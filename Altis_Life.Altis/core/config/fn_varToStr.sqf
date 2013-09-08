@@ -1,0 +1,53 @@
+/*
+	File: fn_varToStr.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Takes the long-name (variable) and returns a display name for our
+	virtual item.
+*/
+private["_var"];
+_var = [_this,0,"",[""]] call BIS_fnc_param;
+if(_var == "") exitWith {""};
+
+switch (_var) do
+{
+	//Virtual Inventory Items
+	case "life_inv_oilu": {"Unprocessed Oil"};
+	case "life_inv_oilp": {"Processed Oil"};
+	case "life_inv_heroinu": {"Unprocessed Heroin"};
+	case "life_inv_heroinp": {"Processed Heroin"};
+	case "life_inv_cannabis": {"Cannabis"};
+	case "life_inv_marijuana": {"Marijuana"};
+	case "life_inv_apple": {"Apple"};
+	case "life_inv_rabbit": {"Rabbit Meat"};
+	case "life_inv_salema": {"Salema Meat"};
+	case "life_inv_ornate": {"Ornate Meat"};
+	case "life_inv_mackerel": {"Mackerel Meat"};
+	case "life_inv_tuna": {"Tuna Meat"};
+	case "life_inv_mullet": {"Mullet Meat"};
+	case "life_inv_catshark": {"Cat Shark Meat"};
+	case "life_inv_turtle": {"Turtle Meat"};
+	case "life_inv_fishingpoles": {"Fishing Pole"};
+	case "life_inv_water": {"Water Bottle"};
+	case "life_inv_coffee": {"Coffee"};
+	case "life_inv_turtlesoup": {"Turtle Soup"};
+	case "life_inv_donuts": {"Donuts"};
+	case "life_inv_fuelE": {"Empty Fuel Can"};
+	case "life_inv_fuelF": {"Full Fuel Can"};
+	
+	//License Block
+	case "license_civ_driver": {"Driver License"};
+	case "license_civ_air": {"Pilot License"};
+	case "license_civ_heroin": {"Heroin License"};
+	case "license_civ_gang": {"Gang License"};
+	case "license_civ_oil": {"Oil Processing"};
+	case "license_civ_dive": {"Diving License"};
+	case "license_civ_boat": {"Boating License"};
+	case "license_civ_gun": {"Firearm License"};
+	case "license_cop_air": {"Pilot License"};
+	case "license_cop_swat": {"Swat License"};
+	case "license_cop_cg": {"Coast Guard"};
+	case "license_civ_rebel": {"Rebel License"};
+	case "license_civ_truck": {"Truck License"};
+};
