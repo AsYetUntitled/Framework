@@ -36,13 +36,3 @@ life_versionInfo = "Stratis Life: v2.2.5";
 [] execVM "core\init.sqf";
 //[] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";
-
-
-fn_rscShop =
-{
-	disableSerialization;
-	private["_item"];
-	_item = ["arifle_SDAR_F","arifle_MX_F","ToolKit","ItemMap","optic_Holosight"] call BIS_fnc_selectRandom;
-	_pic = getText(configFile >> "CfgWeapons" >> _item >> "picture");
-	ctrlSetText[38404,_pic];
-};
