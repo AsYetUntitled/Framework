@@ -57,32 +57,34 @@ class Life_RscHud
 	text = "";
 };
 
-class Life_RscListNBox {
+class Life_RscListNBox
+{
 	style = 16;
-	type=102;
+	type = 102;
 	shadow = 0;
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	color[] = {0.95, 0.95, 0.95, 1};
-	colorText[] = {1, 1, 1, 1.0};
-	colorDisabled[] = {1, 1, 1, 0.25};
-	coloLife_Rscrollbar[] = {0.95, 0.95, 0.95, 1};
-	colorSelect[] = {0, 0, 0, 1};
-	colorSelect2[] = {0, 0, 0, 1};
-	colorSelectBackground[] = {0.95, 0.95, 0.95, 1};
-	colorSelectBackground2[] = {1, 1, 1, 0.5};
+	color[] = {0.95,0.95,0.95,1};
+	colorText[] = {1,1,1,1.0};
+	colorDisabled[] = {1,1,1,0.25};
+	colorScrollbar[] = {0.95,0.95,0.95,1};
+	colorSelect[] = {0,0,0,1};
+	colorSelect2[] = {0,0,0,1};
+	colorSelectBackground[] = {0.95,0.95,0.95,1};
+	colorSelectBackground2[] = {1,1,1,0.5};
 	period = 1.2;
-	
-	class ScrollBar {
-		color[] = {1, 1, 1, 0.6};
-		colorActive[] = {1, 1, 1, 1};
-		colorDisabled[] = {1, 1, 1, 0.3};
+	class ScrollBar
+	{
+		color[] = {1,1,1,0.6};
+		colorActive[] = {1,1,1,1};
+		colorDisabled[] = {1,1,1,0.3};
 		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
 		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
 		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
 };
+
 
 class Life_RscText {
 	x = 0;
@@ -148,7 +150,14 @@ class life_RscPicture {
 	h = 0.15;
 };
 
-class Life_RscPictureKeepAspect : Life_RscPicture {
+class Life_RscTextMulti : Life_RscText
+{
+	linespacing = 1;
+	style = 0 + 16 + 0x200;
+};
+
+class Life_RscPictureKeepAspect : Life_RscPicture 
+{
 	style = 0x30 + 0x800;
 };
 
@@ -426,7 +435,7 @@ class Life_RscCheckbox {
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	rows = 1;
-	columns = 1;
+	5ns = 1;
 	strings[] = {UNCHECKED};
 	checked_strings[] = {CHECKED};
 };

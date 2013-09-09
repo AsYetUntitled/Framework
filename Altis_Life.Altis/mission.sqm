@@ -8,7 +8,8 @@ class Mission
 		"a3_map_altis",
 		"A3_Structures_F_Items_Valuables",
 		"A3_Structures_F_Civ_Garbage",
-		"a3_characters_f_gamma"
+		"a3_characters_f_gamma",
+		"A3_Boat_F_Trawler"
 	};
 	addOnsAuto[]=
 	{
@@ -16,6 +17,7 @@ class Mission
 		"A3_Characters_F_Civil",
 		"a3_characters_f_gamma",
 		"A3_Structures_F_Civ_Garbage",
+		"A3_Boat_F_Trawler",
 		"a3_map_altis"
 	};
 	randomSeed=2004553;
@@ -2124,7 +2126,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			position[]={8341.292,87.965019,24985.707};
@@ -2142,6 +2144,14 @@ class Mission
 			vehicle="Land_Garbage_line_F";
 			skill=0.60000002;
 			text="impound_obj";
+		};
+		class Item2
+		{
+			position[]={3272.2764,-8.455863,12766.362};
+			id=100;
+			side="EMPTY";
+			vehicle="C_Boat_Civil_04_F";
+			skill=0.60000002;
 		};
 	};
 	class Markers

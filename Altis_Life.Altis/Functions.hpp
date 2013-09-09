@@ -82,6 +82,7 @@ class Life_Client_Core
 		class virt_shops {};
 		class vehShopLicenses {};
 		class vehicleAnimate {};
+		class weaponShopCfg {};
 		
 		//Clothing Store Configs
 		class clothing_cop {};
@@ -211,10 +212,6 @@ class Life_Client_Core
 		class impoundMenu {};
 		class unimpound {};
 		class atmMenu {};
-		class virt_buy {};
-		class virt_menu {};
-		class virt_update {};
-		class virt_sell {};
 		class buyClothes {};
 		class changeClothes {};
 		class clothingMenu {};
@@ -222,6 +219,10 @@ class Life_Client_Core
 		class vehicleShop {};
 		class vehicleColorList {};
 		class vehicleShopBuy {};
+		class weaponShopFilter {};
+		class weaponShopMenu {};
+		class weaponShopSelection {};
+		class weaponShopBuySell {};
 	};
 	
 	class Dialog_Controls
