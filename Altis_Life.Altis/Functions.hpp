@@ -223,4 +223,15 @@ class Life_Client_Core
 		class vehicleColorList {};
 		class vehicleShopBuy {};
 	};
+	
+	class Dialog_Controls
+	{
+		file = "dialog\function";
+		class setMapPosition {};
+		class displayHandler {};
+		class spawnConfirm {};
+		class spawnMenu {};
+		class spawnPointCfg {};
+		class spawnPointSelected {};
+	};
 };

@@ -2146,7 +2146,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=8;
+		items=18;
 		class Item0
 		{
 			position[]={3386.2014,2.1326523,12866.599};
@@ -2161,7 +2161,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={3508.5493,3.3442137,13209.409};
+			position[]={3511.6804,3.4476676,13206.726};
 			name="city";
 			type="Empty";
 		};
@@ -2202,6 +2202,68 @@ class Mission
 			name="civ_car_1";
 			type="Empty";
 			angle=-93.321457;
+		};
+		class Item8
+		{
+			position[]={3772.9971,15.261038,13647.058};
+			name="civ_spawn";
+			type="Empty";
+		};
+		class Item9
+		{
+			position[]={3529.9373,7.3869972,13055.158};
+			name="civ_spawn_1";
+			type="Empty";
+		};
+		class Item10
+		{
+			position[]={16822.93,22.089239,12720.003};
+			name="civ_spawn_2";
+			type="Empty";
+		};
+		class Item11
+		{
+			position[]={14016.111,26.688026,18698.537};
+			name="civ_spawn_3";
+			type="Empty";
+		};
+		class Item12
+		{
+			position[]={25694.863,20.346466,21347.943};
+			name="civ_spawn_4";
+			type="Empty";
+		};
+		class Item13
+		{
+			position[]={3190.4575,2.1911974,12913.307};
+			name="cop_spawn_1";
+			type="Empty";
+		};
+		class Item14
+		{
+			position[]={16565.434,11,12736.101};
+			name="cop_spawn_2";
+			type="Empty";
+		};
+		class Item15
+		{
+			position[]={13825.57,19.988623,18974.025};
+			name="cop_spawn_3";
+			type="Empty";
+		};
+		class Item16
+		{
+			position[]={25308.467,81.787903,21793.488};
+			name="cop_spawn_4";
+			type="Empty";
+		};
+		class Item17
+		{
+			position[]={16681.373,13.991628,13604.98};
+			name="federal_reserve_marker";
+			text="Federal Reserve";
+			type="n_hq";
+			colorName="ColorRed";
 		};
 	};
 };

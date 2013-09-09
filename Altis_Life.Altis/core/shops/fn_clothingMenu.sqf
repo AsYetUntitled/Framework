@@ -64,8 +64,8 @@ if(isNil "life_clothesPurchased") exitWith
 {
 	life_clothing_purchase = [-1,-1,-1,-1,-1];
 	player addUniform life_oldClothes;
-	player addHeadgear life_oldHat;
-	player addGoggles life_oldGlasses;
+	if(life_oldHat != "") then {player addHeadgear life_oldHat} else {removeHeadgear player;};
+	if(life_oldGlasses != "") then {player addGoggles life_oldGlasses;} else {removeGoggles player};
 	if(backpack player != "") then
 	{
 		if(life_oldBackpack == "") then
