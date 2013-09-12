@@ -6,12 +6,12 @@
 	Something
 */
 private["_config","_itemInfo","_itemList"];
-uiNamespace setVariable ["Weapon_Shop",_this select 0];
+uiNamespace setVariable ["Weapon_Shop",_this select 3];
 
 disableSerialization;
 if(!(createDialog "life_weapon_shop")) exitwith {};
 
-_config = [_this select 0] call life_fnc_weaponShopCfg;
+_config = [_this select 3] call life_fnc_weaponShopCfg;
 if(typeName _config == "STRING") exitWith {hint _config};
 
 ctrlSetText[38401,_config select 0];

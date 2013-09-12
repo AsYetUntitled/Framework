@@ -44,4 +44,22 @@ switch(_shop) do
 			};
 		};
 	};
+	
+	case "genstore":
+	{
+		["Altis General Store",
+			[
+				["Binocular",nil,150],
+				["ItemGPS",nil,100],
+				["ToolKit",nil,250],
+				["FirstAidKit",nil,150],
+				["Medikit",nil,1000],
+				["NVGoggles",nil,2000],
+				["Chemlight_red",nil,300],
+				["Chemlight_yellow",nil,300],
+				["Chemlight_green",nil,300],
+				["Chemlight_blue",nil,300]
+			]
+		];
+	};
 };

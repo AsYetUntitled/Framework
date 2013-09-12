@@ -131,76 +131,125 @@ life_actions = life_actions +
 //Pickup Unprocessed Oil
 life_actions = life_actions +
 [player addAction["Pickup Unprocessed Oil",life_fnc_pickupItem,false,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "oilu" && (player distance cursorTarget) < 3 && (life_carryWeight + (["oilu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "oilu" && (player distance cursorTarget) < 3 && (life_carryWeight + (["oilu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Processed Oil
 life_actions = life_actions +
 [player addAction["Pickup Processed Oil",life_fnc_pickupItem,true,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "oilp" && (player distance cursorTarget) < 3 && (life_carryWeight + (["oilp"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "oilp" && (player distance cursorTarget) < 3 && (life_carryWeight + (["oilp"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Unprocessed Heroin
 life_actions = life_actions +
 [player addAction["Pickup Unprocessed Heroin",life_fnc_pickupItem,false,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "heroinu" && (player distance cursorTarget) < 3 && (life_carryWeight + (["heroinu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "heroinu" && (player distance cursorTarget) < 3 && (life_carryWeight + (["heroinu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Processed Heroin
 life_actions = life_actions +
 [player addAction["Pickup Processed Heroin",life_fnc_pickupItem,true,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "heroinp" && (player distance cursorTarget) < 3 && (life_carryWeight + (["heroinp"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "heroinp" && (player distance cursorTarget) < 3 && (life_carryWeight + (["heroinp"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Cannabis
 life_actions = life_actions +
 [player addAction["Pickup Cannabis",life_fnc_pickupItem,true,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "cannabis" && (player distance cursorTarget) < 3 && (life_carryWeight + (["cannabis"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "cannabis" && (player distance cursorTarget) < 3 && (life_carryWeight + (["cannabis"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Marijjuana
 life_actions = life_actions +
 [player addAction["Pickup Marijuana",life_fnc_pickupItem,true,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "marijuana" && (player distance cursorTarget) < 3 && (life_carryWeight + (["marijuana"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "marijuana" && (player distance cursorTarget) < 3 && (life_carryWeight + (["marijuana"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Apple
 life_actions = life_actions +
 [player addAction["Pickup Apple",life_fnc_pickupItem,false,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "apple" && (player distance cursorTarget) < 3 && (life_carryWeight + (["apple"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "apple" && (player distance cursorTarget) < 3 && (life_carryWeight + (["apple"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Rabbit MEat
 life_actions = life_actions +
 [player addAction["Pickup Rabbit Meat",life_fnc_pickupItem,"rabbit",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "rabbit" && (player distance cursorTarget) < 3 && (life_carryWeight + (["rabbit"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "rabbit" && (player distance cursorTarget) < 3 && (life_carryWeight + (["rabbit"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup salema
 life_actions = life_actions +
 [player addAction["Pickup Salema Meat",life_fnc_pickupItem,"salema",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "salema" && (player distance cursorTarget) < 3 && (life_carryWeight + (["salema"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "salema" && (player distance cursorTarget) < 3 && (life_carryWeight + (["salema"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup ornate
 life_actions = life_actions +
 [player addAction["Pickup Ornate Meat",life_fnc_pickupItem,"ornate",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "ornate" && (player distance cursorTarget) < 3 && (life_carryWeight + (["ornate"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "ornate" && (player distance cursorTarget) < 3 && (life_carryWeight + (["ornate"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup mackerel
 life_actions = life_actions +
 [player addAction["Pickup Mackerel Meat",life_fnc_pickupItem,"mackerel",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "mackerel" && (player distance cursorTarget) < 3 && (life_carryWeight + (["mackerel"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "mackerel" && (player distance cursorTarget) < 3 && (life_carryWeight + (["mackerel"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup tuna
 life_actions = life_actions +
 [player addAction["Pickup Tuna Meat",life_fnc_pickupItem,"tuna",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "tuna" && (player distance cursorTarget) < 3 && (life_carryWeight + (["tuna"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "tuna" && (player distance cursorTarget) < 3 && (life_carryWeight + (["tuna"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup mullet
 life_actions = life_actions +
 [player addAction["Pickup Mullet Meat",life_fnc_pickupItem,"mullet",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "mullet" && (player distance cursorTarget) < 3 && (life_carryWeight + (["mullet"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "mullet" && (player distance cursorTarget) < 3 && (life_carryWeight + (["mullet"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup catshark
 life_actions = life_actions +
 [player addAction["Pickup Catshark Meat",life_fnc_pickupItem,"catshark",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "catshark" && (player distance cursorTarget) < 3 && (life_carryWeight + (["catshark"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "catshark" && (player distance cursorTarget) < 3 && (life_carryWeight + (["catshark"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup turtle
 life_actions = life_actions +
 [player addAction["Pickup Turtle Meat",life_fnc_pickupItem,"turtle",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "turtle" && (player distance cursorTarget) < 3 && (life_carryWeight + (["turtle"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "turtle" && (player distance cursorTarget) < 3 && (life_carryWeight + (["turtle"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup turtle soup
 life_actions = life_actions +
 [player addAction["Pickup Turtle Soup",life_fnc_pickupItem,"turtlesoup",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "turtlesoup" && (player distance cursorTarget) < 3 && (life_carryWeight + (["turtlesoup"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "turtlesoup" && (player distance cursorTarget) < 3 && (life_carryWeight + (["turtlesoup"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup donut
 life_actions = life_actions +
 [player addAction["Pickup Donut",life_fnc_pickupItem,"donuts",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "donuts" && (player distance cursorTarget) < 3 && (life_carryWeight + (["donuts"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "donuts" && (player distance cursorTarget) < 3 && (life_carryWeight + (["donuts"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Fishing Pole
 life_actions = life_actions +
 [player addAction["Pickup Fishing Pole",life_fnc_pickupItem,"",0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Sack_F" && ((cursorTarget getVariable "item") select 0) == "fishing" && (player distance cursorTarget) < 3 && (life_carryWeight + (["fishing"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "fishing" && (player distance cursorTarget) < 3 && (life_carryWeight + (["fishing"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Fuel Can
 life_actions = life_actions +
 [player addAction["Pickup Fuel Can",life_fnc_pickupItem,"",0,false,false,"",
 ' !isNull cursorTarget && (typeOf cursorTarget == "Land_CanisterFuel_F") && !isNil {(cursorTarget getVariable "item")} && (player distance cursorTarget) < 3 ']];
+//Pickup Pickaxe
+life_actions = life_actions +
+[player addAction["Pickup Pickaxe",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "pickaxe" && (player distance cursorTarget) < 3 && (life_carryWeight + (["pickaxe"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+//Pickup Lead Ore
+life_actions = life_actions +
+[player addAction["Pickup Lead Ore",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "leadore" && (player distance cursorTarget) < 3 && (life_carryWeight + (["leadore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+//Pickup Iron Ore
+life_actions = life_actions +
+[player addAction["Pickup Iron Ore",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "ironore" && (player distance cursorTarget) < 3 && (life_carryWeight + (["ironore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+//Pickup Refined Iron
+life_actions = life_actions +
+[player addAction["Pickup Refined Iron",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "iron_r" && (player distance cursorTarget) < 3 && (life_carryWeight + (["iron_r"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+//Pickup Refined Lead
+life_actions = life_actions +
+[player addAction["Pickup Refined Lead",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "lead_r" && (player distance cursorTarget) < 3 && (life_carryWeight + (["lead_r"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+//Pickup Salt
+life_actions = life_actions +
+[player addAction["Pickup Salt",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "salt" && (player distance cursorTarget) < 3 && (life_carryWeight + (["salt"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+life_actions = life_actions +
+[player addAction["Pickup Sand",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "sand" && (player distance cursorTarget) < 3 && (life_carryWeight + (["sand"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+life_actions = life_actions +
+[player addAction["Pickup Glass",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "glass" && (player distance cursorTarget) < 3 && (life_carryWeight + (["glass"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+life_actions = life_actions +
+[player addAction["Pickup Lockpick",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "lockpick" && (player distance cursorTarget) < 3 && (life_carryWeight + (["lockpick"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+life_actions = life_actions +
+[player addAction["Pickup Peach",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "peach" && (player distance cursorTarget) < 3 && (life_carryWeight + (["peach"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+life_actions = life_actions +
+[player addAction["Pickup Redgull",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Can_V3_F" && ((cursorTarget getVariable "item") select 0) == "redgull" && (player distance cursorTarget) < 3 && (life_carryWeight + (["redgull"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+life_actions = life_actions +
+[player addAction["Pickup Tactical Bacon",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_TacticalBacon_F" && ((cursorTarget getVariable "item") select 0) == "tbacon" && (player distance cursorTarget) < 3 && (life_carryWeight + (["tbacon"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+
+life_actions = life_actions +
+[player addAction["Pickup Diamond Uncut",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "diamond" && (player distance cursorTarget) < 3 && (life_carryWeight + (["diamond"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+life_actions = life_actions +
+[player addAction["Pickup Diamond Cut",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "diamondc" && (player distance cursorTarget) < 3 && (life_carryWeight + (["diamondc"] call life_fnc_itemWeight)) <= life_maxWeight ']];

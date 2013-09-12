@@ -10,7 +10,7 @@ _kill = false;
 
 switch(life_veh_shop) do
 {
-	case "civ_car":
+	case "civ_car_1":
 	{
 		_sp = getMarkerPos "civ_car_1";
 		_dir = markerDir "civ_car_1";
@@ -21,13 +21,13 @@ switch(life_veh_shop) do
 		};
 	};
 	
-	case "civ_car2":
+	case "civ_car_2":
 	{
 		_sp = getMarkerPos "civ_car_2";
 		_dir = markerDir "civ_car_2";
 	};
 	
-	case "civ_car3":
+	case "civ_car_3":
 	{
 		_sp = getMarkerPos "civ_car_3";
 		_dir = markerDir "civ_car_3";
@@ -103,8 +103,8 @@ switch(life_veh_shop) do
 	
 	case "civ_truck_shop":
 	{
-		_sp = getMarkerPos "civ_truck";
-		_dir = markerDir "civ_truck";
+		_sp = getMarkerPos "civ_truck_shop";
+		_dir = markerDir "civ_truck_shop";
 	};
 	
 	case "cop_air":

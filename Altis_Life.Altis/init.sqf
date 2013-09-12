@@ -24,6 +24,12 @@ if(isServer) then
 			["16Rnd_9x21_Mag",15],
 			["20Rnd_556x45_UW_mag",35]
 		];
+		
+		_building = nearestObjects[getMarkerPos "Meth",["Building"],5] select 0;
+		_building setVariable["bis_disabled_Door_1",1,true];
+		_building setVariable["bis_disabled_Door_2",1,true];
+		_building setVariable["bis_disabled_Door_5",1,true];
+		_building setVariable["bis_disabled_Door_6",1,true];
 	};
 	X_Server = true;
 };

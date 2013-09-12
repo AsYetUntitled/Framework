@@ -1,7 +1,7 @@
 class life_progress
 {
 	name = "life_progress";
-	idd = 3400;
+	idd = 38200;
 	fadein=0;
 	duration = 99999999999;
 	fadeout=0;
@@ -9,39 +9,28 @@ class life_progress
 	onLoad="uiNamespace setVariable ['life_progress',_this select 0]";
 	objects[]={};
 
-	class controlsBackground {
-
-		class ProgressBarBackground : Life_RscText {
-			colorBackground[] = {0, 0, 0, 0.7};
+	class controlsBackground 
+	{
+		class background : Life_RscText
+		{
 			idc = -1;
-			x = 0.1999 - 0.004;
-			y = 0.074 - 0.004;
-			w = 0.6 + 0.008;
-			h = 0.05 + 0.008;
+			colorBackground[] = {0,0,0,0.7};
+			x = 0.2; y = -0.3;
+			w = 0.65; h = 0.05;
+		};
+		class ProgressBar : Life_RscProgress
+		{
+			idc = 38201;
+			x = 0.2; y = -0.3;
+			w = 0.65; h = 0.05;
 		};
 		
-		class ProgressBarFillBar : Life_RscText {
-			colorBackground[] = {
-				"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", 
-				"(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", 
-				"(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 
-				"(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"
-			};
-			idc = 3401;
-			x = 0.1999;
-			y = 0.074;
-			w = 0;
-			h = 0.05;
+		class ProgressText : Life_RscText
+		{
+			idc = 38202;
+			text = "Servicing Chopper (50%)...";
+			x = 0.21; y = -0.297;
+			w = 0.65; h = (1 / 25);
 		};
-		
-		class ProgressBarText : Life_RscText {
-			colorBackground[] = {0, 0, 0, 0};
-			idc = 3402;
-			x = 0.1999;
-			y = 0.074;
-			w = 0.6;
-			h = 0.05;
-		};
-		
 	};
 };

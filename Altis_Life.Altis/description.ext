@@ -33,7 +33,6 @@ class Header
 #include "dialog\cell_phone.hpp"
 #include "dialog\wanted_list.hpp"
 #include "dialog\ticket.hpp"
-#include "dialog\progress.hpp"
 #include "dialog\clothing.hpp"
 #include "dialog\trunk.hpp"
 #include "dialog\spawnSelection.hpp"

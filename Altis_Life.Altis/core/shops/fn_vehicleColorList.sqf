@@ -120,7 +120,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 		{
 			switch (life_veh_shop) do
 			{
-				case "civ_car":
+				case "civ_car_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{

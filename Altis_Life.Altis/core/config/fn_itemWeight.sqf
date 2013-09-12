@@ -34,4 +34,15 @@ switch (_item) do
 	case "fuelE": {2};
 	case "fuelF": {5};
 	case "money": {0};
+	case "pickaxe": {2};
+	case "leadore": {4};
+	case "ironore": {5};
+	case "lead_r": {3};
+	case "iron_r": {3};
+	case "sand": {3};
+	case "salt": {3};
+	case "glass": {1};
+	case "diamond": {4};
+	case "diamondc": {2};
+	default {1};
 };

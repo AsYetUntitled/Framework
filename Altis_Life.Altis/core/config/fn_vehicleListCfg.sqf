@@ -11,30 +11,39 @@ if(_shop == "") exitWith {[]};
 _return = [];
 switch (_shop) do
 {
-	case "civ_car":
+	case "civ_car_1":
 	{
 		_return = 
 		[
-			["B_Quadbike_01_F",2000],
-			["C_Offroad_01_F",7000]
+			["B_Quadbike_01_F",2500],
+			["C_Hatchback_01_F",9500],
+			["C_Offroad_01_F",12500],
+			["C_SUV_01_F",35000],
+			["C_Van_01_transport_F",40000]
 		];
 	}; 
 	
-	case "civ_car2":
+	case "civ_car_2":
 	{
 		_return = 
 		[
-			["B_Quadbike_01_F",1000],
-			["C_Offroad_01_F",5000]
+			["B_Quadbike_01_F",2500],
+			["C_Hatchback_01_F",9500],
+			["C_Offroad_01_F",12500],
+			["C_SUV_01_F",35000],
+			["C_Van_01_transport_F",40000]
 		];
 	};
 	
-	case "civ_car3":
+	case "civ_car_3":
 	{
 		_return = 
 		[
-			["B_Quadbike_01_F",1000],
-			["C_Offroad_01_F",5000]
+			["B_Quadbike_01_F",2500],
+			["C_Hatchback_01_F",9500],
+			["C_Offroad_01_F",12500],
+			["C_SUV_01_F",35000],
+			["C_Van_01_transport_F",40000]
 		];
 	}; 
 	
@@ -50,9 +59,11 @@ switch (_shop) do
 	{
 		_return =
 		[
-			["I_Truck_02_transport_F",25000],
-			["I_Truck_02_covered_F",35000],
-			["B_Truck_01_transport_F",90000]
+			["C_Van_01_box_F",60000],
+			["I_Truck_02_transport_F",75000],
+			["I_Truck_02_covered_F",100000],
+			["B_Truck_01_transport_F",200000],
+			["B_Truck_01_box_F",275000]
 		];	
 	};
 	
@@ -61,7 +72,7 @@ switch (_shop) do
 		_return =
 		[
 			["B_Quadbike_01_F",2500],
-			["C_Offroad_01_F",9000]
+			["B_G_Offroad_01_F",13000]
 		];
 	};
 	
@@ -78,37 +89,12 @@ switch (_shop) do
 	case "reb_air":
 	{
 		_return set[count _return,
-		["B_Heli_Light_01_F",400000]];
+		["B_Heli_Light_01_F",275000]];
 		_return set[count _return,
-		["O_Heli_Light_02_unarmed_F",500000]];
-	};
-	
-	case "reb_ship1":
-	{
-		_return set[count _return,
-		["C_Rubberboat",5000]];
-		_return set[count _return,
-		["B_Boat_Armed_01_minigun_F",75000]];
-	};
-	
-	case "reb_ship2":
-	{
-		_return set[count _return,
-		["C_Rubberboat",5000]];
+		["O_Heli_Light_02_unarmed_F",350000]];
 	};
 	
 	case "cop_car":
-	{
-		_return set[count _return,
-		["C_Offroad_01_F",5000]];
-		if(life_coplevel > 2) then
-		{
-			_return set[count _return,
-			["B_MRAP_01_F",30000]];
-		};
-	};
-	
-	case "cop_car2":
 	{
 		_return set[count _return,
 		["C_Offroad_01_F",5000]];
@@ -153,10 +139,11 @@ switch (_shop) do
 	
 	case "civ_air":
 	{
-		_return set[count _return,
-		["B_Heli_Light_01_F",230000]];
-		_return set[count _return,
-		["O_Heli_Light_02_unarmed_F",600000]];
+		_return =
+		[
+			["B_Heli_Light_01_F",175000],
+			["O_Heli_Light_02_unarmed_F",300000]
+		];
 	};
 	
 	case "civ_air2":
@@ -191,48 +178,62 @@ switch (_shop) do
 	
 	case "civ_ship":
 	{
-		_return set[count _return,
-		["C_Rubberboat",5000]];
+		_return =
+		[
+			["C_Rubberboat",5000],
+			["C_Boat_Civil_01_F",22000]
+		];
 	};
 	
 	case "civ_ship2":
 	{
-		_return set[count _return,
-		["C_Rubberboat",4000]];
+		_return =
+		[
+			["C_Rubberboat",5000],
+			["C_Boat_Civil_01_F",22000]
+		];
 	};
 	
 	case "civ_ship3":
 	{
-		_return set[count _return,
-		["C_Rubberboat",4000]];
+		_return =
+		[
+			["C_Rubberboat",5000],
+			["C_Boat_Civil_01_F",22000]
+		];
 	};
 	
 	case "cop_ship":
 	{
-		_return set[count _return,
-		["B_Boat_Transport_01_F",3000]];
-		_return set[count _return,
-		["B_Boat_Armed_01_minigun_F",75000]];
-		_return set[count _return,
-		["B_SDV_01_F",100000]];
+		_return =
+		[
+			["B_Boat_Transport_01_F",3000],
+			["C_Boat_Civil_01_police_F",20000],
+			["B_Boat_Armed_01_minigun_F",75000],
+			["B_SDV_01_F",100000]
+		];
 	};
 	
 	case "donator_heli":
 	{
-		_return set[count _return,
-		["B_Heli_Light_01_F",100000]];
-		_return set[count _return,
-		["O_Heli_Light_02_unarmed_F",175000]];
-		_return set[count _return,
-		["I_Heli_Transport_02_F",195000]];
+		_return =
+		[
+			["B_Heli_Light_01_F",100000],
+			["O_Heli_Light_02_unarmed_F",175000],
+			["I_Heli_Transport_02_F",650000]
+		];
 	};
 	
 	case "donator_car":
 	{
-		_return set[count _return,
-		["B_Quadbike_01_F",500]];
-		_return set[count _return,
-		["C_Offroad_01_F",2500]];
+		_return =
+		[
+			["B_Quadbike_01_F",500],
+			["C_Offroad_01_F",2500],
+			["C_Hatchback_01_sport_F",10000],
+			["C_SUV_01_F",20000],
+			["C_Van_01_fuel_F",7500]
+		];
 	};
 };
 

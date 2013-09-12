@@ -5,7 +5,7 @@
 	Description:
 	Updates the player menu (Virtual Interaction Menu)
 */
-private["_dialog","_inv","_lic","_licenses","_near","_near_units","_mstatus","_shrt"];
+private["_dialog","_inv","_lic","_licenses","_near","_near_units","_mstatus","_shrt","_side"];
 disableSerialization;
 
 if(life_adminlevel < 1) then
@@ -14,6 +14,7 @@ if(life_adminlevel < 1) then
 	ctrlShow[2021,false];
 };
 
+_side = switch(playerSide) do {case west:{"cop"}; case civilian:{"civ"};};
 
 _dialog = findDisplay 2001;
 _inv = _dialog displayCtrl 2005;
@@ -25,19 +26,6 @@ _struct = "";
 lbClear _inv;
 lbClear _near;
 lbClear _near_i;
-
-switch (playerSide) do
-{
-	case west:
-	{
-		_licenses = ["license_cop_air","license_cop_swat","license_cop_cg"];
-	};
-	
-	case civilian:
-	{
-		_licenses = ["license_civ_driver","license_civ_air","license_civ_boat","license_civ_dive","license_civ_gun","license_civ_oil","license_civ_heroin","license_civ_gang","license_civ_rebel","license_civ_truck"];
-	};
-};
 
 //Near players
 _near_units = [];
@@ -65,13 +53,16 @@ ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 	};
 } foreach life_inv_items;
 {
-	_str = [_x] call life_fnc_varToStr;
-	_val = missionNamespace getVariable _x;
-	if(_val) then
+	if((_x select 1) == _side) then
 	{
-		_struct = _struct + format["%1<br/>",_str];
+		_str = [_x select 0] call life_fnc_varToStr;
+		_val = missionNamespace getVariable (_x select 0);
+		if(_val) then
+		{
+			_struct = _struct + format["%1<br/>",_str];
+		};
 	};
-} foreach _licenses;
+} foreach life_licenses;
 
 if(_struct == "") then
 {

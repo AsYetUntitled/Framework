@@ -16,6 +16,8 @@ life_hit_explosive = false;
 life_siren_active = false;
 life_clothing_filter = 0;
 life_clothing_uniform = -1;
+life_redgull_effect = time;
+life_animals_spawned = false;
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 /*
@@ -45,31 +47,6 @@ life_eat_donuts = 30;
 
 /*
 *****************************
-********** Licenses *********
-*****************************
-*/
-
-//Cop Licenses
-license_cop_air = false; //Cop Air License
-license_cop_swat = false; //Swat License
-license_cop_cg = false; //Coast guard License
-
-//Civ Licenses
-license_civ_driver = false; //Driver License
-license_civ_air = false; //Air License
-license_civ_heroin = false; //heroin Processing License
-license_civ_marijuana = false; //Marijuana Processing License
-license_civ_medmarijuana = false; //Medical Marijuana
-license_civ_gang = false; //Gang License
-license_civ_boat = false; //Boat License
-license_civ_oil = false; //Oil Processing License
-license_civ_dive = false; //Diving License
-license_civ_truck = false; //Truck License
-license_civ_gun = false; //Gun License
-license_civ_rebel = false; //Rebel License
-
-/*
-*****************************
 ****** Life Variables *******
 *****************************
 */
@@ -90,30 +67,6 @@ life_impound_boat = 250;
 life_impound_air = 850;
 life_istazed = false;
 life_my_gang = ObjNull;
-
-//Items
-life_inv_oilu = 0;
-life_inv_oilp = 0;
-life_inv_cannabis = 0;
-life_inv_marijuana = 0;
-life_inv_heroinu = 0;
-life_inv_heroinp = 0;
-life_inv_apple = 0;
-life_inv_rabbit = 0;
-life_inv_salema = 0;
-life_inv_ornate = 0;
-life_inv_mackerel = 0;
-life_inv_tuna = 0;
-life_inv_mullet = 0;
-life_inv_catshark = 0;
-life_inv_turtle = 0;
-life_inv_fishingpoles = 0;
-life_inv_water = 0;
-life_inv_turtlesoup = 0;
-life_inv_donuts = 0;
-life_inv_coffee = 0;
-life_inv_fuelF = 0;
-life_inv_fuelE = 0;
 
 life_vehicles = [];
 bank_robber = [];
@@ -157,9 +110,25 @@ life_inv_items =
 	"life_inv_turtlesoup",
 	"life_inv_coffee",
 	"life_inv_fuelF",
-	"life_inv_fuelE"
+	"life_inv_fuelE",
+	"life_inv_pickaxe",
+	"life_inv_leadore",
+	"life_inv_ironore",
+	"life_inv_ironr",
+	"life_inv_leadr",
+	"life_inv_sand",
+	"life_inv_salt",
+	"life_inv_glass",
+	"life_inv_tbacon",
+	"life_inv_lockpick",
+	"life_inv_redgull",
+	"life_inv_peach",
+	"life_inv_diamond",
+	"life_inv_diamondc"
 ];
 
+//Setup variable inv vars.
+{missionNamespace setVariable[_x,0];} foreach life_inv_items;
 //Licenses [license var, civ/cop]
 life_licenses =
 [
@@ -179,6 +148,9 @@ life_licenses =
 	["license_civ_gun","civ"],
 	["license_civ_rebel","civ"]
 ];
+
+//Setup License Variables
+{missionNamespace setVariable[(_x select 0),false];} foreach life_licenses;
 
 life_dp_points = ["dp_1","dp_2","dp_3","dp_4","dp_5","dp_6"];
 //[shortVar,reward]

@@ -223,6 +223,17 @@ class Life_Client_Core
 		class weaponShopMenu {};
 		class weaponShopSelection {};
 		class weaponShopBuySell {};
+		class virt_buy {};
+		class virt_menu {};
+		class virt_update {};
+		class virt_sell {};
+	};
+	
+	class Items
+	{
+		file = "core\items";
+		class pickaxeUse {};
+		class lockpick {};
 	};
 	
 	class Dialog_Controls
@@ -234,5 +245,6 @@ class Life_Client_Core
 		class spawnMenu {};
 		class spawnPointCfg {};
 		class spawnPointSelected {};
+		class progressBar {};
 	};
 };

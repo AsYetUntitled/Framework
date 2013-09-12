@@ -21,6 +21,23 @@ switch (true) do
 		};
 	};
 	
+	case (_item == "redgull"):
+	{
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			life_thirst = 100;
+			player setFatigue 0;
+			[] spawn
+			{
+				life_redgull_effect = time;
+				titleText["You can now run farther for 3 minutes","PLAIN"];
+				player enableFatigue false;
+				waitUntil {!alive player OR ((time - life_redgull_effect) > (3 * 60))};
+				player enableFatigue true;
+			};
+		};
+	};
+	
 	case (_item == "heroinp"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
@@ -43,7 +60,12 @@ switch (true) do
 		};
 	};
 	
-	case (_item in ["apple","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle","turtlesoup","donuts"]):
+	case (_item == "lockpick"):
+	{
+		[] spawn life_fnc_lockpick;
+	};
+	
+	case (_item in ["apple","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle","turtlesoup","donuts","tbacon","peach"]):
 	{
 		[_item] call life_fnc_eatFood;
 	};
@@ -51,6 +73,11 @@ switch (true) do
 	case "fishing":
 	{
 		[] spawn fnc_fishing;
+	};
+	
+	case (_item == "pickaxe"):
+	{
+		[] spawn life_fnc_pickAxeUse;
 	};
 	
 	default

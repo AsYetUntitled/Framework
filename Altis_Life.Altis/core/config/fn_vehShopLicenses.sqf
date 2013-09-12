@@ -12,9 +12,9 @@ _ret = false;
 
 switch (life_veh_shop) do
 {
-	case "civ_car": {_ret = license_civ_driver;};
-	case "civ_car2": {_ret = license_civ_driver;};
-	case "civ_car3": {_ret = license_civ_driver;};
+	case "civ_car_1": {_ret = license_civ_driver;};
+	case "civ_car_2": {_ret = license_civ_driver;};
+	case "civ_car_3": {_ret = license_civ_driver;};
 	case "donator_car":	{_ret = license_civ_driver;};	
 	case "civ_ship": {_ret = license_civ_boat;};
 	case "civ_ship2": {_ret = license_civ_boat;};

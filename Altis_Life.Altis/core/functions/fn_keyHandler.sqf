@@ -23,13 +23,19 @@ switch (_code) do
 		{
 			if(vehicle player != player && alive vehicle player) then
 			{
-				[vehicle player] call life_fnc_openInventory;
+				if((vehicle player) in life_vehicles) then
+				{
+					[vehicle player] call life_fnc_openInventory;
+				};
 			}
 				else
 			{
 				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
-					[cursorTarget] call life_fnc_openInventory;
+					if(cursorTarget in life_vehicles) then
+					{
+						[cursorTarget] call life_fnc_openInventory;
+					};
 				};
 			};
 		};

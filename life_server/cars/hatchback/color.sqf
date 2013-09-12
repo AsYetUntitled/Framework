@@ -1,0 +1,1 @@
+_this setVariable ["BIS_randomSeed1", 2, TRUE];

@@ -35,11 +35,25 @@ switch (_var) do
 	case "life_inv_donuts": {"Donuts"};
 	case "life_inv_fuelE": {"Empty Fuel Can"};
 	case "life_inv_fuelF": {"Full Fuel Can"};
+	case "life_inv_pickaxe": {"Pickaxe"};
+	case "life_inv_leadore": {"Lead Ore"};
+	case "life_inv_ironore": {"Iron Ore"};
+	case "life_inv_ironr": {"Refined Iron"};
+	case "life_inv_leadr": {"Refined Lead"};
+	case "life_inv_sand": {"Sand"};
+	case "life_inv_salt": {"Salt"};
+	case "life_inv_glass": {"Glass"};
+	case "life_inv_diamond": {"Diamond Uncut"};
+	case "life_inv_diamondr": {"Diamond Cut"};
+	case "life_inv_tbacon": {"Tactical Bacon"};
+	case "life_inv_redgull": {"RedGull"};
+	case "life_inv_lockpick": {"Lockpick"};
+	case "life_inv_peach": {"Peach"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
 	case "license_civ_air": {"Pilot License"};
-	case "license_civ_heroin": {"Heroin License"};
+	case "license_civ_heroin": {"Heroin Training"};
 	case "license_civ_gang": {"Gang License"};
 	case "license_civ_oil": {"Oil Processing"};
 	case "license_civ_dive": {"Diving License"};

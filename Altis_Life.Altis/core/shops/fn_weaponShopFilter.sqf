@@ -45,6 +45,7 @@ switch (_index) do
 		if(handgunWeapon player != "") then {_config set[count _config,handgunWeapon player]};
 		
 		//Go through items
+		_config = _config + primaryWeaponItems player;
 		_config = _config + (assignedItems player);
 		_config = _config + (uniformItems player);
 		_config = _config + (vestItems player);
@@ -52,7 +53,7 @@ switch (_index) do
 		
 		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Sell";
 		{
-			if(!(_x in _listedItems)) then
+			if(!(_x in _listedItems) && _x != "") then
 			{
 				_itemInfo = [_x] call life_fnc_fetchCfgDetails;
 				_listedItems set[count _listedItems,_x];

@@ -28,6 +28,59 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "C_Hatchback_01_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Beige";};
+			case 1: {_color = "Green";};
+			case 2: {_color = "Blue";};
+			case 3: {_color = "Dark Blue";};
+			case 4: {_color = "Yellow";};
+			case 5: {_color = "White"};
+			case 6: {_color = "Grey"};
+			case 7: {_color = "Black"};
+		};
+	};
+	
+	case "C_SUV_01_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Dark Red";};
+			case 1: {_color = "Black";};
+			case 2: {_color = "Silver";};
+			case 3: {_color = "Orange";};
+		};
+	};
+	
+	case "C_Van_01_box_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "White"};
+			case 1: {_color = "Red"};
+		};
+	};
+	
+	case "C_Van_01_transport_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "White"};
+			case 1: {_color = "Red"};
+		};
+	};
+	
+	case "C_Van_01_fuel_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "White"};
+			case 1: {_color = "Red"};
+		};
+	};
+	
 	case "B_Quadbike_01_F" :
 	{
 		switch (_index) do

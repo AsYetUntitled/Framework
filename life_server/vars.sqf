@@ -10,6 +10,9 @@
 //Calulate starting player base and times it by 1000 dollars to give initial bank funding.
 serv_bank_funds = (count playableUnits) * 100;
 
+life_animals_spawned = false;
+life_animals_array = [];
+
 //Selling Prices
 life_sell_salema = 45;//20
 life_sell_ornate = 40;//15
@@ -17,8 +20,8 @@ life_sell_mackerel = 175;//45
 life_sell_tuna = 700; //150
 life_sell_mullet = 250; //15
 life_sell_catShark = 300;//100
-life_sell_rabbit = 40;//50
-life_sell_apple = 70;//20
+life_sell_rabbit = 65;//50
+life_sell_apple = 50;//20
 life_sell_oil = 1100;//200
 life_sell_heroin = 1600;//560
 life_sell_marijuana = 600;//450
@@ -30,8 +33,8 @@ life_sell_turtlesoup = 1000;//50
 life_sell_donuts = 60;//10
 
 //Buying Prices (Random each game but always higher then selling prices)
-life_buy_apple = 90;
-life_buy_rabbit = 160;
+life_buy_apple = 65;
+life_buy_rabbit = 75;
 life_buy_salema = 55;
 life_buy_ornate = 50;
 life_buy_mackerel = 200;
@@ -63,7 +66,12 @@ sell_array = [
 ["coffee",life_sell_coffee],
 ["turtlesoup",life_sell_turtlesoup],
 ["donuts",life_sell_donuts],
-["marijuana",life_sell_marijuana]
+["marijuana",life_sell_marijuana],
+["tbacon",25],
+["lockpick",75],
+["pickaxe",750],
+["redgull",1200],
+["peach",55]
 ];
 
 buy_array = [
@@ -81,8 +89,60 @@ buy_array = [
 ["turtlesoup",life_buy_turtlesoup],
 ["donuts",life_buy_donuts],
 ["coffee",life_buy_coffee],
-["marijuana",life_buy_marijuana]
+["marijuana",life_buy_marijuana],
+["tbacon",75],
+["lockpick",150],
+["pickaxe",1500],
+["redgull",2500],
+["peach",68]
 ];
 
 publicVariable "sell_array";
 publicVariable "buy_array";
+
+life_weapon_shop_array =
+[
+	["arifle_sdar_F",7500],
+	["hgun_P07_snds_F",650],
+	["hgun_P07_F",1500],
+	["Binocular",50],
+	["ItemGPS",45],
+	["ToolKit",75],
+	["FirstAidKit",65],
+	["Medikit",450],
+	["NVGoggles",980],
+	["16Rnd_9x21_Mag",15],
+	["20Rnd_556x45_UW_mag",35],
+	["ItemMap",35],
+	["ItemCompass",25],
+	["Chemlight_blue",50],
+	["Chemlight_yellow",50],
+	["Chemlight_green",50],
+	["Chemlight_red",50],
+	["hgun_Rook40_F",500],
+	["arifle_Katiba_F",5000],
+	["30Rnd_556x45_Stanag",65],
+	["20Rnd_762x51_Mag",85],
+	["30Rnd_65x39_caseless_green",50],
+	["DemoCharge_Remote_Mag",7500],
+	["SLAMDirectionalMine_Wire_Mag",2575],
+	["optic_ACO_grn",250],
+	["acc_flashlight",100],
+	["srifle_EBR_F",15000],
+	["arifle_TRG21_F",3500],
+	["optic_MRCO",5000],
+	["optic_Aco",850],
+	["arifle_MX_F",7500],
+	["arifle_MXC_F",5000],
+	["arifle_MXM_F",8500],
+	["MineDetector",500],
+	["optic_Holosight",275],
+	["acc_pointer_IR",175],
+	["arifle_TRG20_F",2500],
+	["SMG_01_F",1500],
+	["arifle_Mk20C_F",4500],
+	["30Rnd_45ACP_Mag_SMG_01",60],
+	["30Rnd_9x21_Mag",30]
+];
+
+publicVariable "life_weapon_shop_array";

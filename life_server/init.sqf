@@ -14,11 +14,12 @@ life_DB_queue = [];
 [] execVM "\life_server\vars.sqf";
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
+[] call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf";
 
 //Only run if truly dedicated
 if(!hasInterface) then
 {
-	[] execVM "\life_server\anticheat_server.sqf";
+	//[] execVM "\life_server\anticheat_server.sqf";
 };
 
 //[] spawn STS_fnc_cleanup;

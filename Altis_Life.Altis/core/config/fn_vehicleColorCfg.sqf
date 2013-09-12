@@ -28,6 +28,50 @@ switch (_vehicle) do
 		];
 	};
 	
+	case "C_Hatchback_01_F":
+	{
+		_ret =
+		[
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base01_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base02_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base03_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base04_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base06_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base07_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base08_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base09_co.paa","civ"]
+		];
+	};
+	
+	case "C_SUV_01_F":
+	{
+		_ret =
+		[
+			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_co.paa","civ"],
+			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_02_co.paa","cop"],
+			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_03_co.paa","civ"],
+			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_04_co.paa","civ"]
+		];
+	};
+	
+	case "C_Van_01_box_F":
+	{
+		_ret = 
+		[
+			["\a3\soft_f_gamma\Van_01\Data\van_01_ext_co.paa","civ"],
+			["\a3\soft_f_gamma\Van_01\Data\van_01_ext_red_co.paa","civ"]
+		];
+	};
+	
+	case "C_Van_01_transport_F":
+	{
+		_ret = 
+		[
+			["\a3\soft_f_gamma\Van_01\Data\van_01_ext_co.paa","civ"],
+			["\a3\soft_f_gamma\Van_01\Data\van_01_ext_red_co.paa","civ"]
+		];
+	};
+	
 	case "B_Quadbike_01_F":
 	{
 		_ret = 

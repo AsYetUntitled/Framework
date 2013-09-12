@@ -65,6 +65,7 @@ class CfgFunctions
 			class managesc {};
 			class cleanup {};
 			class timeStamp {};
+			class huntingZone {};
 		};
 	};
 };
@@ -75,6 +76,62 @@ class CfgVehicles
 	class Offroad_01_base_F: Car_F
 	{
 		class EventHandlers;
+	};
+	
+	class Hatchback_01_base_F: Car_F
+	{
+		class EventHandlers;
+	};
+	class SUV_01_base_F: Car_F
+	{
+		class EventHandlers;
+	};
+	
+	class C_Hatchback_01_sport_F: Hatchback_01_base_F
+	{
+		author = "$STR_A3_Bohemia_Interactive";
+		_generalMacro = "C_Hatchback_01_sport_F";
+		scope = 2;
+		crew = "C_man_1";
+		side = 3;
+		faction = "CIV_F";
+		displayName = "$STR_A3_CfgVehicles_C_car_sport0";
+		hiddenSelectionsTextures[] = {"\A3\soft_f_gamma\Hatchback_01\data\Hatchback_01_ext_SPORT01_CO.paa"};
+		class EventHandlers: EventHandlers
+		{
+			init = "(_this select 0) execVM ""\life_server\cars\hatchback\color.sqf""";
+		};
+	};
+	
+	class C_SUV_01_F: SUV_01_base_F
+	{
+		author = "$STR_A3_Bohemia_Interactive";
+		_generalMacro = "C_SUV_01_F";
+		scope = 2;
+		crew = "C_man_1";
+		typicalCargo[] = {"C_man_1"};
+		side = 3;
+		faction = "CIV_F";
+		accuracy = 1.25;
+		hiddenSelectionsTextures[] = {"\A3\Soft_F_Gamma\SUV_01\Data\SUV_01_ext_CO.paa"};
+		class EventHandlers: EventHandlers
+		{
+			init = "(_this select 0) execVM ""\life_server\cars\SUV\color.sqf""";
+		};
+	};
+	class C_Hatchback_01_F: Hatchback_01_base_F
+	{
+		author = "$STR_A3_Bohemia_Interactive";
+		_generalMacro = "C_Hatchback_01_F";
+		scope = 2;
+		crew = "C_man_1";
+		side = 3;
+		faction = "CIV_F";
+		hiddenSelectionsTextures[] = {"\A3\soft_f_gamma\Hatchback_01\data\Hatchback_01_ext_CO.paa"};
+		class EventHandlers: EventHandlers
+		{
+			init = "(_this select 0) execVM ""\life_server\cars\hatchback\color.sqf""";
+		};
 	};
 	
 	class C_Offroad_01_F: Offroad_01_base_F

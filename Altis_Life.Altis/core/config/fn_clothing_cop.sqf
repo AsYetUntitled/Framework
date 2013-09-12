@@ -18,19 +18,7 @@ switch (_filter) do
 	case 0:
 	{
 		[
-		["U_C_Poloshirt_blue","Poloshirt Blue",250],
-		["U_C_Poloshirt_burgundy","Poloshirt Burgundy",275],
-		["U_C_Poloshirt_redwhite","Poloshirt Red/White",150],
-		["U_C_Poloshirt_salmon","Poloshirt Salmon",175],
-		["U_C_Poloshirt_stripped","Poloshirt stripped",125],
-		["U_C_Poloshirt_tricolour","Poloshirt Tricolor",350],
-		["U_C_Poor_2","Rag tagged clothes",250],
-		["U_IG_Guerilla2_2","Green stripped shirt & Pants",650],
-		["U_IG_Guerilla3_1","Brown Jacket & Pants",735],
-		["U_IG_Guerilla2_3","The Outback Rangler",1200],
-		["U_C_HunterBody_grn","The Hunters Look",1500],
-		["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
-		["U_OrestesBody","Surfing On Land",1100]
+			["U_Rangemaster","Cop Uniform",25]
 		];
 	};
 	
@@ -38,13 +26,6 @@ switch (_filter) do
 	case 1:
 	{
 		[
-			["H_Bandanna_camo","Camo Bandanna",120],
-			["H_Bandanna_surfer","Surfer Bandanna",130],
-			["H_Bandanna_gry","Grey Bandanna",150],
-			["H_Bandanna_khk","Khaki Bandanna",145],
-			["H_Bandanna_sgg","Sage Bandanna",160],
-			["H_StrawHat","Straw Fedora",225],
-			["H_BandMask_blk","Hat & Bandanna",300]
 		];
 	};
 	
@@ -68,8 +49,7 @@ switch (_filter) do
 	case 3:
 	{
 		[
-			["V_PlateCarrierIA1_dgtl",nil,2500],
-			["V_PlateCarrierIA2_dgtl",nil,1500]
+			["V_Rangemaster_belt",nil,1500]
 		];
 	};
 	
@@ -77,9 +57,10 @@ switch (_filter) do
 	case 4:
 	{
 		[
-			["B_Kitbag_mcamo",nil,1250],
-			["B_FieldPack_ocamo",nil,3000],
-			["B_Bergen_sgg",nil,5000]
+			["B_Kitbag_cbr",nil,1250],
+			["B_FieldPack_cbr",nil,2000],
+			["B_AssaultPack_cbr",nil,2200],
+			["B_Bergen_sgg",nil,2500]
 		];
 	};
 };
