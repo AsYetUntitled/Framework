@@ -61,6 +61,7 @@ class Life_Client_Core
 		class pickupItem {};
 		class pickupMoney {};
 		class ticketAction {};
+		class gatherPeaches {};
 	};
 	
 	class Config

@@ -1,20 +1,20 @@
 /*
-	File: fn_gatherApples.sqf
+	File: fn_gatherPeaches.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
 	Gathers apples?
 */
 private["_sum"];
-_sum = ["apple",3,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+_sum = ["peach",3,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 
 if(_sum > 0) then
 {
 	life_action_in_use = true;
-	titleText["Gathering Apples...","PLAIN"];
+	titleText["Gathering Peaches...","PLAIN"];
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	sleep 2;
-	if(([true,"apple",_sum] call life_fnc_handleInv)) then
+	if(([true,"peach",_sum] call life_fnc_handleInv)) then
 	{
 		titleText[format["You have picked %1 Apple(s)",_sum],"PLAIN"];
 	};

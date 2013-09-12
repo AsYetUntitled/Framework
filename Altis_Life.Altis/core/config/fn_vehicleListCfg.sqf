@@ -47,7 +47,7 @@ switch (_shop) do
 		];
 	}; 
 	
-	case "civ_servt":
+	case "civ_servt_1":
 	{
 		_return =
 		[
@@ -55,7 +55,7 @@ switch (_shop) do
 		];
 	};
 	
-	case "civ_truck_shop":
+	case "civ_truck_1":
 	{
 		_return =
 		[
@@ -94,7 +94,29 @@ switch (_shop) do
 		["O_Heli_Light_02_unarmed_F",350000]];
 	};
 	
-	case "cop_car":
+	case "cop_car_1":
+	{
+		_return set[count _return,
+		["C_Offroad_01_F",5000]];
+		if(life_coplevel > 2) then
+		{
+			_return set[count _return,
+			["B_MRAP_01_F",30000]];
+		};
+	};
+	
+	case "cop_car_2":
+	{
+		_return set[count _return,
+		["C_Offroad_01_F",5000]];
+		if(life_coplevel > 2) then
+		{
+			_return set[count _return,
+			["B_MRAP_01_F",30000]];
+		};
+	};
+	
+	case "cop_car_3":
 	{
 		_return set[count _return,
 		["C_Offroad_01_F",5000]];
@@ -137,7 +159,7 @@ switch (_shop) do
 		["I_Heli_Transport_02_F",0]];
 	};
 	
-	case "civ_air":
+	case "civ_air_1":
 	{
 		_return =
 		[
@@ -146,15 +168,16 @@ switch (_shop) do
 		];
 	};
 	
-	case "civ_air2":
+	case "civ_air_2":
 	{
-		_return set[count _return,
-		["B_Heli_Light_01_F",230000]];
-		_return set[count _return,
-		["O_Heli_Light_02_unarmed_F",600000]];
+		_return =
+		[
+			["B_Heli_Light_01_F",175000],
+			["O_Heli_Light_02_unarmed_F",300000]
+		];
 	};
 	
-	case "cop_air":
+	case "cop_air_1":
 	{
 		_return set[count _return,
 		["B_Heli_Light_01_F",75000]];
@@ -165,10 +188,10 @@ switch (_shop) do
 		};
 	};
 	
-	case "cop_air2":
+	case "cop_air_2":
 	{
-		_return set[count _return,
-		["B_Heli_Light_01_F",70000]];
+		return set[count _return,
+		["B_Heli_Light_01_F",75000]];
 		if(life_coplevel > 2) then
 		{
 			_return set[count _return,

@@ -40,7 +40,7 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Civilian Car Shop"];
 	};
 	
-	case "civ_servt":
+	case "civ_servt_1":
 	{
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
 		ctrlSetText[2301,"Service Truck Shop"];
@@ -70,13 +70,19 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Rebel Boat Shop"];
 	};
 	
-	case "cop_car":
+	case "cop_car_1":
 	{
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
 		ctrlSetText[2301,"Cop Car Shop"];
 	};
 	
-	case "cop_car2":
+	case "cop_car_2":
+	{
+		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
+		ctrlSetText[2301,"Cop Car Shop"];
+	};
+	
+	case "cop_car_3":
 	{
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
 		ctrlSetText[2301,"Cop Car Shop"];
@@ -90,25 +96,25 @@ switch (life_veh_shop) do
 		
 	};
 	
-	case "civ_air":
+	case "civ_air_1":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Civilian Air Shop"];
 	};
 	
-	case "civ_air2":
+	case "civ_air_2":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Civilian Air Shop"];
 	};
 	
-	case "cop_air":
+	case "cop_air_1":
 	{
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
 		ctrlSetText[2301,"Cop Air Shop"];
 	};
 	
-	case "cop_air2":
+	case "cop_air_2":
 	{
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
 		ctrlSetText[2301,"Cop Air Shop"];
@@ -133,7 +139,7 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Kamino Boat Shop"];
 	};
 	
-	case "civ_truck_shop":
+	case "civ_truck_1":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Truck Shop"];

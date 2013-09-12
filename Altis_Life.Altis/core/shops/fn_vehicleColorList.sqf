@@ -18,7 +18,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 		{
 			switch(life_veh_shop) do
 			{
-				case "civ_air":
+				case "civ_air_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -28,7 +28,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "civ_air2":
+				case "civ_air_2":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -38,7 +38,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "cop_air":
+				case "cop_air_1":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
 					{
@@ -48,7 +48,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "cop_air2":
+				case "cop_air_2":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
 					{
@@ -74,7 +74,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 		{
 			switch(life_veh_shop) do
 			{
-				case "civ_air":
+				case "civ_air_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -84,7 +84,17 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "cop_air":
+				case "civ_air_2":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "cop_air_1":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
 					{
@@ -94,7 +104,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "cop_air2":
+				case "cop_air_2":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
 					{
@@ -130,7 +140,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "civ_car2":
+				case "civ_car_2":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -140,7 +150,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "civ_car3":
+				case "civ_car_3":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -150,7 +160,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "civ_truck_shop":
+				case "civ_truck_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -180,7 +190,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "cop_car":
+				case "cop_car_1":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
 					{
@@ -190,7 +200,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "cop_car2":
+				case "cop_car_2":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
 					{
@@ -232,7 +242,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 		{
 			switch (life_veh_shop) do
 			{
-				case "cop_car":
+				case "cop_car_1":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
 					{
@@ -267,7 +277,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "civ_truck_shop":
+				case "civ_truck_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -293,7 +303,7 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "civ_truck_shop":
+				case "civ_truck_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{

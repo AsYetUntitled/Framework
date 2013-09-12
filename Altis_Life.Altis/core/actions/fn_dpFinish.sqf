@@ -7,8 +7,9 @@
 	on distance between A->B
 */
 private["_dp","_dis","_price"];
-_dp = _this select 3;
-_dis = round((getMarkerPos "dp_missions") distance (getMarkerPos _dp));
+_dp = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+
+_dis = round((getPos life_dp_start) distance (getPos _dp));
 _price = round(2 * _dis); //2 bucks per meter
 
 ["DeliverySucceeded",[format["You have earned $%1",[_price] call life_fnc_numberText]]] call bis_fnc_showNotification;

@@ -36,7 +36,7 @@ switch (playerSide) do
 		' !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && animationState cursorTarget == "AmovPercMstpSnonWnonDnon_Ease" && (side cursorTarget == civilian) && player distance cursorTarget < 3.5 && (cursorTarget getVariable "restrained") && !(cursorTarget getVariable "Escorting") ']];
 		//Send to jail
 		life_actions = life_actions + [player addAction["Send to Jail",life_fnc_arrestAction,"",0,false,false,"",'
-		!isNull cursorTarget && isPlayer cursorTarget && (side cursorTarget == civilian) && (cursorTarget getVariable "restrained") && alive cursorTarget && (player distance cursorTarget < 3.5) && (player distance (getMarkerPos "dropoff") < 20) && !(cursorTarget getVariable "Escorting") ']];
+		!isNull cursorTarget && isPlayer cursorTarget && (side cursorTarget == civilian) && (cursorTarget getVariable "restrained") && alive cursorTarget && (player distance cursorTarget < 3.5) && ((player distance (getMarkerPos "police_hq_1") < 30) OR  (player distance (getMarkerPos "police_hq_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30)) && !(cursorTarget getVariable "Escorting") ']];
 		//Release Action
 		
 		//Search Action
@@ -78,6 +78,10 @@ switch (playerSide) do
 		//Pick Apples, fields 1 and 2
 		life_actions = life_actions + [player addAction["Pick Apples",life_fnc_gatherApples,"",0,false,false,"",'
 		!life_action_in_use && ((player distance (getMarkerPos "apple_1") < 50) OR (player distance (getMarkerPos "apple_2") < 50)) && (vehicle player == player) ']];
+		life_actions = life_actions + [player addAction["Pick Peaches",life_fnc_gatherPeaches,"",0,false,false,"",'
+		!life_action_in_use && ((player distance (getMarkerPos "peaches_1") < 50) OR (player distance (getMarkerPos "peaches_2") < 50)) && (vehicle player == player) ']];
+		life_actions = life_actions + [player addAction["Pick Peaches",life_fnc_gatherPeaches,"",0,false,false,"",'
+		!life_action_in_use && ((player distance (getMarkerPos "peaches_3") < 50) && (vehicle player == player) ']];
 		//Pick Apples, fields 3 and 4
 		life_actions = life_actions + [player addAction["Pick Apples",life_fnc_gatherApples,"",0,false,false,"",'
 		!life_action_in_use && ((player distance (getMarkerPos "apple_3") < 50) OR (player distance (getMarkerPos "apple_4") < 50)) && (vehicle player == player) ']];

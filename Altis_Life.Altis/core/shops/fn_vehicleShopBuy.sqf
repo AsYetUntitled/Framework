@@ -33,27 +33,28 @@ switch(life_veh_shop) do
 		_dir = markerDir "civ_car_3";
 	};
 	
-	case "civ_servt":
+	case "civ_servt_1":
 	{
 		_sp = getMarkerPos "civ_servt_1";
 		_dir = markerDir "civ_servt_1";
 	};
 	
-	case "cop_car":
+	case "cop_car_1":
 	{
 		_sp = getMarkerPos "cop_car_1";
 		_dir = markerDir "cop_car_1";
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then 
-		{
-			_sp = getMarkerPos "cop_car_1_2";
-			_dir = markerDir "cop_car_1_2";
-		};
 	};
 	
-	case "cop_car2":
+	case "cop_car_2":
 	{
 		_sp = getMarkerPos "cop_car_2";
 		_dir = markerDir "cop_car_2";
+	};
+	
+	case "cop_car_3":
+	{
+		_sp = getMarkerPos "cop_car_3";
+		_dir = markerDir "cop_car_3";
 	};
 	
 	case "fed_car":
@@ -89,31 +90,43 @@ switch(life_veh_shop) do
 		_dir = markerDir "civ_boat_3";
 	};
 	
-	case "civ_air":
+	case "civ_air_1":
 	{
 		_sp = getMarkerPos "civ_air_1";
 		_dir = markerDir "civ_air_1";
+		
+		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then 
+		{
+			_sp = getMarkerPos "civ_air_1_2";
+			_dir = markerDir "civ_air_1_2";
+		};
 	};
 	
-	case "civ_air2":
+	case "civ_air_2":
 	{
 		_sp = getMarkerPos "civ_air_2";
 		_dir = markerDir "civ_air_2";
+		
+		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then 
+		{
+			_sp = getMarkerPos "civ_car_2_2";
+			_dir = markerDir "civ_car_2_2";
+		};
 	};
 	
-	case "civ_truck_shop":
+	case "civ_truck_1":
 	{
-		_sp = getMarkerPos "civ_truck_shop";
-		_dir = markerDir "civ_truck_shop";
+		_sp = getMarkerPos "civ_truck_1";
+		_dir = markerDir "civ_truck_1";
 	};
 	
-	case "cop_air":
+	case "cop_air_1":
 	{
 		_sp = getMarkerPos "cop_air_1";
 		_dir = markerDir "cop_air_1";
 	};
 	
-	case "cop_air2":
+	case "cop_air_2":
 	{
 		_sp = getMarkerPos "cop_air_2";
 		_dir = markerDir "cop_air_2";
