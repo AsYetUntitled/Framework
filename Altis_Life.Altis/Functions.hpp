@@ -42,9 +42,7 @@ class Life_Client_Core
 		class gatherOil {};
 		class getDPMission {};
 		class postBail {};
-		class processHeroin {};
-		class processMarijuana {};
-		class processOil {};
+		class processAction {};
 		class robBankAction {};
 		class sellOil {};
 		class suicideBomb {};

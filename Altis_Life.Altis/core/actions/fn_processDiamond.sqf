@@ -9,7 +9,7 @@ disableSerialization;
 private["_target","_oil","_hasLicense","_price","_ui","_progress","_pgText","_cP"];
 life_is_processing = true;
 _target = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-_oil = life_inv_oilu;
+_oil = life_inv_diamond;
 _hasLicense = license_civ_oil;
 _price = _oil * 1000;
 if(_oil < 1) exitWith {life_is_processing = false;};
@@ -36,8 +36,8 @@ if(_hasLicense) then
 	};
 	
 	if(player distance _target > 10) exitWith {hint "You need to stay within 10m to process oil!"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([false,"oilu",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([true,"oilp",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,"oilu",_oil] call life_fnc_handleInv; life_is_processing = false;};
+	if(!([false,"diamond",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(!([true,"oilp",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,"diamond",_oil] call life_fnc_handleInv; life_is_processing = false;};
 	5 cutText ["","PLAIN"];
 	titleText[format["You have processed %1 oil.",_oil],"PLAIN"];
 	life_is_processing = false;
@@ -58,8 +58,8 @@ if(_hasLicense) then
 	
 	if(player distance _target > 10) exitWith {hint "You need to stay within 10m to process oil!"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(life_cash < _price) exitWith {hint format["You need $%1 to process oil without a license!",[_price] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([false,"oilu",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([true,"oilp",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,"oilu",_oil] call life_fnc_handleInv; life_is_processing = false;};
+	if(!([false,"diamond",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(!([true,"oilp",_oil] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,"diamond",_oil] call life_fnc_handleInv; life_is_processing = false;};
 	5 cutText ["","PLAIN"];
 	life_cash = life_cash - _price;
 	titleText[format["You have processed %1 oil for $%2",_oil,[_pirce] call life_fnc_numberText],"PLAIN"];
