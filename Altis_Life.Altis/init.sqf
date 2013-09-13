@@ -17,7 +17,7 @@ if(isServer) then
 if(!isDedicated) then { X_Client = true;};
 if(isNull player) then 
 {
-	if(!X_JIP) then
+	if(!X_JIP && !isServer) then
 	{
 		[] spawn (compile PreprocessFileLineNumbers "core\jip.sqf");
 	};
@@ -26,7 +26,13 @@ if(isNull player) then
 enableSaving[false,false];
 
 [] execVM "bis\compile.sqf";
-life_versionInfo = "Stratis Life: v2.2.5";
+life_versionInfo = "Altis Life v3.0";
 [] execVM "core\init.sqf";
-//[] execVM "briefing.sqf"; //Load Briefing
+[] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";
+
+if(!StartProgress) then
+{
+	[8,true,false] execFSM "core\fsm\core_time.fsm";
+};
+StartProgress = true;

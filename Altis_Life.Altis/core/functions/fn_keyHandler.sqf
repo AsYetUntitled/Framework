@@ -77,7 +77,7 @@ switch (_code) do
 			{
 				titleText ["Sirens On","PLAIN"];
 				_veh setVariable["siren",true,true];
-				[[_veh],"fnc_cop_siren",nil,true] spawn BIS_fnc_MP;
+				[[_veh],"life_fnc_copSiren",nil,true] spawn BIS_fnc_MP;
 			};
 		};
 	};

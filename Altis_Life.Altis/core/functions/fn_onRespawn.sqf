@@ -11,6 +11,8 @@ _corpse = [_this,1,objNull,[objNull]] call BIS_fnc_param;
 if(isNull _unit) exitWith {};
 if(!isNull _corpse) then{deleteVehicle _corpse;};
 
+hideBody _corpse;
+deleteVehicle _corpse;
 _handle = [] spawn life_fnc_setupActions;
 waitUntil {scriptDone _handle};
 

@@ -31,7 +31,7 @@ compileFinal "
 ";
 
 publicVariable "life_fnc_sidechat";
-publicVariable "life_fnc_shutmedown";
+//publicVariable "life_fnc_shutmedown";
 
 fnc_log_ac =
 compileFinal "

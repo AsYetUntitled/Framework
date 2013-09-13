@@ -24,7 +24,7 @@ life_sell_rabbit = 65;//50
 life_sell_apple = 50;//20
 life_sell_oil = 1100;//200
 life_sell_heroin = 1600;//560
-life_sell_marijuana = 600;//450
+life_sell_marijuana = 2350;//450
 life_sell_turtle = 2000;//2000
 life_sell_fishing = 3;//3
 life_sell_water = 5;//5
@@ -70,8 +70,16 @@ sell_array = [
 ["tbacon",25],
 ["lockpick",75],
 ["pickaxe",750],
-["redgull",1200],
-["peach",55]
+["redgull",200],
+["peach",55],
+["cocainep",3500],
+["diamond",750],
+["diamondc",1750],
+["iron_r",1350],
+["copper_r",1075],
+["salt_r",750],
+["glass",950],
+["fuelF",500]
 ];
 
 buy_array = [
@@ -89,11 +97,10 @@ buy_array = [
 ["turtlesoup",life_buy_turtlesoup],
 ["donuts",life_buy_donuts],
 ["coffee",life_buy_coffee],
-["marijuana",life_buy_marijuana],
 ["tbacon",75],
 ["lockpick",150],
-["pickaxe",1500],
-["redgull",2500],
+["pickaxe",1200],
+["redgull",1500],
 ["peach",68]
 ];
 

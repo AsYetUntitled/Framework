@@ -23,10 +23,13 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 {
 	_name = [([_x,0] call life_fnc_varHandle)] call life_fnc_vartostr;
 	_index = [_x,buy_array] call fnc_index;
-	_price = (buy_array select _index) select 1;
-	_item_list lbAdd format["%1  ($%2)",_name,[_price] call life_fnc_numberText];
-	_item_list lbSetData [(lbSize _item_list)-1,_x];
-	_item_list lbSetValue [(lbSize _item_list)-1,_price];
+	if(_index != -1) then
+	{
+		_price = (buy_array select _index) select 1;
+		_item_list lbAdd format["%1  ($%2)",_name,[_price] call life_fnc_numberText];
+		_item_list lbSetData [(lbSize _item_list)-1,_x];
+		_item_list lbSetValue [(lbSize _item_list)-1,_price];
+	};
 } foreach (_shop_data select 1);
 
 {

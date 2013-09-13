@@ -32,7 +32,7 @@ if(_shooter isKindOf "Man" && alive player) then
 			{player addMagazine _x;} foreach _curMags;
 		};
 		
-		[[_unit],"life_fnc_tazedSound",true,false] spawn BIS_fnc_MP;
+		[[_unit],"life_fnc_tazeSound",true,false] spawn BIS_fnc_MP;
 		_obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL _unit);
 		_obj setPosATL (getPosATL _unit);
 		[[player,"AinjPfalMstpSnonWnonDf_carried_fallwc"],"life_fnc_animSync",true,false] spawn BIS_fnc_MP;

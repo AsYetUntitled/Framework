@@ -10,10 +10,7 @@ _unit = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _source = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _unit) exitWith {};
 
-//Cleanup any guns dropped by the body
-_weapons = nearestObjects[getPos _unit,["GroundWeaponHolder"],3] select 0;
-if(!isNil "_weapons") then {deleteVehicle _weapons;};
-
+hideBody _unit;
 //Make my killer wanted!
 if(playerSide == civilian && side _source != west && alive _source) then
 {
@@ -37,8 +34,6 @@ if(side _source == west && !life_use_atm) then
 	if(life_cash != 0) then
 	{
 		[format["$%1 from the bank robbery was returned from the robber being killed.",[life_cash] call life_fnc_numberText],"life_fnc_broadcast",nil,false] spawn BIS_fnc_MP;
-		bank_addfunds = life_cash;
-		publicVariableServer "bank_addfunds";
 		life_cash = 0;
 	};
 };

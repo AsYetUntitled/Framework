@@ -16,8 +16,8 @@ switch(life_veh_shop) do
 		_dir = markerDir "civ_car_1";
 		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then 
 		{
-			_sp = getMarkerPos "civ_car_1_2";
-			_dir = markerDir "civ_car_1_2";
+			_sp = getMarkerPos "civ_car_1_1";
+			_dir = markerDir "civ_car_1_1";
 		};
 	};
 	
@@ -31,6 +31,12 @@ switch(life_veh_shop) do
 	{
 		_sp = getMarkerPos "civ_car_3";
 		_dir = markerDir "civ_car_3";
+	};
+	
+	case "civ_car_4":
+	{
+		_sp = getMarkerPos "civ_car_4";
+		_dir = markerDir "civ_car_4";
 	};
 	
 	case "civ_servt_1":
@@ -209,6 +215,8 @@ hint format["You bought a %1 for $%2",_name,[_price] call life_fnc_numberText];
 _vehicle = _veh createVehicle _sp;
 _vehicle setPos _sp;
 _vehicle setDir _dir;
+clearMagazineCargoGlobal _vehicle;
+clearWeaponCargoGlobal _vehicle;
 
 if(_sv) then
 {
@@ -222,9 +230,6 @@ _vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,name player]],t
 
 life_vehicles set[count life_vehicles,_vehicle];
 life_cash = life_cash - _price;
-
-bank_addfunds = _price;
-publicVariableServer "bank_addfunds";
 
 if(playerSide == west) then
 {

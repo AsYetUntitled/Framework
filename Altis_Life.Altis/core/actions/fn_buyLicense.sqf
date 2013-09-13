@@ -9,7 +9,7 @@ private["_type"];
 _type = _this select 3;
 
 _price = [_type] call life_fnc_licensePrice;
-_license = [_type] call life_fnc_licenseType;
+_license = [_type,0] call life_fnc_licenseType;
 
 if(life_cash < _price) exitWith {hint format["You do not have $%1 for a %2",[_price] call life_fnc_numberText,_license select 1];};
 

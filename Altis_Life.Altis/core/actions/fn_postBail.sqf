@@ -16,5 +16,3 @@ if(life_atmcash < life_bail_amount) exitWith {hint format["You do not have $%1 i
 life_atmcash = life_atmcash - life_bail_amount;
 life_bail_paid = true;
 [[0,format["%1 has posted bail!", name _unit]],"life_fnc_broadcast",west,false] spawn BIS_fnc_MP;
-bank_addfunds = life_bail_amount;
-publicVariableServer "bank_addfunds";

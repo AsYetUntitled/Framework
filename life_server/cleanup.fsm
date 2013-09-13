@@ -3,37 +3,32 @@
 /*
 item0[] = {"init",0,250,-65.004578,-391.651611,24.995417,-341.651672,0.000000,"init"};
 item1[] = {"true",8,218,-62.976639,-315.185364,27.023363,-265.185364,0.000000,"true"};
-item2[] = {"Time_Check_2",4,218,-111.436989,-131.324951,-21.436943,-81.324913,0.000000,"Time Check"};
-item3[] = {"Delete_Impounded",2,250,-111.100281,-29.272951,-21.100311,20.727024,0.000000,"Delete" \n "Impounded " \n "Cars"};
-item4[] = {"Share__Work_load",2,250,-64.183350,-224.681931,25.816656,-174.681931,0.000000,"Share " \n "Work-load"};
-item5[] = {"true",8,218,-54.709698,75.189262,35.290302,125.189262,0.000000,"true"};
-item6[] = {"Time_Check",4,218,-219.425827,-133.310532,-129.425964,-83.310455,0.000000,"Time Check"};
-item7[] = {"Delete_Dead_Cars",2,4346,-224.917740,-29.248400,-134.917984,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
-item8[] = {"",7,210,-312.538239,95.295059,-304.538239,103.295059,0.000000,""};
-item9[] = {"",7,210,-311.750000,-203.033707,-303.750000,-195.033707,0.000000,""};
-item10[] = {"Time_Check_1",4,218,100.987747,-128.044540,190.987671,-78.044502,0.000000,"Time Check"};
-item11[] = {"Delete_Objects",2,250,101.669182,-24.399967,191.669281,25.600021,0.000000,"Delete Objects"};
-item12[] = {"More_then_1_",4,218,-6.744542,-130.392212,83.255257,-80.392212,0.000000,"More then 1?"};
-item13[] = {"Delete_dead_bodi",2,250,-6.311596,-26.395784,83.688393,23.604227,0.000000,"Delete" \n "dead bodies"};
+item2[] = {"Share__Work_load",2,250,-64.183350,-224.681931,25.816656,-174.681931,0.000000,"Share " \n "Work-load"};
+item3[] = {"true",8,218,-54.709698,75.189262,35.290302,125.189262,0.000000,"true"};
+item4[] = {"Time_Check_1",4,218,-219.425827,-133.310532,-129.425964,-83.310455,0.000000,"Time Check"};
+item5[] = {"Delete_Dead_Cars",2,250,-224.917740,-29.248400,-134.917984,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
+item6[] = {"",7,210,-312.538239,95.295059,-304.538239,103.295059,0.000000,""};
+item7[] = {"",7,210,-311.750000,-203.033707,-303.750000,-195.033707,0.000000,""};
+item8[] = {"Time_Check",4,218,100.987747,-128.044540,190.987671,-78.044502,0.000000,"Time Check"};
+item9[] = {"Delete_Objects",2,4346,101.669182,-24.399967,191.669281,25.600021,0.000000,"Delete Objects"};
+item10[] = {"More_then_1_",4,218,-6.744542,-130.392212,83.255257,-80.392212,0.000000,"More then 1?"};
+item11[] = {"Delete_dead_bodi",2,250,-6.311596,-26.395784,83.688393,23.604227,0.000000,"Delete" \n "dead bodies"};
 link0[] = {0,1};
-link1[] = {1,4};
-link2[] = {2,3};
-link3[] = {3,5};
-link4[] = {4,2};
-link5[] = {4,6};
-link6[] = {4,10};
-link7[] = {4,12};
-link8[] = {5,8};
-link9[] = {6,7};
-link10[] = {7,5};
-link11[] = {8,9};
-link12[] = {9,4};
-link13[] = {10,11};
-link14[] = {11,5};
-link15[] = {12,13};
-link16[] = {13,5};
+link1[] = {1,2};
+link2[] = {2,4};
+link3[] = {2,8};
+link4[] = {2,10};
+link5[] = {3,6};
+link6[] = {4,5};
+link7[] = {5,3};
+link8[] = {6,7};
+link9[] = {7,2};
+link10[] = {8,9};
+link11[] = {9,3};
+link12[] = {10,11};
+link13[] = {11,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,46,6316128,1,-629.444153,611.207214,293.309357,-434.050568,1049,615,1};
-window[] = {0,-1,-1,-32000,-32000,864,211,1854,104,1,1067};
+window[] = {0,-1,-1,-32000,-32000,815,50,1693,55,1,1067};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -64,33 +59,6 @@ class FSM
       };
     };
     /*%FSM</STATE>*/
-    /*%FSM<STATE "Delete_Impounded">*/
-    class Delete_Impounded
-    {
-      name = "Delete_Impounded";
-      init = /*%FSM<STATEINIT""">*/"{" \n
-       "	if(!isNull _x && _x distance impound_obj < 75) then" \n
-       "	{" \n
-       "		deleteVehicle _x;" \n
-       "	};" \n
-       "} foreach (nearestObjects[getPos impound_obj,[""Car"",""Ship"",""Air""],75]);" \n
-       "_impound = time;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "true">*/
-        class true
-        {
-          priority = 0.000000;
-          to="Share__Work_load";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
     /*%FSM<STATE "Share__Work_load">*/
     class Share__Work_load
     {
@@ -103,19 +71,9 @@ class FSM
         class Time_Check
         {
           priority = 0.000000;
-          to="Delete_Dead_Cars";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _cars) > (3 * 60))"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-        /*%FSM<LINK "Time_Check_1">*/
-        class Time_Check_1
-        {
-          priority = 0.000000;
           to="Delete_Objects";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _objs) > (30 * 60))"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _objs) > (60 * 60))"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -125,17 +83,17 @@ class FSM
           priority = 0.000000;
           to="Delete_dead_bodi";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(count (allDeadMen) > 1)"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count (allDeadMen) > 0)"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "Time_Check_2">*/
-        class Time_Check_2
+        /*%FSM<LINK "Time_Check_1">*/
+        class Time_Check_1
         {
           priority = 0.000000;
-          to="Delete_Impounded";
+          to="Delete_Dead_Cars";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _impound) > (30 * 60))"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _cars) > (3 * 60))"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -186,19 +144,7 @@ class FSM
     class Delete_Objects
     {
       name = "Delete_Objects";
-      init = /*%FSM<STATEINIT""">*/"{" \n
-       "	if(!isNil {_x getVariable ""item""}) then" \n
-       "	{" \n
-       "		deleteVehicle _x;" \n
-       "	};" \n
-       "} foreach (nearestObjects[[0,0,0],[""building""],12000]);" \n
-       "" \n
-       "{" \n
-       "	deleteVehicle _x;" \n
-       "} foreach (nearestObjects[[0,0,0],[""GroundWeaponHolder""],12000]);" \n
-       "_objs = time;" \n
-       "" \n
-       ""/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

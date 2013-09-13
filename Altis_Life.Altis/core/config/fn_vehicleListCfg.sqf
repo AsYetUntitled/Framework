@@ -47,6 +47,18 @@ switch (_shop) do
 		];
 	}; 
 	
+	case "civ_car_4":
+	{
+		_return = 
+		[
+			["B_Quadbike_01_F",2500],
+			["C_Hatchback_01_F",9500],
+			["C_Offroad_01_F",12500],
+			["C_SUV_01_F",35000],
+			["C_Van_01_transport_F",40000]
+		];
+	}; 
+	
 	case "civ_servt_1":
 	{
 		_return =

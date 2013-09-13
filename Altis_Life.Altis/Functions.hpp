@@ -60,6 +60,7 @@ class Life_Client_Core
 		class pickupMoney {};
 		class ticketAction {};
 		class gatherPeaches {};
+		class gatherCocaine {};
 	};
 	
 	class Config
@@ -151,6 +152,7 @@ class Life_Client_Core
 		class receiveMoney {};
 		class playerTags {};
 		class clearVehicleAmmo {};
+		class pulloutVeh {};
 	};
 	
 	class Civilian
@@ -166,7 +168,6 @@ class Life_Client_Core
 		file = "core\vehicle";
 		class colorVehicle {};
 		class openInventory {};
-		class vehInventory {};
 		class lockVehicle {};
 		class vehicleOwners {};
 	};
@@ -186,6 +187,7 @@ class Life_Client_Core
 		class ticketGive {};
 		class ticketPay {};
 		class ticketPrompt {};
+		class copSiren {};
 	};
 	
 	class Gangs

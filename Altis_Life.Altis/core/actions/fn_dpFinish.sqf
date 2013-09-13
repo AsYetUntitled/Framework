@@ -10,7 +10,7 @@ private["_dp","_dis","_price"];
 _dp = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 _dis = round((getPos life_dp_start) distance (getPos _dp));
-_price = round(2 * _dis); //2 bucks per meter
+_price = round(1.7 * _dis);
 
 ["DeliverySucceeded",[format["You have earned $%1",[_price] call life_fnc_numberText]]] call bis_fnc_showNotification;
 life_cur_task setTaskState "Succeeded";

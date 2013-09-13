@@ -34,7 +34,7 @@ switch (_mode) do
 			case "diamond": {_var = "license_civ_diamond"};
 			case "salt": {_var = "license_civ_salt"};
 			case "cocaine": {_var = "license_civ_coke"};
-			case "sand": {_var = "license_civ_salt"};
+			case "sand": {_var = "license_civ_sand"};
 			case "iron": {_var = "license_civ_iron"};
 			case "copper": {_var = "license_civ_copper"};
 			default {_var = ""};

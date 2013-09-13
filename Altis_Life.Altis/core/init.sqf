@@ -51,7 +51,7 @@ player setVariable["restrained",false,true];
 player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];
 diag_log "Past Settings Init";
-//[] execFSM "core\client\fsm\client.fsm";
+[] execFSM "core\fsm\client.fsm";
 diag_log "Executing client.fsm";
 waitUntil {!(isNull (findDisplay 46))};
 diag_log "Display 46 Found";
@@ -66,5 +66,11 @@ life_sidechat = true;
 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 //[player] execVM "core\client\intro.sqf";
-//[] call life_fnc_pTags; //Enable tags by default?
+[] call life_fnc_playerTags; //Enable tags by default?
 [] call life_fnc_settingsInit;
+life_fnc_moveIn = compileFinal
+"
+	player moveInCargo (_this select 0);
+";
+
+[] execVM "core\init_survival.sqf";

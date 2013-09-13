@@ -33,8 +33,6 @@ if(_licenses == "") then {_licenses = "No licenses<br/>"};
 
 if(!life_use_atm) then 
 {
-	bank_addfunds = life_cash;
-	publicVariableServer "bank_addfunds";
 	life_cash = 0;
 	_robber = true;
 };

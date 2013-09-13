@@ -13,6 +13,7 @@ life_DB_queue = [];
 
 publicVariable "life_fnc_vehStoreItem";
 publicVariable "life_fnc_vehTakeItem";
+publicVariable "life_fnc_vehInventory";
 [] execVM "\life_server\vars.sqf";
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
@@ -51,21 +52,6 @@ publicVariable "robbery_success";
 	};
 };
 
-[] spawn
-{
-	while {true} do
-	{
-		sleep (40 * 60);
-		{deleteVehicle _x} foreach (nearestObjects[[0,0,0],["Land_BottlePlastic_V1_F","Land_Can_V3_F","Land_Suitcase_F","Land_Sack_F"],10000]);
-	};
-};
-
 fnc_serv_kick = {endMission "loser";};
 publicVariable "fnc_serv_kick";
 [] spawn DB_fnc_queueManagement;
-
-_building = nearestObjects[getMarkerPos "Meth",["Building"],5] select 0;
-_building setVariable["bis_disabled_Door_1",1,true];
-_building setVariable["bis_disabled_Door_2",1,true];
-_building setVariable["bis_disabled_Door_5",1,true];
-_building setVariable["bis_disabled_Door_6",1,true];

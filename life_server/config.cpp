@@ -57,6 +57,7 @@ class CfgFunctions
 			file = "\life_server\clientside";
 			class vehStoreItem {};
 			class vehTakeItem {};
+			class vehInventory {};
 		};	
 	};
 	

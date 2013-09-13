@@ -8,7 +8,7 @@
 
 {
 	_index = _x getVariable "life_VEH_color";
-	if(!isNil !isNil "_index") then
+	if(!isNil "_index") then
 	{
 		[_x,_index] spawn life_fnc_colorVehicle;
 	};
@@ -16,7 +16,7 @@
 
 {
 	_index = _x getVariable "life_VEH_color";
-	if(!isNil !isNil "_index") then
+	if(!isNil "_index") then
 	{
 		[_x,_index] spawn life_fnc_colorVehicle;
 	};

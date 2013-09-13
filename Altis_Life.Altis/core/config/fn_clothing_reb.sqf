@@ -42,15 +42,15 @@ switch (_filter) do
 	case 2:
 	{
 		[
-			["G_Shades_Black",nil,0],
-			["G_Shades_Blue",nil,0],
-			["G_Sport_Blackred",nil,0],
-			["G_Sport_Checkered",nil,0],
-			["G_Sport_Blackyellow",nil,0],
-			["G_Sport_BlackWhite",nil,0],
-			["G_Squares",nil,0],
-			["G_Lowprofile",nil,0],
-			["G_Combat",nil,0]
+			["G_Shades_Black",nil,25],
+			["G_Shades_Blue",nil,20],
+			["G_Sport_Blackred",nil,20],
+			["G_Sport_Checkered",nil,20],
+			["G_Sport_Blackyellow",nil,20],
+			["G_Sport_BlackWhite",nil,20],
+			["G_Squares",nil,10],
+			["G_Lowprofile",nil,30],
+			["G_Combat",nil,55]
 		];
 	};
 	

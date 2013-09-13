@@ -34,7 +34,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 		}
 			else
 		{
-			_vehicle attachTo[impound_obj,[0,0,0]];
+			deleteVehicle _vehicle;
 		};
 		
 		life_atmcash = life_atmcash + _price;

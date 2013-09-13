@@ -58,6 +58,13 @@ switch (playerSide) do
 		life_actions = life_actions + [player addAction["Search Vehicle",life_fnc_searchVehAction,cursorTarget,0,false,false,"",
 		' !isNull cursorTarget && (player distance cursorTarget) < 5 && speed cursorTarget < 2 && cursorTarget isKindOf "Ship" ']];
 		
+		life_actions = life_actions + [player addAction["Search Trunk",life_fnc_vehInvSearch,cursorTarget,0,false,false,"",
+		' !isNull cursorTarget && (player distance cursorTarget) < 6 && speed cursorTarget < 2 && cursorTarget isKindOf "Car"']];
+		life_actions = life_actions + [player addAction["Search Trunk",life_fnc_vehInvSearch,cursorTarget,0,false,false,"",
+		' !isNull cursorTarget && (player distance cursorTarget) < 10 && speed cursorTarget < 2 && cursorTarget isKindOf "Air"']];
+		life_actions = life_actions + [player addAction["Search Trunk",life_fnc_vehInvSearch,cursorTarget,0,false,false,"",
+		' !isNull cursorTarget && (player distance cursorTarget) < 6 && speed cursorTarget < 2 && cursorTarget isKindOf "Ship" ']];
+		
 		//Lights?
 		life_actions = life_actions + [player addAction["Siren Lights ON",{[[vehicle player,0.22],"life_fnc_copLights",true,false] spawn BIS_fnc_MP; vehicle player setVariable["lights",true,true];},"",0,false,false,"",' vehicle player != player && (typeOf vehicle player) == "C_Offroad_01_F" && !isNil {vehicle player getVariable "lights"} && ((driver vehicle player) == player) && !(vehicle player getVariable "lights") && sunOrMoon < 1']];
 		life_actions = life_actions + [player addAction["Siren Lights OFF",{vehicle player setVariable["lights",false,true];},"",0,false,false,"", ' vehicle player != player && (typeOf vehicle player) == "C_Offroad_01_F" && !isNil {vehicle player getVariable "lights"} && ((driver vehicle player) == player) && (vehicle player getVariable "lights") ']];
@@ -93,7 +100,9 @@ switch (playerSide) do
 		!isNull cursorTarget && (typeOf cursorTarget) == "Turtle_F" && ((player distance (getMarkerPos "turtle_1") < 200) OR (player distance (getMarkerPos "turtle_2") < 200) OR (player distance (getMarkerPos "turtle_3") < 200)) && !alive cursorTarget && (life_carryWeight + (["turtle"] call life_fnc_itemWeight)) <= life_maxWeight']];
 		//Gather Cannabis
 		life_actions = life_actions + [player addAction["Gather Cannabis",life_fnc_gatherCannabis,"",0,false,false,"",'
-		!life_action_in_use && (player distance (getMarkerPos "cannabis_area") < 60) && (vehicle player == player) && (life_carryWeight + (["cannabis"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		!life_action_in_use && (player distance (getMarkerPos "weed_1") < 60) && (vehicle player == player) && (life_carryWeight + (["cannabis"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		life_actions = life_actions + [player addAction["Gather Cocaine",life_fnc_gatherCocaine,"",0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "cocaine_1") < 60) && (vehicle player == player) && (life_carryWeight + (["cocaine"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 		//Suicide alahsnackbar
 		life_actions = life_actions + [player addAction["Activate Suicide Vest",life_fnc_suicideBomb,"",0,false,false,"",' vest player == "V_HarnessOGL_brn" && alive player && playerSide == civilian && !life_istazed && !(player getVariable "restrained") && !(player getVariable "Escorting") && !(player getVariable "transporting")']];
 	};
@@ -212,10 +221,10 @@ life_actions = life_actions +
 life_actions = life_actions +
 [player addAction["Pickup Pickaxe",life_fnc_pickupItem,false,0,false,false,"",
 ' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "pickaxe" && (player distance cursorTarget) < 3 && (life_carryWeight + (["pickaxe"] call life_fnc_itemWeight)) <= life_maxWeight ']];
-//Pickup Lead Ore
+//Pickup copper Ore
 life_actions = life_actions +
-[player addAction["Pickup Lead Ore",life_fnc_pickupItem,false,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "leadore" && (player distance cursorTarget) < 3 && (life_carryWeight + (["leadore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+[player addAction["Pickup Copper Ore",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "copperore" && (player distance cursorTarget) < 3 && (life_carryWeight + (["copperore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Iron Ore
 life_actions = life_actions +
 [player addAction["Pickup Iron Ore",life_fnc_pickupItem,false,0,false,false,"",
@@ -224,10 +233,10 @@ life_actions = life_actions +
 life_actions = life_actions +
 [player addAction["Pickup Refined Iron",life_fnc_pickupItem,false,0,false,false,"",
 ' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "iron_r" && (player distance cursorTarget) < 3 && (life_carryWeight + (["iron_r"] call life_fnc_itemWeight)) <= life_maxWeight ']];
-//Pickup Refined Lead
+//Pickup Refined copper
 life_actions = life_actions +
-[player addAction["Pickup Refined Lead",life_fnc_pickupItem,false,0,false,false,"",
-' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "lead_r" && (player distance cursorTarget) < 3 && (life_carryWeight + (["lead_r"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+[player addAction["Pickup Refined Copper",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "copper_r" && (player distance cursorTarget) < 3 && (life_carryWeight + (["copper_r"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Salt
 life_actions = life_actions +
 [player addAction["Pickup Salt",life_fnc_pickupItem,false,0,false,false,"",
@@ -257,3 +266,7 @@ life_actions = life_actions +
 life_actions = life_actions +
 [player addAction["Pickup Diamond Cut",life_fnc_pickupItem,false,0,false,false,"",
 ' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "diamondc" && (player distance cursorTarget) < 3 && (life_carryWeight + (["diamondc"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+[player addAction["Pickup Unprocessed Cocaine",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "cocaine" && (player distance cursorTarget) < 3 && (life_carryWeight + (["cocaine"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+[player addAction["Pickup Processed Cocaine",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "cocainep" && (player distance cursorTarget) < 3 && (life_carryWeight + (["cocainep"] call life_fnc_itemWeight)) <= life_maxWeight ']];

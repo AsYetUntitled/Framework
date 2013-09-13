@@ -55,7 +55,7 @@ if(!isServer) exitWith {};
 		case "480": {_type = ["Hit and run",1300]};
 	};
 	
-	[_unit,_type] call fnc_wanted_add;
+	[_unit,_type] call life_fnc_wantedAdd;
 };
 
 "life_packet_receive" addPublicVariableEventHandler 
@@ -73,7 +73,7 @@ if(!isServer) exitWith {};
 {
 	private["_unit"];
 	_unit = (_this select 1) select 0;
-	[_unit] call fnc_wanted_remove;
+	[_unit] call life_fnc_wantedRemove;
 };
 
 "serv_civ_query" addPublicVariableEventHandler 

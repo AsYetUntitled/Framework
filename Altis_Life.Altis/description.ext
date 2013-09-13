@@ -54,19 +54,13 @@ class CfgSounds
   class SirenLong
   {
     name = "SirenLong";
-    sound[] = {"\sounds\Siren_Long.ogg", 0.90, 1};
+    sound[] = {"\sounds\Siren_Long.ogg", 1.0, 1};
     titles[] = {};
   };
     class tazersound
   {
     name = "Tazersound";
     sound[] = {"\sounds\tazer.ogg", 0.25, 1};
-    titles[] = {};
-  };
-  class bankalarm
-  {
-    name = "bankalarm";
-    sound[] = {"\sounds\bankalarm.ogg", 0.95, 1};
     titles[] = {};
   };
 };
