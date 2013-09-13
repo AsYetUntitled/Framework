@@ -16,7 +16,7 @@ switch (_item) do
 	case "heroinu": {6};
 	case "heroinp": {4};
 	case "cannabis": {4};
-	case "marijuana": {4};
+	case "marijuana": {3};
 	case "apple": {1};
 	case "water": {1};
 	case "rabbit": {1};
@@ -35,14 +35,17 @@ switch (_item) do
 	case "fuelF": {5};
 	case "money": {0};
 	case "pickaxe": {2};
-	case "leadore": {4};
+	case "copperore": {4};
 	case "ironore": {5};
-	case "lead_r": {3};
+	case "copper_r": {3};
 	case "iron_r": {3};
 	case "sand": {3};
 	case "salt": {3};
+	case "salt_r": {1};
 	case "glass": {1};
 	case "diamond": {4};
 	case "diamondc": {2};
+	case "cocaine": {6};
+	case "cocainep": {4};
 	default {1};
 };

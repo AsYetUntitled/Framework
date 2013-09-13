@@ -40,11 +40,12 @@ switch (_mode) do
 			case "fuelF": {"life_inv_fuelF"};
 			case "money": {"life_cash"};
 			case "pickaxe": {"life_inv_pickaxe"};
-			case "leadore": {"life_inv_leadore"};
+			case "copperore": {"life_inv_copperore"};
 			case "ironore": {"life_inv_ironore"};
 			case "iron_r": {"life_inv_ironr"};
-			case "lead_r": {"life_inv_leadr"};
+			case "copper_r": {"life_inv_copperr"};
 			case "salt": {"life_inv_salt"};
+			case "salt_r": {"life_inv_saltr"};
 			case "sand": {"life_inv_sand"};
 			case "glass": {"life_inv_glass"};
 			case "tbacon": {"life_inv_tbacon"};
@@ -52,7 +53,9 @@ switch (_mode) do
 			case "redgull": {"life_inv_redgull"};
 			case "peach": {"life_inv_peach"};
 			case "diamond": {"life_inv_diamond"};
-			case "diamondc": {"life_inv_diamondc"};
+			case "diamondc": {"life_inv_diamondr"};
+			case "cocaine": {"life_inv_coke"};
+			case "cocainep": {"life_inv_cokep"};
 		};
 	};
 	
@@ -84,10 +87,10 @@ switch (_mode) do
 			case "life_inv_fuelF": {"fuelF"};
 			case "life_cash": {"money"};
 			case "life_inv_pickaxe": {"pickaxe"};
-			case "life_inv_leadore": {"leadore"};
+			case "life_inv_copperore": {"copperore"};
 			case "life_inv_ironore": {"ironore"};
 			case "life_inv_ironr": {"iron_r"};
-			case "life_inv_leadr": {"lead_r"};
+			case "life_inv_copperr": {"copper_r"};
 			case "life_inv_sand": {"sand"};
 			case "life_inv_salt": {"salt"};
 			case "life_inv_glass": {"glass"};
@@ -96,7 +99,10 @@ switch (_mode) do
 			case "life_inv_tbacon": {"tbacon"};
 			case "life_inv_peach": {"peach"};
 			case "life_inv_diamond": {"diamond"};
-			case "life_inv_diamondc": {"diamondc"};
+			case "life_inv_diamondr": {"diamondc"};
+			case "life_inv_saltr": {"salt_r"};
+			case "life_inv_coke": {"cocaine"};
+			case "life_inv_cokep": {"cocainep"};
 		};
 	};
 };

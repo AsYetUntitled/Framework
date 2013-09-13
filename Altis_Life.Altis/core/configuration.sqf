@@ -112,19 +112,22 @@ life_inv_items =
 	"life_inv_fuelF",
 	"life_inv_fuelE",
 	"life_inv_pickaxe",
-	"life_inv_leadore",
+	"life_inv_copperore",
 	"life_inv_ironore",
 	"life_inv_ironr",
-	"life_inv_leadr",
+	"life_inv_copperr",
 	"life_inv_sand",
 	"life_inv_salt",
+	"life_inv_saltr",
 	"life_inv_glass",
 	"life_inv_tbacon",
 	"life_inv_lockpick",
 	"life_inv_redgull",
 	"life_inv_peach",
 	"life_inv_diamond",
-	"life_inv_diamondc"
+	"life_inv_coke",
+	"life_inv_cokep",
+	"life_inv_diamondr"
 ];
 
 //Setup variable inv vars.
@@ -146,7 +149,13 @@ life_licenses =
 	["license_civ_dive","civ"],
 	["license_civ_truck","civ"],
 	["license_civ_gun","civ"],
-	["license_civ_rebel","civ"]
+	["license_civ_rebel","civ"],
+	["license_civ_coke","civ"],
+	["license_civ_diamond","civ"],
+	["license_civ_copper","civ"],
+	["license_civ_iron","civ"],
+	["license_civ_sand","civ"],
+	["license_civ_salt","civ"]
 ];
 
 //Setup License Variables

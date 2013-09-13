@@ -36,12 +36,13 @@ switch (_var) do
 	case "life_inv_fuelE": {"Empty Fuel Can"};
 	case "life_inv_fuelF": {"Full Fuel Can"};
 	case "life_inv_pickaxe": {"Pickaxe"};
-	case "life_inv_leadore": {"Lead Ore"};
+	case "life_inv_copperore": {"Copper Ore"};
 	case "life_inv_ironore": {"Iron Ore"};
-	case "life_inv_ironr": {"Refined Iron"};
-	case "life_inv_leadr": {"Refined Lead"};
+	case "life_inv_ironr": {"Iron Ingot"};
+	case "life_inv_copperr": {"Copper Ingot"};
 	case "life_inv_sand": {"Sand"};
 	case "life_inv_salt": {"Salt"};
+	case "life_inv_saltr": {"Refined Salt"};
 	case "life_inv_glass": {"Glass"};
 	case "life_inv_diamond": {"Diamond Uncut"};
 	case "life_inv_diamondr": {"Diamond Cut"};
@@ -49,6 +50,8 @@ switch (_var) do
 	case "life_inv_redgull": {"RedGull"};
 	case "life_inv_lockpick": {"Lockpick"};
 	case "life_inv_peach": {"Peach"};
+	case "life_inv_coke": {"Unprocessed Cocaine"};
+	case "life_inv_cokep": {"Processed Cocaine"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -64,4 +67,11 @@ switch (_var) do
 	case "license_cop_cg": {"Coast Guard"};
 	case "license_civ_rebel": {"Rebel License"};
 	case "license_civ_truck": {"Truck License"};
+	case "license_civ_diamond": {"Diamond Processing"};
+	case "license_civ_copper": {"Copper Processing"};
+	case "license_civ_iron": {"Iron Processing"};
+	case "license_civ_sand": {"Sand Processing"};
+	case "license_civ_salt": {"Salt Processing"};
+	case "license_civ_coke": {"Cocaine Training"};
+	case "license_civ_marijuana": {"Marijuana Training"};
 };

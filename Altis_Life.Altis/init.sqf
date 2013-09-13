@@ -10,6 +10,7 @@ if(isServer) then
 	if(!X_Server) then
 	{
 		[] call compile PreprocessFileLineNumbers "\life_server\init.sqf";
+		master_group attachTo[bank_obj,[0,0,0]];
 	};
 	X_Server = true;
 };
