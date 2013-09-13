@@ -16,7 +16,7 @@ if(_sum > 0) then
 	sleep 2;
 	if(([true,"peach",_sum] call life_fnc_handleInv)) then
 	{
-		titleText[format["You have picked %1 Apple(s)",_sum],"PLAIN"];
+		titleText[format["You have picked %1 Peach(es)",_sum],"PLAIN"];
 	};
 }
 	else

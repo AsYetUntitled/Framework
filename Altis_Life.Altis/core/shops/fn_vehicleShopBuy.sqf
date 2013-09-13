@@ -71,11 +71,11 @@ switch(life_veh_shop) do
 		if(count(nearestObjects[_sp,["Car","Ship","Air"],20]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
 	};
 	
-	case "civ_ship":
+	case "civ_ship_1":
 	{
 		//if(!license_civ_boat) exitWith {_kill = true;};
-		_sp = getMarkerPos "civ_boat_1";
-		_dir = markerDir "civ_boat_1";	
+		_sp = getMarkerPos "civ_ship_1";
+		_dir = markerDir "civ_ship_1";	
 	};
 	
 	case "civ_ship2":
@@ -162,7 +162,7 @@ switch(life_veh_shop) do
 		_dir = markerDir "reb_ship2";
 	};
 	
-	case "cop_ship":
+	case "cop_ship_1":
 	{
 		_sp = getMarkerPos "cop_boat_1";
 		_dir = markerDir "cop_boat_1";

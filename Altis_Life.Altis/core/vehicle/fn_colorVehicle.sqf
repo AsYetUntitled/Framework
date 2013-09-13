@@ -13,6 +13,11 @@ if(isNull _vehicle OR !alive _vehicle OR _index == -1) exitWith {};
 switch (typeOf _vehicle) do
 {
 	case "C_Offroad_01_F": {waitUntil {!isNil {_vehicle getVariable "BIS_randomSeed1"}};};
+	case "C_Hatchback_01_F": {waitUntil {!isNil {_vehicle getVariable "BIS_randomSeed1"}};};
+	case "C_Hatchback_01_sport_F": {waitUntil {!isNil {_vehicle getVariable "BIS_randomSeed1"}};};
+	case "C_SUV_01_F": {waitUntil {!isNil {_vehicle getVariable "BIS_randomSeed1"}};};
+	case "C_Van_01_box_F": {waitUntil {!isNil {_vehicle getVariable "BIS_randomSeed1"}};};
+	case "C_Van_01_transport_F": {waitUntil {!isNil {_vehicle getVariable "BIS_randomSeed1"}};};
 };
 
 //Fetch texture from our present array.

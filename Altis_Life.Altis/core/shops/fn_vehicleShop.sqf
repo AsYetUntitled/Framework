@@ -127,13 +127,13 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Secret Service Air Shop"];
 	};
 	
-	case "civ_ship":
+	case "civ_ship_1":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Agia Marina Boat Shop"];
 	};
 	
-	case "civ_ship2":
+	case "civ_ship_2":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Kamino Boat Shop"];
@@ -145,13 +145,13 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Truck Shop"];
 	};
 	
-	case "civ_ship3":
+	case "civ_ship_3":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Girna Boat Shop"];
 	};
 	
-	case "cop_ship":
+	case "cop_ship_1":
 	{	
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
 		ctrlSetText[2301,"Cop Boat Shop"];

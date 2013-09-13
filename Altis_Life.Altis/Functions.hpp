@@ -169,8 +169,6 @@ class Life_Client_Core
 		class colorVehicle {};
 		class openInventory {};
 		class vehInventory {};
-		class vehTakeItem {};
-		class vehStoreItem {};
 		class lockVehicle {};
 		class vehicleOwners {};
 	};

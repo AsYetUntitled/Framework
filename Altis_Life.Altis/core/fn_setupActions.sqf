@@ -81,7 +81,7 @@ switch (playerSide) do
 		life_actions = life_actions + [player addAction["Pick Peaches",life_fnc_gatherPeaches,"",0,false,false,"",'
 		!life_action_in_use && ((player distance (getMarkerPos "peaches_1") < 50) OR (player distance (getMarkerPos "peaches_2") < 50)) && (vehicle player == player) ']];
 		life_actions = life_actions + [player addAction["Pick Peaches",life_fnc_gatherPeaches,"",0,false,false,"",'
-		!life_action_in_use && ((player distance (getMarkerPos "peaches_3") < 50) && (vehicle player == player) ']];
+		!life_action_in_use && (player distance (getMarkerPos "peaches_3")) < 50) && (vehicle player == player) ']];
 		//Pick Apples, fields 3 and 4
 		life_actions = life_actions + [player addAction["Pick Apples",life_fnc_gatherApples,"",0,false,false,"",'
 		!life_action_in_use && ((player distance (getMarkerPos "apple_3") < 50) OR (player distance (getMarkerPos "apple_4") < 50)) && (vehicle player == player) ']];

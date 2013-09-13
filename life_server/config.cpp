@@ -51,6 +51,13 @@ class CfgFunctions
 			file = "\life_server\jail";
 			class jailSys {};
 		};
+		
+		class Client_Code
+		{
+			file = "\life_server\clientside";
+			class vehStoreItem {};
+			class vehTakeItem {};
+		};	
 	};
 	
 	class STS_System

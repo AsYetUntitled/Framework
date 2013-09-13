@@ -199,7 +199,7 @@ switch (_shop) do
 		};
 	}; 
 	
-	case "civ_ship":
+	case "civ_ship_1":
 	{
 		_return =
 		[
@@ -226,7 +226,7 @@ switch (_shop) do
 		];
 	};
 	
-	case "cop_ship":
+	case "cop_ship_1":
 	{
 		_return =
 		[

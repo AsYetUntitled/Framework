@@ -11,6 +11,8 @@ life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_N
 server_query_running = false;
 life_DB_queue = [];
 
+publicVariable "life_fnc_vehStoreItem";
+publicVariable "life_fnc_vehTakeItem";
 [] execVM "\life_server\vars.sqf";
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
@@ -23,9 +25,8 @@ if(!hasInterface) then
 };
 
 //[] spawn STS_fnc_cleanup;
-fnc_wanted_add = compileFinal PreprocessFileLineNumbers "\life_server\wanted_add.sqf";
-fnc_wanted_remove = compileFinal PreprocessFileLineNumbers "\life_server\wanted_remove.sqf";
-bank_timer = compileFinal PreprocessFileLineNumbers "\life_server\bank_timer.sqf";
+life_fnc_wantedAdd = compileFinal PreprocessFileLineNumbers "\life_server\wanted_add.sqf";
+life_fnc_wantedRemove = compileFinal PreprocessFileLineNumbers "\life_server\wanted_remove.sqf";
 life_gang_list = [];
 publicVariable "life_gang_list";
 life_wanted_list = [];
@@ -62,3 +63,9 @@ publicVariable "robbery_success";
 fnc_serv_kick = {endMission "loser";};
 publicVariable "fnc_serv_kick";
 [] spawn DB_fnc_queueManagement;
+
+_building = nearestObjects[getMarkerPos "Meth",["Building"],5] select 0;
+_building setVariable["bis_disabled_Door_1",1,true];
+_building setVariable["bis_disabled_Door_2",1,true];
+_building setVariable["bis_disabled_Door_5",1,true];
+_building setVariable["bis_disabled_Door_6",1,true];
