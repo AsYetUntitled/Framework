@@ -12,11 +12,11 @@ private["_exit"];
 if(isNil "life_session_time") then {life_session_time = false;};
 if(life_session_time) exitWith {hint "You have already used the sync option, you can only use this feature once every 5 minutes.";};
 
-switch (typeName BIS_fnc_MP_packet) do
+switch (typeName life_fnc_MP_packet) do
 {
 	case "ARRAY":
 	{
-		if(count BIS_fnc_MP_packet == 0) exitWith
+		if(count life_fnc_MP_packet == 0) exitWith
 		{
 			_exit = true;
 		};

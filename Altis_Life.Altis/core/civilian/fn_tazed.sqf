@@ -32,17 +32,17 @@ if(_shooter isKindOf "Man" && alive player) then
 			{player addMagazine _x;} foreach _curMags;
 		};
 		
-		[[_unit],"life_fnc_tazeSound",true,false] spawn BIS_fnc_MP;
+		[[_unit],"life_fnc_tazeSound",true,false] spawn life_fnc_MP;
 		_obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL _unit);
 		_obj setPosATL (getPosATL _unit);
-		[[player,"AinjPfalMstpSnonWnonDf_carried_fallwc"],"life_fnc_animSync",true,false] spawn BIS_fnc_MP;
-		//[[_unit,"AinjPfalMstpSnonWnonDf_carried_fallwc"],"fnc_animsync",true,false] spawn BIS_fnc_MP;
-		[[0,format["%1 was tazed by %2", name _unit, name _shooter]],"life_fnc_broadcast",true,false] spawn BIS_fnc_MP;
+		[[player,"AinjPfalMstpSnonWnonDf_carried_fallwc"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		//[[_unit,"AinjPfalMstpSnonWnonDf_carried_fallwc"],"fnc_animsync",true,false] spawn life_fnc_MP;
+		[[0,format["%1 was tazed by %2", name _unit, name _shooter]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		_unit attachTo [_obj,[0,0,0]];
 		disableUserInput true;
 		sleep 8;
 		detach player;
-		[[player,"amovppnemstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn BIS_fnc_MP;
+		[[player,"amovppnemstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		life_istazed = false;
 		player allowDamage true;
 		disableUserInput false;

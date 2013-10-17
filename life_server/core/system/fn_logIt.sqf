@@ -1,0 +1,1 @@
+diag_log format["%1 set %2",_this select 0, _this select 1];

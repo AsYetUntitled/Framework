@@ -3,7 +3,7 @@ class Life_cell_phone {
 	name= "life_cell_phone";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] call life_fnc_cellphone";
+	onLoad = "[] spawn life_fnc_cellphone";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {

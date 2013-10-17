@@ -64,7 +64,7 @@ life_clothing_filter = 0;
 if(isNil "life_clothesPurchased") exitWith
 {
 	life_clothing_purchase = [-1,-1,-1,-1,-1];
-	player addUniform life_oldClothes;
+	if(life_oldClothes != "") then {player addUniform life_oldClothes;} else {removeUniform player};
 	if(life_oldHat != "") then {player addHeadgear life_oldHat} else {removeHeadgear player;};
 	if(life_oldGlasses != "") then {player addGoggles life_oldGlasses;} else {removeGoggles player};
 	if(backpack player != "") then
@@ -75,6 +75,7 @@ if(isNil "life_clothesPurchased") exitWith
 		}
 			else
 		{
+			removeBackpack player;
 			player addBackpack life_oldBackpack;
 			clearAllItemsFromBackpack player;
 			if(count life_oldBackpackItems > 0) then
@@ -154,6 +155,7 @@ if((life_clothing_purchase select 4) == -1) then
 	{
 		if(life_oldBackpack == "") then {removeBackpack player;} else
 		{
+			removeBackpack player;
 			player addBackpack life_oldBackpack;
 			{[_x,true,true] call life_fnc_handleItem;} foreach life_oldBackpackItems;
 		};

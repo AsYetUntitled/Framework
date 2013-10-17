@@ -19,7 +19,7 @@ if(count (_nearby) > 1) then
 	titleText[format["You have refueled/repaired %1",_name],"PLAIN"];
 	if(!local _vehicle) then
 	{
-		[{_vehicle setFuel 1;},"BIS_fnc_spawn",_vehicle,false] spawn BIS_fnc_MP;
+		[{_vehicle setFuel 1;},"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
 	}
 		else
 	{

@@ -5,6 +5,7 @@ player createDiarySubject ["sealteamsloth","Seal Team Sloth"];
 player createDiarySubject ["changelog","Change Log"];
 player createDiarySubject ["serverrules","General Rules"];
 player createDiarySubject ["policerules","Police Procedures/Rules"];
+player createDiarySubject ["safezones","Safe Zones (No Killing)"];
 //player createDiarySubject ["civrules","Civilian Rules"];
 player createDiarySubject ["illegalitems","Illegal Activity"];
 //player createDiarySubject ["gangrules","Gang Rules"];
@@ -21,427 +22,124 @@ player createDiarySubject ["controls","Controls"];
 		]
 	];
 */
+	player createDiaryRecord ["changelog",
+		[
+			"Altis Life v3.0.5",
+				"
+					Added: Garage functionality, you are now able to store vehicles (so long as you buy a permanent vehicle)<br/>
+					Added: More boat shops near the center of the map.<br/>
+					Added: More civilian littlebird skin selection.<br/>
+					Added: Market to Pyrgos<br/>
+					Added: General store to Athira<br/>
+					Added: ATM to donator shops and Rebel outposts.<br/>
+					Added: Rebel Vehicle Shops and Rebel outposts.<br/>
+					Changed: Moved the gun store near Kavala a bit farther away<br/>
+					Changed: Adjusted Bruce's Outback Outfits in Kavala so he isn't in a wall.<br/>
+					Changed: Realigned the DMV guy in Kavala.<br/>
+					Changed: Moved the cocaine field a bit farther north west.<br/>
+					Changed: Some other stuff was moved around but I can't remember what.<br/>
+					Changed: When cops searches vehicles with drugs they are awarded money from it.<br/>
+					Changed: Adjusted the DP Mission structure to try and prevent spamming to exploit the system<br/>
+					Changed: When using a item you cannot open the player menu to stop exploits and macros.<br/>
+					Changed: Adjusted the donator shop to work in tiers.<br/>
+					<br/>
+					Notes:<br/>
+					The new vehicle storing functionality is a open-beta test. If everything works out fine in the future permanent vehicles will cost more money and getting them from the garage will also cost money. There is no limit of vehicles you can have stored in your garage
+					but if you are buying a vehicle just as a 'burner' vehicle then just use the Buy option, only use 'Buy Permanent' from vehicle shops if you truly want it to be stored in the database.<br/><br/>
+					If you want to store your permenant vehicle (i.e you are getting off and don't want it to be destroyed or stolen) then you can take it to a garage and store it in your garage. Non-permanent vehicles cannot be stored in garages.
+				"
+		]
+	];
+	
+	player createDiaryRecord ["changelog",
+		[
+			"Altis Life v3.0.4",
+				"
+					Changed: Repositioned the progress bar calculating the safezone, in short everyone should see it.<br/>
+					Changed: The jail timer will now tell you when you are allowed to post bail.<br/>
+					Fixed: Bail price was $any (nil).<br/>
+					Fixed: Paychecks would say you earned $any but you actually earned something.<br/>
+					Added: Donator Shops / Areas<br/>
+					Added: Two gun stores have been added back.<br/>
+					Changed: PDW at rebel shop swapped for TRG, PDW moved to Gun Store.<br/>
+					Added: Heroin is back!<br/>
+					Added: Few extra Rebel outposts to prevent camping and douchebags.<br/>
+					Added: Ability to repair vehicle at gas pumps for a price, just look at the gas pump and you'll get the action.<br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["changelog",
+		[
+			"Altis Life v3.0.3",
+				"
+					Fixed: Couldn't pick peaches from the peach field near Athira.<br/>
+					Fixed: Cocaine wouldn't show when searching a player / vehicle.<br/>
+					Fixed: Using the helicopter service station rapidly would send money into a negative factor.<br/>
+					Fixed: When dying during a delivery mission you couldn't get a new mission.<br/>
+					Fixed: Cop shops in Athira could get killed.<br/>
+					Fixed: Zamak wouldn't texture properly.<br/>
+					Fixed: Diamond Training / Processing license should now cost $35,000 as listed.<br/>
+					Fixed: Items would disappear from trunk when you take more then you can carry.<br/>
+					Fixed: Bounty system should now work again.<br/>
+					Removed: Ability to store money in vehicles due to abuse of the system and ARMA's net code.<br/>
+					Changed: Moved Truck shop near Pygros to a new location to get rid of spawning issues.<br/>
+					Added: Oil Training / Processing license to Oil Trader.<br/>
+					Added: Cop whitelist functionality introduced again.<br/>
+					Added: Only one person can access the trunk at a time to avoid duping.<br/>
+					Added: Reintroduced Server-side cleanup that will run every 45 minutes cleaning up abandon cars, cars with broken wheels or engines along with items dropped.<br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["changelog",
+		[
+			"Altis Life v3.0.2",
+				"
+					Fixed: Cop Shop NPC's could be killed.<br/>
+					Fixed: Drug dealer in NW part of map didn't work<br/>
+					Fixed: Extreme FPS loss near Salt and Sand mine (Should improve overall server/client performance anywhere too).<br/>
+					Fixed: Clothing Store System could be exploited for free uniforms and duped backpacks on ground.<br/>
+					Fixed: DP 8 should work now.<br/>
+					Fixed: Marijuana processing now works<br/>
+					Fixed: Peaches field near Athira should work again<br/>
+					Fixed: Bail system is now working again.<br/>
+					Fixed: Truck shop near Kavala should now have an action.<br/>
+					Fixed: Cops should be able to see other cops via markers again.<br/>
+					Added: Truck shop near Pyrgos.<br/>
+					Changed: Diamond mine marker slightly moved so you can mine easier without climbing a giant rock.<br/>
+					Removed: Medkits removed from general store because CIV's can't actually use them.<br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["changelog",
+		[
+			"Altis Life v3.0.6",
+				"
+					Added: Permanent cars cost more money.<br/>
+					Added: Cops can now tase civilians off of quad bikes.<br/>
+					Added: There is now a price for getting your vehicle out of the garage<br/>
+					Added: Ability to sell your vehicle in the garage for some money.<br/>
+					Added: Spike strips for the cops.<br/>
+					Added: Respawn timer increased to 35 seconds by default (System to be expanded later).<br/>
+					Added: Surprises<br/>
+					Added: Dead vehicle cleanup also checks and marks cars as dead in the database.<br/>
+					Added: Limited civilian gear persistency (Uniform,backpack,glasses,hats,gps,nvgs,binocs,misc items).<br/>
+					Added: Cop Item Shop for food/spikestrips<br/>
+					Changed: Changed initial login authorization method to be more efficient and less prone to errors.<br/>
+					Changed: Cop levels of uniforms were changed as per requested.<br/>
+					Fixed: Cop boat shop spawned vehicles at grid 0000000.<br/>
+					Fixed: Cop didn't receive bounties.<br/>
+					Fixed: Fish market guy was floating.<br/>
+					Fixed: Vehicle cleanup now marks removed vehicles as not-active if they are permanent.<br/>
+					Fixed: Permanent vehicles that blew up 90% of the time didn't die in the database making them spawnable after restart.<br/>
+					Fixed: Arrested state for civilians in the database now updates, don't go disconnecting when you are in jail... You won't like it..<br/>
+					Fixed: Settings menu didn't refresh when turning Side chat on/off.<br/>
+				"
+		]
+	];
 
-// Server Section
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life Version 1.B",
-				"
-				Removed: Search ability of cars since full feature not yet implemented (to solve desync).<br/><br/>
-				Removed: No longer require a gang license to view/create a gang.<br/><br/>
-				Added: Server-side Cleanup for impounded cars every hour.<br/><br/>
-				Changed: Merged Cop/Civ Sessions into one session to prevent exploits.<br/><br/>
-				Added: Service Station for Helicopters.<br/><br/>
-				Added: New action for healing with FAKs without a weapon (ITS IN RED).<br/><br/>
-				Added: Doctor named Alan to fully heal you, for a price.<br/><br/>
-				Changed: Price for turtles increased to $15,000 per turtle.<br/><br/>
-				Changed: Helicopter prices increased.<br/><br/>
-				Changed: Civilians can now be busted out of jail via chopper.<br/><br/>
-				Changed: Price adjustments to the general store.<br/><br/>
-				Fixed: Bug in arresting system giving multiple timers.<br/><br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life Version 1.Ba",
-				"
-					Added: Wearing backpacks now increase carrying weight items.<br/>
-					Changed: Adjusted prices at general store.<br/>
-					Added: Diving Gear at cop shop.<br/>
-					Changed: More of the backend to reduce desync.<br/>
-					Added: The ability to use processed heroin.<br/>
-					Added: Toolkits can now be used to repair cars.<br/>
-					Added: Civilian Service Truck to refuel/repair other vehicles.<br/>
-					Changed: Reduced Cop starting bank money to same as civilian to prevent exploits.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version 1.Bc",
-				"
-					Changed: Vehicles should no longer spawn with grenades/items.<br/><br/>
-					Added: Wanted system is now implemented.<br/><br/>
-					Added: Cop Diving suit changed.<br/><br/>
-					Added: Bank robbers can now be identified when they are search or killed within 5 minutes of robbing the bank. The money is returned to the bank when they are identified<br/><br/>
-					Added: Cop Siren functionality now implemented.<br/><br/>
-					Changed: Attempts made to fix helicopters blowing up after unimpounding them (cannot reproduce so won't know if it actually works).<br/><br/>
-					Fixed: Players that are stunned should no longer sync into the ground on surfaces not on ground level.<br/><br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version 1.Bd",
-				"
-					Fixed: Adjustments to jailing system to fix people escapping jail through suiciding.<br/>
-					Added: Simple Bail System implemented, you can now pay your bail to get out of jail. (WIP)<br/>
-					Changed: Hit an run wanted condition changed.<br/>
-					Changed: Adjustments to take_money action to try and prevent dupes.<br/>
-					Fixed: Sometimes picking up oil or heroin wouldn't actually give you the item.<br/>
-					Changed: Ifrit prices changed at terror car shop to $250,000<br/>
-					Changed: Server-side Cleanup Scripts have been adjusted to reduce lag.<br/>
-					Changed: Impounded vehicles will be deleted every 30 minutes to reduce desync.<br/>
-					Added: Items dropped and weapons/items on the ground are deleted every 30 minutes to reduce desync.<br/>
-					Changed: Mission is now branded with STS Logo with Mission Version in bottom right screen. (Did I really say branded like its some type of cattle?)<br/>
-					Changed: Increased income for impounding vehicles.<br/>
-					Changed: Fast Time Module adjusted, clients sync to the server every 30 minutes. May reduce FPS lock.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version 1.Be",
-				"
-					Fixed: Cops didn't receive bounty from killing/arresting a wanted criminal.<br/>
-					Changed: Money system is different, you can no longer 'drop' money, instead you select the nearest person near you (like the key chain).<br/>
-					Changed: Shifted Bank withdraw/desposit buttons around and made the buttons bigger because the w in withdraw was cut off from smaller resolutions. (seriously, its 2013 get a 1920x1080 monitor).<br/>
-					Fixed: When buying a backpack, then buying another backpack type your weight level didn't adjust.<br/>
-					Added: Civilian clothes to the General store.<br/>
-					Added: Another General store at Old Outpost.<br/>
-					Added: Market near Gun Store<br/>
-					Changed: Disabled TPW Houselights for a test in performance.<br/>
-					Fixed: Extreme off-sync in the time system from a change.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version 1.Bf",
-				"
-					Fixed: Cops couldn't restrain/arrest civilians that were excessively killing (engine bug oversight).<br/>
-					Changed: Wanted list should no longer display people not connected.<br/>
-					Added: Delivery jobs are now added as a task so you can keep track of which delivery job you are doing by pressing J.<br/>
-					Changed: Delivery Job completion, failed and accepted notifications changed to be nicer?<br/>
-					Fixed: Cops should no longer be added to the wanted list for killing someone.<br/>
-					Added: New wanted level for killing people with explosives, classified as a 213 (Use of illegal explosives).<br/>
-					Removed: Black Market at Girna<br/>
-					Changed: Moved Market at Kamino to Girna.<br/>
-					Added: Doctor to Girna.<br/>
-					Changed: Moved ATM at Radio towers to Girna.<br/>
-					Added: Boat shop at Kamino.<br/>
-					Changed: Slightly moved North East turtle poaching.<br/>
-					Changed: Bergen backpack price changed to $8,000.<br/>
-					Changed: Kitbag backpack in general store changed to $5,000<br/>
-					Changed: Cop Backpacks prices balanced.<br/>
-					Changed: When a cop picks up an illegal item it is moved to 'Evidence' and a reward is given.<br/>
-					Changed: Removed three types of civilian clothes from the general store due to them being the exact same.<br/>
-					Changed: Default bail price increased to $3,500.<br/>
-					Changed: Cop sirens can longer be turned on unless you are the driver.<br/>
-					Changed: Additional checks added in to prevent Siren spamming.<br/>
-					Changed: Chucked old Bank robbing system and completely revamped it.<br/>
-					Changed: Chucked old system for vehicle coloring and replaced with new and improved to reduce desync.<br/>
-					Changed: Converted the item inventory usage over to the same way as money to prevent duping.<br/>
-					Added: Speedboat with minigun to cop boat shop.<br/>
-					Added: New cop license called (Coast Guard) required to get Speedboat from Cop boat shop.<br/>
-					Added: Civilians can now drop a fishing net in the water while in a boat to catch fish from the boat.<br/>
-					Added: When searching a civilian, illegal items will be removed and a bounty will be collected and they are arrested automatically.<br/>
-					Added: Cops can now ticket players, if a cop is abusing the ticket system please report to admin.<br/>
-					Fixed: Cops could impound buildings (lol).<br/>
-					Changed: Cops can now see weapons hidden in uniforms/vests of players while searching them.<br/>
-					Changed: MXM reduced to $30,000 due to it no longer being 7.62mm<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version 1.Bg",
-				"
-					Removed: ATV color options Blue,White,Red,Black and woodland due to missing texture files from newest game update.<br/>
-					Changed: Adjustments to the jailing system (can't remember what).<br/>
-					Changed: Adjustments to the bank robbing system.<br/>
-					Fixed: Classname for 7.62mm magazines was changed in arma 3 update 0.58<br/>
-					Changed: Price of speedboat increased to $100,000<br/>
-					Changed: Price of Ifrit changed to $200,000<br/>
-					Added: SDAR to Cop Shop.<br/>
-					Changed: Adjustments to Arresting / Restraining.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version 1.Bh",
-				"
-					Added: Fish Market to Agia Marina and Girna, specifically for fish.<br/>
-					Added: Girna Sheriff Department, exclusively for Admins. Sorry ;)<br/>
-					Added: Girna as a hub. It now have about everything Agia has, including a gas station!<br/>
-					Added: Taxi stands to various parts of the map, sends a message to everyone. Don't abuse this!<br/>
-					Added: Items: Turtle Soup @ Wong's, Cannabis, Marijuana, Coffee, and Donuts.<br/>
-					Added: Police checkpoint at old outpost intersection.<br/>
-					Added: Police Checkpoint 2.<br/>
-					Added: An extra car spawn point in Agia Marina and the cop base.<br/>
-					Added: Some announcements at places that seem relavent.<br/>
-					Added: Temporary free refuel and repair at the gas stations.<br/>
-					Moved: Bank to Air Station Mike, and made it a government complex.<br/>
-					Moved: Everything around in Agia Marina, besides a couple shops.<br/>
-					Moved: Oil field and oil processing.<br/>
-					Moved: Gang Area 3.<br/>
-					Changed: Terror base to Rebel Base (Echo Base), replacing terrorists for rebels.<br/>
-					Changed: License shop name to DMV.<br/>
-					Changed: Map markers to use more relavant icons.<br/>
-					Changed: Bank robbery system.<br/>
-					Changed: Bank robbery now takes 3 minutes, but robber will now be able to move within 20m of safe.<br/>
-					Changed: Bank robbery success amount capped at 5,000,000, if the bank has that much.<br/>
-					Changed: Economy, pretty much all prices changed, not final.<br/>
-					Fixed: Escaping from jail glitch (hopefully, reminder: exploiters get banned.)<br/><br/>
-					
-					Added: Cop helicopter shop to Girna<br/>
-					Added: Impound lot at the cop HQ for cops.<br/>
-					Added: Bergen Sage Backpack for the cops.<br/>
-					Added: Thanks to the generosity of the Girna Sheriffs Department, the Stratis Police now have a new and improved High Security Prison. Hopefully the police won't let prisoners escape so easily now.<br/>
-					Removed: a few lights at the police checkpoints 1 and 3.<br/>
-					Fixed: Kamino Car Shop should work properly.<br/>
-					
-					
-					
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version: 1.Bi",
-				"No fixes were implemented, the only thing new is a save system, yes you are reading this correctly... Your stuff is saved even when the server restarts.<br/>
-				Now here are some cons of the new system, it does not track what gang you were in nor does it track the vehicles you owned so once you relog those are lost.<br/>
-				This system is expected to be tweaked to fit the play style accordingly so also expect the prices of things to change a lot and be reduced to a more realistic economy.<br/>"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Stratis Life Version: 2",
-				"Updated classnames and command changes for beta.<br/>
-				Added: New Intro<br/>
-				Added: Remove button to inventory so you can get rid of unwanted items.<br/>
-				Added: Civilian Truck License and Shop (Beta trucks!)<br/>
-				Added: Messaging System [Cell Phone] Message your friends, call for police, etc.<br/>
-				Added: Second helicopter spawn at airport<br/>
-				Added: Donator shop, see forums for more details.<br/>
-				Added: Unarmed kill notification. If you kill someone who is unarmed it will tell everyone, and you have to comp them.<br/>
-				Added: Basic items to the market, like map.<br/>
-				Added: Taxi colored, brightly, offroad to the vehicle shop. Listed as 'Taxi' under color. To be better implemented next update.<br/>
-				Changed: Bank Robbery system, again. <br/>
-					- Time to rob increased to 5 mins<br/>
-					- Time after success increased to 20 mins<br/>
-					- Robbable money capped at 500k<br/>
-					- A new system is planned for the next update.<br/>
-				Changed: New model for money: Silver Briefcase<br/>
-				Changed: New model for water: Plastic water bottle<br/>
-				Changed: New model for coffee: RedGull can<br/>
-				Changed: Put a $10k price back on for creating gangs, cash sink.<br/>
-				Changed: Lowered the price of Delivery missions by $1/m<br/>
-				Changed: Lowered tax for transfering money<br/>
-				Fixed: Unimpounding helicopters should no longer blow up<br/>
-				Fixed: Vehicle spawns, nvm thought these were fixed. Just stop spamming the buy button noobs.<br/>
-				Fixed: The ability to spam some buttons resulting in unintended things.<br/>
-				Fixed: Doctor saying he wants $50 but actually charges $500. He should now take the $50.<br/>
-				Fixed: Repairing a vehicle with a toolkit will now refuel the vehicle until we add gas cans next update.<br/>
-				Fixed: No longer able to give money if you just robbed the bank...silly criminals.<br/>
-				Fixed: Vehicles spawning with items in their inventory<br/>
-				Removed: Players starting with glasses. Gives the shop some more use.<br/>
-				Bug: Because of a change in beta, some NPC's are sporting new shades.<br/><br/>
-
-
-				Cop Stuff:<br/>
-				Added: Cop whitelist to some slots. Apply for cop on forums.<br/>
-				Added: Radar, press L to get the speed of a vehicle.<br/>
-				Added: Whitelisted cop shops.<br/>
-				Added: Ability to 'Search' a vehicle to see the owner(s). Reactivated feature.<br/>
-				Added: Food vendor to cp2<br/>
-				Changed: Checkpoint 2 and 3 upgraded.<br/>
-				Changed: Non-whitelisted cop slots do not get automatic rifles or Hunters.<br/>
-				Changed: Whitelisted officers get more diverse selection of items.<br/>
-				Changed: Ka-60 replaced with Ghosthawk, only purchasable by high ranking officers.<br/>
-				Changed: Arrest System. You now have to escort prisoners to the jail. System may have some bugs, please report.<br/>
-					-May be an issue where you have to enter the driver seat, then exit to be able to put them in the vehicle.<br/>
-				Fixed: Cap to tickets, should no longer be able to give $900 billion tickets.<br/><br/>
-
-
-
-				Rebel Stuff:<br/>
-				Added: Three secret [unmarked] rebel bases.<br/>
-				Added: Border to souther tip of Stratis. High Rebel Activity!<br/>
-				Added: A recruiter that shall remain uncamped, so you can get basic gear.<br/>
-				Secret Base 1: Added exclusive weapon: EBR<br/>
-				Secret Base 2: Added exclusive vehicle: Armed Speedboat<br/>
-				Secret Base 3: Added exclusive vehicle: Ifrit<br/>
-				Echo Base: Exclusive weapon: Explosives<br/>
-				New bases can be captured by gangs/groups and 'camped', enticing war to take them over and get the exclusive benefits.<br/><br/>
-
-				Government Stuff:<br/>
-				Due to increased rebel activity and rule breakers, the Sheriff's Department has been disbanded. The Sheriffs were sent to a training facility off the island and sent back to Stratis as Federal Agents with new tools to help protect those on Stratis.<br/>
-				Goverment agents can be identified by their black clothes and black vehicles. Agents are also Admins.<br/><br/><br/>
-				
-				Hotfix 1:<br/>
-				Fixed: Whitelist for cops?<br/>
-				Fixed: No longer spawn with a truck license.<br/>
-				Fixed: Turned off global.<br/>
-				Removed: Debug announcement after an unarmed person is killed.<br/>
-				Added: This changelog.<br/>
-				Fixed: Do cars still spawn with inventory?<br/>
-				Fixed: Cell phone said Message instead of Message Police/Message Admins.<br/>
-				Fixed: Whitelisted high ranking cops can buy a hunter too.<br/>
-				Fixed: Properly increased bank robbery to 5mins, instead of forgetting and keeping it at 3mins.<br/>
-				Fixed: Bank? I hate the damn bank. If it breaks, go do something else.<br/>
-				Fixed: vehicle color jip issue.<br/>
-				Fixed: Some network lag/desync issues<br/>
-				Added: Tonic has implemented nametags over peoples heads. Press Y and go to Settings to turn tags on. Tags can be seen in a ~10m radius and only people who your character can see.<br/>
-				Fixed: COP SIRENS LOUDER!<br/>
-				Fixed: Pilots license charging more than they say!<br/><br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.0.1",
-				"
-				Fixed: Players sending everyone money/items across the map.<br/>
-				Fixed: Some players couldn't be restrained / escorted.<br/>
-				Changed: Server-side code that you don't need to know about but this is a place holder.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.1",
-				"
-					Changed: Entire saving system is being converted over to a database backend.<br/>
-					Changed: White listing functionality is being changed over to the database backend.<br/>
-					Added: Sync Data button to the player menu so players can forcibly sync their information to the server, this can only be used once every 5 minutes.<br/>
-					Added: Player information is synced automatically to the server every 15 minutes.<br/>
-					Changed: Civilians can not 'abort' or 'respawn' while they are restrained, being escorted or transported by a police officer.<br/>
-					Changed: Civilians being transported/escorted no longer become automatically unrestrained.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.1.1",
-				"
-					Changed: Adjustments to the saving system<br/>
-					Fixed: Cops could 'Escort' buildings and cars.<br/>
-					Changed: Wanted menu functionality was changed to help reduce network usage.<br/>
-					Fixed: Side channel would be turned off when a player dies.<br/>
-					Added: FPS Monitor on the HUD.<br/>
-					Fixed: Cops could 'Escort' the AI.<br/>
-					Removed: Some server-side stuff that is no longer in use.<br/>
-					Fixed: Donator shop is now fixed and ready for use.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.1.2",
-				"
-					Changed: Overhauled jail system.<br/>
-					Changed: More adjustments to the wanted system after previous overhaul.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.1.3",
-				"
-					Fixed: Cops couldn't arrest civilians<br/>
-					Fixed: Civilians wouldn't become unwanted when killed.<br/>
-					Fixed: Cops wouldn't receive any type of a bounty for killing / arresting wanted civilians.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.1.3.1",
-				"
-					Added: Cop SDAR is a stun rifle.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.2",
-				"
-					Fixed: Offroads wouldn't color them selves properly.<br/>
-					Changed: Cleanups in Escorting and Transporting to correct issues.<br/>
-					Changed: Cleanups in bank robbery to fix some issues.<br/>
-					Changed: When stunned the current magazine is emptied from the gun.<br/>
-					Changed: Civilian helicopters are actual civilian helicopters that only support 3 seats (excluding the pilot).<br/>
-					Changed: Prices adjusted for civilian helicopters and Rebel helicopters.<br/>
-					Fixed: When in jail and respawn / die you didn't go back to jail.<br/>
-					Fixed: Couldn't pay bail.<br/>
-					Added: Admins can now unwant / pardon wanted criminals. Admins can only do this to prevent abuse.<br/>
-					Added: When paying a ticket equal to or greater then your bounty (if wanted) it is removed.<br/>
-					Added: Ability to hold a chemlight in your hand.<br/>
-					Changed: Smoothed out the stunned animation set.<br/>
-					Changed: Action order of restrain set to top most selection.<br/>
-					Changed: General Store and other stores have been adjusted to include new stuff.<br/>
-					Changed: Weather patterns were changed adding a bit of wind and clouds.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.2.1",
-				"
-					Changed: When in jail you must first wait 3 minutes before paying your bail.<br/>
-					Changed: Removed more bank errors.<br/>
-					Fixed: Cops could escort buildings again.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.2.2",
-				"
-					Added: Civilian clothing store called 'Bruce's Outback Outfits', you can visually see what you are picking. Be warned do not have any guns inside your uniform/clothes when being / previewing.<br/>
-					Fixed: Some money exploits between the save system.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.2.3",
-				"
-					Added: Server-side vehicle cleanup system (WIP).<br/>
-					Fixed: The bank can now be robbed.<br/>
-					Fixed: Any errors known to me that were caused by the stable build update.<br/>
-					Added: New system to try and help client FPS, may help?<br/>
-					Fixed: Some server-side scripts for database management.<br/>
-					Added: When purchasing gear if you don't have enough room it will tell you and not take your money away.<br/>
-					Added: Cops can now see other cops on the map.<br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["changelog",
-		[
-			"Stratis Life v2.2.4",
-				"
-					Changed: Server-side vehicle cleanup adjusted to help reduce FPS loss.<br/>
-					Fixed: More undefined error messages for cops.<br/>
-					Fixed: When restrained/transported you can not longer use V to glitch out.<br/>
-				"
-		]
-	];
-	
 	player createDiaryRecord ["serverrules",
 		[
 			"Definitions", 
@@ -465,6 +163,21 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
+	
+	player createDiaryRecord["safezones",
+		[
+			"Safe Zones",
+				"
+					Safe zones mean no killing / crimes, if you are committing a crime or killing within a safe zone you will be kicked or banned from the server.<br/>
+					<br/>
+					List of Safe Zones:<br/>
+					Gun Stores<br/>
+					Any Vehicle Shop<br/>
+					Rebel Outposts - This means no crimes, cops are allowed to raid these with 4 members present of the cop force.<br/>
+				"
+		]
+	];
+					
 	
 	player createDiaryRecord ["serverrules",
 		[

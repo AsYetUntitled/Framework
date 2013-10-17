@@ -5,30 +5,25 @@ item0[] = {"init",0,250,-65.004578,-391.651611,24.995417,-341.651672,0.000000,"i
 item1[] = {"true",8,218,-62.976639,-315.185364,27.023363,-265.185364,0.000000,"true"};
 item2[] = {"Share__Work_load",2,250,-64.183350,-224.681931,25.816656,-174.681931,0.000000,"Share " \n "Work-load"};
 item3[] = {"true",8,218,-54.709698,75.189262,35.290302,125.189262,0.000000,"true"};
-item4[] = {"Time_Check_1",4,218,-219.425827,-133.310532,-129.425964,-83.310455,0.000000,"Time Check"};
+item4[] = {"Time_Check",4,218,-219.425827,-133.310532,-129.425964,-83.310455,0.000000,"Time Check"};
 item5[] = {"Delete_Dead_Cars",2,250,-224.917740,-29.248400,-134.917984,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
 item6[] = {"",7,210,-312.538239,95.295059,-304.538239,103.295059,0.000000,""};
 item7[] = {"",7,210,-311.750000,-203.033707,-303.750000,-195.033707,0.000000,""};
-item8[] = {"Time_Check",4,218,100.987747,-128.044540,190.987671,-78.044502,0.000000,"Time Check"};
-item9[] = {"Delete_Objects",2,4346,101.669182,-24.399967,191.669281,25.600021,0.000000,"Delete Objects"};
-item10[] = {"More_then_1_",4,218,-6.744542,-130.392212,83.255257,-80.392212,0.000000,"More then 1?"};
-item11[] = {"Delete_dead_bodi",2,250,-6.311596,-26.395784,83.688393,23.604227,0.000000,"Delete" \n "dead bodies"};
+item8[] = {"More_then_1_",4,218,-6.744542,-130.392212,83.255257,-80.392212,0.000000,"More then 1?"};
+item9[] = {"Delete_dead_bodi",2,250,-6.311596,-26.395784,83.688393,23.604227,0.000000,"Delete" \n "dead bodies"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,4};
 link3[] = {2,8};
-link4[] = {2,10};
-link5[] = {3,6};
-link6[] = {4,5};
-link7[] = {5,3};
-link8[] = {6,7};
-link9[] = {7,2};
-link10[] = {8,9};
-link11[] = {9,3};
-link12[] = {10,11};
-link13[] = {11,3};
+link4[] = {3,6};
+link5[] = {4,5};
+link6[] = {5,3};
+link7[] = {6,7};
+link8[] = {7,2};
+link9[] = {8,9};
+link10[] = {9,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,46,6316128,1,-629.444153,611.207214,293.309357,-434.050568,1049,615,1};
-window[] = {0,-1,-1,-32000,-32000,815,50,1693,55,1,1067};
+window[] = {0,-1,-1,-1,-1,1010,250,1893,250,1,1067};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -67,16 +62,6 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Time_Check">*/
-        class Time_Check
-        {
-          priority = 0.000000;
-          to="Delete_Objects";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _objs) > (60 * 60))"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
         /*%FSM<LINK "More_then_1_">*/
         class More_then_1_
         {
@@ -87,8 +72,8 @@ class FSM
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "Time_Check_1">*/
-        class Time_Check_1
+        /*%FSM<LINK "Time_Check">*/
+        class Time_Check
         {
           priority = 0.000000;
           to="Delete_Dead_Cars";
@@ -104,47 +89,39 @@ class FSM
     class Delete_Dead_Cars
     {
       name = "Delete_Dead_Cars";
-      init = /*%FSM<STATEINIT""">*/"_totCars = 0;" \n
-       "{" \n
+      init = /*%FSM<STATEINIT""">*/"{" \n
        "	if(!alive _x) then" \n
        "	{" \n
+       "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
+       "		if(count _dbInfo > 0) then" \n
+       "		{" \n
+       "			_uid = _dbInfo select 0;" \n
+       "			_plate = _dbInfo select 1;" \n
+       "" \n
+       "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+       "			_sql = ""Arma2Net.Unmanaged"" callExtension format [""Arma2NETMySQLCommand ['arma3life', '%1']"", _query];" \n
+       "		};" \n
        "		deleteVehicle _x;" \n
-       "		_totCars = _totCars + 1;" \n
        "	};" \n
        "} foreach allMissionObjects ""LandVehicle"";" \n
        "" \n
        "{" \n
        "	if(!alive _x) then" \n
        "	{" \n
+       "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
+       "		if(count _dbInfo > 0) then" \n
+       "		{" \n
+       "			_uid = _dbInfo select 0;" \n
+       "			_plate = _dbInfo select 1;" \n
+       "" \n
+       "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+       "			_sql = ""Arma2Net.Unmanaged"" callExtension format [""Arma2NETMySQLCommand ['arma3life', '%1']"", _query];" \n
+       "		};" \n
        "		deleteVehicle _x;" \n
-       "		_totCars = _totCars + 1;" \n
        "	};" \n
        "} foreach allMissionObjects ""Air"";" \n
-       "			" \n
-       "diag_log format[""Server Cleanup: %1 destroyed cars removed."", _totCars];" \n
-       "_totCars = 0;" \n
+       "" \n
        "_cars = time;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "true">*/
-        class true
-        {
-          priority = 0.000000;
-          to="Share__Work_load";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Delete_Objects">*/
-    class Delete_Objects
-    {
-      name = "Delete_Objects";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

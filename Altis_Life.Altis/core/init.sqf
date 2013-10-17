@@ -37,13 +37,15 @@ switch (playerSide) do
 {
 	case west:
 	{
-		[] call life_fnc_initCop;
+		_handle = [] spawn life_fnc_initCop;
+		waitUntil {scriptDone _handle};
 	};
 	
 	case civilian:
 	{
 		//Initialize Civilian Settings
-		[] call life_fnc_initCiv;
+		_handle = [] spawn life_fnc_initCiv;
+		waitUntil {scriptDone _handle};
 	};
 };
 
@@ -62,7 +64,7 @@ diag_log "----------------------------------------------------------------------
 diag_log format["                End of Stratis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
 life_sidechat = true;
-[[player,life_sidechat,playerSide],"STS_fnc_managesc",false,false] spawn BIS_fnc_MP;
+[[player,life_sidechat,playerSide],"STS_fnc_managesc",false,false] spawn life_fnc_MP;
 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 //[player] execVM "core\client\intro.sqf";
@@ -74,3 +76,5 @@ life_fnc_moveIn = compileFinal
 ";
 
 [] execVM "core\init_survival.sqf";
+
+setPlayerRespawnTime life_respawn_timer; //Set our default respawn time.

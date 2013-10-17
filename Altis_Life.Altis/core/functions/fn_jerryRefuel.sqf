@@ -22,7 +22,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[{_vehicle setFuel ((Fuel _vehicle) + 0.5);},"BIS_fnc_spawn",_vehicle,false] spawn BIS_fnc_MP;
+			[{_vehicle setFuel ((Fuel _vehicle) + 0.5);},"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -34,7 +34,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[{_vehicle setFuel ((Fuel _vehicle) + 0.2);},"BIS_fnc_spawn",_vehicle,false] spawn BIS_fnc_MP;
+			[{_vehicle setFuel ((Fuel _vehicle) + 0.2);},"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -46,7 +46,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[{_vehicle setFuel ((Fuel _vehicle) + 0.35);},"BIS_fnc_spawn",_vehicle,false] spawn BIS_fnc_MP;
+			[{_vehicle setFuel ((Fuel _vehicle) + 0.35);},"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{

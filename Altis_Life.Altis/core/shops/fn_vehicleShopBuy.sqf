@@ -5,9 +5,9 @@
 	Description:
 	Deleting it soon enough....
 */
-private["_index","_veh","_color","_price","_sp","_kill","_dir","_name","_sv","_fed"];
+private["_index","_veh","_color","_price","_sp","_kill","_dir","_name","_sv","_fed","_double"];
 _kill = false;
-
+_double = false;
 switch(life_veh_shop) do
 {
 	case "civ_car_1":
@@ -18,6 +18,28 @@ switch(life_veh_shop) do
 		{
 			_sp = getMarkerPos "civ_car_1_1";
 			_dir = markerDir "civ_car_1_1";
+		};
+	};
+	
+	case "donator_1":
+	{
+		_sp = getMarkerPos "donator_1";
+		_dir = markerDir "donator_1";
+		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then 
+		{
+			_sp = getMarkerPos "donator_1_1";
+			_dir = markerDir "donator_1_1";
+		};
+	};
+	
+	case "donator_2":
+	{
+		_sp = getMarkerPos "donator_2";
+		_dir = markerDir "donator_2";
+		if(count(nearestObjects[_sp,["Car","Ship","Air"],5]) > 0) then 
+		{
+			_sp = getMarkerPos "donator_2_1";
+			_dir = markerDir "donator_2_1";
 		};
 	};
 	
@@ -84,16 +106,16 @@ switch(life_veh_shop) do
 		_dir = markerDir "civ_ship_1";	
 	};
 	
-	case "civ_ship2":
+	case "civ_ship_2":
 	{
-		_sp = getMarkerPos "civ_boat_2";
-		_dir = markerDir "civ_boat_2";
+		_sp = getMarkerPos "civ_ship_2";
+		_dir = markerDir "civ_ship_2";
 	};
 	
-	case "civ_ship3":
+	case "civ_ship_3":
 	{
-		_sp = getMarkerPos "civ_boat_3";
-		_dir = markerDir "civ_boat_3";
+		_sp = getMarkerPos "civ_ship_3";
+		_dir = markerDir "civ_ship_3";
 	};
 	
 	case "civ_air_1":
@@ -126,6 +148,18 @@ switch(life_veh_shop) do
 		_dir = markerDir "civ_truck_1";
 	};
 	
+	case "civ_truck_2":
+	{
+		_sp = getMarkerPos "civ_truck_2";
+		_dir = markerDir "civ_truck_2";
+		
+		if(count(nearestObjects[_sp,["Car","Ship","Air"],3]) > 0) then 
+		{
+			_sp = getMarkerPos "civ_truck_2_1";
+			_dir = markerDir "civ_truck_2_1";
+		};
+	};
+	
 	case "cop_air_1":
 	{
 		_sp = getMarkerPos "cop_air_1";
@@ -138,40 +172,22 @@ switch(life_veh_shop) do
 		_dir = markerDir "cop_air_2";
 	};
 	
-	case "reb_air":
+	case "reb_v_1":
 	{
-		_sp = getMarkerPos "reb_air_1";
-		_dir = markerDir "reb_air_1";
+		_sp = getMarkerPos "reb_v_1";
+		_dir = markerDir "reb_v_1";
 	};
 	
-	case "reb_car":
+	case "reb_v_2":
 	{
-		_sp = getMarkerPos "reb_car_1";
-		_dir = markerDir "reb_car_1";
-	};
-	
-	case "reb_car2":
-	{
-		_sp = getMarkerPos "reb_car2";
-		_dir = markerDir "reb_car2";
-	};
-	
-	case "reb_ship1":
-	{
-		_sp = getMarkerPos "reb_ship1";
-		_dir = markerDir "reb_ship1";
-	};
-	
-	case "reb_ship2":
-	{
-		_sp = getMarkerPos "reb_ship2";
-		_dir = markerDir "reb_ship2";
+		_sp = getMarkerPos "reb_v_2";
+		_dir = markerDir "reb_v_2";
 	};
 	
 	case "cop_ship_1":
 	{
-		_sp = getMarkerPos "cop_boat_1";
-		_dir = markerDir "cop_boat_1";
+		_sp = getMarkerPos "cop_ship_1";
+		_dir = markerDir "cop_ship_1";
 	};
 	
 	case "donator_heli":
@@ -190,14 +206,13 @@ _index = lbCurSel 2302;
 _veh = lbData[2302,_index];
 if(!([_veh] call life_fnc_vehShopLicenses)) exitWith {hint "You do not have the required license!"};
 _color = lbValue[2303,(lbCurSel 2303)];
-systemChat format["%1",_color];
 _price = lbValue[2302,(lbCurSel 2302)];
 if(_price < 0) exitWith {};
 if(life_cash < _price) exitWith {hint "You do not have enough money"};
 hint "This may take a second or two.";
 sleep floor(random 3);
 
-if(count(nearestObjects[_sp,["Car","Ship","Air"],3]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
+if(count(nearestObjects[_sp,["Car","Ship","Air"],4]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
 
 _sv = false;
 
@@ -215,8 +230,8 @@ hint format["You bought a %1 for $%2",_name,[_price] call life_fnc_numberText];
 _vehicle = _veh createVehicle _sp;
 _vehicle setPos _sp;
 _vehicle setDir _dir;
-clearMagazineCargoGlobal _vehicle;
-clearWeaponCargoGlobal _vehicle;
+_vehicle setVariable["trunk_in_use",false,true];
+[_vehicle] call life_fnc_clearVehicleAmmo;
 
 if(_sv) then
 {
@@ -224,8 +239,6 @@ if(_sv) then
 	_color = 4;
 };
 
-//Disabled till Vehicle Storage Menu is completed and to help solve Desync
-//_vehicle setVariable["vehicle_info_inv",[],true];
 _vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,name player]],true];
 
 life_vehicles set[count life_vehicles,_vehicle];
@@ -239,10 +252,10 @@ if(playerSide == west) then
 	};
 };
 
-[[_vehicle,_color],"life_fnc_colorVehicle",true,false] spawn BIS_fnc_MP;
+[[_vehicle,_color],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
 
 _vehicle lock 2;
-if((life_veh_shop == "civ_air" OR life_veh_shop == "civ_air2") && (typeOf _vehicle == "B_Heli_Light_01_F")) then
+if((life_veh_shop == "civ_air_1" OR life_veh_shop == "civ_air_2") && (typeOf _vehicle == "B_Heli_Light_01_F")) then
 {
 	[_vehicle,"civ_littlebird",true] call life_fnc_vehicleAnimate;
 };

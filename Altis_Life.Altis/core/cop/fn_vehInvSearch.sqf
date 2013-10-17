@@ -31,7 +31,9 @@ _value = 0;
 
 if(_value > 0) then
 {
-	[[0,format["A vehicle was searched and has $%1 worth of drugs / contraband.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn BIS_fnc_MP;
+	[[0,format["A vehicle was searched and has $%1 worth of drugs / contraband.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	life_atmcash = life_atmcash + _value;
+	_vehicle setVariable["Trunk",[],true];
 }
 	else
 {

@@ -14,5 +14,5 @@ _info = lbData[2902,lbCurSel (2902)];
 _info = call compile format["%1", _info];
 if(isNil "_info") exitWith {_text ctrlSetText "Player no longer exists?";};
 if(isNull _info) exitWith {_text ctrlSetText "Player no longer exists?";};
-[[player],"fnc_player_query",_info,false] spawn BIS_fnc_MP;
+[[player],"fnc_player_query",_info,false] spawn life_fnc_MP;
 _text ctrlSetText "Querying player......";

@@ -52,6 +52,7 @@ switch (_var) do
 	case "life_inv_peach": {"Peach"};
 	case "life_inv_coke": {"Unprocessed Cocaine"};
 	case "life_inv_cokep": {"Processed Cocaine"};
+	case "life_inv_spikeStrip": {"Spike Strip"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};

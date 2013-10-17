@@ -41,6 +41,6 @@ player setCurrentTask life_cur_task;
 		player removeSimpleTask life_cur_task;
 		["DeliveryFailed",["You failed to deliver the package because you died."]] call BIS_fnc_showNotification;
 		life_delivery_in_progress = false;
-		life_dp_point = "";
+		life_dp_point = nil;
 	};
 };

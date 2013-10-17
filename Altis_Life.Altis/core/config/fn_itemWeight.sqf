@@ -47,5 +47,6 @@ switch (_item) do
 	case "diamondc": {2};
 	case "cocaine": {6};
 	case "cocainep": {4};
+	case "spikeStrip": {15};
 	default {1};
 };

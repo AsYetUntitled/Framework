@@ -25,7 +25,7 @@
 					{
 						if((secondaryWeapon _x) in ["launch_NLAW_F","launch_RPG32_F","launch_B_Titan_short_F","launch_RPG32_F","launch_Titan_F","launch_Titan_short_F","launch_O_Titan_short_F","launch_O_Titan_F","launch_I_Titan_short_F"]) then
 						{
-							[[format["%1 spawned in a %2\n\nReport him to an admin.",name _x,typeOf (secondaryWeapon _x)],_x],"fnc_hint_cheat",nil,false] spawn BIS_fnc_MP;
+							[[format["%1 spawned in a %2\n\nReport him to an admin.",name _x,typeOf (secondaryWeapon _x)],_x],"fnc_hint_cheat",nil,false] spawn life_fnc_MP;
 							[format["anticheat:%1:%2:%3",name _x,getPlayerUID _x,typeOf (secondaryWeapon _x)],_x] call fnc_log_ac;
 						};
 					};
@@ -75,10 +75,10 @@
 							{
 								if(!(_uid in _whitelist)) then
 								{
-									[[format["%1 spawned in a %2\n\nReport him to an admin.",name _unit,typeOf _x],_unit],"fnc_hint_cheat",nil,false] spawn BIS_fnc_MP;
+									[[format["%1 spawned in a %2\n\nReport him to an admin.",name _unit,typeOf _x],_unit],"fnc_hint_cheat",nil,false] spawn life_fnc_MP;
 									[format["anticheat:%1:%2:%3",name _unit,getPlayerUID _unit,typeOf _x],_unit] call fnc_log_ac;
 									deleteVehicle _object;
-									//[[],"life_fnc_shutmedown",_unit,false] spawn BIS_fnc_MP;
+									//[[],"life_fnc_shutmedown",_unit,false] spawn life_fnc_MP;
 								}
 									else
 								{

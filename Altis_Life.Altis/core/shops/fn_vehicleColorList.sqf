@@ -38,6 +38,26 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
+				case "donator_1":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "donator_2":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
 				case "cop_air_1":
 				{
 					if((_c_arr select _i) select 1 == "cop") then
@@ -58,7 +78,17 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "reb_air":
+				case "reb_v_1":
+				{
+					if((_c_arr select _i) select 1 == "reb") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "reb_v_2":
 				{
 					if((_c_arr select _i) select 1 == "reb") then
 					{
@@ -74,6 +104,26 @@ for "_i" from 0 to (count _c_arr)-1 do
 		{
 			switch(life_veh_shop) do
 			{
+				case "donator_1":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "donator_2":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
 				case "civ_air_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
@@ -114,7 +164,17 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
-				case "reb_air":
+				case "reb_v_1":
+				{
+					if((_c_arr select _i) select 1 == "reb") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "reb_v_2":
 				{
 					if((_c_arr select _i) select 1 == "reb") then
 					{
@@ -130,6 +190,26 @@ for "_i" from 0 to (count _c_arr)-1 do
 		{
 			switch (life_veh_shop) do
 			{
+				case "donator_1":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "donator_2":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
 				case "civ_car_1":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
@@ -160,7 +240,27 @@ for "_i" from 0 to (count _c_arr)-1 do
 					};
 				};
 				
+				case "civ_car_4":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
 				case "civ_truck_1":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "civ_truck_2":
 				{
 					if((_c_arr select _i) select 1 == "civ") then
 					{
@@ -335,9 +435,19 @@ for "_i" from 0 to (count _c_arr)-1 do
 		{
 			switch (life_veh_shop) do
 			{
-				case "fed_air":
+				case "donator_1":
 				{
-					if((_c_arr select _i) select 1 == "fed") then
+					if((_c_arr select _i) select 1 == "civ") then
+					{
+						_text = [_veh,_i] call life_fnc_vehicleColorStr;
+						lbAdd[2303,format["%1",_text]];
+						lbSetValue [2303,(lbSize 2303)-1,_i];
+					};
+				};
+				
+				case "donator_2":
+				{
+					if((_c_arr select _i) select 1 == "civ") then
 					{
 						_text = [_veh,_i] call life_fnc_vehicleColorStr;
 						lbAdd[2303,format["%1",_text]];

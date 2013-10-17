@@ -14,6 +14,8 @@ _alt = _this select 4;
 _speed = speed cursorTarget;
 _handled = false;
 
+if(life_action_inUse) exitWith {_handled};
+
 switch (_code) do
 {
 	//T Key (Trunk)
@@ -77,7 +79,7 @@ switch (_code) do
 			{
 				titleText ["Sirens On","PLAIN"];
 				_veh setVariable["siren",true,true];
-				[[_veh],"life_fnc_copSiren",nil,true] spawn BIS_fnc_MP;
+				[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
 			};
 		};
 	};
@@ -107,7 +109,7 @@ switch (_code) do
 					}
 						else
 					{
-						[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn BIS_fnc_MP;
+						[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 					};
 					systemChat "You have unlocked your vehicle.";
 				}
@@ -119,7 +121,7 @@ switch (_code) do
 					}
 						else
 					{
-						[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn BIS_fnc_MP;
+						[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 					};
 					systemChat "You have locked your vehicle.";
 				};

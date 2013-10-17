@@ -8,7 +8,7 @@
 */
 
 //Calulate starting player base and times it by 1000 dollars to give initial bank funding.
-serv_bank_funds = (count playableUnits) * 100;
+life_federal_funds = (count playableUnits) * 100;
 
 life_animals_spawned = false;
 life_animals_array = [];
@@ -23,7 +23,7 @@ life_sell_catShark = 300;//100
 life_sell_rabbit = 65;//50
 life_sell_apple = 50;//20
 life_sell_oil = 1100;//200
-life_sell_heroin = 1600;//560
+life_sell_heroin = 2650;//560
 life_sell_marijuana = 2350;//450
 life_sell_turtle = 2000;//2000
 life_sell_fishing = 3;//3
@@ -79,7 +79,8 @@ sell_array = [
 ["copper_r",1075],
 ["salt_r",750],
 ["glass",950],
-["fuelF",500]
+["fuelF",500],
+["spikeStrip",1200]
 ];
 
 buy_array = [
@@ -92,7 +93,6 @@ buy_array = [
 ["mullet",life_buy_mullet],
 ["catshark",life_buy_catshark],
 ["water",life_buy_water],
-["heroinp",life_buy_heroin],
 ["turtle",life_buy_turtle],
 ["turtlesoup",life_buy_turtlesoup],
 ["donuts",life_buy_donuts],
@@ -101,7 +101,8 @@ buy_array = [
 ["lockpick",150],
 ["pickaxe",1200],
 ["redgull",1500],
-["peach",68]
+["peach",68],
+["spikeStrip",2500]
 ];
 
 publicVariable "sell_array";
@@ -153,3 +154,63 @@ life_weapon_shop_array =
 ];
 
 publicVariable "life_weapon_shop_array";
+
+life_garage_prices =
+[
+	["B_QuadBike_01_F",550],
+	["C_Hatchback_01_F",1500],
+	["C_Offroad_01_F", 2500],
+	["B_G_Offroad_01_F",3500],
+	["C_SUV_01_F",5250],
+	["C_Van_01_transport_F",7890],
+	["C_Hatchback_01_sport_F",2350],
+	["C_Van_01_fuel_F",4500],
+	["I_Heli_Transport_02_F",50000],
+	["C_Van_01_box_F",9000],
+	["I_Truck_02_transport_F",12000],
+	["I_Truck_02_covered_F",14500],
+	["B_Truck_01_transport_F",25650],
+	["B_Truck_01_box_F", 35000],
+	["O_MRAP_02_F",45000],
+	["B_Heli_Light_01_F",45000],
+	["O_Heli_Light_02_unarmed_F",65000],
+	["C_Rubberboat",400],
+	["C_Boat_Civil_01_F",4500],
+	["B_Boat_Transport_01_F",450],
+	["C_Boat_Civil_01_police_F",3500],
+	["B_Boat_Armed_01_minigun_F",16500],
+	["B_SDV_01_F",25000],
+	["B_MRAP_01_F",7500]
+];
+
+publicVariable "life_garage_prices";
+
+life_garage_sell =
+[
+	["B_QuadBike_01_F",950],
+	["C_Hatchback_01_F",4500],
+	["C_Offroad_01_F", 6500],
+	["B_G_Offroad_01_F",3500],
+	["C_SUV_01_F",15000],
+	["C_Van_01_transport_F",25000],
+	["C_Hatchback_01_sport_F",7500],
+	["C_Van_01_fuel_F",3850],
+	["I_Heli_Transport_02_F",125000],
+	["C_Van_01_box_F",35000],
+	["I_Truck_02_transport_F",49800],
+	["I_Truck_02_covered_F",62000],
+	["B_Truck_01_transport_F",135000],
+	["B_Truck_01_box_F", 150000],
+	["O_MRAP_02_F",65000],
+	["B_Heli_Light_01_F",57000],
+	["O_Heli_Light_02_unarmed_F",72500],
+	["C_Rubberboat",950],
+	["C_Boat_Civil_01_F",6800],
+	["B_Boat_Transport_01_F",850],
+	["C_Boat_Civil_01_police_F",4950],
+	["B_Boat_Armed_01_minigun_F",21000],
+	["B_SDV_01_F",45000],
+	["B_MRAP_01_F",10000]
+];
+
+publicVariable "life_garage_sell";

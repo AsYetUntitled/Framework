@@ -52,16 +52,30 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Service Truck Shop"];
 	};
 	
-	case "reb_car":
+	case "donator_1":
+	{
+		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
+		if(life_donator == 0) exitWith {_kill = "You are not a donator!"};
+		ctrlSetText[2301,"Service Truck Shop"];
+	};
+	
+	case "donator_2":
+	{
+		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
+		if(life_donator == 0) exitWith {_kill = "You are not a donator!"};
+		ctrlSetText[2301,"Service Truck Shop"];
+	};
+	
+	case "reb_v_1":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Rebel Car Shop"];
 	};
 	
-	case "reb_car2":
+	case "reb_v_1":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
-		ctrlSetText[2301,"Spartan Car Shop"];
+		ctrlSetText[2301,"Rebel Car Shop"];
 	};
 	
 	case "reb_air":
@@ -136,16 +150,28 @@ switch (life_veh_shop) do
 	case "civ_ship_1":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
-		ctrlSetText[2301,"Agia Marina Boat Shop"];
+		ctrlSetText[2301,"Altis Boat Shop"];
 	};
 	
 	case "civ_ship_2":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
-		ctrlSetText[2301,"Kamino Boat Shop"];
+		ctrlSetText[2301,"Altis Boat Shop"];
+	};
+	
+	case "civ_ship_2":
+	{
+		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
+		ctrlSetText[2301,"Altis Boat Shop"];
 	};
 	
 	case "civ_truck_1":
+	{
+		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
+		ctrlSetText[2301,"Truck Shop"];
+	};
+	
+	case "civ_truck_2":
 	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Truck Shop"];
@@ -197,7 +223,7 @@ closeDialog 0;
 		_name = getText(configFile >> "CfgVehicles" >> _veh >> "displayName");
 	};
 	_pic = getText(configFile >> "CfgVehicles" >> _veh >> "picture");
-	_vehicles lbAdd format["%1 - $%2",_name, [_price] call life_fnc_numberText];
+	_vehicles lbAdd format["%1 - Regular: $%2 Permanent: $%3 ",_name, [_price] call life_fnc_numberText, [round(_price * 1.5)] call life_fnc_numberText];
 	
 	if(_name == "Service Truck") then
 	{

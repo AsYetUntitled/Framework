@@ -61,6 +61,9 @@ class Life_Client_Core
 		class ticketAction {};
 		class gatherPeaches {};
 		class gatherCocaine {};
+		class pumpRepair {};
+		class packupSpikes {};
+		class robFederal {};
 	};
 	
 	class Config
@@ -153,6 +156,8 @@ class Life_Client_Core
 		class playerTags {};
 		class clearVehicleAmmo {};
 		class pulloutVeh {};
+		class MP{};
+		class MPexec{};
 	};
 	
 	class Civilian
@@ -161,6 +166,9 @@ class Life_Client_Core
 		class jailMe {};
 		class jail {};
 		class tazed {};
+		class civFetchGear {};
+		class civLoadGear {};
+		class robReserve {};
 	};
 	
 	class Vehicle
@@ -188,6 +196,7 @@ class Life_Client_Core
 		class ticketPay {};
 		class ticketPrompt {};
 		class copSiren {};
+		class spikeStripEffect {};
 	};
 	
 	class Gangs
@@ -208,8 +217,6 @@ class Life_Client_Core
 	class Shops
 	{
 		file = "core\shops";
-		class impoundMenu {};
-		class unimpound {};
 		class atmMenu {};
 		class buyClothes {};
 		class changeClothes {};
@@ -218,6 +225,7 @@ class Life_Client_Core
 		class vehicleShop {};
 		class vehicleColorList {};
 		class vehicleShopBuy {};
+		class vehicleShopBuySave {};
 		class weaponShopFilter {};
 		class weaponShopMenu {};
 		class weaponShopSelection {};
@@ -233,6 +241,7 @@ class Life_Client_Core
 		file = "core\items";
 		class pickaxeUse {};
 		class lockpick {};
+		class spikeStrip {};
 	};
 	
 	class Dialog_Controls
@@ -245,5 +254,8 @@ class Life_Client_Core
 		class spawnPointCfg {};
 		class spawnPointSelected {};
 		class progressBar {};
+		class impoundMenu {};
+		class unimpound {};
+		class sellGarage {};
 	};
 };

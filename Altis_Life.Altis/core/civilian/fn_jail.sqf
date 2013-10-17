@@ -36,8 +36,8 @@ license_civ_gun = false;
 license_civ_rebel = false;
 if(life_inv_heroinu > 0) then {[false,"heroinu",life_inv_heroinu] call life_fnc_handleInv;};
 if(life_inv_heroinp > 0) then {[false,"heroinp",life_inv_heroinp] call life_fnc_handleInv;};
-if(life_inv_cocaine > 0) then {[false,"cocaine",life_inv_cocaine] call life_fnc_handleInv;};
-if(life_inv_cocainep > 0) then {[false,"cocainep",life_inv_cocainep] call life_fnc_handleInv;};
+if(life_inv_coke > 0) then {[false,"cocaine",life_inv_coke] call life_fnc_handleInv;};
+if(life_inv_cokep > 0) then {[false,"cocainep",life_inv_cokep] call life_fnc_handleInv;};
 if(life_inv_turtle > 0) then {[false,"turtle",life_inv_turtle] call life_fnc_handleInv;};
 if(life_inv_cannabis > 0) then {[false,"cannabis",life_inv_cannabis] call life_fnc_handleInv;};
 if(life_inv_marijuana > 0) then {[false,"marijuana",life_inv_marijuana] call life_fnc_handleInv;};
@@ -46,5 +46,5 @@ life_is_arrested = true;
 removeAllWeapons player;
 {player removeMagazine _x} foreach (magazines player);
 
-[[player,_bad],"life_fnc_jailSys",false,false] spawn BIS_fnc_MP;
+[[player,_bad],"life_fnc_jailSys",false,false] spawn life_fnc_MP;
 [1,false] call life_fnc_sessionHandle;

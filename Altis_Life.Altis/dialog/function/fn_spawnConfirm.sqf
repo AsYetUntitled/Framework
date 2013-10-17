@@ -39,3 +39,5 @@ if(count life_spawn_point == 0) then
 	};
 	titleText[format["You have spawned at %1",life_spawn_point select 1],"BLACK IN"];
 };
+
+[] call life_fnc_hudSetup;

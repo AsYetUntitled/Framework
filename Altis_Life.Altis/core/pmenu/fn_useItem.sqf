@@ -38,6 +38,15 @@ switch (true) do
 		};
 	};
 	
+	case (_item == "spikeStrip"):
+	{
+		if(!isNull life_spikestrip) exitWith {hint "You already have a Spike Strip active in deployment"};
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn life_fnc_spikeStrip;
+		};
+	};
+	
 	case (_item == "heroinp"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then

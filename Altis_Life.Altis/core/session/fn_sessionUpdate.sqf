@@ -9,7 +9,7 @@
 */
 private["_packet"];
 
-_packet = [player,playerSide,life_cash,life_atmcash];
+_packet = [player,playerSide,life_cash,life_atmcash,getPlayerUID player];
 switch (playerSide) do
 {
 	case west:
@@ -35,9 +35,11 @@ switch (playerSide) do
 				_array set[count _array,[_x select 0,(missionNamespace getVariable (_x select 0))]];
 			};
 		} foreach life_licenses;
+		[] call life_fnc_civFetchGear;
 		_packet set[count _packet,_array];
 		_packet set[count _packet,life_is_arrested];
+		_packet set[count _packet,civ_gear];
 	};
 };
 
-[_packet,"STS_fnc_update",false,false] spawn BIS_fnc_MP;
+[_packet,"STS_fnc_update",false,false] spawn life_fnc_MP;

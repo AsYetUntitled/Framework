@@ -15,9 +15,9 @@ if(side _unit != civilian) exitWith {}; //Not a civ
 if(isNull _unit) exitWith {}; //Not valid
 
 
-[[_unit,player,false],"life_fnc_wantedBounty",false,false] spawn BIS_fnc_MP;
+[[_unit,player,false],"life_fnc_wantedBounty",false,false] spawn life_fnc_MP;
 
 if(isNull _unit) exitWith {}; //Not valid
 detach _unit;
-[[_unit,false],"life_fnc_jail",_unit,false] spawn BIS_fnc_MP;
-[[0,format["%1 was arrested by %2", name _unit, name player]],"life_fnc_broadcast",true,false] spawn BIS_fnc_MP;
+[[_unit,false],"life_fnc_jail",_unit,false] spawn life_fnc_MP;
+[[0,format["%1 was arrested by %2", name _unit, name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

@@ -21,6 +21,7 @@ switch (_filter) do
 			["U_IG_Guerilla1_1",nil,5000],
 			["U_O_SpecopsUniform_ocamo",nil,17500],
 			["U_O_PilotCoveralls",nil,15610],
+			["U_IG_leader","Guerilla Leader",15340],
 			["U_O_GhillieSuit",nil,50000]
 		];
 	};

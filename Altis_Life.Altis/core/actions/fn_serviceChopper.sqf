@@ -7,9 +7,12 @@
 */
 disableSerialization;
 private["_search","_ui","_progress","_cP","_pgText"];
+if(life_action_inUse) exitWith {hint "You are already doing an action. Please wait for it to end."};
 _search = nearestObjects[getPos air_sp, ["Air"],5];
 if(count _search == 0) exitWith {hint "There isn't a chopper on the helipad!"};
 if(life_cash < 1000) exitWith {hint "You need $1,000 to service your chopper"};
+life_cash = life_cash - 1000;
+life_action_inUse = true;
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
@@ -27,10 +30,10 @@ while {true} do
 	if(_cP >= 1) exitWith {};
 };
 
-if(!alive (_search select 0) || (_search select 0) distance air_sp > 10) exitWith {hint "The vehicle is no longer alive or on the helipad!"};
+if(!alive (_search select 0) || (_search select 0) distance air_sp > 10) exitWith {life_action_inUse = false; hint "The vehicle is no longer alive or on the helipad!"};
 if(!local (_search select 0)) then
 {
-	[{(_search select 0) setFuel 1;},"BIS_fnc_spawn",(_search select 0),false] spawn BIS_fnc_MP;
+	[{(_search select 0) setFuel 1;},"BIS_fnc_spawn",(_search select 0),false] spawn life_fnc_MP;
 }
 	else
 {
@@ -39,5 +42,5 @@ if(!local (_search select 0)) then
 (_search select 0) setDamage 0;
 
 5 cutText ["","PLAIN"];
-titleText ["Your chopper is now repaired and refueled.","PLAIN"];
-life_cash = life_cash - 1000;
+titleText ["Your chopper is now repaired and refuelled.","PLAIN"];
+life_action_inUse = false;

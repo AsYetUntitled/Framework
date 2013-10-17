@@ -22,4 +22,4 @@ if(life_adminlevel < 1) then
 	ctrlShow[2405,false];
 };
 
-[[player],"life_fnc_wantedFetch",false,false] spawn BIS_fnc_MP;
+[[player],"life_fnc_wantedFetch",false,false] spawn life_fnc_MP;

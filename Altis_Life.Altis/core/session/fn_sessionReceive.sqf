@@ -1,6 +1,4 @@
 /*
-	Copyright © 2013 Bryan "Tonic" Boardwine, All rights reserved
-	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_sessionReceive.sqf
 	Author: Bryan "Tonic" Boardwine
 	
@@ -18,7 +16,8 @@ cutText["Received information from the server...","BLACK FADED"];
 0 cutFadeOut 9999999;
 
 //Error handling types
-if(typeName _session == "STRING") exitWith {[] spawn life_fnc_sessionCreate;};
+if(isNil "_session") exitWith {[] spawn life_fnc_sessionCreate;};
+if(typeName _session == "STRING") exitWith {cutText[format["%1",_session],"BLACK FADED"];0 cutFadeOut 9999999;};
 if(count _session == 0) exitWith {[] spawn life_fnc_sessionCreate;};
 if(_session select 0 == "Error") exitWith {[] spawn life_fnc_sessionCreate;};
 
@@ -48,6 +47,7 @@ switch (playerSide) do
 		};
 		cop_gear = (_session select 6);
 		life_adminlevel = parseNumber(_session select 7);
+		life_blacklisted = call compile format["%1",(_session select 8)];
 		[] spawn life_fnc_loadGear;
 		//if(life_adminlevel > 0) then {[] execVM "core\client\aconfig.sqf";};
 		life_donator = 0;
@@ -67,6 +67,8 @@ switch (playerSide) do
 		life_is_arrested = call compile format["%1",(_session select 5)];
 		life_adminlevel = parseNumber(_session select 6);
 		life_donator = parseNumber (_session select 7);
+		civ_gear = (_session select 8);
+		[] spawn life_fnc_civLoadGear;
 		life_coplevel = 0;
 	};
 };

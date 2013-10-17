@@ -10,8 +10,6 @@
 	without this process being completed.
 */
 waitUntil {!isNull player && player == player};
-private["_unit"];
-_unit = player;
 cutText["Contacting server for player information...","BLACK FADED"];
 0 cutFadeOut 9999999;
-[[_unit,playerSide],"STS_fnc_query",false,false] spawn BIS_fnc_MP;
+[[player,playerSide,getPlayerUID player],"STS_fnc_query",false,false] spawn life_fnc_MP;

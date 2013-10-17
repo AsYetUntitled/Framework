@@ -31,11 +31,17 @@ class Life_impound_menu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = "Impound Lot";
+			text = "Vehicle Garage";
 			x = 0.1;
 			y = 0.2;
 			w = 0.6;
 			h = (1 / 25);
+		};
+		
+		class ConnectionStatus : Title {
+			idc = 2802;
+			style = 1;
+			text = "";
 		};
 		
 		class VehicleList : Life_RscListBox 
@@ -60,9 +66,19 @@ class Life_impound_menu {
 		
 		class GetCar : life_RscButtonMenu {
 			idc = -1;
-			text = "Get Car";
-			onButtonClick = "[] call fnc_unimpound";
+			text = "Get Vehicle";
+			onButtonClick = "[] call life_fnc_unimpound";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.8 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		
+		class SellCar : life_RscButtonMenu {
+			idc = -1;
+			text = "Sell Vehicle";
+			onButtonClick = "[] call life_fnc_sellGarage";
+			x = 0.265 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);

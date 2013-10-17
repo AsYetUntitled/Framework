@@ -10,6 +10,10 @@ life_radio_west = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_
 life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 server_query_running = false;
 life_DB_queue = [];
+serv_sv_use = [];
+//fed_bank setVariable["fed_rob_ip",false,true];
+//fed_bank setVariable["fed_locked",false,true];
+_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", "CALL resetLifeVehicles();"]; //Reset vehicles active state to false.
 
 publicVariable "life_fnc_vehStoreItem";
 publicVariable "life_fnc_vehTakeItem";
@@ -25,7 +29,7 @@ if(!hasInterface) then
 	//[] execVM "\life_server\anticheat_server.sqf";
 };
 
-//[] spawn STS_fnc_cleanup;
+[] spawn STS_fnc_cleanup;
 life_fnc_wantedAdd = compileFinal PreprocessFileLineNumbers "\life_server\wanted_add.sqf";
 life_fnc_wantedRemove = compileFinal PreprocessFileLineNumbers "\life_server\wanted_remove.sqf";
 life_gang_list = [];
@@ -45,9 +49,9 @@ publicVariable "robbery_success";
 	while {true} do
 	{
 		//sleep (20 * 60);
-		waitUntil {(count ((missionNamespace getVariable["bis_functions_mainscope",objnull]) getVariable "BIS_fnc_MP_queue")) > 50};
+		waitUntil {(count ((missionNamespace getVariable["bis_functions_mainscope",objnull]) getVariable "BIS_fnc_MP_queue")) > 5};
 		_logic = missionnamespace getvariable ["bis_functions_mainscope",objnull];
-		_queue = _logic getvariable "BIS_fnc_MP_queue";
+		_queue = _logic getvariable "life_fnc_MP_queue";
 		_logic setVariable["BIS_fnc_MP_queue",[],true];
 	};
 };
@@ -55,3 +59,7 @@ publicVariable "robbery_success";
 fnc_serv_kick = {endMission "loser";};
 publicVariable "fnc_serv_kick";
 [] spawn DB_fnc_queueManagement;
+
+//Server-side functions that need to be sent out.
+publicVariable "STS_fnc_addVehicle2Chain";
+publicVariable "life_fnc_fedSuccess";

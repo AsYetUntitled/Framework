@@ -18,4 +18,4 @@ hint "Attempting to open the safe...";
 sleep 1;
 bank_query_funds = nil;
 
-[[_funds],"bank_robbery",true,false] spawn BIS_fnc_MP;
+[[_funds],"bank_robbery",true,false] spawn life_fnc_MP;

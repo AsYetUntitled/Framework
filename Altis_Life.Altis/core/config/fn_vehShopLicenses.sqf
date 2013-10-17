@@ -16,7 +16,6 @@ switch (life_veh_shop) do
 	case "civ_car_2": {_ret = license_civ_driver;};
 	case "civ_car_3": {_ret = license_civ_driver;};
 	case "civ_car_4": {_ret = license_civ_driver;};
-	case "donator_car":	{_ret = license_civ_driver;};	
 	case "civ_ship_1": {_ret = license_civ_boat;};
 	case "civ_ship_2": {_ret = license_civ_boat;};
 	case "civ_ship_3": {_ret = license_civ_boat;};
@@ -24,14 +23,13 @@ switch (life_veh_shop) do
 	case "civ_air_2": {_ret = license_civ_air;};
 	case "cop_air_1": {_ret = license_cop_air;};
 	case "cop_air_2": {_ret = license_cop_air;};
-	case "donator_heli": {_ret = license_civ_air;};
+	case "donator_1": {_ret = true;};
+	case "donator_2": {_ret = true;};
 	case "civ_truck_1":	{_ret = license_civ_truck;};
+	case "civ_truck_2":	{_ret = license_civ_truck;};
 	case "civ_servt_1": {_ret = license_civ_driver;};
-	case "reb_car": {_ret = true;};
-	case "reb_car2": {_ret = true;};
-	case "reb_ship1": {_ret = true;};
-	case "reb_ship2": {_ret = true;};
-	case "reb_air": {_ret = true;};
+	case "reb_v_1": {_ret = license_civ_rebel;};
+	case "reb_v_2": {_ret = license_civ_rebel;};
 	case "cop_car_1": {_ret = true;};
 	case "cop_car_2": {_ret = true;};
 	case "cop_car_3": {_ret = true;};

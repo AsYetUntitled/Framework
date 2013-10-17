@@ -100,13 +100,62 @@ switch(_shop) do
 			{
 				["Mohammed's Jihadi Shop",
 					[
-						["hgun_PDW2000_F",nil,20000],
-						["srifle_EBR_F",nil,50000],
+						["arifle_TRG20_F",nil,25000],
 						["arifle_Katiba_F",nil,30000],
+						["srifle_EBR_F",nil,50000],
+						["optic_ACO_grn",nil,5000],
+						["acc_flashlight",nil,1000],
 						["30Rnd_9x21_Mag",nil,200],
 						["30Rnd_556x45_Stanag",nil,300],
 						["20Rnd_762x51_Mag",nil,500],
 						["30Rnd_65x39_caseless_green",nil,275]
+					]
+				];
+			};
+		};
+	};
+	
+	case "gun":
+	{
+		switch(true) do
+		{
+			case (playerSide != civilian): {"You are not a cop!"};
+			case (!license_civ_gun): {"You don't have a Firearms license!"};
+			default
+			{
+				["Billy Joe's Firearms",
+					[
+						["hgun_Rook40_F",nil,2500],
+						["hgun_PDW2000_F",nil,10000],
+						["optic_ACO_grn_smg",nil,2500],
+						["16Rnd_9x21_Mag",nil,25],
+						["30Rnd_9x21_Mag",nil,75]
+					]
+				];
+			};
+		};
+	};
+	
+	case "donator":
+	{
+		switch(true) do
+		{
+			case (life_donator == 0): {"You are not a donator!"};
+			default
+			{
+				["STS Donator Shop",
+					[
+						["hgun_Rook40_F",nil,500],
+						["hgun_PDW2000_F",nil,6500],
+						["arifle_Mk20C_plain_F",nil,25000],
+						["optic_ACO_grn_smg",nil,750],
+						["optic_MRCO",nil,10000],
+						["ToolKit",nil,50],
+						["itemgps",nil,50],
+						["FirstAidKit",nil,25],
+						["16Rnd_9x21_Mag",nil,25],
+						["30Rnd_9x21_Mag",nil,75],
+						["30Rnd_556x45_Stanag",nil,125]
 					]
 				];
 			};
@@ -121,7 +170,6 @@ switch(_shop) do
 				["ItemGPS",nil,100],
 				["ToolKit",nil,250],
 				["FirstAidKit",nil,150],
-				["Medikit",nil,1000],
 				["NVGoggles",nil,2000],
 				["Chemlight_red",nil,300],
 				["Chemlight_yellow",nil,300],

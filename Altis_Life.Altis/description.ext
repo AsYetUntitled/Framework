@@ -4,10 +4,8 @@ onLoadMission = "A RPG developed by TAW_Tonic for STS (Seal Team Sloth).";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 10;
-enableDebugConsole = 1;
 disabledAI = true;
 disableChannels[]={0,1,2};
-allowFunctionsRecompile = 1;
 
 class Header
 {

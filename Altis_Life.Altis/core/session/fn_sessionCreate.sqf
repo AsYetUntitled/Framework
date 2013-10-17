@@ -10,7 +10,7 @@
 private["_packet"];
 cutText["Creating player information on server...","BLACK FADED"];
 0 cutFadeOut 9999999;
-_packet = [player,playerSide,life_cash,life_atmcash];
+_packet = [player,playerSide,life_cash,life_atmcash,getPlayerUID player];
 switch (playerSide) do
 {
 	case west:
@@ -22,8 +22,9 @@ switch (playerSide) do
 	
 	case civilian:
 	{
+		[] call life_fnc_civFetchGear;
 		_packet set[count _packet,life_is_arrested];
 	};
 };
 
-[_packet,"STS_fnc_add",false,false] spawn BIS_fnc_MP;
+[_packet,"STS_fnc_add",false,false] spawn life_fnc_MP;

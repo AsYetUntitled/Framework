@@ -10,6 +10,7 @@ life_query_time = time;
 life_action_delay = time;
 life_trunk_vehicle = Objnull;
 life_session_completed = false;
+life_garage_store = false;
 life_session_tries = 0;
 life_net_dropped = false;
 life_hit_explosive = false;
@@ -18,6 +19,11 @@ life_clothing_filter = 0;
 life_clothing_uniform = -1;
 life_redgull_effect = time;
 life_is_processing = false;
+life_bail_paid = false;
+life_impound_inuse = false;
+life_action_inUse = false;
+life_spikestrip = ObjNull;
+life_respawn_timer = 35;
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 /*
@@ -75,12 +81,12 @@ switch (playerSide) do
 	case west: 
 	{
 		life_atmcash = 7000; //Starting Bank Money
-		life_paycheck = 300; //Paycheck Amount
+		life_paycheck = 500; //Paycheck Amount
 	};
 	case civilian: 
 	{
 		life_atmcash = 3000; //Starting Bank Money
-		life_paycheck = 100; //Paycheck Amount
+		life_paycheck = 350; //Paycheck Amount
 	};
 };
 
@@ -127,7 +133,8 @@ life_inv_items =
 	"life_inv_diamond",
 	"life_inv_coke",
 	"life_inv_cokep",
-	"life_inv_diamondr"
+	"life_inv_diamondr",
+	"life_inv_spikeStrip"
 ];
 
 //Setup variable inv vars.
@@ -163,4 +170,4 @@ life_licenses =
 
 life_dp_points = ["dp_1","dp_2","dp_3","dp_4","dp_5","dp_6","dp_7","dp_8","dp_9","dp_10","dp_11","dp_12","dp_13","dp_14","dp_15","dp_15","dp_16","dp_17","dp_18","dp_19","dp_20","dp_21","dp_22","dp_23","dp_24","dp_25"];
 //[shortVar,reward]
-life_illegal_items = [["heroinu",1500],["heroinp",3500],["marijuana",2000],["turtle",3000]];
+life_illegal_items = [["heroinu",1200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000]];

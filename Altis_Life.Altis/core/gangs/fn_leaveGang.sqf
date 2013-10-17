@@ -29,7 +29,7 @@ if(getPlayerUID player == _ownerID) then
 		
 		life_gang_list set[_index,[_name,_group,_locked,str(_new_owner),(getPlayerUID _new_owner)]];
 		publicVariable "life_gang_list";
-		[[_new_owner,_group], "clientGangLeader",_new_owner,false] spawn BIS_fnc_MP;
+		[[_new_owner,_group], "clientGangLeader",_new_owner,false] spawn life_fnc_MP;
 	}
 		else
 	{

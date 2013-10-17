@@ -18,7 +18,7 @@ class CfgFunctions
 		tag = "DB";
 		class MySQL
 		{
-			file = "\life_server\DB";
+			file = "\life_server\core\DB";
 			class insert{};
 			class query{};
 			class update{};
@@ -29,6 +29,9 @@ class CfgFunctions
 			class addQueue {};
 			class processQueue {};
 			class queueManagement {};
+			class insertVehicle {};
+			class queryVehicle {};
+			class queryVehicles {};
 			class bool{};
 		};
 	};
@@ -38,7 +41,7 @@ class CfgFunctions
 		tag = "life";
 		class Wanted_Sys
 		{
-			file = "\life_server\wantedsys";
+			file = "\life_server\core\wantedsys";
 			class wantedFetch {};
 			class wantedPerson {};
 			class wantedBounty {};
@@ -48,16 +51,17 @@ class CfgFunctions
 		
 		class Jail_Sys
 		{
-			file = "\life_server\jail";
+			file = "\life_server\core\jail";
 			class jailSys {};
 		};
 		
 		class Client_Code
 		{
-			file = "\life_server\clientside";
+			file = "\life_server\core\clientside";
 			class vehStoreItem {};
 			class vehTakeItem {};
 			class vehInventory {};
+			class fedSuccess {};
 		};	
 	};
 	
@@ -66,7 +70,7 @@ class CfgFunctions
 		tag = "STS";
 		class System
 		{
-			file = "\life_server\system";
+			file = "\life_server\core\system";
 			class query {};
 			class add {};
 			class update {};
@@ -74,6 +78,18 @@ class CfgFunctions
 			class cleanup {};
 			class timeStamp {};
 			class huntingZone {};
+			class getID {};
+			class vehicleCreate {};
+			class vehicleDead {};
+			class spawnVehicle {};
+			class addVehicle2Chain {};
+			class getVehicles {};
+			class vehicleStore {};
+			class vehicleDelete {};
+			class spikeStrip {};
+			class robReserve {};
+			class robberyState {};
+			class logIt {};
 		};
 	};
 };

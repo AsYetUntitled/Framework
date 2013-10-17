@@ -9,6 +9,7 @@
 
 if(!isServer) exitWith {};
 
+"life_fnc_MP_packet" addPublicVariableEventHandler {[_this select 0,_this select 1] call life_fnc_MPexec;};
 "TAW_PVAR_cheater" addPublicVariableEventHandler 
 {
 	diag_log format["%1", (_this select 1) select 0];
@@ -56,17 +57,6 @@ if(!isServer) exitWith {};
 	};
 	
 	[_unit,_type] call life_fnc_wantedAdd;
-};
-
-"life_packet_receive" addPublicVariableEventHandler 
-{
-	private["_unit","_ret","_id"];
-	_unit = (_this select 1) select 0;
-	_id = owner _unit;
-	_ret = [_unit] call life_fnc_wantedPerson;
-	
-	life_packet_receive = _ret;
-	_id publicVariableClient "life_packet_receive";
 };
 
 "serv_wanted_remove" addPublicVariableEventHandler

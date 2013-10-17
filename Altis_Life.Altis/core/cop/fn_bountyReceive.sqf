@@ -8,8 +8,6 @@
 private["_val","_total"];
 _val = [_this,0,"",["",0]] call BIS_fnc_param;
 _total = [_this,1,"",["",0]] call BIS_fnc_param;
-if(typeName _val == "SCALAR") then {_val = str(_val)};
-if(typeName _total == "SCALAR") then {_total = str(_total)};
 
 if(_val == _total) then
 {

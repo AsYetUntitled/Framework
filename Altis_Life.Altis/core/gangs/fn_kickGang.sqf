@@ -40,6 +40,6 @@ switch (true) do
 		publicVariable "life_gang_list";
 	};
 };
-[[_data,_group], "clientGangKick",_data,false] spawn BIS_fnc_MP;
+[[_data,_group], "clientGangKick",_data,false] spawn life_fnc_MP;
 
 [false] spawn life_fnc_gangManagement;

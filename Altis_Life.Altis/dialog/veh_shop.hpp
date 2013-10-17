@@ -76,6 +76,16 @@ class Life_vehicle_shop {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+		
+		class GetCarGarage : life_RscButtonMenu {
+			idc = -1;
+			text = "Buy Permanently";
+			onButtonClick = "[] spawn life_fnc_vehicleShopBuySave";
+			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.8 - (1 / 25);
+			w = (10 / 40);
+			h = (1 / 25);
+		};
 
 	};
 };

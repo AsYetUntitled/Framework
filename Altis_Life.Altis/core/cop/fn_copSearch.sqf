@@ -25,7 +25,7 @@ if(count _invs > 0) then
 		};
 	} foreach _invs;
 	
-	[[0,format["%1 has $%2 worth of contraband on them.",name _civ,[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn BIS_fnc_MP;
+	[[0,format["%1 has $%2 worth of contraband on them.",name _civ,[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 }
 	else
 {
@@ -38,5 +38,5 @@ hint parseText format["<t color='#FF0000'><t size='2'>%1</t></t><br/><t color='#
 
 if(_robber) then
 {
-	[[0,format["%1 was identified as the bank robber!",name _civ]],"life_fnc_broadcast",true,false] spawn BIS_fnc_MP;
+	[[0,format["%1 was identified as the bank robber!",name _civ]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };

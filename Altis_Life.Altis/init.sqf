@@ -10,6 +10,8 @@ if(isServer) then
 	if(!X_Server) then
 	{
 		[] call compile PreprocessFileLineNumbers "\life_server\init.sqf";
+		fed_dome setVariable["bis_disabled_Door_1",1,true];
+		fed_dome setVariable["bis_disabled_Door_2",1,true];
 		master_group attachTo[bank_obj,[0,0,0]];
 	};
 	X_Server = true;
@@ -25,8 +27,7 @@ if(isNull player) then
 };
 enableSaving[false,false];
 
-[] execVM "bis\compile.sqf";
-life_versionInfo = "Altis Life v3.0";
+life_versionInfo = "Altis Life v3.0.3";
 [] execVM "core\init.sqf";
 [] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";

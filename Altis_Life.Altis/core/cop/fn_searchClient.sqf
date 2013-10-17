@@ -37,4 +37,4 @@ if(!life_use_atm) then
 	_robber = true;
 };
 
-[[player,_licenses,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn BIS_fnc_MP;
+[[player,_licenses,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;

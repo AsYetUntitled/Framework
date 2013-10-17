@@ -15,7 +15,10 @@ _bad = "";
 
 if((_itemInfo select 6) != "CfgVehicles") then
 {
-	if(!(player canAdd _item)) exitWith {_bad = "You don't have enough room for that item."};
+	if((_itemInfo select 4) in [4096,131072]) then
+	{
+		if(!(player canAdd _item)) exitWith {_bad = "You don't have enough room for that item."};
+	};
 };
 
 if(_bad != "") exitWith {hint _bad};

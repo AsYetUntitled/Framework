@@ -8,7 +8,7 @@
 private["_display","_units","_type"];
 
 disableSerialization;
-
+waitUntil {!isNull findDisplay 3000};
 _display = findDisplay 3000;
 _units = _display displayCtrl 3004;
 

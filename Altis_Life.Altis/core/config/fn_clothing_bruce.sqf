@@ -41,10 +41,24 @@ switch (_filter) do
 			["H_Bandanna_camo","Camo Bandanna",120],
 			["H_Bandanna_surfer","Surfer Bandanna",130],
 			["H_Bandanna_gry","Grey Bandanna",150],
+			["H_Bandanna_cbr",nil,165],
+			["H_Bandanna_surfer",nil,135],
 			["H_Bandanna_khk","Khaki Bandanna",145],
 			["H_Bandanna_sgg","Sage Bandanna",160],
 			["H_StrawHat","Straw Fedora",225],
-			["H_BandMask_blk","Hat & Bandanna",300]
+			["H_BandMask_blk","Hat & Bandanna",300],
+			["H_Booniehat_tan",nil,425],
+			["H_Hat_blue",nil,310],
+			["H_Hat_brown",nil,276],
+			["H_Hat_checker",nil,340],
+			["H_Hat_grey",nil,280],
+			["H_Hat_tan",nil,265],
+			["H_Cap_blu",nil,150],
+			["H_Cap_grn",nil,150],
+			["H_Cap_grn_BI",nil,150],
+			["H_Cap_oli",nil,150],
+			["H_Cap_red",nil,150],
+			["H_Cap_tan",nil,150]
 		];
 	};
 	

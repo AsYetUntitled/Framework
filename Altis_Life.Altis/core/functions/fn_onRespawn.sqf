@@ -28,6 +28,8 @@ switch(playerSide) do
 		_unit setVariable["restrained",false,true];
 		_unit setVariable["Escorting",false,true];
 		_unit setVariable["transporting",false,true];
+		if(headGear player != "") then {removeHeadgear player;};
+		if(goggles player != "") then {removeGoggles player;};
 	};
 };
 
@@ -47,5 +49,9 @@ if(life_is_arrested) then
 
 _unit addRating 100000;
 
-[[_unit,life_sidechat,playerSide],"STS_fnc_managesc",false,false] spawn BIS_fnc_MP;
+[[_unit,life_sidechat,playerSide],"STS_fnc_managesc",false,false] spawn life_fnc_MP;
 [] call life_fnc_hudUpdate;
+cutText ["","BLACK IN"];
+
+[] call life_fnc_civFetchGear;
+[1,true] call life_fnc_sessionHandle;

@@ -29,7 +29,7 @@ life_gang_list set[_index,[_name,_group,_locked,str(_data),getPlayerUID _data]];
 publicVariable "life_gang_list";
 
 _group selectLeader _data;
-[[_data,_group], "clientGangLeader",_data,false] spawn BIS_fnc_MP;
+[[_data,_group], "clientGangLeader",_data,false] spawn life_fnc_MP;
 
 player setRank "PRIVATE";
 player addRating 0;
