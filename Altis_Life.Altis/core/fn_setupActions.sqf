@@ -36,7 +36,7 @@ switch (playerSide) do
 		' !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && animationState cursorTarget == "AmovPercMstpSnonWnonDnon_Ease" && (side cursorTarget == civilian) && player distance cursorTarget < 3.5 && (cursorTarget getVariable "restrained") && !(cursorTarget getVariable "Escorting") ']];
 		//Send to jail
 		life_actions = life_actions + [player addAction["Send to Jail",life_fnc_arrestAction,"",0,false,false,"",'
-		!isNull cursorTarget && isPlayer cursorTarget && (side cursorTarget == civilian) && (cursorTarget getVariable "restrained") && alive cursorTarget && (player distance cursorTarget < 3.5) && ((player distance (getMarkerPos "police_hq_1") < 30) OR  (player distance (getMarkerPos "police_hq_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30)) && !(cursorTarget getVariable "Escorting") ']];
+		!isNull cursorTarget && isPlayer cursorTarget && (side cursorTarget == civilian) && (cursorTarget getVariable "restrained") && alive cursorTarget && (player distance cursorTarget < 3.5) && ((player distance (getMarkerPos "police_hq_1") < 30) OR  (player distance (getMarkerPos "police_hq_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30) OR  (player distance (getMarkerPos "cop_spawn_5") < 30)) && !(cursorTarget getVariable "Escorting") ']];
 		//Release Action
 		
 		//Search Action
@@ -237,6 +237,14 @@ life_actions = life_actions +
 life_actions = life_actions +
 [player addAction["Pickup Iron Ore",life_fnc_pickupItem,false,0,false,false,"",
 ' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "ironore" && (player distance cursorTarget) < 3 && (life_carryWeight + (["ironore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+//Pickup Rock
+life_actions = life_actions +
+[player addAction["Pickup Rock(s)",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "rock" && (player distance cursorTarget) < 3 && (life_carryWeight + (["rock"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+//Pickup Cement
+life_actions = life_actions +
+[player addAction["Pickup Cement",life_fnc_pickupItem,false,0,false,false,"",
+' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "cement" && (player distance cursorTarget) < 3 && (life_carryWeight + (["cement"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 //Pickup Refined Iron
 life_actions = life_actions +
 [player addAction["Pickup Refined Iron",life_fnc_pickupItem,false,0,false,false,"",

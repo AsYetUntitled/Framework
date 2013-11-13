@@ -53,6 +53,8 @@ switch (_var) do
 	case "life_inv_coke": {"Unprocessed Cocaine"};
 	case "life_inv_cokep": {"Processed Cocaine"};
 	case "life_inv_spikeStrip": {"Spike Strip"};
+	case "life_inv_rock": {"Rock"};
+	case "life_inv_cement": {"Cement Bag"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -75,4 +77,5 @@ switch (_var) do
 	case "license_civ_salt": {"Salt Processing"};
 	case "license_civ_coke": {"Cocaine Training"};
 	case "license_civ_marijuana": {"Marijuana Training"};
+	case "license_civ_cement": {"Cement Mixing License"};
 };

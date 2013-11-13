@@ -90,6 +90,7 @@ class CfgFunctions
 			class robReserve {};
 			class robberyState {};
 			class logIt {};
+			class federalUpdate {};
 		};
 	};
 };

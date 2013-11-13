@@ -24,6 +24,7 @@ life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
 life_respawn_timer = 35;
+life_has_insurance = false;
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 /*
@@ -134,7 +135,9 @@ life_inv_items =
 	"life_inv_coke",
 	"life_inv_cokep",
 	"life_inv_diamondr",
-	"life_inv_spikeStrip"
+	"life_inv_spikeStrip",
+	"life_inv_rock",
+	"life_inv_cement"
 ];
 
 //Setup variable inv vars.
@@ -162,7 +165,8 @@ life_licenses =
 	["license_civ_copper","civ"],
 	["license_civ_iron","civ"],
 	["license_civ_sand","civ"],
-	["license_civ_salt","civ"]
+	["license_civ_salt","civ"],
+	["license_civ_cement","civ"]
 ];
 
 //Setup License Variables

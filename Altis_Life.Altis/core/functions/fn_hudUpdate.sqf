@@ -7,7 +7,9 @@
 */
 private["_ui","_food","_water","_health"];
 disableSerialization;
-_ui = uiNameSpace getVariable "playerHUD";
+
+_ui = uiNameSpace getVariable ["playerHUD",displayNull];
+if(isNull _ui) then {[] call life_fnc_hudSetup;};
 _food = _ui displayCtrl 23500;
 _water = _ui displayCtrl 23510;
 _health = _ui displayCtrl 23515;

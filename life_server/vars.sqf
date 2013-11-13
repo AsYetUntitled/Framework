@@ -7,8 +7,8 @@
 	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 */
 
-//Calulate starting player base and times it by 1000 dollars to give initial bank funding.
-life_federal_funds = (count playableUnits) * 100;
+//Calculate starting player base and times it by 1000 dollars to give initial bank funding.
+life_federal_funds = (count playableUnits) * 750;
 
 life_animals_spawned = false;
 life_animals_array = [];
@@ -22,7 +22,7 @@ life_sell_mullet = 250; //15
 life_sell_catShark = 300;//100
 life_sell_rabbit = 65;//50
 life_sell_apple = 50;//20
-life_sell_oil = 1100;//200
+life_sell_oil = 3200;//200
 life_sell_heroin = 2650;//560
 life_sell_marijuana = 2350;//450
 life_sell_turtle = 2000;//2000
@@ -52,6 +52,7 @@ life_buy_donuts = 120;
 
 sell_array = [
 ["apple",life_sell_apple],
+["heroinu",1850],
 ["heroinp",life_sell_heroin],
 ["salema",life_sell_Salema],
 ["ornate",life_sell_ornate],
@@ -72,15 +73,17 @@ sell_array = [
 ["pickaxe",750],
 ["redgull",200],
 ["peach",55],
-["cocainep",3500],
+["cocaine",3000],
+["cocainep",5000],
 ["diamond",750],
-["diamondc",1750],
-["iron_r",1350],
-["copper_r",1075],
-["salt_r",750],
-["glass",950],
+["diamondc",2000],
+["iron_r",3200],
+["copper_r",1500],
+["salt_r",1650],
+["glass",1450],
 ["fuelF",500],
-["spikeStrip",1200]
+["spikeStrip",1200],
+["cement",1950]
 ];
 
 buy_array = [
@@ -101,6 +104,7 @@ buy_array = [
 ["lockpick",150],
 ["pickaxe",1200],
 ["redgull",1500],
+["fuelF",850],
 ["peach",68],
 ["spikeStrip",2500]
 ];
@@ -165,7 +169,7 @@ life_garage_prices =
 	["C_Van_01_transport_F",7890],
 	["C_Hatchback_01_sport_F",2350],
 	["C_Van_01_fuel_F",4500],
-	["I_Heli_Transport_02_F",50000],
+	["I_Heli_Transport_02_F",100000],
 	["C_Van_01_box_F",9000],
 	["I_Truck_02_transport_F",12000],
 	["I_Truck_02_covered_F",14500],

@@ -13,7 +13,7 @@ private["_funds"];
 _funds = [_this,0,-1,[0]] call BIS_fnc_param;
 if(_funds == -1) exitWith {};
 if(!life_use_atm) exitWith {};
-sleep (2 * 60);
+sleep 45;
 
 if(_funds > life_atmcash) then
 {
@@ -30,6 +30,6 @@ if(_funds > life_atmcash) then
 		else
 	{
 		hint format["Due to the recent robbery on the Federal Reserve you have lost $%1 from your bank account, next time buy some banking insurance!\n\nYou can buy banking insurance from a ATM!",[_funds] call life_fnc_numberText];
-		life_cash = life_cash - _funds;
+		life_atmcash = life_atmcash - _funds;
 	};
 };

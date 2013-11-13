@@ -96,6 +96,17 @@ class life_spawn_selection
 			h = (1 / 25);
 		};
 		
+		class spawnPoint5 : Life_RscButtonMenu
+		{
+			idc = 38514;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			text = "";
+			onButtonClick = "[4] call life_fnc_spawnPointSelected";
+			x = 0.11; y = 0.46;
+			w = (8 / 40);
+			h = (1 / 25);
+		};
+		
 		class spawnButton : Life_RscButtonMenu
 		{
 			idc = -1;

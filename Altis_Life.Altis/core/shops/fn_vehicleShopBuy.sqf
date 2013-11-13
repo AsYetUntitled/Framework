@@ -85,6 +85,12 @@ switch(life_veh_shop) do
 		_dir = markerDir "cop_car_3";
 	};
 	
+	case "cop_car_5":
+	{
+		_sp = getMarkerPos "cop_car_5";
+		_dir = markerDir "cop_car_5";
+	};
+	
 	case "fed_car":
 	{
 		_sp = getMarkerPos "fed_car_1";
@@ -204,7 +210,11 @@ switch(life_veh_shop) do
 };
 _index = lbCurSel 2302;
 _veh = lbData[2302,_index];
-if(!([_veh] call life_fnc_vehShopLicenses)) exitWith {hint "You do not have the required license!"};
+if(_veh != "B_MRAP_01_hmg_F") then
+{
+	if(!([_veh] call life_fnc_vehShopLicenses)) exitWith {hint "You do not have the required license!"};
+};
+
 _color = lbValue[2303,(lbCurSel 2303)];
 _price = lbValue[2302,(lbCurSel 2302)];
 if(_price < 0) exitWith {};

@@ -15,7 +15,7 @@ _robber = false;
 {
 	if(missionNamespace getVariable (_x select 0) && _x select 1 == "civ") then
 	{
-		_licenses = _licenses + ([_x select 0] call life_fnc_varToStr);
+		_licenses = _licenses + ([_x select 0] call life_fnc_varToStr) + "<br/>";
 	};
 } foreach life_licenses;
 

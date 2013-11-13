@@ -8,6 +8,7 @@
 private["_index","_veh","_color","_price","_sp","_kill","_dir","_name","_sv","_fed","_double"];
 _kill = false;
 _double = false;
+
 switch(life_veh_shop) do
 {
 	case "civ_car_1":
@@ -83,6 +84,12 @@ switch(life_veh_shop) do
 	{
 		_sp = getMarkerPos "cop_car_3";
 		_dir = markerDir "cop_car_3";
+	};
+	
+	case "cop_car_5":
+	{
+		_sp = getMarkerPos "cop_car_5";
+		_dir = markerDir "cop_car_5";
 	};
 	
 	case "fed_car":
@@ -204,6 +211,7 @@ switch(life_veh_shop) do
 };
 _index = lbCurSel 2302;
 _veh = lbData[2302,_index];
+if(_veh == "B_G_Offroad_01_armed_F" OR _veh == "B_MRAP_01_hmg_F") exitWith {hint "This vehicle cannot be bought permanently";};
 if(!([_veh] call life_fnc_vehShopLicenses)) exitWith {hint "You do not have the required license!"};
 _color = lbValue[2303,(lbCurSel 2303)];
 _price = lbValue[2302,(lbCurSel 2302)];

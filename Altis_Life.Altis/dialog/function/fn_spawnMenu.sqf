@@ -12,6 +12,11 @@ if(!(createDialog "life_spawn_selection")) exitWith {[] call life_fnc_spawnMenu;
 
 _spCfg = [playerSide] call life_fnc_spawnPointCfg;
 
+if(playerSide != west) then
+{
+	ctrlShow[38514,false];
+};
+
 for "_i" from 0 to (count _spCfg)-1 do
 {
 	_ctrl = ((findDisplay 38500) displayCtrl ((call compile format["3851%1",_i])));

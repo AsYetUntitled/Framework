@@ -11,8 +11,8 @@ life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_N
 server_query_running = false;
 life_DB_queue = [];
 serv_sv_use = [];
-//fed_bank setVariable["fed_rob_ip",false,true];
-//fed_bank setVariable["fed_locked",false,true];
+fed_bank setVariable["fed_rob_ip",false,true];
+fed_bank setVariable["fed_locked",false,true];
 _sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", "CALL resetLifeVehicles();"]; //Reset vehicles active state to false.
 
 publicVariable "life_fnc_vehStoreItem";
@@ -63,3 +63,5 @@ publicVariable "fnc_serv_kick";
 //Server-side functions that need to be sent out.
 publicVariable "STS_fnc_addVehicle2Chain";
 publicVariable "life_fnc_fedSuccess";
+
+[] spawn STS_fnc_federalUpdate;

@@ -139,12 +139,65 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
+	
+	player createDiaryRecord["changelog",
+		[
+			"Altis Life v3.0.7",
+				"
+					Added: Two sets of textures for the Mohawk<br/>
+					Added: Federal reserve (The replacement for a bank). Cops can earn money by guarding it.<br/>
+					Changed: Weight adjustments to some vehicle trunks to balance them out.<br/>
+					Fixed: Fuel cans weren't able to be bought.<br/>
+					Removed: Suicide vest, caused more problems then it was worth.<br/>
+				"
+		]
+	];
+
+	player createDiaryRecord["changelog",
+		[
+			"Altis Life v3.0.8",
+				"
+					Added: New spawn point for cops near Sofia called Highway Patrol Station<br/>
+					Added: Rock mining which turns into cement. Will be used for houses later on.<br/>
+					Added: Donators (tiers) get bigger paychecks. 1 = +750 2 = +1500 3 = +2000<br/>
+					Added: ATM to Pyrgos Cop Shop.<br/>
+					Added: Cop Item Shop to all cop HQ's.<br/>
+					Changed: Moved Heroin processing off the main road.<br/>
+					Changed: Increased the time before the federal reserve can be robbed to 30 minutes after a successful robbery.<br/>
+					Changed: Increased the time before the federal reserve can be robbed to 10 minutes after a failed robbery.<br/>
+					Fixed: When the federal reserve was robbed it would take it from the cash in your hand making people go negative.<br/>
+					Fixed: When searching a person / vehicle that has unprocessed cocaine/heroin gave reward of $0<br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord["changelog",
+		[
+			"Altis Life v3.0.9",
+				"
+					Added: Brought back the radar scanning.<br/>
+					Added: Cops can now buy SUV's<br/>
+					Added: Black market smugglers have smuggled in M2 Offroads for Rebels.<br/>
+					Added: Altis Government has supplied law enforcement with HMG Hunters (Sergeants only).<br/>
+					Changed: Adjusted a good portion of the economy for better payouts on distance and time.<br/>
+					Changed: The rebels have been hit hard and have had to raise prices for their training program.<br/>
+					Changed: Due to an acute rotor blade shortage the prices of large helicopters have been increased.
+					Fixed: Players can no longer be god.<br/>
+					Fixed: Exploits in the repair script.<br/>
+					Fixed: The HUD would sometimes disappear.<br/>
+					Fixed: Oil guy has came back from vacation.<br/>
+					Fixed: The marijuana processor guy has finally figured out that he was in a wall.<br/>
+					Fixed: The government has finally shipped the right clothing for sergeants.<br/>
+					Fixed: Disconnecting as a civilian on death doesn't let you keep your clothes, I wouldn't go doing this as you won't be getting a map.<br/>
+				"
+		]
+	];
 
 	player createDiaryRecord ["serverrules",
 		[
 			"Definitions", 
 				"
-				1. In the rules, town/city is refered to as Agia Marina and Girna.<br/>
+				1. In the rules, town/city is referred to as Agia Marina and Girna.<br/>
 				2. Important buildings are Bank, Markets, DMV, General Stores, etc.<br/><br/>
 				"
 		]

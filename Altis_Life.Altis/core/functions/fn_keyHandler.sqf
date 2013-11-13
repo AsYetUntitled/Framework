@@ -43,7 +43,7 @@ switch (_code) do
 		};
 	};
 	//L Key?
-	case 38: { if(!_alt && !_ctrlKey) then { [] execVM "core\client\act\cop\radar.sqf"; };};
+	case 38: { if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };};
 	//Y Player Menu
 	case 21:
 	{

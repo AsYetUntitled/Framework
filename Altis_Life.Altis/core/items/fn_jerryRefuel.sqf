@@ -13,7 +13,7 @@ if(player distance _vehicle > 7.5) exitWith {hint "You need to be closer to the 
 
 if(!([false,"fuelF",1] call life_fnc_handleInv)) exitWith {};
 _displayName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-titleText[format["Refueling %1.....",_displayName],"PLAIN"];
+titleText[format["Refuelling %1.....",_displayName],"PLAIN"];
 player playMove "AinvPknlMstpSlayWrflDnon_medic";
 sleep 5;
 switch (true) do
@@ -22,7 +22,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[{_vehicle setFuel ((Fuel _vehicle) + 0.5);},"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
+			[[[_vehicle],{_this select 0 setFuel ((Fuel (_this select 0)) + 0.5);}],"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -34,7 +34,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[{_vehicle setFuel ((Fuel _vehicle) + 0.2);},"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
+			[[[_vehicle],{_this select 0 setFuel ((Fuel (_this select 0)) + 0.2);}],"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -46,7 +46,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[{_vehicle setFuel ((Fuel _vehicle) + 0.35);},"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
+			[[[_vehicle],{_this select 0 setFuel ((Fuel (_this select 0)) + 0.35);}],"BIS_fnc_spawn",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -54,5 +54,5 @@ switch (true) do
 		};
 	};
 };
-titleText[format["You have refueled that %1",_displayName],"PLAIN"];
+titleText[format["You have refuelled that %1",_displayName],"PLAIN"];
 [true,"fuelE",1] call life_fnc_handleInv;

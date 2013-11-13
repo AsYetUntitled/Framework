@@ -37,6 +37,7 @@ switch (_mode) do
 			case "sand": {_var = "license_civ_sand"};
 			case "iron": {_var = "license_civ_iron"};
 			case "copper": {_var = "license_civ_copper"};
+			case "cement": {_var = "license_civ_cement"};
 			default {_var = ""};
 		};
 	};
@@ -66,6 +67,7 @@ switch (_mode) do
 			case "license_civ_sand": {_var = "sand"};
 			case "license_civ_iron": {_var = "iron"};
 			case "license_civ_copper": {_var = "copper"};
+			case "license_civ_cement": {_var = "cement"};
 			default {_var = ""};
 		};
 	};

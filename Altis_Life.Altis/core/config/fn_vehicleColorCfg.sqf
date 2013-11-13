@@ -5,7 +5,7 @@
 	Description:
 	Master configuration for vehicle colors.
 */
-private["_vehicle","_ret"];
+private["_vehicle","_ret","_path"];
 _vehicle = [_this,0,"",[""]] call BIS_fnc_param;
 if(_vehicle == "") exitWith {[]};
 _ret = [];
@@ -19,6 +19,21 @@ switch (_vehicle) do
 		[
 			[_path + "heli_transport_02_1_ion_co.paa","civ",_path + "heli_transport_02_2_ion_co.paa",_path + "heli_transport_02_3_ion_co.paa"],
 			[_path + "heli_transport_02_1_dahoman_co.paa","civ",_path + "heli_transport_02_2_dahoman_co.paa",_path + "heli_transport_02_3_dahoman_co.paa"]
+		];
+	};
+	
+	case "C_Hatchback_01_sport_F":
+	{
+		_path = "\a3\soft_f_gamma\Hatchback_01\data\";
+		_ret =
+		[
+			[_path + "hatchback_01_ext_sport01_co.paa","civ"],
+			[_path + "hatchback_01_ext_sport02_co.paa","civ"],
+			[_path + "hatchback_01_ext_sport03_co.paa","civ"],
+			[_path + "hatchback_01_ext_sport04_co.paa","civ"],
+			[_path + "hatchback_01_ext_sport05_co.paa","civ"],
+			[_path + "hatchback_01_ext_sport06_co.paa","civ"],
+			["#(ai,64,64,1)Fresnel(1.3,7)","cop"]
 		];
 	};
 		
@@ -60,7 +75,8 @@ switch (_vehicle) do
 			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_co.paa","civ"],
 			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_02_co.paa","cop"],
 			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_03_co.paa","civ"],
-			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_04_co.paa","civ"]
+			["\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_04_co.paa","civ"],
+			["#(ai,64,64,1)Fresnel(1.3,7)","cop"]
 		];
 	};
 	

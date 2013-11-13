@@ -15,7 +15,7 @@ switch (_side) do
 {
 	case west:
 	{
-		[["cop_spawn_1","Kavala HQ"],["cop_spawn_2","Pyrgos HQ"],["cop_spawn_3","Athira HQ"],["cop_spawn_4","Sofia HQ"]];
+		[["cop_spawn_1","Kavala HQ"],["cop_spawn_2","Pyrgos HQ"],["cop_spawn_3","Athira HQ"],["cop_spawn_4","Air HQ"],["cop_spawn_5","HW Patrol"]];
 	};
 	
 	case civilian:

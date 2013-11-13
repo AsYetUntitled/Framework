@@ -73,6 +73,13 @@ switch (playerSide) do
 	};
 };
 
+switch(life_donator) do
+{
+	case 1: {life_paycheck = life_paycheck + 750;};
+	case 2: {life_paycheck = life_paycheck + 1500;};
+	case 3: {life_paycheck = life_paycheck + 2000;};
+};
+
 if((getPlayerUID player) != (_session select 0)) exitWith {[] spawn life_fnc_sessionCreate;}; //Since it didn't match create the session again?
 cutText["Received information from server and validated it, you are almost ready.","BLACK FADED"];
 0 cutFadeOut 9999999;

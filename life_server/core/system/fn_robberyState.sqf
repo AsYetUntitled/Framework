@@ -19,7 +19,7 @@ switch(_state) do
 	{
 		[[2,"The robbery has failed due to unknown reasons"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		_vault setVariable["fed_locked",true,true];
-		sleep (5 * 60); //Wait 5 minutes
+		sleep (10 * 60); //Wait 10 minutes
 		_vault setVariable["fed_locked",false,true];
 		_vault setVariable["fed_rob_ip",false,true];
 	};
@@ -28,7 +28,7 @@ switch(_state) do
 	{
 		[[1,format["$%1 was stolen from the robbery on the federal reserve.",[_funds] call life_fnc_numberText]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		_vault setVariable["fed_locked",true,true];
-		sleep (20 * 60); //Wait 20 minutes
+		sleep (30 * 60); //Wait 30 minutes
 		_vault setVariable["fed_locked",false,true];
 		_vault setVariable["fed_rob_ip",false,true];
 	
@@ -41,7 +41,7 @@ switch(_state) do
 			life_federal_funds = life_federal_funds - _funds;
 		};
 		
-		_funds = _funds / (count playableUnits) * 3;
+		_funds = round(_funds / (count playableUnits) * 3);
 		[[_funds],"life_fnc_fedSuccess",true,false] spawn life_fnc_MP;
 	};
 };

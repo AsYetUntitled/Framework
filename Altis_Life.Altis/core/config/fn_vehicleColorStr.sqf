@@ -43,6 +43,20 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "C_Hatchback_01_sport_F":
+	{
+		switch(_index) do
+		{
+			case 0: {_color = "Red"};
+			case 1: {_color = "Dark Blue"};
+			case 2: {_color = "Orange"};
+			case 3: {_color = "Black / White"};
+			case 4: {_color = "Tan"};
+			case 5: {_color = "Green"};
+			case 6: {_color = "Cop"};
+		};
+	};
+	
 	case "C_SUV_01_F":
 	{
 		switch (_index) do
@@ -51,6 +65,7 @@ switch (_vehicle) do
 			case 1: {_color = "Black";};
 			case 2: {_color = "Silver";};
 			case 3: {_color = "Orange";};
+			case 4: {_color = "Cop";};
 		};
 	};
 	

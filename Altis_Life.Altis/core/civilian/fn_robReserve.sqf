@@ -17,7 +17,6 @@ if(_funds < 50000) exitWith{[[_vault,-1],"STS_fnc_robberyState",false,false] spa
 
 _timer = time + (10 * 60); //Default timer is 10 minutes to rob.
 titleText["Cracking the safe...","PLAIN"];
-[[_vault],"life_fnc_bankAlarm",nil,false] spawn life_fnc_MP;
 [[2,"$$$ THE FEDERAL RESERVE IS BEING ROBBED!!! $$$"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 
 
@@ -55,8 +54,13 @@ switch(true) do
 	
 	case ((round(_timer - time)) < 1):
 	{
-		hint format["You have successfully robbed $%1\n\nTo avoid the cops tracing you, your bank card will not work for 5 minutes",[_funds] call life_fnc_numberText];
-		life_use_atm = false;
+		hint format["You have successfully robbed $%1\n\nTo avoid the cops tracing you, your bank card will not work for 8 minutes",[_funds] call life_fnc_numberText];
+		[] spawn
+		{
+			life_use_atm = false;
+			sleep 480;
+			life_use_atm = true;
+		};
 		life_cash = life_cash + _funds;
 		[[_vault,1,_funds],"STS_fnc_robberyState",false,false] spawn life_fnc_MP;
 	};

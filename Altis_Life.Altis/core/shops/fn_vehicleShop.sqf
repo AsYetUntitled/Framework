@@ -108,6 +108,12 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Cop Car Shop"];
 	};
 	
+	case "cop_car_5":
+	{
+		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
+		ctrlSetText[2301,"Cop Car Shop"];
+	};
+	
 	case "fed_car":
 	{
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
@@ -223,7 +229,14 @@ closeDialog 0;
 		_name = getText(configFile >> "CfgVehicles" >> _veh >> "displayName");
 	};
 	_pic = getText(configFile >> "CfgVehicles" >> _veh >> "picture");
-	_vehicles lbAdd format["%1 - Regular: $%2 Permanent: $%3 ",_name, [_price] call life_fnc_numberText, [round(_price * 1.5)] call life_fnc_numberText];
+	if(_veh == "B_G_Offroad_01_armed_F" OR _veh == "B_MRAP_01_hmg_F") then
+	{
+		_vehicles lbAdd format["%1 - $%2 ",_name, [_price] call life_fnc_numberText];
+	}
+		else
+	{
+		_vehicles lbAdd format["%1 - Regular: $%2 Permanent: $%3 ",_name, [_price] call life_fnc_numberText, [round(_price * 1.5)] call life_fnc_numberText];
+	};
 	
 	if(_name == "Service Truck") then
 	{

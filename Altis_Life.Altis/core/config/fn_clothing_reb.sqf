@@ -61,8 +61,7 @@ switch (_filter) do
 		[
 			["V_TacVest_khk",nil,12500],
 			["V_BandollierB_cbr",nil,4500],
-			["V_HarnessO_brn",nil,7500],
-			["V_HarnessOGL_brn","Suicide Vest (Read rules)",450000]
+			["V_HarnessO_brn",nil,7500]
 		];
 	};
 	

@@ -149,7 +149,6 @@ class Life_Client_Core
 		class accType {};
 		class onDeath {};
 		class onRespawn {};
-		class jerryRefuel {};
 		class receiveItem {};
 		class giveDiff {};
 		class receiveMoney {};
@@ -197,6 +196,7 @@ class Life_Client_Core
 		class ticketPrompt {};
 		class copSiren {};
 		class spikeStripEffect {};
+		class radar {};
 	};
 	
 	class Gangs
@@ -242,6 +242,7 @@ class Life_Client_Core
 		class pickaxeUse {};
 		class lockpick {};
 		class spikeStrip {};
+		class jerryRefuel {};
 	};
 	
 	class Dialog_Controls

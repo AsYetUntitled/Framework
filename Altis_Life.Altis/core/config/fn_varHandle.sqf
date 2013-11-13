@@ -57,6 +57,8 @@ switch (_mode) do
 			case "cocaine": {"life_inv_coke"};
 			case "cocainep": {"life_inv_cokep"};
 			case "spikeStrip": {"life_inv_spikeStrip"};
+			case "cement": {"life_inv_cement"};
+			case "rock": {"life_inv_rock"};
 		};
 	};
 	
@@ -105,6 +107,8 @@ switch (_mode) do
 			case "life_inv_coke": {"cocaine"};
 			case "life_inv_cokep": {"cocainep"};
 			case "life_inv_spikeStrip": {"spikeStrip"};
+			case "life_inv_cement": {"cement"};
+			case "life_inv_rock": {"rock"};
 		};
 	};
 };

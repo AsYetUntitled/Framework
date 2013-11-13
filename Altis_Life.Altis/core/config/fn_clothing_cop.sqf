@@ -25,7 +25,7 @@ switch (_filter) do
 		};
 		if(life_copLevel > 2) then
 		{
-			_ret set[count _ret,["U_B_CombatUniform_wdl_tshirt",nil,550]];
+			_ret set[count _ret,["U_B_CombatUniform_mcam_worn",nil,550]];
 		};
 	};
 	
