@@ -13,7 +13,6 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 	if("ToolKit" in (items player)) then
 	{
 		titleText["Repairing vehicle.....","PLAIN"];
-		player removeItem "ToolKit";
 		player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 		sleep 3.5;
 		player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
@@ -23,7 +22,6 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		if(player != vehicle player) exitWith {titleText["You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.","PLAIN"];};
 		player removeItem "ToolKit";
 		_veh setDamage 0;
-		_veh setFuel 1;
 		titleText["You have repaired that vehicle.","PLAIN"];
 	};
 };

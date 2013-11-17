@@ -19,7 +19,7 @@ _price = [_vehicle,life_garage_prices] call fnc_index;
 if(_price == -1) then {_price = 1000;} else {_price = (life_garage_prices select _price) select 1;};
 if(life_atmcash < _price) exitWith {hint format["You don't have $%1 in your bank account!",[_price] call life_fnc_numberText];};
 
-[[_vid,_pid,(getMarkerPos life_garage_sp),_unit],"STS_fnc_spawnVehicle",false,false] spawn life_fnc_MP;
+[[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price],"STS_fnc_spawnVehicle",false,false] spawn life_fnc_MP;
 hint "Spawning vehicle please wait...";
 
 life_atmcash = life_atmcash - _price;

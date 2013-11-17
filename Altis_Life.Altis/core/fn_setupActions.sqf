@@ -130,7 +130,7 @@ life_actions = life_actions + [player addAction["Drop Chemlight",{if(isNil "life
 //Custom Heal
 life_actions = life_actions + [player addAction["<t color='#FF0000'>Heal Self</t>",life_fnc_heal,"",99,false,false,"",' vehicle player == player && (damage player) > 0.25 && ("FirstAidKit" in (items player)) && (currentWeapon player == "")']];
 //Custom Repair
-life_actions = life_actions + [player addAction["<t color='#FF0000'>Repair Vehicle</t>",life_fnc_repairTruck,"",99,false,false,"", ' vehicle player == player && !isNull cursorTarget && ((cursorTarget isKindOf "Car") OR (cursorTarget isKindOf "Air") OR (cursorTarget isKindOf "Ship")) && (damage cursorTarget) > 0.01 && ("ToolKit" in (backpackitems player)) && (player distance cursorTarget < 4.5) ']];
+life_actions = life_actions + [player addAction["<t color='#FF0000'>Repair Vehicle</t>",{cursorTarget setDamage 0},"",99,false,false,"", ' vehicle player == player && !isNull cursorTarget && ((cursorTarget isKindOf "Car") OR (cursorTarget isKindOf "Air") OR (cursorTarget isKindOf "Ship")) && (damage cursorTarget) > 0.001 && ("ToolKit" in (backpackitems player)) && (player distance cursorTarget < ((boundingBoxReal cursorTarget select 1) select 0)) ']];
 //Service Truck Stuff
 life_actions = life_actions + [player addAction["<t color='#0000FF'>Service Nearest Car</t>",life_fnc_serviceTruck,"",99,false,false,"",' (typeOf (vehicle player) == "C_Offroad_01_F") && ((vehicle player animationPhase "HideServices") == 0) && ((vehicle player) in life_vehicles) && (speed vehicle player) < 1 ']];
 life_actions = life_actions +

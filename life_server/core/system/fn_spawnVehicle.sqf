@@ -11,6 +11,7 @@ _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[]]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
+_price = [_this,4,0,[0]] call BIS_fnc_param;
 _name = name _unit;
 _unit = owner _unit;
 
@@ -38,7 +39,8 @@ _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
 if(count _nearVehicles > 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[1,"There is a vehicle on the spawn point."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[_price,{life_atmcash = life_atmcash + _this;}],"BIS_fnc_spawn",_unit,false] spawn life_fnc_MP;
+	[[1,"There is a vehicle on the spawn point. You will be refunded the cost of getting it out."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];
