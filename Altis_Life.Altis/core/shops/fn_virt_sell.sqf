@@ -27,3 +27,22 @@ if(([false,_type,_amount] call life_fnc_handleInv)) then
 	[] call life_fnc_virt_update;
 	
 };
+
+if(life_shop_type == "heroin") then
+{
+	private["_array","_ind","_val"];
+	_array = life_shop_npc getVariable["sellers",[]];
+	_ind = [getPlayerUID player,_array] call fnc_index;
+	if(_ind != -1) then
+	{
+		_val = (_array select _ind) select 2;
+		_val = _val + _price;
+		_array set[_ind,[getPlayerUID player,name player,_val]];
+		life_shop_npc setVariable["sellers",_array,true];
+	}
+		else
+	{
+		_array set[count _array,[getPlayerUID player,name player,_price]];
+		life_shop_npc setVariable["sellers",_array,true];
+	};
+};

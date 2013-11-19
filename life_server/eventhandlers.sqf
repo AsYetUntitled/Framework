@@ -41,9 +41,9 @@ if(!isServer) exitWith {};
 	_type = (_this select 1) select 1;
 	switch(_type) do
 	{
-		case "187V": {_type = ["Vehicular Manslaughtter",6500]};
+		case "187V": {_type = ["Vehicular Manslaughter",6500]};
 		case "187": {_type = ["Manslaughter",8500]};
-		case "901": {_type = ["Escapping Jail",4500]};
+		case "901": {_type = ["Escaping Jail",4500]};
 		case "261": {_type = ["Rape",5000]};
 		case "261A": {_type = ["Attempted Rape",3000]};
 		case "215": {_type = ["Attempted Auto Theft",2000]};
@@ -54,6 +54,9 @@ if(!isServer) exitWith {};
 		case "487": {_type = ["Grand Theft",1500]};
 		case "488": {_type = ["Petty Theft",700]};
 		case "480": {_type = ["Hit and run",1300]};
+		case "481": {_type = ["Drug Possession",1000]};
+		case "482": {_type = ["Intent to distribute",5000]};
+		case "483": {_type = ["Drug Trafficking",9500]};
 	};
 	
 	[_unit,_type] call life_fnc_wantedAdd;

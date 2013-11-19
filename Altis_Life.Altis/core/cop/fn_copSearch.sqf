@@ -24,7 +24,12 @@ if(count _invs > 0) then
 			_illegal = _illegal + ((_x select 1) * ((sell_array select _index) select 1));
 		};
 	} foreach _invs;
+	if(_illegal > 6000) then
+	{
+		[[getPlayerUID _civ,name _civ,"482"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	};
 	
+	[[getPlayerUID _civ,name _civ,"481"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	[[0,format["%1 has $%2 worth of contraband on them.",name _civ,[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 }
 	else

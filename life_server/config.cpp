@@ -47,6 +47,8 @@ class CfgFunctions
 			class wantedBounty {};
 			class wantedTicket {};
 			class wantedPardon {};
+			class wantedRemove {};
+			class wantedAdd {};
 		};
 		
 		class Jail_Sys
@@ -91,6 +93,7 @@ class CfgFunctions
 			class robberyState {};
 			class logIt {};
 			class federalUpdate {};
+			class isUIDActive {};
 		};
 	};
 };

@@ -11,7 +11,7 @@ if(_item == "") exitWith {};
 
 switch (_item) do
 {
-	case "oilu": {8};
+	case "oilu": {7};
 	case "oilp": {6};
 	case "heroinu": {6};
 	case "heroinp": {4};
@@ -23,7 +23,7 @@ switch (_item) do
 	case "salema": {2};
 	case "ornate": {2};
 	case "mackerel": {4};
-	case "tuna": {8};
+	case "tuna": {6};
 	case "mullet": {4};
 	case "catshark": {6};
 	case "turtle": {6};

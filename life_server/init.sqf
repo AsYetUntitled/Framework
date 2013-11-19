@@ -30,8 +30,6 @@ if(!hasInterface) then
 };
 
 [] spawn STS_fnc_cleanup;
-life_fnc_wantedAdd = compileFinal PreprocessFileLineNumbers "\life_server\wanted_add.sqf";
-life_fnc_wantedRemove = compileFinal PreprocessFileLineNumbers "\life_server\wanted_remove.sqf";
 life_gang_list = [];
 publicVariable "life_gang_list";
 life_wanted_list = [];

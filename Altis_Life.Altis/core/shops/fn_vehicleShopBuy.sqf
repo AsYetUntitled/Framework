@@ -238,6 +238,11 @@ if(_veh == "serv_truck") then
 };
 hint format["You bought a %1 for $%2",_name,[_price] call life_fnc_numberText];
 _vehicle = _veh createVehicle _sp;
+_vehicle setVectorUp (surfaceNormal _sp);
+if(_veh == "B_MRAP_01_hmg_F") then
+{
+	_vehicle disableTIEquipment true;
+};
 _vehicle setPos _sp;
 _vehicle setDir _dir;
 _vehicle setVariable["trunk_in_use",false,true];

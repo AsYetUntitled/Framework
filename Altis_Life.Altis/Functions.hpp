@@ -64,6 +64,7 @@ class Life_Client_Core
 		class pumpRepair {};
 		class packupSpikes {};
 		class robFederal {};
+		class storeVehicle {};
 	};
 	
 	class Config
@@ -197,6 +198,7 @@ class Life_Client_Core
 		class copSiren {};
 		class spikeStripEffect {};
 		class radar {};
+		class questionDealer {};
 	};
 	
 	class Gangs

@@ -59,7 +59,7 @@ _vehicle lock 2;
 [[_vehicle,(call compile format["%1",_vInfo select 8])],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
 
 //Sets of animations
-if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F") then
+if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (call compile format["%1",_vInfo select 8]) != 13) then
 {
 	[_vehicle,"civ_littlebird",true] call life_fnc_vehicleAnimate;
 };

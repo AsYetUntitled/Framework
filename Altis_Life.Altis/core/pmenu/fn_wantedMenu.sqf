@@ -11,13 +11,13 @@ disableSerialization;
 createDialog "life_wanted_menu";
 
 _display = findDisplay 2400;
-_list = _display displayctrl 2401;
+_list = _display displayCtrl 2401;
 lbClear _list;
 _units = [];
 
 ctrlSetText[2404,"Establishing connection..."];
 
-if(life_adminlevel < 1) then
+if(life_adminlevel < 1 OR life_coplevel < 3) then
 {
 	ctrlShow[2405,false];
 };

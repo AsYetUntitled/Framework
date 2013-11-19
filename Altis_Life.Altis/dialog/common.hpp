@@ -3,12 +3,14 @@ class Life_RscControlsGroup {
 	idc = -1;
 	x = 0;
 	y = 0;
-	w = 1;
-	h = 1;
+	w = safeZoneW;
+	h = safeZoneH;
 	shadow = 0;
 	style = 16;
 	
-	class VScrollbar {
+	class VScrollbar 
+	{
+		color[] = {1, 1, 1, 0.6};
 		width = 0.021;
 		autoScrollSpeed = -1;
 		autoScrollDelay = 5;
@@ -16,7 +18,9 @@ class Life_RscControlsGroup {
 		shadow = 0;
 	};
 	
-	class HScrollbar {
+	class HScrollbar 
+	{
+		color[] = {1, 1, 1, 0.6};
 		height = 0.028;
 		shadow = 0;
 	};

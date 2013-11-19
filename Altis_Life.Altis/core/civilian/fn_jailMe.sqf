@@ -64,18 +64,16 @@ switch (true) do
 	case (_esc) :
 	{
 		life_is_arrested = false;
-		hint "You have escaped from jail, you still retain your previous crimes and now have a count of Escapping jail.";
+		hint "You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.";
 		[[0,format["%1 has escaped from jail!",name player]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
-		serv_killed = [player,"901"];
-		publicVariableServer "serv_killed";
+		[[getPlayerUID player,name player,"901"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	};
 	
 	case (alive player && !_esc && !_bail) :
 	{
 		life_is_arrested = false;
 		hint "You have served your time in jail and have been released.";
-		serv_wanted_remove = [player];
-		publicVariableServer "serv_wanted_remove";
+		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
 		[1,false] call life_fnc_sessionHandle;
 	};

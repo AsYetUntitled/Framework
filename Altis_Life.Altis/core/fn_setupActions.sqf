@@ -102,7 +102,7 @@ switch (playerSide) do
 		!life_action_in_use && ((player distance (getMarkerPos "oil_field_1") < 40) OR (player distance (getMarkerPos "oil_field_2") < 20)) && (vehicle player == player) && (life_carryWeight + (["oilu"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 		//Grab turtle
 		life_actions = life_actions + [player addAction["Grab Turtle",life_fnc_catchTurtle,"",0,false,false,"",'
-		!isNull cursorTarget && (typeOf cursorTarget) == "Turtle_F" && ((player distance (getMarkerPos "turtle_1") < 200) OR (player distance (getMarkerPos "turtle_2") < 200) OR (player distance (getMarkerPos "turtle_3") < 200)) && !alive cursorTarget && (life_carryWeight + (["turtle"] call life_fnc_itemWeight)) <= life_maxWeight']];
+		!isNull cursorTarget && (typeOf cursorTarget) == "Turtle_F" && ((player distance (getMarkerPos "turtle_1") < 350) OR (player distance (getMarkerPos "turtle_2") < 350) OR (player distance (getMarkerPos "turtle_3") < 350)) && !alive cursorTarget && (life_carryWeight + (["turtle"] call life_fnc_itemWeight)) <= life_maxWeight']];
 		//Gather Cannabis
 		life_actions = life_actions + [player addAction["Gather Cannabis",life_fnc_gatherCannabis,"",0,false,false,"",'
 		!life_action_in_use && (player distance (getMarkerPos "weed_1") < 60) && (vehicle player == player) && (life_carryWeight + (["cannabis"] call life_fnc_itemWeight)) <= life_maxWeight ']];

@@ -30,7 +30,7 @@ while{true} do
 		switch(life_thirst) do 
 		{
 			case 30: {hint"You haven't drank anything in awhile, You should find something to drink soon.";};
-			case 20: {hint "You haven't drank anything in along time, you should find someting to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
+			case 20: {hint "You haven't drank anything in along time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
 			case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
 		};
 	};
@@ -45,12 +45,12 @@ while{true} do
 		waitUntil {backpack player != ""};
 		_bp = backpack player;
 		_cfg = getNumber(configFile >> "CfgVehicles" >> (backpack player) >> "maximumload");
-		_load = round(_cfg / 10);
-		life_maxWeight = 64 + _load;
+		_load = round(_cfg / 8);
+		life_maxWeight = life_maxWeightT + _load;
 		waitUntil {backpack player != _bp};
 		if(backpack player == "") then 
 		{
-			life_maxWeight = 64;
+			life_maxWeight = life_maxWeightT;
 		};
 	};
 };

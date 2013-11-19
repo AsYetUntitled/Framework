@@ -25,10 +25,11 @@ if(isNull _unit OR isNil "_unit") exitWith {};
 _uid = getPlayerUID _unit;
 _owners = _vehicle getVariable "vehicle_info_owners";
 _index = [_uid,_owners] call fnc_index;
-if(_index != -1) exitWith {};
-
-_owners set[count _owners,[_uid,name _unit]];
-_vehicle setVariable["vehicle_info_owners",_owners,true];
+if(_index == -1) then 
+{
+	_owners set[count _owners,[_uid,name _unit]];
+	_vehicle setVariable["vehicle_info_owners",_owners,true];
+};
 
 hint format["You have given %1 keys to your %2",name _unit,typeOf _vehicle];
 [[_vehicle,_unit,name player], "clientGetKey",_unit,false] spawn life_fnc_MP;

@@ -1,18 +1,20 @@
 /*
-	@file Version: 1.Bf
-	@file name: wanted_add.sqf
-	@file Author: TAW_Tonic
-	@file edit: 5/18/2013
-	Copyright © 2013 Bryan Boardwine, All rights reserved
-	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
+	File: wanted_add.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Adds or appends a unit to the wanted list.
 */
-private["_unit","_type"];
-_unit = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+private["_unit","_type","_uid","_index","_data","_crimes","_val"];
+_unit = [_this,0,Objnull,["",Objnull]] call BIS_fnc_param;
 _type = _this select 1;
-if(isNull _unit) exitWith {};
-if(_unit isKindOf "B_medic_F") exitWith{};
-
-_index = [(getPlayerUID _unit),life_wanted_list] call fnc_index;
+if(typeName _unit == typeName ObjNull) then
+{
+	if(isNull _unit) exitWith {};
+	if(_unit isKindOf "B_medic_F") exitWith{};
+};
+_uid = if(typeName _unit == typeName "") then {_unit} else {getPlayerUID _unit};
+_index = [_uid,life_wanted_list] call fnc_index;
 
 if(_index != -1) then
 {
@@ -20,11 +22,11 @@ if(_index != -1) then
 	_crimes = _data select 2;
 	_crimes set[count _crimes,(_type select 0)];
 	_val = _data select 3;
-	life_wanted_list set[_index,[(name _unit),(getPlayerUID _unit),_crimes,(_type select 1) + _val]];
+	life_wanted_list set[_index,[(name _unit),_uid,_crimes,(_type select 1) + _val]];
 }
 	else
 {
-	life_wanted_list set[count life_wanted_list,[(name _unit),(getPlayerUID _unit),[(_type select 0)],(_type select 1)]];
+	life_wanted_list set[count life_wanted_list,[(name _unit),_uid,[(_type select 0)],(_type select 1)]];
 };
 
 //publicVariable "life_wanted_list";

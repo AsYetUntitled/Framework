@@ -237,14 +237,26 @@ class playerSettings {
 			h = (1 / 25);
 		};
 		
-		class Life_Licenses : Life_RscStructuredText
+		class Licenses_Menu : Life_RscControlsGroup
 		{
-			idc = 2014;
-			sizeEx = 0.020;
-			text = "";
+			idc = -1;
+			w = 0.28;
+			h = 0.38;
 			x = 0.34;
 			y = 0.30;
-			w = 0.3; h = 0.6;
+			
+			class Controls
+			{
+				class Life_Licenses : Life_RscStructuredText
+				{
+					idc = 2014;
+					sizeEx = 0.020;
+					text = "";
+					x = 0;
+					y = 0;
+					w = 0.27; h = 0.65;
+				};
+			};
 		};
 		
 		class ButtonGangList : Life_RscButtonMenu {
