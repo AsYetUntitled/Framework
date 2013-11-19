@@ -174,7 +174,7 @@ switch(_shop) do
 				];
 			};
 
-			case (life_donator >= 3):
+			case (life_donator == 3):
 			{
 				["STS Donator Shop Tier 3",
 					[
