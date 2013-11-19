@@ -55,6 +55,7 @@ switch (_var) do
 	case "life_inv_spikeStrip": {"Spike Strip"};
 	case "life_inv_rock": {"Rock"};
 	case "life_inv_cement": {"Cement Bag"};
+	case "life_inv_goldbar": {"Gold Bar"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -68,7 +69,7 @@ switch (_var) do
 	case "license_cop_air": {"Pilot License"};
 	case "license_cop_swat": {"Swat License"};
 	case "license_cop_cg": {"Coast Guard"};
-	case "license_civ_rebel": {"Rebel License"};
+	case "license_civ_rebel": {"Rebel Training"};
 	case "license_civ_truck": {"Truck License"};
 	case "license_civ_diamond": {"Diamond Processing"};
 	case "license_civ_copper": {"Copper Processing"};

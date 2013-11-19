@@ -137,7 +137,8 @@ life_inv_items =
 	"life_inv_diamondr",
 	"life_inv_spikeStrip",
 	"life_inv_rock",
-	"life_inv_cement"
+	"life_inv_cement",
+	"life_inv_goldbar"
 ];
 
 //Setup variable inv vars.

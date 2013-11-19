@@ -59,6 +59,7 @@ switch (_mode) do
 			case "spikeStrip": {"life_inv_spikeStrip"};
 			case "cement": {"life_inv_cement"};
 			case "rock": {"life_inv_rock"};
+			case "goldbar": {"life_inv_goldbar"};
 		};
 	};
 	
@@ -109,6 +110,7 @@ switch (_mode) do
 			case "life_inv_spikeStrip": {"spikeStrip"};
 			case "life_inv_cement": {"cement"};
 			case "life_inv_rock": {"rock"};
+			case "life_inv_goldbar": {"goldbar"};
 		};
 	};
 };

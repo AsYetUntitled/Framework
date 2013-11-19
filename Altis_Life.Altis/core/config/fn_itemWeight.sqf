@@ -50,5 +50,6 @@ switch (_item) do
 	case "spikeStrip": {15};
 	case "rock": {6};
 	case "cement": {5};
+	case "goldbar": {12};
 	default {1};
 };

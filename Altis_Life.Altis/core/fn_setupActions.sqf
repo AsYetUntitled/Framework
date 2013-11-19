@@ -1,3 +1,9 @@
+/*
+	File: fn_setupActions.sqf
+	
+	Description:
+	Master addAction file handler for all client-based actions.
+*/
 switch (playerSide) do
 {
 	case west:
@@ -275,7 +281,10 @@ life_actions = life_actions +
 life_actions = life_actions +
 [player addAction["Pickup Tactical Bacon",life_fnc_pickupItem,false,0,false,false,"",
 ' !isNull cursorTarget && (typeOf cursorTarget) == "Land_TacticalBacon_F" && ((cursorTarget getVariable "item") select 0) == "tbacon" && (player distance cursorTarget) < 3 && (life_carryWeight + (["tbacon"] call life_fnc_itemWeight)) <= life_maxWeight ']];
-
+//Pickup Gold Bar(s)
+life_actions = life_actions +
+[player addAction["Pickup Gold Bar(s)",life_fnc_pickupItem",false,0,false,false,"",
+'!isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "goldbar" && (player distance cursorTarget) < 3 && (life_carryWeight + (["goldbar"] call life_fnc_itemWeight)) <= life_maxWeight ']];
 life_actions = life_actions +
 [player addAction["Pickup Diamond Uncut",life_fnc_pickupItem,false,0,false,false,"",
 ' !isNull cursorTarget && (typeOf cursorTarget) == "Land_Suitcase_F" && ((cursorTarget getVariable "item") select 0) == "diamond" && (player distance cursorTarget) < 3 && (life_carryWeight + (["diamond"] call life_fnc_itemWeight)) <= life_maxWeight ']];
