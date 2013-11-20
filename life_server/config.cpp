@@ -64,6 +64,10 @@ class CfgFunctions
 			class vehTakeItem {};
 			class vehInventory {};
 			class fedSuccess {};
+			class safeOpen {};
+			class safeInventory {};
+			class safeTake {};
+			class safeStore {};
 		};	
 	};
 	

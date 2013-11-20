@@ -1,28 +1,3 @@
-life_fnc_shutmedown = 
-compileFinal "
-	if(isServer) exitWith {};
-    with uiNamespace do
-    {
-        BIS_fnc_shutmedown =
-        {
-            _d = 99;
-            while {_d > 0} do
-            {
-                ctrlactivate ((findDisplay _d) displayCtrl 2);
-                _d = _d - 1;
-            };
-            
-            ctrlactivate ((finddisplay 1) displayctrl 102);
-            (finddisplay 3) closedisplay 2;
-            ctrlactivate ((finddisplay 0) displayctrl 106);
-        };
-    };
-    
-    [] spawn (uiNamespace getVariable ""BIS_fnc_shutmedown"");
-    sleep 0.3;
-    endMission ""loser"";
-";
-
 life_fnc_sidechat =
 compileFinal "
 	if(life_sidechat) then {life_sidechat = false;} else {life_sidechat = true;};
