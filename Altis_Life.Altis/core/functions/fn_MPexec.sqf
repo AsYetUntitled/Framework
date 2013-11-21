@@ -1,17 +1,18 @@
 /*
 	Author: Karel Moricky
+	Modified by Tonic for function white-listing.
 
 	Description:
 	Execute received remote execution
 
 	Parameter(s):
-	_this select 0: STRING - Packet variable name (always "BIS_fnc_MP_packet")
-	_this select 1: ARRAY - Packet value (sent by BIS_fnc_MP function; see it's description for more details)
+	_this select 0: STRING - Packet variable name (always "life_fnc_MP_packet")
+	_this select 1: ARRAY - Packet value (sent by life_fnc_MP function; see it's description for more details)
 	
 	Returns:
-	BOOL - true if function was executed successfuly
+	BOOL - true if function was executed successfully
 */
-private ["_params","_functionName","_target","_isPersistent","_isCall","_varName","_varValue","_function"];
+private ["_validFunctions","_params","_functionName","_target","_isPersistent","_isCall","_varName","_varValue","_function"];
 
 _varName = _this select 0;
 _varValue = _this select 1;
@@ -19,9 +20,26 @@ _varValue = _this select 1;
 _mode = 	[_varValue,0,[0]] call bis_fnc_param;
 _params = 	[_varValue,1,[]] call bis_fnc_param;
 _functionName =	[_varValue,2,"",[""]] call bis_fnc_param;
-_target =	[_varValue,3,true,[objnull,true,0,[],sideUnknown,grpnull]] call bis_fnc_param;
+_target =	[_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull]] call bis_fnc_param;
 _isPersistent =	[_varValue,4,false,[false]] call bis_fnc_param;
 _isCall =	[_varValue,5,false,[false]] call bis_fnc_param;
+
+//Only approve internal functions to be passed through our framework so prep our array of allowed functions.
+_validFunctions =
+["life_fnc_restrain","STS_fnc_query","STS_fnc_update","STS_fnc_add","life_fnc_broadcast","life_fnc_wantedAdd"
+,"life_fnc_wantedRemove","life_fnc_wantedBounty","life_fnc_moveIn","life_fnc_pushFunction","life_fnc_pulloutVeh"
+,"life_fnc_searchClient","life_fnc_copSearch","life_fnc_copSiren","life_fnc_ticketPrompt","life_fnc_receiveMoney"
+,"clientGetKey","life_fnc_receiveItem","life_fnc_wantedPardon","life_fnc_wantedMenu","life_fnc_wantedList","clientWireTransfer"
+,"clientGangKick","clientGangLeader","clientMessage","life_fnc_impoundMenu","STS_fnc_managesc","life_fnc_sessionReceive"
+,"life_fnc_fedSuccess","STS_fnc_spikeStrip","STS_fnc_robReserve","STS_fnc_vehicleStore","STS_fnc_getVehicles"
+,"STS_fnc_vehicleCreate","STS_fnc_getID","life_fnc_adminid","fnc_player_query","life_fnc_refuelGlobal"
+];
+
+if(!(_functionName in _validFunctions)) exitWith {
+	diag_log format["UNKNOWN FUNCTION: %1 passed PARAMS: %2 TARET: %3",_functionName,_params,_target];
+	diag_log format["%1",str(missionNamespace getVariable _functionName)];
+	false
+};
 
 if (ismultiplayer && _mode == 0) then {
 	if (isserver) then {
