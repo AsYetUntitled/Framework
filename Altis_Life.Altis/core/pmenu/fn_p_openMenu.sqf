@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_p_openMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -22,7 +23,7 @@ switch(playerSide) do
 	};
 };
 
-if(life_adminlevel < 1) then
+if(__GETC__(life_adminlevel) < 1) then
 {
 	ctrlShow[2020,false];
 	ctrlShow[2021,false];
@@ -30,7 +31,7 @@ if(life_adminlevel < 1) then
 
 [] call life_fnc_p_updateMenu;
 
-if(life_adminlevel < 1) then
+if(__GETC__(life_adminlevel) < 1) then
 {
 	ctrlShow[2020,false];
 	ctrlShow[2021,false];

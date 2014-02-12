@@ -1,11 +1,7 @@
-/*
-	@file Version: 2.1.1
-	@file name: init.sqf
-	@file Author: TAW_Tonic
-	@file edit: 7/14/2013
-	Copyright © 2013 Bryan Boardwine, All rights reserved
-	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
-*/
+#define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
+
+__CONST__(LIFE_SCHEMA_NAME,"'arma3life'");//CHANGE THIS IF YOUR DATABASE IS NOT CALLED ARMA3LIFE KEEP THE ' '
+
 life_radio_west = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 server_query_running = false;
@@ -13,12 +9,13 @@ life_DB_queue = [];
 serv_sv_use = [];
 fed_bank setVariable["fed_rob_ip",false,true];
 fed_bank setVariable["fed_locked",false,true];
-_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", "CALL resetLifeVehicles();"]; //Reset vehicles active state to false.
+_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL resetLifeVehicles();",(call LIFE_SCHEMA_NAME)]; //Reset vehicles active state to false.
+_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL deleteDeadVehicles();",(call LIFE_SCHEMA_NAME)]; //Delete dead / non-usable vehicles for cleanup.
 
-publicVariable "life_fnc_vehStoreItem";
-publicVariable "life_fnc_vehTakeItem";
-publicVariable "life_fnc_vehInventory";
-[] execVM "\life_server\vars.sqf";
+life_federal_funds = (count playableUnits) * 750; //Amount the federal reserve is funded.
+life_animals_spawned = false;
+life_animals_array = [];
+
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
 [] call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf";
@@ -63,3 +60,14 @@ publicVariable "STS_fnc_addVehicle2Chain";
 publicVariable "life_fnc_fedSuccess";
 
 [] spawn STS_fnc_federalUpdate;
+
+[] spawn
+{
+	while {true} do
+	{
+		sleep (30 * 60);
+		{
+			_x setVariable["sellers",[],true];
+		} foreach [Dealer_1,Dealer_2,Dealer_3];
+	};
+};

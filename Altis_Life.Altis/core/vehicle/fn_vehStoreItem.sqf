@@ -1,4 +1,4 @@
-//#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
 /*
 	File: fn_vehStoreItem.sqf
 	Author: Bryan "Tonic" Boardwine

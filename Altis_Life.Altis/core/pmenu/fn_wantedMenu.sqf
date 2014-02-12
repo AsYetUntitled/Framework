@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_wantedMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -17,7 +18,7 @@ _units = [];
 
 ctrlSetText[2404,"Establishing connection..."];
 
-if(life_adminlevel < 1 OR life_coplevel < 3) then
+if(__GETC__(life_coplevel) < 3 && __GETC__(life_adminlevel) == 0) then
 {
 	ctrlShow[2405,false];
 };

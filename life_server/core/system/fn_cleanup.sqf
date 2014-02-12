@@ -40,7 +40,7 @@ while {true} do
 					_plate = _dbInfo select 1;
 
 					_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-					_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", _query];
+					_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 				};
 			};
 		};
@@ -59,58 +59,3 @@ while {true} do
 		deleteVehicle _x;
 	} foreach (allMissionObjects "GroundWeaponHolder");
 };
-
-/*
-private["_near","_vehicle","_vehicles","_timeNow","_creation","_offset"];
-_near = 0;
-_vehicle = ObjNull;
-_vehicles = [];
-_timeNow = 0;
-_creation = 0;
-_offset = 0;
-
-sleep (30 * 60); //Goto sleep and wait till 30 minutes into the game.
-while {true} do
-{
-	_vehicles = allMissionObjects "Car";
-	{_vehicles set[count _vehicles,_x];} foreach (allMissionObjects "Air");
-	{_vehicles set[count _vehicles,_x];} foreach (allMissionObjects "Ship");
-	
-	{
-		_vehicle = _x;
-		if(!isNull _vehicle) then
-		{
-			_creation = _vehicle getVariable _creation;
-			if(isNil "_creation") then {[_vehicle] call STS_fnc_timeStamp;};
-			_timeNow = parseNumber("Arma2Net.Unmanaged" callExtension "DateTime ['now', 'HHmmss']");
-			_offset = ((_timeNow - _creation) / 60);
-			
-			switch (true) do
-			{
-				case (_offset > 10):
-				{
-					//No crew....
-					if(count crew _vehicle == 0) then
-					{
-						//Tally amount of players near it..
-						_near = {(_x distance _vehicle < 200)} count playableUnits;
-						if(count _near == 0) then
-						{
-							deleteVehicle _vehicle;
-						}
-							else
-						{
-							_vehicle setVariable["creation",_timeNow,false];
-						};
-					}
-						else
-					{
-						_vehicle setVariable["creation",_timeNow,false];
-					};
-				};
-			};
-		};
-	} foreach _vehicles;
-sleep (10 * 60);
-};
-*/

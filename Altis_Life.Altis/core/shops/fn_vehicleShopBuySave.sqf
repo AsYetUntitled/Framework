@@ -254,6 +254,10 @@ _vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,name player]],t
 life_vehicles set[count life_vehicles,_vehicle];
 life_cash = life_cash - _price;
 
+if(_veh in ["B_MRAP_01_F","C_SUV_01_F"] && playerSide == west) then {
+	_vehicle setVariable["lights",false,true];
+};
+
 if(playerSide == west) then
 {
 	if(_veh == "C_Offroad_01_F") then

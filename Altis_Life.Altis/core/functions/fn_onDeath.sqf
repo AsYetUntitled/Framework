@@ -44,10 +44,21 @@ if(side _source == west && !life_use_atm) then
 	};
 };
 
+//New addition for idiots.
+if(side _source == civilian && _source != _unit && !local _source) then
+{
+	if(vehicle _source isKindOf "LandVehicle") then {
+		[[2],"life_fnc_removeLicenses",_source,false] spawn life_fnc_MP;
+	} else {
+		[[3],"life_fnc_removeLicenses",_source,false] spawn life_fnc_MP;
+	};
+};
+
 if(side _source == west && vehicle _source == _source && playerSide == civilian) then
 {
 	[[player,_source,true],"life_fnc_wantedBounty",false,false] spawn life_fnc_MP;
 	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
+	//[[getPlayerUID player],"life_fnc_wantedPunish",false,false] spawn life_fnc_MP;
 }
 	else
 {
@@ -65,5 +76,6 @@ life_carryWeight = 0;
 life_thirst = 100;
 life_hunger = 100;
 life_use_atm = true;
+life_cash = 0;
 
 [1,true] call life_fnc_sessionHandle;

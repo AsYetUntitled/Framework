@@ -55,6 +55,22 @@ while{true} do
 	};
 };
 
+//I have no idea what I am looking for in this but trying something different?
+fn_Weight =
+{
+	if(life_carryWeight > life_maxWeight) then {
+		player forceWalk true;
+		player setFatigue 1;
+	}
+		else
+	{
+		player forceWalk false;
+	};
+};
+
+LIFE_ID_MonitorWeight = ["LIFE_WeightMonitor","onEachFrame","fn_Weight"] call BIS_fnc_addStackedEventHandler;
+
+/*
 [] spawn
 {
 	while {true} do
@@ -67,6 +83,7 @@ while{true} do
 		player forceWalk false;
 	};
 };
+*/
 
 [] spawn  {
 private["_walkDis","_myLastPos","_MaxWalk","_runHunger","_runDehydrate"];

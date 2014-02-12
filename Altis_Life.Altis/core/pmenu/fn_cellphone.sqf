@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_cellphone.sqf
 	Author: Alan
@@ -15,7 +16,7 @@ _units = _display displayCtrl 3004;
 ctrlSetText [3003, ""];
 lbClear _units;
 
-if((life_adminlevel < 1)) then
+if((__GETC__(life_adminlevel) < 1)) then
 {
 	ctrlShow[3020,false];
 	ctrlShow[3021,false];

@@ -29,7 +29,7 @@ class playerSettings {
 		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = "Player Menu";
+			text = "$STR_PM_Title";
 			x = 0.1;
 			y = 0.2;
 			w = 0.8;
@@ -59,7 +59,7 @@ class playerSettings {
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Current Items";
+			text = "$STR_PM_cItems";
 			sizeEx = 0.04;
 			
 			x = 0.62; y = 0.26;
@@ -70,7 +70,7 @@ class playerSettings {
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Licenses";
+			text = "$STR_PM_Licenses";
 			sizeEx = 0.04;
 			
 			x = 0.336; y = 0.26;
@@ -81,7 +81,7 @@ class playerSettings {
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Money Stats";
+			text = "$STR_PM_MoneyStats";
 			sizeEx = 0.04;
 			
 			x = 0.11; y = 0.26;
@@ -118,7 +118,7 @@ class playerSettings {
 		class moneyDrop : Life_RscButtonMenu
 		{
 			idc = 2001;
-			text = "Give";
+			text = "$STR_Global_Give";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_giveMoney";
 			sizeEx = 0.025;
@@ -157,7 +157,7 @@ class playerSettings {
 		class DropButton : life_RscButtonMenu {
 			
 			idc = 2002;
-			text = "Give";
+			text = "$STR_Global_Give";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_giveItem;";
 			
@@ -170,7 +170,7 @@ class playerSettings {
 		
 		class UseButton : life_RscButtonMenu {
 			
-			text = "Use";
+			text = "$STR_Global_Use";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_useItem;";
 			
@@ -183,7 +183,7 @@ class playerSettings {
 		
 		class RemoveButton : life_RscButtonMenu {
 			
-			text = "Remove";
+			text = "$STR_Global_Remove";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_removeItem;";
 			
@@ -209,7 +209,7 @@ class playerSettings {
 		class ButtonClose : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
-			text = "Close";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
@@ -219,7 +219,7 @@ class playerSettings {
 		
 		class ButtonSettings : life_RscButtonMenu {
 			idc = -1;
-			text = "Settings";
+			text = "$STR_Global_Settings";
 			onButtonClick = "[] call life_fnc_settingsMenu;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -229,7 +229,7 @@ class playerSettings {
 		
 		class ButtonMyGang : Life_RscButtonMenu {
 			idc = 2011;
-			text = "My Gang";
+			text = "$STR_PM_MyGang";
 			onButtonClick = "[] call life_fnc_gangMenu";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -261,7 +261,7 @@ class playerSettings {
 		
 		class ButtonGangList : Life_RscButtonMenu {
 			idc = 2012;
-			text = "Wanted List";
+			text = "$STR_PM_WantedList";
 			onButtonClick = "[] call life_fnc_wantedMenu";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -271,7 +271,7 @@ class playerSettings {
 	
 		class ButtonKeys : Life_RscButtonMenu {
 			idc = 2013;
-			text = "Key Chain";
+			text = "$STR_PM_KeyChain";
 			onButtonClick = "createDialog ""Life_key_management"";";
 			x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -281,7 +281,7 @@ class playerSettings {
 		
 		class ButtonCell : Life_RscButtonMenu {
 			idc = 2014;
-			text = "Cell Phone";
+			text = "$STR_PM_CellPhone";
 			onButtonClick = "createDialog ""Life_cell_phone"";";
 			x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -289,21 +289,10 @@ class playerSettings {
 			h = (1 / 25);
 		};
 		
-		class ButtonFixSCreen : Life_RscButtonMenu {
+		class ButtonAdminMenu : Life_RscButtonMenu {
 			idc = 2021;
-			text = "Admin Menu";
+			text = "$STR_PM_AdminMenu";
 			onButtonClick = "createDialog ""life_admin_menu"";";
-			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.805;
-			w = (6.25 / 40);
-			h = (1 / 25);
-		};
-		
-		class ButtonGcam : life_RscButtonMenu {
-			idc = 2020;
-			//shortcuts[] = {0x00050000 + 2};
-			text = "GCam";
-			onButtonClick = "closeDialog 0; [] execVM ""gcam.sqf"";";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.805;
 			w = (6.25 / 40);
@@ -313,7 +302,7 @@ class playerSettings {
 		class ButtonSyncData : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
-			text = "Sync Data";
+			text = "$STR_PM_SyncData";
 			onButtonClick = "[] call life_fnc_syncData;";
 			x = 0.1;
 			y = 0.805;

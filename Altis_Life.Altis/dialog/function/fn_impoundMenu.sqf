@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_impoundMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -24,10 +25,10 @@ lbClear _control;
 {
 	_displayName = getText(configFile >> "CfgVehicles" >> (_x select 2) >> "displayName");
 	_picture = getText(configFile >> "CfgVehicles" >> (_x select 2) >> "picture");
-	_price = [_x select 2,life_garage_prices] call fnc_index;
-	_sPrice = [_x select 2,life_garage_sell] call fnc_index;
-	if(_price == -1) then {_price = 1000;} else {_price = (life_garage_prices select _price) select 1;};
-	if(_sPrice == -1) then {_sPrice = 1500;} else {_sPrice = (life_garage_sell select _sPrice) select 1;};
+	_price = [_x select 2,__GETC__(life_garage_prices)] call fnc_index;
+	_sPrice = [_x select 2,__GETC__(life_garage_sell)] call fnc_index;
+	if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_prices) select _price) select 1;};
+	if(_sPrice == -1) then {_sPrice = 1500;} else {_sPrice = (__GETC__(life_garage_sell) select _sPrice) select 1;};
 	
 	_control lbAdd format["%1 - Storage Fee: $%2 || Sell Price: $%3", _displayName,[_price] call life_fnc_numberText,[_sPrice] call life_fnc_numberText];
 	_control lbSetData [(lbSize _control)-1,(_x select 2)];

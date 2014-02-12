@@ -11,7 +11,7 @@ class Life_vehicle_shop {
 			idc = -1;
 			x = 0.1;
 			y = 0.2;
-			w = 0.6;
+			w = 0.8;
 			h = (1 / 25);
 		};
 		
@@ -20,7 +20,7 @@ class Life_vehicle_shop {
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
-			w = 0.6;
+			w = 0.8;
 			h = 0.6 - (22 / 250);
 		};
 	};
@@ -34,7 +34,7 @@ class Life_vehicle_shop {
 			text = "";
 			x = 0.1;
 			y = 0.2;
-			w = 0.6;
+			w = 0.8;
 			h = (1 / 25);
 		};
 		
@@ -47,10 +47,10 @@ class Life_vehicle_shop {
 			onLBSelChanged = "[_this] call life_fnc_vehicleColorList";
 			
 			x = 0.12; y = 0.26;
-			w = 0.56; h = 0.4;
+			w = 0.76; h = 0.4;
 		};
 		
-		class ColorList : Life_RscCombo 
+		class ColorList : Life_RscCombo
 		{
 			idc = 2303;
 			x = 0.42; y = 0.68;

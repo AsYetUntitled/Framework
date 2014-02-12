@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_vehicleShop.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -55,14 +56,14 @@ switch (life_veh_shop) do
 	case "donator_1":
 	{
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
-		if(life_donator == 0) exitWith {_kill = "You are not a donator!"};
+		if(__GETC__(life_donator) == 0) exitWith {_kill = "You are not a donator!"};
 		ctrlSetText[2301,"Service Truck Shop"];
 	};
 	
 	case "donator_2":
 	{
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
-		if(life_donator == 0) exitWith {_kill = "You are not a donator!"};
+		if(__GETC__(life_donator) == 0) exitWith {_kill = "You are not a donator!"};
 		ctrlSetText[2301,"Service Truck Shop"];
 	};
 	
@@ -117,7 +118,7 @@ switch (life_veh_shop) do
 	case "fed_car":
 	{
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
-		if(life_adminlevel < 1) exitWith {_kill = "You Are Not A Federal Agent!"};
+		if(__GETC__(life_adminlevel) < 1) exitWith {_kill = "You Are Not A Federal Agent!"};
 		ctrlSetText[2301,"Secret Service Car Shop"];
 		
 	};
@@ -149,7 +150,7 @@ switch (life_veh_shop) do
 	case "fed_air":
 	{
 		if(playerSide == civilian) exitWith {_kill =  "You are not a cop."};
-		if(life_adminlevel < 1) exitWith {_kill = "You Are Not A Federal Agent!"};
+		if(__GETC__(life_adminlevel) < 1) exitWith {_kill = "You Are Not A Federal Agent!"};
 		ctrlSetText[2301,"Secret Service Air Shop"];
 	};
 	
@@ -197,14 +198,14 @@ switch (life_veh_shop) do
 	
 	case "donator_heli":
 	{
-		if(life_donator < 1) exitWith {_kill = "You Have Not Donated!"};
+		if(__GETC__(life_donator) < 1) exitWith {_kill = "You Have Not Donated!"};
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
 		ctrlSetText[2301,"Donator Air Shop"];
 	};
 	
 	case "donator_car":
 	{
-		if(life_donator < 1) exitWith {_kill = "You Have Not Donated!"};
+		if(__GETC__(life_donator) < 1) exitWith {_kill = "You Have Not Donated!"};
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
 		ctrlSetText[2301,"Donator Car Shop"];
 	};

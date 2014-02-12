@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_vehInvSearch.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -21,10 +22,10 @@ _value = 0;
 	_index = [_var,life_illegal_items] call fnc_index;
 	if(_index != -1) then
 	{
-		_vIndex = [_var,sell_array] call fnc_index;
+		_vIndex = [_var,__GETC__(sell_array)] call fnc_index;
 		if(_vIndex != -1) then
 		{
-			_value = _value + (_val * ((sell_array select _vIndex) select 1));
+			_value = _value + (_val * ((__GETC__(sell_array) select _vIndex) select 1));
 		};
 	};
 } foreach (_vehicleInfo select 0);

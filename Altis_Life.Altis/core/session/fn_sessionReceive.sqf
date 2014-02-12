@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_sessionReceive.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -38,7 +39,7 @@ switch (playerSide) do
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.
 		life_cash = parseNumber(_session select 2);
 		life_atmcash = parseNumber(_session select 3);
-		life_coplevel = parseNumber(_session select 4);
+		__CONST__(life_coplevel,parseNumber(_session select 4));
 		if(count (_session select 5) > 0) then
 		{
 			{
@@ -46,11 +47,11 @@ switch (playerSide) do
 			} foreach (_session select 5);
 		};
 		cop_gear = (_session select 6);
-		life_adminlevel = parseNumber(_session select 7);
+		__CONST__(life_adminlevel,parseNumber(_session select 7));
 		life_blacklisted = call compile format["%1",(_session select 8)];
 		[] spawn life_fnc_loadGear;
 		//if(life_adminlevel > 0) then {[] execVM "core\client\aconfig.sqf";};
-		life_donator = 0;
+		__CONST__(life_donator,parseNumber(_session select 9));
 	};
 	
 	case civilian:
@@ -65,15 +66,15 @@ switch (playerSide) do
 			} foreach (_session select 4);
 		};
 		life_is_arrested = call compile format["%1",(_session select 5)];
-		life_adminlevel = parseNumber(_session select 6);
-		life_donator = parseNumber (_session select 7);
+		__CONST__(life_adminlevel,parseNumber(_session select 6));
+		__CONST__(life_donator,parseNumber(_session select 7));
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
-		life_coplevel = 0;
+		__CONST__(life_coplevel,0);
 	};
 };
 
-switch(life_donator) do
+switch(__GETC__(life_donator)) do
 {
 	case 1: {life_paycheck = life_paycheck + 750;};
 	case 2: {life_paycheck = life_paycheck + 1500;};

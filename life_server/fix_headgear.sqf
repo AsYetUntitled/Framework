@@ -22,19 +22,7 @@ _headgear = ["H_Cap_tan", "H_Cap_blk", "H_Cap_blk_CMMG", "H_Cap_brn_SPECOPS",  "
 			 "H_StrawHat_dark", "H_Hat_blue", "H_Hat_brown", "H_Hat_camo", "H_Hat_grey", "H_Hat_checker", "H_Hat_tan"];
 
 _headCount = count _headgear;
-		["U_C_Poloshirt_blue","Poloshirt Blue",250],
-		["U_C_Poloshirt_burgundy","Poloshirt Burgundy",275],
-		["U_C_Poloshirt_redwhite","Poloshirt Red/White",150],
-		["U_C_Poloshirt_salmon","Poloshirt Salmon",175],
-		["U_C_Poloshirt_stripped","Poloshirt stripped",125],
-		["U_C_Poloshirt_tricolour","Poloshirt Tricolor",350],
-		["U_C_Poor_2","Rag tagged clothes",250],
-		["U_IG_Guerilla2_2","Green stripped shirt & Pants",650],
-		["U_IG_Guerilla3_1","Brown Jacket & Pants",735],
-		["U_IG_Guerilla2_3","The Outback Rangler",1200],
-		["U_C_HunterBody_grn","The Hunters Look",1500],
-		["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
-		["U_OrestesBody","Surfing On Land",1100]
+
 _clothes = ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_redwhite","U_C_Poloshirt_salmon","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_HunterBody_grn"];
 
 if (isServer) then 
@@ -44,12 +32,7 @@ if (isServer) then
 	_rnd1 = floor random 3;
 	
 	//Hotfix patch, We don't want players getting a 'random' hat, just our NPC's
-	if(!isPlayer _this) then
-	{
-		_this setVariable ["BIS_randomSeed1", _rnd1, TRUE];
-	} else {
-		_this setVariable["BIS_randomSeed1",3,TRUE];
-	};
+	_this setVariable["BIS_randomSeed1",3,TRUE];
 	_rnd2 = floor random _headCount;
 	_this setVariable ["BIS_randomSeed2", _rnd2, TRUE];
 	

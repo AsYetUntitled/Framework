@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_sellGarage.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -15,8 +16,8 @@ _unit = player;
 
 if(isNil "_vehicle") exitWith {hint "The selection had a error..."};
 
-_price = [_vehicle,life_garage_sell] call fnc_index;
-if(_price == -1) then {_price = 1000;} else {_price = (life_garage_sell select _price) select 1;};
+_price = [_vehicle,__GETC__(life_garage_sell)] call fnc_index;
+if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_sell) select _price) select 1;};
 
 [[_vid,_pid,_price,player,life_garage_type],"STS_fnc_vehicleDelete",false,false] spawn life_fnc_MP;
 

@@ -40,7 +40,7 @@ if(_shooter isKindOf "Man" && alive player) then
 		[[0,format["%1 was tazed by %2", name _unit, name _shooter]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		_unit attachTo [_obj,[0,0,0]];
 		disableUserInput true;
-		sleep 8;
+		sleep 15;
 		detach player;
 		[[player,"amovppnemstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		life_istazed = false;

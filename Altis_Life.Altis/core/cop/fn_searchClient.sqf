@@ -27,6 +27,7 @@ _robber = false;
 	{
 		_inv set[count _inv,[_x select 0,_val]];
 	};
+	missionNamespace setVariable[_var,0];
 } foreach life_illegal_items;
 
 if(_licenses == "") then {_licenses = "No licenses<br/>"};

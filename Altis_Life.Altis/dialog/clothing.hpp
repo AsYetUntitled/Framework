@@ -52,7 +52,7 @@ class Life_Clothing {
 		class CloseButtonKey : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Cancel";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = -0.14;
 			y = 0.54 - (1 / 25);
@@ -63,7 +63,7 @@ class Life_Clothing {
 		class BuyButtonKey : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Buy";
+			text = "$STR_Global_Buy";
 			onButtonClick = "[] call life_fnc_buyClothes;";
 			x = -0.30;
 			y = 0.54 - (1 / 25);

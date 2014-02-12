@@ -31,7 +31,7 @@ class TAW_VD
 		class VDonFoot : life_RscText
 		{
 			idc = -1;
-			text = "On Foot:";
+			text = "$STR_SM_onFoot";
 			
 			x = 0.32; y = 0.258;
 			w = 0.275; h = 0.04;
@@ -40,7 +40,7 @@ class TAW_VD
 		class VDinCar : life_RscText
 		{
 			idc = -1;
-			text = "In Car:";
+			text = "$STR_SM_inCar";
 			
 			x = 0.32; y = 0.305;
 			w = 0.275; h = 0.04;
@@ -49,7 +49,7 @@ class TAW_VD
 		class VDinAir : life_RscText
 		{
 			idc = -1;
-			text = "In Air:";
+			text = "$STR_SM_inAir";
 			
 			x = 0.32; y = 0.355;
 			w = 0.275; h = 0.04;
@@ -62,7 +62,7 @@ class TAW_VD
 		class Title : life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = "Life Settings Menu";
+			text = "$STR_SM_Title";
 			x = 0.3;
 			y = 0.2;
 			w = 0.8;
@@ -74,7 +74,7 @@ class TAW_VD
 			idc = 2901;
 			text = "";
 			onSliderPosChanged = "[0,_this select 1] call life_fnc_s_onSliderChange;";
-			tooltip = "View distance while on foot";
+			tooltip = "$STR_SM_ToolTip1";
 			x = 0.42;
 			y = 0.30 - (1 / 25);
 			
@@ -96,7 +96,7 @@ class TAW_VD
 			idc = 2911;
 			text = "";
 			onSliderPosChanged = "[1,_this select 1] call life_fnc_s_onSliderChange;";
-			tooltip = "View distance while in a land vehicle";
+			tooltip = "$STR_SM_ToolTip2";
 			x = 0.42;
 			y = 0.35 - (1 / 25);
 			
@@ -118,7 +118,7 @@ class TAW_VD
 			idc = 2921;
 			text = "";
 			onSliderPosChanged = "[2,_this select 1] call life_fnc_s_onSliderChange;";
-			tooltip = "View distance while in a air vehicle";
+			tooltip = "$STR_SM_ToolTip3";
 			x = 0.42;
 			y = 0.40 - (1 / 25);
 			
@@ -152,7 +152,7 @@ class TAW_VD
 		{
 			idc = -1;
 			text = "Tags ON";
-			action = "[] call life_fnc_playerTags";
+			action = "LIFE_ID_PlayerTags = [""LIFE_PlayerTags"",""onEachFrame"",""life_fnc_playerTags""] call BIS_fnc_addStackedEventHandler;";
 			sizeEx = 0.04;
 			
 			x = 0.38; y = 0.50;
@@ -163,7 +163,7 @@ class TAW_VD
 		{
 			idc = -1;
 			text = "Tags OFF";
-			action = "onEachFrame {nil}";
+			action = "[LIFE_ID_PlayerTags,""onEachFrame""] call BIS_fnc_removeStackedEventHandler;";
 			sizeEx = 0.04;
 			
 			x = 0.56; y = 0.50;

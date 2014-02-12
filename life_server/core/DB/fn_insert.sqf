@@ -25,7 +25,7 @@ _query = format["SELECT name, aliases FROM players WHERE playerid='%1'",_uid];
 	called when the initial client was told there wasn't a search result found for him, if so then why
 	is this being executed again?
 */
-_result = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", _query];
+_result = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 _result = call compile format["%1", _result];
 if(!isNil {((_result select 0) select 0)}) exitWith
 {
@@ -40,7 +40,7 @@ if(!isNil {((_result select 0) select 0)}) exitWith
 		_aliases set[count _aliases, _name];
 		_aliases = [_aliases] call DB_fnc_mresArray;
 		_query = format["UPDATE players SET aliases='%1' WHERE playerid='%2'",_aliases,_uid];
-		_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", _query];
+		_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 	};
 };
 
@@ -51,13 +51,13 @@ switch (_side) do
 	case west:
 	{
 		_misc = [_misc] call DB_fnc_mresArray;
-		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, aliases) VALUES('%1', '%2', '%3', '%4', '%5', '%6')",_uid,_name,_money,_bank,_misc,_alias];
+		_query = format["INSERT INTO players (playerid, name, cash, bankacc, cop_gear, aliases, cop_licenses, civ_licenses, civ_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6', '""[]""', '""[]""', '""[]""')",_uid,_name,_money,_bank,_misc,_alias];
 	};
 	
 	case civilian:
 	{
 		if(typeName _misc == "BOOL") then {_misc = [_misc] call DB_fnc_bool;};
-		_query = format["INSERT INTO players (playerid, name, cash, bankacc, arrested, aliases, civ_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6','""[]""')",
+		_query = format["INSERT INTO players (playerid, name, cash, bankacc, arrested, aliases, civ_gear, cop_licenses, civ_licenses, cop_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6','""[]""', '""[]""', '""[]""', '""[]""')",
 		_uid, //1
 		_name, //2 
 		_money,//3
@@ -69,5 +69,5 @@ switch (_side) do
 };
 
 //Execute our SQL statement
-_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", _query];
+_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 waitUntil {typeName _sql == "STRING"};

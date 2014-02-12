@@ -352,9 +352,3 @@ KRON_getArgRev = {
 	};
  	_out
 };
-
-if(!isServer) then
-{
-	life_fnc_shutmedown = compileFinal format["%1", life_fnc_shutmedown];
-	"youarebad" addPublicVariableEventHandler {[] spawn life_fnc_shutmedown};
-};

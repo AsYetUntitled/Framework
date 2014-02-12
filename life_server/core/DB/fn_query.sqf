@@ -23,7 +23,7 @@ switch (_side) do
 			When add new additional licenses, positions, etc to the cop side please add the rows to the database and add those rows in here and adjust the client-side receivers,
 			If you do not adjust both server-side & client side receivers your new added in content will be broken and a waste of time.
 		*/
-		_query = format["SELECT playerid, name, cash, bankacc, coplevel, cop_licenses, cop_gear, adminlevel, blacklist FROM players WHERE playerid='%1'",_uid];
+		_query = format["SELECT playerid, name, cash, bankacc, coplevel, cop_licenses, cop_gear, adminlevel, blacklist, donatorlvl FROM players WHERE playerid='%1'",_uid];
 	};
 	
 	case civilian:
@@ -34,7 +34,7 @@ switch (_side) do
 		_query = format["SELECT playerid, name, cash, bankacc, civ_licenses, arrested, adminlevel, donatorlvl, civ_gear FROM players WHERE playerid='%1'",_uid];
 	};
 };
-_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", _query];
+_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 _sql = call compile format["%1", _sql];
 if(isNil {((_sql select 0) select 0)}) then
 {

@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_weaponShopCfg.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -34,6 +35,7 @@ switch(_shop) do
 						["Binocular",nil,150],
 						["ItemGPS",nil,100],
 						["ToolKit",nil,250],
+						["muzzle_snds_L",nil,650],
 						["FirstAidKit",nil,150],
 						["Medikit",nil,1000],
 						["NVGoggles",nil,2000],
@@ -50,7 +52,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"You are not a cop!"};
-			case (life_coplevel < 2): {"You are not at a patrol officer rank!"};
+			case (__GETC__(life_coplevel) < 2): {"You are not at a patrol officer rank!"};
 			default
 			{
 				["Altis Patrol Officer Shop",
@@ -60,6 +62,8 @@ switch(_shop) do
 						["MineDetector",nil,1000],
 						["acc_flashlight",nil,750],
 						["optic_Holosight",nil,1200],
+						["optic_Arco",nil,2500],
+						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,130],
 						["30Rnd_9x21_Mag",nil,250]
 					]
@@ -73,7 +77,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"You are not a cop!"};
-			case (life_coplevel < 3): {"You are not at a sergeant rank!"};
+			case (__GETC__(life_coplevel) < 3): {"You are not at a sergeant rank!"};
 			default
 			{
 				["Altis Sergeant Officer Shop",
@@ -81,6 +85,8 @@ switch(_shop) do
 						["SMG_02_ACO_F",nil,15000],
 						["hgun_ACPC2_F",nil,17500],
 						["arifle_MXC_F",nil,30000],
+						["optic_Arco",nil,2500],
+						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,100],
 						["30Rnd_9x21_Mag",nil,60],
 						["9Rnd_45ACP_Mag",nil,200]
@@ -102,12 +108,16 @@ switch(_shop) do
 					[
 						["arifle_TRG20_F",nil,25000],
 						["arifle_Katiba_F",nil,30000],
-						["srifle_EBR_F",nil,50000],
-						["optic_ACO_grn",nil,5000],
+						["srifle_DMR_01_F",nil,50000],
+						["arifle_SDAR_F",nil,20000],
+						["optic_ACO_grn",nil,3500],
+						["optic_Holosight",nil,3600],
 						["acc_flashlight",nil,1000],
+						["optic_Hamr",nil,7500],
 						["30Rnd_9x21_Mag",nil,200],
+						["20Rnd_556x45_UW_mag",nil,125],
 						["30Rnd_556x45_Stanag",nil,300],
-						["20Rnd_762x51_Mag",nil,500],
+						["10Rnd_762x51_Mag",nil,500],
 						["30Rnd_65x39_caseless_green",nil,275]
 					]
 				];
@@ -125,10 +135,15 @@ switch(_shop) do
 			{
 				["Billy Joe's Firearms",
 					[
-						["hgun_Rook40_F",nil,2500],
-						["hgun_PDW2000_F",nil,10000],
+						["hgun_Rook40_F",nil,6500],
+						["hgun_Pistol_heavy_02_F",nil,9850],
+						["hgun_ACPC2_F",nil,11500],
+						["hgun_PDW2000_F",nil,20000],
 						["optic_ACO_grn_smg",nil,2500],
+						["V_Rangemaster_belt",nil,4900],
 						["16Rnd_9x21_Mag",nil,25],
+						["9Rnd_45ACP_Mag",nil,45],
+						["6Rnd_45ACP_Cylinder",nil,50],
 						["30Rnd_9x21_Mag",nil,75]
 					]
 				];
@@ -140,8 +155,8 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (life_donator == 0): {"You are not a donator!"};
-			case (life_donator == 1):
+			case (__GETC__(life_donator) == 0): {"You are not a donator!"};
+			case (__GETC__(life_donator) == 1):
 			{
 				["STS Donator Shop Tier 1",
 					[
@@ -156,7 +171,7 @@ switch(_shop) do
 				];
 			};
 
-			case (life_donator == 2):
+			case (__GETC__(life_donator) == 2):
 			{
 				["STS Donator Shop Tier 2",
 					[
@@ -174,7 +189,7 @@ switch(_shop) do
 				];
 			};
 
-			case (life_donator >= 3):
+			case (__GETC__(life_donator) >= 3):
 			{
 				["STS Donator Shop Tier 3",
 					[

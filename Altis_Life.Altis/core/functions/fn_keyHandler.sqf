@@ -14,6 +14,7 @@ _alt = _this select 4;
 _speed = speed cursorTarget;
 _handled = false;
 
+//hint str _code;
 if(life_action_inUse) exitWith {_handled};
 
 switch (_code) do
@@ -21,12 +22,26 @@ switch (_code) do
 	//Restraining (Shift + R)
 	case 19:
 	{
+		if(_shift) then {_handled = true;};
 		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
 			[] call life_fnc_restrainAction;
 		};
 	};
 	
+	//Knock out, this is experimental and yeah...
+	case 34:
+	{
+		if(_shift) then {_handled = true;};
+		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
+		{
+			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then
+			{
+				[cursorTarget] spawn life_fnc_knockoutAction;
+			};
+		};
+	};
+
 	//T Key (Trunk)
 	case 20:
 	{
@@ -108,7 +123,7 @@ switch (_code) do
 			
 			_locked = locked _veh;
 			
-			if(_veh in life_vehicles && player distance _veh < 6.5) then
+			if(_veh in life_vehicles && player distance _veh < 6.5 OR vehicle player == _veh) then
 			{
 				if(_locked == 2) then
 				{

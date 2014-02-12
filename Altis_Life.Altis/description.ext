@@ -1,11 +1,12 @@
 author = "TAW_Tonic";
-onLoadName = "STS Altis Life v3";
-onLoadMission = "A RPG developed by TAW_Tonic for STS (Seal Team Sloth).";
+onLoadName = "Altis Life RPG v3.1.1";
+onLoadMission = "A RPG game mode developed by TAW_Tonic";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 10;
 disabledAI = true;
 disableChannels[]={0,1,2};
+enableDebugConsole = 2;
 
 class Header
 {
@@ -14,26 +15,7 @@ class Header
 	maxPlayers = 75;
 };
 
-#include "dialog\common.hpp"
-#include "dialog\shop_items.hpp"
-#include "dialog\player_inv.hpp"
-#include "dialog\settings.hpp"
-#include "dialog\gang.hpp"
-#include "dialog\key_chain.hpp"
-#include "dialog\impound.hpp"
-#include "dialog\bank.hpp"
-#include "dialog\veh_shop.hpp"
-#include "dialog\shops.hpp"
-#include "dialog\gcam_config.hpp"
-#include "dialog\gcam_component.hpp"
-#include "dialog\ui.hpp"
-#include "dialog\admin_menu.hpp"
-#include "dialog\cell_phone.hpp"
-#include "dialog\wanted_list.hpp"
-#include "dialog\ticket.hpp"
-#include "dialog\clothing.hpp"
-#include "dialog\trunk.hpp"
-#include "dialog\spawnSelection.hpp"
+#include "dialog\MasterHandler.h"
 
 class RscTitles
 {
@@ -43,7 +25,7 @@ class RscTitles
 
 class CfgFunctions
 {
-	#include "Functions.hpp"
+	#include "Functions.h"
 };
 
 class CfgSounds

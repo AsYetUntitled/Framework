@@ -6,38 +6,6 @@ compileFinal "
 ";
 
 publicVariable "life_fnc_sidechat";
-publicVariable "life_fnc_shutmedown";
-
-fnc_log_ac =
-compileFinal "
-	private[""_unit""];
-	_unit = _this select 1;
-	_unit = owner _unit;
-	diag_log format[""%1"",_this select 0];
-	sleep 0.2;
-	
-	switch(typeName life_fnc_MP_packet) do
-	{
-		case ""ARRAY"":
-		{
-			if(count life_fnc_MP_packet == 0) then
-			{
-				youarebad = true;
-				_unit publicVariableClient ""youarebad"";
-			}
-				else
-			{
-				[[],""life_fnc_shutmedown"",_unit,false] spawn life_fnc_MP;
-			};
-		};
-		
-		default
-		{
-			youarebad = true;
-			_unit publicVariableClient ""youarebad"";
-		};
-	};
-";
 
 fnc_index =
 compileFinal "
@@ -90,23 +58,6 @@ compileFinal "
 	serv_query_info = nil;
 ";
 */
-
-fnc_clearVehicle =
-compileFinal "
-	private[""_veh""];
-	_veh = _this select 0;
-	if(isNull _veh) exitWith {};
-	clearItemCargoGlobal _veh;
-	clearMagazineCargoGlobal _veh;
-	clearBackpackCargoGlobal _veh;
-	clearWeaponCargoGlobal _veh;
-";
-
-fnc_req_sync =
-compileFinal "
-	JipTimeNow = date;
-	publicVariable ""JipTimeNow"";
-";
 
 fnc_bank_deposit =
 compileFinal "
@@ -310,7 +261,7 @@ compileFinal "
 //Admin To One Person
 fnc_cell_adminmsg =
 compileFinal "
-	if(life_adminlevel < 1) exitWith {hint ""You are not an admin!"";};
+	if((call life_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_to""];
 	_msg = ctrlText 3003;
 	_to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
@@ -324,7 +275,7 @@ compileFinal "
 
 fnc_cell_adminmsgall =
 compileFinal "
-	if(life_adminlevel < 1) exitWith {hint ""You are not an admin!"";};
+	if((call life_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_from""];
 	_msg = ctrlText 3003;
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
@@ -354,7 +305,6 @@ compileFinal "
 	_from = _this select 1;
 	_type = _this select 2;
 	if(_from == """") exitWith {};
-	if(isNil ""life_adminlevel"") then {life_adminlevel = 0;};
 	switch (_type) do
 	{
 		case 0 :
@@ -380,7 +330,7 @@ compileFinal "
 		
 		case 2 :
 		{
-			if(life_adminlevel < 1) exitWith {};
+			if((call life_adminlevel) < 1) exitWith {};
 			private[""_message""];
 			_message = format[""???ADMIN REQUEST FROM %1: %2"",_from,_msg];
 			hint parseText format [""<t color='#ffcefe'><t size='2'><t align='center'>Admin Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>Admins<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
@@ -398,7 +348,7 @@ compileFinal "
 			
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
-			if(life_adminlevel > 0) then {systemChat _admin;};
+			if((call life_adminlevel) > 0) then {systemChat _admin;};
 		};
 		
 		case 4 :
@@ -410,7 +360,7 @@ compileFinal "
 			
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
-			if(life_adminlevel > 0) then {systemChat _admin;};
+			if((call life_adminlevel) > 0) then {systemChat _admin;};
 		};
 	};
 ";

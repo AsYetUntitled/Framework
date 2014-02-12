@@ -6,13 +6,14 @@
 	Sends the query request to the database, if an array is returned then it creates
 	the vehicle if it's not in use or dead.
 */
-private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name"];
+private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[]]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _name = name _unit;
+_side = side _unit;
 _unit = owner _unit;
 
 if(_vid == -1 OR _pid == "" OR count _sp == 0) exitWith {};
@@ -67,6 +68,10 @@ if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (ca
 if((_vInfo select 1) == "cop" && (_vInfo select 2) == "C_Offroad_01_F") then
 {
 	[_vehicle,"cop_offroad",true] call life_fnc_vehicleAnimate;
+};
+
+if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["B_MRAP_01_F","C_SUV_01_F"]) then {
+	_vehicle setVariable["lights",false,true];
 };
 
 serv_sv_use = serv_sv_use - [_vid];

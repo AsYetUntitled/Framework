@@ -17,8 +17,26 @@ _lightleft = "#lightpoint" createVehicle getpos _vehicle;
 sleep 0.2;
 _lightleft setLightColor _lightRed; 
 _lightleft setLightBrightness 0.2;  
-_lightleft setLightAmbient [0.1,0.1,1]; 
-_lightleft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+_lightleft setLightAmbient [0.1,0.1,1];
+
+switch (typeOf _vehicle) do
+{
+	case "C_Offroad_01_F":
+	{
+		_lightleft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+	};
+	
+	case "B_MRAP_01_F":
+	{
+		_lightleft lightAttachObject [_vehicle, [-0.37, -1.9, 0.7]];
+	};
+	
+	case "C_SUV_01_F":
+	{
+		_lightleft lightAttachObject [_vehicle, [-0.37,-1.2,0.42]];
+	};
+};
+
 _lightleft setLightAttenuation [0.181, 0, 1000, 130]; 
 _lightleft setLightIntensity 10;
 _lightleft setLightFlareSize 0.38;
@@ -30,7 +48,24 @@ sleep 0.2;
 _lightright setLightColor _lightBlue; 
 _lightright setLightBrightness 0.2;  
 _lightright setLightAmbient [0.1,0.1,1]; 
-_lightright lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+
+switch (typeOf _vehicle) do
+{
+	case "C_Offroad_01_F":
+	{
+		_lightright lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+	};
+	
+	case "B_MRAP_01_F":
+	{
+		_lightright lightAttachObject [_vehicle, [0.37, -1.9, 0.7]];
+	};
+	
+	case "C_SUV_01_F":
+	{
+		_lightright lightAttachObject [_vehicle, [0.37,-1.2,0.42]];
+	};
+};
   
 _lightright setLightAttenuation [0.181, 0, 1000, 130]; 
 _lightright setLightIntensity 10;

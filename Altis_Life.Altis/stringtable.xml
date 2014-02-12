@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Altis Life RPG">
+	<Package name="Global">
+		<Key ID="STR_Global_Close">
+			<Original>Close</close>
+		</Key>
+		<Key ID="STR_Global_Sell">
+			<Original>Sell</Original>
+		</Key>
+		<Key ID="STR_Global_Buy">
+			<Original>Buy</Original>
+		</Key>
+		<Key ID="STR_Global_Give">
+			<Original>Give</Original>
+		</Key>
+		<Key ID="STR_Global_Use">
+			<Original>Use</Original>
+		</Key>
+		<Key ID="STR_Global_Remove">
+			<Original>Remove</Original>
+		</Key>
+		<Key ID="STR_Global_Settings">
+			<Original>Settings</Original>
+		</Key>
+	</Package>
+	<Package name="Admin_Menu">
+		<Key ID="STR_Admin_Title">
+			<Original>Admin Menu</Original>
+		</Key>
+		<Key ID="STR_Admin_GetID">
+			<Original>Get ID</Original>
+		</Key>
+	</Package>
+	<Package name="ATM_Menu">
+		<Key ID="STR_ATM_Title">
+			<Original>Bank Account Management</Original>
+		</Key>
+		<Key ID="STR_ATM_Withdraw">
+			<Original>Withdraw</Original>
+		</Key>
+		<Key ID="STR_ATM_Deposit">
+			<Original>Deposit</Original>
+		</Key>
+		<Key ID="STR_ATM_Transfer">
+			<Original>Transfer</Original>
+		</Key>
+	</Package>
+	<Package name="Cell_Phone">
+		<Key ID="STR_CELL_Title">
+			<Original>Altis Mobile</Original>
+		</Key>
+		<Key ID="STR_CELL_TextToSend">
+			<Original>Message To Send:</Original>
+		</Key>
+		<Key ID="STR_CELL_TextMSGBtn">
+			<Original>Text Message:</Original>
+		</Key>
+		<Key ID="STR_CELL_TextPolice">
+			<Original>Text Police</Original>
+		</Key>
+		<Key ID="STR_CELL_TextAdmins">
+			<Original>Text Admins</Original>
+		</Key>
+		<Key ID="STR_CELL_AdminMsg">
+			<Original>Admin Message</Original>
+		</Key>
+		<Key ID="STR_CELL_AdminMSGAll">
+			<Original>Admin Msg All</Original>
+		</Key>
+	</Package>
+	<Package name="Chop_Shop">
+		<Key ID="STR_ChopShop_Title">
+			<Original>Local Chop Shop</Original>
+		</Key>
+	</Package>
+	<Package name="Gang_Menu">
+		<Key ID="STR_Gang_Title">
+			<Original>Gang Management</Original>
+		</Key>
+		<Key ID="STR_Gang_Title2">
+			<Original>Gang Management - Current Gangs</Original>
+		</Key>
+		<Key ID="STR_Gang_Join">
+			<Original>Join</Original>
+		</Key>
+		<Key ID="STR_Gang_Leave">
+			<Original>Leave</Original>
+		</Key>
+		<Key ID="STR_Gang_Lock">
+			<Original>Lock</Original>
+		</Key>
+		<Key ID="STR_Gang_Unlock">
+			<Original>Unlock</Original>
+		</Key>
+		<Key ID="STR_Gang_Kick">
+			<Original>Kick</Original>
+		</Key>
+		<Key ID="STR_Gang_SetLeader">
+			<Original>Set Leader</Original>
+		</Key>
+		<Key ID="STR_Gang_PriceTxt">
+			<Original>To create a gang it costs $10,000</Original>
+		</Key>
+		<Key ID="STR_Gang_Create">
+			<Original>Create</Original>
+		</Key>
+		<Key ID="STR_Gang_YGN">
+			<Original>Your Gang Name</Original>
+		</Key>
+		<Key ID="STR_Gang_MainMenu">
+			<Original>You aren't in a gang currently, what do you want to do?</Original>
+		</Key>
+		<Key ID="STR_Gang_Browse">
+			<Original>Browse</Original>
+		</Key>
+	</Package>
+	<Package name="Garage_Menu">
+		<Key ID="STR_Garage_Title">
+			<Original>Vehicle Garage</Original>
+		</Key>
+		<Key ID="STR_Garage_GetVehicle">
+			<Original> Get Vehicle</Original>
+		</Key>
+		<Key ID="STR_Garage_SellVehicle">
+			<Original>Sell Vehicle</Original>
+		</Key>
+	</Package>
+	<Package name="Key_Chain">
+		<Key ID="STR_Keys_Title">
+			<Original>Key Chain - Current List of Keys</Original>
+		</Key>
+		<Key ID="STR_Keys_DropKey">
+			<Original>Drop Key</Original>
+		</Key>
+		<Key ID="STR_Keys_GiveKey">
+			<Original>Give Key</Original>
+		</Key>
+	</Package>
+	<Package name="Player_Menu">
+		<Key ID="STR_PM_Title">
+			<Original>Player Menu</Original>
+		</Key>
+		<Key ID="STR_PM_cItems">
+			<Original>Current Items</Original>
+		</Key>
+		<Key ID="STR_PM_Licenses">
+			<Original>Licenses</Original>
+		</Key>
+		<Key ID="STR_PM_MoneyStats">
+			<Original>Money Stats</Original>
+		</Key>
+		<Key ID="STR_PM_MyGang">
+			<Original>My Gang</Original>
+		</Key>
+		<Key ID="STR_PM_WantedList">
+			<Original>Wanted List</Original>
+		</Key>
+		<Key ID="STR_PM_CellPhone">
+			<Original>Cell Phone</Original>
+		</Key>
+		<Key ID="STR_PM_KeyChain">
+			<Original>Key Chain</Original>
+		</Key>
+		<Key ID="STR_PM_AdminMenu">
+			<Original>Admin Menu</Original>
+		</Key>
+		<Key ID="STR_PM_SyncData">
+			<Original>Sync Data</Original>
+		</Key>
+	</Package>
+	<Package name="Settings_Menu">
+		<Key ID="STR_SM_Title">
+			<Original>Settings Menu</Original>
+		</Key>
+		<Key ID="STR_SM_onFoot">
+			<Original>On Foot:</Original>
+		</Key>
+		<Key ID="STR_SM_inCar">
+			<Original>In Car:</Original>
+		<Key ID="STR_SM_inAir">
+			<Original>In Air:</Original>
+		</Key>
+		<Key ID="STR_SM_ToolTip1">
+			<Original>View distance while on foot</Original>
+		</Key>
+		<Key ID="STR_SM_ToolTip2">
+			<Original>View distance while in a land vehicle</Original>
+		</Key>
+		<Key ID="STR_SM_ToolTip3">
+			<Original>View distance while in a air vehicle</Original>
+		</Key>
+	</Package>
+</Project>

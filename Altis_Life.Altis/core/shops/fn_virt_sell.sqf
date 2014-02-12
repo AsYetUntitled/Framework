@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_virt_sell.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -8,9 +9,9 @@
 private["_type","_index","_price","_var","_amount","_name"];
 if((lbCurSel 2402) == -1) exitWith {};
 _type = lbData[2402,(lbCurSel 2402)];
-_index = [_type,sell_array] call fnc_index;
+_index = [_type,__GETC__(sell_array)] call fnc_index;
 if(_index == -1) exitWith {};
-_price = (sell_array select _index) select 1;
+_price = (__GETC__(sell_array) select _index) select 1;
 _var = [_type,0] call life_fnc_varHandle;
 
 _amount = ctrlText 2405;

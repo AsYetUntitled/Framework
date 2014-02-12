@@ -1,6 +1,4 @@
 /*
-	Copyright © 2013 Bryan "Tonic" Boardwine, All rights reserved
-	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_fetchGear.sqf
 	Author: Bryan "Tonic" Boardwine
 	

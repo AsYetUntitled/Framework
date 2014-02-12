@@ -31,7 +31,7 @@ class Life_key_management {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = "Key Chain - Current List Of Keys";
+			text = "$STR_Keys_Title";
 			x = 0.1;
 			y = 0.2;
 			w = 0.6;
@@ -50,7 +50,7 @@ class Life_key_management {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "Close";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -69,7 +69,7 @@ class Life_key_management {
 		
 		class DropKey : life_RscButtonMenu {
 			idc = -1;
-			text = "Drop Key";
+			text = "$STR_Keys_DropKey";
 			onButtonClick = "[] call life_fnc_keyDrop";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -79,7 +79,7 @@ class Life_key_management {
 		
 		class GiveKey : Life_RscButtonMenu {
 			idc = 2703;
-			text = "Give Key";
+			text = "$STR_Keys_GiveKey";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_keyGive";
 			x = 0.32;

@@ -15,7 +15,7 @@ _names = "";
 	{
 		_val = round((_x select 2) / 16);
 	};
-	[[_x select 0,"483",_x select 1,_val],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[_x select 0,_x select 1,"483",_val],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	_names = _names + format["%1<br/>",_x select 1];
 } foreach _sellers;
 

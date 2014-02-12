@@ -20,7 +20,7 @@ _varValue = _this select 1;
 _mode = 	[_varValue,0,[0]] call bis_fnc_param;
 _params = 	[_varValue,1,[]] call bis_fnc_param;
 _functionName =	[_varValue,2,"",[""]] call bis_fnc_param;
-_target =	[_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull]] call bis_fnc_param;
+_target =	[_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull,""]] call bis_fnc_param;
 _isPersistent =	[_varValue,4,false,[false]] call bis_fnc_param;
 _isCall =	[_varValue,5,false,[false]] call bis_fnc_param;
 
@@ -35,11 +35,14 @@ _validFunctions =
 ,"STS_fnc_vehicleCreate","STS_fnc_getID","life_fnc_adminid","fnc_player_query","life_fnc_refuelGlobal"
 ];
 
+/*
+	Not fully finished for the 'pre' version
 if(!(_functionName in _validFunctions)) exitWith {
 	diag_log format["UNKNOWN FUNCTION: %1 passed PARAMS: %2 TARET: %3",_functionName,_params,_target];
 	diag_log format["%1",str(missionNamespace getVariable _functionName)];
 	false
 };
+*/
 
 if (ismultiplayer && _mode == 0) then {
 	if (isserver) then {
@@ -68,6 +71,9 @@ if (ismultiplayer && _mode == 0) then {
 				};
 				case (typename grpnull);
 				case (typename sideUnknown): {
+					_ownerID = -1;
+				};
+				case (typeName ""): {
 					_ownerID = -1;
 				};
 			};
@@ -113,6 +119,7 @@ if (ismultiplayer && _mode == 0) then {
 	_canExecute = switch (typename _target) do {
 		case (typename grpnull): {player in units _target};
 		case (typename sideUnknown): {playerside == _target;};
+		case (typeName ""): {if(!isNull player) then {getPlayerUID player == _target;} else {false}};
 		default {true};
 	};
 

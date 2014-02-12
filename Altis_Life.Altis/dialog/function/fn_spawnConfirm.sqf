@@ -15,9 +15,13 @@ if(count life_spawn_point == 0) then
 	
 	if(playerSide == civilian) then
 	{
-		_spawnPos = (call compile format["%1", _sp select 0]) call BIS_fnc_selectRandom;
-		_spawnPos = _spawnPos buildingPos 0;
-		player setPos _spawnPos;
+		if(isNil {(call compile format["%1", _sp select 0])}) then {
+			player setPos (getMarkerPos (_sp select 0));
+		} else {
+			_spawnPos = (call compile format["%1", _sp select 0]) call BIS_fnc_selectRandom;
+			_spawnPos = _spawnPos buildingPos 0;
+			player setPos _spawnPos;
+		};
 	}
 		else
 	{
@@ -29,9 +33,13 @@ if(count life_spawn_point == 0) then
 {
 	if(playerSide == civilian) then
 	{
-		_spawnPos = (call compile format["%1", life_spawn_point select 0]) call BIS_fnc_selectRandom;
-		_spawnPos = _spawnPos buildingPos 0;
-		player setPos _spawnPos;
+		if(isNil {(call compile format["%1",life_spawn_point select 0])}) then {
+			player setPos (getMarkerPos (life_spawn_point select 0));
+		} else {
+			_spawnPos = (call compile format["%1", life_spawn_point select 0]) call BIS_fnc_selectRandom;
+			_spawnPos = _spawnPos buildingPos 0;
+			player setPos _spawnPos;
+		};
 	}
 		else
 	{

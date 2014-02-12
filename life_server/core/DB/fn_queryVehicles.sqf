@@ -19,7 +19,7 @@ _side = switch(_side) do
 	default {"Error"};
 };
 _query = format["SELECT * FROM vehicles WHERE pid='%1' AND alive='1' AND active='0' AND side='%2' AND type='%3'",_pid,_side,_type];
-_result = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3life', '%1']", _query];
+_result = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 _result = call compile format["%1", _result];
 if(isNil {((_result select 0) select 0)}) then
 {

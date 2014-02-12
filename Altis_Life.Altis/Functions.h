@@ -65,6 +65,8 @@ class Life_Client_Core
 		class packupSpikes {};
 		class robFederal {};
 		class storeVehicle {};
+		class robAction {};
+		class sellTurtle {};
 	};
 	
 	class Config
@@ -132,7 +134,6 @@ class Life_Client_Core
 	class Functions
 	{
 		file = "core\functions";
-		class broadcast {};
 		class calWeightDiff {};
 		class fetchCfgDetails {};
 		class handleInv {};
@@ -156,8 +157,17 @@ class Life_Client_Core
 		class playerTags {};
 		class clearVehicleAmmo {};
 		class pulloutVeh {};
-		class MP{};
-		class MPexec{};
+		class nearUnits {};
+		class fedSuccess {};
+	};
+	
+	class Network
+	{
+		file = "core\functions\network";
+		class broadcast {};
+		class MP {};
+		class MPexec {};
+		class netSetVar {};
 	};
 	
 	class Civilian
@@ -169,6 +179,11 @@ class Life_Client_Core
 		class civFetchGear {};
 		class civLoadGear {};
 		class robReserve {};
+		class knockedOut {};
+		class knockoutAction {};
+		class robReceive {};
+		class robPerson {};
+		class removeLicenses {};
 	};
 	
 	class Vehicle
@@ -178,6 +193,9 @@ class Life_Client_Core
 		class openInventory {};
 		class lockVehicle {};
 		class vehicleOwners {};
+		class vehStoreItem {};
+		class vehTakeItem {};
+		class vehInventory {};
 	};
 	
 	class Cop
@@ -236,6 +254,9 @@ class Life_Client_Core
 		class virt_menu {};
 		class virt_update {};
 		class virt_sell {};
+		class chopShopMenu {};
+		class chopShopSelection {};
+		class chopShopSell {};
 	};
 	
 	class Items

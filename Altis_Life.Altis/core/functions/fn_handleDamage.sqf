@@ -3,94 +3,33 @@
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
-	Master damage handling system for Stratis / Altis Life
+	Handles damage, specifically for handling the 'tazer' pistol and nothing else.
 */
-private["_unit","_damage","_source","_projectile","_sel","_curWep"];
+private["_unit","_damage","_source","_projectile","_part","_curWep"];
 _unit = _this select 0;
-_sel = _this select 1;
+_part = _this select 1;
 _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
-_curWep = "";
-if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
-/*
-	This is obsolete
-
-if(_projectile == "DemoCharge_Remote_Ammo" && _source != player && !life_hit_explosive) then
-{
-	life_hit_explosive = true;
-	[] spawn
-	{
-		sleep 2;
-		life_hit_explosive = false;
-	};
-	serv_killed = [_source,"213"];
-	publicVariableServer "serv_killed";
-};
-*/
-
-if(_source != _unit && isPlayer _source && side _source == west && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
-{
-	if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
-	{
-		_damage = false;
-		if(_curwep == "arifle_SDAR_F") then
-		{
-			if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
-			{
-				player allowDamage false;
-				if(typeOf (vehicle player) == "B_Quadbike_01_F") then
-				{
+//Handle the tazer first (Top-Priority).
+if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then {
+	if(side _source == west && playerSide != west) then {
+		_damage = 0;
+		private["_distance","_isVehicle","_isQuad"];
+		_distance = if(_projectile == "B_556x45_dual") then {100} else {35};
+		_isVehicle = if(vehicle player != player) then {true} else {false};
+		_isQuad = if(_isVehicle) then {if(typeOf (vehicle player) == "B_Quadbike_01_F") then {true} else {false}} else {false};
+		
+		if(_unit distance _source < _distance) then {
+			if(!life_istazed && !(_unit getVariable["restrained",false])) then {
+				if(_isVehicle && _isQuad) then {
 					player action ["Eject",vehicle player];
-				};
-				
-				if(vehicle player == player) then
-				{
 					[_unit,_source] spawn life_fnc_tazed;
-				}
-					else
-				{
-					player allowDamage true;
-				};
-			}
-				else
-			{
-				player allowDamage true;
-			};
-		}
-			else
-		{
-			if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
-			{
-				player allowDamage false;
-				if(typeOf (vehicle player) == "B_Quadbike_01_F") then
-				{
-					player action ["Eject",vehicle player];
-				};
-				
-				if(vehicle player == player) then
-				{
+				} else {
 					[_unit,_source] spawn life_fnc_tazed;
-				}
-					else
-				{
-					player allowDamage true;
-					//life_istazed = false;
 				};
-			}
-				else
-			{
-				player allowDamage true;
 			};
-		};
-	}
-		else
-	{
-		player allowDamage true;
-		if(_projectile == "") then
-		{
-			_damage = false;
 		};
 	};
 };

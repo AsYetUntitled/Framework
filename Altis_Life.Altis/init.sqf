@@ -5,16 +5,8 @@ X_Client = false;
 X_JIP = false;
 StartProgress = false;
 
-if(isServer) then 
-{
-	if(!X_Server) then
-	{
-		[] call compile PreprocessFileLineNumbers "\life_server\init.sqf";
-		master_group attachTo[bank_obj,[0,0,0]];
-	};
-	X_Server = true;
-};
 if(!isDedicated) then { X_Client = true;};
+/*
 if(isNull player) then 
 {
 	if(!X_JIP && !isServer) then
@@ -23,13 +15,16 @@ if(isNull player) then
 	};
 	X_JIP = true;
 };
+*/
 enableSaving[false,false];
 
-life_versionInfo = "Altis Life v3.0.7";
+life_versionInfo = "Altis Life RPG v3.1.1";
+/*
 if(X_Client) then
 {
 	[] execVM "core\init.sqf";
 };
+*/
 [] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";
 

@@ -32,8 +32,7 @@ if(player distance (getMarkerPos "jail_marker") > 40) then
 	player setPos (getMarkerPos "jail_marker");
 };
 
-license_civ_gun = false;
-license_civ_rebel = false;
+[1] call life_fnc_removeLicenses;
 if(life_inv_heroinu > 0) then {[false,"heroinu",life_inv_heroinu] call life_fnc_handleInv;};
 if(life_inv_heroinp > 0) then {[false,"heroinp",life_inv_heroinp] call life_fnc_handleInv;};
 if(life_inv_coke > 0) then {[false,"cocaine",life_inv_coke] call life_fnc_handleInv;};

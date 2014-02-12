@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_copSearch.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -5,12 +6,13 @@
 	Description:
 	Returns information on the search.
 */
+life_action_inUse = false;
 private["_civ","_invs","_license","_robber","_guns","_gun"];
 _civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _license = [_this,1,"",[""]] call BIS_fnc_param;
 _invs = [_this,2,[],[[]]] call BIS_fnc_param;
 _robber = [_this,3,false,[false]] call BIS_fnc_param;
-if(isnull _civ) exitWith {};
+if(isNull _civ) exitWith {};
 
 _illegal = 0;
 _inv = "";
@@ -18,10 +20,10 @@ if(count _invs > 0) then
 {
 	{
 		_inv = _inv + format["%1 %2<br/>",_x select 1,[([_x select 0,0] call life_fnc_varHandle)] call life_fnc_varToStr];
-		_index = [_x select 0,sell_array] call fnc_index;
+		_index = [_x select 0,__GETC__(sell_array)] call fnc_index;
 		if(_index != -1) then
 		{
-			_illegal = _illegal + ((_x select 1) * ((sell_array select _index) select 1));
+			_illegal = _illegal + ((_x select 1) * ((__GETC__(sell_array) select _index) select 1));
 		};
 	} foreach _invs;
 	if(_illegal > 6000) then

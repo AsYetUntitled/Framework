@@ -7,8 +7,8 @@
 */
 private["_uid","_type","_index","_data","_crimes","_val","_customBounty","_name"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
-_type = [_this,1,"",[""]] call BIS_fnc_param;
-_name = [_this,2,"",[""]] call BIS_fnc_param;
+_name = [_this,1,"",[""]] call BIS_fnc_param;
+_type = [_this,2,"",[""]] call BIS_fnc_param;
 _customBounty = [_this,3,-1,[0]] call BIS_fnc_param;
 if(_uid == "" OR _type == "" OR _name == "") exitWith {}; //Bad data passed.
 

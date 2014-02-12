@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_clothing_cop.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -19,11 +20,12 @@ switch (_filter) do
 	case 0:
 	{
 		_ret set[count _ret,["U_Rangemaster","Cop Uniform",25]];
-		if(life_coplevel > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_ret set[count _ret,["U_B_CombatUniform_mcam_tshirt",nil,350]];
+			_ret set[count _ret,["U_B_survival_uniform",nil,1250]];
 		};
-		if(life_copLevel > 2) then
+		if(__GETC__(life_coplevel) > 2) then
 		{
 			_ret set[count _ret,["U_B_CombatUniform_mcam_worn",nil,550]];
 		};
@@ -32,13 +34,13 @@ switch (_filter) do
 	//Hats
 	case 1:
 	{
-		if(life_coplevel > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_ret set[count _ret,["H_HelmetB_plain_mcamo",nil,75]];
 			_ret set[count _ret,["H_Booniehat_mcamo",nil,120]];
 		};
 		
-		if(life_copLevel > 2) then
+		if(__GETC__(life_coplevel) > 2) then
 		{
 			_ret set[count _ret,["H_MilCap_mcamo",nil,100]];
 		};
@@ -55,6 +57,7 @@ switch (_filter) do
 			["G_Sport_Checkered",nil,20],
 			["G_Sport_Blackyellow",nil,20],
 			["G_Sport_BlackWhite",nil,20],
+			["G_Aviator",nil,75],
 			["G_Squares",nil,10],
 			["G_Lowprofile",nil,30],
 			["G_Combat",nil,55]
@@ -65,7 +68,7 @@ switch (_filter) do
 	case 3:
 	{
 		_ret set[count _ret,["V_Rangemaster_belt",nil,800]];
-		if(life_coplevel > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_ret set[count _ret,["V_PlateCarrier2_rgr",nil,1500]];
 		};
@@ -79,7 +82,8 @@ switch (_filter) do
 			["B_Kitbag_cbr",nil,800],
 			["B_FieldPack_cbr",nil,500],
 			["B_AssaultPack_cbr",nil,700],
-			["B_Bergen_sgg",nil,2500]
+			["B_Bergen_sgg",nil,2500],
+			["B_Carryall_cbr",nil,3500]
 		];
 	};
 };

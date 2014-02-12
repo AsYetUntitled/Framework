@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_weaponShopSelection.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -14,14 +15,14 @@ _priceTag = ((findDisplay 38400) displayCtrl 38404);
 _item = _control lbData _index;
 if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 {
-	_iS = [_item,life_weapon_shop_array] call fnc_index;
+	_iS = [_item,__GETC__(life_weapon_shop_array)] call fnc_index;
 	if(_iS == -1) then 
 	{
 		_price = 0;
 	}
 		else
 	{
-		_price = (life_weapon_shop_array select _iS) select 1;
+		_price = (__GETC__(life_weapon_shop_array) select _iS) select 1;
 	};
 	_priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#8cff9b'>$%1</t></t>",[(_price)] call life_fnc_numberText];
 	_control lbSetValue[_index,_price];

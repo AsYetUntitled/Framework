@@ -1,38 +1,41 @@
+class Life_RscScrollBar
+{
+	color[] = {1,1,1,0.6};
+	colorActive[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,0.3};
+	thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+	shadow = 0;
+	scrollSpeed = 0.06;
+	width = 0;
+	height = 0;
+	autoScrollEnabled = 1;
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+};
+
 class Life_RscControlsGroup {
 	type = 15;
 	idc = -1;
 	x = 0;
 	y = 0;
-	w = safeZoneW;
-	h = safeZoneH;
+	w = 1;
+	h = 1;
 	shadow = 0;
 	style = 16;
 	
-	class VScrollbar 
+	class VScrollBar : Life_RscScrollBar
 	{
-		color[] = {1, 1, 1, 0.6};
 		width = 0.021;
-		autoScrollSpeed = -1;
-		autoScrollDelay = 5;
-		autoScrollRewind = 0;
-		shadow = 0;
+		autoScrollEnabled = 1;
 	};
 	
-	class HScrollbar 
+	class HScrollBar : Life_RscScrollBar
 	{
-		color[] = {1, 1, 1, 0.6};
 		height = 0.028;
-		shadow = 0;
-	};
-	
-	class ScrollBar {
-		color[] = {1, 1, 1, 0.6};
-		colorActive[] = {1, 1, 1, 1};
-		colorDisabled[] = {1, 1, 1, 0.3};
-		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
 	
 	class Controls {};
@@ -74,19 +77,18 @@ class Life_RscListNBox
 	colorScrollbar[] = {0.95,0.95,0.95,1};
 	colorSelect[] = {0,0,0,1};
 	colorSelect2[] = {0,0,0,1};
-	colorSelectBackground[] = {0.95,0.95,0.95,1};
+	colorSelectBackground[] = {0.8,0.8,0.8,1};
 	colorSelectBackground2[] = {1,1,1,0.5};
+	soundSelect[] = {"",0.1,1};
+	soundExpand[] = {"",0.1,1};
+	soundCollapse[] = {"",0.1,1};
 	period = 1.2;
-	class ScrollBar
-	{
-		color[] = {1,1,1,0.6};
-		colorActive[] = {1,1,1,1};
-		colorDisabled[] = {1,1,1,0.3};
-		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-	};
+	maxHistoryDelay = 0.5;
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+	class ListScrollBar: Life_RscScrollBar{};
+	class ScrollBar: Life_RscScrollBar{};
 };
 
 
@@ -105,6 +107,9 @@ class Life_RscText {
 	colorText[] = {1, 1, 1, 1.0};
 	colorBackground[] = {0, 0, 0, 0};
 	linespacing = 1;
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
 };
 
 class Life_RscLine : Life_RscText {
@@ -152,6 +157,9 @@ class life_RscPicture {
 	y = 0;
 	w = 0.2;
 	h = 0.15;
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
 };
 
 class Life_RscTextMulti : Life_RscText
@@ -203,9 +211,13 @@ idc = -1;
     soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
     action = "";
     text = "";
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class Life_RscButton {
+class Life_RscButton 
+{
 	style = 2;
 	x = 0;
 	y = 0;
@@ -214,23 +226,23 @@ class Life_RscButton {
 	shadow = 2;
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	colorText[] = {1, 1, 1, 1.0};
-	colorDisabled[] = {0.4, 0.4, 0.4, 1};
-	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.7};
-	colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-	colorBackgroundDisabled[] = {0.95, 0.95, 0.95, 1};
+	colorText[] = {1,1,1,1.0};
+	colorDisabled[] = {0.4,0.4,0.4,1};
+	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",0.7};
+	colorBackgroundActive[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+	colorBackgroundDisabled[] = {0.95,0.95,0.95,1};
 	offsetX = 0.003;
 	offsetY = 0.003;
 	offsetPressedX = 0.002;
 	offsetPressedY = 0.002;
-	colorFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-	colorShadow[] = {0, 0, 0, 1};
-	colorBorder[] = {0, 0, 0, 1};
+	colorFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+	colorShadow[] = {0,0,0,1};
+	colorBorder[] = {0,0,0,1};
 	borderSize = 0.0;
-	soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-	soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-	soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-	soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
 class Life_RscButtonTextOnly : Life_RscButton {
@@ -250,36 +262,37 @@ class Life_RscShortcutButton {
 	shadow = 1;
 	w = 0.183825;
 	h = "(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20)";
-	color[] = {1, 1, 1, 1.0};
-	color2[] = {0.95, 0.95, 0.95, 1};
-	colorDisabled[] = {1, 1, 1, 0.25};
-	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-	colorBackground2[] = {1, 1, 1, 1};
+	color[] = {1,1,1,1.0};
+	colorFocused[] = {1,1,1,1.0};
+	color2[] = {0.95,0.95,0.95,1};
+	colorDisabled[] = {1,1,1,0.25};
+	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+	colorBackgroundFocused[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",1};
+	colorBackground2[] = {1,1,1,1};
 	animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
 	animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
 	animTextureDisabled = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\normal_ca.paa";
 	animTextureOver = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\over_ca.paa";
 	animTextureFocused = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\focus_ca.paa";
 	animTexturePressed = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButton\down_ca.paa";
-	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 	periodFocus = 1.2;
 	periodOver = 0.8;
-	
-	class HitZone {
+	class HitZone
+	{
 		left = 0.0;
 		top = 0.0;
 		right = 0.0;
 		bottom = 0.0;
 	};
-	
-	class ShortcutPos {
+	class ShortcutPos
+	{
 		left = 0;
 		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		w = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
 		h = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	};
-	
-	class TextPos {
+	class TextPos
+	{
 		left = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
 		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		right = 0.005;
@@ -290,20 +303,20 @@ class Life_RscShortcutButton {
 	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	text = "";
-	soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-	soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-	soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-	soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 	action = "";
-	
-	class Attributes {
+	class Attributes
+	{
 		font = "PuristaMedium";
 		color = "#E5E5E5";
 		align = "left";
 		shadow = "true";
 	};
-	
-	class AttributesImage {
+	class AttributesImage
+	{
 		font = "PuristaMedium";
 		color = "#E5E5E5";
 		align = "left";
@@ -322,42 +335,52 @@ class Life_RscButtonMenu : Life_RscShortcutButton {
 	h = 0.039216;
 	animTextureNormal = "#(argb,8,8,3)color(1,1,1,1)";
 	animTextureDisabled = "#(argb,8,8,3)color(1,1,1,1)";
-	animTextureOver = "#(argb,8,8,3)color(1,1,1,0.5)";
+	animTextureOver = "#(argb,8,8,3)color(1,1,1,1)";
 	animTextureFocused = "#(argb,8,8,3)color(1,1,1,1)";
 	animTexturePressed = "#(argb,8,8,3)color(1,1,1,1)";
 	animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
-	colorBackground[] = {0, 0, 0, 0.8};
-	colorBackground2[] = {1, 1, 1, 0.5};
-	color[] = {1, 1, 1, 1};
-	color2[] = {1, 1, 1, 1};
-	colorText[] = {1, 1, 1, 1};
-	colorDisabled[] = {1, 1, 1, 0.25};
+	colorBackground[] = {0,0,0,0.8};
+	colorBackgroundFocused[] = {1,1,1,1};
+	colorBackground2[] = {0.75,0.75,0.75,1};
+	color[] = {1,1,1,1};
+	colorFocused[] = {0,0,0,1};
+	color2[] = {0,0,0,1};
+	colorText[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,0.25};
 	period = 1.2;
 	periodFocus = 1.2;
 	periodOver = 1.2;
 	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	
-	class TextPos {
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
+	class TextPos
+	{
 		left = "0.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 		top = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		right = 0.005;
 		bottom = 0.0;
 	};
-	
-	class Attributes {
+	class Attributes
+	{
 		font = "PuristaLight";
 		color = "#E5E5E5";
 		align = "left";
 		shadow = "false";
 	};
-	
-	class ShortcutPos {
+	class ShortcutPos
+	{
 		left = "(6.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)) - 0.0225 - 0.005";
 		top = 0.005;
 		w = 0.0225;
 		h = 0.03;
 	};
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEnter",0.09,1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundPush",0.09,1};
+	soundClick[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundClick",0.09,1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEscape",0.09,1};
+	textureNoShortcut = "";
 };
 
 class Life_RscShortcutButtonMain : Life_RscShortcutButton {
@@ -459,7 +482,8 @@ class Life_RscProgress
 	colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 };
 
-class Life_RscListBox {
+class Life_RscListBox 
+{
 	style = 16;
 	idc = -1;
 	type = 5;
@@ -488,15 +512,13 @@ class Life_RscListBox {
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
 	autoScrollRewind = 0;
-	
-	class ScrollBar {
-		color[] = {1, 1, 1, 0.6};
-		colorActive[] = {1, 1, 1, 1};
-		colorDisabled[] = {1, 1, 1, 0.3};
-		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
+	class ListScrollBar: Life_RscScrollBar
+	{
+		color[] = {1,1,1,1};
+		autoScrollEnabled = 1;
 	};
 };
 
@@ -1049,15 +1071,7 @@ class Life_RscCombo {
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	
-	class ScrollBar {
-		color[] = {1, 1, 1, 0.6};
-		colorActive[] = {1, 1, 1, 1};
-		colorDisabled[] = {1, 1, 1, 0.3};
-		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-	};
+	class ComboScrollBar : Life_RscScrollBar {};
 };
 
 class Life_RscToolbox {

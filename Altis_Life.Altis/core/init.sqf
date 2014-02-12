@@ -19,9 +19,9 @@ _handle = [] spawn life_fnc_setupEVH;
 diag_log "::Life Client:: Setting up Eventhandlers";
 waitUntil {scriptDone _handle};
 diag_log "::Life Client:: Eventhandlers completed";
-_handle = [] spawn life_fnc_setupActions;
-diag_log "::Life Client:: Setting up user actions";
-waitUntil {scriptDone _handle};
+//_handle = [] spawn life_fnc_setupActions;
+//diag_log "::Life Client:: Setting up user actions";
+//waitUntil {scriptDone _handle};
 diag_log "::Life Client:: User actions completed";
 diag_log "::Life Client:: Waiting for server functions to transfer..";
 waitUntil {(!isNil {clientGangLeader})};
@@ -68,7 +68,7 @@ life_sidechat = true;
 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 //[player] execVM "core\client\intro.sqf";
-[] call life_fnc_playerTags; //Enable tags by default?
+LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 [] call life_fnc_settingsInit;
 life_fnc_moveIn = compileFinal
 "
@@ -78,3 +78,4 @@ life_fnc_moveIn = compileFinal
 [] execVM "core\init_survival.sqf";
 
 setPlayerRespawnTime life_respawn_timer; //Set our default respawn time.
+[] execVM "core\monitor_esc.sqf";
