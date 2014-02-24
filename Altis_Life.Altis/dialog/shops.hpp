@@ -63,7 +63,7 @@ class life_weapon_shop
 		class ButtonBuySell : Life_RscButtonMenu
 		{
 			idc = 38405;
-			text = "Buy";
+			text = "$STR_Global_Buy";
 			onButtonClick = "[] call life_fnc_weaponShopBuySell";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -74,7 +74,7 @@ class life_weapon_shop
 		class ButtonClose : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Close";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);

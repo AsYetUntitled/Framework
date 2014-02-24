@@ -6,7 +6,7 @@
 	Starts the searching process.
 */
 private["_unit"];
-_unit = cursorTarget;
+_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _unit) exitWith {};
 hint "Searching...";
 sleep 2;

@@ -49,7 +49,7 @@ class Life_ticket_give
 
 		class payTicket: Life_RscButtonMenu {
 			idc = -1;
-			text = "Give Ticket";
+			text = "$STR_Ticket_GiveTicket";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_ticketGive";
 			x = 0.45;
@@ -101,7 +101,7 @@ class Life_ticket_pay
 
 		class payTicket: Life_RscButtonMenu {
 			idc = -1;
-			text = "Pay Ticket";
+			text = "$STR_Ticket_PayTicket";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_ticketPay;";
 			x = 0.2 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
@@ -112,7 +112,7 @@ class Life_ticket_pay
 		
 		class refuseTicket : Life_RscButtonMenu {
 			idc = -1;
-			text = "Refuse Ticket";
+			text = "$STR_Ticket_RefuseTicket";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "closeDialog 0;";
 			x = 0.4 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));

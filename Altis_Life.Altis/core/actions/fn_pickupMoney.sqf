@@ -7,14 +7,16 @@
 */
 if((time - life_action_delay) < 1.5) exitWith {hint "You can't rapidly use action keys!"};
 private["_obj","_val"];
-_obj = cursorTarget;
+_obj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _val = (_obj getVariable "item") select 1;
 if(isNil {_val}) exitWith {};
 if(isNull _obj || player distance _obj > 3) exitWith {};
-
+if((_obj getVariable["PickedUp",false])) exitWith {}; //Object was already picked up.
+_obj setVariable["PickedUp",TRUE,TRUE];
 if(!isNil {_val}) then
 {
 	deleteVehicle _obj;
+	//waitUntil {isNull _obj};
 	
 	//Stop people picking up huge values of money which should stop spreading dirty money.
 	switch (true) do

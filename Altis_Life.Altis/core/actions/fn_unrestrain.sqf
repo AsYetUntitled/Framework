@@ -2,9 +2,11 @@
 	File: fn_unrestrain.sqf
 */
 private["_unit"];
-_unit = cursorTarget;
+_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if(isNull _unit OR !(_unit getVariable["restrained",FALSE])) exitWith {}; //Error check?
 
-if(isNull _unit || !(_unit getVariable "restrained")) exitWith {};
+_unit setVariable["restrained",FALSE,TRUE];
+_unit setVariable["Escorting",FALSE,TRUE];
+_unit setVariable["transporting",FALSE,TRUE];
 
-_unit setVariable["restrained",false,true];
-[[0,format["%1 was unrestrained by %2", name _unit, name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+[[0,format["%1 was unrestrained by %2",name _unit, name player]],"life_fnc_broadcast",west,FALSE] call life_fnc_MP;

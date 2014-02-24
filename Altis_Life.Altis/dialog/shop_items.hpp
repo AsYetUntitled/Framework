@@ -28,7 +28,7 @@ class shops_menu {
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Shop Inventory";
+			text = "$STR_VS_SI";
 			sizeEx = 0.04;
 			x = 0.12; y = 0.27;
 			w = 0.275; h = 0.04;
@@ -38,7 +38,7 @@ class shops_menu {
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Your Inventory";
+			text = "$STR_VS_PI";
 			sizeEx = 0.04;
 			
 			x = 0.60; y = 0.27;
@@ -99,7 +99,7 @@ class shops_menu {
 		class ButtonAddG : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Buy Item";
+			text = "$STR_VS_BuyItem";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_virt_buy;";
 			
@@ -121,7 +121,7 @@ class shops_menu {
 		class ButtonRemoveG : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Sell Item";
+			text = "$STR_VS_SellItem";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_virt_sell";
 			
@@ -134,7 +134,7 @@ class shops_menu {
 		class ButtonClose : Life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
-			text = "Close";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);

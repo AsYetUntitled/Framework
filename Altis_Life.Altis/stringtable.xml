@@ -22,6 +22,12 @@
 		<Key ID="STR_Global_Settings">
 			<Original>Settings</Original>
 		</Key>
+		<Key ID="STR_Global_BuyPerm">
+			<Original>Buy Permanently</Original>
+		</Key>
+		<Key ID="STR_Global_NoSelection">
+			<Original>You did not select anything.</Original>
+		</Key>
 	</Package>
 	<Package name="Admin_Menu">
 		<Key ID="STR_Admin_Title">
@@ -99,7 +105,7 @@
 			<Original>Set Leader</Original>
 		</Key>
 		<Key ID="STR_Gang_PriceTxt">
-			<Original>To create a gang it costs $10,000</Original>
+			<Original><t align='center'>To create a gang it costs $10,000</t></Original>
 		</Key>
 		<Key ID="STR_Gang_Create">
 			<Original>Create</Original>
@@ -123,6 +129,24 @@
 		</Key>
 		<Key ID="STR_Garage_SellVehicle">
 			<Original>Sell Vehicle</Original>
+		</Key>
+		<Key ID="STR_Garage_SellPrice">
+			<Original>Sell Price</Original>
+		</Key>
+		<Key ID="STR_Garage_SFee">
+			<Original>Storage Fee</Original>
+		</Key>
+		<Key ID="STR_Garage_NoVehicles">
+			<Original>No Vehicles</Original>
+		</Key>
+		<Key ID="STR_Garage_GoodConnection">
+			<Original>Good Connection</Original>
+		</Key>
+		<Key ID="STR_Garage_CashError">
+			<Original>You don't have $%1 in your bank account</Original>
+		</Key>
+		<Key ID="STR_Garage_SpawningVeh">
+			<Original>Spawning vehicle please wait...</Original>
 		</Key>
 	</Package>
 	<Package name="Key_Chain">
@@ -188,6 +212,189 @@
 		</Key>
 		<Key ID="STR_SM_ToolTip3">
 			<Original>View distance while in a air vehicle</Original>
+		</Key>
+		<Key ID="STR_SM_PlayerTags">
+			<Original>Player Tags</Original>
+		</Key>
+		<Key ID="STR_SM_TagsON">
+			<Original>Tags ON</Original>
+		</Key>
+		<Key ID="STR_SM_TagsOFF">
+			<Original>Tags OFF</Original>
+		</Key>
+		<Key ID="STR_SM_SC">
+			<Original>Sidechat Settings</Original>
+		</Key>
+		<Key ID="STR_SM_SCOFF">
+			<Original>Sidechat OFF</Original>
+		</Key>
+		<Key ID="STR_SM_SCON">
+			<Original>Sidechat ON</Original>
+		</Key>
+	</Package>
+	<Package name="Virt_Shop">
+		<Key ID="STR_VS_SI">
+			<Original>Shop Inventory</Original>
+		</Key>
+		<Key ID="STR_VS_PI">
+			<Original>Your Inventory</Original>
+		</Key>
+		<Key ID="STR_VS_BuyItem">
+			<Original>Buy Item</Original>
+		</Key>
+		<Key ID="STR_VS_SellItem">
+			<Original>Sell Item</Original>
+		</Key>
+	</Package>
+	<Package name="Spawn_Menu">
+		<Key ID="STR_Spawn_Title">
+			<Original>Spawn Selection</Original>
+		</Key>
+		<Key ID="STR_Spawn_Spawn">
+			<Original>Spawn</Original>
+		</Key>
+		<Key ID="STR_Spawn_CSP">
+			<Original>Current Spawn Point</Original>
+		</Key>
+		<Key ID="STR_Spawn_Spawned">
+			<Original>You have spawned at</Original>
+		</Key>
+	</Package>
+	<Package name="Ticket_Menu">
+		<Key ID="STR_Ticket_GiveTicket">
+			<Original>Give Ticket</Original>
+		</Key>
+		<Key ID="STR_Ticket_PayTicket">
+			<Original>Pay Ticket</Original>
+		</Key>
+		<Key ID="STR_Ticket_RefuseTicket">
+			<Original>Refuse Ticket</Original>
+		</Key>
+	</Package>
+	<Package name="Trunk_Menu">
+		<Key ID="STR_Trunk_TInventory">
+			<Original>Trunk Inventory</Original>
+		</Key>
+		<Key ID="STR_Trunk_PInventory">
+			<Original>Player Inventory</Original>
+		</Key>
+		<Key ID="STR_Trunk_Take">
+			<Original>Take</Original>
+		</Key>
+		<Key ID="STR_Trunk_Store">
+			<Original>Store</Original>
+		</Key>
+	</Package>
+	<Package name="Wanted_Menu">
+		<Key ID="STR_Wanted_Title">
+			<Original>APD Wanted List</Original>
+		</Key>
+		<Key ID="STR_Wanted_Pardon">
+			<Original>Pardon</Original>
+		</Key>
+	</Package>
+	<Package name="Animals">
+		<Key ID="STR_ANIM_Salema">
+			<Original>Salema</Original>
+		</Key>
+		<Key ID="STR_ANIM_Ornate">
+			<Original>Ornate</Original>
+		</Key>
+		<Key ID="STR_ANIM_Mackerel">
+			<Original>Mackerel</Original>
+		</Key>
+		<Key ID="STR_ANIM_Tuna">
+			<Original>Tuna</Original>
+		</Key>
+		<Key ID="STR_ANIM_Mullet">
+			<Original>Mullet</Original>
+		</Key>
+		<Key ID="STR_ANIM_Catshark">
+			<Original>Cat Shark</Original>
+		</Key>
+		<Key ID="STR_ANIM_Rabbit">
+			<Original>Rabbit</Original>
+		</Key>
+	</Package>
+	<Package name="Notifications">
+		<Key ID="STR_NOTF_NE_1">
+			<Original>You do not have $%1 for a %2</Original>
+		</Key>
+		<Key ID="STR_NOTF_B_1">
+			<Original>You bought a %1 for $%2</Original>
+		</Key>
+		<Key ID="STR_NOTF_Arrested_1">
+			<Original>%1 was arrested by %2</Original>
+		</Key>
+		<Key ID="STR_NOTF_Fishing">
+			<Original>You caught a %1</Original>
+		</Key>
+		<Key ID="STR_NOTF_CaughtTurtle">
+			<Original>You have taken some turtle meat</Original>
+		</Key>
+		<Key ID="STR_NOTF_Earned_1">
+			<Original>You have earned $%1</Original>
+		</Key>
+		<Key ID="STR_NOTF_NetDrop">
+			<Original>Dropping fishing net....</Original>
+		</Key>
+		<Key ID="STR_NOTF_NetDropFail">
+			<Original>Didn't catch any fish..</Original>
+		</Key>
+		<Key ID="STR_NOTF_NetUp">
+			<Original>Fishing net pulled up.</Original>
+		</Key>
+		<Key ID="STR_NOTF_InvFull">
+			<Original>Your inventory space is full.</Original>
+		</Key>
+		<Key ID="STR_NOTF_Gathering">
+			<Original>Gathering %1...</Original>
+		</Key>
+	</Package>
+	<Package name="Player_Interaction">
+		<Key ID="STR_pInAct_Title">
+			<Original>Player Interaction Menu</Original>
+		</Key>
+		<Key ID="STR_pInAct_Unrestrain">
+			<Original>Un-Restrain</Original>
+		</Key>
+		<Key ID="STR_pInAct_checkLicenses">
+			<Original>Check Licenses</Original>
+		</Key>
+		<Key ID="STR_pInAct_SearchPlayer">
+			<Original>Search Player</Original>
+		</Key>
+		<Key ID="STR_pInAct_StopEscort">
+			<Original>Stop Escorting</Original>
+		</Key>
+		<Key ID="STR_pInAct_Escort">
+			<Original>Escort Player</Original>
+		</Key>
+		<Key ID="STR_pInAct_TicketBtn">
+			<Original>Ticket Player</Original>
+		</Key>
+		<Key ID="STR_pInAct_Arrest">
+			<Original>Send to jail</Original>
+		</Key>
+	</Package>
+	<Package name="Vehicle_Interaction">
+		<Key ID="STR_vInAct_Title">
+			<Original>Vehicle Interaction Menu</Original>
+		</Key>
+		<Key ID="STR_vInAct_Repair">
+			<Original>Repair Vehicle</Original>
+		</Key>
+		<Key ID="STR_vInAct_Registration">
+			<Original>Registration</Original>
+		</Key>
+		<Key ID="STR_vInAct_SearchVehicle">
+			<Original>Search Vehicle</Original>
+		</Key>
+		<Key ID="STR_vInAct_PullOut">
+			<Original>Pullout Players</Original>
+		</Key>
+		<Key ID="STR_vInAct_Impound">
+			<Original>Impound Vehicle</Original>
 		</Key>
 	</Package>
 </Project>

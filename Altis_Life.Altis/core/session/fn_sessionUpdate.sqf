@@ -42,4 +42,4 @@ switch (playerSide) do
 	};
 };
 
-[_packet,"STS_fnc_update",false,false] spawn life_fnc_MP;
+[_packet,"TON_fnc_update",false,false] spawn life_fnc_MP;

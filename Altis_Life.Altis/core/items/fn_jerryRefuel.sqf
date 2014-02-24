@@ -7,6 +7,7 @@
 */
 private["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
 _vehicle = cursorTarget;
+life_interrupted = false;
 if(isNull _vehicle) exitWith {hint "You need to look at the vehicle you want to refuel!"};
 if(!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship")) exitWith {};
 if(player distance _vehicle > 7.5) exitWith {hint "You need to be closer to the vehicle!"};
@@ -37,11 +38,13 @@ while{true} do
 	_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 	if(_cP >= 1) exitWith {};
 	if(!alive player) exitWith {};
+	if(life_interrupted) exitWith {};
 };
 5 cutText ["","PLAIN"];
-if(!alive player) exitWith {};
-
 player playActionNow "stop";
+if(!alive player) exitWith {};
+if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
+
 
 switch (true) do
 {

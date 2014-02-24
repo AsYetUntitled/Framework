@@ -20,3 +20,4 @@
 #include "trunk.hpp"
 #include "spawnSelection.hpp"
 #include "chop_shop.h"
+#include "pInteraction.h"

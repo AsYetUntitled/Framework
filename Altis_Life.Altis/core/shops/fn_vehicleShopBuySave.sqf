@@ -268,7 +268,7 @@ if(playerSide == west) then
 
 [[_vehicle,_color],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
 
-[[(getPlayerUID player),playerSide,_vehicle,_color],"STS_fnc_vehicleCreate",false,false] spawn life_fnc_MP;
+[[(getPlayerUID player),playerSide,_vehicle,_color],"TON_fnc_vehicleCreate",false,false] spawn life_fnc_MP;
 
 _vehicle lock 2;
 if((life_veh_shop == "civ_air_1" OR life_veh_shop == "civ_air_2") && (typeOf _vehicle == "B_Heli_Light_01_F")) then

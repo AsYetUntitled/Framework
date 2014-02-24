@@ -26,7 +26,7 @@ if(!hasInterface) then
 	//[] execVM "\life_server\anticheat_server.sqf";
 };
 
-[] spawn STS_fnc_cleanup;
+[] spawn TON_fnc_cleanup;
 life_gang_list = [];
 publicVariable "life_gang_list";
 life_wanted_list = [];
@@ -56,10 +56,10 @@ publicVariable "fnc_serv_kick";
 [] spawn DB_fnc_queueManagement;
 
 //Server-side functions that need to be sent out.
-publicVariable "STS_fnc_addVehicle2Chain";
+publicVariable "TON_fnc_addVehicle2Chain";
 publicVariable "life_fnc_fedSuccess";
 
-[] spawn STS_fnc_federalUpdate;
+[] spawn TON_fnc_federalUpdate;
 
 [] spawn
 {

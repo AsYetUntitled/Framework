@@ -13,5 +13,5 @@ if(alive _obj) exitWith {}; //It's alive, don't take it charlie!
 if(([true,"turtle",1] call life_fnc_handleInv)) then
 {
 	deleteVehicle _obj;
-	titleText["You have taken some turtle meat","PLAIN"];
+	titleText[localize "STR_NOTF_CaughtTurtle","PLAIN"];
 };

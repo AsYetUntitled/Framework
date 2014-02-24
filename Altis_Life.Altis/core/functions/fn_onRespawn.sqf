@@ -13,8 +13,8 @@ if(!isNull _corpse) then{deleteVehicle _corpse;};
 
 hideBody _corpse;
 deleteVehicle _corpse;
-_handle = [] spawn life_fnc_setupActions;
-waitUntil {scriptDone _handle};
+//_handle = [] spawn life_fnc_setupActions;
+//waitUntil {scriptDone _handle};
 
 switch(playerSide) do
 {
@@ -49,7 +49,7 @@ if(life_is_arrested) then
 
 _unit addRating 100000;
 
-[[_unit,life_sidechat,playerSide],"STS_fnc_managesc",false,false] spawn life_fnc_MP;
+[[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 [] call life_fnc_hudUpdate;
 cutText ["","BLACK IN"];
 

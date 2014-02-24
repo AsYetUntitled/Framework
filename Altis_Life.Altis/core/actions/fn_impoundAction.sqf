@@ -56,7 +56,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 		};
 		
 		life_impound_inuse = true;
-		[[_vehicle,true,player],"STS_fnc_vehicleStore",false,false] spawn life_fnc_MP;
+		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
 		waitUntil {!life_impound_inuse};
 		hint format["You have impounded a %1\n\nYou have received $%2 for cleaning up the streets!",_type,_price];
 		[[0,format["%1 has impounded %2's %3",name player,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

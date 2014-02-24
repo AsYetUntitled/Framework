@@ -17,7 +17,7 @@ if((_itemInfo select 6) != "CfgVehicles") then
 {
 	if((_itemInfo select 4) in [4096,131072]) then
 	{
-		if(!(player canAdd _item)) exitWith {_bad = "You don't have enough room for that item."};
+		if(!(player canAdd _item) && (uiNamespace getVariable["Weapon_Shop_Filter",0]) != 1) exitWith {_bad = "You don't have enough room for that item."};
 	};
 };
 

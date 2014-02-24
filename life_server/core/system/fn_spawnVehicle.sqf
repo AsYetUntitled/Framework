@@ -49,12 +49,12 @@ _sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['arma3l
 _vehicle = _vInfo select 2 createVehicle (_sp);
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
-_vehicle addEventHandler["Killed","_this spawn STS_fnc_vehicleDead"];
+_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"];
 [_vehicle] call life_fnc_clearVehicleAmmo;
 _vehicle lock 2;
 
 //Send keys over the network.
-[[_vehicle],"STS_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
+[[_vehicle],"TON_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
 
 //Reskin the vehicle 
 [[_vehicle,(call compile format["%1",_vInfo select 8])],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;

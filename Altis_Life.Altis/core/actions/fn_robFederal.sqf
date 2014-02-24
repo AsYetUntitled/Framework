@@ -11,4 +11,4 @@ _unit = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 if(isNull _vault OR isNull _unit) exitWith {}; //Bad data passed
 
-[[_vault,_unit],"STS_fnc_robReserve",false,false] spawn life_fnc_MP;
+[[_vault,_unit],"TON_fnc_robReserve",false,false] spawn life_fnc_MP;

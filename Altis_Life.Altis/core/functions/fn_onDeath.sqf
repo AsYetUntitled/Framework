@@ -67,7 +67,6 @@ if(side _source == west && vehicle _source == _source && playerSide == civilian)
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 	};
 };
-{ _unit removeAction _x; } foreach life_actions;
 
 _handle = [_unit] spawn life_fnc_dropItems;
 waitUntil {scriptDone _handle};

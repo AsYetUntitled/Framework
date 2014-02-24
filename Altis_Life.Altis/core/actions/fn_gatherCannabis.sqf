@@ -9,7 +9,7 @@ _sum = ["cannabis",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDif
 
 if(_sum > 0) then
 {
-	life_action_in_use = true;
+	life_action_inUse = true;
 	titleText["Gathering Cannabis...","PLAIN"];
 	titleFadeOut 5;
 	sleep 5;
@@ -19,4 +19,4 @@ if(_sum > 0) then
 	};
 };
 
-life_action_in_use = false;
+life_action_inUse = false;

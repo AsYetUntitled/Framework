@@ -7,6 +7,7 @@
 */
 private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName"];
 _veh = cursorTarget;
+life_interrupted = false;
 if(isNull _veh) exitwith {};
 if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) then
 {
@@ -37,10 +38,12 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(_cP >= 1) exitWith {};
 			if(!alive player) exitWith {};
 			if(player != vehicle player) exitWith {};
+			if(life_interrupted) exitWith {};
 		};
 		
 		5 cutText ["","PLAIN"];
 		player playActionNow "stop";
+		if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
 		if(player != vehicle player) exitWith {titleText["You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.","PLAIN"];};
 		player removeItem "ToolKit";
 		_veh setDamage 0;

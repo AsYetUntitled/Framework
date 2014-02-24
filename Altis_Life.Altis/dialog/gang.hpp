@@ -230,7 +230,7 @@ class Life_Create_Gang_Diag {
 		{
 			idc = -1;
 			sizeEx = 0.020;
-			text = "<t align='center'>$STR_Gang_PriceTxt</t>";
+			text = "$STR_Gang_PriceTxt";
 			x = 0.1;
 			y = 0.25;
 			w = 0.5; h = 0.32;

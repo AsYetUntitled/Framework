@@ -26,13 +26,13 @@ _isCall =	[_varValue,5,false,[false]] call bis_fnc_param;
 
 //Only approve internal functions to be passed through our framework so prep our array of allowed functions.
 _validFunctions =
-["life_fnc_restrain","STS_fnc_query","STS_fnc_update","STS_fnc_add","life_fnc_broadcast","life_fnc_wantedAdd"
+["life_fnc_restrain","TON_fnc_query","TON_fnc_update","TON_fnc_add","life_fnc_broadcast","life_fnc_wantedAdd"
 ,"life_fnc_wantedRemove","life_fnc_wantedBounty","life_fnc_moveIn","life_fnc_pushFunction","life_fnc_pulloutVeh"
 ,"life_fnc_searchClient","life_fnc_copSearch","life_fnc_copSiren","life_fnc_ticketPrompt","life_fnc_receiveMoney"
 ,"clientGetKey","life_fnc_receiveItem","life_fnc_wantedPardon","life_fnc_wantedMenu","life_fnc_wantedList","clientWireTransfer"
-,"clientGangKick","clientGangLeader","clientMessage","life_fnc_impoundMenu","STS_fnc_managesc","life_fnc_sessionReceive"
-,"life_fnc_fedSuccess","STS_fnc_spikeStrip","STS_fnc_robReserve","STS_fnc_vehicleStore","STS_fnc_getVehicles"
-,"STS_fnc_vehicleCreate","STS_fnc_getID","life_fnc_adminid","fnc_player_query","life_fnc_refuelGlobal"
+,"clientGangKick","clientGangLeader","clientMessage","life_fnc_impoundMenu","TON_fnc_managesc","life_fnc_sessionReceive"
+,"life_fnc_fedSuccess","TON_fnc_spikeStrip","TON_fnc_robReserve","TON_fnc_vehicleStore","TON_fnc_getVehicles"
+,"TON_fnc_vehicleCreate","TON_fnc_getID","life_fnc_adminid","fnc_player_query","life_fnc_refuelGlobal"
 ];
 
 /*

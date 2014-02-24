@@ -9,20 +9,20 @@ private["_fish","_type"];
 if(!(vehicle player isKindOf "Ship")) exitWith {};
 _fish = (nearestObjects[getPos vehicle player,["Fish_Base_F"],20]);
 life_net_dropped = true;
-titleText["Dropping fishing net....","PLAIN"];
+titleText[localize "STR_NOTF_NetDrop","PLAIN"];
 sleep 5;
-if(count _fish == 0) exitWith {titleText["Didn't catch any fish...","PLAIN"]; life_net_dropped = false;};
+if(count _fish == 0) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLAIN"]; life_net_dropped = false;};
 {
 	if(_x isKindOf "Fish_Base_F") then
 	{
 		switch(true) do
 		{
-			case ((typeOf _x) == "Salema_F"): {_type = "salema"};
-			case ((typeOf _x) == "Ornate_random_F") : {_type = "ornate"};
-			case ((typeOf _x) == "Mackerel_F") : {_type = "mackerel"};
-			case ((typeOf _x) == "Tuna_F") : {_type = "tuna"};
-			case ((typeOf _x) == "Mullet_F") : {_type = "mullet"};
-			case ((typeOf _x) == "Catshark_F") : {_type = "catshark"};
+			case ((typeOf _x) == "Salema_F"): {_type = localize "STR_ANIM_Salema"};
+			case ((typeOf _x) == "Ornate_random_F") : {_type = localize "STR_ANIM_Ornate"};
+			case ((typeOf _x) == "Mackerel_F") : {_type = localize "STR_ANIM_Mackerel"};
+			case ((typeOf _x) == "Tuna_F") : {_type = localize "STR_ANIM_Tuna"};
+			case ((typeOf _x) == "Mullet_F") : {_type = localize "STR_ANIM_Mullet"};
+			case ((typeOf _x) == "CatShark_F") : {_type = localize "STR_ANIM_Catshark"};
 			default {_type = ""};
 		};
 		
@@ -37,5 +37,5 @@ if(count _fish == 0) exitWith {titleText["Didn't catch any fish...","PLAIN"]; li
 } foreach (_fish);
 
 sleep 1.5;
-titleText["Fishing net pulled up.","PLAIN"];
+titleText[localize "STR_NOTF_NetUp","PLAIN"];
 life_net_dropped = false;

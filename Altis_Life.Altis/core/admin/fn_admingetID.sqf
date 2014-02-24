@@ -4,4 +4,4 @@ _unit = call compile format["%1", _unit];
 if(isNil "_unit") exitwith {};
 if(isNull _unit) exitWith {};
 
-[[_unit,player],"STS_fnc_getID",false,false] spawn life_fnc_MP;
+[[_unit,player],"TON_fnc_getID",false,false] spawn life_fnc_MP;

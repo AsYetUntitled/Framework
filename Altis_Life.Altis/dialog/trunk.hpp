@@ -49,7 +49,7 @@ class TrunkMenu
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Trunk Inventory";
+			text = "$STR_Trunk_TInventory";
 			sizeEx = 0.04;
 			
 			x = 0.11; y = 0.25;
@@ -60,7 +60,7 @@ class TrunkMenu
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Player Inventory";
+			text = "$STR_Trunk_PInventory";
 			sizeEx = 0.04;
 			
 			x = 0.49; y = 0.25;
@@ -111,7 +111,7 @@ class TrunkMenu
 		class TakeItem : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Take";
+			text = "$STR_Trunk_Take";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_vehTakeItem;";
 			x = 0.19; y = 0.78;
@@ -122,7 +122,7 @@ class TrunkMenu
 		class StoreItem : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Store";
+			text = "$STR_Trunk_Store";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_vehStoreItem;";
 			x = 0.57; y = 0.78;
@@ -133,7 +133,7 @@ class TrunkMenu
 		class ButtonClose : Life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
-			text = "Close";
+			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.9 - (1 / 25);

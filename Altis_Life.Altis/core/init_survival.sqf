@@ -55,59 +55,50 @@ while{true} do
 	};
 };
 
-//I have no idea what I am looking for in this but trying something different?
-fn_Weight =
-{
-	if(life_carryWeight > life_maxWeight) then {
-		player forceWalk true;
-		player setFatigue 1;
-	}
-		else
-	{
-		player forceWalk false;
-	};
-};
 
-LIFE_ID_MonitorWeight = ["LIFE_WeightMonitor","onEachFrame","fn_Weight"] call BIS_fnc_addStackedEventHandler;
-
-/*
 [] spawn
 {
 	while {true} do
 	{
-		waitUntil {life_carryWeight > life_maxWeight};
-		player forceWalk true;
-		player setFatigue 1;
-		hint "You are over carrying your max weight! You will not be able to run or move fast till you drop some items!";
-		waitUntil {life_carryWeight <= life_maxWeight};
-		player forceWalk false;
+		sleep 1.5;
+		if(life_carryWeight > life_maxWeight && !isForcedWalk player) then {
+			player forceWalk true;
+			player setFatigue 1;
+			hint "You are over carrying your max weight! You will not be able to run or move fast till you drop some items!";
+		} else {
+			if(isForcedWalk player) then {
+				player forceWalk false;
+			};
+		};
 	};
 };
-*/
 
-[] spawn  {
-private["_walkDis","_myLastPos","_MaxWalk","_runHunger","_runDehydrate"];
-_walkDis = 0;
-_myLastPos = (getPos player select 0) + (getPos player select 1);
-_MaxWalk = 1200;
-while{true} do {
-sleep 0.5;
-if(!alive player) then {_walkDis = 0;}
-else
+
+[] spawn  
 {
-_CurPos = (getPos player select 0) + (getPos player select 1);
-if((_CurPos != _myLastPos) && (vehicle player == player)) then
-{
-	_walkDis = _walkDis + 1;
-	if(_walkDis == _MaxWalk) then
+	private["_walkDis","_myLastPos","_MaxWalk","_runHunger","_runDehydrate"];
+	_walkDis = 0;
+	_myLastPos = (getPos player select 0) + (getPos player select 1);
+	_MaxWalk = 1200;
+	while{true} do 
 	{
-		_walkDis = 0;
-		life_thirst = life_thirst - 5;
-		life_hunger = life_hunger - 5;
-		[] call life_fnc_hudUpdate;
+		sleep 0.5;
+		if(!alive player) then {_walkDis = 0;}
+		else
+		{
+			_CurPos = (getPos player select 0) + (getPos player select 1);
+			if((_CurPos != _myLastPos) && (vehicle player == player)) then
+			{
+				_walkDis = _walkDis + 1;
+				if(_walkDis == _MaxWalk) then
+				{
+					_walkDis = 0;
+					life_thirst = life_thirst - 5;
+					life_hunger = life_hunger - 5;
+					[] call life_fnc_hudUpdate;
+				};
+			};
+			_myLastPos = (getPos player select 0) + (getPos player select 1);
+		};
 	};
-};
-_myLastPos = (getPos player select 0) + (getPos player select 1);
-};
-};
 };

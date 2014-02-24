@@ -64,7 +64,7 @@ diag_log "----------------------------------------------------------------------
 diag_log format["                End of Stratis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
 life_sidechat = true;
-[[player,life_sidechat,playerSide],"STS_fnc_managesc",false,false] spawn life_fnc_MP;
+[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 //[player] execVM "core\client\intro.sqf";
