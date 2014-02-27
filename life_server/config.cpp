@@ -67,14 +67,6 @@ class CfgFunctions
 			class safeTake {};
 			class safeStore {};
 		};
-		
-		class Cleanup_System
-		{
-			file = "\life_server\core\cleanup";
-			class vehicleCleanup {};
-			class damagedVehicleCleanup {};
-			class deadBodyCleanup {};
-		};
 	};
 	
 	class TON_System
