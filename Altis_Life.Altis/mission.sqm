@@ -38,9 +38,7 @@ class Mission
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Structures_F_Ind_Cargo",
 		"A3_Structures_F_Research",
-		"A3_Soft_F_MRAP_02",
-		"A3_Modules_F_Curator_Curator",
-		"a3_data_f_curator_virtual"
+		"A3_Soft_F_MRAP_02"
 	};
 	addOnsAuto[]=
 	{
@@ -2694,8 +2692,9 @@ class Mission
 				};
 				class Item50
 				{
-					position[]={3273.9375,2.2053199,12977.392};
+					position[]={3273.627,2.2011256,12976.653};
 					azimut=182.058;
+					offsetY=0.2;
 					special="NONE";
 					id=148;
 					side="WEST";

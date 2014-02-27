@@ -14,6 +14,7 @@ _side = [_this,2,civilian,[sideUnknown]] call BIS_fnc_param;
 _money = [_this,3,"0",[""]] call BIS_fnc_param;
 _bank = [_this,4,"2500",[""]] call BIS_fnc_param;
 _misc = [_this,5,[],[[],false]] call BIS_fnc_param;
+_name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
 
 //Error checks
 if((_uid == "") OR (_name == "")) exitWith {};

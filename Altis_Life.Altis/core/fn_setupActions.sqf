@@ -6,14 +6,6 @@
 */
 switch (playerSide) do
 {
-	case west:
-	{
-		//Lights?
-		life_actions = [];
-		life_actions = life_actions + [player addAction["Siren Lights ON",{[[vehicle player,0.22],"life_fnc_copLights",true,false] spawn life_fnc_MP; vehicle player setVariable["lights",true,true];},"",0,false,false,"",' vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"] && !isNil {vehicle player getVariable "lights"} && ((driver vehicle player) == player) && !(vehicle player getVariable "lights") && sunOrMoon < 1']];
-		life_actions = life_actions + [player addAction["Siren Lights OFF",{vehicle player setVariable["lights",false,true];},"",0,false,false,"", ' vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"] && !isNil {vehicle player getVariable "lights"} && ((driver vehicle player) == player) && (vehicle player getVariable "lights") ']];
-	};
-	
 	case civilian:
 	{
 		//Drop fishing net

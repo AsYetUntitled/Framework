@@ -1,6 +1,4 @@
 /*
-	Copyright © 2013 Bryan "Tonic" Boardwine, All rights reserved
-	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_sessionUpdate.sqf
 	Author: Bryan "Tonic" Boardwine
 	
@@ -42,4 +40,5 @@ switch (playerSide) do
 	};
 };
 
+_packet set[8,name player];
 [_packet,"TON_fnc_update",false,false] spawn life_fnc_MP;

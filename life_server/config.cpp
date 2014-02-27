@@ -18,7 +18,7 @@ class CfgFunctions
 		tag = "DB";
 		class MySQL
 		{
-			file = "\life_server\core\DB";
+			file = "\life_server\core\MySQL";
 			class insert{};
 			class query{};
 			class update{};
@@ -33,6 +33,7 @@ class CfgFunctions
 			class queryVehicle {};
 			class queryVehicles {};
 			class bool{};
+			class mresString {};
 		};
 	};
 	

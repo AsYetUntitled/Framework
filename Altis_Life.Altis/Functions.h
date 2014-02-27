@@ -221,6 +221,7 @@ class Life_Client_Core
 		class radar {};
 		class questionDealer {};
 		class copInteractionMenu {};
+		class sirenLights {};
 	};
 	
 	class Gangs

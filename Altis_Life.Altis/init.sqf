@@ -33,3 +33,5 @@ if(!StartProgress) then
 	[8,true,false] execFSM "core\fsm\core_time.fsm";
 };
 StartProgress = true;
+
+SOUND_DIRECTORY = format["mpmissions\__CUR_MP.%1\sounds\",worldName];
