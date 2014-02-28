@@ -59,4 +59,4 @@ switch (_side) do
 };
 
 //Execute SQL Statement
-_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommandAsync ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
+_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];

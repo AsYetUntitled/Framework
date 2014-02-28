@@ -14,7 +14,7 @@ _uid = _dbInfo select 0;
 _plate = _dbInfo select 1;
 
 _query = format["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommandAsync ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
+_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 
 sleep (1.3 * 60);
 deleteVehicle _vehicle; //Clean it up.
