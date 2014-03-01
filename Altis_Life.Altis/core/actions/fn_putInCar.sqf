@@ -1,19 +1,18 @@
 /*
 	File: fn_putInCar.sqf
+	Author: Bryan "Tonic" Boardwine
 	
 	Description:
-	GETTING SICK OF WRITING DESCRIPTIONS.
+	Finds the nearest vehicle and loads the target into the vehicle.
 */
-private["_unit","_ nearest"];
-_unit = cursorTarget;
-_near = (position player) nearEntities [["Man"],2];
-_nearest = _near select 0;
-if(isNull _nearest) exitWith {}; //Not valid
-if(side _nearest != civilian) exitWith {}; //Not a civ
-if(isNull _nearest) exitWith {}; //Not valid
-if(!(_nearest getVariable "restrained")) exitwith {};
-detach _nearest;
-[[_unit],"life_fnc_moveIn",_nearest,false] spawn life_fnc_MP;
-//_nearest action ["getInCargo", vehicle _unit];
-_nearest setVariable["Escorting",false,true];
-_nearest setVariable["transporting",true,true];
+private["_unit"];
+_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if(isNull _unit OR !isPlayer _unit) exitWith {};
+
+_nearestVehicle = nearestObjects[getPosATL player,["Car","Ship","Submarine","Air"],10] select 0;
+if(isNil "_nearestVehicle") exitWith {hint "There isn't a vehicle near by.."};
+
+detach _unit;
+[[_nearest],"life_fnc_moveIn",_unit,false] call life_fnc_MP;
+_unit setVariable["Escorting",FALSE,TRUE];
+_unit setVariable["transporting",TRUE,TRUE];

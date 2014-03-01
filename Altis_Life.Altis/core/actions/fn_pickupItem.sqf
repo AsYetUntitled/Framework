@@ -16,7 +16,7 @@ _itemName = [([_itemInfo select 0,0] call life_fnc_varHandle)] call life_fnc_var
 _illegal = [_itemInfo select 0,life_illegal_items] call fnc_index;
 if(playerSide == west && _illegal != -1) exitWith
 {
-	titleText[format["%1 has been placed in evidence, you have received $%2 as a reward.",_itemName,[(life_illegal_items select _illegal) select 1] call life_fnc_numberFormat],"PLAIN"];
+	titleText[format["%1 has been placed in evidence, you have received $%2 as a reward.",_itemName,[(life_illegal_items select _illegal) select 1] call life_fnc_numberText],"PLAIN"];
 	life_atmcash = life_atmcash + ((life_illegal_items select _illegal) select 1);
 	deleteVehicle _obj;
 	//waitUntil {isNull _obj};

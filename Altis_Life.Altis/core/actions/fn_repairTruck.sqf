@@ -13,6 +13,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 {
 	if("ToolKit" in (items player)) then
 	{
+		life_action_inUse = true;
 		_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_upp = format["Repairing %1",_displayName];
 		//Setup our progress bar.
@@ -41,6 +42,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(life_interrupted) exitWith {};
 		};
 		
+		life_action_inUse = false;
 		5 cutText ["","PLAIN"];
 		player playActionNow "stop";
 		if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};

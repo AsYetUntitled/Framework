@@ -13,6 +13,7 @@ if(!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicl
 if(player distance _vehicle > 7.5) exitWith {hint "You need to be closer to the vehicle!"};
 
 if(!([false,"fuelF",1] call life_fnc_handleInv)) exitWith {};
+life_action_inUse = true;
 _displayName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 
 _upp = format["Refuelling %1",_displayName];
@@ -40,10 +41,11 @@ while{true} do
 	if(!alive player) exitWith {};
 	if(life_interrupted) exitWith {};
 };
+life_action_inUse = false;
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player) exitWith {};
-if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"];};
 
 
 switch (true) do

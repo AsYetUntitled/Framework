@@ -14,7 +14,6 @@ _side = [_this,1,civilian,[sideUnknown]] call BIS_fnc_param;
 _money = [_this,2,0,[0]] call BIS_fnc_param;
 _bank = [_this,3,2500,[0]] call BIS_fnc_param;
 _uid = [_this,4,"",[""]] call BIS_fnc_param;
-_name = [_this,6,"",[""]] call BIS_fnc_param;
 
 _money = [_money] call DB_fnc_numberSafe;
 _bank = [_bank] call DB_fnc_numberSafe;
@@ -29,7 +28,7 @@ switch (_side) do
 	case west: {_misc = [_this,5,[],[[]]] call BIS_fnc_param;};
 	case civilian: {_misc = [_this,5,false,[false]] call BIS_fnc_param;};
 };
-_handle = [_uid,_name,_side,_money,_bank,_misc] spawn DB_fnc_insert;
+_handle = [_uid,name _unit,_side,_money,_bank,_misc] spawn DB_fnc_insert;
 waitUntil {scriptDone _handle};
 _ret = [_uid,_side] call DB_fnc_query;
 [_ret,"life_fnc_sessionReceive",_ownerID,false] spawn life_fnc_MP;

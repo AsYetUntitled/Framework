@@ -1,12 +1,12 @@
 author = "TAW_Tonic";
-onLoadName = "Altis Life RPG v3.1.1";
+onLoadName = "Altis Life RPG v3.1.2";
 onLoadMission = "A RPG game mode developed by TAW_Tonic";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 10;
 disabledAI = true;
 disableChannels[]={0,1,2};
-enableDebugConsole = 2;
+enableDebugConsole = 1;
 
 class Header
 {
