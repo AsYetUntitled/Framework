@@ -103,6 +103,7 @@ switch (_code) do
 			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
 				if(!isNil {vehicle player getVariable "lights"}) then {
 					[vehicle player] call life_fnc_sirenLights;
+					_handled = true;
 				};
 			};
 		};

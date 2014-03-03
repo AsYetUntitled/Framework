@@ -600,6 +600,8 @@ player createDiarySubject ["controls","Controls"];
 				T: Vehicle Trunk<br/>
 				Left Shift + R: Restrain (Cop Only)<br/>
 				Left Shift + G: Knock out / stun (Civ Only, used for robbing them)<br/>
+				Left Windows: Main Interaction key which is used for picking up items/money, interacting with cars (repair,etc) and for cops to interact with civilians. Can be rebound to a single key like H by pressing ESC->Configure->Controls->Custom->Use Action 10<br/>
+				Left Shift + L: Activates cop siren lights (as a cop).<br/>
 				"
 		]
 	];

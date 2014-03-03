@@ -36,7 +36,9 @@ if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then {
 	//Temp fix for super tasers on cops.
 	if(playerSide == west) then {
 		if(_projectile == "B_9x21_Ball") then {
-			_damage = false;
+			if(currentWeapon _source == "hgun_P07_snds_F") then {
+				_damage = false;
+			};
 		};
 	};
 };
