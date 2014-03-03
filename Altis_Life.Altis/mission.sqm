@@ -75,7 +75,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Altis Life RPG";
-		overviewText="Altis Life RPG 3.1.1";
+		overviewText="Altis Life RPG 3.1.2";
 		startWeather=0.41999999;
 		startWind=0.29999998;
 		startWindDir=20;
