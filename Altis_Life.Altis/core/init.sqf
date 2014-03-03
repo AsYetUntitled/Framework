@@ -1,6 +1,7 @@
 /*
 	Master client initialization file
 */
+life_firstSpawn = true;
 private["_handle","_timeStamp"];
 cutText["Setting up client, please wait...","BLACK FADED"];
 0 cutFadeOut 9999999;

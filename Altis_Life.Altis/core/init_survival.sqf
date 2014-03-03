@@ -1,7 +1,7 @@
 [] spawn  {
-	while{true} do
+	private["_fnc_food","_fnc_water"];
+	_fnc_food = 
 	{
-		sleep 900;
 		if(life_hunger < 2) then {player setDamage 1; hint "You have starved to death.";}
 		else
 		{
@@ -15,26 +15,31 @@
 			};
 		};
 	};
-};
-
-[] spawn  {
-while{true} do
-{
-	sleep 600;
-	if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";}
-	else
+	
+	_fnc_water = 
 	{
-		life_thirst = life_thirst - 10;
-		[] call life_fnc_hudUpdate;
-		if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";};
-		switch(life_thirst) do 
+		if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";}
+		else
 		{
-			case 30: {hint"You haven't drank anything in awhile, You should find something to drink soon.";};
-			case 20: {hint "You haven't drank anything in along time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
-			case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
+			life_thirst = life_thirst - 10;
+			[] call life_fnc_hudUpdate;
+			if(life_thirst < 2) then {player setDamage 1; hint "You have died from dehydration.";};
+			switch(life_thirst) do 
+			{
+				case 30: {hint"You haven't drank anything in awhile, You should find something to drink soon.";};
+				case 20: {hint "You haven't drank anything in along time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
+				case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
+			};
 		};
 	};
-};
+	
+	while{true} do
+	{
+		sleep 600;
+		[] call _fnc_water;
+		sleep 250;
+		[] call _fnc_food;
+	};
 };
 
 [] spawn
@@ -55,7 +60,6 @@ while{true} do
 	};
 };
 
-
 [] spawn
 {
 	while {true} do
@@ -72,7 +76,6 @@ while{true} do
 		};
 	};
 };
-
 
 [] spawn  
 {

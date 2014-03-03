@@ -64,7 +64,7 @@ if(side _source == west && vehicle _source == _source && playerSide == civilian)
 {
 	if(playerSide == civilian) then
 	{
-		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
+		[[getPlayerUID _unit],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 	};
 };
 

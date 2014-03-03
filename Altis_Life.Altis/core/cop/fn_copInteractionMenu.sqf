@@ -38,7 +38,7 @@ _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDi
 
 //Set Check Licenses Button
 _Btn2 ctrlSetText localize "STR_pInAct_checkLicenses";
-//_Btn2 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_checkLicenses;"; //Not yet implemented
+_Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,FALSE] spawn life_fnc_MP";
 
 //Set Search Button
 _Btn3 ctrlSetText localize "STR_pInAct_SearchPlayer";

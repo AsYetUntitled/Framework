@@ -6,16 +6,25 @@
 	Master action key handler, handles requests for picking up various items and
 	interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private["_curTarget"];
+private["_curTarget","_isWater"];
 _curTarget = cursorTarget;
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
-if(isNull _curTarget) exitWith {};
+_isWater = surfaceIsWater (getPosASL player);
+if(isNull _curTarget) exitWith {
+	if(_isWater) then {
+		private["_fish"];
+		_fish = (nearestObjects[getPos player,["Fish_Base_F"],3]) select 0;
+		if(!isNil "_fish") then {
+			[_fish] call life_fnc_catchFish;
+		};
+	};
+};
 if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
 life_action_inUse = true;
 
 //If target is a player then check if we can use the cop menu.
-if(isPlayer _curTarget) then {
+if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 	if((_curTarget getVariable["restrained",false]) && !dialog && playerSide == west) then {
 		[_curTarget] call life_fnc_copInteractionMenu;
 	};

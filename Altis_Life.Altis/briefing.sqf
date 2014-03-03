@@ -1,7 +1,6 @@
 waitUntil {!isNull player && player == player};
 if(player diarySubjectExists "rules")exitwith{};
 
-player createDiarySubject ["sealteamsloth","Seal Team Sloth"];
 player createDiarySubject ["changelog","Change Log"];
 player createDiarySubject ["serverrules","General Rules"];
 player createDiarySubject ["policerules","Police Procedures/Rules"];
@@ -202,50 +201,6 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
-	
-	
-// Seal Team Sloth Section
-
-	player createDiaryRecord ["sealteamsloth",
-		[
-			"Teamspeak",
-				"
-				Seal Team Sloth Teamspeak can be found at:<br/><br/>
-				ts3.sealteamsloth.com:8027<br/><br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["sealteamsloth",
-		[
-			"Website/Forums",
-				"
-				www.sealteamsloth.com<br/>
-				This is also where ban appeals will be made.<br/><br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["sealteamsloth",
-		[
-			"Wiki",
-				"
-				http://sealteamsloth.wikia.com/<br/><br/>
-				"
-		]
-	];
-	
-	player createDiaryRecord ["sealteamsloth",
-		[
-			"Donations",
-				"
-				Donations keep the server running, anything and everything helps.<br/><br/>
-				sealteamsloth.com/donate<br/><br/>
-				"
-		]
-	];
-		
 	
 // Police Section
 	player createDiaryRecord ["policerules",

@@ -9,6 +9,7 @@ class Life_Client_Core
 		class setupEVH {};
 		class initCiv {};
 		class initCop {};
+		class welcomeNotification {};
 	};
 	
 	class Admin
@@ -222,6 +223,8 @@ class Life_Client_Core
 		class questionDealer {};
 		class copInteractionMenu {};
 		class sirenLights {};
+		class licenseCheck {};
+		class licensesRead {};
 	};
 	
 	class Gangs

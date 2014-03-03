@@ -356,6 +356,9 @@
 		<Key ID="STR_pInAct_Title">
 			<Original>Player Interaction Menu</Original>
 		</Key>
+		<Key ID="STR_pInAct_PutInCar">
+			<Original>Put in vehicle</Original>
+		</Key>
 		<Key ID="STR_pInAct_Unrestrain">
 			<Original>Un-Restrain</Original>
 		</Key>

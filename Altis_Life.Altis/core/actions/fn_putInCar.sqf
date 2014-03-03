@@ -13,6 +13,6 @@ _nearestVehicle = nearestObjects[getPosATL player,["Car","Ship","Submarine","Air
 if(isNil "_nearestVehicle") exitWith {hint "There isn't a vehicle near by.."};
 
 detach _unit;
-[[_nearest],"life_fnc_moveIn",_unit,false] call life_fnc_MP;
+[[_nearestVehicle],"life_fnc_moveIn",_unit,false] call life_fnc_MP;
 _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",TRUE,TRUE];

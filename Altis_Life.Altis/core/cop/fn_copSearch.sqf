@@ -9,9 +9,8 @@
 life_action_inUse = false;
 private["_civ","_invs","_license","_robber","_guns","_gun"];
 _civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
-_license = [_this,1,"",[""]] call BIS_fnc_param;
-_invs = [_this,2,[],[[]]] call BIS_fnc_param;
-_robber = [_this,3,false,[false]] call BIS_fnc_param;
+_invs = [_this,1,[],[[]]] call BIS_fnc_param;
+_robber = [_this,2,false,[false]] call BIS_fnc_param;
 if(isNull _civ) exitWith {};
 
 _illegal = 0;
@@ -40,8 +39,8 @@ if(count _invs > 0) then
 };
 if(!alive _civ || player distance _civ > 5) exitWith {hint format["Couldn't search %1", name _civ]};
 //hint format["%1",_this];
-hint parseText format["<t color='#FF0000'><t size='2'>%1</t></t><br/><t color='#FFD700'><t size='1.5'>Licenses:</t></t><br/>%2<t color='#FFD700'><t size='1.5'><br/>Illegal Items</t></t><br/>%3<br/><br/><br/><br/><t color='#FF0000'>%4</t>"
-,name _civ,_license,_inv,if(_robber) then {"Robbed the bank"} else {""}];
+hint parseText format["<t color='#FF0000'><t size='2'>%1</t></t><br/><t color='#FFD700'><t size='1.5'><br/>Illegal Items</t></t><br/>%2<br/><br/><br/><br/><t color='#FF0000'>%3</t>"
+,name _civ,_inv,if(_robber) then {"Robbed the bank"} else {""}];
 
 if(_robber) then
 {
