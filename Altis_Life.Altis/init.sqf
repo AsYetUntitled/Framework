@@ -18,7 +18,7 @@ if(isNull player) then
 */
 enableSaving[false,false];
 
-life_versionInfo = "Altis Life RPG v3.1.1";
+life_versionInfo = "Altis Life RPG v3.1.2";
 /*
 if(X_Client) then
 {
@@ -33,5 +33,3 @@ if(!StartProgress) then
 	[8,true,false] execFSM "core\fsm\core_time.fsm";
 };
 StartProgress = true;
-
-SOUND_DIRECTORY = format["mpmissions\__CUR_MP.%1\sounds\",worldName];

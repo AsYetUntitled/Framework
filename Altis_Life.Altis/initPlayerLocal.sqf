@@ -10,3 +10,10 @@
 if((_this select 1)) then {
 	[] execVM "core\jip.sqf";
 };
+
+//Make NPC's to normal stance..
+{
+	if(!isPlayer _x) then {
+		_x switchMove "";
+	};
+} foreach allUnits;

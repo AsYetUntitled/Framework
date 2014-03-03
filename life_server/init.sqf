@@ -32,7 +32,7 @@ bank_obj setVariable["rob_in_sess",false,true];
 robbery_success = 0;
 publicVariable "robbery_success";
 
-[] execFSM "\life_server\cleanup.fsm";
+//[] execFSM "\life_server\cleanup.fsm";
 
 [] spawn
 {

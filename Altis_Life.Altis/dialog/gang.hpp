@@ -314,7 +314,7 @@ class Life_Gang_Prompt
 		{
 			idc = -1;
 			sizeEx = 0.020;
-			text = "<t align='center'><t size='.8px'>$STR_Gang_MainMenu</t></t>";
+			text = "$STR_Gang_MainMenu";
 			x = 0.287;
 			y = 0.2 + (11 / 250);
 			w = 0.5; h = 0.12;

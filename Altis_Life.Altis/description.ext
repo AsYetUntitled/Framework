@@ -15,6 +15,13 @@ class Header
 	maxPlayers = 75;
 };
 
+wreckLimit = 3;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 320;
+corpseLimit = 5;
+corpseRemovalMinTime = 10;
+corpseRemovalMaxTime = 30;
+
 #include "dialog\MasterHandler.h"
 
 class RscTitles
