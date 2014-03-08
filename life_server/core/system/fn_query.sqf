@@ -22,6 +22,13 @@ if(isNull _unit OR _uid == "") exitWith
 
 _ownerID = owner _unit;
 
+//Is the headless client active? If so let him take over.
+if(!isNil "hc_1" && {life_HC_isActive}) exitWith {
+	private["_packet"];
+	_packet = [_unit,_side,_uid,_ownerID];
+	[_packet,"HC_fnc_query",(owner hc_1),FALSE] spawn BIS_fnc_MP;
+};
+
 _ret = [_uid,_side] call DB_fnc_query;
 waitUntil {typeName _ret == "ARRAY" OR typeName _ret == "STRING" OR isNil "_ret"};
 

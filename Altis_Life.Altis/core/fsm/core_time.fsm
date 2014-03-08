@@ -19,34 +19,29 @@ item14[] = {"Set_Jip_Var",2,250,-311.382965,62.044098,-221.382874,112.044113,0.0
 item15[] = {"Sync",2,250,18.089794,61.131149,108.089844,111.131157,0.000000,"Sync"};
 item16[] = {"true",8,218,-142.563049,62.134674,-52.563004,112.134666,0.000000,"true"};
 item17[] = {"Lets_split",2,250,-142.562988,-53.137280,-52.563026,-3.137243,0.000000,"Lets split"};
-item18[] = {"isServer_Sync",4,218,-196.728683,254.102264,-106.728683,304.102264,0.000000,"isServer" \n "Sync"};
-item19[] = {"Sync_Server",2,250,-196.728653,351.808929,-106.728638,401.808929,0.000000,"Sync" \n "Server"};
 link0[] = {0,1};
 link1[] = {1,17};
 link2[] = {2,3};
 link3[] = {2,4};
 link4[] = {2,8};
-link5[] = {2,18};
-link6[] = {3,5};
-link7[] = {4,6};
-link8[] = {5,7};
-link9[] = {6,7};
-link10[] = {7,9};
-link11[] = {8,11};
-link12[] = {9,10};
-link13[] = {10,2};
-link14[] = {11,7};
-link15[] = {12,14};
-link16[] = {13,15};
-link17[] = {14,16};
-link18[] = {15,16};
-link19[] = {16,2};
-link20[] = {17,12};
-link21[] = {17,13};
-link22[] = {18,19};
-link23[] = {19,7};
+link5[] = {3,5};
+link6[] = {4,6};
+link7[] = {5,7};
+link8[] = {6,7};
+link9[] = {7,9};
+link10[] = {8,11};
+link11[] = {9,10};
+link12[] = {10,2};
+link13[] = {11,7};
+link14[] = {12,14};
+link15[] = {13,15};
+link16[] = {14,16};
+link17[] = {15,16};
+link18[] = {16,2};
+link19[] = {17,12};
+link20[] = {17,13};
 globals[] = {0.000000,0,0,0,0,640,480,1,36,6316128,1,-568.385803,588.371277,652.102600,-316.122223,1030,911,1};
-window[] = {2,-1,-1,-32000,-32000,938,69,1451,187,3,1048};
+window[] = {2,-1,-1,-32000,-32000,943,493,1875,192,3,1048};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -115,7 +110,7 @@ class FSM
           priority = 0.000000;
           to="Skip_time";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _lastupdate) > 60) AND !isDedicated AND !isServer"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _lastupdate) > 60) AND !isDedicated AND !isServer AND hasInterface"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -129,23 +124,13 @@ class FSM
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "isServer_Sync">*/
-        class isServer_Sync
-        {
-          priority = 0.000000;
-          to="Sync_Server";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _srvSync) > (20 * 60)) && isServer"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
         /*%FSM<LINK "isServer">*/
         class isServer
         {
           priority = 0.000000;
           to="Sync_fast_time";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _lastjipupdate) > 60) AND isServer"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _lastjipupdate) > 60) AND isServer OR !hasInterface"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -161,8 +146,12 @@ class FSM
        "_lastjipupdate = time;" \n
        "" \n
        "JipTimeNow = date;" \n
-       "publicVariable ""JipTimeNow"";" \n
        "" \n
+       "if(isServer && !life_HC_isActive) then {" \n
+       "	publicVariable ""JipTimeNow"";" \n
+       "} else {" \n
+       "	publicVariable ""JipTimeNow"";" \n
+       "};" \n
        "_srvSync = time;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -347,27 +336,6 @@ class FSM
           to="Set_Jip_Var";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"isServer"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Sync_Server">*/
-    class Sync_Server
-    {
-      name = "Sync_Server";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "true">*/
-        class true
-        {
-          priority = 0.000000;
-          to="waiting";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
