@@ -1,0 +1,336 @@
+/*%FSM<COMPILE "E:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, MP Fast Time">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Initialize",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Initialize"};
+item1[] = {"true",8,218,-39.834755,-70.246155,50.165245,-20.246151,0.000000,"true"};
+item2[] = {"Junction",2,250,-39.834755,12.192835,50.165268,62.192833,0.000000,"Junction"};
+item3[] = {"isServer",4,218,-197.904358,11.159702,-107.904358,61.159702,0.000000,"isServer"};
+item4[] = {"Set_up_JIP_Var",2,250,-196.871216,102.075562,-106.871201,152.075562,0.000000,"Set up JIP Var"};
+item5[] = {"Client",4,218,102.737808,11.159719,192.737808,61.159721,0.000000,"Client"};
+item6[] = {"Sync_Client",2,250,102.737823,103.108719,192.737839,153.108719,0.000000,"Sync Client"};
+item7[] = {"true",8,218,-47.066704,102.075577,42.933296,152.075577,0.000000,"true"};
+item8[] = {"Thread_Loop",2,250,-48.099831,194.024567,41.900185,244.024582,0.000000,"Thread Loop"};
+item9[] = {"Client_Skip",4,218,106.870361,267.377136,196.870361,317.377136,0.000000,"Client Skip"};
+item10[] = {"Skip_Time",2,250,107.903503,351.061066,197.903519,401.061066,0.000000,"Skip Time"};
+item11[] = {"Client_Sync",4,218,-9.873857,267.377136,80.126137,317.377136,0.000000,"Client Sync"};
+item12[] = {"Sync_Client_1",2,250,-8.840710,350.027893,81.159309,400.027893,0.000000,"Sync Client"};
+item13[] = {"Headless_Client",4,218,-118.352989,269.443359,-28.352989,319.443359,0.000000,"Headless" \n "Client"};
+item14[] = {"Headless_Client",2,250,-123.518661,351.061066,-33.518646,401.061066,0.000000,"Headless Client" \n "Sync Time"};
+item15[] = {"isServer",4,218,-238.196625,266.343994,-148.196625,316.343994,0.000000,"isServer"};
+item16[] = {"Server_Skip_Time",2,4346,-240.262863,345.895355,-150.262848,395.895355,0.000000,"Server Skip Time" \n "And sync"};
+item17[] = {"true",8,218,-63.596848,430.612396,26.403105,480.612061,0.000000,"true"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,5};
+link4[] = {3,4};
+link5[] = {4,7};
+link6[] = {5,6};
+link7[] = {6,7};
+link8[] = {7,8};
+link9[] = {8,9};
+link10[] = {8,11};
+link11[] = {8,13};
+link12[] = {8,15};
+link13[] = {9,10};
+link14[] = {10,17};
+link15[] = {11,12};
+link16[] = {12,17};
+link17[] = {13,14};
+link18[] = {14,17};
+link19[] = {15,16};
+link20[] = {16,17};
+link21[] = {17,8};
+globals[] = {0.000000,0,0,0,0,640,480,1,19,6316128,1,-725.260925,725.260132,771.751648,-210.759476,1404,951,1};
+window[] = {2,-1,-1,-1,-1,952,2312,3752,192,3,1422};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "MP Fast Time";
+  class States
+  {
+    /*%FSM<STATE "Initialize">*/
+    class Initialize
+    {
+      name = "Initialize";
+      init = /*%FSM<STATEINIT""">*/"private[""_skipTime"",""_method"",""_fastNight"",""_skipDay"",""_skipNight"",""_lastUpdate""];" \n
+       "" \n
+       "_skipDay = [_this,0,8,[0]] call BIS_fnc_param;" \n
+       "_method = [_this,1,true,[false]] call BIS_fnc_param;" \n
+       "_fastNight = [_this,2,false,[true]] call BIS_fnc_param;" \n
+       "_skipNight = [_this,3,12,[0]] call BIS_fnc_param;" \n
+       "_lastUpdate = time;" \n
+       "_lastServUpdate = time;" \n
+       "_hcSync = time;" \n
+       "_lastSync = time;" \n
+       "" \n
+       "//Setup our vars." \n
+       "_skipTime = _skipDay;" \n
+       "" \n
+       "if(isNil ""life_HC_isActive"") then {" \n
+       "	life_HC_isActive = false;" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Junction";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Junction">*/
+    class Junction
+    {
+      name = "Junction";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Client">*/
+        class Client
+        {
+          priority = 0.000000;
+          to="Sync_Client";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isDedicated && !isNil ""JipTimeNow"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isServer">*/
+        class isServer
+        {
+          priority = 0.000000;
+          to="Set_up_JIP_Var";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_up_JIP_Var">*/
+    class Set_up_JIP_Var
+    {
+      name = "Set_up_JIP_Var";
+      init = /*%FSM<STATEINIT""">*/"JipTimeNow = date;" \n
+       "publicVariable ""JipTimeNow"";"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Sync_Client">*/
+    class Sync_Client
+    {
+      name = "Sync_Client";
+      init = /*%FSM<STATEINIT""">*/"setDate JipTimeNow;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Thread_Loop">*/
+    class Thread_Loop
+    {
+      name = "Thread_Loop";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Client_Sync">*/
+        class Client_Sync
+        {
+          priority = 0.000000;
+          to="Sync_Client_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _lastSync) > (30 * 60)) AND !isDedicated AND hasInterface"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Headless_Client">*/
+        class Headless_Client
+        {
+          priority = 0.000000;
+          to="Headless_Client";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _hcSync) > (5 * 60)) && !hasInterface && !isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isServer">*/
+        class isServer
+        {
+          priority = 0.000000;
+          to="Server_Skip_Time";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _lastServUpdate) > 60) AND isServer AND !life_HC_isActive"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Client_Skip">*/
+        class Client_Skip
+        {
+          priority = 0.000000;
+          to="Skip_Time";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _lastUpdate) > 60) AND !isDedicated AND !isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Skip_Time">*/
+    class Skip_Time
+    {
+      name = "Skip_Time";
+      init = /*%FSM<STATEINIT""">*/"//Fast night cycle check" \n
+       "if(_fastNight && {SunOrMoon == 0}) then {" \n
+       "	_skipTime = _skipNight;" \n
+       "} else {" \n
+       "	_skipTime = _skipDay;" \n
+       "};" \n
+       "" \n
+       "if(_method) then {" \n
+       "	setDate [date select 0, date select 1,date select 2, date select 3, ((date select 4) + _skipTime)];" \n
+       "} else {" \n
+       "	skipTime (_skipTime / 60);" \n
+       "};" \n
+       "" \n
+       "_lastUpdate = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Sync_Client_1">*/
+    class Sync_Client_1
+    {
+      name = "Sync_Client_1";
+      init = /*%FSM<STATEINIT""">*/"setDate JipTimeNow;" \n
+       "" \n
+       "_lastSync = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Headless_Client">*/
+    class Headless_Client
+    {
+      name = "Headless_Client";
+      init = /*%FSM<STATEINIT""">*/"JipTimeNow = date;" \n
+       "publicVariable ""JipTimeNow"";" \n
+       "" \n
+       "_hcSync = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Server_Skip_Time">*/
+    class Server_Skip_Time
+    {
+      name = "Server_Skip_Time";
+      init = /*%FSM<STATEINIT""">*/"if(_fastNight && {SunOrMoon == 0}) then {" \n
+       "	_skipTime = _skipNight;" \n
+       "} else {" \n
+       "	_skipTime = _skipDay;" \n
+       "};" \n
+       "" \n
+       "if(_method) then {" \n
+       "	setDate [date select 0, date select 1,date select 2, date select 3, ((date select 4) + _skipTime)];" \n
+       "} else {" \n
+       "	skipTime (_skipTime / 60);" \n
+       "};" \n
+       "" \n
+       "_lastServUpdate = time;" \n
+       "JipTimeNow = date;" \n
+       "publicVariable ""JipTimeNow"";"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Initialize";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

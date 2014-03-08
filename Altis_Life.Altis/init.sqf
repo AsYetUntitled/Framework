@@ -30,6 +30,7 @@ if(X_Client) then
 
 if(!StartProgress) then
 {
-	[8,true,false] execFSM "core\fsm\core_time.fsm";
+	[8,true,true,12] execFSM "core\fsm\timeModule.fsm";
+	//[8,true,false] execFSM "core\fsm\core_time.fsm";
 };
 StartProgress = true;
