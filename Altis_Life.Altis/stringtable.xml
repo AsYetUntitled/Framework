@@ -50,6 +50,12 @@
 		<Key ID="STR_ATM_Transfer">
 			<Original>Transfer</Original>
 		</Key>
+		<Key ID="STR_ATM_GreaterThan">
+			<Original>You can't deposit more then $999,999 at a time</Original>
+		</Key>
+		<Key ID="STR_ATM_notnumeric">
+			<Original>The amount entered isn't a numeric value.</Original>
+		</Key>
 	</Package>
 	<Package name="Cell_Phone">
 		<Key ID="STR_CELL_Title">

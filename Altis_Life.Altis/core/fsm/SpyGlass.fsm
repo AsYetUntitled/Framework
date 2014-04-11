@@ -1,0 +1,201 @@
+/*%FSM<COMPILE "E:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, SpyGlass">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"CORE",0,250,-156.695862,-149.625549,-66.695831,-99.625557,0.000000,"CORE"};
+item1[] = {"Bridge_1",4,218,-162.662201,-71.185379,-72.662201,-21.185379,0.000000,"Bridge 1"};
+item2[] = {"Skill_less_Check",4,218,-151.578552,-382.966034,-61.578148,-332.966339,1.000000,"Skill-less" \n "Check"};
+item3[] = {"Spy_glass_report",2,250,-34.410839,-307.741364,55.589062,-257.741577,0.000000,"Spy-glass" \n "report the " \n "skill-less"};
+item4[] = {"Spy_Glass_Variab",2,250,-255.371155,-9.746059,-165.371170,40.254013,0.000000,"Spy-Glass" \n "Variables"};
+item5[] = {"Time_Check",4,218,-169.840042,75.391594,-79.840073,125.391617,0.000000,"Time Check"};
+item6[] = {"Run_Check",2,250,-73.514374,-1.509022,16.485529,48.491135,0.000000,"Run Check"};
+item7[] = {"Bridge_2",8,218,-157.967804,-241.192032,-67.967743,-191.192001,0.000000,"Bridge 2"};
+item8[] = {"Gateway_1",2,250,-270.395325,-294.964478,-180.395264,-244.964478,0.000000,"Gateway 1"};
+link0[] = {0,1};
+link1[] = {0,7};
+link2[] = {1,4};
+link3[] = {2,3};
+link4[] = {3,7};
+link5[] = {4,5};
+link6[] = {5,6};
+link7[] = {6,1};
+link8[] = {7,8};
+link9[] = {8,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,39,6316128,1,-1367.594604,484.474915,267.402374,-935.188660,1403,911,1};
+window[] = {2,-1,-1,-1,-1,762,414,1854,2,3,1421};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "SpyGlass";
+  class States
+  {
+    /*%FSM<STATE "CORE">*/
+    class CORE
+    {
+      name = "CORE";
+      init = /*%FSM<STATEINIT""">*/"/*" \n
+       "	The spyglass sees all" \n
+       "*/" \n
+       "private[""_lastVarCheck"",""_binConfigPatches"",""_cfgPatches"",""_badVariables""];" \n
+       "_lastVarCheck = time;" \n
+       "" \n
+       "//Null out some variables." \n
+       "" \n
+       "" \n
+       "_binConfigPatches = configFile >> ""CfgPatches"";" \n
+       "_cfgPatches = [];" \n
+       "" \n
+       "for ""_i"" from 0 to count (_binConfigPatches)-1 do {" \n
+       "	_patchEntry = _binConfigPatches select _i;" \n
+       "	if(isClass _patchEntry) then {" \n
+       "		_cfgPatches set[count _cfgPatches,configName _patchEntry];" \n
+       "	};" \n
+       "};" \n
+       "" \n
+       "if(""DevCon"" in _cfgPatches) then {" \n
+       "	[[name player,getPlayerUID player,""DevCon""],""SPY_fnc_cookieJar"",false,false] spawn life_fnc_MP;" \n
+       "	[[name player,""DevCon""],""SPY_fnc_notifyAdmins"",true,false] spawn life_fnc_MP;" \n
+       "	disableUserInput true;" \n
+       "	[""SpyGlass"",false,true] call BIS_fnc_endMission;" \n
+       "};" \n
+       "" \n
+       "" \n
+       "//Setup our bad variables." \n
+       "_badVariables = [""W_O_O_K_I_E_FUD_Pro_RE"",""W_O_O_K_I_E_FUD_Car_RE"",""W_O_O_K_I_E_FUD_Car_RE"",""W_O_O_K_I_E_FUD_FuckUp_GunStore"",""W_O_O_K_I_E_FUD_M_E_N_U_initMenu"",""W_O_O_K_I_E_FuckUp_GunStore_a""," \n
+       "	""W_O_O_K_I_E_M_E_N_U_funcs_inited"",""Menu_Init_Lol"",""E_X_T_A_S_Y_Atm"",""W_O_O_K_I_E_Pro_RE"",""W_O_O_K_I_E_Debug_Mon"",""W_O_O_K_I_E_Debug_1337"",""Veh_S_P_A_W_N_Shitt"",""sfsefse"",""tw4etinitMenu"",""tw4etgetControl""," \n
+       "	""efr4243234"",""sdfwesrfwesf233"",""sdgff4535hfgvcxghn"",""adadawer24_1337"",""lkjhgfuyhgfd"",""E_X_T_A_S_Y_M_E_N_U_funcs_inited"",""dayz_serverObjectMonitor"",""fsfgdggdzgfd"",""fsdddInfectLOL"",""Wookie_List""," \n
+       "	""Wookie_Pro_RE"",""Wookie_Car_RE"",""Wookie_Debug_Mon"",""faze_funcs_inited"",""advertising_banner_infiSTAR"",""atext_star_xa"",""Monky_hax_dbclick"",""qopfkqpofqk"",""debug_star_colorful"",""AntiAntiAntiAntiHax"",""antiantiantiantih4x""," \n
+       "	""hub"",""scrollinit"",""gfYJV"",""Lystic_LMAOOOOOOOOOOOOOOOOOOO"",""Lystic_Re"",""Lysto_Lyst"",""E_X_T_A_S_Y_Keybinds"",""Menulocations"",""Lystic_Init"",""scroll_m_init_star"",""exstr1"",""pathtoscrdir3"",""Monky_funcs_inited""," \n
+       "	""Monky_initMenu"",""player_zombieCheck"",""E_X_T_A_S_Y_Recoil"",""godlol"",""playericons"",""abcdefGEH"",""wierdo"",""go_invisible_infiSTAR"",""serverObjectMonitor"",""enamearr"",""initarr3"",""locdb"",""sCode"",""infAmmoIndex""," \n
+       "	""nukeDONEstar"",""Wookie_List"",""Wookie_Pro_RE"",""FUCKTONIC"",""E_X_T_A_S_Y_FuckUp_GunStore_a"",""E_X_T_A_S_Y_Cash_1k_t"",""E_X_T_A_S_Y_Cash_a"",""E_X_T_A_S_Y_LicenseDrive"",""E_X_T_A_S_Y_Menu_LOOOOOOOOOL""" \n
+       "];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Bridge_2">*/
+        class Bridge_2
+        {
+          priority = 0.000000;
+          to="Gateway_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Bridge_1">*/
+        class Bridge_1
+        {
+          priority = 0.000000;
+          to="Spy_Glass_Variab";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"SPY_Glass_VarCheck"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Spy_glass_report">*/
+    class Spy_glass_report
+    {
+      name = "Spy_glass_report";
+      init = /*%FSM<STATEINIT""">*/"[[name player,getPlayerUID player,""No-recoil_hack""],""SPY_fnc_cookieJar"",false,false] spawn life_fnc_MP;" \n
+       "[[name player,""No recoil hack""],""SPY_fnc_notifyAdmins"",true,false] spawn life_fnc_MP;" \n
+       "" \n
+       "[""SpyGlass"",false,false] call BIS_fnc_endMission;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Bridge_2">*/
+        class Bridge_2
+        {
+          priority = 0.000000;
+          to="Gateway_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Spy_Glass_Variab">*/
+    class Spy_Glass_Variab
+    {
+      name = "Spy_Glass_Variab";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Time_Check">*/
+        class Time_Check
+        {
+          priority = 0.000000;
+          to="Run_Check";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _lastVarCheck) > 60)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Run_Check">*/
+    class Run_Check
+    {
+      name = "Run_Check";
+      init = /*%FSM<STATEINIT""">*/"//Check them." \n
+       "{" \n
+       "	_var = missionNamespace getVariable _x;" \n
+       "	if(!isNil ""_var"") then {" \n
+       "		missionNamespace setVariable[_x,nil];" \n
+       "		[[name player,getPlayerUID player,format[""Variable: %1"",_x]],""SPY_fnc_cookieJar"",false,false] spawn life_fnc_MP;" \n
+       "		[[name player,format[""Variable: %1"",_x]],""SPY_fnc_notifyAdmins"",true,false] spawn life_fnc_MP;" \n
+       "		[""SpyGlass"",false,false] call BIS_fnc_endMission;" \n
+       "	};" \n
+       "} foreach _badVariables;" \n
+       "" \n
+       "_lastVarCheck = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Bridge_1">*/
+        class Bridge_1
+        {
+          priority = 0.000000;
+          to="Spy_Glass_Variab";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"SPY_Glass_VarCheck"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Gateway_1">*/
+    class Gateway_1
+    {
+      name = "Gateway_1";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Skill_less_Check">*/
+        class Skill_less_Check
+        {
+          priority = 1.000000;
+          to="Spy_glass_report";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"unitRecoilCoefficient player < 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="CORE";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

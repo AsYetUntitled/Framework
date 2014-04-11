@@ -24,10 +24,17 @@ life_bail_paid = false;
 life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
-life_respawn_timer = 35;
+life_respawn_timer = 1; //Scaled in minutes
 life_has_insurance = false;
 life_knockout = false;
 life_interrupted = false;
+life_respawned = false;
+life_removeWanted = false;
+
+//Revive constant variables.
+__CONST__(life_revive_cops,TRUE); //Set to false if you don't want cops to be able to revive downed players.
+__CONST__(life_revive_fee,50);
+
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 /*
@@ -91,6 +98,11 @@ switch (playerSide) do
 	{
 		life_atmcash = 3000; //Starting Bank Money
 		life_paycheck = 350; //Paycheck Amount
+	};
+	
+	case independent: {
+		life_atmcash = 6500;
+		life_paycheck = 450;
 	};
 };
 
@@ -169,7 +181,8 @@ life_licenses =
 	["license_civ_iron","civ"],
 	["license_civ_sand","civ"],
 	["license_civ_salt","civ"],
-	["license_civ_cement","civ"]
+	["license_civ_cement","civ"],
+	["license_med_air","med"]
 ];
 
 //Setup License Variables
@@ -251,7 +264,6 @@ life_weapon_shop_array =
 	["arifle_sdar_F",7500],
 	["hgun_P07_snds_F",650],
 	["hgun_P07_F",1500],
-	["Binocular",50],
 	["ItemGPS",45],
 	["ToolKit",75],
 	["FirstAidKit",65],

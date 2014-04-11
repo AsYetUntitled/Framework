@@ -6,24 +6,19 @@ item1[] = {"true",8,218,-62.976639,-315.185364,27.023363,-265.185364,0.000000,"t
 item2[] = {"Share__Work_load",2,250,-64.183350,-224.681931,25.816656,-174.681931,0.000000,"Share " \n "Work-load"};
 item3[] = {"true",8,218,-54.709698,75.189262,35.290302,125.189262,0.000000,"true"};
 item4[] = {"Time_Check",4,218,-219.425827,-133.310532,-129.425964,-83.310455,0.000000,"Time Check"};
-item5[] = {"Delete_Dead_Cars",2,4346,-224.917740,-29.248400,-134.917984,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
+item5[] = {"Delete_Dead_Cars",2,250,-224.917740,-29.248400,-134.917984,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
 item6[] = {"",7,210,-312.538239,95.295059,-304.538239,103.295059,0.000000,""};
 item7[] = {"",7,210,-311.750000,-203.033707,-303.750000,-195.033707,0.000000,""};
-item8[] = {"More_then_1_",4,218,-6.744542,-130.392212,83.255257,-80.392212,0.000000,"More then 1?"};
-item9[] = {"Delete_dead_bodi",2,250,-6.311596,-26.395784,83.688393,23.604227,0.000000,"Delete" \n "dead bodies"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,4};
-link3[] = {2,8};
-link4[] = {3,6};
-link5[] = {4,5};
-link6[] = {5,3};
-link7[] = {6,7};
-link8[] = {7,2};
-link9[] = {8,9};
-link10[] = {9,3};
+link3[] = {3,6};
+link4[] = {4,5};
+link5[] = {5,3};
+link6[] = {6,7};
+link7[] = {7,2};
 globals[] = {0.000000,0,0,0,0,640,480,1,46,6316128,1,-629.444153,611.207214,293.309357,-434.050568,1049,615,1};
-window[] = {0,-1,-1,-1,-1,885,125,1768,125,1,1067};
+window[] = {0,-1,-1,-1,-1,860,100,1743,100,1,1067};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -62,16 +57,6 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "More_then_1_">*/
-        class More_then_1_
-        {
-          priority = 0.000000;
-          to="Delete_dead_bodi";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(count (allDeadMen) > 0)"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
         /*%FSM<LINK "Time_Check">*/
         class Time_Check
         {
@@ -122,29 +107,6 @@ class FSM
        "} foreach allMissionObjects ""Air"";" \n
        "" \n
        "_cars = time;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "true">*/
-        class true
-        {
-          priority = 0.000000;
-          to="Share__Work_load";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Delete_dead_bodi">*/
-    class Delete_dead_bodi
-    {
-      name = "Delete_dead_bodi";
-      init = /*%FSM<STATEINIT""">*/"{" \n
-       "	deleteVehicle _x;" \n
-       "} foreach allDeadMen;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

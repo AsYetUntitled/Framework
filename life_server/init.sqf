@@ -25,6 +25,8 @@ life_animals_array = [];
 [] execVM "\life_server\eventhandlers.sqf";
 //[] call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf"; Not currently used
 
+_tempID = ["SERV_onClientDisconnect","onPlayerDisconnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
+
 [] spawn TON_fnc_cleanup;
 life_gang_list = [];
 publicVariable "life_gang_list";
@@ -35,7 +37,7 @@ bank_obj setVariable["rob_in_sess",false,true];
 robbery_success = 0;
 publicVariable "robbery_success";
 
-//[] execFSM "\life_server\cleanup.fsm";
+[] execFSM "\life_server\cleanup.fsm";
 
 [] spawn
 {

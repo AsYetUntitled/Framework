@@ -21,8 +21,6 @@ _robber = false;
 	missionNamespace setVariable[_var,0];
 } foreach life_illegal_items;
 
-if(_licenses == "") then {_licenses = "No licenses<br/>"};
-
 if(!life_use_atm) then 
 {
 	life_cash = 0;

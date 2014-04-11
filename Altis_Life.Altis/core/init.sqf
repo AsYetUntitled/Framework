@@ -1,6 +1,7 @@
 /*
 	Master client initialization file
 */
+SPY_Glass_VarCheck = true;
 life_firstSpawn = true;
 private["_handle","_timeStamp"];
 cutText["Setting up client, please wait...","BLACK FADED"];
@@ -31,8 +32,9 @@ diag_log "::Life Client:: Received server functions.";
 waitUntil {life_session_completed};
 cutText["Finishing client setup procedure","BLACK FADED"];
 0 cutFadeOut 9999999;
-//[] execVM "core\client\group_base_respawn.sqf";
+
 //diag_log "::Life Client:: Group Base Execution";
+[] spawn life_fnc_escInterupt;
 
 switch (playerSide) do
 {
@@ -48,6 +50,13 @@ switch (playerSide) do
 		_handle = [] spawn life_fnc_initCiv;
 		waitUntil {scriptDone _handle};
 	};
+	
+	case independent:
+	{
+		//Initialize Medics and blah
+		_handle = [] spawn life_fnc_initMedic;
+		waitUntil {scriptDone _handle};
+	};
 };
 
 player setVariable["restrained",false,true];
@@ -60,7 +69,6 @@ waitUntil {!(isNull (findDisplay 46))};
 diag_log "Display 46 Found";
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 player addRating 99999999;
-//[] execVM "core\client\init_survival.sqf";
 diag_log "------------------------------------------------------------------------------------------------------";
 diag_log format["                End of Stratis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
@@ -68,7 +76,6 @@ life_sidechat = true;
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
-//[player] execVM "core\client\intro.sqf";
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 [] call life_fnc_settingsInit;
 life_fnc_moveIn = compileFinal
@@ -77,7 +84,10 @@ life_fnc_moveIn = compileFinal
 ";
 
 [] execVM "core\init_survival.sqf";
-
-setPlayerRespawnTime life_respawn_timer; //Set our default respawn time.
-[] execVM "core\monitor_esc.sqf";
+uiNamespace setVariable["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 [] call life_fnc_setupActions;
+
+/*
+	Initialize SpyGlass
+*/
+[] call SPY_fnc_payLoad;

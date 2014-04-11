@@ -1,9 +1,9 @@
 author = "TAW_Tonic";
-onLoadName = "Altis Life RPG v3.1.2";
-onLoadMission = "A RPG game mode developed by TAW_Tonic";
+onLoadName = "Altis Life RPG v3.1.3";
+onLoadMission = "A RPG game mode developed by Tonic";
 joinUnassigned = 1;
 respawn = BASE;
-respawndelay = 10;
+respawndelay = 5;
 disabledAI = true;
 disableChannels[]={0,1,2};
 enableDebugConsole = 1;
@@ -18,9 +18,9 @@ class Header
 wreckLimit = 3;
 wreckRemovalMinTime = 60;
 wreckRemovalMaxTime = 320;
-corpseLimit = 5;
-corpseRemovalMinTime = 10;
-corpseRemovalMaxTime = 30;
+corpseLimit = 150;
+corpseRemovalMinTime = 999;
+corpseRemovalMaxTime = 9999;
 
 #include "dialog\MasterHandler.h"
 
@@ -73,10 +73,29 @@ class CfgDebriefing
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
 	};
+	
+	class SpyGlass
+	{
+		title = "The SpyGlass sees you";
+		subTitle = "You were detected by the SpyGlass";
+		description = "You were detected for cheating and have been reported to the server. Enjoy your day.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
 };
 
 class CfgNotifications
 {
+	class MedicalRequestEmerg
+	{
+		title = "EMS Requested";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 5;
+		priority = 7;
+	};
+	
 	class DeliveryAssigned
 	{
 		title = "Delivery Job Accepted";

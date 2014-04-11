@@ -32,8 +32,8 @@ while {true} do
 {
 	if((round(_time - time)) > 0) then
 	{
-		_countDown = if(round (_time - time) > 60) then {format["%1 minute(s)",round(round(_time - time) / 60)]} else {format["%1 second(s)",round(_time - time)]};
-		hintSilent format["Time Remaining:\n %1\n\nCan pay bail: %3\nBail Price: $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"Yes"} else {"No"}];
+		_countDown = (_time - time) call life_fnc_secondsToString;
+		hintSilent parseText format["Time Remaining:<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>Can pay bail: %3<br/>Bail Price: $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"Yes"} else {"No"}];
 	};
 	
 	if(player distance (getMarkerPos "jail_marker") > 60) exitWith
@@ -51,7 +51,7 @@ while {true} do
 	{
 	
 	};
-	sleep 1;
+	sleep 0.2;
 };
 
 

@@ -9,6 +9,7 @@ class Life_Client_Core
 		class setupEVH {};
 		class initCiv {};
 		class initCop {};
+		class initMedic {};
 		class welcomeNotification {};
 	};
 	
@@ -20,6 +21,21 @@ class Life_Client_Core
 		class admingetID {};
 		class adminMenu {};
 		class adminQuery {};
+	};
+	
+	class Medical_System
+	{
+		file = "core\medical";
+		class onPlayerKilled {};
+		class onPlayerRespawn {};
+		class respawned {};
+		class revivePlayer {};
+		class revived {};
+		class medicMarkers {};
+		class requestMedic {};
+		class medicRequest {};
+		class deathScreen {};
+		class medicLoadout {};
 	};
 	
 	class Actions
@@ -107,6 +123,7 @@ class Life_Client_Core
 		class sessionCreate {};
 		class sessionHandle {};
 		class syncData {};
+		class sessionQuickSync {};
 	};
 
 	class Player_Menu
@@ -161,6 +178,12 @@ class Life_Client_Core
 		class nearUnits {};
 		class fedSuccess {};
 		class actionKeyHandler {};
+		class playerCount {};
+		class fetchDeadGear {};
+		class loadDeadGear {};
+		class isnumeric {};
+		class escInterupt {};
+		class onTakeItem {};
 	};
 	
 	class Network
@@ -170,6 +193,8 @@ class Life_Client_Core
 		class MP {};
 		class MPexec {};
 		class netSetVar {};
+		class corpse {};
+		class jumpFnc {};
 	};
 	
 	class Civilian
@@ -289,5 +314,8 @@ class Life_Client_Core
 		class impoundMenu {};
 		class unimpound {};
 		class sellGarage {};
+		class bankDeposit {};
+		class bankWithdraw {};
+		class bankTransfer {};
 	};
 };

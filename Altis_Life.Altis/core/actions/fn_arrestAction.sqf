@@ -11,7 +11,7 @@ if(isNil "_unit") exitwith {}; //Not Valid
 if(!(_unit isKindOf "Man")) exitWith {}; //Not a unit
 if(!isPlayer _unit) exitWith {}; //Not a human
 if(!(_unit getVariable "restrained")) exitWith {}; //He's not restrained.
-if(side _unit != civilian) exitWith {}; //Not a civ
+if(!((side _unit) in [civilian,independent])) exitWith {}; //Not a civ
 if(isNull _unit) exitWith {}; //Not valid
 
 

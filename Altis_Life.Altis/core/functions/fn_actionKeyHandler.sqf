@@ -23,6 +23,21 @@ if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
 life_action_inUse = true;
 
+//Temp fail safe.
+[] spawn {
+	sleep 60;
+	life_action_inUse = false;
+};
+
+//Check if it's a dead body.
+if(_curTarget isKindOf "Man" && {!alive _curTarget} && {playerSide in [west,independent]}) exitWith {
+	if(playerSide == west && {(call life_revive_cops)} && {"Medkit" in (items player)}) then {
+		[_curTarget] call life_fnc_revivePlayer;
+	} else {
+		[_curTarget] call life_fnc_revivePlayer;
+	};
+};
+
 //If target is a player then check if we can use the cop menu.
 if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 	if((_curTarget getVariable["restrained",false]) && !dialog && playerSide == west) then {
@@ -64,8 +79,9 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 				waitUntil {scriptDone _handle};
 			} else {
 				//It wasn't a misc item so is it money?
-				if((typeOf _curTarget) == _money) then {
+				if((typeOf _curTarget) == _money && isNil {_curTarget getVariable "inUse"}) then {
 					private["_handle"];
+					_curTarget setVariable["inUse",TRUE,TRUE];
 					_handle = [_curTarget] spawn life_fnc_pickupMoney;
 					waitUntil {scriptDone _handle};
 				};

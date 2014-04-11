@@ -34,4 +34,11 @@ switch (_side) do
 			["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
 		];
 	};
+	
+	case independent: {
+		[
+			["medic_spawn_1","Kavala Hospital","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+			["medic_spawn_2","Athira Medical","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
+		];
+	};
 };

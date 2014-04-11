@@ -11,9 +11,9 @@ createDialog "Life_Clothing";
 disableSerialization;
 
 //Cop / Civ Pre Check
-if((_this select 3) in ["bruce","dive","reb"] && playerSide == west) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
+if((_this select 3) in ["bruce","dive","reb"] && playerSide != civilian) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
 if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "You don't have rebel training yet!"; closeDialog 0;};
-if((_this select 3) in ["cop"] && playerSide == civilian) exitWith {hint "You need to be a cop to use this store!"; closeDialog 0;};
+if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint "You need to be a cop to use this store!"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 
@@ -163,3 +163,8 @@ if((life_clothing_purchase select 4) == -1) then
 };
 
 life_clothing_purchase = [-1,-1,-1,-1,-1];
+//Hotfix in for cop gear
+if(playerSide == west) then
+{
+	[] call life_fnc_saveGear;
+};

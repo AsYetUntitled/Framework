@@ -34,7 +34,7 @@ if(backpack player != "") then
 		_info = [_x] call life_fnc_fetchCfgDetails;
 		if((_info select 4) in [4096,131072]) then
 		{
-			_uItems set[count _uItems,_x];
+			_bItems set[count _bItems,_x];
 		};
 	} foreach (backpackItems player);
 };

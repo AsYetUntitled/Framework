@@ -25,12 +25,23 @@ if(life_action_inUse) exitWith {
 };
 
 switch (_code) do
-{	
+{
+	//Space key for Jumping
+	case 57:
+	{
+		if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2}) then {
+			[[player],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP;
+			_handled = true;
+		};
+	};
+	
 	//Map Key
 	case _mapKey:
 	{
-		if(playerSide == west && !visibleMap) then {
-			[] spawn life_fnc_copMarkers;
+		switch (playerSide) do 
+		{
+			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
+			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
 		};
 	};
 	
@@ -52,7 +63,7 @@ switch (_code) do
 	case 19:
 	{
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
 			[] call life_fnc_restrainAction;
 		};
