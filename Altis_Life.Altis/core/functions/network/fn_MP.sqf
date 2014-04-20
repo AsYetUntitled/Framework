@@ -30,7 +30,12 @@ with missionnamespace do {
 	_isCall =	[_this,4,false,[false]] call bis_fnc_param;
 
 	//--- Send to server
-	life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall];
+	if(isServer && isDedicated) then {
+		life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
+		systemChat "SERVER";
+	} else {
+		life_fnc_MP_packet = [0,_params,_functionName,_target,_isPersistent,_isCall,name player,getPlayerUID player];
+	};
 	publicvariableserver "life_fnc_MP_packet";
 
 	//--- Local execution

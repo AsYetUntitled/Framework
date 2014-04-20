@@ -12,8 +12,8 @@
 	Returns:
 	BOOL - true if function was executed successfully
 */
-private ["_validFunctions","_params","_functionName","_target","_isPersistent","_isCall","_varName","_varValue","_function"];
-
+private ["_validFunctions","_params","_functionName","_target","_isPersistent","_isCall","_varName","_varValue","_function","_callerName","_callerUID","_exitScope"];
+_exitScope = false;
 _varName = _this select 0;
 _varValue = _this select 1;
 
@@ -23,36 +23,46 @@ _functionName =	[_varValue,2,"",[""]] call bis_fnc_param;
 _target =	[_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull,""]] call bis_fnc_param;
 _isPersistent =	[_varValue,4,false,[false]] call bis_fnc_param;
 _isCall =	[_varValue,5,false,[false]] call bis_fnc_param;
+_callerName = [_varValue,6,"",[""]] call bis_fnc_param;
+_callerUID = [_varValue,7,"",[""]] call bis_fnc_param;
 
-//Only approve internal functions to be passed through our framework so prep our array of allowed functions.
-_validFunctions =
-["life_fnc_restrain","TON_fnc_query","TON_fnc_update","TON_fnc_add","life_fnc_broadcast","life_fnc_wantedAdd"
-,"life_fnc_wantedRemove","life_fnc_wantedBounty","life_fnc_moveIn","life_fnc_pushFunction","life_fnc_pulloutVeh"
-,"life_fnc_searchClient","life_fnc_copSearch","life_fnc_copSiren","life_fnc_ticketPrompt","life_fnc_receiveMoney"
-,"clientGetKey","life_fnc_receiveItem","life_fnc_wantedPardon","life_fnc_wantedMenu","life_fnc_wantedList","clientWireTransfer"
-,"clientGangKick","clientGangLeader","clientMessage","life_fnc_impoundMenu","TON_fnc_managesc","life_fnc_sessionReceive"
-,"life_fnc_fedSuccess","TON_fnc_spikeStrip","TON_fnc_robReserve","TON_fnc_vehicleStore","TON_fnc_getVehicles"
-,"TON_fnc_vehicleCreate","TON_fnc_getID","life_fnc_adminid","fnc_player_query","life_fnc_refuelGlobal"
-];
+if(_callerName == "" OR _callerUID == "") exitWith {}; //NO.
 
-/*
-	Not fully finished for the 'pre' version
-if(!(_functionName in _validFunctions)) exitWith {
-	diag_log format["UNKNOWN FUNCTION: %1 passed PARAMS: %2 TARET: %3",_functionName,_params,_target];
-	diag_log format["%1",str(missionNamespace getVariable _functionName)];
-	false
+if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functionName) in ["spy_fnc_cookiejar","spy_fnc_notifyadmins"]) then {
+	//Check if the sender & reported UID match, if they don't exit.
+	if(toLower(_functionName) == "spy_fnc_cookiejar") exitWith {
+		private["_reportUID"];
+		_reportUID = _params select 1;
+		if(_reportUID != _callerUID) exitWith {
+			if(isServer && _mode == 0) then {
+				[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
+				[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			};
+			_exitScope = true;
+		};
+	};
+	//So it's not the cookiejar, let's check the admin notification and make sure the report matches.
+	private["_reportName"];
+	_reportName = _params select 0;
+	if(_callerName != _reportName) exitWith {
+		if(isServer && _mode == 0) then {
+			[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
+			[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+		};
+		_exitScope = true;
+	};
 };
-*/
+	
+if(toLower(_functionName) == "bis_fnc_endmission") exitWith {false}; //Don't allow BIS_fnc_endMission to be passed.
 
-if(toLower(_functionName) == "bis_fnc_endmission") exitWith {}; //Don't allow BIS_fnc_endMission to be passed.
-
+if(_exitScope) exitWith {false}; //Blah.
 if (ismultiplayer && _mode == 0) then {
 	if (isserver) then {
 		if (typename _target == typename []) then {
 
 			//--- Multi execution
 			{
-				[_varName,[_mode,_params,_functionName,_x,_isPersistent,_isCall]] call life_fnc_MPexec;
+				[_varName,[_mode,_params,_functionName,_x,_isPersistent,_isCall,_callerName,_callerUID]] call life_fnc_MPexec;
 			} foreach _target;
 		} else {
 
@@ -79,7 +89,7 @@ if (ismultiplayer && _mode == 0) then {
 					_ownerID = -1;
 				};
 			};
-			life_fnc_MP_packet = [1,_params,_functionName,_target,_isPersistent,_isCall];
+			life_fnc_MP_packet = [1,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
 
 			//--- Send to clients
 			if (_ownerID < 0) then {
