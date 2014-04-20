@@ -1,6 +1,4 @@
 /*
-	Copyright © 2013 Bryan "Tonic" Boardwine, All rights reserved
-	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_mresArray.sqf
 	Author: Bryan "Tonic" Boardwine";
 	
@@ -26,5 +24,4 @@ for "_i" from 0 to (count _array)-1 do
 	};
 };
 
-_array = toString(_array);
-_array;
+toString(_array);

@@ -1,7 +1,7 @@
+#include <macro.h>
 /*
 	Master client initialization file
 */
-SPY_Glass_VarCheck = true;
 life_firstSpawn = true;
 private["_handle","_timeStamp"];
 cutText["Setting up client, please wait...","BLACK FADED"];
@@ -86,6 +86,8 @@ life_fnc_moveIn = compileFinal
 [] execVM "core\init_survival.sqf";
 uiNamespace setVariable["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 [] call life_fnc_setupActions;
+
+__CONST__(life_paycheck,life_paycheck); //Make the paycheck static.
 
 /*
 	Initialize SpyGlass

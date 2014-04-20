@@ -15,6 +15,7 @@ _badVariables = ["W_O_O_K_I_E_FUD_Pro_RE","W_O_O_K_I_E_FUD_Car_RE","W_O_O_K_I_E_
 	"nukeDONEstar","Wookie_List","Wookie_Pro_RE","FUCKTONIC","E_X_T_A_S_Y_FuckUp_GunStore_a","E_X_T_A_S_Y_Cash_1k_t","E_X_T_A_S_Y_Cash_a","E_X_T_A_S_Y_LicenseDrive","E_X_T_A_S_Y_Menu_LOOOOOOOOOL"
 ];
 
+if(!(call SPY_cfg_runVarCheck)) exitWith {}; //Variable check is disabled so exit.
 _checkThread = {
 	{
 		_var = missionNamespace getVariable _x;

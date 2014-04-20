@@ -46,7 +46,7 @@ class CfgFunctions
 			class observe{};
 			class payLoad{};
 			class variableCheck{};
-			class initSpy {postInit=1;};
+			class initSpy {preInit=1;};
 		};
 	};
 	
@@ -71,6 +71,13 @@ class CfgFunctions
 			class queryVehicles {};
 			class bool{};
 			class mresString {};
+		};
+		
+		class MySQL_2
+		{
+			file = "\life_server\Functions\MySQL2";
+			class queryRequest{};
+			class asyncCall{};
 		};
 	};
 	

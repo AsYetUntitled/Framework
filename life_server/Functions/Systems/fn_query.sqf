@@ -30,7 +30,6 @@ if(!isNil "hc_1" && {life_HC_isActive}) exitWith {
 };
 
 _ret = [_uid,_side] call DB_fnc_query;
-waitUntil {typeName _ret == "ARRAY" OR typeName _ret == "STRING" OR isNil "_ret"};
 
 if(!isNil "_ret") then
 {

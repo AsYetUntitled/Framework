@@ -44,6 +44,8 @@ if(!(_functionName in _validFunctions)) exitWith {
 };
 */
 
+if(toLower(_functionName) == "bis_fnc_endmission") exitWith {}; //Don't allow BIS_fnc_endMission to be passed.
+
 if (ismultiplayer && _mode == 0) then {
 	if (isserver) then {
 		if (typename _target == typename []) then {
