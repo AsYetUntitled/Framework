@@ -16,19 +16,19 @@ class DeathScreen
 			idc = 7304;
 			colorBackground[] = {0,0,0,0};
 			text = "Medics Online: 1";
-			x = SafeZoneX + 0.01;
-			y = SafeZoneY + 0.1;
+			x = 0.000874975 * safezoneW + safezoneX;
+			y = 0.0556 * safezoneH + safezoneY;
 			w = 0.8;
 			h = (1 / 25);
 		};
 		
-		class MEdicsNearby : Life_RscText
+		class MedicsNearby : Life_RscText
 		{
 			idc = 7305;
 			colorBackground[] = {0,0,0,0};
 			text = "Medics Nearby: No";
-			x = SafeZoneX + 0.01;
-			y = SafeZoneY + 0.13;
+			x = 0.00190622 * safezoneW + safezoneX;
+			y = 0.0776 * safezoneH + safezoneY;
 			w = 0.8;
 			h = (1 / 25);
 		};
@@ -36,8 +36,8 @@ class DeathScreen
 		class RespawnBtn : Life_RscButtonMenu
 		{
 			idc = 7302;
-			x = SafeZoneX + 2.15;
-			y = SafeZoneY + 0.02;
+			x = 0.9 * safezoneW + safezoneX;
+			y = 0.00500001 * safezoneH + safezoneY;
 			w = (9 / 40);
 			h = (1 / 25);
 			text = "Respawn";
@@ -52,8 +52,8 @@ class DeathScreen
 		class MedicBtn : Life_RscButtonMenu
 		{
 			idc = 7303;
-			x = SafeZoneX + 2.15;
-			y = SafeZoneY + 0.07;
+			x = 0.9 * safezoneW + safezoneX;
+			y = 0.0292 * safezoneH + safezoneY;
 			w = (9 / 40);
 			h = (1 / 25);
 			onButtonClick = "[] call life_fnc_requestMedic;";
@@ -70,8 +70,8 @@ class DeathScreen
 			idc = 7301;
 			colorBackground[] = {0,0,0,0};
 			text = "";
-			x = SafeZoneX + 1.08;
-			y = SafeZoneY + 1.7;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.918 * safezoneH + safezoneY;
 			w = 0.8;
 			h = (1 / 25);
 		};

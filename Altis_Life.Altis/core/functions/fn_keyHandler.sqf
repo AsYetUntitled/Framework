@@ -30,7 +30,8 @@ switch (_code) do
 	case 57:
 	{
 		if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2}) then {
-			[[player],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP;
+			[player,true] spawn life_fnc_jumpFnc; //Local execution
+			[[player,false],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP; //Global execution 
 			_handled = true;
 		};
 	};

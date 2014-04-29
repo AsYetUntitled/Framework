@@ -17,6 +17,9 @@ __CONST__(E_X_T_A_S_Y_ANTI_ANTI_HAX,"CopyPasta");
 __CONST__(E_X_T_A_S_Y_Pro_RE,"Iswhat");
 __CONST__(E_X_T_A_S_Y_Car_RE,"Youdo");
 __CONST__(DO_NUKE,"LOL");
+__CONST__(JxMxE_spunkveh,"Blah");
+__CONST__(JxMxE_spunkveh2,"Blah");
+__CONST__(JxMxE_spunkair,"Blah");
 
 if(!(call SPY_cfg_enableSys)) exitWith {}; //Don't waste anymore time since it was disabled.
 if(__GETC__(life_adminlevel) != 0) exitWith {}; //Don't run this for admins?
@@ -25,16 +28,18 @@ if(__GETC__(life_adminlevel) != 0) exitWith {}; //Don't run this for admins?
 waitUntil {!isNil "SPY_fnc_menuCheck" && !isNil "SPY_fnc_variablecheck" && !isNil "SPY_fnc_cmdMenuCheck"};
 
 //Browse through the CfgPatches and check if any patches not white-listed by the server admin exist. Default configuration allows no extra addons.
-_binConfigPatches = configFile >> "CfgPatches";
-for "_i" from 0 to count (_binConfigPatches)-1 do {
-	_patchEntry = _binConfigPatches select _i;
-	if(isClass _patchEntry) then {
-		if(!((configName _patchEntry) in (call SPY_cfg_patchList))) exitWith {
-			[[name player,getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-			[[name player,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-			disableUserInput true;
-			["SpyGlass",false,true] call BIS_fnc_endMission;
-		}
+if(__GETC__(SPY_cfg_runPatchCheck)) then {
+	_binConfigPatches = configFile >> "CfgPatches";
+	for "_i" from 0 to count (_binConfigPatches)-1 do {
+		_patchEntry = _binConfigPatches select _i;
+		if(isClass _patchEntry) then {
+			if(!((configName _patchEntry) in (call SPY_cfg_patchList))) exitWith {
+				[[name player,getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[name player,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+				disableUserInput true;
+				["SpyGlass",false,true] call BIS_fnc_endMission;
+			}
+		};
 	};
 };
 

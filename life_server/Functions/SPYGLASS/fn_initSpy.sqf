@@ -11,6 +11,9 @@
 
 __CONST__(SPY_cfg_enableSys,true); //Set to false to disable the scripted Spyglass Anti-cheat.
 
+//Null out stuff that is server-targeted.
+__CONST__(JxMxE_PublishVehicle,"No.");
+
 //Broadcast to the network
 publicVariable "SPY_fnc_payLoad";
 publicVariable "SPY_fnc_variableCheck";
@@ -23,6 +26,8 @@ if(!(call SPY_cfg_enableSys)) exitWith {}; //Don't waste anymore time since it w
 //Additional configuration section.
 __CONST__(SPY_cfg_runVarCheck,true); //Run the variable checker? set to false if client performance is low.
 publicVariable "SPY_cfg_runVarCheck";
+__CONST__(SPY_cfg_runPatchCheck,true); //Set to false to disable the patch checking (Not recommended but if you can't figure out how to white-list addons then whatever).
+publicVariable "SPY_cfg_runPatchCheck";
 
 /*
 	Compile our list of allowed addon patches, by default this DOES NOT ALLOW ANY ADDONS.
