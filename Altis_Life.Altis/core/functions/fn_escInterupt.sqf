@@ -48,7 +48,7 @@ while {true} do
 	//Block off our buttons first.
 	_abortButton ctrlEnable false;
 	_respawnButton ctrlEnable false;
-	//_fieldManual ctrlEnable false; //Never re-enable, blocks an old script executor.
+	_fieldManual ctrlEnable false; //Never re-enable, blocks an old script executor.
 	
 	_usebleCtrl = call _canUseControls;
 	_usebleCtrl spawn _escSync;

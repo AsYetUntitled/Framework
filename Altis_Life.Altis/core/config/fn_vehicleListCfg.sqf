@@ -12,6 +12,44 @@ if(_shop == "") exitWith {[]};
 _return = [];
 switch (_shop) do
 {
+	case "new_shop_2":
+	{
+		_return = 
+		[
+			["B_Quadbike_01_F",2500],
+			["C_Hatchback_01_F",9500],
+			["C_Offroad_01_F",12500],
+			["C_SUV_01_F",35000],
+			["C_Van_01_transport_F",40000]
+		];
+		
+		_return set[count _return,
+		["B_Quadbike_01_F",0]];
+		_return set[count _return,
+		["C_Offroad_01_F",0]];
+		_return set[count _return,
+		["B_MRAP_01_F",0]];
+		_return set[count _return,
+		["I_MRAP_03_F",0]];
+		_return set[count _return,
+		["I_Truck_02_covered_F",0]];
+		_return set[count _return,
+		["I_Truck_02_transport_F",0]];
+		_return set[count _return,
+		["B_Truck_01_covered_F",0]];
+		_return set[count _return,
+		["B_Truck_01_transport_F",0]];
+		
+		_return set[count _return,
+		["B_Heli_Light_01_F",0]];
+		_return set[count _return,
+		["O_Heli_Light_02_unarmed_F",0]];
+		_return set[count _return,
+		["B_Heli_Transport_01_F",0]];
+		_return set[count _return,
+		["I_Heli_Transport_02_F",0]];
+	};
+	
 	case "civ_car_1":
 	{
 		_return = 

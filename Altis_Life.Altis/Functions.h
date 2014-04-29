@@ -93,7 +93,6 @@ class Life_Client_Core
 		class vehicleColorCfg {};
 		class vehicleColorStr {};
 		class vehicleListCfg {};
-		class vehicleWeight {};
 		class licenseType {};
 		class eatFood {};
 		class varHandle {};
@@ -106,6 +105,7 @@ class Life_Client_Core
 		class vehShopLicenses {};
 		class vehicleAnimate {};
 		class weaponShopCfg {};
+		class vehicleWeightCfg {};
 		
 		//Clothing Store Configs
 		class clothing_cop {};
@@ -184,6 +184,7 @@ class Life_Client_Core
 		class isnumeric {};
 		class escInterupt {};
 		class onTakeItem {};
+		class fetchVehInfo {};
 	};
 	
 	class Network
@@ -225,6 +226,7 @@ class Life_Client_Core
 		class vehTakeItem {};
 		class vehInventory {};
 		class vInteractionMenu {};
+		class vehicleWeight {};
 	};
 	
 	class Cop
@@ -275,10 +277,9 @@ class Life_Client_Core
 		class changeClothes {};
 		class clothingMenu {};
 		class clothingFilter {};
-		class vehicleShop {};
-		class vehicleColorList {};
+		class vehicleShopMenu {};
+		class vehicleShopLBChange {};
 		class vehicleShopBuy {};
-		class vehicleShopBuySave {};
 		class weaponShopFilter {};
 		class weaponShopMenu {};
 		class weaponShopSelection {};

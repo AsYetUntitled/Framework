@@ -22,8 +22,8 @@
 		<Key ID="STR_Global_Settings">
 			<Original>Settings</Original>
 		</Key>
-		<Key ID="STR_Global_BuyPerm">
-			<Original>Buy Permanently</Original>
+		<Key ID="STR_Global_RentVeh">
+			<Original>Rent</Original>
 		</Key>
 		<Key ID="STR_Global_NoSelection">
 			<Original>You did not select anything.</Original>

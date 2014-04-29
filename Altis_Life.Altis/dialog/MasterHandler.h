@@ -22,3 +22,4 @@
 #include "chop_shop.h"
 #include "pInteraction.h"
 #include "deathScreen.h"
+#include "vehicleShop.h"
