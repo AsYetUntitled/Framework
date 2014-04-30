@@ -43,7 +43,7 @@ _vehicle allowDamage true; //Re-enable damage handling.
 _vehicle setVariable["trunk_in_use",false,true];
 _vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,name player]],true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
-[[_vehicle,_colorIndex],"life_fnc_colorVehicle",false,false] spawn life_fnc_MP; //Colorize dat bitch!
+[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP; //Colorize dat bitch!
 
 //Side Specific actions.
 switch(playerSide) do {
