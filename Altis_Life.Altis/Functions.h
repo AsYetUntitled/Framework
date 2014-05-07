@@ -1,3 +1,16 @@
+class Socket_Reciever
+{
+	tag = "SOCK";
+	class SQL_Socket
+	{
+		file = "core\session\socket";
+		class requestReceived {};
+		class dataQuery {};
+		class insertPlayerInfo {};
+		class updateRequest {};
+	};
+};
+
 class Life_Client_Core
 {
 	tag = "life";

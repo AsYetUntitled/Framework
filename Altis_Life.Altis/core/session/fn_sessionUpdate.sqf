@@ -5,6 +5,8 @@
 	Description:
 	Sends the update request to the server to save information in the database.
 */
+[] call SOCK_fnc_updateRequest; //Temp replacement. 
+/*
 private["_packet","_array"];
 
 _packet = [player,playerSide,life_cash,life_atmcash,getPlayerUID player];
@@ -54,3 +56,4 @@ switch (playerSide) do
 
 _packet set[8,name player];
 [_packet,"TON_fnc_update",false,false] spawn life_fnc_MP;
+*/

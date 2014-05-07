@@ -78,6 +78,8 @@ class CfgFunctions
 			file = "\life_server\Functions\MySQL2";
 			class queryRequest{};
 			class asyncCall{};
+			class insertRequest{};
+			class updateRequest{};
 		};
 	};
 	

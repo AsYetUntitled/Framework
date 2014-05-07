@@ -28,7 +28,7 @@ diag_log "::Life Client:: User actions completed";
 diag_log "::Life Client:: Waiting for server functions to transfer..";
 waitUntil {(!isNil {clientGangLeader})};
 diag_log "::Life Client:: Received server functions.";
-[] call life_fnc_sessionSetup;
+[] call SOCK_fnc_dataQuery;
 waitUntil {life_session_completed};
 cutText["Finishing client setup procedure","BLACK FADED"];
 0 cutFadeOut 9999999;

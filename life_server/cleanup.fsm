@@ -6,7 +6,7 @@ item1[] = {"true",8,218,-62.976639,-315.185364,27.023363,-265.185364,0.000000,"t
 item2[] = {"Share__Work_load",2,250,-64.183350,-224.681931,25.816656,-174.681931,0.000000,"Share " \n "Work-load"};
 item3[] = {"true",8,218,-54.709698,75.189262,35.290302,125.189262,0.000000,"true"};
 item4[] = {"Time_Check",4,218,-219.425827,-133.310532,-129.425964,-83.310455,0.000000,"Time Check"};
-item5[] = {"Delete_Dead_Cars",2,250,-224.917740,-29.248400,-134.917984,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
+item5[] = {"Delete_Dead_Cars",2,4346,-224.917740,-29.248400,-134.917984,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
 item6[] = {"",7,210,-312.538239,95.295059,-304.538239,103.295059,0.000000,""};
 item7[] = {"",7,210,-311.750000,-203.033707,-303.750000,-195.033707,0.000000,""};
 link0[] = {0,1};
@@ -18,7 +18,7 @@ link5[] = {5,3};
 link6[] = {6,7};
 link7[] = {7,2};
 globals[] = {0.000000,0,0,0,0,640,480,1,46,6316128,1,-629.444153,611.207214,293.309357,-434.050568,1049,615,1};
-window[] = {0,-1,-1,-1,-1,860,100,1743,100,1,1067};
+window[] = {0,-1,-1,-1,-1,835,75,1718,75,1,1067};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -29,7 +29,7 @@ class FSM
     class init
     {
       name = "init";
-      init = /*%FSM<STATEINIT""">*/"private[""_impound"",""_cars"",""_objs"",""_totCars""];" \n
+      init = /*%FSM<STATEINIT""">*/"private[""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
        "_impound = time;" \n
        "_cars = time;" \n
        "_objs = time;"/*%FSM</STATEINIT""">*/;
@@ -84,7 +84,10 @@ class FSM
        "			_plate = _dbInfo select 1;" \n
        "" \n
        "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
-       "			_sql = ""Arma2Net.Unmanaged"" callExtension format [""Arma2NETMySQLCommand ['%2', '%1']"", _query,(call LIFE_SCHEMA_NAME)];" \n
+       "			waitUntil {!DB_Async_Active};" \n
+       "_thread = [_query,false] spawn DB_fnc_asyncCall;" \n
+       "waitUntil {scriptDone _thread};" \n
+       "			//_sql = ""Arma2Net.Unmanaged"" callExtension format [""Arma2NETMySQLCommand ['%2', '%1']"", _query,(call LIFE_SCHEMA_NAME)];" \n
        "		};" \n
        "		deleteVehicle _x;" \n
        "	};" \n
@@ -100,7 +103,11 @@ class FSM
        "			_plate = _dbInfo select 1;" \n
        "" \n
        "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
-       "			_sql = ""Arma2Net.Unmanaged"" callExtension format [""Arma2NETMySQLCommand ['%2', '%1']"", _query,(call LIFE_SCHEMA_NAME)];" \n
+       "waitUntil {!DB_Async_Active};" \n
+       "_thread = [_query,false] spawn DB_fnc_asyncCall;" \n
+       "waitUntil {scriptDone _thread};" \n
+       "	" \n
+       "			//_sql = ""Arma2Net.Unmanaged"" callExtension format [""Arma2NETMySQLCommand ['%2', '%1']"", _query,(call LIFE_SCHEMA_NAME)];" \n
        "		};" \n
        "		deleteVehicle _x;" \n
        "	};" \n

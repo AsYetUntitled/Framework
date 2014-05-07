@@ -5,15 +5,13 @@
 	Description:
 	Commits an asynchronous call to Arma2MySQL
 */
-if(DB_Async_Active) then {
-	while {DB_Async_Active} do {if(!DB_Async_Active) exitWith {};};
-};
-
-DB_Async_Active = true; //Block the rest of the SQL queue's off.
-private["_queryStmt","_queryResult"];
+waitUntil{!DB_Async_Active};
+private["_queryStmt","_queryResult","_key"];
 _queryStmt = [_this,0,"",[""]] call BIS_fnc_param;
-_key = [_this,1,"",[""]] call BIS_fnc_param;
+_mode = [_this,1,false,[true]] call BIS_fnc_param;
+
 if(_queryStmt == "") exitWith {_queryStmt};
+DB_Async_Active = true;
 
 _queryResult = "";
 while {true} do {
@@ -23,4 +21,11 @@ while {true} do {
 };
 
 DB_Async_Active = false; //Unlock the async caller
-call compile format["%1", _queryResult];
+
+if(_mode) then {
+	_queryResult = call compile format["%1",_queryResult];
+	if(isNil {((_queryResult select 0) select 0)}) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
+	_queryResult = (_queryResult select 0) select 0;
+	if(count _queryResult == 0) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
+	missionNamespace setVariable[format["QUERY_%1",_queryResult select 0],_queryResult];
+};

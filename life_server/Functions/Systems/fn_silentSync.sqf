@@ -5,7 +5,7 @@
 	Description:
 	Receives the silent sync and sends the query.
 */
-private["_uid","_side","_cash","_bank","_gear","_query","_sql"];
+private["_uid","_side","_cash","_bank","_gear","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,civilian,[sideUnknown]] call BIS_fnc_param;
 _cash = [_this,2,0,[0]] call BIS_fnc_param;
@@ -41,4 +41,9 @@ switch(_side) do
 };
 
 //Execute SQL Statement
-_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
+
+waitUntil {!DB_Async_Active};
+_thread = [_query,false] spawn DB_fnc_asyncCall;
+waitUntil {scriptDone _thread};
+
+//_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];

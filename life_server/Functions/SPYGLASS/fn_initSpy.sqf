@@ -12,7 +12,7 @@
 __CONST__(SPY_cfg_enableSys,true); //Set to false to disable the scripted Spyglass Anti-cheat.
 
 //Null out stuff that is server-targeted.
-__CONST__(JxMxE_PublishVehicle,"No.");
+__CONST__(JxMxE_PublishVehicle,"No");
 
 //Broadcast to the network
 publicVariable "SPY_fnc_payLoad";

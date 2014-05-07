@@ -21,7 +21,7 @@ __CONST__(JxMxE_spunkveh,"Blah");
 __CONST__(JxMxE_spunkveh2,"Blah");
 __CONST__(JxMxE_spunkair,"Blah");
 
-if(!(call SPY_cfg_enableSys)) exitWith {}; //Don't waste anymore time since it was disabled.
+if(!(__GETC__(SPY_cfg_enableSys))) exitWith {}; //Don't waste anymore time since it was disabled.
 if(__GETC__(life_adminlevel) != 0) exitWith {}; //Don't run this for admins?
 
 //Make sure all functions were offloaded to the client..
@@ -36,9 +36,9 @@ if(__GETC__(SPY_cfg_runPatchCheck)) then {
 			if(!((configName _patchEntry) in (call SPY_cfg_patchList))) exitWith {
 				[[name player,getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 				[[name player,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-				disableUserInput true;
+				sleep 0.5;
 				["SpyGlass",false,true] call BIS_fnc_endMission;
-			}
+			};
 		};
 	};
 };
@@ -54,7 +54,7 @@ if(__GETC__(SPY_cfg_runPatchCheck)) then {
 		if((unitRecoilCoefficient player) < 1) then {
 			[[name player,getPlayerUID player,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[name player,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-
+			sleep 0.5;
 			["SpyGlass",false,false] call BIS_fnc_endMission;
 		};
 		sleep 1.5;

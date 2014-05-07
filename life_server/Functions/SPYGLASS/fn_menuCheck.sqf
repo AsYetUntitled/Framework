@@ -10,6 +10,7 @@
 	waitUntil {!isNull (findDisplay 3030)};
 	[[name player,getPlayerUID player,"MenuBasedHack_DISPLAY_3030"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[name player,"Menu Hack: DISPLAY 3030 (Wookie Menu etc)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
 	["SpyGlass",false,false] call BIS_fnc_endMission;
 };
 
@@ -18,6 +19,7 @@
 	waitUntil {!isNull ((findDisplay 64) displayCtrl 101)};
 	[[name player,getPlayerUID player,"MenuBasedHack_DISPLAY_64_C_101"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[name player,"Menu Hack: DISPLAY 64 CONTROL 101"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
 	["SpyGlass",false,false] call BIS_fnc_endMission;
 };
 
@@ -26,6 +28,7 @@
 	waitUntil {!isNull (findDisplay 162)};
 	[[name player,getPlayerUID player,"MenuBasedHack_DISPLAY_162"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[name player,"Menu Hack: DISPLAY 162 (Lystic & Bobby Menu Hack)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
 	["SpyGlass",false,false] call BIS_fnc_endMission;
 };
 
@@ -42,5 +45,6 @@
 	waitUntil {!isNull (uiNamespace getVariable "RscDisplayRemoteMissions")};
 	[[name player,getPlayerUID player,"MenuBasedHack_RscDisplayRemoteMissions"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[name player,"Menu Hack: RscDisplayRemoteMissions"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
 	["SpyGlass",false,false] call BIS_fnc_endMission;
 };

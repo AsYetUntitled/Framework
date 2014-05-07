@@ -5,6 +5,8 @@
 	Description:
 	Sends a silent but forceful sync, this syncs the cash,bank and gear.
 */
+[] call SOCK_fnc_updateRequest;
+/*
 private["_packet"];
 _packet = [getPlayerUID player,playerSide,life_cash,life_atmcash];
 
@@ -22,4 +24,5 @@ switch(playerSide) do
 	};
 };
 
-[_packet,"TON_fnc_silentSync",FALSE,FALSE] call life_fnc_MP;
+//[_packet,"TON_fnc_silentSync",FALSE,FALSE] call life_fnc_MP;
+*/

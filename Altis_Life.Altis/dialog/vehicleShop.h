@@ -73,7 +73,7 @@ class Life_Vehicle_Shop_v2
 		{
 			idc = -1;
 			text = "$STR_Global_RentVeh";
-			onButtonClick = "[false] call life_fnc_vehicleShopBuy;";
+			onButtonClick = "[false] spawn life_fnc_vehicleShopBuy;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
 			w = (6.25 / 40);
@@ -84,7 +84,7 @@ class Life_Vehicle_Shop_v2
 		{
 			idc = -1;
 			text = "$STR_Global_Buy";
-			onButtonClick = "[true] call life_fnc_vehicleShopBuy;";
+			onButtonClick = "[true] spawn life_fnc_vehicleShopBuy;";
 			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
 			w = (6.25 / 40);
