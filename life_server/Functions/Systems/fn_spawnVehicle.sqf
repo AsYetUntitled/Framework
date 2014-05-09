@@ -52,6 +52,11 @@ _thread = [_query,false] spawn DB_fnc_asyncCall;
 waitUntil {scriptDone _thread};
 
 _vehicle = _vInfo select 2 createVehicle (_sp);
+_vehicle setVectorUp (surfaceNormal _sp);
+_vehicle setDir (markerDir _sp);
+_vehicle setPos (getMarkerPos _sp);
+//Reskin the vehicle 
+[_vehicle,(call compile format["%1",_vInfo select 8])] call life_fnc_colorVehicle;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
 _vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"];
@@ -61,9 +66,6 @@ _vehicle lock 2;
 //Send keys over the network.
 [[_vehicle],"TON_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
 
-//Reskin the vehicle 
-[[_vehicle,(call compile format["%1",_vInfo select 8])],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
-
 //Sets of animations
 if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (call compile format["%1",_vInfo select 8]) != 13) then
 {
@@ -72,7 +74,7 @@ if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (ca
 
 if((_vInfo select 1) == "cop" && (_vInfo select 2) == "C_Offroad_01_F") then
 {
-	[_vehicle,"cop_offroad",true] call life_fnc_vehicleAnimate;
+	[_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
 };
 
 if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["B_MRAP_01_F","C_SUV_01_F"]) then {

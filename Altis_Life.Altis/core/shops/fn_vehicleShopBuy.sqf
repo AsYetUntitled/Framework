@@ -39,17 +39,17 @@ _vehicle allowDamage false; //Temp disable damage handling..
 _vehicle setVectorUp (surfaceNormal (getMarkerPos _spawnPoint));
 _vehicle setDir (markerDir _spawnPoint);
 _vehicle setPos (getMarkerPos _spawnPoint);
+[_vehicle,_colorIndex] call life_fnc_colorVehicle;
 _vehicle allowDamage true; //Re-enable damage handling.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 _vehicle setVariable["trunk_in_use",false,true];
 _vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,name player]],true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
-[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP; //Colorize dat bitch!
 
 //Side Specific actions.
 switch(playerSide) do {
 	case west: {
-		[_vehicle,"cop_offroad",true] call life_fnc_vehicleAnimate;
+		[_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
 	};
 	
 	case civilian: {
