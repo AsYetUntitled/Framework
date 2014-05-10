@@ -503,6 +503,58 @@ if(_bool) then
 				}
 					else
 				{
+					//FUCK YOU BOHEMIA INTERACTIVE I SHOULDN'T HAVE TO DO THIS.
+					//Lovely code provided by [OCB]Dash
+					if(!(_item in [primaryWeapon player,secondaryWeapon player,handgunweapon player])) exitWith {
+						private["_tWeapons","_tWeaponCount"];
+						switch(true) do {
+							case (_item in (uniformItems player)): {
+								_tWeapons = (getWeaponCargo (uniformContainer player)) select 0;
+								_tWeaponCount = (getWeaponCargo (uniformContainer  player)) select 1;
+
+								clearWeaponCargo (uniformContainer player);
+								{
+									_numVestWeps = _tWeaponCount select _forEachIndex;
+									if(_x == _item) then
+									{
+										_numVestWeps = _numVestWeps - 1;                        
+									};
+									(uniformContainer player) addWeaponCargo [ _x,_numVestWeps];
+								}forEach _tWeapons;
+							};
+							
+							case (_item in (vestItems player)): {
+								_tWeapons = (getWeaponCargo (vestContainer player)) select 0;
+								_tWeaponCount = (getWeaponCargo (vestContainer  player)) select 1;
+
+								clearWeaponCargo (vestContainer player);
+								{
+									_numVestWeps = _tWeaponCount select _forEachIndex;
+									if(_x == _item) then
+									{
+										_numVestWeps = _numVestWeps - 1;                        
+									};
+									(vestContainer player) addWeaponCargo [ _x,_numVestWeps];
+								}forEach _tWeapons;
+							};
+							
+							case (_item in (backpackItems player)): {
+								_tWeapons = (getWeaponCargo (backpackContainer player)) select 0;
+								_tWeaponCount = (getWeaponCargo (backpackContainer  player)) select 1;
+
+								clearWeaponCargo (backpackContainer player);
+								{
+									_numVestWeps = _tWeaponCount select _forEachIndex;
+									if(_x == _item) then
+									{
+										_numVestWeps = _numVestWeps - 1;                        
+									};
+									(backpackContainer player) addWeaponCargo [ _x,_numVestWeps];
+								}forEach _tWeapons;
+							};
+						};
+					};
+								
 					if(_ispack) then
 					{
 						player removeItemFromBackpack _item;
