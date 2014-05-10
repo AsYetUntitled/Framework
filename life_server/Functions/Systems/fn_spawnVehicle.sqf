@@ -53,7 +53,6 @@ waitUntil {scriptDone _thread};
 
 _vehicle = _vInfo select 2 createVehicle (_sp);
 _vehicle setVectorUp (surfaceNormal _sp);
-_vehicle setDir (markerDir _sp);
 _vehicle setPos (getMarkerPos _sp);
 //Reskin the vehicle 
 [_vehicle,(call compile format["%1",_vInfo select 8])] call life_fnc_colorVehicle;
