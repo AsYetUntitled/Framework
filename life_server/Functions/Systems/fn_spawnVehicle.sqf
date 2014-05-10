@@ -53,9 +53,11 @@ waitUntil {scriptDone _thread};
 
 _vehicle = _vInfo select 2 createVehicle (_sp);
 _vehicle setVectorUp (surfaceNormal _sp);
-_vehicle setPos (getMarkerPos _sp);
+_vehicle setPos _sp;
 //Reskin the vehicle 
-[_vehicle,(call compile format["%1",_vInfo select 8])] call life_fnc_colorVehicle;
+private["_h"];
+_h = [_vehicle,parseNumber(_vInfo select 8)] spawn life_fnc_colorVehicle;
+waitUntil {scriptDone _h};
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
 _vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"];
@@ -68,7 +70,7 @@ _vehicle lock 2;
 //Sets of animations
 if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (call compile format["%1",_vInfo select 8]) != 13) then
 {
-	[_vehicle,"civ_littlebird",true] call life_fnc_vehicleAnimate;
+	[_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
 };
 
 if((_vInfo select 1) == "cop" && (_vInfo select 2) == "C_Offroad_01_F") then

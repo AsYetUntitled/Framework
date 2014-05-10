@@ -30,7 +30,7 @@ if(count (_texture select _index) > 3) then {_texture3 = (_texture select _index
 _texture = _texture select _index;
 if(typeName _texture == "ARRAY") then { _texture = _texture select 0;};
 
-sleep 0.15;
+sleep 0.2;
 
 //Local to us? Set it's color.
 _vehicle setObjectTextureGlobal [0,_texture];

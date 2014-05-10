@@ -30,6 +30,7 @@ if(!_preset) then
 	{
 		case "civ_littlebird":
 		{
+			waitUntil{!isNil {_vehicle getVariable "color"}};
 			_vehicle animate ["addDoors",1];
 			_vehicle animate ["addBenches",0];
 			_vehicle animate ["addTread",0];
@@ -42,6 +43,7 @@ if(!_preset) then
 		
 		case "service_truck":
 		{
+			waitUntil{!isNil {_vehicle getVariable "color"}};
 			_vehicle animate ["HideServices", 0];
 			_vehicle animate ["HideDoor3", 1];
 		};
