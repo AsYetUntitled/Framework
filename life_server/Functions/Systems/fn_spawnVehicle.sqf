@@ -20,29 +20,7 @@ if(_vid == -1 OR _pid == "" OR count _sp == 0) exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use set[count serv_sv_use,_vid];
 
-_query = format["SELECT * FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
-private["_handler","_queryResult","_thread"];
-_handler = {
-	private["_thread"];
-	_thread = [_this select 0,true,_this select 1,true] spawn DB_fnc_asyncCall;
-	waitUntil {scriptDone _thread};
-};
-
-waitUntil{!DB_Async_Active};
-
-while {true} do {
-	_thread = [_query,_pid] spawn _handler;
-	waitUntil {scriptDone _thread};
-	sleep 0.2;
-	_queryResult = missionNamespace getVariable format["QUERY_%1",_pid];
-	if(!isNil "_queryResult") exitWith {};
-};
-
-missionNamespace setVariable[format["QUERY_%1",_pid],nil]; //Unset the variable.
-
-if(typeName _queryResult == "STRING") exitWith {};
-
-_vInfo = _queryResult;
+_vInfo = [_vid,_pid] call DB_fnc_queryVehicle;
 if(isNil "_vInfo") exitWith {serv_sv_use = serv_sv_use - [_vid];};
 if(count _vInfo == 0) exitWith {serv_sv_use = serv_sv_use - [_vid];};
 
@@ -74,7 +52,6 @@ _thread = [_query,false] spawn DB_fnc_asyncCall;
 waitUntil {scriptDone _thread};
 
 _vehicle = _vInfo select 2 createVehicle (_sp);
-waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 _vehicle setVectorUp (surfaceNormal _sp);
 _vehicle setPos _sp;
 //Reskin the vehicle 

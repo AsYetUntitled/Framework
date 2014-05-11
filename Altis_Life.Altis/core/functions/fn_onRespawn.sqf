@@ -54,4 +54,4 @@ _unit addRating 100000;
 cutText ["","BLACK IN"];
 
 [] call life_fnc_civFetchGear;
-[] call SOCK_fnc_updateRequest;
+[1,true] call life_fnc_sessionHandle;

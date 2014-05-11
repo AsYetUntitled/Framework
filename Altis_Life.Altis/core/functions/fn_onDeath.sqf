@@ -77,4 +77,4 @@ life_hunger = 100;
 life_use_atm = true;
 life_cash = 0;
 
-[] call SOCK_fnc_updateRequest;
+[1,true] call life_fnc_sessionHandle;

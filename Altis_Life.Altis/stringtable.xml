@@ -25,9 +25,6 @@
 		<Key ID="STR_Global_RentVeh">
 			<Original>Rent</Original>
 		</Key>
-		<Key ID="STR_Global_Retrieve">
-			<Original>Retrieve</Original>
-		</Key>
 		<Key ID="STR_Global_NoSelection">
 			<Original>You did not select anything.</Original>
 		</Key>
@@ -146,7 +143,10 @@
 			<Original>Storage Fee</Original>
 		</Key>
 		<Key ID="STR_Garage_NoVehicles">
-			<Original>No vehicles found in garage.</Original>
+			<Original>No Vehicles</Original>
+		</Key>
+		<Key ID="STR_Garage_GoodConnection">
+			<Original>Good Connection</Original>
 		</Key>
 		<Key ID="STR_Garage_CashError">
 			<Original>You don't have $%1 in your bank account</Original>

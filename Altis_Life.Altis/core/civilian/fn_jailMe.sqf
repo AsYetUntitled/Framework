@@ -65,7 +65,7 @@ switch (true) do
 		serv_wanted_remove = [player];
 		player setPos (getMarkerPos "jail_release");
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
-		[] call SOCK_fnc_updateRequest;;
+		[1,false] call life_fnc_sessionHandle;
 	};
 	
 	case (_esc) :
@@ -82,6 +82,6 @@ switch (true) do
 		hint "You have served your time in jail and have been released.";
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
-		[] call SOCK_fnc_updateRequest;;
+		[1,false] call life_fnc_sessionHandle;
 	};
 };
