@@ -55,9 +55,7 @@ _vehicle = _vInfo select 2 createVehicle (_sp);
 _vehicle setVectorUp (surfaceNormal _sp);
 _vehicle setPos _sp;
 //Reskin the vehicle 
-private["_h"];
-_h = [_vehicle,parseNumber(_vInfo select 8)] spawn life_fnc_colorVehicle;
-waitUntil {scriptDone _h};
+[[_vehicle,parseNumber(_vInfo select 8)],"life_fnc_colorVehicle",_unit,false] spawn life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
 _vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"];
