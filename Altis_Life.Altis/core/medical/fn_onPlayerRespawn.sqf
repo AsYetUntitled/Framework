@@ -9,6 +9,7 @@ private["_unit","_corpse"];
 _unit = _this select 0;
 _corpse = _this select 1;
 life_corpse = _corpse;
+systemChat format["Entity: %1 | Player: %2",_corpse,_unit];
 
 //Set some vars on our new body.
 _unit setVariable["restrained",FALSE,TRUE];
