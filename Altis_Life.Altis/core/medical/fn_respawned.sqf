@@ -28,7 +28,7 @@ life_corpse setVariable["Reviving",nil,TRUE];
 life_deathCamera cameraEffect ["TERMINATE","BACK"];
 camDestroy life_deathCamera;
 
-[1,true] call life_fnc_sessionHandle;
+[] call SOCK_fnc_updateRequest;
 
 //Cleanup of weapon containers near the body & hide it.
 if(!isNull life_corpse) then {

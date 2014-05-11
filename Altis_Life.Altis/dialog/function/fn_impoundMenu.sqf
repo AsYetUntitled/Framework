@@ -11,17 +11,32 @@ private["_vehicles","_control"];
 disableSerialization;
 _vehicles = [_this,0,[],[[]]] call BIS_fnc_param;
 
+ctrlShow[2803,false];
+ctrlShow[2830,false];
 waitUntil {!isNull (findDisplay 2800)};
 
 if(count _vehicles == 0) exitWith
 {
-	ctrlSetText[2802,localize "STR_Garage_NoVehicles"];
+	ctrlSetText[2811,localize "STR_Garage_NoVehicles"];
 };
 
-ctrlSetText[2802,localize "STR_Garage_GoodConnection"];
-_control = ((findDisplay 2800) displayCtrl 2801);
+_control = ((findDisplay 2800) displayCtrl 2802);
 lbClear _control;
 
+
+{
+	_vehicleInfo = [_x select 2] call life_fnc_fetchVehInfo;
+	_control lbAdd (_vehicleInfo select 3);
+	_tmp = [_x select 2,parseNumber(_x select 8)];
+	_tmp = str(_tmp);
+	_control lbSetData [(lbSize _control)-1,_tmp];
+	_control lbSetPicture [(lbSize _control)-1,_vehicleInfo select 2];
+	_control lbSetValue [(lbSize _control)-1,parseNumber(_x select 0)];
+} foreach _vehicles;
+
+ctrlShow[2810,false];
+ctrlShow[2811,false];
+/*
 {
 	_displayName = getText(configFile >> "CfgVehicles" >> (_x select 2) >> "displayName");
 	_picture = getText(configFile >> "CfgVehicles" >> (_x select 2) >> "picture");
@@ -35,3 +50,4 @@ lbClear _control;
 	_control lbSetValue [(lbSize _control)-1,(call compile format["%1", _x select 0])];
 	_control lbSetPicture [(lbSize _control)-1,_picture];
 } foreach _vehicles;
+*/

@@ -8,9 +8,10 @@
 */
 private["_vehicle","_vid","_pid","_unit","_price"];
 disableSerialization;
-if(lbCurSel 2801 == -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2801,(lbCurSel 2801)];
-_vid = lbValue[2801,(lbCurSel 2801)];
+if(lbCurSel 2802 == -1) exitWith {hint localize "STR_Global_NoSelection"};
+_vehicle = lbData[2802,(lbCurSel 2802)];
+_vehicle = (call compile format["%1",_vehicle]) select 0;
+_vid = lbValue[2802,(lbCurSel 2802)];
 _pid = getPlayerUID player;
 _unit = player;
 

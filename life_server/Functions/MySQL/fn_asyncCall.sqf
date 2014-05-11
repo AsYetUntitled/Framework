@@ -24,6 +24,16 @@ DB_Async_Active = false; //Unlock the async caller
 
 if(_mode) then {
 	_queryResult = call compile format["%1",_queryResult];
+	if(!isnil {_this select 3}) exitWith {
+		if(!(_this select 3)) then {
+			missionNamespace setVariable[format["QUERY_%1",_this select 2],_queryResult select 0];
+		} else {
+			_queryResult = (_queryResult select 0) select 0;
+			if(count _queryResult == 0) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
+			missionNamespace setVariable[format["QUERY_%1",_queryResult select 4],_queryResult];
+		};
+	};
+	
 	if(isNil {((_queryResult select 0) select 0)}) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
 	_queryResult = (_queryResult select 0) select 0;
 	if(count _queryResult == 0) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};

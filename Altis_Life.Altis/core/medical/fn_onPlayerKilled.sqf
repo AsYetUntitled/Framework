@@ -93,4 +93,4 @@ waitUntil {scriptDone _handle};
 [] call life_fnc_hudUpdate; //Get our HUD updated.
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 
-[1,true] call life_fnc_sessionHandle;
+[] call SOCK_fnc_updateRequest;

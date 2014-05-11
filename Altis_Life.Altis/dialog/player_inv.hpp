@@ -303,7 +303,7 @@ class playerSettings {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "$STR_PM_SyncData";
-			onButtonClick = "[] call life_fnc_syncData;";
+			onButtonClick = "[] call SOCK_fnc_syncData;";
 			x = 0.1;
 			y = 0.805;
 			w = (6.25 / 40);
