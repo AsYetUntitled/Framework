@@ -25,4 +25,4 @@ publicVariableServer "bank_addfunds";
 [[_val,name player],"clientWireTransfer",_unit,false] spawn life_fnc_MP;
 [] call life_fnc_atmMenu;
 hint format["You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.",[_val] call life_fnc_numberText,name _unit,[_tax] call life_fnc_numberText];
-[] call life_fnc_sessionQuickSync; //Silent Sync
+[] call SOCK_fnc_updateRequest; //Silent Sync

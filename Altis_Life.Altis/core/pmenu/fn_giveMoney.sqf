@@ -24,7 +24,7 @@ if(isNull _unit) exitWith {ctrlShow[2001,true];};
 if(isNil "_unit") exitWith {ctrlShow[2001,true]; hint "The selected player is not within range";};
 hint format["You gave $%1 to %2",[(parseNumber(_amount))] call life_fnc_numberText,name _unit];
 life_cash = life_cash - (parseNumber(_amount));
-[1,false] call life_fnc_sessionHandle;
+[] call SOCK_fnc_updateRequest;
 [[_unit,_amount,player],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
 [] call life_fnc_p_updateMenu;
 

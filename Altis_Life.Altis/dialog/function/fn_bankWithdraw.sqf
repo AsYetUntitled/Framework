@@ -13,4 +13,4 @@ life_cash = life_cash + _val;
 life_atmcash = life_atmcash - _val;
 hint format ["You have withdrawn $%1 from your bank account",[_val] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
-[] call life_fnc_sessionQuickSync; //Silent Sync
+[] call SOCK_fnc_updateRequest; //Silent Sync

@@ -25,7 +25,7 @@ switch (typeName life_fnc_MP_packet) do
 
 if(!isNil "_exit") exitWith {hint "Because of some cheater corrupting the BIS MP Framework they have stopped you from enjoying our mission.\n\nYou can try this again in a minute if you feel it is a mistake.";};
 
-[] call life_fnc_sessionUpdate;
+[] call SOCK_fnc_updateRequest;
 hint "Syncing player information to the server.\n\nPlease wait up to 20 seconds before leaving.";
 [] spawn
 {

@@ -30,7 +30,9 @@ if(_impound) then
 		else
 	{
 		_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-		_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
+		waitUntil {!DB_Async_Active};
+		_thread = [_query,false] spawn DB_fnc_asyncCall;
+		waitUntil {scriptDone _thread};
 		deleteVehicle _vehicle;
 		life_impound_inuse = false;
 		(owner _unit) publicVariableClient "life_impound_inuse";
@@ -53,7 +55,9 @@ if(_impound) then
 	};
 	
 	_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-	_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
+	waitUntil {!DB_Async_Active};
+	_thread = [_query,false] spawn DB_fnc_asyncCall;
+	waitUntil {scriptDone _thread};
 	deleteVehicle _vehicle;
 	life_garage_store = false;
 	(owner _unit) publicVariableClient "life_garage_store";

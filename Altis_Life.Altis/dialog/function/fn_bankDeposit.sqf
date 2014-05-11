@@ -19,4 +19,4 @@ life_atmcash = life_atmcash + _value;
 
 hint format["You have deposited $%1 into your bank account",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
-[] call life_fnc_sessionQuickSync; //Silent Sync
+[] call SOCK_fnc_updateRequest; //Silent Sync
