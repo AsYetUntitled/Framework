@@ -13,12 +13,12 @@ if(isNull _vehicle OR !alive _vehicle OR _index == -1) exitWith {};
 
 switch (typeOf _vehicle) do
 {
-	case "C_Offroad_01_F": {_vehicle setVariable["color",3];};
-	case "C_Hatchback_01_F": {_vehicle setVariable["color",1];};
-	case "C_Hatchback_01_sport_F": {_vehicle setVariable["color",1];};
-	case "C_SUV_01_F": {_vehicle setVariable["color",1];};
-	case "C_Van_01_box_F": {_vehicle setVariable["color",1];};
-	case "C_Van_01_transport_F": {_vehicle setVariable["color",1];};
+	case "C_Offroad_01_F": {_vehicle setVariable["color",3,true];};
+	case "C_Hatchback_01_F": {_vehicle setVariable["color",1,true];};
+	case "C_Hatchback_01_sport_F": {_vehicle setVariable["color",1,true];};
+	case "C_SUV_01_F": {_vehicle setVariable["color",1,true];};
+	case "C_Van_01_box_F": {_vehicle setVariable["color",1,true];};
+	case "C_Van_01_transport_F": {_vehicle setVariable["color",1,true];};
 };
 
 //Fetch texture from our present array.
@@ -39,10 +39,6 @@ if(!isNil "_texture2") then {
 };
 if(!isNil "_texture3") then {
 	_vehicle setObjectTextureGlobal [2,_texture3];
-};
-if(local _vehicle) then
-{
-	_vehicle setVariable["Life_VEH_color",_index,true];
 };
 
 if(typeOf _vehicle == "C_Offroad_01_F") then
