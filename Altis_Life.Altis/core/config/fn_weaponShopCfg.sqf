@@ -46,6 +46,27 @@ switch(_shop) do
 			};
 		};
 	};
+	
+	case "med_basic":
+	{
+		switch (true) do 
+		{
+			case (playerSide != independent): {"You are not an EMS Medic"};
+			default {
+				["Hospital EMS Shop",
+					[
+						["ItemGPS",nil,100],
+						["Binocular",nil,150],
+						["ToolKit",nil,250],
+						["FirstAidKit",nil,150],
+						["Medikit",nil,500],
+						["NVGoggles",nil,1200],
+						["B_FieldPack_ocamo",nil,3000]
+					]
+				];
+			};
+		};
+	};
 
 	case "cop_patrol":
 	{

@@ -29,6 +29,7 @@ if(_mode) then {
 			missionNamespace setVariable[format["QUERY_%1",_this select 2],_queryResult select 0];
 		} else {
 			_queryResult = (_queryResult select 0) select 0;
+			if(isNil _queryResult) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY"];};
 			if(count _queryResult == 0) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
 			missionNamespace setVariable[format["QUERY_%1",_queryResult select 4],_queryResult];
 		};

@@ -130,6 +130,7 @@ switch (_vehicle) do
 			case 11: {_color = "Vrana"};
 			case 12: {_color = "Waves Blue"};
 			case 13: {_color = "Rebel Digital"};
+			case 14: {_color = "EMS White"};
 		};
 	};
 	
@@ -141,6 +142,7 @@ switch (_vehicle) do
 			case 1: {_color = "White / Blue"};
 			case 2: {_color = "Digi Green"};
 			case 3: {_color = "Desert Digi"};
+			case 4: {_color = "EMS White"};
 		};
 	};
 	

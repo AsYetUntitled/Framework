@@ -12,6 +12,23 @@ if(_shop == "") exitWith {[]};
 _return = [];
 switch (_shop) do
 {
+	case "med_shop":
+	{
+		_return = [
+			["C_Offroad_01_F",10000],
+			["I_Truck_02_medical_F",25000],
+			["O_Truck_03_medical_F",45000],
+			["B_Truck_01_medical_F",60000]
+		];
+	};
+	
+	case "med_air_hs": {
+		_return = [
+			["B_Heli_Light_01_F",50000],
+			["O_Heli_Light_02_unarmed_F",75000]
+		];
+	};
+	
 	case "new_shop_2":
 	{
 		_return = 
