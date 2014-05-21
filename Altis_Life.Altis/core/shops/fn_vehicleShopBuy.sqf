@@ -9,7 +9,9 @@ private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPo
 _mode = _this select 0;
 if((lbCurSel 2302) == -1) exitWith {hint "You did not pick a vehicle!"};
 _className = lbData[2302,(lbCurSel 2302)];
-_basePrice = lbValue[2302,(lbCurSel 2302)]; if(_mode) then {_basePrice = round(_basePrice * 1.5)};
+_vIndex = lbValue[2302,(lbCurSel 2302)];
+_vehicleList = [life_veh_shop select 0] call life_fnc_vehicleListCfg; _basePrice = (_vehicleList select _vIndex) select 1;
+ if(_mode) then {_basePrice = round(_basePrice * 1.5)};
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
 //Series of checks (YAY!)

@@ -46,5 +46,5 @@ ctrlShow [2304,false];
 	_control lbAdd (_vehicleInfo select 3);
 	_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
 	_control lbSetData [(lbSize _control)-1,_className];
-	_control lbSetValue [(lbSize _control)-1,_basePrice];
+	_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
 } foreach _vehicleList;

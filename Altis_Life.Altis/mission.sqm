@@ -3048,24 +3048,24 @@ class Mission
 				class Item81
 				{
 					position[]={14164.198,77.390594,21248.781};
-					azimut=294.14786;
+					azimut=294.14801;
 					special="NONE";
 					id=178;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Donator Vehicle Shop"",life_fnc_vehicleShop,""donator_2""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Vehicle Shop"",life_fnc_vehicleShopMenu,[""donator_1"",civilian,[""donator_2"",""donator_2_1""],""reb"",""Donator Shop""],0,false,false,"""",'!isNil ""life_donator"" && {(call life_donator) > 0'];";
 				};
 				class Item82
 				{
 					position[]={11593.461,23.617846,11973.154};
-					azimut=130.69893;
+					azimut=130.69901;
 					special="NONE";
 					id=179;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Donator Vehicle Shop"",life_fnc_vehicleShop,""donator_1""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Vehicle Shop"",life_fnc_vehicleShopMenu,[""donator_1"",civilian,[""donator_1"",""donator_1_1""],""reb"",""Donator Shop""],0,false,false,"""",'!isNil ""life_donator"" && {(call life_donator) > 0'];;";
 				};
 				class Item83
 				{
@@ -9432,28 +9432,28 @@ class Mission
 		};
 		class Item153
 		{
-			position[]={11607.845,23.600693,11966.289};
+			position[]={11609.614,23.596798,11965.673};
 			name="donator_1";
 			type="Empty";
-			angle=77.938637;
+			angle=117.61928;
 		};
 		class Item154
 		{
-			position[]={11609.357,23.620655,11957.764};
+			position[]={11603.984,23.636641,11955.517};
 			name="donator_1_1";
 			type="Empty";
-			angle=77.938637;
+			angle=117.61928;
 		};
 		class Item155
 		{
-			position[]={14154.433,77.306969,21261.822};
+			position[]={14152.972,77.316055,21256.951};
 			name="donator_2";
 			type="Empty";
 			angle=81.255051;
 		};
 		class Item156
 		{
-			position[]={14154.241,77.323952,21254.738};
+			position[]={14151.816,77.295464,21245.088};
 			name="donator_2_1";
 			type="Empty";
 			angle=80.1147;
