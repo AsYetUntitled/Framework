@@ -42,6 +42,6 @@ switch(_state) do
 		};
 		
 		_funds = round(_funds / (count playableUnits) * 3);
-		[[_funds],"life_fnc_fedSuccess",true,false] spawn life_fnc_MP;
+		[[_funds],"life_fnc_fedSuccess",false,false] spawn life_fnc_MP;
 	};
 };
