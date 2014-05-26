@@ -49,13 +49,13 @@ if(count _vInfo == 0) exitWith {serv_sv_use = serv_sv_use - [_vid];};
 if((_vInfo select 5) == "False") exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[1,format["Sorry but %1 was classified as a destroyed vehicle and was sent to the scrap yard.",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 if((_vInfo select 6) == "True") exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[1,format["Sorry but %1 is already active somewhere in the map and cannot be spawned.",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
@@ -63,7 +63,7 @@ if(count _nearVehicles > 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
 	[[_price,{life_atmcash = life_atmcash + _this;}],"BIS_fnc_spawn",_unit,false] spawn life_fnc_MP;
-	[[1,"There is a vehicle on the spawn point. You will be refunded the cost of getting it out."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,(localize "STR_Garage_SpawnPointError")],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];
@@ -73,15 +73,16 @@ waitUntil {!DB_Async_Active};
 _thread = [_query,false] spawn DB_fnc_asyncCall;
 waitUntil {scriptDone _thread};
 
-_vehicle = _vInfo select 2 createVehicle (_sp);
+_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
 waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 _vehicle setVectorUp (surfaceNormal _sp);
 _vehicle setPos _sp;
+_vehicle setOwner _unit; //Transfer ownership
 //Reskin the vehicle 
 [[_vehicle,parseNumber(_vInfo select 8)],"life_fnc_colorVehicle",_unit,false] spawn life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
-_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"];
+//_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"]; //Obsolete function?
 [_vehicle] call life_fnc_clearVehicleAmmo;
 _vehicle lock 2;
 
@@ -91,12 +92,12 @@ _vehicle lock 2;
 //Sets of animations
 if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (call compile format["%1",_vInfo select 8]) != 13) then
 {
-	[_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
+	[[_vehicle,"civ_littlebird",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
 
 if((_vInfo select 1) == "cop" && (_vInfo select 2) == "C_Offroad_01_F") then
 {
-	[_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
+	[[_vehicle,"cop_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
 
 if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["B_MRAP_01_F","C_SUV_01_F"]) then {

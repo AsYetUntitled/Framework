@@ -11,17 +11,17 @@ _sum = ["peach",3,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_sum > 0) then
 {
 	life_action_inUse = true;
-	titleText["Gathering Peaches...","PLAIN"];
+	titleText[format[localize "STR_NOTF_Gathering",localize "STR_Item_Peaches"],"PLAIN"];
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	sleep 2;
 	if(([true,"peach",_sum] call life_fnc_handleInv)) then
 	{
-		titleText[format["You have picked %1 Peach(es)",_sum],"PLAIN"];
+		titleText[format[localize "STR_NOTF_Picked",_sum,localize "STR_Item_Peaches"],"PLAIN"];
 	};
 }
 	else
 {
-	hint "Your inventory space is full.";
+	hint localize "STR_NOTF_InvFull";
 };
 
 life_action_inUse = false;

@@ -18,7 +18,7 @@ _loops = 0;
 while {true} do {
 	_queryResult = "Arma2Net.Unmanaged" callExtension format["Arma2NETMySQLCommandAsync ['%1', '%2']", (call LIFE_SCHEMA_NAME), _queryStmt];
 	if(_queryResult != "") exitWith {};
-	if(_loops > 10) exitWith {}; //Why is it taking that long? ABORT!
+	if(_loops >= 10) exitWith {}; //Why is it taking that long? ABORT!
 	sleep 0.35;
 	_loops = _loops + 1;
 };

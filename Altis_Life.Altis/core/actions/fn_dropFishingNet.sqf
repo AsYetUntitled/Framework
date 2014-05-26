@@ -31,7 +31,7 @@ if(count _fish == 0) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLAIN"
 		if(([true,_type,1] call life_fnc_handleInv)) then
 		{
 			deleteVehicle _x;
-			titleText[format["You caught a %1",_type],"PLAIN"];
+			titleText[format[(localize "STR_NOTF_Fishing"),_type],"PLAIN"];
 		};
 	};
 } foreach (_fish);

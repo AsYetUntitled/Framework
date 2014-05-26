@@ -23,4 +23,4 @@ waitUntil {!DB_Async_Active};
 _thread = [_query,false] spawn DB_fnc_asyncCall;
 waitUntil {scriptDone _thread};
 
-[[[_sp,_type],{life_atmcash = life_atmcash + (_this select 0); hint format["You sold that vehicle for $%1",[(_this select 0)] call life_fnc_numberText];}],"BIS_fnc_call",_unit,false] spawn life_fnc_MP;
+[[[_sp,_type],{life_atmcash = life_atmcash + (_this select 0); hint format[(localize "STR_Garage_SoldCar"),[(_this select 0)] call life_fnc_numberText];}],"BIS_fnc_call",_unit,false] spawn life_fnc_MP;

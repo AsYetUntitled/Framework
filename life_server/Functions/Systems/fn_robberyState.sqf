@@ -17,7 +17,7 @@ switch(_state) do
 	case -1: {_vault setVariable["fed_rob_ip",false,true]; _vault setVariable["fed_locked",false,true];};
 	case 0:
 	{
-		[[2,"The robbery has failed due to unknown reasons"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[2,(localize "STR_NOTF_FRRobbery_fail")],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		_vault setVariable["fed_locked",true,true];
 		sleep (10 * 60); //Wait 10 minutes
 		_vault setVariable["fed_locked",false,true];
@@ -26,7 +26,7 @@ switch(_state) do
 	
 	case 1:
 	{
-		[[1,format["$%1 was stolen from the robbery on the federal reserve.",[_funds] call life_fnc_numberText]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[1,format[(localize "STR_NOTF_FRRobbery_Success"),[_funds] call life_fnc_numberText]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		_vault setVariable["fed_locked",true,true];
 		sleep (30 * 60); //Wait 30 minutes
 		_vault setVariable["fed_locked",false,true];
