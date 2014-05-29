@@ -54,5 +54,5 @@ while {player getVariable "restrained"} do
 		
 if(alive player) then
 {
-	titleText["You have been released, press V to get out of restrainment.","PLAIN"];
+	player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
 };

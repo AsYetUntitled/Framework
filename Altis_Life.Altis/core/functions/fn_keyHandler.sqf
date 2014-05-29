@@ -19,6 +19,11 @@ _mapKey = actionKeys "ShowMap" select 0;
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
+//Vault handling...
+if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable "restrained")}) exitWith {
+	true;
+};
+
 if(life_action_inUse) exitWith {
 	if(!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true;};
 	_handled;
@@ -146,11 +151,7 @@ switch (_code) do
 			[] call life_fnc_p_openMenu;
 		};
 	};
-	//V Key
-	case 47:
-	{
-		if(playerSide != west && (player getVariable "restrained") OR (player getVariable "transporting")) then {_handled = true;};
-	};
+	
 	//F Key
 	case 33:
 	{
