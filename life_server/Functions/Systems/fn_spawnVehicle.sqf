@@ -77,6 +77,7 @@ _vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
 waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 _vehicle setVectorUp (surfaceNormal _sp);
 _vehicle setPos _sp;
+_vehicle lock 2;
 _vehicle setOwner _unit; //Transfer ownership
 //Reskin the vehicle 
 [[_vehicle,parseNumber(_vInfo select 8)],"life_fnc_colorVehicle",_unit,false] spawn life_fnc_MP;
@@ -84,7 +85,6 @@ _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
 //_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"]; //Obsolete function?
 [_vehicle] call life_fnc_clearVehicleAmmo;
-_vehicle lock 2;
 
 //Send keys over the network.
 [[_vehicle],"TON_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;

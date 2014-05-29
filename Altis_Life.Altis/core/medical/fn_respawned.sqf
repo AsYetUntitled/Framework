@@ -15,6 +15,12 @@ life_cash = 0; //Make sure we don't get our cash back.
 life_respawned = false;
 player playMove "amovpercmstpsnonwnondnon";
 
+//Johnny law got me but didn't let the EMS revive me, reward them half the bounty.
+if(!isNil "life_copRecieve") then {
+	[[player,life_copRecieve,true],"life_fnc_wantedBounty",false,false] spawn life_fnc_MP;
+	life_copRecieve = nil;
+};
+
 //So I guess a fellow gang member, cop or myself killed myself so get me off that Altis Most Wanted
 if(life_removeWanted) then {
 	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
