@@ -421,7 +421,7 @@
 			<Original>You have impounded a %1\n\nYou have received $%2 for cleaning up the streets!</Original>
 		</Key>
 		<Key ID="STR_NOTF_HasImpounded">
-			<Original>%1 has impounded %1's %3</Original>
+			<Original>%1 has impounded %2's %3</Original>
 		</Key>
 		<Key ID="STR_NOTF_AbortESC">
 			<Original>Abort available in %1</Original>

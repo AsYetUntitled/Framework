@@ -11,7 +11,7 @@ createDialog "Life_Clothing";
 disableSerialization;
 
 //Cop / Civ Pre Check
-if((_this select 3) in ["bruce","dive","reb"] && playerSide != civilian) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
+if((_this select 3) in ["bruce","dive","reb","kart"] && playerSide != civilian) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
 if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "You don't have rebel training yet!"; closeDialog 0;};
 if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint "You need to be a cop to use this store!"; closeDialog 0;};
 
