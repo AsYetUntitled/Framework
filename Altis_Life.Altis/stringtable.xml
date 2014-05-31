@@ -500,6 +500,15 @@
 		<Key ID="STR_vInAct_Title">
 			<Original>Vehicle Interaction Menu</Original>
 		</Key>
+		<Key ID="STR_vInAct_Unflip">
+			<Original>Unflip Vehicle</Original>
+		</Key>
+		<Key ID="STR_vInAct_GetInKart">
+			<Original>Get In Kart</Original>
+		</Key>
+		<Key ID="STR_vInAct_PushBoat">
+			<Original>Push Boat</Original>
+		</Key>
 		<Key ID="STR_vInAct_Repair">
 			<Original>Repair Vehicle</Original>
 		</Key>

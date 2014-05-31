@@ -48,6 +48,7 @@ while {true} do
 {
 	waitUntil{!isNull (findDisplay 49)};
 	_abortButton = (findDisplay 49) displayCtrl 104;
+	_abortButton buttonSetAction "[[player],""TON_fnc_cleanupRequest"",false,false] spawn life_fnc_MP";
 	_respawnButton = (findDisplay 49) displayCtrl 1010;
 	_fieldManual = (findDisplay 49) displayCtrl 122;
 	

@@ -14,4 +14,4 @@
 		{deleteVehicle _x;} foreach _containers; //Delete the containers.
 		deleteVehicle _x; //Get rid of the corpse.
 	};
-} foreach allDead;
+} foreach allDeadMen;
