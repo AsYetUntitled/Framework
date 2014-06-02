@@ -96,7 +96,7 @@ switch (_shop) do
 		};
 	};
 	
-	case "cir_air":
+	case "civ_air":
 	{
 		_return =
 		[
