@@ -426,6 +426,27 @@
 		<Key ID="STR_NOTF_AbortESC">
 			<Original>Abort available in %1</Original>
 		</Key>
+		<Key ID="STR_NOTF_DeviceIsMining">
+			<Original>This vehicle is already mining</Original>
+		</Key>
+		<Key ID="STR_NOTF_DeviceFull">
+			<Original>The vehicle is full</Original>
+		</Key>
+		<Key ID="STR_NOTF_notNearResource">
+			<Original>You are not near a resource field</Original>
+		</Key>
+		<Key ID="STR_NOTF_MiningStopped">
+			<Original>You cannot turn the vehicle on when mining</Original>
+		</Key>
+		<Key ID="STR_NOTF_DeviceMining">
+			<Original>The Device is mining...</Original>
+		</Key>
+		<Key ID="STR_NOTF_DeviceMined">
+			<Original>Completed cycle, the device has mined %1</Original>
+		</Key>
+		<Key ID="STR_NOTF_OutOfFuel">
+			<Original>Vehicle is out of fuel</Original>
+		</Key>
 	</Package>
 	<Package name="Life_Items">
 		<Key ID="STR_Item_Cannabis">
@@ -523,6 +544,9 @@
 		</Key>
 		<Key ID="STR_vInAct_Impound">
 			<Original>Impound Vehicle</Original>
+		</Key>
+		<Key ID="STR_vInAct_DeviceMine">
+			<Original>Mine from device</Original>
 		</Key>
 	</Package>
 </Project>

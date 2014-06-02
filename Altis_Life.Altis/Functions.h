@@ -200,6 +200,8 @@ class Life_Client_Core
 		class netSetVar {};
 		class corpse {};
 		class jumpFnc {};
+		class soundDevice {};
+		class setFuel {};
 	};
 	
 	class Civilian
@@ -231,6 +233,7 @@ class Life_Client_Core
 		class vehInventory {};
 		class vInteractionMenu {};
 		class vehicleWeight {};
+		class deviceMine {};
 	};
 	
 	class Cop
