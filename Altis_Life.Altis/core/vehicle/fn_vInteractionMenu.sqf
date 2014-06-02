@@ -12,7 +12,7 @@
 #define Btn5 37454
 #define Btn6 37455
 #define Title 37401
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6"];
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };

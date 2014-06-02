@@ -22,4 +22,6 @@ _thread = [_query,false] spawn DB_fnc_asyncCall;
 waitUntil {scriptDone _thread};
 
 sleep (1.3 * 60);
-deleteVehicle _vehicle; //Clean it up.
+if(!isNil "_vehicle" && {!isNull _vehicle}) then {
+	deleteVehicle _vehicle;
+};
