@@ -87,7 +87,7 @@ _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vIn
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 //Send keys over the network.
-[[_vehicle],"TON_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
+[[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
 
 //Sets of animations
 if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (call compile format["%1",_vInfo select 8]) != 13) then

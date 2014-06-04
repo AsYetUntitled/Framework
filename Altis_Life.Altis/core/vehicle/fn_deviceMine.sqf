@@ -52,10 +52,6 @@ while {true} do {
 	if(!alive _vehicle OR isNull _vehicle) exitWith {};
 	if(isEngineOn _vehicle) exitWith {titleText[localize "STR_NOTF_MiningStopped","PLAIN"];};
 	titleText[localize "STR_NOTF_DeviceMining","PLAIN"];
-	_vInv = _vehicle getVariable ["Trunk",[[],0]];
-	_items = _vInv select 0;
-	_space = _vInv select 1;
-	_itemIndex = [_item,_items] call fnc_index;
 	_time = time + 27;
 	
 	//Wait for 27 seconds with a 'delta-time' wait.
@@ -66,6 +62,10 @@ while {true} do {
 		false
 	};
 	if(isEngineOn _vehicle) exitWith {titleText[localize "STR_NOTF_MiningStopped","PLAIN"];};
+	_vInv = _vehicle getVariable ["Trunk",[[],0]];
+	_items = _vInv select 0;
+	_space = _vInv select 1;
+	_itemIndex = [_item,_items] call fnc_index;
 	_weight = [_vehicle] call life_fnc_vehicleWeight;
 	_sum = [_item,10,_weight select 1,_weight select 0] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight.. 
 	if(_sum < 1) exitWith {titleText[localize "STR_NOTF_DeviceFull","PLAIN"];};

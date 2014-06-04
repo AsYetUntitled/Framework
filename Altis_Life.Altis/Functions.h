@@ -234,6 +234,7 @@ class Life_Client_Core
 		class vInteractionMenu {};
 		class vehicleWeight {};
 		class deviceMine {};
+		class addVehicle2Chain {};
 	};
 	
 	class Cop

@@ -115,7 +115,6 @@ class CfgFunctions
 			class vehicleCreate {};
 			class vehicleDead {};
 			class spawnVehicle {};
-			class addVehicle2Chain {};
 			class getVehicles {};
 			class vehicleStore {};
 			class vehicleDelete {};
