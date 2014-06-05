@@ -20,7 +20,7 @@ _mapKey = actionKeys "ShowMap" select 0;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
 //Vault handling...
-if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable "restrained")}) exitWith {
+if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable ["restrained",false])}) exitWith {
 	true;
 };
 
@@ -132,10 +132,14 @@ switch (_code) do
 	case 38: 
 	{
 		//If cop run checks for turning lights on.
-		if(_shift && playerSide == west) then {
+		if(_shift && playerSide in [west,independent]) then {
 			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
 				if(!isNil {vehicle player getVariable "lights"}) then {
-					[vehicle player] call life_fnc_sirenLights;
+					if(playerSide == west) then {
+						[vehicle player] call life_fnc_sirenLights;
+					} else {
+						[vehicle player] call life_fnc_medicSirenLights;
+					};
 					_handled = true;
 				};
 			};
@@ -155,7 +159,7 @@ switch (_code) do
 	//F Key
 	case 33:
 	{
-		if(playerSide == west && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
+		if(playerSide in [west,independent] && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
 		{
 			[] spawn
 			{
@@ -174,7 +178,12 @@ switch (_code) do
 			{
 				titleText ["Sirens On","PLAIN"];
 				_veh setVariable["siren",true,true];
-				[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
+				if(playerSide == west) then {
+					[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
+				} else {
+					//I do not have a custom sound for this and I really don't want to go digging for one, when you have a sound uncomment this and change medicSiren.sqf in the medical folder.
+					//[[_veh],"life_fnc_medicSiren",nil,true] spawn life_fnc_MP;
+				};
 			};
 		};
 	};

@@ -151,6 +151,21 @@ publicVariable "clientGangLeader";
 	-fnc_cell_adminmsg
 	-fnc_cell_adminmsgall
 */
+
+//To EMS
+fnc_cell_emsrequest = 
+compileFinal "
+private[""_msg"",""_to""];
+	ctrlShow[3022,false];
+	_msg = ctrlText 3003;
+	_to = ""EMS Units"";
+	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3022,true];};
+		
+	[[_msg,name player,5],""clientMessage"",independent,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
+	hint format[""You have sent a message to all EMS Units."",_to,_msg];
+	ctrlShow[3022,true];
+";
 //To One Person
 fnc_cell_textmsg =
 compileFinal "
@@ -230,6 +245,7 @@ publicVariable "fnc_cell_textcop";
 publicVariable "fnc_cell_textadmin";
 publicVariable "fnc_cell_adminmsg";
 publicVariable "fnc_cell_adminmsgall";
+publicVariable "fnc_cell_emsrequest";
 //Client Message
 /*
 	0 = private message
@@ -302,6 +318,14 @@ compileFinal "
 			[""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
 			systemChat _message;
 			if((call life_adminlevel) > 0) then {systemChat _admin;};
+		};
+		
+		case 5: {
+			private[""_message""];
+			_message = format[""!!!EMS REQUEST: %1"",_msg];
+			hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>EMS Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
+			
+			[""TextMessage"",[format[""EMS Request from %1"",_from]]] call bis_fnc_showNotification;
 		};
 	};
 ";

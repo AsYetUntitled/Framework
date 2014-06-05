@@ -79,6 +79,10 @@ switch(playerSide) do {
 			[_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
 		};
 	};
+	
+	case independent: {
+		[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
+	};
 };
 
 life_vehicles set[count life_vehicles,_vehicle]; //Add err to the chain.

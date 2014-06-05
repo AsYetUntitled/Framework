@@ -82,6 +82,9 @@
 		<Key ID="STR_CELL_AdminMSGAll">
 			<Original>Admin Msg All</Original>
 		</Key>
+		<Key ID="STR_CELL_EMSRequest">
+			<Original>Request EMS</Original>
+		</Key>
 	</Package>
 	<Package name="Chop_Shop">
 		<Key ID="STR_ChopShop_Title">
