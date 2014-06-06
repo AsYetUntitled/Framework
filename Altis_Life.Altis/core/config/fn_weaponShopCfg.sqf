@@ -121,7 +121,7 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != civilian): {"You are not a cop!"};
+			case (playerSide != civilian): {"You are not a civilian!"};
 			case (!license_civ_rebel): {"You don't have a Rebel training license!"};
 			default
 			{
@@ -150,7 +150,7 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != civilian): {"You are not a cop!"};
+			case (playerSide != civilian): {"You are not a civilian!"};
 			case (!license_civ_gun): {"You don't have a Firearms license!"};
 			default
 			{
