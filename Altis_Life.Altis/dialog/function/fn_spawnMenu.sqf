@@ -7,6 +7,14 @@
 */
 private["_spCfg","_sp","_ctrl"];
 disableSerialization;
+
+if(life_is_arrested) exitWith {
+	[] call life_fnc_respawned;
+};
+
+if(life_respawned) then {
+	[] call life_fnc_respawned;
+};
 cutText["","BLACK FADED"];
 0 cutFadeOut 9999999;
 if(!(createDialog "life_spawn_selection")) exitWith {[] call life_fnc_spawnMenu;};
@@ -26,10 +34,6 @@ for "_i" from 0 to (count _spCfg)-1 do
 	_ctrl ctrlSetText ((_spCfg select _i) select 1);
 };
 */
-
-if(life_respawned) then {
-	[] call life_fnc_respawned;
-};
 
 _ctrl = ((findDisplay 38500) displayCtrl 38510);
 {

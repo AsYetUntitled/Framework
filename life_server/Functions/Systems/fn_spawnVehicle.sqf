@@ -84,7 +84,6 @@ _vehicle setOwner _unit; //Transfer ownership
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
 //_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"]; //Obsolete function?
-[_vehicle] call life_fnc_clearVehicleAmmo;
 
 //Send keys over the network.
 [[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
@@ -108,5 +107,7 @@ if((_vInfo select 1) == "med" && (_vInfo select 2) == "C_Offroad_01_F") then
 if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["B_MRAP_01_F","C_SUV_01_F"]) then {
 	_vehicle setVariable["lights",false,true];
 };
+
+[[_vehicle],"life_fnc_clearVehicleAmmo",_unit,false] spawn life_fnc_MP;
 
 serv_sv_use = serv_sv_use - [_vid];

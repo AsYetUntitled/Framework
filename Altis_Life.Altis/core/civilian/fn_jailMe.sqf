@@ -30,28 +30,22 @@ _bail = false;
 
 while {true} do
 {
-	if((round(_time - time)) > 0) then
-	{
+	if((round(_time - time)) > 0) then {
 		_countDown = [(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString;
 		hintSilent parseText format["Time Remaining:<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>Can pay bail: %3<br/>Bail Price: $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"Yes"} else {"No"}];
 	};
 	
-	if(player distance (getMarkerPos "jail_marker") > 60) exitWith
-	{
+	if(player distance (getMarkerPos "jail_marker") > 60) exitWith {
 		_esc = true;
 	};
 	
-	if(life_bail_paid) exitWith
-	{
+	if(life_bail_paid) exitWith {
 		_bail = true;
 	};
 	
 	if((round(_time - time)) < 1) exitWith {hint ""};
-	if(!alive player && ((round(_time - time)) > 0)) exitWith
-	{
-	
-	};
-	sleep 0.2;
+	if(!alive player && ((round(_time - time)) > 0)) exitWith {};
+	sleep 0.1;
 };
 
 

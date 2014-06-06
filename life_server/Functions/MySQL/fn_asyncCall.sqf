@@ -4,6 +4,12 @@
 	
 	Description:
 	Commits an asynchronous call to Arma2MySQL
+	
+	Parameters:
+		0: STRING (Query to be ran).
+		1: BOOL (True to return for query's, false to not return for update/insert).
+		2: STRING (Unique ID that is stored as QUERY_UNIQUEID so it can be fetched).
+		3: BOOL (True to return a single array, false to return multiple entries mainly for garage).
 */
 waitUntil{!DB_Async_Active};
 private["_queryStmt","_queryResult","_key","_loops"];
