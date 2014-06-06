@@ -15,7 +15,7 @@ if(animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
 _velocity = velocity _unit;
 
 if(local _unit) then {
-	_v1 = 3.8;
+	_v1 = 3.82;
 	_v2 = .4;
 	_dir = direction player;
 	_vel = velocity _unit;

@@ -7,27 +7,15 @@
 	
 	Will also become a standalone system which is why it's setup like this.
 */
+if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
 #define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
 
 __CONST__(SPY_cfg_enableSys,true); //Set to false to disable the scripted Spyglass Anti-cheat.
-
-//Null out stuff that is server-targeted.
-__CONST__(JxMxE_PublishVehicle,"No");
-
-//Broadcast to the network
-publicVariable "SPY_fnc_payLoad";
-publicVariable "SPY_fnc_variableCheck";
-publicVariable "SPY_fnc_menuCheck";
-publicVariable "SPY_fnc_cmdMenuCheck";
-publicVariable "SPY_fnc_notifyAdmins";
-publicVariable "SPY_cfg_enableSys";
-
+__CONST__(BIS_fnc_endMission,BIS_fnc_endMission); //Double compiling of it as suggested by 'Lystic'
 if(!(call SPY_cfg_enableSys)) exitWith {}; //Don't waste anymore time since it was disabled.
 //Additional configuration section.
 __CONST__(SPY_cfg_runVarCheck,true); //Run the variable checker? set to false if client performance is low.
-publicVariable "SPY_cfg_runVarCheck";
 __CONST__(SPY_cfg_runPatchCheck,true); //Set to false to disable the patch checking (Not recommended but if you can't figure out how to white-list addons then whatever).
-publicVariable "SPY_cfg_runPatchCheck";
 
 /*
 	Compile our list of allowed addon patches, by default this DOES NOT ALLOW ANY ADDONS.
@@ -113,4 +101,5 @@ SPY_cfg_patchList =
 "A3_Weapons_F_Kart_Pistols_Pistol_Signal_F","A3_Data_F_Kart","A3_Missions_F_Kart","A3_Modules_F_Kart","A3_Modules_F_Kart_TimeTrials","A3_Weapons_F_Kart","A3_Characters_F_Kart","A3_Soft_F_Kart_Kart_01"];
 
 __CONST__(SPY_cfg_patchList,SPY_cfg_patchList); //Make the array static / constant.
-publicVariable "SPY_cfg_patchList"; //Send the patch out to clients.
+uiNamespace setVariable["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
+[] call SPY_fnc_payLoad; //Initialize Spyglass.

@@ -87,7 +87,7 @@ if(playerSide == west) then {
 	if(typeOf _curTarget == "O_Truck_03_device_F") then {
 		_Btn3 ctrlSetText localize "STR_vInAct_DeviceMine";
 		_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_deviceMine";
-		if(!isNil {(_curTarget getVariable "mining")}) then {
+		if(!isNil {(_curTarget getVariable "mining")} OR !local _curTarget && {_curTarget in life_vehicles}) then {
 			_Btn3 ctrlEnable false;
 		} else {
 			_Btn3 ctrlEnable true;

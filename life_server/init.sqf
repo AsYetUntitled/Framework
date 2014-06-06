@@ -3,6 +3,9 @@ DB_Async_Active = false;
 __CONST__(LIFE_SCHEMA_NAME,"'arma3life'");//CHANGE THIS IF YOUR DATABASE IS NOT CALLED ARMA3LIFE KEEP THE ' '
 publicVariable "LIFE_SCHEMA_NAME";
 
+//Null out harmful things for the server.
+__CONST__(JxMxE_PublishVehicle,"No");
+
 [] execVM "\life_server\fn_initHC.sqf";
 
 life_radio_west = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];

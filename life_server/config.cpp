@@ -33,23 +33,6 @@ class CfgFunctions
 		};
 	};
 	
-	class SpyGlass
-	{
-		tag = "SPY";
-		class Functions
-		{
-			file = "\life_server\Functions\SPYGLASS";
-			class cmdMenuCheck{};
-			class cookieJar{};
-			class menuCheck{};
-			class notifyAdmins{};
-			class observe{};
-			class payLoad{};
-			class variableCheck{};
-			class initSpy {preInit=1;};
-		};
-	};
-	
 	class MySQL_Database
 	{
 		tag = "DB";
