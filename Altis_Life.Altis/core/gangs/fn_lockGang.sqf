@@ -28,7 +28,7 @@ switch (true) do
 	case (getPlayerUID player == _ownerID) :
 	{
 		life_gang_list set [_index,[_name,_group,true,_owner,_ownerID]];
-		publicVariable "life_gang_list"
+		publicVariable "life_gang_list";
 
 		ctrlShow[2622,false];
 		ctrlShow[2623,true];
