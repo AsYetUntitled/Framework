@@ -20,7 +20,7 @@ if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint "You 
 
 if(!createDialog "Life_Vehicle_Shop_v2") exitWith {};
 
-life_veh_shop = [_shop,_spawnpoints,_shopFlag]; //Store it so so other parts of the system can access it.
+life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
 
 ctrlSetText [2301,((_this select 3) select 4)];
 

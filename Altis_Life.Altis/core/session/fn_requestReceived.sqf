@@ -11,7 +11,7 @@
 life_session_tries = life_session_tries + 1;
 if(life_session_tries > 3) exitWith {cutText["There was an error in trying to setup your client.","BLACK FADED"]; 0 cutFadeOut 999999999;};
 
-cutText ["Received request from server... Validating...","BLACK FADED"];
+0 cutText ["Received request from server... Validating...","BLACK FADED"];
 0 cutFadeOut 9999999;
 
 //Error handling and  junk..
@@ -41,17 +41,20 @@ switch(playerSide) do {
 		cop_gear = _this select 8;
 		[] spawn life_fnc_loadGear;
 		life_blacklisted = call compile format["%1",_this select 9];
+		__CONST__(life_medicLevel,0);
 	};
 	
 	case civilian: {
 		life_is_arrested = call compile format["%1", _this select 7];
 		civ_gear = _this select 8;
 		__CONST__(life_coplevel,0);
+		__CONST__(life_medicLevel,0);
 		[] spawn life_fnc_civLoadGear;
 	};
 	
 	case independent: {
 		__CONST__(life_medicLevel,parseNumber(_this select 7));
+		__CONST__(life_copLevel,0);
 	};
 };
 
