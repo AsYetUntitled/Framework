@@ -31,7 +31,7 @@ _item = switch(true) do {
 	case (_zone in ["peaches_1","peaches_2","peaches_3","peaches_4"]): {"peach"};
 	case (_zone in ["heroin_1"]): {"heroinu"};
 	case (_zone in ["cocaine_1"]): {"cocaine"};
-	case (_zone in ["weed_1"]): {"marijuana"};
+	case (_zone in ["weed_1"]): {"cannabis"};
 	case (_zone in ["lead_1"]): {"copperore"};
 	case (_zone in ["iron_1"]): {"ironore"};
 	case (_zone in ["salt_1"]): {"salt"};
@@ -67,7 +67,7 @@ while {true} do {
 	_space = _vInv select 1;
 	_itemIndex = [_item,_items] call fnc_index;
 	_weight = [_vehicle] call life_fnc_vehicleWeight;
-	_sum = [_item,10,_weight select 1,_weight select 0] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight.. 
+	_sum = [_item,15,_weight select 1,_weight select 0] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight.. 
 	if(_sum < 1) exitWith {titleText[localize "STR_NOTF_DeviceFull","PLAIN"];};
 	_itemWeight = ([_item] call life_fnc_itemWeight) * _sum;
 	if(_itemIndex == -1) then {
@@ -83,7 +83,7 @@ while {true} do {
 	if(local _vehicle) then {
 		_vehicle setFuel (fuel _vehicle)-0.045;
 	} else {
-		[[_vehicle,(fuel _vehicle)-0.045],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+		[[_vehicle,(fuel _vehicle)-0.04],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
 	};
 	
 	if(fuel _vehicle == 0) exitWith {titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];};

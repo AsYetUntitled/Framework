@@ -11,7 +11,6 @@ if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
 #define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
 
 __CONST__(SPY_cfg_enableSys,true); //Set to false to disable the scripted Spyglass Anti-cheat.
-__CONST__(BIS_fnc_endMission,BIS_fnc_endMission); //Double compiling of it as suggested by 'Lystic'
 if(!(call SPY_cfg_enableSys)) exitWith {}; //Don't waste anymore time since it was disabled.
 //Additional configuration section.
 __CONST__(SPY_cfg_runVarCheck,true); //Run the variable checker? set to false if client performance is low.

@@ -558,7 +558,7 @@ if(_bool) then
 								
 					if(_ispack) then
 					{
-						player removeItemFromBackpack _item;
+						_item call _tmpfunction;
 					}
 						else
 					{

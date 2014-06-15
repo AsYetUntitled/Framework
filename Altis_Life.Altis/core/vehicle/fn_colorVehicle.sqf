@@ -48,3 +48,5 @@ if(typeOf _vehicle == "C_Offroad_01_F") then
 		_vehicle setObjectTextureGlobal [1,_texture];
 	};
 };
+
+[_vehicle] call life_fnc_clearVehicleAmmo;

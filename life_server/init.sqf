@@ -30,7 +30,9 @@ life_animals_array = [];
 [] execVM "\life_server\eventhandlers.sqf";
 //[] call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf"; Not currently used
 
-_tempID = ["SERV_onClientDisconnect","onPlayerDisconnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
+//Double the cleanup for connecting clients and disconnecting clients.
+_onDisconnect = ["SERV_onClientDisconnect","onPlayerDisconnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
+_onConnect = ["SERV_onClientConnected","onPlayerConnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
 
 [] spawn TON_fnc_cleanup;
 life_gang_list = [];
@@ -55,9 +57,6 @@ publicVariable "robbery_success";
 		_logic setVariable["BIS_fnc_MP_queue",[],TRUE];
 	};
 };
-
-fnc_serv_kick = {endMission "loser";};
-publicVariable "fnc_serv_kick";
 
 //Server-side functions that need to be sent out.
 publicVariable "TON_fnc_addVehicle2Chain";
