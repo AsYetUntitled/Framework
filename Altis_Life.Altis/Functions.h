@@ -191,8 +191,6 @@ class Life_Client_Core
 		class numberText {};
 		class handleItem {};
 		class accType {};
-		class onDeath {};
-		class onRespawn {};
 		class receiveItem {};
 		class giveDiff {};
 		class receiveMoney {};

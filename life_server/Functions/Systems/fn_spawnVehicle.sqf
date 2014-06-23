@@ -101,7 +101,7 @@ if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["C_Offroad_01_F","B_MRAP_
 
 if((_vInfo select 1) == "med" && (_vInfo select 2) == "C_Offroad_01_F") then
 {
-	[[_vehicle,"med_car",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
+	[[_vehicle,"med_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
 [[1,"Your vehicle is ready!"],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 serv_sv_use = serv_sv_use - [_vid];

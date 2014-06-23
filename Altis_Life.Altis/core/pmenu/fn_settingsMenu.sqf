@@ -25,7 +25,7 @@ ctrlSetText[2922, format["%1", tawvd_air]];
 	sliderSetPosition[_x select 0, _x select 1];
 } foreach [[2901,tawvd_foot],[2911,tawvd_car],[2921,tawvd_air]];
 
-private["_display","_side","_tags"];
+private["_display","_side","_tags","_objs"];
 _display = findDisplay 2900;
 _side = _display displayCtrl 2971;
 _tags = _display displayCtrl 2970;
