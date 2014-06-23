@@ -64,7 +64,7 @@ if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cance
 life_atmcash = life_atmcash + (call life_revive_fee);
 life_action_inUse = false;
 _target setVariable["Revive",TRUE,TRUE];
-[[name player],"life_fnc_revived",_target,FALSE] spawn life_fnc_MP;
+[[player getVariable["realname",name player]],"life_fnc_revived",_target,FALSE] spawn life_fnc_MP;
 titleText[format["You have revived %1 and received $%2 for your services.",_targetName,[(call life_revive_fee)] call life_fnc_numberText],"PLAIN"];
 
 sleep 0.6;

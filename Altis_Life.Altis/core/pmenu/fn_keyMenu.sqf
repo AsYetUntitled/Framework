@@ -54,7 +54,7 @@ for "_i" from 0 to (count life_vehicles)-1 do
 {
 	if(!isNull _x && alive _x && player distance _x < 20 && _x != player) then
 	{
-		_plist lbAdd format["%1 - %2",name _x, side _x];
+		_plist lbAdd format["%1 - %2",_x getVariable["realname",name _x], side _x];
 		_plist lbSetData [(lbSize _plist)-1,str(_x)];
 	};
 } foreach _near_units;

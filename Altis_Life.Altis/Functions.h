@@ -209,6 +209,8 @@ class Life_Client_Core
 		class onTakeItem {};
 		class fetchVehInfo {};
 		class pushObject {};
+		class onFired {};
+		class revealObjects {};
 	};
 	
 	class Network
@@ -328,6 +330,7 @@ class Life_Client_Core
 		class lockpick {};
 		class spikeStrip {};
 		class jerryRefuel {};
+		class flashbang {};
 	};
 	
 	class Dialog_Controls

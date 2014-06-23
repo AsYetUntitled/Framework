@@ -13,7 +13,7 @@ _killer = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 //Set some vars
 _unit setVariable["Revive",FALSE,TRUE]; //Set the corpse to a revivable state.
-_unit setVariable["name",name player,TRUE]; //Set my name so they can say my name.
+_unit setVariable["name",player getVariable["realname",name player],TRUE]; //Set my name so they can say my name.
 _unit setVariable["restrained",FALSE,TRUE];
 _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",FALSE,TRUE]; //Why the fuck do I have this? Is it used?
@@ -60,13 +60,13 @@ _unit spawn
 //Make the killer wanted
 if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _killer}) then {
 	if(vehicle _killer isKindOf "LandVehicle") then {
-		[[getPlayerUID _killer,name _killer,"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[getPlayerUID _killer,_killer getVariable["realname",name _killer],"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		//Get rid of this if you don't want automatic vehicle license removal.
 		if(!local _killer) then {
 			[[2],"life_fnc_removeLicenses",_killer,FALSE] spawn life_fnc_MP;
 		};
 	} else {
-		[[getPlayerUID _killer,name _killer,"187"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[getPlayerUID _killer,_killer getVariable["realname",name _killer],"187"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		
 		if(!local _killer) then {
 			[[3],"life_fnc_removeLicenses",_killer,FALSE] spawn life_fnc_MP;
@@ -87,6 +87,11 @@ if(side _killer == west && playerSide != west) then {
 if(!isNull _killer && {_killer != _unit}) then {
 	life_removeWanted = true;
 };
+
+//Comment this code out if you want them to keep the weapon on the ground.
+private["_containers"];
+_containers = nearestObjects[getPosATL _x,["WeaponHolderSimulated"],5]; //Fetch list of containers (Simulated = weapons)
+{deleteVehicle _x;} foreach _containers; //Delete the containers.
 
 _handle = [_unit] spawn life_fnc_dropItems;
 waitUntil {scriptDone _handle};

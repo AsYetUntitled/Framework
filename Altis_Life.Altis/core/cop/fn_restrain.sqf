@@ -30,7 +30,7 @@ if(isNull _cop) exitWith {};
 	};
 };
 
-titleText[format["You have been restrained by %1",name _cop],"PLAIN"];
+titleText[format["You have been restrained by %1",_cop getVariable["realname",name _cop]],"PLAIN"];
 				
 while {player getVariable "restrained"} do
 {

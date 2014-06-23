@@ -9,4 +9,4 @@ _test setVelocity [100,0,0];
 
 if(alive player) then {player setDamage 1;};
 
-[[0,format["%1 has set off their suicide vest.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[0,format["%1 has set off their suicide vest.",player getVariable["realname",name player]]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

@@ -38,19 +38,27 @@ class CfgFunctions
 
 class CfgSounds
 {
-  sounds[] = {};
-  class SirenLong
-  {
-    name = "SirenLong";
-    sound[] = {"\sounds\Siren_Long.ogg", 1.0, 1};
-    titles[] = {};
-  };
-    class tazersound
-  {
-    name = "Tazersound";
-    sound[] = {"\sounds\tazer.ogg", 0.25, 1};
-    titles[] = {};
-  };
+	sounds[] = {};
+	class SirenLong
+	{
+		name = "SirenLong";
+		sound[] = {"\sounds\Siren_Long.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class tazersound
+	{
+		name = "Tazersound";
+		sound[] = {"\sounds\tazer.ogg", 0.25, 1};
+		titles[] = {};
+	};
+	
+	class flashbang
+	{
+		name = "flashbang";
+		sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
+		titles[] = {};
+	};
 };
 
 class CfgDebriefing

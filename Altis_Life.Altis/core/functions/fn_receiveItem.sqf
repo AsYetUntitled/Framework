@@ -18,7 +18,7 @@ if(_diff != (parseNumber _val)) then
 {
 	if(([true,_item,_diff] call life_fnc_handleInv)) then
 	{
-		hint format["%1 has gave you %2 but you can only hold %3 so %4 was returned back.",name _from,_val,_diff,((parseNumber _val) - _diff)];
+		hint format["%1 has gave you %2 but you can only hold %3 so %4 was returned back.",_from getVariable["realname",name _from],_val,_diff,((parseNumber _val) - _diff)];
 		[[_from,_item,str((parseNumber _val) - _diff),_unit],"life_fnc_giveDiff",_from,false] spawn life_fnc_MP;
 	}
 		else
@@ -33,7 +33,7 @@ if(_diff != (parseNumber _val)) then
 		private["_type"];
 		_type = [_item,0] call life_fnc_varHandle;
 		_type = [_type] call life_fnc_varToStr;
-		hint format["%1 has gave you %2 %3",name _from,_val,_type];
+		hint format["%1 has gave you %2 %3",_from getVariable["realname",name _from],_val,_type];
 	}
 		else
 	{

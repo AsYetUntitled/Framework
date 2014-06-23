@@ -22,7 +22,7 @@ if(parseNumber(_amount) <= 0) exitWith {hint "You need to enter an actual amount
 if(parseNumber(_amount) > life_cash) exitWith {hint "You don't have that much to give!";ctrlShow[2001,true];};
 if(isNull _unit) exitWith {ctrlShow[2001,true];};
 if(isNil "_unit") exitWith {ctrlShow[2001,true]; hint "The selected player is not within range";};
-hint format["You gave $%1 to %2",[(parseNumber(_amount))] call life_fnc_numberText,name _unit];
+hint format["You gave $%1 to %2",[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable["realname",name _unit]];
 life_cash = life_cash - (parseNumber(_amount));
 [] call SOCK_fnc_updateRequest;
 [[_unit,_amount,player],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;

@@ -20,4 +20,4 @@ _licenses = "";
 
 if(_licenses == "") then {_licenses = "No Licenses<br/>";};
 
-[[name player,_licenses],"life_fnc_licensesRead",_cop,FALSE] spawn life_fnc_MP;
+[[player getVariable["realname",player getVariable["realname",name player]],_licenses],"life_fnc_licensesRead",_cop,FALSE] spawn life_fnc_MP;

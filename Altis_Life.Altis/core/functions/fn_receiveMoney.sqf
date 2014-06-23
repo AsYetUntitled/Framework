@@ -14,5 +14,5 @@ if(player != _unit) exitWith {};
 if(!([_val] call fnc_isnumber)) exitWith {};
 if(_unit == _from) exitWith {}; //Bad boy, trying to exploit his way to riches.
 
-hint format["%1 has given you $%2",name _from,[(parseNumber (_val))] call life_fnc_numberText];
+hint format["%1 has given you $%2",_from getVariable["realname",name _from],[(parseNumber (_val))] call life_fnc_numberText];
 life_cash = life_cash + (parseNumber(_val));

@@ -15,7 +15,7 @@ if(player distance _target > 4) exitWith {};
 life_knockout = true;
 [[player,"AwopPercMstpSgthWrflDnon_End2"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
 sleep 0.08;
-[[_target,name player],"life_fnc_knockedOut",_target,false] spawn life_fnc_MP;
+[[_target,player getVariable["realname",name player]],"life_fnc_knockedOut",_target,false] spawn life_fnc_MP;
 
 sleep 3;
 life_knockout = false;

@@ -32,6 +32,7 @@ switch(_shop) do
 						["arifle_sdar_F","Taser Rifle",20000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
 						["hgun_P07_F",nil,7500],
+						["HandGrenade_Stone","Flashbang",1700],
 						["Binocular",nil,150],
 						["ItemGPS",nil,100],
 						["ToolKit",nil,250],
@@ -80,6 +81,7 @@ switch(_shop) do
 					[
 						["arifle_MX_F",nil,35000],
 						["SMG_02_ACO_F",nil,30000],
+						["HandGrenade_Stone","Flashbang",1700],
 						["MineDetector",nil,1000],
 						["acc_flashlight",nil,750],
 						["optic_Holosight",nil,1200],
@@ -105,6 +107,7 @@ switch(_shop) do
 					[
 						["SMG_02_ACO_F",nil,15000],
 						["hgun_ACPC2_F",nil,17500],
+						["HandGrenade_Stone","Flashbang",1700],
 						["arifle_MXC_F",nil,30000],
 						["optic_Arco",nil,2500],
 						["muzzle_snds_H",nil,2750],
@@ -166,68 +169,6 @@ switch(_shop) do
 						["9Rnd_45ACP_Mag",nil,45],
 						["6Rnd_45ACP_Cylinder",nil,50],
 						["30Rnd_9x21_Mag",nil,75]
-					]
-				];
-			};
-		};
-	};
-	
-	case "donator":
-	{
-		switch(true) do
-		{
-			case (__GETC__(life_donator) == 0): {"You are not a donator!"};
-			case (__GETC__(life_donator) == 1):
-			{
-				["STS Donator Shop Tier 1",
-					[
-						["hgun_Rook40_F",nil,750],
-						["hgun_PDW2000_F",nil,6500],
-						["optic_ACO_grn_smg",nil,750],
-						["ToolKit",nil,50],
-						["itemgps",nil,50],
-						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75]
-					]
-				];
-			};
-
-			case (__GETC__(life_donator) == 2):
-			{
-				["STS Donator Shop Tier 2",
-					[
-						["hgun_Rook40_F",nil,750],
-						["hgun_PDW2000_F",nil,6500],
-						["arifle_MK20C_plain_F",nil,25000],
-						["optic_ACO_grn_smg",nil,750],
-						["NVGoggles",nil,350],
-						["ToolKit",nil,50],
-						["itemgps",nil,50],
-						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75],
-						["30Rnd_556x45_Stanag",nil,125]
-					]
-				];
-			};
-
-			case (__GETC__(life_donator) >= 3):
-			{
-				["STS Donator Shop Tier 3",
-					[
-						["hgun_Rook40_F",nil,500],
-						["hgun_PDW2000_F",nil,6500],
-						["hgun_pistol_heavy_01_F",nil,5850],
-						["arifle_Mk20C_plain_F",nil,25000],
-						["optic_ACO_grn_smg",nil,750],
-						["optic_MRCO",nil,10000],
-						["NVGoggles",nil,350],
-						["ToolKit",nil,50],
-						["itemgps",nil,50],
-						["FirstAidKit",nil,25],
-						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75],
-						["11Rnd_45ACP_Mag",nil,85],
-						["30Rnd_556x45_Stanag",nil,125]
 					]
 				];
 			};

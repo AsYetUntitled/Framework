@@ -75,39 +75,33 @@ waitUntil {scriptDone _thread};
 
 _vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
 waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
+//Send keys over the network.
+[[_vehicle],"TON_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
 _vehicle setPos _sp;
 _vehicle setVectorUp (surfaceNormal _sp);
 [[_vehicle,2], "life_fnc_lockVehicle",_vehicle,false] spawn life_fnc_MP;
 _vehicle setOwner _unit; //Transfer ownership
 //Reskin the vehicle 
-[[_vehicle,parseNumber(_vInfo select 8)],"life_fnc_colorVehicle",_unit,false] spawn life_fnc_MP;
+[[_vehicle,parseNumber(_vInfo select 8)],"life_fnc_colorVehicle",nil,false] spawn life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(call compile format["%1", _vInfo select 7])]];
 //_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"]; //Obsolete function?
-
-//Send keys over the network.
-[[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
+[_vehicle] call life_fnc_clearVehicleAmmo;
 
 //Sets of animations
-if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (call compile format["%1",_vInfo select 8]) != 13) then
+if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && (parseNumber(_vInfo select 8)) != 13) then
 {
 	[[_vehicle,"civ_littlebird",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
 
-if((_vInfo select 1) == "cop" && (_vInfo select 2) == "C_Offroad_01_F") then
+if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then
 {
 	[[_vehicle,"cop_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
 
 if((_vInfo select 1) == "med" && (_vInfo select 2) == "C_Offroad_01_F") then
 {
-	[[_vehicle,"med_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
+	[[_vehicle,"med_car",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
-
-if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["B_MRAP_01_F","C_SUV_01_F"]) then {
-	_vehicle setVariable["lights",false,true];
-};
-
-[[_vehicle],"life_fnc_clearVehicleAmmo",_unit,false] spawn life_fnc_MP;
-
+[[1,"Your vehicle is ready!"],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 serv_sv_use = serv_sv_use - [_vid];

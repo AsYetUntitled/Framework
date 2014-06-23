@@ -15,4 +15,4 @@ if(life_atmcash < life_bail_amount) exitWith {hint format["You do not have $%1 i
 
 life_atmcash = life_atmcash - life_bail_amount;
 life_bail_paid = true;
-[[0,format["%1 has posted bail!", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[0,format["%1 has posted bail!", _unit getVariable ["realname",name _unit]]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

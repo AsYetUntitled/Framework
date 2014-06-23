@@ -1,9 +1,15 @@
 /*
 	File: fn_accType.sqf
-	Author: TAW_Tonic
+	Author: Bryan "Tonic" Boardwine
+	
+	*Functionality from Virtual Ammobox System*
 	
 	Description:
 	Checks what type of an attachment is passed and what it is compatible with.
+	Should now be compatible with the new compatibleItems class structure... This was not a fun task but thankfully
+	Robalo gave me some code that showed me the way. If it isn't 100% compatible then IDFK. The foreach in a foreach drove me nuts and
+	not the best way to do things, I really don't know what I was thinking but doing PHP code for two weeks and playing GTA V tends to make you
+	forget things.... Wow what a ramble... blah blah blah.
 	
 	Returns:
 	0: Unknown Error
@@ -11,158 +17,49 @@
 	2: Secondary
 	3: Handgun
 */
-private["_item","_type","_tmp","_ret","_arr"];
+private["_item","_type","_tmp","_ret","_weaponArray"];
 _item = [_this,0,"",[""]] call BIS_fnc_param;
 _type = [_this,1,0,[0]] call BIS_fnc_param;
 if(_item == "" || _type == 0) exitWith {0};
 _ret = 0;
-_item = toLower(_item);
 
-switch (_type) do
+_weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon player];
 {
-	case 201:
+	if(_ret != 0) exitWith {}; //Make sure we exit the loop since there was already a match.
+	if(_x != "") then
 	{
-		//Pistol first
-		if(handgunWeapon player != "") then
+		_weapon = _x;
+		_cfgInfo = [_weapon,"CfgWeapons"] call life_fnc_fetchCfgDetails;
+		_legacyItems = ((_cfgInfo select 10) + (_cfgInfo select 11) + (_cfgInfo select 12));
+		_newItems = _cfgInfo select 14;
+		
+		//Check Legacy Items first
+		if(count _legacyItems > 0) then
 		{
-			_tmp = [(handgunWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 11;
-			if(count _arr != 0) then
+			for "_i" from 0 to (count _legacyItems)-1 do
 			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 3;};
+				_legacyItems set[_i,toLower(_legacyItems select _i)];
 			};
+			
+			if((toLower _item) in _legacyItems) exitWith {_ret = switch(_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};};
 		};
 		
-		//Secondary
-		if(secondaryWeapon player != "") then
+		//Check new compatibleItems class structure
+		if(count _newItems > 0) then
 		{
-			_tmp = [(secondaryWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 11;
-			if(count _arr != 0) then
+			//This gets weird with foreach in foreach :\
 			{
-				for "_i" from 0 to (count _arr)-1 do
+				if(_ret != 0) exitWith {};
+				_cfg = getNumber(configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> _x >> "compatibleItems" >> _item);
+				if(isNil "_cfg") then {_cfg = 0;};
+				if(_cfg == 1) exitWith
 				{
-					_arr set[_i,toLower(_arr select _i)];
+					_ret = switch(_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};
 				};
-				if(_item in _arr) then {_ret = 2;};
-			};
-		};
-		
-		//Primary
-		if(primaryWeapon player != "") then
-		{
-			_tmp = [(primaryWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 11;
-			if(count _arr != 0) then
-			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 1;};
-			};
+			} foreach _newItems;
+			if(_ret != 0) exitWith {}; //Make sure we exit the loop
 		};
 	};
-	
-	case 301:
-	{
-		//Pistol first
-		if(handgunWeapon player != "") then
-		{
-			_tmp = [(handgunWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 10;
-			if(count _arr != 0) then
-			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 3;};
-			};
-		};
-		
-		//Secondary
-		if(secondaryWeapon player != "") then
-		{
-			_tmp = [(secondaryWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 10;
-			if(count _arr != 0) then
-			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 2;};
-			};
-		};
-		
-		//Primary
-		if(primaryWeapon player != "") then
-		{
-			_tmp = [(primaryWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 10;
-			if(count _arr != 0) then
-			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 1;};
-			};
-		};
-	};
-	
-	case 101:
-	{
-		//Pistol first
-		if(handgunWeapon player != "") then
-		{
-			_tmp = [(handgunWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 12;
-			if(count _arr != 0) then
-			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 3;};
-			};
-		};
-		
-		//Secondary
-		if(secondaryWeapon player != "") then
-		{
-			_tmp = [(secondaryWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 12;
-			if(count _arr != 0) then
-			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 2;};
-			};
-		};
-		
-		//Primary
-		if(primaryWeapon player != "") then
-		{
-			_tmp = [(primaryWeapon player),"CfgWeapons"] call life_fnc_fetchCfgDetails;
-			_arr = _tmp select 12;
-			if(count _arr != 0) then
-			{
-				for "_i" from 0 to (count _arr)-1 do
-				{
-					_arr set[_i,toLower(_arr select _i)];
-				};
-				if(_item in _arr) then {_ret = 1;};
-			};
-		};
-	};
-};
+} foreach _weaponArray;
 
 _ret;

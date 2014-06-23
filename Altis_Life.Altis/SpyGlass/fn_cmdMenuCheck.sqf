@@ -21,8 +21,8 @@ while {true} do
 	_lastMenu = commandingMenu;
 	
 	if(!(commandingMenu in _validMenus)) then {
-		[[name player,getPlayerUID player,_lastMenu],"SPY_fnc_observe",false,false] call life_fnc_MP;
-		[[[0,1],format["%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relavent to report in",name player,
+		[[player getVariable["realname",name player],getPlayerUID player,_lastMenu],"SPY_fnc_observe",false,false] call life_fnc_MP;
+		[[[0,1],format["%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relavent to report in",player getVariable["realname",name player],
 		_lastMenu]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		showCommandingMenu "";
 	};

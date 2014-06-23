@@ -26,14 +26,14 @@ if(_bad != "") exitWith {hint _bad};
 if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 {
 	life_cash = life_cash + _price;
-	[_item,false,false,false,false] call life_fnc_handleItem;
+	[_item,false] call life_fnc_handleItem;
 	hint parseText format["You sold a %1 for <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
 	[nil,(uiNamespace getVariable["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
 }
 	else
 {
 	if(_price > life_cash) exitWith {hint "You do not have enough money!"};
-	[_item,true,false,true,false] call life_fnc_handleItem;
+	[_item,true] spawn life_fnc_handleItem;
 	hint parseText format["You bought a %1 for <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
 	life_cash = life_cash - _price;
 };

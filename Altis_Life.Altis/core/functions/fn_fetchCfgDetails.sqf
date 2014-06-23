@@ -23,13 +23,15 @@
 	11: acc_Optics
 	12: acc_Muzzles
 	13: Base (Superclass)
+	14: New compatibleItems Structure
 */
-private["_entity","_cfg","_ret","_type","_acc_p","_acc_o","_acc_m","_scope","_displayName","_picture","_config","_itemInfo","_muzzles","_magazines","_desc","_base"];
+private["_entity","_cfg","_ret","_type","_acc_p","_acc_o","_slotclasses","_acc_m","_scope","_displayName","_picture","_config","_itemInfo","_muzzles","_magazines","_desc","_base"];
 _entity = [_this,0,"",[""]] call BIS_fnc_param;
 _type = -1;
 _acc_p = [];
 _acc_o = [];
 _acc_m = [];
+_slotclasses = [];
 _scope = 0;
 _itemInfo = -1;
 _muzzles = [];
@@ -83,6 +85,18 @@ switch (_cfg) do
 			_acc_p = getArray(_config >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems");
 			_acc_o = getArray(_config >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems");
 			_acc_m = getArray(_config >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");
+			
+			{	private "_thiscfgitem";
+				for "_i" from 0 to (count(_x) - 1) do {
+					_thiscfgitem = _x select _i;
+					if (isClass _thiscfgitem) then {
+						if !((configName _thiscfgitem) in _slotclasses) then {
+							_slotclasses set [count _slotclasses, configName _thiscfgitem];
+						};
+					};
+				};
+			} forEach ([_config>>"WeaponSlotsInfo"] call bis_fnc_returnParents);
+
 		};
 		
 		if(isClass (_config >> "ItemInfo")) then
@@ -114,5 +128,11 @@ switch (_cfg) do
 	};
 };
 
-_ret = [_entity,_displayName,_picture,_scope,_type,_itemInfo,_cfg,_magazines,_muzzles,_desc,_acc_p,_acc_o,_acc_m,_base];
+if(!isNil "_slotclasses") then
+{
+	_slotclasses = _slotclasses - ["MuzzleSlot"];
+	_slotclasses = _slotclasses - ["CowsSlot"];
+	_slotclasses = _slotclasses - ["PointerSlot"];
+};
+_ret = [_entity,_displayName,_picture,_scope,_type,_itemInfo,_cfg,_magazines,_muzzles,_desc,_acc_p,_acc_o,_acc_m,_base,_slotclasses];
 _ret;

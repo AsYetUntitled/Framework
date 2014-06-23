@@ -1,16 +1,14 @@
-/*
-	ArmA 3 TAW View Distance Management
-	Resource Definesby Sa-Matra
-*/
-class TAW_VD 
+class SettingsMenu
 {
 	idd = 2900;
-	name= "taw_vd";
-	movingEnable = false;
-	enableSimulation = true;
+	name = "SettingsMenu";
+	movingEnabled = 1;
+	enableSimulation = 1;
 	
-	class controlsBackground {
-		class TAWVD_RscTitleBackground : life_RscText {
+	class controlsBackground
+	{
+		class RscTitleBackground : life_RscText
+		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.3;
@@ -19,15 +17,59 @@ class TAW_VD
 			h = (1 / 25);
 		};
 		
-		class MainBackground : life_RscText {
-			colorBackground[] = {0, 0, 0, 0.7};
+		class RscMainBackground : life_RscText
+		{
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.3;
 			y = 0.2 + (11 / 250);
 			w = 0.5;
-			h = 0.5 - (22 / 250);
+			h = 0.43 - (22 / 250);
 		};
 		
+		class PlayerTagsHeader : Life_RscText
+		{
+			idc = -1;
+			text = "$STR_SM_PlayerTags";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			
+			x = 0.30;
+			y = 0.43;
+			w = 0.35;
+			h = (1 / 25);
+		};
+		
+		class SideChatHeader : PlayerTagsHeader
+		{
+			idc = -1;
+			text = "$STR_SM_SC";
+			shadow = 0;
+			
+			y = 0.48;
+		};
+		
+		class RevealNearestHeader : PlayerTagsHeader
+		{
+			idc = -1;
+			text = "Reveal Nearest Objects";
+			
+			y = 0.53;
+		};
+		
+		class Title : life_RscTitle
+		{
+			idc = -1;
+			colorBackground[] = {0,0,0,0};
+			text = "$STR_SM_Title";
+			x = 0.3;
+			y = 0.2;
+			w = 0.5;
+			h = (1 / 25);
+		};
+	};
+	
+	class controls
+	{
 		class VDonFoot : life_RscText
 		{
 			idc = -1;
@@ -53,20 +95,6 @@ class TAW_VD
 			
 			x = 0.32; y = 0.355;
 			w = 0.275; h = 0.04;
-		};
-
-	};
-	
-	class controls 
-	{
-		class Title : life_RscTitle {
-			colorBackground[] = {0, 0, 0, 0};
-			idc = -1;
-			text = "$STR_SM_Title";
-			x = 0.3;
-			y = 0.2;
-			w = 0.8;
-			h = (1 / 25);
 		};
 		
 		class VD_onfoot_slider : life_RscXSliderH 
@@ -135,73 +163,39 @@ class TAW_VD
 			w = 0.275; h = 0.04;
 		};
 		
-		class VDTerrSet : life_RscText
+		class PlayerTagsONOFF : Life_RscActiveText
 		{
-			idc = -1;
-			text = "$STR_SM_PlayerTags";
-			shadow = 0;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-
-			x = 0.30;
-			y = 0.45;
-			w = 0.5;
-			h = (1 / 25);
-		};
-		
-		class VD_terr_low : Life_RscActiveText
-		{
-			idc = -1;
-			text = "$STR_SM_TagsON";
-			action = "LIFE_ID_PlayerTags = [""LIFE_PlayerTags"",""onEachFrame"",""life_fnc_playerTags""] call BIS_fnc_addStackedEventHandler;";
+			text = "ON";
+			tooltip = "Controls whether or not players will have name tags above their head.";
+			idc = 2970;
 			sizeEx = 0.04;
-			
-			x = 0.38; y = 0.50;
-			w = 0.275; h = 0.04;
+			x = 0.65;
+			y = 0.43;
+			w = 0.275;
 		};
 		
-		class VD_terr_normal : Life_RscActiveText
+		class SideChatONOFF : PlayerTagsONOFF
 		{
-			idc = -1;
-			text = "$STR_Sm_TagsOFF";
-			action = "[LIFE_ID_PlayerTags,""onEachFrame""] call BIS_fnc_removeStackedEventHandler;";
-			sizeEx = 0.04;
-			
-			x = 0.56; y = 0.50;
-			w = 0.275; h = 0.04;
+			idc = 2971;
+			tooltip = "";
+			action = "[] call life_fnc_sidechat;";
+			y = 0.48;
 		};
 		
-		class SideChannelSettings : life_RscText
+		class RevealONOFF : PlayerTagsONOFF
 		{
-			idc = -1;
-			text = "$STR_SM_SC";
-			shadow = 0;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-
-			x = 0.30;
-			y = 0.55;
-			w = 0.5;
-			h = (1 / 25);
+			tooltip = "Automatically reveals nearest objects within 15m, turn this setting off if you are experiencing performance issues.";
+			idc = 2972;
+			y = 0.53;
 		};
 		
-		class SideChatONOFF : Life_RscActiveText
-		{
-			idc = 2926;
-			text = "$STR_SM_SCOFF";
-			color[] = {1, 0, 0, 1};
-			action = "[] call life_fnc_sidechat";
-			sizeEx = 0.04;
-			
-			x = 0.48; y = 0.60;
-			w = 0.275; h = 0.04;
-		};
-
 		class ButtonClose : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.48;
-			y = 0.7 - (1 / 25);
+			y = 0.63 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};

@@ -27,7 +27,7 @@ if(!([false,_item,(parseNumber _val)] call life_fnc_handleInv)) exitWith {hint "
 [[_unit,_val,_item,player],"life_fnc_receiveItem",_unit,false] spawn life_fnc_MP;
 _type = [_item,0] call life_fnc_varHandle;
 _type = [_type] call life_fnc_varToStr;
-hint format["You gave %1 %2 %3",name _unit,_val,_type];
+hint format["You gave %1 %2 %3",_unit getVariable["realname",name _unit],_val,_type];
 [] call life_fnc_p_updateMenu;
 
 ctrlShow[2002,true];

@@ -34,8 +34,8 @@ if(__GETC__(SPY_cfg_runPatchCheck)) then {
 		_patchEntry = _binConfigPatches select _i;
 		if(isClass _patchEntry) then {
 			if(!((configName _patchEntry) in (call SPY_cfg_patchList))) exitWith {
-				[[name player,getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-				[[name player,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+				[[player getVariable["realname",name player],getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[player getVariable["realname",name player],format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				sleep 0.5;
 				["SpyGlass",false,true] call BIS_fnc_endMission;
 			};
@@ -52,8 +52,8 @@ if(__GETC__(SPY_cfg_runPatchCheck)) then {
 [] spawn {
 	while {true} do {
 		if((unitRecoilCoefficient player) < 1) then {
-			[[name player,getPlayerUID player,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-			[[name player,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			[[player getVariable["realname",name player],getPlayerUID player,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[player getVariable["realname",name player],"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
 			["SpyGlass",false,false] call BIS_fnc_endMission;
 		};

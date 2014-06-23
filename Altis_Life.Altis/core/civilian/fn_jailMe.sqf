@@ -66,8 +66,8 @@ switch (true) do
 	{
 		life_is_arrested = false;
 		hint "You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.";
-		[[0,format["%1 has escaped from jail!",name player]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
-		[[getPlayerUID player,name player,"901"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[0,format["%1 has escaped from jail!",player getVariable["realname",name player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[getPlayerUID player,player getVariable["realname",name player],"901"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	};
 	
 	case (alive player && !_esc && !_bail) :

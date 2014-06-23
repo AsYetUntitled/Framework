@@ -35,7 +35,7 @@ _text ctrlSetStructuredText parseText format["<img size='1.7' image='icons\bank.
 			case civilian: {_type = "Civ"};
 			case independent: {_type = "EMS"};
 		};
-		_units lbAdd format["%1 (%2)",name _x,_type];
+		_units lbAdd format["%1 (%2)",_x getVariable["realname",name _x],_type];
 		_units lbSetData [(lbSize _units)-1,str(_x)];
 	};
 } foreach playableUnits;

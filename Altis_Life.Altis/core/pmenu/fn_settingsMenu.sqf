@@ -7,7 +7,7 @@
 */
 if(isNull (findDisplay 2900)) then
 {
-	if(!createDialog "TAW_VD") exitWith {hint "Something went wrong, the menu won't open?"};
+	if(!createDialog "SettingsMenu") exitWith {hint "Something went wrong, the menu won't open?"};
 };
 
 disableSerialization;
@@ -27,21 +27,40 @@ ctrlSetText[2922, format["%1", tawvd_air]];
 
 private["_display","_side","_tags"];
 _display = findDisplay 2900;
-_side = _display displayCtrl 2926;
-_tags = _display displayCtrl 2925;
+_side = _display displayCtrl 2971;
+_tags = _display displayCtrl 2970;
+_objs = _display displayCtrl 2972;
 
-if(isNil "life_sidechat") then 
-{
+if(isNil "life_tagson") then {
 	life_sidechat = true;
+	life_tagson = true;
+	life_revealObjects = true;
 };
 
-if(!life_sidechat) then
-{
+if(life_revealObjects) then {
+	_objs ctrlSetTextColor [0,1,0,1];
+	_objs ctrlSetText "ON";
+	_objs buttonSetAction "[LIFE_ID_RevealObjects,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; life_revealObjects = false; [] call life_fnc_settingsMenu;";
+} else {
+	_objs ctrlSetTextColor [1,0,0,1];
+	_objs ctrlSetText "OFF";
+	_objs buttonSetAction "LIFE_ID_RevealObjects = [""LIFE_RevealObjects"",""onEachFrame"",""life_fnc_revealObjects""] call BIS_fnc_addStackedEventHandler; life_revealObjects = true; [] call life_fnc_settingsMenu;";
+};
+
+if(life_tagson) then {
+	_tags ctrlSetTextColor [0,1,0,1];
+	_tags ctrlSetText "ON";
+	_tags buttonSetAction "[LIFE_ID_PlayerTags,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; life_tagson = false; [] call life_fnc_settingsMenu;";
+} else {
+	_tags ctrlSetTextColor [1,0,0,1];
+	_tags ctrlSetText "OFF";
+	_tags buttonSetAction "LIFE_ID_PlayerTags = [""LIFE_PlayerTags"",""onEachFrame"",""life_fnc_playerTags""] call BIS_fnc_addStackedEventHandler; life_tagson = true; [] call life_fnc_settingsMenu;";
+};
+
+if(life_sidechat) then {
 	_side ctrlSetTextColor [0,1,0,1];
-	_side ctrlSetText "Sidechat ON";
-}
-	else
-{
+	_side ctrlSetText "ON";
+} else {
 	_side ctrlSetTextColor [1,0,0,1];
-	_side ctrlSetText "Sidechat OFF";
+	_side ctrlSetText "OFF";
 };

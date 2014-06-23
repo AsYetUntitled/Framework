@@ -4,7 +4,6 @@
 #include "common.hpp"
 #include "shop_items.hpp"
 #include "player_inv.hpp"
-#include "settings.hpp"
 #include "gang.hpp"
 #include "key_chain.hpp"
 #include "impound.hpp"
@@ -23,3 +22,4 @@
 #include "pInteraction.h"
 #include "deathScreen.h"
 #include "vehicleShop.h"
+#include "settings.h"

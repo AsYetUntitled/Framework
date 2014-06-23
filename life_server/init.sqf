@@ -3,6 +3,10 @@ DB_Async_Active = false;
 __CONST__(LIFE_SCHEMA_NAME,"'arma3life'");//CHANGE THIS IF YOUR DATABASE IS NOT CALLED ARMA3LIFE KEEP THE ' '
 publicVariable "LIFE_SCHEMA_NAME";
 
+life_adminlevel = 0;
+life_medicLevel = 0;
+life_coplevel = 0;
+
 //Null out harmful things for the server.
 __CONST__(JxMxE_PublishVehicle,"No");
 

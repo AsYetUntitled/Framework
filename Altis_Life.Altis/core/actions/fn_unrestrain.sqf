@@ -10,4 +10,4 @@ _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",FALSE,TRUE];
 detach _unit;
 
-[[0,format["%1 was unrestrained by %2",name _unit, name player]],"life_fnc_broadcast",west,FALSE] call life_fnc_MP;
+[[0,format["%1 was unrestrained by %2",_unit getVariable["realname",name _unit], player getVariable["realname",name player]]],"life_fnc_broadcast",west,FALSE] call life_fnc_MP;

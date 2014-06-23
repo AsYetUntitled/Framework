@@ -38,12 +38,12 @@ if(life_shop_type == "heroin") then
 	{
 		_val = (_array select _ind) select 2;
 		_val = _val + _price;
-		_array set[_ind,[getPlayerUID player,name player,_val]];
+		_array set[_ind,[getPlayerUID player,player getVariable["realname",name player],_val]];
 		life_shop_npc setVariable["sellers",_array,true];
 	}
 		else
 	{
-		_array set[count _array,[getPlayerUID player,name player,_price]];
+		_array set[count _array,[getPlayerUID player,player getVariable["realname",name player],_price]];
 		life_shop_npc setVariable["sellers",_array,true];
 	};
 };
