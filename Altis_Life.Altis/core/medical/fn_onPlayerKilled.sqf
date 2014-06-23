@@ -90,7 +90,7 @@ if(!isNull _killer && {_killer != _unit}) then {
 
 //Comment this code out if you want them to keep the weapon on the ground.
 private["_containers"];
-_containers = nearestObjects[getPosATL _x,["WeaponHolderSimulated"],5]; //Fetch list of containers (Simulated = weapons)
+_containers = nearestObjects[getPosATL _unit,["WeaponHolderSimulated"],5]; //Fetch list of containers (Simulated = weapons)
 {deleteVehicle _x;} foreach _containers; //Delete the containers.
 
 _handle = [_unit] spawn life_fnc_dropItems;
