@@ -118,6 +118,7 @@ class Life_Client_Core
 		class storeVehicle {};
 		class robAction {};
 		class sellTurtle {};
+		class sellGoldBars {};
 	};
 	
 	class Config
@@ -241,6 +242,7 @@ class Life_Client_Core
 		class robPerson {};
 		class removeLicenses {};
 		class zoneCreator {};
+		class demoChargeTimer {};
 	};
 	
 	class Vehicle
@@ -282,6 +284,8 @@ class Life_Client_Core
 		class sirenLights {};
 		class licenseCheck {};
 		class licensesRead {};
+		class repairDoor {};
+		class doorAnimate {};
 	};
 	
 	class Gangs
@@ -331,6 +335,9 @@ class Life_Client_Core
 		class spikeStrip {};
 		class jerryRefuel {};
 		class flashbang {};
+		class boltcutter {};
+		class blastingCharge {};
+		class defuseKit {};
 	};
 	
 	class Dialog_Controls
@@ -350,5 +357,9 @@ class Life_Client_Core
 		class bankWithdraw {};
 		class bankTransfer {};
 		class garageLBChange {};
+		class safeInventory {};
+		class safeOpen {};
+		class safeTake {};
+		class safeFix {};
 	};
 };

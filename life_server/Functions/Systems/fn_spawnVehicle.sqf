@@ -76,7 +76,7 @@ waitUntil {scriptDone _thread};
 _vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
 waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 //Send keys over the network.
-[[_vehicle],"TON_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
+[[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
 _vehicle setPos _sp;
 _vehicle setVectorUp (surfaceNormal _sp);
 [[_vehicle,2], "life_fnc_lockVehicle",_vehicle,false] spawn life_fnc_MP;

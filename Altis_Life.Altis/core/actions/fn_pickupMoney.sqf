@@ -5,7 +5,12 @@
 	Description:
 	Picks up money
 */
-if((time - life_action_delay) < 1.5) exitWith {hint "You can't rapidly use action keys!"};
+if((time - life_action_delay) < 1.5) exitWith {
+	hint "You can't rapidly use action keys!";
+	if(!isNil {(_this select 0) getVariable "inUse"}) then {
+		_this select 0 setVariable["inUse",false,true];
+	};
+};
 private["_obj","_val"];
 _obj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _val = (_obj getVariable "item") select 1;

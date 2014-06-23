@@ -21,6 +21,19 @@ switch (true) do
 		};
 	};
 	
+	case (_item == "boltcutter"): {
+		[cursorTarget] spawn life_fnc_boltcutter;
+		closeDialog 0;
+	};
+	
+	case (_item == "blastingcharge"): {
+		[cursorTarget] spawn life_fnc_blastingCharge;
+	};
+	
+	case (_item == "defusekit"): {
+		[cursorTarget] spawn life_fnc_defuseKit;
+	};
+	
 	case (_item == "redgull"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then

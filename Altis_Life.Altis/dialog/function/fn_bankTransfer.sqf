@@ -20,8 +20,6 @@ if((_val + _tax) > life_atmcash) exitWith {hint format["You do not have enough m
 
 life_atmcash = life_atmcash - (_val + _tax);
 
-bank_addfunds = _tax;
-publicVariableServer "bank_addfunds";
 [[_val,player getVariable["realname",name player]],"clientWireTransfer",_unit,false] spawn life_fnc_MP;
 [] call life_fnc_atmMenu;
 hint format["You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.",[_val] call life_fnc_numberText,_unit getVariable["realname",name _unit],[_tax] call life_fnc_numberText];

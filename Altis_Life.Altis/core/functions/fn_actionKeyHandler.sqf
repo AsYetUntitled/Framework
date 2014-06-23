@@ -20,6 +20,11 @@ if(isNull _curTarget) exitWith {
 		};
 	};
 };
+
+if(playerSide == west && {_curTarget isKindOf "House_F"}) exitWith {
+	[_curTarget] call life_fnc_copInteractionMenu;
+};
+
 if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
 life_action_inUse = true;

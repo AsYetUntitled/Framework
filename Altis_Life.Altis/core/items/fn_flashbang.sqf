@@ -21,7 +21,6 @@ _blurEffect = ppEffectCreate ["DynamicBlur",500];
 _blurEffect ppEffectForceInNVG true;
 _blurEffect ppEffectEnable true;
 
-hint format["Angle :%1",_angle];
 if(_angle < 90) then {
 	//Create white-screen
 	_ppEffect = ppEffectCreate ["ColorCorrections",2500];

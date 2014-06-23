@@ -8,14 +8,7 @@
 private["_funds"];
 while {true} do
 {
-	sleep (15 * 60);
-	_funds = ((count playableUnits) * 1000) / 2;
-	if(!isNil "_funds") then
-	{
-		if(life_federal_funds < 1) then 
-		{
-			life_federal_funds = 1000;
-		};
-		life_federal_funds = life_federal_funds + _funds;
-	};
+	sleep (30 * 60);
+	_funds = fed_bank getVariable["safe",0];
+	fed_bank setVariable["safe",_funds+((count playableUnits)/2),true];
 };

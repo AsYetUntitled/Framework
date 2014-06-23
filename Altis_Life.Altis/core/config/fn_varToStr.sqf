@@ -56,6 +56,9 @@ switch (_var) do
 	case "life_inv_rock": {"Rock"};
 	case "life_inv_cement": {"Cement Bag"};
 	case "life_inv_goldbar": {"Gold Bar"};
+	case "life_inv_blastingcharge": {"Blasting Charge"};
+	case "life_inv_boltcutter": {"Bolt Cutter"};
+	case "life_inv_defusekit": {"Bomb Defusal Kit"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};

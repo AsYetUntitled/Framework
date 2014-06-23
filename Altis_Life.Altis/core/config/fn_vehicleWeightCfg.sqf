@@ -41,5 +41,6 @@ switch (_className) do
 	case "O_Truck_03_transport_F": {285};
 	case "O_Truck_03_covered_F": {300};
 	case "O_Truck_03_device_F": {350};
+	case "Land_CargoBox_V1_F": {5000};
 	default {-1};
 };

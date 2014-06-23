@@ -51,5 +51,8 @@ switch (_item) do
 	case "rock": {6};
 	case "cement": {5};
 	case "goldbar": {12};
+	case "blastingcharge": {15};
+	case "boltcutter": {5};
+	case "defusekit": {2};
 	default {1};
 };
