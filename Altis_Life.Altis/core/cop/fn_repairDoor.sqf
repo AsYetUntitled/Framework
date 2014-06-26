@@ -64,9 +64,8 @@ while {true} do
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive playe) exitWith {life_action_inUse = false;};
-if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
+if(!alive player) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
 life_action_inUse = false;
-_door animate [format["door_%1_rot",_door],0];
+_building animate [format["door_%1_rot",_door],0];
 _building setVariable[format["bis_disabled_Door_%1",_door],1,true]; //Unlock the door.

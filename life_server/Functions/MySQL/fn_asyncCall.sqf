@@ -12,10 +12,10 @@
 		3: BOOL (True to return a single array, false to return multiple entries mainly for garage).
 */
 waitUntil{!DB_Async_Active};
-private["_queryStmt","_queryResult","_key","_loops"];
+private["_queryStmt","_queryResult","_key","_loops","_timestamp"];
 _queryStmt = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,false,[true]] call BIS_fnc_param;
-
+_timestamp = diag_tickTime;
 if(_queryStmt == "") exitWith {_queryStmt};
 DB_Async_Active = true;
 
@@ -28,6 +28,11 @@ while {true} do {
 	sleep 0.35;
 	_loops = _loops + 1;
 };
+
+diag_log "-------------- ASYNC DEBUG --------------";
+diag_log format["QUERY: %1",_queryStmt];
+diag_log format["Total time to execute: %1 (Scaled in seconds)",diag_tickTime - _timestamp];
+diag_log "-----------------------------------------";
 
 DB_Async_Active = false; //Unlock the async caller
 

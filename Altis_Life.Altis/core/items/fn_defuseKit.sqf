@@ -32,6 +32,8 @@ while {true} do
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
+		_progressBar = _ui displayCtrl 38201;
+		_titleText = _ui displayCtrl 38202;
 	};
 	_cP = _cP + .0035;
 	_progressBar progressSetPosition _cP;

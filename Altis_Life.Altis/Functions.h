@@ -94,7 +94,6 @@ class Life_Client_Core
 		class getDPMission {};
 		class postBail {};
 		class processAction {};
-		class robBankAction {};
 		class sellOil {};
 		class suicideBomb {};
 		class arrestAction {};
@@ -114,7 +113,6 @@ class Life_Client_Core
 		class gatherCocaine {};
 		class pumpRepair {};
 		class packupSpikes {};
-		class robFederal {};
 		class storeVehicle {};
 		class robAction {};
 		class sellTurtle {};
@@ -233,7 +231,6 @@ class Life_Client_Core
 		class tazed {};
 		class civFetchGear {};
 		class civLoadGear {};
-		class robReserve {};
 		class knockedOut {};
 		class knockoutAction {};
 		class robReceive {};
@@ -284,6 +281,7 @@ class Life_Client_Core
 		class licensesRead {};
 		class repairDoor {};
 		class doorAnimate {};
+		class fedCamDisplay {};
 	};
 	
 	class Gangs

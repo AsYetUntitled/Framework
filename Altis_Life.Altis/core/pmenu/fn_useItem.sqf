@@ -27,6 +27,8 @@ switch (true) do
 	};
 	
 	case (_item == "blastingcharge"): {
+		player reveal fed_bank;
+		(group player) reveal fed_bank;
 		[cursorTarget] spawn life_fnc_blastingCharge;
 	};
 	
@@ -60,26 +62,10 @@ switch (true) do
 		};
 	};
 	
-	case (_item == "heroinp"):
-	{
-		if(([false,_item,1] call life_fnc_handleInv)) then
-		{
-			[] spawn fnc_drug_use;
-		};
-	};
-	
 	case (_item == "fuelF"):
 	{
 		if(vehicle player != player) exitWith {hint "You can't refuel the vehicle while in it!"};
 		[] spawn life_fnc_jerryRefuel;
-	};
-	
-	case (_item == "marijuana"):
-	{
-		if(([false,_item,1] call life_fnc_handleInv)) then
-		{
-			[] spawn fnc_drugweed_use;
-		};
 	};
 	
 	case (_item == "lockpick"):
@@ -91,12 +77,7 @@ switch (true) do
 	{
 		[_item] call life_fnc_eatFood;
 	};
-	
-	case "fishing":
-	{
-		[] spawn fnc_fishing;
-	};
-	
+
 	case (_item == "pickaxe"):
 	{
 		[] spawn life_fnc_pickAxeUse;

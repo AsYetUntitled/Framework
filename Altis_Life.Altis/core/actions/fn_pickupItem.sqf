@@ -33,6 +33,7 @@ if(_diff != _itemInfo select 1) then
 		player playmove "AinvPknlMstpSlayWrflDnon";
 		sleep 0.5;
 		_obj setVariable["item",[_itemInfo select 0,((_itemInfo select 1) - _diff)],true];
+		_obj setVariable["PickedUp",false,true];
 		titleText[format["You picked up %1 %2",_diff,_itemName],"PLAIN"];
 	};
 }
