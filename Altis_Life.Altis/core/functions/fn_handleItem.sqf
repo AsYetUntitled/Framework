@@ -195,17 +195,13 @@ if(_bool) then
 											{player addItemToUniform _x} foreach _items;
 										};
 									};
-								} else {
-									private["_itemName","_unitName"];
-									_itemName = toString [(toArray _item select 2)];
-									_unitName = toString [(toArray (typeOf player) select 0)];
-									
+								} else {									
 									if(uniform player != "") then {
 										_items = uniformItems player;
 										removeUniform player;
 									};
 									
-									if(_itemName != _unitName) then {
+									if(!(player isUniformAllowed _item)) then {
 										player forceAddUniform _item;
 									} else {
 										player addUniform _item;
