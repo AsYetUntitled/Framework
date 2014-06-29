@@ -45,7 +45,7 @@ while {true} do {
 	_loops = _loops + 1;
 };
 
-diag_log format["Time to complete: %1 (in seconds) with %1 loops",(diag_tickTime - _tickTime),_loops];
+diag_log format["Time to complete: %1 (in seconds) with %2 loops",(diag_tickTime - _tickTime),_loops];
 diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
 missionNamespace setVariable[format["QUERY_%1",_uid],nil]; //Unset the variable.
