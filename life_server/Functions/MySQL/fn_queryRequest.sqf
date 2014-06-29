@@ -19,11 +19,13 @@ if(isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
 //if(_uid == "" || _side == sideUnknown) exitWith {"The UID or side passed had invalid inputs."};
 
+/*
 _handler = {
 	private["_thread"];
 	_thread = [_this select 0,true,_this select 1] spawn DB_fnc_asyncCall;
 	waitUntil {scriptDone _thread};
 };
+*/
 
 //compile our query request
 _query = switch(_side) do {
@@ -32,10 +34,13 @@ _query = switch(_side) do {
 	case independent: {format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel FROM players WHERE playerid='%1'",_uid];};
 };
 
-waitUntil{!DB_Async_Active};
+waitUntil{sleep 0.1; !DB_Async_Active};
 _tickTime = diag_tickTime;
 _loops = 0;
 diag_log "------------- Client Query Request -------------";
+
+_queryResult = [_query,true,_uid] call DB_fnc_asyncCall;
+/*
 while {true} do {
 	_thread = [_query,_uid] spawn _handler;
 	waitUntil {scriptDone _thread};
@@ -44,11 +49,12 @@ while {true} do {
 	if(!isNil "_queryResult") exitWith {};
 	_loops = _loops + 1;
 };
-
-diag_log format["Time to complete: %1 (in seconds) with %2 loops",(diag_tickTime - _tickTime),_loops];
+*/
+diag_log format["QUERY: %1",_query];
+diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
 diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
-missionNamespace setVariable[format["QUERY_%1",_uid],nil]; //Unset the variable.
+//missionNamespace setVariable[format["QUERY_%1",_uid],nil]; //Unset the variable.
 
 if(typeName _queryResult == "STRING") exitWith {
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;

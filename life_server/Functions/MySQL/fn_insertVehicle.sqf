@@ -20,5 +20,4 @@ _query = format["INSERT INTO vehicles (side, classname, type, pid, alive, active
 //_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 
 waitUntil {!DB_Async_Active};
-_thread = [_query,false] spawn DB_fnc_asyncCall;
-waitUntil {scriptDone _thread};
+_thread = [_query,false] call DB_fnc_asyncCall;

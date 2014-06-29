@@ -20,7 +20,6 @@ _query = format["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,
 //_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 
 waitUntil {!DB_Async_Active};
-_thread = [_query,false] spawn DB_fnc_asyncCall;
-waitUntil {scriptDone _thread};
+_thread = [_query,false] call DB_fnc_asyncCall;
 
 [[[_sp,_type],{life_atmcash = life_atmcash + (_this select 0); hint format[(localize "STR_Garage_SoldCar"),[(_this select 0)] call life_fnc_numberText];}],"BIS_fnc_call",_unit,false] spawn life_fnc_MP;

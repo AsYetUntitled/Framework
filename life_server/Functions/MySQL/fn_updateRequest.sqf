@@ -38,5 +38,4 @@ switch (_side) do {
 };
 
 waitUntil {!DB_Async_Active};
-_thread = [_query,false] spawn DB_fnc_asyncCall;
-waitUntil {scriptDone _thread};
+_thread = [_query,false] call DB_fnc_asyncCall;

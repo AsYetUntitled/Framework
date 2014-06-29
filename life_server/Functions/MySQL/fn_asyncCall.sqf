@@ -12,10 +12,11 @@
 		3: BOOL (True to return a single array, false to return multiple entries mainly for garage).
 */
 waitUntil{!DB_Async_Active};
-private["_queryStmt","_queryResult","_key","_loops","_timestamp"];
+private["_queryStmt","_queryResult","_key","_loops","_timestamp","_return"];
 _queryStmt = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,false,[true]] call BIS_fnc_param;
 _timestamp = diag_tickTime;
+_return = false;
 if(_queryStmt == "") exitWith {_queryStmt};
 DB_Async_Active = true;
 
@@ -29,32 +30,45 @@ while {true} do {
 	_loops = _loops + 1;
 };
 
-diag_log "-------------- ASYNC DEBUG --------------";
-diag_log format["QUERY: %1",_queryStmt];
-diag_log format["Total time to execute: %1 (Scaled in seconds)",diag_tickTime - _timestamp];
-diag_log "-----------------------------------------";
-
 DB_Async_Active = false; //Unlock the async caller
 
 if(_mode) then {
 	if(_queryResult == "") exitWith {
-		missionNamespace setVariable [format["QUERY_%1",_this select 2],"_LOOP_EXCEEDS_"];
+		//missionNamespace setVariable [format["QUERY_%1",_this select 2],"_LOOP_EXCEEDS_"];
+		_return = "_LOOP_EXCEEDS_";
 	};
 	
 	_queryResult = call compile format["%1",_queryResult];
 	if(!isnil {_this select 3}) exitWith {
 		if(!(_this select 3)) then {
-			missionNamespace setVariable[format["QUERY_%1",_this select 2],_queryResult select 0];
+			//missionNamespace setVariable[format["QUERY_%1",_this select 2],_queryResult select 0];
+			_return = _queryResult select 0;
 		} else {
 			_queryResult = (_queryResult select 0) select 0;
-			if(isNil "_queryResult") exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
-			if(count _queryResult == 0) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
-			missionNamespace setVariable[format["QUERY_%1",_queryResult select 4],_queryResult];
+			if(isNil "_queryResult") exitWith {
+				//missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];
+				_return = "_NO_ENTRY_";
+			};
+			if(count _queryResult == 0) exitWith {
+				//missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];
+				_return = "_NO_ENTRY_";
+			};
+			//missionNamespace setVariable[format["QUERY_%1",_queryResult select 4],_queryResult];
+			_return = _queryResult;
 		};
 	};
 	
-	if(isNil {((_queryResult select 0) select 0)}) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
+	if(isNil {((_queryResult select 0) select 0)}) exitWith {
+		//missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];
+		_return = "_NO_ENTRY_";
+	};
 	_queryResult = (_queryResult select 0) select 0;
-	if(count _queryResult == 0) exitWith {missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];};
-	missionNamespace setVariable[format["QUERY_%1",_queryResult select 0],_queryResult];
+	if(count _queryResult == 0) exitWith {
+		//missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];
+		_return = "_NO_ENTRY_";
+	};
+	//missionNamespace setVariable[format["QUERY_%1",_queryResult select 0],_queryResult];
+	_return = _queryResult;
 };
+
+_return;

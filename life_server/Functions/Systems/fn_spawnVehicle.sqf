@@ -34,6 +34,9 @@ _tickTime = diag_tickTime;
 _loops = 0;
 diag_log "------------- Spawn Vehicle Request -------------";
 
+_queryResult = [_query,true,_pid,true] call DB_fnc_asyncCall;
+
+/*
 while {true} do {
 	_thread = [_query,_pid] spawn _handler;
 	waitUntil {scriptDone _thread};
@@ -41,12 +44,13 @@ while {true} do {
 	_queryResult = missionNamespace getVariable format["QUERY_%1",_pid];
 	if(!isNil "_queryResult") exitWith {};
 };
-
+*/
+diag_log format["QUERY: %1",_query];
 diag_log format["Time to complete: %1 (in seconds) with %2 loops",(diag_tickTime - _tickTime),_loops];
 diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
 
-missionNamespace setVariable[format["QUERY_%1",_pid],nil]; //Unset the variable.
+//missionNamespace setVariable[format["QUERY_%1",_pid],nil]; //Unset the variable.
 
 if(typeName _queryResult == "STRING") exitWith {};
 
@@ -81,9 +85,11 @@ _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid
 //_sql = "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", _query,(call LIFE_SCHEMA_NAME)];
 
 waitUntil {!DB_Async_Active};
+[_query,false] spawn DB_fnc_asyncCall;
+/*
 _thread = [_query,false] spawn DB_fnc_asyncCall;
 waitUntil {scriptDone _thread};
-
+*/
 if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};

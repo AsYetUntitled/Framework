@@ -55,6 +55,5 @@ _query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, co
 ];
 
 waitUntil {!DB_Async_Active};
-_thread = [_query,false] spawn DB_fnc_asyncCall;
-waitUntil {scriptDone _thread};
+_thread = [_query,false] call DB_fnc_asyncCall;
 [[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;
