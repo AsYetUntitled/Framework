@@ -15,8 +15,8 @@ private["_obj","_val"];
 _obj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _val = (_obj getVariable "item") select 1;
 if(isNil {_val}) exitWith {};
-if(isNull _obj || player distance _obj > 3) exitWith {};
-if((_obj getVariable["PickedUp",false])) exitWith {}; //Object was already picked up.
+if(isNull _obj || player distance _obj > 3) exitWith {if(!isNull _obj) then {_obj setVariable["inUse",false,true];};
+if((_obj getVariable["PickedUp",false])) exitWith {deleteVehicle _obj;}; //Object was already picked up.
 _obj setVariable["PickedUp",TRUE,TRUE];
 if(!isNil {_val}) then
 {

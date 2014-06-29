@@ -5,7 +5,7 @@
 	Description:
 	Sends a request to query the database information and returns vehicles.
 */
-private["_pid","_side","_type","_unit","_ret"];
+private["_pid","_side","_type","_unit","_ret","_tickTime","_loops"];
 _pid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[west]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;
@@ -43,6 +43,9 @@ _handler = {
 _query = format["SELECT * FROM vehicles WHERE pid='%1' AND alive='1' AND active='0' AND side='%2' AND type='%3'",_pid,_side,_type];
 
 waitUntil{!DB_Async_Active};
+_tickTime = diag_tickTime;
+_loops = 0;
+diag_log "------------- Get Vehicles Query -------------";
 
 while {true} do {
 	_thread = [_query,_pid] spawn _handler;
@@ -51,6 +54,10 @@ while {true} do {
 	_queryResult = missionNamespace getVariable format["QUERY_%1",_pid];
 	if(!isNil "_queryResult") exitWith {};
 };
+
+diag_log format["Time to complete: %1 (in seconds) with %1 loops",(diag_tickTime - _tickTime),_loops];
+diag_log format["Result: %1",_queryResult];
+diag_log "------------------------------------------------";
 
 missionNamespace setVariable[format["QUERY_%1",_pid],nil]; //Unset the variable.
 

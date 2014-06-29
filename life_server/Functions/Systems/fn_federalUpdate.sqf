@@ -10,5 +10,5 @@ while {true} do
 {
 	sleep (30 * 60);
 	_funds = fed_bank getVariable["safe",0];
-	fed_bank setVariable["safe",_funds+((count playableUnits)/2),true];
+	fed_bank setVariable["safe",round(_funds+((count playableUnits)/2)),true];
 };

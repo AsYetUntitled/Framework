@@ -10,7 +10,7 @@
 	ARRAY - If array has 0 elements it should be handled as an error in client-side files.
 	STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
-private["_uid","_side","_query","_return","_queryResult","_qResult","_handler","_thread"];
+private["_uid","_side","_query","_return","_queryResult","_qResult","_handler","_thread","_tickTime","_loops"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _ownerID = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
@@ -33,15 +33,21 @@ _query = switch(_side) do {
 };
 
 waitUntil{!DB_Async_Active};
-
+_tickTime = diag_tickTime;
+_loops = 0;
+diag_log "------------- Client Query Request -------------";
 while {true} do {
 	_thread = [_query,_uid] spawn _handler;
 	waitUntil {scriptDone _thread};
 	sleep 0.2;
 	_queryResult = missionNamespace getVariable format["QUERY_%1",_uid];
 	if(!isNil "_queryResult") exitWith {};
+	_loops = _loops + 1;
 };
 
+diag_log format["Time to complete: %1 (in seconds) with %1 loops",(diag_tickTime - _tickTime),_loops];
+diag_log format["Result: %1",_queryResult];
+diag_log "------------------------------------------------";
 missionNamespace setVariable[format["QUERY_%1",_uid],nil]; //Unset the variable.
 
 if(typeName _queryResult == "STRING") exitWith {

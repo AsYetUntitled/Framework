@@ -6,7 +6,7 @@
 	Sends the query request to the database, if an array is returned then it creates
 	the vehicle if it's not in use or dead.
 */
-private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side"];
+private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_loops"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
@@ -30,6 +30,10 @@ _handler = {
 
 waitUntil{!DB_Async_Active};
 
+_tickTime = diag_tickTime;
+_loops = 0;
+diag_log "------------- Spawn Vehicle Request -------------";
+
 while {true} do {
 	_thread = [_query,_pid] spawn _handler;
 	waitUntil {scriptDone _thread};
@@ -37,6 +41,10 @@ while {true} do {
 	_queryResult = missionNamespace getVariable format["QUERY_%1",_pid];
 	if(!isNil "_queryResult") exitWith {};
 };
+
+diag_log format["Time to complete: %1 (in seconds) with %1 loops",(diag_tickTime - _tickTime),_loops];
+diag_log format["Result: %1",_queryResult];
+diag_log "------------------------------------------------";
 
 missionNamespace setVariable[format["QUERY_%1",_pid],nil]; //Unset the variable.
 

@@ -28,6 +28,8 @@ while {true} do
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
+		_progressBar = _ui displayCtrl 38201;
+		_titleText = _ui displayCtrl 38202;
 	};
 	_cP = _cP + .012;
 	_progressBar progressSetPosition _cP;
@@ -41,6 +43,8 @@ while {true} do
 player playActionNow "stop";
 if(!alive player) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
+
+life_action_inUse = false;
 
 _vault setVariable["safe_open",false,true];
 hint "The vault is now fixed and re-secured.";

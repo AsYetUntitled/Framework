@@ -19,8 +19,6 @@ life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT
 server_query_running = false;
 life_DB_queue = [];
 serv_sv_use = [];
-fed_bank setVariable["fed_rob_ip",false,true];
-fed_bank setVariable["fed_locked",false,true];
 
 //Run procedures for SQL cleanup on mission start.
 "Arma2Net.Unmanaged" callExtension format ["Arma2NETMySQLCommand ['%2', '%1']", "CALL resetLifeVehicles();",(call LIFE_SCHEMA_NAME)]; //Reset vehicles active state to false.
@@ -62,10 +60,6 @@ publicVariable "robbery_success";
 	};
 };
 
-//Server-side functions that need to be sent out.
-publicVariable "TON_fnc_addVehicle2Chain";
-publicVariable "life_fnc_fedSuccess";
-
 [] spawn TON_fnc_federalUpdate;
 
 [] spawn
@@ -99,3 +93,4 @@ _rsb = nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"];
 for "_i" from 1 to 3 do {_dome setVariable[format["bis_disabled_Door_%1",_i],1,true]; _dome animate [format["Door_%1_rot",_i],0];};
 _rsb setVariable["bis_disabled_Door_1",1,true];
 _rsb allowDamage false;
+_dome allowDamage false;
