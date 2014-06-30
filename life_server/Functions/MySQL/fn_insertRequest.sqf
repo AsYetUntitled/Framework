@@ -13,28 +13,32 @@ _money = [_this,2,0,[""]] call BIS_fnc_param;
 _bank = [_this,3,2500,[""]] call BIS_fnc_param;
 _returnToSender = [_this,4,ObjNull,[ObjNull]] call BIS_fnc_param;
 
-_handler = {
-	private["_thread"];
-	_thread = [_this select 0,true,_this select 1] spawn DB_fnc_asyncCall;
-	waitUntil {scriptDone _thread};
-};
-
 //Error checks
 if((_uid == "") OR (_name == "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
 if(isNull _returnToSender) exitWith {systemChat "ReturnToSender is Null!";}; //No one to send this to!
 
 _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
 
-waitUntil{sleep (random 0.3); !DB_Async_Active}; //Wait for an available chance..
+waitUntil{sleep (random 0.3); !DB_Async_Active};
+_tickTime = diag_tickTime;
+
+private["_exitLoop"];
+_exitLoop = false;
 while {true} do {
-	_thread = [_query,_uid] spawn _handler;
-	waitUntil {scriptDone _thread};
-	sleep 0.2;
-	_queryResult = missionNamespace getVariable format["QUERY_%1",_uid];
-	if(!isNil "_queryResult") exitWith {};
+	waitUntil{!DB_Async_Active}; //Wait again to make SURE the caller is ready.
+	_queryResult = [_query,true,_uid] call DB_fnc_asyncCall;
+	if(typeName _queryResult == "STRING" && {_queryResult == format["_NO_ENTRY_CQ_%1",_uid]}) exitWith {}; //Bad
+	if(count _queryResult == _returnCount) then {
+		if((_queryResult select 0) == _uid) exitWith {_exitLoop = true;}; //The data matched so send it back.
+	};
+	if(_exitLoop) exitWith {};
 };
 
-missionNamespace setVariable [format["QUERY_%1",_uid],nil]; //Unset the variable.
+diag_log "------------- Client Query Request -------------";
+diag_log format["QUERY: %1",_query];
+diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
+diag_log format["Result: %1",_queryResult];
+diag_log "------------------------------------------------";
 
 //Double check to make sure the client isn't in the database...
 if(typeName _queryResult != "STRING") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;}; //There was an entry!
