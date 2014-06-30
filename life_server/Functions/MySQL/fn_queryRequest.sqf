@@ -10,56 +10,48 @@
 	ARRAY - If array has 0 elements it should be handled as an error in client-side files.
 	STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
-private["_uid","_side","_query","_return","_queryResult","_qResult","_handler","_thread","_tickTime","_loops"];
+private["_uid","_side","_query","_return","_queryResult","_qResult","_handler","_thread","_tickTime","_loops","_returnCount"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _ownerID = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 if(isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
-//if(_uid == "" || _side == sideUnknown) exitWith {"The UID or side passed had invalid inputs."};
 
 /*
-_handler = {
-	private["_thread"];
-	_thread = [_this select 0,true,_this select 1] spawn DB_fnc_asyncCall;
-	waitUntil {scriptDone _thread};
-};
+	_returnCount is the count of entries we are expecting back from the async call.
+	The other part is well the SQL statement.
 */
-
-//compile our query request
 _query = switch(_side) do {
-	case west: {format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, coplevel, cop_gear, blacklist FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear FROM players WHERE playerid='%1'",_uid];};
-	case independent: {format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel FROM players WHERE playerid='%1'",_uid];};
+	case west: {_returnCount = 10; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, coplevel, cop_gear, blacklist FROM players WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 9; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear FROM players WHERE playerid='%1'",_uid];};
+	case independent: {_returnCount = 8; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel FROM players WHERE playerid='%1'",_uid];};
 };
 
-waitUntil{sleep 0.1; !DB_Async_Active};
+waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
-_loops = 0;
-diag_log "------------- Client Query Request -------------";
 
-_queryResult = [_query,true,_uid] call DB_fnc_asyncCall;
-/*
+private["_exitLoop"];
+_exitLoop = false;
 while {true} do {
-	_thread = [_query,_uid] spawn _handler;
-	waitUntil {scriptDone _thread};
-	sleep 0.2;
-	_queryResult = missionNamespace getVariable format["QUERY_%1",_uid];
-	if(!isNil "_queryResult") exitWith {};
-	_loops = _loops + 1;
+	waitUntil{!DB_Async_Active}; //Wait again to make SURE the caller is ready.
+	_queryResult = [_query,true,_uid] call DB_fnc_asyncCall;
+	if(typeName _queryResult == "STRING" && {_queryResult == format["_NO_ENTRY_CQ_%1",_uid]}) exitWith {}; //Bad
+	if(count _queryResult == _returnCount) then {
+		if((_queryResult select 0) == _uid) exitWith {_exitLoop = true;}; //The data matched so send it back.
+	};
+	if(_exitLoop) exitWith {};
 };
-*/
+
+diag_log "------------- Client Query Request -------------";
 diag_log format["QUERY: %1",_query];
 diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
 diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
-//missionNamespace setVariable[format["QUERY_%1",_uid],nil]; //Unset the variable.
 
 if(typeName _queryResult == "STRING") exitWith {
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
-
 
 //Parse licenses (Always index 6)
 _new = [(_queryResult select 6)] call DB_fnc_mresToArray;

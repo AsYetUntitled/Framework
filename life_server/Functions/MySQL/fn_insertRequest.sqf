@@ -25,7 +25,7 @@ if(isNull _returnToSender) exitWith {systemChat "ReturnToSender is Null!";}; //N
 
 _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
 
-waitUntil{!DB_Async_Active}; //Wait for an available chance..
+waitUntil{sleep (random 0.3); !DB_Async_Active}; //Wait for an available chance..
 while {true} do {
 	_thread = [_query,_uid] spawn _handler;
 	waitUntil {scriptDone _thread};

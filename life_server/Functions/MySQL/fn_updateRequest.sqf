@@ -37,5 +37,5 @@ switch (_side) do {
 	case independent: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4' WHERE playerid='%5'",_name,_cash,_bank,_licenses,_uid];};
 };
 
-waitUntil {!DB_Async_Active};
+waitUntil {sleep (random 0.3); !DB_Async_Active};
 _thread = [_query,false] call DB_fnc_asyncCall;

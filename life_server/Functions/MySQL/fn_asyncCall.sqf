@@ -21,13 +21,10 @@ if(_queryStmt == "") exitWith {_queryStmt};
 DB_Async_Active = true;
 
 _queryResult = "";
-_loops = 0;
-while {true} do {
+for "_i" from 0 to 10 do {
 	_queryResult = "Arma2Net.Unmanaged" callExtension format["Arma2NETMySQLCommandAsync ['%1', '%2']", (call LIFE_SCHEMA_NAME), _queryStmt];
 	if(_queryResult != "") exitWith {};
-	if(_loops >= 10) exitWith {}; //Why is it taking that long? ABORT!
 	sleep 0.35;
-	_loops = _loops + 1;
 };
 
 DB_Async_Active = false; //Unlock the async caller
@@ -60,12 +57,12 @@ if(_mode) then {
 	
 	if(isNil {((_queryResult select 0) select 0)}) exitWith {
 		//missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];
-		_return = "_NO_ENTRY_";
+		_return = format["_NO_ENTRY_CQ_%1",(_this select 2)];
 	};
 	_queryResult = (_queryResult select 0) select 0;
 	if(count _queryResult == 0) exitWith {
 		//missionNamespace setVariable[format["QUERY_%1",_this select 2],"_NO_ENTRY_"];
-		_return = "_NO_ENTRY_";
+		_return = format["_NO_ENTRY_CQ_%1",(_this select 2)];
 	};
 	//missionNamespace setVariable[format["QUERY_%1",_queryResult select 0],_queryResult];
 	_return = _queryResult;
