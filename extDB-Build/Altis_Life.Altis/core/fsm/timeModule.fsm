@@ -1,0 +1,168 @@
+/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, MP Fast Time">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Initialize",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Initialize"};
+item1[] = {"true",8,218,-39.834755,-70.246155,50.165245,-20.246151,0.000000,"true"};
+item2[] = {"Junction",2,250,-39.834755,12.192835,50.165268,62.192833,0.000000,"Junction"};
+item3[] = {"isServer",4,218,-197.904358,11.159702,-107.904358,61.159702,0.000000,"isServer"};
+item4[] = {"Set_up_JIP_Var",2,250,-196.871216,102.075562,-106.871201,152.075562,0.000000,"Set up JIP Var"};
+item5[] = {"true",8,218,-47.066704,102.075577,42.933296,152.075577,0.000000,"true"};
+item6[] = {"Thread_Loop",2,250,-48.099831,194.024567,41.900185,244.024582,0.000000,"Thread Loop"};
+item7[] = {"isServer",4,218,-188.606140,241.548767,-98.606094,291.548767,0.000000,"isServer"};
+item8[] = {"Server_Skip_Time",2,4346,-143.148376,331.431458,-53.148193,381.431458,0.000000,"Server Skip Time" \n "And sync"};
+item9[] = {"true",8,218,-31.569679,289.072937,58.430275,339.072601,0.000000,"true"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,7};
+link7[] = {7,8};
+link8[] = {8,9};
+link9[] = {9,6};
+globals[] = {0.000000,0,0,0,0,640,480,1,20,6316128,1,-725.260925,725.260132,771.751648,-210.759476,1404,911,1};
+window[] = {2,-1,-1,-1,-1,910,150,1590,150,3,1422};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "MP Fast Time";
+  class States
+  {
+    /*%FSM<STATE "Initialize">*/
+    class Initialize
+    {
+      name = "Initialize";
+      init = /*%FSM<STATEINIT""">*/"private[""_skipTime"",""_method"",""_fastNight"",""_skipDay"",""_skipNight"",""_lastUpdate""];" \n
+       "" \n
+       "_skipDay = [_this,0,8,[0]] call BIS_fnc_param;" \n
+       "_method = [_this,1,true,[false]] call BIS_fnc_param;" \n
+       "_fastNight = [_this,2,false,[true]] call BIS_fnc_param;" \n
+       "_skipNight = [_this,3,12,[0]] call BIS_fnc_param;" \n
+       "_lastUpdate = time;" \n
+       "_lastServUpdate = time;" \n
+       "_hcSync = time;" \n
+       "_lastSync = time;" \n
+       "" \n
+       "//Setup our vars." \n
+       "_skipTime = _skipDay;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Junction";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Junction">*/
+    class Junction
+    {
+      name = "Junction";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isServer">*/
+        class isServer
+        {
+          priority = 0.000000;
+          to="Set_up_JIP_Var";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_up_JIP_Var">*/
+    class Set_up_JIP_Var
+    {
+      name = "Set_up_JIP_Var";
+      init = /*%FSM<STATEINIT""">*/"JipTimeNow = date;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Thread_Loop">*/
+    class Thread_Loop
+    {
+      name = "Thread_Loop";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isServer">*/
+        class isServer
+        {
+          priority = 0.000000;
+          to="Server_Skip_Time";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _lastServUpdate) > 60) AND isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Server_Skip_Time">*/
+    class Server_Skip_Time
+    {
+      name = "Server_Skip_Time";
+      init = /*%FSM<STATEINIT""">*/"if(_fastNight && {SunOrMoon == 0}) then {" \n
+       "	_skipTime = _skipNight;" \n
+       "} else {" \n
+       "	_skipTime = _skipDay;" \n
+       "};" \n
+       "" \n
+       "if(_method) then {" \n
+       "	setDate [date select 0, date select 1,date select 2, date select 3, ((date select 4) + _skipTime)];" \n
+       "} else {" \n
+       "	skipTime (_skipTime / 60);" \n
+       "};" \n
+       "" \n
+       "_lastServUpdate = time;" \n
+       "JipTimeNow = date;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Thread_Loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Initialize";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

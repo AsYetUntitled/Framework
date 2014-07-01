@@ -1,0 +1,142 @@
+/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Server-Side Cleanup">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-65.004578,-391.651611,24.995417,-341.651672,0.000000,"init"};
+item1[] = {"true",8,218,-62.976639,-315.185364,27.023363,-265.185364,0.000000,"true"};
+item2[] = {"Share__Work_load",2,250,-64.183350,-224.681931,25.816656,-174.681931,0.000000,"Share " \n "Work-load"};
+item3[] = {"true",8,218,-54.709698,75.189262,35.290302,125.189262,0.000000,"true"};
+item4[] = {"Time_Check",4,218,-219.425827,-133.310532,-129.425964,-83.310455,0.000000,"Time Check"};
+item5[] = {"Delete_Dead_Cars",2,4346,-220.186951,-29.248400,-130.187195,20.751413,0.000000,"Delete" \n "Dead" \n "Cars"};
+item6[] = {"",7,210,-312.538239,95.295059,-304.538239,103.295059,0.000000,""};
+item7[] = {"",7,210,-311.750000,-203.033707,-303.750000,-195.033707,0.000000,""};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,4};
+link3[] = {3,6};
+link4[] = {4,5};
+link5[] = {5,3};
+link6[] = {6,7};
+link7[] = {7,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,46,6316128,1,-629.444153,611.207214,293.309357,-434.050568,1243,911,1};
+window[] = {2,-1,-1,-32000,-32000,910,150,1793,150,3,1261};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Server-Side Cleanup";
+  class States
+  {
+    /*%FSM<STATE "init">*/
+    class init
+    {
+      name = "init";
+      init = /*%FSM<STATEINIT""">*/"private[""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
+       "_impound = time;" \n
+       "_cars = time;" \n
+       "_objs = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Share__Work_load";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Share__Work_load">*/
+    class Share__Work_load
+    {
+      name = "Share__Work_load";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Time_Check">*/
+        class Time_Check
+        {
+          priority = 0.000000;
+          to="Delete_Dead_Cars";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time - _cars) > (3 * 60))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Delete_Dead_Cars">*/
+    class Delete_Dead_Cars
+    {
+      name = "Delete_Dead_Cars";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "	if(!alive _x) then" \n
+       "	{" \n
+       "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
+       "		if(count _dbInfo > 0) then" \n
+       "		{" \n
+       "			_uid = _dbInfo select 0;" \n
+       "			_plate = _dbInfo select 1;" \n
+       "" \n
+       "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+       "			_query spawn {" \n
+       "				waitUntil {!DB_Async_Active};" \n
+       "				_thread = [_this,1] spawn DB_fnc_asyncCall;" \n
+       "			};" \n
+       "		};" \n
+       "		if(!isNil ""_x"" && {!isNull _x}) then {" \n
+       "			deleteVehicle _x;" \n
+       "		};" \n
+       "	};" \n
+       "} foreach allMissionObjects ""LandVehicle"";" \n
+       "" \n
+       "{" \n
+       "	if(!alive _x) then" \n
+       "	{" \n
+       "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
+       "		if(count _dbInfo > 0) then" \n
+       "		{" \n
+       "			_uid = _dbInfo select 0;" \n
+       "			_plate = _dbInfo select 1;" \n
+       "" \n
+       "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+       "			_query spawn {" \n
+       "				waitUntil {!DB_Async_Active};" \n
+       "				_thread = [_this,1] spawn DB_fnc_asyncCall;" \n
+       "			};" \n
+       "		};" \n
+       "		if(!isNil ""_x"" && {!isNull _x}) then {" \n
+       "			deleteVehicle _x;" \n
+       "		};" \n
+       "	};" \n
+       "} foreach allMissionObjects ""Air"";" \n
+       "" \n
+       "_cars = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Share__Work_load";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

@@ -1,0 +1,119 @@
+/*%FSM<COMPILE "E:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Life Client FSM">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Main_Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Main Init"};
+item1[] = {"true",8,218,-39.994308,-65.712906,50.005692,-15.712896,0.000000,"true"};
+item2[] = {"Split",2,250,-39.994308,10.874098,50.005707,60.874100,0.000000,"Split"};
+item3[] = {"",7,210,-233.614594,295.445374,-225.614578,303.445374,0.000000,""};
+item4[] = {"",7,210,-233.935593,31.234837,-225.935593,39.234840,0.000000,""};
+item5[] = {"Time_to_pay_",4,218,-38.539185,92.835747,51.460873,142.835785,0.000000,"Time to pay?"};
+item6[] = {"Pay_me_",2,250,-36.888039,178.612518,53.111916,228.612396,0.000000,"Pay me!"};
+item7[] = {"true",8,218,-36.716774,275.104858,53.283058,325.104889,0.000000,"true"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,5};
+link3[] = {3,4};
+link4[] = {4,2};
+link5[] = {5,6};
+link6[] = {6,7};
+link7[] = {7,3};
+globals[] = {0.000000,0,0,0,0,640,480,1,26,6316128,1,-456.200378,358.065338,379.837494,-151.171021,1032,673,1};
+window[] = {0,-1,-1,-1,-1,993,175,1615,175,1,1050};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Life Client FSM";
+  class States
+  {
+    /*%FSM<STATE "Main_Init">*/
+    class Main_Init
+    {
+      name = "Main_Init";
+      init = /*%FSM<STATEINIT""">*/"private[""_lastcheck"",""_food"",""_water"",""_lastsync""];" \n
+       "_lastcheck = time;" \n
+       "_food = time;" \n
+       "_water = time;" \n
+       "_lastsync = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Split";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Split">*/
+    class Split
+    {
+      name = "Split";
+      init = /*%FSM<STATEINIT""">*/"systemChat format[""You will receive your next paycheck in %1 minutes"",(call life_paycheck_period)];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Time_to_pay_">*/
+        class Time_to_pay_
+        {
+          priority = 0.000000;
+          to="Pay_me_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(time - _lastcheck) > ((call life_paycheck_period) * 60)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Pay_me_">*/
+    class Pay_me_
+    {
+      name = "Pay_me_";
+      init = /*%FSM<STATEINIT""">*/"if(!alive player) then" \n
+       "{" \n
+       "	systemChat ""You have missed a paycheck because you were dead."";" \n
+       "}" \n
+       "	else" \n
+       "{" \n
+       "	if(player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide == west) then" \n
+       "	{" \n
+       "		systemChat format[""You have received a paycheck of $%1"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
+       "		life_atmcash = life_atmcash + (call life_paycheck) + 1500;" \n
+       "	}" \n
+       "		else" \n
+       "	{" \n
+       "		life_atmcash = life_atmcash + (call life_paycheck);" \n
+       "		systemChat format[""You have received a paycheck of $%1"",[(call life_paycheck)] call life_fnc_numberText];" \n
+       "	};" \n
+       "};" \n
+       "" \n
+       "_lastcheck = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Split";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Main_Init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/
