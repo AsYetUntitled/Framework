@@ -134,6 +134,7 @@ class Life_Client_Core
 		class raidHouse {};
 		class lockupHouse {};
 		class copHouseOwner {};
+		class lockHouse {};
 	};
 	
 	class Config
