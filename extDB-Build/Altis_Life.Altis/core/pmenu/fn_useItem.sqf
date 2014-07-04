@@ -36,6 +36,10 @@ switch (true) do
 		[cursorTarget] spawn life_fnc_defuseKit;
 	};
 	
+	case (_item in ["storagesmall","storagebig"]): {
+		[_item] call life_fnc_storageBox;
+	};
+	
 	case (_item == "redgull"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then

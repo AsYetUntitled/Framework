@@ -51,6 +51,12 @@ switch(playerSide) do {
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
 		[] spawn life_fnc_civLoadGear;
+		life_houses = _this select 9;
+		{
+			_house = nearestBuilding (call compile format["%1", _x select 0]);
+			life_vehicles set[count life_vehicles,_house];
+		} foreach life_houses;
+		[] spawn life_fnc_initHouses;
 	};
 	
 	case independent: {

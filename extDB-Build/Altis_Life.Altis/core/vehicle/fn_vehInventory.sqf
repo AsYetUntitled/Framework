@@ -14,7 +14,15 @@ _tInv = (findDisplay 3500) displayCtrl 3502;
 _pInv = (findDisplay 3500) displayCtrl 3503;
 lbClear _tInv;
 lbClear _pInv;
-_veh_data = [_veh] call life_fnc_vehicleWeight;
+
+if(_veh isKindOf "House_F") then {
+	private["_mWeight"];
+	_mWeight = 0;
+	{_mWeight = _mWeight + ([(typeOf _x)] call life_fnc_vehicleWeightCfg);} foreach (_veh getVariable["containers",[]]);
+	_veh_data = [_mWeight,(_veh getVariable["Trunk",[[],0]]) select 1];
+} else {
+	_veh_data = [_veh] call life_fnc_vehicleWeight;
+};
 
 if(_veh_data select 0 == -1) exitWith {closeDialog 0};
 

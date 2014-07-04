@@ -33,20 +33,10 @@ for "_i" from 0 to (count life_vehicles)-1 do
 		
 		_name = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
-		
-		/*
-		if(_veh distance impound_obj < 50) then
-		{
-			_vehicles lbAdd format["%1 - Impounded",_name];
-		}
-			else
-		{
-			_vehicles lbAdd format["%1 %3 - [Distance: %2m]",_name,round(player distance _veh),_text];
-		};
-		*/
-		
 		_vehicles lbAdd format["%1 %3 - [Distance: %2m]",_name,round(player distance _veh),_text];
-		_vehicles lbSetPicture [(lbSize _vehicles)-1,_pic];
+		if(_pic != "pictureStaticObject") then {
+			_vehicles lbSetPicture [(lbSize _vehicles)-1,_pic];
+		};
 		_vehicles lbSetData [(lbSize _vehicles)-1,str(_i)];
 	};
 };

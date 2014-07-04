@@ -54,5 +54,7 @@ switch (_item) do
 	case "blastingcharge": {15};
 	case "boltcutter": {5};
 	case "defusekit": {2};
+	case "storagesmall": {5};
+	case "storagebig": {10};
 	default {1};
 };

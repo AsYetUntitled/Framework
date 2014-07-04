@@ -59,6 +59,8 @@ switch (_var) do
 	case "life_inv_blastingcharge": {"Blasting Charge"};
 	case "life_inv_boltcutter": {"Bolt Cutter"};
 	case "life_inv_defusekit": {"Bomb Defusal Kit"};
+	case "life_inv_storagesmall": {"Small Storage Box"};
+	case "life_inv_storagebig": {"Large Storage Box"};
 	
 	//License Block
 	case "license_civ_driver": {"Driver License"};
@@ -83,4 +85,5 @@ switch (_var) do
 	case "license_civ_marijuana": {"Marijuana Training"};
 	case "license_civ_cement": {"Cement Mixing License"};
 	case "license_med_air": {"Pilot License"};
+	case "license_civ_home": {"Home Owners License"};
 };

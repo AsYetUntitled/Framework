@@ -6,12 +6,13 @@
 	Sends the query request to the database, if an array is returned then it creates
 	the vehicle if it's not in use or dead.
 */
-private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_loops"];
+private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
+_dir = [_this,5,0,[0]] call BIS_fnc_param;
 _name = name _unit;
 _side = side _unit;
 _unit = owner _unit;
@@ -82,6 +83,7 @@ if(typeName _sp == "STRING") then {
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 	_vehicle setPos _sp;
 	_vehicle setVectorUp (surfaceNormal _sp);
+	_vehicle setDir _dir;
 };
 //Send keys over the network.
 [[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;

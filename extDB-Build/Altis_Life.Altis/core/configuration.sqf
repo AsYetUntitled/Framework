@@ -35,6 +35,9 @@ life_removeWanted = false;
 __CONST__(life_revive_cops,TRUE); //Set to false if you don't want cops to be able to revive downed players.
 __CONST__(life_revive_fee,250); //Fee for players to pay when revived.
 
+//House Limit
+__CONST__(life_houseLimit,5); //Maximum amount of houses a player can buy (TODO: Make Tiered licenses).
+
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 /*
@@ -159,7 +162,9 @@ life_inv_items =
 	"life_inv_goldbar",
 	"life_inv_blastingcharge",
 	"life_inv_boltcutter",
-	"life_inv_defusekit"
+	"life_inv_defusekit",
+	"life_inv_storagesmall",
+	"life_inv_storagebig"
 ];
 
 //Setup variable inv vars.
@@ -188,7 +193,8 @@ life_licenses =
 	["license_civ_sand","civ"],
 	["license_civ_salt","civ"],
 	["license_civ_cement","civ"],
-	["license_med_air","med"]
+	["license_med_air","med"],
+	["license_civ_home","civ"]
 ];
 
 //Setup License Variables
@@ -265,7 +271,9 @@ buy_array =
 	["spikeStrip",2500],
 	["blastingcharge",35000],
 	["boltcutter",7500],
-	["defusekit",2500]
+	["defusekit",2500],
+	["storagesmall",75000],
+	["storagebig",150000]
 ];
 __CONST__(buy_array,buy_array);
 

@@ -88,7 +88,6 @@ class CfgFunctions
 			file = "\life_server\Functions\Systems";
 			class managesc {};
 			class cleanup {};
-			class timeStamp {};
 			class huntingZone {};
 			class getID {};
 			class vehicleCreate {};
@@ -98,15 +97,23 @@ class CfgFunctions
 			class vehicleStore {};
 			class vehicleDelete {};
 			class spikeStrip {};
-			class robReserve {};
-			class robberyState {};
 			class logIt {};
 			class federalUpdate {};
-			class isUIDActive {};
 			class chopShopSell {};
-			class silentSync {};
 			class clientDisconnect {};
 			class cleanupRequest {};
+		};
+		
+		class Housing
+		{
+			file = "\life_server\Functions\Housing";
+			class addHouse {};
+			class fetchPlayerHouses {};
+			class initHouses {};
+			class sellHouse {};
+			class updateHouseContainers {};
+			class updateHouseTrunk {};
+			class houseCleanup {};
 		};
 	};
 };

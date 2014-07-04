@@ -43,9 +43,8 @@ fed_bank setVariable["safe",(count playableUnits),true];
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
 
-//Double the cleanup for connecting clients and disconnecting clients.
+//General cleanup for clients disconnecting.
 _onDisconnect = ["SERV_onClientDisconnect","onPlayerDisconnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
-_onConnect = ["SERV_onClientConnected","onPlayerConnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
 
 [] spawn TON_fnc_cleanup;
 life_gang_list = [];
@@ -91,6 +90,8 @@ client_session_list = [];
 		} foreach [primaryWeapon _npc,secondaryWeapon _npc,handgunWeapon _npc];
 	};
 } foreach allUnits;
+
+[] spawn TON_fnc_initHouses;
 
 //Lockup the dome
 private["_dome","_rsb"];

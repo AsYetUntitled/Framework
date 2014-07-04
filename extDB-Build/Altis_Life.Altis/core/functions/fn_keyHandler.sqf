@@ -120,9 +120,9 @@ switch (_code) do
 			}
 				else
 			{
-				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
+				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship" OR cursorTarget isKindOf "House_F") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
-					if(cursorTarget in life_vehicles) then
+					if(cursorTarget in life_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then
 					{
 						[cursorTarget] call life_fnc_openInventory;
 					};
@@ -192,44 +192,46 @@ switch (_code) do
 	//U Key
 	case 22:
 	{
-		if(!_alt && !_ctrlKey) then
-		{
-			if(vehicle player == player) then
-			{
+		if(!_alt && !_ctrlKey) then {
+			if(vehicle player == player) then {
 				_veh = cursorTarget;
-			}
-				else
-			{
+			} else {
 				_veh = vehicle player;
 			};
 			
-			_locked = locked _veh;
-			
-			if(_veh in life_vehicles && player distance _veh < 8) then
-			{
-				if(_locked == 2) then
-				{
-					if(local _veh) then
-					{
-						_veh lock 0;
-					}
-						else
-					{
-						[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+			if(_veh isKindOf "House_F" && playerSide == civilian) then {
+				if(_veh in life_vehicles && player distance _veh < 8) then {
+					_door = [_veh] call life_fnc_nearestDoor;
+					if(_door == 0) exitWith {hint "You are not near a door!"};
+					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
+					if(_locked == 0) then {
+						_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
+						_veh animate [format["door_%1_rot",_door],0];
+						systemChat "You have locked that door.";
+					} else {
+						_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
+						_veh animate [format["door_%1_rot",_door],1];
+						systemChat "You have unlocked that door.";
 					};
-					systemChat "You have unlocked your vehicle.";
-				}
-					else
-				{
-					if(local _veh) then
-					{
-						_veh lock 2;
-					}
-						else
-					{
-						[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+				};
+			} else {
+				_locked = locked _veh;
+				if(_veh in life_vehicles && player distance _veh < 8) then {
+					if(_locked == 2) then {
+						if(local _veh) then {
+							_veh lock 0;
+						} else {
+							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+						};
+						systemChat "You have unlocked your vehicle.";
+					} else {
+						if(local _veh) then {
+							_veh lock 2;
+						} else {
+							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+						};	
+						systemChat "You have locked your vehicle.";
 					};
-					systemChat "You have locked your vehicle.";
 				};
 			};
 		};

@@ -7699,7 +7699,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=210;
+		items=211;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -9355,6 +9355,12 @@ class Mission
 			type="loc_Tourism";
 			colorName="ColorGreen";
 			angle=139.89178;
+		};
+		class Item210
+		{
+			position[]={1139.6908,-185.77206,20417.156};
+			name="house_marker";
+			type="loc_Lighthouse";
 		};
 	};
 };

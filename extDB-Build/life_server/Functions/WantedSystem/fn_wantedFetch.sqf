@@ -16,7 +16,7 @@ _jailedUnits = [];
 _list = [];
 {
 	_uid = _x select 1;
-	if([_uid] call TON_fnc_isUIDActive) then
+	if([_uid] call life_fnc_isUIDActive) then
 	{
 		if(!(_uid in _jailedUnits)) then {
 			_list set[count _list,_x];

@@ -7,7 +7,7 @@
 */
 private["_spCfg","_sp","_spawnPos"];
 closeDialog 0;
-0 cutText ["","BLACK IN"];
+cutText ["","BLACK IN"];
 if(count life_spawn_point == 0) then
 {
 	private["_sp","_spCfg"];
@@ -35,7 +35,20 @@ if(count life_spawn_point == 0) then
 	if(playerSide == civilian) then
 	{
 		if(isNil {(call compile format["%1",life_spawn_point select 0])}) then {
-			player setPos (getMarkerPos (life_spawn_point select 0));
+			if((["home",life_spawn_point select 0] call BIS_fnc_inString)) then {
+				private["_bPos","_house","_pos"];
+				_house = nearestObjects [getMarkerPos (life_spawn_point select 0),["House_F"],10] select 0;
+				_bPos = [_house] call life_fnc_getBuildingPositions;
+
+				if(count _bPos == 0) exitWith {
+					player setPos (getMarkerPos (life_spawn_point select 0));
+				};
+				
+				_pos = _bPos call BIS_fnc_selectRandom;
+				player setPosATL _pos;
+			} else {
+				player setPos (getMarkerPos (life_spawn_point select 0));
+			};
 		} else {
 			_spawnPos = (call compile format["%1", life_spawn_point select 0]) call BIS_fnc_selectRandom;
 			_spawnPos = _spawnPos buildingPos 0;
