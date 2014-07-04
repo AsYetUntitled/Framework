@@ -27,7 +27,7 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
-	[[_uid,_house],"TON_fnc_addHouse",false,true] spawn life_fnc_MP;
+	[[_uid,_house],"TON_fnc_addHouse",false,false] spawn life_fnc_MP;
 	_house setVariable["house_owner",[_uid,player getVariable["realname",name player]],true];
 	_house setVariable["locked",true,true];
 	_house setVariable["Trunk",[[],0],true];
