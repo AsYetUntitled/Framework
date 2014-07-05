@@ -9,6 +9,7 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `arma3life`
+-- Default Schema
 --
 CREATE DATABASE IF NOT EXISTS `arma3life` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `arma3life`;
@@ -16,6 +17,7 @@ USE `arma3life`;
 DELIMITER $$
 --
 -- Procedures
+-- Edit arma3 and root to match a user in MySQL
 --
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
 BEGIN
@@ -82,6 +84,23 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   KEY `pid` (`pid`),
   KEY `type` (`type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `houses`
+-- Needed for extDB latest update on git
+--
+
+CREATE TABLE IF NOT EXISTS `houses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` varchar(32) NOT NULL,
+  `pos` varchar(64) DEFAULT NULL,
+  `inventory` longtext,
+  `containers` longtext,
+  `owned` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`id`,`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
