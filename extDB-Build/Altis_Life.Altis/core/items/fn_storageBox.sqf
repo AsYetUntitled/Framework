@@ -34,6 +34,7 @@ switch (_boxType) do {
 		
 		_containers set [count _containers,_container];
 		_house setVariable["containers",_containers,true];
+		[[_house],"TON_fnc_updateHouseContainers",false,false] spawn life_fnc_MP;
 		
 		//Empty out the crate
 		clearWeaponCargoGlobal _container;
@@ -48,6 +49,7 @@ switch (_boxType) do {
 		
 		_containers set [count _containers,_container];
 		_house setVariable["containers",_containers,true];
+		[[_house],"TON_fnc_updateHouseContainers",false,false] spawn life_fnc_MP;
 		
 		//Empty out the crate
 		clearWeaponCargoGlobal _container;

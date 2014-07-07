@@ -1,8 +1,13 @@
 #define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
+life_server_isReady = false;
+publicVariable "life_server_isReady";
 
 //__CONST__(LIFE_SCHEMA_NAME,"'arma3life'");//CHANGE THIS IF YOUR DATABASE IS NOT CALLED ARMA3LIFE KEEP THE ' '
+
+[] execVM "\life_server\functions.sqf";
+[] execVM "\life_server\eventhandlers.sqf";
 
 //I am aiming to confuse people including myself, ignore the ui checks it's because I test locally.
 if(isNil {uiNamespace getVariable "life_sql_id"}) then {
@@ -14,6 +19,9 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	__CONST__(life_sql_id,life_sql_id);
 };
 
+_version = "extDB" callExtension "9:VERSION";
+if(_version == "") exitWith {life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
+
 //Initialize the database
 "extDB" callExtension "9:DATABASE:Database2";
 "extDB" callExtension format["9:ADD:DB_RAW:%1",(call life_sql_id)];
@@ -22,6 +30,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 //Run procedures for SQL cleanup on mission start.
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
+["DELETE FROM houses WHERE owned='0'",1] spawn DB_fnc_asyncCall;
 
 life_adminlevel = 0;
 life_medicLevel = 0;
@@ -39,9 +48,6 @@ life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT
 serv_sv_use = [];
 
 fed_bank setVariable["safe",(count playableUnits),true];
-
-[] execVM "\life_server\functions.sqf";
-[] execVM "\life_server\eventhandlers.sqf";
 
 //General cleanup for clients disconnecting.
 _onDisconnect = ["SERV_onClientDisconnect","onPlayerDisconnected","TON_fnc_clientDisconnect"] call BIS_fnc_addStackedEventHandler;
@@ -102,3 +108,5 @@ for "_i" from 1 to 3 do {_dome setVariable[format["bis_disabled_Door_%1",_i],1,t
 _rsb setVariable["bis_disabled_Door_1",1,true];
 _rsb allowDamage false;
 _dome allowDamage false;
+life_server_isReady = true;
+publicVariable "life_server_isReady";

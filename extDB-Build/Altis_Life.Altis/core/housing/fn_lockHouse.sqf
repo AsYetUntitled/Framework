@@ -6,7 +6,7 @@
 */
 private["_house"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _house OR !(_house isKindOf "House_F")) exitWith {}
+if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
 
 _state = _house getVariable["locked",true];
 if(_state) then {
