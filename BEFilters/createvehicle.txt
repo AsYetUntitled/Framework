@@ -10,6 +10,7 @@
 5 "B_static_AA_F"
 5 "B_static_AT_F"
 5 "B_G_Mortar_01_F"
+5 "Land_CargoBox_V1_F"
 5 "B_Heli_Light_01_armed_F"
 5 "B_Heli_Attack_01_F"
 5 "B_Plane_CAS_01_F"

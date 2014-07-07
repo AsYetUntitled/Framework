@@ -1,0 +1,1 @@
+5 "forceRespawn"  !="];\nplayer hideobject true;\nplayer enablesimulation false;\nforcerespawn player;\n} else {\n_isDeath = false;\n};\n};\nif (_respawnOnSt" 
