@@ -21,7 +21,12 @@ _return = [];
 	if(!isNil {(_house getVariable "containers")}) then {
 		{if(!isNull _x) then {deleteVehicle _x;};} foreach (_house getVariable "containers");
 	};
-	_house setVariable["Trunk",_x select 2,true];
+	
+	_trunk = [_x select 2] call DB_fnc_mresToArray;
+	if(typeName _trunk == "STRING") then {_trunk = call compile format["%1", _trunk];};
+	_containerData = [_x select 3] call DB_fnc_mresToArray;
+	if(typeName _containerData == "STRING") then {_containerData = call compile format["%1", _containerData];};
+	_house setVariable["Trunk",_trunk,true];
 	{
 		if(count _x == 0) exitWith {}; //No containers / items.
 		_className = _x select 0;
@@ -79,7 +84,7 @@ _return = [];
 			_container addBackpackCargoGlobal [_x,_backpackCount];
 		} foreach (_backpacks select 0);
 		
-	} foreach (_x select 3);
+	} foreach _containerData;
 	
 	_house setVariable["containers",_containers,true];
 	_return set[count _return,[_x select 1,_containers]];

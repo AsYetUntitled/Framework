@@ -33,7 +33,9 @@ while{true} do {
 	_pipe = "extDB" callExtension format["5:%1",_key];
 	if(_pipe == "") exitWith {};
 	if(_pipe != "[3]") then {
-	_queryResult = format["%1%2",_queryResult,_pipe];
+		_queryResult = format["%1%2",_queryResult,_pipe];
+	} else {
+		sleep 0.35;
 	};
 };
 
