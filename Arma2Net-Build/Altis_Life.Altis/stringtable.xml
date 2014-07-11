@@ -158,13 +158,13 @@
 			<Original>Spawning vehicle please wait...</Original>
 		</Key>
 		<Key ID="STR_Garage_SQLError_Destroyed">
-			<Original>Sorry but %1 was classified as a destroyed vehicle and was sent tot he scrap yard.</Original>
+			<Original>Sorry but %1 was classified as a destroyed vehicle and was sent to the scrap yard.</Original>
 		</Key>
 		<Key ID="STR_Garage_SQLError_Active">
 			<Original>Sorry but %1 is already active somewhere in the world and cannot be spawned.</Original>
 		</Key>
 		<Key ID="STR_Garage_SpawnPointError">
-			<Original>There is already a vehicle on the spawn point. You will be refunded the cost of getting out out.</Original>
+			<Original>There is already a vehicle on the spawn point. You will be refunded the cost of getting it out.</Original>
 		</Key>
 		<Key ID="STR_Garage_SoldCar">
 			<Original>You sold that vehicle for $%1</Original>
@@ -370,7 +370,7 @@
 			<Original>Dropping fishing net....</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetDropFail">
-			<Original>Didn't catch any fish..</Original>
+			<Original>Didn't catch any fish.</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetUp">
 			<Original>Fishing net pulled up.</Original>
@@ -415,7 +415,7 @@
 			<Original>%1 your %2 is being impounded by the police.</Original>
 		</Key>
 		<Key ID="STR_NOTF_Impounding">
-			<Original>Impounding Vehicle</Original>
+			<Original>Impounding Vehicle...</Original>
 		</Key>
 		<Key ID="STR_NOTF_ImpoundingCancelled">
 			<Original>Impounding has been cancelled.</Original>
