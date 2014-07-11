@@ -96,8 +96,8 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pid` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
-  `inventory` longtext,
-  `containers` longtext,
+  `inventory` text,
+  `containers` text,
   `owned` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`,`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
