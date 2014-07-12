@@ -128,6 +128,12 @@
 		<Key ID="STR_Gang_Browse">
 			<Original>Browse</Original>
 		</Key>
+		<Key ID="STR_Invite_Player">
+			<Original>Invite Player</Original>
+		</Key>
+		<Key ID="STR_Disband_Gang">
+			<Original>Disband Gang</Original>
+		</Key>
 	</Package>
 	<Package name="Garage_Menu">
 		<Key ID="STR_Garage_Title">

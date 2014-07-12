@@ -108,7 +108,7 @@ class Life_My_Gang_Diag {
 		class InviteMember : GangLeader
 		{
 			idc = 2630;
-			text = "Invite Player";
+			text = "$STR_Gang_Invite_Player";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = .51;
 		};
@@ -116,7 +116,7 @@ class Life_My_Gang_Diag {
 		class DisbandGang : InviteMember
 		{
 			idc = 2631;
-			text = "Disband Gang";
+			text = "$STR_Gang_Disband_Gang";
 			onButtonClick = "[] spawn life_fnc_gangDisband";
 			y = .46;
 		};
