@@ -118,7 +118,6 @@ CREATE TABLE IF NOT EXISTS `gangs` (
   `bank` int(100) DEFAULT '0',
   `active` tinyint(4) DEFAULT '1',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `owner_UNIQUE` (`owner`),
   UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

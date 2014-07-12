@@ -117,6 +117,7 @@ class Life_Client_Core
 		class robAction {};
 		class sellTurtle {};
 		class sellGoldBars {};
+		class captureHideout {};
 	};
 	
 	class Housing
@@ -382,5 +383,6 @@ class Life_Client_Core
 		class safeTake {};
 		class safeFix {};
 		class vehicleGarage {};
+		class gangDeposit {};
 	};
 };

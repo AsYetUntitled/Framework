@@ -7753,7 +7753,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Pallet_MilBoxes_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian '];";
 		};
 		class Item418
 		{
@@ -7775,7 +7775,8 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Sink_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			text="mari_processor";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Process Marijuana"",life_fnc_processAction,""marijuana"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cannabis > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; ";
 		};
 		class Item420
 		{
@@ -8050,7 +8051,7 @@ class Mission
 			vehicle="FlagPole_F";
 			skill=0.60000002;
 			text="gang_flag_1";
-			init="this allowDamage false; this enableSimulation false;";
+			init="this allowDamage false; this addAction [""Capture Gang Area"",life_fnc_captureHideout,"""",0,false,false,"""",' playerSide == civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
 		};
 		class Item445
 		{
@@ -8061,7 +8062,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V1_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			init="this enableSimulation false; this allowDamage false; this addAction[""Gang Market"",life_fnc_virt_menu,""gang"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} '];";
 		};
 		class Item446
 		{
@@ -8077,13 +8078,13 @@ class Mission
 		class Item447
 		{
 			position[]={4894.6807,17.030001,14423.959};
-			azimut=-200.52068;
+			azimut=-200.521;
 			offsetY=3.8996999;
 			id=660;
 			side="EMPTY";
 			vehicle="Land_Pallet_MilBoxes_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian '];";
 		};
 		class Item448
 		{
@@ -8099,13 +8100,14 @@ class Mission
 		class Item449
 		{
 			position[]={4901.5908,16.961405,14419.505};
-			azimut=-200.53601;
+			azimut=-200.536;
 			offsetY=3.7370801;
 			id=662;
 			side="EMPTY";
 			vehicle="Land_Sink_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			text="coke_processor";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Process Cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; life_inv_coke > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; ";
 		};
 		class Item450
 		{
@@ -8381,18 +8383,18 @@ class Mission
 			vehicle="FlagPole_F";
 			skill=0.60000002;
 			text="gang_flag_2";
-			init="this allowDamage false;";
+			init="this allowDamage false; this addAction [""Capture Gang Area"",life_fnc_captureHideout,"""",0,false,false,"""",' playerSide == civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
 		};
 		class Item475
 		{
 			position[]={4885.5059,17.208822,14411.982};
-			azimut=159.42252;
+			azimut=159.423;
 			offsetY=0.53438199;
 			id=688;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V1_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			init="this enableSimulation false; this allowDamage false; this addAction[""Gang Market"",life_fnc_virt_menu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} '];";
 		};
 		class Item476
 		{
@@ -8408,13 +8410,13 @@ class Mission
 		class Item477
 		{
 			position[]={18393.619,27.08457,15252.262};
-			azimut=170.5665;
+			azimut=170.56599;
 			offsetY=3.8996999;
 			id=690;
 			side="EMPTY";
 			vehicle="Land_Pallet_MilBoxes_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian '];";
 		};
 		class Item478
 		{
@@ -8430,13 +8432,14 @@ class Mission
 		class Item479
 		{
 			position[]={18399.535,27.025404,15246.563};
-			azimut=170.55116;
+			azimut=170.55099;
 			offsetY=3.7370801;
 			id=692;
 			side="EMPTY";
 			vehicle="Land_Sink_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			text="heroin_processor";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Process Heroin"",life_fnc_processAction,""heroin"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; life_inv_heroin > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; ";
 		};
 		class Item480
 		{
@@ -8712,18 +8715,18 @@ class Mission
 			vehicle="FlagPole_F";
 			skill=0.60000002;
 			text="gang_flag_3";
-			init="this allowDamage false; this enableSimulation false;";
+			init="this allowDamage false; this addAction [""Capture Gang Area"",life_fnc_captureHideout,"""",0,false,false,"""",' playerSide == civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
 		};
 		class Item505
 		{
 			position[]={18382.309,27.055088,15242.263};
-			azimut=530.50934;
+			azimut=530.50897;
 			offsetY=0.53438199;
 			id=718;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V1_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false;";
+			init="this enableSimulation false; this allowDamage false; this addAction[""Gang Market"",life_fnc_virt_menu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} '];";
 		};
 		class Item506
 		{

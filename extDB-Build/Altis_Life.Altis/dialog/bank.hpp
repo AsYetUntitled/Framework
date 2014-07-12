@@ -105,6 +105,15 @@ class Life_atm_management {
 			h = (1 / 25);
 		};
 		
+		class GangDeposit : TransferButton
+		{
+			idc = 2705;
+			text = "Deposit To Gang";
+			onButtonClick = "[] call life_fnc_gangDeposit";
+			y = .7; x = 0.365;
+			w = 0.275;
+		};
+		
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";

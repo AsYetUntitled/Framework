@@ -64,7 +64,7 @@ class life_weapon_shop
 		{
 			idc = 38405;
 			text = "$STR_Global_Buy";
-			onButtonClick = "[] call life_fnc_weaponShopBuySell";
+			onButtonClick = "[] spawn life_fnc_weaponShopBuySell; true";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
