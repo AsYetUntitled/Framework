@@ -6,7 +6,7 @@
 */
 private["_query","_queryResult"];
 
-_query = format["SELECT id, owner, name, maxmembers, bank, members FROM gangs WHERE owner='%1' OR members LIKE '%2%1%2'",_this,"%"];
+_query = format["SELECT id, owner, name, maxmembers, bank, members FROM gangs WHERE owner='%1' OR members LIKE '%2%1%2' AND active='1'",_this,"%"];
 waitUntil{!DB_Async_Active};
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
