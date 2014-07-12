@@ -24,7 +24,7 @@ if(count _queryResult != 0) exitWith {
 	[["life_action_gangInUse",nil,missionNamespace],"life_fnc_netSetVar",_ownerID,false] spawn life_fnc_MP;
 };
 
-_query = format["SELECT id FROM gangs WHERE owner='%1' OR members LIKE '%2%1%2' AND active='1'",_uid,"%"];
+_query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
 waitUntil{!DB_Async_Active};
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
