@@ -13,6 +13,6 @@ if(life_atmcash < (__GETC__(life_gangPrice))) exitWith {
 	{(group player) setVariable[_x,nil,true];} foreach ["gang_id","gang_owner","gang_name","gang_members","gang_maxmembers","gang_bank"];
 };
 
-[[[player],{_this select 0 setRank "COLONEL";}],"BIS_fnc_call",nil,false] spawn life_fnc_MP;
+__SUB__(life_atmcash,(__GETC__(life_gangPrice)));
 
 hint format["You have created the gang %1 for $%2",(group player) getVariable "gang_name",[(__GETC__(life_gangPrice))] call life_fnc_numberText];
