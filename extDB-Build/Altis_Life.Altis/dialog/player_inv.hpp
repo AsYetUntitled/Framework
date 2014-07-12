@@ -230,7 +230,7 @@ class playerSettings {
 		class ButtonMyGang : Life_RscButtonMenu {
 			idc = 2011;
 			text = "$STR_PM_MyGang";
-			onButtonClick = "[] call life_fnc_gangMenu";
+			onButtonClick = "if(isNil ""life_action_gangInUse"") then {if(isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""Life_Create_Gang_Diag"";} else {[] spawn life_fnc_gangMenu;};};";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

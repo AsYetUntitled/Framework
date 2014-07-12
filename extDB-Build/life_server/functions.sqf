@@ -38,26 +38,6 @@ compileFinal "
 ";
 publicVariable "fnc_player_query";
 
-/*
-fnc_player_query =
-compileFinal "
-	private[""_req"",""_packet"",""_ret""];
-	_ret = _this select 0;
-	_req = _this select 1;
-	_req = call compile format[""%1"", _req];
-	if(isNull _req) exitWith {admin_query_info = [];(owner _ret) publicVariableClient ""admin_query_info""; sleep 0.5; admin_query_info = nil};
-	[[],""admin_is_querying"",_req,false] spawn life_fnc_MP;
-	waitUntil {!isNil {serv_query_info}};
-	admin_query_info = [(owner _req)];
-	admin_query_info set[count admin_query_info,(serv_query_info select 0)];
-	admin_query_info set[count admin_query_info,(serv_query_info select 1)];
-	admin_query_info set[count admin_query_info,_req];
-	(owner _ret) publicVariableClient ""admin_query_info"";
-	sleep 0.5;
-	admin_query_info = nil;
-	serv_query_info = nil;
-";
-*/
 publicVariable "fnc_index";
 
 clientWireTransfer =

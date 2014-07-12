@@ -75,10 +75,10 @@ if(!_isVehicle) then {
 	if(_dice < 30) then {
 		titleText["You now have keys to this vehicle.","PLAIN"];
 		life_vehicles set[count life_vehicles,_curTarget];
-		[[getPlayerUID player,player getVariable["realname",name player],"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	} else {
-		[[getPlayerUID player,player getVariable["realname",name player],"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-		[[0,format["%1 was seen trying to lockpick a car.",player getVariable["realname",name player]]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+		[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[0,format["%1 was seen trying to lockpick a car.",profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		titleText["The lockpick broke.","PLAIN"];
 	};
 };

@@ -29,7 +29,7 @@ if(_action) then {
 	_house setVariable["Trunk",nil,true];
 	_house setVariable["containers",nil,true];
 	deleteMarkerLocal format["house_%1",_house getVariable "uid"];
-	_house setVariable["uid",nil];
+	_house setVariable["uid",nil,true];
 	
 	life_atmcash = life_atmcash + (round((_houseCfg select 0)/2));
 	_index = life_vehicles find _house;
@@ -42,5 +42,9 @@ if(_action) then {
 	if(_index != -1) then {
 		life_houses set[_index,-1];
 		life_houses = life_houses - [-1];
+	};
+	_numOfDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
+	for "_i" from 1 to _numOfDoors do {
+		_house setVariable[format["bis_disabled_Door_%1",_i],0,true];
 	};
 };

@@ -29,11 +29,11 @@ _action = [
 
 if(_action) then {
 	[[_uid,_house],"TON_fnc_addHouse",false,false] spawn life_fnc_MP;
-	_house setVariable["house_owner",[_uid,player getVariable["realname",name player]],true];
+	_house setVariable["house_owner",[_uid,profileName],true];
 	_house setVariable["locked",true,true];
 	_house setVariable["Trunk",[[],0],true];
 	_house setVariable["containers",[],true];
-	_house setVariable["uid",round(random 99999)];
+	_house setVariable["uid",round(random 99999),true];
 	life_atmcash = life_atmcash - (_houseCfg select 0);
 	life_vehicles set[count life_vehicles,_house];
 	life_houses set[count life_houses,[(getPosATL _house),[]]];

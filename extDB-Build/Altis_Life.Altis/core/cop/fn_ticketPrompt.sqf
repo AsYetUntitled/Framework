@@ -27,7 +27,7 @@ _control ctrlSetStructuredText parseText format["<t align='center'><t size='.8px
 	waitUntil {life_ticket_paid OR (isNull (findDisplay 2600))};
 	if(isNull (findDisplay 2600) && !life_ticket_paid) then
 	{
-		[[0,format["%1 refused to pay the ticket.",player getVariable["realname",name player]]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		[[1,format["%1 refused to pay the ticket.",player getVariable["realname",name player]]],"life_fnc_broadcast",life_ticket_cop,false] spawn life_fnc_MP;
+		[[0,format["%1 refused to pay the ticket.",profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+		[[1,format["%1 refused to pay the ticket.",profileName]],"life_fnc_broadcast",life_ticket_cop,false] spawn life_fnc_MP;
 	};
 };

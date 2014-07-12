@@ -18,8 +18,8 @@ if(_num < 1) exitWith {hint "You can't enter anything below 1!";};
 
 if(life_trunk_vehicle isKindOf "House_F") then {
 	_mWeight = 0;
-	{_mWeight = _mWeight + ([(typeOf _x)] call life_fnc_vehicleWeightConfig);} foreach (_house getVariable["containers",[]]);
-	_totalWeight = [_maxWeight,(life_trunk_vehicle getVariable["Trunk",[[],0]]) select 1];
+	{_mWeight = _mWeight + ([(typeOf _x)] call life_fnc_vehicleWeightCfg);} foreach (life_trunk_vehicle getVariable["containers",[]]);
+	_totalWeight = [_mWeight,(life_trunk_vehicle getVariable["Trunk",[[],0]]) select 1];
 } else {
 	_totalWeight = [life_trunk_vehicle] call life_fnc_vehicleWeight;
 };

@@ -49,7 +49,7 @@ if((life_veh_shop select 0) == "med_air_hs") then {
 	[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
 	[_vehicle] call life_fnc_clearVehicleAmmo;
 	_vehicle setVariable["trunk_in_use",false,true];
-	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,player getVariable["realname",name player]]],true];
+	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 	detach _vehicle;
 } else {
@@ -64,7 +64,7 @@ if((life_veh_shop select 0) == "med_air_hs") then {
 	_vehicle allowDamage true; //Re-enable damage handling.
 	[_vehicle] call life_fnc_clearVehicleAmmo;
 	_vehicle setVariable["trunk_in_use",false,true];
-	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,player getVariable["realname",name player]]],true];
+	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 };
 

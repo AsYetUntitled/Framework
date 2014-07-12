@@ -13,10 +13,11 @@ _killer = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 //Set some vars
 _unit setVariable["Revive",FALSE,TRUE]; //Set the corpse to a revivable state.
-_unit setVariable["name",player getVariable["realname",name player],TRUE]; //Set my name so they can say my name.
+_unit setVariable["name",profileName,TRUE]; //Set my name so they can say my name.
 _unit setVariable["restrained",FALSE,TRUE];
 _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",FALSE,TRUE]; //Why the fuck do I have this? Is it used?
+_unit setVariable["steam64id",(getPlayerUID player),true]; //Set the UID.
 
 //Setup our camera view
 life_deathCamera  = "CAMERA" camCreate (getPosATL _unit);
@@ -90,6 +91,11 @@ if(!isNull _killer && {_killer != _unit}) then {
 
 _handle = [_unit] spawn life_fnc_dropItems;
 waitUntil {scriptDone _handle};
+
+life_hunger = 100;
+life_thirst = 100;
+life_carryWeight = 0;
+life_cash = 0;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;

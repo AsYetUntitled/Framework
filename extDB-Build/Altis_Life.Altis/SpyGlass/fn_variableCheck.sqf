@@ -23,8 +23,8 @@ _checkThread = {
 		_var = missionNamespace getVariable _x;
 		if(!isNil "_var") then {
 			missionNamespace setVariable[_x,nil];
-			[[player getVariable["realname",name player],getPlayerUID player,_x],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-			[[player getVariable["realname",name player],format["Variable: %1",_x]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			[[profileName,getPlayerUID player,_x],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,format["Variable: %1",_x]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
 			["SpyGlass",false,false] call BIS_fnc_endMission;
 		};

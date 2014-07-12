@@ -9,7 +9,7 @@ private["_unit","_vel","_dir","_v1","_v2","_anim"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _run = [_this,1,true,[false]] call BIS_fnc_param;
 if(isNull _unit) exitWith {}; //Bad data
-if(!_run) exitWith {};
+if(local _unit && !_run) exitWith {}; //Ahh
 
 if(animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
 _velocity = velocity _unit;

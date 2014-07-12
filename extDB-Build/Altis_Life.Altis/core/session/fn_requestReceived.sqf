@@ -57,6 +57,11 @@ switch(playerSide) do {
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles set[count life_vehicles,_house];
 		} foreach life_houses;
+		
+		life_gangData = _This select 10;
+		if(count life_gangData != 0) then {
+			[] spawn life_fnc_initGang;
+		};
 		[] spawn life_fnc_initHouses;
 	};
 	

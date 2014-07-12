@@ -87,15 +87,7 @@ LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] cal
 LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
 [] call life_fnc_settingsInit;
 player setVariable["steam64ID",getPlayerUID player];
-[] spawn {
-	private["_name"];
-	_name = "";
-	while {true} do {
-		_name = name player;
-		if(_name != "Error: No unit") exitWith {};
-	};
-	player setVariable["realname",_name,true];
-};
+player setVariable["realname",profileName,true];
 life_fnc_moveIn = compileFinal
 "
 	player moveInCargo (_this select 0);

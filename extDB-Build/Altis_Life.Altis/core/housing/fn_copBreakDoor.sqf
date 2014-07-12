@@ -4,10 +4,13 @@
 	Description:
 	Allows cops to 'kick' in the door?
 */
-private["_house","_door","_title","_titleText","_progressBar","_cpRate","_cP"];
+private["_house","_door","_title","_titleText","_progressBar","_cpRate","_cP","_uid"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
 if(isNil {(_house getVariable "house_owner")}) exitWith {hint "This house doesn't belong to anyone."};
+
+_uid = (_house getVariable "house_owner") select 0;
+if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint "This person is not online there for you cannot raid their house!"};
 
 _door = [_house] call life_fnc_nearestDoor;
 if(_door == 0) exitWith {hint "You are not near a door!"};

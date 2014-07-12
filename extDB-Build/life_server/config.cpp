@@ -115,6 +115,15 @@ class CfgFunctions
 			class updateHouseTrunk {};
 			class houseCleanup {};
 		};
+		
+		class Gangs
+		{
+			file = "\life_server\Functions\Gangs";
+			class insertGang {};
+			class queryPlayerGang {};
+			class removeGang {};
+			class updateGang {};
+		};
 	};
 };
 
