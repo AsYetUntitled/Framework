@@ -30,7 +30,8 @@ switch (_filter) do
 		["U_IG_Guerilla2_3","The Outback Rangler",1200],
 		["U_C_HunterBody_grn","The Hunters Look",1500],
 		["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
-		["U_OrestesBody","Surfing On Land",1100]
+		["U_OrestesBody","Surfing On Land",1100],
+		["U_NikosAgedBody","Casual Wears",5000]
 		];
 	};
 	

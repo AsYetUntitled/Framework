@@ -74,17 +74,19 @@ waitUntil {scriptDone _thread};
 if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
+	_vehicle allowDamage false;
 	_hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
-	_vehicle attachTo[_hs,[-0.4,-4,14]];
+	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,14]);
 	sleep 0.6;
-	detach _vehicle;
 } else {
 	_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
+	_vehicle allowDamage false;
 	_vehicle setPos _sp;
 	_vehicle setVectorUp (surfaceNormal _sp);
 	_vehicle setDir _dir;
 };
+_vehicle allowDamage true;
 //Send keys over the network.
 [[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
 _vehicle lock 2;

@@ -29,6 +29,7 @@ class RscTitles
 {
 	#include "dialog\ui.hpp"
 	#include "dialog\progress.hpp"
+	#include "dialog\hud_nameTags.h"
 };
 
 class CfgFunctions

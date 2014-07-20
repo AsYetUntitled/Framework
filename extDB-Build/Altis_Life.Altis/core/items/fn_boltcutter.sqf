@@ -11,6 +11,8 @@ if(!(_building isKindOf "House_F")) exitWith {hint "You are not looking at a hou
 if(isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then {
 	[[[1,2],"!!!!! SOMEONE IS BREAKING INTO THE FEDERAL RESERVE !!!!!!"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+} else {
+	[[0,format["%1 was seen breaking into a house.",profileName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
 
 _doors = 1;
@@ -82,3 +84,7 @@ if(life_boltcutter_uses >= 5) then {
 };
 
 _building setVariable[format["bis_disabled_Door_%1",_door],0,true]; //Unlock the door.
+if((_building getVariable["locked",false])) then {
+	_building setVariable["locked",false,true];
+};
+[[getPlayerUID player,profileName,"459"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;

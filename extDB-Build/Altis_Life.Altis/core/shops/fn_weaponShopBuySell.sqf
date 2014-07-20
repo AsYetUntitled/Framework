@@ -6,6 +6,7 @@
 	Description:
 	Master handling of the weapon shop for buying / selling an item.
 */
+disableSerialization;
 private["_price","_item","_itemInfo","_bad"];
 if((lbCurSel 38403) == -1) exitWith {hint "You need to select an item to buy/sell."};
 _price = lbValue[38403,(lbCurSel 38403)]; if(isNil "_price") then {_price = 0;};
