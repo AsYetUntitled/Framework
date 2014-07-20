@@ -49,6 +49,7 @@ class CfgFunctions
 			class insertVehicle {};
 			class bool{};
 			class mresString {};
+			class updatePartial {};
 		};
 	};
 	
