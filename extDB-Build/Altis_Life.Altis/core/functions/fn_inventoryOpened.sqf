@@ -28,13 +28,3 @@ if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 		};
 	};
 };
-
-if(_container isKindOf "LandVehicle" OR _container isKindOf "Ship" OR _container isKindOf "Air") exitWith {
-	if(!(_container in life_vehicles) && {(locked _container) == 2}) exitWith {
-		hint "You are not allowed to access this vehicle while its locked.";
-		[] spawn {
-			waitUntil {!isNull (findDisplay 602)};
-			closeDialog 0;
-		};
-	};
-};

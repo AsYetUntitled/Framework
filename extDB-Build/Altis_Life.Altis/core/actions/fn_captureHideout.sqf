@@ -11,7 +11,7 @@ _group = _hideout getVariable ["gangOwner",grpNull];
 
 if(isNil {grpPlayer getVariable "gang_name"}) exitWith {titleText["You must create a gang first before capturing it!","PLAIN"];};
 if(_group == grpPlayer) exitWith {titleText["Your gang already has control over this hideout!","PLAIN"]};
-if((_hideout getVariable ["inCapture",FALSE])) exitWith {hint"Only one person shall capture at once";};
+
 if(!isNull _group) then {
 	_gangName = _group getVariable ["gang_name",""];
 	_action = [
@@ -56,18 +56,17 @@ while {true} do
 	_cP = _cP + _cpRate;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-	_hideout setVariable["inCapture",true,true];
-	if(_cP >= 1 OR !alive player) exitWith {_hideout setVariable["inCapture",false,true];};
-	if(life_istazed) exitWith {_hideout setVariable["inCapture",false,true];}; //Tazed
-	if(life_interrupted) exitWith {_hideout setVariable["inCapture",false,true];};
+	if(_cP >= 1 OR !alive player) exitWith {};
+	if(life_istazed) exitWith {}; //Tazed
+	if(life_interrupted) exitWith {};
 };
 
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive player OR life_istazed) exitWith {life_action_inUse = false;_hideout setVariable["inCapture",false,true];};
-if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;_hideout setVariable["inCapture",false,true];};
-if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;_hideout setVariable["inCapture",false,true];};
+if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
+if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
 life_action_inUse = false;
 
 titleText["Hideout has been captured.","PLAIN"];
@@ -82,6 +81,5 @@ _flagTexture = [
 		"\A3\Data_F\Flags\flag_fd_orange_CO.paa"
 	] call BIS_fnc_selectRandom;
 _this select 0 setFlagTexture _flagTexture;
-[[[0,1],format["%1 and his gang: %2 - have taken control of a local hideout",name player,(group player) getVariable "gang_name" ]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-_hideout setVariable["inCapture",false,true];
+
 _hideout setVariable["gangOwner",grpPlayer,true];

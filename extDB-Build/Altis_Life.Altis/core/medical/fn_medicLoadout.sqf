@@ -19,4 +19,4 @@ if(hmd player != "") then {
 	player unlinkItem (hmd player);
 };
 
-[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
+player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"];
