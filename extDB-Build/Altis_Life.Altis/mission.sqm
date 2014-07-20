@@ -88,7 +88,7 @@ class Mission
 		"A3_Structures_F_Wrecks",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Structures_F_Ind_FuelStation",
-		"a3_weapons_f_ammoboxes",
+		"A3_Weapons_F_Ammoboxes",
 		"A3_Structures_F_EPA_Civ_Camping",
 		"A3_Structures_F_Civ_Accessories",
 		"A3_Weapons_F_Vests",
@@ -460,7 +460,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8452.9307,84.990097,25232.645};
+					position[]={8452.584,84.952843,25232.809};
 					azimut=29.242399;
 					special="NONE";
 					id=22;
@@ -2627,19 +2627,19 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="license_shop";
-					init="this allowDamage false;  this enableSimulation false;  this addAction[format[""%1 ($%2)"",[""license_civ_driver""] call life_fnc_varToStr,[([""driver""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""driver"",0,false,false,"""",' !license_civ_driver && playerSide == civilian '];  this addAction[format[""%1 ($%2)"",[""license_civ_boat""] call life_fnc_varToStr,[([""boat""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""boat"",0,false,false,"""",' !license_civ_boat && playerSide == civilian '];  this addAction[format[""%1 ($%2)"",[""license_civ_air""] call life_fnc_varToStr,[([""pilot""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""pilot"",0,false,false,"""",' !license_civ_air && playerSide == civilian '];  this addAction[format[""%1 ($%2)"",[""license_civ_truck""] call life_fnc_varToStr,[([""truck""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""truck"",0,false,false,"""",' !license_civ_truck && playerSide == civilian ']; this addAction[format[""%1 ($%2)"",[""license_civ_home""] call life_fnc_varToStr,[([""home""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""home"",0,false,false,"""",' !license_civ_home && playerSide == civilian '];";
+					init="this allowDamage false;  this enableSimulation false;  this addAction[format[""%1 ($%2)"",[""license_civ_driver""] call life_fnc_varToStr,[([""driver""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""driver"",0,false,false,"""",' !license_civ_driver && playerSide == civilian '];  this addAction[format[""%1 ($%2)"",[""license_civ_boat""] call life_fnc_varToStr,[([""boat""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""boat"",0,false,false,"""",' !license_civ_boat && playerSide == civilian '];  this addAction[format[""%1 ($%2)"",[""license_civ_air""] call life_fnc_varToStr,[([""pilot""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""pilot"",0,false,false,"""",' !license_civ_air && playerSide == civilian '];  this addAction[format[""%1 ($%2)"",[""license_civ_truck""] call life_fnc_varToStr,[([""truck""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""truck"",0,false,false,"""",' !license_civ_truck && playerSide == civilian ']; this addAction[format[""%1 ($%2)"",[""license_civ_home""] call life_fnc_varToStr,[([""home""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""home"",0,false,false,"""",' !license_civ_home && playerSide == civilian ']; this setVariable[""realname"",""License Shop""];";
 				};
 				class Item44
 				{
 					position[]={3669.6492,10.449143,13109.564};
-					azimut=-81.846283;
+					azimut=-81.846298;
 					special="NONE";
 					id=141;
 					side="CIV";
 					vehicle="C_man_p_beggar_F_afro";
 					skill=0.60000002;
 					text="carshop1";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShopMenu,[""civ_car"",civilian,[""civ_car_1"",""civ_car_1_1""],""civ"",""Bruce's New & Used Auto's""]];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShopMenu,[""civ_car"",civilian,[""civ_car_1"",""civ_car_1_1""],""civ"",""Bruce's New & Used Auto's""]]; this setVariable[""realname"", ""Car Shop""];";
 				};
 				class Item45
 				{
@@ -2690,13 +2690,13 @@ class Mission
 				class Item49
 				{
 					position[]={3240.3093,2.137604,12953.059};
-					azimut=86.662415;
+					azimut=86.662399;
 					special="NONE";
 					id=146;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setVariable[""realname"",""Cop Vehicle Store""];";
 				};
 				class Item50
 				{
@@ -7753,7 +7753,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Pallet_MilBoxes_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian '];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; this setVariable[""realname"",""Gang Armament""];";
 		};
 		class Item418
 		{
@@ -7776,7 +7776,7 @@ class Mission
 			vehicle="Land_Sink_F";
 			skill=0.60000002;
 			text="mari_processor";
-			init="this allowDamage false; this enableSimulation false; this addAction[""Process Marijuana"",life_fnc_processAction,""marijuana"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cannabis > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; ";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Process Marijuana"",life_fnc_processAction,""marijuana"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); life_inv_cannabis > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; this setVariable[""realname"",""Marijuana Processing""];";
 		};
 		class Item420
 		{
@@ -8084,7 +8084,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Pallet_MilBoxes_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian '];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = nearestBuilding (getPosATL player); !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; this setVariable[""realname"",""Gang Armament""];";
 		};
 		class Item448
 		{
@@ -8107,7 +8107,7 @@ class Mission
 			vehicle="Land_Sink_F";
 			skill=0.60000002;
 			text="coke_processor";
-			init="this allowDamage false; this enableSimulation false; this addAction[""Process Cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; life_inv_coke > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; ";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Process Cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; life_inv_coke > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; this setVariable[""realname"",""Cocaine Processing""];";
 		};
 		class Item450
 		{
@@ -8416,7 +8416,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Pallet_MilBoxes_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian '];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; this setVariable[""realname"",""Gang Armament""];";
 		};
 		class Item478
 		{
@@ -8439,7 +8439,7 @@ class Mission
 			vehicle="Land_Sink_F";
 			skill=0.60000002;
 			text="heroin_processor";
-			init="this allowDamage false; this enableSimulation false; this addAction[""Process Heroin"",life_fnc_processAction,""heroin"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; life_inv_heroin > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; ";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Process Heroin"",life_fnc_processAction,""heroin"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_u_Barracks_V2_F"",""Land_i_Barracks_V2_F""],25]) select 0; life_inv_heroin > 0 && !life_is_processing && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide == civilian ']; this setVariable[""realname"",""Heroin Processing""];";
 		};
 		class Item480
 		{
@@ -8921,7 +8921,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=216;
+		items=215;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -10580,19 +10580,13 @@ class Mission
 		};
 		class Item210
 		{
-			position[]={1139.6908,-185.77206,20417.156};
-			name="house_marker";
-			type="loc_Lighthouse";
-		};
-		class Item211
-		{
 			position[]={11693.286,37.651257,15914.844};
 			name="gang_area_1";
 			text="Gang Hideout 1";
 			type="hd_warning";
 			colorName="ColorRed";
 		};
-		class Item212
+		class Item211
 		{
 			position[]={4885.7808,17.059162,14418.125};
 			name="gang_area_2";
@@ -10601,7 +10595,7 @@ class Mission
 			colorName="ColorRed";
 			angle=-358.09299;
 		};
-		class Item213
+		class Item212
 		{
 			position[]={18383.779,27.092974,15248.242};
 			name="gang_area_3";
@@ -10610,7 +10604,7 @@ class Mission
 			colorName="ColorRed";
 			angle=2.7999959;
 		};
-		class Item214
+		class Item213
 		{
 			position[]={3307.8906,12.716581,14142.727};
 			name="turle_dealer_1";
@@ -10619,7 +10613,7 @@ class Mission
 			colorName="ColorRed";
 			angle=77.713181;
 		};
-		class Item215
+		class Item214
 		{
 			position[]={16556.398,1.8017138,15550.469};
 			name="turle_dealer_2";
