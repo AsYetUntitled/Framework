@@ -12,10 +12,10 @@ if(_name == "" OR isNull _group) exitWith {}; //Fail horn anyone?
 
 _gangName = _group getVariable "gang_name";
 _action = [
-	format["%1 has invited you to a gang called %2<br/>If you accept the invitation you will be a part of their gang and will have access to the gang funds and controlled gang hideouts.",_name,_gangName],
-	"Gang Invitation",
-	"Yes",
-	"No"
+	format[localize "STR_GNOTF_InviteMSG",_name,_gangName],
+	localize "STR_Gang_Invitation",
+	localize "STR_Global_Yes",
+	localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {

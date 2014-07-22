@@ -6,7 +6,7 @@
 	32 hours later...
 */
 private["_grp","_grpMembers"];
-if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint "You cannot leave the gang without appointing a new leader first!"};
+if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint localize "STR_GNOTF_LeaderLeave"};
 
 _grp = grpPlayer;
 _grpMembers = grpPlayer getVariable "gang_members";

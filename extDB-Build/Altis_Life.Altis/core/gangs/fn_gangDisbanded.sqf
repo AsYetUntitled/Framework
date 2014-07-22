@@ -8,7 +8,7 @@ private["_group"];
 _group = [_this,0,grpNull,[grpNull]] call BIS_fnc_param;
 if(isNull _group) exitWith {}; //Fail horn please.
 
-hint "The leader has disbanded the gang.";
+hint localize "STR_GNOTF_DisbandWarn_2";
 [player] joinSilent (createGroup civilian);
 if(count units _group == 0) then {
 	deleteGroup _group;

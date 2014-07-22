@@ -173,12 +173,12 @@ switch (_code) do
 			if(isNil {_veh getVariable "siren"}) then {_veh setVariable["siren",false,true];};
 			if((_veh getVariable "siren")) then
 			{
-				titleText ["Sirens Off","PLAIN"];
+				titleText [localize "STR_MISC_SirensOFF","PLAIN"];
 				_veh setVariable["siren",false,true];
 			}
 				else
 			{
-				titleText ["Sirens On","PLAIN"];
+				titleText [localize "STR_MISC_SirensON","PLAIN"];
 				_veh setVariable["siren",true,true];
 				if(playerSide == west) then {
 					[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
@@ -202,16 +202,16 @@ switch (_code) do
 			if(_veh isKindOf "House_F" && playerSide == civilian) then {
 				if(_veh in life_vehicles && player distance _veh < 8) then {
 					_door = [_veh] call life_fnc_nearestDoor;
-					if(_door == 0) exitWith {hint "You are not near a door!"};
+					if(_door == 0) exitWith {hint localize "STR_House_Door_NotNear"};
 					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
 					if(_locked == 0) then {
 						_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
 						_veh animate [format["door_%1_rot",_door],0];
-						systemChat "You have locked that door.";
+						systemChat localize "STR_House_Door_Lock";
 					} else {
 						_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
 						_veh animate [format["door_%1_rot",_door],1];
-						systemChat "You have unlocked that door.";
+						systemChat localize "STR_House_Door_Unlock";
 					};
 				};
 			} else {
@@ -223,14 +223,14 @@ switch (_code) do
 						} else {
 							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
-						systemChat "You have unlocked your vehicle.";
+						systemChat localize "STR_MISC_VehUnlock";
 					} else {
 						if(local _veh) then {
 							_veh lock 2;
 						} else {
 							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};	
-						systemChat "You have locked your vehicle.";
+						systemChat localize "STR_MISC_VehLock";
 					};
 				};
 			};

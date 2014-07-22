@@ -17,9 +17,9 @@ _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
 if(count _houseCfg == 0) exitWith {};
 
 _action = [
-	format["Are you sure you want to sell your house? It will sell for: <t color='#8cff9b'>$%1</t>",
+	format[localize "STR_House_SellHouseMSG",
 	[(_houseCfg select 0)] call life_fnc_numberText,
-	(_houseCfg select 1)],"Sell House","Sell","Cancel"
+	(_houseCfg select 1)],localize "STR_pInAct_SellHouse",localize "STR_Global_Sell",localize "STR_Global_Cancel"
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {

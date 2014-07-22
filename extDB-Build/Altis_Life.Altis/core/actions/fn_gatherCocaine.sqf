@@ -17,6 +17,10 @@ if(_sum > 0) then
 	{
 		titleText[format[localize "STR_NOTF_Collected",localize "STR_Item_Cocaine"],"PLAIN"];
 	};
+}
+else
+{
+	hint localize "STR_NOTF_InvFull";
 };
 
 life_action_inUse = false;

@@ -10,7 +10,7 @@ private["_display","_text","_units","_type"];
 
 if(!life_use_atm) exitWith
 {
-	hint "Because you robbed the bank you can't use the ATM for 5 minutes.";
+	hint localize "STR_Shop_ATMRobbed";
 };
 
 if(!dialog) then

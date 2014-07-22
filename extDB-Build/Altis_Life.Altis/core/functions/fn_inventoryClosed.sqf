@@ -19,6 +19,6 @@ if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 			{if(_x isKindOf "House_F") exitWith {_house = _x;};} foreach _house;
 		};
 	};
-	if(!isNil "_exit" OR !(_house isKindOf "House_F")) exitWith {systemChat "Error saving container, couldn't locate house?"};
+	if(!isNil "_exit" OR !(_house isKindOf "House_F")) exitWith {systemChat localize "STR_House_ContainerError"};
 	[[_house],"TON_fnc_updateHouseContainers",false,false] spawn life_fnc_MP;
 };

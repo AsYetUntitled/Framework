@@ -108,7 +108,8 @@ class Life_atm_management {
 		class GangDeposit : TransferButton
 		{
 			idc = 2705;
-			text = "Deposit To Gang";
+			text = "$STR_pInAct_DepositToGang";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_gangDeposit";
 			y = .7; x = 0.365;
 			w = 0.275;

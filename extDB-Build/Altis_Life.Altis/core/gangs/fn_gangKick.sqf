@@ -8,10 +8,10 @@
 private["_unit","_unitID","_members"];
 disableSerialization;
 
-if((lbCurSel 2621) == -1) exitWith {hint "You need to select a person to kick!"};
+if((lbCurSel 2621) == -1) exitWith {hint localize "STR_GNOTF_SelectKick"};
 _unit = call compile format["%1",getSelData(2621)];
 if(isNull _unit) exitWith {}; //Bad unit?
-if(_unit == player) exitWith {hint "You cannot kick yourself!"};
+if(_unit == player) exitWith {hint localize "STR_GNOTF_KickSelf"};
 
 _unitID = getPlayerUID _unit;
 _members = grpPlayer getVariable "gang_members";

@@ -8,16 +8,16 @@
 private["_unit","_unitID","_members","_action","_index"];
 disableSerialization;
 
-if((lbCurSel 2621) == -1) exitWith {hint "You need to select a person first!"};
+if((lbCurSel 2621) == -1) exitWith {hint localize "STR_GNOTF_TransferSelect"};
 _unit = call compile format["%1",getSelData(2621)];
 if(isNull _unit) exitWith {}; //Bad unit?
-if(_unit == player) exitWith {hint "You are already the leader!"};
+if(_unit == player) exitWith {hint localize "STR_GNOTF_TransferSelf"};
 
 _action = [
-	format["You are about to transfer leadership over to %1<br/>By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.",_unit getVariable ["realname",name _unit]],
-	"Transfer Gang Leadership",
-	"Yes",
-	"No"
+	format[localize "STR_GNOTF_TransferMSG",_unit getVariable ["realname",name _unit]],
+	localize "STR_Gang_Transfer",
+	localize "STR_Global_Yes",
+	localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
@@ -28,6 +28,6 @@ if(_action) then {
 	[[_unit,grpPlayer],"clientGangLeader",_unit,false] spawn life_fnc_MP; //Boot that bitch!
 	[[3,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
 } else {
-	hint "Transfer of leadership cancelled.";
+	hint localize "STR_GNOTF_TransferCancel";
 };
 [] call life_fnc_gangMenu;

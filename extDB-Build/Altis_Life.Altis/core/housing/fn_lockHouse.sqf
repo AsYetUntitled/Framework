@@ -11,8 +11,8 @@ if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
 _state = _house getVariable["locked",true];
 if(_state) then {
 	_house setVariable["locked",false,true];
-	titleText["House storage unlocked","PLAIN"];
+	titleText[localize "STR_House_StorageUnlock","PLAIN"];
 } else {
 	_house setVariable["locked",true,true];
-	titleText["House storage locked","PLAIN"];
+	titleText[localize "STR_House_StorageLock","PLAIN"];
 };

@@ -10,7 +10,7 @@ _shop = _this select 3;
 if(isNil {_shop}) exitWith {};
 life_shop_type = _shop;
 life_shop_npc = _this select 0;
-if(_shop == "cop" && playerSide != west) exitWith {hint "You are not a cop."};
+if(_shop == "cop" && playerSide != west) exitWith {hint localize "STR_NOTF_NotACop"};
 createDialog "shops_menu";
 
 [] call life_fnc_virt_update;

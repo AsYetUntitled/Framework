@@ -8,18 +8,18 @@
 private["_unit"];
 disableSerialization;
 
-if((lbCurSel 2632) == -1) exitWith {hint "You need to select a person to invite!"};
+if((lbCurSel 2632) == -1) exitWith {hint localize "STR_GNOTF_SelectPerson"};
 _unit = call compile format["%1",getSelData(2632)];
 if(isNull _unit) exitWith {}; //Bad unit?
-if(_unit == player) exitWith {hint "You cannot kick yourself!"};
+if(_unit == player) exitWith {hint localize "STR_GNOTF_KickSelf"};
 
-if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint "Your gang has reached its maximum allowed slots, please upgrade your gangs slot limit."};
+if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint localize "STR_GNOTF_MaxSlot"};
 
 _action = [
-	format["You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.",_unit getVariable ["realname",name _unit]],
-	"Transfer Gang Leadership",
-	"Yes",
-	"No"
+	format[localize "STR_GNOTF_InvitePlayer",_unit getVariable ["realname",name _unit]],
+	localize "STR_Gang_Transfer",
+	localize "STR_Global_Yes",
+	localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
@@ -27,7 +27,7 @@ if(_action) then {
 	_members = _group getVariable "gang_members";
 	_members set[count _members,getPlayerUID _unit];
 	_group setVariable["gang_members",_members,true];
-	hint format["You have sent a invite to your gang to %1",_unit getVariable["realname",name _unit]];
+	hint format[localize "STR_GNOTF_InvitePlayerMSG",_unit getVariable["realname",name _unit]];
 } else {
-	hint "Invitation Cancelled";
+	hint localize "STR_GNOTF_InviteCancel";
 };
