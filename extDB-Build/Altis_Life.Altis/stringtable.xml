@@ -685,8 +685,11 @@
 		<Key ID="STR_NOTF_NotACop">
 			<Original>You are not a cop.</Original>
 		</Key>
-		<Key Id="STR_NOTF_NoRoom">
+		<Key ID="STR_NOTF_NoRoom">
 			<Original>You don't have enough room for that item.</Original>
+		</Key>
+		<Key ID="STR_NOTF_ProcessWOLicense">
+			<Original>You need $%1 to process  without a license!</Original>
 		</Key>
 	</Package>
 	<Package name="Jail_Strings">
