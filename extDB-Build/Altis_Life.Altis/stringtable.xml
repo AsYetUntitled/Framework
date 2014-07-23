@@ -558,17 +558,17 @@
 		<Key ID="STR_Keys_Title">
 			<Original>Key Chain - Current List of Keys</Original>
 			<English>Key Chain - Current List of Keys</English>
-			<German>Needs Translation</German>
+			<German>Schlüsselanhänger - Aktuelle Liste</German>
 		</Key>
 		<Key ID="STR_Keys_DropKey">
 			<Original>Drop Key</Original>
 			<English>Drop Key</English>
-			<German>Needs Translation</German>
+			<German>Wegwerfen</German>
 		</Key>
 		<Key ID="STR_Keys_GiveKey">
 			<Original>Give Key</Original>
 			<English>Give Key</English>
-			<German>Needs Translation</German>
+			<German>Geben</German>
 		</Key>
 	</Package>
 	<Package name="Player_Menu">
