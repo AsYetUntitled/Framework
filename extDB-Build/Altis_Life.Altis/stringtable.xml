@@ -1121,22 +1121,27 @@
 		<Key ID="STR_Jail_Warn">
 			<Original>You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!</Original>
 			<English>You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!</English>
+			<German>Du wurdest festgenommen, warte deine Zeit ab. Wenn Sie versuchen zu respawnen oder reconnecten erhöht sich ihre Zeit! </German>
 		</Key>
 		<Key ID="STR_Jail_LicenseNOTF">
 			<Original>For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License</Original>
 			<English>For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License</English>
+			<German>Bei der Verhaftung haben sie folgende Lizenzen verloren\n\nFirearms Lizenz\nRebel Lizenz</German>
 		</Key>
 		<Key ID="STR_Jail_EscapeNOTF">
 			<Original>%1 has escaped from jail!</Original>
 			<English>%1 has escaped from jail!</English>
+			<German>%1 ist aus dem Gefängnis ausgebrochen!</German>
 		</Key>
 		<Key ID="STR_Jail_EscapeSelf">
 			<Original>You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.</Original>
 			<English>You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.</English>
+			<German>Du wurdest festgenommen, warte deine Zeit ab. Wenn Sie versuchen zu respawnen oder reconnecten erhöht sich ihre Zeit! </German>
 		</Key>
 		<Key ID="STR_Jail_Released">
 			<Original>You have served your time in jail and have been released.</Original>
 			<English>You have served your time in jail and have been released.</English>
+			<German>Sie haben Ihre Zeit im Gefängnis abgesessen und wurden freigelassen.</German>
 		</Key>
 	</Package>
 	<Package name="Civ_Strings">
