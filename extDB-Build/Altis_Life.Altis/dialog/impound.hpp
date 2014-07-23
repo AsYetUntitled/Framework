@@ -130,7 +130,7 @@ class Life_impound_menu
 		class MainHideText : Life_RscText
 		{
 			idc = 2811;
-			text = "$STR_ANOTF_Query";
+			text = "$STR_ANOTF_QueryGarage";
 			sizeEx = 0.06;
 			x = 0.24; y = 0.5;
 			w = 0.6;

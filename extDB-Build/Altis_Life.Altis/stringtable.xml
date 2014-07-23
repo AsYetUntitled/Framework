@@ -53,6 +53,9 @@
 		<Key ID="STR_ANOTF_Query">
 			<Original>Querying...</Original>
 		</Key>
+		<Key ID="STR_ANOTF_QueryGarage">
+			<Original>Searching Database for vehicles...</Original>
+		</Key>
 		<Key ID="STR_ANOTF_Query_2">
 			<Original>You are already querying a player.</Original>
 		</Key>
@@ -1007,6 +1010,206 @@
 		</Key>
 		<Key ID="STR_Item_Peaches">
 			<Original>Peaches</Original>
+		</Key>
+		<Key ID="STR_Item_OilU">
+			<Original>Unprocessed Oil</Original>
+		</Key>
+		<Key ID="STR_Item_OilP">
+			<Original>Processed Oil</Original>
+		</Key>
+		<Key ID="STR_Item_HeroinU">
+			<Original>Unprocessed Heroin</Original>
+		</Key>
+		<Key ID="STR_Item_HeroinP">
+			<Original>Processed Heroin</Original>
+		</Key>
+		<Key ID="STR_Item_Marijuana">
+			<Original>Marijuana</Original>
+		</Key>
+		<Key ID="STR_Item_RabbitMeat">
+			<Original>Rabbit Meat</Original>
+		</Key>
+		<Key ID="STR_Item_SalemaMeat">
+			<Original>Salema Meat</Original>
+		</Key>
+		<Key ID="STR_Item_OrnateMeat">
+			<Original>Ornate Meat</Original>
+		</Key>
+		<Key ID="STR_Item_MackerelMeat">
+			<Original>Mackerel Meat</Original>
+		</Key>
+		<Key ID="STR_Item_TunaMeat">
+			<Original>Tuna Meat</Original>
+		</Key>
+		<Key ID="STR_Item_MulletMeat">
+			<Original>Mullet Meat</Original>
+		</Key>
+		<Key ID="STR_Item_CatSharkMeat">
+			<Original>Cat Shark Meat</Original>
+		</Key>
+		<Key ID="STR_Item_TurtleMeat">
+			<Original>Turtle Meat</Original>
+		</Key>
+		<Key ID="STR_Item_FishingPole">
+			<Original>Fishing Pole</Original>
+		</Key>
+		<Key ID="STR_Item_WaterBottle">
+			<Original>Water Bottle</Original>
+		</Key>
+		<Key ID="STR_Item_Coffee">
+			<Original>Coffee</Original>
+		</Key>
+		<Key ID="STR_Item_TurtleSoup">
+			<Original>Turtle Soup</Original>
+		</Key>
+		<Key ID="STR_Item_Donuts">
+			<Original>Donuts</Original>
+		</Key>
+		<Key ID="STR_Item_FuelE">
+			<Original>Empty Fuel Can</Original>
+		</Key>
+		<Key ID="STR_Item_FuelF">
+			<Original>Full Fuel Can</Original>
+		</Key>
+		<Key ID="STR_Item_Pickaxe">
+			<Original>Pickaxe</Original>
+		</Key>
+		<Key ID="STR_Item_CopperOre">
+			<Original>Copper Ore</Original>
+		</Key>
+		<Key ID="STR_Item_IronOre">
+			<Original>Iron Ore</Original>
+		</Key>
+		<Key ID="STR_Item_IronIngot">
+			<Original>Iron Ingot</Original>
+		</Key>
+		<Key ID="STR_Item_CopperIngot">
+			<Original>Copper Ingot</Original>
+		</Key>
+		<Key ID="STR_Item_Sand">
+			<Original>Sand</Original>
+		</Key>
+		<Key ID="STR_Item_Salt">
+			<Original>Salt</Original>
+		</Key>
+		<Key ID="STR_Item_SaltR">
+			<Original>Refined Salt</Original>
+		</Key>
+		<Key ID="STR_Item_Glass">
+			<Original>Glass</Original>
+		</Key>
+		<Key ID="STR_Item_DiamondC">
+			<Original>Diamond Cut</Original>
+		</Key>
+		<Key ID="STR_Item_DiamondU">
+			<Original>Diamond Uncut</Original>
+		</Key>
+		<Key ID="STR_Item_TBacon">
+			<Original>Tactical Bacon</Original>
+		</Key>
+		<Key ID="STR_Item_RedGull">
+			<Original>RedGull</Original>
+		</Key>
+		<Key ID="STR_Item_Lockpick">
+			<Original>Lockpick</Original>
+		</Key>
+		<Key ID="STR_Item_Rock">
+			<Original>Rock</Original>
+		</Key>
+		<Key ID="STR_Item_CementBag">
+			<Original>Cement Bag</Original>
+		</Key>
+		<Key ID="STR_Item_GoldBar">
+			<Original>Gold Bar</Original>
+		</Key>
+		<Key ID="STR_Item_BCharge">
+			<Original>Blasting Charge</Original>
+		</Key>
+		<Key ID="STR_Item_BCutter">
+			<Original>Bolt Cutter</Original>
+		</Key>
+		<Key ID="STR_Item_DefuseKit">
+			<Original>Bomb Defusal Kit</Original>
+		</Key>
+		<Key ID="STR_Item_StorageBS">
+			<Original>Small Storage Box</Original>
+		</Key>
+		<Key ID="STR_Item_StorageBL">
+			<Original>Large Storage Box</Original>
+		</Key>
+		<Key ID="STR_Item_CocaineU">
+			<Original>Unprocessed Cocaine</Original>
+		</Key>
+		<Key ID="STR_Item_CocaineP">
+			<Original>Processed Cocaine</Original>
+		</Key>
+		<Key ID="STR_Item_SpikeStrip">
+			<Original>Spike Strip</Original>
+		</Key>
+	</Package>
+	<Package name="Life_License">
+		<Key ID="STR_License_Driver">
+			<Original>Driver License</Original>
+		</Key>
+		<Key ID="STR_License_Pilot">
+			<Original>Pilot License</Original>
+		</Key>
+		<Key ID="STR_License_Heroin">
+			<Original>Heroin Training</Original>
+		</Key>
+		<Key ID="STR_License_Oil">
+			<Original>Oil Processing</Original>
+		</Key>
+		<Key ID="STR_License_Gang">
+			<Original>Gang License</Original>
+		</Key>
+		<Key ID="STR_License_Diving">
+			<Original>Diving License</Original>
+		</Key>
+		<Key ID="STR_License_Boat">
+			<Original>Boating License</Original>
+		</Key>
+		<Key ID="STR_License_Firearm">
+			<Original>Firearm License</Original>
+		</Key>
+		<Key ID="STR_License_Swat">
+			<Original>SWAT License</Original>
+		</Key>
+		<Key ID="STR_License_CG">
+			<Original>Coast Guard License</Original>
+		</Key>
+		<Key ID="STR_License_Rebel">
+			<Original>Rebel Training</Original>
+		</Key>
+		<Key ID="STR_License_Truck">
+			<Original>Truck License</Original>
+		</Key>
+		<Key ID="STR_License_Diamond">
+			<Original>Diamond Processing</Original>
+		</Key>
+		<Key ID="STR_License_Copper">
+			<Original>Copper Processing</Original>
+		</Key>
+		<Key ID="STR_License_Iron">
+			<Original>Iron Processing</Original>
+		</Key>
+		<Key ID="STR_License_Sand">
+			<Original>Sand Processing</Original>
+		</Key>
+		<Key ID="STR_License_Salt">
+			<Original>Salt Processing</Original>
+		</Key>
+		<Key ID="STR_License_Cocaine">
+			<Original>Cocaine Training</Original>
+		</Key>
+		<Key ID="STR_License_Marijuana">
+			<Original>Marijuana Training</Original>
+		</Key>
+		<Key ID="STR_License_Cement">
+			<Original>Cement Mixing License</Original>
+		</Key>
+		<Key ID="STR_License_Home">
+			<Original>Home Owners License</Original>
 		</Key>
 	</Package>
 	<Package name="More_Item_Strings">

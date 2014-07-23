@@ -10,7 +10,7 @@ private["_action"];
 
 _action = [
 	localize "STR_GNOTF_DisbandWarn",
-	localize "STR_Disband_Gang",
+	localize "STR_Gang_Disband_Gang",
 	localize "STR_Global_Yes",
 	localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;

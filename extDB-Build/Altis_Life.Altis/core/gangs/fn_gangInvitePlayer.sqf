@@ -16,8 +16,8 @@ if(_unit == player) exitWith {hint localize "STR_GNOTF_KickSelf"};
 if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint localize "STR_GNOTF_MaxSlot"};
 
 _action = [
-	format[localize "STR_GNOTF_InvitePlayer",_unit getVariable ["realname",name _unit]],
-	localize "STR_Gang_Transfer",
+	format[localize "STR_GNOTF_InvitePlayerMSG",_unit getVariable ["realname",name _unit]],
+	localize "STR_Gang_Invite_Player",
 	localize "STR_Global_Yes",
 	localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;
@@ -27,7 +27,7 @@ if(_action) then {
 	_members = grpPlayer getVariable "gang_members";
 	_members set[count _members,getPlayerUID _unit];
 	grpPlayer setVariable["gang_members",_members,true];
-	hint format[localize "STR_GNOTF_InvitePlayerMSG",_unit getVariable["realname",name _unit]];
+	hint format[localize "STR_GNOTF_InviteSent",_unit getVariable["realname",name _unit]];
 } else {
 	hint localize "STR_GNOTF_InviteCancel";
 };
