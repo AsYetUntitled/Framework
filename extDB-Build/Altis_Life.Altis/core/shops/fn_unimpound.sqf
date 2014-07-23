@@ -42,11 +42,11 @@ if(_veh distance impound_obj < 50) then
 		};
 	};
 	_check = nearestObjects[_pos,["LandVehicle","Air"],4];
-	if(count _check > 0) exitWith {hint "There is currently a car there.";};
+	if(count _check > 0) exitWith {hint localize "STR_Shop_Unimpound_VehExist";};
 	if(_price > life_cash) then
 	{
 		_price = _price + 200;
-		if(_price > life_atmcash) exitWith {hint "You do not have enough money on you or in your bank to get your car back."};
+		if(_price > life_atmcash) exitWith {hint localize "STR_Shop_Unimpound_NotEnough"};
 		life_atmcash = life_atmcash - _price;
 		life_cash = life_cash + _price;
 	};
@@ -64,7 +64,7 @@ if(_veh distance impound_obj < 50) then
 		_v removeallEventHandlers "handleDamage";
 	};
 
-	hint format["You have unimpounded your %1 for $%3",_name,[_price] call life_fnc_numberText];
+	hint format[localize "STR_Shop_Unimpound_Success",_name,[_price] call life_fnc_numberText];
 	detach _veh;
 	if(_veh isKindOf "Air") then 
 	{

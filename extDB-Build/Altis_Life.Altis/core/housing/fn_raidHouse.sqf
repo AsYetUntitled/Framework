@@ -8,17 +8,17 @@
 private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
-if(isNil {(_house getVariable "house_owner")}) exitWith {hint "This house doesn't belong to anyone."};
+if(isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
 _uid = (_house getVariable "house_owner") select 0;
-if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint "This person is not online there for you cannot raid their house!"};
+if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
 _houseInv = _house getVariable ["Trunk",[[],0]];
-if(_houseInv isEqualTo [[],0]) exitWith {hint "There is nothing in this house."};
+if(_houseInv isEqualTo [[],0]) exitWith {hint localize "STR_House_Raid_Nothing"};
 life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
-_title = "Searching House....";
+_title = localize "STR_House_Raid_Searching";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
@@ -44,7 +44,7 @@ while {true} do
 
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
-if(player distance _house > 13) exitWith {life_action_inUse = false; titleText["You went too far away from the house!","PLAIN"]};
+if(player distance _house > 13) exitWith {life_action_inUse = false; titleText[localize "STR_House_Raid_TooFar","PLAIN"]};
 if(!alive player) exitWith {life_action_inUse = false;};
 life_action_inUse = false;
 
@@ -68,10 +68,10 @@ _value = 0;
 } foreach (_houseInv select 0);
 
 if(_value > 0) then {
-	[[0,format["A house was raided and had $%1 worth of drugs / contraband.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format[localize "STR_House_Raid_Successful",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_atmcash = life_atmcash + _value;
 	_house setVariable["Trunk",[_houseInvData,_houseInvVal],true];
 	[[_house],"TON_fnc_updateHouseTrunk",false,false] spawn life_fnc_MP;
 } else {
-	hint "Nothing illegal in this house.";
+	hint localize "STR_House_Raid_NoIllegal";
 };

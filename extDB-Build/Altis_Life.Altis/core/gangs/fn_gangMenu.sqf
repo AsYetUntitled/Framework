@@ -26,14 +26,14 @@ if(_ownerID != steamid) then {
 };
 
 (getControl(2620,2629)) ctrlSetText _gangName;
-(getControl(2620,601)) ctrlSetText format["Funds: $%1",[_gangBank] call life_fnc_numberText];
+(getControl(2620,601)) ctrlSetText format[(localize "STR_GNOTF_Funds")+ " $%1",[_gangBank] call life_fnc_numberText];
 
 //Loop through the players.
 _members = getControl(2620,2621);
 lbClear _members;
 {
 	if((getPlayerUID _x) == _ownerID) then {
-		_members lbAdd format["%1 (Gang Leader)",(_x getVariable["realname",name _x])];
+		_members lbAdd format["%1 " +(localize "STR_GNOTF_GangLeader"),(_x getVariable["realname",name _x])];
 		_members lbSetData [(lbSize _members)-1,str(_x)];
 	} else {
 		_members lbAdd format["%1",(_x getVariable["realname",name _x])];

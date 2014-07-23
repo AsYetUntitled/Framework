@@ -11,7 +11,7 @@ if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
 _numberOfDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
 if(_numberOfDoors == -1 OR _numberOfDoors == 0) exitWith {}; //MEH
 
-titleText ["Locking up house please wait...","PLAIN"];
+titleText [localize "STR_House_LockingUp","PLAIN"];
 sleep 3;
 
 for "_i" from 1 to _numberOfDoors do {
@@ -20,4 +20,4 @@ for "_i" from 1 to _numberOfDoors do {
 };
 
 _house setVariable["locked",true,true];
-titleText["House has been locked up.","PLAIN"];
+titleText[localize "STR_House_LockedUp","PLAIN"];

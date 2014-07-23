@@ -10,9 +10,9 @@ if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint "You are not looking at a house door."};
 if(isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then {
-	[[[1,2],"!!!!! SOMEONE IS BREAKING INTO THE FEDERAL RESERVE !!!!!!"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[[1,2],localize "STR_ISTR_Bolt_AlertFed"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 } else {
-	[[0,format["%1 was seen breaking into a house.",profileName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format[localize "STR_ISTR_Bolt_AlertHouse",profileName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
 
 _doors = 1;
@@ -28,13 +28,13 @@ for "_i" from 1 to _doors do {
 	_worldSpace = _building modelToWorld _selPos;
 		if(player distance _worldSpace < 5) exitWith {_door = _i;};
 };
-if(_door == 0) exitWith {hint "You are not near a door!"}; //Not near a door to be broken into.
-if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint "This door is already unlocked!"};
+if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor!"}; //Not near a door to be broken into.
+if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
-_title = "Cutting lock on door";
+_title = localize "STR_ISTR_Bolt_Process";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
@@ -75,7 +75,7 @@ while {true} do
 player playActionNow "stop";
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
-if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 life_boltcutter_uses = life_boltcutter_uses + 1;
 life_action_inUse = false;
 if(life_boltcutter_uses >= 5) then {

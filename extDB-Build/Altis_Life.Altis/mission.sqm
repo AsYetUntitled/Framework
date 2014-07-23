@@ -3199,13 +3199,13 @@ class Mission
 				class Item93
 				{
 					position[]={10246.57,5.3196239,11272.06};
-					azimut=-119.75726;
+					azimut=-119.757;
 					special="NONE";
 					id=190;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Sell Turtles"",life_fnc_sellTurtle];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Wong's Food Cart"",life_fnc_virt_menu,""wongs""];";
 				};
 				class Item94
 				{
@@ -3344,13 +3344,13 @@ class Mission
 				class Item106
 				{
 					position[]={13795.639,60.234467,6395.7607};
-					azimut=201.82683;
+					azimut=201.827;
 					special="NONE";
 					id=203;
 					side="CIV";
 					vehicle="C_man_p_fugitive_F";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Sell Gold Bars"",life_fnc_sellGoldBars];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Gold Buyer"",life_fnc_virt_menu,""gold""];";
 				};
 				class Item107
 				{
@@ -3366,24 +3366,24 @@ class Mission
 				class Item108
 				{
 					position[]={16555.859,1.8132056,15550.087};
-					azimut=-68.546669;
+					azimut=-68.5467;
 					special="NONE";
 					id=205;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Sell Turtles"",life_fnc_sellTurtle];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Wong's Food Cart"",life_fnc_virt_menu,""wongs""];";
 				};
 				class Item109
 				{
 					position[]={3308.0859,12.680939,14142.578};
-					azimut=-57.255611;
+					azimut=-57.2556;
 					special="NONE";
 					id=206;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Sell Turtles"",life_fnc_sellTurtle];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Wong's Food Cart"",life_fnc_virt_menu,""wongs""];";
 				};
 			};
 		};

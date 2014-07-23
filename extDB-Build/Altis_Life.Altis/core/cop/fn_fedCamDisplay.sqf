@@ -7,7 +7,7 @@
 _laptop = _this select 0;
 _mode = _this select 3;
 
-if(!isPiPEnabled) exitWith {hint "You need to enable Picture in Picture (PiP) through your video settings to use this!";};
+if(!isPiPEnabled) exitWith {hint localize "STR_Cop_EnablePiP";};
 if(isNil "life_fed_scam") then {
 	life_fed_scam = "camera" camCreate [0,0,0];
 	life_fed_scam camSetFov 0.5;

@@ -1,6 +1,6 @@
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description
 	Main gear handling functionality.
 */
@@ -28,7 +28,7 @@ if(_bool) then
 		{
 			if(_toUniform) exitWith {player addItemToUniform _item;};
 			if(_toVest) exitWith {player addItemToVest _item;};
-			
+
 			if(_ispack) then
 			{
 				player addItemToBackpack _item;
@@ -49,7 +49,7 @@ if(_bool) then
 				};
 			};
 		};
-		
+
 		case "CfgVehicles":
 		{
 			if(backpack player != "") then
@@ -64,23 +64,23 @@ if(_bool) then
 				{[_x,true,true,false,true] spawn life_fnc_handleItem; } foreach _items;
 			};
 		};
-		
+
 		case "CfgMagazines":
 		{
 			if(_toUniform) exitWith {player addItemToUniform _item;};
 			if(_toVest) exitWith {player addItemToVest _item;};
 			if(_ispack) exitWith {player addItemToBackpack _item;};
-			
+
 			player addMagazine _item;
 		};
-		
+
 		case "CfgWeapons":
 		{
 			//New addition
 			if(_toUniform) exitWith {player addItemToUniform _item;};
 			if(_toVest) exitWith {player addItemToVest _item;};
 			if(_ispack) exitWith {player addItemToBackpack _item;};
-			
+
 			if((_details select 4) in [1,2,4,5,4096]) then
 			{
 				if((_details select 4) == 4096) then
@@ -95,7 +95,7 @@ if(_bool) then
 					_isgun = true;
 				};
 			};
-			
+
 			if(_isgun) then
 			{
 				if(!_ispack && _override) exitWith {}; //It was in the vest/uniform, try to close to prevent it overriding stuff... (Actual weapon and not an item)
@@ -189,7 +189,7 @@ if(_bool) then
 											_items = uniformItems player;
 											removeUniform player;
 										};
-										
+
 										player addUniform _item;
 										if(!isNil "_items") then {
 											{player addItemToUniform _x} foreach _items;
@@ -200,7 +200,7 @@ if(_bool) then
 										_items = uniformItems player;
 										removeUniform player;
 									};
-									
+
 									if(!(player isUniformAllowed _item)) then {
 										player forceAddUniform _item;
 									} else {
@@ -238,9 +238,9 @@ if(_bool) then
 										_items = vestItems player;
 										removeVest player;
 									};
-									
+
 									player addVest _item;
-									
+
 									if(!isNil {_items}) then
 									{
 										{[_x,true,false,false,true] spawn life_fnc_handleItem;} foreach _items;
@@ -249,7 +249,7 @@ if(_bool) then
 							};
 						};
 					};
-					
+
 					case 201:
 					{
 						if(_ispack) then
@@ -284,7 +284,7 @@ if(_bool) then
 										if(_wepItems select 2 != "") then {_slotTaken = true;};
 
 										if(_slotTaken) then {
-											_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
+											_action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
 											if(_action) then {
 												switch(_type) do {
 													case 1: {player addPrimaryWeaponItem _item;};
@@ -307,7 +307,7 @@ if(_bool) then
 							};
 						};
 					};
-					
+
 					case 301:
 					{
 						if(_ispack) then
@@ -318,7 +318,7 @@ if(_bool) then
 						{
 							private["_type"];
 							_type = [_item,301] call life_fnc_accType;
-							
+
 							if(_ongun) then
 							{ 
 								switch (_type) do
@@ -343,7 +343,7 @@ if(_bool) then
 										if(_wepItems select 1 != "") then {_slotTaken = true;};
 
 										if(_slotTaken) then {
-											_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
+											_action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
 											if(_action) then {
 												switch(_type) do {
 													case 1: {player addPrimaryWeaponItem _item;};
@@ -366,7 +366,7 @@ if(_bool) then
 							};
 						};
 					};
-					
+
 					case 101:
 					{
 						if(_ispack) then
@@ -377,7 +377,7 @@ if(_bool) then
 						{
 							private["_type"];
 							_type = [_item,101] call life_fnc_accType;
-							
+
 							if(_ongun) then
 							{
 								switch (_type) do
@@ -402,7 +402,7 @@ if(_bool) then
 										if(_wepItems select 0 != "") then {_slotTaken = true;};
 
 										if(_slotTaken) then {
-											_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
+											_action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
 											if(_action) then {
 												switch(_type) do {
 													case 1: {player addPrimaryWeaponItem _item;};
@@ -425,7 +425,7 @@ if(_bool) then
 							};
 						};
 					};
-					
+
 					case 621:
 					{
 						if(_ispack) then
@@ -445,7 +445,7 @@ if(_bool) then
 							};
 						};
 					};
-					
+
 					case 616:
 					{
 						if(_ispack) then
@@ -465,7 +465,7 @@ if(_bool) then
 							};
 						};
 					};
-					
+
 					default 
 					{ 
 						if(_ispack) then 
@@ -490,12 +490,12 @@ if(_bool) then
 		{
 			removeBackpack player;
 		};
-		
+
 		case "CfgMagazines":
 		{
 			player removeMagazine _item;
 		};
-		
+
 		case "CfgGlasses":
 		{
 			if(_item == goggles player) then
@@ -507,7 +507,7 @@ if(_bool) then
 				player removeItem _item;
 			};
 		};
-		
+
 		case "CfgWeapons":
 		{
 			if((_details select 4) in [1,2,4,5,4096]) then
@@ -524,7 +524,7 @@ if(_bool) then
 					_isgun = true;
 				};
 			};
-			
+
 			if(_isgun) then
 			{
 				switch(true) do
@@ -535,7 +535,7 @@ if(_bool) then
 					case (_item in assignedItems player) : {_ispack = false;};
 					default {_ispack = true;};
 				};
-				
+
 				if(_item == "MineDetector") then
 				{
 					player removeItem _item;
@@ -562,7 +562,7 @@ if(_bool) then
 									(uniformContainer player) addWeaponCargo [ _x,_numVestWeps];
 								}forEach _tWeapons;
 							};
-							
+
 							case (_this in (vestItems player)): {
 								_tWeapons = (getWeaponCargo (vestContainer player)) select 0;
 								_tWeaponCount = (getWeaponCargo (vestContainer  player)) select 1;
@@ -577,7 +577,7 @@ if(_bool) then
 									(vestContainer player) addWeaponCargo [ _x,_numVestWeps];
 								}forEach _tWeapons;
 							};
-							
+
 							case (_this in (backpackItems player)): {
 								_tWeapons = (getWeaponCargo (backpackContainer player)) select 0;
 								_tWeaponCount = (getWeaponCargo (backpackContainer  player)) select 1;
@@ -594,7 +594,7 @@ if(_bool) then
 							};
 						};
 					};
-								
+
 					if(_ispack) then
 					{
 						_item call _tmpfunction;

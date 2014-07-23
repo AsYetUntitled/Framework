@@ -10,15 +10,15 @@ if(dialog) exitWith {};
 _vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _vehicle OR !(_vehicle isKindOf "Car" OR _vehicle isKindOf "Air" OR _vehicle isKindOf "Ship" OR _vehicle isKindOf "House_F")) exitWith {}; //Either a null or invalid vehicle type.
 
-if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint "This vehicle's trunk is in use, only one person can use it at a time."};
+if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint localize "STR_MISC_VehInvUse"};
 _vehicle setVariable["trunk_in_use",true,true];
-if(!createDialog "TrunkMenu") exitWith {"Failed Creating Dialog";}; //Couldn't create the menu?
+if(!createDialog "TrunkMenu") exitWith {hint localize "STR_MISC_DialogError";}; //Couldn't create the menu?
 disableSerialization;
 
 if(_vehicle isKindOf "House_F") then {
-	ctrlSetText[3501,format["House Storage - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+	ctrlSetText[3501,format[(localize "STR_MISC_HouseStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 } else {
-	ctrlSetText[3501,format["Vehicle Trunk - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+	ctrlSetText[3501,format[(localize "STR_MISC_VehStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 };
 
 if(_vehicle isKindOf "House_F") then {
@@ -30,10 +30,10 @@ if(_vehicle isKindOf "House_F") then {
 	_veh_data = [_vehicle] call life_fnc_vehicleWeight;
 };
 
-if(_vehicle isKindOf "House_F" && {count (_vehicle getVariable ["containers",[]]) == 0}) exitWith {hint "You need to install storage containers to have storing capabilities!"; closeDialog 0; _vehicle setVariable["trunk_in_use",false,true];};
-if(_veh_data select 0 == -1 && {!(_vehicle isKindOf "House_F")}) exitWith {closeDialog 0; _vehicle setVariable["trunk_in_use",false,true]; hint "This vehicle isn't capable of storing virtual items.";};
+if(_vehicle isKindOf "House_F" && {count (_vehicle getVariable ["containers",[]]) == 0}) exitWith {hint localize "STR_MISC_NoStorageWarn"; closeDialog 0; _vehicle setVariable["trunk_in_use",false,true];};
+if(_veh_data select 0 == -1 && {!(_vehicle isKindOf "House_F")}) exitWith {closeDialog 0; _vehicle setVariable["trunk_in_use",false,true]; hint localize "STR_MISC_NoStorageVeh";};
 
-ctrlSetText[3504,format["Weight: %1/%2",_veh_data select 1,_veh_data select 0]];
+ctrlSetText[3504,format[(localize "STR_MISC_Weight")+ " %1/%2",_veh_data select 1,_veh_data select 0]];
 [_vehicle] call life_fnc_vehInventory;
 life_trunk_vehicle = _vehicle;
 

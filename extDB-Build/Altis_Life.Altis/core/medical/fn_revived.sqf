@@ -11,7 +11,7 @@ _oldGear = [life_corpse] call life_fnc_fetchDeadGear;
 [_oldGear] spawn life_fnc_loadDeadGear;
 [[life_corpse],"life_fnc_corpse",nil,FALSE] spawn life_fnc_MP;
 _dir = getDir life_corpse;
-hint format["%1 has revived you and a fee of $%2 was taken from your bank account for their services.",_medic,[(call life_revive_fee)] call life_fnc_numberText];
+hint format[localize "STR_Medic_RevivePay",_medic,[(call life_revive_fee)] call life_fnc_numberText];
 
 closeDialog 0;
 life_deathCamera cameraEffect ["TERMINATE","BACK"];

@@ -65,15 +65,15 @@ switch (true) do
 	case (_esc) :
 	{
 		life_is_arrested = false;
-		hint "You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.";
-		[[0,format["%1 has escaped from jail!",profileName]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		hint localize "STR_Jail_EscapeSelf";
+		[[0,format[localize "STR_Jail_EscapeNOTF",profileName]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		[[getPlayerUID player,profileName,"901"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	};
 	
 	case (alive player && !_esc && !_bail) :
 	{
 		life_is_arrested = false;
-		hint "You have served your time in jail and have been released.";
+		hint localize "STR_Jail_Released";
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
 		[] call SOCK_fnc_updateRequest;

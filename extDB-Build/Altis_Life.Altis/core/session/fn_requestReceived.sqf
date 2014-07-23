@@ -10,9 +10,9 @@
 */
 life_session_tries = life_session_tries + 1;
 if(life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
-if(life_session_tries > 3) exitWith {cutText["There was an error in trying to setup your client.","BLACK FADED"]; 0 cutFadeOut 999999999;};
+if(life_session_tries > 3) exitWith {cutText[localize "STR_Session_Error","BLACK FADED"]; 0 cutFadeOut 999999999;};
 
-0 cutText ["Received request from server... Validating...","BLACK FADED"];
+0 cutText [localize "STR_Session_Received","BLACK FADED"];
 0 cutFadeOut 9999999;
 
 //Error handling and  junk..
