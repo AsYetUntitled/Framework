@@ -554,6 +554,23 @@
 			<German>Der Server versucht, das Fahrzeug zu speichern ...</German>	
 		</Key>
 	</Package>
+	<Package name="Key_Chain">
+		<Key ID="STR_Keys_Title">
+			<Original>Key Chain - Current List of Keys</Original>
+			<English>Key Chain - Current List of Keys</English>
+			<German>Needs Translation</German>
+		</Key>
+		<Key ID="STR_Keys_DropKey">
+			<Original>Drop Key</Original>
+			<English>Drop Key</English>
+			<German>Needs Translation</German>
+		</Key>
+		<Key ID="STR_Keys_GiveKey">
+			<Original>Give Key</Original>
+			<English>Give Key</English>
+			<German>Needs Translation</German>
+		</Key>
+	</Package>
 	<Package name="Player_Menu">
 		<Key ID="STR_PM_Title">
 			<Original>Player Menu</Original>
