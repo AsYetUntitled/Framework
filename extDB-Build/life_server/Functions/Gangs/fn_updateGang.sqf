@@ -46,7 +46,7 @@ switch (_mode) do {
 			};
 		};
 		_membersFinal = [(_group getVariable "gang_members")] call DB_fnc_mresArray;
-		_query = format["UPDATE gangs SET members='%1' WHERE id='%2'",_members,_groupID];
+		_query = format["UPDATE gangs SET members='%1' WHERE id='%2'",_membersFinal,_groupID];
 	};
 };
 
