@@ -172,7 +172,7 @@
 		<Key ID="STR_CELL_EMSRequest">
 			<Original>Request EMS</Original>
 			<English>Request EMS</English>
-			<German>EMS Anfordern</German>>
+			<German>EMS Anfordern</German>
 		</Key>
 	</Package>
 	<Package name="Chop_Shop">
