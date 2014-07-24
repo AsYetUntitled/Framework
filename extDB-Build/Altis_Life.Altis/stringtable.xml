@@ -1419,12 +1419,6 @@
 			<German>Sie haben nicht genug Platz für das Item.</German>
 			<French>Vous n'avez pas assez de place.</French>
 		</Key>
-		<Key ID="STR_NOTF_ProcessWOLicense">
- 			<Original>You need $%1 to process without a license!</Original>
-			<English>You need $%1 to process without a license!</English>
-			<German>Sie müssen $%1 haben um ohne eine Lizenz zu verarbeiten!</German>
-			<French>Vous devez payer $%1 pour traiter sans licence!</French>
- 		</Key>
  		<Key ID="STR_NOTF_RapidAction">
  			<Original>You can't rapidly use action keys!</Original>
  			<English>You can't rapidly use action keys!</English>
