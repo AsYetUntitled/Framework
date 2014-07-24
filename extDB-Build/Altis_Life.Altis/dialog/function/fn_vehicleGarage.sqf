@@ -13,4 +13,4 @@ life_garage_type = _type;
 [[getPlayerUID player,playerSide,_type,player],"TON_fnc_getVehicles",false,false] spawn life_fnc_MP;
 createDialog "Life_impound_menu";
 disableSerialization;
-ctrlSetText[2802,"Fetching Vehicles...."];
+ctrlSetText[2802,(localize "STR_ANOTF_QueryGarage")];

@@ -7,7 +7,7 @@
 	Buy a virtual item from the store.
 */
 private["_type","_price","_amount","_diff","_name","_hideout"];
-if((lbCurSel 2401) == -1) exitWith {hint "STR_Shop_Virt_Nothing"};
+if((lbCurSel 2401) == -1) exitWith {hint localize "STR_Shop_Virt_Nothing"};
 _type = lbData[2401,(lbCurSel 2401)];
 _price = lbValue[2401,(lbCurSel 2401)];
 _amount = ctrlText 2404;
@@ -17,7 +17,7 @@ _amount = parseNumber(_amount);
 if(_diff <= 0) exitWith {hint localize "STR_NOTF_NoSpace"};
 _amount = _diff;
 _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
-if((_price * _amount) > life_cash && {!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") <= _price * _amount}}) exitWith {hint "STR_NOTF_NotEnoughMoney"};
+if((_price * _amount) > life_cash && {!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") <= _price * _amount}}) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
 
 _name = [([_type,0] call life_fnc_varHandle)] call life_fnc_varToStr;
 

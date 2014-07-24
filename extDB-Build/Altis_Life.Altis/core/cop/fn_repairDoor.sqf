@@ -21,14 +21,14 @@ for "_i" from 1 to _doors do {
 	_worldSpace = _building modelToWorld _selPos;
 		if(player distance _worldSpace < 5) exitWith {_door = _i;};
 };
-if(_door == 0) exitWith {hint "You are not near a door!"}; //Not near a door to be broken into.
-if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 1) exitWith {hint "This door is already locked!"};
+if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
+if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 1) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 life_action_inUse = true;
 
 closeDialog 0;
 //Setup the progress bar
 disableSerialization;
-_title = "Repairing Door";
+_title = localize "STR_Cop_RepairingDoor";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
@@ -65,7 +65,7 @@ while {true} do
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player) exitWith {life_action_inUse = false;};
-if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 life_action_inUse = false;
 _building animate [format["door_%1_rot",_door],0];
 _building setVariable[format["bis_disabled_Door_%1",_door],1,true]; //Unlock the door.

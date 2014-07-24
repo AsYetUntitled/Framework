@@ -3,13 +3,13 @@
 */
 private["_vault"];
 _vault = _this select 0;
-if(!(_vault getVariable["safe_open",false])) exitWith {hint "The vault is already locked?"};
+if(!(_vault getVariable["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
 
 life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
-_title = "Repairing vault...";
+_title = localize "STR_Cop_RepairVault";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
@@ -42,9 +42,9 @@ while {true} do
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player) exitWith {life_action_inUse = false;};
-if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
 life_action_inUse = false;
 
 _vault setVariable["safe_open",false,true];
-hint "The vault is now fixed and re-secured.";
+hint localize "STR_Cop_VaultRepaired";
