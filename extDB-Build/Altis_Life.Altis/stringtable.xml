@@ -136,8 +136,8 @@
 	<Package name="Cell_Phone">
 		<Key ID="STR_CELL_Title">
 			<Original>Altis Mobile</Original>
+			<English>Altis Mobile</English>
 			<German>Altis Mobilfunk</German>
-			<German>Überweisen</German>
 		</Key>
 		<Key ID="STR_CELL_TextToSend">
 			<Original>Message To Send:</Original>
