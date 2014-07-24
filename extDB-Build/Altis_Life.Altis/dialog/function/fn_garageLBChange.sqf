@@ -23,15 +23,15 @@ _sellPrice = [_className,__GETC__(life_garage_sell)] call fnc_index;
 _retrievePrice = if(_retrievePrice == -1) then {1000} else {(__GETC__(life_garage_prices) select _retrievePrice) select 1;};
 _sellPrice = if(_sellPrice == -1) then {1000} else {(__GETC__(life_garage_sell) select _sellPrice) select 1;};
 
-(getControl(2800,2803)) ctrlSetStructuredText parseText format["
-	Retrieval Price: <t color='#8cff9b'>$%1</t><br/>
-	Sell Price: <t color='#8cff9b'>$%2</t><br/>
-	Color: %8<br/>
-	Max Speed: %3 km/h<br/>
-	Horse Power: %4<br/>
-	Passenger Seats: %5<br/>
-	Trunk Capacity: %6<br/>
-	Fuel Capacity: %7
+(getControl(2800,2803)) ctrlSetStructuredText parseText format[
+	(localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>
+	" +(localize "STR_Shop_Veh_UI_SellP")+ " <t color='#8cff9b'>$%2</t><br/>
+	" +(localize "STR_Shop_Veh_UI_Color")+ " %8<br/>
+	" +(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>
+	" +(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>
+	" +(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>
+	" +(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>
+	" +(localize "STR_Shop_Veh_UI_Fuel")+ " %7
 	",
 [_retrievePrice] call life_fnc_numberText,
 [_sellPrice] call life_fnc_numberText,

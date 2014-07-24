@@ -120,7 +120,7 @@
 			<French>Le joueur ne semble pas exister?</French>
 		</Key>
 	</Package>
-	<Package name="ATM_Menu">
+	<Package name="ATM_Strings">
 		<Key ID="STR_ATM_Title">
 			<Original>Bank Account Management</Original>
 			<English>Bank Account Management</English>
@@ -157,6 +157,54 @@
 			<German>Die eingegebene Zahl ist keine richtige Zahl</German>
 			<French>Vous devez entrer un nombre.</French>
 		</Key>
+		<Key ID="STR_ATM_DepositMSG">
+ 			<Original>You have deposited $%1 into your bank account</Original>
+ 			<English>You have deposited $%1 into your bank account</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_NoneSelected">
+ 			<Original>You need to select someone to transfer to</Original>
+ 			<English>You need to select someone to transfer to</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_DoesntExist">
+ 			<Original>The player selected doesn't seem to exist?</Original>
+ 			<English>The player selected doesn't seem to exist?</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_TransferMax">
+ 			<Original>You can't transfer more then $999,999</Original>
+ 			<English>You can't transfer more then $999,999</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_NotEnoughFunds">
+ 			<Original>You don't have that much in your bank account!</Original>
+ 			<English>You don't have that much in your bank account!</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_SentMoneyFail">
+ 			<Original>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</Original>
+ 			<English>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_SentMoneySuccess">
+ 			<Original>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</Original>
+ 			<English>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_WithdrawMax">
+ 			<Original>You can't withdraw more then $999,999</Original>
+ 			<English>You can't withdraw more then $999,999</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_WithdrawMin">
+ 			<Original>You can't withdraw less then $100</Original>
+ 			<English>You can't withdraw less then $100</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_WithdrawSuccess">
+ 			<Original>You have withdrawn $%1 from your bank account</Original>
+ 			<English>You have withdrawn $%1 from your bank account</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_NotEnoughCash">
+ 			<Original>You do not have that much cash on you.</Original>
+ 			<English>You do not have that much cash on you.</English>
+ 		</Key>
+ 		<Key ID="STR_ATM_DepositGang">
+ 			<Original>You have deposited $%1 into your gangs bank account</Original>
+ 			<English>You have deposited $%1 into your gangs bank account</English>
+ 		</Key>
 	</Package>
 	<Package name="Cell_Phone">
 		<Key ID="STR_CELL_Title">
@@ -563,7 +611,7 @@
 			<French>(Gang Leader)</French>
 		</Key>
 	</Package>
-	<Package name="Garage_Menu">
+	<Package name="Garage_Strings">
 		<Key ID="STR_Garage_Title">
 			<Original>Vehicle Garage</Original>
 			<English>Vehicle Garage</English>
@@ -659,6 +707,10 @@
 			<English>The server is trying to store the vehicle...</English>
 			<German>Der Server versucht, das Fahrzeug zu speichern ...</German>	
 			<French>Le serveur tente de stocker le véhicule ...</French>
+		</Key>
+		<Key ID="STR_Garage_Selection_Error">
+			<Original>The selection had a error...</Original>
+			<English>The selection had a error...</English>
 		</Key>
 	</Package>
 	<Package name="Key_Chain">
@@ -1360,7 +1412,15 @@
  			<English>You can't rapidly use action keys!</English>
  			<German>Die Aktionstaste kann nicht so schnell hintereinander genutzt werden!</German>
 			<French>Vous ne pouvez pas utiliser rapidement les touches d'action!</French>
- 		</Key>	
+ 		</Key>
+ 		<Key ID="STR_NOTF_NotEnoughFunds">
+ 			<Original>You do not have enough funds in your bank account</Original>
+ 			<English>You do not have enough funds in your bank account</English>
+ 		</Key>
+ 		<Key ID="STR_NOTF_CouldntAdd">
+ 			<Original>Couldn't add it to your inventory.</Original>
+ 			<English>Couldn't add it to your inventory.</English>
+ 		</Key>
 	</Package>
 	<Package name="Jail_Strings">
 		<Key ID="STR_Jail_Warn">
@@ -1448,6 +1508,30 @@
 			<English>You stole $%1</English>
 			<German>Du hast $%1 gestohlen.</German>
 			<French>Vous avez volé $%1</French>
+		</Key>
+		<Key ID="STR_Civ_VaultEmpty">
+			<Original>The safe is empty!</Original>
+			<English>The safe is empty!</English>
+		</Key>
+		<Key ID="STR_Civ_VaultInUse">
+			<Original>Someone is already accessing the safe..</Original>
+			<English>Someone is already accessing the safe..</English>
+		</Key>
+		<Key ID="STR_Civ_NotEnoughCops">
+			<Original>There needs to be 5 or more cops online to continue.</Original>
+			<English>There needs to be 5 or more cops online to continue.</English>
+		</Key>
+		<Key ID="STR_Civ_SafeInv">
+			<Original>Safe Inventory</Original>
+			<English>Safe Inventory</English>
+		</Key>
+		<Key ID="STR_Civ_SelectItem">
+			<Original>You need to select an item!</Original>
+			<English>You need to select an item!</English>
+		</Key>
+		<Key ID="STR_Civ_IsntEnoughGold">
+			<Original>There isn't %1 gold bar(s) in the safe!</Original>
+			<English>There isn't %1 gold bar(s) in the safe!</English>
 		</Key>
 	</Package>
 	<Package name="Cop_Strings">
@@ -1612,6 +1696,34 @@
 			<English>$%1 from the Federal Reserve robbery was returned from the robber being killed.</English>
 			<German>$%1 wurden vom Bankraub zurückgegeben weil die Räuber gestorben sind.</German>
 			<French>$%1 du vol de la Réserve fédérale qui est revenu de voleur d'être tué.</French>
+		</Key>
+		<Key ID="STR_Cop_RepairVault">
+			<Original>Repairing vault...</Original>
+			<English>Repairing vault...</English>
+		</Key>
+		<Key ID="STR_Cop_VaultRepaired">
+			<Original>The vault is now fixed and re-secured.</Original>
+			<English>The vault is now fixed and re-secured.</English>
+		</Key>
+		<Key ID="STR_Cop_VaultLocked">
+			<Original>The vault is already locked?</Original>
+			<English>The vault is already locked?</English>
+		</Key>
+		<Key ID="STR_Cop_VaultUnder1">
+			<Original>You can't enter anything below 1!</Original>
+			<English>You can't enter anything below 1!</English>
+		</Key>
+		<Key ID="STR_Cop_OnlyGold">
+			<Original>You can't store anything but gold bars in the safe.</Original>
+			<English>You can't store anything but gold bars in the safe.</English>
+		</Key>
+		<Key ID="STR_Cop_NotEnoughGold">
+			<Original>You don't have %1 gold bar(s)</Original>
+			<English>You don't have %1 gold bar(s)</English>
+		</Key>
+		<Key ID="STR_Cop_CantRemove">
+			<Original>Couldn't remove the item(s) from your inventory to put in the safe.</Original>
+			<English>Couldn't remove the item(s) from your inventory to put in the safe.</English>
 		</Key>
 	</Package>
 	<Package name="MISC_Strings">
@@ -3306,6 +3418,18 @@
 			<English>Armor Rating:</English>
 			<German>Munition:</German>
 			<French>Blindage:</French>
+		</Key>
+		<Key ID="STR_Shop_Veh_UI_RetrievalP">
+			<Original>Retrieval Price:</Original>
+			<English>Retrieval Price:</English>
+		</Key>
+		<Key ID="STR_Shop_Veh_UI_SellP">
+			<Original>Sell Price:</Original>
+			<English>Sell Price:</English>
+		</Key>
+		<Key ID="STR_Shop_Veh_UI_Color">
+			<Original>Color:</Original>
+			<English>Color:</English>
 		</Key>
 		<Key ID="STR_Shop_Veh_NotAllowed">
 			<Original>You are not allowed to use this shop!</Original>

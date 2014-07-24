@@ -12,11 +12,11 @@ _value = parseNumber(ctrlText 2702);
 if(_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};
 if(_value < 0) exitWith {};
 if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_AIM_notnumeric"};
-if(_value > life_cash) exitWith {hint "You do not have that much cash on you."};
+if(_value > life_cash) exitWith {hint localize "STR_ATM_NotEnoughCash"};
 
 life_cash = life_cash - _value;
 life_atmcash = life_atmcash + _value;
 
-hint format["You have deposited $%1 into your bank account",[_value] call life_fnc_numberText];
+hint format[localize "STR_ATM_DepositMSG",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [] call SOCK_fnc_updateRequest; //Silent Sync
