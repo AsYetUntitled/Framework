@@ -160,62 +160,74 @@
 		<Key ID="STR_ATM_DepositMSG">
  			<Original>You have deposited $%1 into your bank account</Original>
  			<English>You have deposited $%1 into your bank account</English>
+			<German>Du hast $%1 auf dein Bankkonto überwiesen</German>
  			<French>Vous avez déposé $%1 dans votre compte bancaire</French>
  		</Key>
  		<Key ID="STR_ATM_NoneSelected">
  			<Original>You need to select someone to transfer to</Original>
  			<English>You need to select someone to transfer to</English>
+			<German>Du hast niemanden ausgewählt</German>
  			<French>Sélectionnez une personne pour le transfert</French>
 
  		</Key>
  		<Key ID="STR_ATM_DoesntExist">
  			<Original>The player selected doesn't seem to exist?</Original>
  			<English>The player selected doesn't seem to exist?</English>
+			<German>Der Spieler scheint nicht zu existieren</German>
  			<French>La personne sélectionnée ne semble plus exister</French>
  		</Key>
  		<Key ID="STR_ATM_TransferMax">
  			<Original>You can't transfer more then $999,999</Original>
  			<English>You can't transfer more then $999,999</English>
+			<German>Du kannst nicht mehr alls $999,999 überweisen</German>
  			<French>Vous ne pouvez pas transférer plus de $999,999</French>
  		</Key>
  		<Key ID="STR_ATM_NotEnoughFunds">
  			<Original>You don't have that much in your bank account!</Original>
  			<English>You don't have that much in your bank account!</English>
+			<German>Du hast nicht soviel auf deinem Bankkonto</German>
  			<French>Vous n'avez pas autant dans votre compte bancaire</French>
  		</Key>
  		<Key ID="STR_ATM_SentMoneyFail">
  			<Original>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</Original>
  			<English>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</English>
+			<German>Du hast nicht so viel Geld auf deinem Konto, es kostet $%2 um $%1 zu überweisen </German>
  			<French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxe</French>
  		</Key>
  		<Key ID="STR_ATM_SentMoneySuccess">
  			<Original>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</Original>
  			<English>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</English>
+			<German>Du hast %2  $%1 überwisen \n\nA es wurde eine Gebühr von $%3 berechnet</German>
  			<French>Vous avez transférer $%1 à %2.\n\nA La taxe de $%3 vous à été prélevée pendant le transfert.</French>
  		</Key>
  		<Key ID="STR_ATM_WithdrawMax">
  			<Original>You can't withdraw more then $999,999</Original>
  			<English>You can't withdraw more then $999,999</English>
+			<German>Du kannst nicht mehr als $999,999 Abheben</German>
  			<French>Vous ne pouvez pas retirer plus de $999,999</French>
  		</Key>
  		<Key ID="STR_ATM_WithdrawMin">
  			<Original>You can't withdraw less then $100</Original>
  			<English>You can't withdraw less then $100</English>
+			<German>Du kannst nicht weniger als $100 Abheben</German>
  			<French>Vous ne pouvez pas retirer moins de $100</French>
  		</Key>
  		<Key ID="STR_ATM_WithdrawSuccess">
  			<Original>You have withdrawn $%1 from your bank account</Original>
  			<English>You have withdrawn $%1 from your bank account</English>
+			<German>Du hast $%1 von deinem Bankkonto abgehoben</German>
  			<French>Vous avez retiré $%1 de votre compte en banque</French>
  		</Key>
  		<Key ID="STR_ATM_NotEnoughCash">
  			<Original>You do not have that much cash on you.</Original>
  			<English>You do not have that much cash on you.</English>
+			<German>Du hast nicht so viel Geld</German>
  			<French>Vous n'avez pas autant d'agent sur vous.</French>
  		</Key>
  		<Key ID="STR_ATM_DepositGang">
  			<Original>You have deposited $%1 into your gangs bank account</Original>
  			<English>You have deposited $%1 into your gangs bank account</English>
+			<German>Du hast $%1 auf dein Gang Konto überwiesen</German>
  			<French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
  		</Key>
 	</Package>
@@ -428,13 +440,13 @@
 		<Key ID="STR_GNOTF_CaptureSuccess">
 			<Original>%1 and his gang: %2 - have taken control of a local hideout!</Original>
 			<English>%1 and his gang: %2 - have taken control of a local hideout!</English>
-			<German>%1 und seine Bande: 2% - haben die Kontrolle über ein lokales Versteck übernommen!</German>
-			<French>%1 et sa bande: %2 ont pris le controle de la cachette !</French>
+			<German>%1 und seine Gang: 2% - haben die Kontrolle über ein lokales Versteck übernommen!</German>
+			<French>%1 et sa gang: %2 ont pris le controle de la cachette !</French>
 		</Key>
 		<Key ID="STR_GNOTF_Over32">
 			<Original>You can't have a gang name longer then 32 characters.</Original>
 			<English>You can't have a gang name longer then 32 characters.</English>
-			<German>Sie können keinen Bande Name haben der länger als 32 Zeichen ist.</German>
+			<German>Sie können keinen Gang Name haben der länger als 32 Zeichen ist.</German>
 			<French>Vous ne pouvez pas avoir un nom de gang de plus de 32 caractères.</French>
 		</Key>
 		<Key ID="STR_GNOTF_IncorrectChar">
@@ -446,19 +458,19 @@
 		<Key ID="STR_GNOTF_NotEnoughMoney">
 			<Original>You do not have enough money in your bank account.\n\nYou lack: $%1</Original>
 			<English>You do not have enough money in your bank account.\n\nYou lack: $%1</English>
-			<German>Sie haben nicht genug Geld auf Ihrem Bankkonto.\n\nSie es fehlen: $.% 1</German>
+			<German>Sie haben nicht genug Geld auf Ihrem Bankkonto.\n\nDir fehlen: $%1</German>
 			<French>Vous n'avez pas assez d'argent dans votre compte bancaire.\n\nVous manquez de: $%1</French>
 		</Key>
 		<Key ID="STR_GNOTF_CreateSuccess">
 			<Original>You have created the gang %1 for $%2</Original>
 			<English>You have created the gang %1 for $%2</English>
-			<German>Sie haben die Bande %1 für %2$ erstellt</German>
+			<German>Sie haben die Gang %1 für %2$ erstellt</German>
 			<French>Vous avez créé la bande %1 pour $%2</French>
 		</Key>
 		<Key ID="STR_GNOTF_DisbandWarn">
 			<Original>You are about to disband the gang, by disbanding the gang it will be removed from the database and the group will be dropped. &lt;br/&gt;&lt;br/&gt;Are you sure you want to disband the group? You will not be refunded the price for creating it.</Original>
 			<English>You are about to disband the gang, by disbanding the gang it will be removed from the database and the group will be dropped. &lt;br/&gt;&lt;br/&gt;Are you sure you want to disband the group? You will not be refunded the price for creating it.</English>
-			<German>Sie sind dabei, die Gang aufzulösen, durch Auflösung der Gang wird sie aus der Datenbank entfernt. &lt;br/&gt;&lt;br/&gt;Sind Sie sicher, dass Sie die Gruppe auflösen wollen? Sie erhalten den Preis für die Erstellung nicht zurück.</German>
+			<German>Sie sind dabei, die Gang aufzulösen, durch Auflösung der Gang wird sie aus der Datenbank entfernt. &lt;br/&gt;&lt;br/&gt;Sind Sie sicher, dass Sie die Gang auflösen wollen? Sie erhalten den Preis für die Erstellung nicht zurück.</German>
 			<French>Vous vous apprêtez à dissoudre le gang, en démantelant le gang, il sera supprimé de la base de données et le groupe sera supprimé. &lt;br/&gt;&lt;br/&gt;Etes-vous sûr de vouloir dissoudre le groupe? Vous ne serez pas remboursé le prix de sa création</French>
 		</Key>
 		<Key ID="STR_GNOTF_DisbandGangPro">
@@ -482,19 +494,19 @@
 		<Key ID="STR_GNOTF_InviteMSG">
 			<Original>%1 has invited you to a gang called %2&lt;br/&gt;If you accept the invitation you will be a part of their gang and will have access to the gang funds and controlled gang hideouts.</Original>
 			<English>%1 has invited you to a gang called %2&lt;br/&gt;If you accept the invitation you will be a part of their gang and will have access to the gang funds and controlled gang hideouts.</English>
-			<German>%1 hat Sie zu einer Bande namens %2 eingeladen &lt;br/&gt; Wenn Sie die Einladung annehmen Sie sie ein Teil der Gang</German>
+			<German>%1 hat Sie zu einer Gang namens %2 eingeladen &lt;br/&gt; Wenn Sie die Einladung annehmen Sie sie ein Teil der Gang</German>
 			<French>%1 vous a invité à un gang appelé %2&lt;br/&gt;Si vous acceptez l'invitation que vous serez une partie de leur gang et aurez accès à des fonds de gangs et des cachettes de gangs contrôlés.</French>
 		</Key>
 		<Key ID="STR_GNOTF_InvitePlayerMSG">
 			<Original>You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.</Original>
 			<English>You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.</English>
-			<German>Sie sind dabei %1 in Ihre Gang einzuladen, wenn sie akzeptieren hat er Zugang zu den Mitteln der Bande.</German>
+			<German>Sie sind dabei %1 in Ihre Gang einzuladen, wenn sie akzeptieren hat er Zugang zu den Mitteln der Gang.</German>
 			<French>Vous êtes sur le point d'inviter %1 à votre gang, s'ils acceptent l'invitation, ils auront accès à des fonds du gang.</French>
 		</Key>
 		<Key ID="STR_GNOTF_SelectPerson">
 			<Original>You need to select a person to invite!</Original>
 			<English>You need to select a person to invite!</English>
-			<German>Du musst ein Spieler auswählen!</German>
+			<German>Du musst einen Spieler auswählen!</German>
 			<French>Vous devez sélectionner une personne à inviter!</French>
 		</Key>
 		<Key ID="STR_GNOTF_InviteSent">
@@ -518,7 +530,7 @@
 		<Key ID="STR_GNOTF_MaxSlot">
 			<Original>Your gang has reached its maximum allowed slots, please upgrade your gangs slot limit.</Original>
 			<English>Your gang has reached its maximum allowed slots, please upgrade your gangs slot limit.</English>
-			<German>Ihre Gang hat die maximale Anzahl an Plätzen erreicht, bitte upgrade dein limit.</German>
+			<German>Ihre Gang hat die maximale Anzahl an Plätzen erreicht, Update sie jetzt.</German>
 			<French>Votre gang à atteint le nombre de membre maximum, veuillez augmenter cette limite.</French>
 		</Key>
 		<Key ID="STR_GNOTF_SelectKick">
@@ -536,7 +548,7 @@
 		<Key ID="STR_GNOTF_TransferMSG">
 			<Original>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
 			<English>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</English>
-			<German>Sie sind dabei,die Führung über %1 zu übertragen &lt;br/&gt;Durch die Übertragung der Führung werden Sie keine Kontrolle über die Gang mehr.</German>
+			<German>Sie sind dabei,die Führung über %1 zu übertragen &lt;br/&gt;Durch die Übertragung der Gang haben sie keine Kontrolle über die Gang mehr.</German>
 			<French>Vous allez transférer le commandement à %1&lt;br/&gt;En transférant le commandement, vous ne serez plus le chef du gang, sauf si le commandement est transféré de nouveau.</French>
 		</Key>
 		<Key ID="STR_GNOTF_TransferCancel">
@@ -548,7 +560,7 @@
 		<Key ID="STR_GNOTF_TransferSelf">
 			<Original>You are already the leader!</Original>
 			<English>You are already the leader!</English>
-			<German>Sie sind bereits der Führer!</German>
+			<German>Sie sind bereits der Anführer!</German>
 			<French>Vous êtes déjà leader!</French>
 		</Key>
 		<Key ID="STR_GNOTF_TransferSelect">
@@ -560,7 +572,7 @@
 		<Key ID="STR_GNOTF_MaxMemberMSG">
 			<Original>You are about to upgrade the maximum members allowed for your gang.</Original>
 			<English>You are about to upgrade the maximum members allowed for your gang.</English>
-			<German>Sie sind dabei, die maximalen Anzahl an Mitglieder zu erhöhen</German>
+			<German>Sie sind dabei, die maximale Anzahl an Mitgliedern zu erhöhen</German>
 			<French>Vous êtes sur le point de mettre à niveau la limite de membre autorisées pour votre gang.</French>
 		</Key>
 		<Key ID="STR_GNOTF_CurrentMax">
@@ -572,7 +584,7 @@
 		<Key ID="STR_GNOTF_UpgradeMax">
 			<Original>Upgraded Max: %2</Original>
 			<English>Upgraded Max: %2</English>
-			<German>Upgrade Max: %1</German>
+			<German>Upgrade Max: %2</German>
 			<French>Mise à niveau Max: %2</French>
 		</Key>
 		<Key ID="STR_GNOTF_Price">
@@ -584,7 +596,7 @@
 		<Key ID="STR_GNOTF_NotEoughMoney_2">
 			<Original>You do not have enough money in your bank account to upgrade the gangs maximum member limit.</Original>
 			<English>You do not have enough money in your bank account to upgrade the gangs maximum member limit.</English>
-			<German>Sie haben nicht genug Geld auf Ihr Bankkonto, um die Banden zu vergrößern.</German>
+			<German>Sie haben nicht genug Geld auf Ihr Bankkonto, um die Gang zu vergrößern.</German>
 			<French>Vous n'avez pas assez d'argent dans votre compte de banque pour mettre à niveau la limite de membre maximale.</French>
 		</Key>
 		<Key ID="STR_GNOTF_Current">
@@ -602,13 +614,13 @@
 		<Key ID="STR_GNOTF_UpgradeSuccess">
 			<Original>You have upgraded from %1 to %2 maximum slots for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Original>
 			<English>You have upgraded from %1 to %2 maximum slots for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</English>
-			<German>Sie haben von %1 zu %2 Plätzen für &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt; aufgerüstet</German>
+			<German>Sie haben von %1 zu %2 Plätzen für &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt; geupdatet</German>
 			<French>Vous avez mis à niveau à partir de %1 à %2 membres maximum for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</French>
 		</Key>
 		<Key ID="STR_GNOTF_UpgradeCancel">
 			<Original>Upgrade cancelled.</Original>
 			<English>Upgrade cancelled.</English>
-			<German>Upgrade abgebrochen.</German>
+			<German>Updatet abgebrochen.</German>
 			<French>Mise à jour annulée.</French>
 		</Key>
 		<Key ID="STR_GNOTF_Funds">
@@ -658,7 +670,7 @@
 		<Key ID="STR_Garage_NoVehicles">
 			<Original>No vehicles found in garage.</Original>
 			<English>No vehicles found in garage.</English>
-			<German>Keine Fahrzeuge in der Garage gefunden.</German>
+			<German>Keine Fahrzeuge gefunden.</German>
 			<French>Aucuns Vehicules.</French>			
 		</Key>
 		<Key ID="STR_Garage_CashError">
@@ -694,7 +706,7 @@
 		<Key ID="STR_Garage_SoldCar">
 			<Original>You sold that vehicle for $%1</Original>
 			<English>You sold that vehicle for $%1</English>
-			<German>Sie verkauft das Fahrzeug für $1%</German>
+			<German>Du verkauften dein Fahrzeug für $1%</German>
 			<French>Vous avez vendu votre véhicule pour $%1</French>
 		</Key>
 		<Key ID="STR_Garage_Store_NotPersistent">
@@ -706,7 +718,7 @@
 		<Key ID="STR_Garage_Store_NoOwnership">
 			<Original>That vehicle doesn't belong to you therefor you cannot store it in your garage.</Original>
 			<English>That vehicle doesn't belong to you therefor you cannot store it in your garage.</English>
-			<German>Das Fahrzeug gehört nicht Ihnen und kann deshalb nicht eingelagert werden.</German>
+			<German>Das Fahrzeug gehört nicht dir und kann deshalb nicht eingelagert werden.</German>
 			<French>Ce véhicule ne vous appartient pas, vous ne pouvez pas le stocker dans votre garage.</French>
 		</Key>
 		<Key ID="STR_Garage_Store_Success">
@@ -724,10 +736,13 @@
 		<Key ID="STR_Garage_Selection_Error">
 			<Original>The selection had a error...</Original>
 			<English>The selection had a error...</English>
+			<German>Die Auswahl hat einen fehler</German>	
+			<French></French>
 		</Key>
 		<Key ID="STR_Garage_NoNPC">
 			<Original>There isn't a vehicle near the NPC.</Original>
 			<English>There isn't a vehicle near the NPC.</English>
+			<German>Es ist kein Fahrzeug in der nähe des NPC</German>
 			<French>Il n'y a pas de véhicule près du PNJ</French>
 		</Key>
 	</Package>
@@ -755,7 +770,7 @@
 		<Key ID="STR_PM_Title">
 			<Original>Player Menu</Original>
 			<English>Player Menu</English>
-			<German>Player-Menü</German>
+			<German>Player Menü</German>
 			<French>Menu du Joueur</French>
 		</Key>
 		<Key ID="STR_PM_cItems">
@@ -785,7 +800,7 @@
 		<Key ID="STR_PM_WantedList">
 			<Original>Wanted List</Original>
 			<English>Wanted List</English>
-			<German>Fahndungsliste</German>
+			<German>Wanted</German>
 			<French>Interpol</French>
 		</Key>
 		<Key ID="STR_PM_CellPhone">
@@ -803,7 +818,7 @@
 		<Key ID="STR_PM_AdminMenu">
 			<Original>Admin Menu</Original>
 			<English>Admin Menu</English>
-			<German>Admin-Menü</German>
+			<German>Admin Menü</German>
 			<French>Menu Admin</French>
 		</Key>
 		<Key ID="STR_PM_SyncData">
@@ -817,7 +832,7 @@
 		<Key ID="STR_SM_Title">
 			<Original>Settings Menu</Original>
 			<English>Settings Menu</English>
-			<German>Einstellungen</German>
+			<German>Settings</German>
 			<French>Menu Paramètres</French>
 		</Key>
 		<Key ID="STR_SM_onFoot">
@@ -847,13 +862,13 @@
 		<Key ID="STR_SM_ToolTip2">
 			<Original>View distance while in a land vehicle</Original>
 			<English>View distance while in a land vehicle</English>
-			<German>Sichtweite in Landfahrzeugen</German>
+			<German>Sichtweite Fahrzeuge</German>
 			<French>Distance de vue en voiture</French>
 		</Key>
 		<Key ID="STR_SM_ToolTip3">
 			<Original>View distance while in a air vehicle</Original>
 			<English>View distance while in a air vehicle</English>
-			<German>Sichtweite in Luftfahrzeugen</German>
+			<German>Sichtweite Helikopter</German>
 			<French>Distance de vue dans les airs</French>
 		</Key>
 		<Key ID="STR_SM_PlayerTags">
@@ -877,7 +892,7 @@
 		<Key ID="STR_SM_SC">
 			<Original>Sidechat Settings</Original>
 			<English>Sidechat Settings</English>
-			<German>Sidechat Einstellungen</German>
+			<German>Sidechat Settings</German>
 			<French>Sidechat Paramètres</French>
 		</Key>
 		<Key ID="STR_SM_SCOFF">
@@ -897,7 +912,7 @@
 		<Key ID="STR_VS_SI">
 			<Original>Shop Inventory</Original>
 			<English>Shop Inventory</English>
-			<German>Shop</German>
+			<German>Shop Inventar</German>
 			<French>Boutique</French>
 		</Key>
 		<Key ID="STR_VS_PI">
@@ -988,7 +1003,7 @@
 		<Key ID="STR_Trunk_Store">
 			<Original>Store</Original>
 			<English>Store</English>
-			<German>Reinlegen</German>
+			<German>Lagern</German>
 			<French>Déposer</French>
 		</Key>
 	</Package>
@@ -1002,7 +1017,7 @@
 		<Key ID="STR_Wanted_Pardon">
 			<Original>Pardon</Original>
 			<English>Pardon</English>
-			<German>Streichen</German>
+			<German>Löschen</German>
 			<French>Excuser</French>
 		</Key>
 	</Package>
@@ -1016,7 +1031,7 @@
 		<Key ID="STR_ANIM_Ornate">
 			<Original>Ornate</Original>
 			<English>Ornate</English>
-			<German>Lyrakaiserfisch</German>
+			<German>Ornate</German>
 			<French>Ornate</French>
 
 		</Key>
@@ -1068,7 +1083,7 @@
 		<Key ID="STR_NOTF_Arrested_1">
 			<Original>%1 was arrested by %2</Original>
 			<English>%1 was arrested by %2</English>
-			<German>%1 wurde von %2 in das Gefängnis gesteckt</German>
+			<German>%1 wurde von %2 verhaftet</German>
 			<French>%1 a été arrêté par %2</French>
 		</Key>
 		<Key ID="STR_NOTF_Fishing">
@@ -1092,7 +1107,7 @@
 		<Key ID="STR_NOTF_NetDrop">
 			<Original>Dropping fishing net...</Original>
 			<English>Dropping fishing net...</English>
-			<German>Werfe Fischernetz aus ...</German>
+			<German>Fischernetz auswerfen ...</German>
 			<French>Déploiement du filet de pêche....</French>
 		</Key>
 		<Key ID="STR_NOTF_NetDropFail">
@@ -1104,7 +1119,7 @@
 		<Key ID="STR_NOTF_NetUp">
 			<Original>Fishing net pulled up.</Original>
 			<English>Fishing net pulled up.</English>
-			<German>Fischernetz eingeholt.</German>
+			<German>Fischernetz einholen.</German>
 			<French>Le filet de pêche a été entièrement relevé.</French>
 		</Key>
 		<Key ID="STR_NOTF_InvFull">
@@ -1158,7 +1173,7 @@
 		<Key ID="STR_NOTF_HS_NoCash">
 			<Original>You do not have $%1 to be healed</Original>
 			<English>You do not have $%1 to be healed</English>
-			<German>Du hast keine %1€, um geheilt zu werden.</German>
+			<German>Du hast keine $%1, um geheilt zu werden.</German>
 			<French>Vous n'avez pas $%1 pour vous soignez.</French>
 		</Key>
 		<Key ID="STR_NOTF_HS_Healing">
@@ -1188,7 +1203,7 @@
 		<Key ID="STR_NOTF_Impounding">
 			<Original>Impounding Vehicle</Original>
 			<English>Impounding Vehicle</English>
-			<German>Fahrzeug Beschlagnahmen</German>
+			<German>Beschlagnahmen</German>
 			<French>Mise en fourrière</French>
 		</Key>
 		<Key ID="STR_NOTF_ImpoundingCancelled">
@@ -1230,7 +1245,7 @@
 		<Key ID="STR_NOTF_notNearResource">
 			<Original>You are not near a resource field</Original>
 			<English>You are not near a resource field</English>
-			<German>Du bist nicht in der naehe einer Mine</German>
+			<German>Du bist nicht in der nähe einer Mine</German>
 			<French>Vous n'êtes pas à proximité d'un champ de ressources</French>
 		</Key>
 		<Key ID="STR_NOTF_MiningStopped">
@@ -1254,13 +1269,13 @@
 		<Key ID="STR_NOTF_OutOfFuel">
 			<Original>Vehicle is out of fuel</Original>
 			<English>Vehicle is out of fuel</English>
-			<German>Das Fahrzeug hat kein Sprit mehr</German>
+			<German>Das Fahrzeug hat keinen Sprit mehr</German>
 			<French>Le véhicule n'a plus d'essence.</French>
 		</Key>
 		<Key ID="STR_NOTF_SpikeStrip">
 			<Original>You have packed up the spike strip.</Original>
 			<English>You have packed up the spike strip.</English>
-			<German>Sie haben die Krallenband verpackt.</German>
+			<German>Nagelband einpacken.</German>
 			<French>Vous avez emballé la herse.</French>
 		</Key>
 		<Key ID="STR_NOTF_PickedEvidence">
@@ -1278,13 +1293,13 @@
 		<Key ID="STR_NOTF_Bail_Post">
 			<Original>You must wait at least 3 minutes in jail before paying a bail.</Original>
 			<English>You must wait at least 3 minutes in jail before paying a bail.</English>
-			<German>Sie müssen mindestens 3 Minuten lang im Gefängnis bevor du dich frei kaufen kannst.</German>
+			<German>Sie müssen mindestens 3 Minuten lang im Gefängnis bleiben bevor du dich frei kaufen kannst.</German>
 			<French>Vous devez attendre au moins 3 minutes en prison avant de payer une caution.</French>
 		</Key>
 		<Key ID="STR_NOTF_Bail_NotEnough">
 			<Original>You do not have $%1 in your bank account to pay bail.</Original>
 			<English>You do not have $%1 in your bank account to pay bail.</English>
-			<German>Sie haben keine $%1 auf Ihrem Bankkonto um die Kaution zu zahlen.</German>
+			<German>Sie haben keine $%1 auf Ihrem Bankkonto um die Kaution zu bezahlen.</German>
 			<French>Vous n'avez pas $%1 dans votre compte en banque pour payer la caution.</French>
 		</Key>
 		<Key ID="STR_NOTF_Bail_Bailed">
@@ -1314,13 +1329,13 @@
 		<Key ID="STR_NOTF_SearchVehFail">
 			<Original>Couldn't search the vehicle</Original>
 			<English>Couldn't search the vehicle</English>
-			<German>Das Fahrzeug könnte nicht durchsucht werde</German>
+			<German>Das Fahrzeug könnte nicht durchsucht werden</German>
 			<French>Impossible de fouiller le véhicule</French>
 		</Key>
 		<Key ID="STR_NOTF_VehCheat">
 			<Original>This vehicle has no information, it was probably spawned in through cheats. \n\nDeleting vehicle.</Original>
 			<English>This vehicle has no information, it was probably spawned in through cheats. \n\nDeleting vehicle.</English>
-			<German>Über das Fahrzeug gibt es keine Informationen, Es wurde vermutlich durch Cheats gespawnt. \n\nDeleting Fahrzeugs. </German>
+			<German>Über das Fahrzeug gibt es keine Informationen, Es wurde vermutlich durch Cheats gespawnt. \n\nLösche Fahrzeuge. </German>
 			<French>Ce véhicule dispose d'aucune information, il a probablement été engendré en travers tricheurs. \n\ véhicule nDeleting.</French>
 		</Key>
 		<Key ID="STR_NOTF_Action">
@@ -1356,19 +1371,19 @@
 		<Key ID="STR_NOTF_VehContraband">
 			<Original>A vehicle was searched and has $%1 worth of drugs / contraband.</Original>
 			<English>A vehicle was searched and has $%1 worth of drugs / contraband.</English>
-			<German>Ein Fahrzeug wurde durchsuchtund es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
+			<German>Ein Fahrzeug wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
 			<French>Un véhicule venant d'être fouillé avait $%1 de drogue / contrebande.</French>
 		</Key>
 		<Key ID="STR_NOTF_PulledOut">
 			<Original>You have been pulled out of the vehicle</Original>
 			<English>You have been pulled out of the vehicle</English>
-			<German>Sie wurden aus dem Fahrzeug herausgezogen worden</German>
+			<German>Sie wurden aus dem Fahrzeug gezogen</German>
 			<French>Vous avez sortie les personnes du véhicule</French>
 		</Key>
 		<Key ID="STR_NOTF_GivenItem">
 			<Original>%1 has gave you %2 %3</Original>
 			<English>%1 has gave you %2 %3</English>
-			<German>%1 hat Ihnen %2 %3</German>
+			<German>%1 hat Ihnen %2 %3 gegeben</German>
 			<French>%1 vous a donné %2 %3</French>
 		</Key>
 		<Key ID="STR_NOTF_GivenMoney">
@@ -1398,7 +1413,7 @@
 		<Key ID="STR_NOTF_NoSpace">
 			<Original>You don't have enough space for that amount!</Original>
 			<English>You don't have enough space for that amount!</English>
-			<German>Sie haben nicht genug Platz für diese Menge!</German>
+			<German>Sie haben nicht genug Platz dafür!</German>
 			<French>Vous n'avez pas assez d'espace!</French>
 		</Key>
 		<Key ID="STR_NOTF_NotEnoughMoney">
@@ -1434,11 +1449,13 @@
  		<Key ID="STR_NOTF_NotEnoughFunds">
  			<Original>You do not have enough funds in your bank account</Original>
  			<English>You do not have enough funds in your bank account</English>
+			<German>Du hast nicht genug Geld auf deinem Bankkonto</German>
  			<French>Vous n'avez pas assez de fond dans votre compte bancaire</French>
  		</Key>
  		<Key ID="STR_NOTF_CouldntAdd">
  			<Original>Couldn't add it to your inventory.</Original>
  			<English>Couldn't add it to your inventory.</English>
+			<German>Konnte nicht deinem Inventar hinzugefügt werden</German>
  			<French>Impossible d'ajouter cela à votre inventaire</French>
  		</Key>
 	</Package>
@@ -1452,7 +1469,7 @@
 		<Key ID="STR_Jail_LicenseNOTF">
 			<Original>For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License</Original>
 			<English>For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License</English>
-			<German>Bei der Verhaftung haben sie folgende Lizenzen verloren\n\nFirearms Lizenz\nRebel Lizenz</German>
+			<German>Bei der Verhaftung haben sie folgende Lizenzen verloren\n\nWaffen Lizenz\nRebellen Lizenz</German>
 			<French>Après votre mise en prison, vous avez perdu les licences suivante si vous les aviez\n\nFirearms License\nRebel License</French>
 		</Key>
 		<Key ID="STR_Jail_EscapeNOTF">
@@ -1464,7 +1481,7 @@
 		<Key ID="STR_Jail_EscapeSelf">
 			<Original>You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.</Original>
 			<English>You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.</English>
-			<German>Du wurdest festgenommen, warte deine Zeit ab. Wenn Sie versuchen zu respawnen oder reconnecten erhöht sich ihre Zeit! </German>
+			<German>Du bist aus dem Gefängnis ausgebrochen, die Polizei sucht bereits nach dir</German>
 			<French>Vous vous êtes échappé de prison, vous conserver toujours vos crimes précédents et ils savent maintenant que vous vous êtes échappé de prison.</French>
 		</Key>
 		<Key ID="STR_Jail_Released">
@@ -1514,13 +1531,13 @@
 		<Key ID="STR_Civ_LicenseRemove_2">
 			<Original>You have lost your firearms license for manslaughter.</Original>
 			<English>You have lost your firearms license for manslaughter.</English>
-			<German>Sie haben Ihre Waffenschein für Totschlag verloren.</German>
+			<German>Sie haben Ihren Waffenschein für Totschlag verloren.</German>
 			<French>Vous avez perdu votre permis d'armes à feu pour homicide involontaire.</French>
 		</Key>
 		<Key ID="STR_Civ_RobFail">
 			<Original>They didn't have any cash...</Original>
 			<English>They didn't have any cash...</English>
-			<German>Sie hatten kein Geld ...</German>
+			<German>Er hatten kein Geld ...</German>
 			<French>Ils n'ont pas l'agent...</French>
 		</Key>
 		<Key ID="STR_Civ_Robbed">
@@ -1532,31 +1549,37 @@
 		<Key ID="STR_Civ_VaultEmpty">
 			<Original>The safe is empty!</Original>
 			<English>The safe is empty!</English>
+			<German>Der Safe ist leer!</German>
 			<French>Le coffre est vide</French>
 		</Key>
 		<Key ID="STR_Civ_VaultInUse">
 			<Original>Someone is already accessing the safe..</Original>
 			<English>Someone is already accessing the safe..</English>
+			<German>Jemand greift bereit auf den Safe zu</German>
 			<French>Quelqu'un accède déjà au coffre..</French>
 		</Key>
 		<Key ID="STR_Civ_NotEnoughCops">
 			<Original>There needs to be 5 or more cops online to continue.</Original>
 			<English>There needs to be 5 or more cops online to continue.</English>
+			<German>Es müssen 5 Polizisten Online sein.</German>
 			<French>Il faut au minimum 5 flic pour continuer</French>
 		</Key>
 		<Key ID="STR_Civ_SafeInv">
 			<Original>Safe Inventory</Original>
 			<English>Safe Inventory</English>
+			<German>Safe Inventar</German>
 			<French>Coffre</French>
 		</Key>
 		<Key ID="STR_Civ_SelectItem">
 			<Original>You need to select an item!</Original>
 			<English>You need to select an item!</English>
+			<German>Du musst ein Iteam auswählen</German>
 			<French>Vous devez sélectionner un objet</French>
 		</Key>
 		<Key ID="STR_Civ_IsntEnoughGold">
 			<Original>There isn't %1 gold bar(s) in the safe!</Original>
 			<English>There isn't %1 gold bar(s) in the safe!</English>
+			<German>Es sind keine %1 Goldbarren im Safe!</German>
 			<French>Il n'y a pas %1 lingot(s) d'or dans le coffre</French>
 		</Key>
 	</Package>
@@ -1570,7 +1593,7 @@
 		<Key ID="STR_Cop_Ticket">
 			<Original>Ticketing %1</Original>
 			<English>Ticketing %1</English>
-			<German>%1 Ticket geben </German>
+			<German>Ticketing %1</German>
 			<French>Billetterie %1</French>
 		</Key>
 		<Key ID="STR_Cop_TicketNil">
@@ -1594,7 +1617,7 @@
 		<Key ID="STR_Cop_TicketOver100">
 			<Original>Tickets can not be more than $100,000!</Original>
 			<English>Tickets can not be more than $100,000!</English>
-			<German>Tickets können nicht mehr als $100.000 Strafe betragen!</German>
+			<German>Tickets können nicht mehr als $100.000 betragen!</German>
 			<French>Les billets ne peuvent être plus de $ 100,000!</French>
 		</Key>
 		<Key ID="STR_Cop_TicketGive">
@@ -1606,7 +1629,7 @@
 		<Key ID="STR_Cop_Ticket_NotEnough">
 			<Original>You don't have enough money in your bank account or on you to pay the ticket.</Original>
 			<English>You don't have enough money in your bank account or on you to pay the ticket.</English>
-			<German>Sie haben nicht genug Geld auf Ihr Bankkonto um das Ticket zu bezahlen.</German>
+			<German>Du hast nicht genug Geld auf Ihrwm Bankkonto um das Ticket zu bezahlen.</German>
 			<French>Vous n'avez pas assez d'argent dans votre compte bancaire ou sur vous pour payer le billet.</French>
 		</Key>
 		<Key ID="STR_Cop_Ticket_NotEnoughNOTF">
@@ -1624,37 +1647,37 @@
 		<Key ID="STR_Cop_Ticket_PaidNOTF">
 			<Original>%1 paid the ticket of $%2</Original>
 			<English>%1 paid the ticket of $%2</English>
-			<German>%1 das Ticket von $%2 bezahlt</German>
+			<German>%1 zahlte ein Ticket von $%2</German>
 			<French>%1 payé le billet d' $%2</French>
 		</Key>
 		<Key ID="STR_Cop_Ticket_PaidNOTF_2">
 			<Original>%1 paid the ticket.</Original>
 			<English>%1 paid the ticket.</English>
-			<German>%1 a payé le billet.</German>
+			<German>%1 bezahlt das Ticket.</German>
 			<French>%1 payé le billet.</French>
 		</Key>
 		<Key ID="STR_Cop_Ticket_UI_Given">
 			<Original>%1 has given you a ticket for $%2</Original>
 			<English>%1 has given you a ticket for $%2</English>
-			<German>%1 hat dir ein Ticket für $%2 angegeben</German>
+			<German>%1 hat dir ein Ticket von $%2 gegeben</German>
 			<French>%1 vous a donné un billet pour $%2</French>
 		</Key>
 		<Key ID="STR_Cop_Ticket_Refuse">
 			<Original>%1 refused to pay the ticket.</Original>
 			<English>%1 refused to pay the ticket.</English>
-			<German>%1 verweigert das ticket zu bezahlen.</German>
+			<German>%1 weigert sich das ticket zu zahlen.</German>
 			<French>%1 refusé de payer le billet.</French>
 		</Key>
 		<Key ID="STR_Cop_BountryRecieve">
 			<Original>You have collected a bounty of $%1 for arresting a criminal.</Original>
 			<English>You have collected a bounty of $%1 for arresting a criminal.</English>
-			<German>Sie haben ein Kopfgeld von $%1 für die Festnahme eines kriminellen bekommen.</German>
+			<German>Sie haben ein Kopfgeld von $%1 bekommen für die Festnahme eines Kriminellen.</German>
 			<French>Vous avez recueilli une prime de $%1 pour arrêter un criminel.</French>
 		</Key>
 		<Key ID="STR_Cop_BountyKill">
 			<Original>You have collected a bounty of $%1 for killing a wanted criminal, if you had arrested him you would of received $%2</Original>
 			<English>You have collected a bounty of $%1 for killing a wanted criminal, if you had arrested him you would of received $%2</English>
-			<German>Sie haben ein Kopfgeld von $%1 für das Töten eines gesuchten Verbrechers, Wenn du ihn festgenommen hättest $%2 erhalten</German>
+			<German>Du hast ein Kopfgeld von $%1 für das Töten eines gesuchten Verbrechers bekommen,Du hättest $%2 für die Festnahme bekommen</German>
 			<French>Vous avez recueilli une prime de $%1 pour le meurtre d'un criminel recherché, si vous l'aviez arrêté vous de recevoir $%</French>
 		</Key>
 		<Key ID="STR_Cop_Contraband">
@@ -1672,7 +1695,7 @@
 		<Key ID="STR_Cop_Robber">
 			<Original>%1 was identified as the bank robber!</Original>
 			<English>%1 was identified as the bank robber!</English>
-			<German>% 1 wurde als Bankräuber identifiziert!</German>
+			<German>%1 wurde als Bankräuber identifiziert!</German>
 			<French>%1 was identified as the bank robber!</French>
 		</Key>
 		<Key ID="STR_Cop_NoIllegal">
@@ -1720,79 +1743,95 @@
 		<Key ID="STR_Cop_RobberDead">
 			<Original>$%1 from the Federal Reserve robbery was returned from the robber being killed.</Original>
 			<English>$%1 from the Federal Reserve robbery was returned from the robber being killed.</English>
-			<German>$%1 wurden vom Bankraub zurückgegeben weil die Räuber gestorben sind.</German>
+			<German>$%1 wurden in die Staatsbank zurückgebracht.</German>
 			<French>$%1 du vol de la Réserve fédérale qui est revenu de voleur d'être tué.</French>
 		</Key>
 		<Key ID="STR_Cop_RepairVault">
 			<Original>Repairing vault...</Original>
 			<English>Repairing vault...</English>
+			<German>Safe Reparieren</German>
 		</Key>
 		<Key ID="STR_Cop_VaultRepaired">
 			<Original>The vault is now fixed and re-secured.</Original>
 			<English>The vault is now fixed and re-secured.</English>
+			<German>Der Safe wurde repariert</German>
 		</Key>
 		<Key ID="STR_Cop_VaultLocked">
 			<Original>The vault is already locked?</Original>
 			<English>The vault is already locked?</English>
+			<German>Der Safe ist abgeschlossen</German>
 		</Key>
 		<Key ID="STR_Cop_VaultUnder1">
 			<Original>You can't enter anything below 1!</Original>
 			<English>You can't enter anything below 1!</English>
+			<German>Nichts unter 1 schreiben!</German>
 		</Key>
 		<Key ID="STR_Cop_OnlyGold">
 			<Original>You can't store anything but gold bars in the safe.</Original>
 			<English>You can't store anything but gold bars in the safe.</English>
+			<German>Du kannst nicht ausser Goldbarren in den Safe legen</German>
 		</Key>
 		<Key ID="STR_Cop_NotEnoughGold">
 			<Original>You don't have %1 gold bar(s)</Original>
 			<English>You don't have %1 gold bar(s)</English>
+			<German>Du hast keine %1 Goldbarren</German>
 		</Key>
 		<Key ID="STR_Cop_CantRemove">
 			<Original>Couldn't remove the item(s) from your inventory to put in the safe.</Original>
 			<English>Couldn't remove the item(s) from your inventory to put in the safe.</English>
+			<German>Iteam(s) konnten nicht in den Safe gepackt werden</German>
 		</Key>
 		<Key ID="STR_Cop_CouldntSearch">
 			<Original>Couldn't search %1</Original>
 			<English>Couldn't search %1</English>
+			<German>Konnte %1 nicht durchsuchen</German>
 		</Key>
 		<Key ID="STR_Cop_RepairingDoor">
 			<Original>Repairing Door...</Original>
 			<English>Repairing Door...</English>
+			<German>Tür Reparieren</German>
 		</Key>
 		<Key ID="STR_Cop_NoLicensesFound">
 			<Original>No Licenses&lt;br/&gt;</Original>
 			<English>No Licenses&lt;br/&gt;</English>
+			<German>Keine Lizensen&lt;br/&gt;</German>
 		</Key>
 		<Key ID="STR_Cop_DealerQuestion">
 			<Original>No one has sold to this dealer recently.</Original>
 			<English>No one has sold to this dealer recently.</English>
+			<German>Hier hat niemand etwas verkauft.</German>
 		</Key>
 		<Key ID="STR_Cop_DealerMSG">
 			<Original>The following people have been selling to this dealer recently.</Original>
 			<English>The following people have been selling to this dealer recently.</English>
+			<German>Die Folgenen Leute wurden hier kürzlich gesehen</German>
 		</Key>
 		<Key ID="STR_Cop_Radar">
 			<Original>Radar</Original>
 			<English>Radar</English>
+			<German>Radar</German>
 		</Key>
 		<Key ID="STR_Cop_VehSpeed">
 			<Original>Vehicle Speed %1 km/h</Original>
 			<English>Vehicle Speed %1 km/h</English>
+			<German>Vehicle Speed %1 km/h</German>
 		</Key>
 		<Key ID="STR_Cop_ExcessiveRestrain">
 			<Original>You have been released automatically for excessive restrainment time</Original>
 			<English>You have been released automatically for excessive restrainment time</English>
+			<German>Du würdest frei gelassen</German>
 		</Key>
 		<Key ID="STR_Cop_Retrained">
 			<Original>You have been restrained by %1</Original>
 			<English>You have been restrained by %1</English>
+			<German>Du wrudest von %1 gefesselt</German>
 		</Key>
 	</Package>
 	<Package name="MISC_Strings">
 		<Key ID="STR_MISC_TooMuch">
 			<Original>You tried to give %1 %2 %3 but they couldn't hold that so it was returned.</Original>
 			<English>You tried to give %1 %2 %3 but they couldn't hold that so it was returned.</English>
-			<German>Du bist zu müde um %1 %2 %3 aber sie konnten es nocht halten</German>
+			<German>Du bist zu müde um %1 %2 %3 tragen aber sie konnten es nocht halten</German>
 			<French>Vous avez essayé de donner%1 %2 %3 mais on ne peut tenir il l'a fait ce retourné.</French>
 		</Key>
 		<Key ID="STR_MISC_TooMuch_2">
@@ -1846,13 +1885,13 @@
 		<Key ID="STR_MISC_VehInvUse">
 			<Original>This vehicle's trunk is in use, only one person can use it at a time.</Original>
 			<English>This vehicle's trunk is in use, only one person can use it at a time.</English>
-			<German>Auf denn Kofferraum wird bereit zugegriffen</German>
+			<German>Auf denn Kofferraum wird bereits zugegriffen</German>
 			<French>Le coffre de ce véhicule est en cours d'utilisation, une seule personne peut l'utiliser à la fois.</French>
 		</Key>
 		<Key ID="STR_MISC_DialogError">
 			<Original>Failed Creating Dialog</Original>
 			<English>Failed Creating Dialog</English>
-			<German>Erstellen des Dialog gescheitert</German>
+			<German>Erstellen des Dialogs gescheitert</German>
 			<French>Échec Création de dialogue</French>
 		</Key>
 		<Key ID="STR_MISC_VehUnlock">
@@ -1912,25 +1951,25 @@
 		<Key ID="STR_MISC_VehDoesntExist">
 			<Original>The vehicle either doesn't exist or is destroyed.</Original>
 			<English>The vehicle either doesn't exist or is destroyed.</English>
-			<German>Entweder das Fahrzeug ist nicht vorhanden oder es ist zerstört.</German>
+			<German>Entweder das Fahrzeug ist nicht vorhanden oder es wurde zerstört.</German>
 			<French>Le véhicule soit n'existe pas ou est détruit</French>
 		</Key>
 		<Key ID="STR_MISC_WrongNumFormat">
 			<Original>Invalid Number format</Original>
 			<English>Invalid Number format.</English>
-			<German>Ungültige Nummer Format</German>
+			<German>Ungültiges Nummern Format</German>
 			<French>Format de nombre invalide</French>
 		</Key>
 		<Key ID="STR_MISC_Under1">
 			<Original>You can't enter anything below 1!</Original>
 			<English>You can't enter anything below 1!</English>
-			<German>Sie können nicht unter 1 eingeben!</German>
+			<German>Sie können nichts unter 1 eingeben!</German>
 			<French>Vous ne pouvez pas entrer quoi que ce soit en dessous de 1!</French>
 		</Key>
 		<Key ID="STR_MISC_NotEnough">
 			<Original>The vehicle doesn't have that many of that item.</Original>
 			<English>The vehicle doesn't have that many of that item.</English>
-			<German>Diese Anzahl ist nicth verfügbar.</German>
+			<German>Diese Anzahl ist nicht verfügbar.</German>
 			<French>Le véhicule n'a pas que beaucoup de cet article.</French>
 		</Key>
 	</Package>
@@ -1943,8 +1982,8 @@
 		</Key>
 		<Key ID="STR_House_ContainerDeny">
 			<Original>You are not allowed to access this storage container without the owner opening it.</Original>
-			<English>The vehicle doesn't have that many of that item.</English>
-			<German>Fehler beim Speichern der Container, es konnte kein Haus gefunden werden?</German>
+			<English>You are not allowed to access this storage container without the owner opening it</English>
+			<German>Du hast nicht die erlaubnis des Besitzer in seine Boxen zu schauen</German>
 			<French>Vous n'êtes pas autorisé à accéder à ce réservoir de stockage sans que le propriétaire de l'ouvrir.</French>
 		</Key>
 		<Key ID="STR_House_Door_Unlock">
@@ -1962,7 +2001,7 @@
 		<Key ID="STR_House_Door_NotNear">
 			<Original>You are not near a door!</Original>
 			<English>You are not near a door!</English>
-			<German>Sie haben die Tür verriegelt.</German>
+			<German>Keine Tür in der nähe.</German>
 			<French>Vous n'êtes pas près d'une porte!</French>
 		</Key>
 		<Key ID="STR_House_Sell_Process">
@@ -2004,7 +2043,7 @@
 		<Key ID="STR_House_Raid_NoOwner">
 			<Original>This house doesn't belong to anyone.</Original>
 			<English>This house doesn't belong to anyone</English>
-			<German>Dieses Spiel gehört niemanden</German>
+			<German>Dieses Haus gehört niemanden</German>
 			<French>Cette maison n'appartient pas à n'importe qui.</French>
 		</Key>
 		<Key ID="STR_House_Raid_OwnerOff">
@@ -2052,13 +2091,13 @@
 		<Key ID="STR_House_Raid_TooFar">
 			<Original>You went too far away from the house!</Original>
 			<English>You went too far away from the house!</English>
-			<German>Sie ging zu weit weg von Haus!</German>
+			<German>Sie gingen zu weit weg von Haus!</German>
 			<French>Vous êtes allé trop loin de la maison!</French>
 		</Key>
 		<Key ID="STR_House_Raid_Successful">
 			<Original>A house was raided and had $%1 worth of drugs / contraband.</Original>
 			<English>A house was raided and had $%1 worth of drugs / contraband.</English>
-			<German>Ein Haus wurde durchsucht und hatte Schmuggelware im Wert von $% gefunden.</German>
+			<German>Ein Haus wurde durchsucht und man hat Schmuggelware im Wert von $% gefunden.</German>
 			<French>Une maison a été perquisitionné et a $%1 la valeur de la drogue / contrebande.</French>
 		</Key>
 		<Key ID="STR_House_Raid_NoIllegal">
@@ -2088,7 +2127,7 @@
 		<Key ID="STR_House_LockedUp">
 			<Original>House has been locked up.</Original>
 			<English>House has been locked up.</English>
-			<German>Haus wurde gesperrt.</German>
+			<German>Haus wurde abgeschlossen.</German>
 			<French>Maison a été enfermé.</French>
 		</Key>
 		<Key ID="STR_House_SellHouseMSG">
@@ -2103,7 +2142,7 @@
 			<Original>There isn't a chopper on the helipad!</Original>
 			<English>There isn't a chopper on the helipad!</English>
 			<German>Es ist kein Helikopter auf dem Landeplatz </German>
-			<French>Il n'est pas un couperet sur ​​l'héliport!</French>
+			<French>Il n'est pas un couperet sur ??l'héliport!</French>
 		</Key>
 		<Key ID="STR_Serive_Chopper_NotEnough">
 			<Original>You need $1,000 to service your chopper</Original>
@@ -2596,7 +2635,7 @@
 		<Key ID="STR_ISTR_Blast_Placed">
 			<Original>A blasting charge has been placed on the federal reserves vault, You have till the clock runs out to disarm the charge!</Original>
 			<English>A blasting charge has been placed on the federal reserves vault, You have till the clock runs out to disarm the charge!</English>
-			<German>Eine Sprengladung am Safe angebracht, Sie haben Zeit bis die Uhr abläuft, um die Ladung zu entschärfen!</German>
+			<German>Eine Sprengladung wurde am Safe angebracht, Sie haben Zeit bis die Uhr abläuft, um die Ladung zu entschärfen!</German>
 			<French>Une charge de dynamitage a été placé sur la voûte réserves fédérales, Vous avez jusqu'au temps imparti pour désarmer la charge!</French>
 		</Key>
 		<Key ID="STR_ISTR_Blast_KeepOff">
@@ -2692,7 +2731,7 @@
 		<Key ID="STR_ISTR_Lock_Process">
 			<Original>Lock-picking %1</Original>
 			<English>Lock-picking %1</English>
-			<German>%1 Aufbrechen</German>
+			<German>Aufbrechen %1</German>
 			<French>Crochetage %1</French>
 		</Key>
 		<Key ID="STR_ISTR_Lock_TooFar">
@@ -2734,25 +2773,25 @@
 		<Key ID="STR_ISTR_Pick_Success">
 			<Original>You have mined %2 %1</Original>
 			<English>You have mined %2 %1</English>
-			<German>Sie haben %2x%1 abgebaut</German>
+			<German>Sie haben %2 %1 abgebaut</German>
 			<French>Vous aveze miné %2 %1</French>
 		</Key>
 		<Key ID="STR_ISTR_Spike_Place">
 			<Original>Place Spike Strip</Original>
 			<English>Place Spike Strip</English>
-			<German>Spike-Streifen platzieren</German>
+			<German>Nagelband platzieren</German>
 			<French>Placer la herse</French>
 		</Key>
 		<Key ID="STR_ISTR_Spike_Pack">
 			<Original>Pack up Spike Strip</Original>
 			<English>Pack up Spike Strip</English>
-			<German>Sie haben %2x%1 abgebaut</German>
+			<German>Nagelband auspacken</German>
 			<French>Pack up Spike Strip</French>
 		</Key>
 		<Key ID="STR_ISTR_Box_NotinHouse">
 			<Original>You need to be inside your house to place this.</Original>
 			<English>You need to be inside your house to place this</English>
-			<German>Sie müssen sich in Ihrem Haus sein</German>
+			<German>Du musst in deinem Haus sein</German>
 			<French>Emballez de Spike bande</French>
 		</Key>
 		<Key ID="STR_ISTR_Box_HouseFull">
@@ -2850,7 +2889,7 @@
 		<Key ID="STR_Process_Processed2">
 			<Original>You have processed %1 into %2 for $%3</Original>
 			<English>You have processed %1 into %2 for $%3</English>
-			<German>Sie haben in %1 %2 für $%3 verarbeitet</German>
+			<German>Sie haben %1 in %2 für $%3 verarbeitet</German>
 			<French>Vous avez traité %1 en %2 pour $3%</French>
 		</Key>
 	</Package>
@@ -2944,7 +2983,7 @@
 		<Key ID="STR_Medic_RevivePayReceive">
 			<Original>You have revived %1 and received $%2 for your services.</Original>
 			<English>You have revived %1 and received $%2 for your services.</English>
-			<German>Sie haben %1 wieder belebt und bekammen für Ihre Dienste $%2 .</German>
+			<German>Sie haben %1 wiederbelebt und bekammen für Ihre Dienste $%2 .</German>
 			<French>Vous avez réanimer %1 vous recever $%2 pour votre aide</French>
 		</Key>
 		<Key ID="STR_Medic_TooFar">
@@ -2964,7 +3003,7 @@
 		<Key ID="STR_NOTF_FRRobbery_Success">
 			<Original>$%1 was stolen from the robbery on the federal reserve</Original>
 			<English>$%1 was stolen from the robbery on the federal reserve</English>
-			<German>$%1 wurde beim Raub auf die Zentralbank gestohlen</German>
+			<German>$%1 wurden von den Räubern aus der Zentralbank gestohlen</German>
 			<French>$%1 a été volé a la réserve fédérale.</French>
 		</Key>
 		<Key ID="STR_FEDR_VInUse">
@@ -3022,7 +3061,7 @@
 		<Key ID="STR_pInAct_Title">
 			<Original>Player Interaction Menu</Original>
 			<English>Player Interaction Menu</English>
-			<German>Spieler-Interaktion Menü</German>
+			<German>Interaktion Menü</German>
 			<French>Menu Interaction du Joueur</French>
 		</Key>
 		<Key ID="STR_pInAct_PutInCar">
@@ -3070,7 +3109,7 @@
 		<Key ID="STR_pInAct_Arrest">
 			<Original>Send to jail</Original>
 			<English>Send to jail</English>
-			<German>Ins Gefängnis</German>
+			<German>Gefängnis</German>
 			<French>Envoyer en prison</French>
 		</Key>
 		<Key ID="STR_pInAct_Repair">
@@ -3124,7 +3163,7 @@
 		<Key ID="STR_pInAct_StoreVeh">
 			<Original>Store Vehicle</Original>
 			<English>Store Vehicle</English>
-			<German>Fahrzeug Einlagern</German>
+			<German>Fahrzeug einlagern</German>
 			<French>Ranger le vehicule</French>
 		</Key>
 		<Key ID="STR_pInAct_SellHouse">
@@ -3198,13 +3237,13 @@
 		<Key ID="STR_vInAct_Registration">
 			<Original>Registration</Original>
 			<English>Registration</English>
-			<German>Fahrzeugpapiere</German>
+			<German>Registrieren</German>
 			<French>Enregistrement</French>
 		</Key>
 		<Key ID="STR_vInAct_SearchVehicle">
 			<Original>Search Vehicle</Original>
 			<English>Search Vehicle</English>
-			<German>Fahrzeug durchsuchen</German>
+			<German>Durchsuchen</German>
 			<French>Recherche Véhicule</French>
 		</Key>
 		<Key ID="STR_vInAct_PullOut">
@@ -3216,7 +3255,7 @@
 		<Key ID="STR_vInAct_Impound">
 			<Original>Impound Vehicle</Original>
 			<English>Impound Vehicle</English>
-			<German>Fahrzeug Beschlagnahmen</German>
+			<German>Beschlagnahmen</German>
 			<French>Mise en fourrière</French>
 		</Key>
 		<Key ID="STR_vInAct_DeviceMine">
@@ -3236,7 +3275,7 @@
 		<Key ID="STR_Session_QueryFail">
 			<Original>The server didn't find any player information matching your UID, attempting to add player to system.</Original>
 			<English>The server didn't find any player information matching your UID, attempting to add player to system.</English>
-			<German>Der Server hat keine Spieler Informationen zu Ihrer UID gefunden, versuche Spieler in System hinzuzufügen.</German>
+			<German>Der Server hat keine Spieler Informationen zu Ihrer UID gefunden, versuche Spieler ins System hinzuzufügen.</German>
 			<French>Le serveur n'a pas trouvé toutes les informations de lecteur correspondant à votre UID, de tenter d'ajouter joueur de système.</French>
 		</Key>
 		<Key ID="STR_Session_Error">
@@ -3274,7 +3313,7 @@
 		<Key ID="STR_Shop_ATMRobbed">
 			<Original>Because you robbed the bank you can't use the ATM for 5 minutes.</Original>
 			<English>Because you robbed the bank you can't use the ATM for 5 minutes.</English>
-			<German>Da Sie die Bank ausgeraubt haben können Sie den ATM für 5 Minuten nicht nutzen.</German>
+			<German>Da du die Bank ausgeraubt haben können Sie den ATM für 5 Minuten nicht nutzen.</German>
 			<French>Parce que vous volé la banque que vous ne pouvez pas utiliser le guichet automatique pendant 5 minutes.</French>
 		</Key>
 		<Key ID="STR_Shop_NoClothes">
@@ -3286,7 +3325,7 @@
 		<Key ID="STR_Shop_NotEnoughClothes">
 			<Original>Sorry sir, you don't have enough money to buy those clothes.</Original>
 			<English>Sorry sir, you don't have enough money to buy those clothes.</English>
-			<German>Es tut uns leid, Sir, Sie haben nicht genug Geld, um die Kleider zu kaufen.</German>
+			<German>Es tut uns leid, Sir, Sie haben nicht genug Geld um es zu kaufen.</German>
 			<French>Désolé monsieur, vous n'avez pas assez d'argent pour acheter ces vêtements.</French>
 		</Key>
 		<Key ID="STR_Shop_Total">
@@ -3310,7 +3349,7 @@
 		<Key ID="STR_Shop_NoVehNear">
 			<Original>There are no vehicles near to sell.</Original>
 			<English>There are no vehicles near to sell.</English>
-			<German>Es ist keine Fahrzeug in der nähe zum verkaufen.</German>
+			<German>Es ist keine Fahrzeug in der Nähe zum verkaufen.</German>
 			<French>Il n'y a pas de véhicules à proximité de vendre</French>
 		</Key>
 		<Key ID="STR_Shop_ChopShopError">
@@ -3346,7 +3385,7 @@
 		<Key ID="STR_Shop_NotaDive">
 			<Original>You need a Diving license to use this shop!</Original>
 			<English>You need a Diving license to use this shop!</English>
-			<German>Sie benötigen eine Lizenz, um dieses Tauchershop zu nutzen!</German>
+			<German>Sie benötigen eine Lizenz, um diesen Tauchershop zu nutzen!</German>
 			<French>You need a Diving license to use this shop!</French>
 		</Key>
 		<Key ID="STR_Shop_YouNeed">
@@ -3395,12 +3434,12 @@
 			<Original>You do not have enough money on you or in your bank to get your car back.</Original>
 			<English>You do not have enough money on you or in your bank to get your car back.</English>
 			<German>Sie haben nicht genug Geld um ihr Auto zurück zu bekommen.</German>
-			<French>Vous n'avez pas assez d'argent sur ​​vous ou dans votre banque pour obtenir votre voiture de retour</French>
+			<French>Vous n'avez pas assez d'argent sur ??vous ou dans votre banque pour obtenir votre voiture de retour</French>
 		</Key>
 		<Key ID="STR_Shop_Unimpound_Success">
 			<Original>You have unimpounded your %1 for $%3</Original>
 			<English>You have unimpounded your %1 for $%3</English>
-			<German>Sie haben Ihren %1 für $%3 eingelagert</German>
+			<German>Du hast deinen %1 für $%3 eingelagert</German>
 			<French>Vous avez unimpounded votre %1 pour $%3</French>
 		</Key>
 		<Key ID="STR_Shop_Veh_DidntPick">
@@ -3412,7 +3451,7 @@
 		<Key ID="STR_Shop_Veh_NotEnough">
 			<Original>You do not have enough cash to purchase this vehicle.\n\nAmount Lacking: $%1</Original>
 			<English>You do not have enough cash to purchase this vehicle.\n\nAmount Lacking: $%1</English>
-			<German>Sie haben nicht-genug Geld um das Fahrzeug zu kaufen,\n\nBetrag fehlen: $%1 kaufen</German>
+			<German>Sie haben nicht-genug Geld um das Fahrzeug zu kaufen,\n\nEs fehlen: $%1</German>
 			<French>Vous n'avez pas assez d'argent pour acheter ce véhicule \n\nAmount Manquant: $%1</French>
 		</Key>
 		<Key ID="STR_Shop_Veh_NoLicense">
@@ -3424,20 +3463,20 @@
 		<Key ID="STR_Shop_Veh_Block">
 			<Original>There is a vehicle currently blocking the spawn point</Original>
 			<English>There is a vehicle currently blocking the spawn point</English>
-			<German>Derzeit blockiert ein Fahrzeugdie den Spawn-Punkt</German>
+			<German>Derzeit blockiert ein Fahrzeug den Spawn-Punkt</German>
 			<French>Il s'agit d'un véhicule de blocage actuellement le point de spawn</French>
 		</Key>
 		<Key ID="STR_Shop_Veh_Bought">
 			<Original>You bought a %1 for $%2</Original>
 			<English>You bought a %1 for $%2</English>
-			<German>Sie kaufen %1 für %$2</German>
+			<German>Sie kaufen %1 für $%2</German>
 			<French>Vous avez acheté un %1 pour %$2</French>
 		</Key>
 		<Key ID="STR_Shop_Veh_UI_Rental">
 			<Original>Rental Price:</Original>
 			<English>Rental Price:</English>
 			<German>Mietpreis:</German>
-			<French>Prix ​​de location:</French>
+			<French>Prix ??de location:</French>
 		</Key>
 		<Key ID="STR_Shop_Veh_UI_Ownership">
 			<Original>Ownership Price:</Original>
@@ -3466,13 +3505,13 @@
 		<Key ID="STR_Shop_Veh_UI_Trunk">
 			<Original>Trunk Capacity:</Original>
 			<English>Trunk Capacity:</English>
-			<German>Lager-Kapazität:</German>
+			<German>Lager Kapazität:</German>
 			<French>Capaciter de charge:</French>
 		</Key>
 		<Key ID="STR_Shop_Veh_UI_Fuel">
 			<Original>Fuel Capacity:</Original>
 			<English>Fuel Capacity:</English>
-			<German>Kraftstoff-Kapazität:</German>
+			<German>Tank Kapazität:</German>
 			<French>Capaciter du réservoir:</French>
 		</Key>
 		<Key ID="STR_Shop_Veh_UI_Armor">
@@ -3484,14 +3523,17 @@
 		<Key ID="STR_Shop_Veh_UI_RetrievalP">
 			<Original>Retrieval Price:</Original>
 			<English>Retrieval Price:</English>
+			<German>Preis Abfragen:</German>
 		</Key>
 		<Key ID="STR_Shop_Veh_UI_SellP">
 			<Original>Sell Price:</Original>
 			<English>Sell Price:</English>
+			<German>Verkaufspreis:</German>
 		</Key>
 		<Key ID="STR_Shop_Veh_UI_Color">
 			<Original>Color:</Original>
 			<English>Color:</English>
+			<German>Farbe:</German>
 		</Key>
 		<Key ID="STR_Shop_Veh_NotAllowed">
 			<Original>You are not allowed to use this shop!</Original>
@@ -3520,7 +3562,7 @@
 		<Key ID="STR_Shop_Virt_Gang_FundsMSG">
 			<Original>The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?</Original>
 			<English>The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?</English>
-			<German>Die Gang hat genügend Mittel, um dafür zu bezahlen, würden Sie sich mit den Gang Mittel oder Ihren eigenen Geld zahlen?</German>
+			<German>Die Gang hat genügend Mittel, um dafür zu bezahlen, würden Sie es mit den Gang Geld oder Ihren eigenen Geld zahlen?</German>
 			<French>Le gang a suffisamment de fonds pour payer pour cela, voulez-vous payer avec les fonds de gangs ou de votre propre?</French>
 		</Key>
 		<Key ID="STR_Shop_Virt_Gang_Funds">
@@ -3538,7 +3580,7 @@
 		<Key ID="STR_Shop_Virt_YourorGang">
 			<Original>Pay with cash or gang funds</Original>
 			<English>Pay with cash or gang funds</English>
-			<German>Bezahlen Sie mit Bargeld oder mit Gang Mitteln</German>
+			<German>Bezahlen Sie mit Bargeld oder mit Gang Geld</German>
 			<French>Payez avec des fonds de trésorerie ou gangs</French>
 		</Key>
 		<Key ID="STR_Shop_Virt_UI_GangFunds">
@@ -3556,7 +3598,7 @@
 		<Key ID="STR_Shop_Virt_BoughtGang">
 			<Original>You bought %1 %2 for $%3 with the gangs funds</Original>
 			<English>You bought %1 %2 for $%3 with the gangs funds</English>
-			<German>Du kaufst %1 %2 für $%3 mit den Gang Mitteln</German>
+			<German>Du kaufst %1 %2 für $%3 mit den Gang Geld</German>
 			<French>vous avez acheté %1 %2 pour $%3 avec les fonds gangs</French>
 		</Key>
 		<Key ID="STR_Shop_Virt_BoughtItem">
