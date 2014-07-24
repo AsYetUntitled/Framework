@@ -277,7 +277,7 @@
 			<German>Sie müssen zuerst in einer Gang sein!</German>	
 		</Key>
 		<Key ID="STR_GNOTF_Controlled">
-			<Original>Your gang already has control over this hideout!</Origianal>
+			<Original>Your gang already has control over this hideout!</Original>
 			<English>Your gang already has control over this hideout!</English>
 			<German>Ihre Bande hat bereits die Kontrolle über dieses Versteck!</German>	
 		</Key>
@@ -622,6 +622,7 @@
 			<English>Sync Data</English>
 			<German>Speichern</German>
 		</Key>
+	</Package>
 	<Package name="Settings_Menu">
 		<Key ID="STR_SM_Title">
 			<Original>Settings Menu</Original>
@@ -1005,7 +1006,7 @@
 		<Key ID="STR_NOTF_PickedMoney">
 			<Original>You have picked up $%1</Original>
 			<English>You have picked up $%1</English>
-			<German>Sie haben $1% aufgehoben</German>>
+			<German>Sie haben $1% aufgehoben</German>
 		</Key>
 		<Key ID="STR_NOTF_Bail_Post">
 			<Original>You must wait at least 3 minutes in jail before paying a bail.</Original>
@@ -1076,7 +1077,6 @@
 			<Original>A vehicle was searched and has $%1 worth of drugs / contraband.</Original>
 			<English>A vehicle was searched and has $%1 worth of drugs / contraband.</English>
 			<German>Ein Fahrzeug wurde durchsuchtund es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
-
 		</Key>
 		<Key ID="STR_NOTF_PulledOut">
 			<Original>You have been pulled out of the vehicle</Original>
@@ -1129,10 +1129,14 @@
 			<German>Sie haben nicht genug Platz für das Item.</German>
 		</Key>
 		<Key ID="STR_NOTF_ProcessWOLicense">
- 			<Original>You need $%1 to process  without a license!</Original>
-			<English>>You need $%1 to process  without a license!</English>
+ 			<Original>You need $%1 to process without a license!</Original>
+			<English>>You need $%1 to process without a license!</English>
 			<German>Sie müssen $%1 haben um ohne eine Lizenz zu verarbeiten!</German>
- 		</Key>		
+ 		</Key>
+ 		<Key ID="STR_NOTF_RapidAction">
+ 			<Original>You can't rapidly use action keys!</Original>
+ 			<English>You can't rapidly use action keys!</English>
+ 		</Key>	
 	</Package>
 	<Package name="Jail_Strings">
 		<Key ID="STR_Jail_Warn">
@@ -1159,6 +1163,22 @@
 			<Original>You have served your time in jail and have been released.</Original>
 			<English>You have served your time in jail and have been released.</English>
 			<German>Sie haben Ihre Zeit im Gefängnis abgesessen und wurden freigelassen.</German>
+		</Key>
+		<Key ID="STR_Jail_Time">
+			<Original>Time Remaining:</Original>
+			<English>Time Remaining:</English>
+		</Key>
+		<Key ID="STR_Jail_Pay">
+			<Original>Can pay bail:</Original>
+			<English>Can pay bail:</English>
+		</Key>
+		<Key ID="STR_Jail_Price">
+			<Original>Bail Price:</Original>
+			<English>Bail Price:</English>
+		</Key>
+		<Key ID="STR_Jail_Paid">
+			<Original>You have paid your bail and are now free.</Original>
+			<English>You have paid your bail and are now free.</English>
 		</Key>
 	</Package>
 	<Package name="Civ_Strings">
