@@ -1733,6 +1733,38 @@
 			<Original>Couldn't search %1</Original>
 			<English>Couldn't search %1</English>
 		</Key>
+		<Key ID="STR_Cop_RepairingDoor">
+			<Original>Repairing Door...</Original>
+			<English>Repairing Door...</English>
+		</Key>
+		<Key ID="STR_Cop_NoLicensesFound">
+			<Original>No Licenses&lt;br/&gt;</Original>
+			<English>No Licenses&lt;br/&gt;</English>
+		</Key>
+		<Key ID="STR_Cop_DealerQuestion">
+			<Original>No one has sold to this dealer recently.</Original>
+			<English>No one has sold to this dealer recently.</English>
+		</Key>
+		<Key ID="STR_Cop_DealerMSG">
+			<Original>The following people have been selling to this dealer recently.</Original>
+			<English>The following people have been selling to this dealer recently.</English>
+		</Key>
+		<Key ID="STR_Cop_Radar">
+			<Original>Radar</Original>
+			<English>Radar</English>
+		</Key>
+		<Key ID="STR_Cop_VehSpeed">
+			<Original>Vehicle Speed %1 km/h</Original>
+			<English>Vehicle Speed %1 km/h</English>
+		</Key>
+		<Key ID="STR_Cop_ExcessiveRestrain">
+			<Original>You have been released automatically for excessive restrainment time</Original>
+			<English>You have been released automatically for excessive restrainment time</English>
+		</Key>
+		<Key ID="STR_Cop_Retrained">
+			<Original>You have been restrained by %1</Original>
+			<English>You have been restrained by %1</English>
+		</Key>
 	</Package>
 	<Package name="MISC_Strings">
 		<Key ID="STR_MISC_TooMuch">
