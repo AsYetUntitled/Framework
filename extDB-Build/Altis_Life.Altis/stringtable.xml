@@ -279,7 +279,7 @@
 		<Key ID="STR_GNOTF_Controlled">
 			<Original>Your gang already has control over this hideout!</Original>
 			<English>Your gang already has control over this hideout!</English>
-			<German>Ihre Bande hat bereits die Kontrolle über dieses Versteck!</German>	
+			<German>Ihre Gang hat bereits die Kontrolle über dieses Versteck!</German>	
 		</Key>
 		<Key ID="STR_GNOTF_Captured">
 			<Original>Only one person shall capture at once!</Original>
@@ -1136,6 +1136,7 @@
  		<Key ID="STR_NOTF_RapidAction">
  			<Original>You can't rapidly use action keys!</Original>
  			<English>You can't rapidly use action keys!</English>
+ 			<German>Die Aktionstaste kann nicht so schnell hintereinander genutzt werden!</German>
  		</Key>	
 	</Package>
 	<Package name="Jail_Strings">
@@ -1167,18 +1168,22 @@
 		<Key ID="STR_Jail_Time">
 			<Original>Time Remaining:</Original>
 			<English>Time Remaining:</English>
+			<German>Verbleibene Zeit</German>
 		</Key>
 		<Key ID="STR_Jail_Pay">
 			<Original>Can pay bail:</Original>
 			<English>Can pay bail:</English>
+			<German>Kaution zahlen</German>
 		</Key>
 		<Key ID="STR_Jail_Price">
 			<Original>Bail Price:</Original>
 			<English>Bail Price:</English>
+			<German>Kautions Preis:</German>
 		</Key>
 		<Key ID="STR_Jail_Paid">
 			<Original>You have paid your bail and are now free.</Original>
 			<English>You have paid your bail and are now free.</English>
+			<German>Du hast deine Kaution bezahlt und bist nun Frei</German>
 		</Key>
 	</Package>
 	<Package name="Civ_Strings">
