@@ -1613,10 +1613,12 @@
 		<Key ID="STR_Service_Chopper_NoAir">
 			<Original>There isn't a chopper on the helipad!</Original>
 			<English>There isn't a chopper on the helipad!</English>
+			<German>Es ist kein Helikopter auf dem Landeplatz </German>
 		</Key>
 		<Key ID="STR_Serive_Chopper_NotEnough">
 			<Original>You need $1,000 to service your chopper</Original>
 			<English>You need $1,000 to service your chopper</English>
+			<German>Du benötigst $1,000 um deinen Helikopter zu reparieren</German>
 		</Key>
 		<Key ID="STR_Service_Chopper_Servicing">
 			<Original>Servicing Chopper</Original>
