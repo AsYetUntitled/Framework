@@ -136,8 +136,8 @@
 	<Package name="Cell_Phone">
 		<Key ID="STR_CELL_Title">
 			<Original>Altis Mobile</Original>
+			<English>Altis Mobile</English>
 			<German>Altis Mobilfunk</German>
-			<German>Überweisen</German>
 		</Key>
 		<Key ID="STR_CELL_TextToSend">
 			<Original>Message To Send:</Original>
@@ -172,7 +172,7 @@
 		<Key ID="STR_CELL_EMSRequest">
 			<Original>Request EMS</Original>
 			<English>Request EMS</English>
-			<German>EMS Anfordern</German>>
+			<German>EMS Anfordern</German>
 		</Key>
 	</Package>
 	<Package name="Chop_Shop">
@@ -279,7 +279,7 @@
 		<Key ID="STR_GNOTF_Controlled">
 			<Original>Your gang already has control over this hideout!</Original>
 			<English>Your gang already has control over this hideout!</English>
-			<German>Ihre Bande hat bereits die Kontrolle über dieses Versteck!</German>	
+			<German>Ihre Gang hat bereits die Kontrolle über dieses Versteck!</German>	
 		</Key>
 		<Key ID="STR_GNOTF_Captured">
 			<Original>Only one person shall capture at once!</Original>
@@ -1136,6 +1136,7 @@
  		<Key ID="STR_NOTF_RapidAction">
  			<Original>You can't rapidly use action keys!</Original>
  			<English>You can't rapidly use action keys!</English>
+ 			<German>Die Aktionstaste kann nicht so schnell hintereinander genutzt werden!</German>
  		</Key>	
 	</Package>
 	<Package name="Jail_Strings">
@@ -1167,18 +1168,22 @@
 		<Key ID="STR_Jail_Time">
 			<Original>Time Remaining:</Original>
 			<English>Time Remaining:</English>
+			<German>Verbleibene Zeit</German>
 		</Key>
 		<Key ID="STR_Jail_Pay">
 			<Original>Can pay bail:</Original>
 			<English>Can pay bail:</English>
+			<German>Kaution zahlen</German>
 		</Key>
 		<Key ID="STR_Jail_Price">
 			<Original>Bail Price:</Original>
 			<English>Bail Price:</English>
+			<German>Kautions Preis:</German>
 		</Key>
 		<Key ID="STR_Jail_Paid">
 			<Original>You have paid your bail and are now free.</Original>
 			<English>You have paid your bail and are now free.</English>
+			<German>Du hast deine Kaution bezahlt und bist nun Frei</German>
 		</Key>
 	</Package>
 	<Package name="Civ_Strings">
@@ -1608,10 +1613,12 @@
 		<Key ID="STR_Service_Chopper_NoAir">
 			<Original>There isn't a chopper on the helipad!</Original>
 			<English>There isn't a chopper on the helipad!</English>
+			<German>Es ist kein Helikopter auf dem Landeplatz </German>
 		</Key>
 		<Key ID="STR_Serive_Chopper_NotEnough">
 			<Original>You need $1,000 to service your chopper</Original>
 			<English>You need $1,000 to service your chopper</English>
+			<German>Du benötigst $1,000 um deinen Helikopter zu reparieren</German>
 		</Key>
 		<Key ID="STR_Service_Chopper_Servicing">
 			<Original>Servicing Chopper</Original>
@@ -1622,7 +1629,7 @@
 		<Key ID="STR_Service_Chopper_Missing">
 			<Original>The vehicle is no longer alive or on the helipad!</Original>
 			<English>The vehicle is no longer alive or on the helipad!</English>
-			<German>Das Fahrzeug ist zerstört oder auf dem Helicopterlandeplatz!</German>
+			<German>Das Fahrzeug ist zerstört oder auf dem Helikopterlandeplatz!</German>
 		</Key>
 		<Key ID="STR_Service_Chopper_Done">
 			<Original>Your chopper is now repaired and refuelled.</Original>
