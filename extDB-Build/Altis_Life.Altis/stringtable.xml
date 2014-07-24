@@ -1537,7 +1537,7 @@
 		<Key ID="STR_Civ_RobFail">
 			<Original>They didn't have any cash...</Original>
 			<English>They didn't have any cash...</English>
-			<German>Er hatten kein Geld ...</German>
+			<German>Er hatte kein Geld ...</German>
 			<French>Ils n'ont pas l'agent...</French>
 		</Key>
 		<Key ID="STR_Civ_Robbed">
