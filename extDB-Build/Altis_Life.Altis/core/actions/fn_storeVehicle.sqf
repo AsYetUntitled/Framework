@@ -30,7 +30,7 @@ if(vehicle player != player) then
 	};
 };
 
-if(isNil "_vehicle") exitWith {hint "There isn't a vehicle near the NPC."};
+if(isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
 if(isNull _vehicle) exitWith {};
 [[_vehicle,false,(_this select 1)],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
 hint localize "STR_Garage_Store_Server";

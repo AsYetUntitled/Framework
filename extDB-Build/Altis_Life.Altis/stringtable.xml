@@ -712,6 +712,10 @@
 			<Original>The selection had a error...</Original>
 			<English>The selection had a error...</English>
 		</Key>
+		<Key ID="STR_Garage_NoNPC">
+			<Original>There isn't a vehicle near the NPC.</Original>
+			<English>There isn't a vehicle near the NPC.</English>
+		</Key>
 	</Package>
 	<Package name="Key_Chain">
 		<Key ID="STR_Keys_Title">
@@ -1724,6 +1728,10 @@
 		<Key ID="STR_Cop_CantRemove">
 			<Original>Couldn't remove the item(s) from your inventory to put in the safe.</Original>
 			<English>Couldn't remove the item(s) from your inventory to put in the safe.</English>
+		</Key>
+		<Key ID="STR_Cop_CouldntSearch">
+			<Original>Couldn't search %1</Original>
+			<English>Couldn't search %1</English>
 		</Key>
 	</Package>
 	<Package name="MISC_Strings">
