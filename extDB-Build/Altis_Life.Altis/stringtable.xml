@@ -105,19 +105,19 @@
 			<Original>Searching Database for vehicles...</Original>
 			<English>Searching Database for vehicles...</English>
 			<German>Durchsuche Datenbank nach Fahrzeugen...</German>
-			<French>Recherche base de données pour les véhicules ...</French>
+			<French>Recherche des véhicules dans le garage...</French>
 		</Key>
 		<Key ID="STR_ANOTF_Query_2">
 			<Original>You are already querying a player.</Original>
 			<English>You are already querying a player.</English>
 			<German>Sie fragen bereits einen Spieler ab</German>
-			<French>Vous êtes déjà interrogez un joueur.</French>
+			<French>Vous avez déjà interrogé ce joueur.</French>
 		</Key>
 		<Key ID="STR_ANOTF_QueryFail">
 			<Original>Player no longer exists?</Original>
 			<English>Player no longer exists?</English>
 			<German>Spieler existiert nicht mehr?</German>
-			<French>Le joueur ne semble pas exister?</French>
+			<French>Le joueur ne semble pas exister</French>
 		</Key>
 	</Package>
 	<Package name="ATM_Strings">
@@ -149,7 +149,7 @@
 			<Original>You can't deposit more then $999,999 at a time</Original>
 			<English>You can't deposit more then $999,999 at a time</English>
 			<German>Du kannst nicht mehr als $999,999 gleichzeitig einzahlen</German>
-			<French>Vous ne pouvez pas transferer plus de $999,999</French>
+			<French>Vous ne pouvez pas déposer plus de $999,999</French>
 		</Key>
 		<Key ID="STR_ATM_notnumeric">
 			<Original>The amount entered isn't a numeric value.</Original>
@@ -160,50 +160,63 @@
 		<Key ID="STR_ATM_DepositMSG">
  			<Original>You have deposited $%1 into your bank account</Original>
  			<English>You have deposited $%1 into your bank account</English>
+ 			<French>Vous avez déposé $%1 dans votre compte bancaire</French>
  		</Key>
  		<Key ID="STR_ATM_NoneSelected">
  			<Original>You need to select someone to transfer to</Original>
  			<English>You need to select someone to transfer to</English>
+ 			<French>Sélectionnez une personne pour le transfert</French>
+
  		</Key>
  		<Key ID="STR_ATM_DoesntExist">
  			<Original>The player selected doesn't seem to exist?</Original>
  			<English>The player selected doesn't seem to exist?</English>
+ 			<French>La personne sélectionnée ne semble plus exister</French>
  		</Key>
  		<Key ID="STR_ATM_TransferMax">
  			<Original>You can't transfer more then $999,999</Original>
  			<English>You can't transfer more then $999,999</English>
+ 			<French>Vous ne pouvez pas transférer plus de $999,999</French>
  		</Key>
  		<Key ID="STR_ATM_NotEnoughFunds">
  			<Original>You don't have that much in your bank account!</Original>
  			<English>You don't have that much in your bank account!</English>
+ 			<French>Vous n'avez pas autant dans votre compte bancaire</French>
  		</Key>
  		<Key ID="STR_ATM_SentMoneyFail">
  			<Original>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</Original>
  			<English>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</English>
+ 			<French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxe</French>
  		</Key>
  		<Key ID="STR_ATM_SentMoneySuccess">
  			<Original>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</Original>
  			<English>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</English>
+ 			<French>Vous avez transférer $%1 à %2.\n\nA La taxe de $%3 vous à été prélevée pendant le transfert.</French>
  		</Key>
  		<Key ID="STR_ATM_WithdrawMax">
  			<Original>You can't withdraw more then $999,999</Original>
  			<English>You can't withdraw more then $999,999</English>
+ 			<French>Vous ne pouvez pas retirer plus de $999,999</French>
  		</Key>
  		<Key ID="STR_ATM_WithdrawMin">
  			<Original>You can't withdraw less then $100</Original>
  			<English>You can't withdraw less then $100</English>
+ 			<French>Vous ne pouvez pas retirer moins de $100</French>
  		</Key>
  		<Key ID="STR_ATM_WithdrawSuccess">
  			<Original>You have withdrawn $%1 from your bank account</Original>
  			<English>You have withdrawn $%1 from your bank account</English>
+ 			<French>Vous avez retiré $%1 de votre compte en banque</French>
  		</Key>
  		<Key ID="STR_ATM_NotEnoughCash">
  			<Original>You do not have that much cash on you.</Original>
  			<English>You do not have that much cash on you.</English>
+ 			<French>Vous n'avez pas autant d'agent sur vous.</French>
  		</Key>
  		<Key ID="STR_ATM_DepositGang">
  			<Original>You have deposited $%1 into your gangs bank account</Original>
  			<English>You have deposited $%1 into your gangs bank account</English>
+ 			<French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
  		</Key>
 	</Package>
 	<Package name="Cell_Phone">
@@ -261,7 +274,7 @@
 			<Original>Local Chop Shop</Original>
 			<English>Local Chop Shop</English>
 			<German>Illegaler Fahrzeughändler</German>
-			<French>Commercant de véhicule volé</French>
+			<French>Concessionnaire de véhicule volé</French>
 		</Key>
 	</Package>
 	<Package name="Gang_Menu">
@@ -341,7 +354,7 @@
 			<Original>Invite Player</Original>
 			<English>Invite Player</English>
 			<German>Spieler Einladen</German>
-			<French>Invité joueur</French>
+			<French>Inviter joueur</French>
 		</Key>
 		<Key ID="STR_Gang_Disband_Gang">
 			<Original>Disband Gang</Original>
@@ -360,13 +373,13 @@
 			<Original>Transfer Gang Leadership</Original>
 			<English>Transfer Gang Leadership</English>
 			<German>Gangführung übertragen</German>	
-			<French>Leadership transfert de Gang</French>
+			<French>Transfert du commandement du Gang</French>
 		</Key>
 		<Key ID="STR_Gang_UpgradeMax">
 			<Original>Upgrade Maximum Allowed Gang Members</Original>
 			<English>Upgrade Maximum Allowed Gang Members</English>
 			<German>Upgrade Maximum von erlaubten Gang-Mitglieder</German>	
-			<French>Mise à niveau maximum, admis au membres de gangs</French>
+			<French>Augmentation du nombre de membre acceptés</French>
 		</Key>
 	</Package>
 	<Package name="Gang_Notification">
@@ -398,25 +411,25 @@
 			<Original>Hideout is currently under control...</Original>
 			<English>Hideout is currently under control...</English>
 			<German>Versteck ist derzeit unter Kontrolle ...</German>
-			<French>Hideout est actuellement sous contrôle ...</French>
+			<French>La cachette est actuellement sous contrôle ...</French>
 		</Key>
 		<Key ID="STR_GNOTF_CaptureCancel">
 			<Original>Capturing cancelled</Original>
 			<English>Capturing cancelled</English>
 			<German>Einnehmen abgeborchen</German>
-			<French>Capture d'annulation</French>
+			<French>Capture annulée</French>
 		</Key>
 		<Key ID="STR_GNOTF_Capturing">
 			<Original>Capturing Hideout</Original>
 			<English>Capturing Hideout</English>
 			<German>Versteck Einnehmen</German>
-			<French>Capture Hideout</French>
+			<French>Capture cachette</French>
 		</Key>
 		<Key ID="STR_GNOTF_CaptureSuccess">
 			<Original>%1 and his gang: %2 - have taken control of a local hideout!</Original>
 			<English>%1 and his gang: %2 - have taken control of a local hideout!</English>
 			<German>%1 und seine Bande: 2% - haben die Kontrolle über ein lokales Versteck übernommen!</German>
-			<French>%1 et sa bande: %2 - have taken control of a local hideout!</French>
+			<French>%1 et sa bande: %2 ont pris le controle de la cachette !</French>
 		</Key>
 		<Key ID="STR_GNOTF_Over32">
 			<Original>You can't have a gang name longer then 32 characters.</Original>
@@ -428,7 +441,7 @@
 			<Original>You have invalid characters in your gang name. It can only consist of Numbers amd letters with an underscore</Original>
 			<English>You have invalid characters in your gang name. It can only consist of Numbers amd letters with an underscore</English>
 			<German>Sie haben ein Ungültiges Zeichen in ihrem Namen. Er kann nur aus Zahlen amd Buchstaben bestehen</German>	
-			<French>Vous avez caractères non valides dans le nom de votre gang. Il ne peut être constitué de chiffres amd lettres avec un trait de soulignement</French>
+			<French>Vous avez des caractères non valides dans le nom de votre gang. Il ne peut être constitué de chiffres amd lettres avec un trait de soulignement</French>
 		</Key>
 		<Key ID="STR_GNOTF_NotEnoughMoney">
 			<Original>You do not have enough money in your bank account.\n\nYou lack: $%1</Original>
@@ -458,7 +471,7 @@
 			<Original>Disbanding cancelled</Original>
 			<English>Disbanding cancelled</English>
 			<German>Auflösung Abgebrochen</German>
-			<French>Démantèlement d'annulation</French>
+			<French>Démantèlement annulé</French>
 		</Key>
 		<Key ID="STR_GNOTF_DisbandWarn_2">
 			<Original>The leader has disbanded the gang.</Original>
@@ -476,7 +489,7 @@
 			<Original>You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.</Original>
 			<English>You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.</English>
 			<German>Sie sind dabei %1 in Ihre Gang einzuladen, wenn sie akzeptieren hat er Zugang zu den Mitteln der Bande.</German>
-			<French>Vous êtes sur le point d'inviter %1 à votre gang, s'ils acceptent l'invitation, ils auront accès à des fonds de la gang.</French>
+			<French>Vous êtes sur le point d'inviter %1 à votre gang, s'ils acceptent l'invitation, ils auront accès à des fonds du gang.</French>
 		</Key>
 		<Key ID="STR_GNOTF_SelectPerson">
 			<Original>You need to select a person to invite!</Original>
@@ -494,25 +507,25 @@
 			<Original>Invitation Cancelled</Original>
 			<English>Invitation Cancelled</English>
 			<German>Einladung Abgebrochen</German>
-			<French>Invitation Annulés</French>
+			<French>Invitation Annulées</French>
 		</Key>
 		<Key ID="STR_GNOTF_KickSelf">
 			<Original>You cannot kick yourself!</Original>
 			<English>You cannot kick yourself!</English>
 			<German>Sie können sich nicht selbst kicken!</German>
-			<French>Vous ne pouvez pas lancer vous-même!</French>
+			<French>Vous ne pouvez pas kicker vous-même!</French>
 		</Key>
 		<Key ID="STR_GNOTF_MaxSlot">
 			<Original>Your gang has reached its maximum allowed slots, please upgrade your gangs slot limit.</Original>
 			<English>Your gang has reached its maximum allowed slots, please upgrade your gangs slot limit.</English>
 			<German>Ihre Gang hat die maximale Anzahl an Plätzen erreicht, bitte upgrade dein limit.</German>
-			<French>Your gang has reached its maximum allowed slots, please upgrade your gangs slot limit.</French>
+			<French>Votre gang à atteint le nombre de membre maximum, veuillez augmenter cette limite.</French>
 		</Key>
 		<Key ID="STR_GNOTF_SelectKick">
 			<Original>You need to select a person to kick!</Original>
 			<English>You need to select a person to kick!</English>
 			<German>Du musst einen Spieler markieren um ihn zu Kicken!</German>
-			<French>Vous devez choisir une personne pour le coup!</French>
+			<French>Vous devez choisir une personne pour le kick!</French>
 		</Key>
 		<Key ID="STR_GNOTF_LeaderLeave">
 			<Original>You cannot leave the gang without appointing a new leader first!</Original>
@@ -524,13 +537,13 @@
 			<Original>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
 			<English>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</English>
 			<German>Sie sind dabei,die Führung über %1 zu übertragen &lt;br/&gt;Durch die Übertragung der Führung werden Sie keine Kontrolle über die Gang mehr.</German>
-			<French>You are about to transfer leadership over to %1&lt;br/&gt;En transférant leadership que vous ne serez plus dans le contrôle de la bande, sauf la propriété est transférée de nouveau.</French>
+			<French>Vous allez transférer le commandement à %1&lt;br/&gt;En transférant le commandement, vous ne serez plus le chef du gang, sauf si le commandement est transféré de nouveau.</French>
 		</Key>
 		<Key ID="STR_GNOTF_TransferCancel">
 			<Original>Transfer of leadership cancelled.</Original>
 			<English>Transfer of leadership cancelled.</English>
 			<German>Übertragung der Führung abgebrochen.</German>
-			<French>Transfert du leadership annulée.</French>
+			<French>Transfert du commandement annulée.</French>
 		</Key>
 		<Key ID="STR_GNOTF_TransferSelf">
 			<Original>You are already the leader!</Original>
@@ -548,7 +561,7 @@
 			<Original>You are about to upgrade the maximum members allowed for your gang.</Original>
 			<English>You are about to upgrade the maximum members allowed for your gang.</English>
 			<German>Sie sind dabei, die maximalen Anzahl an Mitglieder zu erhöhen</German>
-			<French>Vous êtes sur le point de mettre à niveau les membres maximales autorisées pour votre gang.</French>
+			<French>Vous êtes sur le point de mettre à niveau la limite de membre autorisées pour votre gang.</French>
 		</Key>
 		<Key ID="STR_GNOTF_CurrentMax">
 			<Original>Current Max: %1</Original>
@@ -572,7 +585,7 @@
 			<Original>You do not have enough money in your bank account to upgrade the gangs maximum member limit.</Original>
 			<English>You do not have enough money in your bank account to upgrade the gangs maximum member limit.</English>
 			<German>Sie haben nicht genug Geld auf Ihr Bankkonto, um die Banden zu vergrößern.</German>
-			<French>Vous n'avez pas assez d'argent dans votre compte de banque pour mettre à niveau les gangs limite de membre maximale.</French>
+			<French>Vous n'avez pas assez d'argent dans votre compte de banque pour mettre à niveau la limite de membre maximale.</French>
 		</Key>
 		<Key ID="STR_GNOTF_Current">
 			<Original>Current:</Original>
@@ -590,7 +603,7 @@
 			<Original>You have upgraded from %1 to %2 maximum slots for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Original>
 			<English>You have upgraded from %1 to %2 maximum slots for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</English>
 			<German>Sie haben von %1 zu %2 Plätzen für &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt; aufgerüstet</German>
-			<French>Vous avez mis à niveau à partir de %1 à %2 maximum slots for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</French>
+			<French>Vous avez mis à niveau à partir de %1 à %2 membres maximum for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</French>
 		</Key>
 		<Key ID="STR_GNOTF_UpgradeCancel">
 			<Original>Upgrade cancelled.</Original>
@@ -634,7 +647,7 @@
 			<Original>Sell Price</Original>
 			<English>Sell Price</English>
 			<German>Verkaufspreis</German>
-			<French>Prix Vente</French>
+			<French>Prix de vente</French>
 		</Key>
 		<Key ID="STR_Garage_SFee">
 			<Original>Storage Fee</Original>
@@ -715,6 +728,7 @@
 		<Key ID="STR_Garage_NoNPC">
 			<Original>There isn't a vehicle near the NPC.</Original>
 			<English>There isn't a vehicle near the NPC.</English>
+			<French>Il n'y a pas de véhicule près du PNJ</French>
 		</Key>
 	</Package>
 	<Package name="Key_Chain">
@@ -1229,13 +1243,13 @@
 			<Original>The Device is mining...</Original>
 			<English>The Device is mining...</English>
 			<German>Der Fahrzeug sammelt...</German>
-			<French>The Device is mining...</French>
+			<French>Le véhicule mine...</French>
 		</Key>
 		<Key ID="STR_NOTF_DeviceMined">
 			<Original>Completed cycle, the device has mined %1</Original>
 			<English>Completed cycle, the device has mined %1</English>
 			<German>Sammeln beendet, das Gerät hat %1 gesammelt</German>
-			<French>Completed cycle, the device has mined %1</French>
+			<French>Cycle terminé, le véhicule à miné %1</French>
 		</Key>
 		<Key ID="STR_NOTF_OutOfFuel">
 			<Original>Vehicle is out of fuel</Original>
@@ -1247,7 +1261,7 @@
 			<Original>You have packed up the spike strip.</Original>
 			<English>You have packed up the spike strip.</English>
 			<German>Sie haben die Krallenband verpackt.</German>
-			<French>Vous avez emballé la bande de pointe.</French>
+			<French>Vous avez emballé la herse.</French>
 		</Key>
 		<Key ID="STR_NOTF_PickedEvidence">
 			<Original>%1 has been placed in evidence, you have received $%2 as a reward.</Original>
@@ -1271,7 +1285,7 @@
 			<Original>You do not have $%1 in your bank account to pay bail.</Original>
 			<English>You do not have $%1 in your bank account to pay bail.</English>
 			<German>Sie haben keine $%1 auf Ihrem Bankkonto um die Kaution zu zahlen.</German>
-			<French>You do not have $%1 in your bank account to pay bail.</French>
+			<French>Vous n'avez pas $%1 dans votre compte en banque pour payer la caution.</French>
 		</Key>
 		<Key ID="STR_NOTF_Bail_Bailed">
 			<Original>%1 has posted bail!</Original>
@@ -1283,13 +1297,13 @@
 			<Original>There isn't a vehicle nearby...</Original>
 			<English>There isn't a vehicle nearby...</English>
 			<German>Es ist kein Fahrzeug in der Nähe ...</German>
-			<French>There isn't a vehicle nearby...</French>
+			<French>Il n'y a pas de véhicule à proximité...</French>
 		</Key>
 		<Key ID="STR_NOTF_Restrained">
 			<Original>%1 was restrained by %2</Original>
 			<English>%1 was restrained by %2</English>
 			<German>%1 wurde von festgenommen %2</German>
-			<French>%1 a été retenu par %2</French>
+			<French>%1 a été menotté par %2</French>
 		</Key>
 		<Key ID="STR_NOTF_Searching">
 			<Original>Searching...</Original>
@@ -1319,7 +1333,7 @@
 			<Original>%1 was unrestrained by %2</Original>
 			<English>%1 was unrestrained by %2</English>
 			<German>%1 wurde von %2 freigelassen</German>
-			<French>%1 n'était pas retenue par %2</French>
+			<French>%1 a été démenotté par %2</French>
 		</Key>
 		<Key ID="STR_NOTF_Robbed">
 			<Original>%1 has robbed %2 for $%3</Original>
@@ -1331,25 +1345,25 @@
 			<Original>%1 doesn't have any money.</Original>
 			<English>%1 doesn't have any money.</English>
 			<German>1% hat keine Geld.</German>
-			<French>%1 n'a pas de money.</French>
+			<French>%1 n'a pas d'argent.</French>
 		</Key>
 		<Key ID="STR_NOTF_Tazed">
 			<Original>%1 was tazed by %2</Original>
 			<English>%1 was tazed by %2</English>
 			<German>%1 wurde von %2 getazert</German>
-			<French>%1 a été tazed par %2</French>
+			<French>%1 a été tazé par %2</French>
 		</Key>
 		<Key ID="STR_NOTF_VehContraband">
 			<Original>A vehicle was searched and has $%1 worth of drugs / contraband.</Original>
 			<English>A vehicle was searched and has $%1 worth of drugs / contraband.</English>
 			<German>Ein Fahrzeug wurde durchsuchtund es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
-			<French>Un véhicule a été fouillé et a $%1 la valeur de la drogue / contrebande.</French>
+			<French>Un véhicule venant d'être fouillé avait $%1 de drogue / contrebande.</French>
 		</Key>
 		<Key ID="STR_NOTF_PulledOut">
 			<Original>You have been pulled out of the vehicle</Original>
 			<English>You have been pulled out of the vehicle</English>
 			<German>Sie wurden aus dem Fahrzeug herausgezogen worden</German>
-			<French>You have been pulled out of the vehicle</French>
+			<French>Vous avez sortie les personnes du véhicule</French>
 		</Key>
 		<Key ID="STR_NOTF_GivenItem">
 			<Original>%1 has gave you %2 %3</Original>
@@ -1367,13 +1381,13 @@
 			<Original>Sending information to server please wait.....</Original>
 			<English>Sending information to server please wait.....</English>
 			<German>Senden Informationen an Server, bitte warten .....</German>
-			<French>Envoi d'informations au serveur s'il vous plaît patienter ....</French>
+			<French>Envoi d'informations au serveur, patienter s'il vous plait....</French>
 		</Key>
 		<Key ID="STR_NOTF_ActionCancel">
 			<Original>Action Cancelled</Original>
 			<English>Action Cancelled</English>
 			<German>Aktion abgebrochen</German>
-			<French>Action Annulé</French>
+			<French>Action Annulée</French>
 		</Key>
 		<Key ID="STR_NOTF_ActionInProc">
 			<Original>An action is already being processed...</Original>
@@ -1385,13 +1399,13 @@
 			<Original>You don't have enough space for that amount!</Original>
 			<English>You don't have enough space for that amount!</English>
 			<German>Sie haben nicht genug Platz für diese Menge!</German>
-			<French>Vous n'avez pas assez d'espace pour ce montant!</French>
+			<French>Vous n'avez pas assez d'espace!</French>
 		</Key>
 		<Key ID="STR_NOTF_NotEnoughMoney">
 			<Original>You don't have that much money!</Original>
 			<English>You don't have that much money!</English>
 			<German>Sie haben nicht so viel Geld!</German>
-			<French>Vous n'avez pas beaucoup d'argent!</French>
+			<French>Vous n'avez pas assez d'argent!</French>
 		</Key>
 		<Key ID="STR_NOTF_NotACop">
 			<Original>You are not a cop.</Original>
@@ -1403,13 +1417,13 @@
 			<Original>You don't have enough room for that item.</Original>
 			<English>You don't have enough room for that item.</English>
 			<German>Sie haben nicht genug Platz für das Item.</German>
-			<French>Vous n'avez pas assez de place pour que le point</French>
+			<French>Vous n'avez pas assez de place.</French>
 		</Key>
 		<Key ID="STR_NOTF_ProcessWOLicense">
  			<Original>You need $%1 to process without a license!</Original>
 			<English>You need $%1 to process without a license!</English>
 			<German>Sie müssen $%1 haben um ohne eine Lizenz zu verarbeiten!</German>
-			<French>Vous devez $%1 de traiter sans permis!</French>
+			<French>Vous devez payer $%1 pour traiter sans licence!</French>
  		</Key>
  		<Key ID="STR_NOTF_RapidAction">
  			<Original>You can't rapidly use action keys!</Original>
@@ -1420,10 +1434,12 @@
  		<Key ID="STR_NOTF_NotEnoughFunds">
  			<Original>You do not have enough funds in your bank account</Original>
  			<English>You do not have enough funds in your bank account</English>
+ 			<French>Vous n'avez pas assez de fond dans votre compte bancaire</French>
  		</Key>
  		<Key ID="STR_NOTF_CouldntAdd">
  			<Original>Couldn't add it to your inventory.</Original>
  			<English>Couldn't add it to your inventory.</English>
+ 			<French>Impossible d'ajouter cela à votre inventaire</French>
  		</Key>
 	</Package>
 	<Package name="Jail_Strings">
@@ -1431,13 +1447,13 @@
 			<Original>You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!</Original>
 			<English>You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!</English>
 			<German>Du wurdest festgenommen, warte deine Zeit ab. Wenn Sie versuchen zu respawnen oder reconnecten erhöht sich ihre Zeit! </German>
-			<French>Vous avez été arrêté, attendez de votre temps. Si vous tentez de respawn ou reconnectez votre temps va augmenter!</French>
+			<French>Vous avez été arrêté, attendez que votre peine soit terminée. Si vous tentez de respawn ou reconnectez votre temps sera augmenté!</French>
 		</Key>
 		<Key ID="STR_Jail_LicenseNOTF">
 			<Original>For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License</Original>
 			<English>For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License</English>
 			<German>Bei der Verhaftung haben sie folgende Lizenzen verloren\n\nFirearms Lizenz\nRebel Lizenz</German>
-			<French>For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License</French>
+			<French>Après votre mise en prison, vous avez perdu les licences suivante si vous les aviez\n\nFirearms License\nRebel License</French>
 		</Key>
 		<Key ID="STR_Jail_EscapeNOTF">
 			<Original>%1 has escaped from jail!</Original>
@@ -1449,13 +1465,13 @@
 			<Original>You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.</Original>
 			<English>You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.</English>
 			<German>Du wurdest festgenommen, warte deine Zeit ab. Wenn Sie versuchen zu respawnen oder reconnecten erhöht sich ihre Zeit! </German>
-			<French>Vous avez échappé de prison, vous conserver toujours vos crimes précédents et ils ont maintenant un compte d'échapper à la prison.</French>
+			<French>Vous vous êtes échappé de prison, vous conserver toujours vos crimes précédents et ils savent maintenant que vous vous êtes échappé de prison.</French>
 		</Key>
 		<Key ID="STR_Jail_Released">
 			<Original>You have served your time in jail and have been released.</Original>
 			<English>You have served your time in jail and have been released.</English>
 			<German>Sie haben Ihre Zeit im Gefängnis abgesessen und wurden freigelassen.</German>
-			<French>You have served your time in jail and have been released.</French>
+			<French>Vous avez terminé votre peine, vous êtes libre.</French>
 		</Key>
 		<Key ID="STR_Jail_Time">
 			<Original>Time Remaining:</Original>
@@ -1473,13 +1489,13 @@
 			<Original>Bail Price:</Original>
 			<English>Bail Price:</English>
 			<German>Kautions Preis:</German>
-			<French>Bail Prix:</French>
+			<French>Prix de la caution:</French>
 		</Key>
 		<Key ID="STR_Jail_Paid">
 			<Original>You have paid your bail and are now free.</Original>
 			<English>You have paid your bail and are now free.</English>
 			<German>Du hast deine Kaution bezahlt und bist nun Frei</German>
-			<French>Vous avez payé votre caution et sont désormais libres.</French>
+			<French>Vous avez payé votre caution, vous êtes désormais libres.</French>
 		</Key>
 	</Package>
 	<Package name="Civ_Strings">
@@ -1493,7 +1509,7 @@
 			<Original>You have lost all your motor vehicle licenses for vehicular manslaughter.</Original>
 			<English>You have lost all your motor vehicle licenses for vehicular manslaughter.</English>
 			<German>Sie haben alle Ihre Kfz-Lizenzen für VDM verloren.</German>
-			<French>You have lost all your motor vehicle licenses for vehicular manslaughter.</French>
+			<French>Vous avez perdu tout vos permis véhicule pour avoir écrasé quelqu'un.</French>
 		</Key>
 		<Key ID="STR_Civ_LicenseRemove_2">
 			<Original>You have lost your firearms license for manslaughter.</Original>
@@ -1505,7 +1521,7 @@
 			<Original>They didn't have any cash...</Original>
 			<English>They didn't have any cash...</English>
 			<German>Sie hatten kein Geld ...</German>
-			<French>Ils n'ont pas les liquidités ..</French>
+			<French>Ils n'ont pas l'agent...</French>
 		</Key>
 		<Key ID="STR_Civ_Robbed">
 			<Original>You stole $%1</Original>
@@ -1516,26 +1532,32 @@
 		<Key ID="STR_Civ_VaultEmpty">
 			<Original>The safe is empty!</Original>
 			<English>The safe is empty!</English>
+			<French>Le coffre est vide</French>
 		</Key>
 		<Key ID="STR_Civ_VaultInUse">
 			<Original>Someone is already accessing the safe..</Original>
 			<English>Someone is already accessing the safe..</English>
+			<French>Quelqu'un accède déjà au coffre..</French>
 		</Key>
 		<Key ID="STR_Civ_NotEnoughCops">
 			<Original>There needs to be 5 or more cops online to continue.</Original>
 			<English>There needs to be 5 or more cops online to continue.</English>
+			<French>Il faut au minimum 5 flic pour continuer</French>
 		</Key>
 		<Key ID="STR_Civ_SafeInv">
 			<Original>Safe Inventory</Original>
 			<English>Safe Inventory</English>
+			<French>Coffre</French>
 		</Key>
 		<Key ID="STR_Civ_SelectItem">
 			<Original>You need to select an item!</Original>
 			<English>You need to select an item!</English>
+			<French>Vous devez sélectionner un objet</French>
 		</Key>
 		<Key ID="STR_Civ_IsntEnoughGold">
 			<Original>There isn't %1 gold bar(s) in the safe!</Original>
 			<English>There isn't %1 gold bar(s) in the safe!</English>
+			<French>Il n'y a pas %1 lingot(s) d'or dans le coffre</French>
 		</Key>
 	</Package>
 	<Package name="Cop_Strings">
@@ -1543,7 +1565,7 @@
 			<Original>Couldn't open the ticketing interface</Original>
 			<English>Couldn't open the ticketing interface</English>
 			<German>Der Bußgeldkatalog konnte nicht geöffnet werden</German>
-			<French>Impossible d'ouvrir l'interface de billetterie</French>
+			<French>Impossible d'ouvrir l'interface d'amendement</French>
 		</Key>
 		<Key ID="STR_Cop_Ticket">
 			<Original>Ticketing %1</Original>
