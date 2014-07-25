@@ -1695,7 +1695,7 @@
 			<German>%1 bezahlt das Ticket.</German>
 			<French>%1 payé la contravention.</French>
 		</Key>
-		<Key ID="STR_Cop_Ticket_UI_Given">
+		<Key ID="STR_Cop_Ticket_GUI_Given">
 			<Original>%1 has given you a ticket for $%2</Original>
 			<English>%1 has given you a ticket for $%2</English>
 			<German>%1 hat dir ein Ticket von $%2 gegeben</German>
@@ -1707,7 +1707,7 @@
 			<German>%1 weigert sich das ticket zu zahlen.</German>
 			<French>%1 refusé de payer l'amende.</French>
 		</Key>
-		<Key ID="STR_Cop_BountryRecieve">
+		<Key ID="STR_Cop_BountyRecieve">
 			<Original>You have collected a bounty of $%1 for arresting a criminal.</Original>
 			<English>You have collected a bounty of $%1 for arresting a criminal.</English>
 			<German>Sie haben ein Kopfgeld von $%1 bekommen für die Festnahme eines Kriminellen.</German>
