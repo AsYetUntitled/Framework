@@ -1698,7 +1698,7 @@
 			<German>%1 weigert sich das ticket zu zahlen.</German>
 			<French>%1 refusé de payer le billet.</French>
 		</Key>
-		<Key ID="STR_Cop_BountryRecieve">
+		<Key ID="STR_Cop_BountyRecieve">
 			<Original>You have collected a bounty of $%1 for arresting a criminal.</Original>
 			<English>You have collected a bounty of $%1 for arresting a criminal.</English>
 			<German>Sie haben ein Kopfgeld von $%1 bekommen für die Festnahme eines Kriminellen.</German>
