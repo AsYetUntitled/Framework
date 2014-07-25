@@ -1452,7 +1452,7 @@
 			<German>Konnte nicht deinem Inventar hinzugefügt werden</German>
  			<French>Impossible d'ajouter cela à votre inventaire</French>
  		</Key>
-<Key ID="STR_NOTF_EatMSG_1">
+		<Key ID="STR_NOTF_EatMSG_1">
  			<Original>You haven't eaten anything in awhile, You should find something to eat soon!</Original>
  			<English>You haven't eaten anything in awhile, You should find something to eat soon!</English>
 			<French>Vous n'avez rien mangé depuis un certain temps, vous devriez trouver quelque chose à manger!</French>
