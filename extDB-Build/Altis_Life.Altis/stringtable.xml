@@ -1686,7 +1686,7 @@
 			<German>%1 bezahlt das Ticket.</German>
 			<French>%1 payé le billet.</French>
 		</Key>
-		<Key ID="STR_Cop_Ticket_UI_Given">
+		<Key ID="STR_Cop_Ticket_GUI_Given">
 			<Original>%1 has given you a ticket for $%2</Original>
 			<English>%1 has given you a ticket for $%2</English>
 			<German>%1 hat dir ein Ticket von $%2 gegeben</German>
