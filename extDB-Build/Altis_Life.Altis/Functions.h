@@ -210,7 +210,7 @@ class Life_Client_Core
 		class receiveMoney {};
 		class playerTags {};
 		class clearVehicleAmmo {};
-		class pulloutVeh {};
+		class pullOutVeh {};
 		class nearUnits {};
 		class actionKeyHandler {};
 		class playerCount {};
