@@ -197,7 +197,7 @@
  		<Key ID="STR_ATM_SentMoneySuccess">
  			<Original>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</Original>
  			<English>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</English>
-			<German>Du hast %2  $%1 überwisen \n\nA es wurde eine Gebühr von $%3 berechnet</German>
+			<German>Du hast %2 an  $%1 überwiesen \n\nA es wurde eine Gebühr von $%3 berechnet</German>
  			<French>Vous avez transférer $%1 à %2.\n\nA La taxe de $%3 vous à été prélevée pendant le transfert.</French>
  		</Key>
  		<Key ID="STR_ATM_WithdrawMax">
@@ -253,31 +253,31 @@
 		<Key ID="STR_CELL_TextPolice">
 			<Original>Text Police</Original>
 			<English>Text Police</English>
-			<German>An die Polizei</German>
+			</German>An die Polizei</German>
 			<French>Text Police</French>
 		</Key>
 		<Key ID="STR_CELL_TextAdmins">
 			<Original>Text Admins</Original>
 			<English>Text Admins</English>
-			<German>An die Admins</German>
+			<German>Text Admins</German>
 			<French>Text Admins</French>
 		</Key>
 		<Key ID="STR_CELL_AdminMsg">
 			<Original>Admin Message</Original>
 			<English>Admin Message</English>
-			<German>Admin Nachricht</German>
+			<German>Admin@User</German>
 			<French>Admin Message</French>
 		</Key>
 		<Key ID="STR_CELL_AdminMSGAll">
 			<Original>Admin Msg All</Original>
 			<English>Admin Msg All</English>
-			<German>Admin Msg ALL</German>
+			<German>Admin@All</German>
 			<French>Admin Msg ALL</French>
 		</Key>
 		<Key ID="STR_CELL_EMSRequest">
 			<Original>Request EMS</Original>
 			<English>Request EMS</English>
-			<German>EMS Anfordern</German>
+			<German>Sanitäter</German>
 			<French>Requête Medecin</French>
 		</Key>
 	</Package>
@@ -500,7 +500,7 @@
 		<Key ID="STR_GNOTF_InvitePlayerMSG">
 			<Original>You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.</Original>
 			<English>You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.</English>
-			<German>Sie sind dabei %1 in Ihre Gang einzuladen, wenn sie akzeptieren hat er Zugang zu den Mitteln der Gang.</German>
+			<German>Sie sind dabei %1 in Ihre Gang einzuladen, wenn er akzeptiert hat er Zugang zu den Mitteln der Gang.</German>
 			<French>Vous êtes sur le point d'inviter %1 à votre gang, s'ils acceptent l'invitation, ils auront accès à des fonds du gang.</French>
 		</Key>
 		<Key ID="STR_GNOTF_SelectPerson">
@@ -542,13 +542,13 @@
 		<Key ID="STR_GNOTF_LeaderLeave">
 			<Original>You cannot leave the gang without appointing a new leader first!</Original>
 			<English>You cannot leave the gang without appointing a new leader first</English>
-			<German>Sie können die Gang nicht verlassen, ohne die Ernennung eines neuen Anführer!</German>
+			<German>Sie können die Gang nicht verlassen, ohne die Ernennung eines neuen Anführers!</German>
 			<French>Vous ne pouvez pas quitter le gang sans la nomination d'un nouveau chef d'abord!</French>
 		</Key>
 		<Key ID="STR_GNOTF_TransferMSG">
 			<Original>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
 			<English>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</English>
-			<German>Sie sind dabei,die Führung über %1 zu übertragen &lt;br/&gt;Durch die Übertragung der Gang haben sie keine Kontrolle über die Gang mehr.</German>
+			<German>Sie sind dabei,die Führung über %1 zu übertragen &lt;br/&gt;Durch die Übertragung der Gang haben sie keine Kontrolle mehr.</German>
 			<French>Vous allez transférer le commandement à %1&lt;br/&gt;En transférant le commandement, vous ne serez plus le chef du gang, sauf si le commandement est transféré de nouveau.</French>
 		</Key>
 		<Key ID="STR_GNOTF_TransferCancel">
@@ -1812,7 +1812,7 @@
 		<Key ID="STR_Cop_OnlyGold">
 			<Original>You can't store anything but gold bars in the safe.</Original>
 			<English>You can't store anything but gold bars in the safe.</English>
-			<German>Du kannst nicht ausser Goldbarren in den Safe legen</German>
+			<German>Du kannst nichts außer Goldbarren in den Safe legen</German>
 			<French>Vous ne pouvez pas mettre autre chose que des lingot d'or.</French>
 		</Key>
 		<Key ID="STR_Cop_NotEnoughGold">
@@ -3711,19 +3711,19 @@
 		<Key ID="STR_FSM_Paycheck">
 			<Original>You will receive your next paycheck in %1 minutes</Original>
 			<English>You will receive your next paycheck in %1 minutes</English>
-			<German>Sie werden Ihren nächsten Gehaltsscheck in %1 Minuten erhalten</German>
+			<German>Du erhälst deinen nächsten Lohn in %1 Minuten"</German>
 			<French>Vous recevrez votre prochain chèque de paie dans %1 minutes</French>
 		</Key>
 		<Key ID="STR_FSM_MissedPay">
 			<Original>You have missed a paycheck because you were dead.</Original>
 			<English>You have missed a paycheck because you were dead.</English>
-			<German>Sie haben einen Gehaltsscheck verpasst, weil Sie tot waren.</German>
+			<German>Du erhältst kein Lohn da du gestorben bist.</German>
 			<French>Vous avez manqué un chèque de paie parce que vous étiez mort.</French>
 		</Key>
 		<Key ID="STR_FSM_ReceivedPay">
 			<Original>You have received a paycheck of $%1</Original>
 			<English>You have received a paycheck of $%1</English>
-			<German>Sie haben einen Gehaltsscheck von $%1 bekommen</German>
+			<German>Du hast deinen Gehaltscheck in Höhe von $%1 erhalten</German>
 			<French>Vous avez reçu un salaire de $%1</French>
 		</Key>
 	</Package>
