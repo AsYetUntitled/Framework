@@ -2036,7 +2036,7 @@
 			<English>You are not near a door!</English>
 			<German>Du bist nicht in der Nähe einer Tür!</German>
 			<French>Vous n'êtes pas près d'une porte!</French>
-			<Italian>Non sei vicno ad una porta!</Italian
+			<Italian>Non sei vicno ad una porta!</Italian>
 		</Key>
 		<Key ID="STR_Cop_EnablePiP">
 			<Original>You need to enable Picture in Picture (PiP) through your video settings to use this!</Original>
