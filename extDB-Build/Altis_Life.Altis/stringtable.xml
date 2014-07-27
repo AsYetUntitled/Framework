@@ -4306,14 +4306,12 @@
 			<German>Shop Inventar</German>
 			<French>Inventaire de la boutique</French>
 			<Italian>Inventario Negozio</Italian>
-			<Italian>Inventario Negozio</Italian>
 		</Key>
 		<Key ID="STR_Shop_Weapon_YourInv">
 			<Original>Your Inventory</Original>
 			<English>Your Inventory</English>
 			<German>Dein Inventar</German>
 			<French>Votre inventaire</French>
-			<Italian>Inventario Personale</Italian>
 			<Italian>Inventario Personale</Italian>
 		</Key>
 	</Package>
