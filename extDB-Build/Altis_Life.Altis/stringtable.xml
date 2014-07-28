@@ -4970,7 +4970,7 @@
 		<Key ID="STR_FSM_Paycheck">
 			<Original>You will receive your next paycheck in %1 minutes</Original>
 			<English>You will receive your next paycheck in %1 minutes</English>
-			<German>Du erhältst deinen nächsten Gehaltsscheck in %1 Minuten"</German>
+			<German>Du erhältst deinen nächsten Gehaltsscheck in %1 Minuten</German>
 			<French>Vous recevrez votre prochain chèque de paie dans %1 minutes</French>
 			<Italian>Riceverai il tuo prossimo stipendio in %1 minuti</Italian>		
 			<Portuguese>Você vai receber seu próximo pagamento em %1 minutos</Portuguese>
@@ -4990,6 +4990,24 @@
 			<French>Vous avez reçu un salaire de $%1</French>
 			<Italian>Hai ricevuto uno stipendio di €%1</Italian>
 			<Portuguese>Você recebeu seu pagamento de R$%1</Portuguese>
+		</Key>
+	</Package>
+	<Package name="Player_Actions">
+		<Key ID="STR_pAct_DropFishingNet">
+			<Original>Drop Fishing Net</Original>
+			<English>Drop Fishing Net</English>
+			<German>Fischernetz auswerfen</German>
+			<French>Drop Fishing Net</French>
+			<Italian>Drop Fishing Net</Italian>		
+			<Portuguese>Drop Fishing Net</Portuguese>
+		</Key>
+		<Key ID="STR_pAct_RobPerson">
+			<Original>Rob Person</Original>
+			<English>Rob Person</English>
+			<German>Person ausrauben</German>
+			<French>Rob Person</French>
+			<Italian>Rob Person</Italian>		
+			<Portuguese>Rob Person</Portuguese>
 		</Key>
 	</Package>
 </Project>
