@@ -2467,7 +2467,7 @@
 		<Key ID="STR_Cop_DealerMSG">
 			<Original>The following people have been selling to this dealer recently.</Original>
 			<English>The following people have been selling to this dealer recently.</English>
-			<German>Die folgenen Leute haben kürzlich an diesen Dealer verkauft.</German>
+			<German>Die folgenden Leute haben kürzlich an diesen Dealer verkauft.</German>
 			<French>Les personnes suivantes sont venues vendre à ce dealer récement.</French>
 			<Italian>Le seguenti persone sono state viste vendere a questo spacciatore.</Italian>
 			<Portuguese>Os seguintes jogadores venderam para esse negociante recentemente.</Portuguese>
@@ -2491,7 +2491,7 @@
 		<Key ID="STR_Cop_ExcessiveRestrain">
 			<Original>You have been released automatically for excessive restrainment time</Original>
 			<English>You have been released automatically for excessive restrainment time</English>
-			<German>Du wurdest frei automatisch freigelassen, da die maximale Verhaftungszeit überschritten wurde</German>
+			<German>Du wurdest automatisch freigelassen, da die maximale Verhaftungszeit überschritten wurde</German>
 			<French>Vous êtes démenotté automatiquement pour un menottage excessivement long</French>
 			<Italian>Sei stato automaticamente liberato per essere rimasto ammanettato troppo tempo</Italian>
 			<Portuguese>Você foi solto automaticamente, devido ao tempo limite ter expirado.</Portuguese>
