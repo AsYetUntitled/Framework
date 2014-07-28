@@ -326,7 +326,7 @@
 			<German>Nachricht:</German>
 			<French>Text Message:</French>
 			<Italian>Msg Giocatore:</Italian>
-			<Portuguese>Texto da Menssagem:</Portuguese>
+			<Portuguese>Mensagem:</Portuguese>
 		</Key>
 		<Key ID="STR_CELL_TextPolice">
 			<Original>Text Police</Original>
@@ -334,7 +334,7 @@
 			<German>An die Polizei</German>
 			<French>Text Police</French>
 			<Italian>Msg Polizia</Italian>		
-			<Portuguese>Enviar para Polícia</Portuguese>
+			<Portuguese>Polícia</Portuguese>
 		</Key>
 		<Key ID="STR_CELL_TextAdmins">
 			<Original>Text Admins</Original>
@@ -1066,7 +1066,7 @@
 			<German>Telefon</German>
 			<French>Téléphone</French>
 			<Italian>Cellulare</Italian>
-			<Portuguese>Telofone</Portuguese>
+			<Portuguese>Celular</Portuguese>
 		</Key>
 		<Key ID="STR_PM_KeyChain">
 			<Original>Key Chain</Original>
@@ -1074,7 +1074,7 @@
 			<German>Schlüssel</German>
 			<French>Porte-clés</French>
 			<Italian>Portachiavi</Italian>
-			<Portuguese>Lista de Chaves</Portuguese>
+			<Portuguese>Chaves</Portuguese>
 		</Key>
 		<Key ID="STR_PM_AdminMenu">
 			<Original>Admin Menu</Original>
@@ -1618,7 +1618,7 @@
 			<German>Abbruch möglich in %1</German>
 			<French>Abandonner disponible dans %1</French>
 			<Italian>Abbandona disponibile in %1</Italian>
-			<Portuguese>Abortar dispoível em %1</Portuguese>
+			<Portuguese>Abortar disponível em %1</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_DeviceIsMining">
 			<Original>This vehicle is already mining</Original>
@@ -1626,7 +1626,7 @@
 			<German>Dieses Fahrzeug ist schon am sammeln</German>
 			<French>Ce véhicule est déjà en train de miner</French>
 			<Italian>Questo veicolo sta già estraendo risorse</Italian>
-			<Portuguese>Esse veículo já esta minerando</Portuguese>
+			<Portuguese>Esse veículo já está minerando</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_DeviceFull">
 			<Original>The vehicle is full</Original>
@@ -1634,7 +1634,7 @@
 			<German>Das Fahrzeug ist voll.</German>
 			<French>Le véhicule est plein.</French>
 			<Italian>Il veicolo è pieno</Italian>
-			<Portuguese>O veículo esta cheio.</Portuguese>
+			<Portuguese>O veículo está cheio.</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_notNearResource">
 			<Original>You are not near a resource field</Original>
@@ -1642,7 +1642,7 @@
 			<German>Du bist nicht in der Nähe einer Mine</German>
 			<French>Vous n'êtes pas à proximité d'un champ de ressources</French>
 			<Italian>Non sei vicino ad un campo risorse</Italian>
-			<Portuguese>Você não esta próximo ao recurso</Portuguese>
+			<Portuguese>Você não está próximo ao recurso</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_MiningStopped">
 			<Original>You cannot turn the vehicle on when mining</Original>
@@ -1658,7 +1658,7 @@
 			<German>Das Fahrzeug sammelt...</German>
 			<French>Le véhicule est en train de miner...</French>
 			<Italian>Il veicolo sta estrando risorse...</Italian>
-			<Portuguese>A máquina esta minerando...</Portuguese>
+			<Portuguese>A máquina está minerando...</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_DeviceMined">
 			<Original>Completed cycle, the device has mined %1</Original>
