@@ -3803,6 +3803,46 @@
 			<Italian>I contenitori in casa tua hanno finito lo spazio disponibile.</Italian>
 			<Portuguese>Não ha mais espaços para guardar itens em sua casa.</Portuguese>
 		</Key>
+		<Key ID="STR_ISTR_SelectItemFirst">
+			<Original>You need to select an item first!</Original>
+			<English>You need to select an item first!</English>
+			<German>Du musst zuerst einen Gegenstand auswählen!</German>
+			<French>You need to select an item first!</French>
+			<Italian>You need to select an item first!</Italian>
+			<Portuguese>You need to select an item first!</Portuguese>
+		</Key>
+		<Key ID="STR_ISTR_RedGullEffect">
+			<Original>You can now run farther for 3 minutes</Original>
+			<English>You can now run farther for 3 minutes</English>
+			<German>Du kannst jetzt für 3 Minuten weiterlaufen</German>
+			<French>You can now run farther for 3 minutes</French>
+			<Italian>You can now run farther for 3 minutes</Italian>
+			<Portuguese>You can now run farther for 3 minutes</Portuguese>
+		</Key>
+		<Key ID="STR_ISTR_SpikesDeployment">
+			<Original>You already have a Spike Strip active in deployment</Original>
+			<English>You already have a Spike Strip active in deployment</English>
+			<German>Du stellst bereits ein Nagelband auf</German>
+			<French>You already have a Spike Strip active in deployment</French>
+			<Italian>You already have a Spike Strip active in deployment</Italian>
+			<Portuguese>You already have a Spike Strip active in deployment</Portuguese>
+		</Key>
+		<Key ID="STR_ISTR_RefuelInVehicle">
+			<Original>You can't refuel the vehicle while in it!</Original>
+			<English>You can't refuel the vehicle while in it!</English>
+			<German>Du kannst ein Fahrzeug nicht betanken während du dich darin befindest!</German>
+			<French>You can't refuel the vehicle while in it!</French>
+			<Italian>You can't refuel the vehicle while in it!</Italian>
+			<Portuguese>You can't refuel the vehicle while in it!</Portuguese>
+		</Key>
+		<Key ID="STR_ISTR_NotUsable">
+			<Original>This item isn't usable.</Original>
+			<English>This item isn't usable.</English>
+			<German>Dieser Gegenstand ist nicht benutzbar.</German>
+			<French>This item isn't usable.</French>
+			<Italian>This item isn't usable.</Italian>
+			<Portuguese>This item isn't usable.</Portuguese>
+		</Key>
 	</Package>
 		<Package name="Process_Action">
 		<Key ID="STR_Process_Oil">
