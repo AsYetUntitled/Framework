@@ -147,7 +147,7 @@
 			<German>Du fragst bereits einen Spieler ab</German>
 			<French>Vous avez déjà interrogé ce joueur.</French>
 			<Italian>Stai già ispezionando un giocatore.</Italian>
-			<Portuguese>Você já esta buscando por um jogador.</Portuguese>
+			<Portuguese>Você já está buscando por um jogador.</Portuguese>
 		</Key>
 		<Key ID="STR_ANOTF_QueryFail">
 			<Original>Player no longer exists?</Original>
@@ -466,7 +466,7 @@
 			<German>Du bist in keiner Gang, was möchtest du machen?</German>
 			<French>Tu n'as pas de gang actuellement</French>
 			<Italian>Non sei in una gang, cosa intendi fare?</Italian>
-			<Portuguese>Você não esta em uma Gangue, o que você deseja fazer?</Portuguese>
+			<Portuguese>Você não está em uma Gangue, o que deseja fazer?</Portuguese>
 		</Key>
 		<Key ID="STR_Gang_Browse">
 			<Original>Browse</Original>
@@ -700,7 +700,7 @@
 			<German>Deine Gang hat die maximale Anzahl an Plätzen erreicht, bitte erhöhe das Limit deiner Gang.</German>
 			<French>Votre gang à atteint le nombre de membre maximum, veuillez augmenter cette limite.</French>
 			<Italian>la tua Gang ha raggiungo il numero massimo di posti consentiti, aumentane il limite.</Italian>
-			<Portuguese>Sua gangue esta com o limite de jogadores, você tem que aumentar o número máximo de jogadores.</Portuguese>
+			<Portuguese>Sua gangue está lotada, você deve aumentar o número máximo de jogadores.</Portuguese>
 		</Key>
 		<Key ID="STR_GNOTF_SelectKick">
 			<Original>You need to select a person to kick!</Original>
@@ -740,7 +740,7 @@
 			<German>Du bist bereits der Anführer!</German>
 			<French>Vous êtes déjà leader!</French>
 			<Italian>Sei già il Capo!</Italian>
-			<Portuguese>Você já esta na liderança!</Portuguese>
+			<Portuguese>Você já está na liderança!</Portuguese>
 		</Key>
 		<Key ID="STR_GNOTF_TransferSelect">
 			<Original>You need to select a person first!</Original>
@@ -918,7 +918,7 @@
 			<German>Sorry, aber dein %1 ist bereits ausgeparkt worden.</German>
 			<French>Désolé mais votre %1 à déjà été sortit du garage.</French>
 			<Italian>Purtroppo %1 è già presente nella mappa e non può essere ricreato</Italian>
-			<Portuguese>O veículo %1 já esta sendo carregado no mapa e não pode ser retirado novamente</Portuguese>
+			<Portuguese>O veículo %1 já está sendo carregado no mapa e não pode ser retirado novamente</Portuguese>
 		</Key>
 		<Key ID="STR_Garage_SpawnPointError">
 			<Original>There is already a vehicle on the spawn point. You will be refunded the cost of getting out out.</Original>
@@ -966,7 +966,7 @@
 			<German>Der Server versucht, das Fahrzeug zu speichern...</German>	
 			<French>Le serveur tente de stocker le véhicule ...</French>
 			<Italian>Il server cercando di depositare il veicolo...</Italian>
-			<Portuguese>O servidor esta guardando o veiculo...</Portuguese>
+			<Portuguese>O servidor está guardando o veiculo...</Portuguese>
 		</Key>
 		<Key ID="STR_Garage_Selection_Error">
 			<Original>The selection had a error...</Original>
@@ -1482,7 +1482,7 @@
 			<German>Dein Inventar ist voll.</German>
 			<French>Tu n'as plus de place dans ton inventaire.</French>
 			<Italian>Il tuo inventario è pieno.</Italian>
-			<Portuguese>Seu inventário esta cheio</Portuguese>
+			<Portuguese>Seu inventário está cheio</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_Gathering">
 			<Original>Gathering %1...</Original>
@@ -1562,7 +1562,7 @@
 			<German>Du musst in der Nähe des Doktors bleiben, während du geheilt wirst</German>
 			<French>Vous devez être à moins de 5m pendant que le médecin vous soigne</French>
 			<Italian>Devi restare entro 5m dal dottore per essere curato</Italian>
-			<Portuguese>Você tem que esta a 5m para o médico tratar você</Portuguese>
+			<Portuguese>Você tem que estar a 5m para o médico tratá-lo</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_HS_Healed">
 			<Original>You are now fully healed.</Original>
@@ -1570,7 +1570,7 @@
 			<German>Du wurdest geheilt.</German>
 			<French>Vous êtes completement soigner.</French>
 			<Italian>Sei stato curato completamente.</Italian>
-			<Portuguese>Sua saude esta perfeita</Portuguese>
+			<Portuguese>Sua saude está perfeita</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_BeingImpounded">
 			<Original>%1 your %2 is being impounded by the police.</Original>
@@ -1578,7 +1578,7 @@
 			<German>%1 dein %2 wird von der Polizei beschlagnahmt.</German>
 			<French>%1 votre %2 est envoyé a la fourrière par la police.</French>
 			<Italian>%1 il tuo %2 sta per essere sequestrato dalla Polizia.</Italian>
-			<Portuguese>%1, %2 esta sendo apreendido pela Polícia</Portuguese>
+			<Portuguese>%1 seu %2 está sendo apreendido pela Polícia</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_Impounding">
 			<Original>Impounding Vehicle</Original>
@@ -1674,7 +1674,7 @@
 			<German>Das Fahrzeug hat keinen Sprit mehr</German>
 			<French>Le véhicule n'a plus d'essence.</French>
 			<Italian>Il veicolo è senza carburante</Italian>
-			<Portuguese>O veículo esta sem combustível</Portuguese>
+			<Portuguese>O veículo está sem combustível</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_SpikeStrip">
 			<Original>You have packed up the spike strip.</Original>
@@ -1770,7 +1770,7 @@
 			<German>Du führst bereits eine Aktion aus. Bitte warte bis diese beendet ist.</German>
 			<French>Vous faites déjà une action. S'il vous plaît attendre qu'elle se termine.</French>
 			<Italian>Stai già compiendo un'azione, attendi che finisca.</Italian>
-			<Portuguese>Você já esta executando uma ação. Por favor espere que ela acabe.</Portuguese>
+			<Portuguese>Você já está executando uma ação. Por favor espere até que ela acabe.</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_Unrestrain">
 			<Original>%1 was unrestrained by %2</Original>
@@ -1858,7 +1858,7 @@
 			<German>Es wird bereits eine Aktion ausgeführt...</German>
 			<French>Une action est déjà en cours de traitement ...</French>
 			<Italian>Un'azione è già in corso...</Italian>
-			<Portuguese>Você já esta realizando um ação...</Portuguese>
+			<Portuguese>Você já está realizando um ação...</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_NoSpace">
 			<Original>You don't have enough space for that amount!</Original>
@@ -1938,7 +1938,7 @@
 			<German>Du hast Hunger, du solltest schnell etwas essen oder du wirst verhungern.</German>
 			<French>Vous commencez à mourir de faim, vous avez besoin de trouver quelque chose à manger, sinon, vous allez mourrir</French>
 			<Italian>Ti stai indebolendo, devi trovare qualcosa da mangiare o morirai.</Italian>
-			<Portuguese>Você esta começando a ficar famindo. Se você não comer irá morrer de fome.</Portuguese>
+			<Portuguese>Você está começando a ficar famindo. Se você não comer irá morrer de fome.</Portuguese>
  		</Key>
  		<Key ID="STR_NOTF_EatMSG_3">
  			<Original>You are now starving to death, you will die very soon if you don't eat something</Original>
@@ -1946,7 +1946,7 @@
 			<German>Du bist am verhungern, du wirst sterben wenn du nichts zum essen findest</German>
 			<French>Vous êtes en train de mourir de faim, vous allez mourir très bientôt si vous ne mangez pas quelque chose</French>
 			<Italian>Stai perdendo le forze, se non mangi qualcosa in fretta morirai.</Italian>
-			<Portuguese>Você esta morto de fome, coma algo ou irá morrer.</Portuguese>
+			<Portuguese>Você está morto de fome, coma algo ou irá morrer.</Portuguese>
  		</Key>
  		<Key ID="STR_NOTF_EatMSG_Death">
  			<Original>You have starved to death.</Original>
@@ -1970,7 +1970,7 @@
 			<German>Du hast Durst, du solltest schnell etwas trinken oder du wirst verdursten.</German>
 			<French>Vous commencez à mourir de soif, vous avez besoin de trouver quelque chose à boire, sinon, vous allez mourrir</French>
 			<Italian>E' troppo tempo che non bevi qualcosa, dovresti trovare qualcosa da bere o comincerai a disitratarti.</Italian>
-			<Portuguese>Você esta ficando desidratado. Se não ber algo poderá morrer.</Portuguese>
+			<Portuguese>Você está ficando desidratado. Se não ber algo poderá morrer.</Portuguese>
  		</Key>
  		<Key ID="STR_NOTF_DrinkMSG_3">
  			<Original>You are now suffering from severe dehydration find something to drink quickly!</Original>
@@ -1978,7 +1978,7 @@
 			<German>Du bist am verdursten, du wirst sterben wenn du nichts zum trinken findest</German>
 			<French>Vous êtes en train de mourir de soif, vous allez mourir très bientôt si vous ne buvez pas quelque chose</French>
 			<Italian>Stai soffrendo per una grave deidratazione, trova velocemente qualcosa da bere o morirai!</Italian>
-			<Portuguese>Você esta sofrendo de desidratação. Beba alguma coisa ou irá morrer!</Portuguese>
+			<Portuguese>Você está sofrendo de desidratação. Beba algo ou irá morrer!</Portuguese>
  		</Key>
  		<Key ID="STR_NOTF_DrinkMSG_Death">
  			<Original>You have died from dehydration.</Original>
@@ -1994,7 +1994,7 @@
 			<German>Du trägst ein zu hohes Gewicht! Du bist nicht in der Lage zu rennen oder dich schnell zu bewegen bis du Items abgelegt hast</German>
 			<French>Vous êtes surchargé, vous ne pouvez plus courrir ou bouger rapidement à moins de lacher quelques objets!</French>
 			<Italian>Stai trasportando oltre il tuo carico massimo! Non riuscirai a correre fino a quando non ti libererai di qualche oggetto!</Italian>
-			<Portuguese>Você esta carregando muito peso. Você não irá conseguir correr ou se mover rapidamente.</Portuguese>
+			<Portuguese>Você está carregando muito peso. Você não irá conseguir correr ou se mover rapidamente.</Portuguese>
  		</Key>
 	</Package>
 	<Package name="Jail_Strings">
@@ -2117,7 +2117,7 @@
 			<German>Der Safe ist leer!</German>
 			<French>Le coffre est vide</French>
 			<Italian>La cassaforte è vuota!</Italian>
-			<Portuguese>O Cofre esta vazio!</Portuguese>
+			<Portuguese>O Cofre está vazio!</Portuguese>
 		</Key>
 		<Key ID="STR_Civ_VaultInUse">
 			<Original>Someone is already accessing the safe..</Original>
@@ -2125,7 +2125,7 @@
 			<German>Jemand greift bereits auf den Safe zu</German>
 			<French>Quelqu'un accède déjà au coffre..</French>
 			<Italian>Qualcuno sta già interagendo con la cassaforte..</Italian>
-			<Portuguese>Alguem já esta acessando o cofre.</Portuguese>
+			<Portuguese>Alguem já está acessando o cofre.</Portuguese>
 		</Key>
 		<Key ID="STR_Civ_NotEnoughCops">
 			<Original>There needs to be 5 or more cops online to continue.</Original>
@@ -2367,7 +2367,7 @@
 			<German>Dieses Fahrzeug ist leer</German>
 			<French>Ce véhicule est vide</French>
 			<Italian>Questo veicolo è vuoto</Italian>
-			<Portuguese>Esse veículo esta vazio</Portuguese>
+			<Portuguese>Esse veículo está vazio</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_RobberDead">
 			<Original>$%1 from the Federal Reserve robbery was returned from the robber being killed.</Original>
@@ -2391,7 +2391,7 @@
 			<German>Der Safe wurde repariert</German>
 			<French>Le coffre est de nouveau sécurisé.</French>
 			<Italian>Il Caveau è stato riparato e messo in sicurezza.</Italian>
-			<Portuguese>O Cofre foi concertado e esta seguro.</Portuguese>
+			<Portuguese>O Cofre foi concertado e está seguro.</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_VaultLocked">
 			<Original>The vault is already locked?</Original>
@@ -2399,7 +2399,7 @@
 			<German>Der Safe ist abgeschlossen</German>
 			<French>Le coffre est déjà fermé?</French>
 			<Italian>Il Caveau è già bloccato?</Italian>
-			<Portuguese>O Cofre esta trancado?</Portuguese>
+			<Portuguese>O Cofre está trancado?</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_VaultUnder1">
 			<Original>You can't enter anything below 1!</Original>
@@ -2569,7 +2569,7 @@
 			<German>Du bist nicht berechtigt in fremde Rucksäcke zu schauen!</German>
 			<French>Vous n'êtes pas autorisé à regarder dans le sac à dos de quelqu'un!</French>
 			<Italian>Non sei autorizzato a guardare negli zaini altrui!</Italian>
-			<Portuguese>Você não esta permitido a olhar na mochila dos outros!</Portuguese>
+			<Portuguese>Você não está permitido a olhar na mochila dos outros!</Portuguese>
 		</Key>
 		<Key ID="STR_MISC_VehInventory">
 			<Original>You are not allowed to access this vehicle while its locked.</Original>
@@ -2577,7 +2577,7 @@
 			<German>Du bist nicht berechtigt auf dieses Fahrzeug zuzugreifen während es abgeschlossen ist.</German>
 			<French>Vous n'êtes pas autorisé à accéder à ce véhicule tant qu'il est vérouillé.</French>
 			<Italian>Non ti è permesso l'accesso a questo veicolo mentre è bloccato.</Italian>
-			<Portuguese>Você não acessar o veiculo quando ele esta trancado.</Portuguese>
+			<Portuguese>Você não acessar o veiculo quando ele está trancado.</Portuguese>
 		</Key>
 		<Key ID="STR_MISC_VehInvUse">
 			<Original>This vehicle's trunk is in use, only one person can use it at a time.</Original>
@@ -2585,7 +2585,7 @@
 			<German>Auf diesen Kofferraum wird bereits zugegriffen.</German>
 			<French>Le coffre de ce véhicule est en cours d'utilisation, une seule personne peut l'utiliser à la fois.</French>
 			<Italian>L'inventario di questo veicolo è in uso, può essere usato solo da una persona alla volta.</Italian>
-			<Portuguese>A mala desse veículo esta em uso, somente uma pessoa pode acessar de cada vez.</Portuguese>
+			<Portuguese>A mala desse veículo está em uso, somente uma pessoa pode acessar de cada vez.</Portuguese>
 		</Key>
 		<Key ID="STR_MISC_DialogError">
 			<Original>Failed Creating Dialog</Original>
@@ -2673,7 +2673,7 @@
 			<German>Entweder das Fahrzeug ist nicht vorhanden oder es wurde zerstört.</German>
 			<French>Le véhicule n'existe pas ou à est détruit</French>
 			<Italian>Il veicolo non esiste o è stato distrutto.</Italian>
-			<Portuguese>Veículo não existe ou esta destruido.</Portuguese>
+			<Portuguese>Veículo não existe ou está destruido.</Portuguese>
 		</Key>
 		<Key ID="STR_MISC_WrongNumFormat">
 			<Original>Invalid Number format</Original>
@@ -2779,7 +2779,7 @@
 			<German>Dieses Haus gibt es für &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt; Es unterstützt %2 Lagerbox(en)</German>
 			<French>Cette maison est disponible pour &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt; Il prend en charge jusqu'à %2 conteneurs de stockage</French>
 			<Italian>Questa casa è disponibile per &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;Può supportare fino a %2 contenitori</Italian>
-			<Portuguese>Essa casa esta disponpivel por &lt;t color='#8cff9b'&gt;R$%1&lt;/t&gt;&lt;br/&gt;Ela suporta até %2 caixas</Portuguese>
+			<Portuguese>Essa casa está disponível por &lt;t color='#8cff9b'&gt;R$%1&lt;/t&gt;&lt;br/&gt;Ela suporta até %2 caixa(s)</Portuguese>
 		</Key>
 		<Key ID="STR_House_Purchase">
 			<Original>Purchase House</Original>
@@ -2795,7 +2795,7 @@
 			<German>Dieses Haus gehört niemandem</German>
 			<French>Cette maison n'appartient à personne.</French>
 			<Italian>Questa casa non appartiene a nessuno.</Italian>
-			<Portuguese>Essa Casa não tem dono.</Portuguese>
+			<Portuguese>Essa casa não tem dono.</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_OwnerOff">
 			<Original>This person is not online there for you cannot raid their house!</Original>
@@ -2803,7 +2803,7 @@
 			<German>Der Hausbesitzer ist nicht online!</German>
 			<French>Cette personne n'est pas en ligne, vous ne pouvez pas perquisitionner cette maison!</French>
 			<Italian>Questa persona non è online quindi non puoi perquisire la sua casa!</Italian>
-			<Portuguese>O dono da casa não esta online, você não pode vasculhar a casa!</Portuguese>
+			<Portuguese>O dono da casa não está online, você não pode vasculhar a casa!</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_DoorUnlocked">
 			<Original>The door is already unlocked!</Original>			
@@ -2811,7 +2811,7 @@
 			<German>Die Tür ist bereits offen!</German>
 			<French>La porte est déjà débloqué!</French>
 			<Italian>La porta è già sbloccata!</Italian>
-			<Portuguese>A porta esta destrancada!</Portuguese>
+			<Portuguese>A porta está destrancada!</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_Progress">
 			<Original>Breaking lock on door</Original>
@@ -2819,7 +2819,7 @@
 			<German>Tür aufbrechen</German>
 			<French>En train de casser la sérrure</French>
 			<Italian>Sbloccando la porta</Italian>
-			<Portuguese>Quebrando o cadeado na porta</Portuguese>
+			<Portuguese>Quebrando a fechadura da porta</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_NOTF">
 			<Original>%1 your house is being raided by the cops!</Original>
@@ -2827,7 +2827,7 @@
 			<German>%1 dein Haus wird von der Polizei durchsucht!</German>
 			<French>%1 votre maison est perquisitionnée par les flics!</French>
 			<Italian>%1 la Polizia si sta introducendo in casa tua!</Italian>
-			<Portuguese>%1 Sua casa esta sendo vasculhada pela Policia!</Portuguese>
+			<Portuguese>%1 Sua casa está sendo vasculhada pela Policia!</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_Owner">
 			<Original>House Owner</Original>
@@ -2835,7 +2835,7 @@
 			<German>Hauseigentümer</German>
 			<French>Propriétaire</French>
 			<Italian>Proprietario Casa</Italian>
-			<Portuguese>Propietário</Portuguese>
+			<Portuguese>Proprietário</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_Nothing">
 			<Original>There is nothing in this house.</Original>
@@ -2843,7 +2843,7 @@
 			<German>Es gibt nichts in diesem Haus.</German>
 			<French>Il n'y a rien dans cette maison</French>
 			<Italian>In questa casa non c'è nulla.</Italian>
-			<Portuguese>Essa casa esta vazia.</Portuguese>
+			<Portuguese>Essa casa está vazia.</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_Searching">
 			<Original>Searching House...</Original>
@@ -2859,7 +2859,7 @@
 			<German>Du hast dich zu weit vom Haus entfernt!</German>
 			<French>Vous êtes parti trop loin de la maison!</French>
 			 <Italian>Sei andato troppo distante dalla casa!</Italian>
-			<Portuguese>Você esta muito distante da casa!</Portuguese>
+			<Portuguese>Você está muito distante da casa!</Portuguese>
 		</Key>
 		<Key ID="STR_House_Raid_Successful">
 			<Original>A house was raided and had $%1 worth of drugs / contraband.</Original>
@@ -2924,7 +2924,7 @@
 			<German>Es ist kein Helikopter auf dem Landeplatz </German>
 			<French>Il n'y a pas d'hélicopter sur l'héliport</French>
 			<Italian>Non c'è alcun elicottero sulla piazzola d'atterraggio</Italian>
-			<Portuguese>Não existe uma aeronave no helipad!</Portuguese>
+			<Portuguese>Não existe uma aeronave no heliponto!</Portuguese>
 		</Key>
 		<Key ID="STR_Serive_Chopper_NotEnough">
 			<Original>You need $1,000 to service your chopper</Original>
@@ -2948,7 +2948,7 @@
 			<German>Das Fahrzeug ist zerstört oder auf dem Helikopterlandeplatz!</German>
 			<French>Le véhicule est détruit ou n'est plus sur l'héliport!</French>
 			<Italian>Il veicolo non è più attivo sulla piazzola d'atterraggio!</Italian>
-			<Portuguese>"A aeronave não esta mais disponível no helipad!</Portuguese>
+			<Portuguese>"A aeronave não está mais disponível no heliponto!</Portuguese>
 		</Key>
 		<Key ID="STR_Service_Chopper_Done">
 			<Original>Your chopper is now repaired and refuelled.</Original>
@@ -2956,7 +2956,7 @@
 			<German>Der Helicopter ist nun repariert und aufgetankt.</German>
 			<French>Votre hélicoptère est maintenant réparé et ravitaillé</French>
 			<Italian>L'elicottero è stato riparato e rifornito di carburante.</Italian>
-			<Portuguese>Sua aeronave esta reparada e como tanque cheio!</Portuguese>
+			<Portuguese>Sua aeronave está reparada e com o tanque cheio!</Portuguese>
 		</Key>
 	</Package>
 	<Package name="Life_Items">
@@ -2966,7 +2966,7 @@
 			<German>Cannabis</German>
 			<French>Cannabis</French>
 			<Italian>Cannabis</Italian>
-			<Portuguese>Erva</Portuguese>
+			<Portuguese>Maconha não Processada</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Apple">
 			<Original>Apple</Original>
@@ -2974,7 +2974,7 @@
 			<German>Apfel</German>
 			<French>Pomme</French>
 			<Italian>Mela</Italian>
-			<Portuguese>Maça</Portuguese>
+			<Portuguese>Maçã</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Apples">
 			<Original>Apples</Original>
@@ -2982,7 +2982,7 @@
 			<German>Äpfel</German>
 			<French>Pommes</French>
 			<Italian>Mele</Italian>
-			<Portuguese>Maças</Portuguese>
+			<Portuguese>Maçãs</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Cocaine">
 			<Original>Cocaine</Original>
@@ -2990,7 +2990,7 @@
 			<German>Kokain</German>
 			<French>Cocaïne</French>
 			<Italian>Cocaina</Italian>
-			<Portuguese>Cocaina</Portuguese>
+			<Portuguese>Cocaína</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Heroin">
 			<Original>Heroin</Original>
@@ -2998,7 +2998,7 @@
 			<German>Heroin</German>
 			<French>Heroïne</French>
 			<Italian>Eroina</Italian>
-			<Portuguese>Heroina</Portuguese>
+			<Portuguese>Heroína</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Oil">
 			<Original>Oil</Original>
@@ -3006,7 +3006,7 @@
 			<German>Öl</German>
 			<French>Pétrole</French>
 			<Italian>Olio</Italian>
-			<Portuguese>Oleo</Portuguese>
+			<Portuguese>Petróleo</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Peach">
 			<Original>Peach</Original>
@@ -3030,7 +3030,7 @@
 			<German>unverarbeitetes Öl</German>
 			<French>Pétrole non raffiné</French>
 			<Italian>Olio non processato</Italian>
-			<Portuguese>Oleo Bruto</Portuguese>
+			<Portuguese>Petróleo não Refinado</Portuguese>
 		</Key>
 		<Key ID="STR_Item_OilP">
 			<Original>Processed Oil</Original>
@@ -3038,7 +3038,7 @@
 			<German>verarbeitetes Öl</German>
 			<French>Pétrole raffiné</French>
 			<Italian>Olio processato</Italian>
-			<Portuguese>Oleo Processado</Portuguese>
+			<Portuguese>Petróleo Refinado</Portuguese>
 		</Key>
 		<Key ID="STR_Item_HeroinU">
 			<Original>Unprocessed Heroin</Original>
@@ -3046,7 +3046,7 @@
 			<German>unverarbeitetes Heroin</German>
 			<French>Graine de pavot</French>
 			<Italian>Eroina non processata</Italian>
-			<Portuguese>Heroina não processada</Portuguese>
+			<Portuguese>Heroína não Processada</Portuguese>
 		</Key>
 		<Key ID="STR_Item_HeroinP">
 			<Original>Processed Heroin</Original>
@@ -3054,7 +3054,7 @@
 			<German>verarbeitetes Heroin</German>
 			<French>Héroine</French>
 			<Italian>Eroina processata</Italian>
-			<Portuguese>Heroina Processada</Portuguese>
+			<Portuguese>Heroína Processada</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Marijuana">
 			<Original>Marijuana</Original>
@@ -3078,7 +3078,7 @@
 			<German>Salema Fleisch</German>
 			<French>Filet de Saupe</French>
 			<Italian>Carne di Salmone</Italian>
-			<Portuguese>Peixe Selama</Portuguese>
+			<Portuguese>Peixe Salema</Portuguese>
 		</Key>
 		<Key ID="STR_Item_OrnateMeat">
 			<Original>Ornate Meat</Original>
@@ -3142,7 +3142,7 @@
 			<German>Wasser</German>
 			<French>Bouteille d'eau</French>
 			<Italian>Bottiglia d'acqua</Italian>
-			<Portuguese>Garrafa de Agua</Portuguese>
+			<Portuguese>Garrafa d'água</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Coffee">
 			<Original>Coffee</Original>
@@ -3166,7 +3166,7 @@
 			<German>Donuts</German>
 			<French>Donuts</French>
 			<Italian>Ciambelle</Italian>
-			<Portuguese>Donuts</Portuguese>
+			<Portuguese>Rosquinha</Portuguese>
 		</Key>
 		<Key ID="STR_Item_FuelE">
 			<Original>Empty Fuel Can</Original>
@@ -3198,7 +3198,7 @@
 			<German>Kupfererz</German>
 			<French>Minerai de Cuivre</French>
 			<Italian>Minerale di Rame</Italian>
-			<Portuguese>Pupita de Bronze</Portuguese>
+			<Portuguese>Pepita de Cobre</Portuguese>
 		</Key>
 		<Key ID="STR_Item_IronOre">
 			<Original>Iron Ore</Original>
@@ -3206,7 +3206,7 @@
 			<German>Eisenerz</German>
 			<French>Minerai de Fer</French>
 			<Italian>Minerale di Ferro</Italian>
-			<Portuguese>Pupita de Ferro</Portuguese>
+			<Portuguese>Pepita de Ferro</Portuguese>
 		</Key>
 		<Key ID="STR_Item_IronIngot">
 			<Original>Iron Ingot</Original>
@@ -3222,7 +3222,7 @@
 			<German>Kupferbarren</German>
 			<French>Lingot de cuivre</French>
 			<Italian>Lingotto di Rame</Italian>
-			<Portuguese>Barra de Bronze</Portuguese>
+			<Portuguese>Barra de Cobre</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Sand">
 			<Original>Sand</Original>
@@ -3262,7 +3262,7 @@
 			<German>geschliffene Diamanten</German>
 			<French>Diamant Taillé</French>
 			<Italian>Diamante tagliato</Italian>
-			<Portuguese>Diamante</Portuguese>
+			<Portuguese>Diamante Lapidado</Portuguese>
 		</Key>
 		<Key ID="STR_Item_DiamondU">
 			<Original>Diamond Uncut</Original>
@@ -3294,7 +3294,7 @@
 			<German>Dietrich</German>
 			<French>Outil de crochetage</French>
 			<Italian>Grimaldello</Italian>
-			<Portuguese>Lockpick</Portuguese>
+			<Portuguese>Chave Mestra</Portuguese>
 		</Key>
 		<Key ID="STR_Item_Rock">
 			<Original>Rock</Original>
@@ -3334,7 +3334,7 @@
 			<German>Bolzenschneider</German>
 			<French>Outils de sérrurier</French>
 			<Italian>Tronchese</Italian>
-			<Portuguese>Bolt Cutter</Portuguese>
+			<Portuguese>Alicate</Portuguese>
 		</Key>
 		<Key ID="STR_Item_DefuseKit">
 			<Original>Bomb Defuse Kit</Original>
@@ -3342,7 +3342,7 @@
 			<German>Entschärfungs Kit</German>
 			<French>Outils de désamorçage</French>
 			<Italian>Attrezzi per il disinnesco</Italian>
-			<Portuguese>Kit anti bomba</Portuguese>
+			<Portuguese>Kit anti-bomba</Portuguese>
 		</Key>
 		<Key ID="STR_Item_StorageBS">
 			<Original>Small Storage Box</Original>
@@ -3366,7 +3366,7 @@
 			<German>unverarbeitetes Kokain</German>
 			<French>Feuille de Coca</French>
 			<Italian>Cocaina non processata</Italian>
-			<Portuguese>Cocaina não Refinada</Portuguese>
+			<Portuguese>Cocaína não Refinada</Portuguese>
 		</Key>
 		<Key ID="STR_Item_CocaineP">
 			<Original>Processed Cocaine</Original>
@@ -3374,7 +3374,7 @@
 			<German>verarbeitetes Kokain</German>
 			<French>Cocaine</French>
 			<Italian>Cocaina processata</Italian>
-			<Portuguese>Cocaina Refinada</Portuguese>
+			<Portuguese>Cocaína Refinada</Portuguese>
 		</Key>
 		<Key ID="STR_Item_SpikeStrip">
 			<Original>Spike Strip</Original>
@@ -3400,7 +3400,7 @@
 			<German>Pilotenschein</German>
 			<French>License de Pilote</French>
 			<Italian>Licenza da Pilota</Italian>
-			<Portuguese>Breve de Piloto</Portuguese>
+			<Portuguese>Licença de Piloto</Portuguese>
 		</Key>
 		<Key ID="STR_License_Heroin">
 			<Original>Heroin Training</Original>
@@ -3408,7 +3408,7 @@
 			<German>Heroin Ausbildung</German>
 			<French>Transformation du Pavot</French>
 			<Italian>Processo Eroina</Italian>
-			<Portuguese>Curso de Heroina</Portuguese>
+			<Portuguese>Treinamento de Heroina</Portuguese>
 		</Key>
 		<Key ID="STR_License_Oil">
 			<Original>Oil Processing</Original>
@@ -3416,7 +3416,7 @@
 			<German>Öl Verarbeitung</German>
 			<French>Raffinage de du pétrole</French>
 			<Italian>Processo Olio</Italian>
-			<Portuguese>Curso de Oleo</Portuguese>
+			<Portuguese>Refinamento de Petróleo</Portuguese>
 		</Key>
 		<Key ID="STR_License_Diving">
 			<Original>Diving License</Original>
@@ -3424,7 +3424,7 @@
 			<German>Taucherschein</German>
 			<French>Permis de Plongée</French>
 			<Italian>Licenza di Pesca</Italian>
-			<Portuguese>Carteira de Mergulho</Portuguese>
+			<Portuguese>Licença de Mergulho</Portuguese>
 		</Key>
 		<Key ID="STR_License_Boat">
 			<Original>Boating License</Original>
@@ -3440,7 +3440,7 @@
 			<German>Waffenschein</German>
 			<French>Permis de Port d'Arme</French>
 			<Italian>Porto d'Armi</Italian>
-			<Portuguese>Licensa de Arma de Fogo</Portuguese>
+			<Portuguese>Licença de Porte de Armas</Portuguese>
 		</Key>
 		<Key ID="STR_License_Swat">
 			<Original>SWAT License</Original>
@@ -3448,7 +3448,7 @@
 			<German>SWAT Lizenz</German>
 			<French>License du SWAT</French>
 			<Italian>Licenza SWAT</Italian>
-			<Portuguese>Curso do Bope</Portuguese>
+			<Portuguese>Licença do Bope</Portuguese>
 		</Key>
 		<Key ID="STR_License_CG">
 			<Original>Coast Guard License</Original>
@@ -3456,7 +3456,7 @@
 			<German>Küstenwache</German>
 			<French>Garde-Cotes</French>
 			<Italian>Licenza Guardia Costiera</Italian>
-			<Portuguese>Curso de Guarda Costeira</Portuguese>
+			<Portuguese>Licença de Guarda Costeira</Portuguese>
 		</Key>
 		<Key ID="STR_License_Rebel">
 			<Original>Rebel Training</Original>
@@ -3472,7 +3472,7 @@
 			<German>Truck Lizenz</German>
 			<French>Permis Poids Lourds</French>
 			<Italian>Licenza Camion</Italian>
-			<Portuguese>Carteira de Trasporte Pessado</Portuguese>
+			<Portuguese>Carteira de Caminhão</Portuguese>
 		</Key>
 		<Key ID="STR_License_Diamond">
 			<Original>Diamond Processing</Original>
@@ -3480,7 +3480,7 @@
 			<German>Diamanten Verarbeitung</German>
 			<French>Taillage des Diamands</French>
 			<Italian>Processo Diamanti</Italian>
-			<Portuguese>Curso de Diamante</Portuguese>
+			<Portuguese>Lapidação de Diamante</Portuguese>
 		</Key>
 		<Key ID="STR_License_Copper">
 			<Original>Copper Processing</Original>
@@ -3488,7 +3488,7 @@
 			<German>Kupfer Verarbeitung</German>
 			<French>Fonte du Cuivre</French>
 			<Italian>Processo Rame</Italian>
-			<Portuguese>Curso de Bronze</Portuguese>
+			<Portuguese>Processamento de Bronze</Portuguese>
 		</Key>
 		<Key ID="STR_License_Iron">
 			<Original>Iron Processing</Original>
@@ -3496,7 +3496,7 @@
 			<German>Eisen Verarbeitung</German>
 			<French>Fonte du Fer</French>
 			<Italian>Processo Ferro</Italian>
-			<Portuguese>Curso de Ferro</Portuguese>
+			<Portuguese>Processamento de Ferro</Portuguese>
 		</Key>
 		<Key ID="STR_License_Sand">
 			<Original>Sand Processing</Original>
@@ -3504,7 +3504,7 @@
 			<German>Sand Aufbereitung</German>
 			<French>Traitement du Sable</French>
 			<Italian>Processo Sabbia</Italian>
-			<Portuguese>Curso de Areia</Portuguese>
+			<Portuguese>Processamento de Areia</Portuguese>
 		</Key>
 		<Key ID="STR_License_Salt">
 			<Original>Salt Processing</Original>
@@ -3512,7 +3512,7 @@
 			<German>Salz Verarbeitung</German>
 			<French>Traitement du Sel</French>
 			<Italian>Processo Sale</Italian>
-			<Portuguese>Curso de Sal</Portuguese>
+			<Portuguese>Processamento de Sal</Portuguese>
 		</Key>
 		<Key ID="STR_License_Cocaine">
 			<Original>Cocaine Training</Original>
@@ -3520,7 +3520,7 @@
 			<German>Kokain Ausbildung</German>
 			<French>Transformation de la Coca</French>
 			<Italian>Processo Cocaina</Italian>
-			<Portuguese>Curso de Cocaina</Portuguese>
+			<Portuguese>Treinamento de Cocaina</Portuguese>
 		</Key>
 		<Key ID="STR_License_Marijuana">
 			<Original>Marijuana Training</Original>
@@ -3528,7 +3528,7 @@
 			<German>Marihuana Ausbildung</German>
 			<French>Traitement du Cannabis</French>
 			<Italian>Processo Marijuana</Italian>
-			<Portuguese>Curso de Maconha</Portuguese>
+			<Portuguese>Treinamento de Maconha</Portuguese>
 		</Key>
 		<Key ID="STR_License_Cement">
 			<Original>Cement Mixing License</Original>
@@ -3536,7 +3536,7 @@
 			<German>Zementmisch Lizenz</German>
 			<French>Fabrication du Ciment</French>
 			<Italian>Processo Cemento</Italian>
-			<Portuguese>Curso de Cimento</Portuguese>
+			<Portuguese>Licença de Cimento</Portuguese>
 		</Key>
 		<Key ID="STR_License_Home">
 			<Original>Home Owners License</Original>
@@ -3544,7 +3544,7 @@
 			<German>Hausbesitzer Lizenz</German>
 			<French>Droit de Propriété</French>
 			<Italian>Licenza possesso Casa</Italian>
-			<Portuguese>Registro Civíl</Portuguese>
+			<Portuguese>Licença de Casas</Portuguese>
 		</Key>
 	</Package>
 	<Package name="More_Item_Strings">
@@ -3554,7 +3554,7 @@
 			<German>Das kann nur an einem Safe benutzt werden.</German>
 			<French>Cela ne peut être utilisé que sur un coffre-fort.</French>
 			<Italian>Può essere usata solo sulla cassaforte.</Italian>
-			<Portuguese>Isto só pode ser usado em um cofre.</Portuguese>
+			<Portuguese>Isso só pode ser usado em um cofre.</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Blast_AlreadyPlaced">
 			<Original>There is already a charge placed on this vault.</Original>
@@ -3602,7 +3602,7 @@
 			<German>Der Safe ist jetzt offen</German>
 			<French>Le coffre est maintenant ouvert</French>
 			<Italian>La cassaforte è stata aperta</Italian>
-			<Portuguese>O cofre esta aberto.</Portuguese>
+			<Portuguese>O cofre está aberto.</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Bolt_NotNear">
 			<Original>You are not looking at a house door.</Original>
@@ -3618,7 +3618,7 @@
 			<German>!!!!! JEMAND BRICHT IN DIE ZENTRALBANK EIN !!!!!!</German>
 			<French>!!!!! QUELQU'UN TENTE DE S'INTRODUIRe DANS LA RÈSERVE FÈDÈRALE !!!!!!</French>
 			<Italian>!!!!!! QUALCUNO STA CERCANDO DI INTRODURSI NELLA RISERVA FEDERALE !!!!!!</Italian>
-			<Portuguese>!!!!! A RESERVA FEDERAL ESTA SENDO ROUBADA !!!!!!</Portuguese>
+			<Portuguese>!!!!! A RESERVA FEDERAL ESTÁ SENDO ROUBADA !!!!!!</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Bolt_AlertHouse">
 			<Original>%1 was seen breaking into a house.</Original>
@@ -3666,7 +3666,7 @@
 			<German>Du musst am Fahrzeug stehen um es zu betanken</German>
 			<French>Vous avez besoin de regarder le véhicule dont vous voulez faire le plein!</French>
 			<Italian>Devi essere girato verso il veicolo che vuoi rifornire!</Italian>
-			<Portuguese>Você precisa estar olhando para o veiculo que quer abastecer!</Portuguese>
+			<Portuguese>Você precisa estar olhando para o veículo que quer abastecer!</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Jerry_NotNear">
 			<Original>You need to be closer to the vehicle!</Original>
@@ -3674,7 +3674,7 @@
 			<German>Du musst näher am Fahrzeug sein</German>
 			<French>Vous devez être plus proche du véhicule!</French>
 			<Italian>Devi stare più vicino al veicolo!</Italian>
-			<Portuguese>Você precisa estar mais perto do veiculo!</Portuguese>
+			<Portuguese>Você precisa estar mais perto do veículo!</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Jerry_Process">
 			<Original>Refuelling %1</Original>
@@ -3706,7 +3706,7 @@
 			<German>aufbrechen %1</German>
 			<French>Crochetage %1</French>
 			<Italian>Scassinando %1</Italian>
-			<Portuguese>Lock-picking %1</Portuguese>
+			<Portuguese>Arrombando %1</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Lock_TooFar">
 			<Original>You got to far away from the target.</Original>
@@ -3714,7 +3714,7 @@
 			<German>Du hast dich zu weit vom Ziel entfernt.</German>
 			<French>Vous êtes trop loin de la cible.</French>
 			<Italian>Sei andato troppo lontano dall'obbiettivo</Italian>
-			<Portuguese>Voçê esta muito longe do seu alvo.</Portuguese>
+			<Portuguese>Voçê está muito longe do seu alvo.</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Lock_Success">
 			<Original>You now have keys to this vehicle.</Original>
@@ -3730,7 +3730,7 @@
 			<German>Der Dietrich ist abgebrochen.</German>
 			<French>L'outil de crochetage à cassé</French>
 			<Italian>Il grimaldello si è rotto.</Italian>
-			<Portuguese>O lockpick quebrou.</Portuguese>
+			<Portuguese>A Chave Mestra quebrou.</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Lock_FailedNOTF">
 			<Original>%1 was seen trying to lockpick a car.</Original>
@@ -3738,7 +3738,7 @@
 			<German>%1 wurde gesehen wie er ein Auto knacken wollte.</German>
 			<French>%1 a été vu essayant de crocheter une voiture</French>
 			<Italian>%1 è stato visto provare a scassinare un veicolo.</Italian>
-			<Portuguese>%1 foi visto usando lockpick em um carro.</Portuguese>
+			<Portuguese>%1 foi visto usando uma Chave Mestra em um carro.</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Pick_NotNear">
 			<Original>You are not near a mine!</Original>
@@ -3746,7 +3746,7 @@
 			<German>Du bist nicht in der Nähe einer Mine!</German>
 			<French>Vous n'êtes pas près d'une mine!</French>
 			<Italian>Non ti trovi vicino ad una mina!</Italian>
-			<Portuguese>Você não esta próximo a uma mina!</Portuguese>
+			<Portuguese>Você não está próximo a uma mina!</Portuguese>
 		</Key>
 		<Key ID="STR_ISTR_Pick_MineVeh">
 			<Original>You can't mine from inside a car!</Original>
@@ -4016,7 +4016,7 @@
 			<German>Jemand anderes belebt diese Person bereits wieder</German>
 			<French>Quelqu'un d'autre s'occupe déjà de cette personne</French>
 			<Italian>Qualcun'altro sta già provando a rianimare questa persona</Italian>
-			<Portuguese>Outro médico já esta revivendo esse jogador</Portuguese>
+			<Portuguese>Outro médico já está revivendo esse jogador</Portuguese>
 		</Key>
 		<Key ID="STR_Medic_Progress">
 			<Original>Reviving %1</Original>
@@ -4048,7 +4048,7 @@
 			<German>Du bist zu weit weg vom Körper</German>
 			<French>Vous êtes trop loin du corps.</French>
 			<Italian>Sei andato troppo distante dal corpo.</Italian>
-			<Portuguese>Você esta muito distante do corpo.</Portuguese>
+			<Portuguese>Você está muito distante do corpo.</Portuguese>
 		</Key>
 	</Package>
 		<Package name="Federal_Reserve">
@@ -4074,7 +4074,7 @@
 			<German>Der Tresor wird bereits von jemand anderem ausgeraubt</German>
 			<French>Ce coffre est déjà pillé par quelqu'un d'autre</French>
 			<Italian>Questo Caveau sta venendo rapinando da qualcun'altro</Italian>
-			<Portuguese>Esse cofre já esta sendo roubado por outro jogador.</Portuguese>
+			<Portuguese>Esse cofre já está sendo roubado por outro jogador.</Portuguese>
 		</Key>
 		<Key ID="STR_FEDR_VRecently">
 			<Original>This vault was already robbed recently</Original>
@@ -4116,7 +4116,7 @@
 			<German>Zeigt automatisch nächstgelegene Objekte innerhalb von 15m an, deaktiviere es wenn du Leistungprobleme hast.</German>
 			<French>Révèle automatiquement les objets les plus proches au sein de 15m, désactiver ce paramètre si vous rencontrez des problèmes de performance.</French>
 				<Italian>Rivela automaticamente gli oggettivi vicini entro 15m, disattiva quest'impostazione se riscontri dei problemi di perfomance di sistema.</Italian>
-			<Portuguese>Revela objetos a 15m, desligue essa opção se esta tendo problemas de performance.</Portuguese>
+			<Portuguese>Revela objetos a 15m, desligue essa opção se está tendo problemas de performance.</Portuguese>
 		</Key>
 		<Key ID="STR_GUI_PlayTags">
 			<Original>Controls whether or not players will have name tags above their head.</Original>
@@ -4124,7 +4124,7 @@
 			<German>regelt, ob die Spieler Namensschilder über dem Kopf haben.</German>
 			<French>Contrôle si les joueurs auront ou non leur noms au dessus de leur tête</French>
 			<Italian>Controlla la visualizzazione delle tags sopra la testa dei giocatori</Italian>
-			<Portuguese>Controla se os jogadores terão a TAG em suas cabeças.</Portuguese>
+			<Portuguese>Controla se os jogadores terão os nomes em suas cabeças.</Portuguese>
 		</Key>
 		<Key ID="STR_GUI_ShopStock">
 			<Original>Shop Stock</Original>
@@ -4132,7 +4132,7 @@
 			<German>Lagerbestand</German>
 			<French>Shop Stock</French>
 			<Italian>Stock Negozio</Italian>
-			<Portuguese></Portuguese>
+			<Portuguese>Estoque</Portuguese>
 		</Key>
 	</Package>
 		<Package name="Player_Interaction">
@@ -4214,7 +4214,7 @@
 			<German>Tür reparieren</German>
 			<French>Réparer la porte</French>
 			<Italian>Ripara porta</Italian>
-			<Portuguese>Concertar Porta</Portuguese>
+			<Portuguese>Consertar Porta</Portuguese>
 		</Key>
 		<Key ID="STR_pInAct_CloseOpen">
 			<Original>Open / Close</Original>
@@ -4780,7 +4780,7 @@
 			<German>Du bist nicht befugt diesen Shop zu nutzen</German>
 			<French>Vous n'êtes pas autorisé à utiliser cette boutique!</French>
 			<Italian>Non sei autorizzato ad usare questo negozio!</Italian>
-			<Portuguese>Você não esta autorizado a utlizar essa loja!</Portuguese>
+			<Portuguese>Você não está autorizado a utlizar essa loja!</Portuguese>
 		</Key>
 		<Key ID="STR_Shop_Virt_Nothing">
 			<Original>You need to select an item to buy.</Original>
