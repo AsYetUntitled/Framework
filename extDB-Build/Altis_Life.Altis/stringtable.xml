@@ -1995,6 +1995,46 @@
 			<Italian>Stai trasportando oltre il tuo carico massimo! Non riuscirai a correre fino a quando non ti libererai di qualche oggetto!</Italian>
 			<Portuguese>Você está carregando muito peso. Você não irá conseguir correr ou se mover rapidamente.</Portuguese>
  		</Key>
+ 		<Key ID="STR_NOTF_SearchVeh">
+ 			<Original>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Original>
+ 			<English>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</English>
+			<German>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Fahrzeuginfo&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Besitzer&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</German>
+			<French>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</French>
+			<Italian>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Italian>
+			<Portuguese>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Portuguese>
+ 		</Key>
+ 		<Key ID="STR_NOTF_CannotSearchPerson">
+			<Original>Cannot search that person.</Original>
+			<English>Cannot search that person.</English>
+			<German>Diese Person kann nicht durchsucht werden.</German>
+			<French>Cannot search that person.</French>
+			<Italian>Cannot search that person.</Italian>
+			<Portuguese>Cannot search that person.</Portuguese>
+		</Key>
+		<Key ID="STR_NOTF_Repairing">
+ 			<Original>Repairing %1</Original>
+ 			<English>Repairing %1</English>
+			<German>Wird repariert %1</German>
+			<French>Repairing %1</French>
+			<Italian>Repairing %1</Italian>
+			<Portuguese>Repairing %1</Portuguese>
+ 		</Key>
+ 		<Key ID="STR_NOTF_RepairingInVehicle">
+ 			<Original>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</Original>
+ 			<English>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</English>
+			<German>Du musst außerhalb des Fahrzeuges sein, um es zu reparieren. Entschuldigung, aber das soll verhindern, dass du das System missbrauchst, naja, nicht wirklich.</German>
+			<French>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</French>
+			<Italian>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</Italian>
+			<Portuguese>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</Portuguese>
+ 		</Key>
+ 		<Key ID="STR_NOTF_RepairedVehicle">
+ 			<Original>You have repaired that vehicle.</Original>
+ 			<English>You have repaired that vehicle.</English>
+			<German>Du hast dieses Fahrzeug repariert.</German>
+			<French>You have repaired that vehicle.</French>
+			<Italian>You have repaired that vehicle.</Italian>
+			<Portuguese>You have repaired that vehicle.</Portuguese>
+ 		</Key>
 	</Package>
 	<Package name="Jail_Strings">
 		<Key ID="STR_Jail_Warn">
@@ -4712,7 +4752,7 @@
 		<Key ID="STR_Shop_Veh_Block">
 			<Original>There is a vehicle currently blocking the spawn point</Original>
 			<English>There is a vehicle currently blocking the spawn point</English>
-			<German>Ein Fahrzeug blockiert gerade den Spawnpunkt/German>
+			<German>Ein Fahrzeug blockiert gerade den Spawnpunkt</German>
 			<French>Il y a actuellement un véhicule qui bloque le point de spawn</French>
 			<Italian>C'è già un veicolo che blocca la zona di spawn</Italian>
 			<Portuguese>Existe um veiculo bloquenado a area de respaw</Portuguese>
