@@ -1897,7 +1897,7 @@
 			<English>You need $%1 to process without a license!</English>
 			<German>Du musst $%1 haben, um ohne eine Lizenz verarbeiten zu können!</German>
 			<French>Vous devez payer $%1 pour traiter sans licence!</French>
-			<Portuguese>Você precisa de R$%1 para processar sem uma licensa!</Portuguese>
+			<Portuguese>Você precisa de R$%1 para processar sem uma licença!</Portuguese>
  		</Key>
  		<Key ID="STR_NOTF_RapidAction">
  			<Original>You can't rapidly use action keys!</Original>
@@ -2011,7 +2011,7 @@
 			<German>Bei der Verhaftung hast du folgende Lizenzen verloren\n\nWaffen Lizenz\nRebellen Lizenz</German>
 			<French>Après votre mise en prison, vous avez perdu les licences suivante si vous les aviez\n\nFirearms License\nRebel License</French>
 			<Italian>A causa del tuo arresto hai perso le seguenti licenze, se le possedevi\n\nPorto d'armi\nLicenza Ribelle</Italian>
-			<Portuguese>Você perdeu as seguintes licensar por ter sido preso\n\nArma de Fogo\n\nTreinamento Rebelde</Portuguese>
+			<Portuguese>Você perdeu as seguintes licenças por ter sido preso\n\nPorte de Armas\n\nTreinamento Rebelde</Portuguese>
 		</Key>
 		<Key ID="STR_Jail_EscapeNOTF">
 			<Original>%1 has escaped from jail!</Original>
@@ -2019,7 +2019,7 @@
 			<German>%1 ist aus dem Gefängnis ausgebrochen!</German>
 			<French>%1 s'est échappé de prison!</French>
 			<Italian>%1 è scappato dalla prigione!</Italian>
-			<Portuguese>%1 escapou da cadeia</Portuguese>
+			<Portuguese>%1 escapou da prisão</Portuguese>
 		</Key>
 		<Key ID="STR_Jail_EscapeSelf">
 			<Original>You have escaped from jail, you still retain your previous crimes and now have a count of escaping jail.</Original>
@@ -2027,7 +2027,7 @@
 			<German>Du bist aus dem Gefängnis ausgebrochen, die Polizei sucht bereits wegen deiner früheren Verbrechen und Gefängnisausbruch nach dir.</German>
 			<French>Vous vous êtes échappé de prison, vous conserver toujours vos crimes précédents et ils savent maintenant que vous vous êtes échappé de prison.</French>
 			<Italian>Sei scappato di prigione, rimarrai ricercato per i crimini da te commessi in precedenza e in aggiunta per essere scappato di prigione.</Italian>
-			<Portuguese>Você escapou da cadeia, agora você é procurado por esse crime e todos que tinha cometido anteriormente</Portuguese>
+			<Portuguese>Você escapou da prisão, agora você é procurado por esse crime e todos os outros que tinha cometido anteriormente</Portuguese>
 		</Key>
 		<Key ID="STR_Jail_Released">
 			<Original>You have served your time in jail and have been released.</Original>
@@ -2035,7 +2035,7 @@
 			<German>Du hast deine Zeit im Gefängnis abgesessen.</German>
 			<French>Vous avez terminé votre peine, vous êtes libre.</French>
 			<Italian>Hai scontato la tua pena in prigione e sei stato rilasciato.</Italian>
-			<Portuguese>Você pagou por seus crimes e foi libertado.</Portuguese>
+			<Portuguese>Você pagou pelo seus crimes e foi libertado.</Portuguese>
 		</Key>
 		<Key ID="STR_Jail_Time">
 			<Original>Time Remaining:</Original>
@@ -2342,7 +2342,7 @@
 			<German>Lizenzen:</German>
 			<French>Licences:</French>
 			<Italian>Licenze:</Italian>
-			<Portuguese>Licensas:</Portuguese>
+			<Portuguese>Licenças:</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_NoLicenses">
 			<Original>No Licenses</Original>
@@ -2350,7 +2350,7 @@
 			<German>Keine Lizenzen</German>
 			<French>Aucune licence</French>
 			<Italian>Nessuna Licenza</Italian>
-			<Portuguese>Sem Licensas</Portuguese>
+			<Portuguese>Sem Licenças</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_NoIllegalVeh">
 			<Original>Nothing illegal in this vehicle</Original>
@@ -2390,7 +2390,7 @@
 			<German>Der Tresor wurde repariert.</German>
 			<French>Le coffre est de nouveau sécurisé.</French>
 			<Italian>Il Caveau è stato riparato e messo in sicurezza.</Italian>
-			<Portuguese>O Cofre foi concertado e está seguro.</Portuguese>
+			<Portuguese>O Cofre foi consertado e está seguro.</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_VaultLocked">
 			<Original>The vault is already locked?</Original>
@@ -2454,7 +2454,7 @@
 			<German>Keine Lizenzen&lt;br/&gt;</German>
 			<French>Aucune licence&lt;br/&gt;</French>
 			<Italian>Nessuna Licenza&lt;br/&gt;</Italian>
-			<Portuguese>Você não tem licensa&lt;br/&gt;</Portuguese>
+			<Portuguese>Você não tem licença&lt;br/&gt;</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_DealerQuestion">
 			<Original>No one has sold to this dealer recently.</Original>
@@ -3391,7 +3391,7 @@
 			<German>Führerschein</German>
 			<French>Permis de Conduire</French>
 			<Italian>Licenza di Guida</Italian>
-			<Portuguese>Carteira de Motorista</Portuguese>
+			<Portuguese>Licença de Motorista</Portuguese>
 		</Key>
 		<Key ID="STR_License_Pilot">
 			<Original>Pilot License</Original>
@@ -3431,7 +3431,7 @@
 			<German>Bootsschein</German>
 			<French>Permis Bateau</French>
 			<Italian>Licenza Nautica</Italian>
-			<Portuguese>Arrais - Carteira de Barco</Portuguese>
+			<Portuguese>Licença de Barco</Portuguese>
 		</Key>
 		<Key ID="STR_License_Firearm">
 			<Original>Firearm License</Original>
@@ -3471,7 +3471,7 @@
 			<German>LKW-Führerschein</German>
 			<French>Permis Poids Lourds</French>
 			<Italian>Licenza Camion</Italian>
-			<Portuguese>Carteira de Caminhão</Portuguese>
+			<Portuguese>Licença de Caminhão</Portuguese>
 		</Key>
 		<Key ID="STR_License_Diamond">
 			<Original>Diamond Processing</Original>
@@ -3939,7 +3939,7 @@
 			<German>Du brauchst $%1, um ohne eine Lizenz verarbeiten zu können!</German>
 			<French>Vous devez $1% pour traiter sans permis!</French>
 			<Italian>Hai bisogno di €%1 per processare senza la dovuta licenza!</Italian>
-			<Portuguese>Você precisa de R$%1 para processar sem licensa!</Portuguese>
+			<Portuguese>Você precisa de R$%1 para processar sem licença!</Portuguese>
 		</Key>
 		<Key ID="STR_Process_Processed">
 			<Original>You have processed %1 into %2</Original>
@@ -4205,7 +4205,7 @@
 			<German>Lizenzen überprüfen</German>
 			<French>Vérifier Licences</French>
 			<Italian>Controlla Licenze</Italian>
-			<Portuguese>Verificar Licensas</Portuguese>
+			<Portuguese>Verificar Licenças</Portuguese>
 		</Key>
 		<Key ID="STR_pInAct_SearchPlayer">
 			<Original>Search Player</Original>
@@ -4349,7 +4349,7 @@
 			<German>Licht ausschalten</German>
 			<French>Lumières éteintes</French>
 			<Italian>Spegni luci</Italian>
-			<Portuguese>Ligar Luz</Portuguese>
+			<Portuguese>Ligar Luzes</Portuguese>
 		</Key>
 		<Key ID="STR_pInAct_LightsOn">
 			<Original>Turn Lights On</Original>
@@ -4391,7 +4391,7 @@
 			<German>Ins Kart setzen</German>
 			<French>Mettre dans le kart</French>
 			<Italian>Entra nel Kart</Italian>
-			<Portuguese>Sentar no Kart</Portuguese>
+			<Portuguese>Entrar no Kart</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_PushBoat">
 			<Original>Push Boat</Original>
@@ -4415,7 +4415,7 @@
 			<German>Eigentümer</German>
 			<French>Enregistrement</French>
 			<Italian>Registrazione</Italian>
-			<Portuguese>Licensas</Portuguese>
+			<Portuguese>Licenças</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_SearchVehicle">
 			<Original>Search Vehicle</Original>
@@ -4423,7 +4423,7 @@
 			<German>Fahrzeug durchsuchen</German>
 			<French>Fouiller Véhicule</French>
 			<Italian>Cerca Veicolo</Italian>
-			<Portuguese>Procurar por Veículo</Portuguese>
+			<Portuguese>Vasculhar Veículo</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_PullOut">
 			<Original>Pullout Players</Original>
@@ -4431,7 +4431,7 @@
 			<German>Aus Fahrzeug ziehen</German>
 			<French>Sortir Personnes</French>
 			<Italian>Estrai Giocatore</Italian>
-			<Portuguese>Retirar Jogador</Portuguese>
+			<Portuguese>Retirar Jogadores</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_Impound">
 			<Original>Impound Vehicle</Original>
@@ -4457,7 +4457,7 @@
 			<German>Frage Spieler Informationen zu UID [%1] ab</German>
 			<French>Envoi de la requête au serveur pour obtenir des informations lecteur UID [%1]</French>
 			<Italian>Invio richiesta al server per le informazioni del giocatore UID [%1]</Italian>
-			<Portuguese>Obtendo informações do UID [%1] do servidor</Portuguese>
+			<Portuguese>Obtendo informações do UID [%1] no servidor</Portuguese>
 		</Key>
 		<Key ID="STR_Session_QueryFail">
 			<Original>The server didn't find any player information matching your UID, attempting to add player to system.</Original>
@@ -4465,7 +4465,7 @@
 			<German>Der Server hat keine Spieler Informationen zu deiner UID gefunden, versuche, Spieler ins System hinzuzufügen.</German>
 			<French>Le serveur n'a pas trouvé toutes les informations de lecteur correspondant à votre UID, tentative d'ajout du joueur dans le système.</French>
 			<Italian>Il server non ha trovato alcuna informazione sul giocatore con il tuo UID, tentativo di aggiunta del giocatore al sistema.</Italian>
-			<Portuguese>O servidor não encontrou qualquer informação jogadores correspondentes ao seu UID, tentando adicionar jogador para o sistema.</Portuguese>
+			<Portuguese>O servidor não encontrou qualquer informação do jogador correspondente ao seu UID, tentando adicionar jogador para o sistema.</Portuguese>
 		</Key>
 		<Key ID="STR_Session_Error">
 			<Original>There was an error in trying to setup your client.</Original>
@@ -4497,7 +4497,7 @@
 			<German>Wegen einiger Cheater ist das BIS MP Framework beschädigt. Versuche es in einer Minute nochmal.</German>
 			<French>En raison de certains tricheur tentant corrompre le BIS MP Framework,ils vous ont empêché de profiter de notre mission.\n\nVous pouvez essayer ce nouveau dans une minute si vous pensez que c'est une erreur.</French>
 			<Italian>A causa di qualche cheater che ha corrotto il BIS MP Framework il tuo divertimento in questa missione finisce qui per ora.\n\nPuoi provare a rientrare a breve se pensi sia un errore.</Italian>
-			<Portuguese>Por causa de alguns trapaceiro corrompendo o Quadro BIS MP eles pararam de desfrutar a nossa missão.</Portuguese>
+			<Portuguese>Por conta de alguns trapaceiro corrompendo o Quadro BIS MP eles pararam de desfrutar a nossa missão.\n\nVocê pode tentar de novo em um minuto se achar que isso é um engano.</Portuguese>
 		</Key>
 		<Key ID="STR_Session_SyncData">
 			<Original>Syncing player information to the server.\n\nPlease wait up to 20 seconds before leaving.</Original>
@@ -4505,7 +4505,7 @@
 			<German>Synchronisieren der Spieler Informationen mit dem Server. \n\nBitte warte bis zu 20 Sekunden vor dem Verbindungsabbruch.</German>
 			<French>Synchronisation des informations de joueur sur le serveur.\n\nS'il vous plaît veuiller attendre 20 secondes avant de quitter.</French>
 			<Italian>Salvando le informazioni giocatore sul server.\n\nAttendere fino a 20 secondi prima di abbandonare.</Italian>
-			<Portuguese>Sincronizar informação do jogador para o servidor.\n\n Por favor aguarde 20 segundos para sair.</Portuguese>
+			<Portuguese>Sincronizando informação do jogador com o servidor.\n\n Por favor aguarde 20 segundos antes de sair.</Portuguese>
 		</Key>
 	</Package>
 	<Package name="Shop_Strings">
@@ -4555,7 +4555,7 @@
 			<German>Keine Anzeige</German>
 			<French>Pas d'affichage</French>
 			<Italian>No Display</Italian>
-			<Portuguese>No Display</Portuguese>
+			<Portuguese>Sem exibir</Portuguese>
 		</Key>
 		<Key ID="STR_Shop_NoVehNear">
 			<Original>There are no vehicles near to sell.</Original>
@@ -4611,7 +4611,7 @@
 			<German>Du benötigst eine Taucherlizenz, um diesen Tauchershop nutzen zu können!</German>
 			<French>Vous devez avoir votre diplome de plongée pour utiliser ce magasin!</French>
 			<Italian>Ti serve la licenza di pesca per usare questo negozio!</Italian>
-			<Portuguese>Você precisa de uma Carteira de Mergulho para usar essa loja!</Portuguese>
+			<Portuguese>Você precisa de uma Licença de Mergulho para usar essa loja!</Portuguese>
 		</Key>
 		<Key ID="STR_Shop_YouNeed">
 			<Original>You need a %1 to buy from this shop!</Original>
@@ -4707,7 +4707,7 @@
 			<German>Du besitzt die benötigte Lizenz nicht!</German>
 			<French>Vous n'avez pas la licence requise!</French>
 			<Italian>Non hai la licenza richiesta per l'acquisto!</Italian>
-			<Portuguese>Você não tem a licensa necessária!</Portuguese>
+			<Portuguese>Você não tem a licença necessária!</Portuguese>
 		</Key>
 		<Key ID="STR_Shop_Veh_Block">
 			<Original>There is a vehicle currently blocking the spawn point</Original>
@@ -4999,7 +4999,7 @@
 			<German>Fischernetz auswerfen</German>
 			<French>Drop Fishing Net</French>
 			<Italian>Drop Fishing Net</Italian>		
-			<Portuguese>Drop Fishing Net</Portuguese>
+			<Portuguese>Jogar Rede de Pesca</Portuguese>
 		</Key>
 		<Key ID="STR_pAct_RobPerson">
 			<Original>Rob Person</Original>
@@ -5007,7 +5007,7 @@
 			<German>Person ausrauben</German>
 			<French>Rob Person</French>
 			<Italian>Rob Person</Italian>		
-			<Portuguese>Rob Person</Portuguese>
+			<Portuguese>Roubar Jogador</Portuguese>
 		</Key>
 	</Package>
 </Project>
