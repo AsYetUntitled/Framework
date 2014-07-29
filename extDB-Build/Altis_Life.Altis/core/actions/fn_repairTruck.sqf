@@ -15,7 +15,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 	{
 		life_action_inUse = true;
 		_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
-		_upp = format["Repairing %1",_displayName];
+		_upp = format[localize "STR_NOTF_Repairing",_displayName];
 		//Setup our progress bar.
 		disableSerialization;
 		5 cutRsc ["life_progress","PLAIN"];
@@ -45,10 +45,10 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		life_action_inUse = false;
 		5 cutText ["","PLAIN"];
 		player playActionNow "stop";
-		if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
-		if(player != vehicle player) exitWith {titleText["You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.","PLAIN"];};
+		if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_RepairingInVehicle","PLAIN"];};
 		player removeItem "ToolKit";
 		_veh setDamage 0;
-		titleText["You have repaired that vehicle.","PLAIN"];
+		titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
 	};
 };

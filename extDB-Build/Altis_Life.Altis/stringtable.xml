@@ -2011,6 +2011,30 @@
 			<Italian>Cannot search that person.</Italian>
 			<Portuguese>Cannot search that person.</Portuguese>
 		</Key>
+		<Key ID="STR_NOTF_Repairing">
+ 			<Original>Repairing %1</Original>
+ 			<English>Repairing %1</English>
+			<German>Wird repariert %1</German>
+			<French>Repairing %1</French>
+			<Italian>Repairing %1</Italian>
+			<Portuguese>Repairing %1</Portuguese>
+ 		</Key>
+ 		<Key ID="STR_NOTF_RepairingInVehicle">
+ 			<Original>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</Original>
+ 			<English>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</English>
+			<German>Du musst außerhalb des Fahrzeuges sein, um es zu reparieren. Entschuldigung, aber das soll verhindern, dass du das System missbrauchst, naja, nicht wirklich.</German>
+			<French>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</French>
+			<Italian>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</Italian>
+			<Portuguese>You must be outside of the vehicle to fix it. Sorry that this prevents you from exploiting the system, well not really.</Portuguese>
+ 		</Key>
+ 		<Key ID="STR_NOTF_RepairedVehicle">
+ 			<Original>You have repaired that vehicle.</Original>
+ 			<English>You have repaired that vehicle.</English>
+			<German>Du hast dieses Fahrzeug repariert.</German>
+			<French>You have repaired that vehicle.</French>
+			<Italian>You have repaired that vehicle.</Italian>
+			<Portuguese>You have repaired that vehicle.</Portuguese>
+ 		</Key>
 	</Package>
 	<Package name="Jail_Strings">
 		<Key ID="STR_Jail_Warn">
