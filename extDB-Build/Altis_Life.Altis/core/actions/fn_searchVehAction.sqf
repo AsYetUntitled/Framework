@@ -20,5 +20,5 @@ if((_vehicle isKindOf "Car") || !(_vehicle isKindOf "Air") || !(_vehicle isKindO
 	{
 		_owners = "No owners, impound it<br/>";
 	};
-	hint parseText format["<t color='#FF0000'><t size='2'>Vehicle Info</t></t><br/><t color='#FFD700'><t size='1.5'>Owners</t></t><br/> %1",_owners];
+	hint parseText format[localize "STR_NOTF_SearchVeh",_owners];
 };
