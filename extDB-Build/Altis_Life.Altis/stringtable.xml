@@ -2003,6 +2003,14 @@
 			<Italian>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Italian>
 			<Portuguese>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Portuguese>
  		</Key>
+ 		<Key ID="STR_NOTF_CannotSearchPerson">
+			<Original>Cannot search that person.</Original>
+			<English>Cannot search that person.</English>
+			<German>Diese Person kann nicht durchsucht werden.</German>
+			<French>Cannot search that person.</French>
+			<Italian>Cannot search that person.</Italian>
+			<Portuguese>Cannot search that person.</Portuguese>
+		</Key>
 	</Package>
 	<Package name="Jail_Strings">
 		<Key ID="STR_Jail_Warn">
