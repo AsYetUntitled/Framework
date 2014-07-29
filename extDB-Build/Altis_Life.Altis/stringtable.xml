@@ -4712,7 +4712,7 @@
 		<Key ID="STR_Shop_Veh_Block">
 			<Original>There is a vehicle currently blocking the spawn point</Original>
 			<English>There is a vehicle currently blocking the spawn point</English>
-			<German>Ein Fahrzeug blockiert gerade den Spawnpunkt/German>
+			<German>Ein Fahrzeug blockiert gerade den Spawnpunkt</German>
 			<French>Il y a actuellement un véhicule qui bloque le point de spawn</French>
 			<Italian>C'è già un veicolo che blocca la zona di spawn</Italian>
 			<Portuguese>Existe um veiculo bloquenado a area de respaw</Portuguese>
