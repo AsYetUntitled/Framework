@@ -30,7 +30,7 @@ switch(true) do {
 	default {""};
 };
 //gather check??
-if(vehicle player != player) exitWith {hint localize "STR_ISTR_Pick_mineVeh";};
+if(vehicle player != player) exitWith {hint localize "STR_NOTF_GatherVeh";};
 
 _diff = [_gather,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint localize "STR_NOTF_InvFull"};
