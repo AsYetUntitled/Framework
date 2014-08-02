@@ -2035,6 +2035,14 @@
 			<Italian>You have repaired that vehicle.</Italian>
 			<Portuguese>You have repaired that vehicle.</Portuguese>
  		</Key>
+ 		<Key ID="STR_NOTF_Gather_Success">
+			<Original>You have gathered %2 %1(s)</Original>
+			<English>You have gathered %2 %1(s)</English>
+		</Key>
+		<Key ID="STR_NOTF_GatherVeh">
+			<Original>You can't gather from inside a car!</Original>
+			<English>You can't gather from inside a car!</English>
+		</Key>
 	</Package>
 	<Package name="Jail_Strings">
 		<Key ID="STR_Jail_Warn">

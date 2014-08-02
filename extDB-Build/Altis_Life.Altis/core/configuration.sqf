@@ -55,22 +55,6 @@ life_carryWeight = 0; //Represents the players current inventory weight (MUST ST
 
 /*
 *****************************
-****** Food Variables *******
-*****************************
-*/
-life_eat_Salema = 40;
-life_eat_Ornate = 20;
-life_eat_Mackerel = 20;
-life_eat_Tuna = 100;
-life_eat_Mullet = 30;
-life_eat_CatShark = 60;
-life_eat_Rabbit = 20;
-life_eat_Apple = 5;
-life_eat_turtlesoup = 62;
-life_eat_donuts = 30;
-
-/*
-*****************************
 ****** Life Variables *******
 *****************************
 */
