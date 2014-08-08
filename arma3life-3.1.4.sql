@@ -29,6 +29,11 @@ BEGIN
 	DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteOldHouses`()
+BEGIN
+  DELETE FROM `houses` WHERE `owned` = 0;
+END$$
+
 
 DELIMITER ;
 
