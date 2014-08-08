@@ -9,6 +9,7 @@ private["_name","_group"];
 _name = [_this,0,"",[""]] call BIS_fnc_param;
 _group = [_this,1,grpNull,[grpNull]] call BIS_fnc_param;
 if(_name == "" OR isNull _group) exitWith {}; //Fail horn anyone?
+if(!isNil {(group player) getVariable "gang_name"}) exitWith {hint "You are already in a gang"};
 
 _gangName = _group getVariable "gang_name";
 _action = [
@@ -25,5 +26,5 @@ if(_action) then {
 	_grpMembers = grpPlayer getVariable "gang_members";
 	_grpMembers = _grpMembers - [steamid];
 	grpPlayer setVariable["gang_members",_grpMembers,true];
-	[[4,_grp],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
+	[[4,_grpMembers],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 };

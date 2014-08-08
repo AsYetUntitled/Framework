@@ -135,7 +135,6 @@ class Life_Client_Core
 		class eatFood {};
 		class varHandle {};
 		class varToStr {};
-		class copDefault {};
 		class impoundPrice {};
 		class itemWeight {};
 		class taxRate {};
@@ -185,7 +184,6 @@ class Life_Client_Core
 		class handleInv {};
 		class hudSetup {};
 		class hudUpdate {};
-		class fetchGear{};
 		class tazeSound {};
 		class animSync {};
 		class simDisable {};
@@ -217,6 +215,9 @@ class Life_Client_Core
 		class inventoryClosed {};
 		class inventoryOpened {};
 		class isUIDActive {};
+		class saveGear {};
+		class loadGear {};
+		class stripDownPlayer {};
 	};
 	
 	class Network
@@ -240,8 +241,6 @@ class Life_Client_Core
 		class jailMe {};
 		class jail {};
 		class tazed {};
-		class civFetchGear {};
-		class civLoadGear {};
 		class knockedOut {};
 		class knockoutAction {};
 		class robReceive {};
@@ -249,6 +248,7 @@ class Life_Client_Core
 		class removeLicenses {};
 		class zoneCreator {};
 		class demoChargeTimer {};
+		class civLoadout {};
 	};
 	
 	class Vehicle
@@ -272,8 +272,6 @@ class Life_Client_Core
 		file = "core\cop";
 		class copMarkers {};
 		class copLights {};
-		class loadGear {};
-		class saveGear {};
 		class vehInvSearch {};
 		class copSearch {};
 		class bountyReceive {};
@@ -293,6 +291,7 @@ class Life_Client_Core
 		class repairDoor {};
 		class doorAnimate {};
 		class fedCamDisplay {};
+		class copLoadout {};
 	};
 	
 	class Gangs
