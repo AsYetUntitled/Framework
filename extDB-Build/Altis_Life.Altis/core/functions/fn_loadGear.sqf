@@ -71,7 +71,7 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn lif
 {(vestContainer player) addItemCargoGlobal [_x,1];} foreach (_vMags);
 {player addItemToBackpack _x;} foreach (_bItems);
 {(backpackContainer player) addItemCargoGlobal [_x,1];} foreach (_bMags);
-
+life_maxWeight = 100;
 {
     _item = [_x,1] call life_fnc_varHandle;
     [true,_item,1] call life_fnc_handleInv;
