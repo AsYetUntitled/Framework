@@ -13,7 +13,7 @@
 */
 private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones"];
 _appleZones = ["apple_1","apple_2","apple_3","apple_4"];
-_peachZones = ["peaches_1","peaches_2","peaches_3","peaches_4"];
+_peachZones = ["peaches_1","peaches_2","peaches_3"];
 _heroinZones = ["heroin_1"];
 _cocaineZones = ["cocaine_1"];
 _weedZones = ["weed_1"];
