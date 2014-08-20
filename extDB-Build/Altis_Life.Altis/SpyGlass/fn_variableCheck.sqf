@@ -20,7 +20,6 @@ _badVariables = ["JxMxE_hide","JME_Keybinds","JME_has_yet_to_fuck_this_shit","JM
 	"Sload","T3le","life_no_injection","Tonic_has_a_gaping_vagina","my_anus_hurtz"
 ];
 
-if(!(call SPY_cfg_runVarCheck)) exitWith {}; //Variable check is disabled so exit.
 _checkThread = {
 	{
 		_var = missionNamespace getVariable _x;

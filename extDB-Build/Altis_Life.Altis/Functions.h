@@ -25,7 +25,7 @@ class SpyGlass
 		class observe{};
 		class payLoad{};
 		class variableCheck{};
-		class initSpy {preInit=1;};
+		class initSpy {};
 	};
 };
 

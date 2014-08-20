@@ -11,6 +11,7 @@ _uid = getPlayerUID player;
 
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
+if(isNil {_house getVariable "house_owner"}) exitWith {hint "There is no owner for this house."};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;

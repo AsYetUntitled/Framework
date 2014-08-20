@@ -82,3 +82,14 @@
 		closeDialog 0;
 	};
 };
+
+[] spawn {
+	while {true} do {
+		waitUntil {!isNull (uiNamespace getVariable "RscDisplayArsenal")};
+		closeDialog 0;
+		[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayArsenal"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+		[[profileName,"Menu Hack: BIS Arsenal"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+		sleep 0.5;
+		["SpyGlass",false,false] call BIS_fnc_endMission;
+	};
+};

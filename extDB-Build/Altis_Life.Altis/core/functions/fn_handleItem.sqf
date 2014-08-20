@@ -4,7 +4,7 @@
 	Description
 	Main gear handling functionality.
 */
-private["_item","_details","_bool","_ispack","_items","_isgun","_ongun","_override","_toUniform","_toVest"];
+private["_item","_details","_bool","_ispack","_items","_isgun","_ongun","_override","_toUniform","_toVest","_preview"];
 _item = [_this,0,"",[""]] call BIS_fnc_param;
 _bool = [_this,1,false,[false]] call BIS_fnc_param;
 _ispack = [_this,2,false,[false]] call BIS_fnc_param;
@@ -12,6 +12,7 @@ _ongun = [_this,3,false,[false]] call BIS_fnc_param;
 _override = [_this,4,false,[false]] call BIS_fnc_param;
 _toUniform = [_this,5,false,[false]] call BIS_fnc_param; //Manual override to send items specifically to a uniform.
 _toVest = [_this,6,false,[false]] call BIS_fnc_param; //Manual override to send items specifically to a vest
+_preview = [_this,7,false,[true]] call BIS_fnc_param;
 
 //Some checks
 if(_item == "") exitWith {};
@@ -182,7 +183,7 @@ if(_bool) then
 								else
 							{
 								if(player isKindOf "Civilian") then {
-									if(uniform player == _item) then {
+									if(uniform player == _item && {!_preview}) then {
 										player addItem _item;
 									} else {
 										if(uniform player != "") then {

@@ -72,7 +72,7 @@ class Life_Clothing {
 			x = 0.15 + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.45 - (1 / 25);
 			w = 0.2;
-			h = 0.2;
+			h = 0.13;
 		};
 		
 		class FilterList : Life_RscCombo
