@@ -51,39 +51,6 @@ class Life_Clothing {
 			h = 0.35;
 		};
 		
-		class CloseButtonKey : Life_RscButtonMenu 
-		{
-			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "closeDialog 0;";
-			x = 0.161 + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.54 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
-		};
-		
-		class BuyButtonKey : Life_RscButtonMenu 
-		{
-			idc = -1;
-			text = "$STR_Global_Buy";
-			onButtonClick = "[] call life_fnc_buyClothes;";
-			x = (1 / 250 / (safezoneW / safezoneH));
-			y = 0.54 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
-		};
-		
-		class FilterList : Life_RscCombo
-		{
-			idc = 3105;
-			colorBackground[] = {0,0,0,0.7};
-			onLBSelChanged  = "_this call life_fnc_clothingFilter";
-			x = (1 / 250 / (safezoneW / safezoneH));
-			y = 0.5 - (1 / 25);
-			w = 0.318;
-			h = 0.035;
-		};
-		
 		class PriceTag : Life_RscStructuredText
 		{
 			idc = 3102;
@@ -106,6 +73,39 @@ class Life_Clothing {
 			y = 0.45 - (1 / 25);
 			w = 0.2;
 			h = 0.2;
+		};
+		
+		class FilterList : Life_RscCombo
+		{
+			idc = 3105;
+			colorBackground[] = {0,0,0,0.7};
+			onLBSelChanged  = "_this call life_fnc_clothingFilter";
+			x = (1 / 250 / (safezoneW / safezoneH));
+			y = 0.5 - (1 / 25);
+			w = 0.318;
+			h = 0.035;
+		};
+		
+		class CloseButtonKey : Life_RscButtonMenu 
+		{
+			idc = -1;
+			text = "$STR_Global_Close";
+			onButtonClick = "closeDialog 0;";
+			x = 0.161 + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.54 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		
+		class BuyButtonKey : Life_RscButtonMenu 
+		{
+			idc = -1;
+			text = "$STR_Global_Buy";
+			onButtonClick = "[] call life_fnc_buyClothes;";
+			x = (1 / 250 / (safezoneW / safezoneH));
+			y = 0.54 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
 		};
 	};
 };

@@ -34,18 +34,7 @@ class Life_atm_management {
 			x = 0.39;
 			y = 0.26;
 			w = 0.3;
-			h = 0.2;
-		};
-		
-		class moneyEdit : Life_RscEdit {
-		
-		idc = 2702;
-		
-		text = "1";
-		sizeEx = 0.030;
-		x = 0.4; y = 0.41;
-		w = 0.2; h = 0.03;
-		
+			h = .14;
 		};
 		
 		class Title : Life_RscTitle {
@@ -82,6 +71,17 @@ class Life_atm_management {
 			y = 0.512;
 			w = (6 / 40);
 			h = (1 / 25);
+		};
+		
+		class moneyEdit : Life_RscEdit {
+		
+		idc = 2702;
+		
+		text = "1";
+		sizeEx = 0.030;
+		x = 0.4; y = 0.41;
+		w = 0.2; h = 0.03;
+		
 		};
 		
 		class PlayerList : Life_RscCombo 
