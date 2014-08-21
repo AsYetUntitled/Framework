@@ -133,6 +133,7 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 };
 
 //Check for copy-pasters of Dev-Con styled execution.
+//Because I am nice, add these to the following below to allow CBA; "CBA_CREDITS_CONT_C","CBA_CREDITS_M_P
 private["_children","_allowedChildren"];
 _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
 _allowedChildren = [
