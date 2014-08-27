@@ -65,7 +65,7 @@ while {true} do {
 	_vInv = _vehicle getVariable ["Trunk",[[],0]];
 	_items = _vInv select 0;
 	_space = _vInv select 1;
-	_itemIndex = [_item,_items] call fnc_index;
+	_itemIndex = [_item,_items] call TON_fnc_index;
 	_weight = [_vehicle] call life_fnc_vehicleWeight;
 	_sum = [_item,15,_weight select 1,_weight select 0] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight.. 
 	if(_sum < 1) exitWith {titleText[localize "STR_NOTF_DeviceFull","PLAIN"];};

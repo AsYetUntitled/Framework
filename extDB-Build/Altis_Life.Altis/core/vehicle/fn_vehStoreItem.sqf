@@ -12,7 +12,7 @@ disableSerialization;
 
 _ctrl = ctrlSelData(3503);
 _num = ctrlText 3506;
-if(!([_num] call fnc_isnumber)) exitWith {hint "Invalid Number format";};
+if(!([_num] call TON_fnc_isnumber)) exitWith {hint "Invalid Number format";};
 _num = parseNumber(_num);
 if(_num < 1) exitWith {hint "You can't enter anything below 1!";};
 
@@ -31,7 +31,7 @@ if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_tr
 
 if(_ctrl == "money") then
 {
-	_index = [_ctrl,_inv] call fnc_index;
+	_index = [_ctrl,_inv] call TON_fnc_index;
 	if(life_cash < _num) exitWith {hint "You don't have that much cash on you to store in the vehicle!"};
 	if(_index == -1) then
 	{
@@ -52,7 +52,7 @@ if(_ctrl == "money") then
 	if(((_totalWeight select 1) + _itemWeight) > (_totalWeight select 0)) exitWith {hint "The vehicle is either full or cannot hold that much."};
 
 	if(!([false,_ctrl,_num] call life_fnc_handleInv)) exitWith {hint "Couldn't remove the items from your inventory to put in the vehicle.";};
-	_index = [_ctrl,_inv] call fnc_index;
+	_index = [_ctrl,_inv] call TON_fnc_index;
 	if(_index == -1) then
 	{
 		_inv set[count _inv,[_ctrl,_num]];

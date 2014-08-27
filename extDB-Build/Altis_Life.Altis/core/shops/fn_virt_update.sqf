@@ -23,7 +23,7 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 
 {
 	_name = [([_x,0] call life_fnc_varHandle)] call life_fnc_vartostr;
-	_index = [_x,__GETC__(buy_array)] call fnc_index;
+	_index = [_x,__GETC__(buy_array)] call TON_fnc_index;
 	if(_index != -1) then
 	{
 		_price = (__GETC__(buy_array) select _index) select 1;

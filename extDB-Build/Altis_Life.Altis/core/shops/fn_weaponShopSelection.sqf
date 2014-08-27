@@ -15,7 +15,7 @@ _priceTag = ((findDisplay 38400) displayCtrl 38404);
 _item = _control lbData _index;
 if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 {
-	_iS = [_item,__GETC__(life_weapon_shop_array)] call fnc_index;
+	_iS = [_item,__GETC__(life_weapon_shop_array)] call TON_fnc_index;
 	if(_iS == -1) then 
 	{
 		_price = 0;

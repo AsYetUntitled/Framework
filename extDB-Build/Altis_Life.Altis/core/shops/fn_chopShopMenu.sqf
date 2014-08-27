@@ -21,7 +21,7 @@ _control = ((findDisplay 39400) displayCtrl 39402);
 		_className = typeOf _x;
 		_displayName = getText(configFile >> "CfgVehicles" >> _className >> "displayName");
 		_picture = getText(configFile >> "CfgVehicles" >> _className >> "picture");
-		_ind = [_className,(call life_garage_sell)] call fnc_index;
+		_ind = [_className,(call life_garage_sell)] call TON_fnc_index;
 		
 		if(_ind != -1 && count crew _x == 0) then {
 			_price = ((call life_garage_sell) select _ind) select 1;

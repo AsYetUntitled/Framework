@@ -39,7 +39,7 @@ if(count _type == 0) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
 if(_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
-_index = [_uid,life_wanted_list] call fnc_index;
+_index = [_uid,life_wanted_list] call TON_fnc_index;
 
 if(_index != -1) then
 {

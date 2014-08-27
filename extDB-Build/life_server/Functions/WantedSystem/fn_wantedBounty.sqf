@@ -11,7 +11,7 @@ _cop = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;
 _half = [_this,2,false,[false]] call BIS_fnc_param;
 if(isNull _civ OR isNull _cop) exitWith {};
 
-_id = [(getPlayerUID _civ),life_wanted_list] call fnc_index;
+_id = [(getPlayerUID _civ),life_wanted_list] call TON_fnc_index;
 if(_id != -1) then
 {
 	if(_half) then

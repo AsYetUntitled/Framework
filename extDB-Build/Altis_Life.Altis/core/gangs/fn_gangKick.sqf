@@ -20,6 +20,6 @@ if(typeName _members != "ARRAY") exitWith {};
 _members = _members - [_unitID];
 grpPlayer setVariable["gang_members",_members,true];
 
-[[_unit,grpPlayer],"clientGangKick",_unit,false] spawn life_fnc_MP; //Boot that bitch!
+[[_unit,grpPlayer],"TON_fnc_clientGangKick",_unit,false] spawn life_fnc_MP; //Boot that bitch!
 [[4,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
 [] call life_fnc_gangMenu;

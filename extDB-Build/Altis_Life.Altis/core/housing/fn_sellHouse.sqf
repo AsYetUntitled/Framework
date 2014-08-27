@@ -39,7 +39,7 @@ if(_action) then {
 		life_vehicles = life_vehicles - [-1];
 	};
 	
-	_index = [str(getPosATL _house),life_houses] call fnc_index;
+	_index = [str(getPosATL _house),life_houses] call TON_fnc_index;
 	if(_index != -1) then {
 		life_houses set[_index,-1];
 		life_houses = life_houses - [-1];
