@@ -26,6 +26,16 @@ _isCall =	[_varValue,5,false,[false]] call bis_fnc_param;
 _callerName = [_varValue,6,"",[""]] call bis_fnc_param;
 _callerUID = [_varValue,7,"",[""]] call bis_fnc_param;
 
+if(!(["life_fnc_",_functionName] call BIS_fnc_inString) && {!(["SPY_fnc_",_functionName] call BIS_fnc_inString)} && {!(["DB_fnc_",_functionName] call BIS_fnc_inString)} && {!(["TON_fnc_",_functionName] call BIS_fnc_inString)} &&
+{!(toLower(_functionName) in ["bis_fnc_execvm","bis_fnc_effectkilledairdestruction","bis_fnc_effectkilledairdestructionstage2"])} && {!(["SOCK_fnc_",_functionName] call BIS_fnc_inString)}) exitWith {false};
+if(toLower(_functionName) == "db_fnc_asynccall") exitWith {false};
+
+if(_functionName == "bis_fnc_execvm") then {
+	_param2 = _params select 1;
+	if(isNil "_param2") exitWith {_exitScope = true;};
+	if(_param2 != "initPlayerServer.sqf") exitWith {_exitScope = true;};
+};
+
 if(_callerName == "" OR _callerUID == "") exitWith {}; //NO.
 
 if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functionName) in ["spy_fnc_cookiejar","spy_fnc_notifyadmins"]) then {

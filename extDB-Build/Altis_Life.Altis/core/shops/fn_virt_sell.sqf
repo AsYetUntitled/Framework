@@ -47,3 +47,5 @@ if(life_shop_type == "heroin") then
 		life_shop_npc setVariable["sellers",_array,true];
 	};
 };
+
+[0] call SOCK_fnc_updatePartial;

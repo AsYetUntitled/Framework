@@ -13,4 +13,4 @@ life_cash = life_cash + _val;
 life_atmcash = life_atmcash - _val;
 hint format [localize "STR_ATM_WithdrawSuccess",[_val] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
-[] call SOCK_fnc_updateRequest; //Silent Sync
+[6] call SOCK_fnc_updatePartial;

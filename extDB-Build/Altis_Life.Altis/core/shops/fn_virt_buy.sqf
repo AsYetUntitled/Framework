@@ -51,3 +51,5 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 	};
 	[] call life_fnc_virt_update;
 };
+
+[0] call SOCK_fnc_updatePartial;

@@ -1,11 +1,11 @@
 /*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, MP Fast Time">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Initialize",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Initialize"};
+item0[] = {"Initialize",0,4346,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Initialize"};
 item1[] = {"true",8,218,-39.834755,-70.246155,50.165245,-20.246151,0.000000,"true"};
 item2[] = {"Junction",2,250,-39.834755,12.192835,50.165268,62.192833,0.000000,"Junction"};
 item3[] = {"isServer",4,218,-197.904358,11.159702,-107.904358,61.159702,0.000000,"isServer"};
-item4[] = {"Set_up_JIP_Var",2,4346,-196.871216,102.075562,-106.871201,152.075562,0.000000,"Set up JIP Var"};
+item4[] = {"Set_up_JIP_Var",2,250,-196.871216,102.075562,-106.871201,152.075562,0.000000,"Set up JIP Var"};
 item5[] = {"true",8,218,-47.066704,102.075577,42.933296,152.075577,0.000000,"true"};
 item6[] = {"Thread_Loop",2,250,-48.099831,194.024567,41.900185,244.024582,0.000000,"Thread Loop"};
 item7[] = {"isServer",4,218,-188.606140,241.548767,-98.606094,291.548767,0.000000,"isServer"};
@@ -22,7 +22,7 @@ link7[] = {7,8};
 link8[] = {8,9};
 link9[] = {9,6};
 globals[] = {0.000000,0,0,0,0,640,480,1,20,6316128,1,-725.260925,725.260132,771.751648,-210.759476,1404,911,1};
-window[] = {2,-1,-1,-32000,-32000,935,175,1615,175,3,1422};
+window[] = {2,-1,-1,-1,-1,935,175,1615,175,3,1422};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -33,7 +33,7 @@ class FSM
     class Initialize
     {
       name = "Initialize";
-      init = /*%FSM<STATEINIT""">*/"private[""_skipDay"",""_skipMight"",""_method"",""_fastNight"",""_sunState""];" \n
+      init = /*%FSM<STATEINIT""">*/"private[""_skipDay"",""_skipNight"",""_method"",""_fastNight"",""_sunState""];" \n
        "" \n
        "_skipDay = [_this,0,8,[0]] call BIS_fnc_param;" \n
        "_method = [_this,1,true,[false]] call BIS_fnc_param;" \n

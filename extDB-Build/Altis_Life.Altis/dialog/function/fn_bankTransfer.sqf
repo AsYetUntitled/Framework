@@ -23,4 +23,4 @@ life_atmcash = life_atmcash - (_val + _tax);
 [[_val,profileName],"clientWireTransfer",_unit,false] spawn life_fnc_MP;
 [] call life_fnc_atmMenu;
 hint format[localize "STR_ATM_SentMoneySuccess",[_val] call life_fnc_numberText,_unit getVariable["realname",name _unit],[_tax] call life_fnc_numberText];
-[] call SOCK_fnc_updateRequest; //Silent Sync
+[1] call SOCK_fnc_updatePartial
