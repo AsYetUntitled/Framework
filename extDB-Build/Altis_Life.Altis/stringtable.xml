@@ -2043,6 +2043,10 @@
 			<Original>You can't gather from inside a car!</Original>
 			<English>You can't gather from inside a car!</English>
 		</Key>
+		<Key ID="STR_NOTF_NoLootingPerson">
+			<Original>You are not allowed to loot dead bodies</Original>
+			<English>You are not allowed to loot dead bodies</English>
+		</Key>
 	</Package>
 	<Package name="Jail_Strings">
 		<Key ID="STR_Jail_Warn">
