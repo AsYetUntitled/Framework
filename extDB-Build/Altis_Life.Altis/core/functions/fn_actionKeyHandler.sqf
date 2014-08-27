@@ -19,6 +19,8 @@ if(isNull _curTarget) exitWith {
 		if(!isNil "_fish") then {
 			[_fish] call life_fnc_catchFish;
 		};
+	} else {
+		[] call life_fnc_gather;
 	};
 };
 
