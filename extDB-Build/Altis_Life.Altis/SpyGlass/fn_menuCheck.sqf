@@ -93,3 +93,12 @@
 		["SpyGlass",false,false] call BIS_fnc_endMission;
 	};
 };
+
+//Gladtwoown's Script Executor
+[] spawn {
+	waitUntil {!isNull (findDisplay 125)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_125"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 125"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call BIS_fnc_endMission;
+};
