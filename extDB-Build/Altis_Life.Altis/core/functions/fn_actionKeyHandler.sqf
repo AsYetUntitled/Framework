@@ -20,7 +20,9 @@ if(isNull _curTarget) exitWith {
 			[_fish] call life_fnc_catchFish;
 		};
 	} else {
-		[] call life_fnc_gather;
+		if(playerSide in ['civ']) then {
+			[] call life_fnc_gather;
+		};
 	};
 };
 
