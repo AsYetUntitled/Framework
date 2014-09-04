@@ -18,6 +18,7 @@ if(life_cash < life_ticket_val) exitWith
 	life_atmcash = life_atmcash - life_ticket_val;
 	life_ticket_paid = true;
 	[[0,format[localize "STR_Cop_Ticket_PaidNOTF",profileName,[life_ticket_val] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 	closeDialog 0;
 };
 
