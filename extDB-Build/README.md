@@ -16,10 +16,15 @@ If you are not using @extdb as a mod and choose to drag extdb.dll into the main 
 For Linux
 
 Requirements:
+
 Working Linux Arma3Server
+
 Debian/Ubuntu
+
 apt-get install libttb2:i386
+
 RedHat/CentOS
+
 yum install tbb.i686
 
 Extract the static build (if you do not know how to build on a linux os) to the root directory.
