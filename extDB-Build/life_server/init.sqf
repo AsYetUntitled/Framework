@@ -4,13 +4,11 @@ DB_Async_ExtraLock = false;
 life_server_isReady = false;
 publicVariable "life_server_isReady";
 
-//__CONST__(LIFE_SCHEMA_NAME,"'arma3life'");//CHANGE THIS IF YOUR DATABASE IS NOT CALLED ARMA3LIFE KEEP THE ' '
-
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
 
 //I am aiming to confuse people including myself, ignore the ui checks it's because I test locally.
-extDBversion = "extDB" callExtension "9:VERSION";
+_extDBversion = "extDB" callExtension "9:VERSION";
 if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	life_sql_id = round(random(9999));
 	__CONST__(life_sql_id,life_sql_id);
@@ -19,16 +17,10 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	//Only need to setup extDB once.
 	//  If mission is reloaded, will tell clients extDB is not loaded.
 	//     Todo: Is it possible first client is loaded before this PV is sent ?
-	if(extDBversion == "") exitWith {life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
+	if(_extDBversion == "") exitWith {life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
 	//Initialize the database
 	"extDB" callExtension "9:DATABASE:Database2";
-	
-	//Temp check to see if DB_RAW_V2 is implemented, eventually will be reverted when DB_RAW is removed from extDB, this is here to keep compatibility.
-	if(parseNumber(extDBversion) > 13) then {
-		"extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
-	} else {
-		"extDB" callExtension format["9:ADD:DB_RAW:%1",(call life_sql_id)];
-	};
+	"extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
 	"extDB" callExtension "9:LOCK";
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";

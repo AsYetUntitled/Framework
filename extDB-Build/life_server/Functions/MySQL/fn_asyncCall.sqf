@@ -42,10 +42,8 @@ DB_Async_Active = false;
 //Get the Array of information blah blah
 _queryResult = call compile format["%1",_queryResult];
 
-//Check if we're using DB_RAW_V2
-if(parseNumber(extDBversion) > 13) then {
-	_queryResult = (_queryResult select 1);
-};
+//Make everything possible for DB_RAW_V2
+_queryResult = (_queryResult select 1);
 
 if(count (_queryResult select 1) == 0) exitWith {[]};
 _return = (_queryResult select 1) select 0;
