@@ -13,4 +13,13 @@ You can drag the extdb.dll to that folder as well or you can copy over @extdb ov
 
 If you are not using @extdb as a mod and choose to drag extdb.dll into the main arma 3 server directory then you only need @life_server in the commandline.
 
-DO NOT USE ARMA2NET WITH THIS BUILD!
+For Linux
+
+Requirements:
+Working Linux Arma3Server
+Debian/Ubuntu
+apt-get install libttb2:i386
+RedHat/CentOS
+yum install tbb.i686
+
+Extract the static build (if you do not know how to build on a linux os) to the root directory.
