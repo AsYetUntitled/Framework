@@ -76,7 +76,7 @@ if(typeName _sp == "STRING") then {
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 	_vehicle allowDamage false;
 	_hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
-	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,14]);
+	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
 	sleep 0.6;
 } else {
 	_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
