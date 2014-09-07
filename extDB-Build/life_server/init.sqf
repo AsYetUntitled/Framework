@@ -17,10 +17,12 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	//Only need to setup extDB once.
 	//  If mission is reloaded, will tell clients extDB is not loaded.
 	//     Todo: Is it possible first client is loaded before this PV is sent ?
-	if(_extDBversion == "") exitWith {life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
+	if(_extDBversion == "") exitWith {diag_log "extDB: Error, check extDB/logs for more info"; life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
 	//Initialize the database
-	"extDB" callExtension "9:DATABASE:Database2";
-	"extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
+	_extDBconnected = "extDB" callExtension "9:DATABASE:Database2";
+	_extDBconnected2 = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
+	if(_extDBconnected != "[1]") exitWith {diag_log "extDB: Database error, check extDB/logs for more info"; life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
+	if(_extDBconnected2 != "[1]") exitWith {diag_log "extDB: Database error, check extDB/logs for more info"; life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
 	"extDB" callExtension "9:LOCK";
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
