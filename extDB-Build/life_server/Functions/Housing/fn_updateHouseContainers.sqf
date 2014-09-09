@@ -20,7 +20,7 @@ _arr = [];
 	_items = getItemCargo _x;
 	_backpacks = getBackpackCargo _x;
 	
-	_arr set[count _arr,[_className,[_weapons,_magazines,_items,_backpacks]]];
+	_arr pushBack [_className,[_weapons,_magazines,_items,_backpacks]];
 } foreach _containers;
 
 _arr = [_arr] call DB_fnc_mresArray;

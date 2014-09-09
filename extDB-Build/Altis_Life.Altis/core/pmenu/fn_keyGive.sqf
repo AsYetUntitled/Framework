@@ -27,7 +27,7 @@ _owners = _vehicle getVariable "vehicle_info_owners";
 _index = [_uid,_owners] call TON_fnc_index;
 if(_index == -1) then 
 {
-	_owners set[count _owners,[_uid,_unit getVariable["realname",name _unit]]];
+	_owners pushBack [_uid,_unit getVariable["realname",name _unit]];
 	_vehicle setVariable["vehicle_info_owners",_owners,true];
 };
 

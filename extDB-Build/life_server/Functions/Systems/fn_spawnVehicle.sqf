@@ -19,7 +19,7 @@ _unit = owner _unit;
 
 if(_vid == -1 OR _pid == "") exitWith {};
 if(_vid in serv_sv_use) exitWith {};
-serv_sv_use set[count serv_sv_use,_vid];
+serv_sv_use pushBack _vid;
 
 _query = format["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 

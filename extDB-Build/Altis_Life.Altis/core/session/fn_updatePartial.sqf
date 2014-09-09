@@ -26,7 +26,7 @@ switch(_mode) do {
 		{
 			if(_x select 1 == _flag) then
 			{
-				_array set[count _array,[_x select 0,(missionNamespace getVariable (_x select 0))]];
+				_array pushBack [_x select 0,(missionNamespace getVariable (_x select 0))];
 			};
 		} foreach life_licenses;
 		

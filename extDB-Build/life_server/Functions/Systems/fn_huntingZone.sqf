@@ -21,7 +21,7 @@ if(_bool) then
 		_animal = _type createUnit [(position player),(createGroup civilian)];
 		//_animal = createAgent[_type,_pos, [], 0, "FORM"];
 		hint format["%1\n%2",_type,_animal];
-		life_animals_array set[count life_animals_array,_animal];
+		life_animals_array pushBack _animal;
 	};
 	life_animals_spawned = true;
 	systemChat str(life_animals_array);

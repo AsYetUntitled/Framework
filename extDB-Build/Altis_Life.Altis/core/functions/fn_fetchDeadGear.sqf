@@ -26,16 +26,16 @@ _goggles = goggles _unit;
 _uitems = [];
 _vitems = [];
 _bitems = [];
-if(_uniform != "") then {{_uitems set[count _uitems,_x];} foreach (uniformItems _unit);};
-if(_vest != "") then {{_vitems set[count _vitems,_x];} foreach (vestItems _unit);};
-if(_backpack != "") then {{_bitems set[count _bitems,_x];} foreach (backPackItems _unit);};
+if(_uniform != "") then {{_uitems pushBack _x} foreach (uniformItems _unit);};
+if(_vest != "") then {{_vitems pushBack _x} foreach (vestItems _unit);};
+if(_backpack != "") then {{_bitems pushBack _x} foreach (backPackItems _unit);};
 	
 if(primaryWeapon _unit != "") then
 {
 	_unit selectWeapon (primaryWeapon _unit);
 	if(currentMagazine _unit != "") then
 	{
-		_magazines set[count _magazines,currentMagazine _unit];
+		_magazines pushBack currentMagazine _unit;
 	};
 };
 		
@@ -44,7 +44,7 @@ if(secondaryWeapon _unit != "") then
 	_unit selectWeapon (secondaryWeapon _unit);
 	if(currentMagazine _unit != "") then
 	{
-		_magazines set[count _magazines,currentMagazine _unit];
+		_magazines pushBack currentMagazine _unit;
 	};
 };
 		
@@ -53,7 +53,7 @@ if(handgunWeapon _unit != "") then
 	_unit selectWeapon (handgunWeapon _unit);
 	if(currentMagazine _unit != "") then
 	{
-		_magazines set[count _magazines,currentMagazine _unit];
+		_magazines pushBack currentMagazine _unit;
 	};
 };
 _unit selectWeapon (primaryWeapon _unit);

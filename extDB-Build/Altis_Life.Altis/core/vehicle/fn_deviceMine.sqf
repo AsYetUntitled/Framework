@@ -71,7 +71,7 @@ while {true} do {
 	if(_sum < 1) exitWith {titleText[localize "STR_NOTF_DeviceFull","PLAIN"];};
 	_itemWeight = ([_item] call life_fnc_itemWeight) * _sum;
 	if(_itemIndex == -1) then {
-		_items set[count _items,[_item,_sum]];
+		_items pushBack [_item,_sum];
 	} else {
 		_val = _items select _itemIndex select 1;
 		_items set[_itemIndex,[_item,_val + _sum]];

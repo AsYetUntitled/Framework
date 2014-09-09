@@ -115,7 +115,7 @@ switch (_cfg) do
 				{
 					_tmp = getArray(_base >> _x >> "magazines");
 					{
-						_magazines set[count _magazines, _x];
+						_magazines pushBack _x;
 					} foreach (_tmp);
 				};
 			} foreach _muzzles;

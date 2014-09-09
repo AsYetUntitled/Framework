@@ -35,7 +35,7 @@ if(_ctrl == "money") then
 	if(life_cash < _num) exitWith {hint "You don't have that much cash on you to store in the vehicle!"};
 	if(_index == -1) then
 	{
-		_inv set[count _inv,[_ctrl,_num]];
+		_inv pushBack [_ctrl,_num];
 	}
 		else
 	{
@@ -55,7 +55,7 @@ if(_ctrl == "money") then
 	_index = [_ctrl,_inv] call TON_fnc_index;
 	if(_index == -1) then
 	{
-		_inv set[count _inv,[_ctrl,_num]];
+		_inv pushBack [_ctrl,_num];
 	}
 		else
 	{

@@ -14,7 +14,7 @@ _display = findDisplay 2400;
 _list = _display displayctrl 2401;
 _units = [];
 {
-	_units set[count _units,_x getVariable["realname",name _x]];
+	_units pushBack _x getVariable["realname",name _x];
 } foreach playableUnits;
 
 {

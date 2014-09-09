@@ -40,9 +40,9 @@ switch (_index) do
 		_config = [];
 		_listedItems = [];
 		//Go through weapons
-		if(primaryWeapon player != "") then {_config set[count _config,primaryWeapon player]};
-		if(secondaryWeapon player != "") then {_config set[count _config,secondaryWeapon player]};
-		if(handgunWeapon player != "") then {_config set[count _config,handgunWeapon player]};
+		if(primaryWeapon player != "") then {_config pushBack primaryWeapon player};
+		if(secondaryWeapon player != "") then {_config pushBack secondaryWeapon player};
+		if(handgunWeapon player != "") then {_config pushBack handgunWeapon player};
 		
 		//Go through items
 		_config = _config + primaryWeaponItems player;
@@ -56,7 +56,7 @@ switch (_index) do
 			if(!(_x in _listedItems) && _x != "") then
 			{
 				_itemInfo = [_x] call life_fnc_fetchCfgDetails;
-				_listedItems set[count _listedItems,_x];
+				_listedItems pushBack _x;
 				
 				_itemCount = {_x == (_itemInfo select 0)} count _config;
 				if(_itemCount > 1) then

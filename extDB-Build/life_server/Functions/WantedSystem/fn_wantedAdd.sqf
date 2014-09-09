@@ -45,11 +45,11 @@ if(_index != -1) then
 {
 	_data = life_wanted_list select _index;
 	_crimes = _data select 2;
-	_crimes set[count _crimes,(_type select 0)];
+	_crimes pushBack (_type select 0)];
 	_val = _data select 3;
-	life_wanted_list set[_index,[_name,_uid,_crimes,(_type select 1) + _val]];
+	life_wanted_list set[_index,[_name,_uid,_crimes,(_type select 1) + _val];
 }
 	else
 {
-	life_wanted_list set[count life_wanted_list,[_name,_uid,[(_type select 0)],(_type select 1)]];
+	life_wanted_list pushBack [_name,_uid,[(_type select 0)],(_type select 1)];
 };

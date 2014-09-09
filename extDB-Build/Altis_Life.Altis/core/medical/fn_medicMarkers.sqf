@@ -15,7 +15,7 @@ if(visibleMap) then {
 		_name = _x getVariable "name";
 		_down = _x getVariable ["Revive",false];
 		if(!isNil "_name" && !_down) then {
-			_units set[count _units,_x];
+			_units pushBack _x;
 		};
 	} foreach allDeadMen;
 	
@@ -25,7 +25,7 @@ if(visibleMap) then {
 		_marker setMarkerColorLocal "ColorRed";
 		_marker setMarkerTypeLocal "loc_Hospital";
 		_marker setMarkerTextLocal format["%1",(_x getVariable["name","Unknown Player"])];
-		_markers set[count _markers,_marker];
+		_markers pushBack _marker;
 	} foreach _units;
 	
 	waitUntil {!visibleMap};

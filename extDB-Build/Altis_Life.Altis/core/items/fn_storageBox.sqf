@@ -20,7 +20,7 @@ _pos = [0,0,0];
 {
 	_slots = _house getVariable ["slots",[]];
 	if(!(_forEachIndex in _slots)) exitWith {
-		_slots set[count _slots,_forEachIndex];
+		_slots pushBack _forEachIndex;
 		_house setVariable["slots",_slots,true];
 		_pos = _x;
 	};

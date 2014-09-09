@@ -42,7 +42,7 @@ _return = [];
 		{
 			_slots = _house getVariable ["slots",[]];
 			if(!(_forEachIndex in _slots)) exitWith {
-				_slots set[count _slots,_forEachIndex];
+				_slots pushBack _forEachIndex;
 				_house setVariable["slots",_slots,true];
 				_pos = _x;
 			};
@@ -55,7 +55,7 @@ _return = [];
 		_container setPosATL _pos;
 		//_container enableSimulation false;
 		
-		_containers set[count _containers,_container];
+		_containers pushBack _container;
 		clearWeaponCargoGlobal _container;
 		clearItemCargoGlobal _container;
 		clearMagazineCargoGlobal _container;
@@ -87,7 +87,7 @@ _return = [];
 	} foreach _containerData;
 	
 	_house setVariable["containers",_containers,true];
-	_return set[count _return,[_x select 1,_containers]];
+	_return pushBack [_x select 1,_containers];
 } foreach _houses;
 
 missionNamespace setVariable[format["houses_%1",_this],_return];

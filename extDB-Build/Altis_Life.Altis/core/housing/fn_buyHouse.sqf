@@ -35,8 +35,8 @@ if(_action) then {
 	_house setVariable["containers",[],true];
 	_house setVariable["uid",round(random 99999),true];
 	life_atmcash = life_atmcash - (_houseCfg select 0);
-	life_vehicles set[count life_vehicles,_house];
-	life_houses set[count life_houses,[str(getPosATL _house),[]]];
+	life_vehicles pushBack _house;
+	life_houses pushBack [str(getPosATL _house),[]];
 	_marker = createMarkerLocal [format["house_%1",(_house getVariable "uid")],getPosATL _house];
 	_houseName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 	_marker setMarkerTextLocal _houseName;

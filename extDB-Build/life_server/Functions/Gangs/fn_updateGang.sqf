@@ -43,7 +43,7 @@ switch (_mode) do {
 		if(count _members > (_group getVariable ["gang_maxMembers",8])) then {
 			_membersFinal = [];
 			for "_i" from 0 to _maxMembers -1 do {
-				_membersFinal set[count _membersFinal,(_members select _i)];
+				_membersFinal pushBack (_members select _i);
 			};
 		};
 		_membersFinal = [(_group getVariable "gang_members")] call DB_fnc_mresArray;
