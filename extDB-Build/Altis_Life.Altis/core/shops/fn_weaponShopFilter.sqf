@@ -40,9 +40,9 @@ switch (_index) do
 		_config = [];
 		_listedItems = [];
 		//Go through weapons
-		if(primaryWeapon player != "") then {_config pushBack primaryWeapon player};
-		if(secondaryWeapon player != "") then {_config pushBack secondaryWeapon player};
-		if(handgunWeapon player != "") then {_config pushBack handgunWeapon player};
+		if(primaryWeapon player != "") then {_config pushBack primaryWeapon player;};
+		if(secondaryWeapon player != "") then {_config pushBack secondaryWeapon player;};
+		if(handgunWeapon player != "") then {_config pushBack handgunWeapon player;};
 		
 		//Go through items
 		_config = _config + primaryWeaponItems player;
