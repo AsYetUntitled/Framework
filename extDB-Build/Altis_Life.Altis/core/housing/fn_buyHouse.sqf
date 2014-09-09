@@ -19,7 +19,6 @@ closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
 if(count _houseCfg == 0) exitWith {};
-if(life_atmcash < (_houseCfg select 0)) exitWith {hint localize "STR_House_NotEnough"};
 
 _action = [
 	format[localize "STR_House_BuyMSG",
@@ -28,6 +27,7 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
+	if(life_atmcash < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
 	[[_uid,_house],"TON_fnc_addHouse",false,false] spawn life_fnc_MP;
 	_house setVariable["house_owner",[_uid,profileName],true];
 	_house setVariable["locked",true,true];

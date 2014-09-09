@@ -65,6 +65,11 @@ switch(_mode) do {
 		_value2 = [_value2] call DB_fnc_numberSafe;
 		_query = format["UPDATE players SET cash='%1', bankacc='%2' WHERE playerid='%3'",_value1,_value2,_uid];
 	};
+	
+	case 7: {
+		_array = [_this,2,[],[[]]] call BIS_fnc_param;
+		[_uid,_side,_array,0] call TON_fnc_keyManagement;
+	};
 };
 
 if(_query == "") exitWith {};

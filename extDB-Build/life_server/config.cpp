@@ -103,6 +103,8 @@ class CfgFunctions
 			class chopShopSell {};
 			class clientDisconnect {};
 			class cleanupRequest {};
+			class setObjVar {};
+			class keyManagement {};
 		};
 		
 		class Housing

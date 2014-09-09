@@ -11,7 +11,7 @@
 	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_3030"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Menu Hack: DISPLAY 3030 (Wookie Menu etc)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;
-	["SpyGlass",false,false] call BIS_fnc_endMission;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
 //Some other old copy-pasted menu/display
@@ -20,7 +20,7 @@
 	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_64_C_101"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Menu Hack: DISPLAY 64 CONTROL 101"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;
-	["SpyGlass",false,false] call BIS_fnc_endMission;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
 //Lystic's Unreleased menu & Bobby's Unreleased menu (Field Menu, if you are not using my client-side code to disable that button prepare for a lot of false-positives.).
@@ -29,7 +29,7 @@
 	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_162"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Menu Hack: DISPLAY 162 (Lystic & Bobby Menu Hack)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;
-	["SpyGlass",false,false] call BIS_fnc_endMission;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
 //Another menu-based cheat by Wookie but it can cause false positives so we just close it.
@@ -46,7 +46,7 @@
 	[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayRemoteMissions"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Menu Hack: RscDisplayRemoteMissions"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;
-	["SpyGlass",false,false] call BIS_fnc_endMission;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
 //Debug Menu
@@ -56,7 +56,7 @@
 	[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayDebugPublic"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Menu Hack: RscDisplayDebugPublic"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;
-	["SpyGlass",false,false] call BIS_fnc_endMission;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
 /*
@@ -77,7 +77,7 @@
 			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
-			["SpyGlass",false,false] call BIS_fnc_endMission;
+			["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 		};
 		closeDialog 0;
 	};
@@ -90,7 +90,7 @@
 		[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayArsenal"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"Menu Hack: BIS Arsenal"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		sleep 0.5;
-		["SpyGlass",false,false] call BIS_fnc_endMission;
+		["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 	};
 };
 
@@ -100,5 +100,23 @@
 	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_125"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Menu Hack: DISPLAY 125"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;
-	["SpyGlass",false,false] call BIS_fnc_endMission;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+//A menu that had eluded my attention for quite some time.
+[] spawn {
+	while{true} do {
+		waitUntil{!isNull (uiNamespace getVariable "RscDisplayInsertMarker")};
+		sleep 0.6;
+		_action = buttonAction 1;
+		_action2 = buttonAction 2;
+		_title = ctrlText 1001;
+		if(_action != "" OR _title != localize "$STR_A3_RscDisplayInsertMarker_Title" OR _action2 != "") exitWith {
+			closeDialog 0;
+			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			sleep 0.5;
+			["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+		};
+	};
 };

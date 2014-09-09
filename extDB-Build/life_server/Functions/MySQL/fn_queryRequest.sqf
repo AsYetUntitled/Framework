@@ -88,4 +88,7 @@ switch (_side) do {
 	};
 };
 
+_keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
+_queryResult set[12,_keyArr];
+
 [_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] spawn life_fnc_MP;
