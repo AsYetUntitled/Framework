@@ -103,6 +103,81 @@
 	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
+//Itsyuka's List of possible executor displays
+//Disabled till testing is done
+/*
+[] spawn {
+	waitUntil {!isNull (findDisplay 69)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_69"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 69"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+[] spawn {
+	waitUntil {!isNull (findDisplay 19)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_19"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 19"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+[] spawn {
+	waitUntil {!isNull (findDisplay 71)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_71"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 71"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+[] spawn {
+	waitUntil {!isNull (findDisplay 45)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_45"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 45"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+[] spawn {
+	waitUntil {!isNull (findDisplay 132)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_132"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 132"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+[] spawn {
+	waitUntil {!isNull (findDisplay 32)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_32"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 32"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+[] spawn {
+	waitUntil {!isNull (findDisplay 165)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_165"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 165"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
+//Itsyuka's List of possible menu displays
+[] spawn {
+	waitUntil {!isNull (findDisplay 157)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_157"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 157"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+*/
+[] spawn {
+	waitUntil {!isNull (findDisplay 2727)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_2727"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 2727"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
 //A menu that had eluded my attention for quite some time.
 [] spawn {
 	while{true} do {
