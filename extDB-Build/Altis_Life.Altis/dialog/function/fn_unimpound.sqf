@@ -6,11 +6,12 @@
 	Description:
 	Yeah... Gets the vehicle from the garage.
 */
-private["_vehicle","_vid","_pid","_unit","_price"];
+private["_vehicle","_vid","_pid","_unit","_price","_sp"];
 disableSerialization;
 if(lbCurSel 2802 == -1) exitWith {hint localize "STR_Global_NoSelection"};
 _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format["%1",_vehicle]) select 0;
+_sp = getMarkerPos life_garage_sp;
 _vid = lbValue[2802,(lbCurSel 2802)];
 _pid = getPlayerUID player;
 _unit = player;
@@ -20,6 +21,9 @@ if(isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
 _price = [_vehicle,__GETC__(life_garage_prices)] call TON_fnc_index;
 if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_prices) select _price) select 1;};
 if(life_atmcash < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
+_nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
+
+if(count _nearVehicles > 0) exitWith{[[1,(localize "STR_Garage_SpawnPointError")],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;};
 
 if(typeName life_garage_sp == "ARRAY") then {
 	[[_vid,_pid,life_garage_sp select 0,_unit,_price,life_garage_sp select 1],"TON_fnc_spawnVehicle",false,false] spawn life_fnc_MP;
