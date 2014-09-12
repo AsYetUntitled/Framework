@@ -13,6 +13,7 @@ _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
+_unit_return = _unit;
 _name = name _unit;
 _side = side _unit;
 _unit = owner _unit;
@@ -58,7 +59,7 @@ if(typeName _sp != "STRING") then {
 if(count _nearVehicles > 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[_price,_unit],"life_fnc_garageRefund",_unit,false] spawn life_fnc_MP;
+	[[_price,_unit_return],"life_fnc_garageRefund",_unit,false] spawn life_fnc_MP;
 	[[1,(localize "STR_Garage_SpawnPointError")],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 

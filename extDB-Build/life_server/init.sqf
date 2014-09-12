@@ -33,6 +33,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteOldHouses",1] spawn DB_fnc_asyncCall;
+["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall; //Maybe delete old gangs
 
 life_adminlevel = 0;
 life_medicLevel = 0;
@@ -52,7 +53,7 @@ serv_sv_use = [];
 fed_bank setVariable["safe",(count playableUnits),true];
 
 //General cleanup for clients disconnecting.
-_onDisconnect = ["SERV_onClientDisconnect","onPlayerDisconnected",{[_uid,_id,_name] call TON_fnc_clientDisconnect}] call BIS_fnc_addStackedEventHandler;
+_onDisconnect = addMissionEventHandler ["HandleDisconnect",{[_uid,_id,_name,_unit] call TON_fnc_clientDisconnect}]; //Colin's Merge
 
 [] spawn TON_fnc_cleanup;
 life_gang_list = [];

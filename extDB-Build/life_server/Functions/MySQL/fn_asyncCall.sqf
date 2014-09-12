@@ -3,7 +3,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	Description:
-	Commits an asynchronous call to Arma2MySQL
+	Commits an asynchronous call to ExtDB
 
 	Parameters:
 		0: STRING (Query to be ran).

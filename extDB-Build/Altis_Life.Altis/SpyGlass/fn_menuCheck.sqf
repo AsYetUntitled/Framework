@@ -104,8 +104,6 @@
 };
 
 //Itsyuka's List of possible executor displays
-//Disabled till testing is done
-/*
 [] spawn {
 	waitUntil {!isNull (findDisplay 69)};
 	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_69"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
@@ -170,7 +168,7 @@
 	sleep 0.5;
 	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
-*/
+
 [] spawn {
 	waitUntil {!isNull (findDisplay 2727)};
 	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_2727"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
