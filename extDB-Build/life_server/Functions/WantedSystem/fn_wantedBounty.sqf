@@ -20,7 +20,6 @@ if(_id != -1) then
 	}
 		else
 	{
-		//[(life_wanted_list select _id) select 3,(life_wanted_list select _id) select 3] call fnc_recv_bounty;
 		[[(life_wanted_list select _id) select 3,(life_wanted_list select _id) select 3],"life_fnc_bountyReceive",(owner _cop),false] spawn life_fnc_MP;
 	};
 };

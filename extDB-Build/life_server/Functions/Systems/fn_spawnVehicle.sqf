@@ -13,6 +13,7 @@ _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
+_unit_return = _unit;
 _name = name _unit;
 _side = side _unit;
 _unit = owner _unit;
@@ -49,17 +50,6 @@ if((_vInfo select 6) == 1) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
 	[[1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
-};
-if(typeName _sp != "STRING") then {
-	_nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
-} else {
-	_nearVehicles = [];
-};
-if(count _nearVehicles > 0) exitWith
-{
-	serv_sv_use = serv_sv_use - [_vid];
-	[[_price,_unit],"life_fnc_garageRefund",_unit,false] spawn life_fnc_MP;
-	[[1,(localize "STR_Garage_SpawnPointError")],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];

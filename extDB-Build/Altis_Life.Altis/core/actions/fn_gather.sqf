@@ -17,7 +17,6 @@ if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 } foreach _resourceZones;
 
 if(_zone == "") exitWith {
-	/*hint localize "STR_NOTF_notNearResource";*/
 	life_action_inUse = false;
 };
 
@@ -31,7 +30,7 @@ switch(true) do {
 	default {""};
 };
 //gather check??
-if(vehicle player != player) exitWith {/*hint localize "STR_NOTF_GatherVeh";*/};
+if(vehicle player != player) exitWith {};
 
 _diff = [_gather,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff == 0) exitWith {hint localize "STR_NOTF_InvFull"};
