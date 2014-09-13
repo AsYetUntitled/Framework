@@ -9,10 +9,13 @@
 private["_uid","_name"];
 _uid = _this select 0;
 _name = _this select 2;
-_unit = _this select 3;
-
-_containers = nearestObjects[_unit,["WeaponHolderSimulated"],5]; //Fetch list of containers (Simulated = weapons)
-{deleteVehicle _x;} foreach _containers; //Delete the containers.
-deleteVehicle _unit; //Get rid of the corpse.
+{
+	_pid = _x getVariable["steam64ID",""];
+	if(_uid == _pid OR _pid == "" OR owner _x < 3) then {
+		_containers = nearestObjects[_x,["WeaponHolderSimulated"],5]; //Fetch list of containers (Simulated = weapons)
+		{deleteVehicle _x;} foreach _containers; //Delete the containers.
+		deleteVehicle _x; //Get rid of the corpse.
+	};
+} foreach allDeadMen;
 
 _uid spawn TON_fnc_houseCleanup;
