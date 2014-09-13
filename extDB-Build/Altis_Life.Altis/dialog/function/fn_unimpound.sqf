@@ -11,7 +11,7 @@ disableSerialization;
 if(lbCurSel 2802 == -1) exitWith {hint localize "STR_Global_NoSelection"};
 _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format["%1",_vehicle]) select 0;
-_sp = getMarkerPos life_garage_sp;
+_sp = getMarkerPos str life_garage_sp;
 _vid = lbValue[2802,(lbCurSel 2802)];
 _pid = getPlayerUID player;
 _unit = player;
