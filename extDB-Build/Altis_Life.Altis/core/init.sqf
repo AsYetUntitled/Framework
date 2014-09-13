@@ -93,6 +93,14 @@ life_fnc_moveIn = compileFinal
 	player moveInCargo (_this select 0);
 ";
 
+life_fnc_garageRefund = compileFinal
+"
+	_price = _this select 0;
+	_unit = _this select 1;
+	if(_unit != player) exitWith {};
+	life_atmcash = life_atmcash + _price;
+";
+
 [] execVM "core\init_survival.sqf";
 
 __CONST__(life_paycheck,life_paycheck); //Make the paycheck static.
