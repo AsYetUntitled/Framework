@@ -176,6 +176,14 @@
 	sleep 0.5;
 	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
+
+[] spawn {
+	waitUntil {!isNull (findDisplay 30)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_30"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 30"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
 //A menu that had eluded my attention for quite some time.
 [] spawn {
 	while{true} do {
