@@ -160,6 +160,14 @@
 	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
+[] spawn {
+	waitUntil {!isNull ((findDisplay 49) displayCtrl 0)};
+	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_49_C_0"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+	[[profileName,"Menu Hack: DISPLAY 49 CONTROL 0"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	sleep 0.5;
+	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+};
+
 //Itsyuka's List of possible menu displays
 [] spawn {
 	waitUntil {!isNull (findDisplay 157)};
