@@ -29,9 +29,9 @@ switch(_mode) do {
 	case 2: {
 		_value = [_this,2,[],[[]]] call BIS_fnc_param;
 		//Does something license related but I can't remember I only know it's important?
-		for "_i" from 0 to count(_licenses)-1 do {
-			_bool = [(_licenses select _i) select 1] call DB_fnc_bool;
-			_value set[_i,[(_licenses select _i) select 0,_bool]];
+		for "_i" from 0 to count(_value)-1 do {
+			_bool = [(_value select _i) select 1] call DB_fnc_bool;
+			_value set[_i,[(_value select _i) select 0,_bool]];
 		};
 		_value = [_value] call DB_fnc_mresArray;
 		switch(_side) do {
