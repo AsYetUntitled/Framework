@@ -8,25 +8,43 @@ publicVariable "life_server_isReady";
 [] execVM "\life_server\eventhandlers.sqf";
 
 //I am aiming to confuse people including myself, ignore the ui checks it's because I test locally.
-_extDBversion = "extDB" callExtension "9:VERSION";
+
+_extDB = false;
+
+//Only need to setup extDB once.
 if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	life_sql_id = round(random(9999));
 	__CONST__(life_sql_id,life_sql_id);
 	uiNamespace setVariable ["life_sql_id",life_sql_id];
-	
-	//Only need to setup extDB once.
-	//  If mission is reloaded, will tell clients extDB is not loaded.
-	//     Todo: Is it possible first client is loaded before this PV is sent ?
-	if(_extDBversion == "") exitWith {diag_log "extDB: Error, check extDB/logs for more info"; life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
+
+	//extDB Version
+	_result = "extDB" callExtension "9:VERSION";
+	diag_log format ["extDB: Version: %1", _result];
+	if(_result == "") exitWith {};
+	if ((parseNumber _result) < 14) exitWith {"Error: extDB version 14 or Higher Required"};
+
 	//Initialize the database
-	_extDBconnected = "extDB" callExtension "9:DATABASE:Database2";
-	_extDBconnected2 = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
-	if(_extDBconnected != "[1]") exitWith {diag_log "extDB: Database error, check extDB/logs for more info"; life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
-	if(_extDBconnected2 != "[1]") exitWith {diag_log "extDB: Database error, check extDB/logs for more info"; life_server_extDB_notLoaded = true; publicVariable "life_server_extDB_notLoaded";};
+	_result = "extDB" callExtension "9:DATABASE:Database2";
+	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
+	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
+	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
+	diag_log format ("extDB: Connected to Database");
+
 	"extDB" callExtension "9:LOCK";
+	_extDB = true;
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
 	__CONST__(life_sql_id,life_sql_id);
+	_extDB = true;
+	diag_log format ("extDB: Still Connected to Database");
+};
+
+//Broadbase PV to Clients, to warn about extDB Error.
+//	exitWith to stop trying to run rest of Server Code
+if (!_extDB) exitWith {
+	life_server_extDB_notLoaded = true;
+	publicVariable "life_server_extDB_notLoaded";
+	diag_log "extDB: Error checked extDB/logs for more info";
 };
 
 //Run procedures for SQL cleanup on mission start.
