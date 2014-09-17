@@ -21,7 +21,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	_result = "extDB" callExtension "9:VERSION";
 	diag_log format ["extDB: Version: %1", _result];
 	if(_result == "") exitWith {};
-	if ((parseNumber _result) < 14) exitWith {"Error: extDB version 14 or Higher Required"};
+	if ((parseNumber _result) < 14) exitWith {diag_log "Error: extDB version 14 or Higher Required";};
 
 	//Initialize the database
 	_result = "extDB" callExtension "9:DATABASE:Database2";
