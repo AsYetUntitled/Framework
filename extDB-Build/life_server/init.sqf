@@ -25,13 +25,12 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 
 	//Initialize the database
 	_result = "extDB" callExtension "9:DATABASE:Database2";
-	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
+	if(_result != "[1]") exitWith {diag_log "extDB: Error with Database Connection";};
 	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
-	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
-	diag_log "extDB: Connected to Database";
-
+	if(_result != "[1]") exitWith {diag_log "extDB: Error with Database Connection";};
 	"extDB" callExtension "9:LOCK";
 	_extDB = true;
+	diag_log "extDB: Connected to Database";
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
 	__CONST__(life_sql_id,life_sql_id);
