@@ -30,7 +30,7 @@ lbClear _near_i;
 
 //Near players
 _near_units = [];
-{ if(player distance _x < 10) then {_near_units set [count _near_units,_x];};} foreach playableUnits;
+{ if(player distance _x < 10) then {_near_units pushBack _x};} foreach playableUnits;
 {
 	if(!isNull _x && alive _x && player distance _x < 10 && _x != player) then
 	{

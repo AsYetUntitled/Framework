@@ -32,7 +32,7 @@ switch (_boxType) do {
 		_container = "Box_IND_Grenades_F" createVehicle [0,0,0];
 		_container setPosATL _pos;
 		
-		_containers set [count _containers,_container];
+		_containers pushBack _container;
 		_house setVariable["containers",_containers,true];
 		[[_house],"TON_fnc_updateHouseContainers",false,false] spawn life_fnc_MP;
 		
@@ -47,7 +47,7 @@ switch (_boxType) do {
 		_container = "B_supplyCrate_F" createVehicle [0,0,0];
 		_container setPosATL _pos;
 		
-		_containers set [count _containers,_container];
+		_containers pushBack _container;
 		_house setVariable["containers",_containers,true];
 		[[_house],"TON_fnc_updateHouseContainers",false,false] spawn life_fnc_MP;
 		

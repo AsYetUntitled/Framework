@@ -28,7 +28,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
 	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
 	if(_result != "[1]") exitWith {"extDB: Error with Database Connection"};
-	diag_log format ("extDB: Connected to Database");
+	diag_log "extDB: Connected to Database";
 
 	"extDB" callExtension "9:LOCK";
 	_extDB = true;
@@ -36,7 +36,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
 	__CONST__(life_sql_id,life_sql_id);
 	_extDB = true;
-	diag_log format ("extDB: Still Connected to Database");
+	diag_log "extDB: Still Connected to Database";
 };
 
 //Broadbase PV to Clients, to warn about extDB Error.
