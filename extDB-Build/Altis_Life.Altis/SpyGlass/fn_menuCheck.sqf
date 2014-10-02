@@ -209,3 +209,33 @@
 		};
 	};
 };
+
+//Oh look..
+[] spawn {
+	while {true} do {
+		waitUntil {!isNull (uiNamespace getVariable "RscDisplayConfigureAction")};
+		sleep 0.6;
+		
+		//These shouldn't be here...
+		(findDisplay 131) displayCtrl 102 ctrlRemoveallEVenthandlers "LBDblClick";
+		(findDisplay 131) displayCtrl 102 ctrlRemoveallEVenthandlers "LBSelChanged";
+		
+		_actions = [buttonAction 1, buttonAction 107, buttonAction 104, buttonAction 106, buttonAction 109, buttonAction 105, buttonAction 108];
+		_title = ctrlText 1000;
+		if(_title != localize "$STR_A3_RscDisplayConfigureAction_Title") exitWith {
+			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,"Menu Hack: RscDisplayConfigureAction"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			sleep 0.5;
+			["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+		};
+		
+		{
+			if(_x != "") exitWith {
+				[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,"Menu Hack: RscDisplayConfigureAction"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+				sleep 0.5;
+				["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+			};
+		} foreach _actions;
+	};
+};

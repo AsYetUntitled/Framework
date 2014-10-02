@@ -21,7 +21,7 @@ _price = [_vehicle,__GETC__(life_garage_sell)] call TON_fnc_index;
 if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_sell) select _price) select 1;};
 
 [[_vid,_pid,_price,player,life_garage_type],"TON_fnc_vehicleDelete",false,false] spawn life_fnc_MP;
-[[1,format[localize "STR_Garage_SoldCar",_price]],"life_fnc_broadcast",player,false] spawn life_fnc_MP;
+hint format[localize "STR_Garage_SoldCar",[_price] call life_fnc_numberText];
 life_atmcash = life_atmcash + _price;
 
 closeDialog 0;

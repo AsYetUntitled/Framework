@@ -30,7 +30,7 @@ _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 _cpRate = 0.0092;
 
-[[2,format[localize "STR_House_Raid_NOTF",(_house getVariable "house_owner") select 1]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[2,"STR_House_Raid_NOTF",true,[(_house getVariable "house_owner") select 1]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 
 while {true} do
 {

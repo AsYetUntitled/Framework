@@ -31,7 +31,7 @@ if(count _invs > 0) then
 	};
 	
 	[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"481"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-	[[0,format[localize "STR_Cop_Contraband",(_civ getVariable["realname",name _civ]),[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	[[0,"STR_Cop_Contraband",true,[(_civ getVariable["realname",name _civ]),[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 }
 	else
 {
@@ -44,5 +44,5 @@ hint parseText format["<t color='#FF0000'><t size='2'>%1</t></t><br/><t color='#
 
 if(_robber) then
 {
-	[[0,format[localize "STR_Cop_Robber",(_civ getVariable["realname",name _civ])]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,"STR_Cop_Robber",true,[(_civ getVariable["realname",name _civ])]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
