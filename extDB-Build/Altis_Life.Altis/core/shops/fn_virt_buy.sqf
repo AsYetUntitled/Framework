@@ -42,7 +42,7 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 		} else {
 			if((_price * _amount) > life_cash) exitWith {[false,_type,_amount] call life_fnc_handleInv; hint localize "STR_NOTF_NotEnoughMoney";};
 			hint format[localize "STR_Shop_Virt_BoughtItem",_amount,_name,[(_price * _amount)] call life_fnc_numberText];
-			__SUB__(life_cash,_price);
+			__SUB__(life_cash,_price * _amount);
 		};
 	} else {
 		if((_price * _amount) > life_cash) exitWith {hint localize "STR_NOTF_NotEnoughMoney"; [false,_type,_amount] call life_fnc_handleInv;};
@@ -53,3 +53,4 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 };
 
 [0] call SOCK_fnc_updatePartial;
+[3] call SOCK_fnc_updatePartial;

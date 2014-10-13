@@ -33,7 +33,7 @@ _checkThread = {
 				[[profileName,getPlayerUID player,_key],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 				[[profileName,format["Variable: %1",_key]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				sleep 0.5;
-				["SpyGlass",false,false] call BIS_fnc_endMission;
+				["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
 			};
 		} forEach [missionNamespace, uiNamespace, profileNamespace, parsingNamespace];
 	} foreach _this;
