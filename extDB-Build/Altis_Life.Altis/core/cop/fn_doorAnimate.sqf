@@ -1,10 +1,7 @@
 private["_b","_doors","_door"];
 _b = _this select 0;
 _doors = 1;
-while {true} do {
-	if(!isClass(configFile >> "CfgVehicles" >> (typeOf _b) >> "AnimationSources" >> format["Door_%1_source",_doors])) exitWith {};
-	_doors = _doors + 1;
-};
+_doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _building) >> "NumberOfDoors");
 
 _door = 0;
 //Find the nearest door
