@@ -15,11 +15,7 @@ if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (near
 	[[0,"STR_ISTR_Bolt_AlertHouse",true,[profileName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
 
-_doors = 1;
-while {true} do {
-	if(!isClass(configFile >> "CfgVehicles" >> (typeOf _building) >> "AnimationSources" >> format["Door_%1_source",_doors])) exitWith {};
-	_doors = _doors + 1;
-};
+_doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _building) >> "NumberOfDoors");
 
 _door = 0;
 //Find the nearest door
