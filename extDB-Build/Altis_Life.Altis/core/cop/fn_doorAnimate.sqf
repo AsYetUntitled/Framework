@@ -1,7 +1,7 @@
 private["_b","_doors","_door"];
 _b = _this select 0;
 _doors = 1;
-_doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _building) >> "NumberOfDoors");
+_doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _b) >> "NumberOfDoors");
 
 _door = 0;
 //Find the nearest door
