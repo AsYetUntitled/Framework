@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "E:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Life Client FSM">*/
+/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Life Client FSM">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Main_Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Main Init"};
@@ -7,7 +7,7 @@ item2[] = {"Split",2,250,-39.994308,10.874098,50.005707,60.874100,0.000000,"Spli
 item3[] = {"",7,210,-233.614594,295.445374,-225.614578,303.445374,0.000000,""};
 item4[] = {"",7,210,-233.935593,31.234837,-225.935593,39.234840,0.000000,""};
 item5[] = {"Time_to_pay_",4,218,-38.539185,92.835747,51.460873,142.835785,0.000000,"Time to pay?"};
-item6[] = {"Pay_me_",2,250,-36.888039,178.612518,53.111916,228.612396,0.000000,"Pay me!"};
+item6[] = {"Pay_me_",2,4346,-36.888039,178.612518,53.111916,228.612396,0.000000,"Pay me!"};
 item7[] = {"true",8,218,-36.716774,275.104858,53.283058,325.104889,0.000000,"true"};
 link0[] = {0,1};
 link1[] = {1,2};
@@ -18,7 +18,7 @@ link5[] = {5,6};
 link6[] = {6,7};
 link7[] = {7,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,26,6316128,1,-456.200378,358.065338,379.837494,-151.171021,1032,673,1};
-window[] = {0,-1,-1,-1,-1,993,175,1615,175,1,1050};
+window[] = {0,-1,-1,-1,-1,1018,200,1640,200,1,1050};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -93,7 +93,14 @@ class FSM
        "	};" \n
        "};" \n
        "" \n
-       "_lastcheck = time;"/*%FSM</STATEINIT""">*/;
+       "_lastcheck = time;" \n
+       "" \n
+       "//Group clean (Local)" \n
+       "{" \n
+       "	if(local _x && {(count units _x == 0)}) then {" \n
+       "		deleteGroup _x;" \n
+       "	};" \n
+       "} foreach allGroups;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
