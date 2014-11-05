@@ -11,7 +11,7 @@ if(isNull _ret) exitWith {};
 
 _ret = owner _ret;
 _jailedUnits = [];
-{if(_x distance (getMarkerPos "jail_marker") < 120) then {_jailedUnits pushBack getPlayerUID _x}} count playableUnits;
+{if(_x distance (getMarkerPos "jail_marker") < 120) then {_jailedUnits pushBack getPlayerUID _x}} forEach playableUnits;
 
 _list = [];
 {
