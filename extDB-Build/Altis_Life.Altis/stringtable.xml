@@ -3115,13 +3115,21 @@
 			<Italian>Marijuana</Italian>
 			<Portuguese>Maconha</Portuguese>
 		</Key>
-		<Key ID="STR_Item_RabbitMeat">
+		<Key ID="STR_Item_Rabbit">
 			<Original>Rabbit Meat</Original>
 			<English>Rabbit Meat</English>
 			<German>Kaninchenfleisch</German>
 			<French>Viande de Lapin</French>
 			<Italian>Carne di coniglio</Italian>
 			<Portuguese>Carne de Coelho</Portuguese>
+		</Key>
+		<Key ID="STR_Item_RabbitGrilled">
+			<Original>Grilled Rabbit</Original>
+			<English>Grilled Rabbit</English>
+			<German>Gegrilltes Hasenfleisch</German>
+			<French>Lapin grillé</French>
+			<Italian>Carne di coniglio alla griglia</Italian>
+			<Portuguese>Carne de coelho grelhado</Portuguese>
 		</Key>
 		<Key ID="STR_Item_SalemaMeat">
 			<Original>Salema Meat</Original>
@@ -3131,6 +3139,14 @@
 			<Italian>Carne di Salmone</Italian>
 			<Portuguese>Peixe Salema</Portuguese>
 		</Key>
+		<Key ID="STR_Item_SalemaGrilled">
+			<Original>Grilled Salema</Original>
+			<English>Grilled Salema</English>
+			<German>Gegrillte Sardine</German>
+			<French>Sardine grillé</French>
+			<Italian>Sardine alla griglia</Italian>
+			<Portuguese>Sardinha grelhada</Portuguese>
+		</Key>
 		<Key ID="STR_Item_OrnateMeat">
 			<Original>Ornate Meat</Original>
 			<English>Ornate Meat</English>
@@ -3138,6 +3154,14 @@
 			<French>Filet d'Ornate</French>
 			<Italian>Carne di Orata</Italian>
 			<Portuguese>Carne Francesa</Portuguese>
+		</Key>
+		<Key ID="STR_Item_OrnateGrilled">
+			<Original>Grilled Ornate</Original>
+			<English>Grilled Ornate</English>
+			<German>Gegrillter Kaiserfisch</German>
+			<French>Angelfish grillé</French>
+			<Italian>Angelfish alla griglia</Italian>
+			<Portuguese>Angelfish grelhado</Portuguese>
 		</Key>
 		<Key ID="STR_Item_MackerelMeat">
 			<Original>Mackerel Meat</Original>
@@ -3147,6 +3171,14 @@
 			<Italian>Carne di Sgombro</Italian>
 			<Portuguese>Peixe Mackerel</Portuguese>
 		</Key>
+		<Key ID="STR_Item_MackerelGrilled">
+			<Original>Grilled Mackerel</Original>
+			<English>Grilled Mackerel</English>
+			<German>Gegrillte Makrele</German>
+			<French>Maquereau grillé</French>
+			<Italian>Sgombro alla griglia</Italian>
+			<Portuguese>cavala grelhada</Portuguese>
+		</Key>
 		<Key ID="STR_Item_TunaMeat">
 			<Original>Tuna Meat</Original>
 			<English>Tuna Meat</English>
@@ -3154,6 +3186,14 @@
 			<French>Filet de Thon</French>
 			<Italian>Carne di Tonno</Italian>
 			<Portuguese>Peixe Tuna</Portuguese>
+		</Key>
+		<Key ID="STR_Item_TunaGrilled">
+			<Original>Grilled Tuna</Original>
+			<English>Grilled Tuna</English>
+			<German>Gegrillter Thunfisch</German>
+			<French>Thon grillé</French>
+			<Italian>tonno alla griglia</Italian>
+			<Portuguese>Atum grelhado</Portuguese>
 		</Key>
 		<Key ID="STR_Item_MulletMeat">
 			<Original>Mullet Meat</Original>
@@ -3163,6 +3203,14 @@
 			<Italian>Carne di Triglia</Italian>
 			<Portuguese>Peixe Mullet</Portuguese>
 		</Key> 
+		<Key ID="STR_Item_MulletFried">
+			<Original>Fried Mullet</Original>
+			<English>Fried Mullet</English>
+			<German>Frittierte Meeräsche</German>
+			<French>Rouget frits</French>
+			<Italian>Triglia fritta</Italian>
+			<Portuguese>Mullet fritada</Portuguese>
+		</Key>
 		<Key ID="STR_Item_CatSharkMeat">
 			<Original>Cat Shark Meat</Original>
 			<English>Cat Shark Meat</English>
@@ -3171,13 +3219,85 @@
 			<Italian>Carne di Squalo</Italian>
 			<Portuguese>Peixe Cat Shark</Portuguese>
 		</Key>
-		<Key ID="STR_Item_TurtleMeat">
+		<Key ID="STR_Item_CatSharkFried">
+			<Original>Fried Catshark</Original>
+			<English>Fried Catshark</English>
+			<German>Frittierter Katzenhai</German>
+			<French>roussette frit</French>
+			<Italian>profondo palombo fritti</Italian>
+			<Portuguese>profundo de cação frito</Portuguese>
+		</Key>
+		<Key ID="STR_Item_Turtle">
 			<Original>Turtle Meat</Original>
 			<English>Turtle Meat</English>
 			<German>Schildkröten Fleisch</German>
 			<French>Viande de Tortue</French>
 			<Italian>Carne di Tartaruga</Italian>
 			<Portuguese>Carne de Tartaruga</Portuguese>
+		</Key>
+		<Key ID="STR_Item_HenRaw">
+			<Original>Raw Chicken</Original>
+			<English>Raw Chicken</English>
+			<German>Rohes Hühnchen</German>
+			<French>poulet cru</French>
+			<Italian>pollo crudo</Italian>
+			<Portuguese>galinha crua</Portuguese>
+		</Key>
+		<Key ID="STR_Item_HenFried">
+			<Original>Deep Fried Chicken</Original>
+			<English>Deep Fried Chicken</English>
+			<German>Schwarz Frittiertes Hühnchen</German>
+			<French>Noir Fried Chicken</French>
+			<Italian>Nero Fried Chicken</Italian>
+			<Portuguese>Preto Fried Chicken</Portuguese>
+		</Key>
+		<Key ID="STR_Item_RoosterRaw">
+			<Original>Raw Rooster</Original>
+			<English>Raw Rooster</English>
+			<German>Roher Gockel</German>
+			<French>Coq Raw</French>
+			<Italian>Rooster Raw</Italian>
+			<Portuguese>Galo Raw</Portuguese>
+		</Key>
+		<Key ID="STR_Item_RoosterGrilled">
+			<Original>Grilled Rooster</Original>
+			<English>Grilled Rooster</English>
+			<German>Gegrillter Gockel</German>
+			<French>Coq grillé</French>
+			<Italian>cazzo alla griglia</Italian>
+			<Portuguese>galo grelhado</Portuguese>
+		</Key>
+		<Key ID="STR_Item_GoatRaw">
+			<Original>Raw Goat</Original>
+			<English>Raw Goat</English>
+			<German>Rohes Ziegenfleisch</German>
+			<French>chèvre cru</French>
+			<Italian>Carne di capra Raw</Italian>
+			<Portuguese>Carne de cabra cru</Portuguese>
+		</Key>
+		<Key ID="STR_Item_GoatGrilled">
+			<Original>Grilled Goat</Original>
+			<English>Grilled Goat</English>
+			<German>Gegrilltes Ziegenfleisch</German>
+			<French>chèvre grillé</French>
+			<Italian>Carne di capra alla griglia</Italian>
+			<Portuguese>Carne de cabrito grelhado</Portuguese>
+		</Key>
+		<Key ID="STR_Item_SheepRaw">
+			<Original>Raw Sheep</Original>
+			<English>Raw Sheep</English>
+			<German>Rohes Schafsfleisch</German>
+			<French>brebis cru</French>
+			<Italian>Carne di pecora grezza</Italian>
+			<Portuguese>Carne ovina Raw</Portuguese>
+		</Key>
+		<Key ID="STR_Item_SheepGrilled">
+			<Original>Grilled Sheep</Original>
+			<English>Grilled Sheep</English>
+			<German>Gegrilltes Schafsfleisch</German>
+			<French>moutons grillés</French>
+			<Italian>Mutton alla griglia</Italian>
+			<Portuguese>Mutton grelhado</Portuguese>
 		</Key>
 		<Key ID="STR_Item_FishingPole">
 			<Original>Fishing Pole</Original>
