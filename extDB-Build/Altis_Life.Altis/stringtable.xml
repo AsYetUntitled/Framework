@@ -40,6 +40,12 @@
 		<Key ID="STR_Shops_Gold">
 			<Original>Cash 4 Gold</Original>
 		</Key>
+		<Key ID="STR_Shops_Diamond">
+			<Original>Diamond Dealer</Original>
+		</Key>
+		<Key ID="STR_Shops_Salt">
+			<Original>Salt Trader</Original>
+		</Key>
 	<Package name="Global">
 		<Key ID="STR_Global_Close">
 			<Original>Close</Original>
