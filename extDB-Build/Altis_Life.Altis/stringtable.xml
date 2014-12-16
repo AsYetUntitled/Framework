@@ -3,48 +3,63 @@
 	<Package name="Shop_Names">
 		<Key ID="STR_Shops_Market">
 			<Original>Altis Market</Original>
+			<German>Altis Markt</German>
 		</Key>
 		<Key ID="STR_Shops_Rebel">
 			<Original>Rebel Market</Original>
+			<German>Rebellen Markt</German>
 		</Key>
 		<Key ID="STR_Shops_Gang">
 			<Original>Gang Market</Original>
+			<German>Gang Markt</German>
 		</Key>
 		<Key ID="STR_Shops_Wongs">
 			<Original>Wong's Food Cart</Original>
+			<German>Wong's Spezialitäten</German>
 		</Key>
 		<Key ID="STR_Shops_Coffee">
 			<Original>Gyro's Coffee</Original>
+			<German>Gyro's Café</German>
 		</Key>
 		<Key ID="STR_Shops_DrugDealer">
 			<Original>Tonic's Narcotics</Original>
+			<German>Drogendealer</German>
 		</Key>
 		<Key ID="STR_Shops_Oil">
 			<Original>Oil Trader</Original>
+			<German>Ölhändler</German>
 		</Key>
 		<Key ID="STR_Shops_FishMarket">
 			<Original>Local Fish Market</Original>
+			<German>Fischmarkt</German>
 		</Key>
 		<Key ID="STR_Shops_Glass">
 			<Original>Glass Trader</Original>
+			<German>Glashändler</German>
 		</Key>
 		<Key ID="STR_Shops_Minerals">
 			<Original>Altis Industrial Trader</Original>
+			<German>Altis Industriehandel</German>
 		</Key>
 		<Key ID="STR_Shops_Cop">
 			<Original>APD Item Shop</Original>
+			<German>APD Gegenstände</German>
 		</Key>
 		<Key ID="STR_Shops_Cement">
 			<Original>Juan's Cement Laying</Original>
+			<German>Juan's Zementleger</German>
 		</Key>
 		<Key ID="STR_Shops_Gold">
 			<Original>Cash 4 Gold</Original>
+			<German>Goldhändler</German>
 		</Key>
 		<Key ID="STR_Shops_Diamond">
 			<Original>Diamond Dealer</Original>
+			<German>Juwelier</German>
 		</Key>
 		<Key ID="STR_Shops_Salt">
 			<Original>Salt Trader</Original>
+			<German>Salzhändler</German>
 		</Key>
 	<Package name="Global">
 		<Key ID="STR_Global_Close">
