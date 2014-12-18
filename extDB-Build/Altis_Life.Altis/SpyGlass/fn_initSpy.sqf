@@ -1,3 +1,6 @@
+#define GVAR_UINS uiNamespace getVariable
+#define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
+#define steamid getPlayerUID player
 /*
 	File: fn_initSpy.sqf
 	
@@ -9,22 +12,20 @@
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-#define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
-#define __GETC__(var) (call var)
 
-__CONST__(W_O_O_K_I_E_ANTI_ANTI_HAX,"No");
-__CONST__(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"No");
-__CONST__(E_X_T_A_S_Y_ANTI_ANTI_HAX,"CopyPasta");
-__CONST__(E_X_T_A_S_Y_Pro_RE,"Iswhat");
-__CONST__(E_X_T_A_S_Y_Car_RE,"Youdo");
-__CONST__(DO_NUKE,"LOL");
-__CONST__(JxMxE_spunkveh,"Blah");
-__CONST__(JxMxE_spunkveh2,"Blah");
-__CONST__(JxMxE_spunkair,"Blah");
-__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE,"No");
-__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"No");
-__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"No");
-__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"No");
+CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
+CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
+CONST(E_X_T_A_S_Y_ANTI_ANTI_HAX,"false");
+CONST(E_X_T_A_S_Y_Pro_RE,"false");
+CONST(E_X_T_A_S_Y_Car_RE,"false");
+CONST(DO_NUKE,"false");
+CONST(JxMxE_spunkveh,"false");
+CONST(JxMxE_spunkveh2,"false");
+CONST(JxMxE_spunkair,"false");
+CONST(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE,"false");
+CONST(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"false");
+CONST(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"false");
+CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
 
 /*
 	Compile our list of allowed addon patches, by default this DOES NOT ALLOW ANY ADDONS.
@@ -134,7 +135,7 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 	_patchEntry = _binConfigPatches select _i;
 	if(isClass _patchEntry) then {
 		if(!((configName _patchEntry) in _patchList)) exitWith {
-			[[profileName,getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,steamid,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
 			failMission "SpyGlass";
@@ -153,7 +154,7 @@ _allowedChildren = [
 
 {
 	if(!((configName _x) in _allowedChildren)) exitWith {
-		[[profileName,getPlayerUID player,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+		[[profileName,steamid,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"Devcon like executor detected"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		sleep 0.5;
 		failMission "SpyGlass";
@@ -170,7 +171,7 @@ _allowedChildren = [
 	_onLoad = getText(configFile >> (_x select 0) >> "onLoad");
 	_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
 	if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith {
-		[[profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+		[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 		[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		sleep 0.5;
 		vehicle player setVelocity[999999999999999999999,0,9999999999999999999999]; //Lets first try to get rid of them by generating a memory leak, go Bohemia for not patching this over a year ago!

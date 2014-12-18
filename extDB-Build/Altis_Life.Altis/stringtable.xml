@@ -61,6 +61,7 @@
 			<Original>Salt Trader</Original>
 			<German>Salzhändler</German>
 		</Key>
+	</Package>
 	<Package name="Global">
 		<Key ID="STR_Global_Close">
 			<Original>Close</Original>

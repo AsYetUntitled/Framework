@@ -1,3 +1,5 @@
+#define steamid getPlayerUID player
+#define GVAR getVariable
 /*
 	File: fn_variableCheck.sqf
 	
@@ -27,10 +29,10 @@ _checkThread = {
 	{
 		_key = _x;
 		{
-			_var = _x getVariable _key;
+			_var = _x GVAR _key;
 			if(!isNil "_var") exitWith {
 				_x setVariable[_key,nil];
-				[[profileName,getPlayerUID player,_key],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,steamid,_key],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 				[[profileName,format["Variable: %1",_key]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 				sleep 0.5;
 				vehicle player setVelocity[999999999999999999999,0,9999999999999999999999]; //Lets first try to get rid of them by generating a memory leak, go Bohemia for not patching this over a year ago!

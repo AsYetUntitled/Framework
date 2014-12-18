@@ -1,3 +1,5 @@
+#define GVAR_UINS uiNamespace getVariable
+#define steamid getPlayerUID player
 #define SPYGLASS_END \
 	vehicle player setVelocity[999999999999999999999,0,9999999999999999999999]; \
 	sleep 3; \
@@ -15,9 +17,9 @@ private["_displays","_detection","_display"];
 disableSerialization;
 
 _displays = [
-	[3030,"BIS_configviewer_display"],[8,"RscDisplayMultiplayer"],[162,"RscDisplayFieldManual"],[17,"RscDisplayRemoteMissions"],[316000,"RscDisplayRemoteMissions"],[125,"RscDisplayEditDiaryRecord"],
+	[3030,"BIS_configviewer_display"],["RscDisplayMultiplayer","RscDisplayMultiplayer"],[162,"RscDisplayFieldManual"],["RscDisplayRemoteMissions","RscDisplayRemoteMissions"],[316000,"RscDisplayDebugPublic"],[125,"RscDisplayEditDiaryRecord"],
 	[69,"UnknownDisplay"],[19,"UnknownDisplay"],[71,"UnknownDisplay"],[45,"UnknownDisplay"],[132,"UnknownDisplay"],[32,"UnknownDisplay"],[165,"RscDisplayPublishMission"],[2727,"RscDisplayLocWeaponInfo"],
-	[49,"RscDisplayMovieInterrupt"],[157,"UnknownDisplay"],[30,"UnknownDisplay"],["RscDisplayArsenal","RscDisplayArsenal"],[166,"RscDisplayPublishMissionSelectTags"],[167,"RscDisplayFileSelect"]
+	["RscDisplayMovieInterrupt","RscDisplayMovieInterrupt"],[157,"UnknownDisplay"],[30,"UnknownDisplay"],["RscDisplayArsenal","RscDisplayArsenal"],[166,"RscDisplayPublishMissionSelectTags"],[167,"RscDisplayFileSelect"]
 ];
 
 _detection = false;
@@ -26,12 +28,12 @@ while {true} do {
 		_targetDisplay = _x select 0;
 		_targetName = _x select 1;
 		switch(typeName _targetDisplay) do {
-			case (typeName ""): {if(!isNull (uiNamespace getVariable [_targetDisplay,displayNull])) exitWith {_detection = true;};};
+			case (typeName ""): {if(!isNull (GVAR_UINS [_targetDisplay,displayNull])) exitWith {_detection = true;};};
 			default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
 		};
 			
 		if(_detection) exitWith {
-			[[profileName,getPlayerUID player,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+			[[profileName,steamid,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 			[[profileName,format["Menu Hack: %1",_targetName]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 			sleep 0.5;
 			SPYGLASS_END
@@ -48,7 +50,7 @@ while {true} do {
 	if(!isNull (findDisplay 148)) then {
 		sleep 0.5;
 		if((lbSize 104)-1 > 3) exitWith {
-			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+			[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 			closeDialog 0;
 			SPYGLASS_END
@@ -60,7 +62,7 @@ while {true} do {
 	if(!isNull _display) then {
 		{
 			if (_x && !isNull _display) exitWith {
-				[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,steamid,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 				[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 				closeDialog 0;
 				SPYGLASS_END
@@ -79,7 +81,7 @@ while {true} do {
 		
 		{
 			if (_x && !isNull _display) exitWith {
-				[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 				[[profileName,"Menu Hack: RscDisplayConfigureAction"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 				closeDialog 0;
 				SPYGLASS_END
@@ -97,7 +99,7 @@ while {true} do {
 		
 		{
 			if (_x && !isNull _display) exitWith {
-				[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayControlSchemes"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,steamid,"MenuBasedHack_RscDisplayControlSchemes"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 				[[profileName,"Menu Hack: RscDisplayControlSchemes"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 				closeDialog 0;
 				SPYGLASS_END
@@ -110,7 +112,7 @@ while {true} do {
 	
 	/* We'll just move the no-recoil check into this thread. */
 	if((unitRecoilCoefficient player) < 1) then {
-		[[profileName,getPlayerUID player,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		sleep 0.5;
 		failMission "SpyGlass";
