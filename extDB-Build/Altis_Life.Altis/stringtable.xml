@@ -4,62 +4,92 @@
 		<Key ID="STR_Shops_Market">
 			<Original>Altis Market</Original>
 			<German>Altis Markt</German>
+			<Italian>Mercato</Italian>
+			<French>Marché</French>
 		</Key>
 		<Key ID="STR_Shops_Rebel">
 			<Original>Rebel Market</Original>
 			<German>Rebellen Markt</German>
+			<Italian>Mercato Ribelle</Italian>
+			<French>Marché Rebel</French>
 		</Key>
 		<Key ID="STR_Shops_Gang">
 			<Original>Gang Market</Original>
 			<German>Gang Markt</German>
+			<Italian>Mercato Gang</Italian>
+			<French>Marché de Gang</French>
 		</Key>
 		<Key ID="STR_Shops_Wongs">
 			<Original>Wong's Food Cart</Original>
 			<German>Wong's Spezialitäten</German>
+			<Italian>Alimentari</Italian>
+			<French>Wong Alimentation</French>
 		</Key>
 		<Key ID="STR_Shops_Coffee">
 			<Original>Gyro's Coffee</Original>
 			<German>Gyro's Café</German>
+			<Italian>Caffè</Italian>
+			<French>Café de Gyro</French>
 		</Key>
 		<Key ID="STR_Shops_DrugDealer">
 			<Original>Tonic's Narcotics</Original>
 			<German>Drogendealer</German>
+			<Italian>Spacciatore</Italian>
+			<French>Dealer de Drogue</French>
 		</Key>
 		<Key ID="STR_Shops_Oil">
 			<Original>Oil Trader</Original>
 			<German>Ölhändler</German>
+			<Italian>Vendita Petrolio</Italian>
+			<French>Acheteur de Pétrole</French>
 		</Key>
 		<Key ID="STR_Shops_FishMarket">
 			<Original>Local Fish Market</Original>
 			<German>Fischmarkt</German>
+			<Italian>Pescivendolo</Italian>
+			<French>Marché de Poissons</French>
 		</Key>
 		<Key ID="STR_Shops_Glass">
 			<Original>Glass Trader</Original>
 			<German>Glashändler</German>
+			<Italian>Vendita Vetro</Italian>
+			<French>Acheteur de Verre</French>
 		</Key>
 		<Key ID="STR_Shops_Minerals">
 			<Original>Altis Industrial Trader</Original>
 			<German>Altis Industriehandel</German>
+			<Italian>Vendita materiali industriali</Italian>
+			<French>Acheteur Industriel</French>
 		</Key>
 		<Key ID="STR_Shops_Cop">
 			<Original>APD Item Shop</Original>
 			<German>APD Gegenstände</German>
+			<Italian>Negozio Polizia</Italian>
+			<French>Equipement de Police</French>
 		</Key>
 		<Key ID="STR_Shops_Cement">
 			<Original>Juan's Cement Laying</Original>
 			<German>Juan's Zementleger</German>
+			<Italian>Vendita Cemento</Italian>
+			<French>Poseur de Ciment</French>
 		</Key>
 		<Key ID="STR_Shops_Gold">
 			<Original>Cash 4 Gold</Original>
 			<German>Goldhändler</German>
+			<Italian>Vendita Oro</Italian>
+			<French>Acheteur d'Or</French>
 		</Key>
 		<Key ID="STR_Shops_Diamond">
 			<Original>Diamond Dealer</Original>
 			<German>Juwelier</German>
+			<Italian>Gioielleria</Italian>
+			<French>Bijouterie</French>
 		</Key>
 		<Key ID="STR_Shops_Salt">
 			<Original>Salt Trader</Original>
 			<German>Salzhändler</German>
+			<Italian>Vendita Sale</Italian>
+			<French>Acheteur de Sel</French>
 		</Key>
 	</Package>
 	<Package name="Global">
