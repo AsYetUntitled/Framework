@@ -17,7 +17,7 @@ disableSerialization;
 _displays = [
 	[3030,"BIS_configviewer_display"],[8,"RscDisplayMultiplayer"],[162,"RscDisplayFieldManual"],[17,"RscDisplayRemoteMissions"],[316000,"RscDisplayRemoteMissions"],[125,"RscDisplayEditDiaryRecord"],
 	[69,"UnknownDisplay"],[19,"UnknownDisplay"],[71,"UnknownDisplay"],[45,"UnknownDisplay"],[132,"UnknownDisplay"],[32,"UnknownDisplay"],[165,"RscDisplayPublishMission"],[2727,"RscDisplayLocWeaponInfo"],
-	[49,"RscDisplayMovieInterrupt"],[157,"UnknownDisplay"],[30,"UnknownDisplay"]["RscDisplayArsenal","RscDisplayArsenal"],[166,"RscDisplayPublishMissionSelectTags"],[167,"RscDisplayFileSelect"]
+	[49,"RscDisplayMovieInterrupt"],[157,"UnknownDisplay"],[30,"UnknownDisplay"],["RscDisplayArsenal","RscDisplayArsenal"],[166,"RscDisplayPublishMissionSelectTags"],[167,"RscDisplayFileSelect"]
 ];
 
 _detection = false;
