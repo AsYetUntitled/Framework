@@ -30,10 +30,16 @@ _checkThread = {
 			_var = _x getVariable _key;
 			if(!isNil "_var") exitWith {
 				_x setVariable[_key,nil];
-				[[profileName,getPlayerUID player,_key],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-				[[profileName,format["Variable: %1",_key]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+				[[profileName,getPlayerUID player,_key],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,format["Variable: %1",_key]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 				sleep 0.5;
-				["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+				vehicle player setVelocity[999999999999999999999,0,9999999999999999999999]; //Lets first try to get rid of them by generating a memory leak, go Bohemia for not patching this over a year ago!
+				/* We'll just wait for 3 seconds, if they're still here then that means the above failed but no worries, this will get rid of them. */
+				sleep 3;
+				[] execVM "SpyGlass\endoftheline.sqf";
+				/* But just in case we will wait just once more. Can't be to careful. */
+				sleep 2.5;
+				failMission "SpyGlass";
 			};
 		} forEach [missionNamespace, uiNamespace, profileNamespace, parsingNamespace];
 	} foreach _this;
