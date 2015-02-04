@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_escInterupt.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -16,7 +17,7 @@ _escSync = {
 	_syncManager = {
 		disableSerialization;
 		private["_abortButton","_timeStamp"];
-		_abortButton = (findDisplay 49) displayCtrl 104;
+		_abortButton = CONTROL(49,104);
 		_timeStamp = time + 10;
 		
 		waitUntil {
@@ -29,7 +30,7 @@ _escSync = {
 		_abortButton ctrlCommit 0;
 	};
 	
-	_abortButton = (findDisplay 49) displayCtrl 104;
+	_abortButton = CONTROL(49,104);
 	[] call SOCK_fnc_updateRequest; //call our silent sync.
 	
 	if(_this) then {
@@ -41,19 +42,19 @@ _escSync = {
 
 _canUseControls = {
 	if(playerSide == west) exitWith {true};
-	if((player getVariable["restrained",FALSE]) OR (player getVariable["Escorting",FALSE]) OR (player getVariable["transporting",FALSE]) OR (life_is_arrested) OR (life_istazed)) then {false} else {true};
+	if((player GVAR ["restrained",FALSE]) OR (player GVAR ["Escorting",FALSE]) OR (player GVAR ["transporting",FALSE]) OR (life_is_arrested) OR (life_istazed)) then {false} else {true};
 };
 	
 while {true} do
 {
 	waitUntil{!isNull (findDisplay 49)};
-	_abortButton = (findDisplay 49) displayCtrl 104;
-	_abortButton buttonSetAction "[[player],""TON_fnc_cleanupRequest"",false,false] spawn life_fnc_MP";
-	_respawnButton = (findDisplay 49) displayCtrl 1010;
-	_fieldManual = (findDisplay 49) displayCtrl 122;
+	_abortButton = CONTROL(49,104);
+	_abortButton buttonSetAction "[[player],""TON_fnc_cleanupRequest"",false,false] call life_fnc_MP";
+	_respawnButton = CONTROL(49,1010);
+	_fieldManual = CONTROL(49,122);
 	
 	//Block off our buttons first.
-	_abortButton ctrlEnable false;
+	//_abortButton ctrlEnable false;
 	_respawnButton ctrlEnable false;
 	_fieldManual ctrlEnable false; //Never re-enable, blocks an old script executor.
 	

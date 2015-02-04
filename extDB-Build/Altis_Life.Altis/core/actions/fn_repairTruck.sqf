@@ -5,7 +5,7 @@
 	Description:
 	Main functionality for toolkits, to be revised in later version.
 */
-private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName"];
+private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test"];
 _veh = cursorTarget;
 life_interrupted = false;
 if(isNull _veh) exitwith {};
@@ -29,7 +29,8 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		while{true} do
 		{
 			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+				[[player,"AinvPknlMstpSnonWnonDnon_medic_1",true],"life_fnc_animSync",true,false] call life_fnc_MP;
+				player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 			};
 			sleep 0.27;

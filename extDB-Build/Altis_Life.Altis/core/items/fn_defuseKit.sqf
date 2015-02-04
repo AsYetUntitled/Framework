@@ -25,7 +25,8 @@ _cP = 0.01;
 while {true} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1",true],"life_fnc_animSync",true,false] call life_fnc_MP;
+		player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
@@ -50,4 +51,4 @@ if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR
 
 life_action_inUse = false;
 _vault setVariable["chargeplaced",false,true];
-[[0,"STR_ISTR_Defuse_Success"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+[[0,"STR_ISTR_Defuse_Success"],"life_fnc_broadcast",west,false] call life_fnc_MP;

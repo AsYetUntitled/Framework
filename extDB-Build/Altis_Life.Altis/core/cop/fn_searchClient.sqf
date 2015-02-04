@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_searchClient.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -10,21 +11,19 @@ _cop = [_this,0,Objnull,[objNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {};
 _inv = [];
 _robber = false;
+
 //Illegal items
 {
-	_var = [_x select 0,0] call life_fnc_varHandle;
-	_val = missionNamespace getVariable _var;
-	if(_val > 0) then
-	{
-		_inv pushBack [_x select 0,_val];
-		[false,(_x select 0),_val] call life_fnc_handleInv;
+	_val = ITEM_VALUE(SEL(_x,0));
+	if(_val > 0) then {
+		_inv pushBack [SEL(_x,0),_val];
+		[false,SEL(_x,0),_val] call life_fnc_handleInv;
 	};
-} foreach life_illegal_items;
+} foreach ("getNumber(_x >> 'illegal') isEqualTo 1" configClasses (missionConfigFile >> "VirtualItems"));
 
-if(!life_use_atm) then 
-{
-	life_cash = 0;
+if(!life_use_atm) then  {
+	CASH = 0;
 	_robber = true;
 };
 
-[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;
+[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] call life_fnc_MP;

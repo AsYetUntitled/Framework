@@ -18,15 +18,11 @@ private["_shop"];
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {closeDialog 0}; //Bad shop type passed.
 
-switch(_shop) do
-{
-	case "cop_basic":
-	{
-		switch(true) do
-		{
+switch(_shop) do {
+	case "cop_basic": {
+		switch(true) do {
 			case (playerSide != west): {"You are not a cop!"};
-			default
-			{
+			default {
 				["Altis Cop Shop",
 					[
 						["arifle_sdar_F","Taser Rifle",20000],
@@ -48,10 +44,8 @@ switch(_shop) do
 		};
 	};
 	
-	case "med_basic":
-	{
-		switch (true) do 
-		{
+	case "med_basic": {
+		switch (true) do {
 			case (playerSide != independent): {"You are not an EMS Medic"};
 			default {
 				["Hospital EMS Shop",
@@ -74,7 +68,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"You are not a cop!"};
-			case (__GETC__(life_coplevel) < 2): {"You are not at a patrol officer rank!"};
+			case (FETCH_CONST(life_coplevel) < 2): {"You are not at a patrol officer rank!"};
 			default
 			{
 				["Altis Patrol Officer Shop",
@@ -100,7 +94,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"You are not a cop!"};
-			case (__GETC__(life_coplevel) < 3): {"You are not at a sergeant rank!"};
+			case (FETCH_CONST(life_coplevel) < 3): {"You are not at a sergeant rank!"};
 			default
 			{
 				["Altis Sergeant Officer Shop",

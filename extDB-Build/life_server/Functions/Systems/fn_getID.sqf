@@ -4,4 +4,4 @@ _ret = _this select 1;
 _id = owner _id;
 _ret = owner _ret;
 
-[[_id],"life_fnc_adminid",_ret,false] spawn life_fnc_MP;
+[[_id],"life_fnc_adminid",_ret,false] call life_fnc_MP;

@@ -8,11 +8,11 @@
 private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
-if(isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
+if(isNil {(_house GVAR "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
-_uid = (_house getVariable "house_owner") select 0;
+_uid = SEL((_house GVAR "house_owner"),0);
 if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
-_houseInv = _house getVariable ["Trunk",[[],0]];
+_houseInv = _house GVAR ["Trunk",[[],0]];
 if(_houseInv isEqualTo [[],0]) exitWith {hint localize "STR_House_Raid_Nothing"};
 life_action_inUse = true;
 
@@ -20,7 +20,7 @@ life_action_inUse = true;
 disableSerialization;
 _title = localize "STR_House_Raid_Searching";
 5 cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
+_ui = GVAR_UINS "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -33,7 +33,7 @@ while {true} do
 	sleep 0.26;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
-		_ui = uiNamespace getVariable "life_progress";
+		_ui = GVAR_UINS "life_progress";
 	};
 	_cP = _cP + _cpRate;
 	_progressBar progressSetPosition _cP;
@@ -48,30 +48,28 @@ if(player distance _house > 13) exitWith {life_action_inUse = false; titleText[l
 if(!alive player) exitWith {life_action_inUse = false;};
 life_action_inUse = false;
 
-_houseInvData = _houseInv select 0;
-_houseInvVal = _houseInv select 1;
+_houseInvData = SEL(_houseInv,0);
+_houseInvVal = SEL(_houseInv,1);
 _value = 0;
 {
-	_var = _x select 0;
-	_val = _x select 1;
+	_var = SEL(_x,0);
+	_val = SEL(_x,1);
 	
-	_index = [_var,life_illegal_items] call TON_fnc_index;
-	if(_index != -1) then {
-		_vIndex = [_var,__GETC__(sell_array)] call TON_fnc_index;
-		if(_vIndex != -1) then {
+	if(EQUAL(ITEM_ILLEGAL(_var),1)) then {
+		if(!(EQUAL(ITEM_SELLPRICE(_var),-1))) then {
 			_houseInvData set[_forEachIndex,-1];
-			_houseInvData = _houseInvData - [-1];
-			_houseInvVal = _houseInvVal - (([_var] call life_fnc_itemWeight) * _val);
-			_value = _value + (_val * ((__GETC__(sell_array) select _vIndex) select 1));
+			SUB(_houseInvData,[-1]);
+			SUB(_houseInvVal,(([_var] call life_fnc_itemWeight) * _val));
+			ADD(_value,(_val * ITEM_SELLPRICE(_var)));
 		};
 	};
-} foreach (_houseInv select 0);
+} foreach (SEL(_houseInv,0));
 
 if(_value > 0) then {
-	[[0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-	life_atmcash = life_atmcash + _value;
-	_house setVariable["Trunk",[_houseInvData,_houseInvVal],true];
-	[[_house],"TON_fnc_updateHouseTrunk",false,false] spawn life_fnc_MP;
+	[[0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+	ADD(BANK,round(_value / 2));
+	_house SVAR ["Trunk",[_houseInvData,_houseInvVal],true];
+	[[_house],"TON_fnc_updateHouseTrunk",false,false] call life_fnc_MP;
 } else {
 	hint localize "STR_House_Raid_NoIllegal";
 };

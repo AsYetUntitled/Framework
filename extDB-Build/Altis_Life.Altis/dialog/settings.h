@@ -110,13 +110,15 @@ class SettingsMenu
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 		
-		class VD_onfoot_value : life_RscText
+		class VD_onfoot_value : Life_RscEdit
 		{
 			idc = 2902;
 			text = "";
+			onChar = "[_this select 0, _this select 1,'ground',false] call life_fnc_s_onChar;";
+			onKeyUp = "[_this select 0, _this select 1,'ground',true] call life_fnc_s_onChar;"
 			
-			x = 0.70; y = 0.258;
-			w = 0.275; h = 0.04;
+			x = .70; y = .258;
+			w = .08; h = .04;
 		};
 		
 		class VD_car_slider : life_RscXSliderH 
@@ -132,13 +134,15 @@ class SettingsMenu
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 		
-		class VD_car_value : life_RscText
+		class VD_car_value : Life_RscEdit
 		{
 			idc = 2912;
 			text = "";
+			onChar = "[_this select 0, _this select 1,'vehicle',false] call life_fnc_s_onChar;";
+			onKeyUp = "[_this select 0, _this select 1,'vehicle',true] call life_fnc_s_onChar;";
 			
-			x = 0.70; y = 0.31;
-			w = 0.275; h = 0.04;
+			x = .70; y = .31;
+			w = .08; h = .04;
 		};
 		
 		class VD_air_slider : life_RscXSliderH 
@@ -154,37 +158,42 @@ class SettingsMenu
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 		
-		class VD_air_value : life_RscText
+		class VD_air_value : Life_RscEdit
 		{
 			idc = 2922;
 			text = "";
-			
+			onChar = "[_this select 0, _this select 1,'air',false] call life_fnc_s_onChar;";
+			onKeyUp = "[_this select 0, _this select 1,'air',true] call life_fnc_s_onChar;";
+
 			x = 0.70; y = 0.36;
-			w = 0.275; h = 0.04;
+			w = .08; h = .04;
 		};
 		
-		class PlayerTagsONOFF : Life_RscActiveText
+		class PlayerTagsONOFF : Life_Checkbox
 		{
-			text = "ON";
+			//text = "ON";
 			tooltip = "$STR_GUI_PlayTags";
 			idc = 2970;
 			sizeEx = 0.04;
+			onCheckedChanged = "['tags',_this select 1] call life_fnc_s_onCheckedChange;";
 			x = 0.65;
 			y = 0.43;
-			w = 0.275;
+	
 		};
 		
 		class SideChatONOFF : PlayerTagsONOFF
 		{
 			idc = 2971;
 			tooltip = "";
-			action = "[] call life_fnc_sidechat;";
+			onCheckedChanged = "['sidechat',_this select 1] call life_fnc_s_onCheckedChange;";
+
 			y = 0.48;
 		};
 		
 		class RevealONOFF : PlayerTagsONOFF
 		{
 			tooltip = "$STR_GUI_PlayerReveal";
+			onCheckedChanged = "['objects',_this select 1] call life_fnc_s_onCheckedChange;";
 			idc = 2972;
 			y = 0.53;
 		};

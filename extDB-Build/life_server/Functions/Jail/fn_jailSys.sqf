@@ -12,4 +12,4 @@ _bad = [_this,1,false,[false]] call BIS_fnc_param;
 _id = owner _unit;
 
 _ret = [_unit] call life_fnc_wantedPerson;
-[[_ret,_bad],"life_fnc_jailMe",_id,false] spawn life_fnc_MP;
+[[_ret,_bad],"life_fnc_jailMe",_id,false] call life_fnc_MP;

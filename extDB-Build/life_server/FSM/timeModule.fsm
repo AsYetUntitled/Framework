@@ -1,0 +1,108 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, timeModules.fsm : Altis Life">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,375.000000,0.000000,475.000000,50.000000,0.000000,"Init"};
+item1[] = {"isServer",4,218,375.000000,75.000000,475.000000,125.000000,0.000000,"isServer"};
+item2[] = {"Apply_Time_Multi",2,250,375.000000,150.000000,475.000000,200.000000,0.000000,"Apply Time" \n "Multiplier"};
+item3[] = {"Opposite_Sunstat",4,4314,500.000000,200.000000,600.000000,250.000000,0.000000,"Opposite" \n "Sunstate"};
+item4[] = {"",7,210,421.000000,221.000000,429.000000,229.000000,0.000000,""};
+item5[] = {"",7,210,546.000000,171.000000,554.000000,179.000000,0.000000,""};
+item6[] = {"Linear_Multiplie",4,218,250.000000,150.000000,350.000000,200.000000,1.000000,"Linear" \n "Multiplier"};
+item7[] = {"Exit",1,250,125.000000,150.000000,225.000000,200.000000,0.000000,"Exit"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,4};
+link3[] = {2,6};
+link4[] = {3,5};
+link5[] = {4,3};
+link6[] = {5,2};
+link7[] = {6,7};
+globals[] = {25.000000,1,0,0,0,640,480,1,10,6316128,1,-179.640472,752.478394,458.482788,-385.274109,1403,1270,1};
+window[] = {2,-1,-1,-1,-1,1020,260,1700,260,3,1421};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "timeModules.fsm : Altis Life";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/"private [""_skipDay"", ""_skipNight"", ""_method"", ""_fastNight"", ""_sunState""];" \n
+       "_skipDay = [_this,0,8,[0]] call BIS_fnc_param;" \n
+       "_fastNight = [_this,1,false,[true]] call BIS_fnc_param;" \n
+       "_skipNight = [_this,2,12,[0]] call BIS_fnc_param;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isServer">*/
+        class isServer
+        {
+          priority = 0.000000;
+          to="Apply_Time_Multi";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Apply_Time_Multi">*/
+    class Apply_Time_Multi
+    {
+      name = "Apply_Time_Multi";
+      init = /*%FSM<STATEINIT""">*/"if(_fastNight && {sunOrMoon == 0}) then {" \n
+       "	setTimeMultiplier _skipNight;" \n
+       "} else {" \n
+       "	setTimeMultiplier _skipDay;" \n
+       "};" \n
+       "" \n
+       "private ""_sunState"";" \n
+       "_sunState = sunOrMoon;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Linear_Multiplie">*/
+        class Linear_Multiplie
+        {
+          priority = 1.000000;
+          to="Exit";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_fastNight"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Opposite_Sunstat">*/
+        class Opposite_Sunstat
+        {
+          priority = 0.000000;
+          to="Apply_Time_Multi";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"sunOrMoon == 1 - _sunState"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Exit">*/
+    class Exit
+    {
+      name = "Exit";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+    "Exit",
+  };
+};
+/*%FSM</COMPILE>*/

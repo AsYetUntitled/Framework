@@ -1,12 +1,4 @@
-life_fnc_sidechat =
-compileFinal "
-	if(life_sidechat) then {life_sidechat = false;} else {life_sidechat = true;};
-	[[player,life_sidechat,playerSide],""TON_fnc_managesc"",false,false] spawn life_fnc_MP;
-	[] call life_fnc_settingsMenu;
-";
-
-publicVariable "life_fnc_sidechat";
-
+#include "script_macros.hpp"
 TON_fnc_index =
 compileFinal "
 	private[""_item"",""_stack""];
@@ -30,24 +22,10 @@ compileFinal "
 	if(isNull _ret) exitWith {};
 	if(isNil ""_ret"") exitWith {};
 	
-	[[life_atmcash,life_cash,owner player,player],""life_fnc_admininfo"",_ret,false] spawn life_fnc_MP;
+	[[life_atmbank,life_cash,owner player,player],""life_fnc_admininfo"",_ret,false] call life_fnc_MP;
 ";
 publicVariable "TON_fnc_player_query";
-
 publicVariable "TON_fnc_index";
-
-TON_fnc_clientWireTransfer =
-compileFinal "
-	private[""_unit"",""_val"",""_from""];
-	_val = _this select 0;
-	_from = _this select 1;
-	if(!([str(_val)] call TON_fnc_isnumber)) exitWith {};
-	if(_from == """") exitWith {};
-	life_atmcash = life_atmcash + _val;
-	hint format[""%1 has wire transferred $%2 to you."",_from,[_val] call life_fnc_numberText];
-	
-";
-publicVariable "TON_fnc_clientWireTransfer";
 
 TON_fnc_isnumber =
 compileFinal "
@@ -98,7 +76,7 @@ compileFinal "
 		_name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
 		hint format[""%1 has gave you keys for a %2"",_giver,_name];
 		life_vehicles pushBack _vehicle;
-		[[getPlayerUID player,playerSide,_vehicle,1],""TON_fnc_keyManagement"",false,false] spawn life_fnc_MP;
+		[[getPlayerUID player,playerSide,_vehicle,1],""TON_fnc_keyManagement"",false,false] call life_fnc_MP;
 	};
 ";
 
@@ -138,7 +116,7 @@ private[""_msg"",""_to""];
 	_to = ""EMS Units"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3022,true];};
 		
-	[[_msg,name player,5],""TON_fnc_clientMessage"",independent,false] spawn life_fnc_MP;
+	[[_msg,name player,5],""TON_fnc_clientMessage"",independent,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You have sent a message to all EMS Units."",_to,_msg];
 	ctrlShow[3022,true];
@@ -155,7 +133,7 @@ compileFinal "
 	if(isNil ""_to"") exitWith {ctrlShow[3015,true];};
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3015,true];};
 	
-	[[_msg,name player,0],""TON_fnc_clientMessage"",_to,false] spawn life_fnc_MP;
+	[[_msg,name player,0],""TON_fnc_clientMessage"",_to,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",name _to,_msg];
 	ctrlShow[3015,true];
@@ -169,7 +147,7 @@ compileFinal "
 	_to = ""The Police"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
 		
-	[[_msg,name player,1],""TON_fnc_clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,1],""TON_fnc_clientMessage"",true,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3016,true];
@@ -183,7 +161,7 @@ compileFinal "
 	_to = ""The Admins"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3017,true];};
 		
-	[[_msg,name player,2],""TON_fnc_clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,2],""TON_fnc_clientMessage"",true,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3017,true];
@@ -199,7 +177,7 @@ compileFinal "
 	if(isNull _to) exitWith {};
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
 	
-	[[_msg,name player,3],""TON_fnc_clientMessage"",_to,false] spawn life_fnc_MP;
+	[[_msg,name player,3],""TON_fnc_clientMessage"",_to,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To: %1 - Message: %2"",name _to,_msg];
 ";
@@ -212,7 +190,7 @@ compileFinal "
 	_msg = ctrlText 3003;
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
 	
-	[[_msg,name player,4],""TON_fnc_clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,4],""TON_fnc_clientMessage"",true,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To All: %1"",_msg];
 ";

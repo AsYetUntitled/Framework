@@ -1,11 +1,12 @@
+#include <macro.h>
 /*
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
 	Turns on and displays a security cam like feed via PiP to the laptop display.
 */
-_laptop = _this select 0;
-_mode = _this select 3;
+_laptop = SEL(_this,0);
+_mode = SEL(_this,3);
 
 if(!isPiPEnabled) exitWith {hint localize "STR_Cop_EnablePiP";};
 if(isNil "life_fed_scam") then {

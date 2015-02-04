@@ -15,13 +15,23 @@ _index = _this select 1;
 //Fetch some information.
 _className = _control lbData _index;
 _vIndex = _control lbValue _index;
-_vehicleList = [life_veh_shop select 0] call life_fnc_vehicleListCfg; _basePrice = (_vehicleList select _vIndex) select 1;
+
+_vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
+_basePrice = SEL(SEL(_vehicleList,_vIndex),1);
+
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 
 ctrlShow [2330,true];
-(getControl(2300,2303)) ctrlSetStructuredText parseText format[
-(localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b'>$%1</t><br/>" +(localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>" +(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>" +(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +(localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +(localize "STR_Shop_Veh_UI_Armor")+ " %8",
+(CONTROL(2300,2303)) ctrlSetStructuredText parseText format[
+(localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b'>$%1</t><br/>" +
+(localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +
+(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +
+(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>" +
+(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>" +
+(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +
+(localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +
+(localize "STR_Shop_Veh_UI_Armor")+ " %8",
 [_basePrice] call life_fnc_numberText,
 [round(_basePrice * 1.5)] call life_fnc_numberText,
 _vehicleInfo select 8,
@@ -32,19 +42,20 @@ _vehicleInfo select 12,
 _vehicleInfo select 9
 ];
 
-_ctrl = getControl(2300,2304);
+_ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
-_colorArray = [_className] call life_fnc_vehicleColorCfg;
+_colorArray = M_CONFIG(getArray,CONFIG_VEHICLES,_className,"textures");
 
-for "_i" from 0 to count(_colorArray)-1 do {
-	if((_colorArray select _i) select 1 == (life_veh_shop select 2)) then {
-		_temp = [_className,_i] call life_fnc_vehicleColorStr;
-		_ctrl lbAdd format["%1",_temp];
-		_ctrl lbSetValue [(lbSize _ctrl)-1,_i];
+{
+	_flag = SEL(_x,1);
+	_textureName = SEL(_x,0);
+	if(EQUAL(SEL(life_veh_shop,2),_flag)) then {
+		_ctrl lbAdd _textureName;
+		_ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
 	};
-};
+} foreach _colorArray;
 
-if(_className in (__GETC__(life_vShop_rentalOnly))) then {
+if(_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
 	ctrlEnable [2309,false];
 } else {
 	if(!(life_veh_shop select 3)) then {

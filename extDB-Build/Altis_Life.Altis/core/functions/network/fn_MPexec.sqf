@@ -27,9 +27,8 @@ _callerName = [_varValue,6,"",[""]] call bis_fnc_param;
 _callerUID = [_varValue,7,"",[""]] call bis_fnc_param;
 
 if(!(["life_fnc_",_functionName] call BIS_fnc_inString) && {!(["SPY_fnc_",_functionName] call BIS_fnc_inString)} && {!(["DB_fnc_",_functionName] call BIS_fnc_inString)} && {!(["TON_fnc_",_functionName] call BIS_fnc_inString)} &&
-{!(toLower(_functionName) in ["bis_fnc_execvm","bis_fnc_effectkilledairdestruction","bis_fnc_effectkilledairdestructionstage2"])} && {!(["SOCK_fnc_",_functionName] call BIS_fnc_inString)}) exitWith {false};
-if(toLower(_functionName) == "db_fnc_asynccall") exitWith {false};
-if(toLower(_functionName) == "db_fnc_mresToArray") exitWith {false};
+{!(toLower(_functionName) in ["bis_fnc_execvm","bis_fnc_effectkilledairdestruction","bis_fnc_effectkilledairdestructionstage2","life_fnc_stripDownPlayer"])} && {!(["SOCK_fnc_",_functionName] call BIS_fnc_inString)}) exitWith {false};
+if(toLower(_functionName) in ["db_fnc_asynccall","db_fnc_mresstring","db_fnc_mresarray","db_fnc_mrestoarray"]) exitWith {false};
 
 if(_functionName == "bis_fnc_execvm") then {
 	_param2 = _params select 1;
@@ -47,7 +46,7 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 		if(_reportUID != _callerUID) exitWith {
 			if(isServer && _mode == 0) then {
 				[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
-				[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+				[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 			};
 			_exitScope = true;
 		};
@@ -58,7 +57,7 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 	if(_callerName != _reportName) exitWith {
 		if(isServer && _mode == 0) then {
 			[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
-			[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		};
 		_exitScope = true;
 	};
@@ -115,7 +114,7 @@ if (ismultiplayer && _mode == 0) then {
 
 			//--- Server execution (for all or server only)
 			if (_ownerID < 0 || _ownerID == _serverID) then {
-				["life_fnc_MP_packet",life_fnc_MP_packet] spawn life_fnc_MPexec;
+				["life_fnc_MP_packet",life_fnc_MP_packet] call life_fnc_MPexec;
 			};
 
 			//--- Persistent call (for all or clients)

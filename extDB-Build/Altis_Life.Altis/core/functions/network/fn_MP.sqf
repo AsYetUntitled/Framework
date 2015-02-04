@@ -39,7 +39,7 @@ with missionnamespace do {
 
 	//--- Local execution
 	if !(ismultiplayer) then {
-		["life_fnc_MP_packet",life_fnc_MP_packet] spawn life_fnc_MPexec;
+		["life_fnc_MP_packet",life_fnc_MP_packet] call life_fnc_MPexec;
 	};
 
 	life_fnc_MP_packet

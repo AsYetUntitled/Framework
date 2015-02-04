@@ -10,7 +10,7 @@ private["_end"];
 player addRating 99999999;
 waitUntil {!(isNull (findDisplay 46))};
 
-if((__GETC__(life_medicLevel)) < 1) exitWith {
+if((FETCH_CONST(life_medicLevel)) < 1) exitWith {
 	["Notwhitelisted",FALSE,TRUE] call BIS_fnc_endMission;
 	sleep 35;
 };

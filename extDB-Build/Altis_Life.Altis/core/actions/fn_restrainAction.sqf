@@ -16,5 +16,5 @@ if(!isPlayer _unit) exitWith {};
 //Broadcast!
 
 _unit setVariable["restrained",true,true];
-[[player], "life_fnc_restrain", _unit, false] spawn life_fnc_MP;
-[[0,"STR_NOTF_Restrained",true,[_unit getVariable["realname", name _unit], profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+[[player], "life_fnc_restrain", _unit, false] call life_fnc_MP;
+[[0,"STR_NOTF_Restrained",true,[_unit getVariable["realname", name _unit], profileName]],"life_fnc_broadcast",west,false] call life_fnc_MP;

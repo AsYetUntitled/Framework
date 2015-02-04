@@ -1,3 +1,4 @@
+#include <macro.h>
 #define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
 /*
 	File: fn_vehTakeItem.sqf
@@ -40,7 +41,7 @@ if(_ctrl == "money") then
 		_data set[_index,[_ctrl,(_value - _num)]];
 	};
 	
-	life_cash = life_cash + _num;
+	CASH = CASH + _num;
 	life_trunk_vehicle setVariable["Trunk",[_data,(_old select 1) - _weight],true];
 	[life_trunk_vehicle] call life_fnc_vehInventory;
 }

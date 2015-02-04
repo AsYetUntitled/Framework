@@ -11,4 +11,4 @@ if(_uid == "") exitWith {};
 
 _index = [_uid,life_wanted_list] call TON_fnc_index;
 if(_index == -1) exitWith {};
-[[0],"life_fnc_removeLicenses",_uid,false] spawn life_fnc_MP;
+[[0],"life_fnc_removeLicenses",_uid,false] call life_fnc_MP;

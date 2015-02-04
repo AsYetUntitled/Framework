@@ -1,5 +1,5 @@
 author = "Tonic";
-onLoadName = "Altis Life RPG v3.1.4.8";
+onLoadName = "Altis Life RPG v4.0";
 onLoadMission = "A RPG game mode developed by Tonic";
 joinUnassigned = 1;
 respawn = BASE;
@@ -23,17 +23,21 @@ corpseLimit = 150;
 corpseRemovalMinTime = 999;
 corpseRemovalMaxTime = 9999;
 
-#include "dialog\MasterHandler.h"
+//SpyGlass configuration
+SPY_Enable = true;
 
-class RscTitles
-{
+#include "Config_Spyglass.hpp"
+
+#include "dialog\MasterHandler.h"
+#include "Config_Master.hpp"
+
+class RscTitles {
 	#include "dialog\ui.hpp"
 	#include "dialog\progress.hpp"
 	#include "dialog\hud_nameTags.h"
 };
 
-class CfgFunctions
-{
+class CfgFunctions {
 	#include "Functions.h"
 };
 

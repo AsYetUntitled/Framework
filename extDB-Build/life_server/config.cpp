@@ -7,7 +7,7 @@ class CfgPatches
 		weapons[] = {};
 		requiredAddons[] = {"A3_Data_F","A3_Soft_F","A3_Soft_F_Offroad_01","A3_Characters_F"};
 		fileName = "life_server.pbo";
-		author[]= {"TAW_Tonic"}; 
+		author[]= {"Tonic"}; 
 	};
 };
 
@@ -126,6 +126,12 @@ class CfgFunctions
 			class queryPlayerGang {};
 			class removeGang {};
 			class updateGang {};
+		};
+
+		class Actions
+		{
+			file = "\life_server\Functions\Actions";
+			class pickupAction {};
 		};
 	};
 };

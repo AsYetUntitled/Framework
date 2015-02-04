@@ -1,3 +1,65 @@
+#define ST_LEFT           0x00
+#define ST_MULTI          0x10
+#define GUI_GRID_CENTER_WAbs		((safezoneW / safezoneH) min 1.2)
+#define GUI_GRID_CENTER_HAbs		(GUI_GRID_CENTER_WAbs / 1.2)
+#define GUI_GRID_CENTER_W		(GUI_GRID_CENTER_WAbs / 40)
+#define GUI_GRID_CENTER_H		(GUI_GRID_CENTER_HAbs / 25)
+#define GUI_GRID_CENTER_X		(safezoneX + (safezoneW - GUI_GRID_CENTER_WAbs)/2)
+#define GUI_GRID_CENTER_Y		(safezoneY + (safezoneH - GUI_GRID_CENTER_HAbs)/2)
+
+class Life_Checkbox
+{
+	access = 0; // Control access (0 - ReadAndWrite, 1 - ReadAndCreate, 2 - ReadOnly, 3 - ReadOnlyVerified)
+	idc = -1; // Control identification (without it, the control won't be displayed)
+	type = 77; // Type
+	style = ST_LEFT + ST_MULTI; // Style
+	default = 0; // Control selected by default (only one within a display can be used)
+	blinkingPeriod = 0; // Time in which control will fade out and back in. Use 0 to disable the effect.
+
+	x = 0;
+	y = 0;
+	w = 1 * GUI_GRID_CENTER_W; // Width
+	h = 1 * GUI_GRID_CENTER_H; // Height
+
+	//Colors
+	color[] = { 1, 1, 1, 0.7 }; // Texture color
+	colorFocused[] = { 1, 1, 1, 1 }; // Focused texture color
+	colorHover[] = { 1, 1, 1, 1 }; // Mouse over texture color
+	colorPressed[] = { 1, 1, 1, 1 }; // Mouse pressed texture color
+	colorDisabled[] = { 1, 1, 1, 0.2 }; // Disabled texture color
+
+	//Background colors
+	colorBackground[] = { 0, 0, 0, 0 }; // Fill color
+	colorBackgroundFocused[] = { 0, 0, 0, 0 }; // Focused fill color
+	colorBackgroundHover[] = { 0, 0, 0, 0 }; // Mouse hover fill color
+	colorBackgroundPressed[] = { 0, 0, 0, 0 }; // Mouse pressed fill color
+	colorBackgroundDisabled[] = { 0, 0, 0, 0 }; // Disabled fill color
+
+	//Textures
+	textureChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";		//Texture of checked CheckBox.
+	textureUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";		//Texture of unchecked CheckBox.
+	textureFocusedChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";	//Texture of checked focused CheckBox (Could be used for showing different texture when focused).
+	textureFocusedUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";	//Texture of unchecked focused CheckBox.
+	textureHoverChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	textureHoverUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	texturePressedChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	texturePressedUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	textureDisabledChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	textureDisabledUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+
+	tooltip = ""; // Tooltip text
+	tooltipColorShade[] = { 0, 0, 0, 1 }; // Tooltip background color
+	tooltipColorText[] = { 1, 1, 1, 1 }; // Tooltip text color
+	tooltipColorBox[] = { 1, 1, 1, 1 }; // Tooltip frame color
+
+	//Sounds
+	soundClick[] = { "\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1 }; // Sound played after control is activated in format {file, volume, pitch}
+	soundEnter[] = { "\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1 }; // Sound played when mouse cursor enters the control
+	soundPush[] = { "\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1 }; // Sound played when the control is pushed down
+	soundEscape[] = { "\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1 }; // Sound played when the control is released after pushing down
+
+};
+
 class Life_RscScrollBar
 {
 	color[] = {1,1,1,0.6};
@@ -497,6 +559,9 @@ class Life_RscListBox
 	colorSelectBackground[] = {0.95, 0.95, 0.95, 0.5};
 	colorSelectBackground2[] = {1, 1, 1, 0.5};
 	colorScrollbar[] = {0.2, 0.2, 0.2, 1};
+	colorPicture[] = {1,1,1,1};
+	colorPictureSelected[] = {1,1,1,1};
+	colorPictureDisabled[] = {1,1,1,1};
 	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
 	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 	wholeHeight = 0.45;

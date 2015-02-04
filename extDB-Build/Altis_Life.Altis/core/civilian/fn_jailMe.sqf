@@ -1,5 +1,5 @@
+#include <macro.h>
 /*
-	File: fn_jailMe.sqf
 	Author Bryan "Tonic" Boardwine
 	
 	Description:
@@ -10,19 +10,15 @@ _ret = [_this,0,[],[[]]] call BIS_fnc_param;
 _bad = [_this,1,false,[false]] call BIS_fnc_param;
 if(_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
 
-if(count _ret > 0) then { life_bail_amount = (_ret select 3); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
+if(count _ret > 0) then { life_bail_amount = SEL(_ret,3); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
 _esc = false;
 _bail = false;
 
-[_bad] spawn
-{
+[_bad] spawn {
 	life_canpay_bail = false;
-	if(_this select 0) then
-	{
+	if(_this select 0) then {
 		sleep (10 * 60);
-	}
-		else
-	{
+	} else {
 		sleep (5 * 60);
 	};
 	life_canpay_bail = nil;
@@ -51,31 +47,28 @@ while {true} do
 
 switch (true) do
 {
-	case (_bail) :
-	{
+	case (_bail): {
 		life_is_arrested = false;
 		life_bail_paid = false;
 		hint localize "STR_Jail_Paid";
 		serv_wanted_remove = [player];
 		player setPos (getMarkerPos "jail_release");
-		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
+		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] call life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
 	};
 	
-	case (_esc) :
-	{
+	case (_esc): {
 		life_is_arrested = false;
 		hint localize "STR_Jail_EscapeSelf";
-		[[0,"STR_Jail_EscapeNOTF",true,[profileName]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
-		[[getPlayerUID player,profileName,"901"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[0,"STR_Jail_EscapeNOTF",true,[profileName]],"life_fnc_broadcast",nil,false] call life_fnc_MP;
+		[[getPlayerUID player,profileName,"901"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
 	};
 	
-	case (alive player && !_esc && !_bail) :
-	{
+	case (alive player && !_esc && !_bail): {
 		life_is_arrested = false;
 		hint localize "STR_Jail_Released";
-		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
+		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] call life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
 		[5] call SOCK_fnc_updatePartial;
 	};

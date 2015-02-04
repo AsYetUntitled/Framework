@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_fetchDeadGear.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -19,8 +20,8 @@ _uniform = uniform _unit;
 _vest = vest _unit;
 _backpack = backpack _unit;
 _items = assignedItems _unit;
-if(primaryWeapon _unit != "") then {_primitems = primaryWeaponItems _unit;};
-if(handgunWeapon _unit != "") then {_handgunItems = handgunItems _unit;};
+if(!(EQUAL(primaryWeapon _unit,""))) then {_primitems = primaryWeaponItems _unit;};
+if(!(EQUAL(handgunWeapon _unit,""))) then {_handgunItems = handgunItems _unit;};
 _headgear = headgear _unit;
 _goggles = goggles _unit;
 _uitems = [];
@@ -30,29 +31,23 @@ if(_uniform != "") then {{_uitems pushBack _x;} foreach (uniformItems _unit);};
 if(_vest != "") then {{_vitems pushBack _x;} foreach (vestItems _unit);};
 if(_backpack != "") then {{_bitems pushBack _x;} foreach (backPackItems _unit);};
 	
-if(primaryWeapon _unit != "") then
-{
+if(!(EQUAL(primaryWeapon _unit,""))) then {
 	_unit selectWeapon (primaryWeapon _unit);
-	if(currentMagazine _unit != "") then
-	{
+	if(!(EQUAL(currentMagazine _unit,""))) then {
 		_magazines pushBack currentMagazine _unit;
 	};
 };
 		
-if(secondaryWeapon _unit != "") then
-{
+if(!(EQUAL(secondaryWeapon _unit,""))) then {
 	_unit selectWeapon (secondaryWeapon _unit);
-	if(currentMagazine _unit != "") then
-	{
+	if(!(EQUAL(currentMagazine _unit,""))) then {
 		_magazines pushBack currentMagazine _unit;
 	};
 };
 		
-if(handgunWeapon _unit != "") then
-{
+if(!(EQUAL(handgunWeapon _unit,""))) then {
 	_unit selectWeapon (handgunWeapon _unit);
-	if(currentMagazine _unit != "") then
-	{
+	if(!(EQUAL(currentMagazine _unit,""))) then {
 		_magazines pushBack currentMagazine _unit;
 	};
 };

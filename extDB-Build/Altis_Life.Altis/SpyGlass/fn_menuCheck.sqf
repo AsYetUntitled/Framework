@@ -47,6 +47,16 @@ while {true} do {
 	if(!isNull (findDisplay 129)) then {
 		closeDialog 0;
 	};
+	
+	/* Check to see if RscDisplayInventory has more controls then it should */
+	_display = findDisplay 602;
+	if(!isNull _display && {count (allControls _display) > 82}) then {
+		_count = count allControls _display;
+		[[profileName,steamid,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]],"SPY_fnc_cookieJar",false,false,true] call life_fnc_MP;
+		[[profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]],"SPY_fnc_notifyAdmins",true,false,true] call life_fnc_MP;
+		closeDialog 0;
+		SPYGLASS_END
+	};
 		
 	if(!isNull (findDisplay 148)) then {
 		sleep 0.5;
@@ -58,7 +68,6 @@ while {true} do {
 		};
 	};
 	
-	//_display = uiNamespace getVariable ["RscDisplayInsertMarker", displayNull];
 	_display = findDisplay 54;
 	if(!isNull _display) then {
 		{
@@ -163,6 +172,5 @@ while {true} do {
 			["RscDisplayInsertMarker","[""onLoad"",_this,""RscDisplayInsertMarker"",'GUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')","[""onUnload"",_this,""RscDisplayInsertMarker"",'GUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')"]
 		];
 	};
-		
 	uiSleep 1;
 };

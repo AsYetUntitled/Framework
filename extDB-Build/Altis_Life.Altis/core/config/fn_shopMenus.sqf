@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_shopMenus.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -9,12 +10,11 @@ private["_shop"];
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {closeDialog 0;};
 
-if(!dialog) then
-{
+if(!dialog) then {
 	if(!(createDialog "shop_menu")) exitWith {};
 };
 disableSerialization;
-ctrlSetText[601,format["Cash: $%1",[life_cash] call life_fnc_numberText]];
+ctrlSetText[601,format["Cash: $%1",[CASH] call life_fnc_numberText]];
 
 switch (_shop) do
 {

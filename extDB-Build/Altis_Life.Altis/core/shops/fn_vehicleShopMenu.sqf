@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_vehicleShopMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -17,7 +18,6 @@ disableSerialization;
 if(dialog) exitWith {};
 if(_shop == "") exitWith {};
 if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
-
 if(!createDialog "Life_Vehicle_Shop_v2") exitWith {};
 
 life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
@@ -30,21 +30,27 @@ if(_disableBuy) then {
 };
 
 //Fetch the shop config.
-_vehicleList = [_shop] call life_fnc_vehicleListCfg;
+_vehicleList = M_CONFIG(getArray,"CarShops",_shop,"vehicles");
 
-_control = ((findDisplay 2300) displayCtrl 2302);
+_control = CONTROL(2300,2302);
 lbClear _control; //Flush the list.
 ctrlShow [2330,false];
 ctrlShow [2304,false];
 
 //Loop through
 {
-	_className = _x select 0;
-	_basePrice = _x select 1;
+	_className = SEL(_x,0);
+	_basePrice = SEL(_x,1);
+	_levelData = SEL(_x,3);
+	_passOver = false;
 	
-	_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-	_control lbAdd (_vehicleInfo select 3);
-	_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
-	_control lbSetData [(lbSize _control)-1,_className];
-	_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
+	if(!isNil "_levelData" && {_var = GVAR_MNS (SEL(_levelData,0)); !(FETCH_CONST(_var) >= (SEL(_levelData,1)))}) then {_passOver = true;};
+	
+	if(!_passOver) then {
+		_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+		_control lbAdd (_vehicleInfo select 3);
+		_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
+		_control lbSetData [(lbSize _control)-1,_className];
+		_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
+	};
 } foreach _vehicleList;

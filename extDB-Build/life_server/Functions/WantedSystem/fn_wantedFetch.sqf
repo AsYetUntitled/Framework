@@ -23,4 +23,4 @@ _list = [];
 		};
 	};
 } foreach life_wanted_list;
-[[_list],"life_fnc_wantedList",_ret,false] spawn life_fnc_MP;
+[[_list],"life_fnc_wantedList",_ret,false] call life_fnc_MP;

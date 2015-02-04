@@ -30,8 +30,8 @@ diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
 
 //Double check to make sure the client isn't in the database...
-if(typeName _queryResult == "STRING") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;}; //There was an entry!
-if(count _queryResult != 0) exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;};
+if(typeName _queryResult == "STRING") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;}; //There was an entry!
+if(count _queryResult != 0) exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;};
 
 //Clense and prepare some information.
 _name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
@@ -50,4 +50,4 @@ _query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, co
 
 waitUntil {!DB_Async_Active};
 [_query,1] call DB_fnc_asyncCall;
-[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;
+[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;

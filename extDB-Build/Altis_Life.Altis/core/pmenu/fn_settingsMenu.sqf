@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_settingsMenu
 	Author: Bryan "Tonic" Boardwine
@@ -5,31 +6,22 @@
 	Description:
 	Setup the settings menu.
 */
-if(isNull (findDisplay 2900)) then
-{
+if(isNull (findDisplay 2900)) then {
 	if(!createDialog "SettingsMenu") exitWith {hint "Something went wrong, the menu won't open?"};
 };
 
 disableSerialization;
 
-ctrlSetText[2902, format["%1", tawvd_foot]];
-ctrlSetText[2912, format["%1", tawvd_car]];
-ctrlSetText[2922, format["%1", tawvd_air]];
+ctrlSetText[2902, format["%1", life_vdFoot]];
+ctrlSetText[2912, format["%1", life_vdCar]];
+ctrlSetText[2922, format["%1", life_vdAir]];
 
-//Setup Sliders range
-{ slidersetRange [_x,100,12000];} foreach [2901,2911,2921];
-//Setup Sliders speed
-{ ((findDisplay 2900) displayCtrl _x) sliderSetSpeed [100,100,100]; } foreach [2901,2911,2921];
-//Setup Sliders position
+/* Set up the sliders */
 {
-	sliderSetPosition[_x select 0, _x select 1];
-} foreach [[2901,tawvd_foot],[2911,tawvd_car],[2921,tawvd_air]];
-
-private["_display","_side","_tags","_objs"];
-_display = findDisplay 2900;
-_side = _display displayCtrl 2971;
-_tags = _display displayCtrl 2970;
-_objs = _display displayCtrl 2972;
+	slidersetRange [SEL(_x,0),100,12000];
+	CONTROL(2900,SEL(_x,0)) sliderSetSpeed [100,100,100];
+	sliderSetPosition [SEL(_x,0),SEL(_x,1)];
+} foreach [[2901,life_vdFoot],[2911,life_vdCar],[2921,life_vdAir]];
 
 if(isNil "life_tagson") then {
 	life_sidechat = true;
@@ -37,30 +29,6 @@ if(isNil "life_tagson") then {
 	life_revealObjects = true;
 };
 
-if(life_revealObjects) then {
-	_objs ctrlSetTextColor [0,1,0,1];
-	_objs ctrlSetText "ON";
-	_objs buttonSetAction "[LIFE_ID_RevealObjects,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; life_revealObjects = false; [] call life_fnc_settingsMenu;";
-} else {
-	_objs ctrlSetTextColor [1,0,0,1];
-	_objs ctrlSetText "OFF";
-	_objs buttonSetAction "LIFE_ID_RevealObjects = [""LIFE_RevealObjects"",""onEachFrame"",""life_fnc_revealObjects""] call BIS_fnc_addStackedEventHandler; life_revealObjects = true; [] call life_fnc_settingsMenu;";
-};
-
-if(life_tagson) then {
-	_tags ctrlSetTextColor [0,1,0,1];
-	_tags ctrlSetText "ON";
-	_tags buttonSetAction "[LIFE_ID_PlayerTags,""onEachFrame""] call BIS_fnc_removeStackedEventHandler; life_tagson = false; [] call life_fnc_settingsMenu;";
-} else {
-	_tags ctrlSetTextColor [1,0,0,1];
-	_tags ctrlSetText "OFF";
-	_tags buttonSetAction "LIFE_ID_PlayerTags = [""LIFE_PlayerTags"",""onEachFrame"",""life_fnc_playerTags""] call BIS_fnc_addStackedEventHandler; life_tagson = true; [] call life_fnc_settingsMenu;";
-};
-
-if(life_sidechat) then {
-	_side ctrlSetTextColor [0,1,0,1];
-	_side ctrlSetText "ON";
-} else {
-	_side ctrlSetTextColor [1,0,0,1];
-	_side ctrlSetText "OFF";
-};
+CONTROL(2900,2971) cbSetChecked life_sidechat;
+CONTROL(2900,2970) cbSetChecked life_tagson;
+CONTROL(2900,2972) cbSetChecked life_revealObjects;

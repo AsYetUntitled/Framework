@@ -16,10 +16,10 @@ if(_id != -1) then
 {
 	if(_half) then
 	{
-		[[((life_wanted_list select _id) select 3) / 2,((life_wanted_list select _id) select 3)],"life_fnc_bountyReceive",(owner _cop),false] spawn life_fnc_MP;
+		[[((life_wanted_list select _id) select 3) / 2,((life_wanted_list select _id) select 3)],"life_fnc_bountyReceive",(owner _cop),false] call life_fnc_MP;
 	}
 		else
 	{
-		[[(life_wanted_list select _id) select 3,(life_wanted_list select _id) select 3],"life_fnc_bountyReceive",(owner _cop),false] spawn life_fnc_MP;
+		[[(life_wanted_list select _id) select 3,(life_wanted_list select _id) select 3],"life_fnc_bountyReceive",(owner _cop),false] call life_fnc_MP;
 	};
 };

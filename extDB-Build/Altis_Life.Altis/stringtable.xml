@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
 	<Package name="Shop_Names">
+		<Key ID="STR_Shops_C_Bruce">
+			<Original>Bruce's Outback Outfits</Original>
+		</Key>
+		<Key ID="STR_Shops_C_Police">
+			<Original>Altis Police Department Shop</Original>
+		</Key>
+		<Key ID="STR_Shops_C_Rebel">
+			<Original>Mohammed's Jihadi Shop</Original>
+		</Key>
+		<Key ID="STR_Shops_C_Diving">
+			<Original>Steve's Diving Shop</Original>
+		</Key>
+		<Key ID="STR_Shops_C_Kart">
+			<Original>Bobby's Kart-Racing Outfits</Original>
+		</Key>
 		<Key ID="STR_Shops_Market">
 			<Original>Altis Market</Original>
 			<German>Altis Markt</German>

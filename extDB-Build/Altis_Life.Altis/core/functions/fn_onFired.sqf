@@ -10,11 +10,11 @@ _projectile = _this select 6;
 
 if(_ammoType == "GrenadeHand_stone") then {
 	_projectile spawn {
-		private["_position"];
+		private "_position";
 		while {!isNull _this} do {
-			_position = getPosATL _this;
+			_position = ASLtoATL (visiblePositionASL _this);
 			sleep 0.1;
 		};
-		[[_position],"life_fnc_flashbang",true,false] spawn life_fnc_MP;
+		[[_position],"life_fnc_flashbang",true,false] call life_fnc_MP;
 	};
 };
