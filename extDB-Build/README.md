@@ -21,7 +21,7 @@ Working Linux Arma3Server
 
 Debian/Ubuntu
 
-apt-get install libttb2:i386
+apt-get install libtbb2:i386
 
 RedHat/CentOS
 
