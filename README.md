@@ -11,6 +11,8 @@ Usage / Terms of agreement
 * All of my code is not to be used outside of the mission in another ‘Life’ like mission. It is to stay the Altis Life RPG Framework / my framework or you don’t use it and direct branding.
 * Some of my code can be used outside of the mission / framework but permission is to be asked first, if no response is received then it is a automatic NO.
 * Core configuration is allowed to be modified (i.e Prices and expansion of items / features).
+* Altis-Life RPG Framework is only allowed to be used with the vanilla maps with no extensions or mods (with the exception of server sided mods).
+* All edits made inside the framework is fine as long as it stays in the vanilla maps that Bohemia Interactive has released, past, present and future.
 * Features added by you to the mission are to stay to your modification in your server, distribution is not allowed without my permission, if you would like your feature to be added to the Altis Life RPG main distribution (by me) you can submit your changes and will be fully credited.
 * This is not be used commercially and is to remain freeware, this includes requiring donations / payment to be able to ‘play’ in your server with this mission. Playability of it is to remain free and open.
 
