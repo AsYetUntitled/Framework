@@ -1,20 +1,29 @@
-Altis-Life
-==========
+#Altis-Life
 
 Altis Life / Altis Life RPG is developed by Tonic / TAW_Tonic. This contains primarily the release contain and on-going development changes to the mission.
 Altis Life RPG by Tonic is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
 http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US
 
 Usage / Terms of agreement
-* The branding of the mission is to stay ‘Altis Life RPG’. This means you cannot modify it to say something else. i.e Atlis Life by YOURCOMMUNITYNAME/TAG. Everything about the naming / branding is to be left untouched.
-* Naturally all credit is to remain intact on all files. Author cannot be modified via Description.ext but can be extended in briefing.sqf
-* All of my code is not to be used outside of the mission in another ‘Life’ like mission. It is to stay the Altis Life RPG Framework / my framework or you don’t use it and direct branding.
-* Some of my code can be used outside of the mission / framework but permission is to be asked first, if no response is received then it is a automatic NO.
-* Core configuration is allowed to be modified (i.e Prices and expansion of items / features).
-* Altis-Life RPG Framework is only allowed to be used with the vanilla maps with no extensions or mods (with the exception of server sided mods, and direct permission from author).
-* All edits made inside the framework is fine as long as it stays in the vanilla maps that Bohemia Interactive has released, past, present and future.
-* Features added by you to the mission are to stay to your modification in your server, distribution is not allowed without my permission, if you would like your feature to be added to the Altis Life RPG main distribution (by me) you can submit your changes and will be fully credited.
-* This is not be used commercially and is to remain freeware, this includes requiring donations / payment to be able to ‘play’ in your server with this mission. Playability of it is to remain free and open.
+>   The branding of the mission is to stay ‘Altis Life RPG’. This means you cannot modify it to say something else. i.e Atlis Life by YOURCOMMUNITYNAME/TAG. Everything about the naming / branding is to be left untouched.
+
+>   Naturally all credit is to remain intact on all files. Author cannot be modified via Description.ext but can be extended in briefing.sqf
+
+>   All of my code is not to be used outside of the mission in another ‘Life’ like mission. It is to stay the Altis Life RPG Framework / my framework or you don’t use it and direct branding.
+
+>   Some of my code can be used outside of the mission / framework but permission is to be asked first, if no response is received then it is a automatic NO.
+
+>   Core configuration is allowed to be modified (i.e Prices and expansion of items / features).
+
+>   Altis-Life RPG Framework is only allowed to be used with the Arma 3 vanilla maps with no extensions or mods (with the exception of server sided mods, and direct permission from author).
+
+>   All edits made inside the framework is fine as long as it stays in the vanilla maps that Bohemia Interactive has released, past, present and future.
+
+>   Features added by you to the mission are to stay to your modification in your server, distribution is not allowed without my permission, if you would like your feature to be added to the Altis Life RPG main distribution (by me) you can submit your changes and will be fully credited.
+
+>   This is not be used commercially and is to remain freeware, this includes requiring donations / payment to be able to ‘play’ in your server with this mission. Playability of it is to remain free and open.
+
+By using the framework and/or code inside the framework, you agree to the terms of agreement.
 
 The terms are subjected to be changed over time.
 
