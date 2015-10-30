@@ -18,7 +18,7 @@ PVAR_ALL("life_server_isReady");
 	Prepare extDB before starting the initialization process
 	for the server.
 */
-if(isNil {GVAR_UINS "EXTDB_ID"}) then {
+if(isNil {GVAR_UINS "life_sql_id"}) then {
 	life_sql_id = round(random(9999));
 	CONSTVAR(life_sql_id);
 	SVAR_UINS ["life_sql_id",life_sql_id];
