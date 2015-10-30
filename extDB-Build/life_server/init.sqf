@@ -32,8 +32,8 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
     diag_log _exception;
     life_server_extDB_notLoaded = [true, _exception];
     PVAR_ALL("life_server_extDB_notLoaded");
-    __EXIT(true);
   };
+  __EXIT(!(EQUAL(life_server_extDB_notLoaded,"")));
   "extDB2" callExtension "9:LOCK";
   diag_log "extDB2: Connected to Database";
 } else {
