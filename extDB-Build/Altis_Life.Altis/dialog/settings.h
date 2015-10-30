@@ -115,7 +115,7 @@ class SettingsMenu
 			idc = 2902;
 			text = "";
 			onChar = "[_this select 0, _this select 1,'ground',false] call life_fnc_s_onChar;";
-			onKeyUp = "[_this select 0, _this select 1,'ground',true] call life_fnc_s_onChar;"
+			onKeyUp = "[_this select 0, _this select 1,'ground',true] call life_fnc_s_onChar;";
 			
 			x = .70; y = .258;
 			w = .08; h = .04;
