@@ -1,7 +1,8 @@
 #include "script_macros.hpp"
+#define __EXIT(condition) if(condition) exitWith {}
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Initialize the server and required systems.
 */
@@ -17,29 +18,28 @@ PVAR_ALL("life_server_isReady");
 	Prepare extDB before starting the initialization process
 	for the server.
 */
-if(isNil {GVAR_UINS "life_sql_id"}) then {
+if(isNil {GVAR_UINS "EXTDB_ID"}) then {
 	life_sql_id = round(random(9999));
 	CONSTVAR(life_sql_id);
 	SVAR_UINS ["life_sql_id",life_sql_id];
-	
-	//Retrieve extDB version
-	_result = "extDB" callExtension "9:VERSION";
-	diag_log format ["extDB: Version: %1", _result];
-	if(EQUAL(_result,"")) exitWith {EXTDB_FAILED("The server-side extension extDB was not loaded into the engine, report this to the server admin.")};
-	if ((parseNumber _result) < 14) exitWith {EXTDB_FAILED("extDB version is not compatible with current Altis life version. Require version 14 or higher.")};
-	
-	//Initialize connection to Database
-	_result = "extDB" callExtension "9:DATABASE:Database2";
-	if(!(EQUAL(_result,"[1]"))) exitWith {EXTDB_FAILED("extDB: Error with Database Connection")};
-	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",FETCH_CONST(life_sql_id)];
-	if(!(EQUAL(_result,"[1]"))) exitWith {EXTDB_FAILED("extDB: Error with Database Connection")};
-	/* Insert any additional code here for extDB features, the next line will lock extDB */ 
-	"extDB" callExtension "9:LOCK";
-	diag_log "extDB: Connected to Database";
+
+  try {
+    _result = "extDB2" callExtension format["9:ADD_DATABASE:%1","Database2"];
+    if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+    _result = "extDB2" callExtension format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),"Database2"];
+    if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+  } catch {
+    diag_log _exception;
+    life_server_extDB_notLoaded = [true, _exception];
+    PVAR_ALL("life_server_extDB_notLoaded");
+    __EXIT(true);
+  };
+  "extDB2" callExtension "9:LOCK";
+  diag_log "extDB2: Connected to Database";
 } else {
 	life_sql_id = GVAR_UINS "life_sql_id";
 	CONSTVAR(life_sql_id);
-	diag_log "extDB: Still Connected to Database";
+  diag_log "extDB2: Still Connected to Database";
 };
 
 if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB did not fully initialize so terminate the rest of the initialization process.
@@ -62,7 +62,7 @@ onMapSingleClick "if(_alt) then {vehicle player setPos _pos};"; //Local debug fo
 	_var attachTo [_hs, [4.69775,32.6045,-0.1125]];
 	detach _var;
 	_var = createVehicle ["Land_Hospital_side2_F", [0,0,0], [], 0, "NONE"];
-	_var attachTo [_hs, [-28.0336,-10.0317,0.0889387]]; 
+	_var attachTo [_hs, [-28.0336,-10.0317,0.0889387]];
 	detach _var;
 } foreach ["hospital_2","hospital_3"];
 
@@ -111,7 +111,7 @@ life_wanted_list = [];
 		_logic = missionnamespace getvariable ["bis_functions_mainscope",objnull];
 		_queue = _logic getvariable "BIS_fnc_MP_queue";
 		_logic setVariable["BIS_fnc_MP_queue",[],TRUE];
-		
+
 		{
 			_x setVariable["sellers",[],true];
 		} foreach [Dealer_1,Dealer_2,Dealer_3];

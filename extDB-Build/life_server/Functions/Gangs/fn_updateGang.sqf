@@ -52,6 +52,6 @@ switch (_mode) do {
 };
 
 if(!isNil "_query") then {
-	waitUntil{!DB_Async_Active};
+	
 	[_query,1] call DB_fnc_asyncCall;
 };

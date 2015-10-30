@@ -48,7 +48,7 @@ while {true} do
 					_plate = _dbInfo select 1;
 
 					_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-					waitUntil {!DB_Async_Active};
+					
 					[_query,1] call DB_fnc_asyncCall;
 				};
 			};

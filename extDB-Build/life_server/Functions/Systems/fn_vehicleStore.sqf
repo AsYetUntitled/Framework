@@ -27,7 +27,7 @@ if(_impound) then {
 		};
 	} else {
 		_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-		waitUntil {!DB_Async_Active};
+		
 		_thread = [_query,1] call DB_fnc_asyncCall;
 		//waitUntil {scriptDone _thread};
 		if(!isNil "_vehicle" && {!isNull _vehicle}) then {
@@ -50,7 +50,7 @@ if(_impound) then {
 	};
 	
 	_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-	waitUntil {!DB_Async_Active};
+	
 	_thread = [_query,1] call DB_fnc_asyncCall;
 	//waitUntil {scriptDone _thread};
 	if(!isNil "_vehicle" && {!isNull _vehicle}) then {

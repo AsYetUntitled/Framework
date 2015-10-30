@@ -6,7 +6,7 @@
 */
 private["_query","_houses"];
 _query = format["SELECT pid, pos, inventory, containers FROM houses WHERE pid='%1' AND owned='1'",_this];
-waitUntil{!DB_Async_Active};
+
 _houses = [_query,2,true] call DB_fnc_asyncCall;
 
 if(count _houses == 0) exitWith {};

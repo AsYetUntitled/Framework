@@ -26,7 +26,7 @@ _servIndex = serv_sv_use find _vid;
 
 _query = format["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
-waitUntil{sleep (random 0.3); !DB_Async_Active};
+
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
@@ -66,7 +66,7 @@ if(count _nearVehicles > 0) exitWith {
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
-waitUntil {!DB_Async_Active};
+
 [_query,false] spawn DB_fnc_asyncCall;
 if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];

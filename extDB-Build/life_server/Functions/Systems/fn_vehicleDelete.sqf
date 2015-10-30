@@ -18,5 +18,5 @@ _unit = owner _unit;
 
 _query = format["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
-waitUntil {!DB_Async_Active};
+
 _thread = [_query,1] call DB_fnc_asyncCall;

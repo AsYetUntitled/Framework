@@ -85,7 +85,7 @@ class FSM
        "" \n
        "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
        "			_query spawn {" \n
-       "				waitUntil {!DB_Async_Active};" \n
+       "				" \n
        "				_thread = [_this,1] spawn DB_fnc_asyncCall;" \n
        "			};" \n
        "		};" \n
@@ -106,7 +106,7 @@ class FSM
        "" \n
        "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
        "			_query spawn {" \n
-       "				waitUntil {!DB_Async_Active};" \n
+       "				" \n
        "				_thread = [_this,1] spawn DB_fnc_asyncCall;" \n
        "			};" \n
        "		};" \n

@@ -78,5 +78,5 @@ switch(_mode) do {
 };
 
 if(_query == "") exitWith {};
-waitUntil {!DB_Async_Active};
+
 [_query,1] call DB_fnc_asyncCall;

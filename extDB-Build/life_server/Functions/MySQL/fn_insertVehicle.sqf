@@ -1,7 +1,7 @@
 /*
 	File: fn_insertVehicle.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Inserts the vehicle into the database
 */
@@ -18,5 +18,5 @@ if(_uid == "" OR _side == "" OR _type == "" OR _className == "" OR _color == -1 
 
 _query = format["INSERT INTO vehicles (side, classname, type, pid, alive, active, inventory, color, plate) VALUES ('%1', '%2', '%3', '%4', '1','1','""[]""', '%5', '%6')",_side,_className,_type,_uid,_color,_plate];
 
-waitUntil {sleep (random 0.3); !DB_Async_Active};
+
 [_query,1] call DB_fnc_asyncCall;
