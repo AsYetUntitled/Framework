@@ -16,14 +16,15 @@
 #define Title 37401
 
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
+disableSerialization;
+_curTarget = param [0,ObjNull,[ObjNull]];
+if(isNull _curTarget) exitWith {}; //Bad target
+_houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
+if(EQUAL(count _houseCfg,0) && playerSide == civilian) exitWith {};
+
 if(!dialog) then {
 	createDialog "pInteraction_Menu";
 };
-disableSerialization;
-_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-_houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
-if(EQUAL(count _houseCfg,0)) exitWith {closeDialog 0;};
 
 _Btn1 = CONTROL(37400,Btn1);
 _Btn2 = CONTROL(37400,Btn2);

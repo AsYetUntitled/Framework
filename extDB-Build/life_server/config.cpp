@@ -1,8 +1,6 @@
 class DefaultEventhandlers;
-class CfgPatches 
-{
-	class life_server
-	{
+class CfgPatches {
+	class life_server {
 		units[] = {"C_man_1"};
 		weapons[] = {};
 		requiredAddons[] = {"A3_Data_F","A3_Soft_F","A3_Soft_F_Offroad_01","A3_Characters_F"};
@@ -11,10 +9,14 @@ class CfgPatches
 	};
 };
 
-class CfgFunctions
-{
-	class BIS_Overwrite
-	{
+class Life_Server_Settings {
+	class EXTDB {
+		DatabaseName = "AltisLife";
+	};
+};
+
+class CfgFunctions {
+	class BIS_Overwrite {
 		tag = "BIS";
 		class MP
 		{
@@ -33,8 +35,7 @@ class CfgFunctions
 		};
 	};
 	
-	class MySQL_Database
-	{
+	class MySQL_Database {
 		tag = "DB";
 		class MySQL
 		{
@@ -53,11 +54,9 @@ class CfgFunctions
 		};
 	};
 	
-	class Life_System
-	{
+	class Life_System {
 		tag = "life";
-		class Wanted_Sys
-		{
+		class Wanted_Sys {
 			file = "\life_server\Functions\WantedSystem";
 			class wantedFetch {};
 			class wantedPerson {};
@@ -69,23 +68,19 @@ class CfgFunctions
 			class wantedPunish {};
 		};
 		
-		class Jail_Sys
-		{
+		class Jail_Sys {
 			file = "\life_server\Functions\Jail";
 			class jailSys {};
 		};
 		
-		class Client_Code
-		{
+		class Client_Code {
 			file = "\life_server\Functions\Client";
 		};
 	};
 	
-	class TON_System
-	{
+	class TON_System {
 		tag = "TON";
-		class Systems
-		{
+		class Systems {
 			file = "\life_server\Functions\Systems";
 			class managesc {};
 			class cleanup {};
@@ -107,8 +102,7 @@ class CfgFunctions
 			class keyManagement {};
 		};
 		
-		class Housing
-		{
+		class Housing {
 			file = "\life_server\Functions\Housing";
 			class addHouse {};
 			class fetchPlayerHouses {};
@@ -119,8 +113,7 @@ class CfgFunctions
 			class houseCleanup {};
 		};
 		
-		class Gangs
-		{
+		class Gangs {
 			file = "\life_server\Functions\Gangs";
 			class insertGang {};
 			class queryPlayerGang {};
@@ -128,28 +121,23 @@ class CfgFunctions
 			class updateGang {};
 		};
 
-		class Actions
-		{
+		class Actions {
 			file = "\life_server\Functions\Actions";
 			class pickupAction {};
 		};
 	};
 };
 
-class CfgVehicles
-{
+class CfgVehicles {
 	class Car_F;
 	class CAManBase;
 	class Civilian;
-	class Civilian_F : Civilian
-	{
+	class Civilian_F : Civilian {
 		class EventHandlers;
 	};
 	
-	class C_man_1 : Civilian_F
-	{
-		class EventHandlers: EventHandlers
-		{
+	class C_man_1 : Civilian_F {
+		class EventHandlers: EventHandlers {
 			init = "(_this select 0) execVM ""\life_server\fix_headgear.sqf""";
 		};
 	};

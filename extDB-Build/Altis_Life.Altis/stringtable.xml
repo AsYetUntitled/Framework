@@ -2617,6 +2617,9 @@
 			<Italian>La porta è già sbloccata!</Italian>
 			<Portuguese>A porta está destrancada!</Portuguese>
 		</Key>
+		<Key ID="STR_House_FedDoor_Locked">
+			<Original>The door is already locked!</Original>
+		</Key>
 		<Key ID="STR_House_Raid_Progress">
 			<Original>Breaking lock on door</Original>
 			<German>Türschloss wird aufgebrochen</German>

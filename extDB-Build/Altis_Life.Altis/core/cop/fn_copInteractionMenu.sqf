@@ -21,7 +21,7 @@ if(!dialog) then {
 	createDialog "pInteraction_Menu";
 };
 disableSerialization;
-_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_curTarget = param [0,ObjNull,[ObjNull]];
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 
 if(_curTarget isKindOf "House_F") exitWith {

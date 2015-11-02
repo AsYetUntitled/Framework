@@ -29,15 +29,15 @@ if(_zone == "") exitWith {
 _item = switch(true) do {
 	case (_zone in ["apple_1","apple_2","apple_3","apple_4"]): {"apple"};
 	case (_zone in ["peaches_1","peaches_2","peaches_3","peaches_4"]): {"peach"};
-	case (_zone in ["heroin_1"]): {"heroinu"};
-	case (_zone in ["cocaine_1"]): {"cocaine"};
+	case (_zone in ["heroin_1"]): {"heroin_unprocessed"};
+	case (_zone in ["cocaine_1"]): {"cocaine_unprocessed"};
 	case (_zone in ["weed_1"]): {"cannabis"};
-	case (_zone in ["lead_1"]): {"copperore"};
-	case (_zone in ["iron_1"]): {"ironore"};
-	case (_zone in ["salt_1"]): {"salt"};
+	case (_zone in ["lead_1"]): {"copper_unrefined"};
+	case (_zone in ["iron_1"]): {"iron_unrefined"};
+	case (_zone in ["salt_1"]): {"salt_unrefined"};
 	case (_zone in ["sand_1"]): {"sand"};
-	case (_zone in ["diamond_1"]): {"diamond"};
-	case (_zone in ["oil_1","oil_2"]): {"oilu"};
+	case (_zone in ["diamond_1"]): {"diamond_uncut"};
+	case (_zone in ["oil_1","oil_2"]): {"oil_unprocessed"};
 	case (_zone in ["rock_1"]): {"rock"};
 	default {""};
 };

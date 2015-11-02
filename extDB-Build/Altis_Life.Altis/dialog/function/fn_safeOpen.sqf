@@ -7,7 +7,7 @@
 	Opens the safe inventory menu.
 */
 if(dialog) exitWith {}; //A dialog is already open.
-life_safeObj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+life_safeObj = param [0,ObjNull,[ObjNull]];
 if(isNull life_safeObj) exitWith {};
 if(playerSide != civilian) exitWith {};
 if((life_safeObj GVAR ["safe",-1]) < 1) exitWith {hint localize "STR_Civ_VaultEmpty";};

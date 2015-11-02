@@ -24,17 +24,17 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 	SVAR_UINS ["life_sql_id",life_sql_id];
 
   try {
-    _result = "extDB2" callExtension format["9:ADD_DATABASE:%1","Database2"];
-    if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
-    _result = "extDB2" callExtension format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),"Database2"];
-    if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+	_result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
+	if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+	_result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+	if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
   } catch {
     diag_log _exception;
     life_server_extDB_notLoaded = [true, _exception];
     PVAR_ALL("life_server_extDB_notLoaded");
   };
   __EXIT(!(EQUAL(life_server_extDB_notLoaded,"")));
-  "extDB2" callExtension "9:LOCK";
+  EXTDB "9:LOCK";
   diag_log "extDB2: Connected to Database";
 } else {
 	life_sql_id = GVAR_UINS "life_sql_id";
@@ -45,10 +45,10 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB did not fully initialize so terminate the rest of the initialization process.
 
 /* Run stored procedures for SQL side cleanup */
-["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
-["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
-["CALL deleteOldHouses",1] spawn DB_fnc_asyncCall;
-["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall;
+["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
+["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
+["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
+["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 
 /* Map-based server side initialization. */
 master_group attachTo[bank_obj,[0,0,0]];

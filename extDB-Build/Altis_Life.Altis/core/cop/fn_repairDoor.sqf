@@ -6,7 +6,7 @@
 	Re-locks the door mainly for the federal reserve structures.
 */
 private["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText"];
-_building = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_building = param [0,ObjNull,[ObjNull]];
 if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint "You are not looking at a house door."};
 
@@ -23,7 +23,7 @@ for "_i" from 1 to _doors do {
 
 if(EQUAL(_door,0)) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 _doorN = _building GVAR [format["bis_disabled_Door_%1",_door],0];
-if(EQUAL(_doorN,1)) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+if(EQUAL(_doorN,1)) exitWith {hint localize "STR_House_FedDoor_Locked"};
 life_action_inUse = true;
 
 closeDialog 0;
@@ -44,8 +44,7 @@ switch (typeOf _building) do {
 	default {_cpRate = 0.08;}
 };
 
-while {true} do
-{
+while {true} do {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1",true],"life_fnc_animSync",true,false] call life_fnc_MP;
 		player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";

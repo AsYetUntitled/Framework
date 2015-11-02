@@ -8,14 +8,14 @@
 	Needs to be revised.
 */
 private["_dp","_target"];
-_target = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(str(_target) in LIFE_SETTINGS(getArray,"delivery_pointsr")) then {
+_target = param [0,ObjNull,[ObjNull]];
+if(str(_target) in LIFE_SETTINGS(getArray,"delivery_points")) then {
 	private "_point";
-	_point = LIFE_SETTINGS(getArray,"delivery_pointsr");
+	_point = LIFE_SETTINGS(getArray,"delivery_points");
 	_point deleteAt (_point find (str(_target)));
 	_dp = _point call BIS_fnc_selectRandom;
 } else {
-	_dp = LIFE_SETTINGS(getArray,"delivery_pointsr") call BIS_fnc_selectRandom;
+	_dp = LIFE_SETTINGS(getArray,"delivery_points") call BIS_fnc_selectRandom;
 };
 
 life_dp_start = _target;

@@ -18,7 +18,7 @@ _safeInfo = life_safeObj GVAR ["safe",0];
 if(!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
 _num = parseNumber(_num);
 if(_num < 1) exitWith {hint localize "STR_Cop_VaultUnder1";};
-if(!(EQUAL(_ctrl,"goldbar"))) exitWith {hint localize "STR_Cop_OnlyGold"};
+if(!(EQUAL(_ctrl,"goldBar"))) exitWith {hint localize "STR_Cop_OnlyGold"};
 if(_num > _safeInfo) exitWith {hint format[localize "STR_Civ_IsntEnoughGold",_num];};
 
 //Secondary checks

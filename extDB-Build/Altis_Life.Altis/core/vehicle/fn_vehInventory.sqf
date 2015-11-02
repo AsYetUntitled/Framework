@@ -37,7 +37,7 @@ if(EQUAL(count _data,0)) then {_veh setVariable["Trunk",[[],0],true]; _data = []
 	if(_val > 0) then {
 		_pInv lbAdd format["[%1] - %2",_val,localize (getText(_x >> "displayName"))];
 		_pInv lbSetData [(lbSize _pInv)-1,configName _x];
-		_icon = M_CONFIG(getText,"VirtualItems",_x,"icon");
+		_icon = (getText(_x >> "icon"));
 		if(!(EQUAL(_icon,""))) then {
 			_pInv lbSetPicture [(lbSize _pInv)-1,_icon];
 		};
