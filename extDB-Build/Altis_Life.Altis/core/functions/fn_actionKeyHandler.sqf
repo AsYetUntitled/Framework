@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_actionKeyHandler.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -99,11 +99,11 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		} else {
 			//OK, it wasn't a vehicle so let's see what else it could be?
 			if((typeOf _curTarget) in _miscItems) then {
-				[[_curTarget,player,false],"TON_fnc_pickupAction",false,false,true] call life_fnc_MP;
+				[_curTarget,player,false] remoteExecCall ["TON_fnc_pickupAction",RSERV];
 			} else {
 				//It wasn't a misc item so is it money?
 				if(EQUAL((typeOf _curTarget),_money) && {!(_curTarget GVAR ["inUse",false])}) then {
-					[[_curTarget,player,true],"TON_fnc_pickupAction",false,false,true] call life_fnc_MP;
+					[_curTarget,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
 				};
 			};
 		};

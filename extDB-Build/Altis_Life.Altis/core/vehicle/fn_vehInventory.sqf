@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_vehInventory.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -7,7 +7,7 @@
 	Used a refresher for the vehicle inventory / trunk menu items.
 */
 private["_veh","_tInv","_pInv","_veh_data"];
-_veh = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_veh = param [0,ObjNull,[ObjNull]];
 if(isNull _veh OR !alive _veh) exitWith {closeDialog 0;}; //If null / dead exit menu
 disableSerialization;
 

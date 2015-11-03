@@ -1,3 +1,4 @@
+#include "\life_server\script_macros.hpp"
 /*
 	File: fn_queryRequest.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -39,11 +40,11 @@ diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
 
 if(typeName _queryResult == "STRING") exitWith {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] call life_fnc_MP;
+	[] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
 if(count _queryResult == 0) exitWith {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] call life_fnc_MP;
+	[] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
 //Blah conversion thing from a2net->extdb
@@ -91,4 +92,4 @@ switch (_side) do {
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
 _queryResult set[12,_keyArr];
 
-[_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] call life_fnc_MP;
+_queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

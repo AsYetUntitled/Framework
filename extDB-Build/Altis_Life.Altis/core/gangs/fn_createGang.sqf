@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -18,7 +18,7 @@ _badChar = false;
 if(_badChar) exitWith {hint localize "STR_GNOTF_IncorrectChar";};
 if(BANK < (LIFE_SETTINGS(getNumber,"gang_price"))) exitWith {hint format[localize "STR_GNOTF_NotEnoughMoney",[((LIFE_SETTINGS(getNumber,"gang_price")) - BANK)] call life_fnc_numberText];};
 
-[[player,getPlayerUID player,_gangName],"TON_fnc_insertGang",false,false] call life_fnc_MP;
+[player,getPlayerUID player,_gangName] remoteExec ["TON_fnc_insertGang",RSERV];
 hint localize "STR_NOTF_SendingData";
 closeDialog 0;
 life_action_gangInUse = true;

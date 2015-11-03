@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_weaponShopFilter.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -19,12 +19,9 @@ _priceTag ctrlSetStructuredText parseText "";
 _itemList = ((findDisplay 38400) displayCtrl 38403);
 lbClear _itemList;
 
-switch (_index) do
-{
-	case 0:
-	{
-		_config = [_shop] call life_fnc_weaponShopCfg;
-		{
+switch (_index) do {
+	case 0: {
+		_config = [_shop] call life_fnc_weaponShopCfg; {
 			_itemInfo = [_x select 0] call life_fnc_fetchCfgDetails;
 			_itemList lbAdd format["%1",if(isNil {_x select 1}) then {_itemInfo select 1} else {_x select 1}];
 			_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
@@ -35,8 +32,7 @@ switch (_index) do
 		((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
 	};
 	
-	case 1:
-	{
+	case 1: {
 		private["_listedItems"];
 		_config = [];
 		_listedItems = [];
@@ -54,18 +50,14 @@ switch (_index) do
 		
 		((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Sell";
 		{
-			if(!(_x in _listedItems) && _x != "") then
-			{
+			if(!(_x in _listedItems) && _x != "") then {
 				_itemInfo = [_x] call life_fnc_fetchCfgDetails;
 				_listedItems pushBack _x;
 				
 				_itemCount = {_x == (_itemInfo select 0)} count _config;
-				if(_itemCount > 1) then
-				{
+				if(_itemCount > 1) then {
 					_itemList lbAdd format["[%2] %1",_itemInfo select 1,_itemCount];
-				}
-					else
-				{
+				} else {
 					_itemList lbAdd format["%1",_itemInfo select 1];
 				};
 				_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];

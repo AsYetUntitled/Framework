@@ -22,7 +22,7 @@ compileFinal "
 	if(isNull _ret) exitWith {};
 	if(isNil ""_ret"") exitWith {};
 	
-	[[life_atmbank,life_cash,owner player,player],""life_fnc_admininfo"",_ret,false] call life_fnc_MP;
+	[life_atmbank,life_cash,owner player,player] remoteExecCall [""life_fnc_admininfo"",_ret];
 ";
 publicVariable "TON_fnc_player_query";
 publicVariable "TON_fnc_index";
@@ -76,7 +76,7 @@ compileFinal "
 		_name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
 		hint format[""%1 has gave you keys for a %2"",_giver,_name];
 		life_vehicles pushBack _vehicle;
-		[[getPlayerUID player,playerSide,_vehicle,1],""TON_fnc_keyManagement"",false,false] call life_fnc_MP;
+		[getPlayerUID player,playerSide,_vehicle,1] remoteExecCall [""TON_fnc_keyManagement"",2];
 	};
 ";
 
@@ -116,7 +116,7 @@ private[""_msg"",""_to""];
 	_to = ""EMS Units"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3022,true];};
 		
-	[[_msg,name player,5],""TON_fnc_clientMessage"",independent,false] call life_fnc_MP;
+	[_msg,name player,5] remoteExecCall [""TON_fnc_clientMessage"",independent];
 	[] call life_fnc_cellphone;
 	hint format[""You have sent a message to all EMS Units."",_to,_msg];
 	ctrlShow[3022,true];
@@ -133,7 +133,7 @@ compileFinal "
 	if(isNil ""_to"") exitWith {ctrlShow[3015,true];};
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3015,true];};
 	
-	[[_msg,name player,0],""TON_fnc_clientMessage"",_to,false] call life_fnc_MP;
+	[_msg,name player,0] remoteExecCall [""TON_fnc_clientMessage"",_to];
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",name _to,_msg];
 	ctrlShow[3015,true];
@@ -147,7 +147,7 @@ compileFinal "
 	_to = ""The Police"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
 		
-	[[_msg,name player,1],""TON_fnc_clientMessage"",true,false] call life_fnc_MP;
+	[_msg,name player,1] remoteExecCall [""TON_fnc_clientMessage"",-2];
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3016,true];
@@ -161,7 +161,7 @@ compileFinal "
 	_to = ""The Admins"";
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3017,true];};
 		
-	[[_msg,name player,2],""TON_fnc_clientMessage"",true,false] call life_fnc_MP;
+	[_msg,name player,2] remoteExecCall [""TON_fnc_clientMessage"",-2];
 	[] call life_fnc_cellphone;
 	hint format[""You sent %1 a message: %2"",_to,_msg];
 	ctrlShow[3017,true];
@@ -177,7 +177,7 @@ compileFinal "
 	if(isNull _to) exitWith {};
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
 	
-	[[_msg,name player,3],""TON_fnc_clientMessage"",_to,false] call life_fnc_MP;
+	[_msg,name player,3] remoteExecCall [""TON_fnc_clientMessage"",_to];
 	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To: %1 - Message: %2"",name _to,_msg];
 ";
@@ -190,7 +190,7 @@ compileFinal "
 	_msg = ctrlText 3003;
 	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
 	
-	[[_msg,name player,4],""TON_fnc_clientMessage"",true,false] call life_fnc_MP;
+	[_msg,name player,4] remoteExecCall [""TON_fnc_clientMessage"",-2];
 	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To All: %1"",_msg];
 ";

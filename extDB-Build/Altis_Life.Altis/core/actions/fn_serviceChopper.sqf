@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_serviceChopper.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -9,9 +9,12 @@
 disableSerialization;
 private["_search","_ui","_progress","_cP","_pgText","_title"];
 if(life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
+
 _search = nearestObjects[getPos air_sp, ["Air"],5];
+
 if(EQUAL(count _search,0)) exitWith {hint localize "STR_Service_Chopper_NoAir"};
 if(CASH < 1000) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
+
 SUB(CASH,1000);
 life_action_inUse = true;
 _title = localize "STR_Service_Chopper_Servicing";
@@ -23,8 +26,7 @@ _pgText ctrlSetText format["%2 (1%1)...","%",_title];
 _progress progressSetPosition 0.01;
 _cP = 0.01;
 
-while {true} do
-{
+while {true} do {
 	sleep  0.2;
 	_cP = _cP + 0.01;
 	_progress progressSetPosition _cP;
@@ -33,14 +35,12 @@ while {true} do
 };
 
 if(!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 10) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
-if(!local SEL(_search,0)) then
-{
-	[[SEL(_search,0),1],"life_fnc_setFuel",SEL(_search,0),false] call life_fnc_MP;
-}
-	else
-{
+if(!local SEL(_search,0)) then {
+	[SEL(_search,0),1] remoteExecCall ["life_fnc_setFuel",SEL(_search,0)];
+} else {
 	SEL(_search,0) setFuel 1;
 };
+
 SEL(_search,0) setDamage 0;
 
 5 cutText ["","PLAIN"];

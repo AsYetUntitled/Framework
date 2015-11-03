@@ -28,3 +28,4 @@ _containers = nearestObjects[(getPosATL _house),["Box_IND_Grenades_F","B_supplyC
 
 [_query,1] call DB_fnc_asyncCall;
 _house setVariable["house_sold",nil,true];
+["CALL deleteOldHouses",1] call DB_fnc_asyncCall;

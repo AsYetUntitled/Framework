@@ -27,7 +27,7 @@ corpseRemovalMaxTime = 9999;
 SPY_Enable = true;
 
 #include "Config_Spyglass.hpp"
-
+#include "CfgRemoteExec.hpp"
 #include "dialog\MasterHandler.h"
 #include "Config_Master.hpp"
 

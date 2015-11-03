@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -12,7 +12,8 @@ if(isNull (findDisplay 2620)) then {
 };
 
 _ownerID = grpPlayer GVAR ["gang_owner",""];
-if(_ownerID == "") exitWith {closeDialog 0;}; //Bad juju
+if(EQUAL(_ownerID,"")) exitWith {closeDialog 0;}; //Bad juju
+
 _gangName = grpPlayer getVariable "gang_name";
 _gangBank = GANG_FUNDS;
 _gangMax = grpPlayer getVariable "gang_maxMembers";
@@ -43,6 +44,7 @@ lbClear _members;
 
 _grpMembers = units grpPlayer;
 _allUnits = playableUnits;
+
 //Clear out the list..
 {
 	if(_x in _grpMembers OR side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {

@@ -11,11 +11,8 @@ if(isNull _unit) exitWith {[]};
 
 _index = [getPlayerUID _unit,life_wanted_list] call TON_fnc_index;
 
-if(_index != -1) then
-{
+if(_index != -1) then {
 	life_wanted_list select _index;
-}
-	else
-{
+} else {
 	[];
 };

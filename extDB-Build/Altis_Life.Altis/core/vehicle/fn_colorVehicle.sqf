@@ -1,24 +1,27 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
 	Reskins the vehicle
 */
-private["_vehicle","_index","_textures"];
-_vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
-_index = [_this,1,-1,[0]] call BIS_fnc_param;
+private "_textures";
+params [
+	["_vehicle",objNull,[objNull]],
+	["_index",-1,[0]]
+];
+
 if(isNull _vehicle OR !alive _vehicle OR EQUAL(_index,-1)) exitWith {};
 //Does the vehicle already have random styles? Halt till it's set.
 
 if(local _vehicle) then {
 	switch (typeOf _vehicle) do {
-		case "C_Offroad_01_F": {[[_vehicle,"color",3,true],"TON_fnc_setObjVar",false,false] call life_fnc_MP;};
-		case "C_Hatchback_01_F": {[[_vehicle,"color",1,true],"TON_fnc_setObjVar",false,false] call life_fnc_MP;};
-		case "C_Hatchback_01_sport_F": {[[_vehicle,"color",1,true],"TON_fnc_setObjVar",false,false] call life_fnc_MP;};
-		case "C_SUV_01_F": {[[_vehicle,"color",1,true],"TON_fnc_setObjVar",false,false] call life_fnc_MP;};
-		case "C_Van_01_box_F": {[[_vehicle,"color",1,true],"TON_fnc_setObjVar",false,false] call life_fnc_MP;};
-		case "C_Van_01_transport_F": {[[_vehicle,"color",1,true],"TON_fnc_setObjVar",false,false] call life_fnc_MP;};
+		case "C_Offroad_01_F": {[_vehicle,"color",3,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];};
+		case "C_Hatchback_01_F": {[_vehicle,"color",1,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];};
+		case "C_Hatchback_01_sport_F": {[_vehicle,"color",1,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];};
+		case "C_SUV_01_F": {[_vehicle,"color",1,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];};
+		case "C_Van_01_box_F": {[_vehicle,"color",1,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];};
+		case "C_Van_01_transport_F": {[_vehicle,"color",1,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];};
 	};
 };
 

@@ -9,8 +9,7 @@ private["_building","_arr","_restricted","_exitLoop","_i"];
 _building = _this select 0;
 _arr = [];
 
-_restricted = switch(typeOf _building) do
-{
+_restricted = switch(typeOf _building) do {
 case "Land_i_House_Big_02_V1_F": {[0,1,2,3,4]};
 case "Land_i_House_Big_02_V2_F": {[0,1,2,3,4]};
 case "Land_i_House_Big_02_V3_F": {[0,1,2,3,4]};

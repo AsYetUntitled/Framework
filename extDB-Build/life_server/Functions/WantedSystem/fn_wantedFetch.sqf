@@ -1,3 +1,4 @@
+#include "\life_server\script_macros.hpp"
 /*
 	File: fn_wantedFetch.sqf
 	Author: Bryan "Tonic" Boardwine"
@@ -16,11 +17,10 @@ _jailedUnits = [];
 _list = [];
 {
 	_uid = _x select 1;
-	if([_uid] call life_fnc_isUIDActive) then
-	{
+	if([_uid] call life_fnc_isUIDActive) then {
 		if(!(_uid in _jailedUnits)) then {
 			_list pushBack _x;
 		};
 	};
 } foreach life_wanted_list;
-[[_list],"life_fnc_wantedList",_ret,false] call life_fnc_MP;
+[_list] remoteExecCall ["life_fnc_wantedList",_ret];

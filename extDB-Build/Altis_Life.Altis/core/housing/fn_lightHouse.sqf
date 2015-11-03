@@ -5,11 +5,16 @@
 	Tells clients to either turn the lights on for that house
 	or off.
 */
-private["_house","_mode","_lightSource","_exit"];
-_house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-_mode = [_this,1,false,[true]] call BIS_fnc_param;
+private["_lightSource","_exit"];
+params [
+	["_house",objNull,[objNull]],
+	["_mode",false,[false]]
+];
+
+
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
+
 _exit = false;
 if(_mode) then {
 	_lightSource = "#lightpoint" createVehicleLocal [0,0,0];

@@ -44,12 +44,12 @@ if(EQUAL(count _vInfo,0)) exitWith {serv_sv_use deleteAt _servIndex;};
 
 if(EQUAL(SEL(_vInfo,5),0)) exitWith {
 	serv_sv_use deleteAt _servIndex;
-	[[1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]],"life_fnc_broadcast",_unit,false,true] call life_fnc_MP;
+	[1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if(EQUAL(SEL(_vInfo,6),1)) exitWith {
 	serv_sv_use deleteAt _servIndex;
-	[[1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]],"life_fnc_broadcast",_unit,false,true] call life_fnc_MP;
+	[1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if!(EQUAL(typeName _sp,typeName "")) then {
@@ -60,8 +60,8 @@ if!(EQUAL(typeName _sp,typeName "")) then {
 
 if(count _nearVehicles > 0) exitWith {
 	serv_sv_use deleteAt _servIndex;
-	[[_price,_unit_return],"life_fnc_garageRefund",_unit,false] call life_fnc_MP;
-	[[1,(localize "STR_Garage_SpawnPointError")],"life_fnc_broadcast",_unit,false,true] call life_fnc_MP;
+	[_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
+	[1,(localize "STR_Garage_SpawnPointError")] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];
@@ -85,11 +85,11 @@ if(typeName _sp == "STRING") then {
 };
 _vehicle allowDamage true;
 //Send keys over the network.
-[[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] call life_fnc_MP;
+[_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain",_unit];
 [_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
 _vehicle lock 2;
 //Reskin the vehicle 
-[[_vehicle,_vInfo select 8],"life_fnc_colorVehicle",nil,false] call life_fnc_MP;
+[_vehicle,_vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",RANY];
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
 //_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"]; //Obsolete function?
@@ -98,15 +98,15 @@ _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
 //Sets of animations
 
 if(EQUAL(SEL(_vInfo,1),"civ") && EQUAL(SEL(_vInfo,2),"B_Heli_Light_01_F") && !(EQUAL(SEL(_vInfo,8),13))) then {
-	[[_vehicle,"civ_littlebird",true],"life_fnc_vehicleAnimate",_unit,false] call life_fnc_MP;
+	[_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
 if(EQUAL(SEL(_vInfo,1),"cop") && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
-	[[_vehicle,"cop_offroad",true],"life_fnc_vehicleAnimate",_unit,false] call life_fnc_MP;
+	[_vehicle,"cop_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
 if(EQUAL(SEL(_vInfo,1),"med") && EQUAL(SEL(_vInfo,2),"C_Offroad_01_F")) then {
-	[[_vehicle,"med_offroad",true],"life_fnc_vehicleAnimate",_unit,false] call life_fnc_MP;
+	[_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
-[[1,"Your vehicle is ready!"],"life_fnc_broadcast",_unit,false,true] call life_fnc_MP;
+[1,"Your vehicle is ready!"] remoteExecCall ["life_fnc_broadcast",_unit];
 serv_sv_use deleteAt _servIndex;

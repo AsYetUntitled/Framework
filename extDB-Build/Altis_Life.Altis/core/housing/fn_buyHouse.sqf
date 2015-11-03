@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -6,8 +6,8 @@
 	Buys the house?
 */
 private["_house","_uid","_action","_houseCfg"];
-_house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-_uid = getPlayerUID player;
+_house = param [0,ObjNull,[ObjNull]];
+_uid = steamid;
 
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
@@ -28,7 +28,7 @@ _action = [
 
 if(_action) then {
 	if(BANK < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
-	[[_uid,_house],"TON_fnc_addHouse",false,false] call life_fnc_MP;
+	[_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
 	_house SVAR ["house_owner",[_uid,profileName],true];
 	_house SVAR ["locked",true,true];
 	_house SVAR ["Trunk",[[],0],true];

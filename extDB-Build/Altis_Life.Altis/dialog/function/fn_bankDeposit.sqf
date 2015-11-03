@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_bankDeposit.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -6,7 +6,7 @@
 	Description:
 	Figure it out.
 */
-private["_value"];
+private "_value";
 _value = parseNumber(ctrlText 2702);
 
 //Series of stupid checks

@@ -1,3 +1,4 @@
+#include "\life_server\script_macros.hpp"
 /*
 	File: fn_spikeStrip.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -17,5 +18,5 @@ if(isNull _spikeStrip) exitWith {}; //It was picked up?
 _vehicle = _nearVehicles select 0;
 
 if(isNil "_vehicle") exitWith {deleteVehicle _spikeStrip;};
-[[_vehicle],"life_fnc_spikeStripEffect",_vehicle,false] call life_fnc_MP;
+[_vehicle] remoteExec ["life_fnc_spikeStripEffect",_vehicle];
 deleteVehicle _spikeStrip;

@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_p_openMenu.sqf
 	Author: Bryan "Tonic" Boardwine

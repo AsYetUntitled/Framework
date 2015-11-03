@@ -1,3 +1,4 @@
+/* System Wide Stuff */
 #define SYSTEM_TAG "life"
 #define ITEM_TAG format["%1%2",SYSTEM_TAG,"item_"]
 #define SUB(var1,var2) var1 = var1 - var2
@@ -44,16 +45,10 @@
 #define PISTOL handgunWeapon player
 #define PISTOL_ITEMS handgunItems player
 #define LAUNCHER secondaryWeapon player
-#define EXTDB "extDB2" callExtension
-#define EXTDB_SETTING(TYPE,SETTING) TYPE(configFile >> "Life_Server_Settings" >> "EXTDB" >> SETTING)
-#define EXTDB_FAILED(MESSAGE) \
-	life_server_extDB_notLoaded = [true,##MESSAGE]; \
-	PVAR_ALL("life_server_extDB_notLoaded"); \
-	diag_log MESSAGE;
 
 //Display Macros
 #define CONTROL(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
-#define CONTROL_DATA(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+#define CONTROL_DATA(ctrl) (lbData[ctrl,lbCurSel ctrl])
 #define CONTROL_DATAI(ctrl,index) ctrl lbData index
 
 //System Macros

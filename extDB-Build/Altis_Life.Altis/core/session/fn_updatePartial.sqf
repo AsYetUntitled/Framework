@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -8,7 +8,7 @@
 	through life_fnc_MP
 */
 private["_mode","_packet","_array","_flag"];
-_mode = [_this,0,0,[0]] call BIS_fnc_param;
+_mode = param [0,0,[0]];
 _packet = [steamid,playerSide,nil,_mode];
 _array = [];
 _flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
@@ -50,4 +50,4 @@ switch(_mode) do {
 	};
 };
 
-[_packet,"DB_fnc_updatePartial",false,false] call life_fnc_MP;
+_packet remoteExecCall ["DB_fnc_updatePartial",RSERV];

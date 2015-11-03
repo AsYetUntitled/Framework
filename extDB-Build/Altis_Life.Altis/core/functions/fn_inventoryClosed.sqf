@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -7,7 +7,7 @@
 	is closed a sync request is sent off to the server.
 */
 private "_container";
-_container = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
+_container = param [1,ObjNull,[ObjNull]];
 if(isNull _container) exitWith {}; //MEH
 
 if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
@@ -21,5 +21,5 @@ if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 		};
 	};
 	if(!isNil "_exit" OR !(_house isKindOf "House_F")) exitWith {systemChat localize "STR_House_ContainerError"};
-	[[_house],"TON_fnc_updateHouseContainers",false,false] call life_fnc_MP;
+	[_house] remoteExecCall ["TON_fnc_updateHouseContainers",RSERV];
 };

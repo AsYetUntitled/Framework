@@ -23,23 +23,24 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 	CONSTVAR(life_sql_id);
 	SVAR_UINS ["life_sql_id",life_sql_id];
 
-  try {
-	_result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-	if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
-	_result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-	if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
-  } catch {
-    diag_log _exception;
-    life_server_extDB_notLoaded = [true, _exception];
-    PVAR_ALL("life_server_extDB_notLoaded");
-  };
-  __EXIT(!(EQUAL(life_server_extDB_notLoaded,"")));
-  EXTDB "9:LOCK";
-  diag_log "extDB2: Connected to Database";
+	try {
+		_result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
+		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+		_result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+	} catch {
+		diag_log _exception;
+		life_server_extDB_notLoaded = [true, _exception];
+		PVAR_ALL("life_server_extDB_notLoaded");
+	};
+	
+	__EXIT(!(EQUAL(life_server_extDB_notLoaded,"")));
+	EXTDB "9:LOCK";
+	diag_log "extDB2: Connected to Database";
 } else {
 	life_sql_id = GVAR_UINS "life_sql_id";
 	CONSTVAR(life_sql_id);
-  diag_log "extDB2: Still Connected to Database";
+	diag_log "extDB2: Still Connected to Database";
 };
 
 if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB did not fully initialize so terminate the rest of the initialization process.
@@ -103,8 +104,7 @@ addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect;
 life_wanted_list = [];
 [] execFSM "\life_server\FSM\cleanup.fsm";
 
-[] spawn
-{
+[] spawn {
 	private["_logic","_queue"];
 	while {true} do {
 		sleep (30 * 60);

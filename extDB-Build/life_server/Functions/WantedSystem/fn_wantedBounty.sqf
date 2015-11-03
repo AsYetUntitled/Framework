@@ -1,3 +1,4 @@
+#include "\life_server\script_macros.hpp"
 /*
 	File: fn_wantedBounty.sqf
 	Author: Bryan "Tonic" Boardwine"
@@ -12,14 +13,10 @@ _half = [_this,2,false,[false]] call BIS_fnc_param;
 if(isNull _civ OR isNull _cop) exitWith {};
 
 _id = [(getPlayerUID _civ),life_wanted_list] call TON_fnc_index;
-if(_id != -1) then
-{
-	if(_half) then
-	{
-		[[((life_wanted_list select _id) select 3) / 2,((life_wanted_list select _id) select 3)],"life_fnc_bountyReceive",(owner _cop),false] call life_fnc_MP;
-	}
-		else
-	{
-		[[(life_wanted_list select _id) select 3,(life_wanted_list select _id) select 3],"life_fnc_bountyReceive",(owner _cop),false] call life_fnc_MP;
+if(_id != -1) then {
+	if(_half) then {
+		[((life_wanted_list select _id) select 3) / 2,((life_wanted_list select _id) select 3)] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
+	} else {
+		[(life_wanted_list select _id) select 3,(life_wanted_list select _id) select 3] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
 	};
 };

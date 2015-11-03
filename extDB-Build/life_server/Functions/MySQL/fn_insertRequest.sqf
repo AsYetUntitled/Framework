@@ -1,3 +1,4 @@
+#include "\life_server\script_macros.hpp"
 /*
 	File: fn_insertRequest.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -6,12 +7,14 @@
 	Does something with inserting... Don't have time for
 	descriptions... Need to write it...
 */
-private["_uid","_name","_side","_money","_bank","_licenses","_handler","_thread","_queryResult","_query","_alias"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_name = [_this,1,"",[""]] call BIS_fnc_param;
-_money = [_this,2,0,[""]] call BIS_fnc_param;
-_bank = [_this,3,2500,[""]] call BIS_fnc_param;
-_returnToSender = [_this,4,ObjNull,[ObjNull]] call BIS_fnc_param;
+private["_handler","_thread","_queryResult","_query","_alias"];
+params [
+	["_uid","",[""]],
+	["_name","",[""]],
+	["_money",0,[""]],
+	["_bank",2500,[""]],
+	["_returnToSender",objNull,objNull]
+];
 
 //Error checks
 if((_uid == "") OR (_name == "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
@@ -30,8 +33,8 @@ diag_log format["Result: %1",_queryResult];
 diag_log "------------------------------------------------";
 
 //Double check to make sure the client isn't in the database...
-if(typeName _queryResult == "STRING") exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;}; //There was an entry!
-if(count _queryResult != 0) exitWith {[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;};
+if(typeName _queryResult == "STRING") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];}; //There was an entry!
+if(count _queryResult != 0) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];};
 
 //Clense and prepare some information.
 _name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
@@ -50,4 +53,4 @@ _query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, co
 
 
 [_query,1] call DB_fnc_asyncCall;
-[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;
+[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];

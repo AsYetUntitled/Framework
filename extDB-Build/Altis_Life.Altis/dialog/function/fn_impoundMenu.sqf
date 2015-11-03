@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_impoundMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -9,7 +9,7 @@
 */
 private["_vehicles","_control"];
 disableSerialization;
-_vehicles = [_this,0,[],[[]]] call BIS_fnc_param;
+_vehicles = param [0,[],[[]]];
 
 ctrlShow[2803,false];
 ctrlShow[2830,false];

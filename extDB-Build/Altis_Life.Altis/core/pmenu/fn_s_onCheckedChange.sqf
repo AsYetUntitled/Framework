@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -32,6 +32,6 @@ switch(_option) do {
 	
 	case "sidechat": {
 		if(EQUAL(_state,1)) then {life_sidechat = true;} else {life_sidechat = !true;};
-		[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false,true] call life_fnc_MP;
+		[player,life_sidechat,playerSide] remoteExecCall ["TON_fnc_managesc",RSERV];
 	};
 };

@@ -41,15 +41,12 @@ if(_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 _index = [_uid,life_wanted_list] call TON_fnc_index;
 
-if(_index != -1) then
-{
+if(_index != -1) then {
 	_data = life_wanted_list select _index;
 	_crimes = _data select 2;
 	_crimes pushBack (_type select 0);
 	_val = _data select 3;
 	life_wanted_list set[_index,[_name,_uid,_crimes,(_type select 1) + _val]];
-}
-	else
-{
+} else {
 	life_wanted_list pushBack [_name,_uid,[(_type select 0)],(_type select 1)];
 };

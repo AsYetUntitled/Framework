@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -17,9 +17,9 @@ if(_value > BANK) exitWith {hint localize "STR_NOTF_NotEnoughFunds"};
 SUB(BANK,_value);
 _gFund = GANG_FUNDS;
 ADD(_gFund,_value);
-grpPlayer setVariable ["gang_bank",_gFund,true];
+grpPlayer SVAR ["gang_bank",_gFund,true];
 
 hint format[localize "STR_ATM_DepositGang",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial; //Silent Sync
-[[1,grpPlayer],"TON_fnc_updateGang",false,false] call life_fnc_MP;
+[1,grpPlayer] remoteExecCall ["TON_fnc_updateGang",RSERV];

@@ -11,8 +11,7 @@ if(_uid == "") exitWith {};
 
 _index = [_uid,life_wanted_list] call TON_fnc_index;
 
-if(_index != -1) then
-{
+if(_index != -1) then {
 	life_wanted_list set[_index,-1];
 	life_wanted_list = life_wanted_list - [-1];
 	//publicVariable "life_wanted_list";

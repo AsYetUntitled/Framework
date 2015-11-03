@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -6,12 +6,15 @@
 	Raids the players house?
 */
 private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
-_house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_house = param [0,ObjNull,[ObjNull]];
+
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
 if(isNil {(_house GVAR "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
 _uid = SEL((_house GVAR "house_owner"),0);
+
 if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
+
 _houseInv = _house GVAR ["Trunk",[[],0]];
 if(_houseInv isEqualTo [[],0]) exitWith {hint localize "STR_House_Raid_Nothing"};
 life_action_inUse = true;
@@ -66,10 +69,11 @@ _value = 0;
 } foreach (SEL(_houseInv,0));
 
 if(_value > 0) then {
-	[[0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+	[0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 	ADD(BANK,round(_value / 2));
+	
 	_house SVAR ["Trunk",[_houseInvData,_houseInvVal],true];
-	[[_house],"TON_fnc_updateHouseTrunk",false,false] call life_fnc_MP;
+	[_house] remoteExecCall ["TON_fnc_updateHouseTrunk",RSERV];
 } else {
 	hint localize "STR_House_Raid_NoIllegal";
 };

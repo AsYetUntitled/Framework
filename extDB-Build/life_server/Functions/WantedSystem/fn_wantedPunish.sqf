@@ -1,3 +1,4 @@
+#include "\life_server\script_macros.hpp"
 /*
 	File: fn_wantedPunish.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -11,4 +12,4 @@ if(_uid == "") exitWith {};
 
 _index = [_uid,life_wanted_list] call TON_fnc_index;
 if(_index == -1) exitWith {};
-[[0],"life_fnc_removeLicenses",_uid,false] call life_fnc_MP;
+[0] remoteExecCall ["life_fnc_removeLicenses",_uid];

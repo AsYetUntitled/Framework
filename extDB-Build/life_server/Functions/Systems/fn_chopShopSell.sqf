@@ -36,4 +36,4 @@ life_action_inUse = false;
 PVAR_ID("life_action_inUse",_unit);
 CASH = _cash;
 PVAR_ID("life_cash",_unit);
-[[2,format[(localize "STR_NOTF_ChopSoldCar"),_displayName,[_price] call life_fnc_numberText]],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
+[2,format[(localize "STR_NOTF_ChopSoldCar"),_displayName,[_price] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",_unit];

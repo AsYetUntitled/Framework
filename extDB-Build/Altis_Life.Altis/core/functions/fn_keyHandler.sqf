@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_keyHandler.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -51,7 +51,7 @@ switch (_code) do {
 		if(_shift && {!(EQUAL(animationState player,"AovrPercMrunSrasWrflDf"))} && {isTouchingGround player} && {EQUAL(stance player,"STAND")} && {speed player > 2} && {!life_is_arrested} && {SEL((velocity player),2) < 2.5} && {time - jumpActionTime > 1.5}) then {
 			jumpActionTime = time; //Update the time.
 			[player,true] spawn life_fnc_jumpFnc; //Local execution
-			[[player,false],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP; //Global execution 
+			[player,false] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution 
 			_handled = true;
 		};
 	};
@@ -171,10 +171,10 @@ switch (_code) do {
 				titleText [localize "STR_MISC_SirensON","PLAIN"];
 				_veh SVAR ["siren",true,true];
 				if(playerSide == west) then {
-					[[_veh],"life_fnc_copSiren",nil,true] call life_fnc_MP;
+					[_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
 				} else {
 					//I do not have a custom sound for this and I really don't want to go digging for one, when you have a sound uncomment this and change medicSiren.sqf in the medical folder.
-					//[[_veh],"life_fnc_medicSiren",nil,true] call life_fnc_MP;
+					//[_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
 				};
 			};
 		};
@@ -212,14 +212,14 @@ switch (_code) do {
 						if(local _veh) then {
 							_veh lock 0;
 						} else {
-							[[_veh,0],"life_fnc_lockVehicle",_veh,false] call life_fnc_MP;
+							[_veh,0] remoteExecCall ["life_fnc_lockVehicle",_veh];
 						};
 						systemChat localize "STR_MISC_VehUnlock";
 					} else {
 						if(local _veh) then {
 							_veh lock 2;
 						} else {
-							[[_veh,2],"life_fnc_lockVehicle",_veh,false] call life_fnc_MP;
+							[_veh,2] remoteExecCall ["life_fnc_lockVehicle",_veh];
 						};	
 						systemChat localize "STR_MISC_VehLock";
 					};

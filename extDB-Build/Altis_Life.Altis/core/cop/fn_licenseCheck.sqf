@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_licenseCheck.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -7,7 +7,7 @@
 	Returns the licenses to the cop.
 */
 private["_cop","_licenses","_licensesConfigs"];
-_cop = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_cop = param [0,ObjNull,[ObjNull]];
 if(isNull _cop) exitWith {}; //Bad entry
 
 _licenses = "";
@@ -22,4 +22,4 @@ _licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses (missio
 } foreach _licensesConfigs;
 
 if(EQUAL(_licenses,"")) then {_licenses = (localize "STR_Cop_NoLicensesFound");};
-[[profileName,_licenses],"life_fnc_licensesRead",_cop,FALSE] call life_fnc_MP;
+[profileName,_licenses] remoteExecCall ["life_fnc_licensesRead",_cop];

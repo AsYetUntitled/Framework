@@ -11,24 +11,20 @@ _value = [_this,1,-1,[0]] call BIS_fnc_param;
 if(_mode == -1 OR _value == -1) exitWith {};
 disableSerialization;
 
-switch (_mode) do
-{
-	case 0:
-	{
+switch (_mode) do {
+	case 0: {
 		life_vdFoot = round(_value);
 		ctrlSetText[2902,format["%1",round(_value)]];
 		[] call life_fnc_updateViewDistance;
 	};
 	
-	case 1:
-	{
+	case 1: {
 		life_vdCar = round(_value);
 		ctrlSetText[2912,format["%1",round(_value)]];
 		[] call life_fnc_updateViewDistance;
 	};
 	
-	case 2:
-	{
+	case 2: {
 		life_vdAir = round(_value);
 		ctrlSetText[2922,format["%1",round(_value)]];
 		[] call life_fnc_updateViewDistance;

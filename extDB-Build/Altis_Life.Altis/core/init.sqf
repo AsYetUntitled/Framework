@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\script_macros.hpp"
 /*
 	Master client initialization file
 */
@@ -87,7 +87,7 @@ diag_log format["                End of Altis Life Client Init :: Total Executio
 diag_log "------------------------------------------------------------------------------------------------------";
 
 life_sidechat = true;
-[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false,true] call life_fnc_MP;
+[player,life_sidechat,playerSide] remoteExecCall ["TON_fnc_managesc",RSERV];
 0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 
@@ -95,7 +95,7 @@ life_sidechat = true;
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
 
-player SVAR ["steam64ID",getPlayerUID player];
+player SVAR ["steam64ID",steamid];
 player SVAR ["realname",profileName,true];
 
 life_fnc_moveIn = compileFinal

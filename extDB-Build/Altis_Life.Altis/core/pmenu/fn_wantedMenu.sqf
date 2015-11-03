@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_wantedMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -18,9 +18,8 @@ _units = [];
 
 ctrlSetText[2404,"Establishing connection..."];
 
-if(FETCH_CONST(life_coplevel) < 3 && FETCH_CONST(life_adminlevel) == 0) then
-{
+if(FETCH_CONST(life_coplevel) < 3 && FETCH_CONST(life_adminlevel) == 0) then {
 	ctrlShow[2405,false];
 };
 
-[[player],"life_fnc_wantedFetch",false,false] call life_fnc_MP;
+[player] remoteExecCall ["life_fnc_wantedFetch",RSERV];

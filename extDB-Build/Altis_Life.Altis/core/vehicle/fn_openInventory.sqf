@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_openInventory.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -37,11 +38,10 @@ ctrlSetText[3504,format[(localize "STR_MISC_Weight")+ " %1/%2",_veh_data select 
 [_vehicle] call life_fnc_vehInventory;
 life_trunk_vehicle = _vehicle;
 
-_vehicle spawn
-{
+_vehicle spawn {
 	waitUntil {isNull (findDisplay 3500)};
 	_this setVariable["trunk_in_use",false,true];
 	if(_this isKindOf "House_F") then {
-		[[_this],"TON_fnc_updateHouseTrunk",false,false] call life_fnc_MP;
+		[_this] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
 	};
 };

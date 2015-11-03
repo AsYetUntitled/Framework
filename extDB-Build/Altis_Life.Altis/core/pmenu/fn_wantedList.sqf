@@ -9,7 +9,7 @@
 */
 private["_info","_display","_list","_units","_entry"];
 disableSerialization;
-_info = [_this,0,[],[[]]] call BIS_fnc_param;
+_info = param [0,[],[[]]];
 _display = findDisplay 2400;
 _list = _display displayctrl 2401;
 _units = [];
@@ -28,7 +28,6 @@ _units = [];
 
 ctrlSetText[2404,"Connection Established"];
 
-if(((lbSize _list)-1) == -1) then
-{
+if(((lbSize _list)-1) == -1) then {
 	_list lbAdd "No criminals";
 };

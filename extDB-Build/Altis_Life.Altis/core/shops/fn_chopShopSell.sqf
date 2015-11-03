@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_chopShopSell.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -19,5 +19,5 @@ if(isNull _vehicle) exitWith {};
 hint localize "STR_Shop_ChopShopSelling";
 life_action_inUse = true;
 _price2 = CASH + _price;
-[[player,_vehicle,_price,_price2],"TON_fnc_chopShopSell",false,false] call life_fnc_MP;
+[player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
 closeDialog 0;

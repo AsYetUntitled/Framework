@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_copSearch.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -7,10 +7,13 @@
 	Returns information on the search.
 */
 life_action_inUse = false;
-private["_civ","_invs","_license","_robber","_guns","_gun"];
-_civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
-_invs = [_this,1,[],[[]]] call BIS_fnc_param;
-_robber = [_this,2,false,[false]] call BIS_fnc_param;
+private["_license","_guns","_gun"];
+params [
+	["_civ",objNull,[objNull]],
+	["_invs",[],[[]]],
+	["_robber",false,[false]]
+];
+
 if(isNull _civ) exitWith {};
 
 _illegal = 0;
@@ -26,11 +29,11 @@ if(count _invs > 0) then {
 		};
 	} foreach _invs;
 	if(_illegal > 6000) then {
-		[[getPlayerUID _civ,_civ GVAR ["realname",name _civ],"482"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+		[getPlayerUID _civ,_civ GVAR ["realname",name _civ],"482"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 	};
 	
-	[[getPlayerUID _civ,_civ GVAR ["realname",name _civ],"481"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
-	[[0,"STR_Cop_Contraband",true,[(_civ GVAR ["realname",name _civ]),[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] call life_fnc_MP;
+	[getPlayerUID _civ,_civ GVAR ["realname",name _civ],"481"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+	[0,"STR_Cop_Contraband",true,[(_civ GVAR ["realname",name _civ]),[_illegal] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",west];
 } else {
 	_inv = localize "STR_Cop_NoIllegal";
 };
@@ -41,5 +44,5 @@ hint parseText format["<t color='#FF0000'><t size='2'>%1</t></t><br/><t color='#
 ,(_civ GVAR ["realname",name _civ]),_inv,if(_robber) then {"Robbed the bank"} else {""}];
 
 if(_robber) then {
-	[[0,"STR_Cop_Robber",true,[(_civ GVAR ["realname",name _civ])]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+	[0,"STR_Cop_Robber",true,[(_civ GVAR ["realname",name _civ])]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 };

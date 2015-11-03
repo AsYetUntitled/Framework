@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
     File: fn_loadGear.sqf
     Author: Bryan "Tonic" Boardwine
@@ -6,7 +6,7 @@
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
-private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
+private["_itemArray","_handle"];
 _itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
@@ -29,23 +29,25 @@ if(EQUAL(count _itemArray,0)) exitWith {
     };
 };
 
-_uniform = [_itemArray,0,"",[""]] call BIS_fnc_param;
-_vest = [_itemArray,1,"",[""]] call BIS_fnc_param;
-_backpack = [_itemArray,2,"",[""]] call BIS_fnc_param;
-_goggles = [_itemArray,3,"",[""]] call BIS_fnc_param;
-_headgear = [_itemArray,4,"",[""]] call BIS_fnc_param;
-_items = [_itemArray,5,[],[[]]] call BIS_fnc_param;
-_prim = [_itemArray,6,"",[""]] call BIS_fnc_param;
-_seco = [_itemArray,7,"",[""]] call BIS_fnc_param;
-_uItems = [_itemArray,8,[],[[]]] call BIS_fnc_param;
-_uMags = [_itemArray,9,[],[[]]] call BIS_fnc_param;
-_bItems = [_itemArray,10,[],[[]]] call BIS_fnc_param;
-_bMags = [_itemArray,11,[],[[]]] call BIS_fnc_param;
-_vItems = [_itemArray,12,[],[[]]] call BIS_fnc_param;
-_vMags = [_itemArray,13,[],[[]]] call BIS_fnc_param;
-_pItems = [_itemArray,14,[],[[]]] call BIS_fnc_param;
-_hItems = [_itemArray,15,[],[[]]] call BIS_fnc_param;
-_yItems = [_itemArray,16,[],[[]]] call BIS_fnc_param;
+_itemArray params [
+	["_uniform","",[""]],
+	["_vest","",[""]],
+	["_backpack","",[""]],
+	["_goggles","",[""]],
+	["_headgear","",[""]],
+	["_items",[],[[]]],
+	["_prim","",[""]],
+	["_seco","",[""]],
+	["_uItems",[],[[]]],
+	["_uMags",[],[[]]],
+	["_bItems",[],[[]]],
+	["_bMags",[],[[]]],
+	["_vItems",[],[[]]],
+	["_vMags",[],[[]]],
+	["_pItems",[],[[]]],
+	["_hItems",[],[[]]],
+	["_yItems",[],[[]]]
+];
 
 if(!(EQUAL(_goggles,""))) then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(!(EQUAL(_headgear,""))) then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
@@ -89,5 +91,5 @@ if(!(EQUAL(_seco,""))) then {_handle = [_seco,true,false,false,false] spawn life
 } foreach (_hItems);
 
 if(playerSide == independent && {EQUAL(uniform player,"U_Rangemaster")}) then {
-	[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] call life_fnc_MP;
+	[player,0,"textures\medic_uniform.jpg"] remoteExecCall ["life_fnc_setTexture",RCLIENT];
 };

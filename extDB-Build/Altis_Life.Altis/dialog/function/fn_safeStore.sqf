@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_safeStore.sqf
 	Author: Bryan "Tonic" Boardwine

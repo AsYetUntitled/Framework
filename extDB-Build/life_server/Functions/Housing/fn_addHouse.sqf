@@ -4,9 +4,12 @@
 	Description:
 	Blah
 */
-private["_house","_uid","_housePos","_query"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_house = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
+private["_housePos","_query"];
+params [
+	["_uid","",[""]],
+	["_house",objNull,[objNull]]
+];
+
 if(isNull _house OR _uid == "") exitWith {};
 
 _housePos = getPosATL _house;

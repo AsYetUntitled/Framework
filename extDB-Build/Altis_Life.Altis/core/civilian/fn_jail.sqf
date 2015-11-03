@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_jail.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -6,13 +6,15 @@
 	Description:
 	Starts the initial process of jailing.
 */
-private["_bad","_unit"];
-_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-hint format["%1", _unit];
+params [
+	["_unit",objNull,[objNull]],
+	["_bad",false,[false]]
+];
+
 if(isNull _unit) exitWith {}; //Dafuq?
 if(_unit != player) exitWith {}; //Dafuq?
 if(life_is_arrested) exitWith {}; //Dafuq i'm already arrested
-_bad = [_this,1,false,[false]] call BIS_fnc_param;
+
 player SVAR ["restrained",false,true];
 player SVAR ["Escorting",false,true];
 player SVAR ["transporting",false,true];
@@ -32,17 +34,18 @@ if(player distance (getMarkerPos "jail_marker") > 40) then {
 };
 
 [1] call life_fnc_removeLicenses;
-if(life_inv_heroinu > 0) then {[false,"heroinu",life_inv_heroinu] call life_fnc_handleInv;};
-if(life_inv_heroinp > 0) then {[false,"heroinp",life_inv_heroinp] call life_fnc_handleInv;};
-if(life_inv_coke > 0) then {[false,"cocaine",life_inv_coke] call life_fnc_handleInv;};
-if(life_inv_cokep > 0) then {[false,"cocainep",life_inv_cokep] call life_fnc_handleInv;};
-if(life_inv_turtle > 0) then {[false,"turtle",life_inv_turtle] call life_fnc_handleInv;};
-if(life_inv_cannabis > 0) then {[false,"cannabis",life_inv_cannabis] call life_fnc_handleInv;};
-if(life_inv_marijuana > 0) then {[false,"marijuana",life_inv_marijuana] call life_fnc_handleInv;};
+
+{
+	_amount = ITEM_VALUE(_x);
+	if(_amount > 0) then {
+		[false,_x,_amount] call life_fnc_handleInv;
+	};
+} forEach ["heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw"];
+
 life_is_arrested = true;
 
 removeAllWeapons player;
-{player removeMagazine _x} foreach (magazines player);
+{player removeMagazine _x} forEach (magazines player);
 
-[[player,_bad],"life_fnc_jailSys",false,false] call life_fnc_MP;
+[player,_bad] remoteExecCall ["life_fnc_jailSys",RSERV];
 [5] call SOCK_fnc_updatePartial;

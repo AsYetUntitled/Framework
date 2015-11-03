@@ -5,10 +5,12 @@
 	Description:
 	Inserts the gang into the database.
 */
-private["_ownerID","_uid","_gangName","_query","_queryResult","_gangMembers","_group"];
-_ownerID = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-_uid = [_this,1,"",[""]] call BIS_fnc_param;
-_gangName = [_this,2,"",[""]] call BIS_fnc_param;
+private ["_query","_queryResult","_gangMembers","_group"];
+params [
+	["_ownerID",objNull,[objNull]],
+	["_uid","",[""]],
+	["_gangName","",[""]]
+];
 _group = group _ownerID;
 
 if(isNull _ownerID OR EQUAL(_uid,"") OR EQUAL(_gangName,"")) exitWith {}; //Fail
@@ -21,7 +23,7 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 //Check to see if the gang name already exists.
 if(!(EQUAL(count _queryResult,0))) exitWith {
-	[[1,"There is already a gang created with that name please pick another name."],"life_fnc_broadcast",_ownerID,false] call life_fnc_MP;
+	[1,"There is already a gang created with that name please pick another name."] remoteExecCall ["life_fnc_broadcast",_ownerID];
 	life_action_gangInUse = nil;
 	PVAR_ID("life_action_gangInUse",_ownerID);
 };
@@ -32,7 +34,7 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 //Check to see if this person already owns or belongs to a gang.
 if(!(EQUAL(count _queryResult,0))) exitWith {
-	[[1,"You are currently already active in a gang, please leave the gang first."],"life_fnc_broadcast",_ownerID,false] call life_fnc_MP;
+	[1,"You are currently already active in a gang, please leave the gang first."] remoteExecCall ["life_fnc_broadcast",_ownerID];
 	life_action_gangInUse = nil;
 	PVAR_ID("life_action_gangInUse",_ownerID);
 };

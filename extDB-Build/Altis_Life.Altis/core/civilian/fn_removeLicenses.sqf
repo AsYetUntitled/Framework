@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_removeLicenses.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -6,8 +6,8 @@
 	Description:
 	Used for stripping certain licenses off of civilians as punishment.
 */
-private["_state"];
-_state = [_this,0,1,[0]] call BIS_fnc_param;
+private "_state";
+_state = param [0,1,[0]];
 
 switch (_state) do {
 	//Death while being wanted

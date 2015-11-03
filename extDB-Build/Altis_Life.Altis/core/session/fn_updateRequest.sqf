@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_updateRequest.sqf
 	Author: Tonic
@@ -23,4 +23,4 @@ switch (playerSide) do {
 	};
 };
 
-[_packet,"DB_fnc_updateRequest",false,false] call life_fnc_MP;
+_packet remoteExecCall ["DB_fnc_updateRequest",RSERV];

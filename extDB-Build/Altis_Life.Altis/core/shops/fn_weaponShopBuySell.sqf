@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_weaponShopBuySell.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -15,25 +15,20 @@ _itemInfo = [_item] call life_fnc_fetchCfgDetails;
 
 _bad = "";
 
-if((_itemInfo select 6) != "CfgVehicles") then
-{
-	if((_itemInfo select 4) in [4096,131072]) then
-	{
+if((_itemInfo select 6) != "CfgVehicles") then {
+	if((_itemInfo select 4) in [4096,131072]) then {
 		if(!(player canAdd _item) && (uiNamespace getVariable["Weapon_Shop_Filter",0]) != 1) exitWith {_bad = (localize "STR_NOTF_NoRoom")};
 	};
 };
 
 if(_bad != "") exitWith {hint _bad};
 
-if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
-{
+if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then {
 	CASH = CASH + _price;
 	[_item,false] call life_fnc_handleItem;
 	hint parseText format[localize "STR_Shop_Weapon_Sold",_itemInfo select 1,[_price] call life_fnc_numberText];
 	[nil,(uiNamespace getVariable["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
-}
-	else
-{
+} else {
 	private["_hideout"];
 	_hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 	if(!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") >= _price}) then {
@@ -52,7 +47,7 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 			_funds = _funds - _price;
 			grpPlayer setVariable["gang_bank",_funds,true];
 			[_item,true] spawn life_fnc_handleItem;
-			[[1,grpPlayer],"TON_fnc_updateGang",false,false] call life_fnc_MP;
+			[1,grpPlayer] remoteExecCall ["TON_fnc_updateGang",RSERV];
 		} else {
 			if(_price > CASH) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
 			hint parseText format[localize "STR_Shop_Weapon_BoughtItem",_itemInfo select 1,[_price] call life_fnc_numberText];

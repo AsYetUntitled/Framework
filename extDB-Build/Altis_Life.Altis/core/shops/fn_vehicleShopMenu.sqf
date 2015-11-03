@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_vehicleShopMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -7,11 +7,14 @@
 	Blah
 */
 private["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy"];
-_shop = [(_this select 3),0,"",[""]] call BIS_fnc_param;
-_sideCheck = [(_this select 3),1,sideUnknown,[civilian]] call BIS_fnc_param;
-_spawnPoints = [(_this select 3),2,"",["",[]]] call BIS_fnc_param;
-_shopFlag = [(_this select 3),3,"",[""]] call BIS_fnc_param;
-_disableBuy = [(_this select 3),5,false,[true]] call BIS_fnc_param;
+(SEL(_this,3)) params [
+	["_shop","",[""]],
+	["_sideCheck",sideUnknown,[civilian]],
+	["_spawnPoints","",["",[]]],
+	["_shopFlag","",[""]],
+	[],
+	["_disableBuy",false,[true]]
+];
 
 disableSerialization;
 //Long boring series of checks

@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_vInteractionMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -18,10 +18,12 @@ if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
 disableSerialization;
-_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+
+_curTarget = param [0,ObjNull,[ObjNull]];
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 _isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
 if(!_isVehicle) exitWith {closeDialog 0;};
+
 _display = findDisplay 37400;
 _Btn1 = _display displayCtrl Btn1;
 _Btn2 = _display displayCtrl Btn2;

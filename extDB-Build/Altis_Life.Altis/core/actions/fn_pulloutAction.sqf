@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_pulloutAction.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -9,9 +10,8 @@ private["_crew"];
 _crew = crew cursorTarget;
 
 {
-	if(side _x != west) then
-	{
-		_x setVariable ["transporting",false,true]; _x setVariable ["Escorting",false,true];
-		[[_x],"life_fnc_pulloutVeh",_x,false] call life_fnc_MP;
+	if(side _x != west) then {
+		_x setVariable ["transporting",false,true]; _x SVAR ["Escorting",false,true];
+		[_x] remoteExecCall ["life_fnc_pulloutVeh",_x];
 	};
-} foreach _crew;
+} forEach _crew;

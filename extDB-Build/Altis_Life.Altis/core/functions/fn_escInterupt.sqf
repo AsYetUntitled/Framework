@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_escInterupt.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -49,7 +49,7 @@ while {true} do
 {
 	waitUntil{!isNull (findDisplay 49)};
 	_abortButton = CONTROL(49,104);
-	_abortButton buttonSetAction "[[player],""TON_fnc_cleanupRequest"",false,false] call life_fnc_MP";
+	_abortButton buttonSetAction "[player] remoteExec [""TON_fnc_cleanupRequest"",-2];";
 	_respawnButton = CONTROL(49,1010);
 	_fieldManual = CONTROL(49,122);
 	

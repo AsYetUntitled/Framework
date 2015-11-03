@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_searchClient.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -7,8 +7,9 @@
 	Searches the player and he returns information back to the player.
 */
 private["_cop","_inv","_var","_val","_robber"];
-_cop = [_this,0,Objnull,[objNull]] call BIS_fnc_param;
+_cop = param [0,Objnull,[objNull]];
 if(isNull _cop) exitWith {};
+
 _inv = [];
 _robber = false;
 
@@ -26,4 +27,4 @@ if(!life_use_atm) then  {
 	_robber = true;
 };
 
-[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] call life_fnc_MP;
+[player,_inv,_robber] remoteExecCall ["life_fnc_copSearch",_cop];

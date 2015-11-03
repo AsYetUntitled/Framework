@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -14,5 +14,5 @@ SUB(_grpMembers,[steamid]);
 _grp SVAR ["gang_members",_grpMembers,true];
 [player] joinSilent (createGroup civilian);
 
-[[4,_grp],"TON_fnc_updateGang",false,false] call life_fnc_MP;
+[4,_grp] remoteExec ["TON_fnc_updateGang",RSERV];
 closeDialog 0;

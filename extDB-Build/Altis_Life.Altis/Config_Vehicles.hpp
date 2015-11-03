@@ -591,6 +591,7 @@ class CfgVehicles {
             } }
         };
     };
+    
 	class B_MRAP_01_F {
         vItemSpace = 65;
         storageFee[] = { 0, 7500, 0, 0 };

@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
 	
@@ -11,6 +11,7 @@ disableSerialization;
 _uiDisp = GVAR_UINS "life_timer";
 _timer = _uiDisp displayCtrl 38301;
 _time = time + (5 * 60);
+
 while {true} do {
 	if(isNull _uiDisp) then {
 		6 cutRsc ["life_timer","PLAIN"];
