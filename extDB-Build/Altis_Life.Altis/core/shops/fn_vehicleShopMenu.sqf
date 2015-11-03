@@ -12,7 +12,7 @@ private["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy"];
 	["_sideCheck",sideUnknown,[civilian]],
 	["_spawnPoints","",["",[]]],
 	["_shopFlag","",[""]],
-	[],
+	["_ERDHNFCXHBNCVBNDFNF","",[""]],
 	["_disableBuy",false,[true]]
 ];
 
