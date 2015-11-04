@@ -2545,6 +2545,14 @@
 			<Italian>Il veicolo non contiene così tanti oggetti.</Italian>
 			<Portuguese>O veículo não tem essa quantidade de items.</Portuguese>
 		</Key>
+		<Key ID="STR_MISC_soundnormal">
+			<Original>Your sound was set to normal mode!</Original>
+			<Portuguese>Seu som voltou ao normal!</Portuguese>
+		</Key>
+		<Key ID="STR_MISC_soundfade">
+			<Original>Your sound was set to fade mode!</Original>
+			<Portuguese>Seu som está abafado.</Portuguese>
+		</Key>
 	</Package>
 	<Package name="Housing_Strings">
 		<Key ID="STR_House_ContainerError">
