@@ -8,7 +8,7 @@
 */
 params [
 	["_caller",objNull,[objNull]],
-	["_caller","Unknown Player",[""]]
+	["_callerName","Unknown Player",[""]]
 ];
 
 if(isNull _caller) exitWith {}; //Bad data
