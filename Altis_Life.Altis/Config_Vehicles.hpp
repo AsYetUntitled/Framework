@@ -107,10 +107,10 @@ class CarShops {
 	class cop_ship {
 		side = "cop";
 		vehicles[] = {
-			{ "B_Boat_Transport_01_F", 3000, "coastguard" },
-			{ "C_Boat_Civil_01_police_F", 20000, "coastguard" },
-			{ "B_Boat_Armed_01_minigun_F", 75000, "coastguard" },
-			{ "B_SDV_01_F", 100000, "coastguard" }
+			{ "B_Boat_Transport_01_F", 3000, "cg" },
+			{ "C_Boat_Civil_01_police_F", 20000, "cg" },
+			{ "B_Boat_Armed_01_minigun_F", 75000, "cg" },
+			{ "B_SDV_01_F", 100000, "cg" }
 		};
 	};
 
