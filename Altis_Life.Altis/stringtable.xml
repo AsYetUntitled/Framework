@@ -1763,6 +1763,10 @@
 			<Italian>Un'azione è già in corso...</Italian>
 			<Portuguese>Você já está realizando um ação...</Portuguese>
 		</Key>
+		<Key ID="STR_NOTF_ActionDelay">
+			<Original>You're doing it too fast!</Original>
+			<Portuguese>Você está fazendo isso muito rápido!</Portuguese>
+		</Key>
 		<Key ID="STR_NOTF_NoSpace">
 			<Original>You don't have enough space for that amount!</Original>
 			<German>Du hast für diese Menge nicht genug Platz!</German>

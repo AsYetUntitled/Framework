@@ -16,6 +16,7 @@ _pid = steamid;
 _unit = player;
 
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
+if((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
 
 _sellPrice = switch(playerSide) do {
 	case civilian: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_vehicle,"garageSell"),0)};
@@ -28,4 +29,5 @@ if(!(EQUAL(typeName _sellPrice,typeName 0)) OR _sellPrice < 1) then {_sellPrice 
 [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
 hint format[localize "STR_Garage_SoldCar",[_sellPrice] call life_fnc_numberText];
 ADD(BANK,_sellPrice);
+life_action_delay = time;
 closeDialog 0;
