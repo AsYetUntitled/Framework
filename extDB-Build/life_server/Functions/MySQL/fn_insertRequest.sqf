@@ -13,7 +13,7 @@ params [
 	["_name","",[""]],
 	["_money",0,[""]],
 	["_bank",2500,[""]],
-	["_returnToSender",objNull,objNull]
+	["_returnToSender",objNull,[objNull]]
 ];
 
 //Error checks
