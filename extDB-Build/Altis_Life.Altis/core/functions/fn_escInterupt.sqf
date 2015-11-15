@@ -54,7 +54,7 @@ while {true} do
 	_fieldManual = CONTROL(49,122);
 	
 	//Block off our buttons first.
-	//_abortButton ctrlEnable false;
+	_abortButton ctrlEnable false;
 	_respawnButton ctrlEnable false;
 	_fieldManual ctrlEnable false; //Never re-enable, blocks an old script executor.
 	
