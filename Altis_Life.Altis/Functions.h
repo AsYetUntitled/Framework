@@ -37,6 +37,14 @@ class Life_Client_Core
 		class admingetID {};
 		class adminMenu {};
 		class adminQuery {};
+		class adminSpectate {};
+		class adminTeleport {};
+		class adminTpHere {};
+		class adminDebugCon {};
+		class adminCompensate {};
+		class adminGodMode {};
+		class adminFreeze {};
+		class adminMarkers {};
 	};
 	
 	class Medical_System
@@ -217,6 +225,7 @@ class Life_Client_Core
 		class removeLicenses {};
 		class demoChargeTimer {};
 		class civLoadout {};
+		class freezePlayer {};
 	};
 	
 	class Vehicle

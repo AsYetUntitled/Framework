@@ -24,3 +24,4 @@
 #include "vehicleShop.h"
 #include "settings.h"
 #include "federalReserve.h"
+#include "compensate.hpp"
