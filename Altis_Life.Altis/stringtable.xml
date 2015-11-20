@@ -226,7 +226,7 @@
 			<German>Admin Menü</German>
 			<Italian>Menu Admin</Italian>
 			<French>Menu Admin</French>
-			<Portuguese>Menu do ADM</Portuguese>
+			<Portuguese>Menu Admin</Portuguese>
 		</Key>
 		<Key ID="STR_Admin_GetID">
 			<Original>Get ID</Original>
@@ -427,21 +427,21 @@
 			<German>An die Admins</German>
 			<French>Text Admins</French>
 			<Italian>Msg Admin</Italian>
-			<Portuguese>Msg ADM</Portuguese>
+			<Portuguese>Msg ADMs</Portuguese>
 		</Key>
 		<Key ID="STR_CELL_AdminMsg">
 			<Original>Admin Message</Original>
 			<German>Admin-Nachricht</German>
 			<French>Admin Message</French>
 			<Italian>Admin Msg</Italian>
-			<Portuguese>Msg do ADM</Portuguese>
+			<Portuguese>ADM Msg</Portuguese>
 		</Key>
 		<Key ID="STR_CELL_AdminMSGAll">
 			<Original>Admin Msg All</Original>
 			<German>Admin-Nachricht an alle</German>
 			<French>Admin Msg ALL</French>
 			<Italian>Admin Msg</Italian>			
-			<Portuguese>Msg do ADM Todos</Portuguese>
+			<Portuguese>ADM Msg Todos</Portuguese>
 		</Key>
 		<Key ID="STR_CELL_EMSRequest">
 			<Original>Request EMS</Original>
@@ -1092,7 +1092,7 @@
 			<German>Einstellungen</German>
 			<French>Menu Paramètres</French>
 			<Italian>Menu Impostazioni</Italian>
-			<Portuguese>Menu de Configuração</Portuguese>
+			<Portuguese>Configurações</Portuguese>
 		</Key>
 		<Key ID="STR_SM_onFoot">
 			<Original>On Foot:</Original>
@@ -1120,21 +1120,21 @@
 			<German>Sichtweite zu Fuß</German>
 			<French>Distance de vue à pied</French>
 			<Italian>Distanza visiva a piedi</Italian>
-			<Portuguese>Vizualizar distância quando a pé</Portuguese>
+			<Portuguese>Vizualizar distância enquanto a pé</Portuguese>
 		</Key>
 		<Key ID="STR_SM_ToolTip2">
 			<Original>View distance while in a land vehicle</Original>
 			<German>Sichtweite in Fahrzeugen</German>
 			<French>Distance de vue en voiture</French>
 			<Italian>Distanza visiva su veicolo di terra</Italian>
-			<Portuguese>Visualizar distância quando em veúclos terrestres</Portuguese>
+			<Portuguese>Visualizar distância enquanto em veúclos terrestres</Portuguese>
 		</Key>
 		<Key ID="STR_SM_ToolTip3">
 			<Original>View distance while in a air vehicle</Original>
 			<German>Sichtweite in Helikoptern</German>
 			<French>Distance de vue dans les airs</French>
 			<Italian>Distanza visiva su velivolo</Italian>
-			<Portuguese>Vizualisar distância quando em veículos aéreos</Portuguese>
+			<Portuguese>Vizualisar distância enquanto em veículos aéreos</Portuguese>
 		</Key>
 		<Key ID="STR_SM_PlayerTags">
 			<Original>Player Tags</Original>
@@ -1185,7 +1185,7 @@
 			<German>Ladeninventar</German>
 			<French>Boutique</French>
 			<Italian>Inventario Negozio</Italian>
-			<Portuguese>Loja</Portuguese>
+			<Portuguese>Loja de Inventário</Portuguese>
 		</Key>
 		<Key ID="STR_VS_PI">
 			<Original>Your Inventory</Original>
@@ -1222,14 +1222,14 @@
 			<German>Spawnen</German>
 			<French>Spawn</French>
 			<Italian>Spawn</Italian>
-			<Portuguese>Começar...</Portuguese>
+			<Portuguese>Começar</Portuguese>
 		</Key>
 		<Key ID="STR_Spawn_CSP">
 			<Original>Current Spawn Point</Original>
 			<German>Aktueller Spawnpunkt</German>
 			<French>Point de Spawn Actuel</French>
 			<Italian>Punto di Spawn corrente</Italian>
-			<Portuguese>Ponto de spawn Atual</Portuguese>
+			<Portuguese>Ponto de início Atual</Portuguese>
 		</Key>
 		<Key ID="STR_Spawn_Spawned">
 			<Original>You have spawned at</Original>
@@ -1268,7 +1268,7 @@
 			<German>Kofferraum</German>
 			<French>Coffre</French>
 			<Italian>Inventario Veicolo</Italian>
-			<Portuguese>Inventário do Caminhão</Portuguese>
+			<Portuguese>Inventário do Veículo</Portuguese>
 		</Key>
 		<Key ID="STR_Trunk_PInventory">
 			<Original>Player Inventory</Original>
@@ -1289,7 +1289,7 @@
 			<German>Lagern</German>
 			<French>Déposer</French>
 			<Italian>Deposita</Italian>
-			<Portuguese>Loja</Portuguese>
+			<Portuguese>Depositar</Portuguese>
 		</Key>
 	</Package>
 	<Package name="Wanted_Menu">
