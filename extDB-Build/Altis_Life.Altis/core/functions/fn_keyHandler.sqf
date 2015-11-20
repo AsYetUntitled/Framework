@@ -120,7 +120,7 @@ switch (_code) do {
 				private "_list";
 				_list = ["landVehicle","Air","Ship","House_F"];
 				if(KINDOF_ARRAY(cursorTarget,_list) && {player distance cursorTarget < 7} && {vehicle player == player} && {alive cursorTarget}) then {
-					if(cursorTarget in life_vehicles OR {!(cursorTarget GVAR ["locked",true])}) then {
+					if(cursorTarget in life_vehicles OR {!(cursorTarget GVAR ["locked",true])} && {!life_action_inUse}) then {
 						[cursorTarget] call life_fnc_openInventory;
 					};
 				};
