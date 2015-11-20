@@ -25,7 +25,7 @@ if(([false,_type,_amount] call life_fnc_handleInv)) then {
 	[] call life_fnc_virt_update;	
 };
 
-if(EQUAL(life_shop_type,"heroin")) then {
+if(EQUAL(life_shop_type,"drugdealer")) then {
 	private["_array","_ind","_val"];
 	_array = life_shop_npc getVariable["sellers",[]];
 	_ind = [getPlayerUID player,_array] call TON_fnc_index;

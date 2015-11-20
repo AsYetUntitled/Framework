@@ -29,3 +29,67 @@ The terms are subjected to be changed over time.
 
 Disclaimer:
 The vast majority of the code / framework has been written by me. Any additional code / content used is fully credited and owned by it’s author as well as linked to the authors content (Forums,Media,etc). The additional content used within the framework either has the expressed permission of the content creators permission or was automatically used under the GPU (General Purpose License) from public posting with no usage / TOA / Disclaimer, however they still own the rights to their content. If in any case that content is being used within this mission / framework that the content creator doesn’t wish for it to be used due to my strict TOA / Agreement all you need to do is ask for it to be removed and it will be honored.
+
+--------------------------------------------------------------------
+
+This build is for extDB2 https://github.com/Torndeco/extdb2
+
+To setup extDB2 you need to use the Windows/Linux pre-compiled build and edit the extdb-conf.ini "MySQL_Example" field to "AltisLife" with your Database name and login SQL user details, like this:
+
+```
+[MySQL_Example]
+Type = MySQL
+Name = Database_Name
+
+Username = root
+Password = password
+
+IP = 127.0.0.1
+Port = 3306
+```
+To something like this:
+```
+[AltisLife]
+Type = MySQL
+Name = arma3life
+
+Username = MyDatabaseLogin
+Password = MyDatabasePassword
+
+IP = 127.0.0.1
+Port = 3306
+```
+
+Make sure the following files/folders are in the root directory of your ARMA 3 server files (where the exe is):
+Windows:
+```
+@extDB2 (Inside it: extDB2.dll + extdb-conf.ini)
+tbbmalloc.dll
+```
+
+Linux:
+```
+@extDB2 (Inside it: extDB2.so + extdb-conf.ini)
+```
+
+
+You can drag the extDB2.dll & extdb-conf.ini to root folder as well or you can copy over @extDB2 over as a regular mod. If you choose to use @extDB2 as a regular mod your commandline will be:
+-mod=@life_server;@extDB2
+
+If you are not using @extDB2 as a mod and choose to drag extDB2.dll into the main arma 3 server directory then you only need @life_server in the commandline.
+
+For Linux
+
+Requirements:
+
+Working Linux Arma3Server
+
+Debian/Ubuntu
+
+apt-get install libtbb2:i386
+
+RedHat/CentOS
+
+yum install tbb.i686
+
+Extract the static build (if you do not know how to build on a linux os) to the root directory.
