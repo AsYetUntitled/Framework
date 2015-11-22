@@ -138,8 +138,8 @@ if(count (PISTOL_ITEMS) > 0) then {
 		_yItems pushBack [_x,_val];
     };
 } forEach [
-	"pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donut",
-	"rabbitGrilled","salemaGrilled","ornateGrilled","mackerelGrilled","tunaGrilled","mulletGrilled","catsharkGrilled","turtleSoup","henGrilled","roosterGrilled","sheepGrilled","goatGrilled"
+	"pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donuts",
+	"rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtleSoup","hen","rooster","sheep","goat"
 ];
 
 _return pushBack _uItems;

@@ -21,8 +21,11 @@ if([false,_food,1] call life_fnc_handleInv) then {
 		case "tuna": {_val = 100};
 		case "mullet": {_val = 80};
 		case "catshark": {_val = 100};
-		case "turtle": {_val = 100};
 		case "turtlesoup": {_val = 100};
+		case "hen": {_val = 45};
+		case "rooster": {_val = 60};
+		case "sheep": {_val = 100};
+		case "goat": {_val = 100};
 		case "donuts": {_val = 30};
 		case "tbacon": {_val = 40};
 		case "peach": {_val = 10};

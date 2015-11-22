@@ -7,7 +7,7 @@
 	Picks up money
 */
 private "_value";
-if((time - life_action_delay) < 1.5) exitWith {hint "You can't rapidly use action keys!"; _this SVAR ["inUse",false,true];};
+if((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay"; _this SVAR ["inUse",false,true];};
 if(isNull _this OR {player distance _this > 3}) exitWith {_this SVAR ["inUse",false,true];};
 
 _value = SEL((_this GVAR "item"),1);

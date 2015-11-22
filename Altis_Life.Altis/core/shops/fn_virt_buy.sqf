@@ -18,6 +18,8 @@ if(_diff <= 0) exitWith {hint localize "STR_NOTF_NoSpace"};
 _amount = _diff;
 _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 if((_price * _amount) > CASH && {!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") <= _price * _amount}}) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
+if((time - life_action_delay) < 0.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
+life_action_delay = time;
 
 _name = M_CONFIG(getText,"VirtualItems",_type,"displayName");
 
