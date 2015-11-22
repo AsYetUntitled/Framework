@@ -17,24 +17,24 @@ USE `arma3life`;
 DELIMITER $$
 --
 -- Procedures
--- Edit arma3 and root to match a user in MySQL
+-- Edit arma3 to match a user in MySQL
 --
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
 BEGIN
-	UPDATE vehicles SET `active`= 0;
+	UPDATE `vehicles` SET `active`= 0;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteDeadVehicles`()
+CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteDeadVehicles`()
 BEGIN
 	DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteOldHouses`()
+CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldHouses`()
 BEGIN
   DELETE FROM `houses` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteOldGangs`()
+CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldGangs`()
 BEGIN
   DELETE FROM `gangs` WHERE `active` = 0;
 END$$
@@ -50,21 +50,21 @@ DELIMITER ;
 CREATE TABLE IF NOT EXISTS `players` (
   `uid` int(12) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
+  `aliases` text NOT NULL,
   `playerid` varchar(50) NOT NULL,
   `cash` int(100) NOT NULL DEFAULT '0',
   `bankacc` int(100) NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
-  `cop_licenses` text,
+  `mediclevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `civ_licenses` text,
+  `cop_licenses` text,
   `med_licenses` text,
+  `civ_gear` text NOT NULL,
   `cop_gear` text NOT NULL,
   `med_gear` text NOT NULL,
-  `mediclevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `arrested` tinyint(1) NOT NULL DEFAULT '0',
-  `aliases` text NOT NULL,
   `adminlevel` enum('0','1','2','3') NOT NULL DEFAULT '0',
   `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
-  `civ_gear` text NOT NULL,
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `playerid` (`playerid`),
