@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_keyMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -22,7 +23,8 @@ _near_units = [];
 for "_i" from 0 to (count life_vehicles)-1 do {
 	_veh = life_vehicles select _i;
 	if(!isNull _veh && alive _veh) then {
-		_color = [(typeOf _veh),(_veh getVariable "Life_VEH_color")] call life_fnc_vehicleColorStr;
+		_color = SEL(SEL(M_CONFIG(getArray,"CfgVehicles",(typeOf _veh),"textures"),(_veh GVAR "Life_VEH_color")),0);
+		if(isNil "_color") then {_color = ""};
 		_text = format["(%1)",_color];
 		if(_text == "()") then {
 			_text = "";
