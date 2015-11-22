@@ -117,7 +117,6 @@ class Life_Client_Core
 		class itemWeight {};
 		class taxRate {};
 		class vehicleAnimate {};
-		class weaponShopCfg {};
 		class vehicleWeightCfg {};
 		class houseConfig {};
 	};

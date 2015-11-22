@@ -21,13 +21,13 @@ lbClear _itemList;
 
 switch (_index) do {
 	case 0: {
-		_config = [_shop] call life_fnc_weaponShopCfg; {
-			_itemInfo = [_x select 0] call life_fnc_fetchCfgDetails;
-			_itemList lbAdd format["%1",if(isNil {_x select 1}) then {_itemInfo select 1} else {_x select 1}];
+		_config = M_CONFIG(getArray,"WeaponShops",_shop,"items"); {
+			_itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
+			_itemList lbAdd format["%1",if(!(EQUAL(SEL(_x,1),""))) then {SEL(_x,1)} else {_itemInfo select 1}];
 			_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
 			_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
-			_itemList lbSetValue[(lbSize _itemList)-1,_x select 2];
-		} foreach (_config select 1);
+			_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
+		} foreach (_config);
 		
 		((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
 	};

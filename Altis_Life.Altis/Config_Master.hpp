@@ -20,6 +20,7 @@
 #define true 1
 #define false 0
 #include "Config_Clothing.hpp"
+#include "Config_Weapons.hpp"
 
 /*
 	Master settings for various features and functionality	
