@@ -65,7 +65,7 @@ class life_weapon_shop
 			idc = 38405;
 			text = "$STR_Global_Buy";
 			onButtonClick = "[] spawn life_fnc_weaponShopBuySell; true";
-			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			x = 0.1;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
@@ -76,7 +76,7 @@ class life_weapon_shop
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
-			x = 0.1;
+			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
