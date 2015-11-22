@@ -19,8 +19,6 @@ _allowedVariables = SPY_SETTINGS(getArray,"allowedVariables");
 _allowedVariables_UI = SPY_SETTINGS(getArray,"allowedVariables_UI");
 _profileCount = count allVariables profileNameSpace;
 
-if(true) exitWith {}; //Disabled Variable Checking till all variable are added
-
 /* Build Player Slots because we name them and they are counted as variables */
 for "_i" from 1 to 125 do {
 	if(_i < SPY_SETTINGS(getNumber,"civSlotNumber")) then {_allowedVariables pushBack [format["civ_%1",_i],"OBJECT"]};
@@ -61,7 +59,7 @@ _checkFunction = {
 							_find = _allowedVariables find [_x,_varType];
 							if(EQUAL(_find,-1)) then {
 								diag_log format["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
-								failMission "SpyGlass";
+								//failMission "SpyGlass";
 							};
 						};
 					};
@@ -83,7 +81,7 @@ _uiCheckFunction = {
 								_find = _allowedVariables_UI find [_x,_varType];
 								if(EQUAL(_find,-1)) then {
 									diag_log format["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
-									failMission "SpyGlass";
+									//failMission "SpyGlass";
 								};
 							};
 						};
