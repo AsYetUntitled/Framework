@@ -189,6 +189,7 @@ class Life_Client_Core
 		class loadGear {};
 		class stripDownPlayer {};
 		class nearATM {};
+		class playerSkins {};
 	};
 	
 	class Network

@@ -32,4 +32,5 @@ player assignItem "ItemWatch";
 player addItem "ItemGPS";
 player assignItem "ItemGPS";
 
+[] call life_fnc_playerSkins;
 [] call life_fnc_saveGear;

@@ -45,3 +45,5 @@ _totalPrice = 0;
 } foreach life_clothing_purchase;
 
 _total ctrlSetStructuredText parseText format [(localize "STR_Shop_Total")+ " <t color='#8cff9b'>$%1</t>",[_totalPrice] call life_fnc_numberText];
+
+[] call life_fnc_playerSkins;

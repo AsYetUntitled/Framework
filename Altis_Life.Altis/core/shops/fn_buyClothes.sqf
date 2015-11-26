@@ -20,4 +20,5 @@ if(_price > CASH) exitWith {titleText[localize "STR_Shop_NotEnoughClothes","PLAI
 CASH = CASH - _price;
 
 life_clothesPurchased = true;
+[] call life_fnc_playerSkins;
 closeDialog 0;

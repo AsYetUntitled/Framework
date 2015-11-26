@@ -90,6 +90,4 @@ if(!(EQUAL(_seco,""))) then {_handle = [_seco,true,false,false,false] spawn life
     };
 } foreach (_hItems);
 
-if(playerSide == independent && {EQUAL(uniform player,"U_Rangemaster")}) then {
-	[player,0,"textures\medic_uniform.jpg"] remoteExecCall ["life_fnc_setTexture",RCLIENT];
-};
+[] call life_fnc_playerSkins;

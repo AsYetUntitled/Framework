@@ -20,6 +20,5 @@ player assignItem "ItemCompass";
 player addItem "ItemWatch";
 player assignItem "ItemWatch";
 
-[player,0,"textures\medic_uniform.jpg"] remoteExecCall ["life_fnc_setTexture",RCLIENT];
-
+[] call life_fnc_playerSkins;
 [] call life_fnc_saveGear;

@@ -30,6 +30,8 @@ ctrlSetText [3103,localize _shopTitle];
 createDialog "Life_Clothing";
 disableSerialization;
 
+(findDisplay 3100) displaySetEventHandler ["KeyDown","if((_this select 1) == 1) then {true}"]; //Block the ESC menu
+
 //Cop / Civ Pre Check
 if((SEL(_this,3) in ["bruce","dive","reb","kart"] && playerSide != civilian)) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
 if((SEL(_this,3) == "reb" && !license_civ_rebel)) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
@@ -114,6 +116,8 @@ life_oldBackpackItems = backpackItems player;
 life_oldGlasses = goggles player;
 life_oldHat = headgear player;
 
+[] call life_fnc_playerSkins;
+
 waitUntil {isNull (findDisplay 3100)};
 {if(_x != player) then {_x hideObject false;};} foreach playableUnits;
 detach player;
@@ -157,6 +161,7 @@ if(isNil "life_clothesPurchased") exitWith {
 			};
 		};
 	};
+	[] call life_fnc_playerSkins;
 };
 life_clothesPurchased = nil;
 
