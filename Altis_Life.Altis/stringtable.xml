@@ -1020,7 +1020,7 @@
 			<German>Spieler Menü</German>
 			<French>Menu du Joueur</French>
 			<Italian>Menu Giocatore</Italian>
-			<Portuguese>Menu do Jogador</Portuguese>
+			<Portuguese>Menu Jogador</Portuguese>
 		</Key>
 		<Key ID="STR_PM_cItems">
 			<Original>Current Items</Original>
@@ -1076,7 +1076,7 @@
 			<German>Admin Menü</German>
 			<French>Menu Admin</French>
 			<Italian>Menu Admin</Italian>
-			<Portuguese>Menu do ADM</Portuguese>
+			<Portuguese>Menu ADM</Portuguese>
 		</Key>
 		<Key ID="STR_PM_SyncData">
 			<Original>Sync Data</Original>
@@ -1120,21 +1120,21 @@
 			<German>Sichtweite zu Fuß</German>
 			<French>Distance de vue à pied</French>
 			<Italian>Distanza visiva a piedi</Italian>
-			<Portuguese>Vizualizar distância enquanto a pé</Portuguese>
+			<Portuguese>Visualizar distância enquanto a pé</Portuguese>
 		</Key>
 		<Key ID="STR_SM_ToolTip2">
 			<Original>View distance while in a land vehicle</Original>
 			<German>Sichtweite in Fahrzeugen</German>
 			<French>Distance de vue en voiture</French>
 			<Italian>Distanza visiva su veicolo di terra</Italian>
-			<Portuguese>Visualizar distância enquanto em veúclos terrestres</Portuguese>
+			<Portuguese>Visualizar distância enquanto em veículos terrestres</Portuguese>
 		</Key>
 		<Key ID="STR_SM_ToolTip3">
 			<Original>View distance while in a air vehicle</Original>
 			<German>Sichtweite in Helikoptern</German>
 			<French>Distance de vue dans les airs</French>
 			<Italian>Distanza visiva su velivolo</Italian>
-			<Portuguese>Vizualisar distância enquanto em veículos aéreos</Portuguese>
+			<Portuguese>Visualisar distância enquanto em veículos aéreos</Portuguese>
 		</Key>
 		<Key ID="STR_SM_PlayerTags">
 			<Original>Player Tags</Original>
@@ -1298,7 +1298,7 @@
 			<German>Fahndungsliste</German>
 			<French>Interpol</French>
 			<Italian>Lista Ricercati</Italian>
-			<Portuguese>Lista de Procurados ADP</Portuguese>
+			<Portuguese>Procurados</Portuguese>
 		</Key>
 		<Key ID="STR_Wanted_Pardon">
 			<Original>Pardon</Original>
@@ -4659,7 +4659,7 @@
 			<German>Du erhältst deinen nächsten Gehaltsscheck in %1 Minuten</German>
 			<French>Vous recevrez votre prochain chèque de paie dans %1 minutes</French>
 			<Italian>Riceverai il tuo prossimo stipendio in %1 minuti</Italian>		
-			<Portuguese>Você irá receber seu próximo pagamento em %1 minutos</Portuguese>
+			<Portuguese>Você irá receber seu próximo pagamento em %1 minuto(s)</Portuguese>
 		</Key>
 		<Key ID="STR_FSM_MissedPay">
 			<Original>You have missed a paycheck because you were dead.</Original>
