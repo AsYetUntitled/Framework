@@ -10,11 +10,14 @@
 # Normal rules
 #
 .*
+*~
 *.so
 *.dll
 *.zip
 *.rar
-*~
+*.bak
+*.bat
+*.exe
 
 #
 # Bohemia Packed Files
