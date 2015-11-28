@@ -8,7 +8,7 @@
 		edible = EDIBLE; \
 		icon = ICON; \
 	};
-	
+
 #define LICENSEMACRO(NAME,DISPLAYNAME,VARNAME,PRICE,ILLEGAL,SIDE) class NAME { \
 		variable = VARNAME; \
 		displayName = DISPLAYNAME; \
@@ -23,7 +23,7 @@
 #include "Config_Weapons.hpp"
 
 /*
-	Master settings for various features and functionality	
+	Master settings for various features and functionality
 */
 class Life_Settings {
 	/* Persistent Settings */
@@ -33,7 +33,7 @@ class Life_Settings {
 	/* Revive system settings */
 	revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
 	revive_fee = 1500; //Revive fee that players have to pay and medics / EMS are rewarded
-	
+
 	/* House related settings */
 	house_limit = 5; //Maximum amount of houses a player can own.
 
@@ -46,7 +46,7 @@ class Life_Settings {
 	enable_fatigue = true; //Set to false to disable the ARMA 3 false system.
 	total_maxWeight = 24; //Static variable for the maximum weight allowed without having a backpack
 	paycheck_period = 5; //Scaled in minutes
-	
+
 	/* Impound Variables */
 	impound_car = 350; //Price for impounding cars
 	impound_boat = 250; //Price for impounding boats
@@ -151,36 +151,36 @@ class VirtualItems {
 	VITEMMACRO(peach, "STR_Item_Peach", "peach", 1, 68, 55, false, 10, "icons\ico_peach.paa")
 	VITEMMACRO(tbacon, "STR_Item_TBacon", "tbacon", 1, 75, 25, false, 40, "icons\ico_tbacon.paa")
 	VITEMMACRO(donuts, "STR_Item_Donuts", "donuts", 1, 120, 60, false, 30, "icons\ico_donuts.paa")
-	VITEMMACRO(rabbit_raw, "STR_Item_Rabbit", "rabbitRaw", 2, -1, 65, false, -1, "icons\ico_meat.paa")
+	VITEMMACRO(rabbit_raw, "STR_Item_RabbitRaw", "rabbitRaw", 2, -1, 65, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(rabbit, "STR_Item_Rabbit", "rabbit", 1, 150, 115, false, 20, "icons\ico_cookedMeat.paa")
-	VITEMMACRO(salema_raw, "STR_Item_Salema", "salemaRaw", 2, -1, 45, false, -1, "icons\ico_meat.paa")
+	VITEMMACRO(salema_raw, "STR_Item_SalemaRaw", "salemaRaw", 2, -1, 45, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(salema, "STR_Item_Salema", "salema", 1, 75, 55, false, 30, "icons\ico_cookedMeat.paa")
-	VITEMMACRO(ornate_raw, "STR_Item_OrnateMeat", "ornateRaw", 2, -1, 40, false, -1, "icons\ico_meat.paa")
+	VITEMMACRO(ornate_raw, "STR_Item_OrnateRaw", "ornateRaw", 2, -1, 40, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(ornate, "STR_Item_Ornate", "ornate", 1, 175, 150, false, 25, "icons\ico_cookedMeat.paa")
-	VITEMMACRO(mackerel_raw, "STR_Item_MackerelMeat", "mackerelRaw", 4, -1, 175, false, -1, "icons\ico_meat.paa")
+	VITEMMACRO(mackerel_raw, "STR_Item_MackerelRaw", "mackerelRaw", 4, -1, 175, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(mackerel, "STR_Item_Mackerel", "mackerel", 2, 250, 200, false, 30, "icons\ico_cookedMeat.paa")
-	VITEMMACRO(tuna_raw, "STR_Item_TunaMeat", "tunaRaw", 6, -1, 700, false, -1, "icons\ico_meat.paa")
+	VITEMMACRO(tuna_raw, "STR_Item_TunaRaw", "tunaRaw", 6, -1, 700, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(tuna, "STR_Item_Tuna", "tuna", 3, 1250, 1000, false, 100, "icons\ico_cookedMeat.paa")
-	VITEMMACRO(mullet_raw, "STR_Item_MulletMeat", "mulletRaw", 4, -1, 250, false, -1, "icons\ico_meat.paa")
+	VITEMMACRO(mullet_raw, "STR_Item_MulletRaw", "mulletRaw", 4, -1, 250, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(mullet, "STR_Item_Mullet", "mullet", 2, 600, 400, false, 80, "icons\ico_cookedMeat.paa")
-	VITEMMACRO(catshark_raw, "STR_Item_CatSharkMeat", "catsharkRaw", 6, -1, 300, false, -1, "icons\ico_meat.paa")
+	VITEMMACRO(catshark_raw, "STR_Item_CatSharkRaw", "catsharkRaw", 6, -1, 300, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(catshark, "STR_Item_CatShark", "catshark", 3, 750, 500, false, 100, "icons\ico_cookedMeat.paa")
-	VITEMMACRO(turtle_raw, "STR_Item_TurtleMeat", "turtleRaw", 6, 4000, 3000, true, -1, "icons\ico_meat.paa")
+	VITEMMACRO(turtle_raw, "STR_Item_TurtleRaw", "turtleRaw", 6, 4000, 3000, true, -1, "icons\ico_meat.paa")
 	VITEMMACRO(turtle_soup, "STR_Item_TurtleSoup", "turtleSoup", 2, 2500, 1000, false, 100, "icons\ico_cookedMeat.paa")
 	VITEMMACRO(hen_raw, "STR_Item_HenRaw", "henRaw", 1, -1, 35, false, -1, "icons\ico_meat.paa")
 	VITEMMACRO(hen, "STR_Item_Hen", "hen", 1, 115, 85, false, 65, "icons\ico_cookedMeat.paa")
 	VITEMMACRO(rooster_raw, "STR_Item_RoosterRaw", "roosterRaw", 1, -1, 35, false, -1, "icons\ico_meat.paa")
-	VITEMMACRO(rooster, "STR_Item_RoosterGrilled", "rooster", 115, 85, false, 45, "icons\ico_cookedMeat.paa")
+	VITEMMACRO(rooster, "STR_Item_Rooster", "rooster", 115, 85, false, 45, "icons\ico_cookedMeat.paa")
 	VITEMMACRO(sheep_raw, "STR_Item_SheepRaw", "sheepRaw", 2, -1, 50, false, -1, "icons\ico_meat.paa")
-	VITEMMACRO(sheep, "STR_Item_SheepGrilled", "sheep", 2, 155, 115, false, 100, "icons\ico_cookedMeat.paa")
+	VITEMMACRO(sheep, "STR_Item_Sheep", "sheep", 2, 155, 115, false, 100, "icons\ico_cookedMeat.paa")
 	VITEMMACRO(goat_raw, "STR_Item_GoatRaw", "goatRaw", 2, -1, 75, false, -1, "icons\ico_meat.paa")
-	VITEMMACRO(goat, "STR_Item_GoatGrilled", "goat", 2, 175, 135, false, 100, "icons\ico_cookedMeat.paa")
+	VITEMMACRO(goat, "STR_Item_Goat", "goat", 2, 175, 135, false, 100, "icons\ico_cookedMeat.paa")
 };
 
 
 /*
 	Licenses
-	
+
 	Params:
 	CLASS ENTRY,DisplayName,VariableName,price,illegal,side indicator
 */
@@ -234,7 +234,7 @@ class VirtualShops {
 		name = "STR_Shops_Coffee";
 		items[] = { "coffee", "donuts" };
 	};
-	
+
 	class drugdealer {
 		name = "STR_Shops_DrugDealer";
 		items[] = { "cocaine_processed", "heroin_processed", "marijuana" };
