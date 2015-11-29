@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_pickupMoney.sqf
 	Author: Bryan "Tonic" Boardwine

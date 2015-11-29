@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\script_macros.hpp"
 /*
 	Master Life Configuration File
 	This file is to setup variables for the client, there are still other configuration files in the system

@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 #define IDC_LIFE_BAR_FOOD 2200
 #define IDC_LIFE_BAR_WATER 2201
 #define IDC_LIFE_BAR_HEALTH 2202

@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 #define INUSE(ENTITY) ENTITY SVAR ["inUse",false,true]
 /*
 	File: fn_pickupItem.sqf

@@ -1,4 +1,4 @@
-#include <macro.h>
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_shopMenus.sqf
 	Author: Bryan "Tonic" Boardwine
