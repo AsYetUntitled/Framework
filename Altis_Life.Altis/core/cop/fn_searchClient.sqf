@@ -27,4 +27,4 @@ if(!life_use_atm) then  {
 	_robber = true;
 };
 
-[player,_inv,_robber] remoteExecCall ["life_fnc_copSearch",_cop];
+[player,_inv,_robber] remoteExec ["life_fnc_copSearch",_cop];

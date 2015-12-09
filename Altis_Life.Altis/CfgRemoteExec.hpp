@@ -55,7 +55,7 @@ class CfgRemoteExec {
 		F(life_fnc_admininfo,CLIENT)
 		F(TON_fnc_clientMessage,CLIENT)
 		F(life_fnc_licenseCheck,CLIENT)
-		F(life_fnc_licenseRead,CLIENT)
+		F(life_fnc_licensesRead,CLIENT)
 		F(life_fnc_copSearch,CLIENT)
 		F(life_fnc_copLights,CLIENT)
 		F(life_fnc_ticketPrompt,CLIENT)
