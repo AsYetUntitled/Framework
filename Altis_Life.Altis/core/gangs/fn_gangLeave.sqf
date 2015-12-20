@@ -14,5 +14,6 @@ SUB(_grpMembers,[steamid]);
 _grp SVAR ["gang_members",_grpMembers,true];
 [player] joinSilent (createGroup civilian);
 
+[_unit,grpPlayer] remoteExec ["TON_fnc_clientGangLeft",_unit];
 [4,_grp] remoteExec ["TON_fnc_updateGang",RSERV];
 closeDialog 0;
