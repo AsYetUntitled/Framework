@@ -18,6 +18,22 @@ waitUntil {!isNull player && player == player}; //Wait till the player is ready
 diag_log "::Life Client:: Initialization Variables";
 [] call compile PreprocessFileLineNumbers "core\configuration.sqf";
 
+//Set bank amount for new players
+switch (playerSide) do {
+	case west: {
+		BANK = LIFE_SETTINGS(getNumber,"bank_cop”);
+		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop”);
+	};
+	case civilian: {
+		BANK = LIFE_SETTINGS(getNumber,"bank_civ”);
+		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ”);
+	};
+	case independent: {
+		BANK = LIFE_SETTINGS(getNumber,"bank_med”);
+		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med”);
+	};
+};
+
 diag_log "::Life Client:: Variables initialized";
 diag_log "::Life Client:: Setting up Eventhandlers";
 [] call life_fnc_setupEVH;

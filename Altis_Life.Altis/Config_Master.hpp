@@ -51,6 +51,16 @@ class Life_Settings {
 	impound_car = 350; //Price for impounding cars
 	impound_boat = 250; //Price for impounding boats
 	impound_air = 850; //Price for impounding helicopters / planes
+    
+	/* Initial Bank Amount */
+	bank_cop = 7000; //Amount of cash on bank for new cops
+	bank_civ = 3000; //Amount of cash on bank for new civillians
+	bank_med = 6500; //Amount of cash on bank for new medics
+    
+	/* Paycheck Amount */
+	paycheck_cop = 500; //Payment for cops
+	paycheck_civ = 350; //Payment for civillians
+	paycheck_med = 450; //Payment for medics
 
 	/* Car-shop Settings */
 	vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F" };
