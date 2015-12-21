@@ -42,5 +42,13 @@ if(EQUAL(life_shop_type,"drugdealer")) then {
 	};
 };
 
+if(EQUAL(life_shop_type,”gold”)) then {
+	[] spawn {
+		life_use_atm = false;
+		sleep ((LIFE_SETTINGS(getNumber,”noatm_timer”)) * 60);
+		life_use_atm = true;
+	};
+};
+
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;

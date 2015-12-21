@@ -61,6 +61,9 @@ class Life_Settings {
 	paycheck_cop = 500; //Payment for cops
 	paycheck_civ = 350; //Payment for civillians
 	paycheck_med = 450; //Payment for medics
+    
+	/* Federal Reserve settings */
+	noatm_timer = 10; //Time in minutes that players won't be able to deposit his money after selling stolen gold
 
 	/* Car-shop Settings */
 	vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F" };
