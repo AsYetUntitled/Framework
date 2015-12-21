@@ -11,7 +11,7 @@ private["_license","_guns","_gun"];
 params [
 	["_civ",objNull,[objNull]],
 	["_invs",[],[[]]],
-	["_robber",false,[false]]
+	["_robber",false,[true]]
 ];
 
 if(isNull _civ) exitWith {};
