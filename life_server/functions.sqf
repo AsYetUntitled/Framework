@@ -109,7 +109,7 @@ compileFinal "
 	{
 		life_my_gang = ObjNull;
 		[player] joinSilent (createGroup civilian);
-		hint “”You have quit the gang.“”;
+		hint ""You have quit the gang."";
 	};
 ";
 
