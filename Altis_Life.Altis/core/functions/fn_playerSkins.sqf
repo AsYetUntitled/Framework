@@ -7,25 +7,25 @@
 */
 switch(playerSide) do {
 	case civilian: {
-		if(!isNull “textures\civilian_uniform_1.jpg” && uniform player == "U_C_Poloshirt_blue") then {
+		if(!isNull "textures\civilian_uniform_1.jpg" && uniform player == "U_C_Poloshirt_blue") then {
 			player setObjectTextureGlobal [0, "textures\civilian_uniform_1.jpg"];
 		};
-		if(!isNull “textures\civilian_uniform_2.jpg” && uniform player == "U_C_Poloshirt_burgundy") then {
+		if(!isNull "textures\civilian_uniform_2.jpg" && uniform player == "U_C_Poloshirt_burgundy") then {
 			player setObjectTextureGlobal [0, "textures\civilian_uniform_2.jpg"];
 		};
-		if(!isNull “textures\civilian_uniform_3.jpg” && uniform player == "U_C_Poloshirt_stripped") then {
+		if(!isNull "textures\civilian_uniform_3.jpg" && uniform player == "U_C_Poloshirt_stripped") then {
 			player setObjectTextureGlobal [0, "textures\civilian_uniform_3.jpg"];
 		};
-		if(!isNull “textures\civilian_uniform_4.jpg” && uniform player == "U_C_Poloshirt_tricolour") then {
+		if(!isNull "textures\civilian_uniform_4.jpg" && uniform player == "U_C_Poloshirt_tricolour") then {
 			player setObjectTextureGlobal [0, "textures\civilian_uniform_4.jpg"];
 		};
-		if(!isNull “textures\civilian_uniform_5.jpg” && uniform player == "U_C_Poloshirt_salmon") then {
+		if(!isNull "textures\civilian_uniform_5.jpg" && uniform player == "U_C_Poloshirt_salmon") then {
 			player setObjectTextureGlobal [0, "textures\civilian_uniform_5.jpg"];
 		};
-		if(!isNull “textures\civilian_uniform_6.jpg” && uniform player == "U_C_Poloshirt_redwhite") then {
+		if(!isNull "textures\civilian_uniform_6.jpg" && uniform player == "U_C_Poloshirt_redwhite") then {
 			player setObjectTextureGlobal [0, "textures\civilian_uniform_6.jpg"];
 		};
-		if(!isNull “textures\civilian_uniform_7.jpg” && uniform player == "U_C_Commoner1_1") then {
+		if(!isNull "textures\civilian_uniform_7.jpg" && uniform player == "U_C_Commoner1_1") then {
 			player setObjectTextureGlobal [0, "textures\civilian_uniform_7.jpg"];
 		};
 	};
