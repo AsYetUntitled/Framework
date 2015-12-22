@@ -1,3 +1,4 @@
+if((LIFE_SETTINGS(getNumber,"spyglass_mode")) > 0) exitWith {};
 #define GVAR_UINS uiNamespace getVariable
 #define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
 #define steamid getPlayerUID player
