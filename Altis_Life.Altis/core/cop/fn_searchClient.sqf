@@ -20,7 +20,7 @@ _robber = false;
 		_inv pushBack [SEL(_x,0),_val];
 		[false,SEL(_x,0),_val] call life_fnc_handleInv;
 	};
-} foreach ("getNumber(_x >> 'illegal') isEqualTo 1" configClasses (missionConfigFile >> "VirtualItems"));
+} foreach ("getText(_x >> 'illegal') isEqualTo 'true'" configClasses (missionConfigFile >> "VirtualItems"));
 
 if(!life_use_atm) then  {
 	CASH = 0;
