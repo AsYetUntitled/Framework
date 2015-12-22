@@ -1,5 +1,4 @@
 #include "..\script_macros.hpp"
-if((LIFE_SETTINGS(getNumber,"spyglass_mode")) > 0) exitWith {};
 /*
 	File: fn_initSpy.sqf
 	
@@ -11,6 +10,7 @@ if((LIFE_SETTINGS(getNumber,"spyglass_mode")) > 0) exitWith {};
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
+if(!(EQUAL(LIFE_SETTINGS(getText,"spyglass_init"),true))) exitWith {};
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
 CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");

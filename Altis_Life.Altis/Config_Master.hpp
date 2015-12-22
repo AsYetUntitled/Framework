@@ -66,7 +66,7 @@ class Life_Settings {
 	noatm_timer = 10; //Time in minutes that players won't be able to deposit his money after selling stolen gold
 
 	/* Spyglass settings */
-	 spyglass_mode = 0; //Enable or Disable spyglass (1 = On / 0 = Off)
+	 spyglass_init = false; //Enable or disable spyglass
 	
 	/* Car-shop Settings */
 	vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F" };
