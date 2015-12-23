@@ -6,16 +6,16 @@
 	Description:
 	Something
 */
-private["_shopSide","_shopSide","_license","_itemInfo","_itemList","_license","_flag","_exit","_level","_message","_exit2"];
+private["_shopSide","_shopSide","_license","_itemInfo","_itemList","_license","_flag","_exit","_level","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg"];
 _exit = false;
-_exit2 = false;
 _shopTitle = M_CONFIG(getText,"WeaponShops",(SEL(_this,3)),"name");
 _shopSide = M_CONFIG(getText,"WeaponShops",(SEL(_this,3)),"side");
 _license = M_CONFIG(getText,"WeaponShops",(SEL(_this,3)),"license");
 _levelAssert = M_CONFIG(getArray,"WeaponShops",(SEL(_this,3)),"level");
-_levelKind = SEL(_levelAssert,0);
-_levelMin = SEL(_levelAssert,1);
-_levelMsg = SEL(_levelAssert,2);
+_levelName = SEL(_levelAssert,0);
+_levelType = SEL(_levelAssert,1);
+_levelValue = SEL(_levelAssert,2);
+_levelMsg = SEL(_levelAssert,3);
 
 
 if(!(EQUAL(_license,""))) then {
@@ -26,11 +26,24 @@ if(_exit) exitWith {};
 
 _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
 if(!(EQUAL(_flag,_shopSide))) exitWith {};
-if(!(EQUAL(_levelMin,-1))) then {
-	_flag = _levelMin <= (FETCH_CONST(_levelKind));
-	if(!(_flag)) then {_exit2 = true;};
+if(!(EQUAL(_levelValue,-1))) then {
+	_level = GVAR_MNS _levelName;
+	if(typeName _level == typeName {}) then {_level = FETCH_CONST(_level);};
+
+	_flag = switch(_levelType) do {
+		case (typeName 0): {_level >= _levelValue};
+		case (typeName true): {_level};
+		default {EQUAL(_level,_levelValue)};
+	};
+
+	if(!(_flag)) exitWith {
+		if(!(EQUAL(_levelMsg,""))) then {
+			hint _levelMsg;
+		}else{
+			hint localize "STR_Shop_Veh_NotAllowed";
+		};
+	};
 };
-if(_exit2) exitWith {hint _levelMsg;};
 
 uiNamespace setVariable ["Weapon_Shop",SEL(_this,3)];
 
