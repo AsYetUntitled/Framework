@@ -6,13 +6,13 @@
 	Description:
 	Blah
 */
-private["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy"];
+private["_shop","_sideCheck","_spawnPoints","_shopFlag","_shopTitle","_disableBuy"];
 (SEL(_this,3)) params [
 	["_shop","",[""]],
 	["_sideCheck",sideUnknown,[civilian]],
 	["_spawnPoints","",["",[]]],
 	["_shopFlag","",[""]],
-	["_ERDHNFCXHBNCVBNDFNF","",[""]],
+	["_shopTitle","",[""]],
 	["_disableBuy",false,[true]]
 ];
 
@@ -25,7 +25,7 @@ if(!createDialog "Life_Vehicle_Shop_v2") exitWith {};
 
 life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
 
-ctrlSetText [2301,((_this select 3) select 4)];
+ctrlSetText [2301,_shopTitle];
 
 if(_disableBuy) then {
 	//Disable the buy button.
