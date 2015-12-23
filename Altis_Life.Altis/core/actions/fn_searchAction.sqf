@@ -5,8 +5,9 @@
 	Description:
 	Starts the searching process.
 */
-private["_unit"];
-_unit = param [0,ObjNull,[ObjNull]];
+params [
+	["_unit",objNull,[objNull]]
+];
 if(isNull _unit) exitWith {};
 hint localize "STR_NOTF_Searching";
 sleep 2;

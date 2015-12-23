@@ -6,8 +6,10 @@
 	Description:
 	Searches the player and he returns information back to the player.
 */
-private["_cop","_inv","_val","_var","_robber"];
-_cop = param [0,Objnull,[objNull]];
+private["_inv","_val","_var","_robber"];
+params [
+	["_cop",objNull,[objNull]]
+];
 if(isNull _cop) exitWith {};
 
 _inv = [];
