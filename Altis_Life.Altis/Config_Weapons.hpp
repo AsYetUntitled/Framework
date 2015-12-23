@@ -16,7 +16,7 @@ class WeaponShops {
         name = "Billy Joe's Firearms";
         side = "civ";
         license = "gun";
-        level[] = { "", "", -1, "" };
+        level[] = { "", -1, "" };
         items[] = {
             { "hgun_Rook40_F", "", 6500 },
             { "hgun_Pistol_heavy_02_F", "", 9850 },
@@ -35,7 +35,7 @@ class WeaponShops {
         name = "Mohammed's Jihadi Shop";
         side = "civ";
         license = "rebel";
-        level[] = { "", "", -1, "" };
+        level[] = { "", -1, "" };
         items[] = {
             { "arifle_TRG20_F", "", 25000 },
             { "arifle_Katiba_F", "", 30000 },
@@ -57,7 +57,7 @@ class WeaponShops {
         name = "Hideout Armament";
         side = "civ";
         license = "";
-        level[] = { "", "", -1, "" };
+        level[] = { "", -1, "" };
         items[] = {
             { "hgun_Rook40_F", "", 1500 },
             { "hgun_Pistol_heavy_02_F", "", 2500 },
@@ -77,7 +77,7 @@ class WeaponShops {
         name = "Altis General Store";
         side = "civ";
         license = "";
-        level[] = { "", "", -1, "" };
+        level[] = { "", -1, "" };
         items[] = {
             { "Binocular", "", 150 },
             { "ItemGPS", "", 100 },
@@ -96,7 +96,7 @@ class WeaponShops {
         name = "Altis Cop Shop";
         side = "cop";
         license = "";
-        level[] = { "", "", -1, "" };
+        level[] = { "", -1, "" };
         items[] = {
             { "arifle_sdar_F", "Taser Rifle", 20000 },
             { "hgun_P07_snds_F", "Stun Pistol", 2000 },
@@ -118,7 +118,7 @@ class WeaponShops {
         name = "Altis Patrol Officer Shop";
         side = "cop";
         license = "";
-        level[] = { "life_copLevel", "SCALAR", 2, "You must be a Patrol Officer Rank!" };
+        level[] = { "life_copLevel", 2, "You must be a Patrol Officer Rank!" };
         items[] = {
             { "arifle_MX_F", "", 35000 },
             { "SMG_02_ACO_F", "", 30000 },
@@ -137,7 +137,7 @@ class WeaponShops {
         name = "Altis Sergeant Officer Shop";
         side = "cop";
         license = "";
-        level[] = { "life_copLevel", "SCALAR", 3, "You must be a Sergeant Rank!" };
+        level[] = { "life_copLevel", 3, "You must be a Sergeant Rank!" };
         items[] = {
             { "SMG_02_ACO_F", "", 15000 },
             { "hgun_ACPC2_F", "", 17500 },
@@ -156,7 +156,7 @@ class WeaponShops {
         name = "store";
         side = "med";
         license = "";
-        level[] = { "", "", -1, "" };
+        level[] = { "", -1, "" };
         items[] = {
             { "ItemGPS", "", 100 },
             { "Binocular", "", 150 },
