@@ -2,7 +2,7 @@
 /*
 	File: fn_weaponShopMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Something
 */
@@ -12,8 +12,11 @@ _exit2 = false;
 _shopTitle = M_CONFIG(getText,"WeaponShops",(SEL(_this,3)),"name");
 _shopSide = M_CONFIG(getText,"WeaponShops",(SEL(_this,3)),"side");
 _license = M_CONFIG(getText,"WeaponShops",(SEL(_this,3)),"license");
-_level = M_CONFIG(getNumber,"WeaponShops",(SEL(_this,3)),"level");
-_message = M_CONFIG(getText,"WeaponShops",(SEL(_this,3)),"msg");
+_levelAssert = M_CONFIG(getArray,"WeaponShops",(SEL(_this,3)),"level");
+_levelKind = SEL(_levelAssert,0);
+_levelMin = SEL(_levelAssert,1);
+_levelMsg = SEL(_levelAssert,2);
+
 
 if(!(EQUAL(_license,""))) then {
 	_flag = M_CONFIG(getText,"Licenses",_license,"side");
@@ -23,11 +26,11 @@ if(_exit) exitWith {};
 
 _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
 if(!(EQUAL(_flag,_shopSide))) exitWith {};
-if(!(EQUAL(_level,-1))) then {
-	_flag = switch(playerSide) do {case west: {(_level <= (FETCH_CONST(life_copLevel)))}; case independent: {(_level <= (FETCH_CONST(life_medicLevel)))}; default {true};};
-	if(!_flag) then {_exit2 = true;};
+if(!(EQUAL(_levelMin,-1))) then {
+	_flag = _levelMin <= (FETCH_CONST(_levelKind));
+	if(!(_flag)) then {_exit2 = true;};
 };
-if(_exit2) exitWith {hint _message;};
+if(_exit2) exitWith {hint _levelMsg;};
 
 uiNamespace setVariable ["Weapon_Shop",SEL(_this,3)];
 
