@@ -18,7 +18,7 @@ _robber = false;
 //Illegal items
 {
 	_var = configName(_x);
-	_val = ITEM_VALUE(_var)
+	_val = ITEM_VALUE(_var);
 	if(_val > 0) then {
 		_inv pushBack [_var,_val];
 		[false,_var,_val] call life_fnc_handleInv;
