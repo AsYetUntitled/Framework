@@ -5,8 +5,9 @@
 	Description:
 	Starts the ticketing process.
 */
-private["_unit"];
-_unit = param [0,ObjNull,[ObjNull]] call BIS_fnc_param;
+params [
+	["_unit",objNull,[objNull]]
+];
 disableSerialization;
 if(!(createDialog "life_ticket_give")) exitWith {hint localize "STR_Cop_TicketFail"};
 if(isNull _unit OR !isPlayer _unit) exitwith {};
