@@ -1,3 +1,6 @@
+#define true 1
+#define false 0
+
 #define VITEMMACRO(NAME,DISPLAYNAME,VARNAME,WEIGHT,BUYPRICE,SELLPRICE,ILLEGAL,EDIBLE,ICON) class NAME { \
 		variable = VARNAME; \
 		weight = WEIGHT; \
@@ -16,11 +19,6 @@
 		illegal = ILLEGAL; \
 		side = SIDE; \
 	};
-
-#define true 1
-#define false 0
-#include "Config_Clothing.hpp"
-#include "Config_Weapons.hpp"
 
 /*
 	Master settings for various features and functionality
@@ -51,26 +49,26 @@ class Life_Settings {
 	impound_car = 350; //Price for impounding cars
 	impound_boat = 250; //Price for impounding boats
 	impound_air = 850; //Price for impounding helicopters / planes
-    
+
 	/* Initial Bank Amount */
 	bank_cop = 7000; //Amount of cash on bank for new cops
 	bank_civ = 3000; //Amount of cash on bank for new civillians
 	bank_med = 6500; //Amount of cash on bank for new medics
-    
+
 	/* Paycheck Amount */
 	paycheck_cop = 500; //Payment for cops
 	paycheck_civ = 350; //Payment for civillians
 	paycheck_med = 450; //Payment for medics
-    
+
 	/* Federal Reserve settings */
 	noatm_timer = 10; //Time in minutes that players won't be able to deposit his money after selling stolen gold
 
 	/* Spyglass settings */
 	 spyglass_init = false; //Enable or disable spyglass
-	 
+
 	/* Skins settings */
 	civ_skins = false; //Enable or disable civilian skins. Before enabling, you must add all the SEVEN files to textures folder. (It must be named as: civilian_uniform_1.jpg, civilian_uniform_2.jpg...civilian_uniform_6.jpg, civilian_uniform_7.jpg)
-	
+
 	/* Car-shop Settings */
 	vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F" };
 
@@ -305,4 +303,6 @@ class VirtualShops {
 	};
 };
 
+#include "Config_Clothing.hpp"
+#include "Config_Weapons.hpp"
 #include "Config_Vehicles.hpp"
