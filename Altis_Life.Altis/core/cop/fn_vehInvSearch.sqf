@@ -19,7 +19,7 @@ _value = 0;
 	_var = SEL(_x,0);
 	_val = SEL(_x,1);
 	
-	if(EQUAL(ITEM_ILLEGAL(_var),true)) then {
+	if(EQUAL(ITEM_ILLEGAL(_var),1)) then {
 		if(!(EQUAL(ITEM_SELLPRICE(_var),-1))) then {
 			ADD(_value,(round(_val * ITEM_SELLPRICE(_var) / 2)));
 		};

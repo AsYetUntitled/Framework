@@ -15,7 +15,7 @@ _itemInfo = _this GVAR ["item",[]]; if(EQUAL(count _itemInfo,0)) exitWith {delet
 _itemName = ITEM_NAME(SEL(_itemInfo,0));
 _illegal = ITEM_ILLEGAL(SEL(_itemInfo,0));
 
-if(playerSide == west && (EQUAL(_illegal,true))) exitWith {
+if(playerSide == west && (EQUAL(_illegal,1))) exitWith {
 	titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2)] call life_fnc_numberText],"PLAIN"];
 	ADD(BANK,round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2));
 	deleteVehicle _this;

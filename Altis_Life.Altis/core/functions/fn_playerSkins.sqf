@@ -2,13 +2,13 @@
 /*
     File: fn_playerSkins.sqf
     Author: Daniel Stuart
-    
+
     Description:
     Sets skins for players by their side and uniform.
 */
 switch(playerSide) do {
 	case civilian: {
-		if(EQUAL(LIFE_SETTINGS(getText,"civ_skins"),true)) then {
+		if(EQUAL(LIFE_SETTINGS(getNumber,"civ_skins"),1)) then {
 			if(uniform player == "U_C_Poloshirt_blue") then {
 				player setObjectTextureGlobal [0, "textures\civilian_uniform_1.jpg"];
 			};
@@ -34,7 +34,7 @@ switch(playerSide) do {
 	};
 	case west: {
 		if(uniform player == "U_Rangemaster") then {
-			player setObjectTextureGlobal [0, "textures\cop_uniform.jpg"];	
+			player setObjectTextureGlobal [0, "textures\cop_uniform.jpg"];
 		};
 	};
 	case independent: {

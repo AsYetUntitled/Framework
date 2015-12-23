@@ -1,16 +1,16 @@
 #include "..\script_macros.hpp"
 /*
 	File: fn_initSpy.sqf
-	
+
 	Description:
 	Does some things that I made over-complicated / un-needed but blah.
 	Will eventually include server-side checks but it's blah at this point.
-	
+
 	Will also become a standalone system which is why it's setup like this.
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-if(!(EQUAL(LIFE_SETTINGS(getText,"spyglass_init"),true))) exitWith {};
+if(!(EQUAL(LIFE_SETTINGS(getNumber,"spyglass_init"),1))) exitWith {};
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
 CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
@@ -28,10 +28,10 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
 
 /*
 	Compile our list of allowed addon patches, by default this DOES NOT ALLOW ANY ADDONS.
-	
+
 	If you want to white-list addons such as JSRS or Blastcore you need to start a test instance (Host locally and not the mission) and first fill the SPY_cfg_patchList array, once you executed it (Filled it)
 	Run the following code and it will copy the list of addons / patches not in the list to your clipboard (Ctrl + V) and then add it to the array.
-	
+
 	_cfgPatches = [];
 	_binConfigPatches = configFile >> "CfgPatches";
 	for "_i" from 0 to count (_binConfigPatches)-1 do {
@@ -44,7 +44,7 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
 	};
 
 	copyToClipboard str(_cfgPatches);
-	
+
 	i.e
 	["cba_xeh","Extended_EventHandlers","CBA_Extended_EventHandlers","JSRS_Environment","WarFXPE","cba_common","cba_events","cba_hashes","cba_network","cba_strings","cba_ui","cba_vectors","JSRS2_120mm_Cannon","JSRS2_127","JSRS2_155mm_AMOS",
 	"JSRS2_230mm_Titan","JSRS2_30mm_Cannon","JSRS2_35mm_Autocannon","JSRS2_4Five45","JSRS2_ACPC","JSRS2_Autocannon","JSRS2_Bullethits","JSRS2_DAGR","JSRS2_DAR","JSRS2_EBR","JSRS2_Explosions","JSRS2_Explosives","JSRS2_Filters","JSRS2_FS2000",
@@ -54,7 +54,7 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
 	"JSRS2_FighterPlane3","JSRS2_FV720_Mora","JSRS2_Hunter","JSRS2_Ifrit","JSRS2_IFV6a_Cheetah","JSRS2_IFV6c_Panther","JSRS2_M2A1_Slammer","JSRS2_M4_Scorcher","JSRS2_M5_Sandstorm","JSRS2_MBT52_Kuma","JSRS2_Mi48_Kajman","JSRS2_MSE3_Marid","JSRS2_Offroad",
 	"JSRS2_Po30_Orca","JSRS2_Strider","JSRS2_SUV","JSRS2_T100_Varsuk","JSRS2_Truck1","JSRS2_Truck2","JSRS2_UAV_1","JSRS2_UH80_GhostHawk","JSRS2_Van","JSRS2_WY55_Hellcat","JSRS2_ZSU39_Tigris","cba_xeh_a3"]
 */
-_patchList = 
+_patchList =
 ["life_server","CAData","A3_BaseConfig_F","A3_Dubbing_Radio_F","A3_Functions_F","A3_Functions_F_EPA","A3_Functions_F_EPC","A3_Data_F","A3_Data_F_ParticleEffects","A3_Editor_F","A3_Functions_F_Curator",
 "A3_Language_F","A3_Language_F_Beta","A3_Language_F_Curator","A3_Language_F_EPA","A3_Language_F_EPB","A3_Language_F_EPC","A3_Language_F_Gamma","A3_LanguageMissions_F","A3_LanguageMissions_F_Beta",
 "A3_LanguageMissions_F_Gamma","A3_Misc_F","A3_Misc_F_Helpers","A3_Modules_F","A3_Modules_F_DynO","A3_Modules_F_Effects","A3_Modules_F_Events","A3_Modules_F_GroupModifiers","A3_Modules_F_HC",
@@ -176,7 +176,7 @@ _allowedChildren = [
 /*
 	Display Validator
 	Loops through and makes sure none of the displays were modified..
-	
+
 	TODO: Run check every x minutes and validate all displays.
 */
 {

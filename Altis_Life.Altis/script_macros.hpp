@@ -58,7 +58,7 @@
 #define LICENSE_VALUE(varName,flag) GVAR_MNS [LICENSE_VARNAME(varName,flag),false]
 #define ITEM_VARNAME(varName) format["life_inv_%1",M_CONFIG(getText,"VirtualItems",varName,"variable")]
 #define ITEM_VALUE(varName) GVAR_MNS [ITEM_VARNAME(varName),0]
-#define ITEM_ILLEGAL(varName) M_CONFIG(getText,"VirtualItems",ITEM_VARNAME(varName),"illegal")
+#define ITEM_ILLEGAL(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"illegal")
 #define ITEM_SELLPRICE(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"sellPrice")
 #define ITEM_BUYPRICE(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"buyPrice")
 #define ITEM_NAME(varName) M_CONFIG(getText,"VirtualItems",varName,"displayName")
