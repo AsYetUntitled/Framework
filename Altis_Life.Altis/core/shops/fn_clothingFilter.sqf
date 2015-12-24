@@ -56,33 +56,33 @@ _array = switch(_selection) do {
 	_className = SEL(_x,0);
 	_displayName = SEL(_x,1);
 	_price = SEL(_x,2);
-	_dataPoint = SEL(_x,3);
-	_varName = SEL(_dataPoint,0);
-	_varType = SEL(_dataPoint,1);
-	_varValue = SEL(_dataPoint,2);
-	
+	_levelAssert = SEL(_x,3);
+	_levelName = SEL(_levelAssert,0);
+	_levelType = SEL(_levelAssert,1);
+	_levelValue = SEL(_levelAssert,2);
+
 	if(!(EQUAL(_className,"NONE"))) then {
 		_details = [_className] call life_fnc_fetchCfgDetails;
 		_pic = SEL(_details,2);
 	};
-	
-	if(!(EQUAL(_varName,""))) then {
-		_var = GVAR_MNS _varName;
-		if(typeName _var == typeName {}) then {_var = FETCH_CONST(_var);};
-		
-		_bool = switch(_varType) do {
-			case (typeName 0): {_var >= _varValue};
-			case (typeName true): {_var};
-			default {EQUAL(_var,_varValue)};
+
+	if(!(EQUAL(_levelValue,-1))) then {
+		_level = GVAR_MNS _levelName;
+		if(typeName _level == typeName {}) then {_level = FETCH_CONST(_level);};
+
+		_bool = switch(_levelType) do {
+			case "SCALAR": {_level >= _levelValue};
+			case "BOOL": {_level};
+			default {false};
 		};
-		
+
 		if(_bool && {!isNil "_details"}) then {
 			if(EQUAL(_displayName,"")) then {
 				_list lbAdd (SEL(_details,1));
 			} else {
 				_list lbAdd _displayName;
 			};
-			
+
 			_list lbSetData [(lbSize _list)-1,_className];
 			_list lbSetValue [(lbSize _list)-1,_price];
 			_list lbSetPicture [(lbSize _list)-1,_pic];
@@ -97,7 +97,7 @@ _array = switch(_selection) do {
 			} else {
 				_list lbAdd _displayName;
 			};
-			
+
 			_list lbSetData [(lbSize _list)-1,_className];
 			_list lbSetValue [(lbSize _list)-1,_price];
 			_list lbSetPicture [(lbSize _list)-1,_pic];

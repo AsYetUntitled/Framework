@@ -1,12 +1,12 @@
 /*
-	ARRAY FORMAT:
-		0: STRING (Classname)
-		1: STRING (Display Name, leave as "" for default)
-		2: SCALAR (Price)
-		4: ARRAY (This is for limiting items to certain things)
-			0: Variable to read from
-			1: Variable Value Type
-			2: What to compare to
+*	ARRAY FORMAT:
+*		0: STRING (Classname)
+*		1: STRING (Display Name, leave as "" for default)
+*		2: SCALAR (Price)
+*		4: ARRAY (This is for limiting items to certain things)
+*			0: Variable to read from
+*			1: Variable Value Type (SCALAR / BOOL)
+*			2: What to compare to (-1 = Check Disabled)
 */
 class Clothing {
 	class bruce {
