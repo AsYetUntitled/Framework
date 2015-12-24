@@ -1,5 +1,5 @@
-Altis-Life
-==========
+Altis-Life v4.1
+===============
 
 <b>Altis Life</b> or <b>[Altis Life RPG] (http://www.altisliferpg.com)</b> is developed by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
 This contains primarily the release contain and on-going development changes to the mission.<br/>
@@ -86,5 +86,3 @@ apt-get install libtbb2:i386
 <br/>
 <b>RedHat/CentOS</b><br/>
 yum install tbb.i686
-<br/>
-Extract the static build (if you do not know how to build on a linux os) to the root directory.
