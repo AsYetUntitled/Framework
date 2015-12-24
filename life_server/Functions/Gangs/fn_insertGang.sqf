@@ -58,7 +58,7 @@ _group setVariable["gang_owner",_uid,true];
 _group setVariable["gang_bank",0,true];
 _group setVariable["gang_maxMembers",8,true];
 _group setVariable["gang_members",[_uid],true];
-[[_group],"life_fnc_gangCreated",_ownerID,false] call life_fnc_MP;
+[_group] remoteExecCall ["life_fnc_gangCreated",_ownerID];
 
 sleep 0.35;
 _query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
