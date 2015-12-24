@@ -2,7 +2,7 @@
 /*
 	File: fn_clothingMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Opens and initializes the clothing store menu.
 	Started clean, finished messy.
@@ -30,7 +30,7 @@ ctrlSetText [3103,localize _shopTitle];
 createDialog "Life_Clothing";
 disableSerialization;
 
-(findDisplay 3100) displaySetEventHandler ["KeyDown","if((_this select 1) == 1) then {true}"]; //Block the ESC menu
+(findDisplay 3100) displaySetEventHandler ["KeyDown","if((_this select 1) == 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
 
 //Cop / Civ Pre Check
 if((SEL(_this,3) in ["bruce","dive","reb","kart"] && playerSide != civilian)) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
@@ -146,11 +146,11 @@ if(isNil "life_clothesPurchased") exitWith {
 			};
 		};
 	};
-	
+
 	if(count life_oldUniformItems > 0) then {
 		{[_x,true,false,false,true] call life_fnc_handleItem;} foreach life_oldUniformItems;
 	};
-	
+
 	if(vest player != "") then {
 		if(life_oldVest == "") then {
 			removeVest player;
