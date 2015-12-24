@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `cop_gear` text NOT NULL,
   `med_gear` text NOT NULL,
   `arrested` tinyint(1) NOT NULL DEFAULT '0',
-  `adminlevel` enum('0','1','2','3') NOT NULL DEFAULT '0',
+  `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
