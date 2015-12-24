@@ -2,12 +2,14 @@
 /*
 	File: fn_wantedFetch.sqf
 	Author: Bryan "Tonic" Boardwine"
-	
+
 	Description:
 	Displays wanted list information sent from the server.
 */
-private["_ret","_list","_jailedUnits"];
-_ret = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+private["_list","_jailedUnits"];
+params [
+	["_ret",ObjNull,[objNull]]
+];
 if(isNull _ret) exitWith {};
 
 _ret = owner _ret;
@@ -23,4 +25,4 @@ _list = [];
 		};
 	};
 } foreach life_wanted_list;
-[_list] remoteExecCall ["life_fnc_wantedList",_ret];
+[_list] remoteExec ["life_fnc_wantedList",_ret];

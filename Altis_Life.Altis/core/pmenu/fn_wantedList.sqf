@@ -3,13 +3,15 @@
 	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_wantedList.sqf
 	Author: Bryan "Tonic" Boardwine"
-	
+
 	Description:
 	Displays wanted list information sent from the server.
 */
-private["_info","_display","_list","_units","_entry"];
-disableSerialization;
-_info = param [0,[],[[]]];
+private["_display","_list","_units","_entry"];
+params [
+	["_info",[]]
+];
+ disableSerialization;
 _display = findDisplay 2400;
 _list = _display displayctrl 2401;
 _units = [];

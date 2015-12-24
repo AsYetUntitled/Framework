@@ -2,7 +2,7 @@
 /*
 	File: fn_wantedMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Opens the Wanted menu and connects to the APD.
 */
@@ -22,4 +22,4 @@ if(FETCH_CONST(life_coplevel) < 3 && FETCH_CONST(life_adminlevel) == 0) then {
 	ctrlShow[2405,false];
 };
 
-[player] remoteExecCall ["life_fnc_wantedFetch",RSERV];
+[player] remoteExec ["life_fnc_wantedFetch",RSERV];
