@@ -30,23 +30,23 @@ if(EQUAL(count _itemArray,0)) exitWith {
 };
 
 _itemArray params [
-	["_uniform","",[""]],
-	["_vest","",[""]],
-	["_backpack","",[""]],
-	["_goggles","",[""]],
-	["_headgear","",[""]],
-	["_items",[],[[]]],
-	["_prim","",[""]],
-	["_seco","",[""]],
-	["_uItems",[],[[]]],
-	["_uMags",[],[[]]],
-	["_bItems",[],[[]]],
-	["_bMags",[],[[]]],
-	["_vItems",[],[[]]],
-	["_vMags",[],[[]]],
-	["_pItems",[],[[]]],
-	["_hItems",[],[[]]],
-	["_yItems",[],[[]]]
+	"_uniform",
+	"_vest",
+	"_backpack",
+	"_goggles",
+	"_headgear",
+	["_items",[]],
+	"_prim",
+	"_seco",
+	["_uItems",[]],
+	["_uMags",[]],
+	["_bItems",[]],
+	["_bMags",[]],
+	["_vItems",[]],
+	["_vMags",[]],
+	["_pItems",[]],
+	["_hItems",[]],
+	["_yItems",[]]
 ];
 
 if(!(EQUAL(_goggles,""))) then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
