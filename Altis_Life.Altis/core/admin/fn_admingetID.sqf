@@ -10,4 +10,4 @@ _unit = call compile format["%1", _unit];
 if(isNil "_unit") exitwith {};
 if(isNull _unit) exitWith {};
 
-[_unit,player] remoteExecCall ["TON_fnc_getID",false];
+[_unit,player] remoteExecCall ["TON_fnc_getID",2];
