@@ -2,7 +2,7 @@
 /*
 	File: fn_adminFreeze.sqf
 	Author: ColinM9991
- 
+
 	Description: Freezes selected player
 */
 if(FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
@@ -14,4 +14,4 @@ if(isNil "_unit") exitWith {};
 if(isNull _unit) exitWith {};
 if(_unit == player) exitWith {hint localize "STR_ANOTF_Error";};
 
-[[player],"life_fnc_freezePlayer",_unit,false] spawn life_fnc_MP; 
+[player] remoteExec ["life_fnc_freezePlayer",_unit];

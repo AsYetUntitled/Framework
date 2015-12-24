@@ -61,7 +61,8 @@ class CfgRemoteExec {
 		F(life_fnc_copLights,CLIENT)
 		F(life_fnc_ticketPrompt,CLIENT)
 		F(life_fnc_ticketPaid,CLIENT)
-		
+		F(life_fnc_freezePlayer,CLIENT)
+
 		/* Server only functions */
 		F(bis_fnc_execvm,SERVER)
 		F(life_fnc_wantedBounty,SERVER)
@@ -96,7 +97,7 @@ class CfgRemoteExec {
 		F(SPY_fnc_cookieJar,SERVER)
 		F(TON_fnc_vehicleCreate,SERVER)
 		F(TON_fnc_addHouse,SERVER)
-		
+
 		/* Functions for everyone */
 		F(life_fnc_broadcast,ANYONE)
 		F(life_fnc_animSync,ANYONE)
@@ -113,11 +114,11 @@ class CfgRemoteExec {
 		F(life_fnc_simDisable,ANYONE)
 
 	};
-	
+
 	class Commands {
 		mode = 1;
 		jip = 0;
-		
+
 		F(setFuel,ANYONE)
 		F(addWeapon,ANYONE)
 		F(addMagazine,ANYONE)
