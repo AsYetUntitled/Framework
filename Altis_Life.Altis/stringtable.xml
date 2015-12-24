@@ -228,6 +228,10 @@
 			<French>Menu Admin</French>
 			<Portuguese>Menu Admin</Portuguese>
 		</Key>
+		<Key ID="STR_Admin_Amount">
+			<Original>Put the amount you want to compensate:</Original>
+			<Portuguese>Coloque a quantidade que você quer compensar:</Portuguese>
+		</Key>
 		<Key ID="STR_Admin_GetID">
 			<Original>Get ID</Original>
 			<German>ID abfragen</German>
