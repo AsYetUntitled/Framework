@@ -6,8 +6,9 @@
 	Description:
 	Getting tired of adding descriptions...
 */
-private["_robber"];
-_robber = param [0,ObjNull,[ObjNull]] call BIS_fnc_param;
+params [
+	["_robber",objNull,[objNull]]
+];
 if(isNull _robber) exitWith {}; //No one to return it to?
 
 if(CASH > 0) then {
