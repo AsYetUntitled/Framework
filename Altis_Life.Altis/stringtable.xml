@@ -397,9 +397,9 @@
 		</Key>
 		<Key ID="STR_NOTF_ActionCancel">
 			<Original>Action Cancelled</Original>
-			<English>Action Cancelled</English>
 			<German>Aktion abgebrochen</German>
 			<French>Action Annulée</French>
+			<Italian>Azione Annullata</Italian>
 			<Portuguese>Ação Cancelada</Portuguese>
 		</Key>
 	</Package>
@@ -1885,13 +1885,6 @@
 			<French>Envoi d'informations au serveur, patienter s'il vous plait....</French>
 			<Italian>Invio delle informazioni al server, attendere prego......</Italian>
 			<Portuguese>Enviando informações para o servidor, seja paciente.....</Portuguese>
-		</Key>
-		<Key ID="STR_NOTF_ActionCancel">
-			<Original>Action Cancelled</Original>
-			<German>Aktion abgebrochen</German>
-			<French>Action Annulée</French>
-			<Italian>Azione Annullata</Italian>
-			<Portuguese>Ação Cancelada</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_ActionInProc">
 			<Original>An action is already being processed...</Original>
