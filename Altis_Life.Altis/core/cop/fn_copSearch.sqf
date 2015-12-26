@@ -2,7 +2,7 @@
 /*
 	File: fn_copSearch.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Returns information on the search.
 */
@@ -11,7 +11,7 @@ private["_license","_guns","_gun"];
 params [
 	["_civ",objNull,[objNull]],
 	["_invs",[],[[]]],
-	["_robber",false,[true]]
+	["_robber",false,[false]]
 ];
 
 if(isNull _civ) exitWith {};
@@ -23,7 +23,7 @@ if(count _invs > 0) then {
 		_displayName = M_CONFIG(getText,"VirtualItems",SEL(_x,0),"displayName");
 		_inv = _inv + format["%1 %2<br/>",SEL(_x,1),(localize _displayName)];
 		_price = M_CONFIG(getNumber,"VirtualItems",SEL(_x,0),"sellPrice");
-		
+
 		if(!(EQUAL(_price,-1))) then {
 			ADD(_illegal,(SEL(_x,1) * _price));
 		};
@@ -31,7 +31,7 @@ if(count _invs > 0) then {
 	if(_illegal > 6000) then {
 		[getPlayerUID _civ,_civ GVAR ["realname",name _civ],"482"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 	};
-	
+
 	[getPlayerUID _civ,_civ GVAR ["realname",name _civ],"481"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 	[0,"STR_Cop_Contraband",true,[(_civ GVAR ["realname",name _civ]),[_illegal] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",west];
 } else {
