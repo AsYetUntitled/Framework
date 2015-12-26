@@ -6,7 +6,7 @@
 	Description:
 	Does something with vehicle purchasing.
 */
-private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_shopSide","_license"];
+private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_exit"];
 _mode = SEL(_this,0);
 if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick"};
 _className = lbData[2302,(lbCurSel 2302)];
@@ -15,6 +15,7 @@ _vIndex = lbValue[2302,(lbCurSel 2302)];
 _vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
 _shopSide = M_CONFIG(getText,"CarShops",SEL(life_veh_shop,0),"side");
 _basePrice = SEL(SEL(_vehicleList,_vIndex),1);
+_licenses = SEL(SEL(_vehicleList,_vIndex),2);
 
  if(_mode) then {_basePrice = round(_basePrice * 1.5)};
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
@@ -23,8 +24,10 @@ _colorIndex = lbValue[2304,(lbCurSel 2304)];
 if(_basePrice < 0) exitWith {}; //Bad price entry
 if(CASH < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - CASH] call life_fnc_numberText];};
 
-_license = SEL(SEL(_vehicleList,_vIndex),2);
-if(!(EQUAL(_license,"")) && {!(LICENSE_VALUE(_license,_shopSide))}) exitWith {hint localize "STR_Shop_Veh_NoLicense"};
+{
+	if(!(EQUAL(_x,"")) && {!(LICENSE_VALUE(_x,_shopSide))}) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
+} foreach _licenses;
+if(_exit) exitWith {};
 
 _spawnPoints = SEL(life_veh_shop,1);
 _spawnPoint = "";
