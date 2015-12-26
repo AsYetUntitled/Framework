@@ -30,8 +30,8 @@ if(isNil "_textures" OR {EQUAL(count _textures,0)}) exitWith {};
 
 //Local to us? Set it's color.
 if(local _vehicle) then {
-	_vehicle setVariable["Life_VEH_color",_index,true];
+	_vehicle SVAR ["Life_VEH_color",_index,true];
 };
 
-waitUntil{!isNil {_vehicle getVariable "Life_VEH_color"}};
+waitUntil{!isNil {_vehicle GVAR "Life_VEH_color"}};
 {_vehicle setObjectTexture [_forEachIndex,_x];} foreach _textures;
