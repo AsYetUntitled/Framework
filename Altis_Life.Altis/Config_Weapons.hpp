@@ -1,15 +1,15 @@
 /*
- * Format:
- *   level: ARRAY (This is for limiting items to certain things)
- *      0: Variable to read from
- *      1: Variable Value Type (SCALAR / BOOL / EQUAL)
- *      2: What to compare to (-1 = Check Disabled)
- *      3: Custom exit message (Optional)
- *
- *   items: { Classname, Itemname, price }
- *
- *   Itemname only needs to be filled if you want to rename the original object name.
- */
+*    Format:
+*        level: ARRAY (This is for limiting items to certain things)
+*            0: Variable to read from
+*            1: Variable Value Type (SCALAR / BOOL / EQUAL)
+*            2: What to compare to (-1 = Check Disabled)
+*            3: Custom exit message (Optional)
+*
+*    items: { Classname, Itemname, price }
+*
+*    Itemname only needs to be filled if you want to rename the original object name.
+*/
 class WeaponShops {
     //Armory Shops
     class gun {
