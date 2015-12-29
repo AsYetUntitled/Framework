@@ -2,7 +2,7 @@
 /*
 	File: fn_clothingFilter.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Functionality for filtering clothing types in the menu.
 */
@@ -18,19 +18,19 @@ switch (_selection) do {
 		life_shop_cam camSetPos (player modelToWorld [1,-4,2]);
 		life_shop_cam camCommit 1;
 	};
-	
+
 	case 0: {
 		life_shop_cam camSetTarget (player modelToWorld [0,0,1]);
 		life_shop_cam camSetPos (player modelToWorld [1,4,2]);
 		life_shop_cam camCommit 1;
 	};
-	
+
 	case 3: {
 		life_shop_cam camSetTarget (player modelToWorld [0,0,1.4]);
 		life_shop_cam camSetPos (player modelToWorld [-.1,2,1.4]);
 		life_shop_cam camCommit 1;
 	};
-	
+
 	default {
 		life_shop_cam camSetTarget (player modelToWorld [0,0,1.6]);
 		life_shop_cam camSetPos (player modelToWorld [-.5,1,1.6]);
@@ -73,6 +73,7 @@ _array = switch(_selection) do {
 		_bool = switch(_levelType) do {
 			case "SCALAR": {_level >= _levelValue};
 			case "BOOL": {_level};
+			case "EQUAL": {EQUAL(_level,_levelValue)};
 			default {false};
 		};
 

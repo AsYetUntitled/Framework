@@ -2,7 +2,7 @@
  * Format:
  *   level: ARRAY (This is for limiting items to certain things)
  *      0: Variable to read from
- *      1: Variable Value Type (SCALAR / BOOL)
+ *      1: Variable Value Type (SCALAR / BOOL / EQUAL)
  *      2: What to compare to (-1 = Check Disabled)
  *      3: Custom exit message (Optional)
  *

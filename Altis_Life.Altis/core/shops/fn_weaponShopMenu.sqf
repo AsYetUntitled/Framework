@@ -34,6 +34,7 @@ if(!(EQUAL(_levelValue,-1))) then {
 	_flag = switch(_levelType) do {
 		case "SCALAR": {_level >= _levelValue};
 		case "BOOL": {_level};
+		case "EQUAL": {EQUAL(_level,_levelValue)};
 		default {false};
 	};
 	if(!(_flag)) then {

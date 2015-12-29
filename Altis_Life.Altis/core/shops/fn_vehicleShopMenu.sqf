@@ -2,7 +2,7 @@
 /*
 	File: fn_vehicleShopMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Blah
 */
@@ -57,6 +57,7 @@ ctrlShow [2304,false];
 		_showall = switch(_levelType) do {
 			case "SCALAR": {_level >= _levelValue};
 			case "BOOL": {_level};
+			case "EQUAL": {EQUAL(_level,_levelValue)};
 			default {false};
 		};
 	};
