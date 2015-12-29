@@ -1,4 +1,4 @@
-Altis-Life v4.1
+Altis-Life v4.2
 ===============
 <b>Altis Life</b> or <b>[Altis Life RPG] (http://www.altisliferpg.com)</b> is developed by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
 This contains primarily the release contain and on-going development changes to the mission.<br/>
