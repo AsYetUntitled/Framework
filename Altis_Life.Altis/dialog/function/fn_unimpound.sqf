@@ -6,22 +6,27 @@
 	Description:
 	Yeah... Gets the vehicle from the garage.
 */
-private["_vehicle","_vid","_pid","_unit","_price"];
+private["_vehicle","_vehicleLife","_vid","_pid","_unit","_price"];
 disableSerialization;
 if(EQUAL(lbCurSel 2802,-1)) exitWith {hint localize "STR_Global_NoSelection"};
 _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format["%1",_vehicle]) select 0;
+_vehicleLife = _vehicle;
 _vid = lbValue[2802,(lbCurSel 2802)];
 _pid = steamid;
 _unit = player;
 
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
+if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _vehicleLife)) then {
+	_vehicleLife = "Default"; //Use Default class if it doesn't exist
+	diag_log format["%1: LifeCfgVehicles class doesn't exist",_vehicle];
+};
 
 _price = switch(playerSide) do {
-	case civilian: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_vehicle,"storageFee"),0)};
-	case west: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_vehicle,"storageFee"),1)};
-	case independent: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_vehicle,"storageFee"),2)};
-	case east: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_vehicle,"storageFee"),4)};
+	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"storageFee"),0)};
+	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"storageFee"),1)};
+	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"storageFee"),2)};
+	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"storageFee"),4)};
 };
 
 if(!(EQUAL(typeName _price,typeName 0)) OR _price < 1) then {_price = 1000};

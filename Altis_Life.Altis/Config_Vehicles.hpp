@@ -129,7 +129,7 @@ class CarShops {
     };
 };
 
-class CfgVehicles {
+class LifeCfgVehicles {
     /*
     *    Vehicle Configs (Contains textures and other stuff)
     *
@@ -560,7 +560,7 @@ class CfgVehicles {
         };
     };
 
-    class I_Truck_02_transport_F : I_Truck_02_covered_F {
+    class I_Truck_02_transport_F {
         vItemSpace = 200;
         storageFee[] = { 12000, 0, 0, 0 };
         garageSell[] = { 49800, 3500, 0, 0 };

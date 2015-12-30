@@ -7,7 +7,7 @@
 	Can't be bothered to answer it.. Already deleted it by accident..
 */
 disableSerialization;
-private["_control","_index","_className","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice"];
+private["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice"];
 _control = SEL(_this,0);
 _index = SEL(_this,1);
 
@@ -15,25 +15,31 @@ _index = SEL(_this,1);
 _dataArr = CONTROL_DATAI(_control,_index);
 _dataArr = call compile format["%1",_dataArr];
 _className = SEL(_dataArr,0);
+_classNameLife = _className;
 
-_vehicleColor = SEL(SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"textures"),SEL(_dataArr,1)),0);
+if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then {
+	_classNameLife = "Default"; //Use Default class if it doesn't exist
+	diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
+};
+
+_vehicleColor = SEL(SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures"),SEL(_dataArr,1)),0);
 if(isNil "_vehicleColor") then {_vehicleColor = "Default";};
 
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 
 _retrievePrice = switch(playerSide) do {
-	case civilian: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"storageFee"),0)};
-	case west: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"storageFee"),1)};
-	case independent: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"storageFee"),2)};
-	case east: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"storageFee"),4)};
+	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),0)};
+	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),1)};
+	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),2)};
+	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),4)};
 };
 
 _sellPrice = switch(playerSide) do {
-	case civilian: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"garageSell"),0)};
-	case west: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"garageSell"),1)};
-	case independent: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"garageSell"),2)};
-	case east: {SEL(M_CONFIG(getArray,CONFIG_VEHICLES,_className,"garageSell"),4)};
+	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),0)};
+	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),1)};
+	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),2)};
+	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),4)};
 };
 
 if(!(EQUAL(typeName _sellPrice,typeName 0)) OR _sellPrice < 1) then {_sellPrice = 1000};

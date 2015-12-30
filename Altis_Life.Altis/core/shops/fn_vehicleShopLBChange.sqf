@@ -8,12 +8,13 @@
 	displays various bits of information about the vehicle.
 */
 disableSerialization;
-private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
+private["_control","_index","_className","_classNameLife","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
 _control = _this select 0;
 _index = _this select 1;
 
 //Fetch some information.
 _className = _control lbData _index;
+_classNameLife = _className;
 _vIndex = _control lbValue _index;
 
 _vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
@@ -44,7 +45,12 @@ _vehicleInfo select 9
 
 _ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
-_colorArray = M_CONFIG(getArray,CONFIG_VEHICLES,_className,"textures");
+
+if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then {
+	_classNameLife = "Default"; //Use Default class if it doesn't exist
+	diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
+};
+_colorArray = M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures");
 
 {
 	_flag = SEL(_x,1);

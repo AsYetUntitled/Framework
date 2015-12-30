@@ -76,6 +76,7 @@
 #define BASE_CONFIG(CFG,CLASS) inheritsFrom(configFile >> CFG >> CLASS)
 #define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)
 #define CONFIG_VEHICLES "CfgVehicles"
+#define CONFIG_LIFE_VEHICLES "LifeCfgVehicles"
 #define CONFIG_WEAPONS "CfgWeapons"
 #define CONFIG_MAGAZINES "CfgMagazines"
 #define CONFIG_GLASSES "CfgGlasses"
