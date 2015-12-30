@@ -136,14 +136,14 @@ class LifeCfgVehicles {
     *    storageFee (Getting vehicles out of garage) format:
     *        INDEX 0: Civilian Price
     *        INDEX 1: Cop Price
-    *        INDEX 3: EMS Price
-    *        INDEX 4: OPFOR Price (Not implemented in vanilla but still leaving support
+    *        INDEX 2: EMS Price
+    *        INDEX 3: OPFOR Price (Not implemented in vanilla but still leaving support
     *
     *    garageSell (Selling vehicles from garage) format:
     *        INDEX 0: Civilian Price
     *        INDEX 1: Cop Price
-    *        INDEX 3: EMS Price
-    *        INDEX 4: OPFOR Price (Not implemented in vanilla but still leaving support
+    *        INDEX 2: EMS Price
+    *        INDEX 3: OPFOR Price (Not implemented in vanilla but still leaving support
     *
     *    Textures config follows { Texture Name, side, {texture(s)path}}
     *    Texture(s)path follows this format:
