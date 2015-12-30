@@ -44,3 +44,4 @@ if(EQUAL(typeName life_garage_sp,typeName [])) then {
 
 hint localize "STR_Garage_SpawningVeh";
 SUB(BANK,_price);
+closeDialog 0;
