@@ -89,7 +89,7 @@ _vehicle allowDamage true;
 [_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
 _vehicle lock 2;
 //Reskin the vehicle 
-[_vehicle,_vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",RANY];
+[_vehicle,_vInfo select 8] remoteExec ["life_fnc_colorVehicle",RANY];
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
 //_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"]; //Obsolete function?
