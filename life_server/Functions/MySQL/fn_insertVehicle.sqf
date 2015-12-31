@@ -7,10 +7,10 @@
 */
 private["_uid","_side","_type","_className","_color","_plate","_query","_sql"];
 params [
-	["_uid","",[""]],
-	["_side","",[""]],
-	["_type","",[""]],
-	["_className","",[""]],
+	"_uid",
+	"_side",
+	"_type",
+	"_className",
 	["_color",-1,[0]],
 	["_plate",-1,[0]]
 ];
