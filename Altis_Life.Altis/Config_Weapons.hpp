@@ -81,6 +81,9 @@ class WeaponShops {
         items[] = {
             { "Binocular", "", 150 },
             { "ItemGPS", "", 100 },
+            { "ItemMap", "", 50 },
+			{ "ItemCompass", "", 50 },
+			{ "ItemWatch", "", 50 },
             { "ToolKit", "", 250 },
             { "FirstAidKit", "", 150 },
             { "NVGoggles", "", 2000 },
