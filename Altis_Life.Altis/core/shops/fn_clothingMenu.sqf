@@ -10,6 +10,8 @@
 private["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_flag","_shopTitle","_license","_shopSide","_exit"];
 _exit = false;
 
+player setBehaviour "SAFE";
+
 /* License check & config validation */
 if(!isClass(missionConfigFile >> "Clothing" >> (SEL(_this,3)))) exitWith {}; //Bad config entry.
 _shopTitle = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"title");
