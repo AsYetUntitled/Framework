@@ -2,7 +2,7 @@
 /*
 	File: fn_repairTruck.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Main functionality for toolkits, to be revised in later version.
 */
@@ -15,7 +15,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		life_action_inUse = true;
 		_displayName = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _veh),"displayName");
 		_upp = format[localize "STR_NOTF_Repairing",_displayName];
-		
+
 		//Setup our progress bar.
 		disableSerialization;
 		5 cutRsc ["life_progress","PLAIN"];
@@ -25,14 +25,14 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_pgText ctrlSetText format["%2 (1%1)...","%",_upp];
 		_progress progressSetPosition 0.01;
 		_cP = 0.01;
-		
+
 		while{true} do {
 			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 				[player,"AinvPknlMstpSnonWnonDnon_medic_1",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
 				player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 			};
-			
+
 			sleep 0.27;
 			_cP = _cP + 0.01;
 			_progress progressSetPosition _cP;
@@ -42,12 +42,12 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(player != vehicle player) exitWith {};
 			if(life_interrupted) exitWith {};
 		};
-		
+
 		life_action_inUse = false;
 		5 cutText ["","PLAIN"];
 		player playActionNow "stop";
 		if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
-		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_RepairingInVehicle","PLAIN"];};
+		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 		player removeItem "ToolKit";
 		_veh setDamage 0;
 		titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];

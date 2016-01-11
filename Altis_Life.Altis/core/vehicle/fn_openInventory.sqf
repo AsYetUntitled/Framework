@@ -2,7 +2,7 @@
 /*
 	File: fn_openInventory.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Starts the initialization of vehicle virtual inventory menu.
 */
@@ -10,6 +10,7 @@ private["_vehicle","_veh_data","_unitsnear"];
 if(dialog) exitWith {};
 _vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _vehicle OR !(_vehicle isKindOf "Car" OR _vehicle isKindOf "Air" OR _vehicle isKindOf "Ship" OR _vehicle isKindOf "House_F")) exitWith {}; //Either a null or invalid vehicle type.
+if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 _unitsnear = (nearestObjects[_vehicle, ["Man"], 12]) arrayIntersect playableUnits;
 if(count _unitsnear > 1) exitWith {hint localize "STR_NOTF_PlayerNear"};
 
