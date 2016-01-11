@@ -2,11 +2,11 @@
 /*
 	File: fn_vehicleShopBuy.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Does something with vehicle purchasing.
 */
-private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_exit"];
+private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_licensesName","_exit"];
 _mode = SEL(_this,0);
 _exit = false;
 if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick"};
@@ -25,10 +25,14 @@ _colorIndex = lbValue[2304,(lbCurSel 2304)];
 if(_basePrice < 0) exitWith {}; //Bad price entry
 if(CASH < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - CASH] call life_fnc_numberText];};
 
+_licensesName = "";
 {
-	if(!(EQUAL(_x,"")) && {!(LICENSE_VALUE(_x,_shopSide))}) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
+	if(!(EQUAL(_x,"")) && {!(LICENSE_VALUE(_x,_shopSide))}) then {
+		ADD(_licensesName,localize M_CONFIG(getText,"Licenses",_x,"displayName") + "<br/>");
+		_exit = true;
+	};
 } foreach _licenses;
-if(_exit) exitWith {};
+if(_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];};
 
 _spawnPoints = SEL(life_veh_shop,1);
 _spawnPoint = "";
@@ -83,13 +87,13 @@ switch(playerSide) do {
 	case west: {
 		[_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
 	};
-	
+
 	case civilian: {
 		if(EQUAL(SEL(life_veh_shop,2),"civ") && {_className == "B_Heli_Light_01_F"}) then {
 			[_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
 		};
 	};
-	
+
 	case independent: {
 		[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
 	};
