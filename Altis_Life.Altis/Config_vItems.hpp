@@ -1,5 +1,13 @@
-//Virtual Shops
+/*
+*    Format:
+*        level: ARRAY (This is for limiting items to certain things)
+*            0: Variable to read from
+*            1: Variable Value Type (SCALAR / BOOL / EQUAL)
+*            2: What to compare to (-1 = Check Disabled)
+*            3: Custom exit message (Optional)
+*/
 class VirtualShops {
+    //Virtual Shops
     class market {
         name = "STR_Shops_Market";
         side = "civ";
@@ -121,8 +129,9 @@ class VirtualShops {
     };
 };
 
-//Virtual Items
 class VirtualItems {
+    //Virtual Items
+
     //Misc
     VITEMMACRO(pickaxe, "STR_Item_Pickaxe", "pickaxe", 2, 750, 350, false, -1, "icons\ico_pickaxe.paa")
     VITEMMACRO(fuelEmpty, "STR_Item_FuelE", "fuelEmpty", 2, -1, -1, false, -1, "icons\ico_fuelempty.paa")
