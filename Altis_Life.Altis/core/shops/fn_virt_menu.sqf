@@ -6,7 +6,7 @@
 	Description:
 	Initialize the virtual shop menu.
 */
-private["_shop","_shopSide","_license","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg","_flag"];
+private["_exit","_shopSide","_license","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg","_flag"];
 if(isNil {SEL(_this,3)}) exitWith {};
 _exit = false;
 _shopSide = M_CONFIG(getText,"VirtualShops",(SEL(_this,3)),"side");
