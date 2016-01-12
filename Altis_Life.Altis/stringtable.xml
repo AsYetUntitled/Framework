@@ -2328,6 +2328,7 @@
     <Key ID="STR_NOTF_ActionInVehicle">
       <Original>You can't do that from inside the vehicle!</Original>
       <Portuguese>Você não pode fazer isso de dentro do veículo!</Portuguese>
+      <Polish>Nie możesz tego wykonać z wntrza pojazdu!</Polish>
     </Key>
     <Key ID="STR_NOTF_RepairedVehicle">
       <Original>You have repaired that vehicle.</Original>
@@ -5641,10 +5642,6 @@
     <Key ID="STR_MAR_Air_Service">
       <Original>Air Service Station</Original>
       <Polish>Serwis lotniczy</Polish>
-    </Key>
-    <Key ID="STR_MAR_Police_HQ">
-      <Original>Police HQ</Original>
-      <Polish>KG Policji</Polish>
     </Key>
     <Key ID="STR_MAR_Channel_News">
       <Original>Channel 7 News</Original>
