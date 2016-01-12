@@ -2,77 +2,122 @@
 class VirtualShops {
     class market {
         name = "STR_Shops_Market";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "storagesmall", "storagebig" };
     };
 
     class rebel {
         name = "STR_Shops_Rebel";
+        side = "civ";
+        license = "rebel";
+        level[] = { "", "", -1, "" };
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "blastingcharge" };
     };
 
     class gang {
         name = "STR_Shops_Gang";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "blastingcharge" };
     };
 
     class wongs {
         name = "STR_Shops_Wongs";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "turtle_soup", "turtle_raw" };
     };
 
     class coffee {
         name = "STR_Shops_Coffee";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "coffee", "donuts" };
     };
 
     class drugdealer {
         name = "STR_Shops_DrugDealer";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "cocaine_processed", "heroin_processed", "marijuana" };
     };
 
     class oil {
         name = "STR_Shops_Oil";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "oil_processed", "pickaxe", "fuelFull" };
     };
 
     class fishmarket {
         name = "STR_Shops_FishMarket";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "salema_raw", "salema", "ornate_raw", "ornate", "mackerel", "mackerel", "tuna_raw", "tuna", "mullet_raw", "mullet", "catshark_raw", "catshark" };
     };
 
     class glass {
         name = "STR_Shops_Glass";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "glass" };
     };
 
     class iron  {
         name = "STR_Shops_Minerals";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "iron_refined", "copper_refined" };
     };
 
     class diamond {
         name = "STR_Shops_Diamond";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "diamond_uncut", "diamond_cut" };
     };
 
     class salt {
         name = "STR_Shops_Salt";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "salt_refined" };
-    };
-
-    class cop {
-        name = "STR_Shops_Cop";
-        items[] = { "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "fuelFull", "defusekit" };
     };
 
     class cement {
         name = "STR_Shops_Cement";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "cement" };
     };
 
     class gold {
         name = "STR_Shops_Gold";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
         items[] = { "goldbar" };
+    };
+
+    class cop {
+        name = "STR_Shops_Cop";
+        side = "cop";
+        license = "";
+        level[] = { "", "", -1, "" };
+        items[] = { "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "fuelFull", "defusekit" };
     };
 };
 
