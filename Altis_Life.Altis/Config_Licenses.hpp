@@ -1,30 +1,190 @@
 /*
-    Licenses
-
-    Params:
-    CLASS ENTRY,DisplayName,VariableName,price,illegal,side indicator
+*  CLASS:
+*    displayName = DisplayName
+*    variable = VariableName
+*    price = Item Price
+*    illegal = Illegal Item
+*    side = side indicator
 */
 class Licenses {
-    LICENSEMACRO(driver,"STR_License_Driver","driver",500,false,"civ")
-    LICENSEMACRO(boat,"STR_License_Boat","boat",1000,false,"civ")
-    LICENSEMACRO(pilot,"STR_License_Pilot","pilot",25000,false,"civ")
-    LICENSEMACRO(gun,"STR_License_Firearm","gun",10000,false,"civ")
-    LICENSEMACRO(dive,"STR_License_Diving","dive",2000,false,"civ")
-    LICENSEMACRO(oil,"STR_License_Oil","oil",10000,false,"civ")
-    LICENSEMACRO(cAir,"STR_License_Pilot","cAir",15000,false,"cop")
-    LICENSEMACRO(cg,"STR_License_CG","cg",8000,false,"cop")
-    LICENSEMACRO(heroin,"STR_License_Heroin","heroin",25000,true,"civ")
-    LICENSEMACRO(marijuana,"STR_License_Marijuana","marijuana",19500,true,"civ")
-    LICENSEMACRO(medmarijuana,"STR_License_Medmarijuana","medmarijuana",15000,false,"civ")
-    LICENSEMACRO(rebel,"STR_License_Rebel","rebel",75000,true,"civ")
-    LICENSEMACRO(trucking,"STR_License_Truck","trucking",20000,false,"civ")
-    LICENSEMACRO(diamond,"STR_License_Diamond","diamond",35000,false,"civ")
-    LICENSEMACRO(salt,"STR_License_Salt","salt",12000,false,"civ")
-    LICENSEMACRO(cocaine,"STR_License_Cocaine","cocaine",30000,false,"civ")
-    LICENSEMACRO(sand,"STR_License_Sand","sand",14500,false,"civ")
-    LICENSEMACRO(iron,"STR_License_Iron","iron",9500,false,"civ")
-    LICENSEMACRO(copper,"STR_License_Copper","copper",8000,false,"civ")
-    LICENSEMACRO(cement,"STR_License_Cement","cement",6500,false,"civ")
-    LICENSEMACRO(mAir,"STR_License_Pilot","mAir",15000,false,"med")
-    LICENSEMACRO(home,"STR_License_Home","home",75000,false,"civ")
+  //Civilian Licenses
+  class driver {
+    variable = "driver";
+    displayName = "STR_License_Driver";
+    price = 500;
+    illegal = false;
+    side = "civ";
+  };
+
+  class boat {
+    variable = "boat";
+    displayName = "STR_License_Boat";
+    price = 1000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class pilot {
+    variable = "pilot";
+    displayName = "STR_License_Pilot";
+    price = 25000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class trucking {
+    variable = "trucking";
+    displayName = "STR_License_Truck";
+    price = 20000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class gun {
+    variable = "gun";
+    displayName = "STR_License_Firearm";
+    price = 10000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class dive {
+    variable = "dive";
+    displayName = "STR_License_Diving";
+    price = 2000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class home {
+    variable = "home";
+    displayName = "STR_License_Home";
+    price = 75000;
+    illegal = false;
+    side = "civ";
+  };
+
+  //Processing Licenses
+  class oil {
+    variable = "oil";
+    displayName = "STR_License_Oil";
+    price = 10000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class diamond {
+    variable = "diamond";
+    displayName = "STR_License_Diamond";
+    price = 35000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class salt {
+    variable = "salt";
+    displayName = "STR_License_Salt";
+    price = 12000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class sand {
+    variable = "sand";
+    displayName = "STR_License_Sand";
+    price = 14500;
+    illegal = false;
+    side = "civ";
+  };
+
+  class iron {
+    variable = "iron";
+    displayName = "STR_License_Iron";
+    price = 9500;
+    illegal = false;
+    side = "civ";
+  };
+
+  class copper {
+    variable = "copper";
+    displayName = "STR_License_Copper";
+    price = 8000;
+    illegal = false;
+    side = "civ";
+  };
+
+  class cement {
+    variable = "cement";
+    displayName = "STR_License_Cement";
+    price = 6500;
+    illegal = false;
+    side = "civ";
+  };
+
+  class medmarijuana {
+    variable = "medmarijuana";
+    displayName = "STR_License_Medmarijuana";
+    price = 15000;
+    illegal = false;
+    side = "civ";
+  };
+
+  //Illegal Licenses
+  class cocaine {
+    variable = "cocaine";
+    displayName = "STR_License_Cocaine";
+    price = 30000;
+    illegal = true;
+    side = "civ";
+  };
+
+  class heroin {
+    variable = "heroin";
+    displayName = "STR_License_Heroin";
+    price = 25000;
+    illegal = true;
+    side = "civ";
+  };
+
+  class marijuana {
+    variable = "marijuana";
+    displayName = "STR_License_Marijuana";
+    price = 19500;
+    illegal = true;
+    side = "civ";
+  };
+
+  class rebel {
+    variable = "rebel";
+    displayName = "STR_License_Rebel";
+    price = 75000;
+    illegal = true;
+    side = "civ";
+  };
+
+  //Cop Licenses
+  class cAir {
+    variable = "cAir";
+    displayName = "STR_License_Pilot";
+    price = 15000;
+    illegal = false;
+    side = "cop";
+  };
+
+  class cg {
+    variable = "cg";
+    displayName = "STR_License_CG";
+    price = 8000;
+    illegal = false;
+    side = "cop";
+  };
+
+  //Medic Licenses
+  class mAir {
+    variable = "mAir";
+    displayName = "STR_License_Pilot";
+    price = 15000;
+    illegal = false;
+    side = "med";
+  };
 };

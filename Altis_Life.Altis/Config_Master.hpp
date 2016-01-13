@@ -111,14 +111,6 @@ class Life_Settings {
     icon = ICON; \
 };
 
-#define LICENSEMACRO(NAME,DISPLAYNAME,VARNAME,PRICE,ILLEGAL,SIDE) class NAME { \
-    variable = VARNAME; \
-    displayName = DISPLAYNAME; \
-    price = PRICE; \
-    illegal = ILLEGAL; \
-    side = SIDE; \
-};
-
 #include "Config_Clothing.hpp"
 #include "Config_Licenses.hpp"
 #include "Config_Vehicles.hpp"
