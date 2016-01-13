@@ -129,78 +129,704 @@ class VirtualShops {
     };
 };
 
+/*
+*    CLASS:
+*        variable = Variable Name
+*        displayName = Item Name
+*        weight = Item Weight
+*        buyPrice = Item Buy Price
+*        sellPrice = Item Sell Price
+*        illegal = Illegal Item
+*        edible = Item Edible (-1 = Disabled)
+*        icon = Item Icon
+*/
 class VirtualItems {
     //Virtual Items
 
     //Misc
-    VITEMMACRO(pickaxe, "STR_Item_Pickaxe", "pickaxe", 2, 750, 350, false, -1, "icons\ico_pickaxe.paa")
-    VITEMMACRO(fuelEmpty, "STR_Item_FuelE", "fuelEmpty", 2, -1, -1, false, -1, "icons\ico_fuelempty.paa")
-    VITEMMACRO(fuelFull, "STR_Item_FuelF", "fuelFull", 5, 850, 500, false, -1, "icons\ico_fuel.paa")
-    VITEMMACRO(spikeStrip, "STR_Item_SpikeStrip", "spikeStrip", 15, 2500, 1200, false, -1, "icons\ico_spikestrip.paa")
-    VITEMMACRO(lockpick, "STR_Item_Lockpick", "lockpick", 1, 150, 75, false, -1, "icons\ico_lockpick.paa")
-    VITEMMACRO(goldbar, "STR_Item_GoldBar", "goldBar", 12, -1, 95000, false, -1, "")
-    VITEMMACRO(blastingcharge, "STR_Item_BCharge", "blastingCharge", 15, 35000, -1, true, -1, "icons\ico_blastingCharge.paa")
-    VITEMMACRO(boltcutter, "STR_Item_BCutter", "boltCutter", 5, 7500, -1, true, -1, "icons\ico_boltcutters.paa")
-    VITEMMACRO(defusekit, "STR_Item_DefuseKit", "defuseKit", 2, 2500, -1, false, -1, "icons\ico_defusekit.paa")
-    VITEMMACRO(storagesmall, "STR_Item_StorageBS", "storageSmall", 5, 75000, -1, false, -1, "icons\ico_storageSmall.paa")
-    VITEMMACRO(storagebig, "STR_Item_StorageBL", "storageBig", 10, 150000, -1, false, -1, "icons\ico_storageBig.paa")
+    class pickaxe {
+        variable = "pickaxe";
+        displayName = "STR_Item_Pickaxe";
+        weight = 2;
+        buyPrice = 750;
+        sellPrice = 350;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_pickaxe.paa";
+    };
+
+    class fuelEmpty {
+        variable = "fuelEmpty";
+        displayName = "STR_Item_FuelE";
+        weight = 2;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_fuelempty.paa";
+    };
+
+    class fuelFull {
+        variable = "fuelFull";
+        displayName = "STR_Item_FuelF";
+        weight = 5;
+        buyPrice = 850;
+        sellPrice = 500;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_fuel.paa";
+    };
+
+    class spikeStrip {
+        variable = "spikeStrip";
+        displayName = "STR_Item_SpikeStrip";
+        weight = 15;
+        buyPrice = 2500;
+        sellPrice = 1200;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_spikestrip.paa";
+    };
+
+    class lockpick {
+        variable = "lockpick";
+        displayName = "STR_Item_Lockpick";
+        weight = 1;
+        buyPrice = 150;
+        sellPrice = 75;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_lockpick.paa";
+    };
+
+    class goldbar {
+        variable = "goldBar";
+        displayName = "STR_Item_GoldBar";
+        weight = 12;
+        buyPrice = -1;
+        sellPrice = 95000;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class blastingcharge {
+        variable = "blastingCharge";
+        displayName = "STR_Item_BCharge";
+        weight = 15;
+        buyPrice = 35000;
+        sellPrice = -1;
+        illegal = true;
+        edible = -1;
+        icon = "icons\ico_blastingCharge.paa";
+    };
+
+    class boltcutter {
+        variable = "boltCutter";
+        displayName = "STR_Item_BCutter";
+        weight = 5;
+        buyPrice = 7500;
+        sellPrice = -1;
+        illegal = true;
+        edible = -1;
+        icon = "icons\ico_boltcutters.paa";
+    };
+
+    class defusekit {
+        variable = "defuseKit";
+        displayName = "STR_Item_DefuseKit";
+        weight = 2;
+        buyPrice = 2500;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_defusekit.paa";
+    };
+
+    class storagesmall {
+        variable = "storageSmall";
+        displayName = "STR_Item_StorageBS";
+        weight = 5;
+        buyPrice = 75000;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_storageSmall.paa";
+    };
+
+    class storagebig {
+        variable = "storageBig";
+        displayName = "STR_Item_StorageBL";
+        weight = 10;
+        buyPrice = 150000;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_storageBig.paa";
+    };
 
     //Mined Items
-    VITEMMACRO(oil_unprocessed, "STR_Item_OilU", "oilUnprocessed", 7, -1, -1, false, -1, "")
-    VITEMMACRO(oil_processed, "STR_Item_OilP", "oilProcessed", 6, -1, 3200, false, -1, "")
-    VITEMMACRO(copper_unrefined, "STR_Item_CopperOre", "copperUnrefined", 4, -1, -1, false, -1, "")
-    VITEMMACRO(copper_refined, "STR_Item_CopperIngot", "copperRefined", 3, -1, 1500, false, -1, "")
-    VITEMMACRO(iron_unrefined, "STR_Item_IronOre", "ironUnrefined", 5, -1, -1, false, -1, "")
-    VITEMMACRO(iron_refined, "STR_Item_IronIngot", "ironRefined", 3, -1, 3200, false, -1, "")
-    VITEMMACRO(salt_unrefined, "STR_Item_Salt", "saltUnrefined", 3, -1, -1, false, -1, "")
-    VITEMMACRO(salt_refined, "STR_Item_SaltR", "saltRefined", 1, -1, 1450, false, -1, "")
-    VITEMMACRO(sand, "STR_Item_Sand", "sand", 3, -1, -1, false, -1, "")
-    VITEMMACRO(glass, "STR_Item_Glass", "glass", 1, -1, 1450, false, -1, "")
-    VITEMMACRO(diamond_uncut, "STR_Item_DiamondU", "diamondUncut", 4, -1, 750, false, -1, "")
-    VITEMMACRO(diamond_cut, "STR_Item_DiamondC", "diamondCut", 2, -1, 2000, false, -1, "")
-    VITEMMACRO(rock, "STR_Item_Rock", "rock", 6, -1, -1, false, -1, "")
-    VITEMMACRO(cement, "STR_Item_CementBag", "cement", 5, -1, 1950, false, -1, "")
+    class oil_unprocessed {
+        variable = "oilUnprocessed";
+        displayName = "STR_Item_OilU";
+        weight = 7;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class oil_processed {
+        variable = "oilProcessed";
+        displayName = "STR_Item_OilP";
+        weight = 6;
+        buyPrice = -1;
+        sellPrice = 3200;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class copper_unrefined {
+        variable = "copperUnrefined";
+        displayName = "STR_Item_CopperOre";
+        weight = 4;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class copper_refined {
+        variable = "copperRefined";
+        displayName = "STR_Item_CopperIngot";
+        weight = 3;
+        buyPrice = -1;
+        sellPrice = 1500;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class iron_unrefined {
+        variable = "ironUnrefined";
+        displayName = "STR_Item_IronOre";
+        weight = 5;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class iron_refined {
+        variable = "ironRefined";
+        displayName = "STR_Item_IronIngot";
+        weight = 3;
+        buyPrice = -1;
+        sellPrice = 3200;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class salt_unrefined {
+        variable = "saltUnrefined";
+        displayName = "STR_Item_Salt";
+        weight = 3;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class salt_refined {
+        variable = "saltRefined";
+        displayName = "STR_Item_SaltR";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = 1450;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class sand {
+        variable = "sand";
+        displayName = "STR_Item_Sand";
+        weight = 3;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class glass {
+        variable = "glass";
+        displayName = "STR_Item_Glass";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = 1450;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class diamond_uncut {
+        variable = "diamondUncut";
+        displayName = "STR_Item_DiamondU";
+        weight = 4;
+        buyPrice = -1;
+        sellPrice = 750;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class diamond_cut {
+        variable = "diamondCut";
+        displayName = "STR_Item_DiamondC";
+        weight = 2;
+        buyPrice = -1;
+        sellPrice = 2000;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class rock {
+        variable = "rock";
+        displayName = "STR_Item_Rock";
+        weight = 6;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
+
+    class cement {
+        variable = "cement";
+        displayName = "STR_Item_CementBag";
+        weight = 5;
+        buyPrice = -1;
+        sellPrice = 1950;
+        illegal = false;
+        edible = -1;
+        icon = "";
+    };
 
     //Drugs
-    VITEMMACRO(heroin_unprocessed, "STR_Item_HeroinU", "heroinUnprocessed", 6, -1, -1, true, -1, "")
-    VITEMMACRO(heroin_processed, "STR_Item_HeroinP", "heroinProcessed", 4, 3500, 2560, true, -1, "")
-    VITEMMACRO(cannabis, "STR_Item_Cannabis", "cannabis", 4, -1, -1, true, -1, "")
-    VITEMMACRO(marijuana, "STR_Item_Marijuana", "marijuana", 3, 2800, 2350, true, -1, "icons\ico_marijuana.paa")
-    VITEMMACRO(cocaine_unprocessed, "STR_Item_CocaineU", "cocaineUnprocessed", 6, -1, 3000, true, -1, "")
-    VITEMMACRO(cocaine_processed, "STR_Item_CocaineP", "cocaineProcessed", 4, -1, 5000, true, -1, "")
+    class heroin_unprocessed {
+        variable = "heroinUnprocessed";
+        displayName = "STR_Item_HeroinU";
+        weight = 6;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = true;
+        edible = -1;
+        icon = "";
+    };
+
+    class heroin_processed {
+        variable = "heroinProcessed";
+        displayName = "STR_Item_HeroinP";
+        weight = 4;
+        buyPrice = 3500;
+        sellPrice = 2560;
+        illegal = true;
+        edible = -1;
+        icon = "";
+    };
+
+    class cannabis {
+        variable = "cannabis";
+        displayName = "STR_Item_Cannabis";
+        weight = 4;
+        buyPrice = -1;
+        sellPrice = -1;
+        illegal = true;
+        edible = -1;
+        icon = "";
+    };
+
+    class marijuana {
+        variable = "marijuana";
+        displayName = "STR_Item_Marijuana";
+        weight = 3;
+        buyPrice = 2800;
+        sellPrice = 2350;
+        illegal = true;
+        edible = -1;
+        icon = "icons\ico_marijuana.paa";
+    };
+
+    class cocaine_unprocessed {
+        variable = "cocaineUnprocessed";
+        displayName = "STR_Item_CocaineU";
+        weight = 6;
+        buyPrice = -1;
+        sellPrice = 3000;
+        illegal = true;
+        edible = -1;
+        icon = "";
+    };
+
+    class cocaine_processed {
+        variable = "cocaineProcessed";
+        displayName = "STR_Item_CocaineP";
+        weight = 4;
+        buyPrice = -1;
+        sellPrice = 5000;
+        illegal = true;
+        edible = -1;
+        icon = "";
+    };
 
     //Drink
-    VITEMMACRO(redgull, "STR_Item_RedGull", "redgull", 1, 1500, 200, false, 100, "icons\ico_redgull.paa")
-    VITEMMACRO(coffee, "STR_Item_Coffee", "coffee", 1, 10, 5, false, 100, "icons\ico_coffee.paa")
-    VITEMMACRO(waterBottle, "STR_Item_WaterBottle", "waterBottle", 1, 10, 5, false, 100, "icons\ico_waterBottle.paa")
+    class redgull {
+        variable = "redgull";
+        displayName = "STR_Item_RedGull";
+        weight = 1;
+        buyPrice = 1500;
+        sellPrice = 200;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_redgull.paa";
+    };
+
+    class coffee {
+        variable = "coffee";
+        displayName = "STR_Item_Coffee";
+        weight = 1;
+        buyPrice = 10;
+        sellPrice = 5;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_coffee.paa";
+    };
+
+    class waterBottle {
+        variable = "waterBottle";
+        displayName = "STR_Item_WaterBottle";
+        weight = 1;
+        buyPrice = 10;
+        sellPrice = 5;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_waterBottle.paa";
+    };
 
     //Food
-    VITEMMACRO(apple, "STR_Item_Apple", "apple", 1, 65, 50, false, 10, "icons\ico_apple.paa")
-    VITEMMACRO(peach, "STR_Item_Peach", "peach", 1, 68, 55, false, 10, "icons\ico_peach.paa")
-    VITEMMACRO(tbacon, "STR_Item_TBacon", "tbacon", 1, 75, 25, false, 40, "icons\ico_tbacon.paa")
-    VITEMMACRO(donuts, "STR_Item_Donuts", "donuts", 1, 120, 60, false, 30, "icons\ico_donuts.paa")
-    VITEMMACRO(rabbit_raw, "STR_Item_RabbitRaw", "rabbitRaw", 2, -1, 65, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(rabbit, "STR_Item_Rabbit", "rabbit", 1, 150, 115, false, 20, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(salema_raw, "STR_Item_SalemaRaw", "salemaRaw", 2, -1, 45, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(salema, "STR_Item_Salema", "salema", 1, 75, 55, false, 30, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(ornate_raw, "STR_Item_OrnateRaw", "ornateRaw", 2, -1, 40, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(ornate, "STR_Item_Ornate", "ornate", 1, 175, 150, false, 25, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(mackerel_raw, "STR_Item_MackerelRaw", "mackerelRaw", 4, -1, 175, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(mackerel, "STR_Item_Mackerel", "mackerel", 2, 250, 200, false, 30, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(tuna_raw, "STR_Item_TunaRaw", "tunaRaw", 6, -1, 700, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(tuna, "STR_Item_Tuna", "tuna", 3, 1250, 1000, false, 100, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(mullet_raw, "STR_Item_MulletRaw", "mulletRaw", 4, -1, 250, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(mullet, "STR_Item_Mullet", "mullet", 2, 600, 400, false, 80, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(catshark_raw, "STR_Item_CatSharkRaw", "catsharkRaw", 6, -1, 300, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(catshark, "STR_Item_CatShark", "catshark", 3, 750, 500, false, 100, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(turtle_raw, "STR_Item_TurtleRaw", "turtleRaw", 6, 4000, 3000, true, -1, "icons\ico_meat.paa")
-    VITEMMACRO(turtle_soup, "STR_Item_TurtleSoup", "turtleSoup", 2, 2500, 1000, false, 100, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(hen_raw, "STR_Item_HenRaw", "henRaw", 1, -1, 35, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(hen, "STR_Item_Hen", "hen", 1, 115, 85, false, 65, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(rooster_raw, "STR_Item_RoosterRaw", "roosterRaw", 1, -1, 35, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(rooster, "STR_Item_Rooster", "rooster", 115, 85, false, 45, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(sheep_raw, "STR_Item_SheepRaw", "sheepRaw", 2, -1, 50, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(sheep, "STR_Item_Sheep", "sheep", 2, 155, 115, false, 100, "icons\ico_cookedMeat.paa")
-    VITEMMACRO(goat_raw, "STR_Item_GoatRaw", "goatRaw", 2, -1, 75, false, -1, "icons\ico_meat.paa")
-    VITEMMACRO(goat, "STR_Item_Goat", "goat", 2, 175, 135, false, 100, "icons\ico_cookedMeat.paa")
+    class apple {
+        variable = "apple";
+        displayName = "STR_Item_Apple";
+        weight = 1;
+        buyPrice = 65;
+        sellPrice = 50;
+        illegal = false;
+        edible = 10;
+        icon = "icons\ico_apple.paa";
+    };
+
+    class peach {
+        variable = "peach";
+        displayName = "STR_Item_Peach";
+        weight = 1;
+        buyPrice = 68;
+        sellPrice = 55;
+        illegal = false;
+        edible = 10;
+        icon = "icons\ico_peach.paa";
+    };
+
+    class tbacon {
+        variable = "tbacon";
+        displayName = "STR_Item_TBacon";
+        weight = 1;
+        buyPrice = 75;
+        sellPrice = 25;
+        illegal = false;
+        edible = 40;
+        icon = "icons\ico_tbacon.paa";
+    };
+
+    class donuts {
+        variable = "donuts";
+        displayName = "STR_Item_Donuts";
+        weight = 1;
+        buyPrice = 120;
+        sellPrice = 60;
+        illegal = false;
+        edible = 30;
+        icon = "icons\ico_donuts.paa";
+    };
+
+    class rabbit_raw {
+        variable = "rabbitRaw";
+        displayName = "STR_Item_RabbitRaw";
+        weight = 2;
+        buyPrice = -1;
+        sellPrice = 65;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class rabbit {
+        variable = "rabbit";
+        displayName = "STR_Item_Rabbit";
+        weight = 1;
+        buyPrice = 150;
+        sellPrice = 115;
+        illegal = false;
+        edible = 20;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class salema_raw {
+        variable = "salemaRaw";
+        displayName = "STR_Item_SalemaRaw";
+        weight = 2;
+        buyPrice = -1;
+        sellPrice = 45;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class salema {
+        variable = "salema";
+        displayName = "STR_Item_Salema";
+        weight = 1;
+        buyPrice = 75;
+        sellPrice = 55;
+        illegal = false;
+        edible = 30;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class ornate_raw {
+        variable = "ornateRaw";
+        displayName = "STR_Item_OrnateRaw";
+        weight = 2;
+        buyPrice = -1;
+        sellPrice = 40;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class ornate {
+        variable = "ornate";
+        displayName = "STR_Item_Ornate";
+        weight = 1;
+        buyPrice = 175;
+        sellPrice = 150;
+        illegal = false;
+        edible = 25;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class mackerel_raw {
+        variable = "mackerelRaw";
+        displayName = "STR_Item_MackerelRaw";
+        weight = 4;
+        buyPrice = -1;
+        sellPrice = 175;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class mackerel {
+        variable = "mackerel";
+        displayName = "STR_Item_Mackerel";
+        weight = 2;
+        buyPrice = 250;
+        sellPrice = 200;
+        illegal = false;
+        edible = 30;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class tuna_raw {
+        variable = "tunaRaw";
+        displayName = "STR_Item_TunaRaw";
+        weight = 6;
+        buyPrice = -1;
+        sellPrice = 700;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class tuna {
+        variable = "tuna";
+        displayName = "STR_Item_Tuna";
+        weight = 3;
+        buyPrice = 1250;
+        sellPrice = 1000;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class mullet_raw {
+        variable = "mulletRaw";
+        displayName = "STR_Item_MulletRaw";
+        weight = 4;
+        buyPrice = -1;
+        sellPrice = 250;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class mullet {
+        variable = "mullet";
+        displayName = "STR_Item_Mullet";
+        weight = 2;
+        buyPrice = 600;
+        sellPrice = 400;
+        illegal = false;
+        edible = 80;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class catshark_raw {
+        variable = "catsharkRaw";
+        displayName = "STR_Item_CatSharkRaw";
+        weight = 6;
+        buyPrice = -1;
+        sellPrice = 300;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class catshark {
+        variable = "catshark";
+        displayName = "STR_Item_CatShark";
+        weight = 3;
+        buyPrice = 750;
+        sellPrice = 500;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class turtle_raw {
+        variable = "turtleRaw";
+        displayName = "STR_Item_TurtleRaw";
+        weight = 6;
+        buyPrice = 4000;
+        sellPrice = 3000;
+        illegal = true;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class turtle_soup {
+        variable = "turtleSoup";
+        displayName = "STR_Item_TurtleSoup";
+        weight = 2;
+        buyPrice = 2500;
+        sellPrice = 1000;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class hen_raw {
+        variable = "henRaw";
+        displayName = "STR_Item_HenRaw";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = 35;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class hen {
+        variable = "hen";
+        displayName = "STR_Item_Hen";
+        weight = 1;
+        buyPrice = 115;
+        sellPrice = 85;
+        illegal = false;
+        edible = 65;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class rooster_raw {
+        variable = "roosterRaw";
+        displayName = "STR_Item_RoosterRaw";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = 35;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class rooster {
+        variable = "rooster";
+        displayName = "STR_Item_Rooster";
+        weight = 115;
+        buyPrice = 85;
+        sellPrice = 85;
+        illegal = false;
+        edible = 45;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class sheep_raw {
+        variable = "sheepRaw";
+        displayName = "STR_Item_SheepRaw";
+        weight = 2;
+        buyPrice = -1;
+        sellPrice = 50;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class sheep {
+        variable = "sheep";
+        displayName = "STR_Item_Sheep";
+        weight = 2;
+        buyPrice = 155;
+        sellPrice = 115;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_cookedMeat.paa";
+    };
+
+    class goat_raw {
+        variable = "goatRaw";
+        displayName = "STR_Item_GoatRaw";
+        weight = 2;
+        buyPrice = -1;
+        sellPrice = 75;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_meat.paa";
+    };
+
+    class goat {
+        variable = "goat";
+        displayName = "STR_Item_Goat";
+        weight = 2;
+        buyPrice = 175;
+        sellPrice = 135;
+        illegal = false;
+        edible = 100;
+        icon = "icons\ico_cookedMeat.paa";
+    };
 };

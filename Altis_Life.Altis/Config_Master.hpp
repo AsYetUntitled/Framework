@@ -100,17 +100,6 @@ class Life_Settings {
     };
 };
 
-#define VITEMMACRO(NAME,DISPLAYNAME,VARNAME,WEIGHT,BUYPRICE,SELLPRICE,ILLEGAL,EDIBLE,ICON) class NAME { \
-    variable = VARNAME; \
-    weight = WEIGHT; \
-    displayName = DISPLAYNAME; \
-    buyPrice = BUYPRICE; \
-    sellPrice = SELLPRICE; \
-    illegal = ILLEGAL; \
-    edible = EDIBLE; \
-    icon = ICON; \
-};
-
 #include "Config_Clothing.hpp"
 #include "Config_Licenses.hpp"
 #include "Config_Vehicles.hpp"
