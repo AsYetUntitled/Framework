@@ -13,16 +13,12 @@ _shop = uiNamespace getVariable ["Weapon_Shop",""];
 if(isNull _control OR _index == -1) exitWith {closeDialog 0;}; //Bad data
 
 _priceTag = CONTROL(38400,38404);
-_item = CONTROL_DATAI(_control,_index);
-_itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
 
 if((GVAR_UINS ["Weapon_Shop_Filter",0]) == 1) then {
-	_iS = [_item,_itemArray] call TON_fnc_index;
-	if(EQUAL(SEL(SEL(_itemArray,_iS),3),-1)) then {
-		_price = 0;
-	} else {
-		_price = SEL(SEL(_itemArray,_iS),3);
-	};
+	_item = CONTROL_DATAI(_control,_index);
+	_itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
+	_item = [_item,_itemArray] call TON_fnc_index;
+	_price = SEL(SEL(_itemArray,_item),3);
 	_priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#8cff9b'>$%1</t></t>",[(_price)] call life_fnc_numberText];
 	_control lbSetValue[_index,_price];
 } else {
