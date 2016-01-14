@@ -7,10 +7,9 @@
 	Opens and initializes the clothing store menu.
 	Started clean, finished messy.
 */
-private["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_flag","_shopTitle","_license","_shopSide","_exit"];
+private["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_oldBev","_flag","_shopTitle","_license","_shopSide","_exit"];
 _exit = false;
-
-player setBehaviour "SAFE";
+if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 
 /* License check & config validation */
 if(!isClass(missionConfigFile >> "Clothing" >> (SEL(_this,3)))) exitWith {}; //Bad config entry.
@@ -43,6 +42,7 @@ if((SEL(_this,3) in ["dive"] && !license_civ_dive)) exitWith { hint localize "ST
 _pos = [1000,1000,10000];
 _oldDir = getDir player;
 _oldPos = visiblePositionASL player;
+_oldBev = behaviour player;
 _testLogic = "Logic" createVehicleLocal _pos;
 _testLogic setPosATL _pos;
 _ut1 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [0,5,10]);
@@ -69,6 +69,7 @@ _ut5 setVectorDirAndUp [[0,0,-.33],[0,.33,0]];
 	_x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];
 } foreach [_ut1,_ut2,_ut3,_ut4];
 
+player setBehaviour "SAFE";
 player attachTo [_testLogic,[0,0,0]];
 player switchMove "";
 
@@ -123,6 +124,7 @@ life_oldHat = headgear player;
 waitUntil {isNull (findDisplay 3100)};
 {if(_x != player) then {_x hideObject false;};} foreach playableUnits;
 detach player;
+player setBehaviour _oldBev;
 player setPosASL _oldPos;
 player setDir _oldDir;
 {deleteVehicle _x;} foreach [_testLogic,_ut1,_ut2,_ut3,_ut4,_ut5];
