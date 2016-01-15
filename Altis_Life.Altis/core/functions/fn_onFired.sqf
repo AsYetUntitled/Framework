@@ -1,12 +1,12 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Handles various different ammo types being fired.
 */
 private["_ammoType","_projectile"];
-_ammoType = SEL(_this,4); 
+_ammoType = SEL(_this,4);
 _projectile = SEL(_this,6);
 
 if(EQUAL(_ammoType,"GrenadeHand_stone")) then {
@@ -16,6 +16,6 @@ if(EQUAL(_ammoType,"GrenadeHand_stone")) then {
 			_position = ASLtoATL (visiblePositionASL _this);
 			sleep 0.1;
 		};
-		[_position] remoteExec ["life_fnc_flashbang",RSERV];
+		[_position] remoteExec ["life_fnc_flashbang",RCLIENT];
 	};
 };
