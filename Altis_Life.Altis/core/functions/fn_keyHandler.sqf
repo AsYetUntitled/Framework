@@ -195,10 +195,10 @@ switch (_code) do {
 
 	//U Key
 	case 22: {
-		if(!_alt && !_ctrlKey) then {
+		if(!_alt && !_ctrlKey && !life_usekey) then {
 			[] spawn {
 				life_usekey = true;
-	                	sleep 0.8;
+	                	sleep 0.2;
 	                	life_usekey = false;
         		};
 			if(vehicle player == player) then {
