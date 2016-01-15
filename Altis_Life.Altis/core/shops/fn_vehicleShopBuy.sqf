@@ -22,9 +22,6 @@ _licenses = SEL(SEL(_vehicleList,_vIndex),2);
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
 //Series of checks (YAY!)
-if(_basePrice < 0) exitWith {}; //Bad price entry
-if(CASH < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - CASH] call life_fnc_numberText];};
-
 _licensesName = "";
 {
 	if(!(EQUAL(_x,"")) && {!(LICENSE_VALUE(_x,_shopSide))}) then {
@@ -33,6 +30,9 @@ _licensesName = "";
 	};
 } foreach _licenses;
 if(_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];};
+
+if(_basePrice < 0) exitWith {}; //Bad price entry
+if(CASH < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - CASH] call life_fnc_numberText];};
 
 _spawnPoints = SEL(life_veh_shop,1);
 _spawnPoint = "";
