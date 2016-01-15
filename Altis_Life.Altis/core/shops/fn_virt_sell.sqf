@@ -2,7 +2,7 @@
 /*
 	File: fn_virt_sell.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Sell a virtual item to the store / shop
 */
@@ -16,7 +16,7 @@ _amount = ctrlText 2405;
 if(!([_amount] call TON_fnc_isnumber)) exitWith {hint localize "STR_Shop_Virt_NoNum";};
 _amount = parseNumber (_amount);
 if(_amount > (ITEM_VALUE(_type))) exitWith {hint localize "STR_Shop_Virt_NotEnough"};
-if((time - life_action_delay) < 0.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
+if((time - life_action_delay) < 0.2) exitWith {hint localize "STR_NOTF_ActionDelay";};
 life_action_delay = time;
 
 _price = (_price * _amount);
@@ -24,7 +24,7 @@ _name = M_CONFIG(getText,"VirtualItems",_type,"displayName");
 if(([false,_type,_amount] call life_fnc_handleInv)) then {
 	hint format[localize "STR_Shop_Virt_SellItem",_amount,(localize _name),[_price] call life_fnc_numberText];
 	ADD(CASH,_price);
-	[] call life_fnc_virt_update;	
+	[] call life_fnc_virt_update;
 };
 
 if(EQUAL(life_shop_type,"drugdealer")) then {
