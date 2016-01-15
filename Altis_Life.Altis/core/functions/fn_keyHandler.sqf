@@ -196,6 +196,11 @@ switch (_code) do {
 	//U Key
 	case 22: {
 		if(!_alt && !_ctrlKey) then {
+			[] spawn {
+				life_usekey = true;
+	                	sleep 0.8;
+	                	life_usekey = false;
+        		};
 			if(vehicle player == player) then {
 				_veh = cursorTarget;
 			} else {
