@@ -71,5 +71,6 @@ if(life_removeWanted) then {
 	[getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
 };
 
+[] call life_fnc_playerSkins;
 [] call SOCK_fnc_updateRequest;
 [] call life_fnc_hudUpdate; //Request update of hud.
