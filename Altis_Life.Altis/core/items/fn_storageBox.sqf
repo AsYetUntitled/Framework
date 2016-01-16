@@ -1,11 +1,11 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Tries to place a storage box in the nearest house.
 */
-private["_boxType","_house","_positions","_containers","_pos","_houseCfg"];
+private["_boxType","_house","_positions","_containers","_pos","_houseCfg","_className"];
 _boxType = SEL(_this,0);
 
 _house = nearestBuilding (getPosATL player);
@@ -32,33 +32,22 @@ if(_pos isEqualTo [0,0,0]) exitWith {hint localize "STR_ISTR_Box_HouseFull_2"};
 if(!([false,_boxType,1] call life_fnc_handleInv)) exitWith {};
 
 switch (_boxType) do {
-	case "storagesmall": {
-		_container = "Box_IND_Grenades_F" createVehicle [0,0,0];
-		_container setPosATL _pos;
-		
-		_containers pushBack _container;
-		_house setVariable["containers",_containers,true];
-		[_house] remoteExecCall ["TON_fnc_updateHouseContainers",RSERV];
-		
-		//Empty out the crate
-		clearWeaponCargoGlobal _container;
-		clearMagazineCargoGlobal _container;
-		clearItemCargoGlobal _container;
-		clearBackpackCargoGlobal _container;
-	};
-	
-	case "storagebig": {
-		_container = "B_supplyCrate_F" createVehicle [0,0,0];
-		_container setPosATL _pos;
-		
-		_containers pushBack _container;
-		_house setVariable["containers",_containers,true];
-		[_house] remoteExecCall ["TON_fnc_updateHouseContainers",RSERV];
-		
-		//Empty out the crate
-		clearWeaponCargoGlobal _container;
-		clearMagazineCargoGlobal _container;
-		clearItemCargoGlobal _container;
-		clearBackpackCargoGlobal _container;
-	};
+	case "storagesmall": { _className = "Box_IND_Grenades_F"; };
+	case "storagebig": { _className = "B_supplyCrate_F"; };
+	default { _className = ""; };
 };
+if(_className == "") exitWith {};
+
+_container = _className createVehicle [0,0,0];
+_container setPosATL _pos;
+_container enableSimulation false;
+
+_containers pushBack _container;
+_house setVariable["containers",_containers,true];
+[_house] remoteExecCall ["TON_fnc_updateHouseContainers",RSERV];
+
+//Empty out the crate
+clearWeaponCargoGlobal _container;
+clearMagazineCargoGlobal _container;
+clearItemCargoGlobal _container;
+clearBackpackCargoGlobal _container;
