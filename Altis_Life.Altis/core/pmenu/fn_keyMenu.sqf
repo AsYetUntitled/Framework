@@ -23,7 +23,7 @@ _near_units = [];
 for "_i" from 0 to (count life_vehicles)-1 do {
 	_veh = life_vehicles select _i;
 	if(!isNull _veh && alive _veh) then {
-		_color = SEL(SEL(M_CONFIG(getArray,"CfgVehicles",(typeOf _veh),"textures"),(_veh GVAR "Life_VEH_color")),0);
+		_color = SEL(SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,(typeOf _veh),"textures"),(_veh GVAR "Life_VEH_color")),0);
 		if(isNil "_color") then {_color = ""};
 		_text = format["(%1)",_color];
 		if(_text == "()") then {
