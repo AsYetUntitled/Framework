@@ -5787,5 +5787,29 @@
       <Original>Hunting Grounds</Original>
       <Polish>Strefa polowań</Polish>
     </Key>
+	<Key ID="STR_MAR_Bruce_New_Used_Auto">
+	  <Original>Bruce's New and Used Auto's</Original>
+	  <Polish>Salon samochodowy</Polish>
+	</Key>
+	<Key ID="STR_MAR_Rebel_Clothing_Shop">
+	  <Original>Rebel Clothing Shop</Original>
+	  <Polish>Magazyn rebelianta</Polish>
+	</Key>
+	<Key ID="STR_MAR_Rebel_Weapon_Shop">
+	  <Original>Rebel Weapon Shop</Original>
+	  <Polish>Zbrojownia rebelianta</Polish>
+	</Key>
+	<Key ID="STR_MAR_Helicopter_Shop">
+	  <Original>Helicopter Shop</Original>
+	  <Polish>Sklep lotniczy</Polish>
+	</Key>
+	<Key ID="STR_MAR_Station_Store">
+	  <Original>Fuel Station Store</Original>
+	  <Polish>Sklep OLLEN</Polish>
+	</Key>
+	<Key ID="STR_MAR_Station_Coffe">
+	  <Original>Fuel Station Coffe</Original>
+	  <Polish>Caffe OLLEN</Polish>
+	</Key>
   </Package>
 </Project>
