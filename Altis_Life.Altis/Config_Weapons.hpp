@@ -96,8 +96,7 @@ class WeaponShops {
 
     class f_station_store {
         name = "Altis Fuel Station Store";
-        side = "civ";	//  i think that cop side want to buy in this shop too, maybe when patroling altis! but dont know how to do this , some array needed ! - for future
-        license = "";
+        side = "";
         level[] = { "", "", -1, "" };
         items[] = {
             { "Binocular", "", 750, -1 },
@@ -115,7 +114,6 @@ class WeaponShops {
         };
     };
 
-	
     //Cop Shops
     class cop_basic {
         name = "Altis Cop Shop";
