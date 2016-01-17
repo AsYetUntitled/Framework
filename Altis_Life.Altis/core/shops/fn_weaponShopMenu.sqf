@@ -17,8 +17,11 @@ _levelType = SEL(_levelAssert,1);
 _levelValue = SEL(_levelAssert,2);
 _levelMsg = SEL(_levelAssert,3);
 
-_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-if(!(EQUAL(_shopSide,"") OR EQUAL(_flag,_shopSide))) exitWith {};
+if(!(EQUAL(_shopSide,""))) then {
+	_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+	if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
+};
+if(_exit) exitWith {};
 
 if(!(EQUAL(_license,""))) then {
 	_flag = M_CONFIG(getText,"Licenses",_license,"side");

@@ -8,8 +8,8 @@
 	Started clean, finished messy.
 */
 private["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_oldBev","_flag","_shopTitle","_license","_shopSide","_exit","_testLogic","_ut1","_ut2","_ut3","_ut4","_ut5","_light"];
-_exit = false;
 if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
+_exit = false;
 
 /* License check & config validation */
 if(!isClass(missionConfigFile >> "Clothing" >> (SEL(_this,3)))) exitWith {}; //Bad config entry.
@@ -17,8 +17,11 @@ _shopTitle = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"title");
 _shopSide = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"side");
 _license = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"license");
 
-_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-if(!(EQUAL(_shopSide,"") OR EQUAL(_flag,_shopSide))) exitWith {};
+if(!(EQUAL(_shopSide,""))) then {
+	_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+	if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
+};
+if(_exit) exitWith {};
 
 if(!(EQUAL(_license,""))) then {
 	_flag = M_CONFIG(getText,"Licenses",_license,"side");
