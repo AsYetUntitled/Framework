@@ -19,14 +19,14 @@ _levelMsg = SEL(_levelAssert,3);
 life_shop_type = SEL(_this,3);
 life_shop_npc = SEL(_this,0);
 
+_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+if(!(EQUAL(_shopSide,"") OR EQUAL(_flag,_shopSide))) exitWith {};
+
 if(!(EQUAL(_license,""))) then {
 	_flag = M_CONFIG(getText,"Licenses",_license,"side");
 	if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
 };
 if(_exit) exitWith {};
-
-_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-if(!(EQUAL(_flag,_shopSide))) exitWith {};
 
 if(!(EQUAL(_levelValue,-1))) then {
 	_level = GVAR_MNS _levelName;

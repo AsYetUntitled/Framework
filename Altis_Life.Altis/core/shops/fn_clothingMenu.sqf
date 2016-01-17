@@ -17,14 +17,14 @@ _shopTitle = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"title");
 _shopSide = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"side");
 _license = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"license");
 
+_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+if(!(EQUAL(_shopSide,"") OR EQUAL(_flag,_shopSide))) exitWith {};
+
 if(!(EQUAL(_license,""))) then {
 	_flag = M_CONFIG(getText,"Licenses",_license,"side");
 	if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
 };
 if(_exit) exitWith {};
-
-_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-if(!(EQUAL(_flag,_shopSide))) exitWith {};
 
 ctrlSetText [3103,localize _shopTitle];
 /* Open up the menu */
