@@ -94,6 +94,29 @@ class WeaponShops {
         };
     };
 
+    //Fuel Station Shops - that same items what in genstore, but more expensive buy prices - that is fuel station ! genstore price x 5 (wery expensive) - ClavosPl
+	class f_station_store {
+        name = "Altis Fuel Station Store";
+        side = "civ";	//  i think that cop side want to buy in this shop too, maybe when patroling altis! but dont know how to do this , some array needed ! - for future
+        license = "";
+        level[] = { "", "", -1, "" };
+        items[] = {
+            { "Binocular", "", 750, -1 },
+            { "ItemGPS", "", 500, 45 },
+            { "ItemMap", "", 250, 35 },
+            { "ItemCompass", "", 250, 25 },
+            { "ItemWatch", "", 250, -1 },
+            { "ToolKit", "", 1250, 75 },
+            { "FirstAidKit", "", 750, 65 },
+            { "NVGoggles", "", 10000, 980 },
+            { "Chemlight_red", "", 1500, -1 },
+            { "Chemlight_yellow", "", 1500, 50 },
+            { "Chemlight_green", "", 1500, 50 },
+            { "Chemlight_blue", "", 1500, 50 }
+        };
+    };
+
+	
     //Cop Shops
     class cop_basic {
         name = "Altis Cop Shop";
