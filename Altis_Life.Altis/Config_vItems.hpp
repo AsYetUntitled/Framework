@@ -48,7 +48,7 @@ class VirtualShops {
         items[] = { "coffee", "donuts" };
     };
 
-    class f_station_coffe {
+    class f_station_coffee {
         name = "STR_Shop_Station_Coffee";
         side = "";
         license = "";
