@@ -49,7 +49,7 @@ class VirtualShops {
     };
 
     class f_station_coffe {
-        name = "STR_MAR_Station_Coffe";
+        name = "STR_Shop_Station_Coffee";
         side = "";
         license = "";
         level[] = { "", "", -1, "" };

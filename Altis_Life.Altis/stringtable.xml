@@ -146,6 +146,10 @@
       <Portuguese>Comprador de Sal</Portuguese>
       <Polish>Skup soli</Polish>
     </Key>
+    <Key ID="STR_Shop_Station_Coffee">
+      <Original>Fuel Station Coffee</Original>
+      <Polish>Caffe OLLEN</Polish>
+    </Key>
   </Package>
   <Package name="Global">
     <Key ID="STR_Global_Close">
@@ -5803,13 +5807,9 @@
 	  <Original>Helicopter Shop</Original>
 	  <Polish>Sklep lotniczy</Polish>
 	</Key>
-	<Key ID="STR_MAR_Station_Store">
+	<Key ID="STR_MAR_Station_Shop">
 	  <Original>Fuel Station Store</Original>
 	  <Polish>Sklep OLLEN</Polish>
-	</Key>
-	<Key ID="STR_MAR_Station_Coffe">
-	  <Original>Fuel Station Coffe</Original>
-	  <Polish>Caffe OLLEN</Polish>
 	</Key>
   </Package>
 </Project>
