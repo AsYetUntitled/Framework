@@ -29,7 +29,7 @@ _value = 0;
 if(_value > 0) then {
 	[0,"STR_NOTF_VehContraband",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 	ADD(BANK,_value);
-	_vehicle SVAR ["Trunk",[],true];
+	_vehicle SVAR ["Trunk",[[],0],true];
 } else {
 	hint localize "STR_Cop_NoIllegalVeh";
 };
