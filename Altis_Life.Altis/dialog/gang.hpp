@@ -1,8 +1,8 @@
 class Life_My_Gang_Diag {
 	idd = 2620;
 	name= "life_my_gang_menu";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "";
 	
 	class controlsBackground {
@@ -141,8 +141,8 @@ class Life_My_Gang_Diag {
 class Life_Create_Gang_Diag {
 	idd = 2520;
 	name= "life_my_gang_menu_create";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "[] spawn {waitUntil {!isNull (findDisplay 2520)}; ((findDisplay 2520) displayCtrl 2523) ctrlSetText format[localize ""STR_Gang_PriceTxt"",[(getNumber(missionConfigFile >> 'Life_Settings' >> 'gang_price'))] call life_fnc_numberText]};";
 	
 	class controlsBackground {

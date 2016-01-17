@@ -1,8 +1,8 @@
 class Life_Clothing {
 	idd = 3100;
 	name= "Life_Clothing";
-	movingEnable = true;
-	enableSimulation = true;
+	movingEnable = 1;
+	enableSimulation = 1;
 	//onLoad = "[] execVM 'core\client\keychain\init.sqf'";
 	
 	class controlsBackground {

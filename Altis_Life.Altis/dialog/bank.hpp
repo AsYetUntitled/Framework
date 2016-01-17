@@ -1,9 +1,9 @@
 class Life_atm_management {
 	idd = 2700;
 	name= "life_atm_menu";
-	movingEnable = false;
-	enableSimulation = true;
-	
+	movingEnable = 0;
+	enableSimulation = 1;
+
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};

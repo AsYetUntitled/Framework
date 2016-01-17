@@ -1,8 +1,8 @@
 class Life_vehicle_shop {
 	idd = 2300;
 	name= "life_impound_menu";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	//onLoad = "[] execVM 'core\client\keychain\init.sqf'";
 	
 	class controlsBackground {

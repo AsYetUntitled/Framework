@@ -1,8 +1,8 @@
 class life_wanted_menu {
 	idd = 2400;
 	name= "life_wanted_menu";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {

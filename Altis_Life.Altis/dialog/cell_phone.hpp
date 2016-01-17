@@ -1,8 +1,8 @@
 class Life_cell_phone {
 	idd = 3000;
 	name= "life_cell_phone";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "[] spawn life_fnc_cellphone";
 	
 	class controlsBackground {

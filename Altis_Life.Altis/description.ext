@@ -4,7 +4,7 @@ onLoadMission = "An RPG game mode developed by Tonic";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 5;
-disabledAI = true;
+disabledAI = 1;
 disableChannels[]={0,1,2};
 enableDebugConsole = 1;
 respawnDialog = 0;
@@ -24,7 +24,7 @@ corpseRemovalMinTime = 999;
 corpseRemovalMaxTime = 9999;
 
 //SpyGlass configuration
-SPY_Enable = true;
+SPY_Enable = 0;
 
 #include "Config_Spyglass.hpp"
 #include "CfgRemoteExec.hpp"

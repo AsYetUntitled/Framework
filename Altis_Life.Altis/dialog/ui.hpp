@@ -15,7 +15,7 @@
 
 class playerHUD {
 	idd = -1;
-	duration = INFINITE;
+	duration = 10e10;
 	movingEnable = 0;
 	fadein = 0;
 	fadeout = 0;

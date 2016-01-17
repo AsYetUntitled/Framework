@@ -2,8 +2,8 @@ class DeathScreen
 {
 	idd = 7300;
 	name = "Life_Death_Screen";
-	movingEnabled = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground
 	{

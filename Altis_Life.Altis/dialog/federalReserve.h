@@ -2,8 +2,8 @@ class Federal_Safe
 {
 	idd = 3500;
 	name = "Federal_Safe";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground
 	{

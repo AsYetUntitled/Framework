@@ -1,8 +1,8 @@
 class life_weapon_shop
 {
 	idd = 38400;
-	movingEnabled = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground
 	{

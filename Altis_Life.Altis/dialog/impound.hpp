@@ -2,7 +2,7 @@ class Life_impound_menu
 {
 	idd = 2800;
 	name="life_vehicle_shop";
-	movingEnabled = 0;
+	movingEnable = 0;
 	enableSimulation = 1;
 	onLoad = "ctrlShow [2330,false];";
 	

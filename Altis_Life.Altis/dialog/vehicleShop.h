@@ -2,7 +2,7 @@ class Life_Vehicle_Shop_v2
 {
 	idd = 2300;
 	name="life_vehicle_shop";
-	movingEnabled = 0;
+	movingEnable = 0;
 	enableSimulation = 1;
 	onLoad = "ctrlShow [2330,false];";
 	

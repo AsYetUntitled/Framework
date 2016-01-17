@@ -3,8 +3,8 @@
 class playerSettings {
 
 	idd = playersys_DIALOG;
-	movingEnable = true;
-	enableSimulation = true;
+	movingEnable = 1;
+	enableSimulation = 1;
 	
 	class controlsBackground {
 	

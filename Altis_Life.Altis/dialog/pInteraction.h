@@ -5,8 +5,8 @@
 class pInteraction_Menu
 {
 	idd = 37400;
-	movingEnabled = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground
 	{
@@ -145,8 +145,8 @@ class pInteraction_Menu
 class vInteraction_Menu
 {
 	idd = 37400;
-	movingEnabled = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground
 	{

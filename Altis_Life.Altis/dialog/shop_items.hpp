@@ -1,8 +1,8 @@
 class shops_menu {
 	idd = 2400;
 	name= "shops_menu";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	//onLoad = "['guns'] execVM 'gear\switch.sqf'";
 	
 	class controlsBackground {

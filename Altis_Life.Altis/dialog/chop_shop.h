@@ -1,9 +1,9 @@
 class Chop_Shop
 {
 	idd = 39400;
-	movingEnabled = false;
-	enableSimulation = true;
-	
+	movingEnable = 0;
+	enableSimulation = 1;
+
 	class controlsBackground
 	{
 		class RscTitleBackground : Life_RscText

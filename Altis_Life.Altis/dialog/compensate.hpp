@@ -1,8 +1,8 @@
 class Life_Admin_Compensate {
 	idd = 9920;
 	name= "life_admin_compensate_give";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "[] spawn {waitUntil {!isNull (findDisplay 9920)}; ((findDisplay 9920) displayCtrl 9921) ctrlSetText localize ""STR_Admin_Amount""};";
 	
 	class controlsBackground {

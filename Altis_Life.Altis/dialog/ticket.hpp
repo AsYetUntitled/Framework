@@ -2,8 +2,8 @@ class Life_ticket_give
 {
 	idd = 2650;
 	name = "life_ticket_give";
-	movingEnabled = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -64,8 +64,8 @@ class Life_ticket_pay
 {
 	idd = 2600;
 	name = "life_ticket_pay";
-	movingEnabled = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {

@@ -1,9 +1,9 @@
 class life_spawn_selection
 {
 	idd = 38500;
-	movingEnabled = false;
-	enableSimulation = true;
-	
+	movingEnable = 0;
+	enableSimulation = 1;
+
 	class controlsBackground
 	{
 		class life_RscTitleBackground : Life_RscText
@@ -58,7 +58,7 @@ class life_spawn_selection
 			text = "";
 			sizeEx = 0.041;
 			coloumns[] = {0,0,0.9};
-			drawSideArrows = false;
+			drawSideArrows = 0;
 			idcLeft = -1;
 			idcRight = -1;
 			rowHeight = 0.050;

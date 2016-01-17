@@ -1,8 +1,8 @@
 class Life_key_management {
 	idd = 2700;
 	name= "life_key_chain";
-	movingEnable = false;
-	enableSimulation = true;
+	movingEnable = 0;
+	enableSimulation = 1;
 	onLoad = "[] spawn life_fnc_keyMenu;";
 	
 	class controlsBackground {
