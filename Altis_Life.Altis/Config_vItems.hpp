@@ -47,6 +47,14 @@ class VirtualShops {
         level[] = { "", "", -1, "" };
         items[] = { "coffee", "donuts" };
     };
+	
+    class f_station_coffe {
+        name = "STR_MAR_Station_Coffe";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
+        items[] = { "coffee", "donuts", "redgull", "fuelFull"};
+    };
 
     class drugdealer {
         name = "STR_Shops_DrugDealer";
