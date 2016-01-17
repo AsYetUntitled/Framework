@@ -97,6 +97,7 @@ class WeaponShops {
     class f_station_store {
         name = "Altis Fuel Station Store";
         side = "";
+        license = "";
         level[] = { "", "", -1, "" };
         items[] = {
             { "Binocular", "", 750, -1 },
