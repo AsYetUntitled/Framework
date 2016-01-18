@@ -1,7 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Reskins the vehicle
 */
@@ -41,5 +41,8 @@ if(local _vehicle) then {
 	_vehicle SVAR ["Life_VEH_color",_index,true];
 };
 
-waitUntil{!isNil {_vehicle GVAR "Life_VEH_color"}};
-{_vehicle setObjectTexture [_forEachIndex,_x];} foreach _textures;
+if (!isNil {_vehicle GVAR "Life_VEH_color"}) then {
+	{
+		_vehicle setObjectTexture [_forEachIndex,_x];
+	} foreach _textures;
+};
