@@ -48,7 +48,7 @@ class WeaponShops {
             { "30Rnd_9x21_Mag", "", 200, -1 },
             { "20Rnd_556x45_UW_mag", "", 125, -1 },
             { "30Rnd_556x45_Stanag", "", 300, -1 },
-            { "10Rnd_762x51_Mag", "", 500, -1 },
+            { "10Rnd_762x54_Mag", "", 500, -1 },
             { "30Rnd_65x39_caseless_green", "", 275, -1 }
         };
     };
