@@ -1,19 +1,21 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	32 hours later...
 */
-private["_grp","_grpMembers"];
+private["_unitID ","_members"];
 if(EQUAL(steamid,(grpPlayer GVAR "gang_owner"))) exitWith {hint localize "STR_GNOTF_LeaderLeave"};
 
-_grp = grpPlayer;
-_grpMembers = grpPlayer GVAR "gang_members";
-SUB(_grpMembers,[steamid]);
-_grp SVAR ["gang_members",_grpMembers,true];
-[player] joinSilent (createGroup civilian);
+_unitID = getPlayerUID player;
+_members = grpPlayer GVAR "gang_members";
+if(isNil "_members") exitWith {};
+if(!(EQUAL(typeName _members,"ARRAY"))) exitWith {};
 
-[_unit,grpPlayer] remoteExec ["TON_fnc_clientGangLeft",_unit];
-[4,_grp] remoteExec ["TON_fnc_updateGang",RSERV];
+SUB(_members,[_unitID]);
+grpPlayer SVAR ["gang_members",_members,true];
+
+[player,grpPlayer] remoteExec ["TON_fnc_clientGangLeft",player];
+[4,grpPlayer] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
 closeDialog 0;
