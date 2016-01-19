@@ -233,8 +233,6 @@ compileFinal "
 	_msg = _this select 0;
 	_from = _this select 1;
 	_type = _this select 2;
-	_loc = _this select 3;
-	_unit = _this select 4;
 	if(_from == """") exitWith {};
 	switch (_type) do
 	{
@@ -252,6 +250,8 @@ compileFinal "
 		{
 			if(side player != west) exitWith {};
 			private[""_message"",""_markName""];
+			_loc = _this select 3;
+			_unit = _this select 4;
 			_markName = format[""%1_marker"",_unit getVariable[""realname"",name _unit]];
 			_message = format[""--- 911 DISPATCH FROM %1: %2"",_from,_msg];
 			if(isNil ""_loc"") then {_loc = ""Unknown"";};
@@ -278,6 +278,8 @@ compileFinal "
 		{
 			if((call life_adminlevel) < 1) exitWith {};
 			private[""_message"",""_markName""];
+			_loc = _this select 3;
+			_unit = _this select 4;
 			_markName = format[""%1_marker"",_unit getVariable[""realname"",name _unit]];
 			_message = format[""!!! ADMIN REQUEST FROM %1: %2"",_from,_msg];
 			if(isNil ""_loc"") then {_loc = ""Unknown"";};
@@ -326,6 +328,7 @@ compileFinal "
 
 		case 5: {
 			private[""_message"",""_markName""];
+			_unit = _this select 4;
 			_markName = format[""%1_marker"",_unit getVariable[""realname"",name _unit]];
 			_message = format[""!!! EMS REQUEST: %1"",_msg];
 			hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>EMS Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
