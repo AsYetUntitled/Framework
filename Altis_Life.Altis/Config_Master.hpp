@@ -12,6 +12,9 @@ class Life_Settings {
     /* Clothing related settings */
     clothing_box = true; //true = preview inside a black box.  false = preview on map.
     
+    /* Medic related settings*/
+    allow_medic_weapons = true; // true allows medics to hold/use weapons - false disallows
+    
     /* Revive system settings */
     revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
     revive_fee = 1500; //Revive fee that players have to pay and medics / EMS are rewarded
