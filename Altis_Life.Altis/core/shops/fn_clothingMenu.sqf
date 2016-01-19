@@ -7,7 +7,7 @@
 	Opens and initializes the clothing store menu.
 	Started clean, finished messy.
 */
-private["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_oldBev","_flag","_shopTitle","_license","_shopSide","_exit","_testLogic","_ut1","_ut2","_ut3","_ut4","_ut5","_light"];
+private["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_oldBev","_flag","_shopTitle","_license","_shopSide","_exit","_testLogic","_nearVeh","_ut1","_ut2","_ut3","_ut4","_ut5","_light"];
 if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 _exit = false;
 
@@ -42,21 +42,15 @@ if((SEL(_this,3) == "reb" && !license_civ_rebel)) exitWith {hint localize "STR_S
 if((SEL(_this,3) in ["cop"] && playerSide != west)) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
 if((SEL(_this,3) in ["dive"] && !license_civ_dive)) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
 
-_pos = [1000,1000,10000];
-
-if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
-		if(SEL(_this,3) == "bruce") then {
-		_pos = [17088.2,11313.6,0.00136757];
-		};
-		if(SEL(_this,3) == "reb") then {
-		_pos = [13590,12214.6,0.00141621];
-		};
-		if(SEL(_this,3) == "cop") then {
-		_pos = [12817.5,16722.9,0.00151062];
-		};
-		if(SEL(_this,3) == "kart") then {
-		_pos = [14120.5,16440.3,0.00139236];
-		};
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
+	_pos = [1000,1000,10000];
+} else {
+	switch(SEL(_this,3)) do {
+		case "reb": {_pos = [13590,12214.6,0.00141621];};
+		case "cop": {_pos = [12817.5,16722.9,0.00151062];};
+	 	case "kart": {_pos = [14120.5,16440.3,0.00139236];};
+		default {_pos = [17088.2,11313.6,0.00136757];};
+	};
 };
 
 _oldDir = getDir player;
@@ -65,6 +59,8 @@ _oldBev = behaviour player;
 
 _testLogic = "Logic" createVehicleLocal _pos;
 _testLogic setPosATL _pos;
+
+_nearVeh = _testLogic nearEntities ["AllVehicles", 20];
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
 	_ut1 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [0,5,10]);
@@ -93,11 +89,12 @@ _light setlightambient [1,1,1];
 _light lightAttachObject [_testLogic, [0,0,0]];
 
 {if(_x != player) then {_x hideObject true;};} foreach playableUnits;
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
+	{if(_x != player && _x != _light) then {_x hideObject true;};} foreach _nearVeh;
+};
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
-	{
-		_x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];
-	} foreach [_ut1,_ut2,_ut3,_ut4];
+	{_x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];} foreach [_ut1,_ut2,_ut3,_ut4];
 };
 
 player setBehaviour "SAFE";
@@ -158,6 +155,9 @@ life_oldHat = headgear player;
 
 waitUntil {isNull (findDisplay 3100)};
 {if(_x != player) then {_x hideObject false;};} foreach playableUnits;
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
+	{if(_x != player && _x != _light) then {_x hideObject false;};} foreach _nearVeh;
+};
 detach player;
 player setBehaviour _oldBev;
 player setPosASL _oldPos;
