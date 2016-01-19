@@ -53,7 +53,6 @@ if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB did not fully 
 
 /* Map-based server side initialization. */
 master_group attachTo[bank_obj,[0,0,0]];
-onMapSingleClick "if(_alt) then {vehicle player setPos _pos};"; //Local debug for myself
 
 {
 	_hs = createVehicle ["Land_Hospital_main_F", [0,0,0], [], 0, "NONE"];
