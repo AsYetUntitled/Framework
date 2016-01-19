@@ -152,7 +152,7 @@ switch (_code) do {
 
 	//Y Player Menu
 	case 21: {
-		if(!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
+		if(!_alt && !_ctrlKey && !dialog && !(player getVariable["restrained",false]) && {!life_action_inUse}) then {
 			[] call life_fnc_p_openMenu;
 		};
 	};
