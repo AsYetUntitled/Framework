@@ -25,17 +25,17 @@ corpseRemovalMaxTime = 9999;
 
 #include "Config_Spyglass.hpp"
 #include "CfgRemoteExec.hpp"
-#include "dialog\MasterHandler.h"
+#include "dialog\MasterHandler.hpp"
 #include "Config_Master.hpp"
 
 class RscTitles {
 	#include "dialog\ui.hpp"
 	#include "dialog\progress.hpp"
-	#include "dialog\hud_nameTags.h"
+	#include "dialog\hud_nameTags.hpp"
 };
 
 class CfgFunctions {
-	#include "Functions.h"
+	#include "Functions.hpp"
 };
 
 class CfgSounds
