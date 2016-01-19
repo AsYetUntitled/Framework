@@ -2,7 +2,7 @@
 /*
 	File: fn_spawnVehicle.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Sends the query request to the database, if an array is returned then it creates
 	the vehicle if it's not in use or dead.
@@ -24,7 +24,7 @@ if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
 
-_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 
 _tickTime = diag_tickTime;
@@ -66,6 +66,8 @@ if(count _nearVehicles > 0) exitWith {
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
+_trunk = [_vInfo select 9] call DB_fnc_mresToArray;
+_gear = [_vInfo select 10] call DB_fnc_mresToArray;
 
 [_query,false] spawn DB_fnc_asyncCall;
 if(typeName _sp == "STRING") then {
@@ -88,15 +90,35 @@ _vehicle allowDamage true;
 [_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain",_unit];
 [_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
 _vehicle lock 2;
-//Reskin the vehicle 
+//Reskin the vehicle
 [_vehicle,_vInfo select 8] remoteExec ["life_fnc_colorVehicle",RANY];
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
-//_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"]; //Obsolete function?
+_vehicle setVariable["Trunk",_trunk,true];
+
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
-//Sets of animations
+if (count _gear > 0) then {
+	_items = _gear select 0;
+	_mags = _gear select 1;
+	_weapons = _gear select 2;
+	_backpacks = _gear select 3;
 
+	for "_i" from 0 to ((count (_items select 0)) - 1) do {
+		_vehicle addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
+	};
+	for "_i" from 0 to ((count (_mags select 0)) - 1) do {
+		_vehicle addMagazineCargoGlobal [((_mags select 0) select _i), ((_mags select 1) select _i)];
+	};
+	for "_i" from 0 to ((count (_weapons select 0)) - 1) do {
+		_vehicle addWeaponCargoGlobal [((_weapons select 0) select _i), ((_weapons select 1) select _i)];
+	};
+	for "_i" from 0 to ((count (_backpacks select 0)) - 1) do {
+		_vehicle addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
+	};
+};
+
+//Sets of animations
 if(EQUAL(SEL(_vInfo,1),"civ") && EQUAL(SEL(_vInfo,2),"B_Heli_Light_01_F") && !(EQUAL(SEL(_vInfo,8),13))) then {
 	[_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
