@@ -9,6 +9,11 @@ class CarShops {
     *            0: Variable to read from
     *            1: Variable Value Type (SCALAR / BOOL /EQUAL)
     *            2: What to compare to (-1 = Check Disabled)
+    *
+    *   BLUFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_WEST
+    *   OPFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_EAST
+    *   Independent Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_GUER
+    *   Civilian Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_CIV
     */
     class civ_car {
         side = "civ";
