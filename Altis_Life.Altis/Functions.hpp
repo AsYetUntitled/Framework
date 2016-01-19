@@ -238,7 +238,6 @@ class Life_Client_Core
 		class vehStoreItem {};
 		class vehTakeItem {};
 		class vehInventory {};
-		class updateVehTrunk {};
 		class vInteractionMenu {};
 		class vehicleWeight {};
 		class deviceMine {};

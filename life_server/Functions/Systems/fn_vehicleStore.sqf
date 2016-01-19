@@ -14,8 +14,6 @@ _unit = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 
 _vInfo = _vehicle getVariable["dbInfo",[]];
-_trunk = _vehicle getVariable["Trunk",[[],0]];
-_trunk = [_trunk] call DB_fnc_mresArray;
 
 if(count _vInfo > 0) then {
 	_plate = _vInfo select 1;
@@ -23,15 +21,22 @@ if(count _vInfo > 0) then {
 };
 
 //Save vehicle inventory
-if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_gear"),1)) then {
-_vehItems = getItemCargo _vehicle;
-_vehMags = getMagazineCargo _vehicle;
-_vehWeapons = getWeaponCargo _vehicle;
-_vehBackpacks = getBackpackCargo _vehicle;
-_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
-_cargo = [_cargo] call DB_fnc_mresArray;
+if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_virtualItems"),1)) then {
+	_trunk = _vehicle getVariable["Trunk",[[],0]];
+	_trunk = [_trunk] call DB_fnc_mresArray;
 } else {
-_cargo = [];
+	_trunk = [[],0];
+};
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_gear"),1)) then {
+	_vehItems = getItemCargo _vehicle;
+	_vehMags = getMagazineCargo _vehicle;
+	_vehWeapons = getWeaponCargo _vehicle;
+	_vehBackpacks = getBackpackCargo _vehicle;
+	_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
+	_cargo = [_cargo] call DB_fnc_mresArray;
+} else {
+	_cargo = [];
 };
 
 if(_impound) then {
