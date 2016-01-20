@@ -59,7 +59,7 @@ while {true} do {
 						_cargo = [];
 					};
 
-					_query = format["UPDATE vehicles SET active='0', inventory='%3', gear='%4' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk,_cargo];
+					_query = format["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk,_cargo,fuel _veh];
 
 					[_query,1] call DB_fnc_asyncCall;
 				};

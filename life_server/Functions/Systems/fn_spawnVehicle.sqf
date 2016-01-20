@@ -24,7 +24,7 @@ if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
 
-_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 
 _tickTime = diag_tickTime;
@@ -74,6 +74,7 @@ if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 	_vehicle allowDamage false;
+	_vehicle setFuel (_vInfo select 11);
 	_hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
 	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
 	sleep 0.6;
@@ -81,6 +82,7 @@ if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 	_vehicle allowDamage false;
+	_vehicle setFuel (_vInfo select 11);
 	_vehicle setPos _sp;
 	_vehicle setVectorUp (surfaceNormal _sp);
 	_vehicle setDir _dir;
