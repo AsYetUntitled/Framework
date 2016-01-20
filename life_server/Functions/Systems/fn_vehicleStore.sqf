@@ -21,14 +21,14 @@ if(count _vInfo > 0) then {
 };
 
 //Save vehicle inventory
-if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_virtualItems"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
 	_trunk = _vehicle getVariable["Trunk",[[],0]];
 	_trunk = [_trunk] call DB_fnc_mresArray;
 } else {
 	_trunk = [[],0];
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_gear"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1)) then {
 	_vehItems = getItemCargo _vehicle;
 	_vehMags = getMagazineCargo _vehicle;
 	_vehWeapons = getWeaponCargo _vehicle;
