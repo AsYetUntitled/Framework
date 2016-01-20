@@ -40,26 +40,11 @@ while {true} do {
 					systemChat "Fixing...";
 					_uid = _dbInfo select 0;
 					_plate = _dbInfo select 1;
+					_trunk = [[],0];
+					_cargo = [];
+					_fuel = 1;
 
-					if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_virtualItems"),1)) then {
-						_trunk = _veh getVariable["Trunk",[[],0]];
-						_trunk = [_trunk] call DB_fnc_mresArray;
-					} else {
-						_trunk = [[],0];
-					};
-
-					if(EQUAL(LIFE_SETTINGS(getNumber,"veh_save_gear"),1)) then {
- 						_vehItems = getItemCargo _veh;
- 						_vehMags = getMagazineCargo _veh;
- 						_vehWeapons = getWeaponCargo _veh;
- 						_vehBackpacks = getBackpackCargo _veh;
- 						_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
- 						_cargo = [_cargo] call DB_fnc_mresArray;
-					} else {
-						_cargo = [];
-					};
-
-					_query = format["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk,_cargo,fuel _veh];
+					_query = format["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk,_cargo,_fuel];
 
 					[_query,1] call DB_fnc_asyncCall;
 				};
