@@ -54,7 +54,7 @@ class Life_Settings {
     noatm_timer = 10; //Time in minutes that players won't be able to deposit his money after selling stolen gold
 
     /* Spyglass settings */
-    spyglass_init = false; //Enable or disable spyglass
+    spyglass_init = true; //Enable or disable spyglass
 
     /* Skins settings */
     civ_skins = false; //Enable or disable civilian skins. Before enabling, you must add all the SEVEN files to textures folder. (It must be named as: civilian_uniform_1.jpg, civilian_uniform_2.jpg...civilian_uniform_6.jpg, civilian_uniform_7.jpg)
