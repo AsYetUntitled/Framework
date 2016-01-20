@@ -62,7 +62,7 @@ if((life_veh_shop select 0) == "med_air_hs") then {
 	_hs = nearestObjects[getMarkerPos _spawnPoint,["Land_Hospital_side2_F"],50] select 0;
 	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
 	_vehicle lock 2;
-	[_vehicle,_colorIndex] remoteExec ["life_fnc_colorVehicle",RCLIENT];
+	[_vehicle,_colorIndex] remoteExecCall ["life_fnc_colorVehicle",RCLIENT];
 	[_vehicle] call life_fnc_clearVehicleAmmo;
 	[_vehicle,"trunk_in_use",false,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
 	[_vehicle,"vehicle_info_owners",[[getPlayerUID player,profileName]],true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
@@ -75,7 +75,7 @@ if((life_veh_shop select 0) == "med_air_hs") then {
 	_vehicle setVectorUp (surfaceNormal (getMarkerPos _spawnPoint));
 	_vehicle setDir (markerDir _spawnPoint);
 	_vehicle setPos (getMarkerPos _spawnPoint);
-	[_vehicle,_colorIndex] remoteExec ["life_fnc_colorVehicle",RCLIENT];
+	[_vehicle,_colorIndex] remoteExecCall ["life_fnc_colorVehicle",RCLIENT];
 	[_vehicle] call life_fnc_clearVehicleAmmo;
 	[_vehicle,"trunk_in_use",false,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
 	[_vehicle,"vehicle_info_owners",[[getPlayerUID player,profileName]],true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
