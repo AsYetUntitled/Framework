@@ -109,6 +109,17 @@ switch (_code) do {
 		};
 	};
 
+	//Surrender... Tab Key
+	case 15: {
+		if(!_alt && !_ctrlKey && !_shift && !dialog && !(player GVAR ["restrained",false]) && (animationState player) != "Incapacitated" && !life_istazed) then {
+			if (player GVAR ["surrender", false]) then {
+				player SVAR ["surrender", false, true];
+			} else {
+				[] spawn life_fnc_surrender;
+			};
+		};
+	};
+
 	//T Key (Trunk)
 	case 20: {
 		if(!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
