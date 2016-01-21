@@ -10,6 +10,8 @@
 private["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
 disableSerialization;
 
+waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
+waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 _escSync = {
 	private["_abortButton","_thread","_syncManager"];
 	disableSerialization;
