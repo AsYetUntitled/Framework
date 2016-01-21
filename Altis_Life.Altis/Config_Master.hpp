@@ -10,6 +10,7 @@ class Life_Settings {
     save_virtualItems = true; //Save Virtual items (all sides)?
     save_veh_virtualItems = false; //Save Virtual items for vehicles (all sides)?
     save_veh_gear = false; //Save Gear for vehicles (all sides)?
+    save_playerStats = false; //Save food & water (all sides)?
 
     /* Clothing related settings */
     clothing_box = true; //true = preview inside a black box.  false = preview on map.

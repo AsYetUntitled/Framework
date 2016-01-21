@@ -25,3 +25,7 @@ LIFEctrl(IDC_LIFE_BAR_HEALTH) progressSetPosition (1 - (damage player));
 LIFEctrl(IDC_LIFE_FOOD_TEXT) ctrlsetText format["%1", life_hunger];
 LIFEctrl(IDC_LIFE_WATER_TEXT) ctrlsetText format["%1", life_thirst];
 LIFEctrl(IDC_LIFE_HEALTH_TEXT) ctrlsetText format["%1", round((1 - (damage player)) * 100)];
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
+	[8] call SOCK_fnc_updatePartial;
+};
