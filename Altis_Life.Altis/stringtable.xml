@@ -2527,12 +2527,12 @@
       <Polish>Ktoś właśnie włamuje się do sejfu!</Polish>
     </Key>
     <Key ID="STR_Civ_NotEnoughCops">
-      <Original>There needs to be 5 or more cops online to continue.</Original>
-      <German>Es müssen 5 oder mehr Polizisten online sein, um fortfahren zu können.</German>
-      <French>Il faut au minimum 5 flic pour continuer</French>
-      <Italian>Servono almeno 5 poliziotti online per continuare.</Italian>
-      <Portuguese>É necessário ter pelo menos 5 Policiais online para continuar.</Portuguese>
-      <Polish>Potrzeba conajmniej 5 policjantów aby kontynuować</Polish>
+      <Original>There needs to be %1 or more cops online to continue.</Original>
+      <German>Es müssen %1 oder mehr Polizisten online sein, um fortfahren zu können.</German>
+      <French>Il faut au minimum %1 flic pour continuer</French>
+      <Italian>Servono almeno %1 poliziotti online per continuare.</Italian>
+      <Portuguese>É necessário ter %1 ou mais policiais online para continuar.</Portuguese>
+      <Polish>Potrzeba conajmniej %1 policjantów aby kontynuować</Polish>
     </Key>
     <Key ID="STR_Civ_SafeInv">
       <Original>Safe Inventory</Original>
