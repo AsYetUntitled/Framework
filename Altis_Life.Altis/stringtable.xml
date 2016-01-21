@@ -281,7 +281,6 @@
     </Key>
     <Key ID="STR_Admin_Spectate">
       <Original>Spectate</Original>
-      <English>Spectate</English>
       <German>Zuschauen</German>
       <French>Regardez</French>
       <Portuguese>Observar</Portuguese>
@@ -289,7 +288,6 @@
     </Key>
     <Key ID="STR_Admin_Teleport">
       <Original>Teleport</Original>
-      <English>Teleport</English>
       <German>Teleport</German>
       <French>Teleport</French>
       <Portuguese>Teleport</Portuguese>
@@ -297,7 +295,6 @@
     </Key>
     <Key ID="STR_Admin_TpHere">
       <Original>TP Here</Original>
-      <English>TP Here</English>
       <German>TP Hier</German>
       <French>TP Ici</French>
       <Portuguese>TP Aqui</Portuguese>
@@ -305,7 +302,6 @@
     </Key>
     <Key ID="STR_Admin_Debug">
       <Original>Debug</Original>
-      <English>Debug</English>
       <German>Debug</German>
       <French>Debug</French>
       <Portuguese>Debug</Portuguese>
@@ -313,7 +309,6 @@
     </Key>
     <Key ID="STR_Admin_Compensate">
       <Original>Comp</Original>
-      <English>Comp</English>
       <German>Comp</German>
       <French>Comp</French>
       <Portuguese>Comp</Portuguese>
@@ -321,7 +316,6 @@
     </Key>
     <Key ID="STR_Admin_God">
       <Original>GodMode</Original>
-      <English>GodMode</English>
       <German>Gott</German>
       <French>Dieu</French>
       <Portuguese>GodMode</Portuguese>
@@ -329,7 +323,6 @@
     </Key>
     <Key ID="STR_Admin_Freeze">
       <Original>Freeze</Original>
-      <English>Freeze</English>
       <German>Freeze</German>
       <French>Geler</French>
       <Portuguese>Congelar</Portuguese>
@@ -337,7 +330,6 @@
     </Key>
     <Key ID="STR_Admin_Markers">
       <Original>Markers</Original>
-      <English>Markers</English>
       <German>Markers</German>
       <French>Markers</French>
       <Portuguese>Marcações</Portuguese>
@@ -379,7 +371,6 @@
     </Key>
     <Key ID="STR_ANOTF_CompWarn">
       <Original>You are about to give yourself $%1 to compensate to another player &lt;br/&gt;&lt;br/&gt;You must give this cash to the person you are compensating manually.</Original>
-      <English>You are about to give yourself $%1 to compensate to another player &lt;br/&gt;&lt;br/&gt;You must give this cash to the person you are compensating manually.</English>
       <German>To Be Changed</German>
       <French>Vous êtes sur le point de vous donner $%1 pour compenser à un autre joueur &lt;br/&gt;&lt;br/&gt; S'il vous plaît donner à cette à la personne vous compensez manuellement</French>
       <Portuguese>Você está prestes a dar para você mesmo R$%1 para compensar outro jogador &lt;br/&gt;&lt;br/&gt;Você deve dar este dinheiro para a pessoa que você está compensando manualmente.</Portuguese>
@@ -387,7 +378,6 @@
     </Key>
     <Key ID="STR_ANOTF_Success">
       <Original>You have added $%1 to your account.</Original>
-      <English>You have added $%1 to your account.</English>
       <German>To Be Changed</German>
       <French>Vous avez ajouté $%1 à votre compte</French>
       <Portuguese>Você adicionou R$%1 em sua conta.</Portuguese>
@@ -395,7 +385,6 @@
     </Key>
     <Key ID="STR_ANOTF_Fail">
       <Original>You can not go above 999999.</Original>
-      <English>You can not go above 999999.</English>
       <German>To Be Changed</German>
       <French>Vous ne pouvez pas aller au-dessus $999999</French>
       <Portuguese>Você não pode ir além de 999999.</Portuguese>
@@ -403,7 +392,6 @@
     </Key>
     <Key ID="STR_ANOTF_Amount">
       <Original>Please type in the amount to compensate.</Original>
-      <English>Please type in the amount to compensate.</English>
       <German>To Be Changed</German>
       <French>S'il vous plaît entrer la quantité pour compenser</French>
       <Portuguese>Por favor, insira a quantidade para compensar.</Portuguese>
@@ -411,7 +399,6 @@
     </Key>
     <Key ID="STR_ANOTF_Frozen">
       <Original>You have disabled %1's input.</Original>
-      <English>You have disabled %1's input.</English>
       <German>To Be Changed</German>
       <French>Vous avez désactivé %1's contrôles</French>
       <Portuguese>Você desabilitou as entradas de %1.</Portuguese>
@@ -419,7 +406,6 @@
     </Key>
     <Key ID="STR_ANOTF_Unfrozen">
       <Original>You have enabled %1's input.</Original>
-      <English>You have enabled %1's input.</English>
       <German>To Be Changed</German>
       <French>Vous avez permis %1's contrôles</French>
       <Portuguese>Você habilitou as entradas de %1.</Portuguese>
@@ -427,7 +413,6 @@
     </Key>
     <Key ID="STR_ANOTF_Error">
       <Original>You can't do that dumbass.</Original>
-      <English>You can't do that dumbass.</English>
       <German>To Be Changed</German>
       <French>Vous ne pouvez pas le faire sur vous-même</French>
       <Portuguese>Você não pode fazer isso, idiota.</Portuguese>
@@ -435,7 +420,6 @@
     </Key>
     <Key ID="STR_ANOTF_ErrorLevel">
       <Original>Your Admin Level is not high enough.</Original>
-      <English>Your Admin Level is not high enough.</English>
       <German>To Be Changed</German>
       <French>Votre Niveau admin n'est pas suffisamment élevée</French>
       <Portuguese>Seu nível de ADM não é alto o bastante.</Portuguese>
@@ -443,7 +427,6 @@
     </Key>
     <Key ID="STR_ANOTF_MDisabled">
       <Original>Player Markers Disabled.</Original>
-      <English>Player Markers Disabled.</English>
       <German>To Be Changed</German>
       <French>Votre Niveau admin n'est pas suffisamment élevée</French>
       <Portuguese>Marcações dos jogadores desabilitada.</Portuguese>
@@ -451,7 +434,6 @@
     </Key>
     <Key ID="STR_ANOTF_MEnabled">
       <Original>Player Markers Enabled.</Original>
-      <English>Player Markers Enabled.</English>
       <German>To Be Changed</German>
       <French>Votre Niveau admin n'est pas suffisamment élevée</French>
       <Portuguese>Marcações dos jogadores habilitada.</Portuguese>
@@ -2359,13 +2341,11 @@
     </Key>
     <Key ID="STR_NOTF_Frozen">
       <Original>You have been frozen by an administrator</Original>
-      <English>You have been frozen by an administrator</English>
       <Portuguese>Você foi congelado por um administrador</Portuguese>
       <Polish>Zostałeś zamrożony przez administratora</Polish>
     </Key>
     <Key ID="STR_NOTF_Unfrozen">
       <Original>You have been unfrozen by an administrator</Original>
-      <English>You have been unfrozen by an administrator</English>
       <Portuguese>Você foi descongelado por um administrador</Portuguese>
       <Polish>Zostałeś odmrożony przez administratora</Polish>
     </Key>
