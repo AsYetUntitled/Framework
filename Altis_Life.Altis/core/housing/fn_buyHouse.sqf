@@ -28,13 +28,13 @@ _action = [
 
 if(_action) then {
 	if(BANK < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
+	SUB(BANK,(SEL(_houseCfg,0)));
 	[_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
 	_house SVAR ["house_owner",[_uid,profileName],true];
 	_house SVAR ["locked",true,true];
 	_house SVAR ["Trunk",[[],0],true];
 	_house SVAR ["containers",[],true];
 	_house SVAR ["uid",floor(random 99999),true];
-	SUB(BANK,(SEL(_houseCfg,0)));
 
 	life_vehicles pushBack _house;
 	life_houses pushBack [str(getPosATL _house),[]];
