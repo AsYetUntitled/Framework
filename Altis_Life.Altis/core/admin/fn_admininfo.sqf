@@ -2,7 +2,7 @@
 /*
 	File: fn_admininfo.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Output information received to admin menu.
 */
@@ -27,5 +27,5 @@ if(!(EQUAL(primaryWeapon _unit,""))) then {
 };
 
 if(EQUAL(count _attach,0)) then {_attach = "None"};
-CONTROL(2900,2903) ctrlSetStructuredText parseText format["Name: %1<br/>Bank: %2<br/>Money: %3<br/>Uniform: %4<br/>Vest: %5<br/>Backpack: %6<br/>Primary: %7<br/>Handgun: %8<br/><t align='center'>Primary Attachments</t><br/>%9",
-_unit GVAR ["realname",name _unit],[SEL(_ret,0)] call life_fnc_numberText,[SEL(_ret,1)] call life_fnc_numberText, _uni,_vest,_bp,_prim,_sec,_attach];
+CONTROL(2900,2903) ctrlSetStructuredText parseText format["<t size='.8'>Name: %1<br/>Steam Name: %10<br/>Player UID: %11<br/>Player Side: %12<br/>Bank: %2<br/>Money: %3<br/>Uniform: %4<br/>Vest: %5<br/>Backpack: %6<br/>Primary: %7<br/>Handgun: %8<br/><t align='center'>Primary Attachments</t><br/>%9</t>",
+_unit GVAR ["realname",name _unit],[SEL(_ret,0)] call life_fnc_numberText,[SEL(_ret,1)] call life_fnc_numberText, _uni,_vest,_bp,_prim,_sec,_attach,SEL(_ret,4),SEL(_ret,5),SEL(_ret,6)];
