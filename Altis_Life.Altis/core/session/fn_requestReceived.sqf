@@ -2,10 +2,10 @@
 /*
 	File: fn_requestReceived.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
-	Called by the server saying that we have a response so let's 
-	sort through the information, validate it and if all valid 
+	Called by the server saying that we have a response so let's
+	sort through the information, validate it and if all valid
 	set the client up.
 */
 life_session_tries = life_session_tries + 1;
@@ -50,33 +50,45 @@ switch(playerSide) do {
 		CONST(life_coplevel, parseNumber(SEL(_this,7)));
 		CONST(life_medicLevel,0);
 		life_blacklisted = SEL(_this,9);
+		if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
+			life_hunger = SEL(_this,10);
+			life_thirst = SEL(_this,11);
+		};
 	};
-	
+
 	case civilian: {
 		life_is_arrested = SEL(_this,7);
 		CONST(life_coplevel, 0);
 		CONST(life_medicLevel, 0);
-		life_houses = SEL(_this,9);
+		life_houses = SEL(_this,11);
+		if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
+			life_hunger = SEL(_this,9);
+			life_thirst = SEL(_this,10);
+		};
 		{
 			_house = nearestBuilding (call compile format["%1", SEL(_x,0)]);
 			life_vehicles pushBack _house;
 		} foreach life_houses;
-		
-		life_gangData = SEL(_this,10);
+
+		life_gangData = SEL(_this,12);
 		if(!(EQUAL(count life_gangData,0))) then {
 			[] spawn life_fnc_initGang;
 		};
 		[] spawn life_fnc_initHouses;
 	};
-	
+
 	case independent: {
 		CONST(life_medicLevel, parseNumber(SEL(_this,7)));
 		CONST(life_coplevel,0);
+		if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
+			life_hunger = SEL(_this,9);
+			life_thirst = SEL(_this,10);
+		};
 	};
 };
 
-if(count (SEL(_this,12)) > 0) then {
-	{life_vehicles pushBack _x;} foreach (SEL(_this,12));
+if(count (SEL(_this,14)) > 0) then {
+	{life_vehicles pushBack _x;} foreach (SEL(_this,14));
 };
 
 life_session_completed = true;
