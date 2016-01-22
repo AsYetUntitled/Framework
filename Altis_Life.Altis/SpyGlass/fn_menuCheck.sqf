@@ -1,6 +1,7 @@
 #define GVAR_UINS uiNamespace getVariable
 #define steamid getPlayerUID player
 #define FETCH_CONST(var) (call var)
+#define EQUAL(condition1,condition2) condition1 isEqualTo condition2
 #define SPYGLASS_END \
 	vehicle player setVelocity[1e10,1e14,1e18]; \
 	sleep 3; \
@@ -18,7 +19,7 @@ private["_displays","_detection","_display","_timeStamp"];
 disableSerialization;
 
 _displays = [
-	[3030,"BIS_configviewer_display"],["RscDisplayMultiplayer","RscDisplayMultiplayer"],[162,"RscDisplayFieldManual"],["RscDisplayRemoteMissions","RscDisplayRemoteMissions"],[316000,"RscDisplayDebugPublic"],[125,"RscDisplayEditDiaryRecord"],
+	[3030,"BIS_configviewer_display"],["RscDisplayMultiplayer","RscDisplayMultiplayer"],[162,"RscDisplayFieldManual"],["RscDisplayRemoteMissions","RscDisplayRemoteMissions"],[125,"RscDisplayEditDiaryRecord"],
 	[69,"UnknownDisplay"],[19,"UnknownDisplay"],[71,"UnknownDisplay"],[45,"UnknownDisplay"],[132,"UnknownDisplay"],[32,"UnknownDisplay"],[165,"RscDisplayPublishMission"],[2727,"RscDisplayLocWeaponInfo"],
 	["RscDisplayMovieInterrupt","RscDisplayMovieInterrupt"],[157,"UnknownDisplay"],[30,"UnknownDisplay"],["RscDisplayArsenal","RscDisplayArsenal"],[166,"RscDisplayPublishMissionSelectTags"],[167,"RscDisplayFileSelect"]
 ];
@@ -29,18 +30,9 @@ while {true} do {
 	{
 		_targetDisplay = _x select 0;
 		_targetName = _x select 1;
-		if(!(_targetDisplay == 316000)) then {
-			switch(typeName _targetDisplay) do {
-				case (typeName ""): {if(!isNull (GVAR_UINS [_targetDisplay,displayNull])) exitWith {_detection = true;};};
-				default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
-			};
-		} else {
-			if(FETCH_CONST(life_adminlevel) < 5) then {
-				switch(typeName _targetDisplay) do {
-					case (typeName ""): {if(!isNull (GVAR_UINS [_targetDisplay,displayNull])) exitWith {_detection = true;};};
-					default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
-				};
-			};
+		switch(typeName _targetDisplay) do {
+			case (""): {if(!isNull (GVAR_UINS [_targetDisplay,displayNull])) exitWith {_detection = true;};};
+			default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
 		};
 
 		if(_detection) exitWith {
@@ -128,6 +120,14 @@ while {true} do {
 			(toLower ctrlText (_display displayCtrl 1000) != toLower localize "STR_DISP_OPTIONS_SCHEME"),
 			{if (buttonAction (_display displayCtrl _x) != "") exitWith {true}; false} forEach [1,2]
 		];
+	};
+
+	_display = findDisplay 316000;
+	if(!(isNull _display && EQUAL(FETCH_CONST(life_adminlevel),5))) exitWith {
+		[[profileName,steamid,"MenuBasedHack_RscDisplayDebugPublic"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+		[[profileName,"Menu Hack: RscDisplayDebugPublic"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+		closeDialog 0;
+		SPYGLASS_END
 	};
 
 	/* We'll just move the no-recoil check into this thread. */
