@@ -52,11 +52,6 @@ switch(_mode) do {
 	case 7: {
 		// Tonic is using for keychain..?
 	};
-
-	case 8: {
-		_packet set[2,life_hunger];
-		_packet set[4,life_thirst];
-	};
 };
 
 _packet remoteExecCall ["DB_fnc_updatePartial",RSERV];

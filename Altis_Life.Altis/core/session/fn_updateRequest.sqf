@@ -17,6 +17,12 @@ _packet pushBack _array;
 
 [] call life_fnc_saveGear;
 _packet pushBack life_gear;
+
+_array = [];
+_array pushBack life_hunger;
+_array pushBack life_thirst;
+_packet pushBack _array;
+
 switch (playerSide) do {
 	case civilian: {
 		_packet pushBack life_is_arrested;
