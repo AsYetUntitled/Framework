@@ -61,7 +61,7 @@ while {true} do
 	_fieldManual ctrlEnable false; //Never re-enable, blocks an old script executor.
 
 	[] spawn {
-		sleep 0.5; // Delay for display detection
+		sleep 2; // Giving script some time, but it shouldn't be too high
 		if (!isNull (findDisplay 602)) exitWith {
 			(findDisplay 49) closeDisplay 2; // Close ESC dialog
 			(findDisplay 602) closeDisplay 2; // Close Inventory dialog
