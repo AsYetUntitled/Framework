@@ -5,7 +5,7 @@
 	Takes partial data of a player and updates it, this is meant to be
 	less network intensive towards data flowing through it for updates.
 */
-private["_uid","_side","_value","_mode","_query"];
+private["_uid","_side","_value","_value1","_value2","_mode","_query"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _mode = [_this,3,-1,[0]] call BIS_fnc_param;
@@ -79,10 +79,12 @@ switch(_mode) do {
 	case 8: {
 		_value1 = [_this,2,0,[0]] call BIS_fnc_param;
 		_value2 = [_this,4,0,[0]] call BIS_fnc_param;
+		_value = [_value1,_value2];
+		_value = [_value] call DB_fnc_mresArray;
 		switch(_side) do {
-			case west: {_query = format["UPDATE players SET cop_hunger='%1', cop_thirst='%2' WHERE playerid='%3'",_value1,_value2,_uid];};
-			case civilian: {_query = format["UPDATE players SET civ_hunger='%1', civ_thirst='%2' WHERE playerid='%3'",_value1,_value2,_uid];};
-			case independent: {_query = format["UPDATE players SET med_hunger='%1', med_thirst='%2' WHERE playerid='%3'",_value1,_value2,_uid];};
+			case west: {_query = format["UPDATE players SET cop_stats='%1' WHERE playerid='%2'",_value,_uid];};
+			case civilian: {_query = format["UPDATE players SET civ_stats='%1' WHERE playerid='%2'",_value,_uid];};
+			case independent: {_query = format["UPDATE players SET med_stats='%1' WHERE playerid='%2'",_value,_uid];};
 		};
 	};
 };
