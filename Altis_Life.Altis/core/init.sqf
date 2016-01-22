@@ -121,5 +121,13 @@ life_fnc_moveIn = compileFinal
 
 [] spawn life_fnc_survival;
 
+[] spawn {
+	while {true} do {
+		waitUntil{(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
+		(findDisplay 49) closeDisplay 2; // Close ESC dialog
+		(findDisplay 602) closeDisplay 2; // Close Inventory dialog
+	};
+};
+
 CONSTVAR(life_paycheck); //Make the paycheck static.
 if(EQUAL(LIFE_SETTINGS(getNumber,"enable_fatigue"),0)) then {player enableFatigue false;};
