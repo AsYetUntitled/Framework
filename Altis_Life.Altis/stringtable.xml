@@ -5501,294 +5501,367 @@
   <Package name="Markers_names">
     <Key ID="STR_MAR_Fish_Market">
       <Original>Fish Market</Original>
+      <Portuguese>Peixaria</Portuguese>
       <Polish>Sklep rybny</Polish>
     </Key>
     <Key ID="STR_MAR_Hospital">
       <Original>Hospital</Original>
+      <Portuguese>Hospital</Portuguese>
       <Polish>Szpital</Polish>
     </Key>
     <Key ID="STR_MAR_Police_Station">
       <Original>Police Station</Original>
+      <Portuguese>Estação Policial</Portuguese>
       <Polish>Posterunek policji</Polish>
     </Key>
     <Key ID="STR_MAR_Police_Air_HQ">
       <Original>Police Air HQ</Original>
+      <Portuguese>QG Aéreo Policial</Portuguese>
       <Polish>Baza lotnicza policji</Polish>
     </Key>
     <Key ID="STR_MAR_Iron_Mine">
       <Original>Iron Mine</Original>
+      <Portuguese>Mina de Ferro</Portuguese>
       <Polish>Kopalnia miedzi</Polish>
     </Key>
     <Key ID="STR_MAR_Salt_Mine">
       <Original>Salt Mine</Original>
+      <Portuguese>Mina de Sal</Portuguese>
       <Polish>Kopalnia soli</Polish>
     </Key>
     <Key ID="STR_MAR_Salt_Processing">
       <Original>Salt Processing</Original>
+      <Portuguese>Processador de Sal</Portuguese>
       <Polish>Warzelnia soli</Polish>
     </Key>
     <Key ID="STR_MAR_Altis_Corrections">
       <Original>Altis Corrections</Original>
+      <Portuguese>Prisão de Altis</Portuguese>
       <Polish>Więzienie Altis</Polish>
     </Key>
     <Key ID="STR_MAR_Police_HQ">
       <Original>Police HQ</Original>
+      <Portuguese>QG Policial</Portuguese>
       <Polish>KG Policji Altis</Polish>
     </Key>
     <Key ID="STR_MAR_Coast_Guard">
       <Original>Coast Guard</Original>
+      <Portuguese>Guarda Costeira</Portuguese>
       <Polish>Straż przybrzeżna</Polish>
     </Key>
     <Key ID="STR_MAR_Rebel_Outpost">
       <Original>Rebel Outpost</Original>
+      <Portuguese>Base Rebelde</Portuguese>
       <Polish>Baza rebeliantów</Polish>
     </Key>
     <Key ID="STR_MAR_Air_Shop">
       <Original>Air Shop</Original>
+      <Portuguese>Loja Aérea</Portuguese>
       <Polish>Sklep lotniczy</Polish>
     </Key>
     <Key ID="STR_MAR_Truck_Shop">
       <Original>Truck Shop</Original>
+      <Portuguese>Loja de Caminhões</Portuguese>
       <Polish>Salon ciężarówek</Polish>
     </Key>
     <Key ID="STR_MAR_Oil_Processing">
       <Original>Oil Processing</Original>
+      <Portuguese>Processador de Petróleo</Portuguese>
       <Polish>Rafineria ropy naftowej</Polish>
     </Key>
     <Key ID="STR_MAR_Iron_processing">
       <Original>Iron_processing</Original>
+      <Portuguese>Processador de Ferro</Portuguese>
       <Polish>Huta żelaza</Polish>
     </Key>
     <Key ID="STR_MAR_Sand_Mine">
       <Original>Sand Mine</Original>
+      <Portuguese>Mina de Areia</Portuguese>
       <Polish>Kopalnia piasku</Polish>
     </Key>
     <Key ID="STR_MAR_Chop_Shop">
       <Original>Chop Shop</Original>
+      <Portuguese>Desmanche</Portuguese>
       <Polish>Dziupla</Polish>
     </Key>
     <Key ID="STR_MAR_Cocaine_Processing">
       <Original>Cocaine Processing</Original>
+      <Portuguese>Processador de Cocaína</Portuguese>
       <Polish>Oczyszczanie kokainy</Polish>
     </Key>
     <Key ID="STR_MAR_Copper_Mine">
       <Original>Copper Mine</Original>
+      <Portuguese>Mina de Cobre</Portuguese>
       <Polish>Kopalnia miedzi</Polish>
     </Key>
     <Key ID="STR_MAR_ATM">
       <Original>ATM</Original>
+      <Portuguese>Caixa Eletrônico</Portuguese>
       <Polish>Bankomat</Polish>
     </Key>
     <Key ID="STR_MAR_Local_Bank">
       <Original>Local Bank</Original>
+      <Portuguese>Banco Local</Portuguese>
       <Polish>Bank Altis</Polish>
     </Key>
     <Key ID="STR_MAR_Car_Shop">
       <Original>Car Shop</Original>
+      <Portuguese>Loja de Carros</Portuguese>
       <Polish>Salon samochodowy</Polish>
     </Key>
     <Key ID="STR_MAR_Hospital_Clinic">
       <Original>Hospital/Clinic</Original>
+      <Portuguese>Hospital/Clínica</Portuguese>
       <Polish>Klinika Altis</Polish>
     </Key>
     <Key ID="STR_MAR_Diamond_Mine">
       <Original>Diamond Mine</Original>
+      <Portuguese>Mina de Diamante</Portuguese>
       <Polish>Kopalnia diamentów</Polish>
     </Key>
     <Key ID="STR_MAR_General_Store">
       <Original>General Store</Original>
+      <Portuguese>Loja de Equipamentos</Portuguese>
       <Polish>Sklep techniczny</Polish>
     </Key>
     <Key ID="STR_MAR_Civilian_Shops">
       <Original>Civilian Shops</Original>
+      <Portuguese>Lojas Civis</Portuguese>
       <Polish>Sklepy dla cywilów</Polish>
     </Key>
     <Key ID="STR_MAR_Boat_Shop">
       <Original>Boat Shop</Original>
+      <Portuguese>Loja de Barcos</Portuguese>
       <Polish>Sklep z łodziami</Polish>
     </Key>
     <Key ID="STR_MAR_Bruce_Outfits">
       <Original>Bruce's Outback Outfits</Original>
+      <Portuguese>Loja de Roupas</Portuguese>
       <Polish>Sklep odzieżowy</Polish>
     </Key>
     <Key ID="STR_MAR_Apple_Field">
       <Original>Apple Field</Original>
+      <Portuguese>Campo de Maçãs</Portuguese>
       <Polish>Sad jabłkowy</Polish>
     </Key>
     <Key ID="STR_MAR_Peaches_Field">
       <Original>Peaches Field</Original>
+      <Portuguese>Campo de Pêras</Portuguese>
       <Polish>Sad brzoskwiniowy</Polish>
     </Key>
     <Key ID="STR_MAR_Market">
       <Original>Market</Original>
+      <Portuguese>Mercado</Portuguese>
       <Polish>Market spożywczy</Polish>
     </Key>
     <Key ID="STR_MAR_Air_Service">
       <Original>Air Service Station</Original>
+      <Portuguese>Estação de Serviços Aéreos</Portuguese>
       <Polish>Serwis lotniczy</Polish>
     </Key>
     <Key ID="STR_MAR_Channel_News">
       <Original>Channel 7 News</Original>
+      <Portuguese>Canal de Notícias 7</Portuguese>
       <Polish>Maszt nadawczy</Polish>
     </Key>
     <Key ID="STR_MAR_DMV">
       <Original>DMV</Original>
+      <Portuguese>Loja de Licenças</Portuguese>
       <Polish>Urząd licencyjny</Polish>
     </Key>
     <Key ID="STR_MAR_Delivery_Missions">
       <Original>Delivery Missions</Original>
+      <Portuguese>Missões de Entrega</Portuguese>
       <Polish>Misje kurierskie</Polish>
     </Key>
     <Key ID="STR_MAR_Diving_Shop">
       <Original>Diving Shop</Original>
+      <Portuguese>Loja de Mergulho</Portuguese>
       <Polish>Akcesoria do nurkowania</Polish>
     </Key>
     <Key ID="STR_MAR_Drug_Dealer">
       <Original>Drug Dealer</Original>
+      <Portuguese>Traficante</Portuguese>
       <Polish>Diler narkotyków</Polish>
     </Key>
     <Key ID="STR_MAR_Sofia_Freight_Yard">
       <Original>Sofia Freight Yard</Original>
+      <Portuguese>Área de Carga e Descarga</Portuguese>
       <Polish>Terminal transportowy</Polish>
     </Key>
     <Key ID="STR_MAR_Diamond_Processing">
       <Original>Diamond Processing</Original>
+      <Portuguese>Processador de Diamante</Portuguese>
       <Polish>Szlifierz diamentów</Polish>
     </Key>
     <Key ID="STR_MAR_Oil_Field">
       <Original>Oil Field</Original>
+      <Portuguese>Campo de Petróleo</Portuguese>
       <Polish>Szyb naftowy</Polish>
     </Key>
     <Key ID="STR_MAR_Weed_Field">
       <Original>Weed Field</Original>
+      <Portuguese>Campo de Maconha</Portuguese>
       <Polish>Pole marihuany</Polish>
     </Key>
     <Key ID="STR_MAR_Weed_Processing">
       <Original>Weed Processing</Original>
+      <Portuguese>Processador de Maconha</Portuguese>
       <Polish>Suszarnia marihuany</Polish>
     </Key>
     <Key ID="STR_MAR_Boat_Spawn">
       <Original>Boat Spawn</Original>
+      <Portuguese>Spawn de Barcos</Portuguese>
       <Polish>Przystań</Polish>
     </Key>
     <Key ID="STR_MAR_Copper_Processing">
       <Original>Copper Processing</Original>
+      <Portuguese>Processador de Cobre</Portuguese>
       <Polish>Huta miedzi</Polish>
     </Key>
     <Key ID="STR_MAR_Cocaine_Field">
       <Original>Cocaine Field</Original>
+      <Portuguese>Campo de Cocaína</Portuguese>
       <Polish>Pole kokainy</Polish>
     </Key>
     <Key ID="STR_MAR_Oil_Trader">
       <Original>Oil Trader</Original>
+      <Portuguese>Comprador de Petróleo</Portuguese>
       <Polish>Skup benzyny</Polish>
     </Key>
     <Key ID="STR_MAR_Salt_Trader">
       <Original>Salt Trader</Original>
+      <Portuguese>Comprador de Sal</Portuguese>
       <Polish>Skup soli</Polish>
     </Key>
     <Key ID="STR_MAR_Diamond_Trader">
       <Original>Diamond Trader</Original>
+      <Portuguese>Comprador de Diamante</Portuguese>
       <Polish>Skup diamentów</Polish>
     </Key>
     <Key ID="STR_MAR_Glass_Trader">
       <Original>Glass Trader</Original>
+      <Portuguese>Comprador de Vidro</Portuguese>
       <Polish>Skup szkła</Polish>
     </Key>
     <Key ID="STR_MAR_Iron_Copper Trader">
       <Original>Iron / Copper Trader</Original>
+      <Portuguese>Comprador de Ferro e Cobre</Portuguese>
       <Polish>Skup metali</Polish>
     </Key>
     <Key ID="STR_MAR_Sand_Processing">
       <Original>Sand Processing</Original>
+      <Portuguese>Processador de Areia</Portuguese>
       <Polish>Huta szkła</Polish>
     </Key>
     <Key ID="STR_MAR_Gun_Store">
       <Original>Gun Store</Original>
+      <Portuguese>Loja de Armas</Portuguese>
       <Polish>Sklep z bronią</Polish>
     </Key>
     <Key ID="STR_MAR_Heroin_Field">
       <Original>Heroin Field</Original>
+      <Portuguese>Campo de Heroína</Portuguese>
       <Polish>Pole heroiny</Polish>
     </Key>
     <Key ID="STR_MAR_Heroin_Processing">
       <Original>Heroin Processing</Original>
+      <Portuguese>Processador de Heroína</Portuguese>
       <Polish>Oczyszczanie heroiny</Polish>
     </Key>
     <Key ID="STR_MAR_Garage">
       <Original>Garage</Original>
+      <Portuguese>Garagem</Portuguese>
       <Polish>Garaż</Polish>
     </Key>
     <Key ID="STR_MAR_Federal_Reserve">
       <Original>Federal Reserve</Original>
+      <Portuguese>Reserva Federal</Portuguese>
       <Polish>Bank Rezerw Federalnych</Polish>
     </Key>
     <Key ID="STR_MAR_Highway_Patrol">
       <Original>Highway Patrol Outpost</Original>
+      <Portuguese>Base da Polícia Rodoviária</Portuguese>
       <Polish>Posterunek policji drogowej</Polish>
     </Key>
     <Key ID="STR_MAR_Rock_Quarry">
       <Original>Rock Quarry</Original>
+      <Portuguese>Pedreira</Portuguese>
       <Polish>Kamieniołom</Polish>
     </Key>
     <Key ID="STR_MAR_Rock_Processing">
       <Original>Rock Processing</Original>
+      <Portuguese>Processador de Pedra</Portuguese>
       <Polish>Wytwórnia cementu z kamienia</Polish>
     </Key>
     <Key ID="STR_MAR_Cement_Trader">
       <Original>Cement Trader</Original>
+      <Portuguese>Comprador de Cimento</Portuguese>
       <Polish>Skup cementu</Polish>
     </Key>
     <Key ID="STR_MAR_Turtle_Poaching">
       <Original>Turtle Poaching</Original>
+      <Portuguese>Área de Tartarugas</Portuguese>
       <Polish>Strefa występowania żółwi morskich</Polish>
     </Key>
     <Key ID="STR_MAR_Turtle_Dealer">
       <Original>Turtle Dealer</Original>
+      <Portuguese>Comprador de Tartarugas</Portuguese>
       <Polish>Skup żółwi</Polish>
     </Key>
     <Key ID="STR_MAR_GoKart_Shop">
       <Original>Go-Kart Shop</Original>
+      <Portuguese>Loja de Karts</Portuguese>
       <Polish>Sklep z GoKartami</Polish>
     </Key>
     <Key ID="STR_MAR_Gold_Bars_Buyer">
       <Original>Gold Bars Buyer</Original>
+      <Portuguese>Comprador de Barras de Ouro</Portuguese>
       <Polish>Skup złota</Polish>
     </Key>
     <Key ID="STR_MAR_Gang_Hideout1">
       <Original>Gang Hideout 1</Original>
+      <Portuguese>Esconderijo de Gangs 1</Portuguese>
       <Polish>Kryjówka gangu 1</Polish>
     </Key>
     <Key ID="STR_MAR_Gang_Hideout2">
       <Original>Gang Hideout 2</Original>
+      <Portuguese>Esconderijo de Gangs 2</Portuguese>
       <Polish>Kryjówka gangu 2</Polish>
     </Key>
     <Key ID="STR_MAR_Gang_Hideout3">
       <Original>Gang Hideout 3</Original>
+      <Portuguese>Esconderijo de Gangs 3</Portuguese>
       <Polish>Kryjówka gangu 3</Polish>
     </Key>
     <Key ID="STR_MAR_Hunting_Grounds">
       <Original>Hunting Grounds</Original>
+      <Portuguese>Área de Caça</Portuguese>
       <Polish>Strefa polowań</Polish>
     </Key>
 	<Key ID="STR_MAR_Bruce_New_Used_Auto">
 	  <Original>Bruce's New and Used Auto's</Original>
+    <Portuguese>Loja de Carros Novos e Usados</Portuguese>
 	  <Polish>Salon samochodowy</Polish>
 	</Key>
 	<Key ID="STR_MAR_Rebel_Clothing_Shop">
 	  <Original>Rebel Clothing Shop</Original>
+    <Portuguese>Loja de Roupas Rebeldes</Portuguese>
 	  <Polish>Magazyn rebelianta</Polish>
 	</Key>
 	<Key ID="STR_MAR_Rebel_Weapon_Shop">
 	  <Original>Rebel Weapon Shop</Original>
+    <Portuguese>Loja de Armas Rebeldes</Portuguese>
 	  <Polish>Zbrojownia rebelianta</Polish>
 	</Key>
 	<Key ID="STR_MAR_Helicopter_Shop">
 	  <Original>Helicopter Shop</Original>
+    <Portuguese>Loja de Helicopteros</Portuguese>
 	  <Polish>Sklep lotniczy</Polish>
 	</Key>
 	<Key ID="STR_MAR_Station_Shop">
 	  <Original>Fuel Station Store</Original>
+    <Portuguese>Loja de Conveniência</Portuguese>
 	  <Polish>Sklep OLLEN</Polish>
 	</Key>
   </Package>
