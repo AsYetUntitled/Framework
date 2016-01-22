@@ -5674,11 +5674,11 @@
       <Portuguese>Missões de Entrega</Portuguese>
       <Polish>Misje kurierskie</Polish>
     </Key>
-	 <Key ID="STR_MAR_Deliver_Package">
+    <Key ID="STR_MAR_Deliver_Package">
       <Original>Deliver Package</Original>
       <Polish>Dostarcz przesyłkę</Polish>
     </Key>
-	 <Key ID="STR_MAR_Get_Delivery_Mission">
+    <Key ID="STR_MAR_Get_Delivery_Mission">
       <Original>Get Delivery Mission</Original>
       <Polish>Pobierz przesyłkę do dostarczenia</Polish>
     </Key>
@@ -5847,139 +5847,139 @@
       <Portuguese>Área de Caça</Portuguese>
       <Polish>Strefa polowań</Polish>
     </Key>
-	<Key ID="STR_MAR_Bruce_New_Used_Auto">
-	  <Original>Bruce's New and Used Auto's</Original>
+    <Key ID="STR_MAR_Bruce_New_Used_Auto">
+      <Original>Bruce's New and Used Auto's</Original>
       <Portuguese>Loja de Carros Novos e Usados</Portuguese>
-	  <Polish>Salon samochodowy</Polish>
-	</Key>
-	<Key ID="STR_MAR_Rebel_Clothing_Shop">
-	  <Original>Rebel Clothing Shop</Original>
+      <Polish>Salon samochodowy</Polish>
+    </Key>
+    <Key ID="STR_MAR_Rebel_Clothing_Shop">
+      <Original>Rebel Clothing Shop</Original>
       <Portuguese>Loja de Roupas Rebeldes</Portuguese>
-	  <Polish>Magazyn rebelianta</Polish>
-	</Key>
-	<Key ID="STR_MAR_Rebel_Weapon_Shop">
-	  <Original>Rebel Weapon Shop</Original>
+      <Polish>Magazyn rebelianta</Polish>
+    </Key>
+    <Key ID="STR_MAR_Rebel_Weapon_Shop">
+      <Original>Rebel Weapon Shop</Original>
       <Portuguese>Loja de Armas Rebeldes</Portuguese>
-	  <Polish>Zbrojownia rebelianta</Polish>
-	</Key>
-	<Key ID="STR_MAR_Helicopter_Shop">
-	  <Original>Helicopter Shop</Original>
+      <Polish>Zbrojownia rebelianta</Polish>
+    </Key>
+    <Key ID="STR_MAR_Helicopter_Shop">
+      <Original>Helicopter Shop</Original>
       <Portuguese>Loja de Helicopteros</Portuguese>
-	  <Polish>Sklep lotniczy</Polish>
-	</Key>
-	<Key ID="STR_MAR_Station_Shop">
-	  <Original>Fuel Station Store</Original>
+      <Polish>Sklep lotniczy</Polish>
+    </Key>
+    <Key ID="STR_MAR_Station_Shop">
+      <Original>Fuel Station Store</Original>
       <Portuguese>Loja de Conveniência</Portuguese>
-	  <Polish>Sklep OLLEN</Polish>
-	</Key>
-	<Key ID="STR_MAR_Rebel_Market">
-	  <Original>Rebel Market</Original>
-	  <Polish>Market rebelianta</Polish>
-	</Key>
-	<Key ID="STR_MAR_Question_Dealer">
-	  <Original>Question Dealer</Original>
-	  <Polish>Przesłuchaj dilera</Polish>
-	</Key>
-	<Key ID="STR_MAR_Service_helicopter">
-	  <Original>Service Helicopter</Original>
-	  <Polish>Serwisuj pojazd lotniczy</Polish>
-	</Key>
-	<Key ID="STR_MAR_Clothing_Store">
-	  <Original>Clothing Store</Original>
-	  <Polish>Sklep odzieżowy</Polish>
-	</Key>
-	<Key ID="STR_MAR_Medical_Assistance">
-	  <Original>Medical Assistance</Original>
-	  <Polish>Pomoc medyczna</Polish>
-	</Key>
-	<Key ID="STR_MAR_Store_vehicle_in_Garage">
-	  <Original>Store vehicle in Garage</Original>
-	  <Polish>Umieść pojazd w garażu</Polish>
-	</Key>
+      <Polish>Sklep OLLEN</Polish>
+    </Key>
+    <Key ID="STR_MAR_Rebel_Market">
+      <Original>Rebel Market</Original>
+      <Polish>Market rebelianta</Polish>
+    </Key>
+    <Key ID="STR_MAR_Question_Dealer">
+      <Original>Question Dealer</Original>
+      <Polish>Przesłuchaj dilera</Polish>
+    </Key>
+    <Key ID="STR_MAR_Service_helicopter">
+      <Original>Service Helicopter</Original>
+      <Polish>Serwisuj pojazd lotniczy</Polish>
+    </Key>
+    <Key ID="STR_MAR_Clothing_Store">
+      <Original>Clothing Store</Original>
+      <Polish>Sklep odzieżowy</Polish>
+    </Key>
+    <Key ID="STR_MAR_Medical_Assistance">
+      <Original>Medical Assistance</Original>
+      <Polish>Pomoc medyczna</Polish>
+    </Key>
+    <Key ID="STR_MAR_Store_vehicle_in_Garage">
+      <Original>Store vehicle in Garage</Original>
+      <Polish>Umieść pojazd w garażu</Polish>
+    </Key>
 	  <Key ID="STR_MAR_Cop_Item_Shop">
-	  <Original>Cop Item Shop</Original>
-	  <Polish>Zaopatrzenie</Polish>
-	</Key>
-	<Key ID="STR_MAR_Cop_Clothing_Shop">
-	  <Original>Cop Clothing Shop</Original>
-	  <Polish>Umundurowanie</Polish>
-	</Key>
-	<Key ID="STR_MAR_Cop_Weapon_Shop">
-	  <Original>Cop Weapon Shop</Original>
-	  <Polish>Broń policji</Polish>
-	</Key>
-	<Key ID="STR_MAR_Patrol_Officer_Weapon_Shop">
-	  <Original>Patrol Officer Weapon Shop</Original>
-	  <Polish>Broń patrolowa</Polish>
-	</Key>
-	<Key ID="STR_MAR_Sergeant_Weapon_Shop">
-	  <Original>Sergeant Weapon Shop</Original>
-	  <Polish>Broń sierżanta</Polish>
-	</Key>
-	<Key ID="STR_MAR_W_E_Vehicle Shop">
-	  <Original>Vehicle Shop</Original>
-	  <Polish>Pojazdy - sklep</Polish>
-	</Key>
-	<Key ID="STR_MAR_Process_Sand">
-	  <Original>Process Sand</Original>
-	  <Polish>Przetop piasek na szkło</Polish>
-	</Key>
+      <Original>Cop Item Shop</Original>
+      <Polish>Zaopatrzenie</Polish>
+    </Key>
+    <Key ID="STR_MAR_Cop_Clothing_Shop">
+      <Original>Cop Clothing Shop</Original>
+      <Polish>Umundurowanie</Polish>
+    </Key>
+    <Key ID="STR_MAR_Cop_Weapon_Shop">
+      <Original>Cop Weapon Shop</Original>
+      <Polish>Broń policji</Polish>
+    </Key>
+    <Key ID="STR_MAR_Patrol_Officer_Weapon_Shop">
+      <Original>Patrol Officer Weapon Shop</Original>
+      <Polish>Broń patrolowa</Polish>
+    </Key>
+    <Key ID="STR_MAR_Sergeant_Weapon_Shop">
+      <Original>Sergeant Weapon Shop</Original>
+      <Polish>Broń sierżanta</Polish>
+    </Key>
+    <Key ID="STR_MAR_W_E_Vehicle Shop">
+      <Original>Vehicle Shop</Original>
+      <Polish>Pojazdy - sklep</Polish>
+    </Key>
+    <Key ID="STR_MAR_Process_Sand">
+      <Original>Process Sand</Original>
+      <Polish>Przetop piasek na szkło</Polish>
+    </Key>
 	  <Key ID="STR_MAR_Process_Rock">
-	  <Original>Process Rock</Original>
-	  <Polish>Zmiel skały na cement</Polish>
-	</Key>
-	<Key ID="STR_MAR_Wong_Food_Cart">
-	  <Original>Wongs Food Cart</Original>
-	  <Polish>Bar u Wonga</Polish>
-	</Key>
-	<Key ID="STR_MAR_Open_Vault">
-	  <Original>Open Vault</Original>
-	  <Polish>Otwórz skarbiec</Polish>
-	</Key>
-	<Key ID="STR_MAR_Fix_Vault">
-	  <Original>Fix Vault</Original>
-	  <Polish>Napraw skarbiec</Polish>
-	</Key>
-	<Key ID="STR_MAR_FED_Front">
-	  <Original>Federal Reserve - Front Entrance</Original>
-	  <Polish>Rezerwa federalna - wejście główne</Polish>
-	</Key>
-	<Key ID="STR_MAR_FED_Side">
-	  <Original>Federal Reserve - Side Entrance</Original>
-	  <Polish>Rezerwa federalna - wejście boczne</Polish>
-	</Key>
-	<Key ID="STR_MAR_FED_Back">
-	  <Original>Federal Reserve - Back Entrance</Original>
-	  <Polish>Rezerwa federalna - wejście tylne</Polish>
-	</Key>
-	<Key ID="STR_MAR_FED_Vault">
-	  <Original>Federal Reserve - Vault View</Original>
-	  <Polish>Rezerwa federalna - skarbiec</Polish>
-	</Key>
-	<Key ID="STR_MAR_FED_Off_display">
-	  <Original>Turn Off Display</Original>
-	  <Polish>Wyłącz wyświetlacz</Polish>
-	</Key>
-	<Key ID="STR_MAR_Armament">
-	  <Original>Armament</Original>
-	  <Polish>Zbrojownia gangu</Polish>
-	</Key>
-	<Key ID="STR_MAR_EMS_Item_Shop">
-	  <Original>EMS Item Shop</Original>
-	  <Polish>Wyposażenie medyczne</Polish>
-	</Key>
-	<Key ID="STR_MAR_Helicopter_Garage">
-	  <Original>Helicopter Garage</Original>
-	  <Polish>Hangar lotniczy</Polish>
-	</Key>
-	<Key ID="STR_MAR_W_Car_Garage">
-	  <Original>Car Garage</Original>
-	  <Polish>Hangar lotniczy</Polish>
-	</Key>
-	<Key ID="STR_MAR_Pay_Bail">
-	  <Original>Pay Bail</Original>
-	  <Polish>Zapłać kaucję</Polish>
-	</Key>
+      <Original>Process Rock</Original>
+      <Polish>Zmiel skały na cement</Polish>
+    </Key>
+    <Key ID="STR_MAR_Wong_Food_Cart">
+      <Original>Wongs Food Cart</Original>
+      <Polish>Bar u Wonga</Polish>
+    </Key>
+    <Key ID="STR_MAR_Open_Vault">
+      <Original>Open Vault</Original>
+      <Polish>Otwórz skarbiec</Polish>
+    </Key>
+    <Key ID="STR_MAR_Fix_Vault">
+      <Original>Fix Vault</Original>
+      <Polish>Napraw skarbiec</Polish>
+    </Key>
+    <Key ID="STR_MAR_FED_Front">
+      <Original>Federal Reserve - Front Entrance</Original>
+      <Polish>Rezerwa federalna - wejście główne</Polish>
+    </Key>
+    <Key ID="STR_MAR_FED_Side">
+      <Original>Federal Reserve - Side Entrance</Original>
+      <Polish>Rezerwa federalna - wejście boczne</Polish>
+    </Key>
+    <Key ID="STR_MAR_FED_Back">
+      <Original>Federal Reserve - Back Entrance</Original>
+      <Polish>Rezerwa federalna - wejście tylne</Polish>
+    </Key>
+    <Key ID="STR_MAR_FED_Vault">
+      <Original>Federal Reserve - Vault View</Original>
+      <Polish>Rezerwa federalna - skarbiec</Polish>
+    </Key>
+    <Key ID="STR_MAR_FED_Off_display">
+      <Original>Turn Off Display</Original>
+      <Polish>Wyłącz wyświetlacz</Polish>
+    </Key>
+    <Key ID="STR_MAR_Armament">
+      <Original>Armament</Original>
+      <Polish>Zbrojownia gangu</Polish>
+    </Key>
+    <Key ID="STR_MAR_EMS_Item_Shop">
+      <Original>EMS Item Shop</Original>
+      <Polish>Wyposażenie medyczne</Polish>
+    </Key>
+    <Key ID="STR_MAR_Helicopter_Garage">
+      <Original>Helicopter Garage</Original>
+      <Polish>Hangar lotniczy</Polish>
+    </Key>
+    <Key ID="STR_MAR_W_Car_Garage">
+      <Original>Car Garage</Original>
+      <Polish>Hangar lotniczy</Polish>
+    </Key>
+    <Key ID="STR_MAR_Pay_Bail">
+      <Original>Pay Bail</Original>
+      <Polish>Zapłać kaucję</Polish>
+    </Key>
 
   </Package>
 </Project>
