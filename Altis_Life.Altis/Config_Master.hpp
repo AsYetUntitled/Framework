@@ -57,6 +57,9 @@ class Life_Settings {
     /* Spyglass settings */
     spyglass_init = false; //Enable or disable spyglass
 
+    /* ATM settings */
+    global_ATM = true; //Allow users to access any ATM on the map.
+
     /* Skins settings */
     civ_skins = false; //Enable or disable civilian skins. Before enabling, you must add all the SEVEN files to textures folder. (It must be named as: civilian_uniform_1.jpg, civilian_uniform_2.jpg...civilian_uniform_6.jpg, civilian_uniform_7.jpg)
 
