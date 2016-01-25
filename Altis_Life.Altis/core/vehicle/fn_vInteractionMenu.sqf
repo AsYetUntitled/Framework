@@ -59,9 +59,24 @@ if(playerSide == west) then {
 		if(_curTarget isKindOf "Ship" && {local _curTarget} && {count crew _curTarget == 0}) then { _Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
 	} else {
 		if(typeOf (_curTarget) in ["C_Kart_01_Blu_F","C_Kart_01_Red_F","C_Kart_01_Fuel_F","C_Kart_01_Vrana_F"]) then {
-			_Btn6 ctrlSetText localize "STR_vInAct_GetInKart";
-			_Btn6 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
-			if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
+			if !(288520 in getDLCs 1) then {
+				_Btn6 ctrlSetText localize "STR_vInAct_GetInKart";
+				_Btn6 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
+				if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
+			};
+		} else {
+			_Btn6 ctrlSetText localize "STR_vInAct_Unflip";
+			_Btn6 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
+			if(count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn6 ctrlEnable false;} else {_Btn6 ctrlEnable true;};
+		};
+	} else {
+
+		if(typeOf (_curTarget) in ["B_Heli_Transport_03_F","B_Heli_Transport_03_unarmed_F","O_Heli_Transport_04_F","O_Heli_Transport_04_ammo_F","O_Heli_Transport_04_bench_F","O_Heli_Transport_04_box_F","O_Heli_Transport_04_covered_F","O_Heli_Transport_04_fuel_F","O_Heli_Transport_04_medevac_F","O_Heli_Transport_04_repair_F"]) then {
+			if !(304380 in getDLCs 1) then {
+				_Btn6 ctrlSetText localize "STR_vInAct_GetInHeli";
+				_Btn6 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
+				if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
+			};
 		} else {
 			_Btn6 ctrlSetText localize "STR_vInAct_Unflip";
 			_Btn6 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
@@ -77,14 +92,28 @@ if(playerSide == west) then {
 		if(_curTarget isKindOf "Ship" && {local _curTarget} && {count crew _curTarget == 0}) then { _Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
 	} else {
 		if(typeOf (_curTarget) in ["C_Kart_01_Blu_F","C_Kart_01_Red_F","C_Kart_01_Fuel_F","C_Kart_01_Vrana_F"]) then {
-			_Btn2 ctrlSetText localize "STR_vInAct_GetInKart";
-			_Btn2 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
-			if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
+			if !(288520 in getDLCs 1) then {
+				_Btn2 ctrlSetText localize "STR_vInAct_GetInKart";
+				_Btn2 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
+				if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
+			};
 		} else {
 			_Btn2 ctrlSetText localize "STR_vInAct_Unflip";
 			_Btn2 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
 			if(count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn2 ctrlEnable false;} else {_Btn2 ctrlEnable true;};
 		};
+	} else {
+		if(typeOf (_curTarget) in ["B_Heli_Transport_03_F","B_Heli_Transport_03_unarmed_F","O_Heli_Transport_04_F","O_Heli_Transport_04_ammo_F","O_Heli_Transport_04_bench_F","O_Heli_Transport_04_box_F","O_Heli_Transport_04_covered_F","O_Heli_Transport_04_fuel_F","O_Heli_Transport_04_medevac_F","O_Heli_Transport_04_repair_F"]) then {
+				if !(304380 in getDLCs 1) then {
+					_Btn2 ctrlSetText localize "STR_vInAct_GetInHeli";
+					_Btn2 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
+					if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
+				};
+			} else {
+				_Btn2 ctrlSetText localize "STR_vInAct_Unflip";
+				_Btn2 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
+				if(count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn2 ctrlEnable false;} else {_Btn2 ctrlEnable true;};
+			};
 	};
 	
 	if(typeOf _curTarget == "O_Truck_03_device_F") then {
