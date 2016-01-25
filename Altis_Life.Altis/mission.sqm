@@ -2944,7 +2944,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Salt_Traderr"",life_fnc_virt_menu,""salt""];";
+					init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Salt_Trader"",life_fnc_virt_menu,""salt""];";
 				};
 				class Item71
 				{
