@@ -8,21 +8,10 @@
 #define BANK life_atmbank
 #define GANG_FUNDS grpPlayer getVariable ["gang_bank",0];
 
-/*
-	remoteExec Section
-	When uncommented it enables proper testing via local testing
-	Otherwise leave it commented out for "LIVE" servers
-*/
-#define DEBUG 1
-
-#ifdef DEBUG
-#define RCLIENT 0
-#else
-#define RCLIENT -2
-#endif
-
-#define RSERV 2
-#define RANY 0
+//RemoteExec Macros
+#define RSERV 2 //Only server
+#define RCLIENT -2 //Except server
+#define RANY 0 //Global
 
 //Namespace Macros
 #define SVAR_MNS missionNamespace setVariable 
