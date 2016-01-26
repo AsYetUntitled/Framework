@@ -516,7 +516,7 @@ class LifeCfgVehicles {
         storageFee[] = { 1000, 0, 0, 0 };
         garageSell[] = { 950, 0, 0, 0 };
         insurance = 2500;
-        chopShop = 5000;
+        chopShop = 1250;
         textures[] = {
             { "Brown", "cop", {
                 "\A3\Soft_F\Quadbike_01\Data\Quadbike_01_co.paa"
