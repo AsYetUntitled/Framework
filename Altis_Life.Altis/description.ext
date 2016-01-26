@@ -8,6 +8,7 @@ disabledAI = 1;
 disableChannels[]={0,1,2};
 enableDebugConsole = 1;
 respawnDialog = 0;
+saving = 0;
 
 class Header
 {
