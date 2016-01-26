@@ -4876,9 +4876,17 @@
     <Key ID="STR_vInAct_GetInKart">
       <Original>Get In Kart</Original>
       <German>Ins Kart setzen</German>
-      <French>Mettre dans le kart</French>
+      <French>Monter dans le kart</French>
       <Italian>Entra nel Kart</Italian>
       <Portuguese>Entrar no Veículo</Portuguese>
+      <Polish>Wejdź do gokarta</Polish>
+    </Key>
+    <Key ID="STR_vInAct_GetInHeli">
+      <Original>Get In Helicopter</Original>
+      <German>Ins Kart setzen</German>
+      <French>Monter dans l'hélicoptere</French>
+      <Italian>Entra nel Kart</Italian>
+      <Portuguese>In den Helikopter</Portuguese>
       <Polish>Wejdź do gokarta</Polish>
     </Key>
     <Key ID="STR_vInAct_PushBoat">
