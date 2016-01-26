@@ -5003,7 +5003,7 @@
   </Package>
   <Package name="Shop_Strings">
     <Key ID="STR_Shop_ATMRobbed">
-      <Original>Because you robbed the bank you can't use the ATM for 5 minutes.</Original>
+      <Original>Because you robbed the bank you can't use the ATM for %1 minutes.</Original>
       <German>Da du die Bank ausgeraubt hast, kannst du für 5 Minuten keine Bankomaten benutzen.</German>
       <French>Vous avez pillé la banque, vous ne pouvez pas utiliser le guichet automatique pendant 5 minutes.</French>
       <Italian>Avendo appena rapinato la banca non puoi utilizzare il Bancomat per 5 minuti.</Italian>
