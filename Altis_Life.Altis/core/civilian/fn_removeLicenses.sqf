@@ -28,8 +28,8 @@ switch (_state) do {
 	
 	//Remove motor vehicle licenses
 	case 2: {
-		if(GVAR_MNS LICENSE_VARNAME("driver","civ") OR GVAR_MNS LICENSE_VARNAME("air","civ") OR GVAR_MNS LICENSE_VARNAME("truck","civ") OR GVAR_MNS LICENSE_VARNAME("boat","civ")) then {			
-			SVAR_MNS [LICENSE_VARNAME("air","civ"),false];
+		if(GVAR_MNS LICENSE_VARNAME("driver","civ") OR GVAR_MNS LICENSE_VARNAME("pilot","civ") OR GVAR_MNS LICENSE_VARNAME("truck","civ") OR GVAR_MNS LICENSE_VARNAME("boat","civ")) then {			
+			SVAR_MNS [LICENSE_VARNAME("pilot","civ"),false];
 			SVAR_MNS [LICENSE_VARNAME("driver","civ"),false];
 			SVAR_MNS [LICENSE_VARNAME("truck","civ"),false];
 			SVAR_MNS [LICENSE_VARNAME("boat","civ"),false];
