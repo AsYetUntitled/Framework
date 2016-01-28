@@ -177,8 +177,7 @@ switch (_code) do {
 				if(playerSide == west) then {
 					[_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
 				} else {
-					//I do not have a custom sound for this and I really don't want to go digging for one, when you have a sound uncomment this and change medicSiren.sqf in the medical folder.
-					//[_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+					[_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
 				};
 			};
 		};
