@@ -17,7 +17,7 @@ while {true} do {
 	if(EQUAL(count crew _vehicle,0)) then {_vehicle SVAR ["siren",false,true]};
 	if(!alive _vehicle) exitWith {};
 	if(isNull _vehicle) exitWith {};
-	_vehicle say3D "SirenLong";
-	sleep 4.7;
+	_vehicle say3D "SirenLong";//Class/name specified in description.ext
+	sleep 4.870;//Exactly matches the length of the audio file.
 	if(!(_vehicle GVAR "siren")) exitWith {};
 };
