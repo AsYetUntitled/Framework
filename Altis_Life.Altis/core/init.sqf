@@ -13,6 +13,7 @@ diag_log "--------------------------------- Starting Altis Life Client Init ----
 diag_log "------------------------------------------------------------------------------------------------------";
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
 [] call compile PreprocessFileLineNumbers "core\clientValidator.sqf";
+enableSentences false;
 
 //Setup initial client core functions
 diag_log "::Life Client:: Initialization Variables";
