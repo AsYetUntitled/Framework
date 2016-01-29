@@ -427,7 +427,7 @@ class LifeCfgVehicles {
             { "Taxi", "civ", {
                 "#(argb,8,8,3)color(0.6,0.3,0.01,1)"
             } },
-            { "Fed", "fed", {
+            { "Fed", "cop", {
                 "#(ai,64,64,1)Fresnel(0.3,3)"
             } },
             { "Police", "cop", {
@@ -551,7 +551,7 @@ class LifeCfgVehicles {
                 "\A3\Soft_F_Beta\Truck_02\data\truck_02_kab_co.paa",
                 "\a3\soft_f_beta\Truck_02\data\truck_02_kuz_co.paa"
             } },
-            { "Black", "fed", {
+            { "Black", "cop", {
                 "#(argb,8,8,3)color(0.05,0.05,0.05,1)"
             } }
         };
@@ -568,7 +568,7 @@ class LifeCfgVehicles {
                 "\A3\Soft_F_Beta\Truck_02\data\truck_02_kab_co.paa",
                 "\a3\soft_f_beta\Truck_02\data\truck_02_kuz_co.paa"
             } },
-            { "Black", "fed", {
+            { "Black", "cop", {
                 "#(argb,8,8,3)color(0.05,0.05,0.05,1)"
             } }
         };
@@ -684,7 +684,7 @@ class LifeCfgVehicles {
             { "Regular", "cop", {
                 "\A3\Soft_F\MRAP_01\Data\mrap_01_base_co.paa"
             } },
-            { "Black", "fed", {
+            { "Black", "cop", {
                 "#(argb,8,8,3)color(0.05,0.05,0.05,1)"
             } }
         };
@@ -700,7 +700,7 @@ class LifeCfgVehicles {
             { "Sheriff", "cop", {
                 "\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_sheriff_co.paa"
             } },
-            { "Black", "fed", {
+            { "Black", "cop", {
                 "\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_ion_co.paa"
             } },
             { "Civ Blue", "civ", {
@@ -709,7 +709,7 @@ class LifeCfgVehicles {
             { "Civ Red", "civ", {
                 "\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_co.paa"
             } },
-            { "Digi Green", "donate", {
+            { "Digi Green", "civ", {
                 "\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_indp_co.paa"
             } },
             { "Blueline", "civ", {
@@ -752,13 +752,13 @@ class LifeCfgVehicles {
         insurance = 2500;
         chopShop = 5000;
         textures[] = {
-            { "Black", "fed", {
+            { "Black", "cop", {
                 "\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_co.paa"
             } },
             { "White / Blue", "civ", {
                 "\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_civilian_co.paa"
             } },
-            { "Digi Green", "donate", {
+            { "Digi Green", "civ", {
                 "\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_indp_co.paa"
             } },
             { "Desert Digi", "reb", {
