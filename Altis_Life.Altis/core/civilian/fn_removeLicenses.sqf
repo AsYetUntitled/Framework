@@ -2,7 +2,7 @@
 /*
 	File: fn_removeLicenses.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Used for stripping certain licenses off of civilians as punishment.
 */
@@ -18,25 +18,25 @@ switch (_state) do {
 		SVAR_MNS [LICENSE_VARNAME("marijuana","civ"),false];
 		SVAR_MNS [LICENSE_VARNAME("coke","civ"),false];
 	};
-	
+
 	//Jail licenses
 	case 1: {
 		SVAR_MNS [LICENSE_VARNAME("gun","civ"),false];
 		SVAR_MNS [LICENSE_VARNAME("driver","civ"),false];
 		SVAR_MNS [LICENSE_VARNAME("rebel","civ"),false];
 	};
-	
+
 	//Remove motor vehicle licenses
 	case 2: {
-		if(GVAR_MNS LICENSE_VARNAME("driver","civ") OR GVAR_MNS LICENSE_VARNAME("pilot","civ") OR GVAR_MNS LICENSE_VARNAME("truck","civ") OR GVAR_MNS LICENSE_VARNAME("boat","civ")) then {			
+		if(GVAR_MNS LICENSE_VARNAME("driver","civ") OR GVAR_MNS LICENSE_VARNAME("pilot","civ") OR GVAR_MNS LICENSE_VARNAME("trucking","civ") OR GVAR_MNS LICENSE_VARNAME("boat","civ")) then {
 			SVAR_MNS [LICENSE_VARNAME("pilot","civ"),false];
 			SVAR_MNS [LICENSE_VARNAME("driver","civ"),false];
-			SVAR_MNS [LICENSE_VARNAME("truck","civ"),false];
+			SVAR_MNS [LICENSE_VARNAME("trucking","civ"),false];
 			SVAR_MNS [LICENSE_VARNAME("boat","civ"),false];
 			hint localize "STR_Civ_LicenseRemove_1";
 		};
 	};
-	
+
 	//Killing someone while owning a gun license
 	case 3: {
 		if(GVAR_MNS LICENSE_VARNAME("gun","civ")) then {
