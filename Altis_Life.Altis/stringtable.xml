@@ -4104,6 +4104,10 @@
       <Portuguese>O cofre está aberto.</Portuguese>
       <Polish>Skarbiec otwarty</Polish>
     </Key>
+    <Key ID="STR_ISTR_Blast_Exploit">
+      <Original>You must open the container before placing the charger!</Original>
+      <Portuguese>Você deve abrir o container antes de colocar o explosivo!</Portuguese>
+    </Key>
     <Key ID="STR_ISTR_Bolt_NotNear">
       <Original>You are not looking at a house door.</Original>
       <German>Du siehst keine Haustür an.</German>
@@ -4135,6 +4139,10 @@
       <Italian>Tranciando i blocchi sulla porta</Italian>
       <Portuguese>Quebrando o cadeado da porta</Portuguese>
       <Polish>Przecinam zabezpieczenia domu</Polish>
+    </Key>
+    <Key ID="STR_ISTR_Bolt_Exploit">
+      <Original>You must open the outside doors before opening it!</Original>
+      <Portuguese>Você deve abrir as portas externas antes de abrir essa!</Portuguese>
     </Key>
     <Key ID="STR_ISTR_Defuse_Nothing">
       <Original>There is no charge on the vault?</Original>

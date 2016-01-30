@@ -1,7 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Breaks the lock on a single door (Closet door to the player).
 */
@@ -10,6 +10,7 @@ _building = param [0,ObjNull,[ObjNull]];
 
 if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint "You are not looking at a house door."};
+if((typeOf _building) == "Land_Research_house_V1_F" && life_fed_break == 0) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
 if(isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 
 if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then {
@@ -82,6 +83,11 @@ life_action_inUse = false;
 if(life_boltcutter_uses >= 5) then {
 	[false,"boltcutter",1] call life_fnc_handleInv;
 	life_boltcutter_uses = 0;
+};
+
+switch (typeOf _building) do {
+	case "Land_Dome_Big_F": {if(life_fed_break == 0) then {life_fed_break = 1;};};
+	case "Land_Research_house_V1_F": {life_fed_break = 2;};
 };
 
 _building SVAR [format["bis_disabled_Door_%1",_door],0,true]; //Unlock the door.
