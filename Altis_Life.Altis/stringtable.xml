@@ -294,7 +294,7 @@
       <Original>Teleport</Original>
       <German>Teleport</German>
       <French>Teleport</French>
-      <Portuguese>Teleport</Portuguese>
+      <Portuguese>Teleportar</Portuguese>
       <Polish>Teleport</Polish>
     </Key>
     <Key ID="STR_Admin_TpHere">
@@ -308,21 +308,21 @@
       <Original>Debug</Original>
       <German>Debug</German>
       <French>Debug</French>
-      <Portuguese>Debug</Portuguese>
+      <Portuguese>Depuração</Portuguese>
       <Polish>Debug</Polish>
     </Key>
     <Key ID="STR_Admin_Compensate">
       <Original>Comp</Original>
       <German>Entschädigen</German>
       <French>Comp</French>
-      <Portuguese>Comp</Portuguese>
+      <Portuguese>Compensar</Portuguese>
       <Polish>Comp</Polish>
     </Key>
     <Key ID="STR_Admin_God">
       <Original>GodMode</Original>
       <German>Gott</German>
       <French>Dieu</French>
-      <Portuguese>GodMode</Portuguese>
+      <Portuguese>Modo Deus</Portuguese>
       <Polish>GodMode</Polish>
     </Key>
     <Key ID="STR_Admin_Freeze">
@@ -426,20 +426,18 @@
       <Original>Your Admin Level is not high enough.</Original>
       <German>Dein Admin Level ist nicht hoch genug.</German>
       <French>Votre Niveau admin n'est pas suffisamment élevée</French>
-      <Portuguese>Seu nível de ADM não é alto o bastante.</Portuguese>
+      <Portuguese>Seu nível de Admin não é alto o bastante.</Portuguese>
       <Polish>Nie masz wystarczających uprawnień, za niski poziom administracyjny</Polish>
     </Key>
     <Key ID="STR_ANOTF_MDisabled">
       <Original>Player Markers Disabled.</Original>
       <German>Spieler Markierungen ausgeschaltet.</German>
-      <French>Votre Niveau admin n'est pas suffisamment élevée</French>
       <Portuguese>Marcações dos jogadores desabilitada.</Portuguese>
       <Polish>Markery 'OFF' graczy Wyłączone</Polish>
     </Key>
     <Key ID="STR_ANOTF_MEnabled">
       <Original>Player Markers Enabled.</Original>
       <German>Spieler Markierungen aktiviert.</German>
-      <French>Votre Niveau admin n'est pas suffisamment élevée</French>
       <Portuguese>Marcações dos jogadores habilitada.</Portuguese>
       <Polish>Markery 'ON' graczy Włączone </Polish>
     </Key>
@@ -635,7 +633,7 @@
       <German>An die Admins</German>
       <French>Text Admins</French>
       <Italian>Msg Admin</Italian>
-      <Portuguese>Msg ADMs</Portuguese>
+      <Portuguese>Msg Admins</Portuguese>
       <Polish>Do: Admin</Polish>
     </Key>
     <Key ID="STR_CELL_AdminMsg">
@@ -643,7 +641,7 @@
       <German>Admin-Nachricht</German>
       <French>Admin Message</French>
       <Italian>Admin Msg</Italian>
-      <Portuguese>ADM Msg</Portuguese>
+      <Portuguese>Admin Msg</Portuguese>
       <Polish>AdmGracz</Polish>
     </Key>
     <Key ID="STR_CELL_AdminMSGAll">
@@ -651,8 +649,8 @@
       <German>Admin-Nachricht an alle</German>
       <French>Admin Msg ALL</French>
       <Italian>Admin Msg</Italian>
+      <Portuguese>Admin Msg All</Portuguese>
       <Polish>SMS do Wszyscy</Polish>
-      <Portuguese>AdmALL</Portuguese>
     </Key>
     <Key ID="STR_CELL_EMSRequest">
       <Original>Request EMS</Original>
@@ -1375,7 +1373,7 @@
       <German>Admin Menü</German>
       <French>Menu Admin</French>
       <Italian>Menu Admin</Italian>
-      <Portuguese>Menu ADM</Portuguese>
+      <Portuguese>Menu Admin</Portuguese>
       <Polish>Admin Menu</Polish>
     </Key>
     <Key ID="STR_PM_SyncData">
@@ -4907,7 +4905,7 @@
       <German>Boot schieben</German>
       <French>Pousser bateau</French>
       <Italian>Spingi Barca</Italian>
-      <Portuguese>Empurar Barco</Portuguese>
+      <Portuguese>Empurrar Barco</Portuguese>
       <Polish>Popchnij</Polish>
     </Key>
     <Key ID="STR_vInAct_Repair">
@@ -5740,11 +5738,13 @@
     <Key ID="STR_MAR_Deliver_Package">
       <Original>Deliver Package</Original>
       <German>Paket ausliefern</German>
+      <Portuguese>Entregar Pacote</Portuguese>
       <Polish>Dostarcz przesyłkę</Polish>
     </Key>
     <Key ID="STR_MAR_Get_Delivery_Mission">
       <Original>Get Delivery Mission</Original>
       <German>Starte Kurier Mission</German>
+      <Portuguese>Pegar Missão de Entrega</Portuguese>
       <Polish>Pobierz przesyłkę do dostarczenia</Polish>
     </Key>
     <Key ID="STR_MAR_Diving_Shop">
@@ -5966,7 +5966,7 @@
     <Key ID="STR_MAR_Helicopter_Shop">
       <Original>Helicopter Shop</Original>
       <German>Verkäufer für Heli's</German>
-      <Portuguese>Loja de Helicopteros</Portuguese>
+      <Portuguese>Loja de Helicópteros</Portuguese>
       <Polish>Sklep lotniczy</Polish>
     </Key>
     <Key ID="STR_MAR_Station_Shop">
@@ -5978,134 +5978,161 @@
     <Key ID="STR_MAR_Rebel_Market">
       <Original>Rebel Market</Original>
       <German>Rebellen Markt</German>
+      <Portuguese>Mercado Rebelde</Portuguese>
       <Polish>Market rebelianta</Polish>
     </Key>
     <Key ID="STR_MAR_Question_Dealer">
       <Original>Question Dealer</Original>
       <German>Informant</German>
+      <Portuguese>Perguntar ao Traficante</Portuguese>
       <Polish>Przesłuchaj dilera</Polish>
     </Key>
     <Key ID="STR_MAR_Service_helicopter">
       <Original>Service Helicopter</Original>
       <German>Heli Werkstatt</German>
+      <Portuguese>Serviço Aéreo</Portuguese>
       <Polish>Serwisuj pojazd lotniczy</Polish>
     </Key>
     <Key ID="STR_MAR_Clothing_Store">
       <Original>Clothing Store</Original>
       <German>Klamottenladen</German>
+      <Portuguese>Loja de Roupas</Portuguese>
       <Polish>Sklep odzieżowy</Polish>
     </Key>
     <Key ID="STR_MAR_Medical_Assistance">
       <Original>Medical Assistance</Original>
       <German>Medizinischer Ersthelfer</German>
+      <Portuguese>Assistência Médica</Portuguese>
       <Polish>Pomoc medyczna</Polish>
     </Key>
     <Key ID="STR_MAR_Store_vehicle_in_Garage">
       <Original>Store vehicle in Garage</Original>
       <German>Fahrzeug in Garage einparken</German>
+      <Portuguese>Guardar veículo na Garagem</Portuguese>
       <Polish>Umieść pojazd w garażu</Polish>
     </Key>
     <Key ID="STR_MAR_Cop_Item_Shop">
       <Original>Cop Item Shop</Original>
       <German>Polizei Ausrüstung</German>
+      <Portuguese>Loja de Items da Polícia</Portuguese>
       <Polish>Zaopatrzenie</Polish>
     </Key>
     <Key ID="STR_MAR_Cop_Clothing_Shop">
       <Original>Cop Clothing Shop</Original>
       <German>Polizei Uniformen</German>
+      <Portuguese>Loja de Roupas da Polícia</Portuguese>
       <Polish>Umundurowanie</Polish>
     </Key>
     <Key ID="STR_MAR_Cop_Weapon_Shop">
       <Original>Cop Weapon Shop</Original>
       <German>Polizei Waffenhändler</German>
+      <Portuguese>Loja de Armas da Polícia</Portuguese>
       <Polish>Broń policji</Polish>
     </Key>
     <Key ID="STR_MAR_Patrol_Officer_Weapon_Shop">
       <Original>Patrol Officer Weapon Shop</Original>
+      <Portuguese>Loja de Armas de Patrulha</Portuguese>
       <Polish>Broń patrolowa</Polish>
     </Key>
     <Key ID="STR_MAR_Sergeant_Weapon_Shop">
       <Original>Sergeant Weapon Shop</Original>
+      <Portuguese>Lojas de Armas de Sargento</Portuguese>
       <Polish>Broń sierżanta</Polish>
     </Key>
     <Key ID="STR_MAR_W_E_Vehicle Shop">
       <Original>Vehicle Shop</Original>
       <German>Autohändler</German>
+      <Portuguese>Loja de Carros</Portuguese>
       <Polish>Pojazdy - sklep</Polish>
     </Key>
     <Key ID="STR_MAR_Process_Sand">
       <Original>Process Sand</Original>
       <German>Verarbeite Sand</German>
+      <Portuguese>Processar Areia</Portuguese>
       <Polish>Przetop piasek na szkło</Polish>
     </Key>
     <Key ID="STR_MAR_Process_Rock">
       <Original>Process Rock</Original>
       <German>Verarbeite Stein</German>
+      <Portuguese>Processar Pedra</Portuguese>
       <Polish>Zmiel skały na cement</Polish>
     </Key>
     <Key ID="STR_MAR_Wong_Food_Cart">
       <Original>Wongs Food Cart</Original>
       <German>Wongs Spezialitäten</German>
+      <Portuguese>Boteco do Wongs</Portuguese>
       <Polish>Bar u Wonga</Polish>
     </Key>
     <Key ID="STR_MAR_Open_Vault">
       <Original>Open Vault</Original>
       <German>Offener Tresor</German>
+      <Portuguese>Abrir Cofre</Portuguese>
       <Polish>Otwórz skarbiec</Polish>
     </Key>
     <Key ID="STR_MAR_Fix_Vault">
       <Original>Fix Vault</Original>
       <German>Tresor reparieren</German>
+      <Portuguese>Consertar Cofre</Portuguese>
       <Polish>Napraw skarbiec</Polish>
     </Key>
     <Key ID="STR_MAR_FED_Front">
       <Original>Federal Reserve - Front Entrance</Original>
       <German>Federal Reserve Bank - Haupteingang</German>
+      <Portuguese>Reserva Federal - Entrada Frontal</Portuguese>
       <Polish>Rezerwa federalna - wejście główne</Polish>
     </Key>
     <Key ID="STR_MAR_FED_Side">
       <Original>Federal Reserve - Side Entrance</Original>
       <German>Federal Reserve Bank - Seiteneingang</German>
+      <Portuguese>Reserva Federal - Entrada Lateral</Portuguese>
       <Polish>Rezerwa federalna - wejście boczne</Polish>
     </Key>
     <Key ID="STR_MAR_FED_Back">
       <Original>Federal Reserve - Back Entrance</Original>
       <German>Federal Reserve Bank - Hintereingang</German>
+      <Portuguese>Reserva Federal - Entrada Traseira</Portuguese>
       <Polish>Rezerwa federalna - wejście tylne</Polish>
     </Key>
     <Key ID="STR_MAR_FED_Vault">
       <Original>Federal Reserve - Vault View</Original>
       <German>Federal Reserve Bank - Tresor</German>
+      <Portuguese>Reserva Federal - Visão do Cofre</Portuguese>
       <Polish>Rezerwa federalna - skarbiec</Polish>
     </Key>
     <Key ID="STR_MAR_FED_Off_display">
       <Original>Turn Off Display</Original>
       <German>Bildschirm ausschalten</German>
+      <Portuguese>Desligar Monitor</Portuguese>
       <Polish>Wyłącz wyświetlacz</Polish>
     </Key>
     <Key ID="STR_MAR_Armament">
       <Original>Armament</Original>
       <German>Rüstkammer</German>
+      <Portuguese>Armamento</Portuguese>
       <Polish>Zbrojownia gangu</Polish>
     </Key>
     <Key ID="STR_MAR_EMS_Item_Shop">
       <Original>EMS Item Shop</Original>
       <German>EMS Ausrüstung</German>
+      <Portuguese>Loja de Items Médicos</Portuguese>
       <Polish>Wyposażenie medyczne</Polish>
     </Key>
     <Key ID="STR_MAR_Helicopter_Garage">
       <Original>Helicopter Garage</Original>
       <German>Helikopter Hangar</German>
+      <Portuguese>Garagem Aérea</Portuguese>
       <Polish>Hangar lotniczy</Polish>
     </Key>
     <Key ID="STR_MAR_W_Car_Garage">
       <Original>Car Garage</Original>
       <German>Fahrzeug Garage</German>
+      <Portuguese>Garagem de Carros</Portuguese>
       <Polish>Hangar lotniczy</Polish>
     </Key>
     <Key ID="STR_MAR_Pay_Bail">
       <Original>Pay Bail</Original>
       <German>Zahle Kaution</German>
+      <Portuguese>Pagar Fiança</Portuguese>
       <Polish>Zapłać kaucję</Polish>
     </Key>
   </Package>
