@@ -215,7 +215,7 @@ class VirtualItems {
         sellPrice = 95000;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_goldbar.paa";
     };
 
     class blastingcharge {
@@ -282,7 +282,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_oilUnprocessed.paa";
     };
 
     class oil_processed {
@@ -293,7 +293,7 @@ class VirtualItems {
         sellPrice = 3200;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_oilProcessed.paa";
     };
 
     class copper_unrefined {
@@ -348,7 +348,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_saltUnprocessed.paa";
     };
 
     class salt_refined {
@@ -359,7 +359,7 @@ class VirtualItems {
         sellPrice = 1450;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_saltProcessed.paa";
     };
 
     class sand {
@@ -392,7 +392,7 @@ class VirtualItems {
         sellPrice = 750;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_diamondUncut.paa";
     };
 
     class diamond_cut {
@@ -403,7 +403,7 @@ class VirtualItems {
         sellPrice = 2000;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_diamondCut.paa";
     };
 
     class rock {
@@ -437,7 +437,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = true;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_heroinUnprocessed.paa";
     };
 
     class heroin_processed {
@@ -448,7 +448,7 @@ class VirtualItems {
         sellPrice = 2560;
         illegal = true;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_heroinProcessed.paa";
     };
 
     class cannabis {
@@ -459,7 +459,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = true;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_cannabis.paa";
     };
 
     class marijuana {
@@ -481,7 +481,7 @@ class VirtualItems {
         sellPrice = 3000;
         illegal = true;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_cocaineUnprocessed.paa";
     };
 
     class cocaine_processed {
@@ -492,7 +492,7 @@ class VirtualItems {
         sellPrice = 5000;
         illegal = true;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_cocaineProcessed.paa";
     };
 
     //Drink
