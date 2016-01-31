@@ -3,7 +3,7 @@ Altis-Life
 
 [![Altis Life Version](https://img.shields.io/badge/version-v4.3-green.svg)](https://github.com/ArmaLife/Altis)
 &nbsp;&nbsp;&nbsp;
-[![Altis Life Release](https://img.shields.io/badge/release-3-yellowgreen.svg)](https://github.com/ArmaLife/Altis/releases)
+[![Altis Life Release](https://img.shields.io/badge/release-4-yellowgreen.svg)](https://github.com/ArmaLife/Altis/releases)
 &nbsp;&nbsp;&nbsp;
 [![Arma 3 Version](https://img.shields.io/badge/arma%203-1.54-orange.svg)](http://dev.arma3.com/post/spotrep-00051)
 &nbsp;&nbsp;&nbsp;
