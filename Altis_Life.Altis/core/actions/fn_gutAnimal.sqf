@@ -10,8 +10,7 @@ _animalCorpse = param [0,ObjNull,[ObjNull]];
 if(isNull _animalCorpse) exitWith {}; //Object passed is null?
 
 life_interrupted = false;
-if(!((typeOf _animalCorpse) in ["Hen_random_F","Cock_random_F","Goat_random_F","Sheep_random_F","Rabbit_F"])) exitWith {};
-if(player distance _animalCorpse > 3.5) exitWith {};
+if(player distance _animalCorpse > 3.5) exitWith {}; //WTF need check with nearest objects I love Arma
 life_action_inUse = true;
 
 switch(typeOf _animalCorpse) do {

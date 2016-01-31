@@ -1,10 +1,10 @@
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Spawns animals around the marker when a player
 	is near. Very basic WIP
-	
+
 	TODO:
 	Change it up so animals repopulate over time.
 */
