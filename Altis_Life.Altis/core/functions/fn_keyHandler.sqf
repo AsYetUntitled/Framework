@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_keyHandler.sqf
-	Author: Bryan "Tonic" Boardwine
-
-	Description:
-	Main key handler for event 'keyDown'
+*	File: fn_keyHandler.sqf
+*	Author: Bryan "Tonic" Boardwine
+*
+*	Description:
+*	Main key handler for event 'keyDown'
 */
 private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys"];
 _ctrl = SEL(_this,0);
@@ -64,7 +64,7 @@ switch (_code) do {
 		};
 	};
 
-	//Holster / recall weapon.
+	//Holster / recall weapon. (Shift + H)
 	case 35: {
 		if(_shift && !_ctrlKey && !(EQUAL(currentWeapon player,""))) then {
 			life_curWep_h = currentWeapon player;
@@ -99,11 +99,11 @@ switch (_code) do {
 		};
 	};
 
-	//Knock out, this is experimental and yeah...
+	//Knock out, this is experimental and yeah... (Shift + G)
 	case 34: {
 		if(_shift) then {_handled = true;};
 		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then {
-			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then {
+			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player GVAR ["restrained",false]) && !life_istazed) then {
 				[cursorTarget] spawn life_fnc_knockoutAction;
 			};
 		};
@@ -142,6 +142,7 @@ switch (_code) do {
 			};
 		};
 	};
+
 	//L Key?
 	case 38: {
 		//If cop run checks for turning lights on.
@@ -163,7 +164,7 @@ switch (_code) do {
 
 	//Y Player Menu
 	case 21: {
-		if(!_alt && !_ctrlKey && !dialog && !(player getVariable["restrained",false]) && {!life_action_inUse}) then {
+		if(!_alt && !_ctrlKey && !dialog && !(player GVAR ["restrained",false]) && {!life_action_inUse}) then {
 			[] call life_fnc_p_openMenu;
 		};
 	};
