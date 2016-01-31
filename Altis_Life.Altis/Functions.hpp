@@ -90,6 +90,7 @@ class Life_Client_Core
 		class searchAction {};
 		class searchVehAction {};
 		class unrestrain {};
+		class surrender {};
 		class pickupItem {};
 		class pickupMoney {};
 		class ticketAction {};
