@@ -14,8 +14,8 @@ _dialog = findDisplay 2700;
 _list = _dialog displayCtrl 2701;
 _plist = _dialog displayCtrl 2702;
 
-if((lbCurSel 2701) == -1) exitWith {hint "You didn't select a vehicle.";};
 _sel = lbCurSel _list;
+if((_list lbText _sel) == "You don't own any vehicles") exitWith {hint "You didn't select a vehicle.";};
 _vehicle = _list lbData _sel;
 _vehicle = life_vehicles select parseNumber(_vehicle);
 
