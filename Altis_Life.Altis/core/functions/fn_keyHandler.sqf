@@ -56,12 +56,15 @@ switch (_code) do {
 		};
 	};
 
-	//Tab Key - Surrender
-	case 15: {
-		if(!_alt && !_ctrlKey) then {
+	//Surrender (Shift + B)
+	case 48: {
+		if(_shift) then {
 			if(player GVAR ["playerSurrender",false]) then {
 				player SVAR ["playerSurrender",false,true];
-			} else {[] spawn life_fnc_surrender;};
+			} else {
+				[] spawn life_fnc_surrender;
+			};
+			_handled = true;
 		};
 	};
 

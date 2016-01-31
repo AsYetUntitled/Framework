@@ -29,7 +29,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord["changelog",
 		[
 			"Custom Change Log",
@@ -41,7 +41,7 @@ player createDiarySubject ["controls","Controls"];
 
 		player createDiaryRecord ["serverrules",
 		[
-			"Exploits", 
+			"Exploits",
 				"
 				These are considered exploits, and you will not be kicked, but banned.<br/><br/>
 
@@ -53,13 +53,13 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord["safezones",
 		[
 			"Safe Zones",
 				"
 					If bombing (bombing can be intentionally exploding a vehicle), robbing, or killing occurs around these or in these areas it is punishable by ban.<br/><br/>
-					
+
 					Any vehicle spawn (shop or garage)<br/>
 					Any weapon shop<br/>
 					All Police HQs<br/>
@@ -68,14 +68,14 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-					
-	
+
+
 	player createDiaryRecord ["serverrules",
 		[
-			"Bannable Offenses", 
+			"Bannable Offenses",
 				"
 				Consider this your one and only warning.<br/><br/>
-				
+
 				1. Hacking<br/>
 				2. Cheating<br/>
 				3. Exploiting (See 'Exploits')<br/>
@@ -83,13 +83,13 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["serverrules",
 		[
-			"Cop Interaction", 
+			"Cop Interaction",
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
-				
+
 				1. Civilians can be arrested for looking in cops' backpacks/vehicles. Constantly doing this will result in your removal from the server.<br/>
 				2. Civilians can be arrested for following cops in game in order to give away their position.<br/>
 				3. Civilians or Rebels who take up arms to kill cops in town or elsewhere for no RP reason will be considered RDMing. See RDMing section.<br/>
@@ -98,39 +98,39 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["serverrules",
 		[
-			"Boats", 
+			"Boats",
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
-				
+
 				1. Repeatedly pushing boats without permission.<br/>
 				2. Pushing a boat with the intention of hurting or killing someone. This is not RP, it is just a flaw in the mechanics.<br/>
 				3. Purposefully running over swimmers/divers.<br/><br/>
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["serverrules",
 		[
-			"Aviation", 
+			"Aviation",
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
-				
+
 				1. Purposefully ramming a helicopter into anything. Other helicopters, vehicles, buildings.<br/>
 				2. Flying below 150m over the city constantly. Once is illegal, more than that you risk crashing into the city, thus against server rules.<br/>
 				3. Stealing helicopters without proper warning and significant time for the driver to lock the vehicle. If they land and run away without locking, fine, if they just get out and you get in before they get a chance to lock it, no no.<br/><br/>
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["serverrules",
 		[
-			"Vehicles", 
+			"Vehicles",
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
-				
+
 				1. Purposefully running people over (VRDM). There are accidents, and then there is going out of your way to run someone over.<br/>
 				2. Purposefully throwing yourself in front of vehicles in order to die/get hurt.<br/>
 				3. Ramming into other vehicles in order to cause an explosion.<br/>
@@ -141,13 +141,13 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["serverrules",
 		[
-			"Communication Rules", 
+			"Communication Rules",
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
-				
+
 				1. Side Chat may not be used to play music or otherwise micspam.<br/>
 				2. Spamming any chat channel will result in your removal.<br/>
 				4. Teamspeak channels are split up into areas for a reason. Cops must be in the cop channels at all times.<br/>
@@ -155,30 +155,30 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["serverrules",
 		[
-			"Random Deathmatching (RDM)", 
+			"Random Deathmatching (RDM)",
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
-				
+
 				1. Killing anyone without a roleplay cause.<br/>
 				2. Declaring a rebellion is not a cause to kill anyone, even cops.<br/>
 				3. Cops and civilians/rebels can only commence in a shootout if there are reasons relating to a crime.<br/>
 				4. If you are killed in the crossfire of a fight, it is not RDM.<br/>
 				5. Killing someone in an attempt to protect yourself or others is not RDMing.<br/>
 				6. Shooting a player without giving reasonable time to follow demands is considered RDM.<br/><br/>
-				
+
 				These are all judged by admins on a case by case basis.<br/><br/>
 				"
 		]
 	];
 	player createDiaryRecord ["serverrules",
 		[
-			"New Life Rule", 
+			"New Life Rule",
 				"
 				The New Life Rule applies to police and civilians.<br/><br/>
-				
+
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 
 				1. If you are killed you must wait 15 minutes before returning to the scene of your death.<br/>
@@ -192,7 +192,7 @@ player createDiarySubject ["controls","Controls"];
 
 	player createDiaryRecord ["serverrules",
 		[
-			"Don't Be A Dick!", 
+			"Don't Be A Dick!",
 				"
 				If an admin has to tell you that you are being a dick, you are doing dickish things.<br/>
 				Causing others grief, disrupting roleplay, the list goes on.<br/>
@@ -201,7 +201,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 // Police Section
 	player createDiaryRecord ["policerules",
 		[
@@ -237,7 +237,7 @@ player createDiarySubject ["controls","Controls"];
 				Pyrgos: The fields North/East of DMV (170127)<br/>
 				Sofia: Opposite the car shop (258214) or the fields Southeast of the garage (257212)<br/>
 				Small towns: An appropriate location may be chosen. This is to be judged by officers on a case by case basis.<br/><br/>
-				
+
 				2. Helicopters may not land on roads.<br/>
 				3. Police may temporarily forbid landing at  but it cannot remain closed for a long period of time.<br/>
 				4. Helicopters cannot fly below 150m over the city without authorization.<br/>
@@ -246,10 +246,10 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
-			"Illegal Areas", 
+			"Illegal Areas",
 				"
 				1. Gang areas are not considered illegal. Thus a cop may enter without a raid, but may not restrain or stop anyone inside without probable cause/illegal activity. (Talking to the gang NPC is NOT probable cause/illegal activity.)<br/>
 				2. Do not enter an illegal area unless it is part of a raid. see Raiding/Camping.<br/>
@@ -258,10 +258,10 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
-			"Patrolling", 
+			"Patrolling",
 				"
 				1. Police may patrol the island's roads and towns searching for abandoned vehicles and criminal activity.<br/>
 				2. Patrols can be done on foot inside of a town, or in a vehicle when outside.<br/>
@@ -269,13 +269,13 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
-			"Checkpoints", 
+			"Checkpoints",
 				"
 				Cops are encouraged to setup checkpoints in strategic areas to help combat illegal activity and promote safety on the road.<br/><br/>
-				
+
 				1. A checkpoint must consist of 3 or more officers, utilizing 2 or more vehicles. An ATV does not count as one of the required vehicles, but may still be used.<br/>
 				2. A checkpoint can not be setup within 300m of an illegal area. Basically, you cannot set one up on top of an illegal area.<br/>
 				3. Checkpoints may only be setup on roads, but it does not have to be on a crossroad.<br/>
@@ -295,10 +295,10 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
-			"Vehicles", 
+			"Vehicles",
 				"
 				1. Vehicles in the parking lot, or are reasonably parked elsewhere should be left alone.<br/>
 				2. Vehicles that look abandoned, broken, with no driver, can be impounded.<br/>
@@ -313,10 +313,10 @@ player createDiarySubject ["controls","Controls"];
 
 	player createDiaryRecord ["policerules",
 		[
-			"Speeding", 
+			"Speeding",
 				"
 				The following speeds are to be enforced by the Altis Police Force for the absolute safety of the citizens of Kavala and all travelling beyond the city.<br/><br/>
-				
+
 				Inside major cities:<br/>
 				Small roads: 50km/h<br/>
 				Main roads: 65km/h<br/>
@@ -326,10 +326,10 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
-			"City Protocol", 
+			"City Protocol",
 				"
 				1. Officers may patrol major cities - Kavala, Athira, Pyrgos and Sofia.<br/>
 				2. Officers may stop by the car shop to make sure there are no cars that need to be impounded.<br/>
@@ -340,7 +340,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
 			"Arresting and Ticketing",
@@ -358,17 +358,17 @@ player createDiarySubject ["controls","Controls"];
 				2. Ticket prices should be based off of the crimes committed.<br/>
 				3. Refusal to pay a legit ticket is grounds for arrest.<br/>
 				4. Giving a civilian and illegitimate ticket, such as $100k for speeding, etc., is not allowed and will result in your removal from the police department.<br/><br/>
-				
+
 				A complete list of all crimes and the appropriate punishments should be given to officers during training. If in doubt, or if you have not been trained, ask a higher ranking officer what to do.<br/><br/>
-				
+
 				The list is available at crime.sealteamsloth.com<br/><br/>
 				"
 		]
 	];
-		
+
 	player createDiaryRecord ["policerules",
 		[
-			"Weapons", 
+			"Weapons",
 				"
 				A cop is NEVER allowed to supply civilians with weapons. This will get you banned from the server and removed from being a cop.<br/><br/>
 
@@ -387,7 +387,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
 			"Use of Non-Lethal Force",
@@ -424,7 +424,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
 			"Chain of Command",
@@ -446,7 +446,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
 			"Use of Lethal Force",
@@ -457,7 +457,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
+
 	player createDiaryRecord ["policerules",
 		[
 			"Teamspeak Rule",
@@ -467,9 +467,9 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-	
-	
-	
+
+
+
 // Illegal Items Section
 	player createDiaryRecord ["illegalitems",
 		[
@@ -542,7 +542,7 @@ player createDiarySubject ["controls","Controls"];
 		]
 	];
 
-	
+
 // Controls Section
 
 	player createDiaryRecord ["controls",
@@ -550,14 +550,17 @@ player createDiarySubject ["controls","Controls"];
 			"",
 				"
 				Y: Open Player Menu<br/>
-				U: Lock and unlock cars<br/>
+				U: Lock and unlock vehicles and houses<br/>
 				F: Cop Siren (if cop)<br/>
 				T: Vehicle Trunk<br/>
+				Left Shift + B: Surrender<br/>
 				Left Shift + R: Restrain (Cop Only)<br/>
 				Left Shift + G: Knock out / stun (Civ Only, used for robbing them)<br/>
-				Left Windows: Main Interaction key which is used for picking up items/money, gathering, interacting with cars (repair,etc) and for cops to interact with civilians. Can be rebound to a single key like H by pressing ESC->Configure->Controls->Custom->Use Action 10<br/>
-				Left Shift + L: Activates cop siren lights (as a cop).<br/>
+				Left Windows: Main Interaction key which is used for interacting with vehicles/houses (repair, etc) and for cops to interact with civilians. Can be rebound to a single key like H by pressing ESC->Configure->Controls->Custom->Use Action 10<br/>
+				Left Windows + T: Used for picking up items/money and gathering<br/>
+				Left Shift + L: Activates cop/medic siren lights (as a cop/medic)<br/>
 				Left Shift + H: Holster's your pistol<br/>
+				Left Ctrl + H: Revert holster action<br/>
 				"
 		]
 	];
