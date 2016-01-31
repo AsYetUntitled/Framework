@@ -9665,7 +9665,7 @@ class Mission
 			name="cop_spawn_3";
 			text="@STR_MAR_Police_Station";
 			type="mil_box";
-			colorName="ColorBLUFOR";
+			colorName="Color4_FD_F";
 		};
 		class Item11
 		{
@@ -9673,7 +9673,7 @@ class Mission
 			name="cop_spawn_4";
 			text="@STR_MAR_Police_Air_HQ";
 			type="mil_box";
-			colorName="ColorBLUFOR";
+			colorName="Color4_FD_F";
 		};
 		class Item12
 		{
@@ -10857,7 +10857,7 @@ class Mission
 			name="cop_spawn_5";
 			text="@STR_MAR_Highway_Patrol";
 			type="mil_box";
-			colorName="ColorBLUFOR";
+			colorName="Color4_FD_F";
 		};
 		class Item160
 		{
