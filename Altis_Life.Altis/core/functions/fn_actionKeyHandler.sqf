@@ -28,17 +28,20 @@ if(isNull _curTarget) exitWith {
 			[_fish] call life_fnc_catchFish;
 		};
 	} else {
-		if(playerSide == civilian && !life_action_gathering) then {
-			_handle = [] spawn life_fnc_gather;
-			waitUntil {scriptDone _handle};
-			life_action_gathering = false;
+		_animal = [position player, ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F"], 3.5] call life_fnc_nearestObjects;
+		if (count _animal > 0) then {
+			_animals = _animal select 0;
+			if (!alive _animals) then {
+				[_animals] call life_fnc_gutAnimal;
+			};
+		} else {
+			if(playerSide == civilian && !life_action_gathering) then {
+				_handle = [] spawn life_fnc_gather;
+				waitUntil {scriptDone _handle};
+				life_action_gathering = false;
+			};
 		};
 	};
-};
-
-
-if(!alive _curTarget && _curTarget isKindOf "Animal" && !(EQUAL((typeOf _curTarget),"Turtle_F"))) exitWith {
-	[_curTarget] call life_fnc_gutAnimal;
 };
 
 if(_curTarget isKindOf "House_F" && {player distance _curTarget < 12} OR ((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _curTarget OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _curTarget)) exitWith {

@@ -198,6 +198,7 @@ class Life_Client_Core
 		class stripDownPlayer {};
 		class nearATM {};
 		class playerSkins {};
+		class nearestObjects {};
 	};
 
 	class Network
