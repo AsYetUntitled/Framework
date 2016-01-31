@@ -84,7 +84,6 @@ class Life_Client_Core
 		class escortAction {};
 		class impoundAction {};
 		class pulloutAction {};
-		class surrender {};
 		class putInCar {};
 		class stopEscorting {};
 		class restrainAction {};
