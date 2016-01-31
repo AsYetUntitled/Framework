@@ -28,7 +28,7 @@ if(isNull _curTarget) exitWith {
 			[_fish] call life_fnc_catchFish;
 		};
 	} else {
-		_animal = [position player, ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F"], 3.5] call life_fnc_nearestObjects;
+		_animal = [position player, ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F","Rabbit_F"], 3.5] call life_fnc_nearestObjects;
 		if (count _animal > 0) then {
 			_animals = _animal select 0;
 			if (!alive _animals) then {
