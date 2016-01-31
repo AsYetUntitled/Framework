@@ -36,6 +36,8 @@ if(isNull _curTarget) exitWith {
 			};
 		} else {
 			if(playerSide == civilian && !life_action_gathering) then {
+				if(life_action_gathering) exitWith {}; //Action is in use, exit to prevent spamming.
+				life_action_gathering = true;
 				_handle = [] spawn life_fnc_gather;
 				waitUntil {scriptDone _handle};
 				life_action_gathering = false;
