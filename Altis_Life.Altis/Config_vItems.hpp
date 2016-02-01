@@ -13,7 +13,7 @@ class VirtualShops {
         side = "civ";
         license = "";
         level[] = { "", "", -1, "" };
-        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "storagesmall", "storagebig" };
+        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "storagesmall", "storagebig", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
     };
 
     class rebel {
@@ -578,7 +578,7 @@ class VirtualItems {
         variable = "rabbitRaw";
         displayName = "STR_Item_RabbitRaw";
         weight = 2;
-        buyPrice = -1;
+        buyPrice = 70;
         sellPrice = 65;
         illegal = false;
         edible = -1;
@@ -754,7 +754,7 @@ class VirtualItems {
         variable = "henRaw";
         displayName = "STR_Item_HenRaw";
         weight = 1;
-        buyPrice = -1;
+        buyPrice = 40;
         sellPrice = 35;
         illegal = false;
         edible = -1;
@@ -776,7 +776,7 @@ class VirtualItems {
         variable = "roosterRaw";
         displayName = "STR_Item_RoosterRaw";
         weight = 1;
-        buyPrice = -1;
+        buyPrice = 40;
         sellPrice = 35;
         illegal = false;
         edible = -1;
@@ -787,7 +787,7 @@ class VirtualItems {
         variable = "rooster";
         displayName = "STR_Item_Rooster";
         weight = 115;
-        buyPrice = 85;
+        buyPrice = 90;
         sellPrice = 85;
         illegal = false;
         edible = 45;
@@ -798,7 +798,7 @@ class VirtualItems {
         variable = "sheepRaw";
         displayName = "STR_Item_SheepRaw";
         weight = 2;
-        buyPrice = -1;
+        buyPrice = 55;
         sellPrice = 50;
         illegal = false;
         edible = -1;
@@ -820,7 +820,7 @@ class VirtualItems {
         variable = "goatRaw";
         displayName = "STR_Item_GoatRaw";
         weight = 2;
-        buyPrice = -1;
+        buyPrice = 80;
         sellPrice = 75;
         illegal = false;
         edible = -1;
