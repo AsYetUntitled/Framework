@@ -12,11 +12,11 @@ player createDiarySubject ["illegalitems","Illegal Activity"];
 player createDiarySubject ["controls","Controls"];
 
 /*  Example
-	player createDiaryRecord ["", //Container
+	player createDiaryRecord ["Credits",
 		[
-			"", //Subsection
+			"ArmaLife",
 				"
-				TEXT HERE<br/><br/>
+					ArmaLife is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.
 				"
 		]
 	];
@@ -34,7 +34,17 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Custom Change Log",
 				"
-					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.
+					v4.3 release 4!<br/>
+					by: danielstuart14<br/>
+					31. January 2016<br/><br/>
+					
+					v4.3.2 release!<br/>
+					by: danielstuart14<br/>
+					22. January 2016<br/><br/>
+					
+					v4.3.1 release!<br/>
+					by: danielstuart14<br/>
+					19. January 2016
 				"
 		]
 	];
