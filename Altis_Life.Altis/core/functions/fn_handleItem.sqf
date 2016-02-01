@@ -13,7 +13,7 @@ _ongun = [_this,3,false,[false]] call BIS_fnc_param;
 _override = [_this,4,false,[false]] call BIS_fnc_param;
 _toUniform = [_this,5,false,[false]] call BIS_fnc_param; //Manual override to send items specifically to a uniform.
 _toVest = [_this,6,false,[false]] call BIS_fnc_param; //Manual override to send items specifically to a vest
-_preview = [_this,7,false,[true]] call BIS_fnc_param;
+_preview = [_this,7,false,[false]] call BIS_fnc_param;
 
 //Some checks
 if(EQUAL(_item,"")) exitWith {};
