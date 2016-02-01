@@ -1,4 +1,4 @@
-#include "..\script_macros.hpp"
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_RefuelCar.sqf
 	Author: NiiRoZz
@@ -62,7 +62,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
 		_tp = _tp +1;
 		if (_tp == 9) then {
 			_tp = 0;
-			[_car,_cp * _setfuell] remoteExecCall ["life_fnc_setFuel",_vehicle];
+			[_car,_cp * _setfuell] remoteExecCall ["life_fnc_setFuel",_car];
 		};
 	};
 	5 cutText ["","PLAIN"];
