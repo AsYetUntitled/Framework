@@ -1,6 +1,7 @@
 waitUntil {!isNull player && player == player};
 if(player diarySubjectExists "rules")exitwith{};
 
+player createDiarySubject ["credits","Credits"];
 player createDiarySubject ["changelog","Change Log"];
 player createDiarySubject ["serverrules","General Rules"];
 player createDiarySubject ["policerules","Police Procedures/Rules"];
@@ -12,39 +13,51 @@ player createDiarySubject ["illegalitems","Illegal Activity"];
 player createDiarySubject ["controls","Controls"];
 
 /*  Example
-	player createDiaryRecord ["Credits",
+	player createDiaryRecord ["", //Container
 		[
-			"ArmaLife",
+			"", //Subsection
 				"
-					ArmaLife is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.
+					TEXT HERE<br/><br/>
 				"
 		]
 	];
 */
-	player createDiaryRecord["changelog",
+
+	player createDiaryRecord ["credits",
 		[
-			"Official Change Log",
+			"ArmaLife",
 				"
-					The official change log can be found on the BIS forums (search Altis Life RPG)
+					ArmaLife is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.<br/><br/>
 				"
 		]
 	];
 
 	player createDiaryRecord["changelog",
 		[
-			"Custom Change Log",
+			"Altis Life Change Log",
 				"
+					The official change log can be found in ArmaLife github.<br/><br/>
+
 					v4.3 release 4!<br/>
 					by: danielstuart14<br/>
 					31. January 2016<br/><br/>
-					
+
 					v4.3.2 release!<br/>
 					by: danielstuart14<br/>
 					22. January 2016<br/><br/>
-					
+
 					v4.3.1 release!<br/>
 					by: danielstuart14<br/>
-					19. January 2016
+					19. January 2016<br/><br/>
+				"
+		]
+	];
+
+	player createDiaryRecord["changelog",
+		[
+			"Server Change Log",
+				"
+					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.<br/><br/>
 				"
 		]
 	];
