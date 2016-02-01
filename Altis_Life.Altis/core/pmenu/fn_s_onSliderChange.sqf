@@ -44,7 +44,7 @@ switch (_mode) do {
 		ctrlSetText[20324,format["Fuel : %1 liters",round(_value) - (floor(_fuel * _fueltank))]];
 		ctrlsettext [20323,format ["Total : %1$",round (life_fuelPrices * (round(_value) -(floor(_fuel * _fueltank)))) ]];
 		} else {
-		hint "Select your vehicle.";
+		hint localize "STR_Select_Vehicle_Pump";
 		};
 	};
 };

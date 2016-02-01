@@ -24,10 +24,7 @@ if (_vehicle iskindof "B_Truck_01_box_F" || _vehicle iskindof "B_Truck_01_transp
 if (_vehicle iskindof "C_Van_01_box_F") then {_fueltank = 100;};//
 if (_vehicle iskindof "I_Truck_02_covered_F" || _vehicle iskindof "I_Truck_02_transport_F") then {_fueltank = 175;};
 ctrlShow [20330,true];
-(CONTROL(20300,20303)) ctrlSetStructuredText parseText format[
-	"Fuel Tank Capacity: %1",
-	_fueltank
-];
+(CONTROL(20300,20303)) ctrlSetStructuredText parseText format[localize "STR_Fuel_Tank_Pump",_fueltank];
 
 {
 	slidersetRange [_x,(floor(_fuel * _fueltank)),_fueltank];

@@ -24,7 +24,7 @@ if (isnil "life_fuelPrices") then {
 
 //Fetch the shop config.
 _vehicleList = nearestObjects [player, ["Car","air"], 10];
-if (count _vehicleList <1) exitwith {Hint "Pas de vehicules!";life_action_inUse = true;};
+if (count _vehicleList < 1) exitwith {hint localize "STR_NOTF_VehicleNear";life_action_inUse = true;};
 vehicleFuelList =[];
 {
 	_fuel = fuel _x;
@@ -34,7 +34,7 @@ vehicleFuelList =[];
 _control = ((findDisplay 20300) displayCtrl 20302);
 lbClear _control; //Flush the list.
 
-ctrlsettext [20322,format ["Prix au litres : %1$",life_fuelPrices]];
+ctrlsettext [20322,format [localize "STR_Price_Fuel_Pump",life_fuelPrices]];
 ctrlsettext [20323,format ["Total : %1$",life_fuelPrices * 0.1]];
 //Loop through
 {
