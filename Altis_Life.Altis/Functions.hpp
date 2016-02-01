@@ -313,6 +313,9 @@ class Life_Client_Core
 		class chopShopMenu {};
 		class chopShopSelection {};
 		class chopShopSell {};
+		class FuelStatOpen {};
+		class FuelLBchange {};
+		class FuelRefuelcar {};
 	};
 
 	class Items

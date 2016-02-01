@@ -132,3 +132,7 @@ life_fnc_moveIn = compileFinal
 
 CONSTVAR(life_paycheck); //Make the paycheck static.
 if(EQUAL(LIFE_SETTINGS(getNumber,"enable_fatigue"),0)) then {player enableFatigue false;};
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"Pump_service"),1)) then{
+	[] execVM "core\fn_Setup_Sation_Service.sqf";
+};
