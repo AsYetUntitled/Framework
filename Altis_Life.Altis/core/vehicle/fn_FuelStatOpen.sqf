@@ -16,7 +16,7 @@ if(life_is_processing) exitwith {};
 _fuelstations = nearestobjects [player, ["Land_fs_feed_F"],10];
 if (count _fuelstations == 0 ) exitwith {life_action_inUse = false;};
 _vehicleList = nearestObjects [player, ["Car","air"], 10];
-if (count _vehicleList < 1) exitwith {hint localize "STR_NOTF_VehicleNear";life_action_inUse = true;};
+if (count _vehicleList < 1) exitwith {hint localize "STR_NOTF_VehicleNear";life_action_inUse = false;};
 if(!createDialog "Life_FuelStat") exitWith {};
 [] spawn {waituntil {!dialog}; life_action_inUse =false;};
 ctrlSetText [20301,"Fuel Station"];
