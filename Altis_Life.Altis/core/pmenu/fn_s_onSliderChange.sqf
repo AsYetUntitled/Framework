@@ -33,6 +33,7 @@ switch (_mode) do {
 	{
 		_classname = lbData[20302,(lbCurSel 20302)];
 		_index =  lbvalue[20302,(lbCurSel 20302)];
+		if((lbCurSel 20302) == -1) exitWith {hint "You didn't select a vehicle.";};
 		if (!isNil "_classname" || _classname =="") then {
 		_car = (vehiclefuelList select _index) select 0;
 		_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
