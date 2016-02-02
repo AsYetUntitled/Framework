@@ -189,14 +189,17 @@ compileFinal "
 	if(isServer) exitWith {};
 	if((call life_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_to""];
+	ctrlShow[3020,false];
 	_msg = ctrlText 3003;
 	_to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
-	if(isNull _to) exitWith {};
-	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
+	if(isNull _to) exitWith {ctrlShow[3020,true];};
+	if(isNil ""_to"") exitWith {ctrlShow[3020,true];};
+	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3020,true];};
 
 	[_msg,name player,3] remoteExecCall [""TON_fnc_clientMessage"",_to];
 	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To: %1 - Message: %2"",name _to,_msg];
+	ctrlShow[3020,true];
 ";
 
 TON_fnc_cell_adminmsgall =
@@ -204,12 +207,14 @@ compileFinal "
 	if(isServer) exitWith {};
 	if((call life_adminlevel) < 1) exitWith {hint ""You are not an admin!"";};
 	private[""_msg"",""_from""];
+	ctrlShow[3021,false];
 	_msg = ctrlText 3003;
-	if(_msg == """") exitWith {hint ""You must enter a message to send!"";};
+	if(_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3021,true];};
 
 	[_msg,name player,4] remoteExecCall [""TON_fnc_clientMessage"",-2];
 	[] call life_fnc_cellphone;
 	hint format[""Admin Message Sent To All: %1"",_msg];
+	ctrlShow[3021,true];
 ";
 
 publicVariable "TON_fnc_cell_textmsg";
