@@ -5293,7 +5293,7 @@
       <German>Kofferraumgröße:</German>
       <French>Capacité du coffre:</French>
       <Italian>Capacità Inventario:</Italian>
-      <Portuguese>Armazenamento:</Portuguese>
+      <Portuguese>Capacidade do Inventário:</Portuguese>
       <Polish>Pojemność bagażnika:</Polish>
     </Key>
     <Key ID="STR_Shop_Veh_UI_Fuel">
@@ -5301,7 +5301,7 @@
       <German>Tankgröße:</German>
       <French>Capacité du réservoir:</French>
       <Italian>Capacità Serbatoio:</Italian>
-      <Portuguese>Autonomia:</Portuguese>
+      <Portuguese>Capacidade do Reservatório:</Portuguese>
       <Polish>Pojemność baku:</Polish>
     </Key>
     <Key ID="STR_Shop_Veh_UI_Armor">
@@ -5309,7 +5309,7 @@
       <German>Panzerungsbewertung:</German>
       <French>Blindage:</French>
       <Italian>Resistenza:</Italian>
-      <Portuguese>Blindagem:</Portuguese>
+      <Portuguese>Resistência:</Portuguese>
       <Polish>Pancerz</Polish>
     </Key>
     <Key ID="STR_Shop_Veh_UI_RetrievalP">
@@ -5517,26 +5517,32 @@
   </Package>
   <Package name="Fuel_Pump">
     <Key ID="STR_Action_Pump">
-      <Original>Refuel the nearest vehicle</Original>
-      <French>Ravitaillez en essence le véhicule le plus proche</French>
+      <Original>Refuel Vehicle</Original>
+      <Portuguese>Reabastecer Veículo</Portuguese>
+      <French>Ravitaillez en essence le Véhicule</French>
     </Key>
     <Key ID="STR_Price_Fuel_Pump">
-      <Original>Price per liter : %1$</Original>
-      <French>Prix au litre : %1$</French>
+      <Original>Price per Liter : $%1</Original>
+      <Portuguese>Preço por Litro : R$%1</Portuguese>
+      <French>Prix au Litre : $%1</French>
     </Key>
     <Key ID="STR_Fuel_Tank_Vehicle">
-      <Original>Current fuel amount:</Original>
+      <Original>Current Fuel Amount:</Original>
+      <Portuguese>Quantidade Atual de Combustível:</Portuguese>
     </Key>
     <Key ID="STR_Select_Vehicle_Pump">
       <Original>Select a vehicle</Original>
+      <Portuguese>Selecione um veículo</Portuguese>
       <French>Selectionne un vehicule!</French>
     </Key>
     <Key ID="STR_Distance_Vehicle_Pump">
-      <Original>The vehicle is too far, or you are in!</Original>
+      <Original>The vehicle is too far or you are in!</Original>
+      <Portuguese>O veículo está muito longe ou você está nele!</Portuguese>
       <French>Le vehicule est trop loin ou tu es dedans!</French>
     </Key>
     <Key ID="STR_Vehicle_Ready_Pump">
       <Original>The vehicle is full!</Original>
+      <Portuguese>O veículo está cheio!</Portuguese>
       <French>Le véhicule est plein!</French>
     </Key>
   </Package>

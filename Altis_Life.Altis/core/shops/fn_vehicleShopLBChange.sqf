@@ -2,7 +2,7 @@
 /*
 	File: fn_vehicleShopLBChange.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Called when a new selection is made in the list box and
 	displays various bits of information about the vehicle.
@@ -31,7 +31,7 @@ ctrlShow [2330,true];
 (localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>" +
 (localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>" +
 (localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +
-(localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +
+(localize "STR_Shop_Veh_UI_Fuel")+ " %7l<br/>" +
 (localize "STR_Shop_Veh_UI_Armor")+ " %8",
 [_basePrice] call life_fnc_numberText,
 [round(_basePrice * 1.5)] call life_fnc_numberText,
