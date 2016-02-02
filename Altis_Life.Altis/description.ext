@@ -1,6 +1,4 @@
 author = "Tonic";
-onLoadName = "Altis Life RPG v4.3r4";
-onLoadMission = "An RPG game mode developed by Tonic";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 5;
