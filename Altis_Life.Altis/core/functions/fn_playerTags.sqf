@@ -6,7 +6,7 @@
 	Description:
 	Adds the tags above other players heads when close and have visible range.
 */
-private["_ui","_units"];
+private["_ui","_units","_masks"];
 #define iconID 78000
 #define scale 0.8
 if(!(!isDedicated && hasInterface)) exitWith {};
@@ -22,8 +22,9 @@ if(isNull _ui) then {
 };
 
 _units = nearestObjects[(visiblePosition player),["Man","Land_Pallet_MilBoxes_F","Land_Sink_F"],50];
-
 SUB(_units,[player]);
+
+_masks = LIFE_SETTINGS(getArray,"clothing_masks");
 
 {
 	private "_text";
@@ -36,8 +37,7 @@ SUB(_units,[player]);
 		};
 		_sPos = worldToScreen _pos;
 		_distance = _pos distance player;
-		_masks = LIFE_SETTINGS(getArray,"clothing_masks");
-		if(!((headgear _x) in _masks) && !((goggles _x) in _masks) && !((uniform _x) in _masks)) then {
+		if(!((headgear _x) in _masks OR (goggles _x) in _masks OR (uniform _x) in _masks)) then {
 			if(count _sPos > 1 && {_distance < 15}) then {
 				_text = switch (true) do {
 					case (_x in (units grpPlayer) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x GVAR ["realname",name _x])];};
