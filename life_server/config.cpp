@@ -12,6 +12,7 @@ class CfgPatches {
 class Life_Server_Settings {
 	class EXTDB {
 		DatabaseName = "ArmaLife";
+		DebugMode = 0;
 	};
 };
 
