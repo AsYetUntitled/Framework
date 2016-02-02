@@ -5524,9 +5524,8 @@
       <Original>Price per liter : %1$</Original>
       <French>Prix au litre : %1$</French>
     </Key>
-    <Key ID="STR_Fuel_Tank_Pump">
-      <Original>Fuel Tank Capacity: %1</Original>
-      <French>Capacité du reservoir: %1</French>
+    <Key ID="STR_Fuel_Tank_Vehicle">
+      <Original>Current fuel amount:</Original>
     </Key>
     <Key ID="STR_Select_Vehicle_Pump">
       <Original>Select a vehicle</Original>
