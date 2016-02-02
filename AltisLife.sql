@@ -8,11 +8,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `arma3life`
+-- Database: `AltisLife`
 -- Default Schema
 --
-CREATE DATABASE IF NOT EXISTS `arma3life` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `arma3life`;
+CREATE DATABASE IF NOT EXISTS `AltisLife` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `AltisLife`;
 
 DELIMITER $$
 --

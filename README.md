@@ -24,11 +24,11 @@ If in any case that content is being used within this mission / framework that t
 <br/>
 <b>This build is for [extDB2] (https://github.com/Torndeco/extdb2)</b>
 ------
-To setup extDB2 you need to use the Windows/Linux pre-compiled build and edit the extdb-conf.ini "MySQL_Example" field to "AltisLife" with your Database name and login SQL user details, like this:
+To setup extDB2 you need to use the Windows/Linux pre-compiled build and edit the extdb-conf.ini "MySQL_Example" field to "ArmaLife" with your Database name and login SQL user details, like this:
 ```
-[AltisLife]
+[ArmaLife]
 Type = MySQL
-Name = arma3life
+Name = AltisLife
 
 Username = MyDatabaseLogin
 Password = MyDatabasePassword
@@ -44,7 +44,7 @@ ARMA_3_DIR
 ├ @extDB2
 | ├ extDB
 | | └ sql_custom_v2
-| |   └ altis-life.ini
+| |   └ armalife.ini
 | ├ extdb-conf.ini
 | └ extDB2.dll
 └ tbbmalloc.dll
@@ -55,7 +55,7 @@ ARMA_3_DIR
 └ @extDB2
   ├ extDB
   | └ sql_custom_v2
-  |   └ altis-life.ini
+  |   └ armalife.ini
   ├ extdb-conf.ini
   └ extDB2.so
 ```
