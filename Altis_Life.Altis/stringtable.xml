@@ -3445,7 +3445,7 @@
       <Polish>Marihuana</Polish>
     </Key>
     <Key ID="STR_Item_RabbitRaw">
-      <Original>Rabbit Meat</Original>
+      <Original>Raw Rabbit</Original>
       <German>Kaninchenfleisch</German>
       <French>Viande de Lapin</French>
       <Italian>Carne di coniglio</Italian>
@@ -3564,6 +3564,14 @@
       <Portuguese>Carne de Tartaruga</Portuguese>
       <Polish>Mięso Żółwia</Polish>
     </Key>
+    <Key ID="STR_Item_TurtleSoup">
+      <Original>Turtle Soup</Original>
+      <German>Schildkrötensuppe</German>
+      <French>Soupe à la Tortue</French>
+      <Italian>Zuppa di Tartaruga</Italian>
+      <Portuguese>Sopa de Tartaruga</Portuguese>
+      <Polish>Zupa z żółwia</Polish>
+    </Key>
     <Key ID="STR_Item_HenRaw">
       <Original>Raw Chicken</Original>
       <German>Rohes Hühnchen</German>
@@ -3651,14 +3659,6 @@
       <Italian>Caffè</Italian>
       <Portuguese>Café</Portuguese>
       <Polish>Kawa</Polish>
-    </Key>
-    <Key ID="STR_Item_TurtleSoup">
-      <Original>Turtle Soup</Original>
-      <German>Schildkrötensuppe</German>
-      <French>Soupe à la Tortue</French>
-      <Italian>Zuppa di Tartaruga</Italian>
-      <Portuguese>Sopa de Tartaruga</Portuguese>
-      <Polish>Zupa z żółwia</Polish>
     </Key>
     <Key ID="STR_Item_Donuts">
       <Original>Donuts</Original>
