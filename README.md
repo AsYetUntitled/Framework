@@ -42,9 +42,6 @@ Port = 3306
 ```
 ARMA_3_DIR
 ├ @extDB2
-| ├ extDB
-| | └ sql_custom_v2
-| |   └ armalife.ini
 | ├ extdb-conf.ini
 | └ extDB2.dll
 └ tbbmalloc.dll
@@ -53,9 +50,6 @@ ARMA_3_DIR
 ```
 ARMA_3_DIR
 └ @extDB2
-  ├ extDB
-  | └ sql_custom_v2
-  |   └ armalife.ini
   ├ extdb-conf.ini
   └ extDB2.so
 ```
