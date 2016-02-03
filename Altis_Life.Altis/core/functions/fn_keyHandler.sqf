@@ -26,7 +26,6 @@ if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(play
 };
 
 if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute") || _code in (actionKeys "SitDown") || _code in (actionKeys "Throw") || _code in (actionKeys "GetIn") || _code in (actionKeys "GetOut") || _code in (actionKeys "Fire") || _code in (actionKeys "Fire") || _code in (actionKeys "ReloadMagazine")) && {(player GVAR ["restrained",false])}) exitWith {
-	systemChat "You're restrained! Please stop trying to do things you shouldn't be able to do...";
 	true;
 };
 
