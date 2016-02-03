@@ -1,4 +1,3 @@
-#include "..\script_macros.hpp"
 /*
 	File: fn_initSpy.sqf
 
@@ -10,7 +9,9 @@
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-if(!(EQUAL(LIFE_SETTINGS(getNumber,"spyglass_init"),1))) exitWith {};
+#define GVAR_UINS uiNamespace getVariable
+#define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
+#define steamid getPlayerUID player
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
 CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
