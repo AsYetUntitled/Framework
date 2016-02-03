@@ -7,7 +7,7 @@
 private["_query","_houses"];
 if(_this == "") exitWith {};
 
-_query = format["SELECT pid, pos, inventory, containers FROM houses WHERE pid='%1' AND owned='1'",_this];
+_query = format["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_this];
 
 _houses = [_query,2,true] call DB_fnc_asyncCall;
 
@@ -16,77 +16,65 @@ _return = [];
 	_pos = call compile format["%1",_x select 1];
 	_house = nearestBuilding _pos;
 	_house allowDamage false;
-	_containers = [];
-	_house setVariable["slots",[],true];
-	if(!isNil {(_house getVariable "containers")}) then {
-		{if(!isNull _x) then {deleteVehicle _x;};} foreach (_house getVariable "containers");
-	};
-
-	_trunk = [_x select 2] call DB_fnc_mresToArray;
-	if(typeName _trunk == "STRING") then {_trunk = call compile format["%1", _trunk];};
-	_containerData = [_x select 3] call DB_fnc_mresToArray;
-	if(typeName _containerData == "STRING") then {_containerData = call compile format["%1", _containerData];};
-	_house setVariable["Trunk",_trunk,true];
-	{
-		if(count _x == 0) exitWith {}; //No containers / items.
-		_className = _x select 0;
-		_weapons = (_x select 1) select 0;
-		_magazines = (_x select 1) select 1;
-		_items = (_x select 1) select 2;
-		_backpacks = (_x select 1) select 3;
-
-		//Setup the variables
-		_positions = [_house] call life_fnc_getBuildingPositions;
-		_pos = [0,0,0];
-
-		{
-			_slots = _house getVariable ["slots",[]];
-			if(!(_forEachIndex in _slots)) exitWith {
-				_slots pushBack _forEachIndex;
-				_house setVariable["slots",_slots,true];
-				_pos = _x;
-			};
-		} foreach _positions;
-
-		if(_pos isEqualTo [0,0,0]) exitWith {};
-		
-		_container = _className createVehicle [0,0,0];
-		_container setPosATL _pos;
-		_container enableSimulation false;
-
-		_containers pushBack _container;
-		clearWeaponCargoGlobal _container;
-		clearItemCargoGlobal _container;
-		clearMagazineCargoGlobal _container;
-		clearBackpackCargoGlobal _container;
-		//Add weapons to the crate.
-		{
-			_weaponCount = (_weapons select 1) select _forEachIndex;
-			_container addWeaponCargoGlobal [_x,_weaponCount];
-		} foreach (_weapons select 0);
-
-		//Add magazines
-		{
-			_magazineCount = (_magazines select 1) select _forEachIndex;
-			_container addMagazineCargoGlobal [_x,_magazineCount];
-		} foreach (_magazines select 0);
-
-		//Add items
-		{
-			_itemCount = (_items select 1) select _forEachIndex;
-			_container addItemCargoGlobal [_x,_itemCount];
-		} foreach (_items select 0);
-
-		//Add backpacks
-		{
-			_backpackCount = (_backpacks select 1) select _forEachIndex;
-			_container addBackpackCargoGlobal [_x,_backpackCount];
-		} foreach (_backpacks select 0);
-
-	} foreach _containerData;
-
-	_house setVariable["containers",_containers,true];
-	_return pushBack [_x select 1,_containers];
+	_return pushBack [_x select 1];
 } foreach _houses;
 
 missionNamespace setVariable[format["houses_%1",_this],_return];
+
+_query = format["SELECT pid, pos, classname, inventory, gear, dir FROM containers WHERE pid='%1' AND owned='1'",_this];
+
+_containers = [_query,2,true] call DB_fnc_asyncCall;
+if(count _containers == 0) exitWith {};
+
+{
+	_position = call compile format["%1",_x select 1];
+	_direction = call compile format["%1",_x select 5];
+	_trunk = [_x select 3] call DB_fnc_mresToArray;
+	if(typeName _trunk == "STRING") then {_trunk = call compile format["%1", _trunk];};
+	_gear = [_x select 4] call DB_fnc_mresToArray;
+	if(typeName _gear == "STRING") then {_gear = call compile format["%1", _gear];};
+	_container = createVehicle[(_x select 2),[0,0,999],[],0,"NONE"];
+	waitUntil {!isNil "_container" && {!isNull _container}};
+	_container allowDamage false;
+	_container setPosATL _position;
+	_container setVectorDirAndUp _direction;
+
+	//Fix position for more accurate positioning
+	_posX = (_position select 0);
+	_posY = (_position select 1);
+	_posZ = (_position select 2);
+	_currentPos = getPosATL _container;
+	_fixX = (_currentPos select 0) - _posX;
+	_fixY = (_currentPos select 1) - _posY;
+	_fixZ = (_currentPos select 2) - _posZ;
+	_container setPosATL [(_posX - _fixX), (_posY - _fixY), (_posZ - _fixZ)];
+	_container setVectorDirAndUp _direction;
+	_container setVariable["Trunk",_trunk,true];
+	clearWeaponCargoGlobal _container;
+	clearItemCargoGlobal _container;
+	clearMagazineCargoGlobal _container;
+	clearBackpackCargoGlobal _container;
+	if (count _gear > 0) then{
+
+		_items = _gear select 0;
+		_mags = _gear select 1;
+		_weapons = _gear select 2;
+		_backpacks = _gear select 3;
+
+		for "_i" from 0 to ((count (_items select 0)) - 1) do {
+			_container addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
+		};
+
+		for "_i" from 0 to ((count (_mags select 0)) - 1) do{
+			_container addMagazineCargoGlobal [((_mags select 0) select _i), ((_mags select 1) select _i)];
+		};
+
+		for "_i" from 0 to ((count (_weapons select 0)) - 1) do{
+			_container addWeaponCargoGlobal [((_weapons select 0) select _i), ((_weapons select 1) select _i)];
+		};
+
+		for "_i" from 0 to ((count (_backpacks select 0)) - 1) do{
+			_container addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
+		};
+	};
+} foreach _containers;

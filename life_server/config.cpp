@@ -106,9 +106,11 @@ class CfgFunctions {
 		class Housing {
 			file = "\life_server\Functions\Housing";
 			class addHouse {};
+			class addContainer {};
 			class fetchPlayerHouses {};
 			class initHouses {};
 			class sellHouse {};
+			class sellHouseContainer {};
 			class updateHouseContainers {};
 			class updateHouseTrunk {};
 			class houseCleanup {};

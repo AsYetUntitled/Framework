@@ -2,7 +2,7 @@
 /*
 	File: fn_vehInventory.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Used a refresher for the vehicle inventory / trunk menu items.
 */
@@ -16,14 +16,7 @@ _pInv = CONTROL(3500,3503);
 lbClear _tInv;
 lbClear _pInv;
 
-if(_veh isKindOf "House_F") then {
-	private "_mWeight";
-	_mWeight = 0;
-	{_mWeight = _mWeight + ([(typeOf _x)] call life_fnc_vehicleWeightCfg);} foreach (_veh getVariable["containers",[]]);
-	_veh_data = [_mWeight,(_veh getVariable["Trunk",[[],0]]) select 1];
-} else {
-	_veh_data = [_veh] call life_fnc_vehicleWeight;
-};
+_veh_data = [_veh] call life_fnc_vehicleWeight;
 
 if(EQUAL(SEL(_veh_data,0),-1)) exitWith {closeDialog 0};
 
@@ -33,7 +26,7 @@ if(EQUAL(count _data,0)) then {_veh setVariable["Trunk",[[],0],true]; _data = []
 //Player Inventory Items
 {
 	_val = ITEM_VALUE(configName _x);
-	
+
 	if(_val > 0) then {
 		_pInv lbAdd format["[%1] - %2",_val,localize (getText(_x >> "displayName"))];
 		_pInv lbSetData [(lbSize _pInv)-1,configName _x];
@@ -48,7 +41,7 @@ if(EQUAL(count _data,0)) then {_veh setVariable["Trunk",[[],0],true]; _data = []
 {
 	_name = M_CONFIG(getText,"VirtualItems",SEL(_x,0),"displayName");
 	_val = SEL(_x,1);
-		
+
 	if(_val > 0) then {
 		_tInv lbAdd format["[%1] - %2",_val,localize _name];
 		_tInv lbSetData [(lbSize _tInv)-1,SEL(_x,0)];

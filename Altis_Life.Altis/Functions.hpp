@@ -118,6 +118,7 @@ class Life_Client_Core
 		class copHouseOwner {};
 		class lockHouse {};
 		class garageRefund {};
+		class placeContainer {};
 	};
 
 	class Config
@@ -329,7 +330,8 @@ class Life_Client_Core
 		class boltcutter {};
 		class blastingCharge {};
 		class defuseKit {};
-		class storageBox {};
+		class storageBoxBig {};
+		class storageBoxSmall {};
 	};
 
 	class Dialog_Controls

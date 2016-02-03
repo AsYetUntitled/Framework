@@ -97,6 +97,8 @@ class CfgRemoteExec {
         F(SPY_fnc_cookieJar,SERVER)
         F(TON_fnc_vehicleCreate,SERVER)
         F(TON_fnc_addHouse,SERVER)
+        F(TON_fnc_addContainer,SERVER)
+        F(TON_fnc_sellHouseContainer,SERVER)
 
         /* Functions for everyone */
         F(life_fnc_broadcast,ANYONE)
