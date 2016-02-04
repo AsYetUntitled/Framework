@@ -27,7 +27,6 @@ class WeaponShops {
             { "hgun_ACPC2_F", "", 11500, -1 },
             { "hgun_PDW2000_F", "", 20000, -1 },
             { "optic_ACO_grn_smg", "", 2500, 250 },
-            { "V_Rangemaster_belt", "", 4900, -1 },
             { "16Rnd_9x21_Mag", "", 25, -1 },
             { "9Rnd_45ACP_Mag", "", 45, -1 },
             { "6Rnd_45ACP_Cylinder", "", 50, -1 },
@@ -68,7 +67,6 @@ class WeaponShops {
             { "hgun_ACPC2_F", "", 4500, -1 },
             { "hgun_PDW2000_F", "", 9500, -1 },
             { "optic_ACO_grn_smg", "", 950, 250 },
-            { "V_Rangemaster_belt", "", 1900, -1 },
             { "16Rnd_9x21_Mag", "", 25, -1 },
             { "9Rnd_45ACP_Mag", "", 45, -1 },
             { "6Rnd_45ACP_Cylinder", "", 50, -1 },
@@ -191,8 +189,7 @@ class WeaponShops {
             { "ToolKit", "", 250, 75 },
             { "FirstAidKit", "", 150, 65 },
             { "Medikit", "", 500, 450 },
-            { "NVGoggles", "", 1200, 980 },
-            { "B_FieldPack_ocamo", "", 3000, -1 }
+            { "NVGoggles", "", 1200, 980 }
         };
     };
 };

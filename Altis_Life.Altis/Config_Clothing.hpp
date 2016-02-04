@@ -162,6 +162,75 @@ class Clothing {
         };
     };
 
+    class gun_clothing {
+        title = "STR_Shops_C_Gun";
+        license = "gun";
+        side = "civ";
+        uniforms[] = {
+            { "NONE", "Remove Uniform", 0, { "", "", -1 } }
+        };
+        headgear[] = {
+            { "NONE", "Remove Hat", 0, { "", "", -1 } }
+        };
+        goggles[] = {
+            { "NONE", "Remove Glasses", 0, { "", "", -1 } }
+        };
+        vests[] = {
+            { "NONE", "Remove Vest", 0, { "", "", -1 } },
+            { "V_Rangemaster_belt", "", 4900, { "", "", -1 } }
+        };
+        backpacks[] = {
+            { "NONE", "Remove Backpack", 0, { "", "", -1 } }
+        };
+    };
+
+    class gang_clothing {
+        title = "STR_Shops_C_Gang";
+        license = "";
+        side = "civ";
+        uniforms[] = {
+            { "NONE", "Remove Uniform", 0, { "", "", -1 } }
+        };
+        headgear[] = {
+            { "NONE", "Remove Hat", 0, { "", "", -1 } }
+        };
+        goggles[] = {
+            { "NONE", "Remove Glasses", 0, { "", "", -1 } }
+        };
+        vests[] = {
+            { "NONE", "Remove Vest", 0, { "", "", -1 } },
+            { "V_Rangemaster_belt", "", 1900, { "", "", -1 } }
+        };
+        backpacks[] = {
+            { "NONE", "Remove Backpack", 0, { "", "", -1 } }
+        };
+    };
+
+    class med_clothing {
+        title = "STR_MAR_EMS_Clothing_Shop";
+        license = "";
+        side = "med";
+        uniforms[] = {
+            { "NONE", "Remove Uniform", 0, { "", "", -1 } },
+            { "U_Rangemaster", "EMS Uniform", 50, { "", "", -1 } }
+        };
+        headgear[] = {
+            { "NONE", "Remove Hat", 0, { "", "", -1 } },
+            { "H_Cap_blu", "", 10, { "", "", -1 } }
+        };
+        goggles[] = {
+            { "NONE", "Remove Glasses", 0, { "", "", -1 } },
+            { "G_Shades_Blue", "", 10, { "", "", -1 } }
+        };
+        vests[] = {
+            { "NONE", "Remove Vest", 0, { "", "", -1 } }
+        };
+        backpacks[] = {
+            { "NONE", "Remove Backpack", 0, { "", "", -1 } },
+            { "B_FieldPack_oli", "EMS Backpack", 3000, { "", "", -1 } }
+        };
+    };
+
     class reb {
         title = "STR_Shops_C_Rebel";
         license = "rebel";

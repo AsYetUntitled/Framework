@@ -22,6 +22,22 @@
       <Portuguese>Loja de equipamentos para Mergulho</Portuguese>
       <Polish>Sklep dla nurków</Polish>
     </Key>
+    <Key ID="STR_Shops_C_Gun"><!-- Non-English translation by Google Translate. Please double check. -->
+      <Original>Billy Joe's Clothing</Original>
+      <German>Billy Joe Bekleidung</German>
+      <Italian>Abbigliamento di Billy Joe</Italian>
+      <French>Vêtements pour Billy Joe</French>
+      <Portuguese>Roupa Billy Joe</Portuguese>
+      <Polish>Billy Joe Odzież</Polish>
+    </Key>
+    <Key ID="STR_Shops_W_Gun"><!-- Non-English translation by Google Translate. Please double check. -->
+      <Original>Billy Joe's Firearms</Original>
+      <German>Billy Joe Schusswaffen</German>
+      <Italian>Le armi da fuoco di Billy Joe</Italian>
+      <French>Les armes à feu de Billy Joe</French>
+      <Portuguese>Armas de fogo Billy Joe</Portuguese>
+      <Polish>Broń palna Billy Joe</Polish>
+    </Key>
     <Key ID="STR_Shops_C_Kart">
       <Original>Bobby's Kart-Racing Outfits</Original>
       <German>Bobby's Go-Kart Rennklamotten</German>
@@ -51,6 +67,14 @@
       <French>Marché de Gang</French>
       <Portuguese>Mercado da Gangue</Portuguese>
       <Polish>Market Gangu</Polish>
+    </Key>
+    <Key ID="STR_Shops_C_Gang"><!-- Non-English translation by Google Translate. Please double check. -->
+      <Original>Gang Clothing</Original>
+      <German>Gang Kleidung</German>
+      <Italian>Gang Abbigliamento</Italian>
+      <French>Gang Vêtements</French>
+      <Portuguese>Roupa Gang</Portuguese>
+      <Polish>Gang Odzież</Polish>
     </Key>
     <Key ID="STR_Shops_Wongs">
       <Original>Wong's Food Cart</Original>
@@ -5026,19 +5050,11 @@
   <Package name="Shop_Strings">
     <Key ID="STR_Shop_ATMRobbed">
       <Original>Because you robbed the bank you can't use the ATM for %1 minutes.</Original>
-<<<<<<< HEAD
-      <German>Da du die Bank ausgeraubt hast, kannst du für 5 Minuten keine Bankautomaten benutzen.</German>
-      <French>Vous avez pillé la banque, vous ne pouvez pas utiliser le guichet automatique pendant 5 minutes.</French>
-      <Italian>Avendo appena rapinato la banca non puoi utilizzare il Bancomat per 5 minuti.</Italian>
-      <Portuguese>Você não pode usar o ATM por 5 minutos, pois você assaltou o banco.</Portuguese>
-      <Polish>Z uwagi na to że okradłeś bank nie możesz korzystać z bankomatu przez najbliższe 5 minut.</Polish>
-=======
       <German>Da du die Bank ausgeraubt hast, kannst du für %1 Minuten keine Bankomaten benutzen.</German>
       <French>Vous avez pillé la banque, vous ne pouvez pas utiliser le guichet automatique pendant %1 minutes.</French>
       <Italian>Avendo appena rapinato la banca non puoi utilizzare il Bancomat per %1 minuti.</Italian>
       <Portuguese>Você não pode usar o ATM por %1 minutos, pois você assaltou o banco.</Portuguese>
       <Polish>Z uwagi na to że okradłeś bank nie możesz korzystać z bankomatu przez najbliższe %1 minut.</Polish>
->>>>>>> faad46bbe26a052ba29d18806c38969d43d55d47
     </Key>
     <Key ID="STR_Shop_NoClothes">
       <Original>You didn't choose the clothes you wanted to buy.</Original>
@@ -6155,6 +6171,12 @@
       <German>EMS Ausrüstung</German>
       <Portuguese>Loja de Items Médicos</Portuguese>
       <Polish>Wyposażenie medyczne</Polish>
+    </Key>
+    <Key ID="STR_MAR_EMS_Clothing_Shop"><!-- Non-English translation by Google Translate. Please double check. -->
+      <Original>EMS Clothing Shop</Original>
+      <German>EMS Kleidungs-System</German>
+      <Portuguese>EMS Roupa Loja</Portuguese>
+      <Polish>Sklep odzieżowy EMS</Polish>
     </Key>
     <Key ID="STR_MAR_Helicopter_Garage">
       <Original>Helicopter Garage</Original>
