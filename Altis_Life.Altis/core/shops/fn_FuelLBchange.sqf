@@ -18,7 +18,6 @@ _vehicle = (vehiclefuelList select _vindex) select 0;
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 
 _fuel = fuel _vehicle;
-diag_log format ["%1",_fuel];
 _fueltank = SEL(_vehicleInfo,12);
 if (_vehicle iskindof "B_Truck_01_box_F" || _vehicle iskindof "B_Truck_01_transport_F") then {_fueltank = 350;};//hemtt
 if (_vehicle iskindof "C_Van_01_box_F") then {_fueltank = 100;};//
