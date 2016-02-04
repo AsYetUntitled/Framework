@@ -40,7 +40,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 			if(count _sPos > 1 && {_distance < 15}) then {
 				_text = switch (true) do {
 					case (_x in (units grpPlayer) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x GVAR ["realname",name _x])];};
-					case (!isNil {(_x GVAR "rank")}): {format["<img image='%1' size='1'></img> %2",switch ((_x GVAR "rank")) do {
+					case (side _x == west && {!isNil {_x GVAR "rank"}}): {format["<img image='%1' size='1'></img> %2",switch ((_x GVAR "rank")) do {
 						case 2: {"\a3\ui_f\data\gui\cfg\Ranks\corporal_gs.paa"};
 						case 3: {"\a3\ui_f\data\gui\cfg\Ranks\sergeant_gs.paa"};
 						case 4: {"\a3\ui_f\data\gui\cfg\Ranks\lieutenant_gs.paa"};
@@ -50,7 +50,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 						case 8: {"\a3\ui_f\data\gui\cfg\Ranks\general_gs.paa"};
 						default {"\a3\ui_f\data\gui\cfg\Ranks\private_gs.paa"};
 						},_x GVAR ["realname",name _x]]};
-					case (playerSide == independent): {format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t> %1",_x GVAR ["realname",name _x]]};
+					case (side _x == independent): {format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t> %1",_x GVAR ["realname",name _x]]};
 					default {
 						if(!isNil {(group _x) GVAR "gang_name"}) then {
 							format["%1<br/><t size='0.8' color='#B6B6B6'>%2</t>",_x GVAR ["realname",name _x],(group _x) GVAR ["gang_name",""]];
