@@ -9,7 +9,6 @@
 private["_ui","_units","_masks"];
 #define iconID 78000
 #define scale 0.8
-if(!(!isDedicated && hasInterface)) exitWith {};
 
 if(visibleMap OR {!alive player} OR {dialog}) exitWith {
 	500 cutText["","PLAIN"];
@@ -29,7 +28,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 {
 	private "_text";
 	_idc = _ui displayCtrl (iconID + _forEachIndex);
-	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && {!isNil {_x GVAR "realname"}} && alive _x) then {
+	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && alive _x && {!isNil {_x GVAR "realname"}}) then {
 		_pos = switch(typeOf _x) do {
 			case "Land_Pallet_MilBoxes_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
 			case "Land_Sink_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 2]};
@@ -41,7 +40,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 			if(count _sPos > 1 && {_distance < 15}) then {
 				_text = switch (true) do {
 					case (_x in (units grpPlayer) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x GVAR ["realname",name _x])];};
-					case (playerSide == west && {!isNil {_x GVAR "rank"}}): {format["<img image='%1' size='1'></img> %2",switch ((_x GVAR "rank")) do {
+					case (!isNil {(_x GVAR "rank")}): {format["<img image='%1' size='1'></img> %2",switch ((_x GVAR "rank")) do {
 						case 2: {"\a3\ui_f\data\gui\cfg\Ranks\corporal_gs.paa"};
 						case 3: {"\a3\ui_f\data\gui\cfg\Ranks\sergeant_gs.paa"};
 						case 4: {"\a3\ui_f\data\gui\cfg\Ranks\lieutenant_gs.paa"};
