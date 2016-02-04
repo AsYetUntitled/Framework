@@ -44,6 +44,16 @@ if(!(EQUAL(count (actionKeys "User10"),0)) && {(inputAction "User10" > 0)}) exit
 	true;
 };
 
+if (life_container_active) then {
+	switch (_code) do {
+		//space key
+		case 57: {
+			[] spawn life_fnc_placestorage;
+		};
+	};
+	true;
+};
+
 switch (_code) do {
 	//Space key for Jumping
 	case 57: {

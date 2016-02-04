@@ -7,34 +7,9 @@
 */
 private["_boxType","_container"];
 _boxType = SEL(_this,0);
-/*
-switch (_boxType) do {
-	case "storagesmall": { _container = "Box_IND_Grenades_F" createVehicle position player; };
-	case "storagebig": { _container = "B_supplyCrate_F" createVehicle position player; };
-};
-*/
-life_action_CrateDeploy = player addAction [
-    "Spawn Crate",
-    {
-        _container = createVehicle [
-            "Box_IND_Grenades_F",
-            position player,
-            [],
-            0,
-            "NONE"
-        ];
-        _container setDir 90;
-        _container allowDamage false;
-				_container setPosATL [ (getPosATL player select 0) + 0.2,  (getPosATL player select 1) + 0.2, (getPosATL player select 2) + 0.4];
-				clearWeaponCargoGlobal _container;
-				clearMagazineCargoGlobal _container;
-				clearItemCargoGlobal _container;
-				clearBackpackCargoGlobal _container;
-				player removeAction life_action_CrateDeploy;
-				life_action_CrateDeploy = nil;
-				[false,"storagesmall",1] call life_fnc_handleInv;
-				[_container] call life_fnc_placeContainer;
-    }
-];
-
-//[_container] call life_fnc_placeContainer;
+life_container_active = true;
+_object = "Box_IND_Grenades_F" createVehicle (position player);
+life_container_activeObj = _object;
+_attachPos = [0, 3, 0.5];
+_object attachTo[player, _attachPos];
+_object enableSimulationGlobal false;
