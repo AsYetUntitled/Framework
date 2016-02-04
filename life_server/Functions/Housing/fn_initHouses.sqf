@@ -36,8 +36,13 @@ for [{_x=0},{_x<=_count2},{_x=_x+10}] do {
 	if(count _queryResult == 0) exitWith {};
 	{
 		_pos = call compile format["%1",_x select 2];
-		_container = (nearestObjects[_pos,["Box_IND_Grenades_F","B_supplyCrate_F"],5]) select 0;
-		_container setVariable["container_owner",[_x select 1],true];
-		_container setVariable["container_id",_x select 0,true];
+		_id = _x select 0;
+		_owner = _x select 1;
+		sleep 3;
+		_containers = [_pos, ["Box_IND_Grenades_F","B_supplyCrate_F"], 7] call life_fnc_nearestObjects;
+		{
+			_x setVariable["container_owner",[_owner],true];
+			_x setVariable["container_id",_id,true];
+		} foreach _containers;
 	} foreach _queryResult;
 };
