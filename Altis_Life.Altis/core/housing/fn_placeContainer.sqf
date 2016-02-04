@@ -15,7 +15,7 @@ switch(true) do {
 	default {_type = ""};
 };
 
-_houses = [position player, ["Land_i_House_Big_02_V1_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_02_V3_F","Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_i_House_Big_01_V3_F","Land_i_Stone_HouseSmall_V1_F","Land_i_Stone_HouseSmall_V2_F","Land_i_Stone_HouseSmall_V3_F"], 20] call life_fnc_nearestObjects;
+_houses = [position player, ["Land_i_House_Big_02_V1_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_02_V3_F","Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_i_House_Big_01_V3_F","Land_i_Stone_HouseSmall_V1_F","Land_i_Stone_HouseSmall_V2_F","Land_i_Stone_HouseSmall_V3_F"], 9] call life_fnc_nearestObjects;
 if (count _houses > 0) then {
 	_house = _houses select 0;
 	if(!(_house in life_vehicles) OR isNil {_house GVAR "house_owner"}) then {
