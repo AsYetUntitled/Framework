@@ -119,6 +119,7 @@ class Life_Client_Core
 		class lockHouse {};
 		class garageRefund {};
 		class placeContainer {};
+		class PlayerInBuilding {};
 	};
 
 	class Config
