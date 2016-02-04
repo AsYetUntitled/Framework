@@ -8,6 +8,8 @@ Altis-Life
 [![Arma 3 Version](https://img.shields.io/badge/arma%203-1.54-orange.svg)](http://dev.arma3.com/post/spotrep-00051)
 &nbsp;&nbsp;&nbsp;
 [![Join the chat at https://gitter.im/ArmaLife/Altis](https://badges.gitter.im/ArmaLife/Altis.svg)](https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+&nbsp;&nbsp;&nbsp;
+[![Join the support chat at https://gitter.im/ArmaLife/Altis/Support](https://img.shields.io/badge/support-on%20gitter-blue.svg)](https://gitter.im/ArmaLife/Altis/Support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 </br>
 <b>Altis Life</b> or <b>[Altis Life RPG] (http://www.altisliferpg.com)</b> is developed by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
 This contains primarily the release contain and on-going development changes to the mission.<br/>
