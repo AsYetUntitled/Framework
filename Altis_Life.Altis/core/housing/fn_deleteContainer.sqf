@@ -5,9 +5,8 @@
 	Description:
 	Delete Container
 */
-private["_house","_uid","_action","_houseCfg"];
+private["_house","_action","_houseCfg"];
 _container = param [0,ObjNull,[ObjNull]];
-_uid = steamid;
 
 _house = nearestBuilding (getPosATL player);
 if(!(_house in life_vehicles)) exitWith {hint localize "STR_ISTR_Box_NotinHouse"};
@@ -31,5 +30,4 @@ if(_action) then {
 	_containers = _containers - ["Delete"];
 	_house SVAR ["containers",_containers,true];
 	[_container] remoteExecCall ["TON_fnc_deleteContainer",RSERV];
-	deleteVehicle _container;
 };

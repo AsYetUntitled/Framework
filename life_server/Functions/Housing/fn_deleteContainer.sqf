@@ -19,9 +19,14 @@ if(_containerID == -1) then {
 	//systemChat format[":SERVER:sellHouse: house_id is %1",_houseID];
 	_query = format["UPDATE containers SET owned='0', pos='[]' WHERE id='%1'",_containerID];
 };
-
+_containerPos2 = getPosATL _container;
 _container setVariable["container_id",nil,true];
 _container setVariable["container_owner",nil,true];
+
+_containers = [_containerPos2, ["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5] call life_fnc_nearestObjects;
+{
+	deletevehicle _x;
+} foreach _containers;
 
 [_query,1] call DB_fnc_asyncCall;
 ["CALL deleteOldContainers",1] call DB_fnc_asyncCall;
