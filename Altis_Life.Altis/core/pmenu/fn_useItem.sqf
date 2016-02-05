@@ -42,7 +42,7 @@ switch (true) do {
 	case (EQUAL(_item,"defusekit")): {
 		[cursorTarget] spawn life_fnc_defuseKit;
 	};
-	
+
 	case (EQUAL(_item,"storagesmall")): {
 		[_item] call life_fnc_storageBoxSmall;
 	};

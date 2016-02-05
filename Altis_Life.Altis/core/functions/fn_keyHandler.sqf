@@ -48,7 +48,7 @@ if (life_container_active) then {
 	switch (_code) do {
 		//space key
 		case 57: {
-			[] spawn life_fnc_placestorage;
+			[life_container_activeObj] spawn life_fnc_placedefinestorage;
 		};
 	};
 	true;

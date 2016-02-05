@@ -333,7 +333,9 @@ class Life_Client_Core
 		class defuseKit {};
 		class storageBoxBig {};
 		class storageBoxSmall {};
-		class placestorage {};
+		class placestorageBig {};
+		class placestorageSmall {};
+		class placedefinestorage {};
 	};
 
 	class Dialog_Controls
