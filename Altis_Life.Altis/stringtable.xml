@@ -3120,6 +3120,14 @@
       <Portuguese>Erro ao salvar a caixa, não foi possível encontrar a casa.</Portuguese>
       <Polish>Błąd w zapisywaniu pojemnika, nie można zlokalizować domu.</Polish>
     </Key>
+    <Key ID="STR_House_ContainerDeny">
+      <Original>You are not allowed to access this storage container without the owner opening it.</Original>
+      <German>Du bist nicht berechtigt, auf diesen Container zuzugreifen, ohne dass der Besitzer ihn aufgeschlossen hat.</German>
+      <French>Vous n'êtes pas autorisé à accéder à ce conteneur de stockage sans que le propriétaire ne l'ouvre.</French>
+      <Italian>Non sei autorizzato ad accedere a questo contentitore senza il permesso del proprietario.</Italian>
+      <Portuguese>Você so pode acessar a caixa se o dono deixar ela aberta.</Portuguese>
+      <Polish>Nie masz dostępu do pojemnika dopóki właściciel go nie otworzy.</Polish>
+     </Key>
     <Key ID="STR_House_Container_House_Near">
       <Original>There are no houses near you.</Original>
       <French>Il n'y a aucune maison près de vous.</French>
