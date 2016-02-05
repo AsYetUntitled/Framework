@@ -26,11 +26,13 @@ class WeaponShops {
             { "hgun_Pistol_heavy_02_F", "", 9850, -1 },
             { "hgun_ACPC2_F", "", 11500, -1 },
             { "hgun_PDW2000_F", "", 20000, -1 },
-            { "optic_ACO_grn_smg", "", 2500, 250 },
-            { "16Rnd_9x21_Mag", "", 25, -1 },
-            { "9Rnd_45ACP_Mag", "", 45, -1 },
-            { "6Rnd_45ACP_Cylinder", "", 50, -1 },
-            { "30Rnd_9x21_Mag", "", 75, -1 }
+            { "optic_ACO_grn_smg", "", 2500, 250 }
+        };
+        mags[] = {
+            { "16Rnd_9x21_Mag", "", 25 },
+            { "9Rnd_45ACP_Mag", "", 45 },
+            { "6Rnd_45ACP_Cylinder", "", 50 },
+            { "30Rnd_9x21_Mag", "", 75 }
         };
     };
 
@@ -47,12 +49,14 @@ class WeaponShops {
             { "optic_ACO_grn", "", 3500, 350 },
             { "optic_Holosight", "", 3600, 275 },
             { "acc_flashlight", "", 1000, 100 },
-            { "optic_Hamr", "", 7500, -1 },
-            { "30Rnd_9x21_Mag", "", 200, -1 },
-            { "20Rnd_556x45_UW_mag", "", 125, -1 },
-            { "30Rnd_556x45_Stanag", "", 300, -1 },
-            { "10Rnd_762x54_Mag", "", 500, -1 },
-            { "30Rnd_65x39_caseless_green", "", 275, -1 }
+            { "optic_Hamr", "", 7500, -1 }
+        };
+        mags[] = {
+            { "30Rnd_9x21_Mag", "", 200 },
+            { "20Rnd_556x45_UW_mag", "", 125 },
+            { "30Rnd_556x45_Stanag", "", 300 },
+            { "10Rnd_762x54_Mag", "", 500 },
+            { "30Rnd_65x39_caseless_green", "", 275 }
         };
     };
 
@@ -66,11 +70,13 @@ class WeaponShops {
             { "hgun_Pistol_heavy_02_F", "", 2500, -1 },
             { "hgun_ACPC2_F", "", 4500, -1 },
             { "hgun_PDW2000_F", "", 9500, -1 },
-            { "optic_ACO_grn_smg", "", 950, 250 },
-            { "16Rnd_9x21_Mag", "", 25, -1 },
-            { "9Rnd_45ACP_Mag", "", 45, -1 },
-            { "6Rnd_45ACP_Cylinder", "", 50, -1 },
-            { "30Rnd_9x21_Mag", "", 75, -1 }
+            { "optic_ACO_grn_smg", "", 950, 250 }
+        };
+        mags[] = {
+            { "16Rnd_9x21_Mag", "", 25 },
+            { "9Rnd_45ACP_Mag", "", 45 },
+            { "6Rnd_45ACP_Cylinder", "", 50 },
+            { "30Rnd_9x21_Mag", "", 75 }
         };
     };
 
@@ -94,6 +100,7 @@ class WeaponShops {
             { "Chemlight_green", "", 300, 50 },
             { "Chemlight_blue", "", 300, 50 }
         };
+        mags[] = {};
     };
 
     class f_station_store {
@@ -115,6 +122,7 @@ class WeaponShops {
             { "Chemlight_green", "", 1500, 50 },
             { "Chemlight_blue", "", 1500, 50 }
         };
+        mags[] = {};
     };
 
     //Cop Shops
@@ -134,9 +142,11 @@ class WeaponShops {
             { "muzzle_snds_L", "", 650, -1 },
             { "FirstAidKit", "", 150, 65 },
             { "Medikit", "", 1000, 450 },
-            { "NVGoggles", "", 2000, 980 },
-            { "16Rnd_9x21_Mag", "", 50, -1 },
-            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 125, -1 }
+            { "NVGoggles", "", 2000, 980 }
+        };
+        mags[] = {
+            { "16Rnd_9x21_Mag", "", 25 },
+            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 45 }
         };
     };
 
@@ -153,9 +163,11 @@ class WeaponShops {
             { "acc_flashlight", "", 750, 100 },
             { "optic_Holosight", "", 1200, 275 },
             { "optic_Arco", "", 2500, -1 },
-            { "muzzle_snds_H", "", 2750, -1 },
-            { "30Rnd_65x39_caseless_mag", "", 130, -1 },
-            { "30Rnd_9x21_Mag", "", 250, -1 }
+            { "muzzle_snds_H", "", 2750, -1 }
+        };
+        mags[] = {
+            { "30Rnd_65x39_caseless_mag", "", 130 },
+            { "30Rnd_9x21_Mag", "", 250 }
         };
     };
 
@@ -171,9 +183,11 @@ class WeaponShops {
             { "arifle_MXC_F", "", 30000, 5000 },
             { "optic_Arco", "", 2500, -1 },
             { "muzzle_snds_H", "", 2750, -1 },
-            { "30Rnd_65x39_caseless_mag", "", 100, -1 },
-            { "30Rnd_9x21_Mag", "", 60, -1 },
-            { "9Rnd_45ACP_Mag", "", 200, -1 }
+            { "30Rnd_65x39_caseless_mag", "", 100, -1 }
+        };
+        mags[] = {
+            { "30Rnd_9x21_Mag", "", 60 },
+            { "9Rnd_45ACP_Mag", "", 200 }
         };
     };
 
@@ -191,5 +205,6 @@ class WeaponShops {
             { "Medikit", "", 500, 450 },
             { "NVGoggles", "", 1200, 980 }
         };
+        mags[] = {};
     };
 };

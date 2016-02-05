@@ -49,6 +49,7 @@ if(!(EQUAL(_levelValue,-1))) then {
 if(_exit) exitWith {hint _levelMsg;};
 
 uiNamespace setVariable ["Weapon_Shop",SEL(_this,3)];
+uiNamespace setVariable["Weapon_Magazine",0];
 
 if(!(createDialog "life_weapon_shop")) exitWith {};
 if(!isClass(missionConfigFile >> "WeaponShops" >> (SEL(_this,3)))) exitWith {}; //Bad config entry.
@@ -59,6 +60,9 @@ ctrlSetText[38401,_shopTitle];
 
 _filters = ((findDisplay 38400) displayCtrl 38402);
 lbClear _filters;
+
+ctrlShow [38406,true];
+ctrlEnable [38406,false];
 
 _filters lbAdd localize "STR_Shop_Weapon_ShopInv";
 _filters lbAdd localize "STR_Shop_Weapon_YourInv";

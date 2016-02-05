@@ -203,6 +203,14 @@
       <Portuguese>Comprar</Portuguese>
       <Polish>Kup</Polish>
     </Key>
+    <Key ID="STR_Global_Mags">
+      <Original>Magazines</Original>
+      <Portuguese>Munições</Portuguese>
+    </Key>
+    <Key ID="STR_Global_Weapons">
+      <Original>Weapons</Original>
+      <Portuguese>Armas</Portuguese>
+    </Key>
     <Key ID="STR_Global_Give">
       <Original>Give</Original>
       <German>Geben</German>

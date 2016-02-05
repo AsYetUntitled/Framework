@@ -23,9 +23,28 @@ if((GVAR_UINS ["Weapon_Shop_Filter",0]) == 1) then {
 	_control lbSetValue[_index,_price];
 } else {
 	_price = _control lbValue _index;
+	_item = CONTROL_DATAI(_control,_index);
 	if(_price > CASH) then {
 		_priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#ff0000'>$%1</t><br/>You lack: <t color='#8cff9b'>$%2</t></t>",[(_price)] call life_fnc_numberText,[(_price - CASH)] call life_fnc_numberText];
 	} else {
 		_priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#8cff9b'>$%1</t></t>",[(_price)] call life_fnc_numberText];
+	};
+	if((GVAR_UINS ["Weapon_Magazine",0]) == 0) then {
+			if(isClass (configFile >> "CfgWeapons" >> _item)) then {
+				if(isArray (configFile >> "CfgWeapons" >> _item >> "magazines")) then {
+					_itemArray = FETCH_CONFIG2(getArray,"CfgWeapons",_item,"magazines");
+					if(count _itemArray > 0) then {
+						((findDisplay 38400) displayCtrl 38406) ctrlEnable true;
+					} else {
+						((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
+					};
+				} else {
+					((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
+				};
+			} else {
+				((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
+			};
+	} else {
+		((findDisplay 38400) displayCtrl 38406) ctrlEnable true;
 	};
 };
