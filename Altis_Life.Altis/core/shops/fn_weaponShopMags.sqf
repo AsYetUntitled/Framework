@@ -6,8 +6,14 @@
 	Description:
 	Set Weapon Shop in magazine mode
 */
-if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
-	uiNamespace setVariable ["Weapon_Magazine",0];
+disableSerialization;
+
+if((GVAR_UINS ["Weapon_Magazine",0]) == 0) then {
+	private["_weapon"];
+	_weapon = lbData[38403,lbCurSel (38403)];
+	_weapon = FETCH_CONFIG2(getArray,"CfgWeapons",_weapon,"magazines");
+	uiNamespace setVariable["Magazine_Array",_weapon];
+	uiNamespace setVariable["Weapon_Magazine",1];
 } else {
-	uiNamespace setVariable ["Weapon_Magazine",1];
+	uiNamespace setVariable["Weapon_Magazine",0];
 };

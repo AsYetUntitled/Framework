@@ -10,7 +10,8 @@ private["_control","_index","_shop","_priceTag","_price","_item","_itemArray"];
 _control = [_this,0,controlNull,[controlNull]] call BIS_fnc_param;
 _index = [_this,1,-1,[0]] call BIS_fnc_param;
 _shop = uiNamespace getVariable ["Weapon_Shop",""];
-if(isNull _control OR _index == -1) exitWith {closeDialog 0;}; //Bad data
+if(isNull _control) exitWith {closeDialog 0;}; //Bad data
+if(_index == -1) exitWith {}; //Nothing selected
 
 _priceTag = CONTROL(38400,38404);
 
