@@ -120,6 +120,8 @@ class Life_Client_Core
 		class garageRefund {};
 		class placeContainer {};
 		class PlayerInBuilding {};
+		class deleteContainer {};
+		class containerMenu {};
 	};
 
 	class Config

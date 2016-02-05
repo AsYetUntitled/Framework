@@ -27,6 +27,7 @@ if(_action) then {
 	_house SVAR ["house_sold",true,true];
 	[_house] remoteExecCall ["TON_fnc_sellHouse",RSERV];
 	_house SVAR ["locked",false,true];
+	_house SVAR ["containers",nil,true];
 	deleteMarkerLocal format["house_%1",_house GVAR "uid"];
 	_house SVAR ["uid",nil,true];
 
@@ -50,15 +51,8 @@ if(_action) then {
 	_containers = [position player, ["Box_IND_Grenades_F","B_supplyCrate_F"], 9] call life_fnc_nearestObjects;
 	if (count _containers > 0) then {
 		{
-			if(_x in life_vehicles) then {
-				_x SVAR ["Trunk",nil,true];
-				[_x] remoteExecCall ["TON_fnc_sellHouseContainer",RSERV];
-				_index = life_vehicles find _x;
-				if(_index != -1) then {
-					life_vehicles set[_index,-1];
-					life_vehicles = life_vehicles - [-1];
-				};
-			};
+			_x SVAR ["Trunk",nil,true];
+			[_x] remoteExecCall ["TON_fnc_sellHouseContainer",RSERV];
 		} forEach _containers;
 	};
 };

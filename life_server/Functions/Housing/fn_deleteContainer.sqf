@@ -7,7 +7,7 @@
 */
 private["_house","_houseID","_ownerID","_housePos","_query","_radius","_containers"];
 _container = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _container) exitWith {systemChat ":SERVER:sellHouseContainer: Container is null";};
+if(isNull _container) exitWith {systemChat ":SERVER:DeleteContainer: Container is null";};
 
 _containerID = _container getVariable["container_id",-1];
 if(_containerID == -1) then {
@@ -22,9 +22,6 @@ if(_containerID == -1) then {
 
 _container setVariable["container_id",nil,true];
 _container setVariable["container_owner",nil,true];
-_radius = (((boundingBoxReal _container select 0) select 2) - ((boundingBoxReal _container select 1) select 2));
-_containers = nearestObjects[(getPosATL _container),["Box_IND_Grenades_F","B_supplyCrate_F"],_radius];
-{deleteVehicle _x} foreach _containers; //Fuck the way you do things Tonic, go fix it
 
 [_query,1] call DB_fnc_asyncCall;
 ["CALL deleteOldContainers",1] call DB_fnc_asyncCall;
