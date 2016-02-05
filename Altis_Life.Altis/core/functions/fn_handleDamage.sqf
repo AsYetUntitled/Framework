@@ -18,14 +18,11 @@ if(!isNull _source) then {
 	if(_source != _unit) then {
 		_curWep = currentWeapon _source;
 		if(_projectile in ["B_9x21_Ball","B_556x45_dual"] && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then {
-			if(side _source == west && playerSide != west) then {
-				private["_distance","_isVehicle","_isQuad"];
+			if(side _source == west && playerSide == civilian) then {
+				private["_distance"];
 				_distance = if(_projectile == "B_556x45_dual") then {100} else {35};
-				_isVehicle = if(vehicle player != player) then {true} else {false};
-				_isQuad = if(_isVehicle) then {if(typeOf (vehicle player) == "B_Quadbike_01_F") then {true} else {false}} else {false};
-				
 				_damage = false;
-				if(_unit distance _source < _distance) then {
+				if(_unit distance _source < _distance && ((vehicle player) == player OR typeOf (vehicle player) == "B_Quadbike_01_F")) then {
 					if(!life_istazed && !(_unit GVAR ["restrained",false])) then {
 						if(_isVehicle && _isQuad) then {
 							player action ["Eject",vehicle player];
@@ -38,7 +35,7 @@ if(!isNull _source) then {
 			};
 			
 			//Temp fix for super tasers on cops.
-			if(playerSide == west && side _source == west) then {
+			if(side _source == west && (playerSide == west OR playerSide == independent)) then {
 				_damage = false;
 			};
 		};
