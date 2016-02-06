@@ -1,16 +1,25 @@
-Altis-Life
-==========
-
-[![Altis Life Version](https://img.shields.io/badge/version-v4.3-green.svg)](https://github.com/ArmaLife/Altis)
-&nbsp;&nbsp;&nbsp;
-[![Altis Life Release](https://img.shields.io/badge/release-4-yellowgreen.svg)](https://github.com/ArmaLife/Altis/releases)
-&nbsp;&nbsp;&nbsp;
-[![Arma 3 Version](https://img.shields.io/badge/arma%203-1.54-orange.svg)](http://dev.arma3.com/post/spotrep-00051)
-&nbsp;&nbsp;&nbsp;
-[![Join the chat at https://gitter.im/ArmaLife/Altis](https://badges.gitter.im/ArmaLife/Altis.svg)](https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-&nbsp;&nbsp;&nbsp;
-[![Join the support chat at https://gitter.im/ArmaLife/Altis/Support](https://img.shields.io/badge/support-on%20gitter-blue.svg)](https://gitter.im/ArmaLife/Altis/Support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-</br>
+<h1 align="center">Altis-Life</h1>
+<p align="center">
+    <a href="https://github.com/ArmaLife/Altis">
+        <img src="https://img.shields.io/badge/version-v4.3-green.svg" alt="Altis Life Version">
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/ArmaLife/Altis/releases">
+        <img src="https://img.shields.io/badge/release-4-yellowgreen.svg" alt="Altis Life Release">
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="http://dev.arma3.com/post/spotrep-00051">
+        <img src="https://img.shields.io/badge/arma%203-1.54-orange.svg" alt="Arma 3 Version">
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+        <img src="https://badges.gitter.im/ArmaLife/Altis.svg" alt="Join the chat at https://gitter.im/ArmaLife/Altis">
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://gitter.im/ArmaLife/Altis/Support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+        <img src="https://img.shields.io/badge/support-on%20gitter-blue.svg" alt="Join the support chat at https://gitter.im/ArmaLife/Altis/Support">
+    </a>
+</p>
 <b>Altis Life</b> or <b>[Altis Life RPG] (http://www.altisliferpg.com)</b> is developed by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
 This contains primarily the release contain and on-going development changes to the mission.<br/>
 Altis Life RPG by Tonic is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License] (http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US)
