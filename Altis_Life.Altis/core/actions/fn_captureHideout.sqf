@@ -1,7 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Blah blah.
 */
@@ -20,7 +20,7 @@ if(!isNull _group) then {
 		localize "STR_Global_Yes",
 		localize "STR_Global_No"
 	] call BIS_fnc_guiMessage;
-	
+
 	_cpRate = 0.0045;
 } else {
 	_cpRate = 0.0075;
@@ -59,13 +59,14 @@ while {true} do {
 	_hideout SVAR ["inCapture",true,true];
 	if(_cP >= 1 OR !alive player) exitWith {_hideout SVAR ["inCapture",false,true];};
 	if(life_istazed) exitWith {_hideout SVAR ["inCapture",false,true];}; //Tazed
+	if(life_isknocked) exitWith {_hideout SVAR ["inCapture",false,true];}; //Knocked
 	if(life_interrupted) exitWith {_hideout SVAR ["inCapture",false,true];};
 };
 
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive player OR life_istazed) exitWith {life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
+if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_GNOTF_CaptureCancel","PLAIN"]; life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
 life_action_inUse = false;

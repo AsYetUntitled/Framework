@@ -2,7 +2,7 @@
 /*
 	File: fn_lockpick.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Main functionality for lock-picking.
 */
@@ -42,9 +42,9 @@ while {true} do
 		player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
-	
+
 	sleep 0.26;
-	
+
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = GVAR_UINS "life_progress";
@@ -54,9 +54,10 @@ while {true} do
 	_cP = _cP + 0.01;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-	
+
 	if(_cP >= 1 OR !alive player) exitWith {};
 	if(life_istazed) exitWith {}; //Tazed
+	if(life_isknocked) exitWith {}; //Knocked
 	if(life_interrupted) exitWith {};
 	if((player GVAR ["restrained",false])) exitWith {};
 	if(player distance _curTarget > _distance) exitWith {_badDistance = true;};
@@ -66,7 +67,7 @@ while {true} do
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 
-if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
+if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;};
 if((player GVAR ["restrained",false])) exitWith {life_action_inUse = false;};
 if(!isNil "_badDistance") exitWith {titleText[localize "STR_ISTR_Lock_TooFar","PLAIN"]; life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};

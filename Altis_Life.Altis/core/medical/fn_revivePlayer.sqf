@@ -45,6 +45,7 @@ while {true} do {
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 	if(_cP >= 1 OR !alive player) exitWith {};
 	if(life_istazed) exitWith {}; //Tazed
+	if(life_isknocked) exitWith {}; //Knocked
 	if(life_interrupted) exitWith {};
 	if((player GVAR ["restrained",false])) exitWith {};
 	if(player distance _target > 4) exitWith {_badDistance = true;};
@@ -59,7 +60,7 @@ player playActionNow "stop";
 if(_target GVAR ["Reviving",ObjNull] != player) exitWith {hint localize "STR_Medic_AlreadyReviving"};
 _target SVAR ["Reviving",NIL,TRUE];
 
-if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
+if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;};
 if(_target GVAR ["Revive",FALSE]) exitWith {hint localize "STR_Medic_RevivedRespawned"};
 if((player GVAR ["restrained",false])) exitWith {life_action_inUse = false;};
 if(!isNil "_badDistance") exitWith {titleText[localize "STR_Medic_TooFar","PLAIN"]; life_action_inUse = false;};
