@@ -1,5 +1,5 @@
 /*
-	File : fn_storageBoxBig.sqf
+	File : fn_storageBoxSmall.sqf
 	Author: NiiRoZz
 
 	Description:
