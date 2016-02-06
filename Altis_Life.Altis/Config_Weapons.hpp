@@ -30,8 +30,8 @@ class WeaponShops {
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 25 },
-            { "9Rnd_45ACP_Mag", "", 45 },
             { "6Rnd_45ACP_Cylinder", "", 50 },
+            { "9Rnd_45ACP_Mag", "", 45 },
             { "30Rnd_9x21_Mag", "", 75 }
         };
     };
@@ -48,15 +48,14 @@ class WeaponShops {
             { "arifle_SDAR_F", "", 20000, 7500 },
             { "optic_ACO_grn", "", 3500, 350 },
             { "optic_Holosight", "", 3600, 275 },
-            { "acc_flashlight", "", 1000, 100 },
-            { "optic_Hamr", "", 7500, -1 }
+            { "optic_Hamr", "", 7500, -1 },
+            { "acc_flashlight", "", 1000, 100 }
         };
         mags[] = {
-            { "30Rnd_9x21_Mag", "", 200 },
-            { "20Rnd_556x45_UW_mag", "", 125 },
             { "30Rnd_556x45_Stanag", "", 300 },
+            { "30Rnd_65x39_caseless_green", "", 275 },
             { "10Rnd_762x54_Mag", "", 500 },
-            { "30Rnd_65x39_caseless_green", "", 275 }
+            { "20Rnd_556x45_UW_mag", "", 125 }
         };
     };
 
@@ -74,8 +73,8 @@ class WeaponShops {
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 25 },
-            { "9Rnd_45ACP_Mag", "", 45 },
             { "6Rnd_45ACP_Cylinder", "", 50 },
+            { "9Rnd_45ACP_Mag", "", 45 },
             { "30Rnd_9x21_Mag", "", 75 }
         };
     };
@@ -177,17 +176,17 @@ class WeaponShops {
         license = "";
         level[] = { "life_coplevel", "SCALAR", 3, "You must be a Sergeant Rank!" };
         items[] = {
-            { "SMG_02_ACO_F", "", 15000, -1 },
             { "hgun_ACPC2_F", "", 17500, -1 },
-            { "HandGrenade_Stone", "Flashbang", 1700, -1 },
+            { "SMG_02_ACO_F", "", 15000, -1 },
             { "arifle_MXC_F", "", 30000, 5000 },
+            { "HandGrenade_Stone", "Flashbang", 1700, -1 },
             { "optic_Arco", "", 2500, -1 },
-            { "muzzle_snds_H", "", 2750, -1 },
-            { "30Rnd_65x39_caseless_mag", "", 100, -1 }
+            { "muzzle_snds_H", "", 2750, -1 }
         };
         mags[] = {
+            { "9Rnd_45ACP_Mag", "", 200 },
             { "30Rnd_9x21_Mag", "", 60 },
-            { "9Rnd_45ACP_Mag", "", 200 }
+            { "30Rnd_65x39_caseless_mag", "", 100, -1 }
         };
     };
 
