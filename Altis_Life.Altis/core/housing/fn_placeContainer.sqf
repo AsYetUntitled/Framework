@@ -5,7 +5,7 @@
 	Description:
 	Place container inside house
 */
-private["_container","_houses","_type","_number","_house","_uid"];
+private["_container","_house","_type","_number","_house","_uid"];
 _container = param [0,ObjNull,[ObjNull]];
 _number = 1;
 _uid = steamid;
@@ -16,10 +16,10 @@ switch(true) do {
 	default {_type = ""};
 };
 
-_houses = [position player, ["Land_i_House_Big_02_V1_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_02_V3_F","Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_i_House_Big_01_V3_F","Land_i_House_Small_01_V1_F","Land_i_House_Small_01_V2_F","Land_i_House_Small_01_V3_F","Land_i_House_Small_02_V1_F","Land_i_House_Small_02_V2_F","Land_i_House_Small_02_V3_F","Land_i_House_Small_03_V1_F","Land_i_Stone_HouseSmall_V2_F","Land_i_Stone_HouseSmall_V1_F","Land_i_Stone_HouseSmall_V3_F"], 8] call life_fnc_nearestObjects;
+_HouseModelNames = M_CONFIG(getArray,"CfgInteractionModels","House","models");
+_house = _HouseModelNames call life_fnc_getLookAt;
 
-if (count _houses > 0) then {
-	_house = _houses select 0;
+if (!isNull _house) then{
 	if(([_unit,_house] call life_fnc_PlayerInBuilding) && {!dialog}) then {
 		if(!(_house in life_vehicles) OR isNil {_house GVAR "house_owner"}) then {
 			deleteVehicle _container;
