@@ -3379,12 +3379,12 @@
       <Polish>Potrzebujesz $1000 aby serwisować helikopter</Polish>
     </Key>
     <Key ID="STR_Service_Chopper_Servicing">
-      <Original>Servicing Chopper</Original>
-      <German>Helikopter wird gewartet</German>
-      <French>Entretien</French>
-      <Italian>Manutenendo Elicottero</Italian>
-      <Portuguese>Reparando aeronave</Portuguese>
-      <Polish>Serwisuję helikopter</Polish>
+      <Original>Servicing Chopper [%1]...</Original>
+      <German>Helikopter wird gewartet [%1]...</German>
+      <French>Entretien [%1]...</French>
+      <Italian>Manutenendo Elicottero [%1]...</Italian>
+      <Portuguese>Reparando aeronave [%1]...</Portuguese>
+      <Polish>Serwisuję helikopter [%1]...</Polish>
     </Key>
     <Key ID="STR_Service_Chopper_Missing">
       <Original>The vehicle is no longer alive or on the helipad!</Original>
