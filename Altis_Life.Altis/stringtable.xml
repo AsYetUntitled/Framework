@@ -2146,6 +2146,14 @@
       <Portuguese>O veículo foi revistado e tem R$%1 em drogas ou contrabandos</Portuguese>
       <Polish>Podczas przeszukania znalezono narkotyki/kontrabandę o wartości $%1</Polish>
     </Key>
+    <Key ID="STR_NOTF_ContainerContraband">
+      <Original>A container of house was searched and has $%1 worth of drugs / contraband.</Original>
+      <German>Ein Fahrzeug wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
+      <French>Un container de maison venant d'être fouillé avait $%1 de drogue / contrebande.</French>
+      <Italian>Un veidolo è stato ispezionato e sono stati sequestrati €%1 in materiale illegale.</Italian>
+      <Portuguese>O veículo foi revistado e tem R$%1 em drogas ou contrabandos</Portuguese>
+      <Polish>Podczas przeszukania znalezono narkotyki/kontrabandę o wartości $%1</Polish>
+    </Key>
     <Key ID="STR_NOTF_PulledOut">
       <Original>You have been pulled out of the vehicle</Original>
       <German>Du wurdest aus dem Fahrzeug gezogen</German>
@@ -2760,6 +2768,10 @@
       <Portuguese>Nada ilegal dentro do veículo</Portuguese>
       <Polish>Nie znaleziono niczego nielegalnego w pojeździe</Polish>
     </Key>
+    <Key ID="STR_Cop_NoIllegalCOntainer">
+      <Original>Nothing illegal in this coontainer</Original>
+      <French>Rien d'illégal dans ce container</French>
+    </Key>
     <Key ID="STR_Cop_VehEmpty">
       <Original>This vehicle is empty</Original>
       <German>Dieses Fahrzeug ist leer</German>
@@ -2767,6 +2779,10 @@
       <Italian>Questo veicolo è vuoto</Italian>
       <Portuguese>Esse veículo está vazio</Portuguese>
       <Polish>Pojazd jest pusty</Polish>
+    </Key>
+    <Key ID="STR_Cop_ContainerEmpty">
+      <Original>This container is empty</Original>
+      <French>Ce container est vide</French>
     </Key>
     <Key ID="STR_Cop_RobberDead">
       <Original>$%1 from the Federal Reserve robbery was returned from the robber being killed.</Original>
@@ -4995,6 +5011,10 @@
       <Italian>Cerca Veicolo</Italian>
       <Portuguese>Vasculhar Veículo</Portuguese>
       <Polish>Przeszukaj pojazd</Polish>
+    </Key>
+    <Key ID="STR_vInAct_SearchContainer">
+      <Original>Search Container</Original>
+      <French>Fouiller Container</French>
     </Key>
     <Key ID="STR_vInAct_PullOut">
       <Original>Pullout Players</Original>
