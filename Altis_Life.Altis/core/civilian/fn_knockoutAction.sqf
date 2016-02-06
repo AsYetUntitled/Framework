@@ -2,7 +2,7 @@
 /*
 	File: fn_knockoutAction.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Knocks out the target.
 */
@@ -13,6 +13,7 @@ _target = param [0,ObjNull,[ObjNull]];
 if(isNull _target) exitWith {};
 if(!isPlayer _target) exitWith {};
 if(player distance _target > 4) exitWith {};
+if(_target GVAR ["playerKnocked",false]) exitWith {};
 life_knockout = true;
 [player,"AwopPercMstpSgthWrflDnon_End2"] remoteExecCall ["life_fnc_animSync",RCLIENT];
 sleep 0.08;

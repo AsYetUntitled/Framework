@@ -2,7 +2,7 @@
 /*
 	File: fn_knockedOut.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Starts and monitors the knocked out state.
 */
@@ -22,9 +22,11 @@ player playMoveNow "Incapacitated";
 _obj = "Land_ClutterCutter_small_F" createVehicle ASLTOATL(visiblePositionASL player);
 _obj setPosATL ASLTOATL(visiblePositionASL player);
 
+player SVAR ["playerKnocked",true,true];
 player attachTo [_obj,[0,0,0]];
 sleep 15;
 player playMoveNow "amovppnemstpsraswrfldnon";
 detach player;
 deleteVehicle _obj;
+player SVAR ["playerKnocked",false,true];
 player SVAR ["robbed",FALSE,TRUE];
