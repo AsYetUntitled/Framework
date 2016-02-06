@@ -1,0 +1,5 @@
+//new
+1 "" !Land_Razorwire_F !Land_Money_F !Land_Suitcase_F !Land_CanisterFuel_F !Land_Can_V3_F !Land_BottlePlastic_V1_F !Land_TacticalBacon_F !Box_IND_Grenades_F !B_supplyCrate_F
+//4 "" !Land_Razorwire_F !Land_Money_F !Land_Suitcase_F !Land_CanisterFuel_F !Land_Can_V3_F !Land_BottlePlastic_V1_F !Land_TacticalBacon_F !Box_IND_Grenades_F !B_supplyCrate_F
+//Issue: impounding vehicle causes deleteVehicle kick but no information on classname. Example log:
+//06.02.2016 19:14:02: playerName (10.0.0.7:2304) 12345678901234567890123456789012 - #0 4:9 
