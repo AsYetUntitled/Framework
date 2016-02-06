@@ -1,0 +1,4 @@
+//new
+5 ""
+//1 "" !="life_HC_isActive" !="HC_UID"
+//7 "" !="life_fnc_MP_packet" !="BIS_fnc_MP_packet" !="JipTimeNow" !="life_HC_isActive" !="HC_UID" !="life_gang_list" !="bank_addfunds"

@@ -1,0 +1,3 @@
+//new
+1 ""
+4 "" !B_AssaultPack_ !B_TacticalPack_ !B_Kitbag_ !B_Bergen_ !B_FieldPack_ !B_Carryall_ !B_OutdoorPack_ !_Parachute
