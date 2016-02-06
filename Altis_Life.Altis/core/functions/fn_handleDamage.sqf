@@ -24,9 +24,11 @@ if(!isNull _source) then {
 				_damage = false;
 				if(_unit distance _source < _distance) then {
 					if(!life_istazed && !life_isknocked && !(_unit GVAR ["restrained",false])) then {
-					if (vehicle player != player && typeOf (vehicle player) == "B_Quadbike_01_F") then {
-							player action ["Eject",vehicle player];
-							[_unit,_source] spawn life_fnc_tazed;
+						if (vehicle player != player) then {
+							if (typeOf (vehicle player) == "B_Quadbike_01_F") then {
+								player action ["Eject",vehicle player];
+								[_unit,_source] spawn life_fnc_tazed;
+							};
 						} else {
 							[_unit,_source] spawn life_fnc_tazed;
 						};
