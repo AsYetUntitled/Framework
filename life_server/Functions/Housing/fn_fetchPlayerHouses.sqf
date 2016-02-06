@@ -1,8 +1,11 @@
 /*
+	File : fn_fetchPlayerHouses.sqf
 	Author: Bryan "Tonic" Boardwine
+	Modified : NiiRoZz
 
 	Description:
-	Fetches all the players houses and sets them up.
+	1. Fetches all the players houses and sets them up.
+	2. Fetches all the players containers and sets them up.
 */
 private["_query","_houses"];
 if(_this == "") exitWith {};

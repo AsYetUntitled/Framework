@@ -1,11 +1,12 @@
 #include "..\..\script_macros.hpp"
 /*
+	File : deleteContainer.sqf
 	Author: NiiRoZz
 
 	Description:
-	Delete Container
+	Delete Container from house storage
 */
-private["_house","_action","_houseCfg"];
+private["_house","_action","_container","_containers"];
 _container = param [0,ObjNull,[ObjNull]];
 _house = nearestBuilding (getPosATL player);
 if(!(_house in life_vehicles)) exitWith {hint localize "STR_ISTR_Box_NotinHouse"};

@@ -1,9 +1,9 @@
-#include "..\..\script_macros.hpp"
 /*
-	Author: Bryan "Tonic" Boardwine
+	File : containerMenu.sqf
+	Author: NiiRoZz
 
 	Description:
-	Building interaction menu
+	Container interaction menu
 */
 #define Btn1 37450
 #define Btn2 37451
@@ -15,7 +15,7 @@
 #define Btn8 37457
 #define Title 37401
 
-private["_display","_container","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
+private["_container","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
 disableSerialization;
 _container = param [0,ObjNull,[ObjNull]];
 if(isNull _container) exitWith {}; //Bad target

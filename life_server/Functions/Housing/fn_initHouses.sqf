@@ -4,7 +4,7 @@
 	Description:
 	WHAT THE HELL DO YOU THINK IT DOES?!?!!??!?!!?!??!
 */
-private["_queryResult","_query","_count","_count2","_container"];
+private["_queryResult","_query","_count",];
 
 _count = (["SELECT COUNT(*) FROM houses WHERE owned='1'",2] call DB_fnc_asyncCall) select 0;
 

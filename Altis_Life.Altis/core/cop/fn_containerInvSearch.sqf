@@ -1,10 +1,11 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_vehInvSearch.sqf
-	Author: Bryan "Tonic" Boardwine
+	File: fn_containerInvSearch.sqf
+	Author: NiiRoZz
+	Inspired : Bryan "Tonic" Boardwine
 
 	Description:
-	Searches the vehicle for illegal items.
+	Searches the container for illegal items.
 */
 private["_container","_containerInfo","_value"];
 _container = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;

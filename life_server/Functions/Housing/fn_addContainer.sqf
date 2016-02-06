@@ -1,10 +1,11 @@
 /*
-	Author: Bryan "Tonic" Boardwine
+	File : fn_addContainer
+	Author: NiiRoZz
 
 	Description:
-	Blah
+	Add container in Database
 */
-private["_containerPos","_query"];
+private["_containerPos","_query","_className","_dir"];
 params [
 	["_uid","",[""]],
 	["_container",objNull,[objNull]]

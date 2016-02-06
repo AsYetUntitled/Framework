@@ -1,12 +1,11 @@
-#include "..\..\script_macros.hpp"
 /*
+	File : fn_storageBoxBig.sqf
 	Author: NiiRoZz
 
 	Description:
-	Tries to place a storage box in position selected.
+	Create Storage and attachto player;
 */
-private["_boxType","_container"];
-_boxType = SEL(_this,0);
+private["_object","_attachPos"];
 life_container_active = true;
 _object = "B_supplyCrate_F" createVehicle (position player);
 life_container_activeObj = _object;

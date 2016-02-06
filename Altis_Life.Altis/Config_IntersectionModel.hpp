@@ -1,3 +1,7 @@
+/*
+    All config with .p3d per objects
+		Use with lineIntersectsWith function
+*/
 class CfgInteractionModels {
 	class Crate {
 		name = "Crate";

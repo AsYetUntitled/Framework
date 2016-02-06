@@ -3,9 +3,9 @@
 	Author: NiiRoZz
 
 	Description:
-	Place container inside house
+	Check container if are in house and if house are owner of player and if all this conditions are true add container in database
 */
-private["_container","_house","_type","_number","_house","_uid"];
+private["_container","_number","_type","_unit","_HouseModelNames","_house","_containers","_houseCfg"];
 _container = param [0,ObjNull,[ObjNull]];
 _number = 1;
 _uid = steamid;

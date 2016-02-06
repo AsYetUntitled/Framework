@@ -1,7 +1,19 @@
 /*
-	Author : NiiRoZz
+	File : fn_getLookAt.sqf
+	Author: NiiRoZz
+	Description:
+	Check if object are in function lineIntersectsWith
 
-	Description : Check if the model looking at are the p3d defined before call script
+	Parameter(s):
+	0: OBJECT - Object.p3d
+
+	Returns:
+	OBJECT - Return the object
+
+	Example
+	//--- Find if unit look at crate
+	_CrateModelNames = M_CONFIG(getArray,"CfgInteractionModels","Crate","models");
+	_crate = _CrateModelNames call life_fnc_getLookAt;
 */
 
 private["_modelNames","_foundObject","_objects","_object","_objectClassName"];

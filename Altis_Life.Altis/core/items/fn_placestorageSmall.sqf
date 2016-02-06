@@ -1,4 +1,12 @@
-disableSerialization;
+/*
+	File : fn_placestorageSmall.sqf
+	Author: NiiRoZz
+
+	Description:
+	PLace container were player select with preview
+
+*/
+private["_container"];
 if (!life_container_active) exitWith {};
 if (life_container_activeObj == ObjNull) exitWith {};
 _container = life_container_activeObj;

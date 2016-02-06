@@ -1,8 +1,9 @@
 /*
-	Author: Bryan "Tonic" Boardwine
+	File : fn_sellHouseContainer.sqf
+	Author: NiiRoZz
 
 	Description:
-	Used in selling the house, sets the owned to 0 and will cleanup with a
+	Used in selling the house, container sets the owned to 0 and will cleanup with a
 	stored procedure on restart.
 */
 private["_house","_houseID","_ownerID","_housePos","_query","_radius","_containers"];

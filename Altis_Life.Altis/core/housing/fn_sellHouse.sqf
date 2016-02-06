@@ -1,9 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
+	Modified : NiiRoZz
 
 	Description:
-	Sells the house?
+	Sells the house and delete all container near house.
 */
 private["_house","_uid","_action","_houseCfg"];
 _house = param [0,ObjNull,[ObjNull]];
@@ -48,7 +49,7 @@ if(_action) then {
 	for "_i" from 1 to _numOfDoors do {
 		_house SVAR [format["bis_disabled_Door_%1",_i],0,true];
 	};
-	_containers = [position player, ["Box_IND_Grenades_F","B_supplyCrate_F"], 9] call life_fnc_nearestObjects;
+	_containers = [getPosATL _house, ["Box_IND_Grenades_F","B_supplyCrate_F"], 9] call life_fnc_nearestObjects;
 	if (count _containers > 0) then {
 		{
 			_x SVAR ["Trunk",nil,true];

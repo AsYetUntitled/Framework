@@ -44,11 +44,11 @@ switch (true) do {
 	};
 
 	case (EQUAL(_item,"storagesmall")): {
-		[_item] call life_fnc_storageBoxSmall;
+		[] call life_fnc_storageBoxSmall;
 	};
 
 	case (EQUAL(_item,"storagebig")): {
-		[_item] call life_fnc_storageBoxBig;
+		[] call life_fnc_storageBoxBig;
 	};
 
 	case (EQUAL(_item,"spikeStrip")): {
