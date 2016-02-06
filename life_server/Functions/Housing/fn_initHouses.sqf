@@ -26,23 +26,3 @@ for [{_x=0},{_x<=_count},{_x=_x+10}] do {
 		};
 	} foreach _queryResult;
 };
-
-_count2 = (["SELECT COUNT(*) FROM containers WHERE owned='1'",2] call DB_fnc_asyncCall) select 0;
-
-for [{_x=0},{_x<=_count2},{_x=_x+10}] do {
-
-	_query = format["SELECT containers.id, containers.pid, containers.pos FROM containers INNER JOIN players ON containers.pid=players.playerid WHERE containers.owned='1' LIMIT %1,10",_x];
-	_queryResult = [_query,2,true] call DB_fnc_asyncCall;
-	if(count _queryResult == 0) exitWith {};
-	{
-		_pos = call compile format["%1",_x select 2];
-		_id = _x select 0;
-		_owner = _x select 1;
-		sleep 3;
-		_containers = [_pos, ["Box_IND_Grenades_F","B_supplyCrate_F"], 7] call life_fnc_nearestObjects;
-		{
-			_x setVariable["container_owner",[_owner],true];
-			_x setVariable["container_id",_id,true];
-		} foreach _containers;
-	} foreach _queryResult;
-};

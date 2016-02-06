@@ -7,7 +7,7 @@
 private["_query","_houses"];
 if(_this == "") exitWith {};
 
-	_query = format["SELECT pid, pos, classname, inventory, gear, dir FROM containers WHERE pid='%1' AND owned='1'",_this];
+	_query = format["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_this];
 
 	_containers = [_query,2,true] call DB_fnc_asyncCall;
 	if(count _containers == 0) exitWith {};
@@ -17,6 +17,8 @@ if(_this == "") exitWith {};
 		_position = call compile format["%1",_x select 1];
 		_house = nearestBuilding _position;
 		_direction = call compile format["%1",_x select 5];
+		_owner = _x select 0;
+		_id = _x select 6;
 		_trunk = [_x select 3] call DB_fnc_mresToArray;
 		if(typeName _trunk == "STRING") then {_trunk = call compile format["%1", _trunk];};
 		_gear = [_x select 4] call DB_fnc_mresToArray;
@@ -39,6 +41,8 @@ if(_this == "") exitWith {};
 		_container setPosATL [(_posX - _fixX), (_posY - _fixY), (_posZ - _fixZ)];
 		_container setVectorDirAndUp _direction;
 		_container setVariable["Trunk",_trunk,true];
+		_container setVariable["container_owner",[_owner],true];
+		_container setVariable["container_id",_id,true];
 		clearWeaponCargoGlobal _container;
 		clearItemCargoGlobal _container;
 		clearMagazineCargoGlobal _container;

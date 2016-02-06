@@ -114,7 +114,7 @@ class CfgFunctions {
 			class updateHouseContainers {};
 			class updateHouseTrunk {};
 			class houseCleanup {};
-			class deleteContainer {};
+			class deleteDBContainer {};
 		};
 
 		class Gangs {
