@@ -2,7 +2,7 @@
 /*
 	File: fn_onPlayerRespawn.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Does something but I won't know till I write it...
 */
@@ -16,9 +16,11 @@ _containers = nearestObjects[getPosATL _corpse,["WeaponHolderSimulated"],5]; //F
 {deleteVehicle _x;} foreach _containers; //Delete the containers.
 
 //Set some vars on our new body.
-_unit SVAR ["restrained",FALSE,TRUE];
-_unit SVAR ["Escorting",FALSE,TRUE];
-_unit SVAR ["transporting",FALSE,TRUE]; //Again why the fuck am I setting this? Can anyone tell me?
+_unit SVAR ["restrained",false,true];
+_unit SVAR ["Escorting",false,true];
+_unit SVAR ["transporting",false,true]; //Again why the fuck am I setting this? Can anyone tell me?
+_unit SVAR ["playerSurrender",false,true];
+_unit SVAR ["playerKnocked",false,true];
 _unit SVAR ["steam64id",steamid,true]; //Reset the UID.
 _unit SVAR ["realname",profileName,true]; //Reset the players name.
 
