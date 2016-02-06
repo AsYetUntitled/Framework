@@ -28,8 +28,8 @@ _value = 0;
 if(_value > 0) then {
 	[0,"STR_NOTF_ContainerContraband",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 	ADD(BANK,_value);
-	_vehicle SVAR ["Trunk",[[],0],true];
-	[_vehicle] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
+	_container SVAR ["Trunk",[[],0],true];
+	[_container] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
 } else {
 	hint localize "STR_Cop_NoIllegalCOntainer";
 };
