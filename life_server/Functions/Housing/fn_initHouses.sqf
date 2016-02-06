@@ -1,10 +1,11 @@
 /*
+	File: fn_initHouses.sqf
 	Author: Bryan "Tonic" Boardwine
 
 	Description:
-	WHAT THE HELL DO YOU THINK IT DOES?!?!!??!?!!?!??!
+	Initalizes house setup when player joins the server.
 */
-private["_queryResult","_query","_count",];
+private["_queryResult","_query","_count"];
 
 _count = (["SELECT COUNT(*) FROM houses WHERE owned='1'",2] call DB_fnc_asyncCall) select 0;
 
