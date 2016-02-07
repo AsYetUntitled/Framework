@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
 	File : containerMenu.sqf
 	Author: NiiRoZz
