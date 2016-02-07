@@ -50,6 +50,11 @@ while {player GVAR  "restrained"} do {
 		detach _player;
 	};
 
+	if(isNull _cop) exitWith {
+		player SVAR ["Escorting",false,true];
+		detach player;
+	};
+
 	if(!alive _cop) then {
 		player SVAR ["Escorting",false,true];
 		detach player;
