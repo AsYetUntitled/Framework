@@ -195,9 +195,10 @@
       <Portuguese>Vender</Portuguese>
       <Polish>Sprzedaj</Polish>
     </Key>
-    <Key ID="STR_Global_Delete">
-      <Original>Delete</Original>
+    <Key ID="STR_Global_Remove">
+      <Original>Remove</Original>
       <French>Supprimer</French>
+      <Portuguese>Remover</Portuguese>
     </Key>
     <Key ID="STR_Global_Buy">
       <Original>Buy</Original>
@@ -3357,8 +3358,9 @@
       <Polish>Jesteś pewny że chcesz sprzedać dom za &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</Polish>
     </Key>
     <Key ID="STR_House_DeleteContainerMSG">
-      <Original>Are you sure you want to delete container? </Original>
+      <Original>Are you sure you want to remove it?</Original>
       <French>Etes-vous sûr de vouloir delete le container?</French>
+      <Portuguese>Você tem certeza que quer remover isso?</Portuguese>
     </Key>
   </Package>
   <Package name="Vehicle_Service">
@@ -4876,13 +4878,10 @@
       <Portuguese>Vender Garagem</Portuguese>
       <Polish>Sprzedaj garaż</Polish>
     </Key>
-    <Key ID="STR_pInAct_DeleteContainer">
-      <Original>Delete Container</Original>
-      <German>Garage verkaufen</German>
+    <Key ID="STR_pInAct_RemoveContainer">
+      <Original>Remove Container</Original>
       <French>Supprimer le container</French>
-      <Italian>Vendi Garage</Italian>
-      <Portuguese>Vender Garagem</Portuguese>
-      <Polish>Sprzedaj garaż</Polish>
+      <Portuguese>Remover Caixa</Portuguese>
     </Key>
     <Key ID="STR_pInAct_AccessGarage">
       <Original>Garage</Original>

@@ -100,6 +100,7 @@ class Life_Client_Core
 		class captureHideout {};
 		class gather {};
 		class gutAnimal {};
+		class removeContainer {};
 	};
 
 	class Housing
@@ -120,7 +121,6 @@ class Life_Client_Core
 		class garageRefund {};
 		class placeContainer {};
 		class PlayerInBuilding {};
-		class deleteContainer {};
 		class containerMenu {};
 	};
 
