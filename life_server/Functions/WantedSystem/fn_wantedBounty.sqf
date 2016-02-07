@@ -16,7 +16,6 @@ _half = [_this,3,false,[false]] call BIS_fnc_param;
 if(isNull _civ OR isNull _cop) exitWith {};
 
 _query = format["SELECT wantedID, wantedName, wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_uid];
-waitUntil{!DB_Async_Active};
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 if(count _queryResult != 0) then

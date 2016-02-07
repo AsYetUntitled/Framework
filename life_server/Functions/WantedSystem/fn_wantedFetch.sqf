@@ -33,7 +33,6 @@ if(count _units == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];
 
 _query = format["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement];
 diag_log format["Query: %1",_query];
-waitUntil{!DB_Async_Active};
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 {

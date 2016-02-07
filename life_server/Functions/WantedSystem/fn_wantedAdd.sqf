@@ -39,11 +39,11 @@ switch(_type) do
 	case "668": {_type = ["668",1500]};
 
 	case "1": {_type = ["1",250]};
-    case "2": {_type = ["2",100]};
-    case "3": {_type = ["3",75]};
-    case "4": {_type = ["4",125]};
-    case "5": {_type = ["5",50]};
-    case "6": {_type = ["6",40]};
+	case "2": {_type = ["2",100]};
+	case "3": {_type = ["3",75]};
+	case "4": {_type = ["4",125]};
+	case "5": {_type = ["5",50]};
+	case "6": {_type = ["6",40]};
 	case "7": {_type = ["7",75]};
 	case "8": {_type = ["8",2500]};
 	case "9": {_type = ["9",2500]};
@@ -72,7 +72,6 @@ if(_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
 _query = format["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
-waitUntil{!DB_Async_Active};
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 _val = [(_type select 1)] call DB_fnc_numberSafe;
 _number = _type select 0;
@@ -80,7 +79,6 @@ _number = _type select 0;
 if(count _queryResult != 0) then
 {
 	_crime = format["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
-	waitUntil{!DB_Async_Active};
 	_crimeresult = [_crime,2] call DB_fnc_asyncCall;
 	_pastcrimess = [_crimeresult select 0] call DB_fnc_mresToArray;
 	if(typeName _pastcrimess == "STRING") then {_pastcrimess = call compile format["%1", _pastcrimess];};
@@ -88,12 +86,10 @@ if(count _queryResult != 0) then
 	_pastCrimes pushBack _number;
 	_pastCrimes = [_pastCrimes] call DB_fnc_mresArray;
 	_query = format["UPDATE wanted SET wantedCrimes = '%1', wantedBounty = wantedBounty + '%2', active = '1' WHERE wantedID='%3'",_pastCrimes,_val,_uid];
-	waitUntil{!DB_Async_Active};
 	[_query,1] call DB_fnc_asyncCall;
 } else {
 	_crimes = [_type select 0];
 	_crimes = [_crimes] call DB_fnc_mresArray;
 	_query = format["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crimes,_val];
-	waitUntil{!DB_Async_Active};
 	[_query,1] call DB_fnc_asyncCall;
 };

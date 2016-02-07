@@ -14,7 +14,6 @@ if(isNull _unit) exitWith {[]};
 _uid = getPlayerUID player;
 
 _query = format["SELECT wantedID, wantedName, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_uid];
-waitUntil{!DB_Async_Active};
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 if(count _queryResult == 0) exitWith {[]};
 _queryResult;
