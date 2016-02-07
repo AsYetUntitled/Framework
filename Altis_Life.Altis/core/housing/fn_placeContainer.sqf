@@ -5,21 +5,19 @@
 	Description:
 	Check container if are in house and if house are owner of player and if all this conditions are true add container in database
 */
-private["_container","_number","_type","_unit","_HouseModelNames","_house","_containers","_houseCfg"];
+private["_container","_number","_type","_unit","_house","_containers","_houseCfg"];
 _container = param [0,ObjNull,[ObjNull]];
 _number = 1;
 _uid = steamid;
 _unit = player;
+_house = cursorTarget;
 switch(true) do {
 	case ((typeOf _container) == "B_supplyCrate_F"): {_type = "storagebig"};
 	case ((typeOf _container) == "Box_IND_Grenades_F") : {_type = "storagesmall"};
 	default {_type = ""};
 };
 
-_HouseModelNames = M_CONFIG(getArray,"CfgInteractionModels","House","models");
-_house = _HouseModelNames call life_fnc_getLookAt;
-
-if (!isNull _house) then{
+if (!isNull _house && _house isKindOf "House_F" && {player distance _curTarget < 12}) then{
 	if(([_unit,_house] call life_fnc_PlayerInBuilding) && {!dialog}) then {
 		if(!(_house in life_vehicles) OR isNil {_house GVAR "house_owner"}) then {
 			deleteVehicle _container;
