@@ -76,9 +76,24 @@ class Life_Settings {
     delivery_points[] = { "dp_1", "dp_2", "dp_3", "dp_4", "dp_5", "dp_6", "dp_7", "dp_8", "dp_9", "dp_10", "dp_11", "dp_12", "dp_13", "dp_14", "dp_15", "dp_15", "dp_16", "dp_17", "dp_18", "dp_19", "dp_20", "dp_21", "dp_22", "dp_23", "dp_24", "dp_25" };
 };
 
+/*
+    All config with .p3d per objects
+		Use with lineIntersectsWith function
+*/
+class CfgInteractionModels {
+	class Crate {
+		name = "Crate";
+		models[] = {"supplydrop.p3d","ammobox_f.p3d"};
+	};
+	class House {
+		name = "Houses";
+		models[] = {"i_house_"};
+	};
+};
+
+
 #include "Config_Clothing.hpp"
 #include "Config_Licenses.hpp"
 #include "Config_Vehicles.hpp"
 #include "Config_vItems.hpp"
 #include "Config_Weapons.hpp"
-#include "Config_IntersectionModel.hpp"
