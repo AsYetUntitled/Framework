@@ -32,8 +32,10 @@ if(count _units == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];
 } forEach _units;
 
 _query = format["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement];
-diag_log format["Query: %1",_query];
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
+if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+	diag_log format["Query: %1",_query];
+};
 
 {
 	_list pushBack (_x);
