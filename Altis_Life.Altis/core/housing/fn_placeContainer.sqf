@@ -17,7 +17,7 @@ switch(true) do {
 	default {_type = ""};
 };
 
-if (!isNull _house && _house isKindOf "House_F" && {player distance _curTarget < 12}) then{
+if (!isNull _house && _house isKindOf "House_F" && {player distance _house < 12}) then{
 	if(([_unit,_house] call life_fnc_PlayerInBuilding) && {!dialog}) then {
 		if(!(_house in life_vehicles) OR isNil {_house GVAR "house_owner"}) then {
 			deleteVehicle _container;
