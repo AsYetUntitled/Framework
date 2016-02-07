@@ -279,6 +279,7 @@ class Life_Client_Core
 		class copLoadout {};
 		class ticketPaid {};
 		class containerInvSearch {};
+		class wantedGrab {};
 	};
 
 	class Gangs

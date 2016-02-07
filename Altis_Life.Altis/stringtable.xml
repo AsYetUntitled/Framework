@@ -6249,4 +6249,253 @@
       <Polish>Zapłać kaucję</Polish>
     </Key>
   </Package>
+  <Package name="Crimes">
+		<Key ID="STR_Crime_187V">
+			<Original>Vehicular Manslaughter</Original>
+			<German>Vehicular Manslaughter</German>
+			<French>Vehicular Manslaughter</French>
+			<Italian>Vehicular Manslaughter</Italian>
+			<Portuguese>Vehicular Manslaughter</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_187">
+			<Original>Manslaughter</Original>
+			<German>Manslaughter</German>
+			<French>Manslaughter</French>
+			<Italian>Manslaughter</Italian>
+			<Portuguese>Manslaughter</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_901">
+			<Original>Escaping Jail</Original>
+			<German>Escaping Jail</German>
+			<French>Escaping Jail</French>
+			<Italian>Escaping Jail</Italian>
+			<Portuguese>Escaping Jail</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_215">
+			<Original>Attempted Auto Theft</Original>
+			<German>Attempted Auto Theft</German>
+			<French>Attempted Auto Theft</French>
+			<Italian>Attempted Auto Theft</Italian>
+			<Portuguese>Attempted Auto Theft</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_213">
+			<Original>Use of illegal explosives</Original>
+			<German>Use of illegal explosives</German>
+			<French>Use of illegal explosives</French>
+			<Italian>Use of illegal explosives</Italian>
+			<Portuguese>Use of illegal explosives</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_211">
+			<Original>Robbery</Original>
+			<German>Robbery</German>
+			<French>Robbery</French>
+			<Italian>Robbery</Italian>
+			<Portuguese>Robbery</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_207">
+			<Original>Kidnapping</Original>
+			<German>Kidnapping</German>
+			<French>Kidnapping</French>
+			<Italian>Kidnapping</Italian>
+			<Portuguese>Kidnapping</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_207A">
+			<Original>Attempted Kidnapping</Original>
+			<German>Attempted Kidnapping</German>
+			<French>Attempted Kidnapping</French>
+			<Italian>Attempted Kidnapping</Italian>
+			<Portuguese>Attempted Kidnapping</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_390">
+			<Original>Public Intoxication</Original>
+			<German>Public Intoxication</German>
+			<French>Public Intoxication</French>
+			<Italian>Public Intoxication</Italian>
+			<Portuguese>Public Intoxication</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_487">
+			<Original>Grand Theft</Original>
+			<German>Grand Theft</German>
+			<French>Grand Theft</French>
+			<Italian>Grand Theft</Italian>
+			<Portuguese>Grand Theft</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_488">
+			<Original>Petty Theft</Original>
+			<German>Petty Theft</German>
+			<French>Petty Theft</French>
+			<Italian>Petty Theft</Italian>
+			<Portuguese>Petty Theft</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_480">
+			<Original>Hit and run</Original>
+			<German>Hit and run</German>
+			<French>Hit and run</French>
+			<Italian>Hit and run</Italian>
+			<Portuguese>Hit and run</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_481">
+			<Original>Drug Possession</Original>
+			<German>Drug Possession</German>
+			<French>Drug Possession</French>
+			<Italian>Drug Possession</Italian>
+			<Portuguese>Drug Possession</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_482">
+			<Original>Intent to distribute</Original>
+			<German>Intent to distribute</German>
+			<French>Intent to distribute</French>
+			<Italian>Intent to distribute</Italian>
+			<Portuguese>Intent to distribute</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_483">
+			<Original>Drug Trafficking</Original>
+			<German>Drug Trafficking</German>
+			<French>Drug Trafficking</French>
+			<Italian>Drug Trafficking</Italian>
+			<Portuguese>Drug Trafficking</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_459">
+			<Original>Burglary</Original>
+			<German>Burglary</German>
+			<French>Burglary</French>
+			<Italian>Burglary</Italian>
+			<Portuguese>Burglary</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_666">
+			<Original>Tax Evasion</Original>
+			<German>Tax Evasion</German>
+			<French>Tax Evasion</French>
+			<Italian>Tax Evasion</Italian>
+			<Portuguese>Tax Evasion</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_667">
+			<Original>Terrorism</Original>
+			<German>Terrorism</German>
+			<French>Terrorism</French>
+			<Italian>Terrorism</Italian>
+			<Portuguese>Terrorism</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_668">
+			<Original>Unlicensed Hunting</Original>
+			<German>Unlicensed Hunting</German>
+			<French>Unlicensed Hunting</French>
+			<Italian>Unlicensed Hunting</Italian>
+			<Portuguese>Unlicensed Hunting</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_919">
+			<Original>Organ Theft</Original>
+			<German>Organ Theft</German>
+			<French>Organ Theft</French>
+			<Italian>Organ Theft</Italian>
+			<Portuguese>Organ Theft</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_919A">
+			<Original>Attempted Organ Theft</Original>
+			<German>Attempted Organ Theft</German>
+			<French>Attempted Organ Theft</French>
+			<Italian>Attempted Organ Theft</Italian>
+			<Portuguese>Attempted Organ Theft</Portuguese>
+		</Key>
+		<Key ID="STR_Crime_1">
+			<Original>Absence du permis de conduire</Original>
+			<French>Absence du permis de conduire</French>
+		</Key>
+		<Key ID="STR_Crime_2">
+			<Original>Conduite sur le mauvais côté de la route</Original>
+			<French>Conduite sur le mauvais côté de la route</French>
+		</Key>
+		<Key ID="STR_Crime_3">
+			<Original>Non respect des signalisations</Original>
+			<French>Non respect des signalisations</French>
+		</Key>
+		<Key ID="STR_Crime_4">
+			<Original>Excès de vitesse</Original>
+			<French>Excès de vitesse</French>
+		</Key>
+		<Key ID="STR_Crime_5">
+			<Original>Absence de phare la nuit</Original>
+			<French>Absence de phare la nuit</French>
+		</Key>
+		<Key ID="STR_Crime_6">
+			<Original>Non-port du casque en Kart</Original>
+			<French>Non-port du casque en Kart</French>
+		</Key>
+		<Key ID="STR_Crime_7">
+			<Original>Véhicule mal garé</Original>
+			<French>Véhicule mal garé</French>
+		</Key>
+		<Key ID="STR_Crime_8">
+			<Original>Véhicule rebel non armé</Original>
+			<French>Véhicule rebel non armé</French>
+		</Key>
+		<Key ID="STR_Crime_9">
+			<Original>Vol de véhicule civil</Original>
+			<French>Vol de véhicule civil</French>
+		</Key>
+		<Key ID="STR_Crime_10">
+			<Original>Vol de véhicule militaire</Original>
+			<French>Vol de véhicule militaire</French>
+		</Key>
+		<Key ID="STR_Crime_11">
+			<Original>Véhicules blindés</Original>
+			<French>Véhicules blindés</French>
+		</Key>
+		<Key ID="STR_Crime_12">
+			<Original>Survol de ville sans autorisation</Original>
+			<French>Survol de ville sans autorisation</French>
+		</Key>
+		<Key ID="STR_Crime_13">
+			<Original>Interdiction de se poser sans autorisation</Original>
+			<French>Interdiction de se poser sans autorisation</French>
+		</Key>
+		<Key ID="STR_Crime_14">
+			<Original>Arme légale visible en ville</Original>
+			<French>Arme légale visible en ville</French>
+		</Key>
+		<Key ID="STR_Crime_15">
+			<Original>Armes rebelles</Original>
+			<French>Armes rebelles</French>
+		</Key>
+		<Key ID="STR_Crime_16">
+			<Original>Vêtements illégaux</Original>
+			<French>Vêtements illégaux</French>
+		</Key>
+		<Key ID="STR_Crime_17">
+			<Original>Cacher son visage</Original>
+			<French>Cacher son visage</French>
+		</Key>
+		<Key ID="STR_Crime_18">
+			<Original>Refus d'obtempérer</Original>
+			<French>Refus d'obtempérer</French>
+		</Key>
+		<Key ID="STR_Crime_19">
+			<Original>Délit de fuite</Original>
+			<French>Délit de fuite</French>
+		</Key>
+		<Key ID="STR_Crime_20">
+			<Original>Insulte envers un civil</Original>
+			<French>Insulte envers un civil</French>
+		</Key>
+		<Key ID="STR_Crime_21">
+			<Original>Insulte envers un militaire</Original>
+			<French>Insulte envers un militaire</French>
+		</Key>
+		<Key ID="STR_Crime_22">
+			<Original>Trafique de drogue</Original>
+			<French>Trafique de drogue</French>
+		</Key>
+		<Key ID="STR_Crime_23">
+			<Original>Intrusion dans le coffre du gouverneur</Original>
+			<French>Intrusion dans le coffre du gouverneur</French>
+		</Key>
+		<Key ID="STR_Crime_24">
+			<Original>Meurtre d'un civil</Original>
+			<French>Meurtre d'un civil</French>
+		</Key>
+		<Key ID="STR_Crime_25">
+			<Original>Meurtre d'un militaire</Original>
+			<French>Meurtre d'un militaire</French>
+		</Key>
+	</Package>
 </Project>
