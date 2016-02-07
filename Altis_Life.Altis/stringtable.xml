@@ -195,11 +195,6 @@
       <Portuguese>Vender</Portuguese>
       <Polish>Sprzedaj</Polish>
     </Key>
-    <Key ID="STR_Global_Remove">
-      <Original>Remove</Original>
-      <French>Supprimer</French>
-      <Portuguese>Remover</Portuguese>
-    </Key>
     <Key ID="STR_Global_Buy">
       <Original>Buy</Original>
       <German>Kaufen</German>

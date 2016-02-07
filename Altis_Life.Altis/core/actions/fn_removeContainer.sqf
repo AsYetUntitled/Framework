@@ -20,6 +20,17 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
+	private ["_box","_diff"];
+	_box = switch (_containerType) do {
+		case ("B_supplyCrate_F"): {"storagebig"};
+		case ("Box_IND_Grenades_F"): {"storagesmall"};
+		default {"None"};
+	};
+	if(_box == "None") exitWith {};
+
+	_diff = [_box,1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+	if(EQUAL(_diff,0)) exitWith {hint localize "STR_NOTF_InvFull"};
+
 	[_container] remoteExecCall ["TON_fnc_deleteDBContainer",RSERV];
 	{
 		if (_x == _container) then {
@@ -29,8 +40,5 @@ if(_action) then {
 	_containers = _containers - [666];
 	_house SVAR ["containers",_containers,true];
 
-	switch (_containerType) do {
-		case ("B_supplyCrate_F"): {[true,"storagebig",1] call life_fnc_handleInv;};
-		case ("Box_IND_Grenades_F"): {[true,"storagesmall",1] call life_fnc_handleInv;};
-	};
+	[true,_box,1] call life_fnc_handleInv;
 };
