@@ -16,6 +16,7 @@ if({side _x == west} count playableUnits < (LIFE_SETTINGS(getNumber,"cops_online
  	hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"cops_online_min"))]
 };
 if(life_fed_break < 2) exitWith {hint localize "STR_ISTR_Blast_Exploit"};
+life_fed_break = 0;
 if(!([false,"blastingcharge",1] call life_fnc_handleInv)) exitWith {}; //Error?
 
 _vault SVAR ["chargeplaced",true,true];
