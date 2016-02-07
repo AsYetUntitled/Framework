@@ -7,6 +7,7 @@
 */
 private["_object","_attachPos"];
 life_container_active = true;
+closeDialog 0;
 _object = "B_supplyCrate_F" createVehicle (position player);
 life_container_activeObj = _object;
 _attachPos = [0, 3, 0.5];

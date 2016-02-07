@@ -7,6 +7,7 @@
 */
 private["_object","_attachPos"];
 life_container_active = true;
+closeDialog 0;
 _object = "Box_IND_Grenades_F" createVehicle (position player);
 life_container_activeObj = _object;
 _attachPos = [0, 3, 0.5];
