@@ -133,6 +133,24 @@ life_fnc_moveIn = compileFinal
 	};
 };
 
+// Eject corpse in vehicle and delete weapon near corpse
+[] spawn {
+	private["_containers"];
+	while {true} do {
+		sleep 3;
+		{
+			if((vehicle _x) != _x) then {
+				UnAssignVehicle _x;
+				_x action ["getOut", vehicle _x];
+				_x setPosATL [(getPosATL _x select 0) + 3, (getPosATL _x select 1) + 1, 0];
+				waitUntil{(vehicle _x) == _x};
+				_containers = nearestObjects[getPosATL _x,["WeaponHolderSimulated"],5]; //Fetch list of containers (Simulated = weapons)
+				{deleteVehicle _x;} foreach _containers; //Delete the containers.
+			};
+		} forEach allDeadMen;
+	};
+};
+
 CONSTVAR(life_paycheck); //Make the paycheck static.
 if(EQUAL(LIFE_SETTINGS(getNumber,"enable_fatigue"),0)) then {player enableFatigue false;};
 
