@@ -46,11 +46,9 @@ if(isNull _curTarget) exitWith {
 	};
 };
 
-_CrateModelNames = M_CONFIG(getArray,"CfgInteractionModels","Crate","models");
-_crate = _CrateModelNames call life_fnc_getLookAt;
-if (!isNull _crate) then{
-	if (alive _crate) then {
-		[_crate] call life_fnc_containerMenu;
+if(_curTarget isKindOf "B_supplyCrate_F" OR _curTarget isKindOf "Box_IND_Grenades_F" && {player distance _curTarget < 3} ) exitWith {
+	if (alive _curTarget) then {
+		[_curTarget] call life_fnc_containerMenu;
 	};
 };
 
