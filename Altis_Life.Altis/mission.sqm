@@ -138,6 +138,59 @@ class Mission
 				items=19;
 				class Item0
 				{
+					position[]={8573.1602,96.90229,25159.342};
+					azimut=-2234.1799;
+					offsetY=2;
+					id=18;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_1";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="Public Slot - Cop 1";
+				};
+				class Item1
+				{
+					position[]={8570.8408,97.189484,25172.373};
+					azimut=-794.64697;
+					id=13;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_2";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="Public Slot - Cop 2";
+				};
+				class Item2
+				{
+					position[]={8568.1729,97.752571,25174.455};
+					azimut=-441.37399;
+					id=14;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_3";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="Public Slot - Cop 3";
+				};
+				class Item3
+				{
+					position[]={8571.2402,96.832321,25175.717};
+					azimut=-794.64697;
+					id=15;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_4";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="Public Slot - Cop 4";
+				};
+				class Item4
+				{
 					position[]={8574.7422,96.200081,25165.313};
 					azimut=-794.64697;
 					id=0;
@@ -146,11 +199,11 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="cop_16";
+					text="cop_5";
 					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 16";
+					description="WhiteListed - Cop 5";
 				};
-				class Item1
+				class Item5
 				{
 					position[]={8580.3154,95.022591,25164.871};
 					azimut=-794.64697;
@@ -159,67 +212,15 @@ class Mission
 					vehicle="B_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="cop_17";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 17";
-				};
-				class Item2
-				{
-					position[]={8580.6445,95.015053,25170.504};
-					azimut=-794.64697;
-					id=2;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="cop_18";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Bomb Squad 1";
-				};
-				class Item3
-				{
-					position[]={8577.0205,95.800713,25168.514};
-					azimut=-794.64697;
-					id=3;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="cop_13";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 13";
-				};
-				class Item4
-				{
-					position[]={8569.7197,97.215805,25167.314};
-					azimut=-794.64697;
-					id=4;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
 					text="cop_6";
 					init="removeBackpack this; removeAllWeapons this;";
 					description="WhiteListed - Cop 6";
 				};
-				class Item5
-				{
-					position[]={8571.7861,96.9188,25168.219};
-					azimut=-794.64697;
-					id=5;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="cop_11";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 11";
-				};
 				class Item6
 				{
-					position[]={8572.917,96.732651,25171.113};
+					position[]={8580.6445,95.015053,25170.504};
 					azimut=-794.64697;
-					id=6;
+					id=2;
 					side="WEST";
 					vehicle="B_medic_F";
 					player="PLAY CDG";
@@ -229,6 +230,58 @@ class Mission
 					description="WhiteListed - Cop 7";
 				};
 				class Item7
+				{
+					position[]={8577.0205,95.800713,25168.514};
+					azimut=-794.64697;
+					id=3;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_8";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="WhiteListed - Cop 8";
+				};
+				class Item8
+				{
+					position[]={8569.7197,97.215805,25167.314};
+					azimut=-794.64697;
+					id=4;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_9";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="WhiteListed - Cop 9";
+				};
+				class Item9
+				{
+					position[]={8571.7861,96.9188,25168.219};
+					azimut=-794.64697;
+					id=5;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_10";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="WhiteListed - Cop 10";
+				};
+				class Item10
+				{
+					position[]={8572.917,96.732651,25171.113};
+					azimut=-794.64697;
+					id=6;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="cop_11";
+					init="removeBackpack this; removeAllWeapons this;";
+					description="WhiteListed - Cop 11";
+				};
+				class Item11
 				{
 					position[]={8575.541,96.108635,25170.709};
 					azimut=-794.64697;
@@ -241,7 +294,7 @@ class Mission
 					init="removeBackpack this; removeAllWeapons this;";
 					description="WhiteListed - Cop 12";
 				};
-				class Item8
+				class Item12
 				{
 					position[]={8578.251,95.441055,25172.359};
 					azimut=-794.64697;
@@ -250,11 +303,11 @@ class Mission
 					vehicle="B_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="cop_14";
+					text="cop_13";
 					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 14";
+					description="WhiteListed - Cop 13";
 				};
-				class Item9
+				class Item13
 				{
 					position[]={8585.7949,94.417938,25172.268};
 					azimut=-1143.1801;
@@ -264,11 +317,11 @@ class Mission
 					vehicle="B_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="cop_19";
+					text="cop_14";
 					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Bomb Squad 2";
+					description="WhiteListed - Cop 14";
 				};
-				class Item10
+				class Item14
 				{
 					position[]={8583.6982,95.396889,25176.781};
 					azimut=-794.64697;
@@ -281,7 +334,7 @@ class Mission
 					init="removeBackpack this; removeAllWeapons this;";
 					description="WhiteListed - Cop 15";
 				};
-				class Item11
+				class Item15
 				{
 					position[]={8577.0811,95.935608,25175.602};
 					azimut=-794.64697;
@@ -290,11 +343,11 @@ class Mission
 					vehicle="B_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="cop_9";
+					text="cop_16";
 					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 9";
+					description="WhiteListed - Cop 16";
 				};
-				class Item12
+				class Item16
 				{
 					position[]={8574.8691,96.045128,25173.803};
 					azimut=-794.64697;
@@ -303,50 +356,11 @@ class Mission
 					vehicle="B_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="cop_8";
+					text="cop_17";
 					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 8";
+					description="WhiteListed - Cop 17";
 				};
-				class Item13
-				{
-					position[]={8570.8408,97.189484,25172.373};
-					azimut=-794.64697;
-					id=13;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="cop_4";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="Public Slot - Cop 4";
-				};
-				class Item14
-				{
-					position[]={8568.1729,97.752571,25174.455};
-					azimut=-441.37399;
-					id=14;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="cop_2";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="Public Slot - Cop 2";
-				};
-				class Item15
-				{
-					position[]={8571.2402,96.832321,25175.717};
-					azimut=-794.64697;
-					id=15;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="cop_3";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="Public Slot - Cop 3";
-				};
-				class Item16
+				class Item17
 				{
 					position[]={8573.71,96.23037,25176.873};
 					azimut=-794.64697;
@@ -355,11 +369,11 @@ class Mission
 					vehicle="B_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="cop_5";
+					text="cop_18";
 					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 5";
+					description="WhiteListed - Cop 18";
 				};
-				class Item17
+				class Item18
 				{
 					position[]={8576.6016,96.182182,25177.244};
 					azimut=-794.64697;
@@ -368,23 +382,9 @@ class Mission
 					vehicle="B_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="cop_10";
+					text="cop_19";
 					init="removeBackpack this; removeAllWeapons this;";
-					description="WhiteListed - Cop 10";
-				};
-				class Item18
-				{
-					position[]={8573.1602,96.90229,25159.342};
-					azimut=-2234.1799;
-					offsetY=2;
-					id=18;
-					side="WEST";
-					vehicle="B_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="cop_1";
-					init="removeBackpack this; removeAllWeapons this;";
-					description="Public Slot - Cop 1";
+					description="WhiteListed - Cop 19";
 				};
 			};
 		};
