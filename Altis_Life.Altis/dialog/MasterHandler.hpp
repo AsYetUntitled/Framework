@@ -10,7 +10,7 @@
 #include "bank.hpp"
 #include "veh_shop.hpp"
 #include "shops.hpp"
-#include "ui.hpp"
+#include "hud_stats.hpp"
 #include "admin_menu.hpp"
 #include "cell_phone.hpp"
 #include "wanted_list.hpp"

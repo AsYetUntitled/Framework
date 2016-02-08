@@ -3384,6 +3384,20 @@
       <Portuguese>Você tem certeza que quer remover isso?</Portuguese>
     </Key>
   </Package>
+  <Package name="HUD">
+    <Key ID="STR_HUD_Food">
+      <Original>Food</Original>
+      <Portuguese>Comida</Portuguese>
+    </Key>
+    <Key ID="STR_HUD_Health">
+      <Original>Health</Original>
+      <Portuguese>Vida</Portuguese>
+    </Key>
+    <Key ID="STR_HUD_Water">
+      <Original>Water</Original>
+      <Portuguese>Água</Portuguese>
+    </Key>
+  </Package>
   <Package name="Vehicle_Service">
     <Key ID="STR_Service_Chopper_NoAir">
       <Original>There isn't a chopper on the helipad!</Original>
