@@ -33,13 +33,5 @@ if(_value > 0) then {
 	_container SVAR ["Trunk",[[],0],true];
 	[_container] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
 } else {
-	if (!isNull _container) then {
-		closeDialog 0;
-		sleep 0.01;
-		[_container] call life_fnc_openInventory;
-		hint "Force opened the inventory of the vehicle";
-	} else {
-		hint "Trunk must be jammed..";
-	};
 	hint localize "STR_Cop_NoIllegalCOntainer";
 };

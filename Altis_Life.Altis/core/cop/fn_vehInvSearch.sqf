@@ -32,13 +32,5 @@ if(_value > 0) then {
 	ADD(BANK,_value);
 	_vehicle SVAR ["Trunk",[[],0],true];
 } else {
-	if (!isNull _vehicle) then {
-		closeDialog 0;
-		sleep 0.01;
-		[_vehicle] call life_fnc_openInventory;
-		hint "Force opened the inventory of the vehicle";
-	} else {
-		hint "Trunk must be jammed..";
-	};
 	hint localize "STR_Cop_NoIllegalVeh";
 };
