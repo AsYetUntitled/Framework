@@ -98,6 +98,7 @@ _vehicle lock 2;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
 _vehicle setVariable["Trunk",_trunk,true];
+_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
