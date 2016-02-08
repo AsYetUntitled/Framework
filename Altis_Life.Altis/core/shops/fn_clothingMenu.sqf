@@ -36,6 +36,8 @@ disableSerialization;
 
 (findDisplay 3100) displaySetEventHandler ["KeyDown","if((_this select 1) == 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
 
+sliderSetRange [3107, 0, 360];
+
 //Cop / Civ Pre Check
 if((SEL(_this,3) in ["bruce","dive","reb","kart"] && playerSide != civilian)) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
 if((SEL(_this,3) == "reb" && !license_civ_rebel)) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
@@ -100,10 +102,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
 player setBehaviour "SAFE";
 player attachTo [_testLogic,[0,0,0]];
 player switchMove "";
-
-if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
-	player setDir 0;
-};
+player setDir 360;
 
 life_clothing_store = SEL(_this,3);
 

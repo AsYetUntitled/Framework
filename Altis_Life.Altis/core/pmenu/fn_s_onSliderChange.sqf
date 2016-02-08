@@ -29,23 +29,27 @@ switch (_mode) do {
 		ctrlSetText[2922,format["%1",round(_value)]];
 		[] call life_fnc_updateViewDistance;
 	};
-	case 3:
-	{
+
+	case 3: {
 		_classname = lbData[20302,(lbCurSel 20302)];
 		_index =  lbvalue[20302,(lbCurSel 20302)];
 		if((lbCurSel 20302) == -1) exitWith {hint localize "STR_Select_Vehicle_Pump";};
 		if (!isNil "_classname" || _classname =="") then {
-		_car = (vehiclefuelList select _index) select 0;
-		_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-		_fuel = fuel _car;
-		_fueltank = (_vehicleInfo select 12);
-		if (_car iskindof "B_Truck_01_box_F" || _car iskindof "B_Truck_01_transport_F") then {
-			_fueltank = 450;
-		};
-		ctrlSetText[20324,format["Fuel : %1 liters",round(_value) - (floor(_fuel * _fueltank))]];
-		ctrlsettext [20323,format ["Total : %1$",round (life_fuelPrices * (round(_value) -(floor(_fuel * _fueltank)))) ]];
+			_car = (vehiclefuelList select _index) select 0;
+			_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+			_fuel = fuel _car;
+			_fueltank = (_vehicleInfo select 12);
+			if (_car iskindof "B_Truck_01_box_F" || _car iskindof "B_Truck_01_transport_F") then {
+				_fueltank = 450;
+			};
+			ctrlSetText[20324,format["Fuel : %1 liters",round(_value) - (floor(_fuel * _fueltank))]];
+			ctrlsettext [20323,format ["Total : %1$",round (life_fuelPrices * (round(_value) -(floor(_fuel * _fueltank)))) ]];
 		} else {
-		hint localize "STR_Select_Vehicle_Pump";
+			hint localize "STR_Select_Vehicle_Pump";
 		};
+	};
+
+	case 4: {
+		player setDir (360 - _value);
 	};
 };
