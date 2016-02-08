@@ -1652,69 +1652,48 @@
     </Key>
   </Package>
   <Package name="Wanted_Menu">
-		<Key ID="STR_Wanted_Title">
-			<Original>APD Wanted List</Original>
-			<German>Fahndungsliste</German>
-			<French>Interpol</French>
-			<Italian>Lista Ricercati</Italian>
-			<Portuguese>Lista de Procurados ADP</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_Pardon">
-			<Original>Pardon</Original>
-			<German>Erlassen</German>
-			<French>Excuser</French>
-			<Italian>Perdona</Italian>
-			<Portuguese>Perdão</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_Add">
-			<Original>Add</Original>
-			<German>Add</German>
-			<French>Add</French>
-			<Italian>Add</Italian>
-			<Portuguese>Add</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_People">
-			<Original>Wanted People</Original>
-			<German>Wanted People</German>
-			<French>Wanted People</French>
-			<Italian>Wanted People</Italian>
-			<Portuguese>Wanted People</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_Citizens">
-			<Original>Citizens</Original>
-			<German>Citizens</German>
-			<French>Citizens</French>
-			<Italian>Citizens</Italian>
-			<Portuguese>Citizens</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_Crimes">
-			<Original>Crimes</Original>
-			<German>Crimes</German>
-			<French>Crimes</French>
-			<Italian>Crimes</Italian>
-			<Portuguese>Crimes</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_AddP">
-			<Original>%1 has been added to the wanted list.</Original>
-			<German>%1 has been added to the wanted list.</German>
-			<French>%1 has been added to the wanted list.</French>
-			<Italian>%1 has been added to the wanted list.</Italian>
-			<Portuguese>%1 has been added to the wanted list.</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_Count">
-			<Original>%1 count(s) of %2</Original>
-			<German>%1 count(s) of %2</German>
-			<French>%1 count(s) of %2</French>
-			<Italian>%1 count(s) of %2</Italian>
-			<Portuguese>%1 count(s) of %2</Portuguese>
-		</Key>
-		<Key ID="STR_Wanted_Bounty">
-			<Original>Current Bounty Price: $%1</Original>
-			<German>Current Bounty Price: $%1</German>
-			<French>Current Bounty Price: $%1</French>
-			<Italian>Current Bounty Price: $%1</Italian>
-			<Portuguese>Current Bounty Price: $%1</Portuguese>
-		</Key>
+    <Key ID="STR_Wanted_Title">
+      <Original>APD Wanted List</Original>
+      <German>Fahndungsliste</German>
+      <French>Interpol</French>
+      <Italian>Lista Ricercati</Italian>
+      <Portuguese>Lista de Procurados</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Pardon">
+      <Original>Pardon</Original>
+      <German>Erlassen</German>
+      <French>Excuser</French>
+      <Italian>Perdona</Italian>
+      <Portuguese>Perdão</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Add">
+      <Original>Add</Original>
+      <Portuguese>Adicionar</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_People">
+      <Original>Wanted People</Original>
+      <Portuguese>Pessoas Procuradas</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Citizens">
+      <Original>Citizens</Original>
+      <Portuguese>Cidadãos</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Crimes">
+      <Original>Crimes</Original>
+      <Portuguese>Crimes</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_AddP">
+      <Original>%1 has been added to the wanted list.</Original>
+      <Portuguese>%1 foi adicionado a lista de procurados.</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Count">
+      <Original>%1 count(s) of %2</Original>
+      <Portuguese>%1 contagem(s) de %2</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Bounty">
+      <Original>Current Bounty Price: $%1</Original>
+      <Portuguese>Atual recompensa: R$%1</Portuguese>
+    </Key>
 	</Package>
   <Package name="Animals">
     <Key ID="STR_ANIM_Salema">
