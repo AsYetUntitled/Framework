@@ -1668,6 +1668,22 @@
       <Portuguese>Perdão</Portuguese>
       <Polish>Usuń z listy</Polish>
     </Key>
+    <Key ID="STR_Wanted_Add">
+      <Original>Add</Original>
+      <Portuguese>Adicionar</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_People">
+      <Original>Wanted People</Original>
+      <Portuguese>Pessoas Procuradas</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Citizens">
+      <Original>Citizens</Original>
+      <Portuguese>Cidadãos</Portuguese>
+    </Key>
+    <Key ID="STR_Wanted_Crimes">
+      <Original>Crimes</Original>
+      <Portuguese>Crimes</Portuguese>
+    </Key>
   </Package>
   <Package name="Animals">
     <Key ID="STR_ANIM_Salema">
