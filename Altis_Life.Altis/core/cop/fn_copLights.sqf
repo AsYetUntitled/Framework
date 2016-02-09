@@ -35,6 +35,21 @@ switch (typeOf _vehicle) do
 	{
 		_lightleft lightAttachObject [_vehicle, [-0.37,-1.2,0.42]];
 	};
+	
+	case "C_Hatchback_01_sport_F":
+	{
+		_lightleft lightAttachObject [_vehicle, [-0.35,-0.2,0.25]];
+	};
+	
+	case "B_Heli_Light_01_F":
+	{
+		_lightleft lightAttachObject [_vehicle,[-0.37, 0.0, -0.80]];
+	};
+	
+	case "B_Heli_Transport_01_F":
+	{			
+		_lightleft lightAttachObject [_vehicle, [-0.5, 0.0, 0.81]];
+ 	};
 };
 
 _lightleft setLightAttenuation [0.181, 0, 1000, 130]; 
@@ -65,6 +80,21 @@ switch (typeOf _vehicle) do
 	{
 		_lightright lightAttachObject [_vehicle, [0.37,-1.2,0.42]];
 	};
+	
+	case "C_Hatchback_01_sport_F":
+	{
+		_lightright lightAttachObject [_vehicle, [0.35,-0.2,0.25]];
+	};
+	
+	case "B_Heli_Light_01_F":
+	{
+		_lightright lightAttachObject [_vehicle,[0.37, 0.0, -0.80]];
+	};
+	
+	case "B_Heli_Transport_01_F":
+	{			
+		_lightright lightAttachObject [_vehicle, [0.5, 0.0, 0.81]];
+ 	};
 };
   
 _lightright setLightAttenuation [0.181, 0, 1000, 130]; 
