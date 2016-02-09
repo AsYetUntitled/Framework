@@ -79,7 +79,6 @@ class CfgRemoteExec {
         F(TON_fnc_spikeStrip,SERVER)
         F(life_fnc_wantedCrimes,SERVER)
         F(life_fnc_wantedFetch,SERVER)
-        F(life_fnc_wantedPerson,SERVER)
         F(life_fnc_wantedProfUpdate,SERVER)
         F(DB_fnc_queryRequest,SERVER)
         F(DB_fnc_insertRequest,SERVER)
