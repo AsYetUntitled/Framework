@@ -21,14 +21,15 @@ _units = [];
 if(count _units == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 {
-	if(_inStatement == "") then
-	{
-		_inStatement = _x;
-	}
-	else
-	{
-		_inStatement = _inStatement + "','" + _x;
-	};
+    if (count _units > 1) then {
+	if(_inStatement == "") then {
+            _inStatement = "'" + _x + "'";
+        } else {
+            _inStatement = _inStatement + ", '" + _x + "'";
+        };
+    } else {
+	_inStatement = _x;
+    };
 } forEach _units;
 
 _query = format["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement];
