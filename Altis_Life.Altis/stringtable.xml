@@ -5752,7 +5752,7 @@
       <Polish>Rafineria ropy naftowej</Polish>
     </Key>
     <Key ID="STR_MAR_Iron_processing">
-      <Original>Iron_processing</Original>
+      <Original>Iron Processing</Original>
       <German>Eisenschmelze</German>
       <Portuguese>Processador de Ferro</Portuguese>
       <Polish>Huta żelaza</Polish>
@@ -5972,7 +5972,7 @@
       <Portuguese>Comprador de Vidro</Portuguese>
       <Polish>Skup szkła</Polish>
     </Key>
-    <Key ID="STR_MAR_Iron_Copper Trader">
+    <Key ID="STR_MAR_Iron_Copper_Trader">
       <Original>Iron / Copper Trader</Original>
       <German>Händler für Eisen / Kupfer</German>
       <Portuguese>Comprador de Ferro e Cobre</Portuguese>
