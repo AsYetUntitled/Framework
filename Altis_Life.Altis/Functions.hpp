@@ -223,6 +223,7 @@ class Life_Client_Core
 	{
 		file = "core\civilian";
 		class jailMe {};
+		class civMarkers {};
 		class jail {};
 		class tazed {};
 		class knockedOut {};
