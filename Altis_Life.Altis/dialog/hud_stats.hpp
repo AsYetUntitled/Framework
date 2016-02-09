@@ -2,7 +2,7 @@
 /*
 	Author: Daniel Stuart
 
-	File: ui.hpp
+	File: hud_stats.hpp
 */
 
 class playerHUD {
