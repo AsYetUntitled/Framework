@@ -20,6 +20,6 @@ _wantedQuery = call compile format["%1",_wantedQuery];
 
 if(_name != (_wantedQuery select 0)) then
 {
-	_query = format["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_uid,_name];
+	_query = format["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_name,_uid];
 	[_query,2] call DB_fnc_asyncCall;
 } else {diag_log "Name Matches, no change needed";};
