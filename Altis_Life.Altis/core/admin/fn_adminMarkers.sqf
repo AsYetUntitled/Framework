@@ -17,14 +17,34 @@ if(life_markers) then {
 		} forEach PlayerMarkers;
 		PlayerMarkers = [];
 		{
-			if(alive _x && isplayer _x) then {
+			if(alive _x && isplayer _x && playerSide == west) then {
 				deleteMarkerLocal str _x;
 				_pSee = createMarkerLocal [str _x,getPos _x];
 				_pSee setMarkerTypeLocal "mil_triangle";
 				_pSee setMarkerPosLocal getPos _x;
 				_pSee setMarkerSizeLocal [1,1];
 				_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
-				_pSee setMarkerColorLocal ("ColorRed");
+				_pSee setMarkerColorLocal ("ColorBLUFOR");
+				PlayerMarkers = PlayerMarkers + [_x];
+		};
+			if(alive _x && isplayer _x && playerSide == independent) then {
+				deleteMarkerLocal str _x;
+				_pSee = createMarkerLocal [str _x,getPos _x];
+				_pSee setMarkerTypeLocal "mil_triangle";
+				_pSee setMarkerPosLocal getPos _x;
+				_pSee setMarkerSizeLocal [1,1];
+				_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
+				_pSee setMarkerColorLocal ("ColorIndependent");
+				PlayerMarkers = PlayerMarkers + [_x];
+		};
+			if(alive _x && isplayer _x && playerSide == civilian) then {
+				deleteMarkerLocal str _x;
+				_pSee = createMarkerLocal [str _x,getPos _x];
+				_pSee setMarkerTypeLocal "mil_triangle";
+				_pSee setMarkerPosLocal getPos _x;
+				_pSee setMarkerSizeLocal [1,1];
+				_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
+				_pSee setMarkerColorLocal ("ColorCivilian");
 				PlayerMarkers = PlayerMarkers + [_x];
 		};
 	} forEach allUnits;
