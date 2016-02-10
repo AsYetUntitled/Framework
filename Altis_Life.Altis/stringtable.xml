@@ -570,6 +570,10 @@
       <Portuguese>Você não tem todo esse dinhero na sua conta bancária</Portuguese>
       <Polish>Nie masz tyle środków na koncie!</Polish>
     </Key>
+    <Key ID="STR_ATM_NotEnoughFundsG">
+      <Original>You don't have that much in your Gang!</Original>
+      <French>Vous n'avez pas autant dans votre Gang</French>
+    </Key>
     <Key ID="STR_ATM_SentMoneyFail">
       <Original>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</Original>
       <German>Du hast nicht genug Geld auf deinem Konto, es kostet $%2, um $%1 zu überweisen.</German>
@@ -609,6 +613,10 @@
       <Italian>Hai prelevato €%1 dal tuo conto in banca</Italian>
       <Portuguese>Você sacou R$%1 de sua conta bancária.</Portuguese>
       <Polish>Pobrałeś z konta kwotę $%1 </Polish>
+    </Key>
+    <Key ID="STR_ATM_WithdrawSuccessG">
+      <Original>You have withdrawn $%1 from your Gang</Original>
+      <French>Vous avez retiré $%1 de votre gang</French>
     </Key>
     <Key ID="STR_ATM_NotEnoughCash">
       <Original>You do not have that much cash on you.</Original>
@@ -4985,6 +4993,10 @@
       <Italian>Deposita alla Gang</Italian>
       <Portuguese>Depositar: Gangue</Portuguese>
       <Polish>Wpłać na konto Gangu</Polish>
+    </Key>
+    <Key ID="STR_pInAct_WithdrawToGang">
+      <Original>Withdraw To Gang</Original>
+      <French>Retirer pour le gang</French>
     </Key>
   </Package>
     <Package name="Vehicle_Interaction">
