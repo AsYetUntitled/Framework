@@ -1,7 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Deposits money into the players gang bank.
 */
@@ -12,9 +12,9 @@ _value = parseNumber(ctrlText 2702);
 if(_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};
 if(_value < 0) exitWith {};
 if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_ATM_notnumeric"};
-if(_value > BANK) exitWith {hint localize "STR_NOTF_NotEnoughFunds"};
+if(_value > CASH) exitWith {hint localize "STR_ATM_NotEnoughCash"};
 
-SUB(BANK,_value);
+SUB(CASH,_value);
 _gFund = GANG_FUNDS;
 ADD(_gFund,_value);
 grpPlayer SVAR ["gang_bank",_gFund,true];
