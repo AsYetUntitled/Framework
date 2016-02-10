@@ -539,14 +539,6 @@
       <Portuguese>O valor digitado não é um número.</Portuguese>
       <Polish>Wprwadzona wartość nie jest liczbą</Polish>
     </Key>
-    <Key ID="STR_ATM_DepositMSG">
-      <Original>You have deposited $%1 into your bank account</Original>
-      <German>Du hast $%1 auf dein Bankkonto überwiesen</German>
-      <French>Vous avez déposé $%1 dans votre compte bancaire</French>
-      <Italian>Hai despositato €%1 nel tuo conto bancario</Italian>
-      <Portuguese>Você depositou R$%1 na sua conta bancária</Portuguese>
-      <Polish>Zdeponowałeś na koncie bankowym $%1</Polish>
-    </Key>
     <Key ID="STR_ATM_NoneSelected">
       <Original>You need to select someone to transfer to</Original>
       <German>Du hast niemanden für den Transfer ausgewählt</German>
@@ -636,7 +628,15 @@
       <Portuguese>Você não tem todo esse dinheiro.</Portuguese>
       <Polish>Nie masz przy sobie tyle pieniędzy</Polish>
     </Key>
-    <Key ID="STR_ATM_DepositGang">
+    <Key ID="STR_ATM_DepositSuccess">
+      <Original>You have deposited $%1 into your bank account</Original>
+      <German>Du hast $%1 auf dein Bankkonto überwiesen</German>
+      <French>Vous avez déposé $%1 dans votre compte bancaire</French>
+      <Italian>Hai despositato €%1 nel tuo conto bancario</Italian>
+      <Portuguese>Você depositou R$%1 na sua conta bancária</Portuguese>
+      <Polish>Zdeponowałeś na koncie bankowym $%1</Polish>
+    </Key>
+    <Key ID="STR_ATM_DepositSuccessG">
       <Original>You have deposited $%1 into your gangs bank account</Original>
       <German>Du hast $%1 auf dein Gang Konto überwiesen</German>
       <French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
