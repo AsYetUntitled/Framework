@@ -2,7 +2,7 @@
 /*
 	File: fn_atmMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Opens and manages the bank menu.
 */
@@ -39,4 +39,5 @@ lbSetCurSel [2703,0];
 
 if(isNil {(grpPlayer GVAR "gang_bank")}) then {
 	(CONTROL(2700,2705)) ctrlEnable false;
+	(CONTROL(2700,2706)) ctrlEnable false;
 };
