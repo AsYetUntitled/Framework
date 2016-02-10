@@ -4764,12 +4764,12 @@
       <German>Zeigt automatisch nächstgelegene Objekte innerhalb von 15m an, deaktiviere es, wenn du Leistungprobleme hast.</German>
       <French>Révèle automatiquement les objets les plus proches au sein de 15m, désactiver ce paramètre si vous rencontrez des problèmes de performance.</French>
       <Italian>Rivela automaticamente gli oggettivi vicini entro 15m, disattiva quest'impostazione se riscontri dei problemi di perfomance di sistema.</Italian>
-      <Portuguese>Revela objetos à 15m, desligue essa opção se está tendo problemas de performance.</Portuguese>
+      <Portuguese>Revela objetos à 15m, desabilite essa opção se está tendo problemas de performance.</Portuguese>
       <Polish>Automatycznie wykrywa najbliższe obiekty w promieniu 15m, wyłącz tę opcję jeśli masz problemy z wydajnością</Polish>
     </Key>
     <Key ID="STR_GUI_SideSwitch">
-      <Original>Switch side-channel mode, turn this off if you don't want to talk with players in your side.</Original>
-      <Portuguese>Habilita/Desabilita o side-channel, desligue caso você não queira conversar com os jogadores da sua facção.</Portuguese>
+      <Original>Switch side-channel mode, turn this off if you don't want to talk with players from your side.</Original>
+      <Portuguese>Habilita/Desabilita o side-channel, desabilite caso você não queira conversar com os jogadores da sua facção.</Portuguese>
     </Key>
     <Key ID="STR_GUI_PlayTags">
       <Original>Controls whether or not players will have name tags above their head.</Original>
