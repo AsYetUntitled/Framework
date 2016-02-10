@@ -1506,6 +1506,10 @@
       <Portuguese>Configurações de Sidechat</Portuguese>
       <Polish>Ustawienia czatu</Polish>
     </Key>
+    <Key ID="STR_SM_RNObj">
+      <Original>Reveal Nearest Objects</Original>
+      <Portuguese>Mostrar Objetos Próximos</Portuguese>
+    </Key>
     <Key ID="STR_SM_SCOFF">
       <Original>Sidechat OFF</Original>
       <German>Sidechat AUS</German>
