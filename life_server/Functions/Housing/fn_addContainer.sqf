@@ -18,7 +18,9 @@ _className = typeOf _container;
 _dir = [vectorDir _container] + [vectorUp _container];
 
 _query = format["INSERT INTO containers (pid, pos, classname, inventory, gear, owned, dir) VALUES('%1', '%2', '%3', '""[[],0]""', '""[]""', '1', '%4')",_uid,_containerPos,_className,_dir];
-diag_log format["Query: %1",_query];
+if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+	diag_log format["Query: %1",_query];
+};
 
 [_query,1] call DB_fnc_asyncCall;
 

@@ -88,5 +88,7 @@ _return = [];
 	_return pushBack [_x select 1,_containerss];
 } foreach _houses;
 
-diag_log format ["Return fetchplayerhouse : %1", _return];
+if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+	diag_log format ["Return fetchplayerhouse : %1", _return];
+};
 missionNamespace setVariable[format["houses_%1",_this],_return];

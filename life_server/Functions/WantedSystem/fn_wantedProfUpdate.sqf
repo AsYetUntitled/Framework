@@ -15,11 +15,10 @@ if(_uid == "" OR  _name == "") exitWith {};
 
 _wantedCheck = format["SELECT wantedName FROM wanted WHERE wantedID='%1'",_uid];
 _wantedQuery = [_wantedCheck,2] call DB_fnc_asyncCall;
-if(count _wantedQuery == 0) exitWith {diag_log "Person not wanted, no update";};
+if(count _wantedQuery == 0) exitWith {};
 _wantedQuery = call compile format["%1",_wantedQuery];
 
-if(_name != (_wantedQuery select 0)) then
-{
+if(_name != (_wantedQuery select 0)) then {
 	_query = format["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_name,_uid];
 	[_query,2] call DB_fnc_asyncCall;
-} else {diag_log "Name Matches, no change needed";};
+};
