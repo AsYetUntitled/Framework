@@ -147,7 +147,7 @@ class VirtualShops {
 *        illegal = Illegal Item
 *        edible = Item Edible (-1 = Disabled)
 *        icon = Item Icon
-*        processedItem = Processed Item ( add only when item are illegal, when you have an item that has no processed item, so just put the name of item in processeditem Line.)
+*        processedItem = Processed Item
 */
 class VirtualItems {
     //Virtual Items
@@ -228,7 +228,6 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_blastingCharge.paa";
-        processedItem = "blastingcharge";
     };
 
     class boltcutter {
@@ -240,7 +239,6 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_boltcutters.paa";
-        processedItem = "boltcutter";
     };
 
     class defusekit {
@@ -453,7 +451,6 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_heroinProcessed.paa";
-        processedItem = "heroin_processed";
     };
 
     class cannabis {
@@ -477,7 +474,6 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_marijuana.paa";
-        processedItem = "marijuana";
     };
 
     class cocaine_unprocessed {
@@ -485,7 +481,7 @@ class VirtualItems {
         displayName = "STR_Item_CocaineU";
         weight = 6;
         buyPrice = -1;
-        sellPrice = 3000;
+        sellPrice = -1;
         illegal = true;
         edible = -1;
         icon = "icons\ico_cocaineUnprocessed.paa";
@@ -501,7 +497,6 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_cocaineProcessed.paa";
-        processedItem = "cocaine_processed";
     };
 
     //Drink
@@ -746,7 +741,6 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_meat.paa";
-        processedItem = "turtle_raw";
     };
 
     class turtle_soup {
