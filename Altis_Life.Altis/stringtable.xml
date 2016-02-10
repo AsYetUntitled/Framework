@@ -571,8 +571,9 @@
       <Polish>Nie masz tyle środków na koncie!</Polish>
     </Key>
     <Key ID="STR_ATM_NotEnoughFundsG">
-      <Original>You don't have that much in your Gang!</Original>
-      <French>Vous n'avez pas autant dans votre Gang</French>
+      <Original>You don't have that much in your gang!</Original>
+      <French>Vous n'avez pas autant dans votre gang</French>
+      <Portuguese>Você não tem todo esse dinhero na sua gangue!</Portuguese>
     </Key>
     <Key ID="STR_ATM_SentMoneyFail">
       <Original>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</Original>
@@ -615,8 +616,9 @@
       <Polish>Pobrałeś z konta kwotę $%1 </Polish>
     </Key>
     <Key ID="STR_ATM_WithdrawSuccessG">
-      <Original>You have withdrawn $%1 from your Gang</Original>
+      <Original>You have withdrawn $%1 from your gang</Original>
       <French>Vous avez retiré $%1 de votre gang</French>
+      <Portuguese>Você sacou R$%1 da sua gangue</Portuguese>
     </Key>
     <Key ID="STR_ATM_NotEnoughCash">
       <Original>You do not have that much cash on you.</Original>
@@ -4991,12 +4993,13 @@
       <German>Auf Gang-Konto einzahlen</German>
       <French>Déposer pour le gang</French>
       <Italian>Deposita alla Gang</Italian>
-      <Portuguese>Depositar: Gangue</Portuguese>
+      <Portuguese>Depositar para Gangue</Portuguese>
       <Polish>Wpłać na konto Gangu</Polish>
     </Key>
     <Key ID="STR_pInAct_WithdrawToGang">
-      <Original>Withdraw To Gang</Original>
+      <Original>Withdraw From Gang</Original>
       <French>Retirer pour le gang</French>
+      <Portuguese>Sacar da gangue</Portuguese>
     </Key>
   </Package>
     <Package name="Vehicle_Interaction">

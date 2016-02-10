@@ -3,11 +3,11 @@
 	Author: Bryan "Tonic" Boardwine
 
 	Description:
-	Deposits money into the players gang bank.
+	Withdraws money from the gang bank.
 */
 private["_value"];
 _value = parseNumber(ctrlText 2702);
-_gFund = grpPlayer getVariable ["gang_bank",0];
+_gFund = GANG_FUNDS;
 
 //Series of stupid checks
 if(_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
@@ -20,7 +20,7 @@ SUB(_gFund,_value);
 ADD(CASH,_value);
 grpPlayer setVariable ["gang_bank",_gFund,true];
 
+[1,grpPlayer] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
 hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial;
-[1,grpPlayer] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.

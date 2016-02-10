@@ -121,7 +121,7 @@ class Life_atm_management {
 			text = "$STR_pInAct_WithdrawToGang";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_gangWithdraw";
-			y = 0.75; x = 0.365;
+			y = 0.752; x = 0.365;
 			w = 0.275;
 		};
 
