@@ -1499,12 +1499,8 @@
       <Polish>Tagi OFF</Polish>
     </Key>
     <Key ID="STR_SM_SC">
-      <Original>Sidechat Settings</Original>
-      <German>Sidechat Einstellungen</German>
-      <French>Sidechat Paramètres</French>
-      <Italian>Impostazioni chat fazione</Italian>
-      <Portuguese>Configurações de Sidechat</Portuguese>
-      <Polish>Ustawienia czatu</Polish>
+      <Original>Sidechat Switch</Original>
+      <Portuguese>Habilitar Sidechat</Portuguese>
     </Key>
     <Key ID="STR_SM_RNObj">
       <Original>Reveal Nearest Objects</Original>
