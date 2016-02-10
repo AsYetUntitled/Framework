@@ -168,7 +168,6 @@ class SettingsMenu
 
 		class PlayerTagsONOFF : Life_Checkbox
 		{
-			//text = "ON";
 			tooltip = "$STR_GUI_PlayTags";
 			idc = 2970;
 			sizeEx = 0.04;
@@ -181,17 +180,16 @@ class SettingsMenu
 		class SideChatONOFF : PlayerTagsONOFF
 		{
 			idc = 2971;
-			tooltip = "";
+			tooltip = "$STR_GUI_SideSwitch";
 			onCheckedChanged = "['sidechat',_this select 1] call life_fnc_s_onCheckedChange;";
-
 			y = 0.48;
 		};
 
 		class RevealONOFF : PlayerTagsONOFF
 		{
+			idc = 2972;
 			tooltip = "$STR_GUI_PlayerReveal";
 			onCheckedChanged = "['objects',_this select 1] call life_fnc_s_onCheckedChange;";
-			idc = 2972;
 			y = 0.53;
 		};
 

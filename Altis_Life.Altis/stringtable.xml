@@ -4767,6 +4767,10 @@
       <Portuguese>Revela objetos à 15m, desligue essa opção se está tendo problemas de performance.</Portuguese>
       <Polish>Automatycznie wykrywa najbliższe obiekty w promieniu 15m, wyłącz tę opcję jeśli masz problemy z wydajnością</Polish>
     </Key>
+    <Key ID="STR_GUI_SideSwitch">
+      <Original>Switch side-channel mode, turn this off if you don't want to talk with players in your side.</Original>
+      <Portuguese>Habilita/Desabilita o side-channel, desligue caso você não queira conversar com os jogadores da sua facção.</Portuguese>
+    </Key>
     <Key ID="STR_GUI_PlayTags">
       <Original>Controls whether or not players will have name tags above their head.</Original>
       <German>Regelt, ob Spieler Namensschilder über dem Kopf haben.</German>
