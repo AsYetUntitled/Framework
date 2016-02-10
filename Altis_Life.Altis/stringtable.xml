@@ -22,7 +22,7 @@
       <Portuguese>Loja de equipamentos para Mergulho</Portuguese>
       <Polish>Sklep dla nurków</Polish>
     </Key>
-    <Key ID="STR_Shops_C_Gun"><!-- Non-English translation by Google Translate. Please double check. -->
+    <Key ID="STR_Shops_C_Gun">
       <Original>Billy Joe's Clothing</Original>
       <German>Billy Joe Bekleidung</German>
       <Italian>Abbigliamento di Billy Joe</Italian>
@@ -30,7 +30,7 @@
       <Portuguese>Roupa Billy Joe</Portuguese>
       <Polish>Billy Joe Odzież</Polish>
     </Key>
-    <Key ID="STR_Shops_W_Gun"><!-- Non-English translation by Google Translate. Please double check. -->
+    <Key ID="STR_Shops_W_Gun">
       <Original>Billy Joe's Firearms</Original>
       <German>Billy Joe Schusswaffen</German>
       <Italian>Le armi da fuoco di Billy Joe</Italian>
@@ -68,7 +68,7 @@
       <Portuguese>Mercado da Gangue</Portuguese>
       <Polish>Market Gangu</Polish>
     </Key>
-    <Key ID="STR_Shops_C_Gang"><!-- Non-English translation by Google Translate. Please double check. -->
+    <Key ID="STR_Shops_C_Gang">
       <Original>Gang Clothing</Original>
       <German>Gang Kleidung</German>
       <Italian>Gang Abbigliamento</Italian>
@@ -6272,7 +6272,7 @@
       <Portuguese>Loja de Items Médicos</Portuguese>
       <Polish>Wyposażenie medyczne</Polish>
     </Key>
-    <Key ID="STR_MAR_EMS_Clothing_Shop"><!-- Non-English translation by Google Translate. Please double check. -->
+    <Key ID="STR_MAR_EMS_Clothing_Shop">
       <Original>EMS Clothing Shop</Original>
       <German>EMS Kleidungs-System</German>
       <Portuguese>EMS Roupa Loja</Portuguese>
