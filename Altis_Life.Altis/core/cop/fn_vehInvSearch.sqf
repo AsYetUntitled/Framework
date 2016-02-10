@@ -19,10 +19,10 @@ _illegalValue = 0;
 {
 	_var = SEL(_x,0);
 	_val = SEL(_x,1);
-	_illegalItemVar = M_CONFIG(getText,"VirtualItems",_var,"variable");
-	_illegalPrice = M_CONFIG(getNumber,"VirtualItems",_var,"sellPrice");
 	_isIllegalItem = M_CONFIG(getNumber,"VirtualItems",_var,"illegal");
 	if(_isIllegalItem == 1 ) then{
+		_illegalItemVar2 = M_CONFIG(getText,"VirtualItems",_var,"processedItem");
+		_illegalPrice = M_CONFIG(getNumber,"VirtualItems",_illegalItemVar2,"sellPrice");
 		_illegalValue = _illegalValue + (round(_val * _illegalPrice / 2));
 	};
 } foreach (SEL(_vehicleInfo,0));
