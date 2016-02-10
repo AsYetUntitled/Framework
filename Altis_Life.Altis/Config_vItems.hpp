@@ -147,7 +147,7 @@ class VirtualShops {
 *        illegal = Illegal Item
 *        edible = Item Edible (-1 = Disabled)
 *        icon = Item Icon
-*        processedItem = Processed Item ( add only when item are illegal)
+*        processedItem = Processed Item ( add only when item are illegal, when you have an item that has no processed item, so just put the name of item in processeditem Line.)
 */
 class VirtualItems {
     //Virtual Items
