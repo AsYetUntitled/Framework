@@ -147,6 +147,7 @@ class VirtualShops {
 *        illegal = Illegal Item
 *        edible = Item Edible (-1 = Disabled)
 *        icon = Item Icon
+*        processedItem = Processed Item ( add only when item are illegal)
 */
 class VirtualItems {
     //Virtual Items
@@ -227,6 +228,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_blastingCharge.paa";
+        processedItem = "blastingcharge";
     };
 
     class boltcutter {
@@ -238,6 +240,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_boltcutters.paa";
+        processedItem = "boltcutter";
     };
 
     class defusekit {
@@ -438,6 +441,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_heroinUnprocessed.paa";
+        processedItem = "heroin_processed";
     };
 
     class heroin_processed {
@@ -449,6 +453,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_heroinProcessed.paa";
+        processedItem = "heroin_processed";
     };
 
     class cannabis {
@@ -460,6 +465,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_cannabis.paa";
+        processedItem = "marijuana";
     };
 
     class marijuana {
@@ -471,6 +477,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_marijuana.paa";
+        processedItem = "marijuana";
     };
 
     class cocaine_unprocessed {
@@ -482,6 +489,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_cocaineUnprocessed.paa";
+        processedItem = "cocaine_processed";
     };
 
     class cocaine_processed {
@@ -493,6 +501,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_cocaineProcessed.paa";
+        processedItem = "cocaine_processed";
     };
 
     //Drink
@@ -737,6 +746,7 @@ class VirtualItems {
         illegal = true;
         edible = -1;
         icon = "icons\ico_meat.paa";
+        processedItem = "turtle_raw";
     };
 
     class turtle_soup {
