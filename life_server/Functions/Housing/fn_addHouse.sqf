@@ -9,7 +9,6 @@ params [
 	["_uid","",[""]],
 	["_house",objNull,[objNull]]
 ];
-
 if(isNull _house OR _uid == "") exitWith {};
 
 _housePos = getPosATL _house;
