@@ -224,7 +224,7 @@ class VirtualItems {
         displayName = "STR_Item_BCharge";
         weight = 15;
         buyPrice = 35000;
-        sellPrice = -1;
+        sellPrice = 10000;
         illegal = true;
         edible = -1;
         icon = "icons\ico_blastingCharge.paa";
@@ -235,7 +235,7 @@ class VirtualItems {
         displayName = "STR_Item_BCutter";
         weight = 5;
         buyPrice = 7500;
-        sellPrice = -1;
+        sellPrice = 1000;
         illegal = true;
         edible = -1;
         icon = "icons\ico_boltcutters.paa";
