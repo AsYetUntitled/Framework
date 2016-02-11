@@ -24,7 +24,7 @@ if(visibleMap) then {
 
 	{
 		_markerss = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
-		_markerss setMarkerColorLocal "ColorBlue";
+		_markerss setMarkerColorLocal "ColorIndependent";
 		_markerss setMarkerTypeLocal "Mil_dot";
 		_markerss setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
 
