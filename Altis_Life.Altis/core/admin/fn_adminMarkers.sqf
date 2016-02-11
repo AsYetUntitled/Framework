@@ -38,7 +38,7 @@ if(life_markers) then {
 				PlayerMarkers = PlayerMarkers + [_x];
 			};
 			if(alive _x && isplayer _x && side _x == civilian) then {
-				if(!(playerSide == civilian && _x in (units (group player))) then {
+				if(!(playerSide == civilian && _x in (units (group player)))) then {
 					deleteMarkerLocal str _x;
 					_pSee = createMarkerLocal [str _x,getPos _x];
 					_pSee setMarkerTypeLocal "mil_triangle";
