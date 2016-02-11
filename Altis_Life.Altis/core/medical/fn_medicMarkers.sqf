@@ -23,12 +23,14 @@ if(visibleMap) then {
 	} foreach allDeadMen;
 
 	{
-		_markerss = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
-		_markerss setMarkerColorLocal "ColorIndependent";
-		_markerss setMarkerTypeLocal "Mil_dot";
-		_markerss setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
+		if(_x != player) then {
+			_markerss = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
+			_markerss setMarkerColorLocal "ColorIndependent";
+			_markerss setMarkerTypeLocal "Mil_dot";
+			_markerss setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
 
-		_markersMedecin pushBack [_markerss,_x];
+			_markersMedecin pushBack [_markerss,_x];
+		};
 	} foreach _medics;
 
 	//Loop through and create markers.
