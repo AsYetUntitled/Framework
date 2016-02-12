@@ -8,7 +8,7 @@
 	1. Fetches all the players houses and sets them up.
 	2. Fetches all the players containers and sets them up.
 */
-private["_query","_houses"];
+private["_query","_containers","_containerss","_houses"];
 params [
 	["_uid","",[""]]
 ];
@@ -77,11 +77,7 @@ _containerss = [];
 } foreach _containers;
 
 _query = format["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid];
-
 _houses = [_query,2,true] call DB_fnc_asyncCall;
-if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
-	diag_log format ["Select House : fetchplayerhouse : %1", _houses];
-};
 
 _return = [];
 {
@@ -91,7 +87,4 @@ _return = [];
 	_return pushBack [_x select 1,_containerss];
 } foreach _houses;
 
-if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
-	diag_log format ["Return fetchplayerhouse : %1", _return];
-};
 missionNamespace setVariable[format["houses_%1",_uid],_return];
