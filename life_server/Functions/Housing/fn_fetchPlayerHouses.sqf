@@ -9,12 +9,18 @@
 	2. Fetches all the players containers and sets them up.
 */
 private["_query","_houses"];
-if(_this == "") exitWith {};
+params [
+	["_uid","",[""]]
+];
+if(_uid == "") exitWith {};
 
-	_query = format["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_this];
+	_query = format["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid];
 
 	_containers = [_query,2,true] call DB_fnc_asyncCall;
 	if(count _containers == 0) exitWith {};
+	if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+		diag_log format ["Select Container : fetchplayerhouse : %1", _containers];
+	};
 
 	_containerss = [];
 	{
@@ -77,9 +83,12 @@ if(_this == "") exitWith {};
 		_house setVariable["containers",_containerss,true];
 	} foreach _containers;
 
-_query = format["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_this];
+_query = format["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid];
 
 _houses = [_query,2,true] call DB_fnc_asyncCall;
+if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+	diag_log format ["Select House : fetchplayerhouse : %1", _houses];
+};
 
 _return = [];
 {
@@ -92,4 +101,4 @@ _return = [];
 if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
 	diag_log format ["Return fetchplayerhouse : %1", _return];
 };
-missionNamespace setVariable[format["houses_%1",_this],_return];
+missionNamespace setVariable[format["houses_%1",_uid],_return];

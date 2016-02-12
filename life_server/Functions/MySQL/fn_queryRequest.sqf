@@ -93,7 +93,7 @@ switch (_side) do {
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[9,_new];
 
-		_houseData = _uid spawn TON_fnc_fetchPlayerHouses;
+		_houseData = [_uid] spawn TON_fnc_fetchPlayerHouses;
 		waitUntil {scriptDone _houseData};
 		_queryResult pushBack (missionNamespace getVariable[format["houses_%1",_uid],[]]);
 		_gangData = _uid spawn TON_fnc_queryPlayerGang;
