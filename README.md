@@ -1,11 +1,11 @@
 <h1 align="center">Altis-Life</h1>
 <p align="center">
-    <a href="https://github.com/TAWTonic/Altis-Life">
+    <a href="https://github.com/ArmaLife/Altis">
         <img src="https://img.shields.io/badge/version-v4.4-green.svg" alt="Altis Life Version">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://github.com/TAWTonic/Altis-Life/releases">
-        <img src="https://img.shields.io/badge/release-stable-yellowgreen.svg" alt="Altis Life Release">
+    <a href="https://github.com/ArmaLife/Altis/releases">
+        <img src="https://img.shields.io/badge/release-1-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="http://dev.arma3.com/post/spotrep-00051">
