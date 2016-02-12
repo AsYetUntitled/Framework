@@ -15,11 +15,7 @@ params [
 if(_uid == "") exitWith {};
 
 _query = format["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid];
-
 _containers = [_query,2,true] call DB_fnc_asyncCall;
-if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
-	diag_log format ["Select Container : fetchplayerhouse : %1", _containers];
-};
 
 _containerss = [];
 {
