@@ -87,7 +87,14 @@ switch (_side) do {
 		//Playtime
 		_new = [(_queryResult select 11)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
-		TON_fnc_playtime_values_request pushBack [_uid, _new];
+		_index = TON_fnc_playtime_values_request find [_uid, _new];
+		if(_index != -1) then {
+			TON_fnc_playtime_values_request set[_index,-1];
+			TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
+			TON_fnc_playtime_values_request pushBack [_uid, _new];
+		} else {
+			TON_fnc_playtime_values_request pushBack [_uid, _new];
+		};
 		_new = _new select 0;
 		[_uid, _new] call TON_fnc_setPlayTime;
 	};
@@ -103,7 +110,14 @@ switch (_side) do {
 		//Playtime
 		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
-		TON_fnc_playtime_values_request pushBack [_uid, _new];
+		_index = TON_fnc_playtime_values_request find [_uid, _new];
+		if(_index != -1) then {
+			TON_fnc_playtime_values_request set[_index,-1];
+			TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
+			TON_fnc_playtime_values_request pushBack [_uid, _new];
+		} else {
+			TON_fnc_playtime_values_request pushBack [_uid, _new];
+		};
 		_new = _new select 2;
 		[_uid, _new] call TON_fnc_setPlayTime;
 
@@ -123,7 +137,14 @@ switch (_side) do {
 		//Playtime
 		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
-		TON_fnc_playtime_values_request pushBack [_uid, _new];
+		_index = TON_fnc_playtime_values_request find [_uid, _new];
+		if(_index != -1) then {
+			TON_fnc_playtime_values_request set[_index,-1];
+			TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
+			TON_fnc_playtime_values_request pushBack [_uid, _new];
+		} else {
+			TON_fnc_playtime_values_request pushBack [_uid, _new];
+		};
 		_new = _new select 1;
 		[_uid, _new] call TON_fnc_setPlayTime;
 	};
