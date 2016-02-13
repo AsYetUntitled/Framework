@@ -22,12 +22,12 @@ DELIMITER $$
 --
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
 BEGIN
-  UPDATE `vehicles` SET `active`= 0;
+	UPDATE `vehicles` SET `active`= 0;
 END$$
 
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteDeadVehicles`()
 BEGIN
-  DELETE FROM `vehicles` WHERE `alive` = 0;
+	DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
 
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldHouses`()
@@ -62,19 +62,20 @@ CREATE TABLE IF NOT EXISTS `players` (
   `bankacc` int(100) NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
   `mediclevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
-  `civ_licenses` text NOT NULL,
+	`civ_licenses` text NOT NULL,
   `cop_licenses` text NOT NULL,
   `med_licenses` text NOT NULL,
   `civ_gear` text NOT NULL,
   `cop_gear` text NOT NULL,
   `med_gear` text NOT NULL,
-  `civ_stats` varchar(11) NOT NULL DEFAULT '"[100,100]"',
+	`civ_stats` varchar(11) NOT NULL DEFAULT '"[100,100]"',
   `cop_stats` varchar(11) NOT NULL DEFAULT '"[100,100]"',
   `med_stats` varchar(11) NOT NULL DEFAULT '"[100,100]"',
   `arrested` tinyint(1) NOT NULL DEFAULT '0',
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
+	`playtime` varchar(40) NOT NULL DEFAULT '"[0,0,0]"',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`),
@@ -150,13 +151,13 @@ CREATE TABLE IF NOT EXISTS `gangs` (
 CREATE TABLE IF NOT EXISTS `containers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pid` varchar(32) NOT NULL,
-  `classname` varchar(32) NOT NULL,
+	`classname` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
-  `inventory` varchar(500) NOT NULL,
+	`inventory` varchar(500) NOT NULL,
   `gear` text NOT NULL,
-  `dir` varchar(64) DEFAULT NULL,
+	`dir` varchar(64) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0',
-  `owned` tinyint(4) DEFAULT '0',
+	`owned` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`,`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
