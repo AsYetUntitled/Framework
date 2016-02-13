@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
-	`playtime` varchar(40) NOT NULL DEFAULT '"[0,0,0]"',
+	`playtime` varchar(60) NOT NULL DEFAULT '"[0,0,0]"',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`),
