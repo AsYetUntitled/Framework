@@ -70,3 +70,5 @@ ctrlShow [2304,false];
 		_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
 	};
 } foreach _vehicleList;
+
+[] call life_fnc_vehicleShopInit3DPreview;

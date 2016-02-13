@@ -9,7 +9,7 @@
 private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_licensesName","_exit"];
 _mode = SEL(_this,0);
 _exit = false;
-if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick"};
+if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
 
@@ -29,10 +29,10 @@ _licensesName = "";
 		_exit = true;
 	};
 } foreach _licenses;
-if(_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];};
+if(_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];closeDialog 0;};
 
-if(_basePrice < 0) exitWith {}; //Bad price entry
-if(CASH < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - CASH] call life_fnc_numberText];};
+if(_basePrice < 0) exitWith {closeDialog 0;}; //Bad price entry
+if(CASH < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - CASH] call life_fnc_numberText];closeDialog 0;};
 
 _spawnPoints = SEL(life_veh_shop,1);
 _spawnPoint = "";
@@ -50,7 +50,7 @@ if((SEL(life_veh_shop,0) == "med_air_hs")) then {
 };
 
 
-if(EQUAL(_spawnPoint,"")) exitWith {hint localize "STR_Shop_Veh_Block";};
+if(EQUAL(_spawnPoint,"")) exitWith {hint localize "STR_Shop_Veh_Block";closeDialog 0;};
 SUB(CASH,_basePrice);
 hint format[localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_basePrice] call life_fnc_numberText];
 

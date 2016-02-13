@@ -22,6 +22,7 @@ _basePrice = SEL(SEL(_vehicleList,_vIndex),1);
 
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
+[_className] call life_fnc_vehicleShop3DPreview;
 
 ctrlShow [2330,true];
 (CONTROL(2300,2303)) ctrlSetStructuredText parseText format[

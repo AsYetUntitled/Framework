@@ -205,6 +205,7 @@ class Life_Client_Core
 		class playerSkins {};
 		class nearestObjects {};
 		class teleport {};
+		class SearchPosEmpty {};
 	};
 
 	class Network
@@ -250,6 +251,7 @@ class Life_Client_Core
 		class deviceMine {};
 		class addVehicle2Chain {};
 		class FuelRefuelcar {};
+		class vehiclecolor3DRefresh {};
 	};
 
 	class Cop
@@ -324,6 +326,9 @@ class Life_Client_Core
 		class chopShopSell {};
 		class FuelStatOpen {};
 		class FuelLBchange {};
+		class vehicleShopEnd3DPreview {};
+		class vehicleShopInit3DPreview {};
+		class vehicleShop3DPreview {};
 	};
 
 	class Items

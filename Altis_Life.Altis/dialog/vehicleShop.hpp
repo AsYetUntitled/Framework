@@ -5,123 +5,130 @@ class Life_Vehicle_Shop_v2
 	movingEnable = 0;
 	enableSimulation = 1;
 	onLoad = "ctrlShow [2330,false];";
-	
+	onUnLoad = "[] call life_fnc_vehicleShopEnd3DPreview";
+
 	class controlsBackground
 	{
-		class Life_RscTitleBackground : Life_RscText
-		{
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			idc = -1;
-			x = 0.1;
-			y = 0.2;
-			w = 0.8;
-			h = (1 / 25);
-		};
-		
-		class MainBackground : Life_RscText
+		class MainBackground: Life_RscText
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
-			x = 0.1;
-			y = 0.2 + (11 / 250);
-			w = 0.8;
-			h = 0.7 - (22 / 250);
+			x = 0.0204687 * safezoneW + safezoneX;
+			y = 0.06 * safezoneH + safezoneY;
+			w = 0.149531 * safezoneW;
+			h = 0.66 * safezoneH;
 		};
-		
+
+		class SecondBackground: Life_RscText
+		{
+			colorBackground[] = {0,0,0,0.7};
+			idc = -1;
+			x = 0.809375 * safezoneW + safezoneX;
+			y = 0.06 * safezoneH + safezoneY;
+			w = 0.190781 * safezoneW;
+			h = 0.341 * safezoneH;
+		};
+
 		class Title : Life_RscTitle
 		{
 			idc = 2301;
 			text = "";
-			x = 0.1;
-			y = 0.2;
-			w = 0.8;
-			h = (1 / 25);
+			x = 0.0204687 * safezoneW + safezoneX;
+			y = 0.027 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.033 * safezoneH;
 		};
-		
-		class VehicleTitleBox : Life_RscText
+
+		class VehicleTitleBox: Life_RscText
 		{
 			idc = -1;
 			text = "$STR_GUI_ShopStock";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			x = 0.11; y = 0.26;
-			w = 0.3;
-			h = (1 / 25);
+			x = 0.0204687 * safezoneW + safezoneX;
+			y = 0.06 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.033 * safezoneH;
 		};
-		
-		class VehicleInfoHeader : Life_RscText
+
+		class VehicleInfoHeader: Life_RscText
 		{
 			idc = 2330;
 			text = "$STR_GUI_VehInfo";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			x = 0.42; y = 0.26;
-			w = 0.46;
-			h = (1 / 25);
+			x = 0.819688 * safezoneW + safezoneX;
+			y = 0.071 * safezoneH + safezoneY;
+			w = 0.165 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
-		
-		class CloseBtn : Life_RscButtonMenu
+
+		class CloseBtn: Life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
-			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.9 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
+			x = 0.0307812 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.0464063 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
-		
-		class RentCar : Life_RscButtonMenu
+
+		class RentCar: Life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_RentVeh";
 			onButtonClick = "[false] spawn life_fnc_vehicleShopBuy;";
-			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.9 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
+			x = 0.0307812 * safezoneW + safezoneX;
+			y = 0.654 * safezoneH + safezoneY;
+			w = 0.0464063 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
-		
-		class BuyCar : life_RscButtonMenu 
+
+		class BuyCar: life_RscButtonMenu
 		{
 			idc = 2309;
 			text = "$STR_Global_Buy";
 			onButtonClick = "[true] spawn life_fnc_vehicleShopBuy;";
-			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.9 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
+			x = 0.0978125 * safezoneW + safezoneX;
+			y = 0.654 * safezoneH + safezoneY;
+			w = 0.061875 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 	};
-	
+
 	class controls
 	{
-		class VehicleList : Life_RscListBox
+		class VehicleList: Life_RscListBox
 		{
 			idc = 2302;
 			text = "";
 			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
 			onLBSelChanged = "_this call life_fnc_vehicleShopLBChange";
-			
-			//Position & height
-			x = 0.11; y = 0.302;
-			w = 0.303; h = 0.49;
+			x = 0.0204687 * safezoneW + safezoneX;
+			y = 0.093 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.55 * safezoneH;
 		};
-		
-		class ColorList : Life_RscCombo
+
+		class ColorList: Life_RscCombo
 		{
 			idc = 2304;
-			x = 0.11; y = 0.8;
-			w = 0.303; h = 0.03;
+			onLBSelChanged = "[] spawn life_fnc_vehiclecolor3DRefresh;";
+			x = 0.0978125 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.061875 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
-		
-		class vehicleInfomationList : Life_RscStructuredText
+
+		class vehicleInfomationList: Life_RscStructuredText
 		{
 			idc = 2303;
 			text = "";
 			sizeEx = 0.035;
-			
-			x = 0.41; y = 0.3;
-			w = 0.5; h = 0.5;
+			x = 0.819688 * safezoneW + safezoneX;
+			y = 0.104 * safezoneH + safezoneY;
+			w = 0.175313 * safezoneW;
+			h = 0.275 * safezoneH;
 		};
 	};
 };
