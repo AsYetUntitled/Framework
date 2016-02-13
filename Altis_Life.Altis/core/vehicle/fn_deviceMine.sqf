@@ -33,13 +33,13 @@ _item = switch(true) do {
 	case (_zone in ["heroin_1"]): {"heroin_unprocessed"};
 	case (_zone in ["cocaine_1"]): {"cocaine_unprocessed"};
 	case (_zone in ["weed_1"]): {"cannabis"};
-	case (_zone in ["lead_1"]): {"copper_unrefined"};
-	case (_zone in ["iron_1"]): {"iron_unrefined"};
-	case (_zone in ["salt_1"]): {"salt_unrefined"};
-	case (_zone in ["sand_1"]): {"sand"};
-	case (_zone in ["diamond_1"]): {"diamond_uncut"};
-	case (_zone in ["oil_1","oil_2"]): {"oil_unprocessed"};
-	case (_zone in ["rock_1"]): {"rock"};
+	case (_zone in ["copper_mine"]): {"copper_unrefined"};
+	case (_zone in ["iron_mine"]): {"iron_unrefined"};
+	case (_zone in ["salt_mine"]): {"salt_unrefined"};
+	case (_zone in ["sand_mine"]): {"sand"};
+	case (_zone in ["diamond_mine"]): {"diamond_uncut"};
+	case (_zone in ["oil_field_1","oil_field_2"]): {"oil_unprocessed"};
+	case (_zone in ["rock_quarry"]): {"rock"};
 	default {""};
 };
 
