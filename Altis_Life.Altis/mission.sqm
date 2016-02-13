@@ -9678,7 +9678,7 @@ class Mission
 		class Item12
 		{
 			position[]={19856.078,62.778057,17895.051};
-			name="iron_1";
+			name="iron_mine";
 			text="@STR_MAR_Iron_Mine";
 			type="mil_triangle";
 			colorName="ColorBrown";
@@ -9774,7 +9774,7 @@ class Mission
 		class Item24
 		{
 			position[]={8090.8218,77.531647,22620.234};
-			name="sand_1";
+			name="sand_mine";
 			text="@STR_MAR_Sand_Mine";
 			type="mil_triangle";
 			colorName="ColorBrown";
@@ -10327,7 +10327,7 @@ class Mission
 		class Item92
 		{
 			position[]={9186.0107,27.468599,13990.347};
-			name="oil_2";
+			name="oil_field_2";
 			text="@STR_MAR_Oil_Field";
 			type="mil_triangle";
 			colorName="ColorBrown";
@@ -10335,7 +10335,7 @@ class Mission
 		class Item93
 		{
 			position[]={9757.7891,231.07008,19445.281};
-			name="oil_1";
+			name="oil_field_1";
 			text="@STR_MAR_Oil_Field";
 			type="mil_triangle";
 			colorName="ColorBrown";
@@ -10866,7 +10866,7 @@ class Mission
 		class Item161
 		{
 			position[]={17073.295,24.327265,11361.496};
-			name="rock_1";
+			name="rock_quarry";
 			text="@STR_MAR_Rock_Quarry";
 			type="mil_triangle";
 			colorName="ColorBrown";
