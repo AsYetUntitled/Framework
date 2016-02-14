@@ -8,7 +8,7 @@ class Life_Settings {
     /* Persistent Settings */
     save_civ_weapons = false; //Allow civilians to save weapons on them?
     save_virtualItems = true; //Save Virtual items (all sides)?
-    save_playerStats = false; //Save food & water (all sides)?
+    save_playerStats = true; //Save food, water and damage (all sides)?
     save_veh_virtualItems = false; //Save Virtual items for vehicles (all sides)?
     save_veh_gear = false; //Save Gear for vehicles (all sides)?
 

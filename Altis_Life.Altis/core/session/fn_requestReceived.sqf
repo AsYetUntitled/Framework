@@ -54,6 +54,7 @@ switch(playerSide) do {
 		if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
 			life_hunger = SEL(SEL(_this,10),0);
 			life_thirst = SEL(SEL(_this,10),1);
+			player setDamage SEL(SEL(_this,10),2);
 		};
 	};
 
@@ -65,6 +66,7 @@ switch(playerSide) do {
 		if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
 			life_hunger = SEL(SEL(_this,9),0);
 			life_thirst = SEL(SEL(_this,9),1);
+			player setDamage SEL(SEL(_this,9),2);
 		};
 		{
 			_house = nearestBuilding (call compile format["%1", SEL(_x,0)]);
@@ -84,6 +86,7 @@ switch(playerSide) do {
 		if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
 			life_hunger = SEL(SEL(_this,9),0);
 			life_thirst = SEL(SEL(_this,9),1);
+			player setDamage SEL(SEL(_this,9),2);
 		};
 	};
 };

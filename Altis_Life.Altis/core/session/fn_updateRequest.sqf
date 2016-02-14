@@ -2,9 +2,9 @@
 /*
 	File: fn_updateRequest.sqf
 	Author: Tonic
-	
+
 	Description:
-	
+
 */
 private["_packet","_array","_flag"];
 _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
@@ -24,6 +24,7 @@ _packet pushBack life_gear;
 _array = [];
 _array pushBack life_hunger;
 _array pushBack life_thirst;
+_array pushBack (damage player);
 _packet pushBack _array;
 
 switch (playerSide) do {
