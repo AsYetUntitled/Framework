@@ -1310,6 +1310,14 @@
       <Portuguese>O veículo foi guardado na sua garagem.</Portuguese>
       <Polish>Pojazd został zaparkowany.</Polish>
     </Key>
+	<Key ID="STR_Garage_spawn_Success">
+      <Original>Your vehicle is ready!</Original>
+      <German>Dein Fahrzeug ist bereit!</German>
+      <French>Votre véhicule est prêt</French>
+      <Italian>Il vostro veicolo è pronto</Italian>
+      <Portuguese>O seu veículo está pronto</Portuguese>
+      <Polish>Pojazd jest gotowy</Polish>
+    </Key>
     <Key ID="STR_Garage_Store_Server">
       <Original>The server is trying to store the vehicle...</Original>
       <German>Der Server versucht, das Fahrzeug zu speichern...</German>

@@ -28,6 +28,7 @@ if(vehicle player != player) then {
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
 if(isNull _vehicle) exitWith {};
 
-[_vehicle,false,(_this select 1)] remoteExecCall ["TON_fnc_vehicleStore",2];
+_storetext = localize "STR_Garage_Store_Success";
+[_vehicle,false,(_this select 1),_storetext] remoteExecCall ["TON_fnc_vehicleStore",2];
 hint localize "STR_Garage_Store_Server";
 life_garage_store = true;

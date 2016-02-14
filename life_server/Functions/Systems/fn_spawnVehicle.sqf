@@ -14,6 +14,7 @@ _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
+_spawntext = _this select 6;
 _unit_return = _unit;
 _name = name _unit;
 _side = side _unit;
@@ -134,5 +135,6 @@ if(EQUAL(SEL(_vInfo,1),"cop") && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01
 if(EQUAL(SEL(_vInfo,1),"med") && EQUAL(SEL(_vInfo,2),"C_Offroad_01_F")) then {
 	[_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
-[1,"Your vehicle is ready!"] remoteExecCall ["life_fnc_broadcast",_unit];
+
+[1,_spawntext] remoteExecCall ["life_fnc_broadcast",_unit];
 serv_sv_use deleteAt _servIndex;
