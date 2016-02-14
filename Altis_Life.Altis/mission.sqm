@@ -3326,6 +3326,7 @@ class Mission
 				{
 					position[]={22160.629,3.0809033,14480.969};
 					azimut=-89.569389;
+					special="NONE";
 					id=201;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
