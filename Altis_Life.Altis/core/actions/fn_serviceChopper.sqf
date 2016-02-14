@@ -10,7 +10,7 @@ disableSerialization;
 private["_search","_ui","_progress","_cP","_pgText"];
 if(life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 
-_search = nearestObjects[getPos air_sp, ["Air"],5];
+_search = nearestObjects[getPos air_sp, ["Air"],10];
 
 if(EQUAL(count _search,0)) exitWith {hint localize "STR_Service_Chopper_NoAir"};
 if(CASH < 1000) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
@@ -33,7 +33,7 @@ while {true} do {
 	if(_cP >= 1) exitWith {};
 };
 
-if(!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 10) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
+if(!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
 if(!local SEL(_search,0)) then {
 	[SEL(_search,0),1] remoteExecCall ["life_fnc_setFuel",SEL(_search,0)];
 } else {
