@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_gangInvite.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
@@ -12,7 +13,7 @@ params [
 ];
 
 if(EQUAL(_name,"") OR isNull _group) exitWith {}; //Fail horn anyone?
-if(!isNil {(group player) GVAR "gang_name"}) exitWith {hint "You are already in a gang"};
+if(!isNil {(group player) GVAR "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
 
 _gangName = _group GVAR "gang_name";
 _action = [

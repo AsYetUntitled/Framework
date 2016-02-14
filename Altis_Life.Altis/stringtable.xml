@@ -1180,6 +1180,14 @@
       <Portuguese>(Lider da Gangue)</Portuguese>
       <Polish>(Szef gangu)</Polish>
     </Key>
+    <Key ID='STR_GNOTF_AlreadyInGang'>
+      <Original>You are already in a gang.</Original>
+      <German>Sie befinden sich bereits in einer Gang.</German>
+      <French>Vous êtes déjà dans un gang.</French>
+      <Italian>Sei già in una banda.</Italian>
+      <Portuguese>Você já está em uma gangue.</Portuguese>
+      <Polish>Jesteś już w gangu.</Polish>
+    </Key>
   </Package>
   <Package name="Garage_Strings">
     <Key ID="STR_Garage_Title">
