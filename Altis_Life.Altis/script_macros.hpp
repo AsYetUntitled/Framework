@@ -17,8 +17,10 @@
 #define SVAR_MNS missionNamespace setVariable
 #define SVAR_UINS uiNamespace setVariable
 #define SVAR_PNS parsingNamespace setVariable
+#define SVAR_PNAS profileNamespace setVariable
 #define GVAR_MNS missionNamespace getVariable
 #define GVAR_UINS uiNamespace getVariable
+#define GVAR_PNAS profileNamespace getVariable
 
 //Scripting Macros
 #define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})

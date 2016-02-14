@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_s_onSliderChange.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -12,22 +13,28 @@ if(_mode == -1 OR _value == -1) exitWith {};
 disableSerialization;
 
 switch (_mode) do {
-	case 0: {
-		life_vdFoot = round(_value);
+	case 0:
+	{
+		life_settings_viewDistanceFoot = round(_value);
 		ctrlSetText[2902,format["%1",round(_value)]];
 		[] call life_fnc_updateViewDistance;
+		SVAR_PNAS["life_viewDistanceFoot",round(_value)];
 	};
 
-	case 1: {
-		life_vdCar = round(_value);
+	case 1:
+	{
+		life_settings_viewDistanceCar = round(_value);
 		ctrlSetText[2912,format["%1",round(_value)]];
 		[] call life_fnc_updateViewDistance;
+		SVAR_PNAS["life_viewDistanceCar",round(_value)];
 	};
 
-	case 2: {
-		life_vdAir = round(_value);
+	case 2:
+	{
+		life_settings_viewDistanceAir = round(_value);
 		ctrlSetText[2922,format["%1",round(_value)]];
 		[] call life_fnc_updateViewDistance;
+		SVAR_PNAS["life_viewDistanceAir",round(_value)];
 	};
 
 	case 3: {

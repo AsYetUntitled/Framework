@@ -25,10 +25,11 @@ if(isNull _control) exitWith {};
 if(_onKeyUp) then {
 	_value = parseNumber(ctrlText _control);
 	_varName = switch(_slider) do {
-		case "ground": {"life_vdFoot";};
-		case "vehicle": {"life_vdCar"};
-		case "air": {"life_vdAir"};
-		default {"life_vdFoot"};
+		case "ground": {"life_settings_viewDistanceFoot";};
+		case "vehicle": {"life_settings_viewDistanceCar"};
+		case "ship": {"life_settings_viewDistanceCar"};
+		case "air": {"life_settings_viewDistanceAir"};
+		default {"life_settings_viewDistanceFoot"};
 	};
 
 	SVAR_MNS [_varName,_value];

@@ -33,9 +33,6 @@ life_interrupted = false;
 life_respawned = false;
 life_removeWanted = false;
 life_action_gathering = false;
-life_vdFoot = viewDistance;
-life_vdCar = viewDistance;
-life_vdAir = viewDistance;
 tawvd_addon_disable = true;
 life_god = false;
 life_frozen = false;
@@ -45,6 +42,14 @@ life_save_gear = [];
 life_container_activeObj = ObjNull;
 life_disable_getIn = false;
 life_disable_getOut = false;
+
+//Settings
+life_settings_enableSidechannel = GVAR_PNAS["life_enableSidechannel",true];
+life_settings_tagson = GVAR_PNAS["life_settings_tagson",true];
+life_settings_revealObjects = GVAR_PNAS["life_settings_revealObjects",true];
+life_settings_viewDistanceFoot = GVAR_PNAS["life_viewDistanceFoot",1250];
+life_settings_viewDistanceCar = GVAR_PNAS["life_viewDistanceCar",1250];
+life_settings_viewDistanceAir = GVAR_PNAS["life_viewDistanceAir",1250];
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
