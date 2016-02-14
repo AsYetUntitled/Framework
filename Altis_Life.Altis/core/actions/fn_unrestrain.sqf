@@ -1,6 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_unrestrain.sqf
+	Author: 
+	
+	Description:
+	
 */
 private["_unit"];
 _unit = param [0,ObjNull,[ObjNull]];

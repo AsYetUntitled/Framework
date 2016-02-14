@@ -1,4 +1,5 @@
 /*
+	File: fn_onPlayerConnected.sqf
 	Author: Karel Moricky
 
 	Description:

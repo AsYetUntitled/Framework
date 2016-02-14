@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_colorVehicle.sqf
 	Author: Bryan "Tonic" Boardwine
 
 	Description:

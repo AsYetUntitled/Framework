@@ -1,5 +1,6 @@
 #include "\life_server\script_macros.hpp"
 /*
+	File: fn_insertGang.sqf
 	Author: Bryan "Tonic" Boardwine
 
 	Description:

@@ -1,4 +1,5 @@
 /*
+	File: fn_addVehicle2Chain.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

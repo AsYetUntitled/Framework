@@ -1,4 +1,5 @@
 /*
+	File: fn_getBuildingPositions.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

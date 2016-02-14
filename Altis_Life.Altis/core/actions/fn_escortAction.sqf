@@ -1,6 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_escortAction.sqf
+	Author: 
+	
+	Description:
+	
 */
 private "_unit";
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;

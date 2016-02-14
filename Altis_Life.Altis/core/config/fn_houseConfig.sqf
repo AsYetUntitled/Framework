@@ -1,4 +1,5 @@
 /*
+	File: fn_houseConfig.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

@@ -1,4 +1,5 @@
 /*
+	File: fn_huntingZone.sqf
 	Author: Bryan "Tonic" Boardwine
 
 	Description:

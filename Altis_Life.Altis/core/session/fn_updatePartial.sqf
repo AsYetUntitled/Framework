@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_updatePartial.sqf
 	Author: Bryan "Tonic" Boardwine
 
 	Description:

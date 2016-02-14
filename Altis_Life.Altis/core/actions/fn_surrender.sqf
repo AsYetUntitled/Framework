@@ -1,6 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_surrender.sqf
+	Author: 
 
 	Description: Causes player to put their hands on their head.
 */

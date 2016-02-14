@@ -1,6 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_searchVehAction.sqf
+	Author: 
+	
+	Description:
+	
 */
 private["_vehicle","_data"];
 _vehicle = cursorTarget;

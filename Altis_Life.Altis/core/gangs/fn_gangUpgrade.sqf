@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_gangUpgrade.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

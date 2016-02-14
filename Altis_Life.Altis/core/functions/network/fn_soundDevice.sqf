@@ -1,4 +1,7 @@
 /*
+	File: fn_soundDevice.sqf
+	Author: 
+	
 	Description:
 	Plays a device sound for mining (Mainly Tempest device).
 */

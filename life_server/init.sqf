@@ -1,6 +1,7 @@
 #include "script_macros.hpp"
 #define __EXIT(condition) if(condition) exitWith {}
 /*
+	File: init.sqf
 	Author: Bryan "Tonic" Boardwine
 
 	Description:

@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_wireTransfer.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

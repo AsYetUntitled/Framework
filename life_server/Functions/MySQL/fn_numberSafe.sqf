@@ -1,4 +1,5 @@
 /*
+	File: fn_numberSafe.sqf
 	Author: Karel Moricky
 
 	Description:

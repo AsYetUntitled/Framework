@@ -1,4 +1,5 @@
 /*
+	File: fn_lightHouse.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

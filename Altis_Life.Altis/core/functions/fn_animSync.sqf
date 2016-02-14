@@ -1,5 +1,9 @@
 /*
 	File: fn_animSync.sqf
+	Author: 
+	
+	Description:
+	
 */
 private["_unit","_anim"];
 _unit = [_this,0,ObjNull,[Objnull]] call BIS_fnc_param;

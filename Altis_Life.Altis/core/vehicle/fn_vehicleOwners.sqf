@@ -1,4 +1,8 @@
 /*
+	File: fn_vehicleOwners.sqf
+	Author: 
+	
+	Description:
 	Pulled from old system, will be revised for new system.
 */
 private["_data","_return","_format"];

@@ -1,5 +1,6 @@
 /*
 	File: fn_initSpy.sqf
+	Author: 
 
 	Description:
 	Does some things that I made over-complicated / un-needed but blah.

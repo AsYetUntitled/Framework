@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_nearATM.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

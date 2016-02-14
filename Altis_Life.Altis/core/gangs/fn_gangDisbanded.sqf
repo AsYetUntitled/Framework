@@ -1,4 +1,5 @@
 /*
+	File: fn_gangDisbanded.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

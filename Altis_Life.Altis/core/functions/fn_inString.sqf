@@ -1,4 +1,5 @@
 /*
+	File: fn_inString.sqf
 	Author: Killzone_Kid
 	
 	Description:

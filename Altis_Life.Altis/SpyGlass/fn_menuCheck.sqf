@@ -10,6 +10,7 @@
 	failMission "SpyGlass";
 
 /*
+	File: fn_menuCheck.sqf
 	Author: Bryan "Tonic" Boardwine
 
 	Description:

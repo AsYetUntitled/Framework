@@ -1,3 +1,10 @@
+/*
+	File: fn_spawn.sqf
+	Author: 
+
+	Description:
+	
+*/
 private ["_params","_code"];
 
 _params = [];

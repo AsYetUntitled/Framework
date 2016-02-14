@@ -1,3 +1,10 @@
+/*
+	File: fn_say3D.sqf
+	Author: 
+	
+	Description:
+	
+*/
 private["_object","_sound"];
 _object = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _sound = [_this,1,"",[""]] call BIS_fnc_param;

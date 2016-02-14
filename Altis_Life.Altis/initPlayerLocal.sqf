@@ -1,5 +1,6 @@
 /*
 	File: initPlayerLocal.sqf
+	Author: 
 
 	Description:
 	Starts the initialization of the player.

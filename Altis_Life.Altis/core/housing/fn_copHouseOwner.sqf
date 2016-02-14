@@ -1,4 +1,8 @@
 /*
+	File: fn_copHouseOwner.sqf
+	Author: 
+	
+	Description:
 	Displays the house owner
 */
 private["_house"];

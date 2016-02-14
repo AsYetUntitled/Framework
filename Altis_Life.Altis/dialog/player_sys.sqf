@@ -1,3 +1,10 @@
+/*
+	File: player_sys.sqf
+	Author: 
+	
+	Description:
+	
+*/
 #define playersys_DIALOG 2001
 #define money_text 2002
 #define water_text 2003

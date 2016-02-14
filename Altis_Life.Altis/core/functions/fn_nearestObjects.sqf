@@ -1,4 +1,5 @@
 /*
+	File: fn_nearestObjects.sqf
 	Author: NiiRoZz
 	Description:
 	Search for nearby pre-built objects like trees, brushes, stone in a nearestObjects-like manner.

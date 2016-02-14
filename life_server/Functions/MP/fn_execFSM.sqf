@@ -1,3 +1,10 @@
+/*
+	File: fn_execFSM.sqf
+	Author: 
+	
+	Description:
+	
+*/
 private ["_params","_fsm"];
 
 _params = [];

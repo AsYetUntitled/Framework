@@ -2,6 +2,9 @@
 /*
 	File: fn_robReceive.sqf
 	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	
 */
 params [
 	["_cash",0,[0]],

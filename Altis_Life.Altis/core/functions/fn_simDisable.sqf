@@ -1,5 +1,9 @@
 /*
 	File: fn_simDisable.sqf
+	Author: 
+	
+	Description:
+	
 */
 private["_obj","_bool"];
 _obj = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;

@@ -1,4 +1,5 @@
 /*
+	File: fn_updateGang.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

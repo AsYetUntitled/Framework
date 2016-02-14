@@ -2,6 +2,7 @@
 #define SPY_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "SpyGlass" >> SETTING)
 /*
 	File: fn_variableCheck.sqf
+	Author: 
 	
 	Description:
 	Checks against harmful variables, disable this if client-performance is 

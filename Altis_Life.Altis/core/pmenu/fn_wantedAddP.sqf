@@ -1,4 +1,11 @@
 #include "..\..\script_macros.hpp"
+/*
+	File: fn_wantedAddP.sqf
+	Author: 
+	
+	Description:
+	
+*/
 private["_unit","_amount"];
 if(playerSide != west) exitWith {hint "Who do you think you are?"};
 if((lbCurSel 2406) == -1) exitWith {hint "You must select a perp."};

@@ -2,6 +2,9 @@
 /*
 	File: fn_updateRequest.sqf
 	Author: Tonic
+	
+	Description:
+	
 */
 private["_packet","_array","_flag"];
 _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];

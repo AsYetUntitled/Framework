@@ -1,5 +1,5 @@
 /*
-	File: fn_Setup_Sation_Service.sqf
+	File: fn_setupStationService.sqf
 	Author: NiiRoZz
 
 	Description:

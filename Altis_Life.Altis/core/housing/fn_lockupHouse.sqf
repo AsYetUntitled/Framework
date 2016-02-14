@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_lockupHouse.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

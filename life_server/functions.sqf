@@ -1,4 +1,11 @@
 #include "script_macros.hpp"
+/*
+	File: functions.sqf
+	Author: 
+
+	Description:
+	
+*/
 TON_fnc_index =
 compileFinal "
 	private[""_item"",""_stack""];

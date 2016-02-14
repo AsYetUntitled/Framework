@@ -1,4 +1,5 @@
 /*
+	File: fn_queryPlayerGang.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

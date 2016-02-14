@@ -1,5 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
+	File: fn_s_onChar.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

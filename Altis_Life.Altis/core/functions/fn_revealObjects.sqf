@@ -1,4 +1,5 @@
 /*
+	File: fn_revealObjects.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

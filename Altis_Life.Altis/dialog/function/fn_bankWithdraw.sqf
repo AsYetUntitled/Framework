@@ -1,6 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
-	Bryan "Tonic" Boardwine
+	File: fn_bankWithdraw.sqf
+	Author: Bryan "Tonic" Boardwine
 	
 	Description:
 	Withdraws money from the players account

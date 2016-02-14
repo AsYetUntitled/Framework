@@ -1,3 +1,10 @@
+/*
+	File: fn_execVM.sqf
+	Author: 
+	
+	Description:
+	
+*/
 private ["_params","_script"];
 
 _params = [];

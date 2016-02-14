@@ -1,5 +1,8 @@
 #include "..\script_macros.hpp"
 /*
+	File: clientValidator.sqf
+	Author: 
+	
 	Description:
 	Loops through a list of variables and checks whether
 	or not they are defined, if they are defined then trigger

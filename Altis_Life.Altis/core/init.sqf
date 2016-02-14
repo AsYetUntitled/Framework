@@ -1,5 +1,9 @@
 #include "..\script_macros.hpp"
 /*
+	File: init.sqf
+	Author: 
+	
+	Description:
 	Master client initialization file
 */
 life_firstSpawn = true;
@@ -137,7 +141,7 @@ CONSTVAR(life_paycheck); //Make the paycheck static.
 if(EQUAL(LIFE_SETTINGS(getNumber,"enable_fatigue"),0)) then {player enableFatigue false;};
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"Pump_service"),1)) then{
-	[] execVM "core\fn_Setup_Sation_Service.sqf";
+	[] execVM "core\fn_setupStationService.sqf";
 };
 
 [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];

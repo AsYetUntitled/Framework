@@ -1,5 +1,6 @@
 /*
 	File: fn_civMarkers.sqf
+	Author: 
 
 	Description:
 	Add markers for civilians in groups.

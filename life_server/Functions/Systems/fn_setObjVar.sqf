@@ -1,4 +1,5 @@
 /*
+	File: fn_setObjVar.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:

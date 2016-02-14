@@ -1,5 +1,6 @@
 /*
 	File: fn_stopEscorting.sqf
+	Author: 
 	
 	Description:
 	ASFSDFHAGFASF

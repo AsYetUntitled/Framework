@@ -1,4 +1,7 @@
 /*
+	File: fn_flashbang.sqf
+	Author: 
+	
 	Description:
 	Handles flash-banging yeahhhh..
 */

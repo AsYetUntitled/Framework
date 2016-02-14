@@ -1,6 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_arrestAction.sqf
+	Author: 
 	
 	Description:
 	Arrests the targeted person.

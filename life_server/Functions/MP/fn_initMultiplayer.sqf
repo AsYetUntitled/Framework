@@ -1,4 +1,5 @@
 /*
+	File: fn_initMultiplayer.sqf
 	Author: Karel Moricky
 
 	Description:
