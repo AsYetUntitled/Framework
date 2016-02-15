@@ -34,5 +34,6 @@ if(_time_gathered < 0 || _time_join < 0) then
 
 _time = (time - _time_join); //return time
 _time = _time + _time_gathered;
+_time = round (_time/60);
 
 _time;
