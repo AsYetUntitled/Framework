@@ -2295,6 +2295,14 @@
       <Portuguese>Você precisa de R$%1 para processar sem uma licença!</Portuguese>
       <Polish>Potrzebujesz $%1 w celu przetworzenia bez licencji</Polish>
     </Key>
+    <Key ID="STR_NOTF_NotEnoughItemProcess">
+      <Original>You don't have enough item!</Original>
+      <French>Vous n'avez pas assez d'item!</French>
+    </Key>
+    <Key ID="STR_NOTF_ItemProcess">
+      <Original>You have processed your item(s)!</Original>
+      <French>Vous avez traité vos item(s)!</French>
+    </Key>
     <Key ID="STR_NOTF_RapidAction">
       <Original>You can't rapidly use action keys!</Original>
       <German>Die Aktionstaste kann nicht so schnell hintereinander genutzt werden!</German>
