@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `players` (
   `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   `playtime` varchar(25) NOT NULL DEFAULT '"[0,0,0]"',
-  `insert_time` datetime DEFAULT CURRENT_TIMESTAMP,
-  `last_seen` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`),
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `inventory` varchar(500) NOT NULL,
   `gear` text NOT NULL,
   `fuel` double NOT NULL DEFAULT '1',
-  `insert_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `side` (`side`),
   KEY `pid` (`pid`),
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `pid` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `owned` tinyint(4) DEFAULT '0',
-  `insert_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `gangs` (
   `maxmembers` int(2) DEFAULT '8',
   `bank` int(100) DEFAULT '0',
   `active` tinyint(4) DEFAULT '1',
-  `insert_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `containers` (
   `dir` varchar(64) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `owned` tinyint(4) DEFAULT '0',
-  `insert_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -180,7 +180,7 @@ CREATE TABLE `wanted` (
   `wantedCrimes` text NOT NULL,
   `wantedBounty` int(100) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0',
-  `insert_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`wantedID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
