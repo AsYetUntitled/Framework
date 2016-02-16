@@ -114,7 +114,7 @@ while {true} do {
 	};
 
 	_display = findDisplay 316000;
-	if(!(isNull _display)) exitWith {
+	if(!isNull _display && !isNull life_adminDebug && life_adminDebug) exitWith {
 		[profileName,steamid,"MenuBasedHack_RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 		[profileName,"Menu Hack: RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 		closeDialog 0;

@@ -1,8 +1,8 @@
 #include "..\script_macros.hpp"
 /*
 	File: configuration.sqf
-	Author: 
-	
+	Author:
+
 	Description:
 	Master Life Configuration File
 	This file is to setup variables for the client, there are still other configuration files in the system
@@ -42,6 +42,7 @@ life_save_gear = [];
 life_container_activeObj = ObjNull;
 life_disable_getIn = false;
 life_disable_getOut = false;
+life_adminDebug = false;
 
 //Settings
 life_settings_enableSidechannel = GVAR_PNAS["life_enableSidechannel",true];
