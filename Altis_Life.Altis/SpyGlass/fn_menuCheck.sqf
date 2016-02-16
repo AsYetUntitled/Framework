@@ -134,8 +134,8 @@ while {true} do {
 
 	/* We'll just move the no-recoil check into this thread. */
 	if((unitRecoilCoefficient player) < 1) then {
-		[profileName,steamid,"No_recoil_hack"] remoteExecCall ["SPY_fnc_cookieJar",2];
-		[profileName,"No recoil hack"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+		[profileName,steamid,"No_recoil_hack"] remoteExec ["SPY_fnc_cookieJar",2];
+		[profileName,"No recoil hack"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;
 		failMission "SpyGlass";
 	};

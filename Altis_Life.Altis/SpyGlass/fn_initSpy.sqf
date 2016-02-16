@@ -140,8 +140,8 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 	_patchEntry = _binConfigPatches select _i;
 	if(isClass _patchEntry) then {
 		if(!((configName _patchEntry) in _patchList)) exitWith {
-			[profileName,steamid,(configName _patchEntry)] remoteExecCall ["SPY_fnc_cookieJar",2];
-			[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+			[profileName,steamid,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",2];
+			[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 			sleep 0.5;
 			failMission "SpyGlass";
 		};
@@ -160,8 +160,8 @@ _allowedChildren = [
 
 {
 	if(!((configName _x) in _allowedChildren)) exitWith {
-		[profileName,steamid,"Modified_MPInterrupt"] remoteExecCall ["SPY_fnc_cookieJar",2];
-		[profileName,"Devcon like executor detected"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+		[profileName,steamid,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",2];
+		[profileName,"Devcon like executor detected"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;
 		failMission "SpyGlass";
 	};
