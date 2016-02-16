@@ -2461,6 +2461,10 @@
       <Portuguese>Você foi congelado por um administrador</Portuguese>
       <Polish>Zostałeś zamrożony przez administratora</Polish>
     </Key>
+    <Key ID="STR_NOTF_Teleport">
+      <Original>You have teleported to your selected position</Original>
+      <Portuguese>Você foi teleportado para a posição que você selecionou</Portuguese>
+    </Key>
     <Key ID="STR_NOTF_Unfrozen">
       <Original>You have been unfrozen by an administrator</Original>
       <German>Ein Admin hat dich wieder aufgetaut</German>
