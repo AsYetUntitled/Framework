@@ -1,15 +1,4 @@
-#define GVAR_UINS uiNamespace getVariable
-#define steamid getPlayerUID player
-#define RCLIENT -2
-#define FETCH_CONST(var) (call var)
-#define EQUAL(condition1,condition2) condition1 isEqualTo condition2
-#define SPYGLASS_END \
-	vehicle player setVelocity[1e10,1e14,1e18]; \
-	sleep 3; \
-	preProcessFile "SpyGlass\endoftheline.sqf"; \
-	sleep 2.5; \
-	failMission "SpyGlass";
-
+#include "..\script_macros.hpp"
 /*
 	File: fn_menuCheck.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -38,7 +27,7 @@ while {true} do {
 		};
 
 		if(_detection) exitWith {
-			[profileName,steamid,format["MenuBasedHack_%1",_targetName]] remoteExecCall ["SPY_fnc_cookieJar",2];
+			[profileName,steamid,format["MenuBasedHack_%1",_targetName]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 			[profileName,format["Menu Hack: %1",_targetName]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 			sleep 0.5;
 			SPYGLASS_END
@@ -56,7 +45,7 @@ while {true} do {
 	_display = findDisplay 602;
 	if(!isNull _display && {count (allControls _display) > 85}) then {
 		_count = count allControls _display;
-		[profileName,steamid,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]] remoteExecCall ["SPY_fnc_cookieJar",2];
+		[profileName,steamid,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 		[profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 		closeDialog 0;
 		SPYGLASS_END
@@ -65,7 +54,7 @@ while {true} do {
 	if(!isNull (findDisplay 148)) then {
 		sleep 0.5;
 		if((lbSize 104)-1 > 3) exitWith {
-			[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"] remoteExecCall ["SPY_fnc_cookieJar",2];
+			[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 			[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 			closeDialog 0;
 			SPYGLASS_END
@@ -76,7 +65,7 @@ while {true} do {
 	if(!isNull _display) then {
 		{
 			if (_x && !isNull _display) exitWith {
-				[profileName,steamid,"MenuBasedHack_RscDisplayInsertMarker"] remoteExecCall ["SPY_fnc_cookieJar",2];
+				[profileName,steamid,"MenuBasedHack_RscDisplayInsertMarker"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 				[profileName,"Menu Hack: RscDisplayInsertMarker"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 				closeDialog 0;
 				SPYGLASS_END
@@ -95,7 +84,7 @@ while {true} do {
 
 		{
 			if (_x && !isNull _display) exitWith {
-				[profileName,steamid,"MenuBasedHack_RscDisplayConfigureAction"] remoteExecCall ["SPY_fnc_cookieJar",2];
+				[profileName,steamid,"MenuBasedHack_RscDisplayConfigureAction"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 				[profileName,"Menu Hack: RscDisplayConfigureAction"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 				closeDialog 0;
 				SPYGLASS_END
@@ -113,7 +102,7 @@ while {true} do {
 
 		{
 			if (_x && !isNull _display) exitWith {
-				[profileName,steamid,"MenuBasedHack_RscDisplayControlSchemes"] remoteExecCall ["SPY_fnc_cookieJar",2];
+				[profileName,steamid,"MenuBasedHack_RscDisplayControlSchemes"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 				[profileName,"Menu Hack: RscDisplayControlSchemes"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 				closeDialog 0;
 				SPYGLASS_END
@@ -126,7 +115,7 @@ while {true} do {
 
 	_display = findDisplay 316000;
 	if(!(isNull _display)) exitWith {
-		[profileName,steamid,"MenuBasedHack_RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_cookieJar",2];
+		[profileName,steamid,"MenuBasedHack_RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 		[profileName,"Menu Hack: RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 		closeDialog 0;
 		SPYGLASS_END
@@ -134,7 +123,7 @@ while {true} do {
 
 	/* We'll just move the no-recoil check into this thread. */
 	if((unitRecoilCoefficient player) < 1) then {
-		[profileName,steamid,"No_recoil_hack"] remoteExec ["SPY_fnc_cookieJar",2];
+		[profileName,steamid,"No_recoil_hack"] remoteExec ["SPY_fnc_cookieJar",RSERV];
 		[profileName,"No recoil hack"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;
 		failMission "SpyGlass";
@@ -152,7 +141,7 @@ while {true} do {
 			_onLoad = getText(configFile >> (_x select 0) >> "onLoad");
 			_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
 			if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith {
-				[profileName,steamid,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",2];
+				[profileName,steamid,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 				[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 				sleep 0.5;
 				SPYGLASS_END

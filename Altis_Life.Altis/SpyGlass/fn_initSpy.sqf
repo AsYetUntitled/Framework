@@ -1,3 +1,4 @@
+#include "..\script_macros.hpp"
 /*
 	File: fn_initSpy.sqf
 	Author:
@@ -140,7 +141,7 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 	_patchEntry = _binConfigPatches select _i;
 	if(isClass _patchEntry) then {
 		if(!((configName _patchEntry) in _patchList)) exitWith {
-			[profileName,steamid,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",2];
+			[profileName,steamid,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",RSERV];
 			[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 			sleep 0.5;
 			failMission "SpyGlass";
@@ -160,7 +161,7 @@ _allowedChildren = [
 
 {
 	if(!((configName _x) in _allowedChildren)) exitWith {
-		[profileName,steamid,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",2];
+		[profileName,steamid,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",RSERV];
 		[profileName,"Devcon like executor detected"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;
 		failMission "SpyGlass";
@@ -177,7 +178,7 @@ _allowedChildren = [
 	_onLoad = getText(configFile >> (_x select 0) >> "onLoad");
 	_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
 	if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith {
-		[profileName,steamid,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",2];
+		[profileName,steamid,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 		[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;
 		vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
@@ -214,7 +215,7 @@ forEach [
 
 /* Forgot to include this but this is also also a popular method for "unreleased" stuff */
 if(getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunctions.sqf") then {
-	[profileName,steamid,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_cookieJar",2];
+	[profileName,steamid,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 	[profileName,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 	sleep 0.5;
 	vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
