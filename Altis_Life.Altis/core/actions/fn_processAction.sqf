@@ -118,17 +118,17 @@ if(_hasLicense) then {
 		_calcul = (floor ((_var)/(_ItemNumberLife)));
 		_ItemMax pushBack _calcul;
 	} forEach _itemNameInv;
+	_ItemMin = _ItemMax select 0;
+	{
+		if (_x<_ItemMin) then {_ItemMin=_x};
+	} forEach _ItemMax;
 	_IndexNow = -1;
 	{
 		_IndexNow = _IndexNow + 1;
 		_ItemNameHandle = _x select 0;
 		_ItemNumberHandle = _x select 1;
-		[false,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMax select _IndexNow))] call life_fnc_handleInv;
+		[false,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMin))] call life_fnc_handleInv;
 	} forEach _oldItem;
-	_ItemMin = _ItemMax select 0;
-	{
-		if (_x<_ItemMin) then {_ItemMin=_x};
-	} forEach _ItemMax;
 	{
 		_ItemNameHandle = _x select 0;
 		_ItemNumberHandle = _x select 1;
@@ -161,17 +161,17 @@ if(_hasLicense) then {
 		_calcul = (floor ((_var)/(_ItemNumberLife)));
 		_ItemMax pushBack _calcul;
 	} forEach _itemNameInv;
+	_ItemMin = _ItemMax select 0;
+	{
+		if (_x<_ItemMin) then {_ItemMin=_x};
+	} forEach _ItemMax;
 	_IndexNow = -1;
 	{
 		_IndexNow = _IndexNow + 1;
 		_ItemNameHandle = _x select 0;
 		_ItemNumberHandle = _x select 1;
-		[false,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMax select _IndexNow))] call life_fnc_handleInv;
+		[false,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMin))] call life_fnc_handleInv;
 	} forEach _oldItem;
-	_ItemMin = _ItemMax select 0;
-	{
-		if (_x<_ItemMin) then {_ItemMin=_x};
-	} forEach _ItemMax;
 	{
 		_ItemNameHandle = _x select 0;
 		_ItemNumberHandle = _x select 1;
