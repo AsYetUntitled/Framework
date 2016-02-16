@@ -45,7 +45,9 @@ life_disable_getOut = false;
 life_admin_debug = false;
 Life_Preview_3D_Vehicle_cam = objNull;
 Life_Preview_3D_Vehicle_object = objNull;
+life_preview_light = objNull;
 life_pos_exist = false;
+life_pos_attach = [];
 
 //Settings
 life_settings_enableSidechannel = GVAR_PNAS["life_enableSidechannel",true];

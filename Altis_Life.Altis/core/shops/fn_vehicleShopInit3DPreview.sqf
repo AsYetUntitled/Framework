@@ -4,7 +4,6 @@ Life_Preview_3D_Vehicle_cam cameraEffect ["Internal", "BACK"];
 Life_Preview_3D_Vehicle_cam camSetFocus [-1, -1];
 showCinemaBorder false;
 Life_Preview_3D_Vehicle_cam camCommit 0;
-camUseNVG (sunOrMoon == 0);
 
 Life_Preview_3D_Vehicle_object = objNull;
 
