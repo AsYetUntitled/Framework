@@ -1,3 +1,11 @@
+/*
+	File: fn_vehicleShop3DPreview.sqf
+	Author: NiiRoZz
+
+	Description:
+	Called when a new selection is made in the list box and
+	displays the new vehicle selected.
+*/
 private ["_classe_a_visualiser", "_objet", "_position_attache"];
 
 if (isNil "Life_Preview_3D_Vehicle_cam") then

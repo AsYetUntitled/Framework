@@ -1,3 +1,10 @@
+/*
+	File: fn_vehicleShopInit3DPreview.sqf
+	Author: NiiRoZz
+
+	Description:
+	Called when a player open the vehicle shop and setup cam and the while for rotate around the vehicle
+*/
 // Creating a camera.
 Life_Preview_3D_Vehicle_cam = "camera" camCreate ([[5000, 5000, 0]] call life_fnc_SearchPosEmpty);
 Life_Preview_3D_Vehicle_cam cameraEffect ["Internal", "BACK"];

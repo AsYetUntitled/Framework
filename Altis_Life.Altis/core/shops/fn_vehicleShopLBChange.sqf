@@ -2,6 +2,7 @@
 /*
 	File: fn_vehicleShopLBChange.sqf
 	Author: Bryan "Tonic" Boardwine
+	Modified : NiiRoZz
 
 	Description:
 	Called when a new selection is made in the list box and
