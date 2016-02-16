@@ -7,7 +7,6 @@
 	Description:
 	Initialize the server and required systems.
 */
-"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
@@ -97,7 +96,6 @@ fed_bank setVariable ["safe",count playableUnits,true];
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
 [] call compile PreProcessFileLineNumbers "\life_server\functions.sqf";
-[] call compile PreProcessFileLineNumbers "\life_server\eventhandlers.sqf";
 
 /* Miscellaneous mission-required stuff */
 [] spawn TON_fnc_cleanup;

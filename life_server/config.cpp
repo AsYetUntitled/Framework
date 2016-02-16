@@ -17,25 +17,6 @@ class Life_Server_Settings {
 };
 
 class CfgFunctions {
-	class BIS_Overwrite {
-		tag = "BIS";
-		class MP
-		{
-			file = "\life_server\Functions\MP";
-			class initMultiplayer{};
-			class call{};
-			class spawn{};
-			class execFSM{};
-			class execVM{};
-			class execRemote{};
-			class addScore{};
-			class setRespawnDelay{};
-			class onPlayerConnected{};
-			class initPlayable{};
-			class missionTimeLeft{};
-		};
-	};
-
 	class MySQL_Database {
 		tag = "DB";
 		class MySQL
