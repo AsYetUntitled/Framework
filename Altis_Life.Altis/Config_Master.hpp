@@ -58,7 +58,7 @@ class Life_Settings {
     noatm_timer = 10; //Time in minutes that players won't be able to deposit his money after selling stolen gold
 
     /* Spyglass settings */
-    spyglass_init = false; //Enable or disable spyglass
+    spyglass_init = true; //Enable or disable spyglass
 
     /* ATM settings */
     global_ATM = true; //Allow users to access any ATM on the map.
