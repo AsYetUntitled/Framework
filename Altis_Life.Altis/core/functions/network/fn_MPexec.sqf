@@ -9,7 +9,7 @@
 	Parameter(s):
 	_this select 0: STRING - Packet variable name (always "life_fnc_MP_packet")
 	_this select 1: ARRAY - Packet value (sent by life_fnc_MP function; see it's description for more details)
-	
+
 	Returns:
 	BOOL - true if function was executed successfully
 */
@@ -47,7 +47,7 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 		if(_reportUID != _callerUID) exitWith {
 			if(isServer && _mode == 0) then {
 				[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
-				[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				[_callerName,"False reporting to SpyGlass (cheater)"] remoteExecCall ["SPY_fnc_notifyAdmins",-2];
 			};
 			_exitScope = true;
 		};
@@ -58,12 +58,12 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 	if(_callerName != _reportName) exitWith {
 		if(isServer && _mode == 0) then {
 			[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
-			[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+			[_callerName,"False reporting to SpyGlass (cheater)"] remoteExecCall ["SPY_fnc_notifyAdmins",-2];
 		};
 		_exitScope = true;
 	};
 };
-	
+
 if(toLower(_functionName) == "bis_fnc_endmission") exitWith {false}; //Don't allow BIS_fnc_endMission to be passed.
 
 if(_exitScope) exitWith {false}; //Blah.
