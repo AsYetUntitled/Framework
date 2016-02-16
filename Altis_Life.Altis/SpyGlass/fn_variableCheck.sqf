@@ -2,10 +2,10 @@
 #define SPY_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "SpyGlass" >> SETTING)
 /*
 	File: fn_variableCheck.sqf
-	Author: 
-	
+	Author:
+
 	Description:
-	Checks against harmful variables, disable this if client-performance is 
+	Checks against harmful variables, disable this if client-performance is
 	to bad in the fn_initSpy.sqf, the menuCheck should be good enough!
 */
 private["_BIS_Functions","_LIFE_Functions","_SERVER_Functions","_SOCK_Functions","_DB_Functions","_allowedVariables","_checkFunction","_BIS_UI_Functions","_allowedVariables_UI","_profileCount"];
@@ -59,7 +59,7 @@ _checkFunction = {
 							_find = _allowedVariables find [_x,_varType];
 							if(EQUAL(_find,-1)) then {
 								diag_log format["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
-								//failMission "SpyGlass";
+								failMission "SpyGlass";
 							};
 						};
 					};
@@ -81,7 +81,7 @@ _uiCheckFunction = {
 								_find = _allowedVariables_UI find [_x,_varType];
 								if(EQUAL(_find,-1)) then {
 									diag_log format["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
-									//failMission "SpyGlass";
+									failMission "SpyGlass";
 								};
 							};
 						};
