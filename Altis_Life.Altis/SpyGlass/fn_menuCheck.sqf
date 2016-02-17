@@ -43,7 +43,7 @@ while {true} do {
 
 	/* Check to see if RscDisplayInventory has more controls then it should */
 	_display = findDisplay 602;
-	if(!isNull _display && {count (allControls _display) > 85}) then {
+	if(!isNull _display && {count (allControls _display) > 87}) then {
 		_count = count allControls _display;
 		[profileName,steamid,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 		[profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
