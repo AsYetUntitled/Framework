@@ -17,7 +17,7 @@ USE `AltisLife`;
 DELIMITER $$
 --
 -- Procedures
--- Edit arma3 to match a user in MySQ
+-- Edit arma3 to match a user in MySQL
 -- For external databases: Edit localhost to match arma3server IP
 --
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
