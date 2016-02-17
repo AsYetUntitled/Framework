@@ -11,6 +11,7 @@ _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;
 _unit = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 _storetext = _this select 3;
+_ressourceItems = ["oil_unprocessed","oil_processed","copper_unrefined","copper_refined","iron_unrefined","iron_refined","salt_unrefined","salt_refined","sand","glass","diamond_uncut","diamond_cut","rock","cement","heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw"];
 
 if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 
@@ -24,6 +25,15 @@ if(count _vInfo > 0) then {
 //Save vehicle inventory
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
 	_trunk = _vehicle getVariable["Trunk",[[],0]];
+	_trunk2 = _trunk select 0;
+	{
+		_itemName = _x select 0;
+		if(_itemName in _ressourceItems) then	{
+			_trunk2 set [_forEachIndex,666];
+		};
+	} forEach _trunk2;
+	_trunk2 = _trunk2 - [666];
+	_trunk set [0, _trunk2];
 	_trunk = [_trunk] call DB_fnc_mresArray;
 } else {
 	_trunk = [[],0];
