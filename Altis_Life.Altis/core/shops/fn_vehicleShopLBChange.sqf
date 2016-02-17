@@ -63,6 +63,15 @@ _colorArray = M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures");
 	};
 } foreach _colorArray;
 
+_numberindexcolor = 0;
+_numberindexcolorarray = [];
+for "_i" from 0 to (count(_colorArray) - 1) do {
+	_numberindexcolorarray pushback _numberindexcolor;
+	_numberindexcolor = _numberindexcolor + 1;
+};
+_indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
+_ctrl lbSetCurSel _indexrandom;
+
 if(_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
 	ctrlEnable [2309,false];
 } else {
@@ -71,7 +80,6 @@ if(_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
 	};
 };
 
-lbSetCurSel[2304,0];
 if((lbSize _ctrl)-1 != -1) then {
 	ctrlShow[2304,true];
 } else {
