@@ -35,7 +35,7 @@ class Life_Settings {
     gang_upgradeMultiplier = 2.5; //Not sure if in use?
 
     /* Player-related systems */
-    enable_fatigue = true; //Set to false to disable the ARMA 3 false system.
+    enable_fatigue = true; //Set to false to disable the ARMA 3 fatigue system.
     total_maxWeight = 24; //Static variable for the maximum weight allowed without having a backpack
     paycheck_period = 5; //Scaled in minutes
 
