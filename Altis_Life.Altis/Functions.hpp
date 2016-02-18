@@ -206,6 +206,7 @@ class Life_Client_Core
 		class nearestObjects {};
 		class teleport {};
 		class searchPosEmpty {};
+		class copSplit {};
 	};
 
 	class Network
