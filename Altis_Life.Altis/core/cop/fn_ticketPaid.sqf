@@ -14,9 +14,9 @@ params [
 if(isNull _unit OR {_unit != life_ticket_unit}) exitWith {}; //NO
 if(isNull _cop OR {_cop != player}) exitWith {}; //Double NO
 
-_copslitmoney = LIFE_SETTINGS(getNumber,"cops_slitmoney");
+_copsplitmoney = LIFE_SETTINGS(getNumber,"cops_splitmoney");
 
-if (_value > _copslitmoney) then {
+if (_value > _copsplitmoney) then {
 	[_value] spawn life_fnc_copSplit;
 } else {
 	ADD(BANK,_value);
