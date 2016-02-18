@@ -6,34 +6,34 @@
 	Called when a new selection is made in the list box and
 	displays the new vehicle selected.
 */
-private ["_classe_a_visualiser", "_objet", "_position_attache"];
+private ["_classView","_object"];
 
-if (isNil "Life_Preview_3D_Vehicle_cam") then
+if (isNil "life_preview_3D_vehicle_cam") then
 {
 	[] call life_fnc_vehicleShopInit3DPreview;
 };
 
-_classe_a_visualiser = _this select 0;
+_classView = _this select 0;
 
 // Ignore non instantiable objects.
-if (_classe_a_visualiser != "" && {isClass (configFile >> "CfgVehicles" >> _classe_a_visualiser) && {getNumber (configFile >> "CfgVehicles" >> _classe_a_visualiser >> "scope") > 0}}) then
+if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && {getNumber (configFile >> "CfgVehicles" >> _classView >> "scope") > 0}}) then
 {
-	// Skip if object view is the same as prcdemment.
-	if (isNull Life_Preview_3D_Vehicle_object || {_classe_a_visualiser != typeOf Life_Preview_3D_Vehicle_object}) then
+	// Skip if object view is the same as previous.
+	if (isNull life_preview_3D_vehicle_object || {_classView != typeOf life_preview_3D_vehicle_object}) then
 	{
-		if (!isNull Life_Preview_3D_Vehicle_object) then {detach Life_Preview_3D_Vehicle_object; deleteVehicle Life_Preview_3D_Vehicle_object;};
-		// Créer et placer l'objet dans le ciel
+		if (!isNull life_preview_3D_vehicle_object) then {detach life_preview_3D_vehicle_object; deleteVehicle life_preview_3D_vehicle_object;};
+		// Create and place the object in the sky
 		if (!life_pos_exist) then {
-			life_pos_attach = [[5000, 5000, 0]] call life_fnc_SearchPosEmpty;
+			life_pos_attach = [[5000, 5000, 0]] call life_fnc_searchPosEmpty;
 			life_pos_exist = true;
 			life_preview_light = "#lightpoint" createVehicleLocal life_pos_attach;
 			life_preview_light setlightbrightness 0.5;
 			life_preview_light setlightcolor [1,1,1];
 			life_preview_light setlightambient [1,1,1];
 		};
-		_objet = _classe_a_visualiser createVehicleLocal life_pos_attach;
-		_objet attachTo [life_attachment_point, life_pos_attach];
+		_object = _classView createVehicleLocal life_pos_attach;
+		_object attachTo [life_attachment_point, life_pos_attach];
 
-		Life_Preview_3D_Vehicle_object = _objet;
+		life_preview_3D_vehicle_object = _object;
 	};
 };

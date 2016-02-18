@@ -46,7 +46,7 @@ class Life_Vehicle_Shop_v2
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.0204687 * safezoneW + safezoneX;
 			y = 0.06 * safezoneH + safezoneY;
-			w = 0.139219 * safezoneW;
+			w = 0.149531 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
 
@@ -55,9 +55,9 @@ class Life_Vehicle_Shop_v2
 			idc = 2330;
 			text = "$STR_GUI_VehInfo";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			x = 0.819688 * safezoneW + safezoneX;
-			y = 0.071 * safezoneH + safezoneY;
-			w = 0.165 * safezoneW;
+			x = 0.809375 * safezoneW + safezoneX;
+			y = 0.058 * safezoneH + safezoneY;
+			w = 0.190781 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 
@@ -104,10 +104,10 @@ class Life_Vehicle_Shop_v2
 			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
 			onLBSelChanged = "_this call life_fnc_vehicleShopLBChange";
-			x = 0.0204687 * safezoneW + safezoneX;
-			y = 0.093 * safezoneH + safezoneY;
+			x = 0.023487 * safezoneW + safezoneX;
+			y = 0.095 * safezoneH + safezoneY;
 			w = 0.144375 * safezoneW;
-			h = 0.55 * safezoneH;
+			h = 0.50 * safezoneH;
 		};
 
 		class ColorList: Life_RscCombo

@@ -6,45 +6,45 @@
 	Called when a player open the vehicle shop and setup cam and the while for rotate around the vehicle
 */
 // Creating a camera.
-Life_Preview_3D_Vehicle_cam = "camera" camCreate ([[5000, 5000, 0]] call life_fnc_SearchPosEmpty);
-Life_Preview_3D_Vehicle_cam cameraEffect ["Internal", "BACK"];
-Life_Preview_3D_Vehicle_cam camSetFocus [-1, -1];
+life_preview_3D_vehicle_cam = "camera" camCreate ([[5000, 5000, 0]] call life_fnc_searchPosEmpty);
+life_preview_3D_vehicle_cam cameraEffect ["Internal", "BACK"];
+life_preview_3D_vehicle_cam camSetFocus [-1, -1];
 showCinemaBorder false;
-Life_Preview_3D_Vehicle_cam camCommit 0;
+life_preview_3D_vehicle_cam camCommit 0;
 
-Life_Preview_3D_Vehicle_object = objNull;
+life_preview_3D_vehicle_object = objNull;
 
 // Thread execution performing a continuous rotation of the camra around the view object.
 0 spawn
 {
 	// Until we left the visualization.
-	while {!isNull Life_Preview_3D_Vehicle_cam} do
+	while {!isNull life_preview_3D_vehicle_cam} do
 	{
-		private ["_objet", "_distance_cam", "_azimut_cam"];
+		private ["_object","_distanceCam","_azimuthCam"];
 
 		// Waiting for a view object.
-		waitUntil {!isNull Life_Preview_3D_Vehicle_object};
+		waitUntil {!isNull life_preview_3D_vehicle_object};
 
-		_objet = Life_Preview_3D_Vehicle_object;
+		_object = life_preview_3D_vehicle_object;
 
-		_distance_cam = 2.25 * (
-				[boundingBoxReal _objet select 0 select 0, boundingBoxReal _objet select 0 select 2]
+		_distanceCam = 2.25 * (
+				[boundingBoxReal _object select 0 select 0, boundingBoxReal _object select 0 select 2]
 			distance
-				[boundingBoxReal _objet select 1 select 0, boundingBoxReal _objet select 1 select 2]
+				[boundingBoxReal _object select 1 select 0, boundingBoxReal _object select 1 select 2]
 		);
-		_azimut_cam = 0;
+		_azimuthCam = 0;
 
-		Life_Preview_3D_Vehicle_cam camSetTarget _objet;
-		Life_Preview_3D_Vehicle_cam camSetPos (_objet modelToWorld [_distance_cam * sin _azimut_cam, _distance_cam * cos _azimut_cam, _distance_cam * 0.33]);
-		Life_Preview_3D_Vehicle_cam camCommit 0;
+		life_preview_3D_vehicle_cam camSetTarget _object;
+		life_preview_3D_vehicle_cam camSetPos (_object modelToWorld [_distanceCam * sin _azimuthCam, _distanceCam * cos _azimuthCam, _distanceCam * 0.33]);
+		life_preview_3D_vehicle_cam camCommit 0;
 
 		// Rotation around the object.
-		while {Life_Preview_3D_Vehicle_object == _objet} do
+		while {life_preview_3D_vehicle_object == _object} do
 		{
-			_azimut_cam = _azimut_cam + 3.25;
+			_azimuthCam = _azimuthCam + 3.25;
 
-			Life_Preview_3D_Vehicle_cam camSetPos (_objet modelToWorld [_distance_cam * sin _azimut_cam, _distance_cam * cos _azimut_cam, _distance_cam * 0.33]);
-			Life_Preview_3D_Vehicle_cam camCommit 0.05;
+			life_preview_3D_vehicle_cam camSetPos (_object modelToWorld [_distanceCam * sin _azimuthCam, _distanceCam * cos _azimuthCam, _distanceCam * 0.33]);
+			life_preview_3D_vehicle_cam camCommit 0.05;
 
 			sleep 0.05;
 		};

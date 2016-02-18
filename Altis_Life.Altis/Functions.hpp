@@ -205,7 +205,7 @@ class Life_Client_Core
 		class playerSkins {};
 		class nearestObjects {};
 		class teleport {};
-		class SearchPosEmpty {};
+		class searchPosEmpty {};
 	};
 
 	class Network
