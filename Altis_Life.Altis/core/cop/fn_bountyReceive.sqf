@@ -16,9 +16,9 @@ if(_val == _total) then {
 	titleText[format[localize "STR_Cop_BountyKill",[_val] call life_fnc_numberText,[_total] call life_fnc_numberText],"PLAIN"];
 };
 
-_copslitmoney = LIFE_SETTINGS(getNumber,"cops_splitmoney");
+_copsplitmoney = LIFE_SETTINGS(getNumber,"cops_splitmoney");
 
-if (_val > _copslitmoney) then {
+if (_val > _copsplitmoney) then {
 	[_val] spawn life_fnc_copSplit;
 } else {
 	ADD(BANK,_val);
