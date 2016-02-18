@@ -58,7 +58,7 @@ if(EQUAL(count crew _vehicle,0)) then {
 	waitUntil {!life_impound_inuse};
 	hint format[localize "STR_NOTF_Impounded",_type,_price];
 	[0,"STR_NOTF_HasImpounded",true,[profileName,SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-	_copslitmoney = LIFE_SETTINGS(getNumber,"cops_slitmoney");
+	_copslitmoney = LIFE_SETTINGS(getNumber,"cops_splitmoney");
 	if (_price > _copslitmoney) then {
 		[_price] spawn life_fnc_copSplit;
 	} else {
