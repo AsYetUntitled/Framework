@@ -1,7 +1,7 @@
 class SpyGlass {
     civSlotNumber = 75;
     copSlotNumber = 19;
-    medSlotNumber = 4;
+    medSlotNumber = 6;
 
     /*
         Internal functions, sort by what they are.
