@@ -17,16 +17,6 @@ class Life_impound_menu_action
 			h = 0.495 * safezoneH;
 		};
 
-		class TitleBackground : Life_RscText
-		{
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			idc = -1;
-			x = 0.309219 * safezoneW + safezoneX;
-			y = 0.247 * safezoneH + safezoneY;
-			w = 0.180469 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-
 		class Title: Life_RscTitle
 		{
 			idc = -1;
