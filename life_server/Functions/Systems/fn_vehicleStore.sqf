@@ -92,7 +92,8 @@ if(_impound) then {
 	(owner _unit) publicVariableClient "life_garage_store";
 	[1,_storetext] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
 	_trunk3 = _trunk select 1;
-	if (count _cargo > 0 && _trunk3 > 0) then {
+	_cargo = [_cargo] call DB_fnc_mresToArray;
+	if (count _cargo > 0 OR _trunk3 > 0) then {
 		sleep 1200: //20 minutes
 		_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
 		_thread = [_query,1] call DB_fnc_asyncCall;
