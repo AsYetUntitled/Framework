@@ -74,7 +74,6 @@ class Life_Client_Core
 		class repairTruck {};
 		class serviceChopper {};
 		class catchFish {};
-		class catchTurtle {};
 		class dpFinish {};
 		class dropFishingNet {};
 		class getDPMission {};

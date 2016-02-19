@@ -1786,6 +1786,46 @@
       <Portuguese>Coelho</Portuguese>
       <Polish>Zając</Polish>
     </Key>
+	<Key ID="STR_ANIM_chicken">
+      <Original>Chicken</Original>
+      <German>Hähnchen</German>
+      <French>Poulet</French>
+      <Italian>Pollo</Italian>
+      <Portuguese>Frango</Portuguese>
+      <Polish>Kurczak</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Rooster">
+      <Original>Rooster</Original>
+      <German>Hahn</German>
+      <French>coq</French>
+      <Italian>gallo</Italian>
+      <Portuguese>galo</Portuguese>
+      <Polish>kogut</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Goat">
+      <Original>Goat</Original>
+      <German>Ziege</German>
+      <French>Chèvre</French>
+      <Italian>Capra</Italian>
+      <Portuguese>Cabra</Portuguese>
+      <Polish>Koza</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Sheep">
+      <Original>Sheep</Original>
+      <German>Schaf</German>
+      <French>Mouton</French>
+      <Italian>pecora</Italian>
+      <Portuguese>ovelha</Portuguese>
+      <Polish>Owca</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Turtle">
+      <Original>Turtle</Original>
+      <German>Schildkröte</German>
+      <French>Tortue</French>
+      <Italian>Tartaruga</Italian>
+      <Portuguese>Tartaruga</Portuguese>
+      <Polish>żółw</Polish>
+    </Key>
   </Package>
   <Package name="Notifications">
     <Key ID="STR_NOTF_NE_1">
@@ -1819,6 +1859,22 @@
       <Italian>Hai pescato %1</Italian>
       <Portuguese>Você pegou %1</Portuguese>
       <Polish>Złapałeś %1</Polish>
+    </Key>
+	<Key ID="STR_NOTF_Gutting">
+      <Original>Gutting %1</Original>
+      <German>Ausnehmen %1</German>
+      <French>éviscération %1</French>
+      <Italian>eviscerazione %1</Italian>
+      <Portuguese>evisceração %1</Portuguese>
+      <Polish>Patroszenie %1</Polish>
+    </Key>
+	<Key ID="STR_NOTF_Guttingfinish">
+      <Original>You have collected some raw %1 meat</Original>
+      <German>You have collected some raw %1 meat</German>
+      <French>You have collected some raw %1 meat</French>
+      <Italian>You have collected some raw %1 meat</Italian>
+      <Portuguese>You have collected some raw %1 meat</Portuguese>
+      <Polish>You have collected some raw %1 meat</Polish>
     </Key>
     <Key ID="STR_NOTF_CaughtTurtle">
       <Original>You have taken some turtle meat</Original>
