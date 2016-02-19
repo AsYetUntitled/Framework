@@ -305,7 +305,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = false;
         edible = -1;
-		icon = "icons\ico_copperore.paa";
+	icon = "icons\ico_copperore.paa";
     };
 
     class copper_refined {
