@@ -29,18 +29,22 @@ _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 
 _retrievePrice = switch(playerSide) do {
-	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),0)};
-	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),1)};
-	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),2)};
-	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"storageFee"),3)};
+	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),0)};
+	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),1)};
+	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
+	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
 };
+_chopchopmultiplikator = LIFE_SETTINGS(getNumber,"storagefeemultiplikator");
+_retrievePrice = _chopchopmultiplikator * _retrievePrice;
 
 _sellPrice = switch(playerSide) do {
-	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),0)};
-	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),1)};
-	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),2)};
-	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"garageSell"),3)};
+	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),0)};
+	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),1)};
+	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
+	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
 };
+_chopchopmultiplikator = LIFE_SETTINGS(getNumber,"garagesellmultiplikator");
+_sellPrice = _chopchopmultiplikator * _sellPrice;
 
 if(!(EQUAL(typeName _sellPrice,typeName 0)) OR _sellPrice < 1) then {_sellPrice = 1000};
 if(!(EQUAL(typeName _retrievePrice,typeName 0)) OR _retrievePrice < 1) then {_retrievePrice = 1000};

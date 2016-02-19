@@ -43,8 +43,7 @@ ctrlShow [2304,false];
 //Loop through
 {
 	_className = SEL(_x,0);
-	_basePrice = SEL(_x,1);
-	_levelAssert = SEL(_x,3);
+	_levelAssert = SEL(_x,1);
 	_levelName = SEL(_levelAssert,0);
 	_levelType = SEL(_levelAssert,1);
 	_levelValue = SEL(_levelAssert,2);
