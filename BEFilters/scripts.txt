@@ -7,7 +7,7 @@
 // !="inamespace getvariable \"BIS_RscGUIEditor_exit\")) then {\n\n\ncreatedialog \"RscGUIEditor\";\nGUI_listKeys = [];\nwaituntil {!isnil {	(u" //Exit GUI Editor
 5 "ctrlCreate" !=">> \"RscDisplayDebriefing_ListGroup\";\n_ListGroup = _display ctrlCreate [\"RscControlsGroupNoHScrollbars\", 		21903	];\n\n_ListGroup c" !="DisplayDLCContentBrowser_ListGroup\";\n_ListGroup = _display ctrlCreate [\"RscControlsGroupNoHScrollbars\", 		38400];\n\n_ListGroup ct"
 5 "ctrlDelete" !="};\n};\n\n\n\n\n\n\n_ListGroup = _display displayctrl 		21903	;\n\n\n\nctrlDelete _ListGroup;\n_listGroupCfg = configfile >> \"RscDisplayDebri"
-5 "forceRespawn" !="];\nplayer hideobject true;\nplayer enablesimulation false;\nforcerespawn player;\n} else {\n_isDeath = false;\n};\n};\nif (_respawnOnSt" !=Helper\",\"BIS_fnc_reviveRemoveHelper\",\"BIS_fnc_reviveHandleForceRespawnAction\",\"BIS_fnc_reviveHandleIncapUnitDetection\",\"BIS_fnc_
+5 "forceRespawn" !="];\nplayer hideobject true;\nplayer enablesimulation false;\nforcerespawn player;\n} else {\n_isDeath = false;\n};\n};\nif (_respawnOnSt" !=Helper\",\"BIS_fnc_reviveRemoveHelper\",\"BIS_fnc_reviveHandleForceRespawnAction\",\"BIS_fnc_reviveHandleIncapUnitDetection\",\"BIS_fnc_ !=[\"a3\functions_f_mp_mark\revive\fn_reviveHandleForceRespawnAction.sqf\",\".sqf\",0,false,false,false,\"A3_Mark\",\"Revive\",\"reviveHand
 //1 "teleport"
 //5 "cursorTarget setPos"      
 //5 "Wookie"
