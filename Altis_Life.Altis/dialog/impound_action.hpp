@@ -21,22 +21,33 @@ class Life_impound_menu_action
 		{
 			idc = -1;
 			text = "$STR_Vehicle_Store";
-			onButtonClick = "[1] call life_fnc_storeVehicleAction;";
+			onButtonClick = "[1] call life_fnc_storeVehicleAction;closeDialog 0;";
 			x = 0.402031 * safezoneW + safezoneX;
-			y = 0.533 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
-			h = 0.033 * safezoneH;
+			y = 0.528 * safezoneH + safezoneY;
+			w = 0.075 * safezoneW;
+			h = 0.038 * safezoneH;
+		};
+
+		class CloseButton : life_RscButtonMenu
+		{
+			idc = -1;
+			text = "$STR_Global_Close";
+			onButtonClick = "closeDialog 0;";
+			x = 0.47 * safezoneW + safezoneX;
+			y = 0.528 * safezoneH + safezoneY;
+			w = 0.075 * safezoneW;
+			h = 0.038 * safezoneH;
 		};
 
 		class CleanCar : life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Vehicle_Clean";
-			onButtonClick = "[2] call life_fnc_storeVehicleAction;";
+			onButtonClick = "[2] call life_fnc_storeVehicleAction;closeDialog 0;";
 			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.533 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
-			h = 0.033 * safezoneH;
+			y = 0.528 * safezoneH + safezoneY;
+			w = 0.075 * safezoneW;
+			h = 0.038 * safezoneH;
 		};
 	};
 
