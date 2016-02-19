@@ -11,58 +11,78 @@ class Life_impound_menu_action
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
-			x = 0.402031 * safezoneW + safezoneX;
-			y = 0.412 * safezoneH + safezoneY;
-			w = 0.201094 * safezoneW;
-			h = 0.154 * safezoneH;
+			x = 0.298906 * safezoneW + safezoneX;
+			y = 0.225 * safezoneH + safezoneY;
+			w = 0.402187 * safezoneW;
+			h = 0.495 * safezoneH;
 		};
 
-		class StoreCar : Life_RscButtonMenu
+		class TitleBackground : Life_RscText
+		{
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			idc = -1;
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.247 * safezoneH + safezoneY;
+			w = 0.180469 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class Title: Life_RscTitle
+		{
+			idc = -1;
+			text = "$STR_GUI_Store_Confirmation";
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.247 * safezoneH + safezoneY;
+			w = 0.180469 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class StoreCar: Life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Vehicle_Store";
 			onButtonClick = "[1] call life_fnc_storeVehicleAction;closeDialog 0;";
-			x = 0.402031 * safezoneW + safezoneX;
-			y = 0.528 * safezoneH + safezoneY;
-			w = 0.075 * safezoneW;
-			h = 0.038 * safezoneH;
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.654 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.055 * safezoneH;
 		};
 
-		class CloseButton : life_RscButtonMenu
+		class CloseButton: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
-			x = 0.47 * safezoneW + safezoneX;
-			y = 0.528 * safezoneH + safezoneY;
-			w = 0.075 * safezoneW;
-			h = 0.038 * safezoneH;
+			x = 0.572187 * safezoneW + safezoneX;
+			y = 0.236 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.044 * safezoneH;
 		};
 
-		class CleanCar : life_RscButtonMenu
+		class CleanCar: life_RscButtonMenu
 		{
 			idc = -1;
 			text = "$STR_Vehicle_Clean";
 			onButtonClick = "[2] call life_fnc_storeVehicleAction;closeDialog 0;";
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.528 * safezoneH + safezoneY;
-			w = 0.075 * safezoneW;
-			h = 0.038 * safezoneH;
+			x = 0.577344 * safezoneW + safezoneX;
+			y = 0.654 * safezoneH + safezoneY;
+			w = 0.113437 * safezoneW;
+			h = 0.055 * safezoneH;
 		};
 	};
 
 	class controls
 	{
-
-		class TextMessage : Life_RscStructuredText
+		class TextMessage: Life_RscStructuredText
 		{
 			idc = 4302;
 			text = "$STR_Vehicle_StoreMSG";
-			sizeEx = 0.045;
-			x = 0.402031 * safezoneW + safezoneX;
-			y = 0.412 * safezoneH + safezoneY;
-			w = 0.201094 * safezoneW;
-			h = 0.121 * safezoneH;
+			sizeEx = 0.040;
+			colorBackground[] = {0,0,0,1};
+			x = 0.309219 * safezoneW + safezoneX;
+			y = 0.291 * safezoneH + safezoneY;
+			w = 0.381563 * safezoneW;
+			h = 0.352 * safezoneH;
 		};
 	};
 };

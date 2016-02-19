@@ -4853,6 +4853,10 @@
       <Portuguese>Garagem</Portuguese>
       <Polish>Garaż</Polish>
     </Key>
+    <Key ID="STR_GUI_Store_Confirmation">
+      <Original>Store your vehicle confirmation</Original>
+      <French>Stockez votre vehicule confirmation</French>
+    </Key>
     <Key ID="STR_GUI_YourVeh">
       <Original>Your Vehicles</Original>
       <German>Deine Fahrzeuge</German>
