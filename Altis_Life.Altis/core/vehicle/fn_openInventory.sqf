@@ -40,3 +40,14 @@ _vehicle spawn {
 		[_this] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
 	};
 };
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
+	_vehicle spawn {
+		waitUntil {isNull (findDisplay 3500)};
+		_this setVariable["trunk_in_use",false,true];
+		if((_this isKindOf "Car") || (_this isKindOf "Air") || (_this isKindOf "Ship")) then {
+			[] call SOCK_fnc_updateRequest;
+			[_this,2] remoteExecCall ["TON_fnc_vehicleUpdate",2];
+		};
+	};
+};
