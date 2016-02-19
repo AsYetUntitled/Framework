@@ -6,7 +6,7 @@
 	Description:
 	Does something with vehicle purchasing.
 */
-private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_licensesName","_exit"];
+private["_mode","_spawnPoints","_className","_basePrice","_multiplicator","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_licensesName","_exit"];
 _mode = SEL(_this,0);
 _exit = false;
 if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
@@ -32,8 +32,8 @@ _basePrice = switch(playerSide) do {
 	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
 };
 
-_vehiclepermanentbuy = LIFE_SETTINGS(getNumber,"permanentbuymultiplikator");
- if(_mode) then {_basePrice = round(_basePrice * _vehiclepermanentbuy)};
+_multiplicator = LIFE_SETTINGS(getNumber,"vehicleShop_BuyMultiplicator");
+ if(_mode) then {_basePrice = round(_basePrice * _multiplicator)};
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
 _licensesName = "";

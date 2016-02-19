@@ -2,11 +2,11 @@
 /*
 	File: fn_unimpound.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Yeah... Gets the vehicle from the garage.
 */
-private["_vehicle","_vehicleLife","_vid","_pid","_unit","_price"];
+private["_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_multiplicator"];
 disableSerialization;
 if(EQUAL(lbCurSel 2802,-1)) exitWith {hint localize "STR_Global_NoSelection"};
 _vehicle = lbData[2802,(lbCurSel 2802)];
@@ -28,8 +28,8 @@ _price = switch(playerSide) do {
 	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"rentalprice"),2)};
 	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"rentalprice"),3)};
 };
-_chopchopmultiplikator = LIFE_SETTINGS(getNumber,"storagefeemultiplikator");
-_price = _chopchopmultiplikator * _price;
+_multiplicator = LIFE_SETTINGS(getNumber,"vehicleGarage_StorFeeMultiplicator");
+_price = _multiplicator * _price;
 
 if(!(EQUAL(typeName _price,typeName 0)) OR _price < 1) then {_price = 1000};
 if(BANK < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};

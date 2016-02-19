@@ -2,11 +2,11 @@
 /*
 	File: fn_sellGarage.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Sells a vehicle from the garage.
 */
-private["_vehicle","_vehicleLife","_vid","_pid","_unit","_sellPrice"];
+private["_vehicle","_vehicleLife","_vid","_pid","_unit","_sellPrice","_multiplicator"];
 disableSerialization;
 if(EQUAL(lbCurSel 2802,-1)) exitWith {hint localize "STR_Global_NoSelection"};
 _vehicle = lbData[2802,(lbCurSel 2802)];
@@ -29,8 +29,8 @@ _sellPrice = switch(playerSide) do {
 	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"rentalprice"),2)};
 	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"rentalprice"),3)};
 };
-_chopchopmultiplikator = LIFE_SETTINGS(getNumber,"garagesellmultiplikator");
-_sellPrice = _chopchopmultiplikator * _sellPrice;
+_multiplicator = LIFE_SETTINGS(getNumber,"vehicleGarage_SellMultiplicator");
+_sellPrice = _multiplicator * _sellPrice;
 
 if(!(EQUAL(typeName _sellPrice,typeName 0)) OR _sellPrice < 1) then {_sellPrice = 1000};
 [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
