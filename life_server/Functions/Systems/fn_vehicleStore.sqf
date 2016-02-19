@@ -91,8 +91,13 @@ if(_impound) then {
 	life_garage_store = false;
 	(owner _unit) publicVariableClient "life_garage_store";
 	[1,_storetext] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
+	// System for suspend vehicle when have inventory
+	if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1)) then {
+		_cargo = [_cargo] call DB_fnc_mresToArray;
+	} else {
+		_cargo = [];
+	};
 	_trunk3 = _trunk select 1;
-	_cargo = [_cargo] call DB_fnc_mresToArray;
 	if (count _cargo > 0 OR _trunk3 > 0) then {
 		sleep 1200: //20 minutes
 		_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
