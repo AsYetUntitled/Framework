@@ -38,27 +38,9 @@ if((EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1)) OR (EQUAL(LIFE_SETTINGS(g
 	_vehWeapons = getWeaponCargo _vehicle;
 	_vehBackpacks = getBackpackCargo _vehicle;
 	_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
-	
+
 	if (((count ((_cargo select 0) select 0) > 0) OR (count ((_cargo select 1) select 0) > 0) OR (count ((_cargo select 2) select 0) > 0) OR (count ((_cargo select 3) select 0) > 0)) OR (_trunk1 select 0) > 0) then {
-		_action = [
-			format[localize "STR_Vehicle_StoreMSG"],localize "STR_Vehicle_StoreVehicle",localize "STR_Vehicle_Store",localize "STR_Vehicle_Clean"
-		] call BIS_fnc_guiMessage;
-		if(_action) then {
-			_storetext = localize "STR_Garage_Store_Success";
-			[_vehicle,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",2];
-			hint localize "STR_Garage_Store_Server";
-			life_garage_store = true;
-		} else {
-			clearWeaponCargoGlobal _vehicle;
-			clearMagazineCargoGlobal _vehicle;
-			clearItemCargoGlobal _vehicle;
-			clearBackpackCargoGlobal _vehicle;
-			_vehicle SVAR ["Trunk",[[],0],true];
-			_storetext = localize "STR_Garage_Store_Success";
-			[_vehicle,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",2];
-			hint localize "STR_Garage_Store_Server";
-			life_garage_store = true;
-		};
+		createDialog "Life_impound_menu_action";
 	} else {
 		_storetext = localize "STR_Garage_Store_Success";
 		[_vehicle,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",2];

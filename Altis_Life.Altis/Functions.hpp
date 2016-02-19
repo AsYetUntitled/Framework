@@ -100,6 +100,7 @@ class Life_Client_Core
 		class gather {};
 		class gutAnimal {};
 		class removeContainer {};
+		class storeVehicleAction {};
 	};
 
 	class Housing

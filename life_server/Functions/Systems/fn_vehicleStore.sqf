@@ -93,7 +93,7 @@ if(_impound) then {
 	[1,_storetext] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
 	// System for suspend vehicle when have inventory
 	_trunk3 = [];
-	if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1)) then {
+	if((EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1)) OR (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1))) then {
 		_cargo = [_cargo] call DB_fnc_mresToArray;
 		if(typeName _cargo == "STRING") then {_cargo = call compile format["%1", _cargo];};
 		_trunk = [_trunk] call DB_fnc_mresToArray;
@@ -102,9 +102,13 @@ if(_impound) then {
 	} else {
 		_trunk = [[],0];
 		_trunk3 pushback (_trunk select 1);
-		_cargo = [];
+		_vehItems = getItemCargo _vehicle;
+		_vehMags = getMagazineCargo _vehicle;
+		_vehWeapons = getWeaponCargo _vehicle;
+		_vehBackpacks = getBackpackCargo _vehicle;
+		_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 	};
-	if (count _cargo > 0 OR (_trunk3 select 0) > 0) then {
+	if (((count ((_cargo select 0) select 0) > 0) OR (count ((_cargo select 1) select 0) > 0) OR (count ((_cargo select 2) select 0) > 0) OR (count ((_cargo select 3) select 0) > 0)) OR (_trunk3 select 0) > 0) then {
 		sleep 1200; //20 minutes
 		_query = format["UPDATE vehicles SET active='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
 		_thread = [_query,1] call DB_fnc_asyncCall;
