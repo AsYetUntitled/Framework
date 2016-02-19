@@ -5124,6 +5124,22 @@
       <Portuguese>Minerar</Portuguese>
       <Polish>Uruchom wydobycie</Polish>
     </Key>
+    <Key ID="STR_Vehicle_StoreMSG">
+      <Original>Your vehicle contains items,if you store this car, you will have to wait 20 minutes before returning your car in your garage (prevent duplication)</Original>
+      <French>Votre vehicule contient des items,si vous stockez cette voiture, vous allez devoir attendre 20 minutes avant de retrouver votre voiture dans votre garage</French>
+    </Key>
+    <Key ID="STR_Vehicle_StoreVehicle">
+      <Original>Store your vehicle</Original>
+      <French>Rangez votre véhicule</French>
+    </Key>
+    <Key ID="STR_Vehicle_Store">
+      <Original>Store</Original>
+      <French>Ranger</French>
+    </Key>
+    <Key ID="STR_Vehicle_Clean">
+      <Original>Clean</Original>
+      <French>Nettoyer</French>
+    </Key>
   </Package>
   <Package name="Session_Strings">
     <Key ID="STR_Session_Query">
