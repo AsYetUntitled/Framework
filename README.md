@@ -8,8 +8,8 @@
         <img src="https://img.shields.io/badge/release-1-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="http://dev.arma3.com/post/spotrep-00051">
-        <img src="https://img.shields.io/badge/arma%203-1.54-orange.svg" alt="Arma 3 Version">
+    <a href="http://dev.arma3.com/post/spotrep-00052">
+        <img src="https://img.shields.io/badge/arma%203-1.56-orange.svg" alt="Arma 3 Version">
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
