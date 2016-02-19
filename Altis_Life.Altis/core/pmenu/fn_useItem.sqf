@@ -81,10 +81,6 @@ switch (true) do {
 		};
 	};
 
-	case (EQUAL(_item,"pickaxe")): {
-		[] spawn life_fnc_pickAxeUse;
-	};
-
 	default {
 		hint localize "STR_ISTR_NotUsable";
 	};

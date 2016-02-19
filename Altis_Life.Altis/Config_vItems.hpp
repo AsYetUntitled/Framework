@@ -305,7 +305,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = false;
         edible = -1;
-        icon = "";
+		icon = "icons\ico_copperore.paa";
     };
 
     class copper_refined {
@@ -316,7 +316,7 @@ class VirtualItems {
         sellPrice = 1500;
         illegal = false;
         edible = -1;
-        icon = "";
+		icon = "icons\ico_copper.paa";
     };
 
     class iron_unrefined {
@@ -327,7 +327,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = false;
         edible = -1;
-        icon = "";
+		icon = "icons\ico_ironore.paa";
     };
 
     class iron_refined {
@@ -338,7 +338,7 @@ class VirtualItems {
         sellPrice = 3200;
         illegal = false;
         edible = -1;
-        icon = "";
+        icon = "icons\ico_iron.paa";
     };
 
     class salt_unrefined {
@@ -371,7 +371,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = false;
         edible = -1;
-        icon = "";
+		icon = "icons\ico_sand.paa";
     };
 
     class glass {
@@ -382,7 +382,7 @@ class VirtualItems {
         sellPrice = 1450;
         illegal = false;
         edible = -1;
-        icon = "";
+		icon = "icons\ico_glass.paa";
     };
 
     class diamond_uncut {
@@ -415,7 +415,7 @@ class VirtualItems {
         sellPrice = -1;
         illegal = false;
         edible = -1;
-        icon = "";
+		icon = "icons\ico_rock.paa";
     };
 
     class cement {
@@ -426,7 +426,7 @@ class VirtualItems {
         sellPrice = 1950;
         illegal = false;
         edible = -1;
-        icon = "";
+		icon = "icons\ico_cement.paa";
     };
 
     //Drugs

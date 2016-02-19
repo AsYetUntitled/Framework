@@ -481,6 +481,38 @@
       <Portuguese>Ação Cancelada</Portuguese>
       <Polish>Anulowano akcję</Polish>
     </Key>
+	<Key ID="STR_NOTF_Pickaxe">
+      <Original>A pickaxe is required</Original>
+      <German>Eine Spitzhacke wird benötigt.</German>
+      <French>Une pioche est nécessaire</French>
+      <Italian>è necessaria una piccone</Italian>
+      <Portuguese>A picareta é necessária</Portuguese>
+      <Polish>Wymagana jest kilof</Polish>
+    </Key>
+	<Key ID="STR_NOTF_isrestrained">
+      <Original>You are restrained</Original>
+      <German>Wie willst du mit gefesselten Händen sammeln?</German>
+      <French>Vous sont retenus</French>
+      <Italian>Si sono trattenuti</Italian>
+      <Portuguese>Você está contido</Portuguese>
+      <Polish>Ty skrępowaniem</Polish>
+    </Key>
+	<Key ID="STR_NOTF_surrender">
+      <Original>You can't do this while you surrender</Original>
+      <German>Mit gehobenen Händen kannst du nichts sammeln!.</German>
+      <French>Vous ne pouvez pas faire cela pendant que vous abandonnez</French>
+      <Italian>Non si può fare questo mentre si rinuncia</Italian>
+      <Portuguese>Você não pode fazer isso enquanto você se entrega</Portuguese>
+      <Polish>Nie można tego zrobić, gdy się poddasz</Polish>
+    </Key>
+	<Key ID="STR_NOTF_cantgather">
+      <Original>You can't gather this resource with this vehicle!</Original>
+      <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
+      <French>You can't gather this resource with this vehicle!</French>
+      <Italian>You can't gather this resource with this vehicle!</Italian>
+      <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
+      <Polish>You can't gather this resource with this vehicle!</Polish>
+    </Key>
   </Package>
   <Package name="ATM_Strings">
     <Key ID="STR_ATM_Title">
@@ -2101,12 +2133,12 @@
       <Polish>Trwa wydobycie...</Polish>
     </Key>
     <Key ID="STR_NOTF_DeviceMined">
-      <Original>Completed cycle, the device has mined %1</Original>
-      <German>Sammeln beendet, das Gerät hat %1 gesammelt</German>
-      <French>Cycle terminé, le véhicule à miné %1</French>
-      <Italian>Ciclo completato, il veicolo ha raccolto %1</Italian>
-      <Portuguese>Ciclo completo, a máquina minerou %1</Portuguese>
-      <Polish>Urządzenie wydobyło %1</Polish>
+      <Original>Completed cycle, the device has mined %1 %2</Original>
+      <German>Sammeln beendet, das Gerät hat %1 %2 gesammelt</German>
+      <French>Cycle terminé, le véhicule à miné %1 %2</French>
+      <Italian>Ciclo completato, il veicolo ha raccolto %1 %2</Italian>
+      <Portuguese>Ciclo completo, a máquina minerou %1 %2</Portuguese>
+      <Polish>Urządzenie wydobyło %1 %2</Polish>
     </Key>
     <Key ID="STR_NOTF_OutOfFuel">
       <Original>Vehicle is out of fuel</Original>
