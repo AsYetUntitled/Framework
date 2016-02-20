@@ -9,6 +9,7 @@
 */
 private["_curTarget","_isWater","_CrateModelNames","_crate"];
 _curTarget = cursorTarget;
+_curObject = cursorObject;
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if(life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
@@ -107,12 +108,12 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		};
 	} else {
 		//OK, it wasn't a vehicle so let's see what else it could be?
-		if((typeOf _curTarget) in _miscItems) then {
-			[_curTarget,player,false] remoteExecCall ["TON_fnc_pickupAction",RSERV];
+		if((typeOf _curObject) in _miscItems) then {
+			[_curObject,player,false] remoteExecCall ["TON_fnc_pickupAction",RSERV];
 		} else {
 			//It wasn't a misc item so is it money?
-			if(EQUAL((typeOf _curTarget),_money) && {!(_curTarget GVAR ["inUse",false])}) then {
-				[_curTarget,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
+			if(EQUAL((typeOf _curObject),_money) && {!(_curObject GVAR ["inUse",false])}) then {
+				[_curObject,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
 			};
 		};
 	};
