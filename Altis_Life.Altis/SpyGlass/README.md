@@ -17,7 +17,7 @@ If you encounter errors regarding variables, whitelist them via Config_Spyglass 
 
 allowedVariables[] = { { "reb_1_4", "OBJECT" }, { "ggs_shop", "OBJECT" },{ "reb_helicopter_1", "OBJECT" }};
  
-If Aram 3 has updated, it may be possable they have included new files into the game. If this is the case,
+If ARMA 3 has updated, it may be possable they have included new files into the game. If this is the case,
 Launch Arma 3 and goto the editor, (you do not need to load your mission)
 Press escape and put into init:
 http://hastebin.com/povasuvizo.coffee
