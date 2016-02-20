@@ -21,6 +21,8 @@ if(_containerID == -1) then {
 
 _container setVariable["container_id",nil,true];
 _container setVariable["container_owner",nil,true];
+_containers = nearestObjects[(getPosATL _container),["Box_IND_Grenades_F","B_supplyCrate_F"],2];
+{deleteVehicle _x} foreach _containers;
 
 [_query,1] call DB_fnc_asyncCall;
 ["CALL deleteOldContainers",1] call DB_fnc_asyncCall;
