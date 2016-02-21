@@ -1,50 +1,84 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_gather.sqf
-	Author: Bryan "Tonic" Boardwine
+	Author: Devilfloh
 
 	Description:
 	Main functionality for gathering.
 */
-if(isNil "life_action_gathering") then {life_action_gathering = false;};
-private["_gather","_itemWeight","_diff","_itemName","_resourceZones","_zone"];
-_resourceZones = ["apple_1","apple_2","apple_3","apple_4","peaches_1","peaches_2","peaches_3","peaches_4","heroin_1","cocaine_1","weed_1"];
+private["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
+if (life_action_inUse) exitWith {};
+if((vehicle player) != player) exitWith {};
+if((player GVAR "restrained")) exitWith {hint localize "STR_NOTF_isrestrained";};
+if((player GVAR "playerSurrender")) exitWith {hint localize "STR_NOTF_surrender";};
+
+life_action_inUse = true;
+
 _zone = "";
+_requiredItem = "";
+_zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
+_exit = false;
 
-if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
-life_action_inUse = true;
-//Find out what zone we're near
+_resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
+for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
+
+	_curConfig = (_resourceCfg select _i);
+	_resource = configName _curConfig;
+	_maxGather = getNumber(_curConfig >> "amount");
+	_resourceZones = getArray(_curConfig >> "zones");
+	_requiredItem = getText(_curConfig >> "item");
+
+	{
+		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
+	} forEach _resourceZones;
+
+	if(_zone != "") exitWith {};
+};
+
+if(_zone == "") exitWith {life_action_inUse = false;};
+
+if (_requiredItem != "") then
 {
-	if(player distance (getMarkerPos _x) < 30) exitWith {_zone = _x;};
-} foreach _resourceZones;
+	_valItem = GVAR_MNS "life_inv_" + _requiredItem;
 
-if(EQUAL(_zone,"")) exitWith {life_action_inUse = false;};
-
-//Get the resource that will be gathered from the zone name...
-switch(true) do {
-	case (_zone in ["apple_1","apple_2","apple_3","apple_4"]): {_gather = ["apple",3];};
-	case (_zone in ["peaches_1","peaches_2","peaches_3","peaches_4"]): {_gather = ["peach",3];};
-	case (_zone in ["heroin_1"]): {_gather = ["heroin_unprocessed",1];};
-	case (_zone in ["cocaine_1"]): {_gather = ["cocaine_unprocessed",1];};
-	case (_zone in ["weed_1"]): {_gather = ["cannabis",1];};
-	default {""};
+	if (_valItem < 1) exitWith
+	{
+		switch (_requiredItem) do
+		{
+			case "pickaxe": {titleText[(localize "STR_NOTF_Pickaxe"),"PLAIN"];};
+		};
+		life_action_inUse = false;
+		_exit = true;
+	};
 };
-//gather check??
-if(vehicle player != player) exitWith {};
 
-_diff = [SEL(_gather,0),SEL(_gather,1),life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if(EQUAL(_diff,0)) exitWith {hint localize "STR_NOTF_InvFull"};
-life_action_inUse = true;
+if(_exit) exitWith {life_action_inUse = false;};
 
-for "_i" from 0 to 2 do {
-	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+_amount = round(random(_maxGather)) + 1;
+_diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+if(_diff == 0) exitWith {
+	hint localize "STR_NOTF_InvFull";
+	life_action_inUse = false;
+};
+
+switch (_requiredItem) do
+{
+	case "pickaxe": {player say3D "mining";};
+	default {player say3D "harvest";};
+};
+
+for "_i" from 0 to 4 do
+{
+	player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
-	sleep 2.5;
+	sleep 0.5;
 };
 
-if(([true,SEL(_gather,0),_diff] call life_fnc_handleInv)) then {
-	_itemName = M_CONFIG(getText,"VirtualItems",SEL(_gather,0),"displayName");
+if(([true,_resource,_diff] call life_fnc_handleInv)) then
+{
+	_itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
 	titleText[format[localize "STR_NOTF_Gather_Success",(localize _itemName),_diff],"PLAIN"];
 };
 
+sleep 1;
 life_action_inUse = false;

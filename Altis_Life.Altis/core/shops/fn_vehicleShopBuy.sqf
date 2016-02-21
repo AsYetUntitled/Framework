@@ -6,22 +6,36 @@
 	Description:
 	Does something with vehicle purchasing.
 */
-private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_licensesName","_exit"];
+private["_mode","_spawnPoints","_className","_basePrice","_multiplicator","_colorIndex","_spawnPoint","_vehicle","_shopSide","_licenses","_licensesName","_exit"];
 _mode = SEL(_this,0);
 _exit = false;
 if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
-
+_classNameLife = _className;
 _vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
 _shopSide = M_CONFIG(getText,"CarShops",SEL(life_veh_shop,0),"side");
-_basePrice = SEL(SEL(_vehicleList,_vIndex),1);
-_licenses = SEL(SEL(_vehicleList,_vIndex),2);
 
- if(_mode) then {_basePrice = round(_basePrice * 1.5)};
+_licenses = switch(playerSide) do {
+	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),0)};
+	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),1)};
+	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),2)};
+	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),3)};
+};
+
+hint format ["%1",_licenses];
+
+_basePrice = switch(playerSide) do {
+	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),0)};
+	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),1)};
+	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
+	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
+};
+
+_multiplicator = LIFE_SETTINGS(getNumber,"vehicleShop_BuyMultiplicator");
+ if(_mode) then {_basePrice = round(_basePrice * _multiplicator)};
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
-//Series of checks (YAY!)
 _licensesName = "";
 {
 	if(!(EQUAL(_x,"")) && {!(LICENSE_VALUE(_x,_shopSide))}) then {
@@ -29,6 +43,7 @@ _licensesName = "";
 		_exit = true;
 	};
 } foreach _licenses;
+
 if(_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];closeDialog 0;};
 
 if(_basePrice < 0) exitWith {closeDialog 0;}; //Bad price entry

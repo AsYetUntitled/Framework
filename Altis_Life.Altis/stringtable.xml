@@ -481,6 +481,38 @@
       <Portuguese>Ação Cancelada</Portuguese>
       <Polish>Anulowano akcję</Polish>
     </Key>
+	<Key ID="STR_NOTF_Pickaxe">
+      <Original>A pickaxe is required</Original>
+      <German>Eine Spitzhacke wird benötigt.</German>
+      <French>Une pioche est nécessaire</French>
+      <Italian>è necessaria una piccone</Italian>
+      <Portuguese>A picareta é necessária</Portuguese>
+      <Polish>Wymagana jest kilof</Polish>
+    </Key>
+	<Key ID="STR_NOTF_isrestrained">
+      <Original>You are restrained</Original>
+      <German>Wie willst du mit gefesselten Händen sammeln?</German>
+      <French>Vous sont retenus</French>
+      <Italian>Si sono trattenuti</Italian>
+      <Portuguese>Você está contido</Portuguese>
+      <Polish>Ty skrępowaniem</Polish>
+    </Key>
+	<Key ID="STR_NOTF_surrender">
+      <Original>You can't do this while you surrender</Original>
+      <German>Mit gehobenen Händen kannst du nichts sammeln!.</German>
+      <French>Vous ne pouvez pas faire cela pendant que vous abandonnez</French>
+      <Italian>Non si può fare questo mentre si rinuncia</Italian>
+      <Portuguese>Você não pode fazer isso enquanto você se entrega</Portuguese>
+      <Polish>Nie można tego zrobić, gdy się poddasz</Polish>
+    </Key>
+	<Key ID="STR_NOTF_cantgather">
+      <Original>You can't gather this resource with this vehicle!</Original>
+      <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
+      <French>You can't gather this resource with this vehicle!</French>
+      <Italian>You can't gather this resource with this vehicle!</Italian>
+      <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
+      <Polish>You can't gather this resource with this vehicle!</Polish>
+    </Key>
   </Package>
   <Package name="ATM_Strings">
     <Key ID="STR_ATM_Title">
@@ -1786,6 +1818,46 @@
       <Portuguese>Coelho</Portuguese>
       <Polish>Zając</Polish>
     </Key>
+	<Key ID="STR_ANIM_chicken">
+      <Original>Chicken</Original>
+      <German>Hähnchen</German>
+      <French>Poulet</French>
+      <Italian>Pollo</Italian>
+      <Portuguese>Frango</Portuguese>
+      <Polish>Kurczak</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Rooster">
+      <Original>Rooster</Original>
+      <German>Hahn</German>
+      <French>coq</French>
+      <Italian>gallo</Italian>
+      <Portuguese>galo</Portuguese>
+      <Polish>kogut</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Goat">
+      <Original>Goat</Original>
+      <German>Ziege</German>
+      <French>Chèvre</French>
+      <Italian>Capra</Italian>
+      <Portuguese>Cabra</Portuguese>
+      <Polish>Koza</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Sheep">
+      <Original>Sheep</Original>
+      <German>Schaf</German>
+      <French>Mouton</French>
+      <Italian>pecora</Italian>
+      <Portuguese>ovelha</Portuguese>
+      <Polish>Owca</Polish>
+    </Key>
+	<Key ID="STR_ANIM_Turtle">
+      <Original>Turtle</Original>
+      <German>Schildkröte</German>
+      <French>Tortue</French>
+      <Italian>Tartaruga</Italian>
+      <Portuguese>Tartaruga</Portuguese>
+      <Polish>żółw</Polish>
+    </Key>
   </Package>
   <Package name="Notifications">
     <Key ID="STR_NOTF_NE_1">
@@ -1819,6 +1891,22 @@
       <Italian>Hai pescato %1</Italian>
       <Portuguese>Você pegou %1</Portuguese>
       <Polish>Złapałeś %1</Polish>
+    </Key>
+	<Key ID="STR_NOTF_Gutting">
+      <Original>Gutting %1</Original>
+      <German>Ausnehmen %1</German>
+      <French>éviscération %1</French>
+      <Italian>eviscerazione %1</Italian>
+      <Portuguese>evisceração %1</Portuguese>
+      <Polish>Patroszenie %1</Polish>
+    </Key>
+	<Key ID="STR_NOTF_Guttingfinish">
+      <Original>You have collected some raw %1 meat</Original>
+      <German>You have collected some raw %1 meat</German>
+      <French>You have collected some raw %1 meat</French>
+      <Italian>You have collected some raw %1 meat</Italian>
+      <Portuguese>You have collected some raw %1 meat</Portuguese>
+      <Polish>You have collected some raw %1 meat</Polish>
     </Key>
     <Key ID="STR_NOTF_CaughtTurtle">
       <Original>You have taken some turtle meat</Original>
@@ -2045,12 +2133,12 @@
       <Polish>Trwa wydobycie...</Polish>
     </Key>
     <Key ID="STR_NOTF_DeviceMined">
-      <Original>Completed cycle, the device has mined %1</Original>
-      <German>Sammeln beendet, das Gerät hat %1 gesammelt</German>
-      <French>Cycle terminé, le véhicule à miné %1</French>
-      <Italian>Ciclo completato, il veicolo ha raccolto %1</Italian>
-      <Portuguese>Ciclo completo, a máquina minerou %1</Portuguese>
-      <Polish>Urządzenie wydobyło %1</Polish>
+      <Original>Completed cycle, the device has mined %1 %2</Original>
+      <German>Sammeln beendet, das Gerät hat %1 %2 gesammelt</German>
+      <French>Cycle terminé, le véhicule à miné %1 %2</French>
+      <Italian>Ciclo completato, il veicolo ha raccolto %1 %2</Italian>
+      <Portuguese>Ciclo completo, a máquina minerou %1 %2</Portuguese>
+      <Polish>Urządzenie wydobyło %1 %2</Polish>
     </Key>
     <Key ID="STR_NOTF_OutOfFuel">
       <Original>Vehicle is out of fuel</Original>
@@ -4789,6 +4877,10 @@
       <Portuguese>Garagem</Portuguese>
       <Polish>Garaż</Polish>
     </Key>
+    <Key ID="STR_GUI_Store_Confirmation">
+      <Original>Store your vehicle confirmation</Original>
+      <French>Stockez votre vehicule confirmation</French>
+    </Key>
     <Key ID="STR_GUI_YourVeh">
       <Original>Your Vehicles</Original>
       <German>Deine Fahrzeuge</German>
@@ -5115,6 +5207,22 @@
       <Italian>Piazza mine dal veicolo</Italian>
       <Portuguese>Minerar</Portuguese>
       <Polish>Uruchom wydobycie</Polish>
+    </Key>
+    <Key ID="STR_Vehicle_StoreMSG">
+      <Original>Your vehicle contains items,if you store this car, you will have to wait 20 minutes before returning your car in your garage (prevent duplication)</Original>
+      <French>Votre vehicule contient des items,si vous stockez cette voiture, vous allez devoir attendre 20 minutes avant de retrouver votre voiture dans votre garage</French>
+    </Key>
+    <Key ID="STR_Vehicle_StoreVehicle">
+      <Original>Store your vehicle</Original>
+      <French>Rangez votre véhicule</French>
+    </Key>
+    <Key ID="STR_Vehicle_Store">
+      <Original>Store</Original>
+      <French>Ranger</French>
+    </Key>
+    <Key ID="STR_Vehicle_Clean">
+      <Original>Clean</Original>
+      <French>Nettoyer</French>
     </Key>
   </Package>
   <Package name="Session_Strings">

@@ -21,6 +21,7 @@ if(_containerID == -1) then {
 
 _container setVariable["container_id",nil,true];
 _container setVariable["container_owner",nil,true];
+deleteVehicle _container;
 
 [_query,1] call DB_fnc_asyncCall;
 ["CALL deleteOldContainers",1] call DB_fnc_asyncCall;

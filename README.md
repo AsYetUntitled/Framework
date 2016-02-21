@@ -8,8 +8,8 @@
         <img src="https://img.shields.io/badge/release-1-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="http://dev.arma3.com/post/spotrep-00051">
-        <img src="https://img.shields.io/badge/arma%203-1.54-orange.svg" alt="Arma 3 Version">
+    <a href="http://dev.arma3.com/post/spotrep-00052">
+        <img src="https://img.shields.io/badge/arma%203-1.56-orange.svg" alt="Arma 3 Version">
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
@@ -28,53 +28,9 @@ Altis Life RPG by Tonic is licensed under a [Creative Commons Attribution-NonCom
 By using the framework and/or code inside the framework, you agree to the [terms of agreement] (README.md/#usage--terms-of-agreement).<br/>
 The terms are subjected to be changed over time.<br/>
 
-This build is for [extDB2] (https://github.com/Torndeco/extdb2)
----------------------------------------------------------------
-To setup extDB2 you need to use the Windows/Linux pre-compiled build and edit the <b>extdb-conf.ini</b> "MySQL_Example" field to "ArmaLife" with your Database name and login SQL user details, like this:
-```
-[ArmaLife]
-Type = MySQL
-Name = AltisLife
-
-Username = MyDatabaseLogin
-Password = MyDatabasePassword
-
-IP = 127.0.0.1
-Port = 3306
-```
-<br/>
-Make sure the following files/folders are in the root directory of your ARMA 3 server files (where the exe is):<br/>
-<b>Windows:</b>
-```
-ARMA_3_DIR
-├ @extDB2
-| ├ extdb-conf.ini
-| └ extDB2.dll
-└ tbbmalloc.dll
-```
-<b>Linux:</b>
-```
-ARMA_3_DIR
-└ @extDB2
-  ├ extdb-conf.ini
-  └ extDB2.so
-```
-
-You can drag the extDB2.dll & extdb-conf.ini to root folder as well or you can copy over @extDB2 over as a regular mod. If you choose to use @extDB2 as a regular mod your commandline will be: <b>-mod=@life_server;@extDB2</b><br/>
-<br/>
-If you are not using @extDB2 as a mod and choose to drag extDB2.dll into the main arma 3 server directory then you only need @life_server in the commandline.
-
-ExtDB Requirements
-------------------
-<b>Windows:</b><br/>
-[vc2015 redist (x86)] (https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe)
-<br/><br/>
-<b>Debian/Ubuntu x64:</b><br/>
-``` $ apt-get install libtbb2:i386 ```
-<br/><br/>
-<b>RedHat/CentOS x64:</b><br/>
-``` $ yum install tbb.i686 ```
-<br/>
+[How to configure your server] (https://github.com/ArmaLife/Altis/wiki/Setup-Server)
+-------------------------------------
+You can found all the steps to have a fully working server in our [github wiki] (https://github.com/ArmaLife/Altis/wiki).
 
 Disclaimer
 -----------

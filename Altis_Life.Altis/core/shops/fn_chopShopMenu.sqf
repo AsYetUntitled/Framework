@@ -2,7 +2,7 @@
 /*
 	File: fn_chopShopMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Opens & initializes the chop shop menu.
 */
@@ -28,7 +28,15 @@ _control = CONTROL(39400,39402);
 			_classNameLife = "Default"; //Use Default class if it doesn't exist
 			diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 		};
-		_price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"chopShop");
+
+		_price = switch(playerSide) do {
+			case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),0)};
+			case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),1)};
+			case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
+			case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
+		};
+		_multiplicator = LIFE_SETTINGS(getNumber,"vehicleChopShop_Multiplicator");
+		_price = _multiplicator * _price;
 		if(!isNil "_price" && EQUAL(count crew _x,0)) then {
 			_control lbAdd _displayName;
 			_control lbSetData [(lbSize _control)-1,str(_forEachIndex)];

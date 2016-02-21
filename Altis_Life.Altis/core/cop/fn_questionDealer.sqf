@@ -2,7 +2,7 @@
 /*
 	File: fn_questionDealer.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Questions the drug dealer and sets the sellers wanted.
 */
@@ -15,6 +15,8 @@ _names = "";
 {
 	if(SEL(_x,2) > 150000) then {
 		_val = round((SEL(_x,2)) / 16);
+	} else {
+		_val = round((SEL(_x,2)) / 8);
 	};
 	[SEL(_x,0),SEL(_x,1),"483",_val] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 	ADD(_names,format["%1<br/>",SEL(_x,1)]);

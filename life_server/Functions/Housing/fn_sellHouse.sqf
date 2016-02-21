@@ -1,9 +1,9 @@
 /*
 	File: fn_sellHouse.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
-	Used in selling the house, sets the owned to 0 and will cleanup with a 
+	Used in selling the house, sets the owned to 0 and will cleanup with a
 	stored procedure on restart.
 */
 private["_house","_houseID","_ownerID","_housePos","_query","_radius","_containers"];
@@ -23,9 +23,6 @@ if(_houseID == -1) then {
 
 _house setVariable["house_id",nil,true];
 _house setVariable["house_owner",nil,true];
-_radius = (((boundingBoxReal _house select 0) select 2) - ((boundingBoxReal _house select 1) select 2));
-_containers = nearestObjects[(getPosATL _house),["Box_IND_Grenades_F","B_supplyCrate_F"],_radius];
-{deleteVehicle _x} foreach _containers; //Fuck the way you do things Tonic, go fix it
 
 [_query,1] call DB_fnc_asyncCall;
 _house setVariable["house_sold",nil,true];

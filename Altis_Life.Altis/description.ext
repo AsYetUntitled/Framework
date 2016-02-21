@@ -68,6 +68,20 @@ class CfgSounds
 		sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
 		titles[] = {};
 	};
+	
+	class mining
+	{
+		name = "mining";
+		sound[] = {"\sounds\mining.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class harvest
+	{
+		name = "harvest";
+		sound[] = {"\sounds\harvest.ogg", 1.0, 1};
+		titles[] = {};
+	};
 };
 
 class CfgDebriefing

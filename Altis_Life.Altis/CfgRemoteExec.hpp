@@ -62,6 +62,7 @@ class CfgRemoteExec {
         F(life_fnc_ticketPrompt,CLIENT)
         F(life_fnc_ticketPaid,CLIENT)
         F(life_fnc_freezePlayer,CLIENT)
+        F(life_fnc_mediclights,CLIENT)
 
         /* Server only functions */
         F(bis_fnc_execvm,SERVER)
@@ -101,6 +102,7 @@ class CfgRemoteExec {
         F(TON_fnc_addContainer,SERVER)
         F(TON_fnc_sellHouseContainer,SERVER)
         F(TON_fnc_deleteDBContainer,SERVER)
+        F(TON_fnc_vehicleUpdate,SERVER)
 
         /* Functions for everyone */
         F(life_fnc_broadcast,ANYONE)

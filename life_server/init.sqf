@@ -136,10 +136,8 @@ PVAR_ALL("life_server_isReady");
 /* Initialize hunting zone(s) */
 ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
-// We create the attachment point to be used for objects to attachTo load virtually in vehicles.
+// We create the attachment point to be used for objects to attachTo vehicles.
 life_attachment_point = "Land_HelipadEmpty_F" createVehicle [0,0,0];
 life_attachment_point setPosASL [0,0,0];
 life_attachment_point setVectorDirAndUp [[0,1,0], [0,0,1]];
-
-// Sharing the point of attachment with all players.
 publicVariable "life_attachment_point";
