@@ -2724,14 +2724,6 @@
     </Key>
   </Package>
   <Package name="Cop_Strings">
-	<Key ID="STR_Cop_splitmoney">
-      <Original>All active Cops have $%1 received</Original>
-      <German>Alle aktiven Polizisten haben $%1 erhalten</German>
-      <French>All active Cops have $%1 received</French>
-      <Italian>All active Cops have $%1 received</Italian>
-      <Portuguese>All active Cops have $%1 received</Portuguese>
-      <Polish>All active Cops have $%1 received</Polish>
-    </Key>
     <Key ID="STR_Cop_TicketError">
       <Original>Couldn't open the ticketing interface</Original>
       <German>Der Bußgeldkatalog konnte nicht geöffnet werden</German>
