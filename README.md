@@ -28,9 +28,9 @@ Altis Life RPG by Tonic is licensed under a [Creative Commons Attribution-NonCom
 By using the framework and/or code inside the framework, you agree to the [terms of agreement] (README.md/#usage--terms-of-agreement).<br/>
 The terms are subjected to be changed over time.<br/>
 
-[How to configure your server] (https://github.com/ArmaLife/Altis/wiki)
+[How to configure your server] (https://github.com/ArmaLife/Altis/wiki/Setup-Server)
 -------------------------------------
-You can found all the steps to have a working server in our [github wiki] (https://github.com/ArmaLife/Altis/wiki).
+You can found all the steps to have a fully working server in our [github wiki] (https://github.com/ArmaLife/Altis/wiki).
 
 ExtDB Requirements
 ------------------
