@@ -28,41 +28,9 @@ Altis Life RPG by Tonic is licensed under a [Creative Commons Attribution-NonCom
 By using the framework and/or code inside the framework, you agree to the [terms of agreement] (README.md/#usage--terms-of-agreement).<br/>
 The terms are subjected to be changed over time.<br/>
 
-This build is for [extDB2] (https://github.com/Torndeco/extdb2)
----------------------------------------------------------------
-To setup extDB2 you need to use the Windows/Linux pre-compiled build and edit the <b>extdb-conf.ini</b> "MySQL_Example" field to "ArmaLife" with your Database name and login SQL user details, like this:
-```
-[ArmaLife]
-Type = MySQL
-Name = AltisLife
-
-Username = MyDatabaseLogin
-Password = MyDatabasePassword
-
-IP = 127.0.0.1
-Port = 3306
-```
-<br/>
-Make sure the following files/folders are in the root directory of your ARMA 3 server files (where the exe is):<br/>
-<b>Windows:</b>
-```
-ARMA_3_DIR
-├ @extDB2
-| ├ extdb-conf.ini
-| └ extDB2.dll
-└ tbbmalloc.dll
-```
-<b>Linux:</b>
-```
-ARMA_3_DIR
-└ @extDB2
-  ├ extdb-conf.ini
-  └ extDB2.so
-```
-
-You can drag the extDB2.dll & extdb-conf.ini to root folder as well or you can copy over @extDB2 over as a regular mod. If you choose to use @extDB2 as a regular mod your commandline will be: <b>-mod=@life_server;@extDB2</b><br/>
-<br/>
-If you are not using @extDB2 as a mod and choose to drag extDB2.dll into the main arma 3 server directory then you only need @life_server in the commandline.
+[How to configure your server] (wiki)
+-------------------------------------
+You can found all the steps to have a working server in our [github wiki] (wiki).
 
 ExtDB Requirements
 ------------------
