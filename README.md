@@ -32,18 +32,6 @@ The terms are subjected to be changed over time.<br/>
 -------------------------------------
 You can found all the steps to have a fully working server in our [github wiki] (https://github.com/ArmaLife/Altis/wiki).
 
-ExtDB Requirements
-------------------
-<b>Windows:</b><br/>
-[vc2015 redist (x86)] (https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe)
-<br/><br/>
-<b>Debian/Ubuntu x64:</b><br/>
-``` $ apt-get install libtbb2:i386 ```
-<br/><br/>
-<b>RedHat/CentOS x64:</b><br/>
-``` $ yum install tbb.i686 ```
-<br/>
-
 Disclaimer
 -----------
 >   The vast majority of the code / framework has been written by Tonic.
