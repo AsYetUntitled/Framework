@@ -1,7 +1,7 @@
 /*
 	File: fn_vehicleCreate.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Answers the query request to create the vehicle in the database.
 */
