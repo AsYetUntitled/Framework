@@ -18,7 +18,7 @@ class Life_Settings {
 
     /* Cop related settings */
     cops_online_min = 5; //minimum cops online for robbing a bank
-    cops_splitmoney = 30000; //minimum amount for splitting the money with all cops
+	cops_slitmoney = 30000;
 
     /* Medic related settings*/
     allow_medic_weapons = true; // true allows medics to hold/use weapons - false disallows
@@ -85,7 +85,7 @@ class Life_Settings {
     /* Animal settings */
     animaltypes_fish[] = { "Salema_F", "Ornate_random_F", "Mackerel_F", "Tuna_F", "Mullet_F", "CatShark_F", "Turtle_F" };
     animaltypes_hunting[] = { "Sheep_random_F", "Goat_random_F", "Hen_random_F", "Cock_random_F", "Rabbit_F" };
-	
+
     /* Wanted System related settings */
     /* crimes[] = {String, Bounty, Code} */
     crimes[] = {
