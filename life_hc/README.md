@@ -31,21 +31,18 @@ headlessClients[] = {IP¨of headless}; for exemple if you have your headless in 
 
 > My Start-HC.bat :
 
-@echo off
-::timeout 20
-
-:: Modify your folders etc!
-set armapath="D:\SteamGames\steamapps\common\Arma 3"
-set armaparams=-client -connect=127.0.0.1 -port=2302 -password=dev -name=HC -profiles=HC -mod=@extDB2;@life_hc;
-set serverexe=arma3.exe
-
-echo.
-echo Restarting
-:: start the servers..
-cd /d %armapath%
-start "" %serverexe% %armaparams%
-
-exit
+> @echo off
+> ::timeout 20
+> :: Modify your folders etc!
+> set armapath="D:\SteamGames\steamapps\common\Arma 3"
+> set armaparams=-client -connect=127.0.0.1 -port=2302 -password=dev -name=HC -profiles=HC -mod=@extDB2;@life_hc;
+> set serverexe=arma3.exe
+> echo.
+> echo Restarting
+> :: start the servers..
+> cd /d %armapath%
+> start "" %serverexe% %armaparams%
+> exit
 
 <br/>
 
