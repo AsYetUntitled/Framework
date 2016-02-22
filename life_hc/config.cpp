@@ -11,7 +11,7 @@ class CfgPatches
 		weapons[] = {};
 		requiredAddons[] = {"A3_Data_F"};
 		fileName = "life_hc.pbo";
-		author[] = {"Nanou"}; 
+		author[] = {"Nanou"};
 	};
 };
 
@@ -48,14 +48,14 @@ class CfgFunctions
 			class updateRequest {};
 			class cleanup {};
 		};
-		
+
 		class PlayTime
 		{
 			file = "\life_hc\MySQL\PlayTime";
 			class getPlayTime {};
 			class setPlayTime {};
 		};
-		
+
 		class Housing
 		{
 			file = "\life_hc\MySQL\Housing";
@@ -78,7 +78,7 @@ class CfgFunctions
 			class removeGang {};
 			class updateGang {};
 		};
-		
+
 		class Vehicles
 		{
 			file = "\life_hc\MySQL\Vehicles";
@@ -91,7 +91,7 @@ class CfgFunctions
 			class vehicleDelete {};
 			class vehicleUpdate {};
 		};
-		
+
 		class Wanted_Sys
 		{
 			file = "\life_hc\MySQL\WantedSystem";
@@ -103,13 +103,13 @@ class CfgFunctions
 			class wantedCrimes {};
 			class wantedProfUpdate {};
 		};
-		
+
 		class Jail
 		{
-			file = "\life_hc\Jail";
+			file = "\life_hc\MySQL\Jail";
 			class jailSys;
 		};
-		
+
 	};
 
 };
