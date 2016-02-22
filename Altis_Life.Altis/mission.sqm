@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={8447.2109,141.27751,25125.016};
-		dir[]={-0.19423263,-0.7667383,0.61188304};
-		up[]={-0.23198281,0.64195347,0.73080474};
-		aside[]={0.95313561,1.0611693e-006,0.30255795};
+		dir[]={-0.10999164,-0.84824264,0.51809704};
+		up[]={-0.17615545,0.52960396,0.82974863};
+		aside[]={0.97821647,3.277928e-007,0.20767446};
 	};
 };
 binarizationWanted=0;
@@ -84,24 +84,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -116,6 +98,24 @@ class CustomAttributes
 						};
 					};
 					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -559,7 +559,7 @@ class Mission
 			position[]={3653.833,10.282444,13121.493};
 			name="civ_car_1_1";
 			type="Empty";
-			angle=208.40797;
+			angle=208.40796;
 			id=40;
 		};
 		class Item41
@@ -760,7 +760,7 @@ class Mission
 			text="@STR_MAR_Diving_Shop";
 			type="mil_box";
 			colorName="ColorOrange";
-			angle=215.54437;
+			angle=215.54436;
 			id=60;
 		};
 		class Item61
@@ -830,7 +830,7 @@ class Mission
 			text="DP 17";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=219.81389;
+			angle=219.81387;
 			id=67;
 		};
 		class Item68
@@ -1211,7 +1211,7 @@ class Mission
 			position[]={14696.649,17.91,16745.127};
 			name="civ_air_1";
 			type="Empty";
-			angle=308.02094;
+			angle=308.0209;
 			id=105;
 		};
 		class Item106
@@ -1239,7 +1239,7 @@ class Mission
 			position[]={26868.668,24.43294,24567.473};
 			name="civ_air_2";
 			type="Empty";
-			angle=308.02094;
+			angle=308.0209;
 			id=108;
 		};
 		class Item109
@@ -1799,7 +1799,7 @@ class Mission
 			text="@STR_MAR_Diving_Shop";
 			type="mil_box";
 			colorName="ColorOrange";
-			angle=215.54437;
+			angle=215.54436;
 			id=164;
 		};
 		class Item165
@@ -2104,7 +2104,7 @@ class Mission
 			position[]={9184.4463,14.484413,21649.447};
 			name="reb_v_1_1";
 			type="Empty";
-			angle=142.37598;
+			angle=142.37596;
 			id=195;
 		};
 		class Item196
@@ -17350,6 +17350,8 @@ class Mission
 				position[]={8442.0732,104.80252,25147.066};
 			};
 			name="hc_1";
+			isPlayable=1;
+			description="HeadlessClient";
 			id=1110;
 			type="HeadlessClient_F";
 		};
