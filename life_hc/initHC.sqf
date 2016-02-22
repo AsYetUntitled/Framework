@@ -6,12 +6,6 @@
 	
 	Description:
 	Initialize the headless client.
-	
-	------------------------------------------------------------------------------------
-	At the moment, HC is not recommended because we have some problems (with vehicles).
-	We need to fix it, and after, HC will be perfect.
-	Please check to life_hc\MySQL\Vehicles\fn_vehiclesCreate.sqf
-	------------------------------------------------------------------------------------
 */
 
 if(!(EXTDB_SETTINGS_BOOL("Enabled"))) exitWith {};
@@ -60,6 +54,8 @@ if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB2-HC did not fu
 
 [] execFSM "\life_hc\FSM\cleanup.fsm";
 
+[] spawn HC_fnc_cleanup;
+
 // A list of allowed funcs to be passed on the hc (by external sources)
 // Have to be written in only lower capitals
 HC_MPAllowedFuncs = [
@@ -69,6 +65,8 @@ HC_MPAllowedFuncs = [
     "hc_fnc_queryrequest",
     "hc_fnc_updatepartial",
     "hc_fnc_updaterequest",
+	
+	"hc_fnc_cleanup",
 	
 	"hc_fnc_setplaytime",
 	"hc_fnc_getplaytime",

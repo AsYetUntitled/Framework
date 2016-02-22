@@ -137,7 +137,11 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
 };
 
 [] spawn TON_fnc_initHouses;
-[] spawn TON_fnc_cleanup;
+
+if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+	[] spawn TON_fnc_cleanup;
+};
+
 [] spawn TON_fnc_initPlayTime;
 
 /* Setup the federal reserve building(s) */
