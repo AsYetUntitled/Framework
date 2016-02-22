@@ -13,6 +13,9 @@ class Life_Server_Settings {
 	class EXTDB {
 		DatabaseName = "ArmaLife";
 		DebugMode = 0;
+		
+		/* HC Setting */
+		HC_Enabled = false; //Don't enable it for the moment, we need to fix some bug (vehicles). Please read life_hc\MySQL\Vehicles\fn_vehiclesCreate.sqf
 	};
 };
 

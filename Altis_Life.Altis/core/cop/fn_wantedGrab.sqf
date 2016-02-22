@@ -14,4 +14,8 @@ _criminal = lbData[2401,(lbCurSel 2401)];
 _criminal = call compile format["%1", _criminal];
 if(isNil "_criminal") exitWith {};
 
-[player,_criminal] remoteExec ["life_fnc_wantedCrimes",RSERV];
+if(life_HC_isActive) then {
+	[player,_criminal] remoteExec ["HC_fnc_wantedCrimes",HC_Life];
+} else {
+	[player,_criminal] remoteExec ["life_fnc_wantedCrimes",RSERV];
+};
