@@ -54,13 +54,7 @@ if(EQUAL(count crew _vehicle,0)) then {
 	};
 	
 	life_impound_inuse = true;
-	
-	if(life_HC_isActive) then {
-		[_vehicle,true,player] remoteExecCall ["HC_fnc_vehicleStore",HC_Life];
-	} else {
-		[_vehicle,true,player] remoteExecCall ["TON_fnc_vehicleStore",RSERV];
-	};
-	
+	[_vehicle,true,player] remoteExecCall ["TON_fnc_vehicleStore",RSERV];
 	waitUntil {!life_impound_inuse};
 	hint format[localize "STR_NOTF_Impounded",_type,_price];
 	[0,"STR_NOTF_HasImpounded",true,[profileName,SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];

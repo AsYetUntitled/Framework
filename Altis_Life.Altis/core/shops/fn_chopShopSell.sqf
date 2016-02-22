@@ -19,11 +19,5 @@ if(isNull _vehicle) exitWith {};
 hint localize "STR_Shop_ChopShopSelling";
 life_action_inUse = true;
 _price2 = CASH + _price;
-
-if(life_HC_isActive) then {
-	[player,_vehicle,_price,_price2] remoteExecCall ["HC_fnc_chopShopSell",HC_Life];
-} else {
-	[player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
-};
-
+[player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
 closeDialog 0;

@@ -25,22 +25,10 @@ _action = [
 
 if(_action) then {
 	[player] join _group;
-	
-	if(life_HC_isActive) then {
-		[4,_group] remoteExecCall ["HC_fnc_updateGang",HC_Life];
-	} else {
-		[4,_group] remoteExecCall ["TON_fnc_updateGang",RSERV];
-	};
-	
+	[4,_group] remoteExecCall ["TON_fnc_updateGang",RSERV];
 } else {
 	_grpMembers = grpPlayer GVAR "gang_members";
 	SUB(_grpMembers,[steamid]);
 	grpPlayer SVAR ["gang_members",_grpMembers,true];
-	
-	if(life_HC_isActive) then {
-		[4,_grpMembers] remoteExecCall ["HC_fnc_updateGang",HC_Life];
-	} else {
-		[4,_grpMembers] remoteExecCall ["TON_fnc_updateGang",RSERV];
-	};
-	
+	[4,_grpMembers] remoteExecCall ["TON_fnc_updateGang",RSERV];
 };

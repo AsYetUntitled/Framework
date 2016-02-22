@@ -32,13 +32,7 @@ if (!isNull _house && _house isKindOf "House_F" && {player distance _house < 12}
 				[true,_type,_number] call life_fnc_handleInv;
 				hint localize "STR_ISTR_Box_HouseFull";
 				} else {
-					
-					if(life_HC_isActive) then {
-						[_uid,_container] remoteExec ["HC_fnc_addContainer",HC_Life];
-					} else {
-						[_uid,_container] remoteExec ["TON_fnc_addContainer",RSERV];
-					};
-					
+					[_uid,_container] remoteExec ["TON_fnc_addContainer",RSERV];
 					_container SVAR ["Trunk",[[],0],true];
 					_container SVAR ["container_owner",[_uid],true];
 					_container allowDamage true;

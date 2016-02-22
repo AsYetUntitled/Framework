@@ -28,6 +28,7 @@ lbClear _players;
 _list2 = CONTROL(2400,2407);
 lbClear _list2; //Purge the list
 
+
 _crimes = LIFE_SETTINGS(getArray,"crimes");
 
 {
@@ -42,8 +43,4 @@ if(FETCH_CONST(life_coplevel) < 3 && FETCH_CONST(life_adminlevel) == 0) then
 	ctrlShow[2405,false];
 };
 
-if(life_HC_isActive) then {
-	[player] remoteExec ["HC_fnc_wantedFetch",HC_Life];
-} else {
-	[player] remoteExec ["life_fnc_wantedFetch",RSERV];
-};
+[player] remoteExec ["life_fnc_wantedFetch",RSERV];

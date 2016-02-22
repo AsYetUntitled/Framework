@@ -19,9 +19,4 @@ if(typeName _data != "ARRAY") exitWith {};
 if(count _data == 0) exitWith {};
 
 _uid = _data select 0;
-
-if(life_HC_isActive) then {
-	[_uid] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
-} else {
-	[_uid] remoteExecCall ["life_fnc_wantedRemove",RSERV];
-};
+[_uid] remoteExecCall ["life_fnc_wantedRemove",RSERV];

@@ -10,8 +10,4 @@ if(life_session_completed) exitWith {}; //Why did this get executed when the cli
 cutText[localize "STR_Session_QueryFail","BLACK FADED"];
 0 cutFadeOut 9999999;
 
-if(life_HC_isActive) then {
-	[getPlayerUID player,profileName,CASH,BANK,player] remoteExecCall ["HC_fnc_insertRequest",HC_Life];
-} else {
-	[getPlayerUID player,profileName,CASH,BANK,player] remoteExecCall ["DB_fnc_insertRequest",RSERV];
-};
+[getPlayerUID player,profileName,CASH,BANK,player] remoteExecCall ["DB_fnc_insertRequest",RSERV];

@@ -40,13 +40,7 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 			_funds = grpPlayer getVariable "gang_bank";
 			_funds = _funds - (_price * _amount);
 			grpPlayer setVariable["gang_bank",_funds,true];
-			
-			if(life_HC_isActive) then {
-				[1,grpPlayer] remoteExecCall ["HC_fnc_updateGang",HC_Life];
-			} else {
-				[1,grpPlayer] remoteExecCall ["TON_fnc_updateGang",RSERV];
-			};
-			
+			[1,grpPlayer] remoteExecCall ["TON_fnc_updateGang",RSERV];
 		} else {
 			if((_price * _amount) > CASH) exitWith {[false,_type,_amount] call life_fnc_handleInv; hint localize "STR_NOTF_NotEnoughMoney";};
 			hint format[localize "STR_Shop_Virt_BoughtItem",_amount,(localize _name),[(_price * _amount)] call life_fnc_numberText];

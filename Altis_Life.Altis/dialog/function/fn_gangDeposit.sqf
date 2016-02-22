@@ -19,12 +19,7 @@ _gFund = GANG_FUNDS;
 ADD(_gFund,_value);
 grpPlayer SVAR ["gang_bank",_gFund,true];
 
-if(life_HC_isActive) then {
-	[1,grpPlayer] remoteExecCall ["HC_fnc_updateGang",HC_Life];
-} else {
-	[1,grpPlayer] remoteExecCall ["TON_fnc_updateGang",RSERV];
-};
-
+[1,grpPlayer] remoteExecCall ["TON_fnc_updateGang",RSERV];
 hint format[localize "STR_ATM_DepositSuccessG",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial; //Silent Sync

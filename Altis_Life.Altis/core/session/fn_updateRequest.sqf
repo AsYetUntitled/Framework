@@ -33,8 +33,4 @@ switch (playerSide) do {
 	};
 };
 
-if(life_HC_isActive) then {
-	_packet remoteExecCall ["HC_fnc_updateRequest",HC_Life];
-} else {
-	_packet remoteExecCall ["DB_fnc_updateRequest",RSERV];
-};
+_packet remoteExecCall ["DB_fnc_updateRequest",RSERV];

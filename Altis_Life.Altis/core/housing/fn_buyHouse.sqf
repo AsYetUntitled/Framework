@@ -30,13 +30,7 @@ _action = [
 if(_action) then {
 	if(BANK < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
 	SUB(BANK,(SEL(_houseCfg,0)));
-	
-	if(life_HC_isActive) then {
-		[_uid,_house] remoteExec ["HC_fnc_addHouse",HC_Life];
-	} else {
-		[_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
-	};
-	
+	[_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
 	_house SVAR ["house_owner",[_uid,profileName],true];
 	_house SVAR ["locked",true,true];
 	_house SVAR ["containers",[],true];

@@ -15,17 +15,6 @@ serv_sv_use = [];
 PVAR_ALL("life_server_isReady");
 
 /*
-	Prepare the headless client.
-*/
-life_HC_isActive = false;
-PVAR_ALL("life_HC_isActive");
-HC_Life = false;
-PVAR_ALL("HC_Life");
-if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),1)) then {
-	[] execVM "\life_server\initHC.sqf";
-};
-
-/*
 	Prepare extDB before starting the initialization process
 	for the server.
 */
@@ -108,14 +97,8 @@ fed_bank setVariable ["safe",count playableUnits,true];
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
 [] call compile PreProcessFileLineNumbers "\life_server\functions.sqf";
 
-/* Set OwnerID players for Headless Client */
-TON_fnc_requestClientID =
-{
-	(_this select 1) setVariable ["life_clientID", owner (_this select 1), true];
-};
-"life_fnc_RequestClientId" addPublicVariableEventHandler TON_fnc_requestClientID;
- 
 /* Miscellaneous mission-required stuff */
+[] spawn TON_fnc_cleanup;
 life_wanted_list = [];
 [] execFSM "\life_server\FSM\cleanup.fsm";
 
@@ -134,7 +117,6 @@ life_wanted_list = [];
 };
 
 [] spawn TON_fnc_initHouses;
-[] spawn TON_fnc_cleanup;
 [] spawn TON_fnc_initPlayTime;
 
 /* Setup the federal reserve building(s) */
@@ -154,10 +136,8 @@ PVAR_ALL("life_server_isReady");
 /* Initialize hunting zone(s) */
 ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
-// We create the attachment point to be used for objects to attachTo load virtually in vehicles.
+// We create the attachment point to be used for objects to attachTo vehicles.
 life_attachment_point = "Land_HelipadEmpty_F" createVehicle [0,0,0];
 life_attachment_point setPosASL [0,0,0];
 life_attachment_point setVectorDirAndUp [[0,1,0], [0,0,1]];
-
-// Sharing the point of attachment with all players.
 publicVariable "life_attachment_point";

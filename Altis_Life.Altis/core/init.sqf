@@ -126,9 +126,6 @@ life_fnc_moveIn = compileFinal
 	life_disable_getOut = true;
 ";
 
-life_fnc_RequestClientId = player;
-publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for HeadlessClient
-
 [] spawn life_fnc_survival;
 
 [] spawn {
@@ -146,8 +143,4 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"Pump_service"),1)) then{
 	[] execVM "core\fn_setupStationService.sqf";
 };
 
-if(life_HC_isActive) then {
-	[getPlayerUID player,player getVariable["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate",HC_Life];
-} else {
-	[getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
-};
+[getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
