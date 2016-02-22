@@ -5,7 +5,7 @@
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="http://dev.arma3.com/post/spotrep-00052">
-        <img src="https://img.shields.io/badge/AltisLife%20-4.5-orange.svg" alt="Altis Life Version">
+        <img src="https://img.shields.io/badge/arma%203-1.56-orange.svg" alt="Arma 3 Version">
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
@@ -21,32 +21,30 @@ About Headless Client
 ----------------------
 > Headless Client optimize +80% of arma3server.exe. He takes actually 75% of MySQL request and 65% of ServerSide's scripts.
 
-<br/>
-
 How to install it
 ----------------------
 
-> put in your config.sfg
-headlessClients[] = {127.0.0.1};
+> Put in your config.cfg
+headlessClients[] = {IP¨of headless}; for exemple if you have your headless in the same computer  : headlessClients[] = {127.0.0.1};
 
 > life_hc.pbo need to be signed if verifysignature=2 !!!
 
 > My Start-HC.bat :
 
+```
 @echo off
 ::timeout 20
-
 :: Modify your folders etc!
 set armapath="D:\SteamGames\steamapps\common\Arma 3"
 set armaparams=-client -connect=127.0.0.1 -port=2302 -password=dev -name=HC -profiles=HC -mod=@extDB2;@life_hc;
 set serverexe=arma3.exe
-
 echo.
 echo Restarting
 :: start the servers..
 cd /d %armapath%
 start "" %serverexe% %armaparams%
-
 exit
+```
+<br/>
 
 ---------------------------
