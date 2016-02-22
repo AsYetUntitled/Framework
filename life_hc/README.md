@@ -19,33 +19,34 @@
 
 About Headless Client
 ----------------------
-> Headless Client optimize +70% of arma3server.exe. He takes actually 75% of MySQL request and 65% of ServerSide's scripts.
+> Headless Client optimize +80% of arma3server.exe. He takes actually 75% of MySQL request and 65% of ServerSide's scripts.
 
 <br/>
 
 How to install it
 ----------------------
 
-> 
+> put in your config.sfg
+headlessClients[] = {127.0.0.1};
+
+> life_hc.pbo need to be signed if verifysignature=2 !!!
+
+> My Start-HC.bat :
+
 @echo off
-:start
-C:\Windows\System32\tasklist /FI "IMAGENAME eq arma3.exe" 2>NUL | C:\Windows\System32\find /I /N "arma3.exe">NUL
-if "%ERRORLEVEL%"=="0" goto loop
-echo Server is not running, will be started now 
-start "" /wait "C:\Steam\SteamApps\common\Arma 3\arma3.exe" -client -connect=127.0.0.1 -port=2302 -password=XXXX -name=HC -profiles=HC -mod=@extDB2;@life_hc
-timeout 30
-echo Server started succesfully
-goto started
-:loop
-cls
-echo Server is already running, running monitoring loop
-C:\Windows\System32\timeout /t 420
-goto started
-:started
-taskkill /f /im WerFault.exe /fi "WINDOWTITLE eq Arma 3"
-C:\Windows\System32\timeout /t 80
-C:\Windows\System32\tasklist /FI "IMAGENAME eq arma3.exe" 2>NUL | C:\Windows\System32\find /I /N "arma3.exe">NUL
-if "%ERRORLEVEL%"=="0" goto loop
-goto start
+::timeout 20
+
+:: Modify your folders etc!
+set armapath="D:\SteamGames\steamapps\common\Arma 3"
+set armaparams=-client -connect=127.0.0.1 -port=2302 -password=dev -name=HC -profiles=HC -mod=@extDB2;@life_hc;
+set serverexe=arma3.exe
+
+echo.
+echo Restarting
+:: start the servers..
+cd /d %armapath%
+start "" %serverexe% %armaparams%
+
+exit
 
 ---------------------------

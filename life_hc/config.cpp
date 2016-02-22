@@ -46,6 +46,7 @@ class CfgFunctions
 			class queryRequest {};
 			class updatePartial {};
 			class updateRequest {};
+			class cleanup {};
 		};
 		
 		class PlayTime
