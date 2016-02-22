@@ -117,7 +117,10 @@ TON_fnc_requestClientID =
  
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
-[] execFSM "\life_server\FSM\cleanup.fsm";
+
+if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+	[] execFSM "\life_server\FSM\cleanup.fsm";
+};
 
 [] spawn {
 	private["_logic","_queue"];

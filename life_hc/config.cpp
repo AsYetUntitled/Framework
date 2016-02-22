@@ -86,7 +86,6 @@ class CfgFunctions
 			class spawnVehicle {};
 			class keyManagement {};
 			class vehicleStore {};
-			class vehicleDead {};
 			class vehicleCreate {};
 			class vehicleDelete {};
 			class vehicleUpdate {};
