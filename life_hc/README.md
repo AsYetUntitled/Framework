@@ -5,7 +5,7 @@
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="http://dev.arma3.com/post/spotrep-00052">
-        <img src="https://img.shields.io/badge/AltisLife%20-4.5-orange.svg" alt="Altis Life Version">
+        <img src="https://img.shields.io/badge/arma%203-1.56-orange.svg" alt="Arma 3 Version">
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
