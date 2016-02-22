@@ -58,6 +58,8 @@ if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB2-HC did not fu
     };
 };
 
+[] execFSM "\life_hc\FSM\cleanup.fsm";
+
 // A list of allowed funcs to be passed on the hc (by external sources)
 // Have to be written in only lower capitals
 HC_MPAllowedFuncs = [
@@ -92,7 +94,6 @@ HC_MPAllowedFuncs = [
 	"hc_fnc_vehiclestore",
 	"hc_fnc_chopshopsell",
 	"hc_fnc_getvehicles",
-	"hc_fnc_vehicledead",
 	"hc_fnc_vehicledelete",
 	"hc_fnc_vehicleupdate",
 	
