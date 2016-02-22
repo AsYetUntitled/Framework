@@ -21,13 +21,11 @@ About Headless Client
 ----------------------
 > Headless Client optimize +80% of arma3server.exe. He takes actually 75% of MySQL request and 65% of ServerSide's scripts.
 
-<br/>
-
 How to install it
 ----------------------
 
-> put in your config.sfg
-headlessClients[] = {127.0.0.1};
+> Put in your config.cfg
+headlessClients[] = {IP¨of headless}; for exemple if you have your headless in the same computer  : headlessClients[] = {127.0.0.1};
 
 > life_hc.pbo need to be signed if verifysignature=2 !!!
 
@@ -48,5 +46,7 @@ cd /d %armapath%
 start "" %serverexe% %armaparams%
 
 exit
+
+<br/>
 
 ---------------------------
