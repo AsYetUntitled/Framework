@@ -4,10 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
-	HERE WE HAVE A PROBLEM WITH setPlayTime and getPlayTime,
-	but its not HeadlessClient's problem, it's your script i think....
-	
+
 	Description:
 	Handles the incoming request and sends an asynchronous query
 	request to the database.
