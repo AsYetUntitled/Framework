@@ -62,7 +62,7 @@ if(life_is_arrested) exitWith {
 
 //Johnny law got me but didn't let the EMS revive me, reward them half the bounty.
 if(!isNil "life_copRecieve") then {
-	[player,life_copRecieve,true] remoteExecCall ["life_fnc_wantedBounty",RSERV];
+	[getPlayerUID player,player,life_copRecieve,true] remoteExecCall ["life_fnc_wantedBounty",RSERV];
 	life_copRecieve = nil;
 };
 
