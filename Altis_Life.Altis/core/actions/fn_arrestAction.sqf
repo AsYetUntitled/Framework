@@ -16,7 +16,11 @@ if(!(_unit GVAR "restrained")) exitWith {}; //He's not restrained.
 if(!((side _unit) in [civilian,independent])) exitWith {}; //Not a civ
 if(isNull _unit) exitWith {}; //Not valid
 
-[_unit,player,false] remoteExecCall ["life_fnc_wantedBounty",RSERV];
+if(life_HC_isActive) then {
+	[_unit,player,false] remoteExecCall ["HC_fnc_wantedBounty",HC_Life];
+} else {
+	[_unit,player,false] remoteExecCall ["life_fnc_wantedBounty",RSERV];
+};
 
 if(isNull _unit) exitWith {}; //Not valid
 detach _unit;
