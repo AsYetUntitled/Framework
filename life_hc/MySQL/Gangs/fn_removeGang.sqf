@@ -2,9 +2,9 @@
 /*
 	File: fn_removeGang.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Blah
 */
@@ -23,3 +23,4 @@ if(EQUAL(count _result,0)) then {
 	sleep 5;
 	deleteGroup _group;
 };
+["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
