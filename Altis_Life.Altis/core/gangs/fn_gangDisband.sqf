@@ -17,7 +17,13 @@ _action = [
 
 if(_action) then {
 	hint localize "STR_GNOTF_DisbandGangPro";
-	[grpPlayer] remoteExec ["TON_fnc_removeGang",RSERV];
+	
+	if(life_HC_isActive) then {
+		[grpPlayer] remoteExec ["HC_fnc_removeGang",HC_Life];
+	} else {
+		[grpPlayer] remoteExec ["TON_fnc_removeGang",RSERV];
+	};
+	
 } else {
 	hint localize "STR_GNOTF_DisbandGangCanc";
 };

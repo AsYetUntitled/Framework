@@ -32,7 +32,13 @@ if(isNull _vehicle) exitWith {};
 switch (_mode) do {
 	case 1: {
 		_storetext = localize "STR_Garage_Store_Success";
-		[_vehicle,false,player,_storetext] remoteExec ["TON_fnc_vehicleStore",2];
+		
+		if(life_HC_isActive) then {
+			[_vehicle,false,player,_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];
+		} else {
+			[_vehicle,false,player,_storetext] remoteExec ["TON_fnc_vehicleStore",2];
+		};
+
 		hint localize "STR_Garage_Store_Server";
 		life_garage_store = true;
 	};
@@ -44,7 +50,13 @@ switch (_mode) do {
 		clearBackpackCargoGlobal _vehicle;
 		_vehicle SVAR ["Trunk",[[],0],true];
 		_storetext = localize "STR_Garage_Store_Success";
-		[_vehicle,false,player,_storetext] remoteExec ["TON_fnc_vehicleStore",2];
+		
+		if(life_HC_isActive) then {
+			[_vehicle,false,player,_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];
+		} else {
+			[_vehicle,false,player,_storetext] remoteExec ["TON_fnc_vehicleStore",2];
+		};
+		
 		hint localize "STR_Garage_Store_Server";
 		life_garage_store = true;
 	};

@@ -27,7 +27,13 @@ _action = [
 
 if(_action) then {
 	_house SVAR ["house_sold",true,true];
-	[_house] remoteExecCall ["TON_fnc_sellHouse",RSERV];
+	
+	if(life_HC_isActive) then {
+		[_house] remoteExecCall ["HC_fnc_sellHouse",HC_Life];
+	} else {
+		[_house] remoteExecCall ["TON_fnc_sellHouse",RSERV];
+	};
+	
 	_house SVAR ["locked",false,true];
 	_house SVAR ["containers",nil,true];
 	deleteMarkerLocal format["house_%1",_house GVAR "uid"];
@@ -54,7 +60,13 @@ if(_action) then {
 	if (count _containers > 0) then {
 		{
 			_x SVAR ["Trunk",nil,true];
-			[_x] remoteExecCall ["TON_fnc_sellHouseContainer",RSERV];
+			
+			if(life_HC_isActive) then {
+				[_x] remoteExecCall ["HC_fnc_sellHouseContainer",HC_Life];
+			} else {
+				[_x] remoteExecCall ["TON_fnc_sellHouseContainer",RSERV];
+			};
+			
 		} forEach _containers;
 	};
 };

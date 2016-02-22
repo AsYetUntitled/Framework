@@ -20,4 +20,8 @@ if(isNull _unit) exitWith {};
 
 [1,"STR_Wanted_AddP",true,[_unit GVAR ["realname",name _unit],_amount,getPlayerUID _unit]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 
-[getPlayerUID _unit,_unit GVAR ["realname",name _unit],_amount] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+if(life_HC_isActive) then {
+	[getPlayerUID _unit,_unit GVAR ["realname",name _unit],_amount] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
+} else {
+	[getPlayerUID _unit,_unit GVAR ["realname",name _unit],_amount] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+};
