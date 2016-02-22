@@ -3,7 +3,7 @@
 		Author : NiiRoZz
 
 		This file is for Nanou's HeadlessClient.
-	
+
 		Description :
 		Gets playtime for player with UID
 
@@ -23,8 +23,7 @@ _time_join = -1;
 		_time_gathered = _x select 1;
 		_time_join = _x select 2;
 	};
-}
-foreach TON_fnc_playtime_values;
+} foreach TON_fnc_playtime_values;
 
 if(_time_gathered < 0 || _time_join < 0) then
 {

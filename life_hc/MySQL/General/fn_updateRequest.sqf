@@ -4,11 +4,6 @@
 
 	This file is for Nanou's HeadlessClient.
 	
-	SAME AS fn_queryRequest.sqf, u have a problem here.
-	WITH setPlayTime and getPlayTime,
-	but its not HeadlessClient's problem, it's your script i think....
-	Please fix it.
-	
 	Description:
 	Ain't got time to describe it, READ THE FILE NAME!
 */
@@ -48,7 +43,7 @@ _playtime_update = [];
 	{
 		_playtime_update pushBack [_x select 1];
 	};
-} foreach HC_fnc_playtime_values_request;
+} foreach TON_fnc_playtime_values_request;
 _playtime_update = (_playtime_update select 0) select 0;
 switch (_side) do {
 	case west: {_playtime_update set[0,_playtime];};
