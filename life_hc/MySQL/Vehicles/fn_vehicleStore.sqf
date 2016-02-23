@@ -4,7 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Stores the vehicle in the 'Garage'
 */
@@ -30,14 +30,20 @@ if(count _vInfo > 0) then {
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
 	_trunk = _vehicle getVariable["Trunk",[[],0]];
 	_trunk2 = _trunk select 0;
+	_trunk4 = _trunk select 1;
 	{
 		_itemName = _x select 0;
 		if(_itemName in _resourceItems) then	{
+			_val = ITEM_WEIGHT(_itemName);
+			_ItemNumber = _x select 1;
+			_setnumber = _val * _ItemNumber;
+			_trunk4 = _trunk4 - _setnumber;
 			_trunk2 set [_forEachIndex,666];
 		};
 	} forEach _trunk2;
 	_trunk2 = _trunk2 - [666];
 	_trunk set [0, _trunk2];
+	_trunk set [1, _trunk4];
 	_trunk = [_trunk] call HC_fnc_mresArray;
 } else {
 	_trunk = [[],0];

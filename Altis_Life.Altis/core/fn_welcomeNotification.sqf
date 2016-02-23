@@ -1,7 +1,7 @@
 /*
 	File: fn_welcomeNotification.sqf
-	Author: 
-	
+	Author:
+
 	Description:
 	Called upon first spawn selection and welcomes our player.
 */
@@ -15,26 +15,25 @@ disableSerialization;
         0,
         8
 ] spawn BIS_fnc_dynamicText;
- 
+
 createDialog "RscDisplayWelcome";
- 
+
 _display = findDisplay 999999;
 _text1 = _display displayCtrl 1100;
 _buttonSpoiler = _display displayctrl 2400;
 _textSpoiler = _display displayctrl 1101;
 _text2 = _display displayCtrl 1102;
- 
+
 _message = "";
 _message = _message + "<t align='center' size='8' shadow='0'><img image='textures\armalife.jpg' /></t><br /><br />";
 _message = _message + "Useful Links (click on the links to open your browser)<br /><br />";
 _message = _message + " <a href='https://github.com/ArmaLife/Altis' color='#56BDD6'>ArmaLife</a> -- Our Website, check it out for the latest news and updates.<br /><br />";
 _message = _message + "Teamspeak 3 Address: ADDRESS HERE  <br /><br />";
-_message = _message + " <a href='https://www.youtube.com/embed/JvNLlwkwP64?autoplay=1' color='#56BDD6'>Italian Spiderman";
 
- 
+
 //Fill only the first text
 _text1 ctrlSetStructuredText (parseText _message);
- 
+
 //Resize StructuredText component to display the scrollbar if needed
 _positionText1 = ctrlPosition _text1;
 _yText1 = _positionText1 select 1;
