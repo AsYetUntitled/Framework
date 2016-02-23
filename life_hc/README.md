@@ -1,7 +1,7 @@
 <h1 align="center">Headless Client</h1>
 <p align="center">
     <a href="https://github.com/ArmaLife/Altis">
-        <img src="https://img.shields.io/badge/Version-v0.5-green.svg" alt="HC Version">
+        <img src="https://img.shields.io/badge/Version-v1.0-green.svg" alt="HC Version">
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="http://dev.arma3.com/post/spotrep-00052">

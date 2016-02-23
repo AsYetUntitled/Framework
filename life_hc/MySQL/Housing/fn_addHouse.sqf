@@ -8,7 +8,6 @@
 	Description:
 	Blah
 */
-diag_log "addhouse HC";
 private["_housePos","_query"];
 params [
 	["_uid","",[""]],
@@ -25,7 +24,5 @@ sleep 0.3;
 
 _query = format["SELECT id FROM houses WHERE pos='%1' AND pid='%2' AND owned='1'",_housePos,_uid];
 _queryResult = [_query,2] call HC_fnc_asyncCall;
-
-diag_log format["addHouse Query: %1",_queryResult];
 
 _house setVariable["house_id",(_queryResult select 0),true];
