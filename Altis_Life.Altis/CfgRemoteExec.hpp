@@ -103,7 +103,7 @@ class CfgRemoteExec {
         F(TON_fnc_addContainer,SERVER)
         F(TON_fnc_sellHouseContainer,SERVER)
         F(TON_fnc_deleteDBContainer,SERVER)
-		    F(TON_fnc_vehicleUpdate,SERVER)
+		F(TON_fnc_vehicleUpdate,SERVER)
 
 		/* HeadlessClient only functions */
 		F(HC_fnc_queryRequest,HC)
@@ -136,6 +136,7 @@ class CfgRemoteExec {
         F(HC_fnc_wantedAdd,HC)
 		F(HC_fnc_wantedBounty,HC)
 		F(HC_fnc_jailSys,HC)
+		F(HC_fnc_spikeStrip,HC)
 
         /* Functions for everyone */
         F(life_fnc_broadcast,ANYONE)
