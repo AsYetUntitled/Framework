@@ -481,6 +481,10 @@
       <Portuguese>Ação Cancelada</Portuguese>
       <Polish>Anulowano akcję</Polish>
     </Key>
+    <Key ID="STR_NOTF_PlaceContainer">
+      <Original>Hit spacebar for place Container</Original>
+      <French>Appuyez sur espace pour placer le container</French>
+    </Key>
 	<Key ID="STR_NOTF_Pickaxe">
       <Original>A pickaxe is required</Original>
       <German>Eine Spitzhacke wird benötigt.</German>
