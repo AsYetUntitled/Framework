@@ -111,6 +111,12 @@ class CfgFunctions
 			file = "\life_hc\MySQL\Jail";
 			class jailSys;
 		};
+		
+		class Items
+		{
+			file = "\life_hc\MySQL\Items";
+			class spikeStrip {};
+		};
 
 	};
 

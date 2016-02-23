@@ -109,6 +109,8 @@ HC_MPAllowedFuncs = [
 	
 	"hc_fnc_jailsys",
 	
+	"hc_fnc_spikestrip",
+	
 	"hc_fnc_wantedadd",
 	"hc_fnc_wantedbounty",
 	"hc_fnc_wantedcrimes",
