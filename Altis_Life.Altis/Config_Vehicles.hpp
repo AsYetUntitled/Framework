@@ -131,13 +131,14 @@ class LifeCfgVehicles {
     *         Ex: { 200, 200 , 200 , 200 } //civilian, west, independent, east
     *       2: ARRAY (license required)
     *         Ex: { "driver", "" , "" , "" } //civilian, west, independent, east
-    *
+    *         licenses[] = { {"CIV"}, {"COP"}, {"MEDIC"}, {"EAST"} };
     *    Textures config follows { Texture Name, side, {texture(s)path}}
     *    Texture(s)path follows this format:
     *    INDEX 0: Texture Layer 0
     *    INDEX 1: Texture Layer 1
     *    INDEX 2: Texture Layer 2
     *    etc etc etc
+    *    
     */
 
     class Default {
