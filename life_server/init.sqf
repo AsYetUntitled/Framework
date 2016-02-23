@@ -4,6 +4,9 @@
 	File: init.sqf
 	Author: Bryan "Tonic" Boardwine
 
+	Edit: Nanou for HeadlessClient optimization.
+	Please read support for more informations.
+	
 	Description:
 	Initialize the server and required systems.
 */
@@ -29,12 +32,12 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),1)) then {
 	Prepare extDB before starting the initialization process
 	for the server.
 */
+
 if(isNil {GVAR_UINS "life_sql_id"}) then {
 	life_sql_id = round(random(9999));
 	CONSTVAR(life_sql_id);
 	SVAR_UINS ["life_sql_id",life_sql_id];
-
-	try {
+		try {
 		_result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
 		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
 		_result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
@@ -44,8 +47,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 		life_server_extDB_notLoaded = [true, _exception];
 		PVAR_ALL("life_server_extDB_notLoaded");
 	};
-
-	__EXIT(!(EQUAL(life_server_extDB_notLoaded,"")));
+		__EXIT(!(EQUAL(life_server_extDB_notLoaded,"")));
 	EXTDB "9:LOCK";
 	diag_log "extDB2: Connected to Database";
 } else {
@@ -56,11 +58,13 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 
 if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB did not fully initialize so terminate the rest of the initialization process.
 
-/* Run stored procedures for SQL side cleanup */
-["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
-["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
-["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
-["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
+if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+	/* Run stored procedures for SQL side cleanup */
+	["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
+	["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
+	["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
+	["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
+};
 
 /* Map-based server side initialization. */
 master_group attachTo[bank_obj,[0,0,0]];
@@ -136,9 +140,8 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
 	};
 };
 
-[] spawn TON_fnc_initHouses;
-
 if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+	[] spawn TON_fnc_initHouses;
 	[] spawn TON_fnc_cleanup;
 };
 
@@ -154,12 +157,16 @@ _rsb setVariable["bis_disabled_Door_1",1,true];
 _rsb allowDamage false;
 _dome allowDamage false;
 
-/* Tell clients that the server is ready and is accepting queries */
-life_server_isReady = true;
-PVAR_ALL("life_server_isReady");
+if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+	/* Tell clients that the server is ready and is accepting queries */
+	life_server_isReady = true;
+	PVAR_ALL("life_server_isReady");
+};
 
-/* Initialize hunting zone(s) */
-["hunting_zone",30] spawn TON_fnc_huntingZone;
+if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+	/* Initialize hunting zone(s) */
+	["hunting_zone",30] spawn TON_fnc_huntingZone;
+};
 
 // We create the attachment point to be used for objects to attachTo load virtually in vehicles.
 life_attachment_point = "Land_HelipadEmpty_F" createVehicle [0,0,0];

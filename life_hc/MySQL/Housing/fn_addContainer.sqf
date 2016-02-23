@@ -3,6 +3,8 @@
 	File : fn_addContainer
 	Author: NiiRoZz
 
+	This file is for Nanou's HeadlessClient.
+	
 	Description:
 	Add container in Database
 */

@@ -6,6 +6,7 @@
 	
 	Description:
 	Initialize the headless client.
+	(extDB2 V.70)
 */
 
 if(!(EXTDB_SETTINGS_BOOL("Enabled"))) exitWith {};
@@ -52,10 +53,19 @@ if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB2-HC did not fu
     };
 };
 
+["CALL resetLifeVehicles",1] call HC_fnc_asyncCall;
+["CALL deleteDeadVehicles",1] call HC_fnc_asyncCall;
+["CALL deleteOldHouses",1] call HC_fnc_asyncCall;
+["CALL deleteOldGangs",1] call HC_fnc_asyncCall;
+	
 [] execFSM "\life_hc\FSM\cleanup.fsm";
 
 [] spawn HC_fnc_cleanup;
+[] spawn HC_fnc_initHouses;
 
+/* Initialize hunting zone(s) */
+["hunting_zone",30] spawn HC_fnc_huntingZone;
+	
 // A list of allowed funcs to be passed on the hc (by external sources)
 // Have to be written in only lower capitals
 HC_MPAllowedFuncs = [
@@ -67,6 +77,7 @@ HC_MPAllowedFuncs = [
     "hc_fnc_updaterequest",
 	
 	"hc_fnc_cleanup",
+	"hc_fnc_huntingzone",
 	
 	"hc_fnc_setplaytime",
 	"hc_fnc_getplaytime",
@@ -76,6 +87,7 @@ HC_MPAllowedFuncs = [
     "hc_fnc_removegang",
     "hc_fnc_updategang",
 
+	"hc_fnc_inithouses",
     "hc_fnc_addcontainer",
     "hc_fnc_addhouse",
 	"hc_fnc_deletedbcontainer",
@@ -114,3 +126,6 @@ publicVariable "life_HC_isActive";
 diag_log "---------------------------- HC is Ready --------------------------------";
 diag_log "Published the needed vars over the network, ready for queries to recieve!";
 diag_log "-------------------------------------------------------------------------";
+
+life_server_isReady = true;
+publicVariable "life_server_isReady";
