@@ -3,6 +3,8 @@
 	File: fn_addHouse.sqf
 	Author: Bryan "Tonic" Boardwine
 
+	This file is for Nanou's HeadlessClient.
+	
 	Description:
 	Blah
 */

@@ -19,7 +19,7 @@
 
 About Headless Client
 ----------------------
-> Headless Client optimize +80% of arma3server.exe. He takes actually 75% of MySQL request and 65% of ServerSide's scripts.
+> Headless Client optimize +80% of arma3server.exe. He takes actually 100% of MySQL request and 80% of ServerSide's scripts.
 
 How to install it
 ----------------------

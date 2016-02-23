@@ -7,8 +7,6 @@
 	Starts the initialization of the player.
 */
 if (!hasInterface && !isServer) exitWith {
-	waitUntil{!isNil "life_server_isReady"};
-	waitUntil{life_server_isReady};
 	[] call compile PreprocessFileLineNumbers "\life_hc\initHC.sqf";
 }; //This is a headless client.
 

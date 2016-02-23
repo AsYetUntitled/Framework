@@ -47,6 +47,7 @@ class CfgFunctions
 			class updatePartial {};
 			class updateRequest {};
 			class cleanup {};
+			class huntingZone {};
 		};
 
 		class PlayTime
@@ -68,6 +69,7 @@ class CfgFunctions
 			class sellHouseContainer {};
 			class updateHouseContainers {};
 			class updateHouseTrunk {};
+			class initHouses {};
 		};
 
 		class Gangs
