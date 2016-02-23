@@ -8,7 +8,6 @@
 	Description:
 	Add container in Database
 */
-diag_log "addcontainer HC";
 private["_containerPos","_query","_className","_dir"];
 params [
 	["_uid","",[""]],
@@ -28,7 +27,5 @@ sleep 0.3;
 
 _query = format["SELECT id FROM containers WHERE pos='%1' AND pid='%2' AND owned='1'",_containerPos,_uid];
 _queryResult = [_query,2] call HC_fnc_asyncCall;
-
-diag_log format["addContainer Query: %1",_queryResult];
 
 _container setVariable["container_id",(_queryResult select 0),true];
