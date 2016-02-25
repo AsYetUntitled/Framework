@@ -31,8 +31,8 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1 OR (GVAR_UINS ["Weapon_Accessories",0]
 				_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
 			};
 			} forEach (_config);
-			((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Accs";
 			((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
+			((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Accs";
 	} else {
 		_config = M_CONFIG(getArray,"WeaponShops",_shop,"accs");
 		{
