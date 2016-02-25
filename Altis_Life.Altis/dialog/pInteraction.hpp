@@ -1,6 +1,6 @@
 #define BGX 0.35
 #define BGY 0.2
-#define BGW 0.3
+#define BGW 0.46
 
 class pInteraction_Menu
 {
@@ -27,7 +27,7 @@ class pInteraction_Menu
 			x = BGX;
 			y = BGY + (11 / 250);
 			w = BGW;
-			h = 0.6 - (22 / 250);
+			h = 0.6 - (22 / 250) + 0.05;
 		};
 		
 		class Title : life_RscTitle
@@ -51,7 +51,7 @@ class pInteraction_Menu
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = BGX;
-			y = 0.8 - (1 / 25);
+			y = 0.8 - (1 / 25) + 0.05;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
@@ -64,7 +64,7 @@ class pInteraction_Menu
 			sizeEx = 0.025;
 			x = BGX + 0.03;
 			y = BGY + 0.07;
-			w = 0.24;
+			w = 0.4;
 			h = 0.038;
 		};
 		
@@ -76,7 +76,7 @@ class pInteraction_Menu
 			sizeEx = 0.025;
 			x = BGX + 0.03;
 			y = BGY + 0.12;
-			w = 0.24;
+			w = 0.4;
 			h = 0.038;
 		};
 		
@@ -88,7 +88,7 @@ class pInteraction_Menu
 			sizeEx = 0.025;
 			x = BGX + 0.03;
 			y = BGY + 0.17;
-			w = 0.24;
+			w = 0.4;
 			h = 0.038;
 		};
 		
@@ -100,7 +100,7 @@ class pInteraction_Menu
 			sizeEx = 0.025;
 			x = BGX + 0.03;
 			y = BGY + 0.22;
-			w = 0.24;
+			w = 0.4;
 			h = 0.038;
 		};
 		
@@ -112,7 +112,7 @@ class pInteraction_Menu
 			sizeEx = 0.025;
 			x = BGX + 0.03;
 			y = BGY + 0.27;
-			w = 0.24;
+			w = 0.4;
 			h = 0.038;
 		};
 		
@@ -124,7 +124,7 @@ class pInteraction_Menu
 			sizeEx = 0.025;
 			x = BGX + 0.03;
 			y = BGY + 0.32;
-			w = 0.24;
+			w = 0.4;
 			h = 0.038;
 		};
 		
@@ -136,7 +136,7 @@ class pInteraction_Menu
 			sizeEx = 0.025;
 			x = BGX + 0.03;
 			y = BGY + 0.37;
-			w = 0.24;
+			w = 0.4;
 			h = 0.038;
 		};
 	};
