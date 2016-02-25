@@ -50,7 +50,9 @@ if(_exit) exitWith {hint _levelMsg;};
 
 uiNamespace setVariable ["Weapon_Shop",SEL(_this,3)];
 uiNamespace setVariable["Weapon_Magazine",0];
+uiNamespace setVariable["Weapon_Accessories",0];
 uiNamespace setVariable["Magazine_Array",[]];
+uiNamespace setVariable["Accessories_Array",[]];
 
 if(!(createDialog "life_weapon_shop")) exitWith {};
 if(!isClass(missionConfigFile >> "WeaponShops" >> (SEL(_this,3)))) exitWith {}; //Bad config entry.

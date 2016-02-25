@@ -92,5 +92,16 @@ class life_weapon_shop
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+
+		class ButtonAccs : life_RscButtonMenu
+		{
+			idc = 38407;
+			text = "$STR_Global_Accs";
+			onButtonClick = "_this call life_fnc_weaponShopAccs; _this call life_fnc_weaponShopFilter";
+			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.8 + (1 / 250 / (safezoneW / safezoneH));
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
 	};
 };

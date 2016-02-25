@@ -19,22 +19,39 @@ _priceTag ctrlSetStructuredText parseText "";
 _itemList = ((findDisplay 38400) displayCtrl 38403);
 lbClear _itemList;
 
-if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
-	_config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
-	{
-		if(SEL(_x,0) in (uiNamespace getVariable ["Magazine_Array",[]])) then {
-			_itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
-			_itemList lbAdd format["%1",if(!(EQUAL(SEL(_x,1),""))) then {SEL(_x,1)} else {_itemInfo select 1}];
-			_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
-			_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
-			_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
-		};
-	} foreach (_config);
+if((GVAR_UINS ["Weapon_Magazine",0]) == 1 OR (GVAR_UINS ["Weapon_Accessories",0]) == 1) then {
+	if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
+		_config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
+		{
+			if(SEL(_x,0) in (uiNamespace getVariable ["Magazine_Array",[]])) then {
+				_itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
+				_itemList lbAdd format["%1",if(!(EQUAL(SEL(_x,1),""))) then {SEL(_x,1)} else {_itemInfo select 1}];
+				_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
+				_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
+				_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
+			};
+			} forEach (_config);
+			((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Accs";
+			((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
+	} else {
+		_config = M_CONFIG(getArray,"WeaponShops",_shop,"accs");
+		{
+			if(SEL(_x,0) in (uiNamespace getVariable ["Accessories_Array",[]])) then {
+				_itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
+				_itemList lbAdd format["%1",if(!(EQUAL(SEL(_x,1),""))) then {SEL(_x,1)} else {_itemInfo select 1}];
+				_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
+				_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
+				_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
+			};
+			} forEach (_config);
+			((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Mags";
+			((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Weapons";
+	};
 
 	((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
-	((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
 	ctrlShow [38402,false];
 	ctrlShow [38406,true];
+	ctrlShow [38407,true];
 } else {
 	switch (_index) do {
 		case 0: {
@@ -45,12 +62,14 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
 				_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
 				_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
 				_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
-			} foreach (_config);
+			} forEach (_config);
 
 			((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
 			((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Mags";
+			((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Accs";
 			ctrlShow [38402,true];
 			ctrlShow [38406,true];
+			ctrlShow [38407,true];
 		};
 
 		case 1: {
@@ -72,6 +91,7 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
 			((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Sell";
 			ctrlShow [38402,true];
 			ctrlShow [38406,false];
+			ctrlShow [38407,false];
 
 			_itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
 			{
@@ -93,7 +113,7 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
 						};
 					};
 				};
-			} foreach _config;
+			} forEach _config;
 		};
 	};
 };
