@@ -120,7 +120,7 @@ class Life_FuelStat
 
 			//Position & height
 			x = 0.11; y = 0.302;
-			w = 0.303; h = 0.49;
+			w = 0.32; h = 0.49;
 		};
 		class fuelTank : life_RscXSliderH
 		{
@@ -141,8 +141,8 @@ class Life_FuelStat
 			text = "";
 			sizeEx = 0.035;
 
-			x = 0.41; y = 0.3;
-			w = 0.5; h = 0.5;
+			x = 0.46; y = 0.3;
+			w = 0.42; h = 0.5;
 		};
 	};
 };
