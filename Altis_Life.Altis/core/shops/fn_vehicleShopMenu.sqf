@@ -71,3 +71,4 @@ ctrlShow [2304,false];
 } foreach _vehicleList;
 
 [] call life_fnc_vehicleShopInit3DPreview;
+((findDisplay 2300) displayCtrl 2302) lbSetCurSel 0;
