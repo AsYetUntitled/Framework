@@ -13,10 +13,10 @@ if((GVAR_UINS ["Weapon_Accessories",0]) == 0) then {
 	_weapon = lbData[38403,lbCurSel (38403)];
 	_weaponArray = [];
 	_slotArray = [];
-	_CowsSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotInfo >> CowsSlot);
-	_MuzzleSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotInfo >> MuzzleSlot);
-	_PointerSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotInfo >> PointerSlot);
-	_UnderBarrelSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotInfo >> UnderBarrelSlot);
+	_CowsSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotsInfo >> CowsSlot);
+	_MuzzleSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotsInfo >> MuzzleSlot);
+	_PointerSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotsInfo >> PointerSlot);
+	_UnderBarrelSlot = (configFile >> "CfgWeapons" >> _weapon >> WeaponSlotsInfo >> UnderBarrelSlot);
 
 	if(isClass _CowsSlot) then {
 		if(isArray (_CowsSlot >> compatibleItems)) then {
