@@ -317,6 +317,7 @@ class Life_Client_Core
 		class weaponShopSelection {};
 		class weaponShopBuySell {};
 		class weaponShopMags {};
+		class weaponShopAccs {};
 		class virt_buy {};
 		class virt_menu {};
 		class virt_update {};

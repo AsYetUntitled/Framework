@@ -207,6 +207,10 @@
       <Original>Magazines</Original>
       <Portuguese>Munições</Portuguese>
     </Key>
+    <Key ID="STR_Global_Accs">
+      <Original>Accessories</Original>
+      <Portuguese>Acessórios</Portuguese>
+    </Key>
     <Key ID="STR_Global_Weapons">
       <Original>Weapons</Original>
       <Portuguese>Armas</Portuguese>
