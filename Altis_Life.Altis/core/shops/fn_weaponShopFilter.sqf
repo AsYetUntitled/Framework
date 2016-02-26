@@ -30,9 +30,10 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1 OR (GVAR_UINS ["Weapon_Accessories",0]
 				_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
 				_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
 			};
-			} forEach (_config);
-			((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
-			((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Accs";
+		} forEach (_config);
+		((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
+		ctrlShow [38406,true];
+		ctrlShow [38407,false];
 	} else {
 		_config = M_CONFIG(getArray,"WeaponShops",_shop,"accs");
 		{
@@ -43,15 +44,14 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1 OR (GVAR_UINS ["Weapon_Accessories",0]
 				_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
 				_itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
 			};
-			} forEach (_config);
-			((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Mags";
-			((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Weapons";
+		} forEach (_config);
+		((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Weapons";
+		ctrlShow [38406,false];
+		ctrlShow [38407,true];
 	};
 
 	((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
 	ctrlShow [38402,false];
-	ctrlShow [38406,true];
-	ctrlShow [38407,true];
 } else {
 	switch (_index) do {
 		case 0: {
