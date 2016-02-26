@@ -32,6 +32,7 @@ if((GVAR_UINS ["Weapon_Shop_Filter",0]) == 1) then {
 	};
 	if((GVAR_UINS ["Weapon_Magazine",0]) == 0 && (GVAR_UINS ["Weapon_Accessories",0]) == 0) then {
 			if(isClass (configFile >> "CfgWeapons" >> _item)) then {
+				//Magazines menu
 				if(isArray (configFile >> "CfgWeapons" >> _item >> "magazines")) then {
 					_itemArray = FETCH_CONFIG2(getArray,"CfgWeapons",_item,"magazines");
 					if(count _itemArray > 0) then {
@@ -43,53 +44,40 @@ if((GVAR_UINS ["Weapon_Shop_Filter",0]) == 1) then {
 					((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
 				};
 
-				if(isClass (configFile >> "CfgWeapons" >> _item >> WeaponSlotInfo)) then {
-					private["_CowsSlot","_MuzzleSlot","_PointerSlot","_UnderBarrelSlot","_slotArray","_weaponArray"];
-
-					_CowsSlot = (configFile >> "CfgWeapons" >> _item >> WeaponSlotInfo >> CowsSlot);
-					_MuzzleSlot = (configFile >> "CfgWeapons" >> _item >> WeaponSlotInfo >> MuzzleSlot);
-					_PointerSlot = (configFile >> "CfgWeapons" >> _item >> WeaponSlotInfo >> PointerSlot);
-					_UnderBarrelSlot = (configFile >> "CfgWeapons" >> _item >> WeaponSlotInfo >> UnderBarrelSlot);
-
+				//Accessories Menu
+				if(isClass (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo")) then {
+					private["_slotArray","_weaponArray"];
 					_weaponArray = [];
-					if(isClass _CowsSlot) then {
-						if(isArray (_CowsSlot >> compatibleItems)) then {
-							_slotArray = getArray(_CowsSlot >> compatibleItems);
-							{
-								_weaponArray pushBack _x;
-								} forEach _slotArray;
-							};
-						};
-						if(isClass _MuzzleSlot) then {
-							if(isArray (_MuzzleSlot >> compatibleItems)) then {
-								_slotArray = getArray(_MuzzleSlot >> compatibleItems);
-								{
-									_weaponArray pushBack _x;
-									} forEach _slotArray;
-								};
-							};
-							if(isClass _PointerSlot) then {
-								if(isArray (_PointerSlot >> compatibleItems)) then {
-									_slotArray = getArray(_PointerSlot >> compatibleItems);
-									{
-								_weaponArray pushBack _x;
-								} forEach _slotArray;
-							};
-						};
-						if(isClass _UnderBarrelSlot) then {
-							if(isArray (_UnderBarrelSlot >> compatibleItems)) then {
-								_slotArray = getArray(_UnderBarrelSlot >> compatibleItems);
-								{
-									_weaponArray pushBack _x;
-								} forEach _slotArray;
-							};
-						};
-						if(count _weaponArray > 0) then {
-							((findDisplay 38400) displayCtrl 38407) ctrlEnable true;
-						} else {
-							((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
-						};
+					if(isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
+						_slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","CowsSlot","compatibleItems");
+						{
+							_weaponArray pushBack _x;
+						} forEach _slotArray;
+					};
+					if(isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems")) then {
+						_slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","MuzzleSlot","compatibleItems");
+						{
+							_weaponArray pushBack _x;
+						} forEach _slotArray;
+					};
+					if(isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems")) then {
+						_slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","PointerSlot","compatibleItems");
+						{
+							_weaponArray pushBack _x;
+						} forEach _slotArray;
+					};
+					if(isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "UnderBarrelSlot" >> "compatibleItems")) then {
+						_slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","UnderBarrelSlot","compatibleItems");
+						{
+							_weaponArray pushBack _x;
+						} forEach _slotArray;
+					};
+					if(count _weaponArray > 0) then {
+						((findDisplay 38400) displayCtrl 38407) ctrlEnable true;
 					} else {
+						((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
+					};
+				} else {
 					((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
 				};
 			} else {

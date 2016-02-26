@@ -14,7 +14,6 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 0) then {
 	_weapon = FETCH_CONFIG2(getArray,"CfgWeapons",_weapon,"magazines");
 	uiNamespace setVariable["Magazine_Array",_weapon];
 	uiNamespace setVariable["Weapon_Magazine",1];
-	uiNamespace setVariable["Weapon_Accessories",0];
 } else {
 	uiNamespace setVariable["Weapon_Magazine",0];
 };
