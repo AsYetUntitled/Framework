@@ -6447,166 +6447,213 @@
   <Package name="Crimes">
     <Key ID="STR_Crime_187V">
       <Original>Vehicular Manslaughter</Original>
+	  <Portuguese>Atropelamento</Portuguese>
     </Key>
     <Key ID="STR_Crime_187">
       <Original>Manslaughter</Original>
+	  <Portuguese>Homicidio Involuntario</Portuguese>
     </Key>
     <Key ID="STR_Crime_901">
       <Original>Escaping Jail</Original>
+	  <Portuguese>Fuga da Prisão</Portuguese>
     </Key>
     <Key ID="STR_Crime_215">
       <Original>Attempted Auto Theft</Original>
+	  <Portuguese>Tentativa de Roubo de Veiculo</Portuguese>
     </Key>
     <Key ID="STR_Crime_213">
       <Original>Use of illegal explosives</Original>
+	  <Portuguese>Uso de explosivos ilegais</Portuguese>
     </Key>
     <Key ID="STR_Crime_211">
       <Original>Robbery</Original>
+	  <Portuguese>Roubo</Portuguese>
     </Key>
     <Key ID="STR_Crime_207">
       <Original>Kidnapping</Original>
+	  <Portuguese>Sequestro</Portuguese>
     </Key>
     <Key ID="STR_Crime_207A">
       <Original>Attempted Kidnapping</Original>
+	  <Portuguese>Tentativa de Sequestro</Portuguese>
     </Key>
     <Key ID="STR_Crime_390">
       <Original>Public Intoxication</Original>
+	  <Portuguese>Uso de Droga em Publico</Portuguese>
     </Key>
     <Key ID="STR_Crime_487">
       <Original>Grand Theft</Original>
+	  <Portuguese>Grande Roubo</Portuguese>
     </Key>
     <Key ID="STR_Crime_488">
       <Original>Petty Theft</Original>
+	  <Portuguese>Pequeno Roubo</Portuguese>
     </Key>
     <Key ID="STR_Crime_480">
       <Original>Hit and run</Original>
+	  <Portuguese>Fugir de Batida</Portuguese>
     </Key>
     <Key ID="STR_Crime_481">
       <Original>Drug Possession</Original>
+	  <Portuguese>Posse de Droga</Portuguese>
     </Key>
     <Key ID="STR_Crime_482">
       <Original>Intent to distribute</Original>
+	  <Portuguese>Tentativa de Trafico</Portuguese>
     </Key>
     <Key ID="STR_Crime_483">
       <Original>Drug Trafficking</Original>
+	  <Portuguese>Trafico de Drogas</Portuguese>
     </Key>
     <Key ID="STR_Crime_459">
       <Original>Burglary</Original>
+	  <Portuguese>Arrombamento</Portuguese>
     </Key>
     <Key ID="STR_Crime_666">
       <Original>Tax Evasion</Original>
+	  <Portuguese>Evasão Fiscal</Portuguese>
     </Key>
     <Key ID="STR_Crime_667">
       <Original>Terrorism</Original>
+	  <Portuguese>Terrorismo</Portuguese>
+	  
     </Key>
     <Key ID="STR_Crime_668">
       <Original>Unlicensed Hunting</Original>
+	  <Portuguese>Caça sem Licença</Portuguese>
     </Key>
     <Key ID="STR_Crime_919">
       <Original>Organ Theft</Original>
+	  <Portuguese>Roubo de Orgãos</Portuguese>
     </Key>
     <Key ID="STR_Crime_919A">
       <Original>Attempted Organ Theft</Original>
+	  <Portuguese>Tentativa de Roubo de Orgãos</Portuguese>
     </Key>
     <Key ID="STR_Crime_1">
       <Original>Driving without license</Original>
       <French>Absence du permis de conduire</French>
+	  <Portuguese>Dirigir sem Licença</Portuguese>
     </Key>
     <Key ID="STR_Crime_2">
       <Original>Driving in the wrong way of the street</Original>
       <French>Conduite sur le mauvais côté de la route</French>
+	  <Portuguese>Dirigindo no sentido contrario</Portuguese>
     </Key>
     <Key ID="STR_Crime_3">
       <Original>Not respecting the signalizations</Original>
       <French>Non respect des signalisations</French>
+	  <Portuguese>Não respeitar as sinalizações</Portuguese>
     </Key>
     <Key ID="STR_Crime_4">
       <Original>Speeding</Original>
       <French>Excès de vitesse</French>
+	  <Portuguese>Excesso de Velocidade</Portuguese>
     </Key>
     <Key ID="STR_Crime_5">
       <Original>No headlight in the night</Original>
       <French>Absence de phare la nuit</French>
+	  <Portuguese>Farois Apagados Durante a Noite</Portuguese>
     </Key>
     <Key ID="STR_Crime_6">
       <Original>Driving kart without helmet</Original>
       <French>Non-port du casque en Kart</French>
+	  <Portuguese>Dirigindo Kart Sem Capacete</Portuguese>
     </Key>
     <Key ID="STR_Crime_7">
       <Original>Badly parked vehicle</Original>
       <French>Véhicule mal garé</French>
+	  <Portuguese>Veículo Mal Estacionado</Portuguese>
     </Key>
     <Key ID="STR_Crime_8">
       <Original>Rebel vehicle (Not armed)</Original>
       <French>Véhicule rebel non armé</French>
+	  <Portuguese>Veículo Rebelde(Não Armado)</Portuguese>
     </Key>
     <Key ID="STR_Crime_9">
       <Original>Grand Theft (Civilian Vehicle)</Original>
       <French>Vol de véhicule civil</French>
+	  <Portuguese>Roubo de Veículo (Veículo Civil)</Portuguese>
     </Key>
     <Key ID="STR_Crime_10">
       <Original>Grand Theft (Military Vehicle)</Original>
       <French>Vol de véhicule militaire</French>
+	  <Portuguese>Roubo de Veículo(Militar)</Portuguese>
     </Key>
     <Key ID="STR_Crime_11">
       <Original>Armored Vehicle</Original>
       <French>Véhicules blindés</French>
+	  <Portuguese>Veículo Armado</Portuguese>
     </Key>
     <Key ID="STR_Crime_12">
       <Original>Flying over the city without authorization</Original>
       <French>Survol de ville sans autorisation</French>
+	  <Portuguese>Sobrevoando sobre a cidade sem autorização</Portuguese>
     </Key>
     <Key ID="STR_Crime_13">
       <Original>Closing the street without authorization</Original>
       <French>Interdiction de se poser sans autorisation</French>
+	  <Portuguese>Fechar Rua Sem Autorização</Portuguese>
     </Key>
     <Key ID="STR_Crime_14">
       <Original>Open carry in city (Legal Weapon)</Original>
       <French>Arme légale visible en ville</French>
+	  <Portuguese>Portar em Cidades(Arma Legal)</Portuguese>
     </Key>
     <Key ID="STR_Crime_15">
       <Original>Rebel weapon</Original>
       <French>Armes rebelles</French>
+	  <Portuguese>Arma Rebelde</Portuguese>
     </Key>
     <Key ID="STR_Crime_16">
       <Original>Ilegal clothing</Original>
       <French>Vêtements illégaux</French>
+	  <Portuguese>Roupas Ilegais</Portuguese>
     </Key>
     <Key ID="STR_Crime_17">
       <Original>Hiding face (Mask)</Original>
       <French>Cacher son visage</French>
+	  <Portuguese>Esconder o Rosto(Mascara)</Portuguese>
     </Key>
     <Key ID="STR_Crime_18">
       <Original>Refuses to cooperate</Original>
       <French>Refus d'obtempérer</French>
+	  <Portuguese>Recusou-se a Cooperar</Portuguese>
     </Key>
     <Key ID="STR_Crime_19">
       <Original>Hit and run</Original>
       <French>Délit de fuite</French>
+	  <Portuguese>Bater e Fugir</Portuguese>
     </Key>
     <Key ID="STR_Crime_20">
       <Original>Insulting a civilian</Original>
       <French>Insulte envers un civil</French>
+	  <Portuguese>Insulto a Civil</Portuguese>
     </Key>
     <Key ID="STR_Crime_21">
       <Original>Insulting a soldier</Original>
       <French>Insulte envers un militaire</French>
+	  <Portuguese>Insulto as Autoridades</Portuguese>
     </Key>
     <Key ID="STR_Crime_22">
       <Original>Drug dealing</Original>
       <French>Trafique de drogue</French>
+	  <Portuguese>Trafico de Drogas</Portuguese>
     </Key>
     <Key ID="STR_Crime_23">
       <Original>Federal research breaking</Original>
       <French>Intrusion dans le coffre du gouverneur</French>
+	  <Portuguese>Invasão a Reserva Federal</Portuguese>
     </Key>
     <Key ID="STR_Crime_24">
       <Original>Killing of a civilian</Original>
       <French>Meurtre d'un civil</French>
+	  <Portuguese>Matou um Civil</Portuguese>
     </Key>
     <Key ID="STR_Crime_25">
       <Original>Killing of a soldier</Original>
       <French>Meurtre d'un militaire</French>
+	  <Portuguese>Matou um Policial</Portuguese>
     </Key>
 	</Package>
 </Project>
