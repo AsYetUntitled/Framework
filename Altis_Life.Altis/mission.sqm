@@ -9592,7 +9592,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=218;
+		items=220;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -11317,6 +11317,22 @@ class Mission
 			colorName="ColorWhite";
 			a=30;
 			b=30;
+		};
+		class Item218
+		{
+			position[]={6173.5654,43,16272.292};
+			name="fuel_storage_1";
+			text="@STR_MAR_FuelTank_Storage";
+			type="loc_Fuelstation";
+			colorName="ColorWhite";
+		};
+		class Item219
+		{
+			position[]={25398.041,9.7377434,20319.992};
+			name="fuel_storage_2";
+			text="@STR_MAR_FuelTank_Storage";
+			type="loc_Fuelstation";
+			colorName="ColorWhite";
 		};
 	};
 };
