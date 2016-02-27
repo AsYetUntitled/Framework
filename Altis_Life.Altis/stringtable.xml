@@ -489,7 +489,7 @@
       <Original>Hit spacebar for place Container</Original>
       <French>Appuyez sur espace pour placer le container</French>
     </Key>
-  <Key ID="STR_NOTF_Pickaxe">
+    <Key ID="STR_NOTF_Pickaxe">
       <Original>A pickaxe is required</Original>
       <German>Eine Spitzhacke wird benötigt.</German>
       <French>Une pioche est nécessaire</French>
@@ -497,7 +497,7 @@
       <Portuguese>A picareta é necessária</Portuguese>
       <Polish>Wymagana jest kilof</Polish>
     </Key>
-  <Key ID="STR_NOTF_isrestrained">
+    <Key ID="STR_NOTF_isrestrained">
       <Original>You are restrained</Original>
       <German>Wie willst du mit gefesselten Händen sammeln?</German>
       <French>Vous sont retenus</French>
@@ -505,7 +505,7 @@
       <Portuguese>Você está contido</Portuguese>
       <Polish>Ty skrępowaniem</Polish>
     </Key>
-  <Key ID="STR_NOTF_surrender">
+    <Key ID="STR_NOTF_surrender">
       <Original>You can't do this while you surrender</Original>
       <German>Mit gehobenen Händen kannst du nichts sammeln!.</German>
       <French>Vous ne pouvez pas faire cela pendant que vous abandonnez</French>
@@ -513,7 +513,7 @@
       <Portuguese>Você não pode fazer isso enquanto você se entrega</Portuguese>
       <Polish>Nie można tego zrobić, gdy się poddasz</Polish>
     </Key>
-  <Key ID="STR_NOTF_cantgather">
+    <Key ID="STR_NOTF_cantgather">
       <Original>You can't gather this resource with this vehicle!</Original>
       <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
       <French>You can't gather this resource with this vehicle!</French>
