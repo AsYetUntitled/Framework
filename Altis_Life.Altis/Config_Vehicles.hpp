@@ -44,7 +44,10 @@ class CarShops {
             { "O_Truck_03_transport_F", { "", "", -1 } },
             { "O_Truck_03_covered_F", { "", "", -1 } },
             { "B_Truck_01_box_F", { "", "", -1 } },
-            { "O_Truck_03_device_F", { "", "", -1 } }
+            { "O_Truck_03_device_F", { "", "", -1 } },
+            { "C_Van_01_fuel_F", { "", "", -1 } },
+            { "I_Truck_02_fuel_F", { "", "", -1 } },
+            { "B_Truck_01_fuel_F", { "", "", -1 } }
         };
     };
 
@@ -644,6 +647,44 @@ class LifeCfgVehicles {
         vItemSpace = 50;
         licenses[] = { {"boat"}, {"cg"}, {""}, {""} };
         rentalprice[] = { 150000, 100000, -1, -1 };
+        textures[] = {};
+    };
+    
+        class C_Van_01_fuel_F {
+        vItemSpace = 20;
+        vFuelSpace = 19500;
+        licenses[] = { {"trucking"}, {""}, {""}, {""} };
+        rentalprice[] = { 120000, -1, -1, -1 };
+        textures[] = {
+            { "White", "civ", {
+                "\A3\soft_f_gamma\Van_01\data\van_01_ext_co.paa",
+                "\A3\soft_f_gamma\Van_01\data\van_01_tank_co.paa"
+            } },
+            { "Red", "civ", {
+                "\A3\soft_f_gamma\Van_01\data\van_01_ext_red_co.paa",
+                "\A3\soft_f_gamma\Van_01\data\van_01_tank_red_co.paa"
+            } }
+        };
+    };
+
+    class I_Truck_02_fuel_F {
+        vItemSpace = 40;
+        vFuelSpace = 42000;
+        licenses[] = { {"trucking"}, {""}, {""}, {""} };
+        rentalprice[] = { 200000, -1, -1, -1 };
+        textures[] = {
+            { "White", "civ", {
+                "\A3\Soft_F_Beta\Truck_02\data\truck_02_kab_co.paa",
+                "\A3\Soft_F_Beta\Truck_02\data\truck_02_fuel_co.paa"
+            } }
+        };
+    };
+
+    class B_Truck_01_fuel_F {
+        vItemSpace = 50;
+        vFuelSpace = 50000;
+        licenses[] = { {"trucking"}, {""}, {""}, {""} };
+        rentalprice[] = { 250000, -1, -1, -1 };
         textures[] = {};
     };
 };

@@ -489,7 +489,7 @@
       <Original>Hit spacebar for place Container</Original>
       <French>Appuyez sur espace pour placer le container</French>
     </Key>
-	<Key ID="STR_NOTF_Pickaxe">
+    <Key ID="STR_NOTF_Pickaxe">
       <Original>A pickaxe is required</Original>
       <German>Eine Spitzhacke wird benötigt.</German>
       <French>Une pioche est nécessaire</French>
@@ -497,7 +497,7 @@
       <Portuguese>A picareta é necessária</Portuguese>
       <Polish>Wymagana jest kilof</Polish>
     </Key>
-	<Key ID="STR_NOTF_isrestrained">
+    <Key ID="STR_NOTF_isrestrained">
       <Original>You are restrained</Original>
       <German>Wie willst du mit gefesselten Händen sammeln?</German>
       <French>Vous sont retenus</French>
@@ -505,7 +505,7 @@
       <Portuguese>Você está contido</Portuguese>
       <Polish>Ty skrępowaniem</Polish>
     </Key>
-	<Key ID="STR_NOTF_surrender">
+    <Key ID="STR_NOTF_surrender">
       <Original>You can't do this while you surrender</Original>
       <German>Mit gehobenen Händen kannst du nichts sammeln!.</German>
       <French>Vous ne pouvez pas faire cela pendant que vous abandonnez</French>
@@ -513,7 +513,7 @@
       <Portuguese>Você não pode fazer isso enquanto você se entrega</Portuguese>
       <Polish>Nie można tego zrobić, gdy się poddasz</Polish>
     </Key>
-	<Key ID="STR_NOTF_cantgather">
+    <Key ID="STR_NOTF_cantgather">
       <Original>You can't gather this resource with this vehicle!</Original>
       <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
       <French>You can't gather this resource with this vehicle!</French>
@@ -1350,7 +1350,7 @@
       <Portuguese>O veículo foi guardado na sua garagem.</Portuguese>
       <Polish>Pojazd został zaparkowany.</Polish>
     </Key>
-	<Key ID="STR_Garage_spawn_Success">
+  <Key ID="STR_Garage_spawn_Success">
       <Original>Your vehicle is ready!</Original>
       <German>Dein Fahrzeug ist bereit!</German>
       <French>Votre véhicule est prêt</French>
@@ -1768,7 +1768,7 @@
       <Original>Current Bounty Price: $%1</Original>
       <Portuguese>Atual recompensa: R$%1</Portuguese>
     </Key>
-	</Package>
+  </Package>
   <Package name="Animals">
     <Key ID="STR_ANIM_Salema">
       <Original>Salema</Original>
@@ -1826,7 +1826,7 @@
       <Portuguese>Coelho</Portuguese>
       <Polish>Zając</Polish>
     </Key>
-	<Key ID="STR_ANIM_chicken">
+  <Key ID="STR_ANIM_chicken">
       <Original>Chicken</Original>
       <German>Hähnchen</German>
       <French>Poulet</French>
@@ -1834,7 +1834,7 @@
       <Portuguese>Frango</Portuguese>
       <Polish>Kurczak</Polish>
     </Key>
-	<Key ID="STR_ANIM_Rooster">
+  <Key ID="STR_ANIM_Rooster">
       <Original>Rooster</Original>
       <German>Hahn</German>
       <French>coq</French>
@@ -1842,7 +1842,7 @@
       <Portuguese>galo</Portuguese>
       <Polish>kogut</Polish>
     </Key>
-	<Key ID="STR_ANIM_Goat">
+  <Key ID="STR_ANIM_Goat">
       <Original>Goat</Original>
       <German>Ziege</German>
       <French>Chèvre</French>
@@ -1850,7 +1850,7 @@
       <Portuguese>Cabra</Portuguese>
       <Polish>Koza</Polish>
     </Key>
-	<Key ID="STR_ANIM_Sheep">
+  <Key ID="STR_ANIM_Sheep">
       <Original>Sheep</Original>
       <German>Schaf</German>
       <French>Mouton</French>
@@ -1858,7 +1858,7 @@
       <Portuguese>ovelha</Portuguese>
       <Polish>Owca</Polish>
     </Key>
-	<Key ID="STR_ANIM_Turtle">
+  <Key ID="STR_ANIM_Turtle">
       <Original>Turtle</Original>
       <German>Schildkröte</German>
       <French>Tortue</French>
@@ -1900,7 +1900,7 @@
       <Portuguese>Você pegou %1</Portuguese>
       <Polish>Złapałeś %1</Polish>
     </Key>
-	<Key ID="STR_NOTF_Gutting">
+  <Key ID="STR_NOTF_Gutting">
       <Original>Gutting %1</Original>
       <German>Ausnehmen %1</German>
       <French>éviscération %1</French>
@@ -1908,7 +1908,7 @@
       <Portuguese>evisceração %1</Portuguese>
       <Polish>Patroszenie %1</Polish>
     </Key>
-	<Key ID="STR_NOTF_Guttingfinish">
+  <Key ID="STR_NOTF_Guttingfinish">
       <Original>You have collected some raw %1 meat</Original>
       <German>You have collected some raw %1 meat</German>
       <French>You have collected some raw %1 meat</French>
@@ -3529,17 +3529,17 @@
   <Package name="HUD">
     <Key ID="STR_HUD_Food">
       <Original>Food</Original>
-	  <German>Hunger</German>
+    <German>Hunger</German>
       <Portuguese>Comida</Portuguese>
     </Key>
     <Key ID="STR_HUD_Health">
       <Original>Health</Original>
-	  <German>Gesundheit</German>
+    <German>Gesundheit</German>
       <Portuguese>Vida</Portuguese>
     </Key>
     <Key ID="STR_HUD_Water">
       <Original>Water</Original>
-	  <German>Durst</German>
+    <German>Durst</German>
       <Portuguese>Água</Portuguese>
     </Key>
   </Package>
@@ -6447,213 +6447,308 @@
   <Package name="Crimes">
     <Key ID="STR_Crime_187V">
       <Original>Vehicular Manslaughter</Original>
-	  <Portuguese>Atropelamento</Portuguese>
+      <Portuguese>Atropelamento</Portuguese>
+      <German>Fahrlässige Tötung</German>
     </Key>
     <Key ID="STR_Crime_187">
       <Original>Manslaughter</Original>
-	  <Portuguese>Homicidio Involuntario</Portuguese>
+      <Portuguese>Homicidio Involuntario</Portuguese>
+      <German>Totschlag</German>
     </Key>
     <Key ID="STR_Crime_901">
       <Original>Escaping Jail</Original>
-	  <Portuguese>Fuga da Prisão</Portuguese>
+      <Portuguese>Fuga da Prisão</Portuguese>
+      <German>Ausbruch</German>
     </Key>
     <Key ID="STR_Crime_215">
       <Original>Attempted Auto Theft</Original>
-	  <Portuguese>Tentativa de Roubo de Veiculo</Portuguese>
+      <Portuguese>Tentativa de Roubo de Veiculo</Portuguese>
+      <German>Versuchter Autodiebstahl</German>
     </Key>
     <Key ID="STR_Crime_213">
       <Original>Use of illegal explosives</Original>
-	  <Portuguese>Uso de explosivos ilegais</Portuguese>
+      <Portuguese>Uso de explosivos ilegais</Portuguese>
+      <German>Verwendung von illegalen Sprengstoff</German>
     </Key>
     <Key ID="STR_Crime_211">
       <Original>Robbery</Original>
-	  <Portuguese>Roubo</Portuguese>
+      <Portuguese>Roubo</Portuguese>
+      <German>Raub</German>
     </Key>
     <Key ID="STR_Crime_207">
       <Original>Kidnapping</Original>
-	  <Portuguese>Sequestro</Portuguese>
+      <Portuguese>Sequestro</Portuguese>
+      <German>Entführung</German>
     </Key>
     <Key ID="STR_Crime_207A">
       <Original>Attempted Kidnapping</Original>
-	  <Portuguese>Tentativa de Sequestro</Portuguese>
+      <Portuguese>Tentativa de Sequestro</Portuguese>
+      <German></German>
     </Key>
     <Key ID="STR_Crime_390">
       <Original>Public Intoxication</Original>
-	  <Portuguese>Uso de Droga em Publico</Portuguese>
+      <Portuguese>Uso de Droga em Publico</Portuguese>
+      <German>Versuchte Entführung</German>
     </Key>
     <Key ID="STR_Crime_487">
       <Original>Grand Theft</Original>
-	  <Portuguese>Grande Roubo</Portuguese>
+      <Portuguese>Grande Roubo</Portuguese>
+      <German>Auto Diebstahl</German>
     </Key>
     <Key ID="STR_Crime_488">
       <Original>Petty Theft</Original>
-	  <Portuguese>Pequeno Roubo</Portuguese>
+      <Portuguese>Pequeno Roubo</Portuguese>
+      <German>Kleiner Diebstahl</German>
     </Key>
     <Key ID="STR_Crime_480">
       <Original>Hit and run</Original>
-	  <Portuguese>Fugir de Batida</Portuguese>
+      <Portuguese>Fugir de Batida</Portuguese>
+      <German>Fahrerflucht</German>
     </Key>
     <Key ID="STR_Crime_481">
       <Original>Drug Possession</Original>
-	  <Portuguese>Posse de Droga</Portuguese>
+      <Portuguese>Posse de Droga</Portuguese>
+      <German>Drogenbesitz</German>
     </Key>
     <Key ID="STR_Crime_482">
       <Original>Intent to distribute</Original>
-	  <Portuguese>Tentativa de Trafico</Portuguese>
+      <Portuguese>Tentativa de Trafico</Portuguese>
+      <German>Versuchter Drogenhandel</German>
     </Key>
     <Key ID="STR_Crime_483">
       <Original>Drug Trafficking</Original>
-	  <Portuguese>Trafico de Drogas</Portuguese>
+      <Portuguese>Trafico de Drogas</Portuguese>
+      <German>Drogenhandel</German>
     </Key>
     <Key ID="STR_Crime_459">
       <Original>Burglary</Original>
-	  <Portuguese>Arrombamento</Portuguese>
+      <Portuguese>Arrombamento</Portuguese>
+      <German>Einbruch</German>
     </Key>
     <Key ID="STR_Crime_666">
       <Original>Tax Evasion</Original>
-	  <Portuguese>Evasão Fiscal</Portuguese>
+      <Portuguese>Evasão Fiscal</Portuguese>
+      <German>Steuerhinterziehung</German>
     </Key>
     <Key ID="STR_Crime_667">
       <Original>Terrorism</Original>
-	  <Portuguese>Terrorismo</Portuguese>
-	  
+      <Portuguese>Terrorismo</Portuguese>
+      <German>Terrorismus</German>
     </Key>
     <Key ID="STR_Crime_668">
       <Original>Unlicensed Hunting</Original>
-	  <Portuguese>Caça sem Licença</Portuguese>
+      <Portuguese>Caça sem Licença</Portuguese>
+      <German>Jagen ohne Lizenz</German>
     </Key>
     <Key ID="STR_Crime_919">
       <Original>Organ Theft</Original>
-	  <Portuguese>Roubo de Orgãos</Portuguese>
+      <Portuguese>Roubo de Orgãos</Portuguese>
+      <German>Organ Diebstahl</German>
     </Key>
     <Key ID="STR_Crime_919A">
       <Original>Attempted Organ Theft</Original>
-	  <Portuguese>Tentativa de Roubo de Orgãos</Portuguese>
+      <Portuguese>Tentativa de Roubo de Orgãos</Portuguese>
+      <German>Versuchte Organ-Diebstahl</German>
     </Key>
     <Key ID="STR_Crime_1">
       <Original>Driving without license</Original>
       <French>Absence du permis de conduire</French>
-	  <Portuguese>Dirigir sem Licença</Portuguese>
+      <Portuguese>Dirigir sem Licença</Portuguese>
+      <German>Fahren ohne Führerschein</German>
     </Key>
     <Key ID="STR_Crime_2">
       <Original>Driving in the wrong way of the street</Original>
       <French>Conduite sur le mauvais côté de la route</French>
-	  <Portuguese>Dirigindo no sentido contrario</Portuguese>
+      <Portuguese>Dirigindo no sentido contrario</Portuguese>
+      <German>Fahren in die falsche Richtung der Straße</German>
     </Key>
     <Key ID="STR_Crime_3">
       <Original>Not respecting the signalizations</Original>
       <French>Non respect des signalisations</French>
-	  <Portuguese>Não respeitar as sinalizações</Portuguese>
+      <Portuguese>Não respeitar as sinalizações</Portuguese>
+      <German>Nicht unter Beachtung der Signalisierungen</German>
     </Key>
     <Key ID="STR_Crime_4">
       <Original>Speeding</Original>
       <French>Excès de vitesse</French>
-	  <Portuguese>Excesso de Velocidade</Portuguese>
+      <Portuguese>Excesso de Velocidade</Portuguese>
+      <German>Geschwindigkeitsüberschreitung</German>
     </Key>
     <Key ID="STR_Crime_5">
       <Original>No headlight in the night</Original>
       <French>Absence de phare la nuit</French>
-	  <Portuguese>Farois Apagados Durante a Noite</Portuguese>
+      <Portuguese>Farois Apagados Durante a Noite</Portuguese>
+      <German>Fahren ohne Licht</German>
     </Key>
     <Key ID="STR_Crime_6">
       <Original>Driving kart without helmet</Original>
       <French>Non-port du casque en Kart</French>
-	  <Portuguese>Dirigindo Kart Sem Capacete</Portuguese>
+      <Portuguese>Dirigindo Kart Sem Capacete</Portuguese>
+      <German>Fahren ohne Helm</German>
     </Key>
     <Key ID="STR_Crime_7">
       <Original>Badly parked vehicle</Original>
       <French>Véhicule mal garé</French>
-	  <Portuguese>Veículo Mal Estacionado</Portuguese>
+      <Portuguese>Veículo Mal Estacionado</Portuguese>
+      <German>Parksünder</German>
     </Key>
     <Key ID="STR_Crime_8">
       <Original>Rebel vehicle (Not armed)</Original>
       <French>Véhicule rebel non armé</French>
-	  <Portuguese>Veículo Rebelde(Não Armado)</Portuguese>
+      <Portuguese>Veículo Rebelde(Não Armado)</Portuguese>
+      <German>Rebelen Fahrzeug (nicht bewaffnet)</German>
     </Key>
     <Key ID="STR_Crime_9">
       <Original>Grand Theft (Civilian Vehicle)</Original>
       <French>Vol de véhicule civil</French>
-	  <Portuguese>Roubo de Veículo (Veículo Civil)</Portuguese>
+      <Portuguese>Roubo de Veículo (Veículo Civil)</Portuguese>
+      <German>Schwerer Diebstahl (Zivilfahrzeug)</German>
     </Key>
     <Key ID="STR_Crime_10">
       <Original>Grand Theft (Military Vehicle)</Original>
       <French>Vol de véhicule militaire</French>
-	  <Portuguese>Roubo de Veículo(Militar)</Portuguese>
+      <Portuguese>Roubo de Veículo(Militar)</Portuguese>
+      <German>Schwerer Diebstahl (Dienstfahrzeug)</German>
     </Key>
     <Key ID="STR_Crime_11">
       <Original>Armored Vehicle</Original>
       <French>Véhicules blindés</French>
-	  <Portuguese>Veículo Armado</Portuguese>
+      <Portuguese>Veículo Armado</Portuguese>
+      <German>Panzerfahrzeug</German>
     </Key>
     <Key ID="STR_Crime_12">
       <Original>Flying over the city without authorization</Original>
       <French>Survol de ville sans autorisation</French>
-	  <Portuguese>Sobrevoando sobre a cidade sem autorização</Portuguese>
+      <Portuguese>Sobrevoando sobre a cidade sem autorização</Portuguese>
+      <German>Fliegen über die Stadt ohne Genehmigung</German>
     </Key>
     <Key ID="STR_Crime_13">
       <Original>Closing the street without authorization</Original>
       <French>Interdiction de se poser sans autorisation</French>
-	  <Portuguese>Fechar Rua Sem Autorização</Portuguese>
+      <Portuguese>Fechar Rua Sem Autorização</Portuguese>
+      <German>Das Schließen der Straße ohne Genehmigung</German>
     </Key>
     <Key ID="STR_Crime_14">
       <Original>Open carry in city (Legal Weapon)</Original>
       <French>Arme légale visible en ville</French>
-	  <Portuguese>Portar em Cidades(Arma Legal)</Portuguese>
+      <Portuguese>Portar em Cidades(Arma Legal)</Portuguese>
+      <German>Offenes tragen einer legalen Waffe in der Stadt</German>
     </Key>
     <Key ID="STR_Crime_15">
       <Original>Rebel weapon</Original>
       <French>Armes rebelles</French>
-	  <Portuguese>Arma Rebelde</Portuguese>
+      <Portuguese>Arma Rebelde</Portuguese>
+      <German>Rebellen Waffe</German>
     </Key>
     <Key ID="STR_Crime_16">
       <Original>Ilegal clothing</Original>
       <French>Vêtements illégaux</French>
-	  <Portuguese>Roupas Ilegais</Portuguese>
+      <Portuguese>Roupas Ilegais</Portuguese>
+      <German>Illegale Kleidung</German>
     </Key>
     <Key ID="STR_Crime_17">
       <Original>Hiding face (Mask)</Original>
       <French>Cacher son visage</French>
-	  <Portuguese>Esconder o Rosto(Mascara)</Portuguese>
+      <Portuguese>Esconder o Rosto(Mascara)</Portuguese>
+      <German>Verstecken des Gesichts (Maske)</German>
     </Key>
     <Key ID="STR_Crime_18">
       <Original>Refuses to cooperate</Original>
       <French>Refus d'obtempérer</French>
-	  <Portuguese>Recusou-se a Cooperar</Portuguese>
+      <Portuguese>Recusou-se a Cooperar</Portuguese>
+      <German>Behinderung der Staatsgewalt</German>
     </Key>
     <Key ID="STR_Crime_19">
       <Original>Hit and run</Original>
       <French>Délit de fuite</French>
-	  <Portuguese>Bater e Fugir</Portuguese>
+      <Portuguese>Bater e Fugir</Portuguese>
+      <German>Fahrerflucht</German>
     </Key>
     <Key ID="STR_Crime_20">
       <Original>Insulting a civilian</Original>
       <French>Insulte envers un civil</French>
-	  <Portuguese>Insulto a Civil</Portuguese>
+      <Portuguese>Insulto a Civil</Portuguese>
+      <German>Beleidigung</German>
     </Key>
     <Key ID="STR_Crime_21">
       <Original>Insulting a soldier</Original>
       <French>Insulte envers un militaire</French>
-	  <Portuguese>Insulto as Autoridades</Portuguese>
+      <Portuguese>Insulto as Autoridades</Portuguese>
+      <German>Beamtenbeleidigung</German>
     </Key>
     <Key ID="STR_Crime_22">
       <Original>Drug dealing</Original>
       <French>Trafique de drogue</French>
-	  <Portuguese>Trafico de Drogas</Portuguese>
+      <Portuguese>Trafico de Drogas</Portuguese>
+      <German>Drogenhandel</German>
     </Key>
     <Key ID="STR_Crime_23">
-      <Original>Federal research breaking</Original>
+      <Original>Federal Reserve breaking</Original>
       <French>Intrusion dans le coffre du gouverneur</French>
-	  <Portuguese>Invasão a Reserva Federal</Portuguese>
+      <Portuguese>Invasão a Reserva Federal</Portuguese>
+      <German>Bankeinbruch</German>
     </Key>
     <Key ID="STR_Crime_24">
       <Original>Killing of a civilian</Original>
       <French>Meurtre d'un civil</French>
-	  <Portuguese>Matou um Civil</Portuguese>
+      <Portuguese>Matou um Civil</Portuguese>
+      <German>Das Töten eines Zivilen</German>
     </Key>
     <Key ID="STR_Crime_25">
       <Original>Killing of a soldier</Original>
       <French>Meurtre d'un militaire</French>
-	  <Portuguese>Matou um Policial</Portuguese>
+      <Portuguese>Matou um Policial</Portuguese>
+      <German>Das Töten eines Beamten</German>
     </Key>
-	</Package>
+  </Package>
+  <Package name="FuelTank_Mission">
+    <Key ID="STR_MAR_FuelTank_Storage">
+      <Original>Gas Storage</Original>
+      <German>Treibstofflager</German>
+    </Key>
+      <Key ID="STR_FuelTank_Supply">
+      <Original>Supply</Original>
+      <German>Liefern</German>
+    </Key>
+    <Key ID="STR_FuelTank_Store">
+      <Original>Store</Original>
+      <German>Lagern</German>
+    </Key>
+    <Key ID="STR_FuelTank_Stop">
+      <Original>Stop</Original>
+      <German>Stoppen</German>
+    </Key>
+    <Key ID="STR_FuelTank_InUse">
+      <Original>Tankers is already in use</Original>
+      <German>Tankwagen wird bereits benutzt</German>
+    </Key>
+    <Key ID="STR_FuelTank_AnotherInUse">
+      <Original>Gas Station is in use</Original>
+      <German>Tankstelle wird bereits beliefert</German>
+    </Key>
+    <Key ID="STR_FuelTank_Empty">
+      <Original>Tankers is empty</Original>
+      <German>Treibstofftank ist leer</German>
+    </Key>
+    <Key ID="STR_FuelTank_Full">
+      <Original>Tankers is full</Original>
+      <German>Treibstofftank ist voll</German>
+    </Key>
+    <Key ID="STR_FuelTank_FeedFull">
+      <Original>Gas station has enough fuel</Original>
+      <German>Tankstelle hat genug Treibstoff</German>
+    </Key>
+    <Key ID="STR_FuelTank_PipeLine">
+      <Original>This Gas Station is supplied through a pipeline</Original>
+      <German>Diese Tankstelle wird über eine Pipeline versorgt</German>
+    </Key>
+    <Key ID="STR_FuelTank_Stopped">
+      <Original>Discontinued operation</Original>
+      <German>Vorgang abgebrochen</German>
+    </Key>
+    <Key ID="STR_FuelTank_Money">
+      <Original>Your share is $%1</Original>
+      <German>Dein Anteil beträgt $%1</German>
+    </Key>
+  </Package>
 </Project>
