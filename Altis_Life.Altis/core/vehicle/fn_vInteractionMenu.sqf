@@ -106,6 +106,27 @@ if(playerSide == west) then {
 		};
 	} else {
 		_Btn3 ctrlShow false;
+		if(typeOf (_curTarget) in ["C_Van_01_fuel_F","I_Truck_02_fuel_F","B_Truck_01_fuel_F"] && _curTarget in life_vehicles) then {
+			if(!isNil {_curTarget getVariable "fuelTankWork"}) then {
+				_Btn3 ctrlSetText localize "STR_FuelTank_Stop";
+				_Btn3 buttonSetAction "life_vInact_curTarget setVariable [""fuelTankWork"",nil,true];closeDialog 0;";
+				_Btn3 ctrlShow true;
+			} else {
+				if(count (nearestObjects [_curTarget, ["Land_FuelStation_Feed_F","Land_fs_feed_F"], 15]) > 0) then {
+					_Btn3 ctrlSetText localize "STR_FuelTank_Supply";
+					_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_fuelSupply";
+					_Btn3 ctrlShow true;
+				}else{
+					{
+						if(player distance (getMarkerPos _x) < 20) exitWith {
+							_Btn3 ctrlSetText localize "STR_FuelTank_Store";
+							_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_fuelStore";
+							_Btn3 ctrlShow true;
+						};
+					} foreach ["fuel_storage_1","fuel_storage_2"];
+				};
+			};
+		};
 	};
 	
 	_Btn4 ctrlShow false;

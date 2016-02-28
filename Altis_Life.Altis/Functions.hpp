@@ -252,6 +252,8 @@ class Life_Client_Core
 		class addVehicle2Chain {};
 		class FuelRefuelcar {};
 		class vehiclecolor3DRefresh {};
+		class fuelSupply {};
+		class fuelStore {};
 	};
 
 	class Cop
