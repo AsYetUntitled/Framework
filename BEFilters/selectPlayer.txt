@@ -1,3 +1,0 @@
-//new
-1 ""
-4 "" !C_man_ !B_medic_F
