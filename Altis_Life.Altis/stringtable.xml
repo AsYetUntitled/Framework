@@ -6483,12 +6483,12 @@
     <Key ID="STR_Crime_207A">
       <Original>Attempted Kidnapping</Original>
       <Portuguese>Tentativa de Sequestro</Portuguese>
-      <German></German>
+      <German>Versuchte Entführung</German>
     </Key>
     <Key ID="STR_Crime_390">
       <Original>Public Intoxication</Original>
       <Portuguese>Uso de Droga em Publico</Portuguese>
-      <German>Versuchte Entführung</German>
+      <German>Öffentlicher Drogenmissbrauch</German>
     </Key>
     <Key ID="STR_Crime_487">
       <Original>Grand Theft</Original>
