@@ -21,9 +21,9 @@ _profileCount = count allVariables profileNameSpace;
 
 /* Build Player Slots because we name them and they are counted as variables */
 for "_i" from 1 to 125 do {
-	if(_i < SPY_SETTINGS(getNumber,"civSlotNumber")) then {_allowedVariables pushBack [format["civ_%1",_i],"OBJECT"]};
-	if(_i < SPY_SETTINGS(getNumber,"copSlotNumber")) then {_allowedVariables pushBack [format["cop_%1",_i],"OBJECT"]};
-	if(_i < SPY_SETTINGS(getNumber,"medSlotNumber")) then {_allowedVariables pushBack [format["medic_%1",_i],"OBJECT"]};
+	if(_i <= SPY_SETTINGS(getNumber,"civSlotNumber")) then {_allowedVariables pushBack [format["civ_%1",_i],"OBJECT"]};
+	if(_i <= SPY_SETTINGS(getNumber,"copSlotNumber")) then {_allowedVariables pushBack [format["cop_%1",_i],"OBJECT"]};
+	if(_i <= SPY_SETTINGS(getNumber,"medSlotNumber")) then {_allowedVariables pushBack [format["medic_%1",_i],"OBJECT"]};
 };
 
 /* First lets clear out the memory of potentially bad variables */
