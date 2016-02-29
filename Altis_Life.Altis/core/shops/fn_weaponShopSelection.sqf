@@ -34,8 +34,13 @@ if((GVAR_UINS ["Weapon_Shop_Filter",0]) == 1) then {
 			if(isClass (configFile >> "CfgWeapons" >> _item)) then {
 				//Magazines menu
 				if(isArray (configFile >> "CfgWeapons" >> _item >> "magazines")) then {
+					private["_mags"];
+					_mags = [];
+					{
+						_mags pushBack (_x select 0);
+					} forEach M_CONFIG(getArray,"WeaponShops",_shop,"mags");
 					_itemArray = FETCH_CONFIG2(getArray,"CfgWeapons",_item,"magazines");
-					if(count _itemArray > 0) then {
+					if(count (_itemArray ArrayIntersect _mags) > 0) then {
 						((findDisplay 38400) displayCtrl 38406) ctrlEnable true;
 					} else {
 						((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
@@ -46,7 +51,11 @@ if((GVAR_UINS ["Weapon_Shop_Filter",0]) == 1) then {
 
 				//Accessories Menu
 				if(isClass (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo")) then {
-					private["_slotArray","_weaponArray"];
+					private["_slotArray","_weaponArray","_accs"];
+					_accs = [];
+					{
+						_accs pushBack (_x select 0);
+					} forEach M_CONFIG(getArray,"WeaponShops",_shop,"accs");
 					_weaponArray = [];
 					if(isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
 						_slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","CowsSlot","compatibleItems");
@@ -72,7 +81,7 @@ if((GVAR_UINS ["Weapon_Shop_Filter",0]) == 1) then {
 							_weaponArray pushBack _x;
 						} forEach _slotArray;
 					};
-					if(count _weaponArray > 0) then {
+					if(count (_weaponArray ArrayIntersect _accs) > 0) then {
 						((findDisplay 38400) displayCtrl 38407) ctrlEnable true;
 					} else {
 						((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
