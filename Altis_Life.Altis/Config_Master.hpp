@@ -5,13 +5,17 @@
     Master settings for various features and functionality
 */
 class Life_Settings {
-    /* Persistent Settings */
+    /* Persistent Player Settings */
     save_civ_weapons = false; //Allow civilians to save weapons on them?
     save_virtualItems = true; //Save Virtual items (all sides)?
     save_playerStats = true; //Save food, water and damage (all sides)?
+
+    /* Persistent Vehicle Settings */
     save_veh_virtualItems = false; //Save Virtual items for vehicles (all sides)?
     save_veh_gear = false; //Save Gear for vehicles (all sides)?
-
+    save_veh_fuel = false; // Save Vehicle fuel
+    save_veh_items[] = { "oil_unprocessed","oil_processed","copper_unrefined","copper_refined","iron_unrefined","iron_refined","salt_unrefined","salt_refined","sand","glass","diamond_uncut","diamond_cut","rock","cement","heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw" };// define which virtual items to save in vehicles.
+   
     /* Clothing related settings */
     clothing_box = true; //true = preview inside a black box.  false = preview on map.
     clothing_masks[] = { "H_Shemag_olive", "H_Shemag_khk", "H_Shemag_tan", "H_Shemag_olive_hs", "H_ShemagOpen_khk", "H_ShemagOpen_tan", "G_Balaclava_blk", "G_Balaclava_combat", "G_Balaclava_lowprofile", "G_Balaclava_oli", "G_Bandanna_aviator", "G_Bandanna_beast", "G_Bandanna_blk", "G_Bandanna_khk", "G_Bandanna_oli", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_tan", "U_O_GhillieSuit", "U_I_GhillieSuit", "U_B_GhillieSuit", "H_RacingHelmet_1_black_F", "H_RacingHelmet_1_red_F", "H_RacingHelmet_1_white_F", "H_RacingHelmet_1_blue_F", "H_RacingHelmet_1_yellow_F", "H_RacingHelmet_1_green_F", "H_RacingHelmet_1_F", "H_RacingHelmet_2_F", "H_RacingHelmet_3_F", "H_RacingHelmet_4_F" };
