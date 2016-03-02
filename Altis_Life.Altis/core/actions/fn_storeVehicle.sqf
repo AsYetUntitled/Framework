@@ -28,29 +28,14 @@ if(vehicle player != player) then {
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
 if(isNull _vehicle) exitWith {};
 
-if((EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1)) OR (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1))) then {
 
-	_storetext = localize "STR_Garage_Store_Success";
-	
-	if(life_HC_isActive) then {
-		[_vehicle,false,true,(_this select 1),_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];
-	} else {
-		[_vehicle,false,true,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",2];
-	};
-	
-	hint localize "STR_Garage_Store_Server";
-	life_garage_store = true;
+_storetext = localize "STR_Garage_Store_Success";
 
+if(life_HC_isActive) then {
+	[_vehicle,false,(_this select 1),_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];
 } else {
-
-	_storetext = localize "STR_Garage_Store_Success";
-	
-	if(life_HC_isActive) then {
-		[_vehicle,false,false,(_this select 1),_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];
-	} else {
-		[_vehicle,false,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",2];
-	};
-	
-	hint localize "STR_Garage_Store_Server";
-	life_garage_store = true;
+	[_vehicle,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",RSERV];
 };
+
+hint localize "STR_Garage_Store_Server";
+life_garage_store = true;
