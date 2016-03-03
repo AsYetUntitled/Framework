@@ -1,0 +1,3 @@
+//new
+5 ""
+//5 "" !=hgun_Rook40_F !=hgun_Pistol_heavy_02_F !=hgun_ACPC2_F !=hgun_PDW2000_F !=arifle_TRG20_F !=arifle_Katiba_F !=srifle_DMR_01_F !=arifle_SDAR_F !hgun_P07_ !=SMG_02_ACO_F !=arifle_MX_F !=arifle_MXC_F
