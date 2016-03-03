@@ -341,27 +341,18 @@ class LifeCfgVehicles {
         rentalprice[] = { 15000, -1, -1, -1 };
         textures[] = {};
     };
+/*
+To edit another information in this classes you can use this exemple.
+class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{
+    vItemSpace = 40;
+    rentalprice[] = { 25000, -1, -1, -1 };
+};
 
-    class C_Kart_01_Fuel_F {
-        vItemSpace = 20;
-        licenses[] = { {"driver"}, {""}, {""}, {""} };
-        rentalprice[] = { 15000, -1, -1, -1 };
-        textures[] = {};
-    };
-
-    class C_Kart_01_Red_F {
-        vItemSpace = 20;
-        licenses[] = { {"driver"}, {""}, {""}, {""} };
-        rentalprice[] = { 15000, -1, -1, -1 };
-        textures[] = {};
-    };
-
-    class C_Kart_01_Vrana_F {
-        vItemSpace = 20;
-        licenses[] = { {"driver"}, {""}, {""}, {""} };
-        rentalprice[] = { 15000, -1, -1, -1 };
-        textures[] = {};
-    };
+will modify the virtual space and the price of the vehicle, but other information such as license and textures will pick up the vehicle declare at : Vehicle {};
+*/
+    class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{}; // Get all information of C_Kart_01_Blu_F 
+    class C_Kart_01_Red_F  : C_Kart_01_Blu_F{};
+    class C_Kart_01_Vrana_F : C_Kart_01_Blu_F{};
 
     class C_Hatchback_01_sport_F {
         vItemSpace = 45;
