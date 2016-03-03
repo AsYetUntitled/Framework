@@ -130,10 +130,6 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
 	private["_logic","_queue"];
 	while {true} do {
 		sleep (30 * 60);
-		_logic = missionnamespace getvariable ["bis_functions_mainscope",objnull];
-		_queue = _logic getvariable "BIS_fnc_MP_queue";
-		_logic setVariable["BIS_fnc_MP_queue",[],TRUE];
-
 		{
 			_x setVariable["sellers",[],true];
 		} foreach [Dealer_1,Dealer_2,Dealer_3];
