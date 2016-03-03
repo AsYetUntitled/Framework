@@ -72,7 +72,7 @@ _trunk = [_vInfo select 9] call DB_fnc_mresToArray;
 _gear = [_vInfo select 10] call DB_fnc_mresToArray;
 _damage = [_vInfo select 12] call DB_fnc_mresToArray;
 
-[_query,false] spawn DB_fnc_asyncCall;
+[_query,1] spawn DB_fnc_asyncCall;
 if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
