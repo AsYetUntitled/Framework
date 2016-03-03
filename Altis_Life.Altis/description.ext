@@ -158,7 +158,7 @@ class CfgNotifications
 	class TextMessage
 	{
 		title = "Received A Text Message";
-		iconPicture = "icons\messagenew.paa";
+		iconPicture = "icons\ico_messageNew.paa";
 		description = "%1";
 		duration = 10;
 		priority = 6;
@@ -167,7 +167,7 @@ class CfgNotifications
 	class PoliceDispatch
 	{
 		title = "911 Dispatch Center";
-		iconPicture = "icons\messagepolice.paa";
+		iconPicture = "icons\ico_messagePolice.paa";
 		description = "%1";
 		duration = 10;
 		priority = 6;
@@ -176,7 +176,7 @@ class CfgNotifications
 	class AdminDispatch
 	{
 		title = "Admin Dispatch Center";
-		iconPicture = "icons\messageadmin.paa";
+		iconPicture = "icons\ico_messageAdmin.paa";
 		description = "%1";
 		duration = 10;
 		priority = 6;
@@ -185,7 +185,7 @@ class CfgNotifications
 	class AdminMessage
 	{
 		title = "Admin Message";
-		iconPicture = "icons\messageadmin.paa";
+		iconPicture = "icons\ico_messageAdmin.paa";
 		description = "%1";
 		duration = 10;
 		priority = 5;
