@@ -102,7 +102,8 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `color` int(20) NOT NULL,
   `inventory` varchar(500) NOT NULL,
   `gear` text NOT NULL,
-  `fuel` double NOT NULL DEFAULT '1',
+  `fuel` double NOT NULL DEFAULT '1'
+  `damage` varchar(150) NOT NULL,
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `side` (`side`),
