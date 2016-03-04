@@ -15,7 +15,7 @@ class Life_Settings {
     save_veh_gear = false; //Save Gear for vehicles (all sides)?
     save_veh_fuel = false; //Save Vehicle fuel state
     save_veh_damage = false; //Save Vehicle Damage
-    save_veh_items[] = { "oil_unprocessed","oil_processed","copper_unrefined","copper_refined","iron_unrefined","iron_refined","salt_unrefined","salt_refined","sand","glass","diamond_uncut","diamond_cut","rock","cement","heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw" };// define which virtual items to save in vehicles.
+    save_veh_items[] = { "pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donuts","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat" };
 	
     /* Clothing related settings */
     clothing_box = true; //true = preview inside a black box.  false = preview on map.
