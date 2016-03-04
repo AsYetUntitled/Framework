@@ -66,10 +66,10 @@ class Life_Vehicle_Shop_v2
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
-			x = 0.0307812 * safezoneW + safezoneX;
-			y = 0.687 * safezoneH + safezoneY;
-			w = 0.0464063 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = 0.0204687 * safezoneW + safezoneX;
+			y = 0.789935 * safezoneH + safezoneY;
+			w = 0.0721724 * safezoneW;
+			h = 0.0219957 * safezoneH;
 		};
 
 		class RentCar: Life_RscButtonMenu
@@ -77,10 +77,10 @@ class Life_Vehicle_Shop_v2
 			idc = -1;
 			text = "$STR_Global_RentVeh";
 			onButtonClick = "[false] spawn life_fnc_vehicleShopBuy;";
-			x = 0.0307812 * safezoneW + safezoneX;
-			y = 0.654 * safezoneH + safezoneY;
-			w = 0.0464063 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = 0.0964687 * safezoneW + safezoneX;
+			y = 0.756941 * safezoneH + safezoneY;
+			w = 0.0721724 * safezoneW;
+			h = 0.0219957 * safezoneH;
 		};
 
 		class BuyCar: life_RscButtonMenu
@@ -88,10 +88,10 @@ class Life_Vehicle_Shop_v2
 			idc = 2309;
 			text = "$STR_Global_Buy";
 			onButtonClick = "[true] spawn life_fnc_vehicleShopBuy;";
-			x = 0.0978125 * safezoneW + safezoneX;
-			y = 0.654 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = 0.0204687 * safezoneW + safezoneX;
+			y = 0.756941 * safezoneH + safezoneY;
+			w = 0.0721724 * safezoneW;
+			h = 0.0219957 * safezoneH;
 		};
 	};
 
@@ -114,10 +114,10 @@ class Life_Vehicle_Shop_v2
 		{
 			idc = 2304;
 			onLBSelChanged = "[] spawn life_fnc_vehiclecolor3DRefresh;";
-			x = 0.0978125 * safezoneW + safezoneX;
-			y = 0.687 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = 0.0204687 * safezoneW + safezoneX;
+			y = 0.723948 * safezoneH + safezoneY;
+			w = 0.149531 * safezoneW;
+			h = 0.0219957 * safezoneH;
 		};
 
 		class vehicleInfomationList: Life_RscStructuredText
