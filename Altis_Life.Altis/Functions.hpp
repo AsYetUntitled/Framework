@@ -156,6 +156,7 @@ class Life_Client_Core
 		class s_onChar {};
 		class s_onCheckedChange {};
 		class wantedAddP {};
+		class altisPhone {};
 	};
 
 	class Functions

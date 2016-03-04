@@ -23,6 +23,7 @@
 #include "federalReserve.hpp"
 #include "compensate.hpp"
 #include "FuelStat.hpp"
+#include "AltisPhone.hpp"
 //Travis's Custom Phone
 #include "CustomPhone\Dialog\player_inv.hpp"
 #include "CustomPhone\Dialog\player_menu.hpp"

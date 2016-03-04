@@ -179,7 +179,11 @@ switch (_code) do {
 	//Y Player Menu
 	case 21: {
 		if(!_alt && !_ctrlKey && !dialog && !(player GVAR ["restrained",false]) && {!life_action_inUse}) then {
-			[] call life_fnc_p_openMenu;
+			if(!_shift) then {
+				[] call life_fnc_p_openMenu;
+			} else {
+				[] call life_fnc_altisPhone;
+			};
 		};
 	};
 
