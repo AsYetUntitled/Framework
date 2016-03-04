@@ -10310,7 +10310,7 @@ class Mission
 		class Item90
 		{
 			position[]={25831.131,20.912157,21446.154};
-			name="car1_1";
+			name="car1_1_1";
 			text="@STR_MAR_Car_Shop";
 			type="c_car";
 			colorName="ColorWhite";
