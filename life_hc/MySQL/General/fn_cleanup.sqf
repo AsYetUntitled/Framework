@@ -12,13 +12,15 @@
 private "_deleted";
 _deleted = false;
 while {true} do {
-	private["_veh","_units"];
+	private["_veh","_units","_fuel"];
 	sleep (60 * 60);
 	{
 		_veh = _x;
 		_vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
+		_fuel = 1;
 
 		if(_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) then {
+			if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_fuel"),1)) then {_fuel = (fuel _veh);};
 			_dbInfo = _veh getVariable["dbInfo",[]];
 			_units = {(_x distance _veh < 300)} count playableUnits;
 			if(count crew _x == 0) then {
@@ -39,14 +41,10 @@ while {true} do {
 
 			if(isNull _veh) then {
 				if(count _dbInfo > 0) then {
-					systemChat "Fixing...";
 					_uid = _dbInfo select 0;
 					_plate = _dbInfo select 1;
-					_trunk = [[],0];
-					_cargo = [];
-					_fuel = 1;
 
-					_query = format["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk,_cargo,_fuel];
+					_query = format["UPDATE vehicles SET active='0' fuel='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_fuel];
 
 					[_query,1] call HC_fnc_asyncCall;
 				};
