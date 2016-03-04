@@ -9,7 +9,7 @@
 	Sends the query request to the database, if an array is returned then it creates
 	the vehicle if it's not in use or dead.
 */
-private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex"];
+private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
@@ -20,16 +20,25 @@ _spawntext = _this select 6;
 _unit_return = _unit;
 _name = name _unit;
 _side = side _unit;
+_unit = owner _unit;
 
 if(EQUAL(_vid,-1) OR EQUAL(_pid,"")) exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
 
-_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
+
+if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+	diag_log "------------- Client Query Request -------------";
+	diag_log format["QUERY: %1",_query];
+	diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
+	diag_log format["Result: %1",_queryResult];
+	diag_log "------------------------------------------------";
+};
 
 if(EQUAL(typeName _queryResult,typeName "")) exitWith {};
 
@@ -59,12 +68,13 @@ if(count _nearVehicles > 0) exitWith {
 	[1,(localize "STR_Garage_SpawnPointError")] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-_query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];
+_query = format["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
 _trunk = [_vInfo select 9] call HC_fnc_mresToArray;
 _gear = [_vInfo select 10] call HC_fnc_mresToArray;
+_damage = [_vInfo select 12] call HC_fnc_mresToArray;
 
-[_query,false] spawn HC_fnc_asyncCall;
+[_query,1] spawn HC_fnc_asyncCall;
 if(typeName _sp == "STRING") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
@@ -80,7 +90,6 @@ if(typeName _sp == "STRING") then {
 	_vehicle setVectorUp (surfaceNormal _sp);
 	_vehicle setDir _dir;
 };
-_vehicle setFuel (_vInfo select 11);
 _vehicle allowDamage true;
 //Send keys over the network.
 [_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain",_unit];
@@ -89,13 +98,24 @@ _vehicle lock 2;
 //Reskin the vehicle
 [_vehicle,_vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",_unit];
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7],true];
-_vehicle setVariable["Trunk",_trunk,true];
+_vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
-
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
-if (count _gear > 0) then {
+// Avoid problems if u keep changing which stuff to save!
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
+	_vehicle setVariable["Trunk",_trunk,true];
+	}else{
+	_vehicle setVariable["Trunk",[[],0],true];
+};
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_fuel"),1)) then {
+	_vehicle setFuel (_vInfo select 11);
+	}else{
+	_vehicle setfuel 1;
+};
+
+if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1))) then {
 	_items = _gear select 0;
 	_mags = _gear select 1;
 	_weapons = _gear select 2;
@@ -112,6 +132,14 @@ if (count _gear > 0) then {
 	};
 	for "_i" from 0 to ((count (_backpacks select 0)) - 1) do {
 		_vehicle addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
+	};
+};
+
+if (count _damage > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_damage"),1))) then {
+	_parts = getAllHitPointsDamage _vehicle;
+
+	for "_i" from 0 to ((count _damage) - 1) do {   
+		_vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],(_damage select _i)];  
 	};
 };
 
