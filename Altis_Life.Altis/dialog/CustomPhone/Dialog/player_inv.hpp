@@ -34,6 +34,7 @@ class playerSettings {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "";
+			tooltip = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.478263 * safezoneW + safezoneX;
 			y = 0.700115 * safezoneH + safezoneY;
@@ -44,6 +45,7 @@ class playerSettings {
 		class ButtonSettings : Life_RscButtonInvisible {
 			idc = -1;
 			text = "";
+			tooltip = "$STR_Global_Settings";
 			onButtonClick = "[] call life_fnc_settingsMenu;";
 			x = 0.427544 * safezoneW + safezoneX;
 			y = 0.651735 * safezoneH + safezoneY;
@@ -54,6 +56,7 @@ class playerSettings {
 		class ButtonMyGang : Life_RscButtonInvisible {
 			idc = 2011;
 			text = "";
+			tooltip = "$STR_PM_MyGang";
 			onButtonClick = "if(isNil ""life_action_gangInUse"") then {if(isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""Life_Create_Gang_Diag"";} else {[] spawn life_fnc_gangMenu;};};";
 			x = 0.5 * safezoneW + safezoneX;
 			y = 0.326274 * safezoneH + safezoneY;
@@ -64,6 +67,7 @@ class playerSettings {
 		class ButtonGangList : Life_RscButtonInvisible {
 			idc = 2012;
 			text = "";
+			tooltip = "$STR_PM_WantedList";
 			onButtonClick = "[] call life_fnc_wantedMenu;";
 			x = 0.463772 * safezoneW + safezoneX;
 			y = 0.392246 * safezoneH + safezoneY;
@@ -74,6 +78,7 @@ class playerSettings {
 		class ButtonLicences : Life_RscButtonInvisible {
 			idc = 1602;
 			onButtonClick = "[] call life_fnc_openLicensesMenu;";
+			tooltip = "$STR_PM_Licenses";
 			x = 0.491000 * safezoneW + safezoneX;
 			y = 0.392246 * safezoneH + safezoneY;
 			w = 0.025877 * safezoneW;
@@ -83,6 +88,7 @@ class playerSettings {
 		class ButtonKeys : Life_RscButtonInvisible {
 			idc = 2013;
 			text = "";
+			tooltip = "$STR_PM_KeyChain";
 			onButtonClick = "createDialog ""Life_key_management"";";
 			x = 0.463772 * safezoneW + safezoneX;
 			y = 0.324075 * safezoneH + safezoneY;
@@ -92,6 +98,7 @@ class playerSettings {
 		
 		class ButtonCell : Life_RscButtonInvisible {
 			idc = 2014;
+			tooltip = "$STR_PM_CellPhone";
 			onButtonClick = "createDialog ""Life_cell_phone"";";
 			x = 0.49586 * safezoneW + safezoneX;
 			y = 0.653934 * safezoneH + safezoneY;
@@ -101,6 +108,7 @@ class playerSettings {
 		
 		class ButtonAdminMenu : Life_RscButtonInvisible {
 			idc = 2021;
+			tooltip = "$STR_PM_AdminMenu";
 			onButtonClick = "createDialog ""life_admin_menu"";";
 			x = 0.532087 * safezoneW + safezoneX;
 			y = 0.324075 * safezoneH + safezoneY;
@@ -112,6 +120,7 @@ class playerSettings {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "";
+			tooltip = "$STR_PM_SyncData";
 			onButtonClick = "[] call SOCK_fnc_syncData;";
 			x = 0.462737 * safezoneW + safezoneX;
 			y = 0.651735 * safezoneH + safezoneY;
@@ -123,6 +132,7 @@ class playerSettings {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "";
+			tooltip = "$STR_PM_MovesMenu";
 			onButtonClick = "createDialog ""life_moves_menu"";";
 			x = 0.427544 * safezoneW + safezoneX;
 			y = 0.390047 * safezoneH + safezoneY;
@@ -134,6 +144,7 @@ class playerSettings {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
 			text = "";
+			tooltip = "$STR_PM_OpenBankMenu";
 			onButtonClick = "[] call life_fnc_openBankMenu;";
 			x = 0.531052 * safezoneW + safezoneX;
 			y = 0.651735 * safezoneH + safezoneY;
@@ -143,6 +154,7 @@ class playerSettings {
 
 		class ButtonPlayerMenu : Life_RscButtonInvisible {
 			idc = -1;
+			tooltip = "$STR_PM_OpenInvMenu";
 			onButtonClick = "[]call life_fnc_openInvMenu;";
 			x = 0.427544 * safezoneW + safezoneX;
 			y = 0.326274 * safezoneH + safezoneY;
