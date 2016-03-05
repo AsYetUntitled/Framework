@@ -14,6 +14,7 @@ if(!(EXTDB_SETTINGS_BOOL("Enabled"))) exitWith {};
 [] execVM "\life_hc\KRON_Strings.sqf";
 
 life_server_extDB_notLoaded = "";
+life_save_civ_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civ_position"),0)) then {false} else {true};
 
 diag_log "-------------------------------------------------------------------------------------------------------------------";
 diag_log "-------------------------------- Starting initialization of 'extDB2-HC' by NANOU ----------------------------------";

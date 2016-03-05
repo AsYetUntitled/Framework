@@ -7,7 +7,7 @@
 	Description:
 	Ain't got time to describe it, READ THE FILE NAME!
 */
-private["_uid","_side","_cash","_bank","_licenses","_gear","_stats","_name","_query","_thread"];
+private["_uid","_side","_cash","_bank","_licenses","_gear","_stats","_name","_alive","_position","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;
@@ -16,6 +16,8 @@ _bank = [_this,4,5000,[0]] call BIS_fnc_param;
 _licenses = [_this,5,[],[[]]] call BIS_fnc_param;
 _gear = [_this,6,[],[[]]] call BIS_fnc_param;
 _stats = [_this,7,[100,100],[[]]] call BIS_fnc_param;
+_alive = [_this,9,0,[0]] call BIS_fnc_param;
+_position = [_this,10,[],[[]]] call BIS_fnc_param;
 
 //Get to those error checks.
 if((_uid == "") OR (_name == "")) exitWith {};
@@ -26,6 +28,7 @@ _gear = [_gear] call HC_fnc_mresArray;
 _stats = [_stats] call HC_fnc_mresArray;
 _cash = [_cash] call HC_fnc_numberSafe;
 _bank = [_bank] call HC_fnc_numberSafe;
+_position = if(_side == civilian) then {[_position] call DB_fnc_mresArray} else {[]};
 
 //Does something license related but I can't remember I only know it's important?
 for "_i" from 0 to count(_licenses)-1 do {
@@ -54,7 +57,7 @@ _playtime_update = [_playtime_update] call HC_fnc_mresArray;
 
 switch (_side) do {
 	case west: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5', cop_stats='%6', playtime='%7' WHERE playerid='%8'",_name,_cash,_bank,_gear,_licenses,_stats,_playtime_update,_uid];};
-	case civilian: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', playtime='%8' WHERE playerid='%9'",_name,_cash,_bank,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,_playtime_update,_uid];};
+	case civilian: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', civ_alive='%8', civ_position='%9', playtime='%10' WHERE playerid='%11'",_name,_cash,_bank,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,[_this select 9] call DB_fnc_bool,_position,_playtime_update,_uid];};
 	case independent: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4', med_gear='%5', med_stats='%6', playtime='%7' WHERE playerid='%8'",_name,_cash,_bank,_licenses,_gear,_stats,_playtime_update,_uid];};
 };
 
