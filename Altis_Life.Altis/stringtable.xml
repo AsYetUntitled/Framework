@@ -1422,10 +1422,6 @@
       <Original>Moves Menu</Original>
       <German>Bewegungen</German>
     </Key>
-	<Key ID="STR_PM_Licenses">
-      <Original>My Licenses</Original>
-      <German>Meine Lizenzen</German>
-    </Key>
     <Key ID="STR_PM_Title">
       <Original>Player Menu</Original>
       <German>Spieler Menü</German>
