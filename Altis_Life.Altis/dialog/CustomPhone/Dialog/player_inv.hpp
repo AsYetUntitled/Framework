@@ -1,8 +1,6 @@
-#include "player_sys.sqf"
-
 class playerSettings {
 
-	idd = playersys_DIALOG;
+	idd = 10892;
 	movingEnable = 1;
 	enableSimulation = 1;
 	
@@ -77,8 +75,8 @@ class playerSettings {
 
 		class ButtonLicences : Life_RscButtonInvisible {
 			idc = 1602;
-			onButtonClick = "[] call life_fnc_openLicensesMenu;";
 			tooltip = "$STR_PM_Licenses";
+			onButtonClick = "[] call life_fnc_openLicensesMenu;";
 			x = 0.491000 * safezoneW + safezoneX;
 			y = 0.392246 * safezoneH + safezoneY;
 			w = 0.025877 * safezoneW;
