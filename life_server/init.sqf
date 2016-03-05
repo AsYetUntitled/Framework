@@ -16,6 +16,7 @@ life_server_isReady = false;
 life_server_extDB_notLoaded = "";
 serv_sv_use = [];
 PVAR_ALL("life_server_isReady");
+life_save_civ_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civ_position"),0)) then {false} else {true};
 
 /*
 	Prepare the headless client.
