@@ -18,15 +18,15 @@ if(isNull _civ OR isNull _cop) exitWith {};
 _query = format["SELECT wantedID, wantedName, wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_uid];
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
-if(count _queryResult != 0) then
-{
+if(count _queryResult != 0) then {
 	_amount = _queryResult select 3;
-	if(_half) then
-	{
-		[((_amount) / 2),_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
-	}
-		else
-	{
+	if(_half) then {
+		if(_amount != 0) then {
+			[((_amount) / 2),_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
+		} else {
+			[_amount,_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
+		};
+	} else {
 		[_amount,_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
 	};
 };
