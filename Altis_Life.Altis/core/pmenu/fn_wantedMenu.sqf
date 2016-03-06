@@ -9,6 +9,8 @@
 private["_display","_list","_name","_crimes","_bounty","_units"];
 disableSerialization;
 
+if(playerSide != west) exitWith {}; // Only for cops open this menu
+
 createDialog "life_wanted_menu";
 
 _display = findDisplay 2400;
