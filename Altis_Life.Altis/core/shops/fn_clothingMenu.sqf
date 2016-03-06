@@ -44,14 +44,18 @@ if((SEL(_this,3) == "reb" && !license_civ_rebel)) exitWith {hint localize "STR_S
 if((SEL(_this,3) in ["cop"] && playerSide != west)) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
 if((SEL(_this,3) in ["dive"] && !license_civ_dive)) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
-	_pos = [1000,1000,10000];
+if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_noTP"),1)) then {
+	_pos = getPosATL player;
 } else {
-	switch(SEL(_this,3)) do {
-		case "reb": {_pos = [13590,12214.6,0.00141621];};
-		case "cop": {_pos = [12817.5,16722.9,0.00151062];};
-	 	case "kart": {_pos = [14120.5,16440.3,0.00139236];};
-		default {_pos = [17088.2,11313.6,0.00136757];};
+	if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
+		_pos = [1000,1000,10000];
+	} else {
+		switch(SEL(_this,3)) do {
+			case "reb": {_pos = [13590,12214.6,0.00141621];};
+			case "cop": {_pos = [12817.5,16722.9,0.00151062];};
+			case "kart": {_pos = [14120.5,16440.3,0.00139236];};
+			default {_pos = [17088.2,11313.6,0.00136757];};
+		};
 	};
 };
 
