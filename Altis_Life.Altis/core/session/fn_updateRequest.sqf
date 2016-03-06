@@ -6,9 +6,11 @@
 	Description:
 
 */
-private["_packet","_array","_flag"];
+private["_packet","_array","_flag","_alive","_position"];
 _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
 _array = [];
+_alive = alive player;
+_position = getPosWorld player;
 _flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 
 {
@@ -30,6 +32,8 @@ _packet pushBack _array;
 switch (playerSide) do {
 	case civilian: {
 		_packet pushBack life_is_arrested;
+		_packet pushBack _alive;
+		_packet pushBack _position;
 	};
 };
 

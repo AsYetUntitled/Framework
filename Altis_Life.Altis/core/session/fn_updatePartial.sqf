@@ -38,7 +38,8 @@ switch(_mode) do {
 	};
 
 	case 4: {
-		//Not yet implemented
+		_packet set[2,life_is_alive];
+		_packet set[4,getPosWorld player];
 	};
 
 	case 5: {

@@ -62,18 +62,29 @@ switch(playerSide) do {
 		life_is_arrested = SEL(_this,7);
 		CONST(life_coplevel, 0);
 		CONST(life_medicLevel, 0);
-		life_houses = SEL(_this,11);
+		life_houses = SEL(_this,13);
 		if(EQUAL(LIFE_SETTINGS(getNumber,"save_playerStats"),1)) then {
 			life_hunger = SEL(SEL(_this,9),0);
 			life_thirst = SEL(SEL(_this,9),1);
 			player setDamage SEL(SEL(_this,9),2);
 		};
+
+		//Position
+		if(EQUAL(LIFE_SETTINGS(getNumber,"save_civ_position"),1)) then {
+			life_is_alive = SEL(_this,10);
+			life_civ_position = SEL(_this,11);
+			if(life_is_alive) then {
+				if(count life_civ_position != 3) then {diag_log format["[requestReceived] Bad position received. Data: %1",life_civ_position];life_is_alive =false;};
+				if(life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_is_alive = false;};
+			};
+		};
+
 		{
 			_house = nearestBuilding (call compile format["%1", SEL(_x,0)]);
 			life_vehicles pushBack _house;
 		} foreach life_houses;
 
-		life_gangData = SEL(_this,12);
+		life_gangData = SEL(_this,14);
 		if(!(EQUAL(count life_gangData,0))) then {
 			[] spawn life_fnc_initGang;
 		};
@@ -91,8 +102,8 @@ switch(playerSide) do {
 	};
 };
 
-if(count (SEL(_this,13)) > 0) then {
-	{life_vehicles pushBack _x;} foreach (SEL(_this,13));
+if(count (SEL(_this,15)) > 0) then {
+	{life_vehicles pushBack _x;} foreach (SEL(_this,15));
 };
 
 life_session_completed = true;
