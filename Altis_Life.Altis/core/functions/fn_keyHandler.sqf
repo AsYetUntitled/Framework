@@ -280,7 +280,7 @@ switch (_code) do {
 							_veh animateDoor ['DoorL_Back_Open',1];
 							_veh animateDoor ['DoorR_Back_Open ',1];
 						} else {
-							[_veh,0] remoteExec ["life_fnc_lockVehicle",_veh];
+							[_veh,0] remoteExecCall ["life_fnc_lockVehicle",_veh];
 
 							_veh animateDoor ["door_back_R",1];
 							_veh animateDoor ["door_back_L",1];
@@ -329,7 +329,7 @@ switch (_code) do {
 							_veh animateDoor ['DoorL_Back_Open',0];
 							_veh animateDoor ['DoorR_Back_Open ',0];
 						} else {
-							[_veh,2] remoteExec ["life_fnc_lockVehicle",_veh];
+							[_veh,2] remoteExecCall ["life_fnc_lockVehicle",_veh];
 
 							_veh animateDoor ["door_back_R",0];
 							_veh animateDoor ["door_back_L",0];
