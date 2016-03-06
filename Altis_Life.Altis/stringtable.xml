@@ -1410,18 +1410,6 @@
     </Key>
   </Package>
   <Package name="Player_Menu">
-    <Key ID="STR_PM_OpenInvMenu">
-      <Original>My Inventory</Original>
-      <German>Mein Inventar</German>
-    </Key>
-    <Key ID="STR_PM_OpenBankMenu">
-      <Original>Bank Menu</Original>
-      <German>Bank Menü</German>
-    </Key>
-    <Key ID="STR_PM_MovesMenu">
-      <Original>Moves Menu</Original>
-      <German>Bewegungen</German>
-    </Key>
     <Key ID="STR_PM_Title">
       <Original>Player Menu</Original>
       <German>Spieler Menü</German>

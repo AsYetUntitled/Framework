@@ -56,8 +56,11 @@ switch(_mode) do {
 
 	case 4: {
 		_value = [_this,2,false,[true]] call BIS_fnc_param;
-		_value = [_value] call HC_fnc_bool;
-		_query = format["UPDATE players SET alive='%1' WHERE playerid='%2'",_value,_uid];
+		_value = [_value] call DB_fnc_bool;
+		_value2 = [_this,4,[],[[]]] call BIS_fnc_param;
+		_value2 = if(count _value2 == 3) then {_value2} else {[0,0,0]};
+		_value2 = [_value2] call DB_fnc_mresArray;
+		_query = format["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE playerid='%3'",_value,_value2,_uid];
 	};
 
 	case 5: {

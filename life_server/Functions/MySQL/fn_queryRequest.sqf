@@ -25,7 +25,7 @@ _ownerID = owner _ownerID;
 */
 _query = switch(_side) do {
 	case west: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 10; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_stats, playtime FROM players WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE playerid='%1'",_uid];};
 	case independent: {_returnCount = 10; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE playerid='%1'",_uid];};
 };
 
@@ -107,8 +107,14 @@ switch (_side) do {
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[9,_new];
 
+		//Position
+		_queryResult set[10,([_queryResult select 10,1] call DB_fnc_bool)];
+		_new = [(_queryResult select 11)] call DB_fnc_mresToArray;
+		if(typeName _new == "STRING") then {_new = call compile format["%1",_new];};
+		_queryResult set[11,_new];
+
 		//Playtime
-		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
+		_new = [(_queryResult select 12)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_index = TON_fnc_playtime_values_request find [_uid, _new];
 		if(_index != -1) then {
@@ -151,6 +157,6 @@ switch (_side) do {
 };
 
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
-_queryResult set[13,_keyArr];
+_queryResult set[15,_keyArr];
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

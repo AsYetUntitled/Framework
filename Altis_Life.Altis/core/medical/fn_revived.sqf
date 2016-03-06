@@ -36,8 +36,11 @@ life_corpse SVAR ["name",nil,TRUE];
 [life_corpse] remoteExecCall ["life_fnc_corpse",RANY];
 deleteVehicle life_corpse;
 
+life_is_alive = true;
+
 player SVAR ["Revive",nil,TRUE];
 player SVAR ["name",nil,TRUE];
 player SVAR ["Reviving",nil,TRUE];
 [] call life_fnc_playerSkins;
 [] call life_fnc_hudUpdate; //Request update of hud.
+[] call SOCK_fnc_updateRequest;

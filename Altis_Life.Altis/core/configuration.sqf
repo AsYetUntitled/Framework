@@ -48,6 +48,7 @@ life_preview_3D_vehicle_object = objNull;
 life_preview_light = objNull;
 life_pos_exist = false;
 life_pos_attach = [];
+life_civ_position = [];
 
 //Settings
 life_settings_enableSidechannel = GVAR_PNAS["life_enableSidechannel",true];
@@ -75,6 +76,7 @@ life_carryWeight = 0; //Represents the players current inventory weight (MUST ST
 life_net_dropped = false;
 life_use_atm = true;
 life_is_arrested = false;
+life_is_alive = false;
 life_delivery_in_progress = false;
 life_thirst = 100;
 life_hunger = 100;

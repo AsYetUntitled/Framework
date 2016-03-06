@@ -16,8 +16,8 @@ if(FETCH_CONST(life_adminlevel) < 1) then {
 
 _side = switch(playerSide) do {case west:{"cop"}; case civilian:{"civ"}; case independent:{"med"};};
 
-_inv = CONTROL(10892,1500);
-_lic = CONTROL(20058,1500);
+_inv = CONTROL(2001,2005);
+_lic = CONTROL(2001,2014);
 _near = CONTROL(2001,2022);
 _near_i = CONTROL(2001,2023);
 _mstatus = CONTROL(2001,2015);
