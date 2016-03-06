@@ -23,7 +23,7 @@ if(count _invs > 0) then {
 		_displayName = M_CONFIG(getText,"VirtualItems",SEL(_x,0),"displayName");
 		_inv = _inv + format["%1 %2<br/>",SEL(_x,1),(localize _displayName)];
 		_price = M_CONFIG(getNumber,"VirtualItems",SEL(_x,0),"sellPrice");
-		if(!isNull (missionConfigFile >> "VirtualItems" >> _var >> "processedItem")) then {
+		if(!isNull (missionConfigFile >> "VirtualItems" >> SEL(_x,0) >> "processedItem")) then {
 			_processed = M_CONFIG(getText,"VirtualItems",SEL(_x,0),"processedItem");
 			_price = M_CONFIG(getNumber,"VirtualItems",_processed,"sellPrice");
 		};
