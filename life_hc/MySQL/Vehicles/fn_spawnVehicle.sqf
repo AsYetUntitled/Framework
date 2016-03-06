@@ -17,10 +17,11 @@ _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
 _spawntext = _this select 6;
+_ownerID = [_this,7,0,[0]] call BIS_fnc_param;
 _unit_return = _unit;
 _name = name _unit;
 _side = side _unit;
-_unit = owner _unit;
+//_unit = owner _unit;
 
 if(EQUAL(_vid,-1) OR EQUAL(_pid,"")) exitWith {};
 if(_vid in serv_sv_use) exitWith {};
