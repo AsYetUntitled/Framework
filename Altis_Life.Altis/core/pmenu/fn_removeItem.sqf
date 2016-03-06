@@ -9,8 +9,8 @@
 */
 private["_data","_value","_obj"];
 disableSerialization;
-_data = lbData[1500,(lbCurSel 1500)];
-_value = ctrlText 3004;
+_data = lbData[2005,(lbCurSel 2005)];
+_value = ctrlText 2010;
 
 if(EQUAL(_data,"")) exitWith {hint "You didn't select anything to remove.";};
 if(!([_value] call TON_fnc_isnumber)) exitWith {hint "You didn't enter an actual number format."};

@@ -208,15 +208,6 @@ class Life_Client_Core
 		class searchPosEmpty {};
 	};
 
-	class Travis_Phone
-	{
-		file = "dialog\CustomPhone\Functions";
-		class movesMenu {};
-		class openInvMenu {};
-		class openLicensesMenu {};
-		class openBankMenu {};
-	};
-
 	class Network
 	{
 		file = "core\functions\network";
