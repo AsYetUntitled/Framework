@@ -79,7 +79,7 @@ switch(_mode) do {
 
 	case 7: {
 		_array = [_this,2,[],[[]]] call BIS_fnc_param;
-		[_uid,_side,_array,0] call HC_fnc_keyManagement;
+		[_uid,_side,_array,0] remoteExecCall ["TON_fnc_keyManagement",RSERV];
 	};
 };
 
