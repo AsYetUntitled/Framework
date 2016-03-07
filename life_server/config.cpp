@@ -16,6 +16,7 @@ class Life_Server_Settings {
 
 		/* HC Setting */
 		HC_Enabled = true;
+		HC_Required = false;
 	};
 };
 
