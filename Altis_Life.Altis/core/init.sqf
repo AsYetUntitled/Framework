@@ -71,7 +71,7 @@ waitUntil {life_session_completed};
 0 cutFadeOut 9999999;
 
 //diag_log "::Life Client:: Group Base Execution";
-//[] spawn life_fnc_escInterupt;
+[] spawn life_fnc_escInterupt;
 
 switch (playerSide) do {
 	case west: {
