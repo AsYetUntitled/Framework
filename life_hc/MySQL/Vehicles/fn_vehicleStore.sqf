@@ -13,7 +13,7 @@ _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;
 _unit = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 _storetext = [_this,3,"",[""]] call BIS_fnc_param;
-_ownerID = [_this,4,0,[0]] call BIS_fnc_param;
+_ownerID = _unit GVAR["life_clientID",-1];
 _resourceItems = LIFE_SETTINGS(getArray,"save_veh_items");
 
 if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.

@@ -106,6 +106,4 @@ if(count (SEL(_this,15)) > 0) then {
 	{life_vehicles pushBack _x;} foreach (SEL(_this,15));
 };
 
-life_ownerID = SEL(_this,16);
-
 life_session_completed = true;

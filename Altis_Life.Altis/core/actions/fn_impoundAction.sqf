@@ -56,7 +56,7 @@ if(EQUAL(count crew _vehicle,0)) then {
 	life_impound_inuse = true;
 	
 	if(life_HC_isActive) then {
-		[_vehicle,true,player,"",life_ownerID] remoteExec ["HC_fnc_vehicleStore",HC_Life];
+		[_vehicle,true,player] remoteExec ["HC_fnc_vehicleStore",HC_Life];
 	} else {
 		[_vehicle,true,player] remoteExec ["TON_fnc_vehicleStore",RSERV];
 	};
