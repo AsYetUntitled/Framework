@@ -20,7 +20,7 @@ if(life_save_civ_position && _side == civilian) then {
 	if(isNil "HC_UID" || {_uid != HC_UID}) then {
 		_alive = alive _unit;
 		_position = getPosWorld _unit;
-		diag_log format["[clientDisconnect] Saving position for %1:%4 (Alive: %2 | Position: %3)",_name,_alive,_position,_uid];
+		if((getMarkerPos "respawn_civilian" distance _position) > 300) then {_alive = false;_position = [];};
 		if(life_HC_isActive) then {[_uid,_side,_alive,4,_position] remoteExec ["HC_fnc_updatePartial",HC_Life];} else {[_uid,_side,_alive,4,_position] spawn DB_fnc_updatePartial;};
 	};
 };
