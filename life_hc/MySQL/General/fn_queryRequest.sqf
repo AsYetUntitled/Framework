@@ -101,8 +101,8 @@ switch (_side) do {
 		_queryResult set[9,_new];
 
 		//Position
-		_queryResult set[10,([_queryResult select 10,1] call DB_fnc_bool)];
-		_new = [(_queryResult select 11)] call DB_fnc_mresToArray;
+		_queryResult set[10,([_queryResult select 10,1] call HC_fnc_bool)];
+		_new = [(_queryResult select 11)] call HC_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1",_new];};
 		_queryResult set[11,_new];
 
