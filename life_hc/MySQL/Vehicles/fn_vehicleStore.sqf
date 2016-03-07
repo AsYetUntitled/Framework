@@ -13,9 +13,10 @@ _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;
 _unit = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 _storetext = [_this,3,"",[""]] call BIS_fnc_param;
+_ownerID = [_this,4,0,[0]] call BIS_fnc_param;
 _resourceItems = LIFE_SETTINGS(getArray,"save_veh_items");
 
-if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
+if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.
 _vInfo = _vehicle getVariable["dbInfo",[]];
 
 if(count _vInfo > 0) then {
@@ -42,7 +43,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_fuel"),1)) then {
 if(_impound) exitWith {
 	if(count _vInfo == 0) then  {
 		life_impound_inuse = false;
-		(owner _unit) publicVariableClient "life_impound_inuse";
+		_ownerID publicVariableClient "life_impound_inuse";
 		
 		if(!isNil "_vehicle" && {!isNull _vehicle}) then {
 			deleteVehicle _vehicle;
@@ -56,21 +57,21 @@ if(_impound) exitWith {
 		};
 		
 		life_impound_inuse = false;
-		(owner _unit) publicVariableClient "life_impound_inuse";
+		_ownerID publicVariableClient "life_impound_inuse";
 	};
 };
 
 // not persistent so just do this!
 if(count _vInfo == 0) exitWith {
-	[1,(localize "STR_Garage_Store_NotPersistent")] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
+	[1,(localize "STR_Garage_Store_NotPersistent")] remoteExecCall ["life_fnc_broadcast",_ownerID];
 	life_garage_store = false;
-	(owner _unit) publicVariableClient "life_garage_store";
+	_ownerID publicVariableClient "life_garage_store";
 };
 
 if(_uid != getPlayerUID _unit) exitWith {
-	[1,(localize "STR_Garage_Store_NoOwnership")] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
+	[1,(localize "STR_Garage_Store_NoOwnership")] remoteExecCall ["life_fnc_broadcast",_ownerID];
 	life_garage_store = false;
-	(owner _unit) publicVariableClient "life_garage_store";
+	_ownerID publicVariableClient "life_garage_store";
 };
 
 // sort out whitelisted items!
@@ -116,5 +117,5 @@ if(!isNil "_vehicle" && {!isNull _vehicle}) then {
 };
 
 life_garage_store = false;
-(owner _unit) publicVariableClient "life_garage_store";
-[1,_storetext] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
+_ownerID publicVariableClient "life_garage_store";
+[1,_storetext] remoteExecCall ["life_fnc_broadcast",_ownerID];
