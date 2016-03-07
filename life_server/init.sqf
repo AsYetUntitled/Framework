@@ -154,11 +154,11 @@ _rsb setVariable["bis_disabled_Door_1",1,true];
 _rsb allowDamage false;
 _dome allowDamage false;
 
-//if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
 	/* Tell clients that the server is ready and is accepting queries */
 	life_server_isReady = true;
 	PVAR_ALL("life_server_isReady");
-//};
+};
 
 if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
 	/* Initialize hunting zone(s) */

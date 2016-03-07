@@ -15,7 +15,7 @@ class Life_Server_Settings {
 		DebugMode = 0;
 
 		/* HC Setting */
-		HC_Enabled = true;
+		HC_Enabled = false;
 	};
 };
 

@@ -37,7 +37,7 @@ if(BANK < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_pric
 if(EQUAL(typeName life_garage_sp,typeName [])) then {
 
 	if(life_HC_isActive) then {
-		[_vid,_pid,SEL(life_garage_sp,0),_unit,_price,SEL(life_garage_sp,1),_spawntext,life_ownerID] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
+		[_vid,_pid,SEL(life_garage_sp,0),_unit,_price,SEL(life_garage_sp,1),_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
 	} else {
 		[_vid,_pid,SEL(life_garage_sp,0),_unit,_price,SEL(life_garage_sp,1),_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
 	};
@@ -46,7 +46,7 @@ if(EQUAL(typeName life_garage_sp,typeName [])) then {
 	if(life_garage_sp in ["medic_spawn_1","medic_spawn_2","medic_spawn_3"]) then {
 	
 		if(life_HC_isActive) then {
-			[_vid,_pid,life_garage_sp,_unit,_price,0,_spawntext,life_ownerID] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
+			[_vid,_pid,life_garage_sp,_unit,_price,0,_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
 		} else {
 			[_vid,_pid,life_garage_sp,_unit,_price,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
 		};
@@ -54,7 +54,7 @@ if(EQUAL(typeName life_garage_sp,typeName [])) then {
 	} else {
 	
 		if(life_HC_isActive) then {
-			[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp,_spawntext,life_ownerID] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
+			[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp,_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
 		} else {
 			[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
 		};
