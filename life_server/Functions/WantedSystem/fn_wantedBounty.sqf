@@ -20,13 +20,11 @@ _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 if(count _queryResult != 0) then {
 	_amount = _queryResult select 3;
-	if(_half) then {
-		if(_amount != 0) then {
+	if(_amount != 0) then {
+		if(_half) then {
 			[((_amount) / 2),_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
 		} else {
 			[_amount,_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
 		};
-	} else {
-		[_amount,_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];
 	};
 };
