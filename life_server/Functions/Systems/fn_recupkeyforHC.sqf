@@ -11,4 +11,4 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 if(_uid == "") exitWith {}; //NULL
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
-[_keyArr,_uid,_side] remoteExecCall ["HC_fnc_receivekeyofServer",HC_Life];
+[_keyArr] remoteExecCall ["HC_fnc_receivekeyofServer",HC_Life];
