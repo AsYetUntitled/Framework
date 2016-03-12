@@ -84,6 +84,7 @@ class CfgFunctions {
 			class setObjVar {};
 			class keyManagement {};
 			class vehicleUpdate {};
+			class recupkeyforHC {};
 		};
 
 		class Housing {

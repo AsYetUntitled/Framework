@@ -149,7 +149,11 @@ switch (_side) do {
 	};
 };
 
-_keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
+life_keyreceived = false;
+life_keyreceivedvar = [];
+[_uid,_side] remoteExecCall ["TON_fnc_recupkeyforHC",RSERV];
+waitUntil {life_keyreceived};
+_keyArr = life_keyreceivedvar;
 _queryResult set[15,_keyArr];
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

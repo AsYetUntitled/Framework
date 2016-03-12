@@ -48,6 +48,7 @@ class CfgFunctions
 			class updateRequest {};
 			class cleanup {};
 			class huntingZone {};
+			class receivekeyofServer {};
 		};
 
 		class PlayTime
@@ -111,7 +112,7 @@ class CfgFunctions
 			file = "\life_hc\MySQL\Jail";
 			class jailSys;
 		};
-		
+
 		class Items
 		{
 			file = "\life_hc\MySQL\Items";
