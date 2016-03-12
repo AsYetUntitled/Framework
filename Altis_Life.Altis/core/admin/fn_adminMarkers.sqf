@@ -10,9 +10,10 @@
 private["_PlayerMarkers","_FinishedLoop"];
 if(FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
 life_markers = !life_markers;
-if(life_markers) then {
+if(!life_markersvaar) then {
 	_PlayerMarkers = [];
 	_FinishedLoop = false;
+	life_markersvaar = true;
 	hint localize "STR_ANOTF_MEnabled";
 	while{life_markers} do {
 		{
@@ -61,6 +62,7 @@ _FinishedLoop = true;
 } else {
 	if(isNil "_FinishedLoop") exitWith {};
 	hint localize "STR_ANOTF_MDisabled";
+	life_markersvaar = false;
 	waitUntil{_FinishedLoop};
 	{
 		deleteMarkerLocal str _x;
