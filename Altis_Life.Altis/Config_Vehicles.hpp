@@ -54,6 +54,7 @@ class CarShops {
     class civ_air {
         side = "civ";
         vehicles[] = {
+            { "C_Heli_Light_01_civil_F", { "", "", -1 } },
             { "B_Heli_Light_01_F", { "", "", -1 } },
             { "O_Heli_Light_02_unarmed_F", { "", "", -1 } }
         };
@@ -141,7 +142,7 @@ class LifeCfgVehicles {
     *    INDEX 1: Texture Layer 1
     *    INDEX 2: Texture Layer 2
     *    etc etc etc
-    *    
+    *
     */
 
     class Default {
@@ -350,7 +351,7 @@ class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{
 
 will modify the virtual space and the price of the vehicle, but other information such as license and textures will pick up the vehicle declare at : Vehicle {};
 */
-    class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{}; // Get all information of C_Kart_01_Blu_F 
+    class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{}; // Get all information of C_Kart_01_Blu_F
     class C_Kart_01_Red_F  : C_Kart_01_Blu_F{};
     class C_Kart_01_Vrana_F : C_Kart_01_Blu_F{};
 
@@ -611,6 +612,11 @@ will modify the virtual space and the price of the vehicle, but other informatio
         };
     };
 
+    class C_Heli_Light_01_civil_F : B_Heli_Light_01_F {
+        vItemSpace = 75;
+        rentalprice[] = { 245000, 55000, 40000, -1 };
+    };
+
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 210;
         licenses[] = { {"pilot" }, {""}, {"mAir"}, {""} };
@@ -640,7 +646,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
         rentalprice[] = { 150000, 100000, -1, -1 };
         textures[] = {};
     };
-    
+
         class C_Van_01_fuel_F {
         vItemSpace = 20;
         vFuelSpace = 19500;
