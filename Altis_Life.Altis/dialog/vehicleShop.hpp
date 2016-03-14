@@ -16,7 +16,7 @@ class Life_Vehicle_Shop_v2
 			x = 0.0204687 * safezoneW + safezoneX;
 			y = 0.06 * safezoneH + safezoneY;
 			w = 0.149531 * safezoneW;
-			h = 0.66 * safezoneH;
+			h = 0.638 * safezoneH;
 		};
 
 		class SecondBackground: Life_RscText
@@ -67,7 +67,7 @@ class Life_Vehicle_Shop_v2
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.0204687 * safezoneW + safezoneX;
-			y = 0.789935 * safezoneH + safezoneY;
+			y = 0.669387 * safezoneH + safezoneY;
 			w = 0.0721724 * safezoneW;
 			h = 0.0219957 * safezoneH;
 		};
@@ -78,7 +78,7 @@ class Life_Vehicle_Shop_v2
 			text = "$STR_Global_RentVeh";
 			onButtonClick = "[false] spawn life_fnc_vehicleShopBuy;";
 			x = 0.0964687 * safezoneW + safezoneX;
-			y = 0.756941 * safezoneH + safezoneY;
+			y = 0.636393 * safezoneH + safezoneY;
 			w = 0.0721724 * safezoneW;
 			h = 0.0219957 * safezoneH;
 		};
@@ -89,7 +89,7 @@ class Life_Vehicle_Shop_v2
 			text = "$STR_Global_Buy";
 			onButtonClick = "[true] spawn life_fnc_vehicleShopBuy;";
 			x = 0.0204687 * safezoneW + safezoneX;
-			y = 0.756941 * safezoneH + safezoneY;
+			y = 0.636393 * safezoneH + safezoneY;
 			w = 0.0721724 * safezoneW;
 			h = 0.0219957 * safezoneH;
 		};
@@ -115,7 +115,7 @@ class Life_Vehicle_Shop_v2
 			idc = 2304;
 			onLBSelChanged = "[] spawn life_fnc_vehiclecolor3DRefresh;";
 			x = 0.0204687 * safezoneW + safezoneX;
-			y = 0.723948 * safezoneH + safezoneY;
+			y = 0.6034 * safezoneH + safezoneY;
 			w = 0.149531 * safezoneW;
 			h = 0.0219957 * safezoneH;
 		};
