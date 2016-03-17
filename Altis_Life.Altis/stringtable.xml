@@ -3610,14 +3610,6 @@
       <Portuguese>Maçãs</Portuguese>
       <Polish>Jabłka</Polish>
     </Key>
-    <Key ID="STR_Item_Cocaine">
-      <Original>Coke</Original>
-      <German>Kokain</German>
-      <French>Cocaïne</French>
-      <Italian>Cocaina</Italian>
-      <Portuguese>Cocaína</Portuguese>
-      <Polish>Kokaina</Polish>
-    </Key>
     <Key ID="STR_Item_Heroin">
       <Original>Heroin</Original>
       <German>Heroin</German>
