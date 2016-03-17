@@ -3651,7 +3651,7 @@
       <Polish>Brzoskwinie</Polish>
     </Key>
     <Key ID="STR_Item_OilU">
-      <Original>Raw Oil</Original>
+      <Original>Crude Oil</Original>
       <German>Unverarbeitetes Öl</German>
       <French>Pétrole non raffiné</French>
       <Italian>Olio non processato</Italian>
@@ -3659,7 +3659,7 @@
       <Polish>Ropa naftowa</Polish>
     </Key>
     <Key ID="STR_Item_OilP">
-      <Original>Gasoline</Original>
+      <Original>Processed Oil</Original>
       <German>Verarbeitetes Öl</German>
       <French>Pétrole raffiné</French>
       <Italian>Olio processato</Italian>
