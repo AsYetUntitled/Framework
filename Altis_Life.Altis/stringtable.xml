@@ -3587,7 +3587,7 @@
   </Package>
   <Package name="Life_Items">
     <Key ID="STR_Item_Cannabis">
-      <Original>Cannabis</Original>
+      <Original>Marijuana leaf</Original>
       <German>Kannabis</German>
       <French>Cannabis</French>
       <Italian>Cannabis</Italian>
@@ -3611,7 +3611,7 @@
       <Polish>Jabłka</Polish>
     </Key>
     <Key ID="STR_Item_Cocaine">
-      <Original>Cocaine</Original>
+      <Original>Coke</Original>
       <German>Kokain</German>
       <French>Cocaïne</French>
       <Italian>Cocaina</Italian>
@@ -3651,7 +3651,7 @@
       <Polish>Brzoskwinie</Polish>
     </Key>
     <Key ID="STR_Item_OilU">
-      <Original>Unprocessed Oil</Original>
+      <Original>Raw Oil</Original>
       <German>Unverarbeitetes Öl</German>
       <French>Pétrole non raffiné</French>
       <Italian>Olio non processato</Italian>
@@ -3659,7 +3659,7 @@
       <Polish>Ropa naftowa</Polish>
     </Key>
     <Key ID="STR_Item_OilP">
-      <Original>Processed Oil</Original>
+      <Original>Gasoline</Original>
       <German>Verarbeitetes Öl</German>
       <French>Pétrole raffiné</French>
       <Italian>Olio processato</Italian>
@@ -3667,7 +3667,7 @@
       <Polish>Olej napędowy</Polish>
     </Key>
     <Key ID="STR_Item_HeroinU">
-      <Original>Unprocessed Heroin</Original>
+      <Original>Opium Poppy</Original>
       <German>Unverarbeitetes Heroin</German>
       <French>Graine de pavot</French>
       <Italian>Eroina non processata</Italian>
@@ -3675,7 +3675,7 @@
       <Polish>Heroina nieoczyszczona</Polish>
     </Key>
     <Key ID="STR_Item_HeroinP">
-      <Original>Processed Heroin</Original>
+      <Original>Heroin</Original>
       <German>Verarbeitetes Heroin</German>
       <French>Héroine</French>
       <Italian>Eroina processata</Italian>
@@ -3683,7 +3683,7 @@
       <Polish>Heroina oczyszczona</Polish>
     </Key>
     <Key ID="STR_Item_Marijuana">
-      <Original>Marijuana</Original>
+      <Original>Pot</Original>
       <German>Marihuana</German>
       <French>Marijuana</French>
       <Italian>Marijuana</Italian>
@@ -3707,7 +3707,7 @@
       <Polish>Grilowany zając</Polish>
     </Key>
     <Key ID="STR_Item_SalemaRaw">
-      <Original>Salema Meat</Original>
+      <Original>Raw Salema</Original>
       <German>Salema Fleisch</German>
       <French>Filet de Saupe</French>
       <Italian>Carne di Salmone</Italian>
@@ -3723,7 +3723,7 @@
       <Polish>Grilowana Salema</Polish>
     </Key>
     <Key ID="STR_Item_OrnateRaw">
-      <Original>Ornate Meat</Original>
+      <Original>Raw Ornate</Original>
       <German>Ornate Fleisch</German>
       <French>Filet d'Ornate</French>
       <Italian>Carne di Orata</Italian>
@@ -3739,7 +3739,7 @@
       <Polish>Grilowany Ornat</Polish>
     </Key>
     <Key ID="STR_Item_MackerelRaw">
-      <Original>Mackerel Meat</Original>
+      <Original>Raw Mackerel</Original>
       <German>Makrelen Fleisch</German>
       <French>Filet de Maquereau</French>
       <Italian>Carne di Sgombro</Italian>
@@ -3755,7 +3755,7 @@
       <Polish>Grilowana Makrela</Polish>
     </Key>
     <Key ID="STR_Item_TunaRaw">
-      <Original>Tuna Meat</Original>
+      <Original>Raw Tuna</Original>
       <German>Thunfisch Fleisch </German>
       <French>Filet de Thon</French>
       <Italian>Carne di Tonno</Italian>
@@ -3771,7 +3771,7 @@
       <Polish>Grilowany Tuńczyk</Polish>
     </Key>
     <Key ID="STR_Item_MulletRaw">
-      <Original>Mullet Meat</Original>
+      <Original>Raw Mullet</Original>
       <German>Meerbarben Fleisch</German>
       <French>Filet de Mulet</French>
       <Italian>Carne di Triglia</Italian>
@@ -3787,7 +3787,7 @@
       <Polish>Grilowany Cefal</Polish>
     </Key>
     <Key ID="STR_Item_CatSharkRaw">
-      <Original>Cat Shark Meat</Original>
+      <Original>Raw Catshark</Original>
       <German>Katzenhai Fleisch</German>
       <French>Filet de Poisson Chat</French>
       <Italian>Carne di Squalo</Italian>
@@ -3803,7 +3803,7 @@
       <Polish>Grilowany Rekin</Polish>
     </Key>
     <Key ID="STR_Item_TurtleRaw">
-      <Original>Turtle Meat</Original>
+      <Original>Raw Turtle</Original>
       <German>Schildkröten Fleisch</German>
       <French>Viande de Tortue</French>
       <Italian>Carne di Tartaruga</Italian>
@@ -4003,7 +4003,7 @@
       <Polish>Szkło</Polish>
     </Key>
     <Key ID="STR_Item_DiamondC">
-      <Original>Diamond Cut</Original>
+      <Original>Polished Diamond</Original>
       <German>Geschliffene Diamanten</German>
       <French>Diamant Taillé</French>
       <Italian>Diamante tagliato</Italian>
@@ -4011,7 +4011,7 @@
       <Polish>Diament szlifowany</Polish>
     </Key>
     <Key ID="STR_Item_DiamondU">
-      <Original>Diamond Uncut</Original>
+      <Original>Uncut Diamond</Original>
       <German>Ungeschliffene Diamanten</German>
       <French>Diamant Brut</French>
       <Italian>Diamante grezzo</Italian>
@@ -4107,7 +4107,7 @@
       <Polish>Duży pojemnik</Polish>
     </Key>
     <Key ID="STR_Item_CocaineU">
-      <Original>Unprocessed Cocaine</Original>
+      <Original>Cocaleaf</Original>
       <German>Unverarbeitetes Kokain</German>
       <French>Feuille de Coca</French>
       <Italian>Cocaina non processata</Italian>
@@ -4115,7 +4115,7 @@
       <Polish>Nieoczyszczona kokaina</Polish>
     </Key>
     <Key ID="STR_Item_CocaineP">
-      <Original>Processed Cocaine</Original>
+      <Original>Coke</Original>
       <German>Verarbeitetes Kokain</German>
       <French>Cocaine</French>
       <Italian>Cocaina processata</Italian>
@@ -4617,7 +4617,7 @@
       <Polish>Szlif diamentów</Polish>
     </Key>
     <Key ID="STR_Process_Heroin">
-      <Original>Processing Heroin</Original>
+      <Original>Processing Opium</Original>
       <German>Heroin wird verarbeitet</German>
       <French>Traitement d'Heroine</French>
       <Italian>Processando Eroina</Italian>
@@ -4625,7 +4625,7 @@
       <Polish>Oczyszczanie heroiny</Polish>
     </Key>
     <Key ID="STR_Process_Copper">
-      <Original>Processing Copper</Original>
+      <Original>Casting Copper Ingots</Original>
       <German>Kupfer wird verarbeitet</German>
       <French>Fonte de Cuivre</French>
       <Italian>Processando Rame</Italian>
@@ -4633,7 +4633,7 @@
       <Polish>Wytop miedzi</Polish>
     </Key>
     <Key ID="STR_Process_Iron">
-      <Original>Processing Iron</Original>
+      <Original>Casting Iron Ingots</Original>
       <German>Eisen wird verarbeitet</German>
       <French>Fonte de fer</French>
       <Italian>Processando Ferro</Italian>
@@ -4657,7 +4657,7 @@
       <Polish>Warzenie soli</Polish>
     </Key>
     <Key ID="STR_Process_Cocaine">
-      <Original>Processing Cocaine</Original>
+      <Original>Processing Cocaleafs</Original>
       <German>Kokain wird verarbeitet</German>
       <French>Traitement de Cocaine</French>
       <Italian>Processando Cocaina</Italian>
@@ -4731,7 +4731,7 @@
       <Polish>Zbieranie brzoskwiń</Polish>
     </Key>
     <Key ID="STR_Gather_Heroin">
-      <Original>Gather Heroin</Original>
+      <Original>Gather Opium Poppy</Original>
       <German>Heroin sammeln</German>
       <French>Récolter des graines de Pavot</French>
       <Italian>Raccogli Eroina</Italian>
@@ -4739,7 +4739,7 @@
       <Polish>Zbieranie heroiny</Polish>
     </Key>
     <Key ID="STR_Gather_Cannabis">
-      <Original>Gather Cannabis</Original>
+      <Original>Gather Marijuana</Original>
       <German>Kannabis sammeln</German>
       <French>Récolter du Cannabis</French>
       <Italian>Raccogli Cannabis</Italian>
@@ -4747,7 +4747,7 @@
       <Polish>Zbieranie konopii</Polish>
     </Key>
     <Key ID="STR_Gather_Cocaine">
-      <Original>Gather Cocaine</Original>
+      <Original>Gather Cocaleafs</Original>
       <German>Kokain sammeln</German>
       <French>Récolte de la Cocaine</French>
       <Italian>Raccogli Cocaina</Italian>
@@ -6080,13 +6080,13 @@
       <Polish>Szyb naftowy</Polish>
     </Key>
     <Key ID="STR_MAR_Weed_Field">
-      <Original>Weed Field</Original>
+      <Original>Marijuana Field</Original>
       <German>Gras Plantage</German>
       <Portuguese>Campo de Maconha</Portuguese>
       <Polish>Pole marihuany</Polish>
     </Key>
     <Key ID="STR_MAR_Weed_Processing">
-      <Original>Weed Processing</Original>
+      <Original>Marijuana Processing</Original>
       <German>Gras Verarbeitung</German>
       <Portuguese>Processador de Maconha</Portuguese>
       <Polish>Suszarnia marihuany</Polish>
@@ -6104,7 +6104,7 @@
       <Polish>Huta miedzi</Polish>
     </Key>
     <Key ID="STR_MAR_Cocaine_Field">
-      <Original>Cocaine Field</Original>
+      <Original>Coca Field</Original>
       <German>Koks Plantage</German>
       <Portuguese>Campo de Cocaína</Portuguese>
       <Polish>Pole kokainy</Polish>
@@ -6152,7 +6152,7 @@
       <Polish>Sklep z bronią</Polish>
     </Key>
     <Key ID="STR_MAR_Heroin_Field">
-      <Original>Heroin Field</Original>
+      <Original>Opium Poppy Field</Original>
       <German>Heroin Plantage</German>
       <Portuguese>Campo de Heroína</Portuguese>
       <Polish>Pole heroiny</Polish>
