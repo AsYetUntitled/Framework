@@ -27,7 +27,7 @@ if(life_is_alive && !life_is_arrested) then {
 	} else {
 		if(life_is_arrested) then {
 			life_is_arrested = false;
-			[player,true] spawn life_fnc_jail;
+			[player,true,life_jailtime] spawn life_fnc_jail;
 		};
 	};
 };

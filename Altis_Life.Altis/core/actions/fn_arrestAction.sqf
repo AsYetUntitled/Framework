@@ -6,7 +6,7 @@
 	Description:
 	Arrests the targeted person.
 */
-private["_unit","_id"];
+private["_unit","_id","_time"];
 _unit = param [0,ObjNull,[ObjNull]];
 if(isNull _unit) exitWith {}; //Not valid
 if(isNil "_unit") exitwith {}; //Not Valid
@@ -15,6 +15,9 @@ if(!isPlayer _unit) exitWith {}; //Not a human
 if(!(_unit GVAR "restrained")) exitWith {}; //He's not restrained.
 if(!((side _unit) in [civilian,independent])) exitWith {}; //Not a civ
 if(isNull _unit) exitWith {}; //Not valid
+_time = parseNumber(ctrlText 5672);
+if(_time > LIFE_SETTINGS(getNumber,"jailTimeMax")) exitWith {hint localize "STR_JailTime_WrongTime"};
+if(_time < LIFE_SETTINGS(getNumber,"jailTimeMin")) exitWith {hint localize "STR_JailTime_WrongTime"};
 
 if(life_HC_isActive) then {
 	[getPlayerUID _unit,_unit,player,false] remoteExecCall ["HC_fnc_wantedBounty",HC_Life];
@@ -24,5 +27,5 @@ if(life_HC_isActive) then {
 
 if(isNull _unit) exitWith {}; //Not valid
 detach _unit;
-[_unit,false] remoteExecCall ["life_fnc_jail",_unit];
+[_unit,false,_time] remoteExecCall ["life_fnc_jail",_unit];
 [0,"STR_NOTF_Arrested_1",true, [_unit GVAR ["realname",name _unit], profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];

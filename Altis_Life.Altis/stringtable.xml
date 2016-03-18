@@ -6751,4 +6751,22 @@
       <German>Dein Anteil beträgt $%1</German>
     </Key>
   </Package>
+  <Package name="JailTime">
+    <Key ID="STR_JailTime_Title">
+      <Original>Jail Time</Original>
+      <French>Temps de prison</French>
+    </Key>
+    <Key ID="STR_JailTime_Text">
+      <Original>Set the time the player will be in jail.</Original>
+      <French>Choisir le temps que le joueur passera en prison.</French>
+    </Key>
+    <Key ID="STR_JailTime_WrongTime">
+      <Original>Waow! You can't send a player in jail for that long.</Original>
+      <French>Vous ne pouvez pas envoyer un joueur en prison pour autant de temps.</French>
+    </Key>
+    <Key ID="STR_JailTime_Arrest">
+      <Original>Arrest</Original>
+      <French>Arrêter</French>
+    </Key>
+  </Package>
 </Project>

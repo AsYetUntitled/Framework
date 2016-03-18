@@ -65,7 +65,7 @@ _Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
 _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
 _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
-_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
+_Btn6 buttonSetAction "createDialog ""life_jail_time"";";
 
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";

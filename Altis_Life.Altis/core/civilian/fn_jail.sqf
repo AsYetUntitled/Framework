@@ -8,7 +8,8 @@
 */
 params [
 	["_unit",objNull,[objNull]],
-	["_bad",false,[false]]
+	["_bad",false,[false]],
+    ["_time",0,[0]]
 ];
 
 if(isNull _unit) exitWith {}; //Dafuq?
@@ -43,14 +44,15 @@ if(player distance (getMarkerPos "jail_marker") > 40) then {
 } forEach ["heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw"];
 
 life_is_arrested = true;
+life_jailtime = _time;
 
 removeAllWeapons player;
 {player removeMagazine _x} forEach (magazines player);
 
 if(life_HC_isActive) then {
-	[player,_bad] remoteExecCall ["HC_fnc_jailSys",HC_Life];
+	[player,_bad,_time] remoteExecCall ["HC_fnc_jailSys",HC_Life];
 } else {
-	[player,_bad] remoteExecCall ["life_fnc_jailSys",RSERV];
+	[player,_bad,_time] remoteExecCall ["life_fnc_jailSys",RSERV];
 };
 
 [5] call SOCK_fnc_updatePartial;

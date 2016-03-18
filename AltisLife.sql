@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `playtime` varchar(25) NOT NULL DEFAULT '"[0,0,0]"',
   `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `jailtime` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`),

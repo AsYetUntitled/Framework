@@ -10,13 +10,11 @@ private["_time","_bail","_esc","_countDown"];
 
 params [
 	["_ret",[],[[]]],
-	["_bad",false,[false]]
+	["_bad",false,[false]],
+    ["_time",0,[0]]
 ];
 
-
-if(_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
-
-if(count _ret > 0) then { life_bail_amount = SEL(_ret,3); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
+if(count _ret > 0) then { life_bail_amount = SEL(_ret,3); } else { life_bail_amount = 1500;};
 _esc = false;
 _bail = false;
 
@@ -53,6 +51,7 @@ while {true} do {
 switch (true) do {
 	case (_bail): {
 		life_is_arrested = false;
+        life_jailtime = 0;
 		life_bail_paid = false;
 		hint localize "STR_Jail_Paid";
 		serv_wanted_remove = [player];
@@ -69,6 +68,7 @@ switch (true) do {
 	
 	case (_esc): {
 		life_is_arrested = false;
+        life_jailtime = 0;
 		hint localize "STR_Jail_EscapeSelf";
 		[0,"STR_Jail_EscapeNOTF",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 		
@@ -83,6 +83,7 @@ switch (true) do {
 	
 	case (alive player && !_esc && !_bail): {
 		life_is_arrested = false;
+        life_jailtime = 0;
 		hint localize "STR_Jail_Released";
 		
 		if(life_HC_isActive) then {

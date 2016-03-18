@@ -77,6 +77,7 @@ life_carryWeight = 0; //Represents the players current inventory weight (MUST ST
 life_net_dropped = false;
 life_use_atm = true;
 life_is_arrested = false;
+life_jailtime = 0;
 life_is_alive = false;
 life_delivery_in_progress = false;
 life_thirst = 100;
