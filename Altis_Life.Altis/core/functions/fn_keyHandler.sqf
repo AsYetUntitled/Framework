@@ -137,19 +137,19 @@ switch (_code) do {
 		if(!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
 			if(vehicle player != player && alive vehicle player) then {
 				if((vehicle player) in life_vehicles) then {
-					[vehicle player] call life_fnc_openInventory;
+					[vehicle player] spawn life_fnc_openInventory;
 				};
 			} else {
 				private "_list";
 				_containers = [getPosATL player, ["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5] call life_fnc_nearestObjects;
 				if (count _containers > 0) then {
 					_container = _containers select 0;
-					[_container] call life_fnc_openInventory;
+					[_container] spawn life_fnc_openInventory;
 				} else {
 					_list = ["landVehicle","Air","Ship"];
 					if(KINDOF_ARRAY(cursorTarget,_list) && {player distance cursorTarget < 7} && {vehicle player == player} && {alive cursorTarget} && {!life_action_inUse}) then {
 						if(cursorTarget in life_vehicles) then {
-							[cursorTarget] call life_fnc_openInventory;
+							[cursorTarget] spawn life_fnc_openInventory;
 						};
 					};
 				};
