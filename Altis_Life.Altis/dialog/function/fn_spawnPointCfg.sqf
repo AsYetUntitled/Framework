@@ -8,50 +8,31 @@
 	Return:
 	[Spawn Marker,Spawn Name,Image Path]
 */
-private["_side","_return"];
-_side = [_this,0,civilian,[civilian]] call BIS_fnc_param;
+private["_side","_return","_spawnCfg","_curConfig","_name","_condition","_tempConfig"];
+_side = param [0,civilian,[civilian]];
 
-//Spawn Marker, Spawn Name, PathToImage
-switch (_side) do
-{
-	case west:
-	{
-		_return = [
-			["cop_spawn_1","Kavala HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["cop_spawn_2","Pyrgos HQ","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
-			["cop_spawn_3","Athira HQ","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"],
-			["cop_spawn_4","Air HQ","\a3\ui_f\data\map\Markers\NATO\b_air.paa"],
-			["cop_spawn_5","HW Patrol","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
-		];
-	};
-	
-	case civilian:
-	{
-		_return = [
-			["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["civ_spawn_2","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["civ_spawn_3","Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
-		];
-		
-		if(count life_houses > 0) then {
-			{
-				_pos = call compile format["%1",_x select 0];
-				_house = nearestBuilding _pos;
-				_houseName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
-				
-				_return pushBack [format["house_%1",_house getVariable "uid"],_houseName,"\a3\ui_f\data\map\MapControl\lighthouse_ca.paa"];
-			} foreach life_houses;
-		};	
-	};
-	
-	case independent: {
-		_return = [
-			["medic_spawn_1","Kavala Hospital","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-			["medic_spawn_2","Athira Regional","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-			["medic_spawn_3","Pygros Hospital","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
-		];
-	};
+switch (_side) do {
+    case west: {_side = "Cop"};
+    case civilian: {_side = "Civilian"};
+    case independent: {_side = "Medic"};
+    default {_side = "Civilian"};
+};
+
+_return = [];
+
+_spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> _side;
+
+for[{_i = 0},{_i < count(_spawnCfg)},{_i = _i + 1}] do {
+    _tempConfig = [];
+	_curConfig = (_spawnCfg select _i);
+    _condition = getText(_curConfig >> "condition");
+    if(call compile _condition) then 
+    {
+        _tempConfig pushBack getText(_curConfig >> "spawnMarker");
+        _tempConfig pushBack getText(_curConfig >> "displayName");
+        _tempConfig pushBack getText(_curConfig >> "icon");
+        _return pushBack _tempConfig;
+    };
 };
 
 _return;
