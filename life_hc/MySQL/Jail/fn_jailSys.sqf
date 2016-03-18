@@ -9,12 +9,9 @@
 	I forget?
 */
 private["_unit","_bad","_ret"];
-params [
-    ["_unit",Objnull,[Objnull]],
-    ["_bad",false,[false]],
-    ["_time",0,[0]]
-];
+_unit = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _unit) exitWith {};
+_bad = [_this,1,false,[false]] call BIS_fnc_param;
 
 _ret = [_unit] call HC_fnc_wantedPerson;
-[_ret,_bad,_time] remoteExec ["life_fnc_jailMe",_unit];
+[_ret,_bad] remoteExec ["life_fnc_jailMe",_unit];

@@ -95,10 +95,6 @@ class Life_Settings {
     /* Animal settings */
     animaltypes_fish[] = { "Salema_F", "Ornate_random_F", "Mackerel_F", "Tuna_F", "Mullet_F", "CatShark_F", "Turtle_F" };
     animaltypes_hunting[] = { "Sheep_random_F", "Goat_random_F", "Hen_random_F", "Cock_random_F", "Rabbit_F" };
-    
-    /* Jail setting */
-    jailTimeMax = 10; //Maximum jail time
-    jailTimeMin = 1; //Minimum jail time
 
     /* Wanted System related settings */
     /* crimes[] = {String, Bounty, Code} */

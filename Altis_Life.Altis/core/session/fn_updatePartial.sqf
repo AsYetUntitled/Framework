@@ -44,7 +44,6 @@ switch(_mode) do {
 
 	case 5: {
 		_packet set[2,life_is_arrested];
-        _packet set[4,life_jailtime];
 	};
 
 	case 6: {

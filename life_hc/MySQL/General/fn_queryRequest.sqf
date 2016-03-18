@@ -26,7 +26,7 @@ if(isNull _ownerID) exitWith {};
 */
 _query = switch(_side) do {
 	case west: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 13; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime, jailtime FROM players WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE playerid='%1'",_uid];};
 	case independent: {_returnCount = 10; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE playerid='%1'",_uid];};
 };
 
@@ -94,7 +94,6 @@ switch (_side) do {
 
 	case civilian: {
 		_queryResult set[7,([_queryResult select 7,1] call HC_fnc_bool)];
-        _queryResult set[12,[_queryResult select 13] call HC_fnc_numberSafe];
 
 		//Parse Stats
 		_new = [(_queryResult select 9)] call HC_fnc_mresToArray;
