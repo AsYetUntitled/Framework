@@ -5,11 +5,13 @@
       <Original>Bruce's Outback Outfits</Original>
       <Portuguese>Loja de Roupas</Portuguese>
       <Polish>Sklep odzieżowy</Polish>
+      <Italian>Emporio di Bruce</Italian>
     </Key>
     <Key ID="STR_Shops_C_Police">
       <Original>Altis Police Department Shop</Original>
       <Portuguese>Loja de Roupas Policiais</Portuguese>
       <Polish>Sklep Policyjny</Polish>
+      <Italian></Italian>
     </Key>
     <Key ID="STR_Shops_C_Rebel">
       <Original>Mohammed's Jihadi Shop</Original>
@@ -33,7 +35,7 @@
     <Key ID="STR_Shops_W_Gun">
       <Original>Billy Joe's Firearms</Original>
       <German>Billy Joe Schusswaffen</German>
-      <Italian>Le armi da fuoco di Billy Joe</Italian>
+      <Italian>Armeria di Billy Joe</Italian>
       <French>Les armes à feu de Billy Joe</French>
       <Portuguese>Armas de fogo Billy Joe</Portuguese>
       <Polish>Broń palna Billy Joe</Polish>
@@ -2024,7 +2026,7 @@
       <Original>You do not have $%1 to be healed</Original>
       <German>Du hast keine $%1, um geheilt zu werden.</German>
       <French>Vous n'avez pas $%1 pour vous soignez.</French>
-      <Italian>Non hai €$1 per essere curato</Italian>
+      <Italian>Non hai €%1 per essere curato</Italian>
       <Portuguese>Você não tem R$%1 para ser curado</Portuguese>
       <Polish>Nie masz $%1 na leczenie</Polish>
     </Key>
@@ -6106,42 +6108,49 @@
       <German>Öl Händler</German>
       <Portuguese>Comprador de Petróleo</Portuguese>
       <Polish>Skup benzyny</Polish>
+      <Italian>Vendita Olio</Italian>
     </Key>
     <Key ID="STR_MAR_Salt_Trader">
       <Original>Salt Trader</Original>
       <German>Salz Händler</German>
       <Portuguese>Comprador de Sal</Portuguese>
       <Polish>Skup soli</Polish>
+      <Italian>Vendita Sale</Italian>
     </Key>
     <Key ID="STR_MAR_Diamond_Trader">
       <Original>Diamond Trader</Original>
       <German>Juwelier</German>
       <Portuguese>Comprador de Diamante</Portuguese>
       <Polish>Skup diamentów</Polish>
+      <Italian>Vendita Diamanti</Italian>
     </Key>
     <Key ID="STR_MAR_Glass_Trader">
       <Original>Glass Trader</Original>
       <German>Glasbläserei</German>
       <Portuguese>Comprador de Vidro</Portuguese>
       <Polish>Skup szkła</Polish>
+      <Italian>Vendita del Vetro</Italian>
     </Key>
     <Key ID="STR_MAR_Iron_Copper_Trader">
       <Original>Iron / Copper Trader</Original>
       <German>Händler für Eisen / Kupfer</German>
       <Portuguese>Comprador de Ferro e Cobre</Portuguese>
       <Polish>Skup metali</Polish>
+      <Italian>Vendita del Ferro/Rame</Italian>
     </Key>
     <Key ID="STR_MAR_Sand_Processing">
       <Original>Sand Processing</Original>
       <German>Sand Verarbeiter</German>
       <Portuguese>Processador de Areia</Portuguese>
       <Polish>Huta szkła</Polish>
+      <Italian>Processo Sabbia</Italian>
     </Key>
     <Key ID="STR_MAR_Gun_Store">
       <Original>Gun Store</Original>
       <German>Waffenladen</German>
       <Portuguese>Loja de Armas</Portuguese>
       <Polish>Sklep z bronią</Polish>
+      <Italian>Armeria</Italian>
     </Key>
     <Key ID="STR_MAR_Heroin_Field">
       <Original>Opium Poppy Field</Original>
@@ -6184,6 +6193,7 @@
       <German>Stein Verarbeitung</German>
       <Portuguese>Processador de Pedra</Portuguese>
       <Polish>Wytwórnia cementu z kamienia</Polish>
+      <Italian>Processo Roccia</Italian>
     </Key>
     <Key ID="STR_MAR_Cement_Trader">
       <Original>Cement Trader</Original>
@@ -6220,18 +6230,21 @@
       <German>Gang Versteck 1</German>
       <Portuguese>Esconderijo de Gangs 1</Portuguese>
       <Polish>Kryjówka gangu 1</Polish>
+      <Italian>Covo Gang 1</Italian>
     </Key>
     <Key ID="STR_MAR_Gang_Hideout2">
       <Original>Gang Hideout 2</Original>
       <German>Gang Versteck 2</German>
       <Portuguese>Esconderijo de Gangs 2</Portuguese>
       <Polish>Kryjówka gangu 2</Polish>
+      <Italian>Covo Gang 2</Italian>
     </Key>
     <Key ID="STR_MAR_Gang_Hideout3">
       <Original>Gang Hideout 3</Original>
       <German>Gang Versteck 3</German>
       <Portuguese>Esconderijo de Gangs 3</Portuguese>
       <Polish>Kryjówka gangu 3</Polish>
+      <Italian>Covo Gang 3</Italian>
     </Key>
     <Key ID="STR_MAR_Hunting_Grounds">
       <Original>Hunting Grounds</Original>
@@ -6256,6 +6269,7 @@
       <German>Rebellen Waffenladen</German>
       <Portuguese>Loja de Armas Rebeldes</Portuguese>
       <Polish>Zbrojownia rebelianta</Polish>
+      <Italian>Armeria della Guerriglia</Italian>
     </Key>
     <Key ID="STR_MAR_Helicopter_Shop">
       <Original>Helicopter Shop</Original>
@@ -6286,18 +6300,21 @@
       <German>Heli Werkstatt</German>
       <Portuguese>Serviço Aéreo</Portuguese>
       <Polish>Serwisuj pojazd lotniczy</Polish>
+      <Italian>Servizio Aereo</Italian>
     </Key>
     <Key ID="STR_MAR_Clothing_Store">
       <Original>Clothing Store</Original>
       <German>Klamottenladen</German>
       <Portuguese>Loja de Roupas</Portuguese>
       <Polish>Sklep odzieżowy</Polish>
+      <Italian>Vestiario</Italian>
     </Key>
     <Key ID="STR_MAR_Medical_Assistance">
       <Original>Medical Assistance</Original>
       <German>Medizinischer Ersthelfer</German>
       <Portuguese>Assistência Médica</Portuguese>
       <Polish>Pomoc medyczna</Polish>
+      <Italian>Assistenza Medica</Italian>
     </Key>
     <Key ID="STR_MAR_Store_vehicle_in_Garage">
       <Original>Store vehicle in Garage</Original>
@@ -6506,11 +6523,13 @@
       <Original>Intent to distribute</Original>
       <Portuguese>Tentativa de Trafico</Portuguese>
       <German>Versuchter Drogenhandel</German>
+      <Italian>Tentativo di spaccio</Italian>
     </Key>
     <Key ID="STR_Crime_483">
       <Original>Drug Trafficking</Original>
       <Portuguese>Trafico de Drogas</Portuguese>
       <German>Drogenhandel</German>
+      <Italian>Vendita di droga</Italian>
     </Key>
     <Key ID="STR_Crime_459">
       <Original>Burglary</Original>
@@ -6521,16 +6540,19 @@
       <Original>Tax Evasion</Original>
       <Portuguese>Evasão Fiscal</Portuguese>
       <German>Steuerhinterziehung</German>
+      <Italian>Evasione delle tasse</Italian>
     </Key>
     <Key ID="STR_Crime_667">
       <Original>Terrorism</Original>
       <Portuguese>Terrorismo</Portuguese>
       <German>Terrorismus</German>
+      <Italian>Terrorismo</Italian>
     </Key>
     <Key ID="STR_Crime_668">
       <Original>Unlicensed Hunting</Original>
       <Portuguese>Caça sem Licença</Portuguese>
       <German>Jagen ohne Lizenz</German>
+      <Italian>Caccia senza licenza</Italian>
     </Key>
     <Key ID="STR_Crime_919">
       <Original>Organ Theft</Original>
@@ -6547,11 +6569,13 @@
       <French>Absence du permis de conduire</French>
       <Portuguese>Dirigir sem Licença</Portuguese>
       <German>Fahren ohne Führerschein</German>
+      <Italian>Guida senza patente</Italian>
     </Key>
     <Key ID="STR_Crime_2">
       <Original>Driving in the wrong way of the street</Original>
       <French>Conduite sur le mauvais côté de la route</French>
       <Portuguese>Dirigindo no sentido contrario</Portuguese>
+      <Italian>Guida Contromano</Italian>
       <German>Fahren in die falsche Richtung der Straße</German>
     </Key>
     <Key ID="STR_Crime_3">
@@ -6559,66 +6583,78 @@
       <French>Non respect des signalisations</French>
       <Portuguese>Não respeitar as sinalizações</Portuguese>
       <German>Nicht unter Beachtung der Signalisierungen</German>
+      <Italian>Mancato rispetto dei segnali stradali</Italian>
     </Key>
     <Key ID="STR_Crime_4">
       <Original>Speeding</Original>
       <French>Excès de vitesse</French>
       <Portuguese>Excesso de Velocidade</Portuguese>
       <German>Geschwindigkeitsüberschreitung</German>
+      <Italian>Eccesso di velocità</Italian>
     </Key>
     <Key ID="STR_Crime_5">
       <Original>No headlight in the night</Original>
       <French>Absence de phare la nuit</French>
       <Portuguese>Farois Apagados Durante a Noite</Portuguese>
       <German>Fahren ohne Licht</German>
+      <Italian>Luci spente durante la notte</Italian>
     </Key>
     <Key ID="STR_Crime_6">
       <Original>Driving kart without helmet</Original>
       <French>Non-port du casque en Kart</French>
       <Portuguese>Dirigindo Kart Sem Capacete</Portuguese>
       <German>Fahren ohne Helm</German>
+      <Italian>Guida di Kart senza casco</Italian>
     </Key>
     <Key ID="STR_Crime_7">
       <Original>Badly parked vehicle</Original>
       <French>Véhicule mal garé</French>
       <Portuguese>Veículo Mal Estacionado</Portuguese>
       <German>Parksünder</German>
+      <Italian>Veicolo mal parcheggiato</Italian>
     </Key>
     <Key ID="STR_Crime_8">
       <Original>Rebel vehicle (Not armed)</Original>
       <French>Véhicule rebel non armé</French>
       <Portuguese>Veículo Rebelde(Não Armado)</Portuguese>
       <German>Rebelen Fahrzeug (nicht bewaffnet)</German>
+      <Italian>Veicolo blindato(Non armato)</Italian>
     </Key>
     <Key ID="STR_Crime_9">
       <Original>Grand Theft (Civilian Vehicle)</Original>
       <French>Vol de véhicule civil</French>
       <Portuguese>Roubo de Veículo (Veículo Civil)</Portuguese>
       <German>Schwerer Diebstahl (Zivilfahrzeug)</German>
+      <Italian>Furto di veicolo (Civile)</Italian>
+      
     </Key>
     <Key ID="STR_Crime_10">
       <Original>Grand Theft (Military Vehicle)</Original>
       <French>Vol de véhicule militaire</French>
       <Portuguese>Roubo de Veículo(Militar)</Portuguese>
       <German>Schwerer Diebstahl (Dienstfahrzeug)</German>
+      <Italian>Furto di veicolo militare</Italian>
     </Key>
     <Key ID="STR_Crime_11">
       <Original>Armored Vehicle</Original>
       <French>Véhicules blindés</French>
       <Portuguese>Veículo Armado</Portuguese>
       <German>Panzerfahrzeug</German>
+      <Italian>Veicolo D'assalto</Italian>
     </Key>
     <Key ID="STR_Crime_12">
       <Original>Flying over the city without authorization</Original>
       <French>Survol de ville sans autorisation</French>
       <Portuguese>Sobrevoando sobre a cidade sem autorização</Portuguese>
       <German>Fliegen über die Stadt ohne Genehmigung</German>
+      <Italian>Guida di velivolo su città abitata senza autorizzazione</Italian>
     </Key>
     <Key ID="STR_Crime_13">
       <Original>Closing the street without authorization</Original>
       <French>Interdiction de se poser sans autorisation</French>
       <Portuguese>Fechar Rua Sem Autorização</Portuguese>
       <German>Das Schließen der Straße ohne Genehmigung</German>
+      <Italian>Impedimento del traffico senza permesso</Italian>
     </Key>
     <Key ID="STR_Crime_14">
       <Original>Open carry in city (Legal Weapon)</Original>
@@ -6631,6 +6667,7 @@
       <French>Armes rebelles</French>
       <Portuguese>Arma Rebelde</Portuguese>
       <German>Rebellen Waffe</German>
+      <Italian>Arma Ribelle</Italian>
     </Key>
     <Key ID="STR_Crime_16">
       <Original>Ilegal clothing</Original>
@@ -6661,24 +6698,28 @@
       <French>Insulte envers un civil</French>
       <Portuguese>Insulto a Civil</Portuguese>
       <German>Beleidigung</German>
+      <Italian>Insulto a civile</Italian>
     </Key>
     <Key ID="STR_Crime_21">
       <Original>Insulting a soldier</Original>
       <French>Insulte envers un militaire</French>
       <Portuguese>Insulto as Autoridades</Portuguese>
       <German>Beamtenbeleidigung</German>
+      <Italian>Insulto a pubblico ufficiale</Italian>
     </Key>
     <Key ID="STR_Crime_22">
       <Original>Drug dealing</Original>
       <French>Trafique de drogue</French>
       <Portuguese>Trafico de Drogas</Portuguese>
       <German>Drogenhandel</German>
+      <Italian>Traffico di droga</Italian>
     </Key>
     <Key ID="STR_Crime_23">
       <Original>Federal Reserve breaking</Original>
       <French>Intrusion dans le coffre du gouverneur</French>
       <Portuguese>Invasão a Reserva Federal</Portuguese>
       <German>Bankeinbruch</German>
+      <Italian>Rapina alla Riserva Federale</Italian>
     </Key>
     <Key ID="STR_Crime_24">
       <Original>Killing of a civilian</Original>
@@ -6691,6 +6732,7 @@
       <French>Meurtre d'un militaire</French>
       <Portuguese>Matou um Policial</Portuguese>
       <German>Das Töten eines Beamten</German>
+      <Italian>Omicidio a un agente</Italian>
     </Key>
   </Package>
   <Package name="FuelTank_Mission">
