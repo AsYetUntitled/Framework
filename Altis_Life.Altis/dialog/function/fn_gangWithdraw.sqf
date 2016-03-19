@@ -6,9 +6,9 @@
 	Description:
 	Withdraws money from the gang bank.
 */
-sleep (random 1.5);
 private["_value"];
 _value = parseNumber(ctrlText 2702);
+sleep (random 1.5);
 _gFund = GANG_FUNDS;
 
 //Series of stupid checks
