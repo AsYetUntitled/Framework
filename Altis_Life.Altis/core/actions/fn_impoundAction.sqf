@@ -68,7 +68,7 @@ if(playerSide == west) then {
 	if(playerSide == west) then {
 			[0,"STR_NOTF_HasImpounded",true,[profileName,SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 			if(_vehicle in life_vehicles) then {
-			life_atmbank = life_atmbank - _price; hint format[localize "STR_NOTF_OwnImpounded",_type,_price];
+			SUB(BANK,_price); hint format[localize "STR_NOTF_OwnImpounded",_type,_price];
 			} else {
 			ADD(BANK,_price); hint format[localize "STR_NOTF_Impounded",_type,_price];
 			};
