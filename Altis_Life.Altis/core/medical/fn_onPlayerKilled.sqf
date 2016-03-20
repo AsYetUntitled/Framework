@@ -20,7 +20,7 @@ if((vehicle _unit) != _unit) then {
 };
 
 //Set some vars
-_unit SVAR ["Revive",true,true];
+_unit SVAR ["Revive",false,true];
 _unit SVAR ["name",profileName,true]; //Set my name so they can say my name.
 _unit SVAR ["restrained",false,true];
 _unit SVAR ["Escorting",false,true];
