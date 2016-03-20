@@ -10,8 +10,6 @@
 private["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
 disableSerialization;
 
-// waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
-// waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 _escSync = {
 	private["_abortButton","_thread","_syncManager"];
 	disableSerialization;
@@ -33,7 +31,6 @@ _escSync = {
 	};
 
 	_abortButton = CONTROL(49,104);
-	[] call SOCK_fnc_updateRequest; //call our silent sync.
 
 	if(_this) then {
 		_thread = [] spawn _syncManager;
@@ -51,7 +48,7 @@ while {true} do
 {
 	waitUntil{!isNull (findDisplay 49)};
 	_abortButton = CONTROL(49,104);
-	_abortButton buttonSetAction "[player] remoteExec [""TON_fnc_cleanupRequest"",2];";
+	_abortButton buttonSetAction "[] call SOCK_fnc_updateRequest; [player] remoteExec [""TON_fnc_cleanupRequest"",2];";
 	_respawnButton = CONTROL(49,1010);
 	_fieldManual = CONTROL(49,122);
 
