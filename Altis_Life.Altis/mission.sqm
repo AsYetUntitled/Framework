@@ -104,7 +104,7 @@ class Mission
 	randomSeed=2004553;
 	class Intel
 	{
-		briefingName="Altis Life RPG v4.4r1";
+		briefingName="Altis Life RPG v4.4r2";
 		overviewText="An RPG game mode developed by Tonic";
 		startWeather=0.099999994;
 		startWind=0.29999998;
