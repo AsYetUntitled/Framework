@@ -18,6 +18,7 @@ _zone = "";
 _requiredItem = "";
 _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 _exit = false;
+_exitforMine = false;
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
@@ -27,6 +28,7 @@ for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
 	_maxGather = getNumber(_curConfig >> "amount");
 	_resourceZones = getArray(_curConfig >> "zones");
 	_requiredItem = getText(_curConfig >> "item");
+	if (_requiredItem == "pickaxe") exitWith { _exitforMine = true; };
 
 	{
 		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
@@ -34,6 +36,7 @@ for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
 
 	if(_zone != "") exitWith {};
 };
+if (_exitforMine) exitWith { life_action_inUse = false; [] spawn life_fnc_mine; }; //Near a mine,go to the proper script
 
 if(_zone == "") exitWith {life_action_inUse = false;};
 
