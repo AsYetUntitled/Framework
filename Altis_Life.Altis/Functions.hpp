@@ -98,7 +98,6 @@ class Life_Client_Core
 		class robAction {};
 		class captureHideout {};
 		class gather {};
-		class mine {};
 		class gutAnimal {};
 		class removeContainer {};
 	};
