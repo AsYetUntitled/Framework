@@ -5,8 +5,9 @@ include "..\..\script_macros.hpp"
 		Author: Devilfloh
 		Editor: Dardo
 
+
 		Description:
-		Same as fn_gather,but it allows use of probabilities for mining.
+		Same as fn_gather,but allow use of probabilities for mining.
 	*/
 private["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
 if (life_action_inUse) exitWith {};
