@@ -4,11 +4,11 @@
 	Author: Bryan "Tonic" Boardwine
 	Modified: Devilfloh
 	Description:
-	Starts automated mining of resource from the tempest device.
+	Starts automated mining of resource from the tempest device. Not integrated with percents.
 */
-private["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_amount"];
+private["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_amount","_isMineral"];
 _vehicle = param [0,ObjNull,[ObjNull]];
-
+_isMineral = true;
 if(isNull _vehicle) exitWith {};
 
 if(!isNil {_vehicle GVAR "mining"}) exitWith {
@@ -46,8 +46,40 @@ for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
 
 	} forEach _resourceZones;
 
-	if(_zone != "") exitWith {};
-};
+	if(_zone != "") exitWith {_isMineral = false;};
+}; 
+
+for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
+	private ["_curConfig","_resourceZones","_resources","_resourceCfg","_mined"];
+	_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
+
+    if (!_isMineral) exitWith {};
+	_curConfig = (_resourceCfg select _i);
+	_resources = getArray(_curConfig >> "mined");
+	_resourceZones = getArray(_curConfig >> "zones");
+	
+	
+
+	if (typeName(_resources select 0) != "ARRAY") then {
+                    _mined = _resources select 0;
+                }
+                else {
+                    _mined = _resources select 0 select 0;
+                };
+                
+	{
+		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
+			_zone = _x;
+		};
+
+	} forEach _resourceZones;
+
+	if(_zone != "") exitWith {_resource = _mined};
+}; 
+
+
+
+
 
 if(_zone == "") exitWith {
 	hint localize "STR_NOTF_notNearResource";

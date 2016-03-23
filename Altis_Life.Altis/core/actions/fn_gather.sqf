@@ -13,7 +13,6 @@ if((player GVAR "restrained")) exitWith {hint localize "STR_NOTF_isrestrained";}
 if((player GVAR "playerSurrender")) exitWith {hint localize "STR_NOTF_surrender";};
 
 life_action_inUse = true;
-
 _zone = "";
 _requiredItem = "";
 _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
@@ -27,7 +26,6 @@ for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
 	_maxGather = getNumber(_curConfig >> "amount");
 	_resourceZones = getArray(_curConfig >> "zones");
 	_requiredItem = getText(_curConfig >> "item");
-
 	{
 		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
 	} forEach _resourceZones;
@@ -45,7 +43,7 @@ if (_requiredItem != "") then
 	{
 		switch (_requiredItem) do
 		{
-			case "pickaxe": {titleText[(localize "STR_NOTF_Pickaxe"),"PLAIN"];};
+         //Messages here
 		};
 		life_action_inUse = false;
 		_exit = true;
