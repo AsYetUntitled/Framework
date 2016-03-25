@@ -2,11 +2,11 @@
 /*
 	File: fn_repairDoor.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Re-locks the door mainly for the federal reserve structures.
 */
-private["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText"];
+private["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText","_doors","_locked"];
 _building = param [0,ObjNull,[ObjNull]];
 if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint "You are not looking at a house door."};
@@ -69,5 +69,16 @@ player playActionNow "stop";
 if(!alive player) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 life_action_inUse = false;
+
 _building animate [format["door_%1_rot",_door],0];
-_building SVAR [format["bis_disabled_Door_%1",_door],1,true]; //Unlock the door.
+_building SVAR [format["bis_disabled_Door_%1",_door],1,true]; //Lock the door.
+
+_doors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _building),"numberOfDoors");
+_locked = true;
+for "_i" from 1 to _doors do {
+	if((_building GVAR [format["bis_disabled_Door_%1",_i],0]) == 0) exitWith {_locked = false};
+};
+
+if(_locked) then {
+	_building setVariable["locked",true,true];
+};
