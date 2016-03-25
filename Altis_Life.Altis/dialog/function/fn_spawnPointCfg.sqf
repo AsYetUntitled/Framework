@@ -36,9 +36,9 @@ for[{_i = 0},{_i < count(_spawnCfg)},{_i = _i + 1}] do {
 
     if(!(EQUAL(_licenseName,""))) then {
         if(_licenseType == 0) then {
-            if(LICENSE_VALUE(_license,(M_CONFIG(getText,"Licenses",_license,"side")))) then {_flag = false;};
+            if(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) then {_flag = false;};
         } else {
-            if(!(LICENSE_VALUE(_license,(M_CONFIG(getText,"Licenses",_license,"side"))))) then {_flag = false;};
+            if(!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) then {_flag = false;};
         };
     };
 
