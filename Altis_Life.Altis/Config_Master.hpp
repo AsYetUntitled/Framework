@@ -9,7 +9,7 @@ class Life_Settings {
     save_civ_weapons = false; //Allow civilians to save weapons on them?
     save_virtualItems = true; //Save Virtual items (all sides)?
     save_playerStats = true; //Save food, water and damage (all sides)?
-    save_civ_position = true; //Save civilian location?
+    save_civ_position = false; //Save civilian location?
     save_civ_positionStrict = false; //Strip the player if possible combat-log?  WARNING: Server crashes and lack of reliable syncing can trigger this.
 
     /* Persistent Vehicle Settings */
