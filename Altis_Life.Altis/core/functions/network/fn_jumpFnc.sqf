@@ -28,9 +28,10 @@ _anim = animationState _unit;
 _unit switchMove "AovrPercMrunSrasWrflDf";
 
 if(local _unit) then {
+	waitUntil{
 	if((getpos player select 2) > 4) then {
 		player setposATL _oldpos
 	};
-	waitUntil{animationState _unit != "AovrPercMrunSrasWrflDf"};
+	animationState _unit != "AovrPercMrunSrasWrflDf"};
 	_unit switchMove _anim;
 };
