@@ -6,7 +6,7 @@
 	Description:
 	Opens the admin menu, sorry nothing special in here. Take a look for yourself.
 */
-private["_display","_list","_side"];
+private["_display","_list","_side","_godmode","_markers"];
 if(FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
 disableSerialization;
@@ -32,3 +32,12 @@ lbClear _list;
 	_list lbSetdata [(lbSize _list)-1,str(_x)];
 } foreach playableUnits;
 if(FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};
+
+if (life_god) then {
+	_godmode = CONTROL(2900,2908);
+	_godmode ctrlSetTextColor [0, 255, 0, 1];	// green
+};
+if(life_markersvaar) then {
+	_markers = CONTROL(2900,2910);
+	_markers ctrlSetTextColor [0, 255, 0, 1];	// green
+};
