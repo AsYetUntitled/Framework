@@ -32,7 +32,7 @@ while {life_markers} do
 			_pSee setMarkerSizeLocal [1,1];
 			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
 			_pSee setMarkerColorLocal ("ColorBLUFOR");
-			PlayerMarkers = PlayerMarkers + [_x];
+			PlayerMarkers pushback _x;
 		};
 
 		if(alive _x && side _x == independent) then {
@@ -43,7 +43,7 @@ while {life_markers} do
 			_pSee setMarkerSizeLocal [1,1];
 			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
 			_pSee setMarkerColorLocal ("ColorIndependent");
-			PlayerMarkers = PlayerMarkers + [_x];
+			PlayerMarkers pushback _x;
 		};
 		if(alive _x && side _x == civilian) then {
 			deleteMarkerLocal str _x;
@@ -53,7 +53,7 @@ while {life_markers} do
 			_pSee setMarkerSizeLocal [1,1];
 			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
 			_pSee setMarkerColorLocal ("ColorCivilian");
-			PlayerMarkers = PlayerMarkers + [_x];
+			PlayerMarkers pushback _x;
 		};
 	} forEach playableUnits;
 	sleep 0.25;
