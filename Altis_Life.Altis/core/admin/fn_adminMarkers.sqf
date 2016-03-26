@@ -1,10 +1,11 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_adminMarkers.sqf
-	Sourced from Lystics Player Markers Loop
-	Author:
+	Sourced from bAdmin Manu made by Battleguns, AgentRev
+	Edited: NiiRoZz
 
 	Description:
+	Add markers where are all players
 
 */
 private["_PlayerMarkers","_FinishedLoop"];
