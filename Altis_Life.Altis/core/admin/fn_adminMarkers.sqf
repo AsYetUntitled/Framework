@@ -1,47 +1,64 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_adminMarkers.sqf
-	Sourced from bAdmin Manu made by Battleguns, AgentRev
-	Edited: NiiRoZz
+	Author: NiiRoZz
 
 	Description:
 	Add markers where are all players
-
 */
-private["_PlayerMarkers","_FinishedLoop"];
 if(FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
-if (isNil "life_PlayerMarkers") then { life_PlayerMarkers = false };
-
-if (!life_PlayerMarkers) then
-{
-	life_PlayerMarkers = true;
-	hint "Player Markers ON";
-}
-	else
-{
-	life_PlayerMarkers = false;
-	hint "Player Markers OFF";
+if (!life_markers) then {
+	life_markers = true;
+	hint localize "STR_ANOTF_MEnabled";
+	PlayerMarkers = [];
+} else {
+	life_markers = false;
+	hint localize "STR_ANOTF_MDisabled";
 };
 
-setGroupIconsVisible [true, false]; // Refer to https://community.bistudio.com/wiki/setGroupIconsVisible
-while {life_PlayerMarkers} do
+while {life_markers} do
 {
 	{
-		if (isPlayer _x && _x != player) then
-		{
-			private ["_groupIcon", "_iconColor"];
-			switch (side _x) do
-			{
-				case BLUFOR:      { _groupIcon = "b_inf"; _iconColor = [0, 0, 1, 1] };
-				case OPFOR:       { _groupIcon = "o_inf"; _iconColor = [1, 0, 0, 1] };
-				case INDEPENDENT: { _groupIcon = "n_inf"; _iconColor = [1, 1, 0, 1] };
-				default           { _groupIcon = "c_unknown"; _iconColor = [1, 1, 1, 1] };
-			};
-			clearGroupIcons group _x;
-			group _x addGroupIcon [_groupIcon];
-			group _x setGroupIconParams [_iconColor, format ["%1", name _x], 1, true];
+		if !(_x in playableUnits) then {
+			deleteMarkerLocal str _x;
+		};
+	} forEach PlayerMarkers;
+	{
+		if(alive _x && side _x == west) then {
+			deleteMarkerLocal str _x;
+			_pSee = createMarkerLocal [str _x,getPos _x];
+			_pSee setMarkerTypeLocal "mil_triangle";
+			_pSee setMarkerPosLocal getPos _x;
+			_pSee setMarkerSizeLocal [1,1];
+			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
+			_pSee setMarkerColorLocal ("ColorBLUFOR");
+			PlayerMarkers = PlayerMarkers + [_x];
+		};
+
+		if(alive _x && side _x == independent) then {
+			deleteMarkerLocal str _x;
+			_pSee = createMarkerLocal [str _x,getPos _x];
+			_pSee setMarkerTypeLocal "mil_triangle";
+			_pSee setMarkerPosLocal getPos _x;
+			_pSee setMarkerSizeLocal [1,1];
+			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
+			_pSee setMarkerColorLocal ("ColorIndependent");
+			PlayerMarkers = PlayerMarkers + [_x];
+		};
+		if(alive _x && side _x == civilian) then {
+			deleteMarkerLocal str _x;
+			_pSee = createMarkerLocal [str _x,getPos _x];
+			_pSee setMarkerTypeLocal "mil_triangle";
+			_pSee setMarkerPosLocal getPos _x;
+			_pSee setMarkerSizeLocal [1,1];
+			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
+			_pSee setMarkerColorLocal ("ColorCivilian");
+			PlayerMarkers = PlayerMarkers + [_x];
 		};
 	} forEach playableUnits;
-	sleep 0.5;
+	sleep 0.25;
 };
-{ clearGroupIcons group _x } forEach playableUnits;
+
+{
+	deleteMarkerLocal str _x;
+} forEach PlayerMarkers;

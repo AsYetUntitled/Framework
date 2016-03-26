@@ -47,7 +47,6 @@ life_preview_light = objNull;
 life_pos_exist = false;
 life_pos_attach = [];
 life_civ_position = [];
-life_PlayerMarkers = false;
 
 //Settings
 life_settings_enableSidechannel = GVAR_PNAS["life_enableSidechannel",true];
