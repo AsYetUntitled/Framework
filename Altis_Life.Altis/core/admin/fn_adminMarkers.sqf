@@ -9,15 +9,21 @@
 */
 private["_PlayerMarkers","_FinishedLoop"];
 if(FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
+if (isNil "life_PlayerMarkers") then { life_PlayerMarkers = false };
 
+if (!life_PlayerMarkers) then
 {
+	life_PlayerMarkers = true;
 	hint "Player Markers ON";
 }
 	else
 {
+	life_PlayerMarkers = false;
 	hint "Player Markers OFF";
 };
 
+setGroupIconsVisible [true, false]; // Refer to https://community.bistudio.com/wiki/setGroupIconsVisible
+while {life_PlayerMarkers} do
 {
 	{
 		if (isPlayer _x && _x != player) then
