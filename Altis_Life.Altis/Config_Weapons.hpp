@@ -202,7 +202,7 @@ class WeaponShops {
         mags[] = {
             { "9Rnd_45ACP_Mag", "", 200 },
             { "30Rnd_9x21_Mag", "", 60 },
-            { "30Rnd_65x39_caseless_mag", "", 100, -1 }
+            { "30Rnd_65x39_caseless_mag", "", 100 }
         };
         accs[] = {
             { "optic_Arco", "", 2500 },
