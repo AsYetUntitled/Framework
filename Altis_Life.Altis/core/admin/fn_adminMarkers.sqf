@@ -38,7 +38,7 @@ while {life_PlayerMarkers} do
 			};
 			clearGroupIcons group _x;
 			group _x addGroupIcon [_groupIcon];
-			group _x setGroupIconParams [_iconColor, format ["%1 (%2m)", name _x, round (_x distance player)], 1, true];
+			group _x setGroupIconParams [_iconColor, format ["%1", name _x], 1, true];
 		};
 	} forEach playableUnits;
 	sleep 0.5;
