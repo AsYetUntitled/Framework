@@ -36,7 +36,6 @@ life_action_gathering = false;
 tawvd_addon_disable = true;
 life_god = false;
 life_frozen = false;
-life_markers = false;
 life_save_gear = [];
 life_container_activeObj = ObjNull;
 life_disable_getIn = false;
@@ -48,7 +47,7 @@ life_preview_light = objNull;
 life_pos_exist = false;
 life_pos_attach = [];
 life_civ_position = [];
-life_markersvaar = false;
+life_PlayerMarkers = false;
 
 //Settings
 life_settings_enableSidechannel = GVAR_PNAS["life_enableSidechannel",true];
