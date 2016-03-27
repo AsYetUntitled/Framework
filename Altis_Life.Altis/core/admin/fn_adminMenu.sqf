@@ -37,7 +37,7 @@ if (life_god) then {
 	_godmode = CONTROL(2900,2908);
 	_godmode ctrlSetTextColor [0, 255, 0, 1];	// green
 };
-if(life_markersvaar) then {
+if(life_markers) then {
 	_markers = CONTROL(2900,2910);
 	_markers ctrlSetTextColor [0, 255, 0, 1];	// green
 };
