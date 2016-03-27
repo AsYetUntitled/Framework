@@ -65,6 +65,7 @@ class CfgRemoteExec {
         F(life_fnc_freezePlayer,CLIENT)
         F(life_fnc_mediclights,CLIENT)
         F(life_fnc_hideObj,CLIENT)
+        F(SOCK_fnc_updateRequest,CLIENT)
 
         /* Server only functions */
         F(bis_fnc_execvm,SERVER)
