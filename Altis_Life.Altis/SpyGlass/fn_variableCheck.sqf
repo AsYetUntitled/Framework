@@ -93,7 +93,6 @@ _uiCheckFunction = {
 };
 
 while {true} do {
-	systemChat "Calling check";
 	objNull call _checkFunction;
 	uiSleep 10;
 	objNull call _uiCheckFunction;
