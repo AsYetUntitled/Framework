@@ -10,6 +10,7 @@
 */
 private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val"];
 disableSerialization;
+if((life_trunk_vehicle getVariable ["trunk_in_use",false]) && (life_trunk_vehicle getVariable ["trunk_in_use_by",false] != name player)) exitWith { closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
 _ctrl = ctrlSelData(3503);
 _num = ctrlText 3506;
@@ -43,7 +44,7 @@ if(_ctrl == "money") then
 	life_trunk_vehicle setVariable["Trunk",[_inv,(_veh_data select 1) + _itemWeight],true];
 	[life_trunk_vehicle] call life_fnc_vehInventory;
 }
-	else
+else
 {
 	if(((_totalWeight select 1) + _itemWeight) > (_totalWeight select 0)) exitWith {hint "The vehicle is either full or cannot hold that much."};
 
