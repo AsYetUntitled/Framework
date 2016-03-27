@@ -30,7 +30,7 @@ while {life_markers} do
 			_pSee setMarkerTypeLocal "mil_triangle";
 			_pSee setMarkerPosLocal getPos _x;
 			_pSee setMarkerSizeLocal [1,1];
-			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
+			_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
 			_pSee setMarkerColorLocal ("ColorBLUFOR");
 			PlayerMarkers pushback _x;
 		};
@@ -41,7 +41,7 @@ while {life_markers} do
 			_pSee setMarkerTypeLocal "mil_triangle";
 			_pSee setMarkerPosLocal getPos _x;
 			_pSee setMarkerSizeLocal [1,1];
-			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
+			_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
 			_pSee setMarkerColorLocal ("ColorIndependent");
 			PlayerMarkers pushback _x;
 		};
@@ -51,7 +51,7 @@ while {life_markers} do
 			_pSee setMarkerTypeLocal "mil_triangle";
 			_pSee setMarkerPosLocal getPos _x;
 			_pSee setMarkerSizeLocal [1,1];
-			_pSee setMarkerTextLocal format['%1',_x getVariable ["NomJoueur",""]];
+			_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
 			_pSee setMarkerColorLocal ("ColorCivilian");
 			PlayerMarkers pushback _x;
 		};
