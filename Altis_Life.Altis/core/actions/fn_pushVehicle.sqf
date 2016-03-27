@@ -3,7 +3,7 @@
 	Built for Feint's Push functionality
 */
 private["_target","_caller","_posCaller","_dir"];
-_target = cursorTarget;
+_target = cursorObject;
 _caller = player;
 _posCaller = getPos _caller;
 _dir = getDir _caller;

@@ -12,7 +12,7 @@ _code = SEL(_this,1);
 _shift = SEL(_this,2);
 _ctrlKey = SEL(_this,3);
 _alt = SEL(_this,4);
-_speed = speed cursorTarget;
+_speed = speed cursorObject;
 _handled = false;
 
 _interactionKey = if((EQUAL(count (actionKeys "User10"),0))) then {219} else {(actionKeys "User10") select 0};
@@ -117,7 +117,7 @@ switch (_code) do {
 	//Restraining (Shift + R)
 	case 19: {
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && {!isNull cursorTarget} && {cursorTarget isKindOf "Man"} && {(isPlayer cursorTarget)} && {(side cursorTarget in [civilian,independent])} && {alive cursorTarget} && {cursorTarget distance player < 3.5} && {!(cursorTarget GVAR "Escorting")} && {!(cursorTarget GVAR "restrained")} && {speed cursorTarget < 1}) then {
+		if(_shift && playerSide == west && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject GVAR "Escorting")} && {!(cursorObject GVAR "restrained")} && {speed cursorObject < 1}) then {
 			[] call life_fnc_restrainAction;
 		};
 	};
@@ -125,9 +125,9 @@ switch (_code) do {
 	//Knock out, this is experimental and yeah... (Shift + G)
 	case 34: {
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then {
-			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player GVAR ["restrained",false]) && !life_istazed && !life_isknocked) then {
-				[cursorTarget] spawn life_fnc_knockoutAction;
+		if(_shift && playerSide == civilian && !isNull cursorObject && cursorObject isKindOf "Man" && isPlayer cursorObject && alive cursorObject && cursorObject distance player < 4 && speed cursorObject < 1) then {
+			if((animationState cursorObject) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player GVAR ["restrained",false]) && !life_istazed && !life_isknocked) then {
+				[cursorObject] spawn life_fnc_knockoutAction;
 			};
 		};
 	};
@@ -137,19 +137,19 @@ switch (_code) do {
 		if(!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
 			if(vehicle player != player && alive vehicle player) then {
 				if((vehicle player) in life_vehicles) then {
-					[vehicle player] spawn life_fnc_openInventory;
+					titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];
 				};
 			} else {
-				private "_list";
-				_containers = [getPosATL player, ["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5] call life_fnc_nearestObjects;
-				if (count _containers > 0) then {
-					_container = _containers select 0;
-					[_container] spawn life_fnc_openInventory;
+				private ["_list"];
+				_list = [getPosATL player, ["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5] call life_fnc_nearestObjects;
+				if (count _list > 0) then {
+					_list = _list select 0;
+					[_list] spawn life_fnc_openInventory;
 				} else {
 					_list = ["landVehicle","Air","Ship"];
-					if(KINDOF_ARRAY(cursorTarget,_list) && {player distance cursorTarget < 7} && {vehicle player == player} && {alive cursorTarget} && {!life_action_inUse}) then {
-						if(cursorTarget in life_vehicles) then {
-							[cursorTarget] spawn life_fnc_openInventory;
+					if(KINDOF_ARRAY(cursorObject,_list) && {player distance cursorObject < 7} && {vehicle player == player} && {alive cursorObject} && {!life_action_inUse}) then {
+						if(cursorObject in life_vehicles) then {
+							[cursorObject] spawn life_fnc_openInventory;
 						};
 					};
 				};
@@ -230,7 +230,7 @@ switch (_code) do {
 	case 22: {
 		if(!_alt && !_ctrlKey) then {
 			if(vehicle player == player) then {
-				_veh = cursorTarget;
+				_veh = cursorObject;
 			} else {
 				_veh = vehicle player;
 			};

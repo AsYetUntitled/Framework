@@ -7,7 +7,7 @@
 	Searches the vehicle for illegal items.
 */
 private["_vehicle","_vehicleInfo","_value","_list"];
-_vehicle = cursorTarget;
+_vehicle = cursorObject;
 _list = ["Air","Ship","LandVehicle"];
 if(isNull _vehicle OR {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
 

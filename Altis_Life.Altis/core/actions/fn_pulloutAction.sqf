@@ -2,12 +2,12 @@
 /*
 	File: fn_pulloutAction.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Pulls civilians out of a car if it's stopped.
 */
 private["_crew"];
-_crew = crew cursorTarget;
+_crew = crew cursorObject;
 
 {
 	if(side _x != west) then {

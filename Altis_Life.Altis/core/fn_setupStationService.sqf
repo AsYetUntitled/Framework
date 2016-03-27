@@ -44,5 +44,5 @@ _pumpClass = "Land_fs_feed_F";
 {
 	_pump = (nearestObject [_x, _pumpClass]);
 	_pump setFuelCargo 0;
-	_pump addAction [localize "STR_Action_Pump", life_fnc_FuelStatOpen, 1, 3, true, true, "", ' _this distance _target < 5 && cursorTarget == _target '];
+	_pump addAction [localize "STR_Action_Pump", life_fnc_FuelStatOpen, 1, 3, true, true, "", ' _this distance _target < 5 && cursorObject == _target '];
 } forEach _NiiRoZz_Station_Essence;

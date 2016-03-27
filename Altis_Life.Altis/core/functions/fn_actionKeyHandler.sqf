@@ -8,8 +8,7 @@
 	interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
 private["_curTarget","_isWater","_CrateModelNames","_crate"];
-_curTarget = cursorTarget;
-_curObject = cursorObject;
+_curTarget = cursorObject;
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if(life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
@@ -46,13 +45,13 @@ if(isNull _curTarget) exitWith {
 		} else {
 			private "_handle";
 			if(playerSide == civilian && !life_action_gathering) then {
-				
+
 	            _whatIsIt = [] call life_fnc_whereAmI;
 				if(life_action_gathering) exitWith {};				 //Action is in use, exit to prevent spamming.
 				switch (_whatIsIt) do {
 					case "mine" : { _handle = [] spawn life_fnc_mine };
 					default { _handle = [] spawn life_fnc_gather };
-				}; 
+				};
 
 				life_action_gathering = true;
 				waitUntil {scriptDone _handle};
@@ -115,12 +114,12 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		};
 	} else {
 		//OK, it wasn't a vehicle so let's see what else it could be?
-		if((typeOf _curObject) in _miscItems) then {
-			[_curObject,player,false] remoteExecCall ["TON_fnc_pickupAction",RSERV];
+		if((typeOf _curTarget) in _miscItems) then {
+			[_curTarget,player,false] remoteExecCall ["TON_fnc_pickupAction",RSERV];
 		} else {
 			//It wasn't a misc item so is it money?
-			if(EQUAL((typeOf _curObject),_money) && {!(_curObject GVAR ["inUse",false])}) then {
-				[_curObject,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
+			if(EQUAL((typeOf _curTarget),_money) && {!(_curTarget GVAR ["inUse",false])}) then {
+				[_curTarget,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
 			};
 		};
 	};

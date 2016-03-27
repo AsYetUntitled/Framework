@@ -29,18 +29,18 @@ switch (true) do {
 	};
 
 	case (EQUAL(_item,"boltcutter")): {
-		[cursorTarget] spawn life_fnc_boltcutter;
+		[cursorObject] spawn life_fnc_boltcutter;
 		closeDialog 0;
 	};
 
 	case (EQUAL(_item,"blastingcharge")): {
 		player reveal fed_bank;
 		(group player) reveal fed_bank;
-		[cursorTarget] spawn life_fnc_blastingCharge;
+		[cursorObject] spawn life_fnc_blastingCharge;
 	};
 
 	case (EQUAL(_item,"defusekit")): {
-		[cursorTarget] spawn life_fnc_defuseKit;
+		[cursorObject] spawn life_fnc_defuseKit;
 	};
 
 	case (EQUAL(_item,"storagesmall")): {

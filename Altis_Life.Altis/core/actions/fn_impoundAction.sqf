@@ -2,7 +2,7 @@
 /*
 	File: fn_impoundAction.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Impounds the vehicle
 */
@@ -10,7 +10,7 @@ private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progre
 _vehicle = param [0,ObjNull,[ObjNull]];
 _filters = ["Car","Air","Ship"];
 if(!((KINDOF_ARRAY(_vehicle,_filters)))) exitWith {};
-if(player distance cursorTarget > 10) exitWith {};
+if(player distance cursorObject > 10) exitWith {};
 
 _vehicleData = _vehicle GVAR ["vehicle_info_owners",[]];
 if(EQUAL((count _vehicleData),0)) exitWith {deleteVehicle _vehicle}; //Bad vehicle.

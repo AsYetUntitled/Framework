@@ -7,7 +7,7 @@
 	Main functionality for lock-picking.
 */
 private["_curTarget","_distance","_isVehicle","_title","_progressBar","_cP","_titleText","_dice","_badDistance"];
-_curTarget = cursorTarget;
+_curTarget = cursorObject;
 life_interrupted = false;
 
 if(life_action_inUse) exitWith {};
