@@ -3,7 +3,7 @@
 /*
 	File: fn_vehTakeItem.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Used in the vehicle trunk menu, takes the selected item and puts it in the players virtual inventory
 	if the player has room.
@@ -12,7 +12,7 @@ private["_ctrl","_num","_index","_data","_old","_value","_weight","_diff"];
 disableSerialization;
 if(isNull life_trunk_vehicle OR !alive life_trunk_vehicle) exitWith {hint localize "STR_MISC_VehDoesntExist"};
 if(!alive player) exitwith {closeDialog 0;};
-if((life_trunk_vehicle getVariable ["trunk_in_use",false]) && (life_trunk_vehicle getVariable ["trunk_in_use_by",false] != name player)) exitWith {  closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
+if((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith {  closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
 if((lbCurSel 3502) == -1) exitWith {hint localize "STR_Global_NoSelection";};
 _ctrl = ctrlSelData(3502);
@@ -37,7 +37,7 @@ if(_ctrl == "money") then {
 	} else {
 		_data set[_index,[_ctrl,(_value - _num)]];
 	};
-	
+
 	CASH = CASH + _num;
 	life_trunk_vehicle setVariable["Trunk",[_data,(_old select 1) - _weight],true];
 	[life_trunk_vehicle] call life_fnc_vehInventory;

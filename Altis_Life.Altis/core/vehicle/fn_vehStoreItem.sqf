@@ -10,7 +10,7 @@
 */
 private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val"];
 disableSerialization;
-if((life_trunk_vehicle getVariable ["trunk_in_use",false]) && (life_trunk_vehicle getVariable ["trunk_in_use_by",false] != name player)) exitWith { closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
+if((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith { closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
 _ctrl = ctrlSelData(3503);
 _num = ctrlText 3506;

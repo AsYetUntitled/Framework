@@ -14,7 +14,7 @@ if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehi
 sleep (random 0.6);
 if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint localize "STR_MISC_VehInvUse"};
 _vehicle setVariable["trunk_in_use",true,true];
-_vehicle setVariable["trunk_in_use_by",name player,true];
+_vehicle setVariable["trunk_in_use_by",player,true];
 if(!createDialog "TrunkMenu") exitWith {hint localize "STR_MISC_DialogError";}; //Couldn't create the menu?
 disableSerialization;
 
