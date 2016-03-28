@@ -12,6 +12,7 @@ private["_ctrl","_num","_index","_data","_old","_value","_weight","_diff"];
 disableSerialization;
 if(isNull life_trunk_vehicle OR !alive life_trunk_vehicle) exitWith {hint localize "STR_MISC_VehDoesntExist"};
 if(!alive player) exitwith {closeDialog 0;};
+if((life_trunk_vehicle getVariable ["trunk_in_use",false]) && (life_trunk_vehicle getVariable ["trunk_in_use_by",false] != name player)) exitWith {  closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
 if((lbCurSel 3502) == -1) exitWith {hint localize "STR_Global_NoSelection";};
 _ctrl = ctrlSelData(3502);
