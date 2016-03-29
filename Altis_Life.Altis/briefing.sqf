@@ -1,5 +1,5 @@
 waitUntil {!isNull player && player == player};
-if(player diarySubjectExists "rules")exitwith{};
+if(player diarySubjectExists "controls") exitWith {};
 
 player createDiarySubject ["credits","Credits"];
 player createDiarySubject ["changelog","Change Log"];
