@@ -662,6 +662,10 @@
       <French>Vous avez retiré $%1 de votre gang</French>
       <Portuguese>Você sacou R$%1 da sua gangue</Portuguese>
     </Key>
+    <Key ID="STR_ATM_WithdrawInUseG">
+      <Original>Someone is already trying to withdraw from your gang</Original>
+      <Portuguese>Alguém já está tentando sacar da sua gangue</Portuguese>
+    </Key>
     <Key ID="STR_ATM_NotEnoughCash">
       <Original>You do not have that much cash on you.</Original>
       <German>Du hast nicht so viel Geld bei dir.</German>
@@ -679,12 +683,16 @@
       <Polish>Zdeponowałeś na koncie bankowym $%1</Polish>
     </Key>
     <Key ID="STR_ATM_DepositSuccessG">
-      <Original>You have deposited $%1 into your gangs bank account</Original>
+      <Original>You have deposited $%1 into your gang's bank account</Original>
       <German>Du hast $%1 auf dein Gang Konto überwiesen</German>
       <French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
       <Italian>Hai despoitato €%1 nel conto bancario della tua gang</Italian>
       <Portuguese>Você depositou R$%1 na conta da sua gangue.</Portuguese>
       <Polish>Zdeponowałeś na koncie gangu kwotę $%1 </Polish>
+    </Key>
+    <Key ID="STR_ATM_DepositInUseG">
+      <Original>Someone is already trying to deposit into your gang's bank account</Original>
+      <Portuguese>Alguém já está tentando depositar na conta da sua gangue</Portuguese>
     </Key>
   </Package>
   <Package name="Cell_Phone">
@@ -6630,7 +6638,7 @@
       <Portuguese>Roubo de Veículo (Veículo Civil)</Portuguese>
       <German>Schwerer Diebstahl (Zivilfahrzeug)</German>
       <Italian>Furto di veicolo (Civile)</Italian>
-      
+
     </Key>
     <Key ID="STR_Crime_10">
       <Original>Grand Theft (Military Vehicle)</Original>

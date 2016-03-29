@@ -8,8 +8,8 @@
 */
 private["_value"];
 _value = parseNumber(ctrlText 2702);
-sleep (random 1.5);
 _gFund = GANG_FUNDS;
+grpPlayer setVariable["gbank_in_use_by",player,true];
 
 //Series of stupid checks
 if(_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
@@ -17,6 +17,7 @@ if(_value < 0) exitWith {};
 if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_ATM_notnumeric"};
 if(_value > _gFund) exitWith {hint localize "STR_ATM_NotEnoughFundsG"};
 if(_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
+if((grpPlayer getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawInUseG"}; //Check if it's in use.
 
 SUB(_gFund,_value);
 ADD(CASH,_value);
