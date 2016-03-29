@@ -137,7 +137,7 @@ switch (_code) do {
 		if(!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
 			if(vehicle player != player && alive vehicle player) then {
 				if((vehicle player) in life_vehicles) then {
-					titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];
+					[vehicle player] spawn life_fnc_openInventory;
 				};
 			} else {
 				private ["_list"];
