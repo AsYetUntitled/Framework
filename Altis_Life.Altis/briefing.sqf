@@ -36,19 +36,31 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Altis Life Change Log",
 				"
-					The official change log can be found in ArmaLife github.<br/><br/>
+					The official changelog can be found in ArmaLife github. https://git.io/vVkhe<br/><br/>
+
+					v4.4 release 2!<br/>
+					by: danielstuart14<br/>
+					date: 20. March 2016<br/><br/>
+
+					v4.4 release 1!<br/>
+					by: danielstuart14<br/>
+					date: 12. February 2016<br/><br/>
 
 					v4.3 release 4!<br/>
 					by: danielstuart14<br/>
-					31. January 2016<br/><br/>
+					date: 31. January 2016<br/><br/>
 
-					v4.3.2 release!<br/>
+					v4.3 release 3!<br/>
 					by: danielstuart14<br/>
-					22. January 2016<br/><br/>
+					date: Not released<br/><br/>
 
-					v4.3.1 release!<br/>
+					v4.3 release 2!<br/>
 					by: danielstuart14<br/>
-					19. January 2016<br/><br/>
+					date: 22. January 2016<br/><br/>
+
+					v4.3 release 1!<br/>
+					by: danielstuart14<br/>
+					date: 19. January 2016<br/><br/>
 				"
 		]
 	];
