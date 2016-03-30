@@ -41,7 +41,7 @@ life_preview_3D_vehicle_object = objNull;
 		// Rotation around the object.
 		while {life_preview_3D_vehicle_object == _object} do
 		{
-			_azimuthCam = _azimuthCam + 3.25;
+			_azimuthCam = _azimuthCam + .70;
 
 			life_preview_3D_vehicle_cam camSetPos (_object modelToWorld [_distanceCam * sin _azimuthCam, _distanceCam * cos _azimuthCam, _distanceCam * 0.33]);
 			life_preview_3D_vehicle_cam camCommit 0.05;
