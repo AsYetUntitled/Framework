@@ -48,6 +48,7 @@ class CfgRemoteExec {
         F(life_fnc_adminid,CLIENT)
         F(life_fnc_impoundMenu,CLIENT)
         F(life_fnc_garageRefund,CLIENT)
+        F(life_fnc_seizeClient,CLIENT)
         F(life_fnc_addVehicle2Chain,CLIENT)
         F(life_fnc_vehicleAnimate,CLIENT)
         F(life_fnc_spikeStripEffect,CLIENT)
