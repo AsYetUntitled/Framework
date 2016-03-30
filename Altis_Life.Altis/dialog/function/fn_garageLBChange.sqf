@@ -7,7 +7,7 @@
 	Can't be bothered to answer it.. Already deleted it by accident..
 */
 disableSerialization;
-private["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_multiplicator"];
+private["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_multiplier"];
 _control = SEL(_this,0);
 _index = SEL(_this,1);
 
@@ -34,8 +34,8 @@ _retrievePrice = switch(playerSide) do {
 	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
 	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
 };
-_multiplicator = LIFE_SETTINGS(getNumber,"vehicleGarage_StorFeeMultiplicator");
-_retrievePrice = _multiplicator * _retrievePrice;
+_multiplier = LIFE_SETTINGS(getNumber,"vehicleGarage_StorFeeMultiplier");
+_retrievePrice = _multiplier * _retrievePrice;
 
 _sellPrice = switch(playerSide) do {
 	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),0)};
@@ -43,8 +43,8 @@ _sellPrice = switch(playerSide) do {
 	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
 	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
 };
-_multiplicator = LIFE_SETTINGS(getNumber,"vehicleGarage_SellMultiplicator");
-_sellPrice = _multiplicator * _sellPrice;
+_multiplier = LIFE_SETTINGS(getNumber,"vehicleGarage_SellMultiplier");
+_sellPrice = _multiplier * _sellPrice;
 
 if(!(EQUAL(typeName _sellPrice,typeName 0)) OR _sellPrice < 1) then {_sellPrice = 1000};
 if(!(EQUAL(typeName _retrievePrice,typeName 0)) OR _retrievePrice < 1) then {_retrievePrice = 1000};

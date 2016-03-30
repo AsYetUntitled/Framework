@@ -35,8 +35,8 @@ _control = CONTROL(39400,39402);
 			case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
 			case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
 		};
-		_multiplicator = LIFE_SETTINGS(getNumber,"vehicleChopShop_Multiplicator");
-		_price = _multiplicator * _price;
+		_multiplier = LIFE_SETTINGS(getNumber,"vehicleChopShop_multiplier");
+		_price = _multiplier * _price;
 		if(!isNil "_price" && EQUAL(count crew _x,0)) then {
 			_control lbAdd _displayName;
 			_control lbSetData [(lbSize _control)-1,str(_forEachIndex)];

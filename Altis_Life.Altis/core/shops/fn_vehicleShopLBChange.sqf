@@ -9,7 +9,7 @@
 	displays various bits of information about the vehicle.
 */
 disableSerialization;
-private["_control","_index","_className","_classNameLife","_basePrice","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor","_multiplicator"];
+private["_control","_index","_className","_classNameLife","_basePrice","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor","_multiplier"];
 _control = _this select 0;
 _index = _this select 1;
 
@@ -33,7 +33,7 @@ _passengerseats = _vehicleInfo select 10;
 _fuel = _vehicleInfo select 12;
 _armor = _vehicleInfo select 9;
 [_className] call life_fnc_vehicleShop3DPreview;
-_multiplicator = LIFE_SETTINGS(getNumber,"vehicleShop_BuyMultiplicator");
+_multiplier = LIFE_SETTINGS(getNumber,"vehicleShop_BuyMultiplier");
 
 ctrlShow [2330,true];
 (CONTROL(2300,2303)) ctrlSetStructuredText parseText format[
@@ -46,7 +46,7 @@ ctrlShow [2330,true];
 (localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +
 (localize "STR_Shop_Veh_UI_Armor")+ " %8",
 [_basePrice] call life_fnc_numberText,
-[round(_basePrice * _multiplicator)] call life_fnc_numberText,
+[round(_basePrice * _multiplier)] call life_fnc_numberText,
 _maxspeed,
 _horsepower,
 _passengerseats,
