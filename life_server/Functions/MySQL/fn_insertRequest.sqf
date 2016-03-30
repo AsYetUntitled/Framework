@@ -11,8 +11,8 @@ private["_handler","_thread","_queryResult","_query","_alias"];
 params [
 	"_uid",
 	"_name",
-	["_money",0],
-	["_bank",2500],
+	["_money",-1,[0]],
+	["_bank",-1,[0]],
 	["_returnToSender",objNull,[objNull]]
 ];
 
