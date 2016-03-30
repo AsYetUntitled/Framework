@@ -1,8 +1,8 @@
 #include "..\script_macros.hpp"
 /*
 	File: init.sqf
-	Author: 
-	
+	Author:
+
 	Description:
 	Master client initialization file
 */
@@ -26,15 +26,12 @@ diag_log "::Life Client:: Initialization Variables";
 //Set bank amount for new players
 switch (playerSide) do {
 	case west: {
-		BANK = LIFE_SETTINGS(getNumber,"bank_cop");
 		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
 	};
 	case civilian: {
-		BANK = LIFE_SETTINGS(getNumber,"bank_civ");
 		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
 	};
 	case independent: {
-		BANK = LIFE_SETTINGS(getNumber,"bank_med");
 		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
 	};
 };

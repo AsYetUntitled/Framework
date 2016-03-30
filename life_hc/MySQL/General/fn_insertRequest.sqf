@@ -4,7 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Does something with inserting... Don't have time for
 	descriptions... Need to write it...
@@ -13,8 +13,8 @@ private["_handler","_thread","_queryResult","_query","_alias"];
 params [
 	"_uid",
 	"_name",
-	["_money",0],
-	["_bank",2500],
+	["_money",-1,[0]],
+	["_bank",-1,[0]],
 	["_returnToSender",objNull,[objNull]]
 ];
 
