@@ -4,7 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	Description:
-	Blah
+	Inserts the players newly bought house in the database.
 */
 private["_housePos","_query"];
 params [
