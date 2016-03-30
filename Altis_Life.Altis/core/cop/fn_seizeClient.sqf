@@ -46,5 +46,5 @@ if (uniform player in _uniform) then {removeUniform player;};
 if (vest player in _vest) then {removeVest player;};
 if (headgear player in _headgear) then {removeHeadgear player;};
 
-[] call life_fnc_sessionUpdate;
+[] call SOCK_fnc_updateRequest;
 titleText[localize "STR_NOTF_SeizeIllegals","PLAIN"];
