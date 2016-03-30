@@ -95,6 +95,9 @@ if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _ki
 
 life_save_gear = [player] call life_fnc_fetchDeadGear;
 
+_containers = nearestObjects[getPosATL player,["WeaponHolderSimulated"],5];
+{deleteVehicle _x;} foreach _containers;
+
 //Killed by cop stuff...
 if(side _killer == west && playerSide != west) then {
 	life_copRecieve = _killer;
