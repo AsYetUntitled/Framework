@@ -32,9 +32,6 @@ class Life_Settings {
     seize_headgear[] = { "H_Cap_police" }; //Any hats or helmets you want seized from players
     seize_minimum_rank = 2; //Required minimum CopLevel to be able to seize items from players
 
-    /* Medic related settings*/
-    allow_medic_weapons = true; // true allows medics to hold/use weapons - false disallows
-
     /* Revive system settings */
     revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
     revive_fee = 1500; //Revive fee that players have to pay and medics / EMS are rewarded
@@ -53,7 +50,13 @@ class Life_Settings {
     /* Player-related systems */
     enable_fatigue = true; //Set to false to disable the ARMA 3 fatigue system.
     total_maxWeight = 24; //Static variable for the maximum weight allowed without having a backpack
-    paycheck_period = 5; //Scaled in minutes
+
+    /* Item-related restrictions */
+    restrict_medic_weapons = true; //Set to false to allow medics to use any weapon -true will remove ANY weapon they attempt to use (primary,secondary,launcher)
+    restrict_clothingPickup = true; //Set to false to allow civilians to pickup/take any uniform (ground/crates/vehicles)
+    restrict_weaponPickup = false; //Set to false to allow civilians to pickup/take any weapon (ground/crates/vehicles)
+    restricted_uniforms[] = { "U_Rangemaster", "U_B_CombatUniform_mcam_tshirt", "U_B_CombatUniform_mcam_worn", "U_B_survival_uniform" };
+    restricted_weapons[] = { "hgun_P07_snds_F", "arifle_MX_F", "arifle_MXC_F" };
 
     /* Impound Variables */
     impound_car = 350; //Price for impounding cars
@@ -65,7 +68,8 @@ class Life_Settings {
     bank_civ = 3000; //Amount of cash on bank for new civillians
     bank_med = 6500; //Amount of cash on bank for new medics
 
-    /* Paycheck Amount */
+    /* Paycheck Settings */
+    paycheck_period = 5; //Scaled in minutes
     paycheck_cop = 500; //Payment for cops
     paycheck_civ = 350; //Payment for civillians
     paycheck_med = 450; //Payment for medics
@@ -91,7 +95,7 @@ class Life_Settings {
     vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F", "B_Boat_Armed_01_minigun_F" };
     vehicleShop_BuyMultiplier = 1.5;
     vehicleGarage_SellMultiplier = 0.75;
-    vehicleGarage_StorFeeMultiplier = 0.2;
+    vehicleGarage_StoreFeeMultiplier = 0.2;
     vehicleChopShop_Multiplier = 0.5;
 
     /* Job-related stuff */

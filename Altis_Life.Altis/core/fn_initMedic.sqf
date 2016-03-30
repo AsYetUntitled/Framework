@@ -15,12 +15,9 @@ if((FETCH_CONST(life_medicLevel)) < 1 && (FETCH_CONST(life_adminlevel) == 0)) ex
 	sleep 35;
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
-{
-	[] spawn
-	{
-		while {true} do
-		{
+if(EQUAL(LIFE_SETTINGS(getNumber,"restrict_medic_weapons"),1)) then {
+	[] spawn {
+		while {true} do	{
 			waitUntil {sleep 3; currentWeapon player != ""};
 			removeAllWeapons player;
 		};
