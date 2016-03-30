@@ -2256,6 +2256,14 @@
       <Portuguese>Você não pode revistar o veículo</Portuguese>
       <Polish>Nie można przeszukać pojazdu</Polish>
     </Key>
+    <Key ID="STR_NOTF_SeizeIllegals">
+      <Original>Your illegal items have been put into evidence.</Original>
+      <German>Ihre illegale Gegenstände wurden als Beweismittel gesetzt.</German>
+      <French>Vos articles illégaux ont été mis en preuve.</French>
+      <Italian>I tuoi articoli illegali sono stati messi in evidenza.</Italian>
+      <Portuguese>Seus itens ilegais têm sido postas em evidência.</Portuguese>
+      <Polish>Twoje nielegalne pozycje zostały wprowadzone do dowodów.</Polish>
+    </Key>
     <Key ID="STR_NOTF_VehCheat">
       <Original>This vehicle has no information, it was probably spawned in through cheats. \n\nDeleting vehicle.</Original>
       <German>Über das Fahrzeug gibt es keine Informationen, es wurde vermutlich durch Cheats gespawnt. \n\nLösche Fahrzeuge.</German>
@@ -2524,6 +2532,9 @@
       <Italian>Cannot search that person.</Italian>
       <Portuguese>Essa pessoa não pode ser revistada.</Portuguese>
       <Polish>Nie możesz przeszukać tej osoby</Polish>
+    </Key>
+    <Key ID="STR_NOTF_CannotSeizePerson">
+      <Original>You couldn't effectively seize any items. Try Again.</Original>
     </Key>
     <Key ID="STR_NOTF_Repairing">
       <Original>Repairing %1</Original>
@@ -5007,6 +5018,14 @@
       <Italian>Multa Giocatore</Italian>
       <Portuguese>Multar Jogador</Portuguese>
       <Polish>Wystaw mandat</Polish>
+    </Key>
+    <Key ID="STR_pInAct_Seize">
+      <Original>Seize Weapons</Original>
+      <German>Seize Waffen</German>
+      <French>saisir les armes</French>
+      <Italian>cogliere Armi</Italian>
+      <Portuguese>apreensão de armas</Portuguese>
+      <Polish>Chwytaj broń</Polish>
     </Key>
     <Key ID="STR_pInAct_Arrest">
       <Original>Send to jail</Original>

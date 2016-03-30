@@ -88,6 +88,7 @@ class Life_Client_Core
 		class restrainAction {};
 		class searchAction {};
 		class searchVehAction {};
+		class seizePlayerAction {};
 		class unrestrain {};
 		class surrender {};
 		class pickupItem {};
@@ -272,6 +273,7 @@ class Life_Client_Core
 		class ticketGive {};
 		class ticketPay {};
 		class ticketPrompt {};
+		class seizeClient {};
 		class copSiren {};
 		class spikeStripEffect {};
 		class radar {};
