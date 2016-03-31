@@ -1,5 +1,5 @@
-//new
-1 "" !Land_Razorwire_F !Land_Money_F !Land_Suitcase_F !Land_CanisterFuel_F !Land_Can_V3_F !Land_BottlePlastic_V1_F !Land_TacticalBacon_F !Box_IND_Grenades_F !B_supplyCrate_F
-//4 "" !Land_Razorwire_F !Land_Money_F !Land_Suitcase_F !Land_CanisterFuel_F !Land_Can_V3_F !Land_BottlePlastic_V1_F !Land_TacticalBacon_F !Box_IND_Grenades_F !B_supplyCrate_F
-//Issue: impounding vehicle causes deleteVehicle kick but no information on classname. Example log:
+//regex
+1 ""
+1 "" !Land_(Razorwire|Money|Suitcase|CanisterFuel|Can|BottlePlastic|TacticalBacon)_F !Land_Can_V3_F !Land_BottlePlastic_V1_F !Box_IND_Grenades_F !B_supplyCrate_F !(Cock|Goat|Hen|Ornate|Sheep)_random_F !(CatShark|Mackerel|Mullet|Salema|Tuna|Turtle)_F
+//Issue: impounding a vehicle may cause a deleteVehicle kick but no information on classname. Example log:
 //06.02.2016 19:14:02: playerName (10.0.0.7:2304) 12345678901234567890123456789012 - #0 4:9 

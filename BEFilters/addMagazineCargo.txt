@@ -1,3 +1,3 @@
-//new
+//regex
 1 ""
-4 "" !Chemlight_ !=16Rnd_9x21_Mag !=30Rnd_9x21_Mag !=20Rnd_556x45_UW_mag !=30Rnd_556x45_Stanag !=10Rnd_762x54_Mag !=30Rnd_65x39_caseless_green !=6Rnd_45ACP_Cylinder !=9Rnd_45ACP_Mag !=HandGrenade_Stone !=30Rnd_65x39_caseless_mag !=SmokeShell !=SmokeShellGreen !=SmokeShellBlue !=SmokeShellOrange
+5 "" !=[69]Rnd_45ACP_(Cylinder|Mag) !=[13][60]Rnd_9x21_Mag !=[123][60]Rnd_65x39_caseless_(green|mag) !=[123]0Rnd_[57][56][62]x[45][45]_(Mag|Stanag|UW_Mag) !=Chemlight_(blue|green|red|yellow) !=HandGrenade_Stone !=SmokeShell(Blue|Green|Orange)?
