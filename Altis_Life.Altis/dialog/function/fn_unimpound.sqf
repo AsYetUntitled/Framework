@@ -28,7 +28,7 @@ _price = switch(playerSide) do {
 	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"rentalprice"),2)};
 	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_vehicleLife,"rentalprice"),3)};
 };
-_multiplier = LIFE_SETTINGS(getNumber,"vehicleGarage_StorFeeMultiplier");
+_multiplier = LIFE_SETTINGS(getNumber,"vehicleGarage_StoreFeeMultiplier");
 _price = _multiplier * _price;
 
 if(!(EQUAL(typeName _price,typeName 0)) OR _price < 1) then {_price = 1000};
