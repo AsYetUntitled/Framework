@@ -2,9 +2,9 @@
 /*
 	File: fn_adminMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
-	Opens the admin menu, sorry nothing special in here. Take a look for yourself.
+	Opens the admin menu and hides buttons based on life_adminlevel.
 */
 private["_display","_list","_side","_godmode","_markers"];
 if(FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};

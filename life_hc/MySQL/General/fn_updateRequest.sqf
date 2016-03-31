@@ -3,9 +3,10 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
-	Ain't got time to describe it, READ THE FILE NAME!
+	Updates ALL player information in the database.
+	Information gets passed here from the client side file: core\session\fn_updateRequest.sqf
 */
 private["_uid","_side","_cash","_bank","_licenses","_gear","_stats","_name","_alive","_position","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;

@@ -4,7 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	Description:
-	Blah
+	Removes gang from database
 */
 private["_group","_groupID"];
 _group = param [0,grpNull,[grpNull]];

@@ -4,8 +4,8 @@
 	Author: Bryan "Tonic" Boardwine
 
 	Description:
-	Does something with inserting... Don't have time for
-	descriptions... Need to write it...
+	Adds a player to the database upon first joining of the server.
+	Recieves information from core\sesison\fn_insertPlayerInfo.sqf
 */
 private["_handler","_thread","_queryResult","_query","_alias"];
 params [
