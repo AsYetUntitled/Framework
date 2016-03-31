@@ -1,3 +1,32 @@
-//new
+//regex
 1 ""
-4 "" !B_AssaultPack_ !B_TacticalPack_ !B_Kitbag_ !B_Bergen_ !B_FieldPack_ !B_Carryall_ !B_OutdoorPack_ !_Parachute
+5 "" !B_(OutdoorPack|AssaultPack|TacticalPack|Kitbag|FieldPack|Bergen|Carryall)_(blk|khk|dgtl|rgr|sgg|cbr|oli|mcamo|ocamo|oucamo) !B_Parachute
+5 B_AssaultPack_blk_DiverExp
+5 B_AssaultPack_mcamo_AT
+5 B_AssaultPack_mcamo_AA
+5 B_AssaultPack_mcamo_AAR
+5 B_AssaultPack_mcamo_Ammo
+5 B_AssaultPack_rgr_LAT
+5 B_AssaultPack_rgr_Medic
+5 B_AssaultPack_rgr_Repair
+5 B_AssaultPack_rgr_ReconMedic
+5 B_AssaultPack_rgr_ReconExp
+5 B_AssaultPack_rgr_ReconLAT
+5 B_Kitbag_rgr_Exp
+5 B_Kitbag_mcamo_Eng
+5 B_FieldPack_ocamo_Medic
+5 B_FieldPack_ocamo_AA
+5 B_FieldPack_ocamo_AAR
+5 B_FieldPack_ocamo_ReconMedic
+5 B_FieldPack_ocamo_ReconExp
+5 B_Carryall_ocamo_Exp
+5 B_Carryall_mcamo_AAA
+5 B_Carryall_mcamo_AAT
+5 B_Carryall_ocamo_AAA
+5 B_Carryall_ocamo_Eng
+5 B_Carryall_cbr_AAT
+5 B_Carryall_oucamo_AAT
+5 B_Carryall_oucamo_AAA
+5 B_Carryall_oucamo_Exp
+5 B_Carryall_oucamo_Eng
+5 B_B_Parachute_02_F
