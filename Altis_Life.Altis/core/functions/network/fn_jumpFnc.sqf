@@ -8,13 +8,12 @@
 private["_unit","_vel","_dir","_v1","_v2","_anim","_oldpos"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _run = [_this,1,true,[false]] call BIS_fnc_param;
-_oldpos = getPosATL player;
+_oldpos = getPosATL _unit;
 
 if(isNull _unit) exitWith {}; //Bad data
 if(local _unit && !_run) exitWith {}; //Ahh
 
 if(animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
-_velocity = velocity _unit;
 
 if(local _unit) then {
 	_v1 = 3.82;
@@ -28,10 +27,12 @@ _anim = animationState _unit;
 _unit switchMove "AovrPercMrunSrasWrflDf";
 
 if(local _unit) then {
-	waitUntil{
-	if((getpos player select 2) > 4) then {
-		player setposATL _oldpos
+	waitUntil {
+		if((getpos _unit select 2) > 4) then {
+			_unit setposATL _oldpos;
+			_unit setVelocity [0, 0, 0];
+		};
+		animationState _unit != "AovrPercMrunSrasWrflDf"
 	};
-	animationState _unit != "AovrPercMrunSrasWrflDf"};
 	_unit switchMove _anim;
 };
