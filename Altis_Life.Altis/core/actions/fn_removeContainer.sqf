@@ -9,7 +9,7 @@
 private["_house","_action","_container","_containerType","_containers"];
 _container = param [0,ObjNull,[ObjNull]];
 _containerType = typeOf _container;
-_house = nearestBuilding (getPosATL player);
+_house = nearestObject [player, "House"];
 if(!(_house in life_vehicles)) exitWith {hint localize "STR_ISTR_Box_NotinHouse"};
 if(isNull _container) exitWith {};
 _containers = _house GVAR ["containers",[]];

@@ -18,7 +18,7 @@ if(EQUAL(_isPack,1)) exitWith {
 };
 
 if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
-	_house = nearestBuilding (getPosATL player);
+	_house = nearestObject [player, "House"];
 	if(!(_house in life_vehicles) && (_house GVAR ["locked",true])) exitWith {
 		hint localize "STR_House_ContainerDeny";
 		true;

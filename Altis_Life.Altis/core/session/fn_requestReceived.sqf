@@ -84,7 +84,7 @@ switch(playerSide) do {
 		};
 
 		{
-			_house = nearestBuilding (call compile format["%1", SEL(_x,0)]);
+			_house = nearestObject [(call compile format["%1", SEL(_x,0)]), "House"];
 			life_vehicles pushBack _house;
 		} foreach life_houses;
 

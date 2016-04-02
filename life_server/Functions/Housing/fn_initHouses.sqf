@@ -14,7 +14,7 @@ for [{_x=0},{_x<=_count},{_x=_x+10}] do {
 	if(count _queryResult == 0) exitWith {};
 	{
 		_pos = call compile format["%1",_x select 2];
-		_house = nearestBuilding _pos;
+		_house = nearestObject [_pos, "House"];
 		_house setVariable["house_owner",[_x select 1,_x select 3],true];
 		_house setVariable["house_id",_x select 0,true];
 		_house setVariable["locked",true,true]; //Lock up all the stuff.

@@ -20,7 +20,7 @@ _containers = [_query,2,true] call DB_fnc_asyncCall;
 _containerss = [];
 {
 	_position = call compile format["%1",_x select 1];
-	_house = nearestBuilding _position;
+	_house = nearestObject [_position, "House"];
 	_direction = call compile format["%1",_x select 5];
 	_owner = _x select 0;
 	_id = _x select 6;
@@ -78,7 +78,7 @@ _houses = [_query,2,true] call DB_fnc_asyncCall;
 _return = [];
 {
 	_pos = call compile format["%1",_x select 1];
-	_house = nearestBuilding _pos;
+	_house = nearestObject [_pos, "House"];
 	_house allowDamage false;
 	_return pushBack [_x select 1,_containerss];
 } foreach _houses;
