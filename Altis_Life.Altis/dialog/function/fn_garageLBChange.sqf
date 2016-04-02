@@ -34,7 +34,7 @@ _retrievePrice = switch(playerSide) do {
 	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
 	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
 };
-_multiplier = LIFE_SETTINGS(getNumber,"vehicleGarage_StorFeeMultiplier");
+_multiplier = LIFE_SETTINGS(getNumber,"vehicleGarage_StoreFeeMultiplier");
 _retrievePrice = _multiplier * _retrievePrice;
 
 _sellPrice = switch(playerSide) do {
