@@ -5,7 +5,7 @@ class shops_menu {
 	enableSimulation = 1;
 
 	class controlsBackground {
-		class Life_RscTitleBackground:Life_RscText {
+		class Life_RscTitleBackground: Life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
 			x = 0.1;
@@ -14,7 +14,7 @@ class shops_menu {
 			h = (1 / 25);
 		};
 
-		class MainBackground:Life_RscText {
+		class MainBackground: Life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -23,7 +23,7 @@ class shops_menu {
 			h = 0.6 - (22 / 250);
 		};
 
-		class vasText : Life_RscText {
+		class vasText: Life_RscText {
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_VS_SI";
@@ -34,7 +34,7 @@ class shops_menu {
 			h = 0.04;
 		};
 
-		class vasgText : Life_RscText {
+		class vasgText: Life_RscText {
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_VS_PI";
@@ -47,8 +47,7 @@ class shops_menu {
 	};
 
 	class controls {
-
-		class itemList : Life_RscListBox  {
+		class itemList: Life_RscListBox {
 			idc = 2401;
 			text = "";
 			sizeEx = 0.030;
@@ -58,7 +57,7 @@ class shops_menu {
 			h = 0.340;
 		};
 
-		class pItemlist : Life_RscListBox  {
+		class pItemlist: Life_RscListBox {
 			idc = 2402;
 			text = "";
 			sizeEx = 0.030;
@@ -68,7 +67,7 @@ class shops_menu {
 			h = 0.340;
 		};
 
-		class Title : Life_RscTitle {
+		class Title: Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 2403;
 			text = "";
@@ -78,13 +77,13 @@ class shops_menu {
 			h = (1 / 25);
 		};
 
-		class PlayersName : Title {
+		class PlayersName: Title {
 			idc = 601;
 			style = 1;
 			text = "";
 		};
 
-		class buyEdit : Life_RscEdit {
+		class buyEdit: Life_RscEdit {
 			idc = 2404;
 			text = "1";
 			sizeEx = 0.030;
@@ -94,7 +93,7 @@ class shops_menu {
 			h = 0.03;
 		};
 
-		class sellEdit : Life_RscEdit {
+		class sellEdit: Life_RscEdit {
 			idc = 2405;
 			text = "1";
 			sizeEx = 0.030;
@@ -104,7 +103,7 @@ class shops_menu {
 			h = 0.03;
 		};
 
-		class ButtonAddG : Life_RscButtonMenu {
+		class ButtonAddG: Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_VS_BuyItem";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -115,7 +114,7 @@ class shops_menu {
 			h = (1 / 25);
 		};
 
-		class ButtonRemoveG : Life_RscButtonMenu {
+		class ButtonRemoveG: Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_VS_SellItem";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -126,7 +125,7 @@ class shops_menu {
 			h = (1 / 25);
 		};
 
-		class ButtonClose : Life_RscButtonMenu {
+		class ButtonClose: Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
