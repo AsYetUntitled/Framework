@@ -177,7 +177,7 @@ class Life_RscText {
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class Life_RscLine : Life_RscText {
+class Life_RscLine: Life_RscText {
 	idc = -1;
 	style = 176;
 	x = 0.17;
@@ -204,7 +204,7 @@ class Life_RscTree {
 	borderSize = 0;
 };
 
-class Life_RscTitle : Life_RscText {
+class Life_RscTitle: Life_RscText {
 	style = 0;
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {0.95, 0.95, 0.95, 1};
@@ -227,7 +227,7 @@ class life_RscPicture {
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class Life_RscTextMulti : Life_RscText
+class Life_RscTextMulti: Life_RscText
 {
 	linespacing = 1;
 	style = 0 + 16 + 0x200;
@@ -648,7 +648,7 @@ class Life_RscFrame {
 	text = "";
 };
 
-class Life_RscBackground : Life_RscText {
+class Life_RscBackground: Life_RscText {
 	type = 0;
 	IDC = -1;
 	style = 512;

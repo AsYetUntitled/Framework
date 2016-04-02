@@ -1,18 +1,13 @@
-class DeathScreen
-{
+class DeathScreen {
 	idd = 7300;
 	name = "Life_Death_Screen";
 	movingEnable = 0;
 	enableSimulation = 1;
-	
-	class controlsBackground
-	{
-	};
-	
-	class Controls
-	{
-		class MedicsOnline : Life_RscText
-		{
+
+	class controlsBackground { };
+
+	class Controls {
+		class MedicsOnline: Life_RscText {
 			idc = 7304;
 			colorBackground[] = {0,0,0,0};
 			text = "Medics Online: 1";
@@ -21,9 +16,8 @@ class DeathScreen
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
-		class MedicsNearby : Life_RscText
-		{
+
+		class MedicsNearby: Life_RscText {
 			idc = 7305;
 			colorBackground[] = {0,0,0,0};
 			text = "Medics Nearby: No";
@@ -32,9 +26,8 @@ class DeathScreen
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
-		class RespawnBtn : Life_RscButtonMenu
-		{
+
+		class RespawnBtn: Life_RscButtonMenu {
 			idc = 7302;
 			x = 0.9 * safezoneW + safezoneX;
 			y = 0.00500001 * safezoneH + safezoneY;
@@ -43,14 +36,10 @@ class DeathScreen
 			text = "Respawn";
 			onButtonClick = "closeDialog 0; life_respawned = true; [] call life_fnc_spawnMenu;";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.7};
-			class Attributes 
-			{
-				align = "center";
-			};
+			class Attributes {align = "center";};
 		};
-		
-		class MedicBtn : Life_RscButtonMenu
-		{
+
+		class MedicBtn: Life_RscButtonMenu {
 			idc = 7303;
 			x = 0.9 * safezoneW + safezoneX;
 			y = 0.0292 * safezoneH + safezoneY;
@@ -59,14 +48,10 @@ class DeathScreen
 			onButtonClick = "[] call life_fnc_requestMedic;";
 			text = "Request Medic";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.7};
-			class Attributes 
-			{
-				align = "center";
-			};
+			class Attributes {align = "center";};
 		};
-		
-		class respawnTime : Life_RscText
-		{
+
+		class respawnTime: Life_RscText {
 			idc = 7301;
 			colorBackground[] = {0,0,0,0};
 			text = "";
