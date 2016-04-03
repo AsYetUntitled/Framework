@@ -202,7 +202,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={8573.2227,97.719269,25154.586};
-			name="Respawn_west";
+			name="respawn_west";
 			type="Empty";
 			id=1;
 		};
@@ -37151,7 +37151,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={8426.6553,106.05005,25181.125};
-			name="Respawn_guerrila";
+			name="respawn_guerrila";
 			type="Empty";
 			id=1110;
 		};
