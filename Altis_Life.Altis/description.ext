@@ -1,28 +1,3 @@
-author = "Tonic";
-loadScreen = "textures\armalife.jpg";
-joinUnassigned = 1;
-respawn = BASE;
-respawndelay = 5;
-disabledAI = 1;
-disableChannels[]={0,1,2};
-enableDebugConsole = 1;
-respawnDialog = 0;
-saving = 0;
-
-class Header
-{
-	gameType = RPG;
-	minPlayers = 1;
-	maxPlayers = 75;
-};
-
-wreckLimit = 3;
-wreckRemovalMinTime = 60;
-wreckRemovalMaxTime = 320;
-corpseLimit = 150;
-corpseRemovalMinTime = 999;
-corpseRemovalMaxTime = 9999;
-
 #include "Config_Spyglass.hpp"
 #include "CfgRemoteExec.hpp"
 #include "dialog\MasterHandler.hpp"
@@ -68,14 +43,14 @@ class CfgSounds
 		sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
 		titles[] = {};
 	};
-	
+
 	class mining
 	{
 		name = "mining";
 		sound[] = {"\sounds\mining.ogg", 1.0, 1};
 		titles[] = {};
 	};
-	
+
 	class harvest
 	{
 		name = "harvest";

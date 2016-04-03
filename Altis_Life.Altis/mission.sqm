@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1110;
+		nextID=1111;
 	};
 	class MarkerIDProvider
 	{
-		nextID=220;
+		nextID=221;
 	};
 	class Camera
 	{
-		pos[]={26849.723,49.090057,24568.18};
+		pos[]={26960.461,1103.681,23869.916};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -71,9 +71,13 @@ randomSeed=2639488;
 class ScenarioData
 {
 	author="Tonic";
+	overViewPicture="textures\armalife.jpg";
+	overViewPictureLocked="textures\armalife.jpg";
 	loadScreen="textures\armalife.jpg";
 	saving=0;
 	respawnDialog=0;
+	disabledAI=1;
+	respawn=3;
 	respawnDelay=5;
 	class Header
 	{
@@ -81,6 +85,12 @@ class ScenarioData
 		minPlayers=1;
 		maxPlayers=75;
 	};
+	wreckLimit=3;
+	wreckRemovalMinTime=60;
+	wreckRemovalMaxTime=320;
+	corpseLimit=150;
+	corpseRemovalMinTime=999;
+	corpseRemovalMaxTime=9999;
 };
 class CustomAttributes
 {
@@ -88,6 +98,24 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
 		{
 			property="RespawnButton";
 			expression="true";
@@ -103,24 +131,6 @@ class CustomAttributes
 						};
 					};
 					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
 				};
 			};
 		};
@@ -179,11 +189,11 @@ class Mission
 	};
 	class Entities
 	{
-		items=846;
+		items=847;
 		class Item0
 		{
 			dataType="Marker";
-			position[]={8459.6777,104.56568,25131.203};
+			position[]={8453.6484,84.711037,25216.969};
 			name="respawn_civilian";
 			type="Empty";
 			id=0;
@@ -191,7 +201,7 @@ class Mission
 		class Item1
 		{
 			dataType="Marker";
-			position[]={8301.9658,76.704063,25059.033};
+			position[]={8573.2227,97.719269,25154.586};
 			name="Respawn_west";
 			type="Empty";
 			id=1;
@@ -521,7 +531,7 @@ class Mission
 			name="car1_2";
 			type="c_car";
 			colorName="ColorWhite";
-			angle=0.011481639;
+			angle=0.011481636;
 			id=35;
 		};
 		class Item36
@@ -569,7 +579,7 @@ class Mission
 			position[]={3653.8333,10.282446,13121.501};
 			name="civ_car_1_1";
 			type="Empty";
-			angle=208.40825;
+			angle=208.40822;
 			id=40;
 		};
 		class Item41
@@ -749,7 +759,7 @@ class Mission
 			text="@STR_MAR_DMV";
 			type="c_unknown";
 			colorName="ColorBlue";
-			angle=358.09692;
+			angle=358.09689;
 			id=58;
 		};
 		class Item59
@@ -770,7 +780,7 @@ class Mission
 			text="@STR_MAR_Diving_Shop";
 			type="mil_box";
 			colorName="ColorOrange";
-			angle=215.54445;
+			angle=215.5444;
 			id=60;
 		};
 		class Item61
@@ -789,7 +799,7 @@ class Mission
 			position[]={3649.4426,7.00559,13384.339};
 			name="jail_release";
 			type="Empty";
-			angle=190.78467;
+			angle=190.78464;
 			id=62;
 		};
 		class Item63
@@ -840,7 +850,7 @@ class Mission
 			text="DP 17";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=219.81396;
+			angle=219.81392;
 			id=67;
 		};
 		class Item68
@@ -935,7 +945,7 @@ class Mission
 			text="DP 24";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=144.67554;
+			angle=144.67552;
 			id=76;
 		};
 		class Item77
@@ -946,7 +956,7 @@ class Mission
 			text="DP 23";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=315.43085;
+			angle=315.43076;
 			id=77;
 		};
 		class Item78
@@ -1060,7 +1070,7 @@ class Mission
 			text="@STR_MAR_Drug_Dealer";
 			type="mil_dot";
 			colorName="ColorOrange";
-			angle=302.06686;
+			angle=302.06683;
 			id=88;
 		};
 		class Item89
@@ -1165,7 +1175,7 @@ class Mission
 			position[]={3244.9341,2.1102631,12960.808};
 			name="cop_car_1";
 			type="Empty";
-			angle=178.63148;
+			angle=178.63144;
 			id=99;
 		};
 		class Item100
@@ -1174,7 +1184,7 @@ class Mission
 			position[]={13780.473,20.25041,18931.313};
 			name="cop_car_2";
 			type="Empty";
-			angle=48.51189;
+			angle=48.511879;
 			id=100;
 		};
 		class Item101
@@ -1201,7 +1211,7 @@ class Mission
 			position[]={3194.3025,2,12897.396};
 			name="cop_air_1";
 			type="Empty";
-			angle=185.48514;
+			angle=185.48511;
 			id=103;
 		};
 		class Item104
@@ -1212,7 +1222,7 @@ class Mission
 			text="@STR_MAR_DMV";
 			type="c_unknown";
 			colorName="ColorBlue";
-			angle=358.09692;
+			angle=358.09689;
 			id=104;
 		};
 		class Item105
@@ -1249,7 +1259,7 @@ class Mission
 			position[]={26868.67,24.432938,24567.48};
 			name="civ_air_2";
 			type="Empty";
-			angle=308.02124;
+			angle=308.02115;
 			id=108;
 		};
 		class Item109
@@ -1278,7 +1288,7 @@ class Mission
 			text="DP 20";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=270.68674;
+			angle=270.68671;
 			id=111;
 		};
 		class Item112
@@ -1378,7 +1388,7 @@ class Mission
 			text="@STR_MAR_DMV";
 			type="c_unknown";
 			colorName="ColorBlue";
-			angle=358.09692;
+			angle=358.09689;
 			id=121;
 		};
 		class Item122
@@ -1410,7 +1420,7 @@ class Mission
 			text="@STR_MAR_DMV";
 			type="c_unknown";
 			colorName="ColorBlue";
-			angle=30.320112;
+			angle=30.32011;
 			id=124;
 		};
 		class Item125
@@ -1511,7 +1521,7 @@ class Mission
 			position[]={18145.107,26.476664,12855.548};
 			name="civ_truck_2";
 			type="Empty";
-			angle=359.83612;
+			angle=359.83603;
 			id=134;
 		};
 		class Item135
@@ -1520,7 +1530,7 @@ class Mission
 			position[]={18149.994,26.508713,12855.938};
 			name="civ_truck_2_1";
 			type="Empty";
-			angle=359.83612;
+			angle=359.83603;
 			id=135;
 		};
 		class Item136
@@ -1621,7 +1631,7 @@ class Mission
 			position[]={14266.07,19.374266,16294.293};
 			name="air_g_1";
 			type="Empty";
-			angle=153.94186;
+			angle=153.94185;
 			id=145;
 		};
 		class Item146
@@ -1640,7 +1650,7 @@ class Mission
 			position[]={25716.904,18.13162,21271.055};
 			name="car_g_2";
 			type="Empty";
-			angle=220.38795;
+			angle=220.38791;
 			id=147;
 		};
 		class Item148
@@ -1650,7 +1660,7 @@ class Mission
 			name="civ_gar_1_2";
 			text="@STR_MAR_Garage";
 			type="o_service";
-			angle=168.39323;
+			angle=168.39319;
 			id=148;
 		};
 		class Item149
@@ -1659,7 +1669,7 @@ class Mission
 			position[]={14476.976,19.342848,17749.266};
 			name="car_g_3";
 			type="Empty";
-			angle=151.55495;
+			angle=151.55492;
 			id=149;
 		};
 		class Item150
@@ -1739,7 +1749,7 @@ class Mission
 			position[]={12288.481,123.74883,8919.6299};
 			name="reb_v_2";
 			type="Empty";
-			angle=285.16614;
+			angle=285.16611;
 			id=157;
 		};
 		class Item158
@@ -1768,7 +1778,7 @@ class Mission
 			position[]={23526.816,12.94872,19936.809};
 			name="cop_car_5";
 			type="Empty";
-			angle=91.179619;
+			angle=91.179596;
 			id=160;
 		};
 		class Item161
@@ -1809,7 +1819,7 @@ class Mission
 			text="@STR_MAR_Diving_Shop";
 			type="mil_box";
 			colorName="ColorOrange";
-			angle=215.54445;
+			angle=215.5444;
 			id=164;
 		};
 		class Item165
@@ -1940,7 +1950,7 @@ class Mission
 			name="atm_marker_1";
 			type="loc_Tourism";
 			colorName="ColorGreen";
-			angle=318.17349;
+			angle=318.17343;
 			id=177;
 		};
 		class Item178
@@ -1967,7 +1977,7 @@ class Mission
 			name="atm_marker_3";
 			type="loc_Tourism";
 			colorName="ColorGreen";
-			angle=13.824051;
+			angle=13.824049;
 			id=180;
 		};
 		class Item181
@@ -2017,7 +2027,7 @@ class Mission
 			name="atm_marker_2_1";
 			type="loc_Tourism";
 			colorName="ColorGreen";
-			angle=315.66138;
+			angle=315.66129;
 			id=185;
 		};
 		class Item186
@@ -2047,7 +2057,7 @@ class Mission
 			name="atm_marker_2_4";
 			type="loc_Tourism";
 			colorName="ColorGreen";
-			angle=335.50696;
+			angle=335.50687;
 			id=188;
 		};
 		class Item189
@@ -2103,8 +2113,8 @@ class Mission
 		class Item194
 		{
 			dataType="Marker";
-			position[]={8386.0293,102.81116,25087.004};
-			name="respawn_west_1";
+			position[]={8422.4014,107.16431,25112.775};
+			name="respawn_east";
 			type="Empty";
 			id=194;
 		};
@@ -2272,7 +2282,7 @@ class Mission
 			text="@STR_MAR_Gang_Hideout2";
 			type="hd_warning";
 			colorName="ColorRed";
-			angle=1.9070156;
+			angle=1.9070154;
 			id=211;
 		};
 		class Item212
@@ -37136,6 +37146,14 @@ class Mission
 			description="Headless Client";
 			id=1108;
 			type="HeadlessClient_F";
+		};
+		class Item846
+		{
+			dataType="Marker";
+			position[]={8426.6553,106.05005,25181.125};
+			name="Respawn_guerrila";
+			type="Empty";
+			id=1110;
 		};
 	};
 };
