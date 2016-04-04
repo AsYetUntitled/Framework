@@ -23,7 +23,7 @@ class CfgServerSettings
 	{
 		/* Enabling */
 		Enabled = true; //enable extDB2
-		DatabaseName = "ArmaLife";
+		DatabaseName = "altislife";
 	};
 };
 
