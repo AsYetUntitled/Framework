@@ -45,7 +45,7 @@
 #define PISTOL_ITEMS handgunItems player
 #define LAUNCHER secondaryWeapon player
 #define EXTDB "extDB2" callExtension
-#define EXTDB_SETTING(TYPE,SETTING) TYPE(configFile >> "Life_Server_Settings" >> "EXTDB" >> SETTING)
+#define EXTDB_SETTING(TYPE,SETTING) TYPE(missionConfigFile >> "CfgServer" >> SETTING)
 #define EXTDB_FAILED(MESSAGE) \
 	life_server_extDB_notLoaded = [true,##MESSAGE]; \
 	PVAR_ALL("life_server_extDB_notLoaded"); \

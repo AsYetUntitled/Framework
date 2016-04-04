@@ -5,6 +5,12 @@ disableChannels[]={0,1,2};
 #include "dialog\MasterHandler.hpp"
 #include "Config_Master.hpp"
 
+class CfgServer {
+	DatabaseName = "altislife"; //Config name that'll be grep in the extdb-conf.ini. Default: [altislife]
+	HeadlessMode = 0; //Enable/Disable headless client addon. Default: 0 (1 = Enabled / 0 = Disabled)
+	DebugMode = 0; //Enable many server/hc debugging logs. Default: 0 (1 = Enabled / 0 = Disabled)
+};
+
 class RscTitles {
 	#include "dialog\progress.hpp"
 	#include "dialog\hud_nameTags.hpp"

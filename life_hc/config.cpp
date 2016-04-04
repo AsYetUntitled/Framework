@@ -15,18 +15,6 @@ class CfgPatches
 	};
 };
 
-/*Server Settings*/
-
-class CfgServerSettings
-{
-	class extDB
-	{
-		/* Enabling */
-		Enabled = true; //enable extDB2
-		DatabaseName = "altislife";
-	};
-};
-
 class CfgFunctions
 {
 	class Headless_Client

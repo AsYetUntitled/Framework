@@ -25,7 +25,7 @@ life_HC_isActive = false;
 PVAR_ALL("life_HC_isActive");
 HC_Life = false;
 PVAR_ALL("HC_Life");
-if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),1)) then {
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),1)) then {
 	[] execVM "\life_server\initHC.sqf";
 };
 
@@ -59,7 +59,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 
 if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB did not fully initialize so terminate the rest of the initialization process.
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	/* Run stored procedures for SQL side cleanup */
 	["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
 	["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
@@ -123,7 +123,7 @@ TON_fnc_requestClientID =
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	[] execFSM "\life_server\FSM\cleanup.fsm";
 };
 
@@ -137,7 +137,7 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
 	};
 };
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	[] spawn TON_fnc_initHouses;
 	[] spawn TON_fnc_cleanup;
 };
@@ -156,13 +156,13 @@ _rsb setVariable["bis_disabled_Door_1",1,true];
 _dome allowDamage false;
 _rsb allowDamage false;
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	/* Tell clients that the server is ready and is accepting queries */
 	life_server_isReady = true;
 	PVAR_ALL("life_server_isReady");
 };
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HC_Enabled"),0)) then {
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	/* Initialize hunting zone(s) */
 	["hunting_zone",30] spawn TON_fnc_huntingZone;
 };

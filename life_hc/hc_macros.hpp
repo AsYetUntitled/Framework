@@ -56,9 +56,7 @@
 
 // extDB2 Macros
 #define EXTDB "extDB2" callExtension
-#define RCON_SELECTION getText(configFile >> "CfgServerSettings" >> "extDB" >> "RCON_Selection")
-#define EXTDB_SETTINGS_BOOL(SETTING) CONFIG_BOOL(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> SETTING))
-#define EXTDB_SETTING(TYPE,SETTING) TYPE(configFile >> "CfgServerSettings" >> "extDB" >> SETTING)
+#define EXTDB_SETTING(TYPE,SETTING) TYPE(missionConfigFile >> "CfgServer" >> SETTING)
 #define EXTDB_FAILED(MESSAGE) \
 	life_server_extDB_notLoaded = [true,##MESSAGE]; \
 	PVAR_ALL("life_server_extDB_notLoaded"); \
