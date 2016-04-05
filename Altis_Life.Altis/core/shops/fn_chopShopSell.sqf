@@ -2,7 +2,7 @@
 /*
 	File: fn_chopShopSell.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Sells the selected vehicle off.
 */
@@ -24,6 +24,15 @@ if(life_HC_isActive) then {
 	[player,_vehicle,_price,_price2] remoteExecCall ["HC_fnc_chopShopSell",HC_Life];
 } else {
 	[player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
+};
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+		advanced_log = format ["chopped vehicle %1 for %2  On Hand Cash(pre-chop): %3",_vehicle,[_price] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+	} else {
+		advanced_log = format ["%1 - %2 chopped vehicle %3 for %4  On Hand Cash(pre-chop): %5",profileName,(getPlayerUID player),_vehicle,[_price] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+	};
+	publicVariableServer "advanced_log";
 };
 
 closeDialog 0;

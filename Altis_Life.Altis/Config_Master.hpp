@@ -19,6 +19,11 @@ class Life_Settings {
     save_veh_damage = false; //Save Vehicle Damage
     save_veh_items[] = { "pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donuts","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat" };
 
+    /* Logging Settings */
+    BattlEye_friendlyLogging = false; //Set to true if you plan to read the data in your BattlEye log files. Otherwise use the SERVER RPT.
+    player_advancedLog = false; //Logs the following: Houses(purchase/sale), Vehicle(Purchase/Sale/Chopping), Cop Arrests and Gang Creations. SEARCH USING: advanced_log
+    player_moneyLog = false; //Logs player and gang bank(deposits/withdrawals/transfers). Logs money picked up off the ground. Logs player robbery. SEARCH USING: money_log
+
     /* Clothing related settings */
     clothing_noTP = false;  //Disable clothing preview teleport? (true = no teleport. false = teleport)
     clothing_box = true; //true = teleport to a black box. false = teleport to somewhere on map. (It only affects the game if clothing_noTP is set as false)

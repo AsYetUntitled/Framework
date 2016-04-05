@@ -29,7 +29,15 @@ if(life_HC_isActive) then {
 	[1,grpPlayer] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
 };
 
-
 hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial;
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"player_moneyLog"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+		money_log = format ["withdrew %1 from their gang bank. Gang Bank Balance: %2  Bank Balance: %3  On Hand Balance: %4",_value,[_gFund] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+	} else {
+		money_log = format ["%1 - %2 withdrew %3 from their gang bank. Gang Bank Balance: %4  Bank Balance: %5  On Hand Balance: %6",profileName,(getPlayerUID player),_value,[_gFund] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+	};
+	publicVariableServer "money_log";
+};
