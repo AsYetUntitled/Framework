@@ -6,7 +6,7 @@
 	Description:
 	Opens the Wanted menu and connects to the APD.
 */
-private["_display","_list","_name","_crimes","_bounty","_units"];
+private["_display","_list","_list2","_name","_crimes","_bounty","_units"];
 disableSerialization;
 
 if(playerSide != west) exitWith {}; // Only for cops open this menu
@@ -31,9 +31,12 @@ _list2 = CONTROL(2400,2407);
 lbClear _list2; //Purge the list
 
 _crimes = LIFE_SETTINGS(getArray,"crimes");
-
 {
-	_list2 lbAdd format["%1 - $%2 (%3)",localize (_x select 0),(_x select 1),(_x select 2)];
+  if(isLocalized (_x select 0)) then {
+    _list2 lbAdd format["%1 - $%2 (%3)",localize (_x select 0),(_x select 1),(_x select 2)];
+  } else {
+    _list2 lbAdd format["%1 - $%2 (%3)",(_x select 0),(_x select 1),(_x select 2)];
+  };
 	_list2 lbSetData [(lbSize _list2)-1,(_x select 2)];
 } foreach _crimes;
 

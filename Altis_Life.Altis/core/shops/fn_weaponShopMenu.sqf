@@ -43,6 +43,10 @@ if(!(EQUAL(_levelValue,-1))) then {
 		_exit = true;
 		if(EQUAL(_levelMsg,"")) then {
 			_levelMsg = (localize "STR_Shop_Veh_NotAllowed");
+		} else {
+			if(isLocalized _levelMsg) then {
+				_levelMsg = (localize _levelMsg);
+			};
 		};
 	};
 };
