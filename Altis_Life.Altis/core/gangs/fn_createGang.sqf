@@ -2,7 +2,7 @@
 /*
 	File: fn_createGang.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Pulls up the menu and creates the gang?
 */
@@ -23,6 +23,15 @@ if(life_HC_isActive) then {
 	[player,getPlayerUID player,_gangName] remoteExec ["HC_fnc_insertGang",HC_Life];
 } else {
 	[player,getPlayerUID player,_gangName] remoteExec ["TON_fnc_insertGang",RSERV];
+};
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+		advanced_log = format ["created a gang named: %1 for %2",_gangName,(LIFE_SETTINGS(getNumber,"gang_price"))];
+	} else {
+		advanced_log = format ["%1 - %2 created a gang named: %3 for %4",profileName,(getPlayerUID player),_gangName,(LIFE_SETTINGS(getNumber,"gang_price"))];
+	};
+	publicVariableServer "advanced_log";
 };
 
 hint localize "STR_NOTF_SendingData";

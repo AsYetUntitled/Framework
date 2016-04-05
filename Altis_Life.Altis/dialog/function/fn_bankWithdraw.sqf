@@ -2,20 +2,29 @@
 /*
 	File: fn_bankWithdraw.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Withdraws money from the players account
 */
-private["_val"];
-_val = parseNumber(ctrlText 2702);
-if(_val > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
-if(_val < 0) exitwith {};
-if(!([str(_val)] call life_fnc_isnumeric)) exitWith {hint localize "STR_ATM_notnumeric"};
-if(_val > BANK) exitWith {hint localize "STR_ATM_NotEnoughFunds"};
-if(_val < 100 && BANK > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
+private["_value"];
+_value = parseNumber(ctrlText 2702);
+if(_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
+if(_value < 0) exitwith {};
+if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_ATM_notnumeric"};
+if(_value > BANK) exitWith {hint localize "STR_ATM_NotEnoughFunds"};
+if(_value < 100 && BANK > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
 
-ADD(CASH,_val);
-SUB(BANK,_val);
-hint format [localize "STR_ATM_WithdrawSuccess",[_val] call life_fnc_numberText];
+ADD(CASH,_value);
+SUB(BANK,_value);
+hint format [localize "STR_ATM_WithdrawSuccess",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial;
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"player_moneyLog"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+		money_log = format ["withdrew %1 from their bank. Bank Balance: %2  On Hand Balance: %3",_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+	} else {
+		money_log = format ["%1 - %2 withdrew %3 from their bank. Bank Balance: %4  On Hand Balance: %5",profileName,(getPlayerUID player),_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+	};
+	publicVariableServer "money_log";
+};
