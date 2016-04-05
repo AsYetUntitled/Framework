@@ -1,6 +1,4 @@
 disableChannels[]={0,1,2};
-disableAI = 1;
-respawn = 3;
 
 #include "Config_Spyglass.hpp"
 #include "CfgRemoteExec.hpp"
