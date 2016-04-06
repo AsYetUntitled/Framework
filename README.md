@@ -8,7 +8,7 @@
         <img src="https://img.shields.io/badge/release-2-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="http://dev.arma3.com/post/spotrep-00052">
+    <a href="https://dev.arma3.com/post/spotrep-00053">
         <img src="https://img.shields.io/badge/arma%203-1.56-orange.svg" alt="Arma 3 Version">
     </a>
     &nbsp;&nbsp;&nbsp;
