@@ -28,7 +28,7 @@ _unit switchMove "AovrPercMrunSrasWrflDf";
 
 if(local _unit) then {
 	waitUntil {
-		if((getpos _unit select 2) > 4) then {
+		if((getPos _unit select 2) > 4) then {
 			_unit setposATL _oldpos;
 			_unit setVelocity [0, 0, 0];
 		};

@@ -22,4 +22,4 @@ _vars = [
 		sleep 0.5;
 		failMission "SpyGlass";
 	};
-} foreach _vars;
+} forEach _vars;

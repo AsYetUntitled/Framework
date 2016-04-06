@@ -12,6 +12,6 @@ _return = "";
 {
 	_format = format["%1<br/>",_x select 1];
 	_return = _return + _format;
-} foreach _data;
+} forEach _data;
 
 _return;

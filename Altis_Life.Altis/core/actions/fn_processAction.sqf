@@ -55,7 +55,7 @@ _itemNameInv = [];
 _ItemNumber = [];
 {
 	_itemNumberNow = _x select 1;
-	_ItemNumber pushback [_itemNumberNow];
+	_ItemNumber pushBack [_itemNumberNow];
 } forEach _oldItem;
 
 

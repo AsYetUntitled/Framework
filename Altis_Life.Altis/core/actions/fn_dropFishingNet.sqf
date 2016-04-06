@@ -34,7 +34,7 @@ if(count _fish == 0) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLAIN"
 			titleText[format[(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
 		};
 	};
-} foreach (_fish);
+} forEach (_fish);
 
 sleep 1.5;
 titleText[localize "STR_NOTF_NetUp","PLAIN"];

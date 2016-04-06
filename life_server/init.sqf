@@ -80,7 +80,7 @@ master_group attachTo[bank_obj,[0,0,0]];
 	_var = createVehicle ["Land_Hospital_side2_F", [0,0,0], [], 0, "NONE"];
 	_var attachTo [_hs, [-28.0336,-10.0317,0.0889387]];
 	detach _var;
-} foreach ["hospital_2","hospital_3"];
+} forEach ["hospital_2","hospital_3"];
 
 {
 	if(!isPlayer _x) then {
@@ -89,9 +89,9 @@ master_group attachTo[bank_obj,[0,0,0]];
 			if(_x != "") then {
 				_npc removeWeapon _x;
 			};
-		} foreach [primaryWeapon _npc,secondaryWeapon _npc,handgunWeapon _npc];
+		} forEach [primaryWeapon _npc,secondaryWeapon _npc,handgunWeapon _npc];
 	};
-} foreach allUnits;
+} forEach allUnits;
 
 [8,true,12] execFSM "\life_server\FSM\timeModule.fsm";
 
@@ -137,7 +137,7 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 		sleep (30 * 60);
 		{
 			_x setVariable["sellers",[],true];
-		} foreach [Dealer_1,Dealer_2,Dealer_3];
+		} forEach [Dealer_1,Dealer_2,Dealer_3];
 	};
 };
 

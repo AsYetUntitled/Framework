@@ -27,9 +27,9 @@ if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && 
 			life_pos_attach = [[5000, 5000, 0]] call life_fnc_searchPosEmpty;
 			life_pos_exist = true;
 			life_preview_light = "#lightpoint" createVehicle life_pos_attach;
-			life_preview_light setlightbrightness 0.5;
-			life_preview_light setlightcolor [1,1,1];
-			life_preview_light setlightambient [1,1,1];
+			life_preview_light setLightBrightness 0.5;
+			life_preview_light setLightColor [1,1,1];
+			life_preview_light setLightAmbient [1,1,1];
 		};
 		_object = _classView createVehicle life_pos_attach;
 		_id = player getVariable["life_clientID",-1];

@@ -21,7 +21,7 @@ if(vehicle player != player) then {
 					_vehicle = _x;
 				};
 			};
-		} foreach _nearVehicles;
+		} forEach _nearVehicles;
 	};
 };
 

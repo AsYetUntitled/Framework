@@ -42,7 +42,7 @@ _licensesName = "";
 		ADD(_licensesName,localize M_CONFIG(getText,"Licenses",_x,"displayName") + "<br/>");
 		_exit = true;
 	};
-} foreach _licenses;
+} forEach _licenses;
 
 if(_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];closeDialog 0;};
 
@@ -58,7 +58,7 @@ if((SEL(life_veh_shop,0) == "med_air_hs")) then {
 	//Check if there is multiple spawn points and find a suitable spawnpoint.
 	if(EQUAL(typeName _spawnPoints,typeName [])) then {
 		//Find an available spawn point.
-		{if(count(nearestObjects[(getMarkerPos _x),["Car","Ship","Air"],5]) == 0) exitWith {_spawnPoint = _x};} foreach _spawnPoints;
+		{if(count(nearestObjects[(getMarkerPos _x),["Car","Ship","Air"],5]) == 0) exitWith {_spawnPoint = _x};} forEach _spawnPoints;
 	} else {
 		if(count(nearestObjects[(getMarkerPos _spawnPoints),["Car","Ship","Air"],5]) == 0) exitWith {_spawnPoint = _spawnPoints};
 	};

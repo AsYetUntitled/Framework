@@ -1,5 +1,5 @@
 /*
-	File: fn_copLights.sqf
+	File: fn_medicLights.sqf
 	Author: mindstorm, modified by Adanteh
 	Link: http://forums.bistudio.com/showthread.php?157474-Offroad-Police-sirens-lights-and-underglow
 	
@@ -13,7 +13,7 @@ if(isNil "_vehicle" OR isNull _vehicle OR !(_vehicle getVariable "lights")) exit
 _lightRed = [0.1, 0.1, 20];
 _lightBlue = [0.1, 0.1, 20];
 
-_lightleft = "#lightpoint" createVehicle getpos _vehicle;   
+_lightleft = "#lightpoint" createVehicle getPos _vehicle;   
 sleep 0.2;
 _lightleft setLightColor _lightRed; 
 _lightleft setLightBrightness 0.2;  
@@ -33,7 +33,7 @@ _lightleft setLightFlareSize 0.38;
 _lightleft setLightFlareMaxDistance 150;
 _lightleft setLightUseFlare true;
 
-_lightright = "#lightpoint" createVehicle getpos _vehicle;   
+_lightright = "#lightpoint" createVehicle getPos _vehicle;   
 sleep 0.2;
 _lightright setLightColor _lightBlue; 
 _lightright setLightBrightness 0.2;  

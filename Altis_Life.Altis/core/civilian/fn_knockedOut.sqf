@@ -25,7 +25,7 @@ _obj setPosATL ASLTOATL(visiblePositionASL player);
 life_isknocked = true;
 player attachTo [_obj,[0,0,0]];
 sleep 15;
-player playMoveNow "amovppnemstpsraswrfldnon";
+player playMoveNow "AmovPpneMstpSrasWrflDnon";
 detach player;
 deleteVehicle _obj;
 life_isknocked = false;

@@ -33,7 +33,7 @@ _shopItems = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
 			_item_list lbSetPicture [(lbSize _item_list)-1,_icon];
 		};
 	};
-} foreach _shopItems;
+} forEach _shopItems;
 
 {
 	_name = M_CONFIG(getText,"VirtualItems",_x,"displayName");
@@ -47,4 +47,4 @@ _shopItems = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
 			_gear_list lbSetPicture [(lbSize _gear_list)-1,_icon];
 		};
 	};
-} foreach _shopItems;
+} forEach _shopItems;

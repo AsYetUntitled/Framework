@@ -18,5 +18,5 @@ _return = true;
 	{
 		_return = false;
 	};
-} foreach _array;
+} forEach _array;
 _return;

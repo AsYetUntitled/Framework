@@ -24,7 +24,7 @@ _exitLoop = false;
 		if(EQUAL(_groupOwner,"") OR isNil "_groupID") exitWith {}; //Seriously?
 		if(EQUAL(SEL(life_gangData,0),_groupID) && {EQUAL(SEL(life_gangData,1),_groupOwner)}) exitWith {_group = _x; _exitLoop = true;};
 	};
-} foreach allGroups;
+} forEach allGroups;
 
 if(!isNil "_group") then {
 	[player] join _group;

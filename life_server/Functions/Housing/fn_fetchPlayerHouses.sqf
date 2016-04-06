@@ -70,7 +70,7 @@ _containerss = [];
 		};
 	};
 	_house setVariable["containers",_containerss,true];
-} foreach _containers;
+} forEach _containers;
 
 _query = format["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid];
 _houses = [_query,2,true] call DB_fnc_asyncCall;
@@ -81,6 +81,6 @@ _return = [];
 	_house = nearestObject [_pos, "House"];
 	_house allowDamage false;
 	_return pushBack [_x select 1,_containerss];
-} foreach _houses;
+} forEach _houses;
 
 missionNamespace setVariable[format["houses_%1",_uid],_return];

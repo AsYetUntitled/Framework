@@ -76,7 +76,7 @@ class FSM
            "	if(local _x && {(count units _x == 0)}) then {" \n
            "		deleteGroup _x;" \n
            "	};" \n
-           "} foreach allGroups;" \n
+           "} forEach allGroups;" \n
            "" \n
            "" \n
            ""/*%FSM</ACTION""">*/;

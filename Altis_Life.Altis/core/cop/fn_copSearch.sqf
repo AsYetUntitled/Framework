@@ -31,7 +31,7 @@ if(count _invs > 0) then {
 		if(!(EQUAL(_price,-1))) then {
 			ADD(_illegal,(SEL(_x,1) * _price));
 		};
-	} foreach _invs;
+	} forEach _invs;
 	if(_illegal > 6000) then {
 	
 		if(life_HC_isActive) then {

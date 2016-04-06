@@ -18,4 +18,4 @@ if(count life_houses == 0) exitWith {}; //Nothing to do.
 	_marker setMarkerColorLocal "ColorBlue";
 	_marker setMarkerTypeLocal "loc_Lighthouse";
 
-} foreach life_houses;
+} forEach life_houses;

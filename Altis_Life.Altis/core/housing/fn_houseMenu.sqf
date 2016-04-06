@@ -35,7 +35,7 @@ _Btn5 = CONTROL(37400,Btn5);
 _Btn6 = CONTROL(37400,Btn6);
 _Btn7 = CONTROL(37400,Btn7);
 _Btn8 = CONTROL(37400,Btn8);
-{_x ctrlShow false;} foreach [_Btn1,_Btn2,_Btn3,_Btn4,_Btn5,_Btn6,_Btn7,_Btn8];
+{_x ctrlShow false;} forEach [_Btn1,_Btn2,_Btn3,_Btn4,_Btn5,_Btn6,_Btn7,_Btn8];
 
 life_pInact_curTarget = _curTarget;
 if(_curTarget isKindOf "House_F" && playerSide == west) exitWith {

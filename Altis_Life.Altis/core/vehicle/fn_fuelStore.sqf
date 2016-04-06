@@ -39,7 +39,7 @@ waitUntil {
 	if(!alive _vehicle OR isNull _vehicle) exitWith {true};
 	if(isEngineOn _vehicle) exitWith {titleText[localize "STR_FuelTank_Stopped","PLAIN"]; true};
 	if(isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_Stopped","PLAIN"]; true};
-	if(player distance _vehicle > 20) exitwith {titleText[localize "STR_FuelTank_Stopped","PLAIN"]; true};
+	if(player distance _vehicle > 20) exitWith {titleText[localize "STR_FuelTank_Stopped","PLAIN"]; true};
 
 	_fuelState = _fuelState + 100;
 	_vehicle setVariable ["fuelTank",[_fuelSpace,_fuelState],true];

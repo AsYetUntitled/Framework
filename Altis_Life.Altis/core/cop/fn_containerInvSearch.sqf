@@ -29,7 +29,7 @@ _illegalValue = 0;
 
 		_illegalValue = _illegalValue + (round(_val * _illegalPrice / 2));
 	};
-} foreach (SEL(_containerInfo,0));
+} forEach (SEL(_containerInfo,0));
 _value = _illegalValue;
 if(_value > 0) then {
 	[0,"STR_NOTF_ContainerContraband",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];

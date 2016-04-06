@@ -15,6 +15,6 @@ if(EQUAL(_uid,"")) exitWith {false}; //Bad UID
 _ret = false;
 {
 	if(isPlayer _x && {EQUAL(getPlayerUID _x,_uid)}) exitWith {_ret = true;};
-} foreach playableUnits;
+} forEach playableUnits;
 
 _ret;

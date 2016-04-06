@@ -30,7 +30,7 @@ lbClear _control;
 	_control lbSetData [(lbSize _control)-1,_tmp];
 	_control lbSetPicture [(lbSize _control)-1,SEL(_vehicleInfo,2)];
 	_control lbSetValue [(lbSize _control)-1,SEL(_x,0)];
-} foreach _vehicles;
+} forEach _vehicles;
 
 ctrlShow[2810,false];
 ctrlShow[2811,false];

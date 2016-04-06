@@ -23,7 +23,7 @@ while {true} do
 				_marker setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
 				_markers pushBack [_marker,_x];
 			};
-		} foreach _members;
+		} forEach _members;
 
 		while {visibleMap} do
 		{
@@ -34,12 +34,12 @@ while {true} do
 				if(!isNil "_unit" && !isNull _unit) then {
 					  _marker setMarkerPosLocal (visiblePosition _unit);
 				};
-			} foreach _markers;
+			} forEach _markers;
 			if(!visibleMap) exitWith {};
 			sleep 0.02;
 		};
 
-		{deleteMarkerLocal (_x select 0);} foreach _markers;
+		{deleteMarkerLocal (_x select 0);} forEach _markers;
 		_markers = [];
 		_members = [];
 	};

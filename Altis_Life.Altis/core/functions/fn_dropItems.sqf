@@ -112,4 +112,4 @@ _unit = SEL(_this,0);
 			};
 		};
 	};
-} foreach (("true" configClasses (missionConfigFile >> "VirtualItems")) + ["life_cash"]);
+} forEach (("true" configClasses (missionConfigFile >> "VirtualItems")) + ["life_cash"]);

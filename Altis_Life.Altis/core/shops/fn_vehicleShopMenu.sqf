@@ -68,7 +68,7 @@ ctrlShow [2304,false];
 		_control lbSetData [(lbSize _control)-1,_className];
 		_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
 	};
-} foreach _vehicleList;
+} forEach _vehicleList;
 
 [] call life_fnc_vehicleShopInit3DPreview;
 ((findDisplay 2300) displayCtrl 2302) lbSetCurSel 0;

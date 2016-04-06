@@ -43,7 +43,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"donor_level"),1)) then {
 
 //Loop through licenses
 if(count (SEL(_this,6)) > 0) then {
-	{SVAR_MNS [SEL(_x,0),SEL(_x,1)];} foreach (SEL(_this,6));
+	{SVAR_MNS [SEL(_x,0),SEL(_x,1)];} forEach (SEL(_this,6));
 };
 
 life_gear = SEL(_this,8);
@@ -86,7 +86,7 @@ switch(playerSide) do {
 		{
 			_house = nearestObject [(call compile format["%1", SEL(_x,0)]), "House"];
 			life_vehicles pushBack _house;
-		} foreach life_houses;
+		} forEach life_houses;
 
 		life_gangData = SEL(_this,14);
 		if(!(EQUAL(count life_gangData,0))) then {
@@ -107,7 +107,7 @@ switch(playerSide) do {
 };
 
 if(count (SEL(_this,15)) > 0) then {
-	{life_vehicles pushBack _x;} foreach (SEL(_this,15));
+	{life_vehicles pushBack _x;} forEach (SEL(_this,15));
 };
 
 life_session_completed = true;

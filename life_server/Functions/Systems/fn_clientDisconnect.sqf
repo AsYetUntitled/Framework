@@ -31,7 +31,7 @@ if(isNil "HC_UID" || {_uid != HC_UID}) then {
 };
 
 _containers = nearestObjects[_unit,["WeaponHolderSimulated"],5];
-{deleteVehicle _x;} foreach _containers;
+{deleteVehicle _x;} forEach _containers;
 deleteVehicle _unit;
 
 _uid spawn TON_fnc_houseCleanup;

@@ -21,7 +21,7 @@ ctrlSetText[2922, format["%1", life_settings_viewDistanceAir]];
 	slidersetRange [SEL(_x,0),100,8000];
 	CONTROL(2900,SEL(_x,0)) sliderSetSpeed [100,100,100];
 	sliderSetPosition [SEL(_x,0),SEL(_x,1)];
-} foreach [[2901,life_settings_viewDistanceFoot],[2911,life_settings_viewDistanceCar],[2921,life_settings_viewDistanceAir]];
+} forEach [[2901,life_settings_viewDistanceFoot],[2911,life_settings_viewDistanceCar],[2921,life_settings_viewDistanceAir]];
 
 
 if(isNil "life_settings_tagson") then {

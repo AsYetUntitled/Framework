@@ -110,7 +110,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_fuel"),1)) then {
 	_vehicle setFuel (_vInfo select 11);
 	}else{
-	_vehicle setfuel 1;
+	_vehicle setFuel 1;
 };
 
 if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1))) then {

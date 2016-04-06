@@ -91,7 +91,7 @@ class FSM
        "			deleteVehicle _x;" \n
        "		};" \n
        "	};" \n
-       "} foreach allMissionObjects ""LandVehicle"";" \n
+       "} forEach allMissionObjects ""LandVehicle"";" \n
        "" \n
        "{" \n
        "	if(!alive _x) then {" \n
@@ -110,7 +110,7 @@ class FSM
        "			deleteVehicle _x;" \n
        "		};" \n
        "	};" \n
-       "} foreach allMissionObjects ""Air"";" \n
+       "} forEach allMissionObjects ""Air"";" \n
        "" \n
        "_cars = time;" \n
        "" \n
@@ -119,7 +119,7 @@ class FSM
        "	if(count units _x == 0 && local _x) then {" \n
        "		deleteGroup _x;" \n
        "	};" \n
-       "} foreach allGroups;"/*%FSM</STATEINIT""">*/;
+       "} forEach allGroups;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

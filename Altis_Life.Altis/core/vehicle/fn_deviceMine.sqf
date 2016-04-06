@@ -147,7 +147,7 @@ while {true} do {
 	};
 
 	if(_itemIndex == -1) then {
-		_inv pushback [_resource,_random];
+		_inv pushBack [_resource,_random];
 	} else {
 		_val = _inv select _itemIndex select 1;
 		_inv set[_itemIndex,[_resource,_val + _random]];

@@ -39,4 +39,4 @@ if(isNil "_textures" OR {EQUAL(count _textures,0)}) exitWith {};
 
 _vehicle SVAR ["Life_VEH_color",_index,true];
 
-{_vehicle setObjectTextureGlobal [_forEachIndex,_x];} foreach _textures;
+{_vehicle setObjectTextureGlobal [_forEachIndex,_x];} forEach _textures;

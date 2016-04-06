@@ -7,7 +7,7 @@
 */
 private["_vehicle","_animate","_state"];
 _vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
-if(isnull _vehicle) exitwith {}; //FUCK
+if(isNull _vehicle) exitWith {}; //FUCK
 _animate = [_this,1,"",["",[]]] call BIS_fnc_param;
 _preset = [_this,2,false,[false]] call BIS_fnc_param;
 
@@ -17,7 +17,7 @@ if(!_preset) then
 	{
 		{
 			_vehicle animate[_x select 0,_x select 1];
-		} foreach _animate;
+		} forEach _animate;
 	}
 		else
 	{

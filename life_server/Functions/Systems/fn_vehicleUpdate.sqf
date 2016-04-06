@@ -42,11 +42,11 @@ switch (_mode) do {
 		_items = [];
 		{
 			if((_x select 0) in _resourceItems) then {
-				_items pushback [(_x select 0),(_x select 1)];
+				_items pushBack [(_x select 0),(_x select 1)];
 				_weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
 				_totalweight = _weight + _totalweight;
 			};
-		}foreach _itemList;
+		}forEach _itemList;
 		_trunk = [_items,_totalweight];
 		_trunk = [_trunk] call DB_fnc_mresArray;
 		

@@ -67,7 +67,7 @@ _value = 0;
 			ADD(_value,(_val * ITEM_SELLPRICE(_var)));
 		};
 	};
-} foreach (SEL(_houseInv,0));
+} forEach (SEL(_houseInv,0));
 
 if(_value > 0) then {
 	[0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];

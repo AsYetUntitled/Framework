@@ -104,4 +104,4 @@ _array = switch(_selection) do {
 			_list lbSetPicture [(lbSize _list)-1,_pic];
 		};
 	};
-} foreach _array;
+} forEach _array;

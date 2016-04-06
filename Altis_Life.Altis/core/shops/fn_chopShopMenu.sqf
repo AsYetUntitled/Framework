@@ -44,4 +44,4 @@ _control = CONTROL(39400,39402);
 			_control lbSetValue [(lbSize _control)-1,_price];
 		};
 	};
-} foreach _nearVehicles;
+} forEach _nearVehicles;

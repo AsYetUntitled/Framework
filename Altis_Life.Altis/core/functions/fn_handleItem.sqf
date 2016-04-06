@@ -53,7 +53,7 @@ if(_bool) then {
 			clearAllItemsFromBackpack player;
 
 			if(!isNil {_items}) then {
-				{[_x,true,true,false,true] call life_fnc_handleItem; } foreach _items;
+				{[_x,true,true,false,true] call life_fnc_handleItem; } forEach _items;
 			};
 		};
 
@@ -142,7 +142,7 @@ if(_bool) then {
 
 										player addUniform _item;
 										if(!isNil "_items") then {
-											{player addItemToUniform _x} foreach _items;
+											{player addItemToUniform _x} forEach _items;
 										};
 									};
 								} else {
@@ -157,7 +157,7 @@ if(_bool) then {
 										player addUniform _item;
 									};
 									if(!isNil "_items") then {
-										{player addItemToUniform _x} foreach _items;
+										{player addItemToUniform _x} forEach _items;
 									};
 								};
 							};
@@ -182,7 +182,7 @@ if(_bool) then {
 									player addVest _item;
 
 									if(!isNil {_items}) then {
-										{[_x,true,false,false,true] spawn life_fnc_handleItem;} foreach _items;
+										{[_x,true,false,false,true] spawn life_fnc_handleItem;} forEach _items;
 									};
 								};
 							};

@@ -28,6 +28,6 @@ _bounty = _data select 1;
 		_mylist pushBack _crime;
 		_list lbAdd format[localize "STR_Wanted_Count",{_x == _crime} count _crimes,localize _crime];
 	};
-} foreach _crimes;
+} forEach _crimes;
 
 ctrlSetText[2403,format[localize "STR_Wanted_Bounty",[_bounty] call life_fnc_numberText]]; 

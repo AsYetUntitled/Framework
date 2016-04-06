@@ -34,7 +34,7 @@ while {life_markers} do
 			_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
 			_pSee setMarkerColorLocal ("ColorBLUFOR");
 			if !(_x in _PlayerMarkers) then {
-				_PlayerMarkers pushback _x;
+				_PlayerMarkers pushBack _x;
 			};
 		};
 
@@ -47,7 +47,7 @@ while {life_markers} do
 			_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
 			_pSee setMarkerColorLocal ("ColorIndependent");
 			if !(_x in _PlayerMarkers) then {
-				_PlayerMarkers pushback _x;
+				_PlayerMarkers pushBack _x;
 			};
 		};
 		if(alive _x && side _x == civilian) then {
@@ -59,7 +59,7 @@ while {life_markers} do
 			_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
 			_pSee setMarkerColorLocal ("ColorCivilian");
 			if !(_x in _PlayerMarkers) then {
-				_PlayerMarkers pushback _x;
+				_PlayerMarkers pushBack _x;
 			};
 		};
 	} forEach playableUnits;

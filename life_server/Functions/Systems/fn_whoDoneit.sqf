@@ -1,5 +1,5 @@
 /*
-	File: fn_whoDunnit
+	File: fn_whoDunnit.sqf
 	Description: Save log file of units killed.
 	Author: Å  ColinM - Help of BI Wiki & Forums.
 	

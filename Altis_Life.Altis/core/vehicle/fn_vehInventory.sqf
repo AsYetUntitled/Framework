@@ -35,7 +35,7 @@ if(EQUAL(count _data,0)) then {_veh setVariable["Trunk",[[],0],true]; _data = []
 			_pInv lbSetPicture [(lbSize _pInv)-1,_icon];
 		};
 	};
-} foreach ("true" configClasses (missionConfigFile >> "VirtualItems"));
+} forEach ("true" configClasses (missionConfigFile >> "VirtualItems"));
 
 //Trunk Inventory Items
 {
@@ -50,4 +50,4 @@ if(EQUAL(count _data,0)) then {_veh setVariable["Trunk",[[],0],true]; _data = []
 			_tInv lbSetPicture [(lbSize _tInv)-1,_icon];
 		};
 	};
-} foreach _data;
+} forEach _data;

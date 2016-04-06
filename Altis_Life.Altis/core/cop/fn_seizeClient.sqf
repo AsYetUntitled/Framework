@@ -16,31 +16,31 @@ _uniform = LIFE_SETTINGS(getArray,"seize_uniform");
 	if(!(_x in _exempt)) then {
 		player removeWeapon _x;
 	};
-} foreach weapons player;
+} forEach weapons player;
 
 {
 	if(!(_x in _exempt)) then {
 		player removeItemFromUniform _x;
 	};
-} foreach uniformItems player;
+} forEach uniformItems player;
 
 {
 	if(!(_x in _exempt)) then {
 		player removeItemFromVest _x;
 	};
-} foreach vestItems player;
+} forEach vestItems player;
 
 {
 	if(!(_x in _exempt)) then {
 		player removeItemFromBackpack _x;
 	};
-} foreach backpackItems player;
+} forEach backpackItems player;
 
 {
     if(!(_x in _exempt)) then {
             player removeMagazine _x;
     };
-} foreach magazines player;
+} forEach magazines player;
 
 if (uniform player in _uniform) then {removeUniform player;};
 if (vest player in _vest) then {removeVest player;};

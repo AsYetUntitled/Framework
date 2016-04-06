@@ -17,4 +17,4 @@ if(count _containers == 0) exitWith {};
 	{
 		deleteVehicle _x;
 	} forEach _container;
-} foreach _containers;
+} forEach _containers;

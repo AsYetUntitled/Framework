@@ -11,7 +11,7 @@ _cops = [];
 
 sleep 0.5;
 if(visibleMap) then {
-	{if(side _x == west) then {_cops pushBack _x;}} foreach playableUnits; //Fetch list of cops / blufor
+	{if(side _x == west) then {_cops pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
 
 	//Create markers
 	{
@@ -23,7 +23,7 @@ if(visibleMap) then {
 
 			_markers pushBack [_marker,_x];
 		};
-	} foreach _cops;
+	} forEach _cops;
 
 	while {visibleMap} do {
 		{
@@ -33,12 +33,12 @@ if(visibleMap) then {
 			if(!isNil "_unit" && !isNull _unit) then {
 				_marker setMarkerPosLocal (visiblePosition _unit);
 			};
-		} foreach _markers;
+		} forEach _markers;
 		if(!visibleMap) exitWith {};
 		sleep 0.02;
 	};
 
-	{deleteMarkerLocal (_x select 0);} foreach _markers;
+	{deleteMarkerLocal (_x select 0);} forEach _markers;
 	_markers = [];
 	_cops = [];
 };

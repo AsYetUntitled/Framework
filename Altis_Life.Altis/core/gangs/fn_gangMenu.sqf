@@ -41,7 +41,7 @@ lbClear _members;
 		_members lbAdd format["%1",(_x GVAR ["realname",name _x])];
 		_members lbSetData [(lbSize _members)-1,str(_x)];
 	};
-} foreach (units grpPlayer);
+} forEach (units grpPlayer);
 
 _grpMembers = units grpPlayer;
 _allUnits = playableUnits;
@@ -51,7 +51,7 @@ _allUnits = playableUnits;
 	if(_x in _grpMembers OR side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {
 		_allUnits set[_forEachIndex,-1];
 	};
-} foreach _allUnits;
+} forEach _allUnits;
 SUB(_allUnits,[-1]);
 
 _ctrl = CONTROL(2620,2632);
@@ -59,4 +59,4 @@ lbClear _ctrl; //Purge the list
 {
 	_ctrl lbAdd format["%1",_x GVAR ["realname",name _x]];
 	_ctrl lbSetData [(lbSize _ctrl)-1,str(_x)];
-} foreach _allUnits;
+} forEach _allUnits;

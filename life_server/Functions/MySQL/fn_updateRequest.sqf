@@ -45,7 +45,7 @@ _playtime_update = [];
 	{
 		_playtime_update pushBack [_x select 1];
 	};
-} foreach TON_fnc_playtime_values_request;
+} forEach TON_fnc_playtime_values_request;
 _playtime_update = (_playtime_update select 0) select 0;
 switch (_side) do {
 	case west: {_playtime_update set[0,_playtime];};

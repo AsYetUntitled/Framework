@@ -71,12 +71,12 @@ _colorArray = M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures");
 		_ctrl lbAdd _textureName;
 		_ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
 	};
-} foreach _colorArray;
+} forEach _colorArray;
 
 _numberindexcolor = 0;
 _numberindexcolorarray = [];
 for "_i" from 0 to (count(_colorArray) - 1) do {
-	_numberindexcolorarray pushback _numberindexcolor;
+	_numberindexcolorarray pushBack _numberindexcolor;
 	_numberindexcolor = _numberindexcolor + 1;
 };
 _indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;

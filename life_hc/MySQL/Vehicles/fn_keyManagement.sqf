@@ -22,7 +22,7 @@ switch(_mode) do {
 			if(!isNull _x && {!(_x isKindOf "House")}) then {
 				_arr pushBack _x;
 			};
-		} foreach _input;
+		} forEach _input;
 		
 		_arr = _arr - [ObjNull];
 		missionNamespace setVariable[format["%1_KEYS_%2",_uid,_side],_arr];

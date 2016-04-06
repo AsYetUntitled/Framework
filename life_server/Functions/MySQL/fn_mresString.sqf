@@ -16,7 +16,7 @@ _filter = toArray _filter; //Blow it up to an array
 	if(_x in _filter) then {
 		_string set[_forEachIndex,-1];
 	};
-} foreach _string;
+} forEach _string;
 
 _string = _string - [-1];
 toString _string;

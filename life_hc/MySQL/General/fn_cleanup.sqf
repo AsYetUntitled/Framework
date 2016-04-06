@@ -50,17 +50,17 @@ while {true} do {
 				};
 			};
 		};
-	} foreach vehicles;
+	} forEach vehicles;
 
 	sleep (3 * 60); //3 minute cool-down before next cycle.
 	{
 		if((typeOf _x) in ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F", "Land_Can_V3_F","Land_Money_F","Land_Suitcase_F"]) then {
 			deleteVehicle _x;
 		};
-	} foreach (allMissionObjects "Thing");
+	} forEach (allMissionObjects "Thing");
 
 	sleep (2 * 60);
 	{
 		deleteVehicle _x;
-	} foreach (allMissionObjects "GroundWeaponHolder");
+	} forEach (allMissionObjects "GroundWeaponHolder");
 };

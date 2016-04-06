@@ -21,17 +21,17 @@ if(_shooter isKindOf "Man" && alive player) then {
 		_curMags = magazines player;
 		_attach = if(!(EQUAL(RIFLE,""))) then {RIFLE_ITEMS} else {[]};
 		
-		{player removeMagazine _x} foreach _curMags;
+		{player removeMagazine _x} forEach _curMags;
 		player removeWeapon _curWep;
 		player addWeapon _curWep;
 		if(!(EQUAL(count _attach,0)) && !(EQUAL(RIFLE,""))) then {
 			{
 				_unit addPrimaryWeaponItem _x;
-			} foreach _attach;
+			} forEach _attach;
 		};
 		
 		if(!(EQUAL(count _curMags,0))) then {
-			{player addMagazine _x;} foreach _curMags;
+			{player addMagazine _x;} forEach _curMags;
 		};
 		
 		[_unit] remoteExecCall ["life_fnc_tazeSound",RCLIENT];
@@ -43,7 +43,7 @@ if(_shooter isKindOf "Man" && alive player) then {
 		disableUserInput true;
 		sleep 15;
 		
-		[player,"amovppnemstpsraswrfldnon"] remoteExecCall ["life_fnc_animSync",RCLIENT];
+		[player,"AmovPpneMstpSrasWrflDnon"] remoteExecCall ["life_fnc_animSync",RCLIENT];
 		
 		if(!(player GVAR ["Escorting",false])) then {
 			detach player;

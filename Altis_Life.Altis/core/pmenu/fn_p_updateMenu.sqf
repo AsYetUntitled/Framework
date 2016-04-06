@@ -28,7 +28,7 @@ lbClear _near_i;
 
 //Near players
 _near_units = [];
-{ if(player distance _x < 10) then {_near_units pushBack _x};} foreach playableUnits;
+{ if(player distance _x < 10) then {_near_units pushBack _x};} forEach playableUnits;
 {
 	if(!isNull _x && alive _x && player distance _x < 10 && _x != player) then {
 		_near lbAdd format["%1 - %2",_x GVAR ["realname",name _x], side _x];
@@ -36,7 +36,7 @@ _near_units = [];
 		_near_i lbAdd format["%1 - %2",_x GVAR ["realname",name _x], side _x];
 		_near_i lbSetData [(lbSize _near)-1,str(_x)];
 	};
-} foreach _near_units;
+} forEach _near_units;
 
 _mstatus ctrlSetStructuredText parseText format["<img size='1.3' image='icons\ico_bank.paa'/> <t size='0.8px'>$%1</t><br/><img size='1.2' image='icons\ico_money.paa'/> <t size='0.8'>$%2</t>",[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
@@ -50,7 +50,7 @@ ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 			_inv lbSetPicture [(lbSize _inv)-1,_icon];
 		};
 	};
-} foreach ("true" configClasses (missionConfigFile >> "VirtualItems"));
+} forEach ("true" configClasses (missionConfigFile >> "VirtualItems"));
 
 {
 	_displayName = getText(_x >> "displayName");
@@ -58,7 +58,7 @@ ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 	if(LICENSE_VALUE(configName _x,_side)) then {
 		_struct = _struct + format["%1<br/>",localize _displayName];
 	};
-} foreach (format["getText(_x >> 'side') isEqualTo '%1'",_side] configClasses (missionConfigFile >> "Licenses"));
+} forEach (format["getText(_x >> 'side') isEqualTo '%1'",_side] configClasses (missionConfigFile >> "Licenses"));
 
 if(EQUAL(_struct,"")) then {
 	_struct = "No Licenses";

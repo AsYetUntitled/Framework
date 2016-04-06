@@ -28,4 +28,4 @@ _time_gathered = (_time_gathered*60);
 		_x set [1, _time_gathered];
 		_x set [2, time];
 	};
-} foreach TON_fnc_playtime_values;
+} forEach TON_fnc_playtime_values;

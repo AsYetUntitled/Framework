@@ -9,7 +9,7 @@
 private["_unit","_id"];
 _unit = param [0,ObjNull,[ObjNull]];
 if(isNull _unit) exitWith {}; //Not valid
-if(isNil "_unit") exitwith {}; //Not Valid
+if(isNil "_unit") exitWith {}; //Not Valid
 if(!(_unit isKindOf "Man")) exitWith {}; //Not a unit
 if(!isPlayer _unit) exitWith {}; //Not a human
 if(!(_unit GVAR "restrained")) exitWith {}; //He's not restrained.

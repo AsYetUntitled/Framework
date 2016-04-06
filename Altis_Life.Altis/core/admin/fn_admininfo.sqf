@@ -24,7 +24,7 @@ if(!(EQUAL(primaryWeapon _unit,""))) then {
 		if(!(EQUAL(_x,""))) then {
 			_attach pushBack (FETCH_CONFIG2(getText,CONFIG_WEAPONS,_x,"displayName"));
 		};
-	} foreach (primaryWeaponItems _unit);
+	} forEach (primaryWeaponItems _unit);
 };
 
 if(!(EQUAL(handgunItems _unit,""))) then {
@@ -32,7 +32,7 @@ if(!(EQUAL(handgunItems _unit,""))) then {
 		if(!(EQUAL(_x,""))) then {
 			_secondary pushBack (FETCH_CONFIG2(getText,CONFIG_WEAPONS,_x,"displayName"));
 		};
-	} foreach (handgunItems _unit);
+	} forEach (handgunItems _unit);
 };
 
 _steamName = SEL(_ret,4);

@@ -30,6 +30,6 @@ if((FETCH_CONST(life_adminlevel) < 1)) then {
 		_units lbAdd format["%1 (%2)",_x GVAR ["realname",name _x],_type];
 		_units lbSetData [(lbSize _units)-1,str(_x)];
 	};
-} foreach playableUnits;
+} forEach playableUnits;
 
 lbSetCurSel [3004,0];

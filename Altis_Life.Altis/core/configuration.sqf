@@ -91,7 +91,7 @@ life_vehicles = [];
 //Setup variable inv vars.
 {
 	SVAR_MNS [ITEM_VARNAME(configName _x),0];
-} foreach ("true" configClasses (missionConfigFile >> "VirtualItems"));
+} forEach ("true" configClasses (missionConfigFile >> "VirtualItems"));
 
 /* Setup the BLAH! */
 {
@@ -99,4 +99,4 @@ life_vehicles = [];
 	_sideFlag = getText(_x >> "side");
 
 	SVAR_MNS [LICENSE_VARNAME(_varName,_sideFlag),false];
-} foreach ("true" configClasses (missionConfigFile >> "Licenses"));
+} forEach ("true" configClasses (missionConfigFile >> "Licenses"));

@@ -9,7 +9,7 @@
 private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test"];
 _veh = cursorObject;
 life_interrupted = false;
-if(isNull _veh) exitwith {};
+if(isNull _veh) exitWith {};
 if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) then {
 	if("ToolKit" in (items player)) then {
 		life_action_inUse = true;

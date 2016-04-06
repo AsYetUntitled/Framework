@@ -101,9 +101,9 @@ switch (_section) do
 				if(_x != "this") then {
 					_tmp = getArray(_base >> _x >> "magazines"); {
 						_magazines pushBack _x;
-					} foreach (_tmp);
+					} forEach (_tmp);
 				};
-			} foreach _muzzles;
+			} forEach _muzzles;
 		};
 	};
 	

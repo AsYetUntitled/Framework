@@ -123,7 +123,7 @@ if(playerSide == west) then {
 							_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_fuelStore";
 							_Btn3 ctrlShow true;
 						};
-					} foreach ["fuel_storage_1","fuel_storage_2"];
+					} forEach ["fuel_storage_1","fuel_storage_2"];
 				};
 			};
 		};

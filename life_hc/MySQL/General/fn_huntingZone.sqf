@@ -24,7 +24,7 @@ _animals = [];
 _unitsNear = false;
 _animalsActive = false;
 while {true} do {
-	{if((_x distance _zone) < _dist) exitWith {_unitsNear = true;}; _unitsNear = false;} foreach playableUnits;
+	{if((_x distance _zone) < _dist) exitWith {_unitsNear = true;}; _unitsNear = false;} forEach playableUnits;
 	if(_unitsNear && !_animalsActive) then {
 		_animalsActive = true;
 		for "_i" from 1 to _maxAnimals do {
@@ -36,7 +36,7 @@ while {true} do {
 		};
 	} else {
 		if(!_unitsNear && _animalsActive) then {
-			{deleteVehicle _x;} foreach _animals;
+			{deleteVehicle _x;} forEach _animals;
 			_animals = [];
 			_animalsActive = false;
 		};

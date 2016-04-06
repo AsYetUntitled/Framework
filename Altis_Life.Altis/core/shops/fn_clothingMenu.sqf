@@ -88,18 +88,18 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_noTP"),1)) then {
 	};
 
 	_light = "#lightpoint" createVehicleLocal _pos;
-	_light setlightbrightness 0.5;
-	_light setlightcolor [1,1,1];
-	_light setlightambient [1,1,1];
+	_light setLightBrightness 0.5;
+	_light setLightColor [1,1,1];
+	_light setLightAmbient [1,1,1];
 	_light lightAttachObject [_testLogic, [0,0,0]];
 
-	{if(_x != player) then {_x hideObject true;};} foreach playableUnits;
+	{if(_x != player) then {_x hideObject true;};} forEach playableUnits;
 	if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
-		{if(_x != player && _x != _light) then {_x hideObject true;};} foreach _nearVeh;
+		{if(_x != player && _x != _light) then {_x hideObject true;};} forEach _nearVeh;
 	};
 
 	if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
-		{_x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];} foreach [_ut1,_ut2,_ut3,_ut4];
+		{_x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];} forEach [_ut1,_ut2,_ut3,_ut4];
 	};
 
 	player setBehaviour "SAFE";
@@ -158,18 +158,18 @@ life_oldHat = headgear player;
 
 waitUntil {isNull (findDisplay 3100)};
 if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_noTP"),0)) then {
-	{if(_x != player) then {_x hideObject false;};} foreach playableUnits;
+	{if(_x != player) then {_x hideObject false;};} forEach playableUnits;
 	if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
-		{if(_x != player && _x != _light) then {_x hideObject false;};} foreach _nearVeh;
+		{if(_x != player && _x != _light) then {_x hideObject false;};} forEach _nearVeh;
 	};
 	detach player;
 	player setBehaviour _oldBev;
 	player setPosASL _oldPos;
 	player setDir _oldDir;
 	if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
-		{deleteVehicle _x;} foreach [_testLogic,_ut1,_ut2,_ut3,_ut4,_ut5,_light];
+		{deleteVehicle _x;} forEach [_testLogic,_ut1,_ut2,_ut3,_ut4,_ut5,_light];
 	} else {
-		{deleteVehicle _x;} foreach [_testLogic,_light];
+		{deleteVehicle _x;} forEach [_testLogic,_light];
 	};
 };
 life_shop_cam cameraEffect ["TERMINATE","BACK"];
@@ -190,13 +190,13 @@ if(isNil "life_clothesPurchased") exitWith {
 			if(count life_oldBackpackItems > 0) then {
 				{
 					[_x,true,true] call life_fnc_handleItem;
-				} foreach life_oldBackpackItems;
+				} forEach life_oldBackpackItems;
 			};
 		};
 	};
 
 	if(count life_oldUniformItems > 0) then {
-		{[_x,true,false,false,true] call life_fnc_handleItem;} foreach life_oldUniformItems;
+		{[_x,true,false,false,true] call life_fnc_handleItem;} forEach life_oldUniformItems;
 	};
 
 	if(vest player != "") then {
@@ -205,7 +205,7 @@ if(isNil "life_clothesPurchased") exitWith {
 		} else {
 			player addVest life_oldVest;
 			if(count life_oldVestItems > 0) then {
-				{[_x,true,false,false,true] call life_fnc_handleItem;} foreach life_oldVestItems;
+				{[_x,true,false,false,true] call life_fnc_handleItem;} forEach life_oldVestItems;
 			};
 		};
 	};
@@ -236,7 +236,7 @@ if((life_clothing_purchase select 3) == -1) then {
 	if(life_oldVest != vest player) then {
 		if(life_oldVest == "") then {removeVest player;} else {
 			player addVest life_oldVest;
-			{[_x,true,false,false,true] call life_fnc_handleItem;} foreach life_oldVestItems;
+			{[_x,true,false,false,true] call life_fnc_handleItem;} forEach life_oldVestItems;
 		};
 	};
 };
@@ -247,7 +247,7 @@ if((life_clothing_purchase select 4) == -1) then {
 		if(life_oldBackpack == "") then {removeBackpack player;} else {
 			removeBackpack player;
 			player addBackpack life_oldBackpack;
-			{[_x,true,true] call life_fnc_handleItem;} foreach life_oldBackpackItems;
+			{[_x,true,true] call life_fnc_handleItem;} forEach life_oldBackpackItems;
 		};
 	};
 };

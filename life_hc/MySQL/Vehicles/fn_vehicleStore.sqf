@@ -82,11 +82,11 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
 	_items = [];
 		{
 			if((_x select 0) in _resourceItems) then {
-				_items pushback [(_x select 0),(_x select 1)];
+				_items pushBack [(_x select 0),(_x select 1)];
 				_weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
 				_totalweight = _weight + _totalweight;
 			};
-		}foreach _itemList;
+		}forEach _itemList;
 	_trunk = [_items,_totalweight];
 	} else { 
 	_trunk = [[],0];
