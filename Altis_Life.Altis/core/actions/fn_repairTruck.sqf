@@ -11,7 +11,7 @@ _veh = cursorObject;
 life_interrupted = false;
 if(isNull _veh) exitWith {};
 if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) then {
-	if("ToolKit" in (items player)) then {
+	if(life_inv_toolkit > 0) then {
 		life_action_inUse = true;
 		_displayName = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _veh),"displayName");
 		_upp = format[localize "STR_NOTF_Repairing",_displayName];
@@ -48,7 +48,9 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		player playActionNow "stop";
 		if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
-		player removeItem "ToolKit";
+		if(EQUAL(LIFE_SETTINGS(getNumber,"vehicle_infiniteRepair"),0)) then {
+			[false,"toolkit",1] call life_fnc_handleInv;
+		};
 		_veh setDamage 0;
 		titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
 	};

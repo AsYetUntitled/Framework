@@ -97,7 +97,6 @@ class WeaponShops {
             { "ItemMap", "", 50, 35 },
             { "ItemCompass", "", 50, 25 },
             { "ItemWatch", "", 50, -1 },
-            { "ToolKit", "", 250, 75 },
             { "FirstAidKit", "", 150, 65 },
             { "NVGoggles", "", 2000, 980 },
             { "Chemlight_red", "", 300, -1 },
@@ -120,7 +119,6 @@ class WeaponShops {
             { "ItemMap", "", 250, 35 },
             { "ItemCompass", "", 250, 25 },
             { "ItemWatch", "", 250, -1 },
-            { "ToolKit", "", 1250, 75 },
             { "FirstAidKit", "", 750, 65 },
             { "NVGoggles", "", 10000, 980 },
             { "Chemlight_red", "", 1500, -1 },
@@ -145,7 +143,6 @@ class WeaponShops {
             { "HandGrenade_Stone", "Flashbang", 1700, -1 },
             { "Binocular", "", 150, -1 },
             { "ItemGPS", "", 100, 45 },
-            { "ToolKit", "", 250, 75 },
             { "FirstAidKit", "", 150, 65 },
             { "Medikit", "", 1000, 450 },
             { "NVGoggles", "", 2000, 980 }
@@ -219,7 +216,6 @@ class WeaponShops {
         items[] = {
             { "ItemGPS", "", 100, 45 },
             { "Binocular", "", 150, -1 },
-            { "ToolKit", "", 250, 75 },
             { "FirstAidKit", "", 150, 65 },
             { "Medikit", "", 500, 450 },
             { "NVGoggles", "", 1200, 980 }
