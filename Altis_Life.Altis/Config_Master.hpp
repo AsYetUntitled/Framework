@@ -40,7 +40,7 @@ class Life_Settings {
     /* Revive system settings */
     revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
     revive_fee = 1500; //Revive fee that players have to pay and medics / EMS are rewarded
-	respawn_timer = 30; //How many seconds a player should wait, before being able to respawn.
+    respawn_timer = 30; //How many seconds a player should wait, before being able to respawn.
 
     /* House related settings */
     house_limit = 5; //Maximum amount of houses a player can own.
