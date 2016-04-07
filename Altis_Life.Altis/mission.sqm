@@ -78,7 +78,7 @@ class ScenarioData
 	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
-	respawnDelay=5;
+	respawnDelay=0;
 	class Header
 	{
 		gameType="RPG";
