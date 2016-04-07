@@ -3947,6 +3947,14 @@
       <Portuguese>Tanque de Gasolina Cheio</Portuguese>
       <Polish>Pełny Kanister</Polish>
     </Key>
+    <Key ID="STR_Item_Toolkit">
+      <Original>Toolkit</Original>
+      <German>Toolkit</German>
+      <French>boîte à outils</French>
+      <Italian>kit di strumenti</Italian>
+      <Portuguese>conjunto de ferramentas</Portuguese>
+      <Polish>zestaw narzędzi</Polish>
+    </Key>
     <Key ID="STR_Item_Pickaxe">
       <Original>Pickaxe</Original>
       <German>Spitzhacke</German>
