@@ -225,7 +225,7 @@ class VirtualItems {
         weight = 12;
         buyPrice = -1;
         sellPrice = 95000;
-        illegal = false;
+        illegal = true;
         edible = -1;
         icon = "icons\ico_goldBar.paa";
     };
