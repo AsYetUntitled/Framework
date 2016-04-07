@@ -172,7 +172,7 @@ class VirtualItems {
         sellPrice = 100;
         illegal = false;
         edible = -1;
-        icon = "icons\ico_toolkit.paa";
+        icon = "\a3\weapons_f\items\data\UI\gear_toolkit_ca.paa";
     };
 
     class fuelEmpty {
