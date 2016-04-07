@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1111;
+		nextID=1165;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={26960.461,1103.681,23869.916};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={8465.8848,97.084282,25203.498};
+		dir[]={-0.14218314,-0.46610713,0.87323058};
+		up[]={-0.074907281,0.8847276,0.46005002};
+		aside[]={0.98700422,-3.9523002e-008,0.16070826};
 	};
 };
 binarizationWanted=0;
@@ -83,7 +83,7 @@ class ScenarioData
 	{
 		gameType="RPG";
 		minPlayers=1;
-		maxPlayers=75;
+		maxPlayers=100;
 	};
 	wreckLimit=3;
 	wreckRemovalMinTime=60;
@@ -99,24 +99,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -131,6 +113,24 @@ class CustomAttributes
 						};
 					};
 					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -189,7 +189,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=847;
+		items=872;
 		class Item0
 		{
 			dataType="Marker";
@@ -780,7 +780,7 @@ class Mission
 			text="@STR_MAR_Diving_Shop";
 			type="mil_box";
 			colorName="ColorOrange";
-			angle=215.5444;
+			angle=215.54439;
 			id=60;
 		};
 		class Item61
@@ -850,7 +850,7 @@ class Mission
 			text="DP 17";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=219.81392;
+			angle=219.8139;
 			id=67;
 		};
 		class Item68
@@ -1175,7 +1175,7 @@ class Mission
 			position[]={3244.9341,2.1102631,12960.808};
 			name="cop_car_1";
 			type="Empty";
-			angle=178.63144;
+			angle=178.63142;
 			id=99;
 		};
 		class Item100
@@ -1184,7 +1184,7 @@ class Mission
 			position[]={13780.473,20.25041,18931.313};
 			name="cop_car_2";
 			type="Empty";
-			angle=48.511879;
+			angle=48.511875;
 			id=100;
 		};
 		class Item101
@@ -1259,7 +1259,7 @@ class Mission
 			position[]={26868.67,24.432938,24567.48};
 			name="civ_air_2";
 			type="Empty";
-			angle=308.02115;
+			angle=308.02112;
 			id=108;
 		};
 		class Item109
@@ -1521,7 +1521,7 @@ class Mission
 			position[]={18145.107,26.476664,12855.548};
 			name="civ_truck_2";
 			type="Empty";
-			angle=359.83603;
+			angle=359.836;
 			id=134;
 		};
 		class Item135
@@ -1530,7 +1530,7 @@ class Mission
 			position[]={18149.994,26.508713,12855.938};
 			name="civ_truck_2_1";
 			type="Empty";
-			angle=359.83603;
+			angle=359.836;
 			id=135;
 		};
 		class Item136
@@ -1650,7 +1650,7 @@ class Mission
 			position[]={25716.904,18.13162,21271.055};
 			name="car_g_2";
 			type="Empty";
-			angle=220.38791;
+			angle=220.38789;
 			id=147;
 		};
 		class Item148
@@ -1778,7 +1778,7 @@ class Mission
 			position[]={23526.816,12.94872,19936.809};
 			name="cop_car_5";
 			type="Empty";
-			angle=91.179596;
+			angle=91.179588;
 			id=160;
 		};
 		class Item161
@@ -1819,7 +1819,7 @@ class Mission
 			text="@STR_MAR_Diving_Shop";
 			type="mil_box";
 			colorName="ColorOrange";
-			angle=215.5444;
+			angle=215.54439;
 			id=164;
 		};
 		class Item165
@@ -24328,8 +24328,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8588.1602,95.419128,25150.516};
-						angles[]={0.015987216,4.9803491,6.0819488};
+						position[]={8588.6719,95.292046,25151.945};
+						angles[]={0.015994642,4.9803491,6.0819468};
 					};
 					side="West";
 					class Attributes
@@ -24348,8 +24348,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8558.1602,100.72285,25150.516};
-						angles[]={0.2630899,4.98035,6.2232571};
+						position[]={8559.8096,99.022697,25157.398};
+						angles[]={0.11153574,4.98035,6.172967};
 					};
 					side="West";
 					class Attributes
@@ -24368,8 +24368,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8573.1602,96.885338,25159.494};
-						angles[]={0.18067499,4.98035,6.1861577};
+						position[]={8575.9307,95.854919,25162.324};
+						angles[]={0.25311917,4.98035,6.111557};
 					};
 					side="West";
 					class Attributes
@@ -24388,8 +24388,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8573.1602,96.885338,25159.494};
-						angles[]={0.18067499,4.98035,6.1861577};
+						position[]={8588.0615,95.241844,25155.527};
+						angles[]={0.22163208,4.98035,6.0526891};
 					};
 					side="West";
 					class Attributes
@@ -24408,8 +24408,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8578.1602,96.636009,25157.811};
-						angles[]={0.25311917,4.98035,6.111557};
+						position[]={8578.0879,97.408798,25152.393};
+						angles[]={0.071876638,4.98035,6.1861567};
 					};
 					side="West";
 					class Attributes
@@ -24428,8 +24428,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8568.1602,97.880379,25157.811};
-						angles[]={0.15475227,4.98035,6.1571898};
+						position[]={8568.3994,97.029327,25162.65};
+						angles[]={6.1914439,4.98035,6.1310372};
 					};
 					side="West";
 					class Attributes
@@ -24448,8 +24448,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8583.1602,96.369293,25155.084};
-						angles[]={0.25311893,4.98035,6.0793886};
+						position[]={8582.2803,96.694107,25151.414};
+						angles[]={0.071875811,4.98035,6.0263209};
 					};
 					side="West";
 					class Attributes
@@ -24468,8 +24468,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8563.1602,98.911095,25155.084};
-						angles[]={0.11153574,4.98035,6.172967};
+						position[]={8562.9443,98.364357,25159.313};
+						angles[]={0.15475266,4.98035,6.1297355};
 					};
 					side="West";
 					class Attributes
@@ -24488,8 +24488,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8588.1602,95.418488,25150.557};
-						angles[]={0.015994642,5.1804867,6.0819468};
+						position[]={8586.7178,95.741577,25148.891};
+						angles[]={0.015998369,5.1804867,6.0793886};
 					};
 					side="West";
 					class Attributes
@@ -24508,8 +24508,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8558.1602,100.71201,25150.557};
-						angles[]={0.2630899,4.98035,6.2232571};
+						position[]={8564.2061,97.669922,25162.691};
+						angles[]={6.2432065,4.98035,6.1297355};
 					};
 					side="West";
 					class Attributes
@@ -24548,8 +24548,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8573.1602,96.885338,25159.494};
-						angles[]={0.18067499,4.98035,6.1861577};
+						position[]={8582.7285,95.76548,25157.764};
+						angles[]={0.25311893,4.98035,6.0793886};
 					};
 					side="West";
 					class Attributes
@@ -24568,8 +24568,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8573.1602,96.885338,25159.494};
-						angles[]={0.18067499,4.98035,6.1861577};
+						position[]={8577.4766,96.239716,25159.801};
+						angles[]={0.25311917,4.98035,6.111557};
 					};
 					side="West";
 					class Attributes
@@ -24588,8 +24588,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8568.1602,97.880379,25157.811};
-						angles[]={0.15475227,4.98035,6.1571898};
+						position[]={8567.707,97.554123,25160.207};
+						angles[]={0.18067499,4.98035,6.1310368};
 					};
 					side="West";
 					class Attributes
@@ -24653,7 +24653,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_1";
-						description="Civ 1";
+						description="Civilian 1";
 						isPlayable=1;
 					};
 					id=789;
@@ -24709,7 +24709,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_2";
-						description="Civ 2";
+						description="Civilian 2";
 						isPlayable=1;
 					};
 					id=791;
@@ -24765,7 +24765,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_3";
-						description="Civ 3";
+						description="Civilian 3";
 						isPlayable=1;
 					};
 					id=793;
@@ -24821,7 +24821,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_4";
-						description="Civ 4";
+						description="Civilian 4";
 						isPlayable=1;
 					};
 					id=795;
@@ -24877,7 +24877,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_5";
-						description="Civ 5";
+						description="Civilian 5";
 						isPlayable=1;
 					};
 					id=797;
@@ -24933,7 +24933,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_6";
-						description="Civ 6";
+						description="Civilian 6";
 						isPlayable=1;
 					};
 					id=799;
@@ -24989,7 +24989,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_7";
-						description="Civ 7";
+						description="Civilian 7";
 						isPlayable=1;
 					};
 					id=801;
@@ -25045,7 +25045,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_8";
-						description="Civ 8";
+						description="Civilian 8";
 						isPlayable=1;
 					};
 					id=803;
@@ -25101,7 +25101,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_9";
-						description="Civ 9";
+						description="Civilian 9";
 						isPlayable=1;
 					};
 					id=805;
@@ -25157,7 +25157,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_10";
-						description="Civ 10";
+						description="Civilian 10";
 						isPlayable=1;
 					};
 					id=807;
@@ -25213,7 +25213,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_11";
-						description="Civ 11";
+						description="Civilian 11";
 						isPlayable=1;
 					};
 					id=809;
@@ -25269,7 +25269,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_12";
-						description="Civ 12";
+						description="Civilian 12";
 						isPlayable=1;
 					};
 					id=811;
@@ -25325,7 +25325,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_13";
-						description="Civ 13";
+						description="Civilian 13";
 						isPlayable=1;
 					};
 					id=813;
@@ -25381,7 +25381,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_14";
-						description="Civ 14";
+						description="Civilian 14";
 						isPlayable=1;
 					};
 					id=815;
@@ -25437,7 +25437,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_15";
-						description="Civ 15";
+						description="Civilian 15";
 						isPlayable=1;
 					};
 					id=817;
@@ -25493,7 +25493,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_16";
-						description="Civ 16";
+						description="Civilian 16";
 						isPlayable=1;
 					};
 					id=819;
@@ -25549,7 +25549,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_17";
-						description="Civ 17";
+						description="Civilian 17";
 						isPlayable=1;
 					};
 					id=821;
@@ -25605,7 +25605,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_18";
-						description="Civ 18";
+						description="Civilian 18";
 						isPlayable=1;
 					};
 					id=823;
@@ -25661,7 +25661,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_19";
-						description="Civ 19";
+						description="Civilian 19";
 						isPlayable=1;
 					};
 					id=825;
@@ -25717,7 +25717,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_20";
-						description="Civ 20";
+						description="Civilian 20";
 						isPlayable=1;
 					};
 					id=827;
@@ -25773,7 +25773,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_21";
-						description="Civ 21";
+						description="Civilian 21";
 						isPlayable=1;
 					};
 					id=829;
@@ -25829,7 +25829,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_22";
-						description="Civ 22";
+						description="Civilian 22";
 						isPlayable=1;
 					};
 					id=831;
@@ -25885,7 +25885,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_23";
-						description="Civ 23";
+						description="Civilian 23";
 						isPlayable=1;
 					};
 					id=833;
@@ -25941,7 +25941,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_24";
-						description="Civ 24";
+						description="Civilian 24";
 						isPlayable=1;
 					};
 					id=835;
@@ -25997,7 +25997,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_25";
-						description="Civ 25";
+						description="Civilian 25";
 						isPlayable=1;
 					};
 					id=837;
@@ -26053,7 +26053,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_26";
-						description="Civ 26";
+						description="Civilian 26";
 						isPlayable=1;
 					};
 					id=839;
@@ -26109,7 +26109,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_27";
-						description="Civ 27";
+						description="Civilian 27";
 						isPlayable=1;
 					};
 					id=841;
@@ -26165,7 +26165,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_28";
-						description="Civ 28";
+						description="Civilian 28";
 						isPlayable=1;
 					};
 					id=843;
@@ -26221,7 +26221,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_29";
-						description="Civ 29";
+						description="Civilian 29";
 						isPlayable=1;
 					};
 					id=845;
@@ -26277,7 +26277,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_30";
-						description="Civ 30";
+						description="Civilian 30";
 						isPlayable=1;
 					};
 					id=847;
@@ -26333,7 +26333,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_31";
-						description="Civ 31";
+						description="Civilian 31";
 						isPlayable=1;
 					};
 					id=849;
@@ -26389,7 +26389,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_32";
-						description="Civ 32";
+						description="Civilian 32";
 						isPlayable=1;
 					};
 					id=851;
@@ -26445,7 +26445,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_33";
-						description="Civ 33";
+						description="Civilian 33";
 						isPlayable=1;
 					};
 					id=853;
@@ -26501,7 +26501,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_34";
-						description="Civ 34";
+						description="Civilian 34";
 						isPlayable=1;
 					};
 					id=855;
@@ -26557,7 +26557,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_35";
-						description="Civ 35";
+						description="Civilian 35";
 						isPlayable=1;
 					};
 					id=857;
@@ -26613,7 +26613,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_36";
-						description="Civ 36";
+						description="Civilian 36";
 						isPlayable=1;
 					};
 					id=859;
@@ -26669,7 +26669,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_37";
-						description="Civ 37";
+						description="Civilian 37";
 						isPlayable=1;
 					};
 					id=861;
@@ -26725,7 +26725,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_38";
-						description="Civ 38";
+						description="Civilian 38";
 						isPlayable=1;
 					};
 					id=863;
@@ -26781,7 +26781,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_39";
-						description="Civ 39";
+						description="Civilian 39";
 						isPlayable=1;
 					};
 					id=865;
@@ -26837,7 +26837,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_40";
-						description="Civ 40";
+						description="Civilian 40";
 						isPlayable=1;
 					};
 					id=867;
@@ -26893,7 +26893,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_41";
-						description="Civ 41";
+						description="Civilian 41";
 						isPlayable=1;
 					};
 					id=869;
@@ -26949,7 +26949,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_42";
-						description="Civ 42";
+						description="Civilian 42";
 						isPlayable=1;
 					};
 					id=871;
@@ -27005,7 +27005,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_43";
-						description="Civ 43";
+						description="Civilian 43";
 						isPlayable=1;
 					};
 					id=873;
@@ -27061,7 +27061,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_44";
-						description="Civ 44";
+						description="Civilian 44";
 						isPlayable=1;
 					};
 					id=875;
@@ -27117,7 +27117,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_45";
-						description="Civ 45";
+						description="Civilian 45";
 						isPlayable=1;
 					};
 					id=877;
@@ -27173,7 +27173,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_46";
-						description="Civ 46";
+						description="Civilian 46";
 						isPlayable=1;
 					};
 					id=879;
@@ -27229,7 +27229,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_47";
-						description="Civ 47";
+						description="Civilian 47";
 						isPlayable=1;
 					};
 					id=881;
@@ -27285,7 +27285,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_48";
-						description="Civ 48";
+						description="Civilian 48";
 						isPlayable=1;
 					};
 					id=883;
@@ -27341,7 +27341,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_49";
-						description="Civ 49";
+						description="Civilian 49";
 						isPlayable=1;
 					};
 					id=885;
@@ -27397,7 +27397,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_50";
-						description="Civ 50";
+						description="Civilian 50";
 						isPlayable=1;
 					};
 					id=887;
@@ -27453,7 +27453,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_51";
-						description="Civ 51";
+						description="Civilian 51";
 						isPlayable=1;
 					};
 					id=889;
@@ -27509,7 +27509,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_52";
-						description="Civ 52";
+						description="Civilian 52";
 						isPlayable=1;
 					};
 					id=891;
@@ -27565,7 +27565,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_53";
-						description="Civ 53";
+						description="Civilian 53";
 						isPlayable=1;
 					};
 					id=893;
@@ -27621,7 +27621,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_54";
-						description="Civ 54";
+						description="Civilian 54";
 						isPlayable=1;
 					};
 					id=895;
@@ -27677,7 +27677,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_55";
-						description="Civ 55";
+						description="Civilian 55";
 						isPlayable=1;
 					};
 					id=897;
@@ -27733,7 +27733,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_56";
-						description="Civ 56";
+						description="Civilian 56";
 						isPlayable=1;
 					};
 					id=899;
@@ -27789,7 +27789,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_57";
-						description="Civ 57";
+						description="Civilian 57";
 						isPlayable=1;
 					};
 					id=901;
@@ -27845,7 +27845,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_58";
-						description="Civ 58";
+						description="Civilian 58";
 						isPlayable=1;
 					};
 					id=903;
@@ -27901,7 +27901,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_59";
-						description="Civ 59";
+						description="Civilian 59";
 						isPlayable=1;
 					};
 					id=905;
@@ -27957,7 +27957,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_60";
-						description="Civ 60";
+						description="Civilian 60";
 						isPlayable=1;
 					};
 					id=907;
@@ -28013,7 +28013,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_61";
-						description="Civ 61";
+						description="Civilian 61";
 						isPlayable=1;
 					};
 					id=909;
@@ -28069,7 +28069,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_62";
-						description="Civ 62";
+						description="Civilian 62";
 						isPlayable=1;
 					};
 					id=911;
@@ -28125,7 +28125,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_63";
-						description="Civ 63";
+						description="Civilian 63";
 						isPlayable=1;
 					};
 					id=913;
@@ -28181,7 +28181,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_64";
-						description="Civ 64";
+						description="Civilian 64";
 						isPlayable=1;
 					};
 					id=915;
@@ -28237,7 +28237,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_65";
-						description="Civ 65";
+						description="Civilian 65";
 						isPlayable=1;
 					};
 					id=917;
@@ -28293,7 +28293,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_66";
-						description="Civ 66";
+						description="Civilian 66";
 						isPlayable=1;
 					};
 					id=919;
@@ -28349,7 +28349,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_67";
-						description="Civ 67";
+						description="Civilian 67";
 						isPlayable=1;
 					};
 					id=921;
@@ -28405,7 +28405,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_68";
-						description="Civ 68";
+						description="Civilian 68";
 						isPlayable=1;
 					};
 					id=923;
@@ -28461,7 +28461,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_69";
-						description="Civ 69";
+						description="Civilian 69";
 						isPlayable=1;
 					};
 					id=925;
@@ -28517,7 +28517,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_70";
-						description="Civ 70";
+						description="Civilian 70";
 						isPlayable=1;
 					};
 					id=927;
@@ -28573,7 +28573,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_71";
-						description="Civ 71";
+						description="Civilian 71";
 						isPlayable=1;
 					};
 					id=929;
@@ -28629,7 +28629,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_72";
-						description="Civ 72";
+						description="Civilian 72";
 						isPlayable=1;
 					};
 					id=931;
@@ -28685,7 +28685,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_73";
-						description="Civ 73";
+						description="Civilian 73";
 						isPlayable=1;
 					};
 					id=933;
@@ -28741,7 +28741,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_74";
-						description="Civ 74";
+						description="Civilian 74";
 						isPlayable=1;
 					};
 					id=935;
@@ -28797,7 +28797,7 @@ class Mission
 					{
 						skill=0.60000002;
 						name="civ_75";
-						description="Civ 75";
+						description="Civilian 75";
 						isPlayable=1;
 					};
 					id=937;
@@ -37027,7 +37027,7 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=4;
+				items=6;
 				class Item0
 				{
 					dataType="Object";
@@ -37053,7 +37053,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8425.2324,99.419868,25179.07};
+						position[]={8425.4766,99.273796,25179.539};
 						angles[]={0.26557502,3.2307963,6.2073312};
 					};
 					side="Independent";
@@ -37105,6 +37105,44 @@ class Mission
 					id=1061;
 					type="B_medic_F";
 				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8427.8242,100.57317,25174.123};
+						angles[]={0.26680848,3.2307963,6.2073331};
+					};
+					side="Independent";
+					class Attributes
+					{
+						skill=0.60000002;
+						name="medic_5";
+						description="WhiteListed - EMS Medic 5";
+						isPlayable=1;
+					};
+					id=1162;
+					type="B_medic_F";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8426.2715,101.17136,25172.354};
+						angles[]={0.26433292,3.2307963,6.2099824};
+					};
+					side="Independent";
+					class Attributes
+					{
+						skill=0.60000002;
+						name="medic_6";
+						description="WhiteListed - EMS Medic 6";
+						isPlayable=1;
+					};
+					id=1164;
+					type="B_medic_F";
+				};
 			};
 			class Attributes
 			{
@@ -37150,10 +37188,835 @@ class Mission
 		class Item846
 		{
 			dataType="Marker";
-			position[]={8426.6553,106.05005,25181.125};
+			position[]={8430.2295,106.05005,25179.502};
 			name="respawn_guerrila";
 			type="Empty";
 			id=1110;
+		};
+		class Item847
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8458.0732,85.039246,25227.771};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_76";
+						description="Civilian 76";
+						isPlayable=1;
+					};
+					id=1112;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1111;
+		};
+		class Item848
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8457.1992,84.531029,25225.902};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_77";
+						description="Civilian 77";
+						isPlayable=1;
+					};
+					id=1114;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1113;
+		};
+		class Item849
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8459.1152,84.541832,25225.016};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_78";
+						description="Civilian 78";
+						isPlayable=1;
+					};
+					id=1116;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1115;
+		};
+		class Item850
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8460.3467,85.085823,25226.885};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_79";
+						description="Civilian 79";
+						isPlayable=1;
+					};
+					id=1118;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1117;
+		};
+		class Item851
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8460.4248,84.50029,25224.205};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_80";
+						description="Civilian 80";
+						isPlayable=1;
+					};
+					id=1120;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1119;
+		};
+		class Item852
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8461.501,84.40126,25223.271};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_81";
+						description="Civilian 81";
+						isPlayable=1;
+					};
+					id=1122;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1121;
+		};
+		class Item853
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8461.8428,84.972809,25225.699};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_82";
+						description="Civilian 82";
+						isPlayable=1;
+					};
+					id=1124;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1123;
+		};
+		class Item854
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8456.3262,84.288414,25223.691};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_83";
+						description="Civilian 83";
+						isPlayable=1;
+					};
+					id=1126;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1125;
+		};
+		class Item855
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8458.3213,84.199829,25223.283};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_84";
+						description="Civilian 84";
+						isPlayable=1;
+					};
+					id=1128;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1127;
+		};
+		class Item856
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8455.5,84.294289,25221.227};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_85";
+						description="Civilian 85";
+						isPlayable=1;
+					};
+					id=1130;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1129;
+		};
+		class Item857
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8463.2148,84.498047,25222.021};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_86";
+						description="Civilian 86";
+						isPlayable=1;
+					};
+					id=1132;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1131;
+		};
+		class Item858
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8463.2764,84.909081,25224.764};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_87";
+						description="Civilian 87";
+						isPlayable=1;
+					};
+					id=1134;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1133;
+		};
+		class Item859
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8464.6504,84.812256,25223.705};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_88";
+						description="Civilian 88";
+						isPlayable=1;
+					};
+					id=1136;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1135;
+		};
+		class Item860
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8464.1973,84.86541,25220.354};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_89";
+						description="Civilian 89";
+						isPlayable=1;
+					};
+					id=1138;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1137;
+		};
+		class Item861
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8465.6475,84.701126,25222.271};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_90";
+						description="Civilian 90";
+						isPlayable=1;
+					};
+					id=1140;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1139;
+		};
+		class Item862
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8465.6318,85.119942,25219.666};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_91";
+						description="Civilian 91";
+						isPlayable=1;
+					};
+					id=1142;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1141;
+		};
+		class Item863
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8466.8779,84.990494,25221.24};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_92";
+						description="Civilian 92";
+						isPlayable=1;
+					};
+					id=1144;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1143;
+		};
+		class Item864
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8459.6025,85.66111,25229.836};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_93";
+						description="Civilian 93";
+						isPlayable=1;
+					};
+					id=1146;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1145;
+		};
+		class Item865
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8461.3262,85.569611,25228.629};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_94";
+						description="Civilian 94";
+						isPlayable=1;
+					};
+					id=1148;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1147;
+		};
+		class Item866
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8463.2676,85.528191,25227.736};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_95";
+						description="Civilian 95";
+						isPlayable=1;
+					};
+					id=1150;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1149;
+		};
+		class Item867
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8464.2783,85.373352,25226.549};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_96";
+						description="Civilian 96";
+						isPlayable=1;
+					};
+					id=1152;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1151;
+		};
+		class Item868
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8466.0811,85.333748,25225.734};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_97";
+						description="Civilian 97";
+						isPlayable=1;
+					};
+					id=1154;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1153;
+		};
+		class Item869
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8467.0322,85.186295,25224.605};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_98";
+						description="Civilian 98";
+						isPlayable=1;
+					};
+					id=1156;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1155;
+		};
+		class Item870
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8467.9238,85.056656,25223.455};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_99";
+						description="Civilian 99";
+						isPlayable=1;
+					};
+					id=1158;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1157;
+		};
+		class Item871
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8468.7168,85.640663,25226.15};
+						angles[]={0.086446159,0.51036918,6.232553};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						name="civ_100";
+						description="Civilian 100";
+						isPlayable=1;
+					};
+					id=1160;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1159;
 		};
 	};
 };
