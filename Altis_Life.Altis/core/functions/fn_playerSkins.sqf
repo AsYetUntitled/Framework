@@ -6,6 +6,8 @@
     Description:
     Sets skins for players by their side and uniform.
 */
+private["_skinName"];
+
 switch(playerSide) do {
 	case civilian: {
 		if(EQUAL(LIFE_SETTINGS(getNumber,"civ_skins"),1)) then {
@@ -32,11 +34,17 @@ switch(playerSide) do {
 			};
 		};
 	};
+
 	case west: {
 		if(uniform player == "U_Rangemaster") then {
-			player setObjectTextureGlobal [0, "textures\cop_uniform.jpg"];
+			_skinName = "textures\cop_uniform.jpg";
+			if(EQUAL(LIFE_SETTINGS(getNumber,"cop_extendedSkins"),1) && FETCH_CONST(life_coplevel) >= 1 && FETCH_CONST(life_coplevel) <= 7) then {
+					_skinName = ["textures\cop_uniform_",(FETCH_CONST(life_coplevel)),".jpg"] joinString "";
+			};
+			player setObjectTextureGlobal [0, _skinName];
 		};
 	};
+
 	case independent: {
 		if(uniform player == "U_Rangemaster") then {
 			player setObjectTextureGlobal [0, "textures\medic_uniform.jpg"];
