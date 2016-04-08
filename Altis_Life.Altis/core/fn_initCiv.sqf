@@ -17,7 +17,7 @@ if(life_is_alive && !life_is_arrested) then {
 	player setPosWorld life_civ_position;
 } else {
 	if(!life_is_alive && !life_is_arrested) then {
-		if(EQUAL(LIFE_SETTINGS(getNumber,"save_civ_positionStrict"),1)) then {
+		if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_positionStrict"),1)) then {
 			_handle = [] spawn life_fnc_civLoadout;
 			waitUntil {scriptDone _handle}; CASH = 0;
 		};

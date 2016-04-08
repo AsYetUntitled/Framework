@@ -22,20 +22,20 @@ switch (_mode) do {
 		_vehWeapons = getWeaponCargo _vehicle;
 		_vehBackpacks = getBackpackCargo _vehicle;
 		_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
-		
+
 		// Keep it clean!
 		if((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {
 			_cargo = [];
-		};	
-		
+		};
+
 		_cargo = [_cargo] call DB_fnc_mresArray;
-		
+
 		_query = format["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_cargo];
 		_thread = [_query,1] call DB_fnc_asyncCall;
 	};
 
 	case 2: {
-		_resourceItems = LIFE_SETTINGS(getArray,"save_veh_items");
+		_resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 		_trunk = _vehicle getVariable["Trunk",[[],0]];
 		_itemList = _trunk select 0;
 		_totalweight = 0;
@@ -49,7 +49,7 @@ switch (_mode) do {
 		}forEach _itemList;
 		_trunk = [_items,_totalweight];
 		_trunk = [_trunk] call DB_fnc_mresArray;
-		
+
 		_query = format["UPDATE vehicles SET inventory='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk];
 		_thread = [_query,1] call DB_fnc_asyncCall;
 	};

@@ -49,7 +49,7 @@ if(!(EQUAL(_diff,SEL(_itemInfo,1)))) then {
 };
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
 		advanced_log = format ["picked up %1 %2",_diff,localize _itemName];
 	} else {
 		advanced_log = format ["%1 - %2 picked up %3 %4",profileName,(getPlayerUID player),_diff,localize _itemName];

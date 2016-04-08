@@ -4,7 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Server-side cleanup script on vehicles.
 	Sort of a lame way but whatever.
@@ -20,7 +20,7 @@ while {true} do {
 		_fuel = 1;
 
 		if(_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) then {
-			if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_fuel"),1)) then {_fuel = (fuel _veh);};
+			if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {_fuel = (fuel _veh);};
 			_dbInfo = _veh getVariable["dbInfo",[]];
 			_units = {(_x distance _veh < 300)} count playableUnits;
 			if(count crew _x == 0) then {

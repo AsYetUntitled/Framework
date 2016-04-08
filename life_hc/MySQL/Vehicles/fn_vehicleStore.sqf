@@ -2,9 +2,9 @@
 /*
 	File: fn_vehicleStore.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Stores the vehicle in the 'Garage'
 */
@@ -14,7 +14,7 @@ _impound = [_this,1,false,[true]] call BIS_fnc_param;
 _unit = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 _storetext = [_this,3,"",[""]] call BIS_fnc_param;
 _ownerID = _unit GVAR["life_clientID",-1];
-_resourceItems = LIFE_SETTINGS(getArray,"save_veh_items");
+_resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
 if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.
 _vInfo = _vehicle getVariable["dbInfo",[]];
@@ -25,7 +25,7 @@ if(count _vInfo > 0) then {
 };
 
 // save damage.
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_damage"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_damage"),1)) then {
 	_damage = getAllHitPointsDamage _vehicle;
 	_damage = _damage select 2;
 	} else {
@@ -34,7 +34,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_damage"),1)) then {
 _damage = [_damage] call HC_fnc_mresArray;
 
 // because fuel price!
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_fuel"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {
 	_fuel = (fuel _vehicle);
 	} else {
 	_fuel = 1;
@@ -44,7 +44,7 @@ if(_impound) exitWith {
 	if(count _vInfo == 0) then  {
 		life_impound_inuse = false;
 		_ownerID publicVariableClient "life_impound_inuse";
-		
+
 		if(!isNil "_vehicle" && {!isNull _vehicle}) then {
 			deleteVehicle _vehicle;
 		};
@@ -55,7 +55,7 @@ if(_impound) exitWith {
 		if(!isNil "_vehicle" && {!isNull _vehicle}) then {
 			deleteVehicle _vehicle;
 		};
-		
+
 		life_impound_inuse = false;
 		_ownerID publicVariableClient "life_impound_inuse";
 	};
@@ -75,7 +75,7 @@ if(_uid != getPlayerUID _unit) exitWith {
 };
 
 // sort out whitelisted items!
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
 	_trunk = _vehicle getVariable["Trunk",[[],0]];
 	_itemList = _trunk select 0;
 	_totalweight = 0;
@@ -88,18 +88,18 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
 			};
 		}forEach _itemList;
 	_trunk = [_items,_totalweight];
-	} else { 
+	} else {
 	_trunk = [[],0];
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),1)) then {
 	_vehItems = getItemCargo _vehicle;
 	_vehMags = getMagazineCargo _vehicle;
 	_vehWeapons = getWeaponCargo _vehicle;
 	_vehBackpacks = getBackpackCargo _vehicle;
 	_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 	// no items? clean the array so the database looks pretty
-	if((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {_cargo = [];};	
+	if((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {_cargo = [];};
 	} else {
 	_cargo = [];
 };

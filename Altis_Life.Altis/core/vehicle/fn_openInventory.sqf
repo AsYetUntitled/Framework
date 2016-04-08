@@ -43,7 +43,7 @@ _vehicle spawn {
 	};
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
 	_vehicle spawn {
 		waitUntil {isNull (findDisplay 3500)};
 		_this setVariable["trunk_in_use",false,true];

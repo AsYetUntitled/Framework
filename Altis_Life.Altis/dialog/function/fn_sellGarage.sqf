@@ -44,7 +44,7 @@ hint format[localize "STR_Garage_SoldCar",[_sellPrice] call life_fnc_numberText]
 ADD(BANK,_sellPrice);
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
 		advanced_log = format ["sold vehicle %1 for %2. Bank Balance: %3  On Hand Balance: %4",_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 	} else {
 		advanced_log = format ["%1 - %2 sold vehicle %3 for %4. Bank Balance: %5  On Hand Balance: %6",profileName,(getPlayerUID player),_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];

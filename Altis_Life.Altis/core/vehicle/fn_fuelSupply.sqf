@@ -2,7 +2,7 @@
 /*
 	File: fn_fuelSupply.sqf
 	Author: Ulrich "Zero" Werren
-	
+
 	Description:
 	Fuel Tank Job, Fill Gas Station with Fuel.
 */
@@ -66,7 +66,7 @@ _shortest = 100000;
 
 if(_distance < 1000) exitWith {titleText [localize "STR_FuelTank_PipeLine","PLAIN"]; life_action_inUse = false;};
 
-_pricem = getNumber(missionConfigFile >> "Life_Settings" >> "FuelTank_WinMultiplier");
+_pricem = getNumber(missionConfigFile >> "Life_Settings" >> "fuelTank_winMultiplier");
 _price = floor((((floor(_shortest / 100) * 100) / 1337) * _pricem) * 100) / 100;
 _win = 0;
 
@@ -91,7 +91,7 @@ waitUntil {
 
 	_fuelState = _fuelState - 100;
 	_fuelFeedState = _fuelFeedState - 100;
-	
+
 	_win = _win + (_price * 100);
 	_vehicle setVariable ["fuelTank",[_fuelSpace,_fuelState],true];
 
