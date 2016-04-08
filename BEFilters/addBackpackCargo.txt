@@ -7,7 +7,6 @@
 5 B_AssaultPack_mcamo_AAR
 5 B_AssaultPack_mcamo_Ammo
 5 B_AssaultPack_rgr_LAT
-5 B_AssaultPack_rgr_Medic
 5 B_AssaultPack_rgr_Repair
 5 B_AssaultPack_rgr_ReconMedic
 5 B_AssaultPack_rgr_ReconExp
