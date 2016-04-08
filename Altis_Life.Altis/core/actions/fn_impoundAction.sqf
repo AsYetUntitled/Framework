@@ -11,6 +11,7 @@ _vehicle = param [0,ObjNull,[ObjNull]];
 _filters = ["Car","Air","Ship"];
 if(!((KINDOF_ARRAY(_vehicle,_filters)))) exitWith {};
 if(player distance cursorObject > 10) exitWith {};
+if(_vehicle getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 
 _vehicleData = _vehicle GVAR ["vehicle_info_owners",[]];
 if(EQUAL((count _vehicleData),0)) exitWith {deleteVehicle _vehicle}; //Bad vehicle.

@@ -5268,6 +5268,9 @@
       <Original>Clean</Original>
       <French>Nettoyer</French>
     </Key>
+    <key ID="STR_NPC_Protected">
+      <original>This vehicle is NPC protected.</original>
+    </key>
   </Package>
   <Package name="Session_Strings">
     <Key ID="STR_Session_Query">
