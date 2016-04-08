@@ -18,6 +18,7 @@
 *.bak
 *.bat
 *.exe
+Thumbs.db
 
 #
 # Bohemia Packed Files
