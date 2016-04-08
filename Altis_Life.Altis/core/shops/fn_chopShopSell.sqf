@@ -27,7 +27,7 @@ if(life_HC_isActive) then {
 };
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
 		advanced_log = format ["chopped vehicle %1 for %2  On Hand Cash(pre-chop): %3",_vehicle,[_price] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 	} else {
 		advanced_log = format ["%1 - %2 chopped vehicle %3 for %4  On Hand Cash(pre-chop): %5",profileName,(getPlayerUID player),_vehicle,[_price] call life_fnc_numberText,[CASH] call life_fnc_numberText];

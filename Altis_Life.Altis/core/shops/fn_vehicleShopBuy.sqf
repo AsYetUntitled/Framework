@@ -135,7 +135,7 @@ if(_mode) then {
 };
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
 		advanced_log = format ["bought vehicle %1 for %2. On Hand Cash: %3  Bank Balance: %4",_className,[_basePrice] call life_fnc_numberText,[CASH] call life_fnc_numberText,[BANK] call life_fnc_numberText];
 	} else {
 		advanced_log = format ["%1 - %2 bought vehicle %3 for %4. On Hand Cash: %5  Bank Balance %6",profileName,(getPlayerUID player),_className,[_basePrice] call life_fnc_numberText,[CASH] call life_fnc_numberText,[BANK] call life_fnc_numberText];

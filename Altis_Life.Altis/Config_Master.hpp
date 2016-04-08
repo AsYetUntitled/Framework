@@ -5,118 +5,113 @@
     Master settings for various features and functionality
 */
 class Life_Settings {
-    /* Persistent Player Settings */
-    save_civ_weapons = false; //Allow civilians to save weapons on them?
-    save_virtualItems = true; //Save Virtual items (all sides)?
-    save_playerStats = true; //Save food, water and damage (all sides)?
-    save_civ_position = false; //Save civilian location?
-    save_civ_positionStrict = false; //Strip the player if possible combat-log?  WARNING: Server crashes and lack of reliable syncing can trigger this.
+/* Logging and Security Settings*/
+    /* Security Settings */
+    sypglass_toggle = true; //Spyglass On/Off Toggle --> True = On & False = Off
 
-    /* Persistent Vehicle Settings */
-    save_veh_virtualItems = false; //Save Virtual items for vehicles (all sides)?
-    save_veh_gear = false; //Save Gear for vehicles (all sides)?
-    save_veh_fuel = false; //Save Vehicle fuel state
-    save_veh_damage = false; //Save Vehicle Damage
-    save_veh_items[] = { "pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donuts","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat" };
-
-    /* Logging Settings */
-    BattlEye_friendlyLogging = false; //Set to true if you plan to read the data in your BattlEye log files. Otherwise use the SERVER RPT.
+    /* Data Logging Settings */
+    battlEye_friendlyLogging = false; //Set to true if you plan to read the data in your BattlEye log files. Otherwise use the SERVER RPT.
     player_advancedLog = false; //Logs the following: Houses(purchase/sale), Vehicle(Purchase/Sale/Chopping), Cop Arrests and Gang Creations. SEARCH USING: advanced_log
     player_moneyLog = false; //Logs player and gang bank(deposits/withdrawals/transfers). Logs money picked up off the ground. Logs player robbery. SEARCH USING: money_log
 
-    /* Clothing related settings */
+/* Database Related Settings */
+    /* Player Data Saving */
+    save_virtualItems = true; //Save Virtual items (all sides)?
+    save_playerStats = true; //Save food, water and damage (all sides)?
+    save_civilian_weapons = false; //Allow civilians to save weapons on them?
+    save_civilian_position = false; //Save civilian location?
+    save_civilian_positionStrict = false; //Strip the player if possible combat-log?  WARNING: Server crashes and lack of reliable syncing can trigger this.
+
+    /* Vehicle Data Saving */
+    save_vehicle_virtualItems = false; //Save virtual items inside the vehicle (all sides)(-- See defined items on next line --)
+    save_vehicle_items[] = { "pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donuts","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat" };
+    save_vehicle_inventory = false; //Save Arma inventory of vehicle to the database
+    save_vehicle_fuel = false; //Save vehicle fuel level to the database (Impounded/Garaged).
+    save_vehicle_damage = false; //Save vehicle damage to the database.
+
+/* System Settings */
+    /* ATM & Federal Reserve System Configurations */
+    global_ATM = true; //Allow users to access any ATM on the map (Marked & Unmarked).
+    noatm_timer = 10; //Time in minutes that players cannot deposit money after selling stolen gold.
+    minimum_cops = 5; //Minimum cops required online to rob the Federal Reserve
+
+    /* Basic System Configurations */
+    donor_level = false; //Enable the donor level set in database (var = life_donorlevel; levels = 0,1,2,3,4,5). ATTENTION! Before enabling, read: https://www.bistudio.com/community/game-content-usage-rules & https://www.bistudio.com/monetization
+    enable_fatigue = true; //Set to false to disable the ARMA 3 fatigue system.
+    total_maxWeight = 24; //Static variable for the maximum weight allowed without having a backpack
+    respawn_timer = 30; //How many seconds a player should wait, before being able to respawn.
+
+    /* Clothing System Configurations */
+    civ_skins = false; //Enable or disable civilian skins. Before enabling, you must add all the SEVEN files to textures folder. (It must be named as: civilian_uniform_1.jpg, civilian_uniform_2.jpg...civilian_uniform_6.jpg, civilian_uniform_7.jpg)
+    cop_extendedSkins = false; //Enable or disable cop skins by level. Before enabling, you must add all the EIGHT files to textures folder. (It must be named as: cop_uniform.jpg + cop_uniform_1.jpg, cop_uniform_2.jpg...cop_uniform_6.jpg, cop_uniform_7.jpg; meaning cop_uniform = life_coplevel=0, cop_uniform_1 = life_coplevel=1, cop_uniform_2 = life_coplevel=2, etc...)
     clothing_noTP = false;  //Disable clothing preview teleport? (true = no teleport. false = teleport)
     clothing_box = true; //true = teleport to a black box. false = teleport to somewhere on map. (It only affects the game if clothing_noTP is set as false)
     clothing_masks[] = { "H_Shemag_olive", "H_Shemag_khk", "H_Shemag_tan", "H_Shemag_olive_hs", "H_ShemagOpen_khk", "H_ShemagOpen_tan", "G_Balaclava_blk", "G_Balaclava_combat", "G_Balaclava_lowprofile", "G_Balaclava_oli", "G_Bandanna_aviator", "G_Bandanna_beast", "G_Bandanna_blk", "G_Bandanna_khk", "G_Bandanna_oli", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_tan", "U_O_GhillieSuit", "U_I_GhillieSuit", "U_B_GhillieSuit", "H_RacingHelmet_1_black_F", "H_RacingHelmet_1_red_F", "H_RacingHelmet_1_white_F", "H_RacingHelmet_1_blue_F", "H_RacingHelmet_1_yellow_F", "H_RacingHelmet_1_green_F", "H_RacingHelmet_1_F", "H_RacingHelmet_2_F", "H_RacingHelmet_3_F", "H_RacingHelmet_4_F" };
 
-    /* Cop related settings */
-    cops_online_min = 5; //minimum cops online for robbing a bank
-    seize_exempt[] = { "Binocular", "ItemWatch", "ItemCompass", "ItemGPS", "ItemMap", "NVGoggles", "FirstAidKit", "ToolKit", "Chemlight_red", "Chemlight_yellow", "Chemlight_green", "Chemlight_blue", "optic_ACO_grn_smg" };
-    seize_uniform[] = { "U_Rangemaster" }; //Any specific uniforms you want to be seized from players
-    seize_vest[] = { "V_TacVest_blk_POLICE" }; //Any specific vests you want to be seized from players
-    seize_headgear[] = { "H_Cap_police" }; //Any hats or helmets you want seized from players
-    seize_minimum_rank = 2; //Required minimum CopLevel to be able to seize items from players
+    /* Fuel System Configurations */
+    pump_service = false; //Allow users to use pump service on the map. Default = false
+    fuel_cost = 80; //Cost of fuel per liter at fuel stations (if not defined for the vehicle already).
+    service_chopper = 1000; //Cost to service chopper at chopper service station(Repair/Refuel).
 
-    /* Revive system settings */
-    revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
-    revive_fee = 1500; //Revive fee that players have to pay and medics / EMS are rewarded
-    respawn_timer = 30; //How many seconds a player should wait, before being able to respawn.
+    /* Gang System Configurations */
+    gang_price = 75000; //Gang creation price. --Remember they are persistent so keep it reasonable to avoid millions of gangs.
+    gang_upgradeBase = 10000; //The base cost for purchasing additional slots in a gang
+    gang_upgradeMultiplier = 2.5; //CURRENTLY NOT IN USE
 
-    /* House related settings */
-    house_limit = 5; //Maximum amount of houses a player can own.
+    /* Housing System Configurations */
+    house_limit = 5; //Maximum number of houses a player can own.
 
-    /* Donor related settings */
-    donor_level = false; //Enable the donor level set in database (var = life_donorlevel; levels = 0,1,2,3,4,5). ATTENTION! Before enabling, read: https://www.bistudio.com/community/game-content-usage-rules & https://www.bistudio.com/monetization
+    /* Hunting & Fishing System Configurations */
+    animaltypes_fish[] = { "Salema_F", "Ornate_random_F", "Mackerel_F", "Tuna_F", "Mullet_F", "CatShark_F", "Turtle_F" }; //Classnames of fish you can catch
+    animaltypes_hunting[] = { "Sheep_random_F", "Goat_random_F", "Hen_random_F", "Cock_random_F", "Rabbit_F" }; //Classnames of aniamls you can hunt/gut
 
-    /* Gang related settings */
-    gang_price = 75000; //Price for creating a gang, remember they are persistent so keep it reasonable to avoid millions of gangs.
-    gang_upgradeBase = 10000; //The base cost for upgrading slots in a gang
-    gang_upgradeMultiplier = 2.5; //Not sure if in use?
-
-    /* Player-related systems */
-    enable_fatigue = true; //Set to false to disable the ARMA 3 fatigue system.
-    total_maxWeight = 24; //Static variable for the maximum weight allowed without having a backpack
-
-    /* Item-related restrictions */
-    restrict_medic_weapons = true; //Set to false to allow medics to use any weapon -true will remove ANY weapon they attempt to use (primary,secondary,launcher)
+    /* Item-related Restrictions */
+    restrict_medic_weapons = true; //Set to false to allow medics to use any weapon --true will remove ANY weapon they attempt to use (primary,secondary,launcher)
     restrict_clothingPickup = true; //Set to false to allow civilians to pickup/take any uniform (ground/crates/vehicles)
     restrict_weaponPickup = false; //Set to false to allow civilians to pickup/take any weapon (ground/crates/vehicles)
     restricted_uniforms[] = { "U_Rangemaster", "U_B_CombatUniform_mcam_tshirt", "U_B_CombatUniform_mcam_worn", "U_B_survival_uniform" };
     restricted_weapons[] = { "hgun_P07_snds_F", "arifle_MX_F", "arifle_MXC_F" };
 
-    /* Impound Variables */
-    impound_car = 350; //Price for impounding cars
-    impound_boat = 250; //Price for impounding boats
-    impound_air = 850; //Price for impounding helicopters / planes
+    /* Medical System Configurations */
+    revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
+    revive_fee = 1500; //Revive fee that players have to pay and medics only EMS(independent) are rewarded with this amount.
 
-    /* Initial Bank Amount */
-    bank_cop = 7000; //Amount of cash on bank for new cops
-    bank_civ = 3000; //Amount of cash on bank for new civillians
-    bank_med = 6500; //Amount of cash on bank for new medics
+    /* Paycheck & Bank System Configurations */
+    bank_cop = 7000; //Amount of cash in bank for new cops
+    bank_civ = 3000; //Amount of cash in bank for new civillians
+    bank_med = 6500; //Amount of cash in bank for new medics
 
-    /* Paycheck Settings */
     paycheck_period = 5; //Scaled in minutes
     paycheck_cop = 500; //Payment for cops
     paycheck_civ = 350; //Payment for civillians
     paycheck_med = 450; //Payment for medics
 
-    /* Federal Reserve settings */
-    noatm_timer = 10; //Time in minutes that players won't be able to deposit his money after selling stolen gold
+    /* Player Job System Configurations */
+    delivery_points[] = { "dp_1", "dp_2", "dp_3", "dp_4", "dp_5", "dp_6", "dp_7", "dp_8", "dp_9", "dp_10", "dp_11", "dp_12", "dp_13", "dp_14", "dp_15", "dp_15", "dp_16", "dp_17", "dp_18", "dp_19", "dp_20", "dp_21", "dp_22", "dp_23", "dp_24", "dp_25" };
+    fuelTank_winMultiplier = 1; //Win Multiplier in FuelTank Missions. Increase for greater payout. Default = 1
 
-    /* Spyglass settings */
-    spyglass_init = true; //Enable or disable spyglass
-
-    /* ATM settings */
-    global_ATM = true; //Allow users to access any ATM on the map.
-
-    /* Fuel Station & Heli Service settings */
-    Pump_service = false; //Allow users to use pump service on the map. Default = false
-    fuel_cost = 80; //Cost of fuel per liter at fuel stations (if not defined for the vehicle already).
-    service_chopper = 1000; //Cost to service chopper at chopper service station.
-
-    /* Skins settings */
-    civ_skins = false; //Enable or disable civilian skins. Before enabling, you must add all the SEVEN files to textures folder. (It must be named as: civilian_uniform_1.jpg, civilian_uniform_2.jpg...civilian_uniform_6.jpg, civilian_uniform_7.jpg)
-    cop_extendedSkins = false; //Enable or disable cop skins by level. Before enabling, you must add all the EIGHT files to textures folder. (It must be named as: cop_uniform.jpg + cop_uniform_1.jpg, cop_uniform_2.jpg...cop_uniform_6.jpg, cop_uniform_7.jpg; meaning cop_uniform = life_coplevel=0, cop_uniform_1 = life_coplevel=1, cop_uniform_2 = life_coplevel=2, etc...)
-
-    /* Vehicle Settings */
+    /* Vehicle System Configurations */
     vehicle_infiniteRepair = false; //Set to true for unlimited repairs with 1 toolkit. False will remove toolkit upon use.
-    vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F", "B_Boat_Armed_01_minigun_F" };
-    vehicleShop_BuyMultiplier = 1.5;
+    vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F", "B_Boat_Armed_01_minigun_F" }; //Vehicles that can only be rented and not purchased. (Last only for the session)
+    vehicleShop_BuyMultiplier = 1.5; //Buy Price = rental price * vehicleShop_BuyMultipler
     vehicleGarage_SellMultiplier = 0.75;
     vehicleGarage_StoreFeeMultiplier = 0.2;
     vehicleChopShop_Multiplier = 0.5;
 
-    /* Job-related stuff */
-    delivery_points[] = { "dp_1", "dp_2", "dp_3", "dp_4", "dp_5", "dp_6", "dp_7", "dp_8", "dp_9", "dp_10", "dp_11", "dp_12", "dp_13", "dp_14", "dp_15", "dp_15", "dp_16", "dp_17", "dp_18", "dp_19", "dp_20", "dp_21", "dp_22", "dp_23", "dp_24", "dp_25" };
+/* Cop Related Settings */
+    /* Search & Seizure System Configurations */
+    seize_exempt[] = { "Binocular", "ItemWatch", "ItemCompass", "ItemGPS", "ItemMap", "NVGoggles", "FirstAidKit", "ToolKit", "Chemlight_red", "Chemlight_yellow", "Chemlight_green", "Chemlight_blue", "optic_ACO_grn_smg" }; //Arma items that will not get seized from player inventories
+    seize_uniform[] = { "U_Rangemaster" }; //Any specific uniforms you want to be seized from players
+    seize_vest[] = { "V_TacVest_blk_POLICE" }; //Any specific vests you want to be seized from players
+    seize_headgear[] = { "H_Cap_police" }; //Any hats or helmets you want seized from players
+    seize_minimum_rank = 2; //Required minimum CopLevel to be able to seize items from players
 
-    /* FuelTank Mission */
-    FuelTank_WinMultiplier = 1; //Win Multiplier in FuelTank Missions. Increase for more Money! Default = 1
+    /* Vehicle System Configurations */
+    impound_car = 350; //Payout for impounding cars
+    impound_boat = 250; //Payout for impounding boats
+    impound_air = 850; //Payout for impounding helicopters / planes
 
-    /* Animal settings */
-    animaltypes_fish[] = { "Salema_F", "Ornate_random_F", "Mackerel_F", "Tuna_F", "Mullet_F", "CatShark_F", "Turtle_F" };
-    animaltypes_hunting[] = { "Sheep_random_F", "Goat_random_F", "Hen_random_F", "Cock_random_F", "Rabbit_F" };
-
-    /* Wanted System related settings */
+/* Wanted System Settings *
     /* crimes[] = {String, Bounty, Code} */
     crimes[] = {
         {"STR_Crime_187V","650","187V"},

@@ -27,7 +27,7 @@ hint format[localize "STR_ATM_SentMoneySuccess",[_value] call life_fnc_numberTex
 [1] call SOCK_fnc_updatePartial;
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_moneyLog"),1)) then {
-	if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
 		money_log = format ["transfered %1 to %2. Bank Balance: %3  On Hand Balance: %4",_value,_unit GVAR ["realname",name _unit],[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 	} else {
 		money_log = format ["%1 - %2 transfered %3 to %4. Bank Balance: %5  On Hand Balance: %6",profileName,(getPlayerUID player),_value,_unit GVAR ["realname",name _unit],[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];

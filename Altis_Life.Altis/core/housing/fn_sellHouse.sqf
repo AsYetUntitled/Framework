@@ -43,7 +43,7 @@ if(_action) then {
 	_index = life_vehicles find _house;
 
 	if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-		if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+		if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
 			advanced_log = format ["sold a house for %1. Bank Balance: %2",(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
 		} else {
 			advanced_log = format ["%1 - %2 sold a house for %3. Bank Balance: %4",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];

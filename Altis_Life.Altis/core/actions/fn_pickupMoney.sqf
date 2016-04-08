@@ -26,7 +26,7 @@ if(!isNil "_value") exitWith {
 	life_action_delay = time;
 
 	if(EQUAL(LIFE_SETTINGS(getNumber,"player_moneyLog"),1)) then {
-		if(EQUAL(LIFE_SETTINGS(getNumber,"BattlEye_friendlyLogging"),1)) then {
+		if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
 			money_log = format ["picked up %1 from the ground. Bank Balance: %2  On Hand Balance: %3",[_value] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 		} else {
 			money_log = format ["%1 - %2 picked up %3 from the ground. Bank Balance: %4  On Hand Balance %5",profileName,(getPlayerUID player),[_value] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];

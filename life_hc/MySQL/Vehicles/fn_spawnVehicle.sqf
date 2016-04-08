@@ -2,9 +2,9 @@
 /*
 	File: fn_spawnVehicle.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Sends the query request to the database, if an array is returned then it creates
 	the vehicle if it's not in use or dead.
@@ -105,19 +105,19 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 // Avoid problems if u keep changing which stuff to save!
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_virtualItems"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
 	_vehicle setVariable["Trunk",_trunk,true];
 	}else{
 	_vehicle setVariable["Trunk",[[],0],true];
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_veh_fuel"),1)) then {
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {
 	_vehicle setFuel (_vInfo select 11);
 	}else{
 	_vehicle setFuel 1;
 };
 
-if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1))) then {
+if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),1))) then {
 	_items = _gear select 0;
 	_mags = _gear select 1;
 	_weapons = _gear select 2;
@@ -137,11 +137,11 @@ if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_gear"),1))) then
 	};
 };
 
-if (count _damage > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_veh_damage"),1))) then {
+if (count _damage > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_damage"),1))) then {
 	_parts = getAllHitPointsDamage _vehicle;
 
-	for "_i" from 0 to ((count _damage) - 1) do {   
-		_vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],(_damage select _i)];  
+	for "_i" from 0 to ((count _damage) - 1) do {
+		_vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],(_damage select _i)];
 	};
 };
 

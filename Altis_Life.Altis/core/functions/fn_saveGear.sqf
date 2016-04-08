@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
     Full Gear/Y-Menu Save by Vampire
     Edited: Itsyuka
-    
+
     Description:
     Saves the players gear for syncing to the database for persistence..
 */
@@ -17,7 +17,7 @@ _return pushBack backpack player;
 _return pushBack goggles player;
 _return pushBack headgear player;
 _return pushBack assignedITems player;
-if(playerSide == west || playerSide == civilian && {EQUAL(LIFE_SETTINGS(getNumber,"save_civ_weapons"),1)}) then {
+if(playerSide == west || playerSide == civilian && {EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_weapons"),1)}) then {
     _return pushBack RIFLE;
     _return pushBack PISTOL;
 } else {
@@ -70,23 +70,23 @@ if(!(EQUAL(vest player,""))) then {
 
 if(count (primaryWeaponMagazine player) > 0 && alive player) then {
     _pMag = SEL((primaryWeaponMagazine player),0);
-	
+
     if(!(EQUAL(_pMag,""))) then {
         _uni = player canAddItemToUniform _pMag;
         _ves = player canAddItemToVest _pMag;
         _bag = player canAddItemToBackpack _pMag;
         _handled = false;
-		
+
         if(_ves) then {
 			ADD(_vMags,[_pMag]);
             _handled = true;
         };
-		
+
         if(_uni && !_handled) then {
 			ADD(_uMags,[_pMag]);
             _handled = true;
         };
-		
+
         if(_bag && !_handled) then {
 			ADD(_bMags,[_pMag]);
             _handled = true;
@@ -96,23 +96,23 @@ if(count (primaryWeaponMagazine player) > 0 && alive player) then {
 
 if(count (handgunMagazine player) > 0 && alive player) then {
     _hMag = ((handgunMagazine player) select 0);
-	
+
     if(!(EQUAL(_hMag,""))) then {
         _uni = player canAddItemToUniform _hMag;
         _ves = player canAddItemToVest _hMag;
         _bag = player canAddItemToBackpack _hMag;
         _handled = false;
-		
+
         if(_ves) then {
 			ADD(_vMags,[_hMag]);
             _handled = true;
         };
-		
+
         if(_uni && !_handled) then {
 			ADD(_uMags,[_hMag]);
             _handled = true;
         };
-		
+
         if(_bag && !_handled) then {
             ADD(_uMags,[_hMag]);
             _handled = true;

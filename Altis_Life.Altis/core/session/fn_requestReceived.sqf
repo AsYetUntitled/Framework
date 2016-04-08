@@ -74,7 +74,7 @@ switch(playerSide) do {
 		};
 
 		//Position
-		if(EQUAL(LIFE_SETTINGS(getNumber,"save_civ_position"),1)) then {
+		if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position"),1)) then {
 			life_is_alive = SEL(_this,10);
 			life_civ_position = SEL(_this,11);
 			if(life_is_alive) then {
