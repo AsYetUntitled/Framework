@@ -40,7 +40,7 @@ if(player distance (getMarkerPos "jail_marker") > 40) then {
 	if(_amount > 0) then {
 		[false,_x,_amount] call life_fnc_handleInv;
 	};
-} forEach ["heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw"];
+} forEach ["spikeStrip","lockpick","goldbar","blastingcharge","boltcutter","defusekit","heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw"];
 
 life_is_arrested = true;
 
