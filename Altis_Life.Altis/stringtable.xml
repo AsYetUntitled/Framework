@@ -491,6 +491,9 @@
       <Original>Hit spacebar for place Container</Original>
       <French>Appuyez sur espace pour placer le container</French>
     </Key>
+    <Key ID="STR_NOTF_notAllowed">
+      <Original>Your faction is not allowed to chop vehicles!</Original>
+    </Key>
     <Key ID="STR_NOTF_Pickaxe">
       <Original>A pickaxe is required</Original>
       <German>Eine Spitzhacke wird benötigt.</German>
@@ -2102,9 +2105,9 @@
       <Portuguese>%1 apreendeu %3 de %2</Portuguese>
       <Polish>%1 usunął %2's %3</Polish>
     </Key>
-	<Key ID="STR_NOTF_OwnImpounded">
-      <Original>You payed %2 $ for Impounding your own %1</Original>
-      <German>Du hast %2 $ bezahlt, weil du dein eigenen %1 beschlagnahmt hast.</German>
+	  <Key ID="STR_NOTF_OwnImpounded">
+      <Original>You paid $%1 for impounding your own %2</Original>
+      <German>Du hast %1 $ bezahlt, weil du dein eigenen %2 beschlagnahmt hast.</German>
     </Key>
     <Key ID="STR_NOTF_AbortESC">
       <Original>Abort available in %1</Original>
@@ -2227,10 +2230,7 @@
       <Polish>W pobliżu nie ma pojazdu...</Polish>
     </Key>
     <Key ID="STR_NOTF_PlayerNear">
-      <Original>You can't open trunk while a player is near!</Original>
-      <German>Du kannst deinen Kofferaum nicht öffnen wenn ein anderer Spieler zu nah dran ist!</German>
-      <Portuguese>Você não pode abrir o inventário enquanto estiver perto de um jogador!</Portuguese>
-      <Polish>Nie możesz otworzyć wyposażenia gdy inny gracz jest w pobliżu!</Polish>
+      <Original>You can't chop a vehicle while a player is near!</Original>
     </Key>
     <Key ID="STR_NOTF_Restrained">
       <Original>%1 was restrained by %2</Original>

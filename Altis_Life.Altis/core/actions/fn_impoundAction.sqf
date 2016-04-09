@@ -6,7 +6,7 @@
 	Description:
 	Impounds the vehicle
 */
-private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progress","_pgText","_cP","_filters"];
+private["_vehicle","_type","_time","_value","_vehicleData","_upp","_ui","_progress","_pgText","_cP","_filters","_impoundValue","_price","_impoundMultiplier"];
 _vehicle = param [0,ObjNull,[ObjNull]];
 _filters = ["Car","Air","Ship"];
 if(!((KINDOF_ARRAY(_vehicle,_filters)))) exitWith {};
@@ -16,6 +16,7 @@ if(_vehicle getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 _vehicleData = _vehicle GVAR ["vehicle_info_owners",[]];
 if(EQUAL((count _vehicleData),0)) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 _vehicleName = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _vehicle),"displayName");
+_price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,(typeOf _vehicle),"price");
 [0,"STR_NOTF_BeingImpounded",true,[SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 life_action_inUse = true;
 
@@ -48,14 +49,6 @@ if(!alive player) exitWith {life_action_inUse = false;};
 if(EQUAL(count crew _vehicle,0)) then {
 	if(!(KINDOF_ARRAY(_vehicle,_filters))) exitWith {life_action_inUse = false;};
 	_type = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _vehicle),"displayName");
-if(playerSide == west) then {
-	switch (true) do {
-		case (_vehicle isKindOf "Car"): {_price = LIFE_SETTINGS(getNumber,"impound_car");};
-		case (_vehicle isKindOf "Ship"): {_price = LIFE_SETTINGS(getNumber,"impound_boat");};
-		case (_vehicle isKindOf "Air"): {_price = LIFE_SETTINGS(getNumber,"impound_air");};
-		default {_price = 0};
-	};
-};
 
 	life_impound_inuse = true;
 
@@ -67,13 +60,18 @@ if(playerSide == west) then {
 
 	waitUntil {!life_impound_inuse};
 	if(playerSide == west) then {
+			_impoundMultiplier = LIFE_SETTINGS(getNumber,"vehicle_cop_impound_multiplier");
+			_value = _price * _impoundMultiplier;
 			[0,"STR_NOTF_HasImpounded",true,[profileName,SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 			if(_vehicle in life_vehicles) then {
-			SUB(BANK,_price); hint format[localize "STR_NOTF_OwnImpounded",_type,_price];
+				hint format[localize "STR_NOTF_OwnImpounded",[_value] call life_fnc_numberText,_type];
+				SUB(BANK,_value);
 			} else {
-			ADD(BANK,_price); hint format[localize "STR_NOTF_Impounded",_type,_price];
+				hint format[localize "STR_NOTF_Impounded",[_value] call life_fnc_numberText,_type];
+				ADD(BANK,_value);
 			};
-			if(life_atmbank < 0) then {life_atmbank = 0};
+			if(BANK < 0) then {BANK = 0;};
+			[1] call SOCK_fnc_updatePartial;
 	};
 } else {
 	hint localize "STR_NOTF_ImpoundingCancelled";
