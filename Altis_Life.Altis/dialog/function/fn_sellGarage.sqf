@@ -6,7 +6,7 @@
 	Description:
 	Sells a vehicle from the garage.
 */
-private["_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_price"];
+private["_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_price","_purchasePrice"];
 disableSerialization;
 if(EQUAL(lbCurSel 2802,-1)) exitWith {hint localize "STR_Global_NoSelection"};
 _vehicle = lbData[2802,(lbCurSel 2802)];
@@ -24,13 +24,25 @@ if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _vehicleLife)) then {
 
 _price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_vehicleLife,"price");
 switch(playerSide) do {
-	case civilian: {_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");};
-	case west: {_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_COP");};
-	case independent: {_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_MEDIC");};
-	case east: {_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPFOR");};
+	case civilian: {
+		_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");
+		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
+	};
+	case west: {
+		_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_COP");
+		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");
+	};
+	case independent: {
+		_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_MEDIC");
+		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");
+	};
+	case east: {
+		_multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPFOR");
+		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
+	};
 };
 
-_sellPrice = _price * _multiplier;
+_sellPrice = _purchasePrice * _multiplier;
 
 if(!(EQUAL(typeName _sellPrice,typeName 0)) OR _sellPrice < 1) then {_sellPrice = 500;};
 
