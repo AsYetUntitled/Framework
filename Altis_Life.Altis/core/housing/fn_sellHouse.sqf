@@ -40,6 +40,7 @@ if(_action) then {
 	_house SVAR ["uid",nil,true];
 
 	BANK = BANK + (round((_houseCfg select 0)/2));
+	[1] call SOCK_fnc_updatePartial;
 	_index = life_vehicles find _house;
 
 	if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {

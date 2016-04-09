@@ -9,7 +9,7 @@
 	displays various bits of information about the vehicle.
 */
 disableSerialization;
-private["_control","_index","_className","_classNameLife","_basePrice","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor","_multiplier"];
+private["_control","_index","_className","_classNameLife","_initalPrice","_buyMultiplier","_rentMultiplier","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
 _control = _this select 0;
 _index = _this select 1;
 
@@ -18,11 +18,25 @@ _className = _control lbData _index;
 _classNameLife = _className;
 _vIndex = _control lbValue _index;
 
-_basePrice = switch(playerSide) do {
-	case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),0)};
-	case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),1)};
-	case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
-	case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
+_initalPrice = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
+
+switch(playerSide) do {
+	case civilian: {
+		_buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
+		_rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_CIVILIAN");
+	};
+	case west: {
+		_buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");
+		_rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_COP");
+	};
+	case independent: {
+		_buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");
+		_rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_MEDIC");
+	};
+	case east: {
+		_buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
+		_rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_OPFOR");
+	};
 };
 
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
@@ -33,26 +47,25 @@ _passengerseats = _vehicleInfo select 10;
 _fuel = _vehicleInfo select 12;
 _armor = _vehicleInfo select 9;
 [_className] call life_fnc_vehicleShop3DPreview;
-_multiplier = LIFE_SETTINGS(getNumber,"vehicleShop_BuyMultiplier");
 
 ctrlShow [2330,true];
 (CONTROL(2300,2303)) ctrlSetStructuredText parseText format[
-(localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b'>$%1</t><br/>" +
-(localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +
-(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +
-(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>" +
-(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>" +
-(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +
-(localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +
-(localize "STR_Shop_Veh_UI_Armor")+ " %8",
-[_basePrice] call life_fnc_numberText,
-[round(_basePrice * _multiplier)] call life_fnc_numberText,
-_maxspeed,
-_horsepower,
-_passengerseats,
-if(_trunkSpace == -1) then {"None"} else {_trunkSpace},
-_fuel,
-_armor
+	(localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b'>$%1</t><br/>" +
+	(localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +
+	(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +
+	(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>" +
+	(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>" +
+	(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +
+	(localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +
+	(localize "STR_Shop_Veh_UI_Armor")+ " %8",
+	[round(_initalPrice * _rentMultiplier)] call life_fnc_numberText,
+	[round(_initalPrice * _buyMultiplier)] call life_fnc_numberText,
+	_maxspeed,
+	_horsepower,
+	_passengerseats,
+	if(_trunkSpace == -1) then {"None"} else {_trunkSpace},
+	_fuel,
+	_armor
 ];
 
 _ctrl = CONTROL(2300,2304);
@@ -75,10 +88,12 @@ _colorArray = M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures");
 
 _numberindexcolor = 0;
 _numberindexcolorarray = [];
+
 for "_i" from 0 to (count(_colorArray) - 1) do {
 	_numberindexcolorarray pushBack _numberindexcolor;
 	_numberindexcolor = _numberindexcolor + 1;
 };
+
 _indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
 _ctrl lbSetCurSel _indexrandom;
 
@@ -95,4 +110,5 @@ if((lbSize _ctrl)-1 != -1) then {
 } else {
 	ctrlShow[2304,false];
 };
+
 true;

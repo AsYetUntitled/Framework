@@ -6,10 +6,14 @@
 	Description:
 	Opens & initializes the chop shop menu.
 */
+private["_control","_price","_price","_chopMultiplier","chopable","_nearUnits"];
 if(life_action_inUse) exitWith {hint localize "STR_NOTF_ActionInProc"};
+if(playerSide != civilian) exitWith {hint localize "STR_NOTF_notAllowed"};
 disableSerialization;
-private["_nearVehicles","_control"];
-_nearVehicles = nearestObjects [getMarkerPos (_this select 3),["Car","Truck"],25];
+_chopable = LIFE_SETTINGS(getArray,"chopShop_vehicles");
+_nearVehicles = nearestObjects [getMarkerPos (_this select 3),_chopable,25];
+_nearUnits = (nearestObjects[player,["Man"],5]) arrayIntersect playableUnits;
+if(count _nearUnits > 1) exitWith {hint localize "STR_NOTF_PlayerNear"};
 
 life_chopShop = SEL(_this,3);
 //Error check
@@ -29,14 +33,10 @@ _control = CONTROL(39400,39402);
 			diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 		};
 
-		_price = switch(playerSide) do {
-			case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),0)};
-			case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),1)};
-			case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),2)};
-			case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"rentalprice"),3)};
-		};
-		_multiplier = LIFE_SETTINGS(getNumber,"vehicleChopShop_multiplier");
-		_price = _multiplier * _price;
+		_price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
+		_chopMultiplier = LIFE_SETTINGS(getNumber,"vehicle_chopShop_multiplier");
+
+		_price = _price * _chopMultiplier;
 		if(!isNil "_price" && EQUAL(count crew _x,0)) then {
 			_control lbAdd _displayName;
 			_control lbSetData [(lbSize _control)-1,str(_forEachIndex)];
