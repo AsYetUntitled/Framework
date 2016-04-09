@@ -144,7 +144,6 @@ class WeaponShops {
             { "Binocular", "", 150, -1 },
             { "ItemGPS", "", 100, 45 },
             { "FirstAidKit", "", 150, 65 },
-            { "Medikit", "", 1000, 450 },
             { "NVGoggles", "", 2000, 980 }
         };
         mags[] = {
@@ -217,7 +216,6 @@ class WeaponShops {
             { "ItemGPS", "", 100, 45 },
             { "Binocular", "", 150, -1 },
             { "FirstAidKit", "", 150, 65 },
-            { "Medikit", "", 500, 450 },
             { "NVGoggles", "", 1200, 980 }
         };
         mags[] = {};
