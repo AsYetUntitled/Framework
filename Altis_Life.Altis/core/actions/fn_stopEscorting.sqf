@@ -1,15 +1,18 @@
+#include "..\..\script_macros.hpp"
 /*
 	File: fn_stopEscorting.sqf
-	Author: 
-	
+	Author: Bryan "Tonic" Boardwine
+
 	Description:
-	ASFSDFHAGFASF
+	Detaches player(_unit) from the Escorter(player) and sets them back down.
 */
 private["_unit"];
-_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _unit) exitWith {}; //Not valid
-if(!(_unit getVariable "Escorting")) exitWith {}; //He's not being Escorted.
+_unit = player GVAR ["escortingPlayer",objNull];
+if(isNull _unit) then {_unit = cursorTarget;}; //Emergency fallback.
+if(isNull _unit) exitWith {}; //Target not found even after using cursorTarget.
+if(!(_unit GVAR ["Escorting",false])) exitWith {}; //He's not being Escorted.
 if(side _unit != civilian) exitWith {}; //Not a civ
-if(isNull _unit) exitWith {}; //Not valid
 detach _unit;
-_unit setVariable["Escorting",false,true];
+_unit SVAR ["Escorting",false,true];
+player SVAR ["currentlyEscorting",nil];
+player SVAR ["isEscorting",false];
