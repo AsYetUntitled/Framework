@@ -2,10 +2,11 @@
 /*
 	File: fn_jail.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Starts the initial process of jailing.
 */
+private ["_illegalItems"];
 params [
 	["_unit",objNull,[objNull]],
 	["_bad",false,[false]]
@@ -14,6 +15,7 @@ params [
 if(isNull _unit) exitWith {}; //Dafuq?
 if(_unit != player) exitWith {}; //Dafuq?
 if(life_is_arrested) exitWith {}; //Dafuq i'm already arrested
+_illegalItems = LIFE_SETTINGS(getArray,"jail_seize_vItems");
 
 player SVAR ["restrained",false,true];
 player SVAR ["Escorting",false,true];
@@ -40,12 +42,16 @@ if(player distance (getMarkerPos "jail_marker") > 40) then {
 	if(_amount > 0) then {
 		[false,_x,_amount] call life_fnc_handleInv;
 	};
-} forEach ["spikeStrip","lockpick","goldbar","blastingcharge","boltcutter","defusekit","heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw"];
+} forEach _illegalItems;
 
 life_is_arrested = true;
 
-removeAllWeapons player;
-{player removeMagazine _x} forEach (magazines player);
+if(EQUAL(LIFE_SETTINGS(getNumber,"jail_seize_inventory"),1)) then {
+	[] spawn life_fnc_seizeClient;
+} else {
+	removeAllWeapons player;
+	{player removeMagazine _x} forEach (magazines player);
+};
 
 if(life_HC_isActive) then {
 	[player,_bad] remoteExecCall ["HC_fnc_jailSys",HC_Life];
