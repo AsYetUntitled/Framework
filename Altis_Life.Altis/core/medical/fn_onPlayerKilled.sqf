@@ -24,7 +24,7 @@ _unit SVAR ["Revive",true,true];
 _unit SVAR ["name",profileName,true]; //Set my name so they can say my name.
 _unit SVAR ["restrained",false,true];
 _unit SVAR ["Escorting",false,true];
-_unit SVAR ["transporting",false,true]; //Why the fuck do I have this? Is it used?
+_unit SVAR ["transporting",false,true];
 _unit SVAR ["playerSurrender",false,true];
 _unit SVAR ["steam64id",(getPlayerUID player),true]; //Set the UID.
 
@@ -68,19 +68,19 @@ _unit spawn {
 //Make the killer wanted
 if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _killer}) then {
 	if(vehicle _killer isKindOf "LandVehicle") then {
-	
+
 		if(life_HC_isActive) then {
 			[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187V"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
 		} else {
 			[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187V"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 		};
-		
+
 		//Get rid of this if you don't want automatic vehicle license removal.
 		if(!local _killer) then {
 			[2] remoteExecCall ["life_fnc_removeLicenses",_killer];
 		};
 	} else {
-	
+
 		if(life_HC_isActive) then {
 			[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
 		} else {
