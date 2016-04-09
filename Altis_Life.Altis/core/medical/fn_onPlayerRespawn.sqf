@@ -18,7 +18,7 @@ _containers = nearestObjects[getPosATL _corpse,["WeaponHolderSimulated"],5]; //F
 //Set some vars on our new body.
 _unit SVAR ["restrained",false,true];
 _unit SVAR ["Escorting",false,true];
-_unit SVAR ["transporting",false,true]; //Again why the fuck am I setting this? Can anyone tell me?
+_unit SVAR ["transporting",false,true];
 _unit SVAR ["playerSurrender",false,true];
 _unit SVAR ["steam64id",steamid,true]; //Reset the UID.
 _unit SVAR ["realname",profileName,true]; //Reset the players name.
