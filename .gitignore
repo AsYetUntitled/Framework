@@ -11,14 +11,32 @@
 #
 .*
 *~
-*.so
-*.dll
 *.zip
 *.rar
 *.bak
+
+#
+# Windows Files
+#
+*.dll
 *.bat
 *.exe
 Thumbs.db
+
+#
+# Linux Files
+#
+*.so
+*.sh
+.fuse_hidden*
+.Trash-*
+
+#
+# OSX Files
+#
+.DS_Store
+.AppleDouble
+.LSOverride
 
 #
 # Bohemia Packed Files
