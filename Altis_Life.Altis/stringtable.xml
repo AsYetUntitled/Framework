@@ -3947,6 +3947,14 @@
       <Portuguese>Tanque de Gasolina Cheio</Portuguese>
       <Polish>Pełny Kanister</Polish>
     </Key>
+    <Key ID="STR_Item_Defibrillator">
+      <Original>Defibrillator</Original>
+      <German>Defibrillator</German>
+      <French>défibrillateur</French>
+      <Italian>defibrillatore</Italian>
+      <Portuguese>desfibrilador</Portuguese>
+      <Polish>defibrylator</Polish>
+    </Key>
     <Key ID="STR_Item_Toolkit">
       <Original>Toolkit</Original>
       <German>Toolkit</German>
