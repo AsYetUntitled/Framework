@@ -35,7 +35,6 @@ if(_action) then {
 	};
 
 	_house SVAR ["locked",false,true];
-	_house SVAR ["containers",nil,true];
 	deleteMarkerLocal format["house_%1",_house GVAR "uid"];
 	_house SVAR ["uid",nil,true];
 
@@ -79,4 +78,5 @@ if(_action) then {
 
 		} forEach _containers;
 	};
+	_house SVAR ["containers",nil,true];
 };
