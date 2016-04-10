@@ -22,5 +22,5 @@ for [{_x=0},{_x<=_count},{_x=_x+10}] do {
 		for "_i" from 1 to _numOfDoors do {
 			_house setVariable[format["bis_disabled_Door_%1",_i],1,true];
 		};
-		} forEach _queryResult;
+	} foreach _queryResult;
 };
