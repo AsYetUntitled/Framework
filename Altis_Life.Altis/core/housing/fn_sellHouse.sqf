@@ -66,7 +66,7 @@ if(_action) then {
 	for "_i" from 1 to _numOfDoors do {
 		_house SVAR [format["bis_disabled_Door_%1",_i],0,true];
 	};
-	_containers = [getPosATL _house, ["Box_IND_Grenades_F","B_supplyCrate_F"], 9] call life_fnc_nearestObjects;
+	_containers = _house GVAR ["containers",[]];
 	if (count _containers > 0) then {
 		{
 			_x SVAR ["Trunk",nil,true];
