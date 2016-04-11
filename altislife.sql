@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 CREATE TABLE IF NOT EXISTS `vehicles` (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `side` varchar(15) NOT NULL,
-  `classname` varchar(32) NOT NULL,
+  `classname` varchar(64) NOT NULL,
   `type` varchar(12) NOT NULL,
   `pid` varchar(32) NOT NULL,
   `alive` tinyint(1) NOT NULL DEFAULT '1',
