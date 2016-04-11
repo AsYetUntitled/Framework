@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `containers` (
   `pos` varchar(64) DEFAULT NULL,
   `inventory` varchar(500) NOT NULL,
   `gear` text NOT NULL,
-  `dir` varchar(64) DEFAULT NULL,
+  `dir` varchar(105) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `owned` tinyint(4) DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
