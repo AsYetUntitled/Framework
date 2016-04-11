@@ -19,6 +19,10 @@
     <a href="https://gitter.im/ArmaLife/Altis/Support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
         <img src="https://img.shields.io/badge/support-on%20gitter-blue.svg" alt="Join the support chat at https://gitter.im/ArmaLife/Altis/Support">
     </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://waffle.io/ArmaLife/Altis">
+        <img src="https://badge.waffle.io/ArmaLife/Altis.png?label=ready&title=Ready" alt="Stories in Ready">
+    </a>
 </p>
 
 <b>Altis Life</b> or <b>[Altis Life RPG] (http://www.altisliferpg.com)</b> was created and mainly developed by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
