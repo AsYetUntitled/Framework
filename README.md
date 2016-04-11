@@ -21,7 +21,7 @@
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://waffle.io/ArmaLife/Altis">
-        <img src="https://badge.waffle.io/ArmaLife/Altis.png?label=ready&title=Ready" alt="Stories in Ready">
+        <img src="https://img.shields.io/badge/issues-on%20waffle-red.svg" alt="Stories in Ready">
     </a>
 </p>
 
