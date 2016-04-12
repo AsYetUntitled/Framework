@@ -7,7 +7,7 @@
 	Sends the query request to the database, if an array is returned then it creates
 	the vehicle if it's not in use or dead.
 */
-private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage"];
+private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage","_wasIllegal","_location"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
@@ -25,7 +25,7 @@ if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
 
-_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call DB_fnc_asyncCall;
@@ -71,6 +71,8 @@ _query = format["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' 
 _trunk = [_vInfo select 9] call DB_fnc_mresToArray;
 _gear = [_vInfo select 10] call DB_fnc_mresToArray;
 _damage = [_vInfo select 12] call DB_fnc_mresToArray;
+_wasIllegal = _vInfo select 13;
+_wasIllegal = if (_wasIllegal == 1) then { true } else { false };
 
 [_query,1] spawn DB_fnc_asyncCall;
 if(typeName _sp == "STRING") then {
@@ -103,6 +105,19 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 // Avoid problems if u keep changing which stuff to save!
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
 	_vehicle setVariable["Trunk",_trunk,true];
+	if (_wasIllegal) then { 
+		if(typeName _sp == "STRING") then {
+		_location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
+		} else {
+			_location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
+		   };
+		   _location = text _location;
+		  _msg = format[localize "STR_NOTF_BlackListedVehicle", _location ,_name];
+
+		 [1,_msg,false] remoteExecCall ["life_fnc_broadcast",west];
+		 _query = format["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
+		_thread = [_query,1] call DB_fnc_asyncCall;
+		};
 	}else{
 	_vehicle setVariable["Trunk",[[],0],true];
 };
