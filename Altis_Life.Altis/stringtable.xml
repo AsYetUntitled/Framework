@@ -506,7 +506,7 @@
       <Original>You are restrained</Original>
       <German>Wie willst du mit gefesselten Händen sammeln?</German>
       <French>Vous sont retenus</French>
-      <Italian>Si sono trattenuti</Italian>
+      <Italian>Sei incapacitato</Italian>
       <Portuguese>Você está contido</Portuguese>
       <Polish>Ty skrępowaniem</Polish>
     </Key>
@@ -514,7 +514,7 @@
       <Original>You can't do this while you surrender</Original>
       <German>Mit gehobenen Händen kannst du nichts sammeln!.</German>
       <French>Vous ne pouvez pas faire cela pendant que vous abandonnez</French>
-      <Italian>Non si può fare questo mentre si rinuncia</Italian>
+      <Italian>Non si può fare questo mentre hai le mani in alto</Italian>
       <Portuguese>Você não pode fazer isso enquanto você se entrega</Portuguese>
       <Polish>Nie można tego zrobić, gdy się poddasz</Polish>
     </Key>
@@ -522,7 +522,7 @@
       <Original>You can't gather this resource with this vehicle!</Original>
       <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
       <French>You can't gather this resource with this vehicle!</French>
-      <Italian>You can't gather this resource with this vehicle!</Italian>
+      <Italian>Non puoi raccogliere questa risorsa con questo veicolo!</Italian>
       <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
       <Polish>You can't gather this resource with this vehicle!</Polish>
     </Key>
@@ -555,10 +555,12 @@
     <Key ID="STR_ATM_WithdrawGang">
       <Original>Withdraw: Gang</Original>
       <Portuguese>Sacar: gangue</Portuguese>
+      <Italian>Ritira: Gang</Italian>
     </Key>
     <Key ID="STR_ATM_DepositGang">
       <Original>Deposit: Gang</Original>
       <Portuguese>Depositar: Gangue</Portuguese>
+      <Italian>Deposita: Gang</Italian>
     </Key>
     <Key ID="STR_ATM_Transfer">
       <Original>Transfer</Original>
@@ -1367,7 +1369,7 @@
       <Original>Your vehicle is ready!</Original>
       <German>Dein Fahrzeug ist bereit!</German>
       <French>Votre véhicule est prêt</French>
-      <Italian>Il vostro veicolo è pronto</Italian>
+      <Italian>Il tuo veicolo è pronto</Italian>
       <Portuguese>O seu veículo está pronto</Portuguese>
       <Polish>Pojazd jest gotowy</Polish>
     </Key>
@@ -1375,7 +1377,7 @@
       <Original>The server is trying to store the vehicle...</Original>
       <German>Der Server versucht, das Fahrzeug zu speichern...</German>
       <French>Le serveur tente de stocker le véhicule ...</French>
-      <Italian>Il server cercando di depositare il veicolo...</Italian>
+      <Italian>Il server sta cercando di depositare il veicolo...</Italian>
       <Portuguese>O servidor está guardando o veiculo...</Portuguese>
       <Polish>Serwer próbuje schować pojazd w garażu ...</Polish>
     </Key>
@@ -2420,6 +2422,7 @@
     <Key ID="STR_NOTF_ItemProcess">
       <Original>You have processed your item(s)!</Original>
       <French>Vous avez traité vos item(s)!</French>
+      <Italian>Hai processato i tuoi oggetti!</Italian>
     </Key>
     <Key ID="STR_NOTF_RapidAction">
       <Original>You can't rapidly use action keys!</Original>
@@ -2540,7 +2543,7 @@
       <Original>Repairing %1</Original>
       <German>Wird repariert %1</German>
       <French>Repairing %1</French>
-      <Italian>Repairing %1</Italian>
+      <Italian>Riparando %1</Italian>
       <Portuguese>Reparando %1</Portuguese>
       <Polish>Naprawiam %1</Polish>
     </Key>
@@ -2772,6 +2775,10 @@
       <Italian>Multando %1</Italian>
       <Portuguese>Multando %1</Portuguese>
       <Polish>Mandat dla %1</Polish>
+    </Key>
+    <Key ID="STR_COP_BlackListedVehicle">
+      <Original>%2 got back a blacklisted vehicle near %1</Original>
+      <Italian>%2 ha ritirato un veicolo blacklistato vicino %1</Italian>
     </Key>
     <Key ID="STR_Cop_TicketNil">
       <Original>Person to ticket is nil</Original>
@@ -3101,11 +3108,11 @@
       <Portuguese>Você foi solto automaticamente, devido ao tempo limite ter expirado.</Portuguese>
       <Polish>Zostałeś automatycznie rozkuty z uwagi na długi upływ czasu od skucia.</Polish>
     </Key>
-    <Key ID="STR_Cop_Retrained">
+    <Key ID="STR_Cop_Restrained">
       <Original>You have been restrained by %1</Original>
       <German>Du wurdest von %1 festgenommen</German>
       <French>Vous avez été menotté par %1</French>
-      <Italian>%1 ti ha tolto le manette</Italian>
+      <Italian>%1 ti ha messo le manette</Italian>
       <Portuguese>Você foi solto por %1</Portuguese>
       <Polish>Zostałeś rozkuty przez %1</Polish>
     </Key>
@@ -4499,7 +4506,7 @@
       <Original>You got to far away from the target.</Original>
       <German>Du hast dich zu weit vom Ziel entfernt.</German>
       <French>Vous êtes trop loin de la cible.</French>
-      <Italian>Sei andato troppo lontano dall'obbiettivo</Italian>
+      <Italian>Sei andato troppo lontano dall'obiettivo</Italian>
       <Portuguese>Voçê está muito longe do seu alvo.</Portuguese>
       <Polish>Jesteś za daleko od celu.</Polish>
     </Key>
@@ -4531,7 +4538,7 @@
       <Original>You are not near a mine!</Original>
       <German>Du bist nicht in der Nähe einer Mine!</German>
       <French>Vous n'êtes pas près d'une mine!</French>
-      <Italian>Non ti trovi vicino ad una mina!</Italian>
+      <Italian>Non ti trovi vicino ad una cava!</Italian>
       <Portuguese>Você não está próximo de uma mina!</Portuguese>
       <Polish>Nie jesteś blisko kopalni!</Polish>
     </Key>
@@ -4539,7 +4546,7 @@
       <Original>You can't mine from inside a car!</Original>
       <German>Du kannst nicht in deinem Auto abbauen!</German>
       <French>Vous ne pouvez pas miner à l'intérieur d'une voiture!</French>
-      <Italian>Non puoi piazzare mine da dentro un veicolo!</Italian>
+      <Italian>Non puoi minare da dentro un veicolo!</Italian>
       <Portuguese>Você não pode minerar dentro do carro!</Portuguese>
       <Polish>Nie możesz wydobywać z samochodu!</Polish>
     </Key>
@@ -4571,7 +4578,7 @@
       <Original>You need to be inside your house to place this.</Original>
       <German>Du musst in deinem Haus sein, um dies platzieren zu können.</German>
       <French>Vous devez être à l'interieur de votre maison pour placer ceci</French>
-      <Italian>Devi essere all'interno della tua casa per posizionare questo.</Italian>
+      <Italian>Devi essere all'interno della tua casa per posizionarlo.</Italian>
       <Portuguese>Você precisa estar dentro da sua casa para colocar isso!</Portuguese>
       <Polish>Musisz być wewnątrz własnego domu aby to umieścić.</Polish>
     </Key>
@@ -4595,7 +4602,7 @@
       <Original>You need to select an item first!</Original>
       <German>Du musst zuerst einen Gegenstand auswählen!</German>
       <French>You need to select an item first!</French>
-      <Italian>You need to select an item first!</Italian>
+      <Italian>Devi prima selezionare un oggetto!</Italian>
       <Portuguese>Você precisa selecionar um item primeiro!</Portuguese>
       <Polish>Zaznacz najpier rzecz.</Polish>
     </Key>
@@ -4603,7 +4610,7 @@
       <Original>You can now run farther for 3 minutes</Original>
       <German>Du kannst jetzt für 3 Minuten weiter laufen</German>
       <French>You can now run farther for 3 minutes</French>
-      <Italian>You can now run farther for 3 minutes</Italian>
+      <Italian>Puoi ora correre per 3 minuti consecutivi</Italian>
       <Portuguese>Você agora pode correr por 3 minutos</Portuguese>
       <Polish>Możesz przez 3 minuty biec bez wysiłku</Polish>
     </Key>
@@ -4611,7 +4618,7 @@
       <Original>You already have a Spike Strip active in deployment</Original>
       <German>Du platzierst bereits ein Nagelband</German>
       <French>You already have a Spike Strip active in deployment</French>
-      <Italian>You already have a Spike Strip active in deployment</Italian>
+      <Italian>Hai già una striscia chiodata piazzata</Italian>
       <Portuguese>Você já tem um Tapete de Espinhos ativo</Portuguese>
       <Polish>Aktualnie masz rozłożoną kolczatkę</Polish>
     </Key>
@@ -4619,7 +4626,7 @@
       <Original>You can't refuel the vehicle while in it!</Original>
       <German>Du kannst ein Fahrzeug nicht betanken während du dich darin befindest!</German>
       <French>You can't refuel the vehicle while in it!</French>
-      <Italian>You can't refuel the vehicle while in it!</Italian>
+      <Italian>Non puoi rifornire il veicolo di benzina mentre ci sei dentro!</Italian>
       <Portuguese>Você não pode abastecer o veículo enquanto dentro dele!</Portuguese>
       <Polish>Nie możesz zatankować pojazdu gdy w nim jesteś!</Polish>
     </Key>
@@ -4627,7 +4634,7 @@
       <Original>This item isn't usable.</Original>
       <German>Dieser Gegenstand ist nicht benutzbar.</German>
       <French>This item isn't usable.</French>
-      <Italian>This item isn't usable.</Italian>
+      <Italian>Questo oggetto è inutilizzabile.</Italian>
       <Portuguese>Esse item não é usável.</Portuguese>
       <Polish>Nie można użyć tej rzeczy.</Polish>
     </Key>
@@ -4637,7 +4644,7 @@
       <Original>Processing Oil</Original>
       <German>Öl wird verarbeite</German>
       <French>Raffinage de Pétrole</French>
-      <Italian>Processando l'Olio</Italian>
+      <Italian>Raffinando il Petrolio</Italian>
       <Portuguese>Processando Petróleo</Portuguese>
       <Polish>Rafinacja ropy</Polish>
     </Key>
@@ -4645,7 +4652,7 @@
       <Original>Cutting Diamonds</Original>
       <German>Diamanten werden geschliffen</German>
       <French>Taillage de diamant</French>
-      <Italian>Raffinando diamanti</Italian>
+      <Italian>Rifinendo diamanti</Italian>
       <Portuguese>Lapidando Diamante</Portuguese>
       <Polish>Szlif diamentów</Polish>
     </Key>
@@ -4661,7 +4668,7 @@
       <Original>Casting Copper Ingots</Original>
       <German>Kupfer wird verarbeitet</German>
       <French>Fonte de Cuivre</French>
-      <Italian>Processando Rame</Italian>
+      <Italian>Processando in lingotti di Rame</Italian>
       <Portuguese>Processando Cobre</Portuguese>
       <Polish>Wytop miedzi</Polish>
     </Key>
@@ -4817,7 +4824,7 @@
       <Original>Respawn Available in: %1</Original>
       <German>Respawn verfügbar in: %1</German>
       <French>Respawn Disponible dans: %1</French>
-      <Italian>Respawn disponibile in: $1</Italian>
+      <Italian>Respawn disponibile in: %1</Italian>
       <Portuguese>Respawn Disponível em: %1</Portuguese>
       <Polish>Odrodzenie możliwe za: %1</Polish>
     </Key>
@@ -5503,7 +5510,7 @@
       <Original>You do not have enough money on you or in your bank to get your car back.</Original>
       <German>Du hast nicht genug Geld bei dir oder auf dem Bankkonto, um dein Auto auszulösen.</German>
       <French>Vous n'avez pas assez d'argent sur vous ou dans votre banque pour obtenir votre voiture</French>
-      <Italian>Non hai abbastanza fondi alla mano o nel tuo conto in banca per poter riavere il tuo veicolo.</Italian>
+      <Italian>Non hai abbastanza fondi con te o nel tuo conto in banca per poter ritirare il tuo veicolo.</Italian>
       <Portuguese>Você não tem dinheiro suficiente em sua conta bancária para obter seu veiculo.</Portuguese>
       <Polish>Nie masz tyle pieniędzy na koncie aby wyciągnąć samochód.</Polish>
     </Key>
@@ -5877,18 +5884,21 @@
       <German>Fischmarkt</German>
       <Portuguese>Peixaria</Portuguese>
       <Polish>Sklep rybny</Polish>
+      <Italian>Pescivendolo</Italian>
     </Key>
     <Key ID="STR_MAR_Hospital">
       <Original>Hospital</Original>
       <German>Krankenhaus</German>
       <Portuguese>Hospital</Portuguese>
       <Polish>Szpital</Polish>
+      <Italian>Ospedale</Italian>
     </Key>
     <Key ID="STR_MAR_Police_Station">
       <Original>Police Station</Original>
       <German>Polizei Revier</German>
       <Portuguese>Estação Policial</Portuguese>
       <Polish>Posterunek policji</Polish>
+      <Italian>Questura di polizia</Italian>
     </Key>
     <Key ID="STR_MAR_Police_Air_HQ">
       <Original>Police Air HQ</Original>
@@ -5901,24 +5911,28 @@
       <German>Eisenmine</German>
       <Portuguese>Mina de Ferro</Portuguese>
       <Polish>Kopalnia miedzi</Polish>
+      <Italian>Miniera di ferro</Italian>
     </Key>
     <Key ID="STR_MAR_Salt_Mine">
       <Original>Salt Mine</Original>
       <German>Salzmine</German>
       <Portuguese>Mina de Sal</Portuguese>
       <Polish>Kopalnia soli</Polish>
+      <Italian>Salina</Italian>
     </Key>
     <Key ID="STR_MAR_Salt_Processing">
       <Original>Salt Processing</Original>
       <German>Salzverarbeitung</German>
       <Portuguese>Processador de Sal</Portuguese>
       <Polish>Warzelnia soli</Polish>
+      <Italian>Processo del sale</Italian>
     </Key>
     <Key ID="STR_MAR_Altis_Corrections">
       <Original>Altis Corrections</Original>
       <German>Altis Bundesgefängnis</German>
       <Portuguese>Prisão de Altis</Portuguese>
       <Polish>Więzienie Altis</Polish>
+      <Italian>Penitenziario di Altis</Italian>
     </Key>
     <Key ID="STR_MAR_Police_HQ">
       <Original>Police HQ</Original>
@@ -5931,6 +5945,7 @@
       <German>Küstenwache</German>
       <Portuguese>Guarda Costeira</Portuguese>
       <Polish>Straż przybrzeżna</Polish>
+      <Italian>Guardia Costiera</Italian>
     </Key>
     <Key ID="STR_MAR_Rebel_Outpost">
       <Original>Rebel Outpost</Original>
@@ -5949,12 +5964,14 @@
       <German>LKW Händler</German>
       <Portuguese>Loja de Caminhões</Portuguese>
       <Polish>Salon ciężarówek</Polish>
+      <Italian>Concessionaria Camion</Italian>
     </Key>
     <Key ID="STR_MAR_Oil_Processing">
       <Original>Oil Processing</Original>
       <German>Öl Verarbeiter</German>
       <Portuguese>Processador de Petróleo</Portuguese>
       <Polish>Rafineria ropy naftowej</Polish>
+      <Italian></Italian>
     </Key>
     <Key ID="STR_MAR_Iron_processing">
       <Original>Iron Processing</Original>
@@ -6015,6 +6032,7 @@
       <German>Diamanten Mine</German>
       <Portuguese>Mina de Diamante</Portuguese>
       <Polish>Kopalnia diamentów</Polish>
+      
     </Key>
     <Key ID="STR_MAR_General_Store">
       <Original>General Store</Original>
@@ -6074,36 +6092,43 @@
       <German>Zulassungstelle für Lizenzen</German>
       <Portuguese>Loja de Licenças</Portuguese>
       <Polish>Urząd licencyjny</Polish>
+      <Italian>Negozio Licenze</Italian>
     </Key>
     <Key ID="STR_MAR_Delivery_Missions">
       <Original>Delivery Missions</Original>
       <German>Kurier Mission</German>
       <Portuguese>Missões de Entrega</Portuguese>
       <Polish>Misje kurierskie</Polish>
+      <Italian>Missioni Postali</Italian>
     </Key>
     <Key ID="STR_MAR_Deliver_Package">
       <Original>Deliver Package</Original>
       <German>Paket ausliefern</German>
       <Portuguese>Entregar Pacote</Portuguese>
       <Polish>Dostarcz przesyłkę</Polish>
+      <Italian>Consegna il pacco</Italian>
     </Key>
     <Key ID="STR_MAR_Get_Delivery_Mission">
       <Original>Get Delivery Mission</Original>
       <German>Starte Kurier Mission</German>
       <Portuguese>Pegar Missão de Entrega</Portuguese>
       <Polish>Pobierz przesyłkę do dostarczenia</Polish>
+      <Italian>Ottieni una missione postale</Italian>
     </Key>
     <Key ID="STR_MAR_Diving_Shop">
       <Original>Diving Shop</Original>
       <German>Taucherladen</German>
       <Portuguese>Loja de Mergulho</Portuguese>
       <Polish>Akcesoria do nurkowania</Polish>
+      <Italian>Negozio da Sub</Italian>
+
     </Key>
     <Key ID="STR_MAR_Drug_Dealer">
       <Original>Drug Dealer</Original>
       <German>Drogendealer</German>
       <Portuguese>Traficante</Portuguese>
       <Polish>Diler narkotyków</Polish>
+      <Italian>Spacciatore</Italian>
     </Key>
     <Key ID="STR_MAR_Sofia_Freight_Yard">
       <Original>Sofia Freight Yard</Original>
@@ -6116,42 +6141,50 @@
       <German>Diamantenschleifer</German>
       <Portuguese>Processador de Diamante</Portuguese>
       <Polish>Szlifierz diamentów</Polish>
+      <Italian>Processo diamanti</Italian>
     </Key>
     <Key ID="STR_MAR_Oil_Field">
       <Original>Oil Field</Original>
       <German>Öl Felder</German>
       <Portuguese>Campo de Petróleo</Portuguese>
       <Polish>Szyb naftowy</Polish>
+      <Italian>Giacimento di Petrolio</Italian>
     </Key>
     <Key ID="STR_MAR_Weed_Field">
       <Original>Marijuana Field</Original>
       <German>Gras Plantage</German>
       <Portuguese>Campo de Maconha</Portuguese>
       <Polish>Pole marihuany</Polish>
+      <Italian>Campo di Marijuana</Italian>
     </Key>
     <Key ID="STR_MAR_Weed_Processing">
       <Original>Marijuana Processing</Original>
       <German>Gras Verarbeitung</German>
       <Portuguese>Processador de Maconha</Portuguese>
       <Polish>Suszarnia marihuany</Polish>
+      <Italian>Trattamento Marijuana</Italian>
     </Key>
     <Key ID="STR_MAR_Boat_Spawn">
       <Original>Boat Spawn</Original>
       <German>Boot Spawn</German>
       <Portuguese>Spawn de Barcos</Portuguese>
       <Polish>Przystań</Polish>
+      <Italian>Consegna Barche</Italian>
     </Key>
     <Key ID="STR_MAR_Copper_Processing">
       <Original>Copper Processing</Original>
       <German>Kupferschmelze</German>
       <Portuguese>Processador de Cobre</Portuguese>
       <Polish>Huta miedzi</Polish>
+      <Italian>Processo Rame</Italian>
     </Key>
     <Key ID="STR_MAR_Cocaine_Field">
       <Original>Coca Field</Original>
       <German>Koks Plantage</German>
       <Portuguese>Campo de Cocaína</Portuguese>
       <Polish>Pole kokainy</Polish>
+      <Italian>Campo di Cocaina</Italian>
+
     </Key>
     <Key ID="STR_MAR_Oil_Trader">
       <Original>Oil Trader</Original>
@@ -6225,18 +6258,22 @@
       <German>Federal Reserve Bank</German>
       <Portuguese>Reserva Federal</Portuguese>
       <Polish>Bank Rezerw Federalnych</Polish>
+      <Italian>Banca Federale</Italian>
+
     </Key>
     <Key ID="STR_MAR_Highway_Patrol">
       <Original>Highway Patrol Outpost</Original>
       <German>Mautstation</German>
       <Portuguese>Base da Polícia Rodoviária</Portuguese>
       <Polish>Posterunek policji drogowej</Polish>
+      <Italian>Checkpoint di polizia</Italian>
     </Key>
     <Key ID="STR_MAR_Rock_Quarry">
       <Original>Rock Quarry</Original>
       <German>Steinbruch</German>
       <Portuguese>Pedreira</Portuguese>
       <Polish>Kamieniołom</Polish>
+      <Italian>Cava di Roccia</Italian>
     </Key>
     <Key ID="STR_MAR_Rock_Processing">
       <Original>Rock Processing</Original>
@@ -6250,6 +6287,7 @@
       <German>Zement Händler</German>
       <Portuguese>Comprador de Cimento</Portuguese>
       <Polish>Skup cementu</Polish>
+      <Italian>Vendita del Cemento</Italian>
     </Key>
     <Key ID="STR_MAR_Turtle_Poaching">
       <Original>Turtle Poaching</Original>
@@ -6262,18 +6300,21 @@
       <German>Schildkröten Händler</German>
       <Portuguese>Comprador de Tartarugas</Portuguese>
       <Polish>Skup żółwi</Polish>
+      <Italian>Vendita Tartarughe</Italian>
     </Key>
     <Key ID="STR_MAR_GoKart_Shop">
       <Original>Go-Kart Shop</Original>
       <German>Go-Kart Händler</German>
       <Portuguese>Loja de Karts</Portuguese>
       <Polish>Sklep z GoKartami</Polish>
+      <Italian>Parco Go-Kart</Italian>
     </Key>
     <Key ID="STR_MAR_Gold_Bars_Buyer">
       <Original>Gold Bars Buyer</Original>
       <German>Händler für Goldbarren</German>
       <Portuguese>Comprador de Barras de Ouro</Portuguese>
       <Polish>Skup złota</Polish>
+      <Italian>Gioielliere</Italian>
     </Key>
     <Key ID="STR_MAR_Gang_Hideout1">
       <Original>Gang Hideout 1</Original>
@@ -6301,12 +6342,14 @@
       <German>Jagtgründe</German>
       <Portuguese>Área de Caça</Portuguese>
       <Polish>Strefa polowań</Polish>
+      <Italian>Riserva di Caccia</Italian>
     </Key>
     <Key ID="STR_MAR_Bruce_New_Used_Auto">
       <Original>Bruce's New and Used Auto's</Original>
       <German>Bruce's Gebrauchtwagen</German>
       <Portuguese>Loja de Carros Novos e Usados</Portuguese>
       <Polish>Salon samochodowy</Polish>
+      <Italian>Automobili nuove e usate da Bruce</Italian>
     </Key>
     <Key ID="STR_MAR_Rebel_Clothing_Shop">
       <Original>Rebel Clothing Shop</Original>
@@ -6344,6 +6387,7 @@
       <German>Informant</German>
       <Portuguese>Perguntar ao Traficante</Portuguese>
       <Polish>Przesłuchaj dilera</Polish>
+      <Italian>Minaccia Spacciatore</Italian>
     </Key>
     <Key ID="STR_MAR_Service_helicopter">
       <Original>Service Helicopter</Original>
@@ -6371,6 +6415,7 @@
       <German>Fahrzeug in Garage einparken</German>
       <Portuguese>Guardar veículo na Garagem</Portuguese>
       <Polish>Umieść pojazd w garażu</Polish>
+      <Italian>Deposita veicolo in garage</Italian>
     </Key>
     <Key ID="STR_MAR_Cop_Item_Shop">
       <Original>Cop Item Shop</Original>
@@ -6411,12 +6456,14 @@
       <German>Verarbeite Sand</German>
       <Portuguese>Processar Areia</Portuguese>
       <Polish>Przetop piasek na szkło</Polish>
+      <Italian>Lavorazione Sabbia</Italian>
     </Key>
     <Key ID="STR_MAR_Process_Rock">
       <Original>Process Rock</Original>
       <German>Verarbeite Stein</German>
       <Portuguese>Processar Pedra</Portuguese>
       <Polish>Zmiel skały na cement</Polish>
+      <Italian>Processo Roccia</Italian>
     </Key>
     <Key ID="STR_MAR_Wong_Food_Cart">
       <Original>Wongs Food Cart</Original>
@@ -6435,6 +6482,7 @@
       <German>Tresor reparieren</German>
       <Portuguese>Consertar Cofre</Portuguese>
       <Polish>Napraw skarbiec</Polish>
+      <Italian>Ripara Cassaforte</Italian>
     </Key>
     <Key ID="STR_MAR_FED_Front">
       <Original>Federal Reserve - Front Entrance</Original>
@@ -6495,12 +6543,14 @@
       <German>Fahrzeug Garage</German>
       <Portuguese>Garagem de Carros</Portuguese>
       <Polish>Hangar lotniczy</Polish>
+      <Italian>Garage Automobili</Italian>
     </Key>
     <Key ID="STR_MAR_Pay_Bail">
       <Original>Pay Bail</Original>
       <German>Zahle Kaution</German>
       <Portuguese>Pagar Fiança</Portuguese>
       <Polish>Zapłać kaucję</Polish>
+      <Italian>Paga cauzione</Italian>
     </Key>
   </Package>
   <Package name="Crimes">
@@ -6543,11 +6593,13 @@
       <Original>Attempted Kidnapping</Original>
       <Portuguese>Tentativa de Sequestro</Portuguese>
       <German>Versuchte Entführung</German>
+      <Italian>Tentativo di rapimento</Italian>
     </Key>
     <Key ID="STR_Crime_390">
       <Original>Public Intoxication</Original>
       <Portuguese>Uso de Droga em Publico</Portuguese>
       <German>Öffentlicher Drogenmissbrauch</German>
+      <Italian>Uso di stupefacenti in pubblico</Italian>
     </Key>
     <Key ID="STR_Crime_487">
       <Original>Grand Theft</Original>
@@ -6782,7 +6834,7 @@
       <French>Meurtre d'un militaire</French>
       <Portuguese>Matou um Policial</Portuguese>
       <German>Das Töten eines Beamten</German>
-      <Italian>Omicidio a un agente</Italian>
+      <Italian>Omicidio di un agente</Italian>
     </Key>
   </Package>
   <Package name="FuelTank_Mission">

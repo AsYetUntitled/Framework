@@ -99,6 +99,8 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `type` varchar(12) NOT NULL,
   `pid` varchar(32) NOT NULL,
   `alive` tinyint(1) NOT NULL DEFAULT '1',
+  `blacklist` tinyint(1) NOT NULL DEFAULT '0',
+
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `plate` int(20) NOT NULL,
   `color` int(20) NOT NULL,

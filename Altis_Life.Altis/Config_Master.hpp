@@ -29,6 +29,8 @@ class Life_Settings {
     save_vehicle_inventory = false; //Save Arma inventory of vehicle to the database
     save_vehicle_fuel = false; //Save vehicle fuel level to the database (Impounded/Garaged).
     save_vehicle_damage = false; //Save vehicle damage to the database.
+    save_vehicle_illegal = true; //This will allow cops to be advised when a vehicle,with previously illegal items in it,gets taken. This will also save illegal items as proof of crime.
+
 
 /* System Settings */
     /* ATM & Federal Reserve System Configurations */
