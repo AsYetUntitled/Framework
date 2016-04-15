@@ -10,14 +10,14 @@ private["_container","_number","_type","_house","_containers","_houseCfg"];
 _container = param [0,ObjNull,[ObjNull]];
 _number = 1;
 _uid = steamid;
-_house = cursorObject;
+_house = nearestObject [player, "House"];
 switch(true) do {
 	case ((typeOf _container) == "B_supplyCrate_F"): {_type = "storagebig"};
 	case ((typeOf _container) == "Box_IND_Grenades_F") : {_type = "storagesmall"};
 	default {_type = ""};
 };
 
-if (!isNull _house && _house isKindOf "House_F" && {player distance _house < 12}) then{
+if (!isNull _house) then{
 	if(([player] call life_fnc_PlayerInBuilding)) then {
 		if(!(_house in life_vehicles) OR isNil {_house GVAR "house_owner"}) then {
 			deleteVehicle _container;
