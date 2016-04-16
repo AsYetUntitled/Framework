@@ -75,7 +75,7 @@ _query = format["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' 
 _trunk = [_vInfo select 9] call HC_fnc_mresToArray;
 _gear = [_vInfo select 10] call HC_fnc_mresToArray;
 _damage = [_vInfo select 12] call HC_fnc_mresToArray;
-_wasIllegal = [_vInfo select 13] call HC_fnc_mresString;
+_wasIllegal = _vInfo select 13;
 _wasIllegal = if (_wasIllegal == 1) then { true } else { false };
 
 [_query,1] spawn HC_fnc_asyncCall;
