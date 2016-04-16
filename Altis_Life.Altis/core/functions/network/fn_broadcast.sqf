@@ -1,7 +1,7 @@
 /*
 	File: fn_broadcast.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Broadcast system used in the life mission for multi-notification purposes.
 */
@@ -20,7 +20,7 @@ if(_localize) exitWith {
 		case 3: {format[localize _message,_arr select 0, _arr select 1, _arr select 2];};
 		case 4: {format[localize _message,_arr select 0, _arr select 1, _arr select 2, _arr select 3];};
 	};
-	
+
 	if(typeName _type == typeName []) then {
 		for "_i" from 0 to (count _type)-1 do
 		{
