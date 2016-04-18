@@ -92,7 +92,7 @@ while {true} do {
 	if(!alive player) then {_walkDis = 0;} else {
 		_curPos = visiblePosition player;
 		_curPos = (SEL(_curPos,0)) + (SEL(_curPos,1));
-		if(!(EQUAL(_curPos,_lastPos)) && {(vehicle player == player)}) then {
+		if(!(EQUAL(_curPos,_lastPos)) && {(isNull objectParent player)}) then {
 			ADD(_walkDis,1);
 			if(EQUAL(_walkDis,650)) then {
 				_walkDis = 0;

@@ -151,7 +151,7 @@ switch (_code) do {
 					};
 				} else {
 					_list = ["landVehicle","Air","Ship"];
-					if(KINDOF_ARRAY(cursorObject,_list) && {player distance cursorObject < 7} && {vehicle player == player} && {alive cursorObject} && {!life_action_inUse}) then {
+					if(KINDOF_ARRAY(cursorObject,_list) && {player distance cursorObject < 7} && {isNull objectParent player} && {alive cursorObject} && {!life_action_inUse}) then {
 						if(cursorObject in life_vehicles) then {
 							[cursorObject] spawn life_fnc_openInventory;
 						};
@@ -233,7 +233,7 @@ switch (_code) do {
 	//U Key
 	case 22: {
 		if(!_alt && !_ctrlKey) then {
-			if(vehicle player == player) then {
+			if(isNull objectParent player) then {
 				_veh = cursorObject;
 			} else {
 				_veh = vehicle player;

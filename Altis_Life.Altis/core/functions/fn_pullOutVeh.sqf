@@ -5,7 +5,7 @@
 	Description:
 	
 */
-if(playerSide == west OR (vehicle player == player)) exitWith {};
+if(playerSide == west OR (isNull objectParent player)) exitWith {};
 if(player getVariable "restrained") then {
 	detach player;
 	player setVariable["Escorting",false,true];
