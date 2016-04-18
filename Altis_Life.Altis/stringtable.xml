@@ -49,7 +49,7 @@
 		</Key>
 		<Key ID="STR_Shops_W_Gun">
 			<Original>Billy Joe's Firearms</Original>
-			<Czech></Czech>
+			<Czech>Billy Joe Střelné zbraně</Czech>
 			<Spanish></Spanish>
 			<Russian></Russian>
 			<German>Billy Joe Schusswaffen</German>
@@ -6869,7 +6869,7 @@
 		</Key>
 		<Key ID="STR_GUI_SideSwitch">
 			<Original>Switch side-channel mode, turn this off if you don't want to talk with players from your side.</Original>
-			<Czech></Czech>
+			<Czech>Přepnout do režimu side-channel, tuto funkci vypnout, pokud nechcete mluvit s hráči z vaší strany.</Czech>
 			<Spanish></Spanish>
 			<Russian></Russian>
 			<Portuguese>Habilita/Desabilita o side-channel, desabilite caso você não queira conversar com os jogadores da sua facção.</Portuguese>
@@ -7986,8 +7986,8 @@
 			<Polish>Musisz wybrać rzecz którą chcesz kupić/sprzedać</Polish>
 		</Key>
 		<Key ID="STR_Shop_Weapon_Sold">
-			<Original>Prodal jste si% 1 pro &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt;</Original>
-			<Czech></Czech>
+			<Original>You sold a %1 for &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt;</Original>
+			<Czech>prodával jsi %1 pro &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt;</Czech>
 			<Spanish></Spanish>
 			<Russian></Russian>
 			<German>Du hast eine %1 für &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt; verkauft</German>
@@ -7997,8 +7997,8 @@
 			<Polish>Sprzedałeś %1 za &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt;</Polish>
 		</Key>
 		<Key ID="STR_Shop_Weapon_BoughtGang">
-			<Original>Koupil sis% 1 pro &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt; with the gangs funds.</Original>
-			<Czech></Czech>
+			<Original>You bought a %1 for &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt; with the gangs funds.</Original>
+			<Czech>Koupil sis %1 pro &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt; s peněžními prostředky gangů.</Czech>
 			<Spanish></Spanish>
 			<Russian></Russian>
 			<German>Du hast eine %1 für &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt; mit dem Geld der Gang gekauft.</German>
@@ -8008,8 +8008,8 @@
 			<Polish>Kupiłeś %1 za &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt; ze środków gangu.</Polish>
 		</Key>
 		<Key ID="STR_Shop_Weapon_BoughtItem">
-			<Original>Koupil sis% 1 pro &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt;</Original>
-			<Czech></Czech>
+			<Original>You bought a %1 for &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt;</Original>
+			<Czech>Koupil sis %1 pro &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt;</Czech>
 			<Spanish></Spanish>
 			<Russian></Russian>
 			<German>Du hast eine %1 für &lt;t color='#8cff9b'&gt;$%2&lt;/t&gt; gekauft</German>
@@ -9357,7 +9357,7 @@
 		</Key>
 		<Key ID="STR_Crime_6">
 			<Original>Driving kart without helmet</Original>
-			<Czech>Hnací motokáru bez helmy <...</Czech>
+			<Czech>Hnací motokáru bez helmy</Czech>
 			<Spanish></Spanish>
 			<Russian></Russian>
 			<French>Non-port du casque en Kart</French>
