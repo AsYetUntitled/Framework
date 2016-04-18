@@ -27,9 +27,8 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"global_ATM"),1)) then{
 if(isNull _curObject) exitWith {
 	if(_isWater) then {
 		_fishconfig = LIFE_SETTINGS(getArray,"animaltypes_fish");
-		_fishTypes = [position player, _fishconfig, 3] call life_fnc_nearestObjects;
-		if(count _fishTypes > 0) then {
-			_fish = _fishTypes select 0;
+		_fish = (nearestObjects[ASLtoATL (getPosASL player),_fishconfig,3]);
+		if(!(isNil "_fish")) then {
 			if ((typeOf _fish) == "Turtle_F" && !alive _fish) then {
 				[_fish] call life_fnc_catchFish;
 			} else {
@@ -40,23 +39,18 @@ if(isNull _curObject) exitWith {
 		};
 	} else {
 		_animalconfig = LIFE_SETTINGS(getArray,"animaltypes_hunting");
-		_animals = [position player, _animalconfig, 3.5] call life_fnc_nearestObjects;
-		if (count _animals > 0) then {
-			_animal = _animals select 0;
-			if (!alive _animal) then {
-				[_animal] call life_fnc_gutAnimal;
-			};
+		_animal = ((ASLtoATL (getPosASL player)) nearEntities [_animalconfig, 3]) select 0;
+		if (!(isNil "_animal")) then {
+			[_animal] call life_fnc_gutAnimal;
 		} else {
 			private "_handle";
 			if(playerSide == civilian && !life_action_gathering) then {
-
-	            _whatIsIt = [] call life_fnc_whereAmI;
+	      _whatIsIt = [] call life_fnc_whereAmI;
 				if(life_action_gathering) exitWith {};				 //Action is in use, exit to prevent spamming.
 				switch (_whatIsIt) do {
 					case "mine" : { _handle = [] spawn life_fnc_mine };
 					default { _handle = [] spawn life_fnc_gather };
 				};
-
 				life_action_gathering = true;
 				waitUntil {scriptDone _handle};
 				life_action_gathering = false;

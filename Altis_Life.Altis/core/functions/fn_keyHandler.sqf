@@ -140,11 +140,10 @@ switch (_code) do {
 					[vehicle player] spawn life_fnc_openInventory;
 				};
 			} else {
-				private ["_list"];
-				_list = [getPosATL player, ["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5] call life_fnc_nearestObjects;
-				if (count _list > 0) then {
-					_list = _list select 0;
-					_house = nearestObject [(getposATL _list), "House"];
+				private "_list";
+				_list = ((ASLtoATL (getPosASL player)) nearEntities [["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5]) select 0;
+				if (!(isNil "_list")) then {
+					_house = nearestObject [(ASLtoATL (getPosASL _list)), "House"];
 					if (_house getVariable ["locked", false]) then {
 						hint localize "STR_House_ContainerDeny";
 					} else {

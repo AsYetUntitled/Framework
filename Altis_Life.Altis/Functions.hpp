@@ -189,7 +189,6 @@ class Life_Client_Core {
 		class loadGear {};
 		class nearATM {};
 		class nearestDoor {};
-		class nearestObjects {};
 		class nearUnits {};
 		class numberText {};
 		class onFired {};
