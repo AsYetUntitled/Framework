@@ -134,7 +134,7 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 [] spawn {
 	private["_logic","_queue"];
 	while {true} do {
-		sleep (30 * 60);
+		uiSleep (30 * 60);
 		{
 			_x setVariable["sellers",[],true];
 		} forEach [Dealer_1,Dealer_2,Dealer_3];

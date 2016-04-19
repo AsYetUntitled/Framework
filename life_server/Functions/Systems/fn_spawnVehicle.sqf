@@ -81,7 +81,7 @@ if(typeName _sp == "STRING") then {
 	_vehicle allowDamage false;
 	_hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
 	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
-	sleep 0.6;
+	uiSleep 0.6;
 } else {
 	_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
@@ -105,7 +105,7 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 // Avoid problems if u keep changing which stuff to save!
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
 	_vehicle setVariable["Trunk",_trunk,true];
-	if (_wasIllegal) then { 
+	if (_wasIllegal) then {
 		if(typeName _sp == "STRING") then {
 		_location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
 		} else {

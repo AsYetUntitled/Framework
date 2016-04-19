@@ -23,5 +23,5 @@ while {true} do {
 	};
 
 	_loops = _loops + 1;
-	sleep 1;
+	uiSleep 1;
 };

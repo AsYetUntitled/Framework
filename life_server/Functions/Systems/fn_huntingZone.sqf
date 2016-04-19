@@ -39,5 +39,5 @@ while {true} do {
 			_animalsActive = false;
 		};
 	};
-	sleep (3 + random 2);
+	uiSleep (3 + random 2);
 };
