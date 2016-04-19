@@ -9,7 +9,7 @@
 */
 private "_deleted";
 _deleted = false;
-while {true} do {
+for "_i" from 0 to 1e10 do {
 	private["_veh","_units","_fuel"];
 	uiSleep (60 * 60);
 	{
