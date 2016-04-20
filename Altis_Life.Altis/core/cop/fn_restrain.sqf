@@ -15,7 +15,7 @@ if(isNull _cop) exitWith {};
 //Monitor excessive restrainment
 [] spawn {
 	private "_time";
-	while {true} do {
+	For "_i" from 0 to 1 step 0 do {
 		_time = time;
 		waitUntil {(time - _time) > (5 * 60)};
 

@@ -35,7 +35,7 @@ _cpRate = 0.0092;
 
 [2,"STR_House_Raid_NOTF",true,[(_house GVAR "house_owner") select 1]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 
-while {true} do {
+For "_i" from 0 to 1 step 0 do {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 		[player,"AinvPknlMstpSnonWnonDnon_medic_1",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
 		player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";

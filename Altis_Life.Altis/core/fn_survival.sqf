@@ -55,7 +55,7 @@ _lastPos = visiblePosition player;
 _lastPos = (SEL(_lastPos,0)) + (SEL(_lastPos,1));
 _lastState = vehicle player;
 
-while {true} do {
+For "_i" from 0 to 1 step 0 do {
 	/* Thirst / Hunger adjustment that is time based */
 	if((time - _waterTime) > 600) then {[] call _fnc_water; _waterTime = time;};
 	if((time - _foodTime) > 850) then {[] call _fnc_food; _foodTime = time;};

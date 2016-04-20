@@ -30,7 +30,7 @@ _bail = false;
 	life_canpay_bail = nil;
 };
 
-while {true} do {
+For "_i" from 0 to 1 step 0 do {
 	if((round(_time - time)) > 0) then {
 		_countDown = [(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString;
 		hintSilent parseText format[(localize "STR_Jail_Time")+ "<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>" +(localize "STR_Jail_Pay")+ " %3<br/>" +(localize "STR_Jail_Price")+ " $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"Yes"} else {"No"}];

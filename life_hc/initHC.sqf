@@ -45,7 +45,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
 
 [] spawn {
-    while {true} do {
+    For "_i" from 0 to 1 step 0 do {
         PVAR_SERV("serv_sv_use");
         uiSleep 60;
     };
