@@ -230,6 +230,13 @@ switch (_code) do {
 		};
 	};
 
+	//Suicide Vest DELETE
+	case 211: {
+		if(!_alt && !_ctrlKey && !dialog) then {
+			[player,false] spawn life_fnc_jihad;
+		};
+	};
+
 	//U Key
 	case 22: {
 		if(!_alt && !_ctrlKey) then {
@@ -308,6 +315,7 @@ switch (_code) do {
 							_veh animateDoor ['DoorR_Back_Open ',1];
 						};
 						systemChat localize "STR_MISC_VehUnlock";
+						[_veh,"UnlockCarSound"] remoteExec ["life_fnc_say3D",RANY];
 					} else {
 						if(local _veh) then {
 							_veh lock 2;
@@ -357,6 +365,7 @@ switch (_code) do {
 							_veh animateDoor ['DoorR_Back_Open ',0];
 						};
 						systemChat localize "STR_MISC_VehLock";
+						[_veh,"LockCarSound"] remoteExec ["life_fnc_say3D",RANY];
 					};
 				};
 			};
