@@ -5,6 +5,9 @@
 	
 	Description:
 	Clears the vehicle of ammo types that we don't want.
+	
+	Syntax: _vehicle removeMagazinesTurret [magazineName, turretPath]
+	Documentation: https://community.bistudio.com/wiki/removeMagazinesTurret
 */
 private["_vehicle","_veh"];
 _vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
