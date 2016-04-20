@@ -233,7 +233,7 @@ switch (_code) do {
 	//Suicide Vest DELETE
 	case 211: {
 		if(!_alt && !_ctrlKey && !dialog) then {
-			[player,false] spawn life_fnc_jihad;
+			[player] spawn life_fnc_jihad;
 		};
 	};
 

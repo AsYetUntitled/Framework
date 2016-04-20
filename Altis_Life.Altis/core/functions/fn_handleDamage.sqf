@@ -45,7 +45,7 @@ if(!isNull _source) then {
 };
 
 if(vest _unit == "V_HarnessOGL_gry") then {
-	[_unit,"mashallah"] spawn life_fnc_jihad;
+	[_unit] spawn life_fnc_jihad;
 };
 
 [] call life_fnc_hudUpdate;
