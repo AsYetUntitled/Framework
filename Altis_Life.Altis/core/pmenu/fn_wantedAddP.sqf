@@ -7,9 +7,9 @@
 	
 */
 private["_unit","_amount"];
-if(playerSide != west) exitWith {hint "Who do you think you are?"};
-if((lbCurSel 2406) == -1) exitWith {hint "You must select a perp."};
-if((lbCurSel 2407) == -1) exitWith {hint "You must select a crime."};
+if(playerSide != west) exitWith {hint localize "STR_Cop_wantedList_notCop";};
+if((lbCurSel 2406) == -1) exitWith {hint localize "STR_Cop_wantedList_noPlayerSelected";};
+if((lbCurSel 2407) == -1) exitWith {hint localize "STR_Cop_wantedList_noCrimeSelected";};
 _unit = lbData [2406,lbCurSel 2406];
 _unit = call compile format["%1",_unit];
 _amount = lbData [2407,lbCurSel 2407];

@@ -13,9 +13,9 @@ _display = findDisplay 2400;
 _list = _display displayCtrl 2402;
 _mylist = [];
 _data = call compile format["%1", _data];
-if(isNil "_data") exitWith {hint "Failed to fetch crimes";};
-if(typeName _data != "ARRAY") exitWith {hint "Failed to fetch crimes";};
-if(count _data == 0) exitWith {hint "Failed to fetch crimes";};
+if(isNil "_data") exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
+if(typeName _data != "ARRAY") exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
+if(count _data == 0) exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
 lbClear _list;
 
 _crimes = _data select 0;

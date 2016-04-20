@@ -13,7 +13,7 @@ _uid = steamid;
 
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
-if(isNil {_house getVariable "house_owner"}) exitWith {hint "There is no owner for this house."};
+if(isNil {_house getVariable "house_owner"}) exitWith {hint localize "STR_House_noOwner";};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;

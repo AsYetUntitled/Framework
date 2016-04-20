@@ -11,11 +11,11 @@ disableSerialization;
 _dialog = findDisplay 2700;
 _list = _dialog displayCtrl 2701;
 _sel = lbCurSel _list;
-if(_sel == -1) exitWith {hint "No Data Selected";};
-if((_list lbText _sel) == "You don't own any vehicles") exitWith {hint "You didn't select a vehicle.";};
+if(_sel == -1) exitWith {hint localize "STR_NOTF_noDataSelected";};
+if((_list lbText _sel) == "You don't own any vehicles.") exitWith {hint localize "STR_NOTF_didNotSelectVehicle";};
 _index = (parseNumber(_list lbData _sel));
 _vehicle = life_vehicles select _index;
-if(_vehicle isKindOf "House_F") exitWith {hint "You can't remove the keys to your house!"};
+if(_vehicle isKindOf "House_F") exitWith {hint localize "STR_NOTF_cannotRemoveHouseKeys";};
 _owners = _vehicle getVariable "vehicle_info_owners";
 
 _index2 = [(getPlayerUID player),_owners] call TON_fnc_index;
