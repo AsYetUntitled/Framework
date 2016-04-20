@@ -233,7 +233,9 @@ switch (_code) do {
 	//Suicide Vest DELETE
 	case 211: {
 		if(!_alt && !_ctrlKey && !dialog) then {
+			if((time - life_action_delay) < 15) exitWith {hint localize "STR_NOTF_ActionDelay";};
 			[player] spawn life_fnc_jihad;
+			life_action_delay = time;
 		};
 	};
 
