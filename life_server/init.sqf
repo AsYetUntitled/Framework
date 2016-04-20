@@ -107,7 +107,7 @@ life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT
 
 /* Set the amount of gold in the federal reserve at mission start */
 fed_bank setVariable ["safe",count playableUnits,true];
-[] call TON_fnc_federalUpdate;
+[] spawn TON_fnc_federalUpdate;
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
@@ -131,16 +131,18 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	[] execFSM "\life_server\FSM\cleanup.fsm";
 };
 
-for "_i" from 0 to 1e10 do {
-	uiSleep (30 * 60);
-	{
-		_x setVariable["sellers",[],true];
-	} forEach [Dealer_1,Dealer_2,Dealer_3];
+[] spawn {
+	for "_i" from 0 to 1e10 do {
+		uiSleep (30 * 60);
+		{
+			_x setVariable["sellers",[],true];
+		} forEach [Dealer_1,Dealer_2,Dealer_3];
+	};
 };
 
 if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	[] spawn TON_fnc_initHouses;
-	[] call TON_fnc_cleanup;
+	[] spawn TON_fnc_cleanup;
 };
 
 [] call TON_fnc_initPlayTime;
@@ -165,7 +167,7 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 
 if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	/* Initialize hunting zone(s) */
-	["hunting_zone",30] call TON_fnc_huntingZone;
+	["hunting_zone",30] spawn TON_fnc_huntingZone;
 };
 
 // We create the attachment point to be used for objects to attachTo load virtually in vehicles.
