@@ -147,10 +147,10 @@ For "_i" from 0 to 1 step 0 do {
 	};
 
 	if(_itemIndex == -1) then {
-		_inv pushBack [_resource,_random];
+		_inv pushBack [_resource,_sum];
 	} else {
 		_val = _inv select _itemIndex select 1;
-		_inv set[_itemIndex,[_resource,_val + _random]];
+		_inv set[_itemIndex,[_resource,_val + _sum]];
 	};
 
 	if(fuel _vehicle < 0.1) exitWith {
@@ -171,7 +171,7 @@ For "_i" from 0 to 1 step 0 do {
 	};
 	
 	_itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
-	titleText[format[localize "STR_NOTF_DeviceMined",_random,(localize _itemName)],"PLAIN"];
+	titleText[format[localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
 	_itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
 	_vehicle SVAR["Trunk",[_inv,_space + _itemWeight],true];
 	_weight = [_vehicle] call life_fnc_vehicleWeight;
