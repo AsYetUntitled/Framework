@@ -1712,7 +1712,7 @@
 			<Portuguese>Recursos:</Portuguese>
 			<Polish>Środki:</Polish>
 		</Key>
-		<Key ID='STR_GNOTF_GangLeader'>
+		<Key ID="STR_GNOTF_GangLeader">
 			<Original>(Gang Leader)</Original>
 			<Czech>(Gang Leader)</Czech>
 			<Spanish>(Lider de Pandilla)</Spanish>
@@ -1723,7 +1723,7 @@
 			<Portuguese>(Lider da Gangue)</Portuguese>
 			<Polish>(Szef gangu)</Polish>
 		</Key>
-		<Key ID='STR_GNOTF_AlreadyInGang'>
+		<Key ID="STR_GNOTF_AlreadyInGang">
 			<Original>You are already in a gang.</Original>
 			<Czech>Jste již v gangu.</Czech>
 			<Spanish>Ya estas en una pandilla.</Spanish>
