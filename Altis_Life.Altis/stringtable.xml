@@ -691,12 +691,14 @@
 			<Spanish>Aprieta la barra de espacio para colocar el Contenedor</Spanish>
 			<Russian></Russian>
 			<French>Appuyez sur espace pour placer le container</French>
+			<Portuguese>Pressione a barra de espaço para posicionar</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_notAllowed">
 			<Original>Your faction is not allowed to chop vehicles!</Original>
 			<Czech>Váš frakce není povoleno sekat vozidla!</Czech>
 			<Spanish>Tu facción no tiene permitido usar esta tienda! </Spanish>
 			<Russian></Russian>
+			<Portuguese>Sua facção não têm direito de usar essa loja</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_Pickaxe">
 			<Original>A pickaxe is required</Original>
@@ -2932,6 +2934,7 @@
 			<Spanish>Has pagado $%2 para embargar tu propio %1</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 $ bezahlt, weil du dein eigenen %2 beschlagnahmt hast.</German>
+			<Portuguese>Você pagou R$%1 para guardar seu próprio %2</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_AbortESC">
 			<Original>Abort available in %1</Original>
@@ -3145,7 +3148,7 @@
 			<German>Ihre illegale Gegenstände wurden als Beweismittel gesetzt.</German>
 			<French>Vos articles illégaux ont été mis en preuve.</French>
 			<Italian>I tuoi articoli illegali sono stati messi in evidenza.</Italian>
-			<Portuguese>Seus itens ilegais têm sido postas em evidência.</Portuguese>
+			<Portuguese>Seus itens ilegais foram postos em evidência.</Portuguese>
 			<Polish>Twoje nielegalne pozycje zostały wprowadzone do dowodów.</Polish>
 		</Key>
 		<Key ID="STR_NOTF_VehCheat">
@@ -3528,6 +3531,7 @@
 			<Czech>Dalo by se efektivně využily všech položek. Zkus to znovu.</Czech>
 			<Spanish>No pudistes efectivamente, confiscar algun objeto. Prueba de nuevo.</Spanish>
 			<Russian></Russian>
+			<Portuguese>Você não pode apreender nenhum item, efetivamente. Tente de novo.</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_Repairing">
 			<Original>Repairing %1</Original>
@@ -3865,6 +3869,7 @@
 			<Spanish>%2 tiene un vehículo prohibido cerca de %1</Spanish>
 			<Russian></Russian>
 			<Italian>%2 ha ritirato un veicolo blacklistato vicino %1</Italian>
+			<Portuguese>%2 tem um veículo proíbido nas proximidades %1</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_TicketNil">
 			<Original>Person to ticket is nil</Original>
@@ -5498,7 +5503,7 @@
 			<German>Defibrillator</German>
 			<French>défibrillateur</French>
 			<Italian>defibrillatore</Italian>
-			<Portuguese>desfibrilador</Portuguese>
+			<Portuguese>Desfibrilador</Portuguese>
 			<Polish>defibrylator</Polish>
 		</Key>
 		<Key ID="STR_Item_Toolkit">
@@ -6994,7 +6999,7 @@
 			<German>Seize Waffen</German>
 			<French>saisir les armes</French>
 			<Italian>cogliere Armi</Italian>
-			<Portuguese>apreensão de armas</Portuguese>
+			<Portuguese>Apreender Armas</Portuguese>
 			<Polish>Chwytaj broń</Polish>
 		</Key>
 		<Key ID="STR_pInAct_Arrest">
@@ -7304,6 +7309,7 @@
 			<Spanish>Tu vehículo contiene objetos, si lo guardas, deberas esperar 20 minutos antes de retirar el carro del garaje (prevención de duplicación)</Spanish>
 			<Russian></Russian>
 			<French>Votre vehicule contient des items,si vous stockez cette voiture, vous allez devoir attendre 20 minutes avant de retrouver votre voiture dans votre garage</French>
+			<Portuguese>Seu veículo contém itens, se você guardá-lo, terá de esperar 20 minutos para poder retirá-lo novamente.</Portuguese>
 		</Key>
 		<Key ID="STR_Vehicle_StoreVehicle">
 			<Original>Store your vehicle</Original>
@@ -7311,6 +7317,7 @@
 			<Spanish>Guardar tu Vehículo</Spanish>
 			<Russian></Russian>
 			<French>Rangez votre véhicule</French>
+			<Portuguese>Guardar seu veículo</Portuguese>
 		</Key>
 		<Key ID="STR_Vehicle_Store">
 			<Original>Store</Original>
@@ -7318,6 +7325,7 @@
 			<Spanish>Guardar</Spanish>
 			<Russian></Russian>
 			<French>Ranger</French>
+			<Portuguese>Guardar</Portuguese>
 		</Key>
 		<Key ID="STR_Vehicle_Clean">
 			<Original>Clean</Original>
@@ -7325,12 +7333,14 @@
 			<Spanish>Limpiar</Spanish>
 			<Russian></Russian>
 			<French>Nettoyer</French>
+			<Portuguese>Limpar</Portuguese>
 		</Key>
 		<Key ID="STR_NPC_Protected">
 			<original>This vehicle is NPC protected.</Original>
 			<Czech>Toto vozidlo je chráněno NPC.</Czech>
 			<Spanish>Este vehículo esta protegido.</Spanish>
 			<Russian></Russian>
+			<Portuguese>Esse veículo está protegido.</Portuguese>
 		</Key>
 	</Package>
 	<Package name="Session_Strings">
@@ -7397,7 +7407,7 @@
 			<German>Wegen einiger Cheater ist das BIS MP Framework beschädigt. Versuche es in einer Minute nochmal.</German>
 			<French>En raison de certains tricheur tentant corrompre le BIS MP Framework,ils vous ont empêché de profiter de notre mission.\n\nVous pouvez essayer ce nouveau dans une minute si vous pensez que c'est une erreur.</French>
 			<Italian>A causa di qualche cheater che ha corrotto il BIS MP Framework il tuo divertimento in questa missione finisce qui per ora.\n\nPuoi provare a rientrare a breve se pensi sia un errore.</Italian>
-			<Portuguese>Por conta de alguns trapaceiros corrompendo o BIS MP Framework eles pararam de desfrutar a nossa missão.\n\nVocê pode tentar de novo em um minuto se achar que isso é um engano.</Portuguese>
+			<Portuguese>Por conta de alguns trapaceiros corrompendo a BIS MP Framework, eles pararam de desfrutar a nossa missão.\n\nVocê pode tentar de novo em um minuto se achar que isso é um engano.</Portuguese>
 			<Polish>Z uwagi na to że niektórzy hakerzy psują BIS MP Framework zatrzymują możliwość zabawy na serwerze.\n\nMożesz spróbować ponowni za minutę jeśli uważasz to za błąd</Polish>
 		</Key>
 		<Key ID="STR_Session_SyncData">
@@ -7421,7 +7431,7 @@
 			<German>Da du die Bank ausgeraubt hast, kannst du für %1 Minuten keine Bankomaten benutzen.</German>
 			<French>Vous avez pillé la banque, vous ne pouvez pas utiliser le guichet automatique pendant %1 minutes.</French>
 			<Italian>Avendo appena rapinato la banca non puoi utilizzare il Bancomat per %1 minuti.</Italian>
-			<Portuguese>Você não pode usar o ATM por %1 minutos, pois você assaltou o banco.</Portuguese>
+			<Portuguese>Você não pode usar o ATM por %1 minuto(s), pois você assaltou o banco.</Portuguese>
 			<Polish>Z uwagi na to że okradłeś bank nie możesz korzystać z bankomatu przez najbliższe %1 minut.</Polish>
 		</Key>
 		<Key ID="STR_Shop_NoClothes">
@@ -9558,6 +9568,7 @@
 			<Spanish>Almacenamiento de Combustible</Spanish>
 			<Russian></Russian>
 			<German>Treibstofflager</German>
+			<Portuguese>Posto de Combustível</Portuguese>
 		</Key>
 			<Key ID="STR_FuelTank_Supply">
 			<Original>Supply</Original>
@@ -9565,6 +9576,7 @@
 			<Spanish>Suministro</Spanish>
 			<Russian></Russian>
 			<German>Liefern</German>
+			<Portuguese>Abastecer</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Store">
 			<Original>Store</Original>
@@ -9572,6 +9584,7 @@
 			<Spanish>Guardar</Spanish>
 			<Russian></Russian>
 			<German>Lagern</German>
+			<Portuguese>Guardar</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Stop">
 			<Original>Stop</Original>
@@ -9579,6 +9592,7 @@
 			<Spanish>Parar</Spanish>
 			<Russian></Russian>
 			<German>Stoppen</German>
+			<Portuguese>Parar</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_InUse">
 			<Original>Tankers is already in use</Original>
@@ -9586,6 +9600,7 @@
 			<Spanish>El tanque ya esta siendo usado</Spanish>
 			<Russian></Russian>
 			<German>Tankwagen wird bereits benutzt</German>
+			<Portuguese>Os tanques já estão em uso</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_AnotherInUse">
 			<Original>Gas Station is in use</Original>
@@ -9593,6 +9608,7 @@
 			<Spanish>La estación ya se esta usando</Spanish>
 			<Russian></Russian>
 			<German>Tankstelle wird bereits beliefert</German>
+			<Portuguese>O posto já está sendo usado</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Empty">
 			<Original>Tankers is empty</Original>
@@ -9600,6 +9616,7 @@
 			<Spanish>El tanque esta vacío</Spanish>
 			<Russian></Russian>
 			<German>Treibstofftank ist leer</German>
+			<Portuguese>Os tanques estão vazios</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Full">
 			<Original>Tankers is full</Original>
@@ -9607,6 +9624,7 @@
 			<Spanish>El Tanque esta lleno</Spanish>
 			<Russian></Russian>
 			<German>Treibstofftank ist voll</German>
+			<Portuguese>Os tanques estão cheios</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_FeedFull">
 			<Original>Gas station has enough fuel</Original>
@@ -9614,6 +9632,7 @@
 			<Spanish>La estación tiene suficiente gasolina</Spanish>
 			<Russian></Russian>
 			<German>Tankstelle hat genug Treibstoff</German>
+			<Portuguese>O posto tem combustível suficiente</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_PipeLine">
 			<Original>This Gas Station is supplied through a pipeline</Original>
@@ -9621,6 +9640,7 @@
 			<Spanish>Esta estación es suministrada por una tubería</Spanish>
 			<Russian></Russian>
 			<German>Diese Tankstelle wird über eine Pipeline versorgt</German>
+			<Portuguese>Esse posto é abastecido através de uma mangueira</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Stopped">
 			<Original>Discontinued operation</Original>
@@ -9628,6 +9648,7 @@
 			<Spanish>Operación discontinuada</Spanish>
 			<Russian></Russian>
 			<German>Vorgang abgebrochen</German>
+			<Portuguese>Operação descontinuada</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Money">
 			<Original>Your share is $%1</Original>
@@ -9635,6 +9656,7 @@
 			<Spanish>Tu ganancia es $%1</Spanish>
 			<Russian></Russian>
 			<German>Dein Anteil beträgt $%1</German>
+			<Portuguese>A sua parte é de R$%1</Portuguese>
 		</Key>
 	</Package>
 </Project>
