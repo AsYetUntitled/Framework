@@ -14,7 +14,7 @@ civ_spawn_4 = nearestObjects[getMarkerPos  "civ_spawn_4", ["Land_i_Shop_01_V1_F"
 waitUntil {!(isNull (findDisplay 46))};
 if(life_is_alive && !life_is_arrested) then {
 	/* Spawn at our last position */
-	player setPosWorld life_civ_position;
+	player setVehiclePosition [life_civ_position, [], 0, "CAN_COLLIDE"];
 } else {
 	if(!life_is_alive && !life_is_arrested) then {
 		if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_positionStrict"),1)) then {
