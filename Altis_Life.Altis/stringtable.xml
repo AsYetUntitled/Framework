@@ -578,7 +578,7 @@
 		</Key>
 		<Key ID="STR_ANOTF_CompWarn">
 			<Original>You are about to give yourself $%1 to compensate to another player &lt;br/&gt;&lt;br/&gt;You must give this cash to the person you are compensating manually.</Original>
-			<Czech>Chystáte se dát si $% 1 kompenzovat jinému hráči & lt; br / & gt; & lt; br / & gt; Musíte dát tuto hotovost na osoby, které jsou kompenzačním ručně.</Czech>
+			<Czech>Chystáte se dát si $%1 kompenzovat jinému hráči & lt; br / & gt; & lt; br / & gt; Musíte dát tuto hotovost na osoby, které jsou kompenzačním ručně.</Czech>
 			<Spanish>Estas a punto de darte $%1 para compensar a otro jugador&lt;br/&gt;&lt;br/&gt; Debes darle el dinero a la persona manualmente.</Spanish>
 			<Russian></Russian>
 			<German>Du bist dabei dir selbst $%1 zu geben um einen anderen Spieler zu entschädigen.&lt;br/&gt;&lt;br/&gt;Gib das Geld dann an den Spieler weiter.</German>
@@ -588,7 +588,7 @@
 		</Key>
 		<Key ID="STR_ANOTF_Success">
 			<Original>You have added $%1 to your account.</Original>
-			<Czech>Přidali jste $% 1 se ke svému účtu.</Czech>
+			<Czech>Přidali jste $%1 se ke svému účtu.</Czech>
 			<Spanish>Has agregado $%1 a tu cuenta.</Spanish>
 			<Russian></Russian>
 			<German>Dir wurden $%1 auf deinem Bankkonto gutgeschrieben.</German>
@@ -618,7 +618,7 @@
 		</Key>
 		<Key ID="STR_ANOTF_Frozen">
 			<Original>You have disabled %1's input.</Original>
-			<Czech>Jste zakázali vstup% 1 je.</Czech>
+			<Czech>Jste zakázali vstup%1 je.</Czech>
 			<Spanish>Has desabilitado los controles de %1</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 Schock-Gefrostet. Er kann sich nichtmehr bewegen.</German>
@@ -628,7 +628,7 @@
 		</Key>
 		<Key ID="STR_ANOTF_Unfrozen">
 			<Original>You have enabled %1's input.</Original>
-			<Czech>Jste povolili vstup% 1 je.</Czech>
+			<Czech>Jste povolili vstup%1 je.</Czech>
 			<Spanish>Has abilitado los controles de %1</Spanish>
 			<Russian></Russian>
 			<German>du hast %1 wieder aufgetaut.</German>
@@ -901,7 +901,7 @@
 		</Key>
 		<Key ID="STR_ATM_SentMoneyFail">
 			<Original>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</Original>
-			<Czech>Nemáte dostatek peněz na váš bankovní účet, převést $% 1 budete potřebovat $% 2 jako daňový poplatek.</Czech>
+			<Czech>Nemáte dostatek peněz na váš bankovní účet, převést $%1 budete potřebovat $%2 jako daňový poplatek.</Czech>
 			<Spanish>No tienes el dinero suficiente, para transferir $%1 necesitaras $%2 para pagar como cuota.</Spanish>
 			<Russian></Russian>
 			<German>Du hast nicht genug Geld auf deinem Konto, es kostet $%2, um $%1 zu überweisen.</German>
@@ -912,7 +912,7 @@
 		</Key>
 		<Key ID="STR_ATM_SentMoneySuccess">
 			<Original>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</Original>
-			<Czech>Jste přenesli $% 1 do% 2. \ N \ nA daňový poplatek ve výši $% 3 byla pořízena na bankovním převodem.</Czech>
+			<Czech>Jste přenesli $%1 do%2. \ N \ nA daňový poplatek ve výši $%3 byla pořízena na bankovním převodem.</Czech>
 			<Spanish>Has transferido $%1 a $%2 \n\nUna cuota de $%3 fue tomada de tu cuenta.</Spanish>
 			<Russian></Russian>
 			<German>Du hast $%1 an %2 überwiesen.\n\nEine Gebühr von $%3 wurde verrechnet.</German>
@@ -945,7 +945,7 @@
 		</Key>
 		<Key ID="STR_ATM_WithdrawSuccess">
 			<Original>You have withdrawn $%1 from your bank account</Original>
-			<Czech>Jste staženy $% 1 z vašeho bankovního účtu</Czech>
+			<Czech>Jste staženy $%1 z vašeho bankovního účtu</Czech>
 			<Spanish>Has retirado $%1 de tu cuenta bancaria</Spanish>
 			<Russian></Russian>
 			<German>Du hast $%1 von deinem Bankkonto abgehoben</German>
@@ -956,7 +956,7 @@
 		</Key>
 		<Key ID="STR_ATM_WithdrawSuccessG">
 			<Original>You have withdrawn $%1 from your gang</Original>
-			<Czech>Jste staženy $% 1 z naší bandy</Czech>
+			<Czech>Jste staženy $%1 z naší bandy</Czech>
 			<Spanish>Has retirado $%1 de tu pandilla</Spanish>
 			<Russian></Russian>
 			<French>Vous avez retiré $%1 de votre gang</French>
@@ -982,7 +982,7 @@
 		</Key>
 		<Key ID="STR_ATM_DepositSuccess">
 			<Original>You have deposited $%1 into your bank account</Original>
-			<Czech>Máte uloženy $% 1 na váš bankovní účet</Czech>
+			<Czech>Máte uloženy $%1 na váš bankovní účet</Czech>
 			<Spanish>Has depositado $%1 en tu cuenta de banco.</Spanish>
 			<Russian></Russian>
 			<German>Du hast $%1 auf dein Bankkonto überwiesen</German>
@@ -993,7 +993,7 @@
 		</Key>
 		<Key ID="STR_ATM_DepositSuccessG">
 			<Original>You have deposited $%1 into your gang's bank account</Original>
-			<Czech>Máte uloženy $% 1 na bankovní účet svého gangu</Czech>
+			<Czech>Máte uloženy $%1 na bankovní účet svého gangu</Czech>
 			<Spanish>Has depositado $%1 en la cuenta de tu pandilla</Spanish>
 			<Russian></Russian>
 			<German>Du hast $%1 auf dein Gang Konto überwiesen</German>
@@ -1193,7 +1193,7 @@
 		</Key>
 		<Key ID="STR_Gang_PriceTxt">
 			<Original>To create a gang it costs $%1</Original>
-			<Czech>Chcete-li vytvořit gang stojí $% 1</Czech>
+			<Czech>Chcete-li vytvořit gang stojí $%1</Czech>
 			<Spanish>Cuesta $%1 para crear una pandilla</Spanish>
 			<Russian></Russian>
 			<German>Eine Gang zu erstellen kostet $%1</German>
@@ -1338,7 +1338,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_AlreadyControlled">
 			<Original>This hideout is controlled by %1.&lt;br/&gt;&lt;br/&gt;Are you sure you want to take over their gang area?</Original>
-			<Czech>Tento úkryt je řízen% 1 & lt; br / & gt; & lt; br / & gt; Opravdu chcete převzít svůj gang prostor?</Czech>
+			<Czech>Tento úkryt je řízen%1 & lt; br / & gt; & lt; br / & gt; Opravdu chcete převzít svůj gang prostor?</Czech>
 			<Spanish>Este escondite esta controlado por %1.&lt;br/&gt;&lt;br/&gt;Estas seguro que quieres tomarlo?</Spanish>
 			<Russian></Russian>
 			<German>Das Versteck wird durch %1 kontrolliert.&lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du ihr Gang Gebiet übernehmen möchtest?</German>
@@ -1382,12 +1382,12 @@
 		</Key>
 		<Key ID="STR_GNOTF_CaptureSuccess">
 			<Original>%1 and his gang: %2 - have taken control of a local hideout!</Original>
-			<Czech>% 1 a jeho gang:% 2 - vzali kontrolu místního úkrytu!</Czech>
+			<Czech>%1 a jeho gang:%2 - vzali kontrolu místního úkrytu!</Czech>
 			<Spanish>%1 y su pandilla: %2 - han tomado control de un Escondite!</Spanish>
 			<Russian></Russian>
-			<German>%1 und seine Gang: 2% - haben die Kontrolle über ein lokales Versteck übernommen!</German>
+			<German>%1 und seine Gang: %2 - haben die Kontrolle über ein lokales Versteck übernommen!</German>
 			<French>%1 et sa gang: %2 ont pris le controle de la cachette !</French>
-			<Italian>%1 e la sua Gang: % 2 - hanno preso il controllo di un Covo!</Italian>
+			<Italian>%1 e la sua Gang: %2 - hanno preso il controllo di un Covo!</Italian>
 			<Portuguese>%1 e sua gangue: %2 - agora têm o controle de um esconderijo!</Portuguese>
 			<Polish>%1 i jego gang: %2 - przejął kontrolę nad kryjówką!</Polish>
 		</Key>
@@ -1398,7 +1398,7 @@
 			<Russian></Russian>
 			<German>Dein Gang Name kann nicht länger als 32 Zeichen sein.</German>
 			<French>Vous ne pouvez pas avoir un nom de gang de plus de 32 caractères.</French>
-			<Italian>%1 e la sua Gang: % 2 - hanno preso il controllo di un Covo!</Italian>
+			<Italian>%1 e la sua Gang: %2 - hanno preso il controllo di un Covo!</Italian>
 			<Portuguese>O nome de sua gangue não pode ter mais de 32 caracteres.</Portuguese>
 			<Polish>Nazwa gangu może posiadać maksymalnie 32 znaki</Polish>
 		</Key>
@@ -1415,7 +1415,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_NotEnoughMoney">
 			<Original>You do not have enough money in your bank account.\n\nYou lack: $%1</Original>
-			<Czech>Nemáte dostatek peněz na váš bankovní účet \ ne vy balení:. $% 1</Czech>
+			<Czech>Nemáte dostatek peněz na váš bankovní účet \ ne vy balení:. $%1</Czech>
 			<Spanish>No tienes suficiente dinero en tu cuenta.\n\nTe falta: $%1</Spanish>
 			<Russian></Russian>
 			<German>Du hast nicht genug Geld auf deinem Bankkonto.\n\nDir fehlen: $%1</German>
@@ -1426,7 +1426,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_CreateSuccess">
 			<Original>You have created the gang %1 for $%2</Original>
-			<Czech>Vytvořili jste gangu% 1 pro $ 2%</Czech>
+			<Czech>Vytvořili jste gangu%1 pro $ %2</Czech>
 			<Spanish>Has creado la Pandilla %1 por $%2</Spanish>
 			<Russian></Russian>
 			<German>Du hast die Gang %1 für $%2 erstellt</German>
@@ -1481,7 +1481,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_InviteMSG">
 			<Original>%1 has invited you to a gang called %2&lt;br/&gt;If you accept the invitation you will be a part of their gang and will have access to the gang funds and controlled gang hideouts.</Original>
-			<Czech>% 1 vás pozval na party s názvem% 2 & lt; br / & gt; Pokud přijmete pozvání budete součástí jejich gangu a budou mít přístup ke gangu fondů a řízených gangů úkrytů.</Czech>
+			<Czech>%1 vás pozval na party s názvem%2 & lt; br / & gt; Pokud přijmete pozvání budete součástí jejich gangu a budou mít přístup ke gangu fondů a řízených gangů úkrytů.</Czech>
 			<Spanish>%1 te ha invitado a una Pandilla llamada %2&lt;br/&gt;Si aceptas seras parte de su pandilla, compartiras el banco de la pandilla y controlaras sus escondites.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat dich zu einer Gang namens %2 eingeladen &lt;br/&gt; Wenn Du die Einladung annimmst, wirst du ein Teil der Gang und bekommst Zugang zu den Gang-Konten und kontrollierten Gang Verstecken.</German>
@@ -1492,7 +1492,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_InvitePlayerMSG">
 			<Original>You are about to invite %1 to your gang, if they accept the invite they will have access to the gang's funds.</Original>
-			<Czech>Chystáte se pozvat% 1 na svůj gang, pokud přijmou pozvání budou mít přístup k finančním prostředkům gangu.</Czech>
+			<Czech>Chystáte se pozvat%1 na svůj gang, pokud přijmou pozvání budou mít přístup k finančním prostředkům gangu.</Czech>
 			<Spanish>Estas a putno de invitar a %1 a tu pandilla, si aceptan tendran aceso al banco de tu Pandilla.</Spanish>
 			<Russian></Russian>
 			<German>Du bist dabei, %1 in deine Gang einzuladen. Wenn die Einladung angenommen wird, hat der Spieler Zugang zu den Mitteln der Gang.</German>
@@ -1514,7 +1514,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_InviteSent">
 			<Original>You have sent a invite to your gang to %1</Original>
-			<Czech>Jste adresoval zvou na svůj gang do% 1</Czech>
+			<Czech>Jste adresoval zvou na svůj gang do%1</Czech>
 			<Spanish>Has invitado a %1 a tu Pandilla</Spanish>
 			<Russian></Russian>
 			<German>Du hast eine Einladung in deine Gang an %1 gesendet</German>
@@ -1580,7 +1580,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_TransferMSG">
 			<Original>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
-			<Czech>Chystáte se přenést vedoucí přes% 1 & lt; br / & gt; Převedením vedení už nebude mít kontrolu nad gangu, pokud je vlastnictví převedeno zpět.</Czech>
+			<Czech>Chystáte se přenést vedoucí přes%1 & lt; br / & gt; Převedením vedení už nebude mít kontrolu nad gangu, pokud je vlastnictví převedeno zpět.</Czech>
 			<Spanish>Estas a punto de transferir liderazgo a %1&lt;br/&gt;Al transferir liderazgo no tendrás control de la Pandilla.</Spanish>
 			<Russian></Russian>
 			<German>Du bist dabei, die Führung an %1 zu übertragen&lt;br/&gt;Durch die Übertragung der Leitung der Gang hast du keine Kontrolle mehr.</German>
@@ -1635,7 +1635,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_CurrentMax">
 			<Original>Current Max: %1</Original>
-			<Czech>Proud Max: 1%</Czech>
+			<Czech>Proud Max: %1</Czech>
 			<Spanish>Límite Corriente: %1</Spanish>
 			<Russian></Russian>
 			<German>Aktuelles Maximum: %1</German>
@@ -1646,7 +1646,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_UpgradeMax">
 			<Original>Upgraded Max: %2</Original>
-			<Czech>Modernizované Max: 2%</Czech>
+			<Czech>Modernizované Max: %2</Czech>
 			<Spanish>Nuevo Límite: %2</Spanish>
 			<Russian></Russian>
 			<German>Maximum erhöhen: %2</German>
@@ -1701,7 +1701,7 @@
 		</Key>
 		<Key ID="STR_GNOTF_UpgradeSuccess">
 			<Original>You have upgraded from %1 to %2 maximum slots for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Original>
-			<Czech>Provedli jste upgrade z% 1 do% 2 Maximální sloty pro & lt; k color = "# 8cff9b '& gt; $% 3 & lt; / & gt;</Czech>
+			<Czech>Provedli jste upgrade z%1 do%2 Maximální sloty pro & lt; k color = "# 8cff9b '& gt; $%3 & lt; / & gt;</Czech>
 			<Spanish>Has aumentado de %1 a %2 slots &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Spanish>
 			<Russian></Russian>
 			<German>Du hast für &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt; von %1 auf %2 Plätze erhöht</German>
@@ -1846,7 +1846,7 @@
 		</Key>
 		<Key ID="STR_Garage_CashError">
 			<Original>You don't have $%1 in your bank account</Original>
-			<Czech>Nemáte $% 1 z vašeho bankovního účtu</Czech>
+			<Czech>Nemáte $%1 z vašeho bankovního účtu</Czech>
 			<Spanish>No tienes $%1 en tu cuenta de Banco</Spanish>
 			<Russian></Russian>
 			<German>Du hast keine $%1 auf deinem Bankkonto</German>
@@ -1868,7 +1868,7 @@
 		</Key>
 		<Key ID="STR_Garage_SQLError_Destroyed">
 			<Original>Sorry but %1 was classified as a destroyed vehicle and was sent to the scrap yard.</Original>
-			<Czech>Je nám líto, ale% 1 byl klasifikován jako zničené vozidlo a byl poslán na šrotiště.</Czech>
+			<Czech>Je nám líto, ale%1 byl klasifikován jako zničené vozidlo a byl poslán na šrotiště.</Czech>
 			<Spanish>Lo siento, pero %1 fue clasificado como destruido y fue mandado al basurero.</Spanish>
 			<Russian></Russian>
 			<German>Entschuldigung, aber dein %1 wurde zerstört und auf den Schrottplatz geschickt.</German>
@@ -1879,7 +1879,7 @@
 		</Key>
 		<Key ID="STR_Garage_SQLError_Active">
 			<Original>Sorry but %1 is already active somewhere in the world and cannot be spawned.</Original>
-			<Czech>Je nám líto, ale% 1 je již aktivní někde ve světě a nemůže být třel.</Czech>
+			<Czech>Je nám líto, ale%1 je již aktivní někde ve světě a nemůže být třel.</Czech>
 			<Spanish>Lo siento, pero %1 esta activo en alguna parte del mundo y no puede aparecer.</Spanish>
 			<Russian></Russian>
 			<German>Entschuldigung, aber dein %1 ist bereits ausgeparkt worden und kann darum nicht bereitgestellt werden.</German>
@@ -1901,7 +1901,7 @@
 		</Key>
 		<Key ID="STR_Garage_SoldCar">
 			<Original>You sold that vehicle for $%1</Original>
-			<Czech>Ty jsi prodal toto vozidlo za $% 1</Czech>
+			<Czech>Ty jsi prodal toto vozidlo za $%1</Czech>
 			<Spanish>Vendiste el vehículo por $%1</Spanish>
 			<Russian></Russian>
 			<German>Du verkaufst dein Fahrzeug für $%1</German>
@@ -2507,21 +2507,21 @@
 		</Key>
 		<Key ID="STR_Wanted_AddP">
 			<Original>%1 has been added to the wanted list.</Original>
-			<Czech>% 1 byl přidán do seznamu hledaných.</Czech>
+			<Czech>%1 byl přidán do seznamu hledaných.</Czech>
 			<Spanish>%1 ha sido agregado a la Lista de Busqueda.</Spanish>
 			<Russian></Russian>
 			<Portuguese>%1 foi adicionado a lista de procurados.</Portuguese>
 		</Key>
 		<Key ID="STR_Wanted_Count">
 			<Original>%1 count(s) of %2</Original>
-			<Czech>Počet% 1 (y) z% 2</Czech>
+			<Czech>Počet%1 (y) z%2</Czech>
 			<Spanish>%1 cuenta(s) de %2</Spanish>
 			<Russian></Russian>
 			<Portuguese>%1 contagem(s) de %2</Portuguese>
 		</Key>
 		<Key ID="STR_Wanted_Bounty">
 			<Original>Current Bounty Price: $%1</Original>
-			<Czech>Aktuální Bounty Cena: $ 1%</Czech>
+			<Czech>Aktuální Bounty Cena: $ %1</Czech>
 			<Spanish>Recompensa Actual: $%1</Spanish>
 			<Russian></Russian>
 			<Portuguese>Atual recompensa: R$%1</Portuguese>
@@ -2664,7 +2664,7 @@
 	<Package name="Notifications">
 		<Key ID="STR_NOTF_NE_1">
 			<Original>You do not have $%1 for a %2</Original>
-			<Czech>Nemáte $% 1 pro% 2</Czech>
+			<Czech>Nemáte $%1 pro%2</Czech>
 			<Spanish>No tienes $%1 para una %2</Spanish>
 			<Russian></Russian>
 			<German>Du hast keine $%1 für einen %2</German>
@@ -2675,7 +2675,7 @@
 		</Key>
 		<Key ID="STR_NOTF_B_1">
 			<Original>You bought a %1 for $%2</Original>
-			<Czech>Koupil sis% 1 pro $ 2%</Czech>
+			<Czech>Koupil sis%1 pro $ %2</Czech>
 			<Spanish>Comprastes una %1 por $%2</Spanish>
 			<Russian></Russian>
 			<German>Du hast einen %1 für $%2 gekauft</German>
@@ -2686,7 +2686,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Arrested_1">
 			<Original>%1 was arrested by %2</Original>
-			<Czech>% 1 byl zatčen% 2</Czech>
+			<Czech>%1 byl zatčen%2</Czech>
 			<Spanish>%1 fue arrestado por %2</Spanish>
 			<Russian></Russian>
 			<German>%1 wurde von %2 verhaftet</German>
@@ -2697,7 +2697,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Fishing">
 			<Original>You caught a %1</Original>
-			<Czech>chytil jste% 1</Czech>
+			<Czech>chytil jste%1</Czech>
 			<Spanish>Atrapastes un %1</Spanish>
 			<Russian></Russian>
 			<German>Du hast einen %1 gefangen</German>
@@ -2708,7 +2708,7 @@
 		</Key>
 	<Key ID="STR_NOTF_Gutting">
 			<Original>Gutting %1</Original>
-			<Czech>Kuchání% 1</Czech>
+			<Czech>Kuchání%1</Czech>
 			<Spanish>Eviscerando %1</Spanish>
 			<Russian></Russian>
 			<German>Ausnehmen %1</German>
@@ -2719,7 +2719,7 @@
 		</Key>
 	<Key ID="STR_NOTF_Guttingfinish">
 			<Original>You have collected some raw %1 meat</Original>
-			<Czech>Nasbíráte nějaké syrové maso 1%</Czech>
+			<Czech>Nasbíráte nějaké syrové maso %1</Czech>
 			<Spanish>Has recolectado carne cruda de %1</Spanish>
 			<Russian></Russian>
 			<German>You have collected some raw %1 meat</German>
@@ -2741,7 +2741,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Earned_1">
 			<Original>You have earned $%1</Original>
-			<Czech>Jste získali $% 1</Czech>
+			<Czech>Jste získali $%1</Czech>
 			<Spanish>Has ganado $%1</Spanish>
 			<Russian></Russian>
 			<German>Du hast $%1 verdient</German>
@@ -2796,7 +2796,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Gathering">
 			<Original>Gathering %1...</Original>
-			<Czech>Sběr% 1 ...</Czech>
+			<Czech>Sběr%1 ...</Czech>
 			<Spanish>Recolectando %1...</Spanish>
 			<Russian></Russian>
 			<German>Sammle %1...</German>
@@ -2807,7 +2807,7 @@
 		</Key>
 		<Key ID="STR_NOTF_ChopSoldCar">
 			<Original>You have sold a %1 for $%2</Original>
-			<Czech>Jste prodal% 1 pro $ 2%</Czech>
+			<Czech>Jste prodal%1 pro $ %2</Czech>
 			<Spanish>Has vendido un %1 por $%2</Spanish>
 			<Russian></Russian>
 			<German>Du hast einen %1 für $%2 verkauft</German>
@@ -2818,7 +2818,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Picked">
 			<Original>You have picked %1 %2</Original>
-			<Czech>Jste si vybrali% 1% 2</Czech>
+			<Czech>Jste si vybrali% %1 2</Czech>
 			<Spanish>Has recogido %1 %2</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 %2 gesammelt</German>
@@ -2829,7 +2829,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Collected">
 			<Original>You have collected some %1</Original>
-			<Czech>Jste nasbírali řadu% 1</Czech>
+			<Czech>Jste nasbírali řadu%1</Czech>
 			<Spanish>Has recolectado %1</Spanish>
 			<Russian></Russian>
 			<German>Du hast etwas %1 gesammelt</German>
@@ -2840,7 +2840,7 @@
 		</Key>
 		<Key ID="STR_NOTF_DPStart">
 			<Original>You are to deliver this package to %1</Original>
-			<Czech>Jste doručit tento balíček% 1</Czech>
+			<Czech>Jste doručit tento balíček%1</Czech>
 			<Spanish>Debes llevar este paquete a %1</Spanish>
 			<Russian></Russian>
 			<German>Du musst dieses Paket bei %1 abliefern</German>
@@ -2851,7 +2851,7 @@
 		</Key>
 		<Key ID="STR_NOTF_DPTask">
 			<Original>Deliver this package to %1</Original>
-			<Czech>Doručit tento balíček% 1</Czech>
+			<Czech>Doručit tento balíček%1</Czech>
 			<Spanish>LLeva el paquete a: %1</Spanish>
 			<Russian></Russian>
 			<German>Liefere dieses Paket bei %1 ab</German>
@@ -2873,7 +2873,7 @@
 		</Key>
 		<Key ID="STR_NOTF_HS_NoCash">
 			<Original>You do not have $%1 to be healed</Original>
-			<Czech>Nemáte $% 1, aby se léčil</Czech>
+			<Czech>Nemáte $%1, aby se léčil</Czech>
 			<Spanish>No tienes $%1 para ser curado</Spanish>
 			<Russian></Russian>
 			<German>Du hast keine $%1, um geheilt zu werden.</German>
@@ -2917,7 +2917,7 @@
 		</Key>
 		<Key ID="STR_NOTF_BeingImpounded">
 			<Original>%1 your %2 is being impounded by the police.</Original>
-			<Czech>% 1 Váš% 2 je zabaveno policií.</Czech>
+			<Czech>%1 Váš%2 je zabaveno policií.</Czech>
 			<Spanish>%1 tu %2 esta siendo embargado por la policía.</Spanish>
 			<Russian></Russian>
 			<German>%1 dein %2 wird von der Polizei beschlagnahmt.</German>
@@ -2950,7 +2950,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Impounded">
 			<Original>You have impounded a %1\n\nYou have received $%2 for cleaning up the streets!</Original>
-			<Czech>Jste zabaveno a% 1 \ n \ n jste obdržel $% 2 pro čištění ulic!</Czech>
+			<Czech>Jste zabaveno a%1 \ n \ n jste obdržel $%2 pro čištění ulic!</Czech>
 			<Spanish>Has embargado un %1\n\nHas recibido $%2 por  limpiar las calles!</Spanish>
 			<Russian></Russian>
 			<German>Du hast einen %1 beschlagnahmt\n\nDu hast $%2 für das Aufräumen der Straßen bekommen!</German>
@@ -2961,7 +2961,7 @@
 		</Key>
 		<Key ID="STR_NOTF_HasImpounded">
 			<Original>%1 has impounded %2's %3</Original>
-			<Czech>% 1 byl odtažen% 2% 3 je</Czech>
+			<Czech>%1 byl odtažen% %2 3 je</Czech>
 			<Spanish>%1 a embargado el %3 de %2</Spanish>
 			<Russian></Russian>
 			<German>%1 hat %2's %3 beschlagnahmt</German>
@@ -2972,14 +2972,14 @@
 		</Key>
 		<Key ID="STR_NOTF_OwnImpounded">
 			<Original>You paid $%1 for impounding your own %2</Original>
-			<Czech>Zaplatil jste $% 1 pro vzdouvání vlastní% 2</Czech>
+			<Czech>Zaplatil jste $%1 pro vzdouvání vlastní%2</Czech>
 			<Spanish>Has pagado $%2 para embargar tu propio %1</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 $ bezahlt, weil du dein eigenen %2 beschlagnahmt hast.</German>
 		</Key>
 		<Key ID="STR_NOTF_AbortESC">
 			<Original>Abort available in %1</Original>
-			<Czech>Přerušit k dispozici v% 1</Czech>
+			<Czech>Přerušit k dispozici v%1</Czech>
 			<Spanish>Aborto disponible en %1</Spanish>
 			<Russian></Russian>
 			<German>Abbruch möglich in %1</German>
@@ -3045,7 +3045,7 @@
 		</Key>
 		<Key ID="STR_NOTF_DeviceMined">
 			<Original>Completed cycle, the device has mined %1 %2</Original>
-			<Czech>Dokončena cyklus, přístroj se těžil% 1% 2</Czech>
+			<Czech>Dokončena cyklus, přístroj se těžil% %1 2</Czech>
 			<Spanish>Ciclo completado el dispositivo ha minado %1 %2</Spanish>
 			<Russian></Russian>
 			<German>Sammeln beendet, das Gerät hat %1 %2 gesammelt</German>
@@ -3078,7 +3078,7 @@
 		</Key>
 		<Key ID="STR_NOTF_PickedEvidence">
 			<Original>%1 has been placed in evidence, you have received $%2 as a reward.</Original>
-			<Czech>% 1 byl umístěn v důkazu, jste obdrželi $% 2 jako odměnu.</Czech>
+			<Czech>%1 byl umístěn v důkazu, jste obdrželi $%2 jako odměnu.</Czech>
 			<Spanish>%1 ha sido colocado en evidencias, has recibido $%2 como recompensa.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat Beweise hinterlassen, du hast eine Belohnung von $%2 erhalten.</German>
@@ -3089,7 +3089,7 @@
 		</Key>
 		<Key ID="STR_NOTF_PickedMoney">
 			<Original>You have picked up $%1</Original>
-			<Czech>Jste zvedl $% 1</Czech>
+			<Czech>Jste zvedl $%1</Czech>
 			<Spanish>Has recogido $%1</Spanish>
 			<Russian></Russian>
 			<German>Du hast $%1 aufgehoben</German>
@@ -3111,7 +3111,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Bail_NotEnough">
 			<Original>You do not have $%1 in your bank account to pay bail.</Original>
-			<Czech>Nemáte $% 1 z vašeho bankovního účtu platit kauci.</Czech>
+			<Czech>Nemáte $%1 z vašeho bankovního účtu platit kauci.</Czech>
 			<Spanish>No tienes $%1 en tu cuenta de banco para pagar la fianza!</Spanish>
 			<Russian></Russian>
 			<German>Du hast keine $%1 auf deinem Bankkonto, um die Kaution zu bezahlen.</German>
@@ -3122,7 +3122,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Bail_Bailed">
 			<Original>%1 has posted bail!</Original>
-			<Czech>% 1 byl vyslán na kauci!</Czech>
+			<Czech>%1 byl vyslán na kauci!</Czech>
 			<Spanish>%1 a pagado la fianza!</Spanish>
 			<Russian></Russian>
 			<German>%1 hat die Kaution bezahlt!</German>
@@ -3150,7 +3150,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Restrained">
 			<Original>%1 was restrained by %2</Original>
-			<Czech>% 1 byl omezen% 2</Czech>
+			<Czech>%1 byl omezen%2</Czech>
 			<Spanish>%1 fue retenido por %2</Spanish>
 			<Russian></Russian>
 			<German>%1 wurde von %2 festgenommen</German>
@@ -3216,7 +3216,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Unrestrain">
 			<Original>%1 was unrestrained by %2</Original>
-			<Czech>% 1 byl živelný% 2</Czech>
+			<Czech>%1 byl živelný%2</Czech>
 			<Spanish>%1 fue soltado por %2</Spanish>
 			<Russian></Russian>
 			<German>%1 wurde von %2 freigelassen</German>
@@ -3227,7 +3227,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Robbed">
 			<Original>%1 has robbed %2 for $%3</Original>
-			<Czech>% 1 oloupil% 2 na $ 3%</Czech>
+			<Czech>%1 oloupil%2 na $ %3</Czech>
 			<Spanish>%1 le ha robado $%3 a %2</Spanish>
 			<Russian></Russian>
 			<German>%1 hat $%3 von %2 geraubt</German>
@@ -3238,7 +3238,7 @@
 		</Key>
 		<Key ID="STR_NOTF_RobFail">
 			<Original>%1 doesn't have any money.</Original>
-			<Czech>% 1 nemá žádné peníze.</Czech>
+			<Czech>%1 nemá žádné peníze.</Czech>
 			<Spanish>%1 No tiene dinero.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat kein Geld.</German>
@@ -3249,7 +3249,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Tazed">
 			<Original>%1 was tazed by %2</Original>
-			<Czech>% 1 byl tased% 2</Czech>
+			<Czech>%1 byl tased%2</Czech>
 			<Spanish>%1 fue paralizado por %2</Spanish>
 			<Russian></Russian>
 			<German>%1 wurde von %2 getazert</German>
@@ -3260,7 +3260,7 @@
 		</Key>
 		<Key ID="STR_NOTF_VehContraband">
 			<Original>A vehicle was searched and has $%1 worth of drugs / contraband.</Original>
-			<Czech>Vozidlo byl prohledán a má $% 1 v hodnotě drog / kontrabandu.</Czech>
+			<Czech>Vozidlo byl prohledán a má $%1 v hodnotě drog / kontrabandu.</Czech>
 			<Spanish>Un vehículo fue buscado y se econtro $%1 en drogas / contrabando.</Spanish>
 			<Russian></Russian>
 			<German>Ein Fahrzeug wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
@@ -3271,7 +3271,7 @@
 		</Key>
 		<Key ID="STR_NOTF_ContainerContraband">
 			<Original>A container of house was searched and has $%1 worth of drugs / contraband.</Original>
-			<Czech>Kontejner domu byl prohledán a má $% 1 v hodnotě drog / kontrabandu.</Czech>
+			<Czech>Kontejner domu byl prohledán a má $%1 v hodnotě drog / kontrabandu.</Czech>
 			<Spanish>Un contenedor fue buscado y se econtro $%1 en drogas / contrabando.</Spanish>
 			<Russian></Russian>
 			<German>Ein Fahrzeug wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
@@ -3293,7 +3293,7 @@
 		</Key>
 		<Key ID="STR_NOTF_GivenItem">
 			<Original>%1 has gave you %2 %3.</Original>
-			<Czech>% 1 vám již dal% 2% 3.</Czech>
+			<Czech>%1 vám již dal% %2 3.</Czech>
 			<Spanish>%1 te ha dado %2 %3</Spanish>
 			<Russian></Russian>
 			<German>%1 hat dir %2 %3 gegeben</German>
@@ -3304,7 +3304,7 @@
 		</Key>
 		<Key ID="STR_NOTF_GivenMoney">
 			<Original>%1 has given you $%2.</Original>
-			<Czech>% 1 vám dal $ 2%.</Czech>
+			<Czech>%1 vám dal $ %2.</Czech>
 			<Spanish>%1 te ha dado $%2</Spanish>
 			<Russian></Russian>
 			<German>%1 hat dir $%2 gegeben</German>
@@ -3390,7 +3390,7 @@
 		</Key>
 		<Key ID="STR_NOTF_ProcessWOLicense">
 			<Original>You need $%1 to process without a license!</Original>
-			<Czech>Musíte $% 1 bez povolení ke zpracování!</Czech>
+			<Czech>Musíte $%1 bez povolení ke zpracování!</Czech>
 			<Spanish>Necesitas $%1 par procesar sin una licencia!</Spanish>
 			<Russian></Russian>
 			<German>Du musst $%1 haben, um ohne eine Lizenz verarbeiten zu können!</German>
@@ -3606,7 +3606,7 @@
 		</Key>
 		<Key ID="STR_NOTF_Gather_Success">
 			<Original>You have gathered %2 %1(s)</Original>
-			<Czech>Jste shromáždili% 2% 1 (y)</Czech>
+			<Czech>Jste shromáždili% %2 1 (y)</Czech>
 			<Spanish>Has recolectado %2 %1(s)</Spanish>
 			<Russian></Russian>
 			<German>Du hast %2 %1(s) gesammelt</German>
@@ -3836,11 +3836,11 @@
 			<Original>You have given %1 keys to your %2.</Original>
 			<Czech>Dali jste %1 klíče ke svému %2.</Czech>
 			<French>Vous avez donné %1 touches à votre %2.</French>
-			<Spanish>Usted ha dado 1% llaves de su %2.</Spanish>
+			<Spanish>Usted ha dado %1 llaves de su %2.</Spanish>
 			<Italian>Hai dato %1 chiavi della vostra %2.</Italian>
 			<Polish>Dałeś %1 klucze do %2.</Polish>
 			<Portuguese>Você tem dado %1 chaves de sua %2.</Portuguese>
-			<Russian>Вы дали %1 ключи от 2%.</Russian>
+			<Russian>Вы дали %1 ключи от %2.</Russian>
 			<German>Sie haben %1 Schlüssel zu Ihrem %2 angegeben.</German>
 		</Key>
 		<Key ID="STR_NOTF_cannotRemoveHouseKeys">
@@ -3885,7 +3885,7 @@
 			<Polish>Pomyślnie usunięto %1 %2 z inwentarza.</Polish>
 			<Portuguese>Você removeu com êxito %1 %2 do seu inventário.</Portuguese>
 			<Russian>Вы успешно удалены %1 %2 из инвентаря.</Russian>
-			<German>Sie haben erfolgreich 1% %2 aus dem Inventar entfernt.</German>
+			<German>Sie haben erfolgreich %1 %2 aus dem Inventar entfernt.</German>
 		</Key>
 		<Key ID="STR_NOTF_menuWillNotOpen">
 			<Original>Something went wrong; the menu will not open?</Original>
@@ -3979,7 +3979,7 @@
 		</Key>
 		<Key ID="STR_Jail_EscapeNOTF">
 			<Original>%1 has escaped from jail!</Original>
-			<Czech>% 1 utekl z vězení!</Czech>
+			<Czech>%1 utekl z vězení!</Czech>
 			<Spanish>%1 se ha escapado de la cárcel!</Spanish>
 			<Russian></Russian>
 			<German>%1 ist aus dem Gefängnis ausgebrochen!</German>
@@ -4058,7 +4058,7 @@
 	<Package name="Civ_Strings">
 		<Key ID="STR_Civ_KnockedOut">
 			<Original>%1 has knocked you out.</Original>
-			<Czech>% 1 zaklepal vás.</Czech>
+			<Czech>%1 zaklepal vás.</Czech>
 			<Spanish>%1 te a noqueado.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat dich niedergeschlagen.</German>
@@ -4101,7 +4101,7 @@
 		</Key>
 		<Key ID="STR_Civ_Robbed">
 			<Original>You stole $%1</Original>
-			<Czech>Ukradl jsi $% 1</Czech>
+			<Czech>Ukradl jsi $%1</Czech>
 			<Spanish>Robastes $%1</Spanish>
 			<Russian></Russian>
 			<German>Du hast $%1 geraubt.</German>
@@ -4134,7 +4134,7 @@
 		</Key>
 		<Key ID="STR_Civ_NotEnoughCops">
 			<Original>There needs to be %1 or more cops online to continue.</Original>
-			<Czech>Musí existovat% 1 nebo více policajtů on-line pokračovat.</Czech>
+			<Czech>Musí existovat%1 nebo více policajtů on-line pokračovat.</Czech>
 			<Spanish>Necesita haber %1 o mas policías para continuar.</Spanish>
 			<Russian></Russian>
 			<German>Es müssen %1 oder mehr Polizisten online sein, um fortfahren zu können.</German>
@@ -4167,7 +4167,7 @@
 		</Key>
 		<Key ID="STR_Civ_IsntEnoughGold">
 			<Original>There isn't %1 gold bar(s) in the safe!</Original>
-			<Czech>Není% 1 zlatá bar (y) v bezpečí!</Czech>
+			<Czech>Není%1 zlatá bar (y) v bezpečí!</Czech>
 			<Spanish>No hay %1 barra(s) de oro en la caja!</Spanish>
 			<Russian></Russian>
 			<German>Es sind keine %1 Goldbarren im Tresor!</German>
@@ -4191,7 +4191,7 @@
 		</Key>
 		<Key ID="STR_Cop_Ticket">
 			<Original>Ticketing %1</Original>
-			<Czech>Jízdenek% 1</Czech>
+			<Czech>Jízdenek%1</Czech>
 			<Spanish>Dando Tiquete a %1</Spanish>
 			<Russian></Russian>
 			<German>Verrechne %1</German>
@@ -4202,7 +4202,7 @@
 		</Key>
 		<Key ID="STR_COP_BlackListedVehicle">
 			<Original>%2 got back a blacklisted vehicle near %1</Original>
-			<Czech>% 2 dostat zpět na černou listinu vozidlo nedaleko% 1</Czech>
+			<Czech>%2 dostat zpět na černou listinu vozidlo nedaleko%1</Czech>
 			<Spanish>%2 tiene un vehículo prohibido cerca de %1</Spanish>
 			<Russian></Russian>
 			<Italian>%2 ha ritirato un veicolo blacklistato vicino %1</Italian>
@@ -4253,7 +4253,7 @@
 		</Key>
 		<Key ID="STR_Cop_TicketGive">
 			<Original>%1 gave a ticket of $%2 to %3</Original>
-			<Czech>% 1 dal lístek na $% 2% 3</Czech>
+			<Czech>%1 dal lístek na $% %2 3</Czech>
 			<Spanish>%1 le dio un tiquete de $%2 a %3</Spanish>
 			<Russian></Russian>
 			<German>%1 hat %3 einen Strafzettel über $%2 ausgestellt</German>
@@ -4275,18 +4275,18 @@
 		</Key>
 		<Key ID="STR_Cop_Ticket_NotEnoughNOTF">
 			<Original>%1 couldn't pay the ticket due to not having enough money.</Original>
-			<Czech>% 1 nemohl zaplatit letenku z důvodu nemají dostatek peněz.</Czech>
+			<Czech>%1 nemohl zaplatit letenku z důvodu nemají dostatek peněz.</Czech>
 			<Spanish>%1 No puedo pagar el tiquete porque no tiene suficiente dinero.</Spanish>
 			<Russian></Russian>
 			<German>%1 konnte den Strafzettel nicht bezahlen, weil er nicht genug Geld hat.</German>
-			<French>% 1 ne pouvait pas payer la contravention car il n'avait pas assez d'argent.</French>
+			<French>%1 ne pouvait pas payer la contravention car il n'avait pas assez d'argent.</French>
 			<Italian>%1 non può pagare la multa perchè non ha sufficienti fondi nel suo conto in banca.</Italian>
 			<Portuguese>%1 não pode pagar a multa pois não tem dinheiro suficiente.</Portuguese>
 			<Polish>%1 nie może zapłacić mandatu bo nie ma tylu środków na koncie</Polish>
 		</Key>
 		<Key ID="STR_Cop_Ticket_Paid">
 			<Original>You have paid the ticket of $%1</Original>
-			<Czech>Jste zaplatili letenku ve výši $ 1%</Czech>
+			<Czech>Jste zaplatili letenku ve výši $ %1</Czech>
 			<Spanish>Has pagado el tiquete de $%1</Spanish>
 			<Russian></Russian>
 			<German>Du hast den Strafzettel von $%1 bezahlt</German>
@@ -4297,7 +4297,7 @@
 		</Key>
 		<Key ID="STR_Cop_Ticket_PaidNOTF">
 			<Original>%1 paid the ticket of $%2</Original>
-			<Czech>% 1 zaplatil letenku ve výši $ 2%</Czech>
+			<Czech>%1 zaplatil letenku ve výši $ %2</Czech>
 			<Spanish>%1 a pagado el tiquete de $%2</Spanish>
 			<Russian></Russian>
 			<German>%1 zahlte einen Strafzettel von $%2</German>
@@ -4308,7 +4308,7 @@
 		</Key>
 		<Key ID="STR_Cop_Ticket_PaidNOTF_2">
 			<Original>%1 paid the ticket.</Original>
-			<Czech>% 1 zaplatil jízdenku.</Czech>
+			<Czech>%1 zaplatil jízdenku.</Czech>
 			<Spanish>%1 pago el tiquete.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat den Strafzettel bezahlt.</German>
@@ -4319,7 +4319,7 @@
 		</Key>
 		<Key ID="STR_Cop_Ticket_GUI_Given">
 			<Original>%1 has given you a ticket for $%2</Original>
-			<Czech>% 1 vám dal lístek za $ 2%</Czech>
+			<Czech>%1 vám dal lístek za $ %2</Czech>
 			<Spanish>%1 te ha dado un tiquete de $%2</Spanish>
 			<Russian></Russian>
 			<German>%1 hat dir einen Strafzettel von $%2 gegeben</German>
@@ -4330,7 +4330,7 @@
 		</Key>
 		<Key ID="STR_Cop_Ticket_Refuse">
 			<Original>%1 refused to pay the ticket.</Original>
-			<Czech>% 1 odmítl zaplatit letenku.</Czech>
+			<Czech>%1 odmítl zaplatit letenku.</Czech>
 			<Spanish>>%1 no aceptó pagar el tiquete.</Spanish>
 			<Russian></Russian>
 			<German>%1 weigert sich, den Strafzettel zu bezahlen.</German>
@@ -4341,7 +4341,7 @@
 		</Key>
 		<Key ID="STR_Cop_BountyRecieve">
 			<Original>You have collected a bounty of $%1 for arresting a criminal.</Original>
-			<Czech>Nasbíráte kvantum $% 1 pro aretaci zločince.</Czech>
+			<Czech>Nasbíráte kvantum $%1 pro aretaci zločince.</Czech>
 			<Spanish>Has recolectado la recompensa de $%1 por arrestar a un criminal.</Spanish>
 			<Russian></Russian>
 			<German>Du hast ein Kopfgeld von $%1 für die Festnahme eines Kriminellen bekommen.</German>
@@ -4352,7 +4352,7 @@
 		</Key>
 		<Key ID="STR_Cop_BountyKill">
 			<Original>You have collected a bounty of $%1 for killing a wanted criminal, if you had arrested him you would of received $%2.</Original>
-			<Czech>Nasbíráte kvantum $% 1 za zabití hledaného zločince, pokud jste ho zatkli byste přijímaného $% 2.</Czech>
+			<Czech>Nasbíráte kvantum $%1 za zabití hledaného zločince, pokud jste ho zatkli byste přijímaného $%2.</Czech>
 			<Spanish>Has recolectado la recompensa de $%1 por matar a un criminal, si lo hubieras arrestado hubieses conseguido $%2.</Spanish>
 			<Russian></Russian>
 			<German>Du hast ein Kopfgeld von $%1 für das Töten eines gesuchten Verbrechers erhalten, für eine Festnahme hättest du $%2 bekommen.</German>
@@ -4363,7 +4363,7 @@
 		</Key>
 		<Key ID="STR_Cop_Contraband">
 			<Original>%1 has $%2 worth of contraband on them.</Original>
-			<Czech>% 1 má $% 2 v hodnotě kontrabandu na nich.</Czech>
+			<Czech>%1 má $%2 v hodnotě kontrabandu na nich.</Czech>
 			<Spanish>%1 tiene $%2 en contrabando con el.</Spanish>
 			<Russian></Russian>
 			<German>%1 hatte Schmuggelware im Wert von $%2 bei sich.</German>
@@ -4385,7 +4385,7 @@
 		</Key>
 		<Key ID="STR_Cop_Robber">
 			<Original>%1 was identified as the bank robber!</Original>
-			<Czech>% 1 byl identifikován jako bankovního lupiče!</Czech>
+			<Czech>%1 byl identifikován jako bankovního lupiče!</Czech>
 			<Spanish>%1 fue identificado como el ladrón del banco!</Spanish>
 			<Russian></Russian>
 			<German>%1 wurde als Bankräuber identifiziert!</German>
@@ -4487,7 +4487,7 @@
 		</Key>
 		<Key ID="STR_Cop_RobberDead">
 			<Original>$%1 from the Federal Reserve robbery was returned from the robber being killed.</Original>
-			<Czech>$% 1 z Federálního rezervního systému loupeže byla vrácena ze lupič byl zabit.</Czech>
+			<Czech>$%1 z Federálního rezervního systému loupeže byla vrácena ze lupič byl zabit.</Czech>
 			<Spanish>$%1 de la Reserva Federal fue devuelto, ya que mataron al ladrón.</Spanish>
 			<Russian></Russian>
 			<German>$%1 wurden in die Staatsbank zurückgebracht.</German>
@@ -4553,7 +4553,7 @@
 		</Key>
 		<Key ID="STR_Cop_NotEnoughGold">
 			<Original>You don't have %1 gold bar(s)</Original>
-			<Czech>Nemáte% 1 zlatá tyč (y)</Czech>
+			<Czech>Nemáte%1 zlatá tyč (y)</Czech>
 			<Spanish>No tienes %1 barra(s) de oro</Spanish>
 			<Russian></Russian>
 			<German>Du hast keine %1 Goldbarren</German>
@@ -4575,7 +4575,7 @@
 		</Key>
 		<Key ID="STR_Cop_CouldntSearch">
 			<Original>Couldn't search %1</Original>
-			<Czech>Nemohl hledání% 1</Czech>
+			<Czech>Nemohl hledání%1</Czech>
 			<Spanish>No se pudo buscar a %1</Spanish>
 			<Russian></Russian>
 			<German>Konnte %1 nicht durchsuchen</German>
@@ -4641,7 +4641,7 @@
 		</Key>
 		<Key ID="STR_Cop_VehSpeed">
 			<Original>Vehicle Speed %1 km/h</Original>
-			<Czech>Rychlost vozidla% 1 km / h</Czech>
+			<Czech>Rychlost vozidla%1 km / h</Czech>
 			<Spanish>Velocidad %1 km/h</Spanish>
 			<Russian></Russian>
 			<German>Geschwindigkeit %1 km/h</German>
@@ -4663,7 +4663,7 @@
 		</Key>
 		<Key ID="STR_Cop_Restrained">
 			<Original>You have been restrained by %1</Original>
-			<Czech>Byli jste omezeni% 1</Czech>
+			<Czech>Byli jste omezeni%1</Czech>
 			<Spanish>Has sido retenido por %1</Spanish>
 			<Russian></Russian>
 			<German>Du wurdest von %1 festgenommen</German>
@@ -4720,7 +4720,7 @@
 	<Package name="MISC_Strings">
 		<Key ID="STR_MISC_TooMuch">
 			<Original>You tried to give %1 %2 %3 but they couldn't hold that so it was returned.</Original>
-			<Czech>Pokusili jste se dát% 1% 2% 3, ale nemohli si myslí, že tak to bylo se vrátil.</Czech>
+			<Czech>Pokusili jste se dát% %1 %2 3, ale nemohli si myslí, že tak to bylo se vrátil.</Czech>
 			<Spanish>Le tratastes de dar %1 %2 %3 pero no tenian espacio asi que se te devolvió.</Spanish>
 			<Russian></Russian>
 			<German>Du wolltest %1 %2 %3 geben, aber er hat keinen Platz in seinem Inventar und hat es darum zurückgegeben.</German>
@@ -4731,7 +4731,7 @@
 		</Key>
 		<Key ID="STR_MISC_TooMuch_2">
 			<Original>%1 returned %2 %3 because they couldn't hold that amount.</Original>
-			<Czech>% 1 vrátila% 2% 3, protože oni nemohli držet tuto částku.</Czech>
+			<Czech>%1 vrátila% %2 3, protože oni nemohli držet tuto částku.</Czech>
 			<Spanish>%1 devolvió %2 %3 porque no tenian espacio.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat %2 %3 zurückgegeben, weil er nicht so viel tragen kann.</German>
@@ -4742,7 +4742,7 @@
 		</Key>
 		<Key ID="STR_MISC_TooMuch_3">
 			<Original>%1 has gave you %2 but you can only hold %3 so %4 was returned back.</Original>
-			<Czech>% 1 vám již dal% 2, ale můžete mít pouze% 3% 4 tak byla vrácena zpět.</Czech>
+			<Czech>%1 vám již dal%2, ale můžete mít pouze% %3 4 tak byla vrácena zpět.</Czech>
 			<Spanish>%1 te a dado %2, pero solo puedes cargar %3 asi que %4 fue devuelto.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat dir %2 gegeben, du kannst aber nur %3 tragen, also hast du %4 zurückgegeben.</German>
@@ -5106,7 +5106,7 @@
 		</Key>
 		<Key ID="STR_House_Max_House">
 			<Original>You can only own %1 houses at a time.</Original>
-			<Czech>Můžete vlastnit pouze% 1 domy najednou.</Czech>
+			<Czech>Můžete vlastnit pouze%1 domy najednou.</Czech>
 			<Spanish>Solo puedes ser dueño de %1 casas a la vez.</Spanish>
 			<Russian></Russian>
 			<German>Du darfst nur %1 Häuser zugleich besitzen.</German>
@@ -5128,7 +5128,7 @@
 		</Key>
 		<Key ID="STR_House_BuyMSG">
 			<Original>This house is available for &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;It supports up to %2 storage containers</Original>
-			<Czech>Tento dům je k dispozici pro & lt; k color = "# 8cff9b '& gt; $% 1 & lt; / t & gt; & lt; br / & gt; Podporuje až 2% skladovací kontejnery</Czech>
+			<Czech>Tento dům je k dispozici pro & lt; k color = "# 8cff9b '& gt; $%1 & lt; / t & gt; & lt; br / & gt; Podporuje až %2 skladovací kontejnery</Czech>
 			<Spanish>Esta casa esta disponible por &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;Soporta hasta %2 contenedores</Spanish>
 			<Russian></Russian>
 			<German>Dieses Haus gibt es für &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt; Es unterstützt %2 Lagerbox(en)</German>
@@ -5202,7 +5202,7 @@
 		</Key>
 		<Key ID="STR_House_Raid_NOTF">
 			<Original>%1 your house is being raided by the cops!</Original>
-			<Czech>% 1 vašeho domu je vpadl policajti!</Czech>
+			<Czech>%1 vašeho domu je vpadl policajti!</Czech>
 			<Spanish>%1 tu casa esta siendo asaltada por los policías!</Spanish>
 			<Russian></Russian>
 			<German>%1 dein Haus wird von der Polizei durchsucht!</German>
@@ -5257,7 +5257,7 @@
 		</Key>
 		<Key ID="STR_House_Raid_Successful">
 			<Original>A house was raided and had $%1 worth of drugs / contraband.</Original>
-			<Czech>Dům byl vpadl a měl $% 1 v hodnotě drog / kontrabandu.</Czech>
+			<Czech>Dům byl vpadl a měl $%1 v hodnotě drog / kontrabandu.</Czech>
 			<Spanish>Una casa fue asaltada y se econtraron $%1 en drogas / contrabando.</Spanish>
 			<Russian></Russian>
 			<German>Ein Haus wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $% gefunden.</German>
@@ -5413,7 +5413,7 @@
 		</Key>
 		<Key ID="STR_Service_Chopper_Servicing">
 			<Original>Servicing Chopper [%1]...</Original>
-			<Czech>Servis Chopper [% 1] ...</Czech>
+			<Czech>Servis Chopper [%1] ...</Czech>
 			<Spanish>Reparando Helicóptero [%1]...</Spanish>
 			<Russian></Russian>
 			<German>Helikopter wird gewartet [%1]...</German>
@@ -6559,7 +6559,7 @@
 		</Key>
 		<Key ID="STR_ISTR_Bolt_AlertHouse">
 			<Original>%1 was seen breaking into a house.</Original>
-			<Czech>% 1 byl viděn vloupání do domu.</Czech>
+			<Czech>%1 byl viděn vloupání do domu.</Czech>
 			<Spanish>%1 ha sido visto entrando a una casa.</Spanish>
 			<Russian></Russian>
 			<German>%1 wurde beim Einbruch in ein Haus gesehen.</German>
@@ -6643,7 +6643,7 @@
 		</Key>
 		<Key ID="STR_ISTR_Jerry_Process">
 			<Original>Refuelling %1</Original>
-			<Czech>Doplňování paliva% 1</Czech>
+			<Czech>Doplňování paliva%1</Czech>
 			<Spanish>Llenado el tanque %1</Spanish>
 			<Russian></Russian>
 			<German>Wird betankt %1</German>
@@ -6654,7 +6654,7 @@
 		</Key>
 		<Key ID="STR_ISTR_Jerry_Success">
 			<Original>You have refuelled that %1</Original>
-			<Czech>Jsi natankoval, že produkt% 1</Czech>
+			<Czech>Jsi natankoval, že produkt%1</Czech>
 			<Spanish>Has llenado el %1</Spanish>
 			<Russian></Russian>
 			<German>Du hast deinen %1 aufgetankt</German>
@@ -6676,7 +6676,7 @@
 		</Key>
 		<Key ID="STR_ISTR_Lock_Process">
 			<Original>Lock-picking %1</Original>
-			<Czech>Lockpicking% 1</Czech>
+			<Czech>Lockpicking%1</Czech>
 			<Spanish>Abriendo Cerradura %1</Spanish>
 			<Russian></Russian>
 			<German>Wird aufgebrochen %1</German>
@@ -6720,7 +6720,7 @@
 		</Key>
 		<Key ID="STR_ISTR_Lock_FailedNOTF">
 			<Original>%1 was seen trying to lockpick a car.</Original>
-			<Czech>% 1 byl viděn snaží lockpick auto.</Czech>
+			<Czech>%1 byl viděn snaží lockpick auto.</Czech>
 			<Spanish>%1 ha sido visto tratando de abrir un carro.</Spanish>
 			<Russian></Russian>
 			<German>%1 wurde beim Aufbrechen eines Auto erwischt.</German>
@@ -6753,7 +6753,7 @@
 		</Key>
 		<Key ID="STR_ISTR_Pick_Success">
 			<Original>You have mined %2 %1</Original>
-			<Czech>Jste těžil% 2% 1</Czech>
+			<Czech>Jste těžil% %2 1</Czech>
 			<Spanish>Has minado %2 %1</Spanish>
 			<Russian></Russian>
 			<German>Du hast %2 %1 abgebaut</German>
@@ -6997,18 +6997,18 @@
 		</Key>
 		<Key ID="STR_Process_License">
 			<Original>You need $%1 to process without a license!</Original>
-			<Czech>Musíte $% 1 bez povolení ke zpracování!</Czech>
+			<Czech>Musíte $%1 bez povolení ke zpracování!</Czech>
 			<Spanish>Necesitas $%1 para procesar sin licencia!</Spanish>
 			<Russian></Russian>
 			<German>Du brauchst $%1, um ohne eine Lizenz verarbeiten zu können!</German>
-			<French>Vous devez $1% pour traiter sans permis!</French>
+			<French>Vous devez $%1 pour traiter sans permis!</French>
 			<Italian>Hai bisogno di €%1 per processare senza la dovuta licenza!</Italian>
 			<Portuguese>Você precisa de R$%1 para processar sem licença!</Portuguese>
 			<Polish>Musisz mieć $%1 aby przetworzyć bez odpowiedniej licencji</Polish>
 		</Key>
 		<Key ID="STR_Process_Processed">
 			<Original>You have processed %1 into %2</Original>
-			<Czech>Máte zpracovaný% 1 do% 2</Czech>
+			<Czech>Máte zpracovaný%1 do%2</Czech>
 			<Spanish>Has procesado %1 a %2</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 in %2 verarbeitet</German>
@@ -7019,11 +7019,11 @@
 		</Key>
 		<Key ID="STR_Process_Processed2">
 			<Original>You have processed %1 into %2 for $%3</Original>
-			<Czech>Máte zpracovaný% 1 do% 2 na $ 3%</Czech>
+			<Czech>Máte zpracovaný%1 do%2 na $ %3</Czech>
 			<Spanish>Has procesado %1 a %2 por $%3</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 für $%3 in %2 verarbeitet</German>
-			<French>Vous avez traité %1 en %2 pour $3%</French>
+			<French>Vous avez traité %1 en %2 pour $%3</French>
 			<Italian>Hai processato %1 in %2 al costo di €%3</Italian>
 			<Portuguese>Você trasformou %1 em %2 por R$%3</Portuguese>
 			<Polish>Przetworzyłeś %1 na % za $%3</Polish>
@@ -7089,7 +7089,7 @@
 	<Package name="Medical_Strings">
 		<Key ID="STR_Medic_Online">
 			<Original>Medics Online: %1</Original>
-			<Czech>Zdravotníci Online: 1%</Czech>
+			<Czech>Zdravotníci Online: %1</Czech>
 			<Spanish>Médicos en línea: %1</Spanish>
 			<Russian></Russian>
 			<German>Sanitäter online: %1</German>
@@ -7100,7 +7100,7 @@
 		</Key>
 		<Key ID="STR_Medic_Near">
 			<Original>Medics Nearby: %1</Original>
-			<Czech>Zdravotníci v blízkosti:% 1</Czech>
+			<Czech>Zdravotníci v blízkosti:%1</Czech>
 			<Spanish>Médicos Cerca: %1</Spanish>
 			<Russian></Russian>
 			<German>Sanitäter in der Nähe: %1</German>
@@ -7111,7 +7111,7 @@
 		</Key>
 		<Key ID="STR_Medic_Request">
 			<Original>%1 is requesting EMS Revive.</Original>
-			<Czech>% 1 požaduje EMS oživit.</Czech>
+			<Czech>%1 požaduje EMS oživit.</Czech>
 			<Spanish>%1 esta pidiendo servicio médico.</Spanish>
 			<Russian></Russian>
 			<German>%1 benötigt medizinische Hilfe</German>
@@ -7122,7 +7122,7 @@
 		</Key>
 		<Key ID="STR_Medic_Respawn">
 			<Original>Respawn Available in: %1</Original>
-			<Czech>Respawn K dispozici v:% 1</Czech>
+			<Czech>Respawn K dispozici v:%1</Czech>
 			<Spanish>Puedes reaparecer en: %1</Spanish>
 			<Russian></Russian>
 			<German>Respawn verfügbar in: %1</German>
@@ -7144,13 +7144,13 @@
 		</Key>
 		<Key ID="STR_Medic_RevivePay">
 			<Original>%1 has revived you and a fee of $%2 was taken from your bank account for their services.</Original>
-			<Czech>% 1 oživil vy a poplatek ve výši $% 2 byl převzat z bankovního účtu za své služby.</Czech>
+			<Czech>%1 oživil vy a poplatek ve výši $%2 byl převzat z bankovního účtu za své služby.</Czech>
 			<Spanish>%1 te a revivido y una cuota de $%2 a sido tomada de tu cuenta por sus servicios.</Spanish>
 			<Russian></Russian>
 			<German>%1 hat dich wiederbelebt und dafür eine Gebühr von $%2 von deinem Bankkonto eingezogen.</German>
 			<French>%1 vous à réanimé, les fraits de $%2 sont transféré depuit votre compte bancaire pour leurs services.</French>
 			<Italian>%1 ti ha rianimato e sono stati prelevati €%2 dal tuo conto in banca per pagare la prestazione.</Italian>
-			<Portuguese>%1 reviveu você e uma taxa de R$2% foi cobrada da sua conta bancária para os serviços prestados.</Portuguese>
+			<Portuguese>%1 reviveu você e uma taxa de R$%2 foi cobrada da sua conta bancária para os serviços prestados.</Portuguese>
 			<Polish>%1 pobrał opłatę w wysokości $%2 za reanimację i przywrócenie funkcji życiowych.</Polish>
 		</Key>
 		<Key ID="STR_Medic_AlreadyReviving">
@@ -7166,7 +7166,7 @@
 		</Key>
 		<Key ID="STR_Medic_Progress">
 			<Original>Reviving %1</Original>
-			<Czech>Oživení% 1</Czech>
+			<Czech>Oživení%1</Czech>
 			<Spanish>Reviviendo %1</Spanish>
 			<Russian></Russian>
 			<German>Wird wiederbelebt %1</German>
@@ -7188,7 +7188,7 @@
 		</Key>
 		<Key ID="STR_Medic_RevivePayReceive">
 			<Original>You have revived %1 and received $%2 for your services.</Original>
-			<Czech>Obdrželi jste% 1 a získal $ 2% za vaše služby.</Czech>
+			<Czech>Obdrželi jste%1 a získal $ %2 za vaše služby.</Czech>
 			<Spanish>Has revivido a %1 y recivido $%2 por tus servicios.</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 wiederbelebt und $%2 für deine Dienste erhalten.</German>
@@ -7223,7 +7223,7 @@
 		</Key>
 		<Key ID="STR_NOTF_FRRobbery_Success">
 			<Original>$%1 was stolen from the robbery on the federal reserve</Original>
-			<Czech>$% 1 byl ukraden z loupeže na federální rezervy</Czech>
+			<Czech>$%1 byl ukraden z loupeže na federální rezervy</Czech>
 			<Spanish>$%1 fue robado de la reserva federal</Spanish>
 			<Russian></Russian>
 			<German>$%1 wurden von den Räubern aus der Zentralbank gestohlen</German>
@@ -7776,7 +7776,7 @@
 	<Package name="Session_Strings">
 		<Key ID="STR_Session_Query">
 			<Original>Sending request to server for player information UID [%1]</Original>
-			<Czech>Odesílání požadavku na server pro informační hráč UID [% 1]</Czech>
+			<Czech>Odesílání požadavku na server pro informační hráč UID [%1]</Czech>
 			<Spanish>Pidiendo informacion del UID de [%1] del server</Spanish>
 			<Russian></Russian>
 			<German>Frage Spieler Informationen zu UID [%1] ab</German>
@@ -7855,7 +7855,7 @@
 	<Package name="Shop_Strings">
 		<Key ID="STR_Shop_ATMRobbed">
 			<Original>Because you robbed the bank you can't use the ATM for %1 minutes.</Original>
-			<Czech>Protože jste vyloupil banku nelze použít bankomat pro% 1 minut.</Czech>
+			<Czech>Protože jste vyloupil banku nelze použít bankomat pro%1 minut.</Czech>
 			<Spanish>Porque robastes el banco no puedes usar el ATM por %1 minutos.</Spanish>
 			<Russian></Russian>
 			<German>Da du die Bank ausgeraubt hast, kannst du für %1 Minuten keine Bankomaten benutzen.</German>
@@ -7998,7 +7998,7 @@
 		</Key>
 		<Key ID="STR_Shop_YouNeed">
 			<Original>You need a %1 to buy from this shop!</Original>
-			<Czech>Potřebujete% 1 koupit od tomto obchodě!</Czech>
+			<Czech>Potřebujete%1 koupit od tomto obchodě!</Czech>
 			<Spanish>Necesitas un %1 para comprar algo de esta tienda!</Spanish>
 			<Russian></Russian>
 			<German>Du benötigst eine %1, um diesen Shop nutzen zu können!</German>
@@ -8086,7 +8086,7 @@
 		</Key>
 		<Key ID="STR_Shop_Unimpound_Success">
 			<Original>You have unimpounded your %1 for $%3</Original>
-			<Czech>Jste unimpounded svůj% 1 na $% 3</Czech>
+			<Czech>Jste unimpounded svůj%1 na $%3</Czech>
 			<Spanish>Has desembargado tu %1 por $%3</Spanish>
 			<Russian></Russian>
 			<German>Du hast deinen %1 für $%3 ausgelöst</German>
@@ -8108,7 +8108,7 @@
 		</Key>
 		<Key ID="STR_Shop_Veh_NotEnough">
 			<Original>You do not have enough cash to purchase this vehicle.\n\nAmount Lacking: $%1</Original>
-			<Czech>Nemáte dostatek peněz na koupi tohoto vozidla \ n \ nAmount Postrádat:. $% 1</Czech>
+			<Czech>Nemáte dostatek peněz na koupi tohoto vozidla \ n \ nAmount Postrádat:. $%1</Czech>
 			<Spanish>No tienes suficiente dinero para comprar este vehículo.\n\nFalta: $%1</Spanish>
 			<Russian></Russian>
 			<German>Du hast nicht genug Geld, um das Fahrzeug zu kaufen.\n\nFehlender Betrag: $%1</German>
@@ -8141,7 +8141,7 @@
 		</Key>
 		<Key ID="STR_Shop_Veh_Bought">
 			<Original>You bought a %1 for $%2</Original>
-			<Czech>Koupil sis% 1 pro $ 2%</Czech>
+			<Czech>Koupil sis%1 pro $ %2</Czech>
 			<Spanish>Comprastes %1 por $%2</Spanish>
 			<Russian></Russian>
 			<German>Du kaufst eine(n) %1 für $%2</German>
@@ -8383,7 +8383,7 @@
 		</Key>
 		<Key ID="STR_Shop_Virt_BoughtGang">
 			<Original>You bought %1 %2 for $%3 with the gangs funds</Original>
-			<Czech>Koupili jste% 1% 2% za $ 3 s fondy gangů</Czech>
+			<Czech>Koupili jste% %1 %2 za $ 3 s fondy gangů</Czech>
 			<Spanish>Comprastes %1 %2 por $%3 con el dinero de la pandilla</Spanish>
 			<Russian></Russian>
 			<German>Du kaufst %1 %2 für $%3 mit dem Geld der Gang</German>
@@ -8394,7 +8394,7 @@
 		</Key>
 		<Key ID="STR_Shop_Virt_BoughtItem">
 			<Original>You bought %1 %2 for $%3</Original>
-			<Czech>Koupili jste% 1% 2 na $ 3%</Czech>
+			<Czech>Koupili jste% %1 2 na $ %3</Czech>
 			<Spanish>Comprastes %1 %2 por $%3</Spanish>
 			<Russian></Russian>
 			<German>Du kaufst %1 %2 für $%3</German>
@@ -8405,7 +8405,7 @@
 		</Key>
 		<Key ID="STR_Shop_Virt_SellItem">
 			<Original>You sold %1 %2 for $%3</Original>
-			<Czech>Prodali jste% 1% 2 na $ 3%</Czech>
+			<Czech>Prodali jste% %1 2 na $ %3</Czech>
 			<Spanish>Vendistes %1 %2 por $%3</Spanish>
 			<Russian></Russian>
 			<German>Du verkaufst %1 %2 für $%3</German>
@@ -8484,7 +8484,7 @@
 	<Package name="FSM_Strings">
 		<Key ID="STR_FSM_Paycheck">
 			<Original>You will receive your next paycheck in %1 minutes.</Original>
-			<Czech>Obdržíte svůj další výplatní pásku v% 1 minut.</Czech>
+			<Czech>Obdržíte svůj další výplatní pásku v%1 minut.</Czech>
 			<Spanish>Recibiras tu siguiente pago en %1 minutos</Spanish>
 			<Russian></Russian>
 			<German>Du erhältst deinen nächsten Gehaltsscheck in %1 Minuten.</German>
@@ -8506,7 +8506,7 @@
 		</Key>
 		<Key ID="STR_FSM_ReceivedPay">
 			<Original>You have received a paycheck of $%1.</Original>
-			<Czech>Dostali jste výplatu ve výši $ 1%.</Czech>
+			<Czech>Dostali jste výplatu ve výši $ %1.</Czech>
 			<Spanish>Has recibido un pago de $%1</Spanish>
 			<Russian></Russian>
 			<German>Du hast deinen Gehaltscheck in Höhe von $%1 erhalten.</German>
@@ -8527,7 +8527,7 @@
 		</Key>
 		<Key ID="STR_Price_Fuel_Pump">
 			<Original>Price per Liter : $%1</Original>
-			<Czech>Cena za litr: $ 1%</Czech>
+			<Czech>Cena za litr: $ %1</Czech>
 			<Spanish>Precio por Litro: $%1</Spanish>
 			<Russian></Russian>
 			<Portuguese>Preço por Litro : R$%1</Portuguese>
@@ -10071,7 +10071,7 @@
 		</Key>
 		<Key ID="STR_FuelTank_Money">
 			<Original>Your share is $%1</Original>
-			<Czech>Váš podíl $% 1</Czech>
+			<Czech>Váš podíl $%1</Czech>
 			<Spanish>Tu ganancia es $%1</Spanish>
 			<Russian></Russian>
 			<German>Dein Anteil beträgt $%1</German>
