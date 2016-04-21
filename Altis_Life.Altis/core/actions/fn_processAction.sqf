@@ -99,7 +99,7 @@ _cP = 0.01;
 life_is_processing = true;
 
 if(_hasLicense) then {
-	while{true} do {
+	For "_i" from 0 to 1 step 0 do {
 		sleep  0.28;
 		_cP = _cP + 0.01;
 		_progress progressSetPosition _cP;
@@ -140,7 +140,7 @@ if(_hasLicense) then {
 } else {
 	if(CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 
-	while{true} do {
+	For "_i" from 0 to 1 step 0 do {
 		sleep  0.9;
 		_cP = _cP + 0.01;
 		_progress progressSetPosition _cP;

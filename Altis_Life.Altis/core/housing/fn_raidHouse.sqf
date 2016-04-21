@@ -32,8 +32,7 @@ _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 _cpRate = 0.0075;
 
-while {true} do
-{
+For "_i" from 0 to 1 step 0 do {
 	sleep 0.26;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];

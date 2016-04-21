@@ -9,8 +9,7 @@ private["_markers","_members"];
 _markers = [];
 _members = [];
 
-while {true} do
-{
+For "_i" from 0 to 1 step 0 do {
 	sleep 0.5;
 	if(visibleMap) then
 	{
