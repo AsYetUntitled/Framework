@@ -18,7 +18,7 @@ if(CASH < 500) then
 
 switch (_method) do
 {
-	case 0: {hint "You do not have $500 in cash or in your bank account."};
-	case 1: {vehicle player setDamage 0; SUB(CASH,500); hint "You have repaired your vehicle for $500";};
-	case 2: {vehicle player setDamage 0; SUB(BANK,500); hint "You have repaired your vehicle for $500";};
+	case 0: {hint localize "STR_pumpRepair_notEnoughMoney";};
+	case 1: {vehicle player setDamage 0; SUB(CASH,500); hint localize "STR_pumpRepair_Repaired";};
+	case 2: {vehicle player setDamage 0; SUB(BANK,500); hint localize "STR_pumpRepair_Repaired";};
 };
