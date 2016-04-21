@@ -24,7 +24,7 @@ _action = [
 
 if(_action) then {
 	_unitID = getPlayerUID _unit;
-	if(EQUAL(_unitID,"")) exitWith {hint "Bad UID?"}; //Unlikely?
+	if(EQUAL(_unitID,"")) exitWith {hint localize "STR_GNOTF_badUID";}; //Unlikely?
 	grpPlayer SVAR ["gang_owner",_unitID,true];
 	grpPlayer selectLeader _unit;
 	[_unit,grpPlayer] remoteExec ["TON_fnc_clientGangLeader",_unit]; //Boot that bitch!
