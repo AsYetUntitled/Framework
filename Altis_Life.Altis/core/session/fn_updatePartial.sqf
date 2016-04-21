@@ -39,7 +39,7 @@ switch(_mode) do {
 
 	case 4: {
 		_packet set[2,life_is_alive];
-		_packet set[4,getPosWorld player];
+		_packet set[4,getPosATL player];
 	};
 
 	case 5: {

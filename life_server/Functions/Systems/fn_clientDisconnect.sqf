@@ -17,7 +17,7 @@ _side = side _unit;
 
 //Save player info
 if(isNil "HC_UID" || {_uid != HC_UID}) then {
-	_position = getPosWorld _unit;
+	_position = getPosATL _unit;
 	if((getMarkerPos "respawn_civilian" distance _position) > 300) then {
 		//Call UpdateRequest as unit
 		[] remoteExecCall ["SOCK_fnc_updateRequest",_unit];
