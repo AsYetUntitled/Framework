@@ -31,7 +31,7 @@ while{_loop} do {
 	if (EQUAL(_queryResult,"[5]")) then {
 		// extDB2 returned that result is Multi-Part Message
 		_queryResult = "";
-		For "_i" from 0 to 1 step 0 do {
+		for "_i" from 0 to 1 step 0 do {
 			_pipe = EXTDB format["5:%1", _key];
 			if(_pipe == "") exitWith {_loop = false};
 			_queryResult = _queryResult + _pipe;

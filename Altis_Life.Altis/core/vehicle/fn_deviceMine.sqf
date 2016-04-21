@@ -91,7 +91,7 @@ _vehicle remoteExec ["life_fnc_soundDevice",RCLIENT]; //Broadcast the 'mining' s
 
 life_action_inUse = false; //Unlock it since it's going to do it's own thing...
 
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 
 	if(!alive _vehicle || isNull _vehicle) exitWith {};
 

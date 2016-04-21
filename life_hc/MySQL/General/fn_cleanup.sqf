@@ -11,7 +11,7 @@
 */
 private "_deleted";
 _deleted = false;
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 	private["_veh","_units","_fuel"];
 	sleep (60 * 60);
 	{

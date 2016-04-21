@@ -14,7 +14,7 @@ disableSerialization;
 [] spawn
 {
 	private["_dam"];
-	For "_i" from 0 to 1 step 0 do {
+	for "_i" from 0 to 1 step 0 do {
 		_dam = damage player;
 		waitUntil {(damage player) != _dam};
 		[] call life_fnc_hudUpdate;

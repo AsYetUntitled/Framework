@@ -16,7 +16,7 @@ _validMenus = [
 ];
 
 _lastMenu = "";
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 	waitUntil {commandingMenu != _lastMenu};
 	_lastMenu = commandingMenu;
 

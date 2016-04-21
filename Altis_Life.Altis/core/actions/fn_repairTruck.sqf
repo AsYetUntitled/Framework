@@ -26,7 +26,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_progress progressSetPosition 0.01;
 		_cP = 0.01;
 
-		For "_i" from 0 to 1 step 0 do {
+		for "_i" from 0 to 1 step 0 do {
 			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 				[player,"AinvPknlMstpSnonWnonDnon_medic_1",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
 				player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";

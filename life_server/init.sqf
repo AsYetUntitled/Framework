@@ -131,7 +131,7 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	[] execFSM "\life_server\FSM\cleanup.fsm";
 };
 [] spawn {
-	For "_i" from 0 to 1 step 0 do {
+	for "_i" from 0 to 1 step 0 do {
 		uiSleep (30 * 60);
 		{
 			_x setVariable["sellers",[],true];

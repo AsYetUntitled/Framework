@@ -31,7 +31,7 @@ _pgText ctrlSetText format["%2 (1%1)...","%",_upp];
 _progress progressSetPosition 0.01;
 _cP = 0.01;
 
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 	sleep 0.09;
 	_cP = _cP + 0.01;
 	_progress progressSetPosition _cP;

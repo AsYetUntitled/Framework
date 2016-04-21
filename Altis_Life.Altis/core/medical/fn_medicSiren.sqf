@@ -12,7 +12,7 @@ _vehicle = param [0,ObjNull,[ObjNull]];
 if(isNull _vehicle) exitWith {};
 if(isNil {_vehicle GVAR "siren"}) exitWith {};
 
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 	if(!(_vehicle GVAR "siren")) exitWith {};
 	if(EQUAL(count crew _vehicle,0)) then {_vehicle SVAR ["siren",false,true]};
 	if(!alive _vehicle) exitWith {};

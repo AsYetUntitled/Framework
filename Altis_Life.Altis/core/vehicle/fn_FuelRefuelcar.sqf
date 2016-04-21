@@ -48,7 +48,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
 	_cP = 0.01;
 	_tp =0;
 	_totalcost = _fueltoput * life_fuelPrices;
-	For "_i" from 0 to 1 step 0 do {
+	for "_i" from 0 to 1 step 0 do {
 		sleep  _timer;
 		_cP = _cP + 0.01;
 		_progress progressSetPosition _cP;

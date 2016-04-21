@@ -12,7 +12,7 @@ _client = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _client) exitWith {};
 
 _loops = 0;
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 	if(_loops >= 25) exitWith {};
 	if(!alive _client) exitWith {
 		_containers = nearestObjects[(getPosATL _client),["WeaponHolderSimulated"],5];

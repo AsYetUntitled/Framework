@@ -17,7 +17,7 @@ _displays = [
 
 _detection = false;
 _timeStamp = time;
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 	{
 		_targetDisplay = _x select 0;
 		_targetName = _x select 1;

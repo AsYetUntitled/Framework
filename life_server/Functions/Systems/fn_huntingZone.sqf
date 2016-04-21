@@ -21,7 +21,7 @@ _animals = [];
 
 _unitsNear = false;
 _animalsActive = false;
-For "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do {
 	{if((_x distance _zone) < _dist) exitWith {_unitsNear = true;}; _unitsNear = false;} forEach playableUnits;
 	if(_unitsNear && !_animalsActive) then {
 		_animalsActive = true;
