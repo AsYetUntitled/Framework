@@ -11,3 +11,8 @@ life_admin_debug = true;
 
 createDialog "RscDisplayDebugPublic";
 [0,format [localize "STR_NOTF_adminHasOpenedDebug",profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+
+if(EQUAL(LIFE_SETTINGS(getNumber,"player_adminLog"),1)) then {
+	_log = format ["%1 opened the debug console", profileName];
+	[_log,true] remoteExecCall ["TON_fnc_logit",RSERV];
+};
