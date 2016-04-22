@@ -7,7 +7,7 @@
 	Master action key handler, handles requests for picking up various items and
 	interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private["_curObject","_isWater","_CrateModelNames","_crate"];
+private["_curObject","_isWater","_CrateModelNames","_crate","_animal"];
 _curObject = cursorObject;
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if(life_interrupted) exitWith {life_interrupted = false;};
@@ -39,9 +39,12 @@ if(isNull _curObject) exitWith {
 		};
 	} else {
 		_animalconfig = LIFE_SETTINGS(getArray,"animaltypes_hunting");
-		_animal = ((ASLtoATL (getPosASL player)) nearEntities [_animalconfig, 3]) select 0;
-		if (!(isNil "_animal")) then {
-			[_animal] call life_fnc_gutAnimal;
+		_animal = nearestObjects [player,_animalconfig, 3];
+		if (count _animal > 0) then {
+			_animal = _animal select 0;
+			if (!alive _animal) then {
+				[_animal] call life_fnc_gutAnimal;
+			};
 		} else {
 			private "_handle";
 			if(playerSide == civilian && !life_action_gathering) then {
