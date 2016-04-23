@@ -26,14 +26,14 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"global_ATM"),1)) then{
 
 if(isNull _curObject) exitWith {
 	if(_isWater) then {
-		_fish = (nearestObjects[ASLtoATL (getPosASL player),(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
+		_fish = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
 		if(!isNil "_fish") then {
 			if (!alive _fish) then {
 				[_fish] call life_fnc_catchFish;
 			};
 		};
 	} else {
-		_animal = (nearestObjects[ASLtoATL (getPosASL player),(LIFE_SETTINGS(getArray,"animaltypes_hunting")),3]) select 0;
+		_animal = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_hunting")),3]) select 0;
 		if (!isNil "_animal") then {
 			if (!alive _animal) then {
 				[_animal] call life_fnc_gutAnimal;
