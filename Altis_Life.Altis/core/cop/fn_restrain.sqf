@@ -19,39 +19,39 @@ if(isNull _cop) exitWith {};
 		_time = time;
 		waitUntil {(time - _time) > (5 * 60)};
 
-		if(!(player GVAR ["restrained",FALSE])) exitWith {};
-		if(!([west,getPos player,30] call life_fnc_nearUnits) && (player GVAR ["restrained",FALSE]) && isNull objectParent player) exitWith {
-			player SVAR ["restrained",FALSE,TRUE];
-			player SVAR ["Escorting",FALSE,TRUE];
-			player SVAR ["transporting",false,true];
+		if(!(player getVariable ["restrained",FALSE])) exitWith {};
+		if(!([west,getPos player,30] call life_fnc_nearUnits) && (player getVariable ["restrained",FALSE]) && isNull objectParent player) exitWith {
+			player setVariable ["restrained",FALSE,TRUE];
+			player setVariable ["Escorting",FALSE,TRUE];
+			player setVariable ["transporting",false,true];
 			detach player;
 			titleText[localize "STR_Cop_ExcessiveRestrain","PLAIN"];
 		};
 	};
 };
 
-titleText[format[localize "STR_Cop_Restrained",_cop GVAR ["realname",name _cop]],"PLAIN"];
+titleText[format[localize "STR_Cop_Restrained",_cop getVariable ["realname",name _cop]],"PLAIN"];
 
 life_disable_getIn = true;
 life_disable_getOut = false;
 
-while {player GVAR  "restrained"} do {
+while {player getVariable  "restrained"} do {
 	if(isNull objectParent player) then {
 		player playMove "AmovPercMstpSnonWnonDnon_Ease";
 	};
 
 	_state = vehicle player;
-	waitUntil {animationState player != "AmovPercMstpSnonWnonDnon_Ease" || !(player GVAR "restrained") || vehicle player != _state};
+	waitUntil {animationState player != "AmovPercMstpSnonWnonDnon_Ease" || !(player getVariable "restrained") || vehicle player != _state};
 
 	if(!alive player) exitWith {
-		player SVAR ["restrained",false,true];
-		player SVAR ["Escorting",false,true];
-		player SVAR ["transporting",false,true];
+		player setVariable ["restrained",false,true];
+		player setVariable ["Escorting",false,true];
+		player setVariable ["transporting",false,true];
 		detach _player;
 	};
 
 	if(!alive _cop) then {
-		player SVAR ["Escorting",false,true];
+		player setVariable ["Escorting",false,true];
 		detach player;
 	};
 
@@ -71,7 +71,7 @@ while {player GVAR  "restrained"} do {
 		player action["eject",vehicle player];
 		player moveInCargo _vehicle;
 	};
-	
+
 	if(vehicle player != player && life_disable_getOut) then {
 		_turrets = [[-1]] + allTurrets _vehicle;
 		{
@@ -88,7 +88,7 @@ while {player GVAR  "restrained"} do {
 
 if(alive player) then {
 	player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
-	player SVAR ["Escorting",false,true];
-	player SVAR ["transporting",false,true];
+	player setVariable ["Escorting",false,true];
+	player setVariable ["transporting",false,true];
 	detach player;
 };

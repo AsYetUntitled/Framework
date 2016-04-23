@@ -34,10 +34,10 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),1)) then {
 	for the server.
 */
 
-if(isNil {GVAR_UINS "life_sql_id"}) then {
+if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 	life_sql_id = round(random(9999));
 	CONSTVAR(life_sql_id);
-	SVAR_UINS ["life_sql_id",life_sql_id];
+	uiNamespace setVariable ["life_sql_id",life_sql_id];
 		try {
 		_result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
 		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
@@ -52,7 +52,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 	EXTDB "9:LOCK";
 	diag_log "extDB2: Connected to Database";
 } else {
-	life_sql_id = GVAR_UINS "life_sql_id";
+	life_sql_id = uiNamespace getVariable "life_sql_id";
 	CONSTVAR(life_sql_id);
 	diag_log "extDB2: Still Connected to Database";
 };

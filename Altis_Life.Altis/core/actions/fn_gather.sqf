@@ -9,8 +9,8 @@
 private["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
 if (life_action_inUse) exitWith {};
 if((vehicle player) != player) exitWith {};
-if((player GVAR "restrained")) exitWith {hint localize "STR_NOTF_isrestrained";};
-if((player GVAR "playerSurrender")) exitWith {hint localize "STR_NOTF_surrender";};
+if((player getVariable "restrained")) exitWith {hint localize "STR_NOTF_isrestrained";};
+if((player getVariable "playerSurrender")) exitWith {hint localize "STR_NOTF_surrender";};
 
 life_action_inUse = true;
 _zone = "";
@@ -37,7 +37,7 @@ if(_zone == "") exitWith {life_action_inUse = false;};
 
 if (_requiredItem != "") then
 {
-	_valItem = GVAR_MNS "life_inv_" + _requiredItem;
+	_valItem = missionNamespace getVariable "life_inv_" + _requiredItem;
 
 	if (_valItem < 1) exitWith
 	{

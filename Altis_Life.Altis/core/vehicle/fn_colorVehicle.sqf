@@ -37,6 +37,6 @@ if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then 
 _textures = SEL(SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures"),_index),2);
 if(isNil "_textures" OR {EQUAL(count _textures,0)}) exitWith {};
 
-_vehicle SVAR ["Life_VEH_color",_index,true];
+_vehicle setVariable ["Life_VEH_color",_index,true];
 
 {_vehicle setObjectTextureGlobal [_forEachIndex,_x];} forEach _textures;

@@ -4,23 +4,11 @@
 #define SUB(var1,var2) var1 = var1 - var2
 #define ADD(var1,var2) var1 = var1 + var2
 #define SEL(ARRAY,INDEX) (ARRAY select INDEX)
-#define CASH life_cash
-#define BANK life_atmbank
-#define GANG_FUNDS grpPlayer getVariable ["gang_bank",0];
 
 //RemoteExec Macros
 #define RSERV 2 //Only server
 #define RCLIENT -2 //Except server
 #define RANY 0 //Global
-
-//Namespace Macros
-#define SVAR_MNS missionNamespace setVariable
-#define SVAR_UINS uiNamespace setVariable
-#define SVAR_PNS parsingNamespace setVariable
-#define SVAR_PNAS profileNamespace setVariable
-#define GVAR_MNS missionNamespace getVariable
-#define GVAR_UINS uiNamespace getVariable
-#define GVAR_PNAS profileNamespace getVariable
 
 //Scripting Macros
 #define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
@@ -29,13 +17,6 @@
 #define PVAR_ALL(var) publicVariable var
 #define PVAR_SERV(var) publicVariableServer var
 #define PVAR_ID(var,id) id publicVariableClient var
-#define GVAR getVariable
-#define SVAR setVariable
-#define RIFLE primaryWeapon player
-#define RIFLE_ITEMS primaryWeaponItems player
-#define PISTOL handgunWeapon player
-#define PISTOL_ITEMS handgunItems player
-#define LAUNCHER secondaryWeapon player
 
 //Display Macros
 #define CONTROL(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
@@ -43,13 +24,11 @@
 #define CONTROL_DATAI(ctrl,index) ctrl lbData index
 
 //System Macros
-#define grpPlayer group player
-#define steamid getPlayerUID player
 #define LICENSE_VARNAME(varName,flag) format["license_%1_%2",flag,M_CONFIG(getText,"Licenses",varName,"variable")]
-#define LICENSE_VALUE(varName,flag) GVAR_MNS [LICENSE_VARNAME(varName,flag),false]
+#define LICENSE_VALUE(varName,flag) missionNamespace getVariable [LICENSE_VARNAME(varName,flag),false]
 #define ITEM_VARNAME(varName) format["life_inv_%1",M_CONFIG(getText,"VirtualItems",varName,"variable")]
-#define ITEM_VALUE(varName) GVAR_MNS [ITEM_VARNAME(varName),0]
-#define ITEM_VALUE2(varName) GVAR_MNS [varName,0]
+#define ITEM_VALUE(varName) missionNamespace getVariable [ITEM_VARNAME(varName),0]
+#define ITEM_VALUE2(varName) missionNamespace getVariable [varName,0]
 #define ITEM_ILLEGAL(varName) M_CONFIG(getNumber,"VirtualItems",varName,"illegal")
 #define ITEM_SELLPRICE(varName) M_CONFIG(getNumber,"VirtualItems",varName,"sellPrice")
 #define ITEM_BUYPRICE(varName) M_CONFIG(getNumber,"VirtualItems",varName,"buyPrice")
@@ -74,8 +53,8 @@
 #define CONFIG_GLASSES "CfgGlasses"
 
 //UI Macros
-#define LIFEdisplay (GVAR_UINS ["playerHUD",displayNull])
-#define LIFEctrl(ctrl) ((GVAR_UINS ["playerHUD",displayNull]) displayCtrl ctrl)
+#define LIFEdisplay (uiNamespace getVariable ["playerHUD",displayNull])
+#define LIFEctrl(ctrl) ((uiNamespace getVariable ["playerHUD",displayNull]) displayCtrl ctrl)
 
 //SpyGlass Macros
 #define SPYGLASS_END \

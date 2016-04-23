@@ -20,13 +20,13 @@ if((vehicle _unit) != _unit) then {
 };
 
 //Set some vars
-_unit SVAR ["Revive",true,true];
-_unit SVAR ["name",profileName,true]; //Set my name so they can say my name.
-_unit SVAR ["restrained",false,true];
-_unit SVAR ["Escorting",false,true];
-_unit SVAR ["transporting",false,true];
-_unit SVAR ["playerSurrender",false,true];
-_unit SVAR ["steam64id",(getPlayerUID player),true]; //Set the UID.
+_unit setVariable ["Revive",true,true];
+_unit setVariable ["name",profileName,true]; //Set my name so they can say my name.
+_unit setVariable ["restrained",false,true];
+_unit setVariable ["Escorting",false,true];
+_unit setVariable ["transporting",false,true];
+_unit setVariable ["playerSurrender",false,true];
+_unit setVariable ["steam64id",(getPlayerUID player),true]; //Set the UID.
 
 //Setup our camera view
 life_deathCamera  = "CAMERA" camCreate (getPosATL _unit);
@@ -74,9 +74,9 @@ if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _ki
 	if(vehicle _killer isKindOf "LandVehicle") then {
 
 		if(life_HC_isActive) then {
-			[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187V"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
+			[getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187V"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
 		} else {
-			[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187V"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+			[getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187V"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 		};
 
 		//Get rid of this if you don't want automatic vehicle license removal.
@@ -86,9 +86,9 @@ if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _ki
 	} else {
 
 		if(life_HC_isActive) then {
-			[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
+			[getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
 		} else {
-			[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+			[getPlayerUID _killer,_killer getVariable ["realname",name _killer],"187"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 		};
 
 		if(!local _killer) then {
@@ -106,9 +106,9 @@ _containers = nearestObjects[getPosATL player,["WeaponHolderSimulated"],5];
 if(side _killer == west && playerSide != west) then {
 	life_copRecieve = _killer;
 	//Did I rob the federal reserve?
-	if(!life_use_atm && {CASH > 0}) then {
-		[format[localize "STR_Cop_RobberDead",[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-		CASH = 0;
+	if(!life_use_atm && {life_cash > 0}) then {
+		[format[localize "STR_Cop_RobberDead",[life_cash] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+		life_cash = 0;
 	};
 };
 
@@ -122,7 +122,7 @@ waitUntil {scriptDone _handle};
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
-CASH = 0;
+life_cash = 0;
 life_is_alive = false;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.

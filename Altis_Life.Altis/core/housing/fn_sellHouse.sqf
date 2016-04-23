@@ -9,7 +9,7 @@
 */
 private["_house","_uid","_action","_houseCfg"];
 _house = param [0,ObjNull,[ObjNull]];
-_uid = steamid;
+_uid = getPlayerUID player;
 
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
@@ -26,7 +26,7 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
-	_house SVAR ["house_sold",true,true];
+	_house setVariable ["house_sold",true,true];
 
 	if(life_HC_isActive) then {
 		[_house] remoteExecCall ["HC_fnc_sellHouse",HC_Life];
@@ -34,19 +34,19 @@ if(_action) then {
 		[_house] remoteExecCall ["TON_fnc_sellHouse",RSERV];
 	};
 
-	_house SVAR ["locked",false,true];
-	deleteMarkerLocal format["house_%1",_house GVAR "uid"];
-	_house SVAR ["uid",nil,true];
+	_house setVariable ["locked",false,true];
+	deleteMarkerLocal format["house_%1",_house getVariable "uid"];
+	_house setVariable ["uid",nil,true];
 
-	BANK = BANK + (round((_houseCfg select 0)/2));
+	life_atmbank = life_atmbank + (round((_houseCfg select 0)/2));
 	[1] call SOCK_fnc_updatePartial;
 	_index = life_vehicles find _house;
 
 	if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
 		if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
-			advanced_log = format ["sold a house for %1. Bank Balance: %2",(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
+			advanced_log = format ["sold a house for %1. Bank Balance: %2",(round((_houseCfg select 0)/2)),[life_atmbank] call life_fnc_numberText];
 		} else {
-			advanced_log = format ["%1 - %2 sold a house for %3. Bank Balance: %4",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
+			advanced_log = format ["%1 - %2 sold a house for %3. Bank Balance: %4",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[life_atmbank] call life_fnc_numberText];
 			};
 		publicVariableServer "advanced_log";
 	};
@@ -63,12 +63,12 @@ if(_action) then {
 	};
 	_numOfDoors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _house), "numberOfDoors");
 	for "_i" from 1 to _numOfDoors do {
-		_house SVAR [format["bis_disabled_Door_%1",_i],0,true];
+		_house setVariable [format["bis_disabled_Door_%1",_i],0,true];
 	};
-	_containers = _house GVAR ["containers",[]];
+	_containers = _house getVariable ["containers",[]];
 	if (count _containers > 0) then {
 		{
-			_x SVAR ["Trunk",nil,true];
+			_x setVariable ["Trunk",nil,true];
 
 			if(life_HC_isActive) then {
 				[_x] remoteExecCall ["HC_fnc_sellHouseContainer",HC_Life];
@@ -78,5 +78,5 @@ if(_action) then {
 
 		} forEach _containers;
 	};
-	_house SVAR ["containers",nil,true];
+	_house setVariable ["containers",nil,true];
 };

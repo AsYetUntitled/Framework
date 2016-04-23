@@ -11,9 +11,7 @@
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-#define GVAR_UINS uiNamespace getVariable
 #define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
-#define steamid getPlayerUID player
 #define RCLIENT -2
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
@@ -141,7 +139,7 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 	_patchEntry = _binConfigPatches select _i;
 	if(isClass _patchEntry) then {
 		if(!((configName _patchEntry) in _patchList)) exitWith {
-			[profileName,steamid,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",RSERV];
+			[profileName,getPlayerUID player,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",RSERV];
 			[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 			sleep 0.5;
 			failMission "SpyGlass";
@@ -161,7 +159,7 @@ _allowedChildren = [
 
 {
 	if(!((configName _x) in _allowedChildren)) exitWith {
-		[profileName,steamid,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",RSERV];
+		[profileName,getPlayerUID player,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",RSERV];
 		[profileName,"Devcon like executor detected"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;
 		failMission "SpyGlass";
@@ -178,7 +176,7 @@ _allowedChildren = [
 	_onLoad = getText(configFile >> (_x select 0) >> "onLoad");
 	_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
 	if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith {
-		[profileName,steamid,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
+		[profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 		[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;
 		vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
@@ -215,7 +213,7 @@ forEach [
 
 /* Forgot to include this but this is also also a popular method for "unreleased" stuff */
 if(getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunctions.sqf") then {
-	[profileName,steamid,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
+	[profileName,getPlayerUID player,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 	[profileName,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 	sleep 0.5;
 	vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.

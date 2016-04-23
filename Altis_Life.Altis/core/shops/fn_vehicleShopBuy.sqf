@@ -64,7 +64,7 @@ _licensesName = "";
 if(_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];closeDialog 0;};
 
 if(_purchasePrice < 0) exitWith {closeDialog 0;}; //Bad price entry
-if(CASH < _purchasePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_purchasePrice - CASH] call life_fnc_numberText];closeDialog 0;};
+if(life_cash < _purchasePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_purchasePrice - life_cash] call life_fnc_numberText];closeDialog 0;};
 
 _spawnPoints = SEL(life_veh_shop,1);
 _spawnPoint = "";
@@ -83,7 +83,7 @@ if((SEL(life_veh_shop,0) == "med_air_hs")) then {
 
 
 if(EQUAL(_spawnPoint,"")) exitWith {hint localize "STR_Shop_Veh_Block";closeDialog 0;};
-SUB(CASH,_purchasePrice);
+SUB(life_cash,_purchasePrice);
 hint format[localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
 
 //Spawn the vehicle and prep it.
@@ -150,9 +150,9 @@ if(_mode) then {
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
 	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
-		advanced_log = format ["bought vehicle %1 for %2. On Hand Cash: %3  Bank Balance: %4",_className,[_purchasePrice] call life_fnc_numberText,[CASH] call life_fnc_numberText,[BANK] call life_fnc_numberText];
+		advanced_log = format ["bought vehicle %1 for %2. On Hand Cash: %3  Bank Balance: %4",_className,[_purchasePrice] call life_fnc_numberText,[life_cash] call life_fnc_numberText,[life_atmbank] call life_fnc_numberText];
 	} else {
-		advanced_log = format ["%1 - %2 bought vehicle %3 for %4. On Hand Cash: %5  Bank Balance %6",profileName,(getPlayerUID player),_className,[_purchasePrice] call life_fnc_numberText,[CASH] call life_fnc_numberText,[BANK] call life_fnc_numberText];
+		advanced_log = format ["%1 - %2 bought vehicle %3 for %4. On Hand Cash: %5  Bank Balance %6",profileName,(getPlayerUID player),_className,[_purchasePrice] call life_fnc_numberText,[life_cash] call life_fnc_numberText,[life_atmbank] call life_fnc_numberText];
 	};
 	publicVariableServer "advanced_log";
 };

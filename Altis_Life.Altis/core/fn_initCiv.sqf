@@ -19,7 +19,7 @@ if(life_is_alive && !life_is_arrested) then {
 	if(!life_is_alive && !life_is_arrested) then {
 		if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_positionStrict"),1)) then {
 			_handle = [] spawn life_fnc_civLoadout;
-			waitUntil {scriptDone _handle}; CASH = 0;
+			waitUntil {scriptDone _handle}; life_cash = 0;
 		};
 		[] call life_fnc_spawnMenu;
 		waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.

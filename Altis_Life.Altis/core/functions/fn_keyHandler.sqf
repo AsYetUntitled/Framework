@@ -21,7 +21,7 @@ _mapKey = SEL(actionKeys "ShowMap",0);
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
 //Vault handling...
-if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute") || _code in (actionKeys "SitDown") || _code in (actionKeys "Throw") || _code in (actionKeys "GetIn") || _code in (actionKeys "GetOut") || _code in (actionKeys "Fire") || _code in (actionKeys "ReloadMagazine") || _code in [16,18]) && ((player GVAR ["restrained",false]) || (player GVAR ["playerSurrender",false]) || life_isknocked || life_istazed)) exitWith {
+if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute") || _code in (actionKeys "SitDown") || _code in (actionKeys "Throw") || _code in (actionKeys "GetIn") || _code in (actionKeys "GetOut") || _code in (actionKeys "Fire") || _code in (actionKeys "ReloadMagazine") || _code in [16,18]) && ((player getVariable ["restrained",false]) || (player getVariable ["playerSurrender",false]) || life_isknocked || life_istazed)) exitWith {
 	true;
 };
 
@@ -69,8 +69,8 @@ switch (_code) do {
 	//Surrender (Shift + B)
 	case 48: {
 		if(_shift) then {
-			if(player GVAR ["playerSurrender",false]) then {
-				player SVAR ["playerSurrender",false,true];
+			if(player getVariable ["playerSurrender",false]) then {
+				player setVariable ["playerSurrender",false,true];
 			} else {
 				[] spawn life_fnc_surrender;
 			};
@@ -96,7 +96,7 @@ switch (_code) do {
 		};
 
 		if(!_shift && _ctrlKey && !isNil "life_curWep_h" && {!(EQUAL(life_curWep_h,""))}) then {
-			if(life_curWep_h in [RIFLE,LAUNCHER,PISTOL]) then {
+			if(life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
 				player selectWeapon life_curWep_h;
 			};
 		};
@@ -117,7 +117,7 @@ switch (_code) do {
 	//Restraining (Shift + R)
 	case 19: {
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject GVAR "Escorting")} && {!(cursorObject GVAR "restrained")} && {speed cursorObject < 1}) then {
+		if(_shift && playerSide == west && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
 			[] call life_fnc_restrainAction;
 		};
 	};
@@ -126,7 +126,7 @@ switch (_code) do {
 	case 34: {
 		if(_shift) then {_handled = true;};
 		if(_shift && playerSide == civilian && !isNull cursorObject && cursorObject isKindOf "Man" && isPlayer cursorObject && alive cursorObject && cursorObject distance player < 4 && speed cursorObject < 1) then {
-			if((animationState cursorObject) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player GVAR ["restrained",false]) && !life_istazed && !life_isknocked) then {
+			if((animationState cursorObject) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable ["restrained",false]) && !life_istazed && !life_isknocked) then {
 				[cursorObject] spawn life_fnc_knockoutAction;
 			};
 		};
@@ -166,7 +166,7 @@ switch (_code) do {
 		//If cop run checks for turning lights on.
 		if(_shift && playerSide in [west,independent]) then {
 			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
-				if(!isNil {vehicle player GVAR "lights"}) then {
+				if(!isNil {vehicle player getVariable "lights"}) then {
 					if(playerSide == west) then {
 						[vehicle player] call life_fnc_sirenLights;
 					} else {
@@ -182,7 +182,7 @@ switch (_code) do {
 
 	//Y Player Menu
 	case 21: {
-		if(!_alt && !_ctrlKey && !dialog && !(player GVAR ["restrained",false]) && {!life_action_inUse}) then {
+		if(!_alt && !_ctrlKey && !dialog && !(player getVariable ["restrained",false]) && {!life_action_inUse}) then {
 			if(!_shift) then {
 				[] call life_fnc_p_openMenu;
 			} else {
@@ -201,13 +201,13 @@ switch (_code) do {
 			};
 
 			_veh = vehicle player;
-			if(isNil {_veh GVAR "siren"}) then {_veh SVAR ["siren",false,true];};
-			if((_veh GVAR "siren")) then {
+			if(isNil {_veh getVariable "siren"}) then {_veh setVariable ["siren",false,true];};
+			if((_veh getVariable "siren")) then {
 				titleText [localize "STR_MISC_SirensOFF","PLAIN"];
-				_veh SVAR ["siren",false,true];
+				_veh setVariable ["siren",false,true];
 			} else {
 				titleText [localize "STR_MISC_SirensON","PLAIN"];
-				_veh SVAR ["siren",true,true];
+				_veh setVariable ["siren",true,true];
 				if(playerSide == west) then {
 					[_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
 				} else {
@@ -252,14 +252,14 @@ switch (_code) do {
 				if(_veh in life_vehicles && player distance _veh < 8) then {
 					_door = [_veh] call life_fnc_nearestDoor;
 					if(EQUAL(_door,0)) exitWith {hint localize "STR_House_Door_NotNear"};
-					_locked = _veh GVAR [format["bis_disabled_Door_%1",_door],0];
+					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
 
 					if(EQUAL(_locked,0)) then {
-						_veh SVAR [format["bis_disabled_Door_%1",_door],1,true];
+						_veh setVariable [format["bis_disabled_Door_%1",_door],1,true];
 						_veh animate [format["door_%1_rot",_door],0];
 						systemChat localize "STR_House_Door_Lock";
 					} else {
-						_veh SVAR [format["bis_disabled_Door_%1",_door],0,true];
+						_veh setVariable [format["bis_disabled_Door_%1",_door],0,true];
 						_veh animate [format["door_%1_rot",_door],1];
 						systemChat localize "STR_House_Door_Unlock";
 					};

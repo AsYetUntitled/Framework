@@ -17,7 +17,7 @@ _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
 _spawntext = _this select 6;
-_ownerID = _unit GVAR["life_clientID",-1];
+_ownerID = _unit getVariable["life_clientID",-1];
 _unit_return = _unit;
 _name = name _unit;
 _side = side _unit;
@@ -110,7 +110,7 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 // Avoid problems if u keep changing which stuff to save!
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
 	_vehicle setVariable["Trunk",_trunk,true];
-	if (_wasIllegal) then { 
+	if (_wasIllegal) then {
 		private "_location";
 		if(typeName _sp == "STRING") then {
 			_location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;

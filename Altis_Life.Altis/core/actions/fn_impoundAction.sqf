@@ -13,7 +13,7 @@ if(!((KINDOF_ARRAY(_vehicle,_filters)))) exitWith {};
 if(player distance cursorObject > 10) exitWith {};
 if(_vehicle getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 
-_vehicleData = _vehicle GVAR ["vehicle_info_owners",[]];
+_vehicleData = _vehicle getVariable ["vehicle_info_owners",[]];
 if(EQUAL((count _vehicleData),0)) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 _vehicleName = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _vehicle),"displayName");
 _price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,(typeOf _vehicle),"price");
@@ -24,7 +24,7 @@ _upp = localize "STR_NOTF_Impounding";
 //Setup our progress bar.
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
-_ui = GVAR_UINS "life_progress";
+_ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format["%2 (1%1)...","%",_upp];
@@ -65,12 +65,12 @@ if(EQUAL(count crew _vehicle,0)) then {
 			[0,"STR_NOTF_HasImpounded",true,[profileName,SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 			if(_vehicle in life_vehicles) then {
 				hint format[localize "STR_NOTF_OwnImpounded",[_value] call life_fnc_numberText,_type];
-				SUB(BANK,_value);
+				SUB(life_atmbank,_value);
 			} else {
 				hint format[localize "STR_NOTF_Impounded",[_value] call life_fnc_numberText,_type];
-				ADD(BANK,_value);
+				ADD(life_atmbank,_value);
 			};
-			if(BANK < 0) then {BANK = 0;};
+			if(life_atmbank < 0) then {life_atmbank = 0;};
 			[1] call SOCK_fnc_updatePartial;
 	};
 } else {

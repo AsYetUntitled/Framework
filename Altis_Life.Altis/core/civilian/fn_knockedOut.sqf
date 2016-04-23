@@ -29,4 +29,4 @@ player playMoveNow "AmovPpneMstpSrasWrflDnon";
 detach player;
 deleteVehicle _obj;
 life_isknocked = false;
-player SVAR ["robbed",FALSE,TRUE];
+player setVariable ["robbed",FALSE,TRUE];
