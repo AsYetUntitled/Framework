@@ -249,6 +249,7 @@
 			<Spanish>Cafeteria de Gasolinera</Spanish>
 			<Russian></Russian>
 			<German>Tankstellen Café</German>
+			<Portuguese>Loja de Conveniência</Portuguese>
 			<Polish>Caffe OLLEN</Polish>
 		</Key>
 	</Package>
@@ -3150,6 +3151,7 @@
 			<Czech>Nemůžeš sekat vozidla, zatímco hráč je blízko!</Czech>
 			<Spanish>No puedes vender este vehículo mientras hay un jugador cerca!</Spanish>
 			<Russian></Russian>
+			<Portuguese>Você não pode usar o desmanche enquanto um jogador está próximo!</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_Restrained">
 			<Original>%1 was restrained by %2</Original>
@@ -3407,6 +3409,7 @@
 			<Spanish>No tienes suficientes objetos!</Spanish>
 			<Russian></Russian>
 			<French>Vous n'avez pas assez d'item!</French>
+			<Portuguese>Você não tem itens suficientes!</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_ItemProcess">
 			<Original>You have processed your item(s)!</Original>
@@ -3415,6 +3418,7 @@
 			<Russian></Russian>
 			<French>Vous avez traité vos item(s)!</French>
 			<Italian>Hai processato i tuoi oggetti!</Italian>
+			<Portuguese>Você processou seu(s) item(s)</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_RapidAction">
 			<Original>You can't rapidly use action keys!</Original>
@@ -4090,6 +4094,7 @@
 			<German>Du hast deinen Waffenschein wegen Mordes verloren.</German>
 			<French>Vous avez perdu votre permis d'armes à feu pour homicide involontaire.</French>
 			<Italian>Hai perso il tuo Porto d'Armi a causa di un omicidio</Italian>
+			<Portuguese>Você perdeu suas licenças de porte de arma por cometer homicídio.</Portuguese>
 			<Polish>Straciłeś pozwolenie na broń z uwagi na zabijanie ludzi z broni palnej</Polish>
 		</Key>
 		<Key ID="STR_Civ_RobFail">
@@ -4470,6 +4475,7 @@
 			<Czech>Nic nezákonného v tomto kontejneru</Czech>
 			<Spanish>Nada ilegal en este contenedor</Spanish>
 			<Russian></Russian>
+			<Portuguese>Nada ilegal dentro do container</Portuguese>
 			<French>Rien d'illégal dans ce container</French>
 		</Key>
 		<Key ID="STR_Cop_VehEmpty">
@@ -5046,6 +5052,7 @@
 			<Spanish>No hay casas cerca de ti.</Spanish>
 			<Russian></Russian>
 			<French>Il n'y a aucune maison près de vous.</French>
+			<Portuguese>Não há casas perto  de você.</Portuguese>
 		</Key>
 		<Key ID="STR_House_Container_House_Near_Owner">
 			<Original>You are not the owner of the house.</Original>
@@ -5053,6 +5060,7 @@
 			<Spanish>No eres el dueño de la casa.</Spanish>
 			<Russian></Russian>
 			<French>Vous n'êtes pas le propriétaire de la maison.</French>
+			<Portuguese>Você não é o dono da casa.</Portuguese>
 		</Key>
 		<Key ID="STR_House_Door_Unlock">
 			<Original>You have unlocked the door.</Original>
@@ -5192,6 +5200,7 @@
 			<Spanish>La puerta ya esta cerrada con llave!</Spanish>
 			<Russian></Russian>
 			<German>Die Tür ist bereits verriegelt!</German>
+			<Portuguese>Esta porta já está trancada!</Portuguese>
 			<Polish>Drzwi są już zablokowane!</Polish>
 		</Key>
 		<Key ID="STR_House_Raid_Progress">
@@ -7278,6 +7287,7 @@
 			<Spanish>Confirmación de guardar vehíchulo</Spanish>
 			<Russian></Russian>
 			<French>Stockez votre vehicule confirmation</French>
+			<Portuguese>Confirmação para guardar o veículo</Portuguese>
 		</Key>
 		<Key ID="STR_GUI_YourVeh">
 			<Original>Your Vehicles</Original>
@@ -7709,6 +7719,7 @@
 			<Spanish>Buscar Contenedor</Spanish>
 			<Russian></Russian>
 			<French>Fouiller Container</French>
+			<Portuguese>Vasculhar Container</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_PullOut">
 			<Original>Pullout Players</Original>
