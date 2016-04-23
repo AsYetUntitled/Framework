@@ -3863,7 +3863,15 @@
 			<German>Sie haben kein Fahrzeug auswählen.</German>
 		</Key>
 		<Key ID="STR_NOTF_noVehOwned">
-			<Original>You don't own any vehicles.</Original>
+			<Original>You do not own any vehicles.</Original>
+			<Czech>Nevlastníte žádná vozidla.</Czech>
+			<French>Vous ne possédez pas de véhicules.</French>
+			<Spanish>Usted no posee ningún vehículo.</Spanish>
+			<Italian>Non possedete tutti i veicoli.</Italian>
+			<Polish>Nie posiada żadnych pojazdów.</Polish>
+			<Portuguese>Você não possui quaisquer veículos.</Portuguese>
+			<Russian>Вы не являетесь владельцем каких-либо транспортных средств.</Russian>
+			<German>Sie besitzen keine Fahrzeuge.</German>
 		</Key>
 		<Key ID="STR_NOTF_didNotSelectPlayer">
 			<Original>You did not select a player.</Original>
