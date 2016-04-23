@@ -77,6 +77,7 @@ while {player GVAR  "restrained"} do {
 		{
 			if (_vehicle turretUnit [_x select 0] == player) then {
 				player action["eject",vehicle player];
+				sleep 1;
 				player moveInCargo _vehicle;
 			};
 		}forEach _turrets;
