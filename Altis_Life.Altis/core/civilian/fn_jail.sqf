@@ -17,9 +17,9 @@ if(_unit != player) exitWith {}; //Dafuq?
 if(life_is_arrested) exitWith {}; //Dafuq i'm already arrested
 _illegalItems = LIFE_SETTINGS(getArray,"jail_seize_vItems");
 
-player setVariable ["restrained",false,true];
-player setVariable ["Escorting",false,true];
-player setVariable ["transporting",false,true];
+player SVAR ["restrained",false,true];
+player SVAR ["Escorting",false,true];
+player SVAR ["transporting",false,true];
 
 titleText[localize "STR_Jail_Warn","PLAIN"];
 hint localize "STR_Jail_LicenseNOTF";

@@ -13,7 +13,7 @@ _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format["%1",_vehicle]) select 0;
 _vehicleLife = _vehicle;
 _vid = lbValue[2802,(lbCurSel 2802)];
-_pid = getPlayerUID player;
+_pid = steamid;
 
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
 if((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
@@ -53,14 +53,14 @@ if(life_HC_isActive) then {
 };
 
 hint format[localize "STR_Garage_SoldCar",[_sellPrice] call life_fnc_numberText];
-ADD(life_atmbank,_sellPrice);
+ADD(BANK,_sellPrice);
 [1] call SOCK_fnc_updatePartial;
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
 	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
-		advanced_log = format ["sold vehicle %1 for %2. Bank Balance: %3  On Hand Balance: %4",_vehicleLife,[_sellPrice] call life_fnc_numberText,[life_atmbank] call life_fnc_numberText,[life_cash] call life_fnc_numberText];
+		advanced_log = format ["sold vehicle %1 for %2. Bank Balance: %3  On Hand Balance: %4",_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 	} else {
-		advanced_log = format ["%1 - %2 sold vehicle %3 for %4. Bank Balance: %5  On Hand Balance: %6",profileName,(getPlayerUID player),_vehicleLife,[_sellPrice] call life_fnc_numberText,[life_atmbank] call life_fnc_numberText,[life_cash] call life_fnc_numberText];
+		advanced_log = format ["%1 - %2 sold vehicle %3 for %4. Bank Balance: %5  On Hand Balance: %6",profileName,(getPlayerUID player),_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 		};
 	publicVariableServer "advanced_log";
 };

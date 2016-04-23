@@ -10,17 +10,17 @@
 */
 private["_mode","_packet","_array","_flag"];
 _mode = param [0,0,[0]];
-_packet = [getPlayerUID player,playerSide,nil,_mode];
+_packet = [steamid,playerSide,nil,_mode];
 _array = [];
 _flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 
 switch(_mode) do {
 	case 0: {
-		_packet set[2,life_cash];
+		_packet set[2,CASH];
 	};
 
 	case 1: {
-		_packet set[2,life_atmbank];
+		_packet set[2,BANK];
 	};
 
 	case 2: {
@@ -47,8 +47,8 @@ switch(_mode) do {
 	};
 
 	case 6: {
-		_packet set[2,life_cash];
-		_packet set[4,life_atmbank];
+		_packet set[2,CASH];
+		_packet set[4,BANK];
 	};
 
 	case 7: {

@@ -2,7 +2,7 @@
 /*
 	File: fn_handleInv.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Do I really need one?
 */
@@ -25,9 +25,9 @@ _value = ITEM_VALUE(_item);
 if(_math) then {
 	//Lets add!
 	if((life_carryWeight + _weight) <= life_maxWeight) then {
-		missionNamespace setVariable [_var,(_value + _num)];
-
-		if((missionNamespace getVariable _var) > _value) then {
+		SVAR_MNS [_var,(_value + _num)];
+		
+		if((GVAR_MNS _var) > _value) then {
 			life_carryWeight = life_carryWeight + _weight;
 			_return = true;
 		} else {
@@ -37,9 +37,9 @@ if(_math) then {
 } else {
 	//Lets SUB!
 	if((_value - _num) < 0) then { _return = false;} else {
-		missionNamespace setVariable[_var,(_value - _num)];
-
-		if((missionNamespace getVariable _var) < _value) then {
+		SVAR_MNS[_var,(_value - _num)];
+		
+		if((GVAR_MNS _var) < _value) then {
 			life_carryWeight = life_carryWeight - _weight;
 			_return = true;
 		} else {_return = false;};

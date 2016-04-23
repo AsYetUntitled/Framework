@@ -21,7 +21,7 @@ if(isNil "_this") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if(EQUAL(typeName _this,"STRING")) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if(EQUAL(count _this,0)) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if(EQUAL(SEL(_this,0),"Error")) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
-if(!(EQUAL(getPlayerUID player,SEL(_this,0)))) exitWith {[] call SOCK_fnc_dataQuery;};
+if(!(EQUAL(steamid,SEL(_this,0)))) exitWith {[] call SOCK_fnc_dataQuery;};
 
 //Lets make sure some vars are not set before hand.. If they are get rid of them, hopefully the engine purges past variables but meh who cares.
 if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_coplevel" OR !isNil "life_donorlevel")) exitWith {
@@ -32,8 +32,8 @@ if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_coplevel" OR !isNil "l
 };
 
 //Parse basic player information.
-life_cash = parseNumber (SEL(_this,2));
-life_atmbank = parseNumber (SEL(_this,3));
+CASH = parseNumber (SEL(_this,2));
+BANK = parseNumber (SEL(_this,3));
 CONST(life_adminlevel,parseNumber (SEL(_this,4)));
 if(EQUAL(LIFE_SETTINGS(getNumber,"donor_level"),1)) then {
 	CONST(life_donorlevel,parseNumber (SEL(_this,5)));
@@ -43,7 +43,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"donor_level"),1)) then {
 
 //Loop through licenses
 if(count (SEL(_this,6)) > 0) then {
-	{missionNamespace setVariable [SEL(_x,0),SEL(_x,1)];} forEach (SEL(_this,6));
+	{SVAR_MNS [SEL(_x,0),SEL(_x,1)];} forEach (SEL(_this,6));
 };
 
 life_gear = SEL(_this,8);

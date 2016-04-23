@@ -22,7 +22,7 @@ for "_i" from 1 to _doors do {
 };
 
 if(EQUAL(_door,0)) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
-_doorN = _building getVariable [format["bis_disabled_Door_%1",_door],0];
+_doorN = _building GVAR [format["bis_disabled_Door_%1",_door],0];
 if(EQUAL(_doorN,1)) exitWith {hint localize "STR_House_FedDoor_Locked"};
 life_action_inUse = true;
 
@@ -31,7 +31,7 @@ closeDialog 0;
 disableSerialization;
 _title = localize "STR_Cop_RepairingDoor";
 5 cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
+_ui = GVAR_UINS "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -53,7 +53,7 @@ for "_i" from 0 to 1 step 0 do {
 	sleep 0.26;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
-		_ui = uiNamespace getVariable "life_progress";
+		_ui = GVAR_UINS "life_progress";
 	};
 	_cP = _cP + _cpRate;
 	_progressBar progressSetPosition _cP;
@@ -70,11 +70,11 @@ if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR
 life_action_inUse = false;
 
 _building animate [format["door_%1_rot",_door],0];
-_building setVariable [format["bis_disabled_Door_%1",_door],1,true]; //Lock the door.
+_building SVAR [format["bis_disabled_Door_%1",_door],1,true]; //Lock the door.
 
 _locked = true;
 for "_i" from 1 to _doors do {
-	if((_building getVariable [format["bis_disabled_Door_%1",_i],0]) == 0) exitWith {_locked = false};
+	if((_building GVAR [format["bis_disabled_Door_%1",_i],0]) == 0) exitWith {_locked = false};
 };
 
 if(_locked) then {

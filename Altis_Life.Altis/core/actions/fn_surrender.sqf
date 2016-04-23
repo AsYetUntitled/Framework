@@ -1,24 +1,24 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_surrender.sqf
-	Author:
+	Author: 
 
 	Description: Causes player to put their hands on their head.
 */
-if( player getVariable ["restrained",false] ) exitWith {};
-if( player getVariable ["Escorting",false] ) exitWith {};
+if( player GVAR ["restrained",false] ) exitWith {};
+if( player GVAR ["Escorting",false] ) exitWith {};
 if( vehicle player != player ) exitWith {};
 if( speed player > 1 ) exitWith {};
 
-if(player getVariable ["playerSurrender",false]) then {
-	player setVariable ["playerSurrender",false,true];
+if(player GVAR ["playerSurrender",false]) then {
+	player SVAR ["playerSurrender",false,true];
 } else {
-	player setVariable ["playerSurrender",true,true];
+	player SVAR ["playerSurrender",true,true];
 };
 
-while {player getVariable ["playerSurrender",false]} do {
+while {player GVAR ["playerSurrender",false]} do {
 	player playMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
-	if(!alive player OR (vehicle player) != player) then { player setVariable ["playerSurrender",false,true]; };
+	if(!alive player OR (vehicle player) != player) then { player SVAR ["playerSurrender",false,true]; };
 };
 
 player playMoveNow "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";

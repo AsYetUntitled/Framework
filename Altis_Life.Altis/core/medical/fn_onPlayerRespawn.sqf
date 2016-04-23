@@ -16,12 +16,12 @@ _containers = nearestObjects[getPosATL _corpse,["WeaponHolderSimulated"],5]; //F
 {deleteVehicle _x;} forEach _containers; //Delete the containers.
 
 //Set some vars on our new body.
-_unit setVariable ["restrained",false,true];
-_unit setVariable ["Escorting",false,true];
-_unit setVariable ["transporting",false,true];
-_unit setVariable ["playerSurrender",false,true];
-_unit setVariable ["steam64id",getPlayerUID player,true]; //Reset the UID.
-_unit setVariable ["realname",profileName,true]; //Reset the players name.
+_unit SVAR ["restrained",false,true];
+_unit SVAR ["Escorting",false,true];
+_unit SVAR ["transporting",false,true];
+_unit SVAR ["playerSurrender",false,true];
+_unit SVAR ["steam64id",steamid,true]; //Reset the UID.
+_unit SVAR ["realname",profileName,true]; //Reset the players name.
 
 _unit addRating 1e12; //Set our rating to a high value, this is for a ARMA engine thing.
 player playMoveNow "AmovPpneMstpSrasWrflDnon";

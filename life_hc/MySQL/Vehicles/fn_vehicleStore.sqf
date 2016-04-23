@@ -13,7 +13,7 @@ _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;
 _unit = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 _storetext = [_this,3,"",[""]] call BIS_fnc_param;
-_ownerID = _unit getVariable["life_clientID",-1];
+_ownerID = _unit GVAR["life_clientID",-1];
 _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
 if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.
@@ -84,7 +84,7 @@ if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_virtualItems"), 1)) then {
 		_blacklist = false;
 		_profileQuery = format["SELECT name FROM players WHERE playerid='%1'", _uid];
 		_profileName = [_profileQuery, 2] call DB_fnc_asyncCall;
-		_profileName = _profileName select 0;
+		_profileName = _profileName select 0; 
 		{
 			_var = _x select 0;
 			_isIllegal = M_CONFIG(getNumber, "VirtualItems", _var, "illegal");

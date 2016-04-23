@@ -35,7 +35,7 @@ if (_car distance player > 10 && vehicle player != player) exitWith {
 	closeDialog 0;
 };
 
-if ((life_atmbank - (_fueltoput * life_fuelPrices))> 0)then {
+if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
 	life_is_processing = true;
 	//Setup our progress bar.
 	disableSerialization;
@@ -56,8 +56,8 @@ if ((life_atmbank - (_fueltoput * life_fuelPrices))> 0)then {
 		if(_cP >= 1) exitWith {};
 		if(player distance _car > 10) exitWith {};
 		if(vehicle player != player) exitWith {};
-		if !((life_atmbank - round(0.01 * _totalcost))> 0) exitWith {};
-		life_atmbank = life_atmbank - round((0.01 * _totalcost));
+		if !((BANK - round(0.01 * _totalcost))> 0) exitWith {};
+		BANK = BANK - round((0.01 * _totalcost));
 		_tp = _tp +1;
 		if (_tp == 9) then {
 			_tp = 0;

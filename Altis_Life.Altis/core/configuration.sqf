@@ -49,12 +49,12 @@ life_civ_position = [];
 life_markers = false;
 
 //Settings
-life_settings_enableSidechannel = profileNamespace getVariable["life_enableSidechannel",true];
-life_settings_tagson = profileNamespace getVariable["life_settings_tagson",true];
-life_settings_revealObjects = profileNamespace getVariable["life_settings_revealObjects",true];
-life_settings_viewDistanceFoot = profileNamespace getVariable["life_viewDistanceFoot",1250];
-life_settings_viewDistanceCar = profileNamespace getVariable["life_viewDistanceCar",1250];
-life_settings_viewDistanceAir = profileNamespace getVariable["life_viewDistanceAir",1250];
+life_settings_enableSidechannel = GVAR_PNAS["life_enableSidechannel",true];
+life_settings_tagson = GVAR_PNAS["life_settings_tagson",true];
+life_settings_revealObjects = GVAR_PNAS["life_settings_revealObjects",true];
+life_settings_viewDistanceFoot = GVAR_PNAS["life_viewDistanceFoot",1250];
+life_settings_viewDistanceCar = GVAR_PNAS["life_viewDistanceCar",1250];
+life_settings_viewDistanceAir = GVAR_PNAS["life_viewDistanceAir",1250];
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
@@ -78,7 +78,7 @@ life_is_alive = false;
 life_delivery_in_progress = false;
 life_thirst = 100;
 life_hunger = 100;
-life_cash = 0;
+CASH = 0;
 
 life_istazed = false;
 life_isknocked = false;
@@ -89,7 +89,7 @@ life_vehicles = [];
 */
 //Setup variable inv vars.
 {
-	missionNamespace setVariable [ITEM_VARNAME(configName _x),0];
+	SVAR_MNS [ITEM_VARNAME(configName _x),0];
 } forEach ("true" configClasses (missionConfigFile >> "VirtualItems"));
 
 /* Setup the BLAH! */
@@ -97,5 +97,5 @@ life_vehicles = [];
 	_varName = getText(_x >> "variable");
 	_sideFlag = getText(_x >> "side");
 
-	missionNamespace setVariable [LICENSE_VARNAME(_varName,_sideFlag),false];
+	SVAR_MNS [LICENSE_VARNAME(_varName,_sideFlag),false];
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));

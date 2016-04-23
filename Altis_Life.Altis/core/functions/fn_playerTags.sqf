@@ -15,10 +15,10 @@ if(visibleMap OR {!alive player} OR {dialog}) exitWith {
 	500 cutText["","PLAIN"];
 };
 
-_ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
+_ui = GVAR_UINS ["Life_HUD_nameTags",displayNull];
 if(isNull _ui) then {
 	500 cutRsc["Life_HUD_nameTags","PLAIN"];
-	_ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
+	_ui = GVAR_UINS ["Life_HUD_nameTags",displayNull];
 };
 
 _units = nearestObjects[(visiblePosition player),["Man","Land_Pallet_MilBoxes_F","Land_Sink_F"],50];
@@ -29,7 +29,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 {
 	private "_text";
 	_idc = _ui displayCtrl (iconID + _forEachIndex);
-	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && alive _x && {!isNil {_x getVariable "realname"}}) then {
+	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && alive _x && {!isNil {_x GVAR "realname"}}) then {
 		_pos = switch(typeOf _x) do {
 			case "Land_Pallet_MilBoxes_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
 			case "Land_Sink_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 2]};
@@ -40,8 +40,8 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 		if(!((headgear _x) in _masks OR (goggles _x) in _masks OR (uniform _x) in _masks)) then {
 			if(count _sPos > 1 && {_distance < 15}) then {
 				_text = switch (true) do {
-					case (_x in (units group player) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x getVariable ["realname",name _x])];};
-					case (side _x == west && {!isNil {_x getVariable "rank"}}): {format["<img image='%1' size='1'></img> %2",switch ((_x getVariable "rank")) do {
+					case (_x in (units grpPlayer) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x GVAR ["realname",name _x])];};
+					case (side _x == west && {!isNil {_x GVAR "rank"}}): {format["<img image='%1' size='1'></img> %2",switch ((_x GVAR "rank")) do {
 						case 2: {"\a3\ui_f\data\gui\cfg\Ranks\corporal_gs.paa"};
 						case 3: {"\a3\ui_f\data\gui\cfg\Ranks\sergeant_gs.paa"};
 						case 4: {"\a3\ui_f\data\gui\cfg\Ranks\lieutenant_gs.paa"};
@@ -50,13 +50,13 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 						case 7: {"\a3\ui_f\data\gui\cfg\Ranks\colonel_gs.paa"};
 						case 8: {"\a3\ui_f\data\gui\cfg\Ranks\general_gs.paa"};
 						default {"\a3\ui_f\data\gui\cfg\Ranks\private_gs.paa"};
-						},_x getVariable ["realname",name _x]]};
-					case (side _x == independent): {format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t> %1",_x getVariable ["realname",name _x]]};
+						},_x GVAR ["realname",name _x]]};
+					case (side _x == independent): {format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t> %1",_x GVAR ["realname",name _x]]};
 					default {
-						if(!isNil {(group _x) getVariable "gang_name"}) then {
-							format["%1<br/><t size='0.8' color='#B6B6B6'>%2</t>",_x getVariable ["realname",name _x],(group _x) getVariable ["gang_name",""]];
+						if(!isNil {(group _x) GVAR "gang_name"}) then {
+							format["%1<br/><t size='0.8' color='#B6B6B6'>%2</t>",_x GVAR ["realname",name _x],(group _x) GVAR ["gang_name",""]];
 						} else {
-							_x getVariable ["realname",name _x];
+							_x GVAR ["realname",name _x];
 						};
 					};
 				};

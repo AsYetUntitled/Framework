@@ -2,7 +2,7 @@
 /*
 	File: fn_searchClient.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Searches the player and he returns information back to the player.
 */
@@ -26,7 +26,7 @@ _robber = false;
 } forEach ("getNumber(_x >> 'illegal') isEqualTo 1" configClasses (missionConfigFile >> "VirtualItems"));
 
 if(!life_use_atm) then  {
-	life_cash = 0;
+	CASH = 0;
 	_robber = true;
 };
 

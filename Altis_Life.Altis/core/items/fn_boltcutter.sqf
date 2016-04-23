@@ -14,7 +14,7 @@ if(!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNe
 if(((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) && ({side _x == west} count playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
 	hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))]
 };
-if((typeOf _building) == "Land_Research_house_V1_F" && (nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) getVariable ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
+if((typeOf _building) == "Land_Research_house_V1_F" && (nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) GVAR ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
 if(isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 
 _doors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _building),"numberOfDoors");
@@ -26,7 +26,7 @@ for "_i" from 1 to _doors do {
 		if(player distance _worldSpace < 5) exitWith {_door = _i;};
 };
 if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
-if((_building getVariable [format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+if((_building GVAR [format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
 if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then {
 	[[1,2],"STR_ISTR_Bolt_AlertFed",true,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
@@ -39,7 +39,7 @@ life_action_inUse = true;
 disableSerialization;
 _title = localize "STR_ISTR_Bolt_Process";
 5 cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
+_ui = GVAR_UINS "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -61,7 +61,7 @@ for "_i" from 0 to 1 step 0 do {
 	sleep 0.26;
 	if(isNull _ui) then {
 		5 cutRsc ["life_progress","PLAIN"];
-		_ui = uiNamespace getVariable "life_progress";
+		_ui = GVAR_UINS "life_progress";
 		_progressBar = _ui displayCtrl 38201;
 		_titleText = _ui displayCtrl 38202;
 	};
@@ -78,7 +78,7 @@ for "_i" from 0 to 1 step 0 do {
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;};
-if((player getVariable ["restrained",false])) exitWith {life_action_inUse = false;};
+if((player GVAR ["restrained",false])) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 life_boltcutter_uses = life_boltcutter_uses + 1;
 life_action_inUse = false;
@@ -88,7 +88,7 @@ if(life_boltcutter_uses >= 5) then {
 	life_boltcutter_uses = 0;
 };
 
-_building setVariable [format["bis_disabled_Door_%1",_door],0,true]; //Unlock the door.
+_building SVAR [format["bis_disabled_Door_%1",_door],0,true]; //Unlock the door.
 _building setVariable["locked",false,true];
 
 if(life_HC_isActive) then {
