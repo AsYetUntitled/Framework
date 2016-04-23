@@ -13,7 +13,7 @@ _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format["%1",_vehicle]) select 0;
 _vehicleLife = _vehicle;
 _vid = lbValue[2802,(lbCurSel 2802)];
-_pid = steamid;
+_pid = getPlayerUID player;
 _unit = player;
 _spawntext = localize "STR_Garage_spawn_Success";
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
@@ -34,7 +34,7 @@ switch(playerSide) do {
 _price = _purchasePrice * _storageFee;
 
 if(!(EQUAL(typeName _price,typeName 0)) OR _price < 1) then {_price = 1000};
-if(BANK < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
+if(life_atmbank < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
 
 if(EQUAL(typeName life_garage_sp,typeName [])) then {
 	if(life_HC_isActive) then {
@@ -59,6 +59,6 @@ if(EQUAL(typeName life_garage_sp,typeName [])) then {
 };
 
 hint localize "STR_Garage_SpawningVeh";
-SUB(BANK,_price);
+SUB(life_atmbank,_price);
 [1] call SOCK_fnc_updatePartial;
 closeDialog 0;

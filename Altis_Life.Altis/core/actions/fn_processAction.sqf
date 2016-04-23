@@ -89,7 +89,7 @@ if(EQUAL(_oldVal,0)) exitWith {};
 //Setup our progress bar.
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
-_ui = GVAR_UINS "life_progress";
+_ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format["%2 (1%1)...","%",_upp];
@@ -138,7 +138,7 @@ if(_hasLicense) then {
 	hint localize "STR_NOTF_ItemProcess";
 	life_is_processing = false;
 } else {
-	if(CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(life_cash < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 
 	for "_i" from 0 to 1 step 0 do {
 		sleep  0.9;
@@ -150,7 +150,7 @@ if(_hasLicense) then {
 	};
 
 	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(life_cash < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	_IndexNow = -1;
 	_ItemMax = [];
 	{
@@ -179,6 +179,6 @@ if(_hasLicense) then {
 	} forEach _newItem;
 	5 cutText ["","PLAIN"];
 	hint localize "STR_NOTF_ItemProcess";
-	SUB(CASH,_cost);
+	SUB(life_cash,_cost);
 	life_is_processing = false;
 };

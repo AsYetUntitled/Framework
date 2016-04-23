@@ -9,7 +9,7 @@
 private["_unit","_bomb"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 // checks
-if(isNil "_unit" || isNull _unit || !isPlayer _unit || life_isknocked || life_istazed || (vehicle _unit != _unit) || !alive _unit || (_unit GVAR ["restrained",false])) exitWith {};
+if(isNil "_unit" || isNull _unit || !isPlayer _unit || life_isknocked || life_istazed || (vehicle _unit != _unit) || !alive _unit || (_unit getVariable ["restrained",false])) exitWith {};
 if(vest _unit != "V_HarnessOGL_gry") exitWith {hint localize "STR_NOTF_notWearingVest";};
 if (player distance (getMarkerPos "civ_spawn_1") < 250 OR player distance (getMarkerPos "civ_spawn_2") < 250 OR player distance (getMarkerPos "civ_spawn_3") < 250 OR player distance (getMarkerPos "civ_spawn_4") < 250) exitWith {hint localize "STR_NOTF_cannotDetonateBombHere";};
 // Bomb

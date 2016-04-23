@@ -34,10 +34,10 @@ for "_i" from 1 to 125 do {
 				if(!(_x in _SOCK_Functions)) then {
 					if(!(_x in _DB_Functions)) then {
 						if(!(_x in _BIS_UI_Functions)) then {
-							_varType = typeName (GVAR_UINS _x);
+							_varType = typeName (uiNamespace getVariable _x);
 							_find = _allowedVariables find [_x,_varType];
 							if(EQUAL(_find,-1)) then {
-								SVAR_UINS [_x,nil];
+								uiNamespace setVariable [_x,nil];
 							};
 						};
 					};
@@ -55,7 +55,7 @@ _checkFunction = {
 				if(!(_x in _SERVER_Functions)) then {
 					if(!(_x in _SOCK_Functions)) then {
 						if(!(_x in _DB_Functions)) then {
-							_varType = typeName (GVAR_MNS _x);
+							_varType = typeName (missionNamespace getVariable _x);
 							_find = _allowedVariables find [_x,_varType];
 							if(EQUAL(_find,-1)) then {
 								diag_log format["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
@@ -77,7 +77,7 @@ _uiCheckFunction = {
 					if(!(_x in _SOCK_Functions)) then {
 						if(!(_x in _DB_Functions)) then {
 							if(!(_x in _BIS_UI_Functions)) then {
-								_varType = typeName (GVAR_UINS _x);
+								_varType = typeName (uiNamespace getVariable _x);
 								_find = _allowedVariables_UI find [_x,_varType];
 								if(EQUAL(_find,-1)) then {
 									diag_log format["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];

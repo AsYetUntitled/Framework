@@ -4,7 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Inserts the gang into the database.
 */
@@ -67,4 +67,4 @@ _query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
 
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-_group SVAR ["gang_id",SEL(_queryResult,0),true];
+_group setVariable ["gang_id",SEL(_queryResult,0),true];

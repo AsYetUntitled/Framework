@@ -19,8 +19,8 @@ _priceTag ctrlSetStructuredText parseText "";
 _itemList = ((findDisplay 38400) displayCtrl 38403);
 lbClear _itemList;
 
-if((GVAR_UINS ["Weapon_Magazine",0]) == 1 OR (GVAR_UINS ["Weapon_Accessories",0]) == 1) then {
-	if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
+if((uiNamespace getVariable ["Weapon_Magazine",0]) == 1 OR (uiNamespace getVariable ["Weapon_Accessories",0]) == 1) then {
+	if((uiNamespace getVariable ["Weapon_Magazine",0]) == 1) then {
 		_config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
 		{
 			if(SEL(_x,0) in (uiNamespace getVariable ["Magazine_Array",[]])) then {

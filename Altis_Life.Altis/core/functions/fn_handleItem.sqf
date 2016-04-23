@@ -206,7 +206,7 @@ if(_bool) then {
 									player addItem _item;
 								} else {
 									private["_wepItems","_action","_slotTaken"];
-									_wepItems = switch(_type) do {case 1:{RIFLE_ITEMS}; case 2:{secondaryWeaponItems player}; case 3:{PISTOL_ITEMS}; default {["","",""]};};
+									_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
 									_slotTaken = false;
 
 									if(!(EQUAL(SEL(_wepItems,2),""))) then {_slotTaken = true;};
@@ -254,7 +254,7 @@ if(_bool) then {
 									player addItem _item;
 								} else {
 									private["_wepItems","_action","_slotTaken"];
-									_wepItems = switch(_type) do {case 1:{RIFLE_ITEMS}; case 2:{secondaryWeaponItems player}; case 3:{PISTOL_ITEMS}; default {["","",""]};};
+									_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
 									_slotTaken = false;
 
 									if(!(EQUAL(SEL(_wepItems,1),""))) then {_slotTaken = true;};
@@ -302,7 +302,7 @@ if(_bool) then {
 									player addItem _item;
 								} else {
 									private["_wepItems","_action","_slotTaken"];
-									_wepItems = switch(_type) do {case 1:{RIFLE_ITEMS}; case 2:{secondaryWeaponItems player}; case 3:{PISTOL_ITEMS}; default {["","",""]};};
+									_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
 									_slotTaken = false;
 
 									if(!(EQUAL(SEL(_wepItems,0),""))) then {_slotTaken = true;};
@@ -400,9 +400,9 @@ if(_bool) then {
 
 			if(_isgun) then {
 				switch(true) do {
-					case (EQUAL(RIFLE,_item)) : {_ispack = false;};
-					case (EQUAL(LAUNCHER,_item)) : {_ispack = false;};
-					case (EQUAL(PISTOL,_item)) : {_ispack = false;};
+					case (EQUAL(primaryWeapon player,_item)) : {_ispack = false;};
+					case (EQUAL(secondaryWeapon player,_item)) : {_ispack = false;};
+					case (EQUAL(handgunWeapon player,_item)) : {_ispack = false;};
 					case (_item in assignedItems player) : {_ispack = false;};
 					default {_ispack = true;};
 				};
@@ -484,8 +484,8 @@ if(_bool) then {
 					case 616: {player unassignItem _item; player removeItem _item;};
 					default {
 						switch (true) do {
-							case (_item in RIFLE_ITEMS) : {player removePrimaryWeaponItem _item;};
-							case (_item in PISTOL_ITEMS) : {player removeHandgunItem _item;};
+							case (_item in primaryWeaponItems player) : {player removePrimaryWeaponItem _item;};
+							case (_item in handgunItems player) : {player removeHandgunItem _item;};
 							default {player removeItem _item;};
 						};
 					};

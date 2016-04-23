@@ -1,8 +1,8 @@
 #include "..\script_macros.hpp"
 /*
 	File: clientValidator.sqf
-	Author: 
-	
+	Author:
+
 	Description:
 	Loops through a list of variables and checks whether
 	or not they are defined, if they are defined then trigger
@@ -16,7 +16,7 @@ _vars = [
 ];
 
 {
-	if(!isNil {(GVAR_MNS _x)}) exitWith {
+	if(!isNil {(missionNamespace getVariable _x)}) exitWith {
 		[profileName,getPlayerUID player,format["VariableSetBeforeInitialized_%1",_x]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
 		[profileName,format["Variable set before client initialized: %1",_x]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
 		sleep 0.5;

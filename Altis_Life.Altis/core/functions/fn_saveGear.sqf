@@ -19,8 +19,8 @@ _return pushBack goggles player;
 _return pushBack headgear player;
 _return pushBack assignedITems player;
 if(playerSide == west || playerSide == civilian && {EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_weapons"),1)}) then {
-    _return pushBack RIFLE;
-    _return pushBack PISTOL;
+    _return pushBack primaryWeapon player;
+    _return pushBack handgunWeapon player;
 } else {
     _return pushBack [];
     _return pushBack [];
@@ -121,13 +121,13 @@ if(count (handgunMagazine player) > 0 && alive player) then {
     };
 };
 
-if(count (RIFLE_ITEMS) > 0) then {
+if(count (primaryWeaponItems player) > 0) then {
     {
 		ADD(_pItems,[_x]);
     } forEach (primaryWeaponItems player);
 };
 
-if(count (PISTOL_ITEMS) > 0) then {
+if(count (handgunItems player) > 0) then {
     {
 		ADD(_hItems,[_x]);
     } forEach (handGunItems player);
