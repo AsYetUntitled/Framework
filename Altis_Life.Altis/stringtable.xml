@@ -3862,6 +3862,9 @@
 			<Russian>Вы не выбрали автомобиль.</Russian>
 			<German>Sie haben kein Fahrzeug auswählen.</German>
 		</Key>
+		<Key ID="STR_NOTF_noVehOwned">
+			<Original>You don't own any vehicles.</Original>
+		</Key>
 		<Key ID="STR_NOTF_didNotSelectPlayer">
 			<Original>You did not select a player.</Original>
 			<Czech>Nevybrali jste si přehrávač.</Czech>

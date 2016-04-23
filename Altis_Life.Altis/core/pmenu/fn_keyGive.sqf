@@ -15,7 +15,7 @@ _list = _dialog displayCtrl 2701;
 _plist = _dialog displayCtrl 2702;
 
 _sel = lbCurSel _list;
-if((_list lbText _sel) == "You don't own any vehicles") exitWith {hint localize "STR_NOTF_didNotSelectVehicle";};
+if((_list lbData _sel) == "") exitWith {hint localize "STR_NOTF_didNotSelectVehicle";};
 _vehicle = _list lbData _sel;
 _vehicle = life_vehicles select parseNumber(_vehicle);
 

@@ -7,7 +7,7 @@
 	Master action key handler, handles requests for picking up various items and
 	interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private["_curObject","_isWater","_CrateModelNames","_crate","_animal"];
+private["_curObject","_isWater","_CrateModelNames","_crate","_fish","_animal","_whatIsIt","_handle"];
 _curObject = cursorObject;
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if(life_interrupted) exitWith {life_interrupted = false;};
@@ -26,22 +26,15 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"global_ATM"),1)) then{
 
 if(isNull _curObject) exitWith {
 	if(_isWater) then {
-		_fishconfig = LIFE_SETTINGS(getArray,"animaltypes_fish");
-		_fish = (nearestObjects[ASLtoATL (getPosASL player),_fishconfig,3]);
-		if(!(isNil "_fish")) then {
-			if ((typeOf _fish) == "Turtle_F" && !alive _fish) then {
+		_fish = (nearestObjects[ASLtoATL (getPosASL player),(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
+		if(!isNil "_fish") then {
+			if (!alive _fish) then {
 				[_fish] call life_fnc_catchFish;
-			} else {
-				if (!((typeOf _fish) == "Turtle_F")) then {
-					[_fish] call life_fnc_catchFish;
-				};
 			};
 		};
 	} else {
-		_animalconfig = LIFE_SETTINGS(getArray,"animaltypes_hunting");
-		_animal = nearestObjects [player,_animalconfig, 3];
-		if (count _animal > 0) then {
-			_animal = _animal select 0;
+		_animal = (nearestObjects[ASLtoATL (getPosASL player),(LIFE_SETTINGS(getArray,"animaltypes_hunting")),3]) select 0;
+		if (!isNil "_animal") then {
 			if (!alive _animal) then {
 				[_animal] call life_fnc_gutAnimal;
 			};
@@ -104,13 +97,12 @@ if(isPlayer _curObject && _curObject isKindOf "Man") then {
 	_list = ["landVehicle","Ship","Air"];
 	_isVehicle = if(KINDOF_ARRAY(_curObject,_list)) then {true} else {false};
 	_miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
-	_animalTypes = ["Salema_F","Ornate_random_F","Mackerel_F","Tuna_F","Mullet_F","CatShark_F","Turtle_F"];
 	_money = "Land_Money_F";
 
 	//It's a vehicle! open the vehicle interaction key!
 	if(_isVehicle) then {
 		if(!dialog) then {
-			if(player distance _curObject < SEL(SEL(boundingBox _curObject,1),0)+2) then {
+			if(player distance _curObject < SEL(SEL(boundingBox _curObject,1),0)+2 && (!(player GVAR ["restrained",false])) && (!(player GVAR ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
 				[_curObject] call life_fnc_vInteractionMenu;
 			};
 		};

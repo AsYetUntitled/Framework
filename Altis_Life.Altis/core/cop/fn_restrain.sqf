@@ -30,7 +30,7 @@ if(isNull _cop) exitWith {};
 	};
 };
 
-titleText[format[localize "STR_Cop_Retrained",_cop GVAR ["realname",name _cop]],"PLAIN"];
+titleText[format[localize "STR_Cop_Restrained",_cop GVAR ["realname",name _cop]],"PLAIN"];
 
 life_disable_getIn = true;
 life_disable_getOut = false;
@@ -70,6 +70,16 @@ while {player GVAR  "restrained"} do {
 	if((vehicle player != player) && life_disable_getOut && (driver (vehicle player) == player)) then {
 		player action["eject",vehicle player];
 		player moveInCargo _vehicle;
+	};
+	
+	if(vehicle player != player && life_disable_getOut) then {
+		_turrets = [[-1]] + allTurrets _vehicle;
+		{
+			if (_vehicle turretUnit [_x select 0] == player) then {
+				player action["eject",vehicle player];
+				player moveInCargo _vehicle;
+			};
+		}forEach _turrets;
 	};
 };
 
