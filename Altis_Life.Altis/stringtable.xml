@@ -675,6 +675,28 @@
 			<Portuguese>Marcações dos jogadores habilitada.</Portuguese>
 			<Polish>Markery 'ON' graczy Włączone </Polish>
 		</Key>
+		<Key ID="STR_ANOTF_godModeOn">
+			<Original>God mode enabled</Original>
+			<Czech>nesmrtelnost povolen</Czech>
+			<French>God mode activé</French>
+			<Spanish>Modo Dios capacitó</Spanish>
+			<Italian>God mode abilitato</Italian>
+			<Polish>God mode włączony</Polish>
+			<Portuguese>Modo Deus capacitou</Portuguese>
+			<Russian>Режим бога включен</Russian>
+			<German>Gott-Modus aktiviert</German>
+		</Key>
+		<Key ID="STR_ANOTF_godModeOff">
+			<Original>God mode disabled"</Original>
+			<Czech>nesmrtelnost zakázán</Czech>
+			<French>God mode désactivé</French>
+			<Spanish>Modo Dios desactivado</Spanish>
+			<Italian>God mode disabilitato</Italian>
+			<Polish>God mode wyłączony</Polish>
+			<Portuguese>Modo Deus desativada</Portuguese>
+			<Russian>Режим бога отключен</Russian>
+			<German>Gott-Modus deaktiviert</German>
+		</Key>
 		<Key ID="STR_NOTF_ActionCancel">
 			<Original>Action Cancelled</Original>
 			<Czech>akce byla zrušena</Czech>
@@ -1382,6 +1404,17 @@
 			<Italian>Catturando il Covo</Italian>
 			<Portuguese>Capturando Esconderijo</Portuguese>
 			<Polish>Przejmowanie kryjówki</Polish>
+		</Key>
+		<Key ID="STR_GNOTF_Captured">
+			<Original>Hideout has been captured.</Original>
+			<Czech>Úkryt byl zajat.</Czech>
+			<French>Hideout a été capturé.</French>
+			<Spanish>Escondite ha sido capturado.</Spanish>
+			<Italian>Hideout è stato catturato.</Italian>
+			<Polish>Hideout został schwytany.</Polish>
+			<Portuguese>Hideout foi capturado.</Portuguese>
+			<Russian>Хайдеаут был захвачен в плен.</Russian>
+			<German>Hideout erfasst wurde.</German>
 		</Key>
 		<Key ID="STR_GNOTF_CaptureSuccess">
 			<Original>%1 and his gang: %2 - have taken control of a local hideout!</Original>
@@ -3960,6 +3993,28 @@
 			<Portuguese>O veículo está cheio ou não pode segurar muito.</Portuguese>
 			<Russian>Транспортное средство либо полностью или не может держать так много.</Russian>
 			<German>Das Fahrzeug ist entweder voll oder kann nicht so viel halten.</German>
+		</Key>
+		<Key ID="STR_NOTF_illegalItemCannotDispose">
+			<Original>This is an illegal item and cops are near by. You cannot dispose of the evidence.</Original>
+			<Czech>To je ilegální položky a policajti jsou v blízkosti. Nemůžete zbavit důkazů.</Czech>
+			<French>Ceci est un élément illégal et les flics sont à proximité. Vous ne pouvez pas disposer de la preuve.</French>
+			<Spanish>Este es un artículo ilegal y policías están cerca. No se puede disponer de las pruebas.</Spanish>
+			<Italian>Si tratta di un elemento illegale e poliziotti si trovano nelle vicinanze. Non si può disporre delle prove.</Italian>
+			<Polish>Jest to nielegalne element i policjanci są w pobliżu. Nie można pozbyć się dowodów.</Polish>
+			<Portuguese>Este é um item ilegal e policiais estão nas proximidades. Você não pode dispor das provas.</Portuguese>
+			<Russian>Это незаконный пункт и полицейские находятся поблизости. Вы не можете избавиться от доказательств.</Russian>
+			<German>Dies ist eine illegale Artikel und Polizisten sind in der Nähe. Sie können nicht von den Beweisen zu entsorgen.</German>
+		</Key>
+		<Key ID="STR_NOTF_cannotRemoveInVeh">
+			<Original>You cannot remove an item when you are in a vehicle.</Original>
+			<Czech>Nemůžete-li odebrat položku, když jste ve vozidle.</Czech>
+			<French>Vous ne pouvez pas supprimer un élément lorsque vous êtes dans un véhicule.</French>
+			<Spanish>No se puede eliminar un elemento cuando se está en un vehículo.</Spanish>
+			<Italian>Non è possibile rimuovere un elemento quando si è in un veicolo.</Italian>
+			<Polish>Nie można usunąć element, kiedy jesteś w pojeździe.</Polish>
+			<Portuguese>Você não pode remover um item quando você está em um veículo.</Portuguese>
+			<Russian>Вы не можете удалить элемент, когда вы находитесь в автомобиле.</Russian>
+			<German>Sie können ein Element nicht entfernen, wenn Sie in einem Fahrzeug sind.</German>
 		</Key>
 	</Package>
 	<Package name="Jail_Strings">
