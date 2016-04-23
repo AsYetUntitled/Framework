@@ -4492,9 +4492,13 @@
 		<Key ID="STR_Cop_ContainerEmpty">
 			<Original>This container is empty</Original>
 			<Czech>Tento zásobník je prázdný</Czech>
-			<Spanish>Este contenedor esta vacío</Spanish>
-			<Russian></Russian>
 			<French>Ce container est vide</French>
+			<Spanish>Este contenedor esta vacío</Spanish>
+			<Italian>Questo contenitore è vuoto</Italian>
+			<Polish>Ten pojemnik jest pusty</Polish>
+			<Portuguese>Este recipiente está vazio</Portuguese>
+			<Russian>Этот контейнер пуст</Russian>
+			<German>Dieser Behälter ist leer</German>
 		</Key>
 		<Key ID="STR_Cop_RobberDead">
 			<Original>$%1 from the Federal Reserve robbery was returned from the robber being killed.</Original>
