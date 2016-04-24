@@ -1,6 +1,6 @@
 Spyglass
 ================
-<b>Spyglass an anticheat system for [Altis Life RPG] (https://github.com/ArmaLife/Altis)</b>.</br></br>
+<b>Spyglass an anticheat system for [Altis Life RPG](https://github.com/ArmaLife/Framework)</b>.</br></br>
 <b>Any modification</b> to the Altis Life RPG mission files will require changes to Config_Spyglass.
 
 <b>Notes</b>
@@ -26,4 +26,4 @@ Open Mission fn_initSpy.sqf and find
 _patchList =
 Edit the result that you got from your notepad to include at the start ["life_server",
 Paste in your results and follow the existing structure.
-This should fix any issues. Any other problems, refer to (https://gitter.im/ArmaLife/Altis/Support) for help
+This should fix any issues. Any other problems, refer to (https://gitter.im/ArmaLife/Framework/Support) for help

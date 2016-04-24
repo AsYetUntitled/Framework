@@ -1,10 +1,10 @@
 <h1 align="center">Altis-Life</h1>
 <p align="center">
-    <a href="https://github.com/ArmaLife/Altis">
+    <a href="https://github.com/ArmaLife/Framework">
         <img src="https://img.shields.io/badge/version-v4.4-green.svg" alt="Altis Life Version">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://github.com/ArmaLife/Altis/releases">
+    <a href="https://github.com/ArmaLife/Framework/releases">
         <img src="https://img.shields.io/badge/release-2-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
@@ -12,15 +12,15 @@
         <img src="https://img.shields.io/badge/arma%203-1.58-orange.svg" alt="Arma 3 Version">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://gitter.im/ArmaLife/Altis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
-        <img src="https://badges.gitter.im/ArmaLife/Altis.svg" alt="Join the chat at https://gitter.im/ArmaLife/Altis">
+    <a href="https://gitter.im/ArmaLife/Framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+        <img src="https://badges.gitter.im/ArmaLife/Framework.svg" alt="Join the chat at https://gitter.im/ArmaLife/Framework">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://gitter.im/ArmaLife/Altis/Support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
-        <img src="https://img.shields.io/badge/support-on%20gitter-blue.svg" alt="Join the support chat at https://gitter.im/ArmaLife/Altis/Support">
+    <a href="https://gitter.im/ArmaLife/Framework/Support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+        <img src="https://img.shields.io/badge/support-on%20gitter-blue.svg" alt="Join the support chat at https://gitter.im/ArmaLife/Framework/Support">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://waffle.io/ArmaLife/Altis">
+    <a href="https://waffle.io/ArmaLife/Framework">
         <img src="https://img.shields.io/badge/issues-on%20waffle-red.svg" alt="Stories in Ready">
     </a>
 </p>
@@ -32,9 +32,9 @@ Altis Life RPG by Tonic is licensed under a [Creative Commons Attribution-NonCom
 By using the framework and/or code inside the framework, you agree to the [terms of agreement] (README.md/#usage--terms-of-agreement).<br/>
 The terms are subjected to be changed over time.<br/>
 
-[How to configure your server] (https://github.com/ArmaLife/Altis/wiki/Setup-Server)
+[How to configure your server] (https://github.com/ArmaLife/Framework/wiki/Setup-Server)
 -------------------------------------
-You can found all the steps to have a fully working server in our [github wiki] (https://github.com/ArmaLife/Altis/wiki).
+You can found all the steps to have a fully working server in our [github wiki] (https://github.com/ArmaLife/Framework/wiki).
 
 Disclaimer
 -----------
