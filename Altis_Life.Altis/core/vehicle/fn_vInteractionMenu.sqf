@@ -38,7 +38,7 @@ _dlcVehicles = ["C_Kart_01_Blu_F","C_Kart_01_Red_F","C_Kart_01_Fuel_F","C_Kart_0
 _Btn1 ctrlSetText localize "STR_vInAct_Repair";
 _Btn1 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_repairTruck;";
 
-if((life_inv_toolkit >= 1) && (damage _curTarget < 1)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
+if((life_inv_toolkit >= 1) && (damage _curTarget < 1) && (damage _curTarget > 0)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
 
 if(playerSide == west) then {
 	_Btn2 ctrlSetText localize "STR_vInAct_Registration";

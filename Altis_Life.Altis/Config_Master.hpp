@@ -189,3 +189,4 @@ class Life_Settings {
 #include "Config_Weapons.hpp"
 #include "Config_Gather.hpp"
 #include "Config_SpawnPoints.hpp"
+#include "Config_Process.hpp"

@@ -6,27 +6,26 @@
 	Description:
 	Master handling for processing an item.
 */
-private["_vendor","_type","_itemInfo","_oldItem","_newItem","_cost","_upp","_hasLicense","_itemName","_oldVal","_ui","_progress","_pgText","_cP"];
+private["_vendor","_type","_itemInfo","_oldItem","_newItem","_cost","_upp","_hasLicense","_itemName","_oldVal","_ui","_progress","_pgText","_cP","_matsReq","_matsGive","_noliccost","_text","_filter"];
 _vendor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,3,"",[""]] call BIS_fnc_param;
 //Error check
 if(isNull _vendor OR EQUAL(_type,"") OR (player distance _vendor > 10)) exitWith {};
 
-//unprocessed item,processed item, cost if no license,Text to display (I.e Processing  (percent) ..."
-_itemInfo = switch (_type) do {
-	case "oil": {[[["oil_unprocessed",1]],[["oil_processed",1]],1200,(localize "STR_Process_Oil")];};
-	case "diamond": {[[["diamond_uncut",1]],[["diamond_cut",1]],1350,(localize "STR_Process_Diamond")];};
-	case "heroin": {[[["heroin_unprocessed",1]],[["heroin_processed",1]],1750,(localize "STR_Process_Heroin")];};
-	case "copper": {[[["copper_unrefined",1]],[["copper_refined",1]],750,(localize "STR_Process_Copper")];};
-	case "iron": {[[["iron_unrefined",1]],[["iron_refined",1]],1120,(localize "STR_Process_Iron")];};
-	case "sand": {[[["sand",1]],[["glass",1]],650,(localize "STR_Process_Sand")];};
-	case "salt": {[[["salt_unrefined",1]],[["salt_refined",1]],450,(localize "STR_Process_Salt")];};
-	case "cocaine": {[[["cocaine_unprocessed",1]],[["cocaine_processed",1]],1500,(localize "STR_Process_Cocaine")];};
-	case "marijuana": {[[["cannabis",1]],[["marijuana",1]],500,(localize "STR_Process_Marijuana")];};
-	case "cement": {[[["rock",1]],[["cement",1]],350,(localize "STR_Process_Cement")];};
-	case "ExempleMultiProcess": {[[["peach",2],["cannabis",3],["cocaine_unprocessed",2]],[["diamond_cut",2],["marijuana",5]],350,(localize "STR_Process_Cement")];};
-	default {[];};
-};
+
+if(isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
+
+	_filter = false;
+	_matsReq = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsReq");
+	_matsGive = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsGive");
+	_noliccost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
+	_text = M_CONFIG(getText,"ProcessAction",_type,"Text");
+	
+} else {_filter = true;};
+
+if(_filter) exitWith {};
+
+_itemInfo = [_matsReq,_matsGive,_noliccost,(localize format["%1",_text])];
 
 //Error checking
 if(EQUAL(count _itemInfo,0)) exitWith {};
