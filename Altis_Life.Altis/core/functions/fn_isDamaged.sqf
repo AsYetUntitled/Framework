@@ -1,5 +1,5 @@
 /*
-*		File: fn_getDamage.sqf
+*		File: fn_isDamaged.sqf
 *		Author: BoGuu
 *
 *		Description:
