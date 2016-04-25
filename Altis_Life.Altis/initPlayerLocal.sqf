@@ -15,6 +15,6 @@ if (!hasInterface && !isServer) exitWith {
 #define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)
 
 CONST(BIS_fnc_endMission,BIS_fnc_endMission);
-if(EQUAL(LIFE_SETTINGS(getNumber,"sypglass_toggle"),1)) then {[] execVM "SpyGlass\fn_initSpy.sqf";};
+if(EQUAL(LIFE_SETTINGS(getNumber,"spyGlass_toggle"),1)) then {[] execVM "SpyGlass\fn_initSpy.sqf";};
 
 [] execVM "core\init.sqf";
