@@ -2875,7 +2875,7 @@
 			<Polish>Wziąłeś %1</Polish>
 		</Key>
 		<Key ID="STR_NOTF_DPStart">
-			<Original>You are to deliver this package to %1</Original>
+			<Original>You are to deliver this package to %1.</Original>
 			<Czech>Jste doručit tento balíček%1</Czech>
 			<Spanish>Debes llevar este paquete a %1</Spanish>
 			<Russian></Russian>
@@ -2886,7 +2886,7 @@
 			<Polish>Dostarcz tę przesyłkę do %1</Polish>
 		</Key>
 		<Key ID="STR_NOTF_DPTask">
-			<Original>Deliver this package to %1</Original>
+			<Original>Deliver this package to %1.</Original>
 			<Czech>Doručit tento balíček%1</Czech>
 			<Spanish>LLeva el paquete a: %1</Spanish>
 			<Russian></Russian>
@@ -10178,6 +10178,201 @@
 			<Russian></Russian>
 			<German>Dein Anteil beträgt $%1</German>
 			<Portuguese>A sua parte é de R$%1</Portuguese>
+		</Key>
+	</Package>
+	<Package name="NotWhitelisted">
+		<Key ID="STR_NotWhitelisted_Title">
+			<Original>Mission Failed</Original>
+			<Czech>Mise selhala</Czech>
+			<French>Mission échouée</French>
+			<Spanish>Misión fallida</Spanish>
+			<Italian>Missione fallita</Italian>
+			<Polish>Misja nie powiodła się</Polish>
+			<Portuguese>Missão fracassada</Portuguese>
+			<Russian>Миссия провалена</Russian>
+			<German>Mission fehlgeschlagen</German>
+		</Key>
+		<Key ID="STR_NotWhitelisted_SubTitle">
+			<Original>You are not white-listed to use this slot.</Original>
+			<Czech>Mise selhala</Czech>
+			<French>Mission échouée</French>
+			<Spanish>Misión fallida</Spanish>
+			<Italian>Missione fallita</Italian>
+			<Polish>Misja nie powiodła się</Polish>
+			<Portuguese>Missão fracassada</Portuguese>
+			<Russian>Миссия провалена</Russian>
+			<German>Mission fehlgeschlagen</German>
+		</Key>
+		<Key ID="STR_NotWhitelisted_Descript">
+			<Original>You are not allowed to use this slot because you do not have the appropriate permissions. Try another slot.</Original>
+			<Czech>Ty jsou není dovoleno používat tento slot, protože nemáte příslušná oprávnění. Zkuste použít jiný slot.</Czech>
+			<French>Vous n'êtes pas autorisé à utiliser cet emplacement parce que vous ne disposez pas des autorisations appropriées. Essayez un autre emplacement.</French>
+			<Spanish>No se le permite utilizar esta ranura, ya que no tiene los permisos adecuados. Pruebe con otra ranura.</Spanish>
+			<Italian>Non è consentito usare questo slot, perché non si dispone delle autorizzazioni appropriate. Prova un altro slot.</Italian>
+			<Polish>Nie wolno korzystać z tego gniazda, ponieważ nie masz odpowiednich uprawnień. Spróbuj użyć innego gniazda.</Polish>
+			<Portuguese>Você não tem permissão para usar esse slot, porque você não tem as permissões apropriadas. Tente outro slot.</Portuguese>
+			<Russian>Вы не можете использовать этот слот, потому что у вас нет соответствующих разрешений. Попробуйте использовать другой слот.</Russian>
+			<German>Sie sind nicht berechtigt diesen Slot zu verwenden, da Sie nicht über die entsprechenden Berechtigungen verfügen. Versuchen Sie einen anderen Steckplatz.</German>
+		</Key>
+	</Package>
+	<Package name="Blacklisted">
+		<Key ID="STR_Blacklisted_Title">
+			<Original>Mission Failed</Original>
+			<Czech>Mise selhala</Czech>
+			<French>Mission échouée</French>
+			<Spanish>Misión fallida</Spanish>
+			<Italian>Missione fallita</Italian>
+			<Polish>Misja nie powiodła się</Polish>
+			<Portuguese>Missão fracassada</Portuguese>
+			<Russian>Миссия провалена</Russian>
+			<German>Mission fehlgeschlagen</German>
+		</Key>
+		<Key ID="STR_Blacklisted_SubTitle">
+			<Original>You are blacklisted from cops.</Original>
+			<Czech>Ty jsou na černé listině z policajtů.</Czech>
+			<French>Vous êtes sur la liste noire de flics.</French>
+			<Spanish>Usted está en la lista negra de policías.</Spanish>
+			<Italian>Stai lista nera da poliziotti.</Italian>
+			<Polish>Jesteś na czarnej liście od policjantów.</Polish>
+			<Portuguese>Você está na lista negra de policiais.</Portuguese>
+			<Russian>Вы в черном списке от ментов.</Russian>
+			<German>Sie sind von Polizisten die schwarze Liste gesetzt.</German>
+		</Key>
+		<Key ID="STR_Blacklisted_Descript">
+			<Original>You are not allowed to be a cop due to previous actions and the admins have removed you from being a cop.</Original>
+			<Czech>Ty jsou nesmí být policajt vzhledem k předcházejícími akcemi a administrátoři vám odstraní z bytí policista.</Czech>
+			<French>Vous n'êtes pas autorisé à être un flic en raison des actions précédentes et les admins vous avez supprimé d'être un flic.</French>
+			<Spanish>No se le permite ser un policía debido a las acciones anteriores y los administradores de haber quitado de ser un policía.</Spanish>
+			<Italian>Non è consentito fare il poliziotto a causa di azioni precedenti e gli amministratori di aver rimosso da essere un poliziotto.</Italian>
+			<Polish>Nie mogą być policjantem z powodu wcześniejszych działań oraz administratorzy usunęli cię od bycia policjantem.</Polish>
+			<Portuguese>Você não tem permissão para ser um policial devido a ações anteriores e os admins ter removido-lo de ser um policial.</Portuguese>
+			<Russian>Вы не можете быть полицейским в связи с предыдущими действиями и админы удалили вас от того, чтобы быть полицейским.</Russian>
+			<German>Sie sind nicht Polizist werden auf Grund früherer Aktionen und die Admins haben sich von einem Cop entfernt es erlaubt.</German>
+		</Key>
+	</Package>
+	<Package name="SpyGlass">
+		<Key ID="STR_SpyDetect_Title">
+			<Original>The SpyGlass sees you!</Original>
+			<Czech>Dalekohled tě vidí!</Czech>
+			<French>Le SpyGlass vous voit!</French>
+			<Spanish>El SpyGlass te ve!</Spanish>
+			<Italian>Il cannocchiale si vede!</Italian>
+			<Polish>Lunetę widzi!</Polish>
+			<Portuguese>O SpyGlass te vê!</Portuguese>
+			<Russian>SpyGlass видит, что вы!</Russian>
+			<German>Die SpyGlass sieht dich!</German>
+		</Key>
+		<Key ID="STR_SpyDetect_SubTitle">
+			<Original>You were detected by the SpyGlass.</Original>
+			<Czech>Vy byly detekovány dalekohled.</Czech>
+			<French>Vous avez été détecté par le SpyGlass.</French>
+			<Spanish>Le fue detectada por el catalejo.</Spanish>
+			<Italian>Lei è stato rilevato dal SpyGlass.</Italian>
+			<Polish>Ty zostały wykryte przez lunetę.</Polish>
+			<Portuguese>Você foi detectado pelo SpyGlass.</Portuguese>
+			<Russian>Вы были обнаружены с помощью SpyGlass.</Russian>
+			<German>Sie wurden von der SpyGlass erkannt.</German>
+		</Key>
+		<Key ID="STR_SpyDetect_Descript">
+			<Original>You were detected for cheating and have been reported to the server. Enjoy your day.</Original>
+			<Czech>Vy byly detekovány za podvádění a byly zaznamenány na server. Užijte si svůj den.</Czech>
+			<French>Vous avez été détecté pour tricher et ont été signalés au serveur. Profitez de votre journée.</French>
+			<Spanish>Le fue detectada por hacer trampas y se ha informado al servidor. Disfruta tu día.</Spanish>
+			<Italian>Lei è stato rilevato per truffa e sono stati segnalati per il server. Buona giornata.</Italian>
+			<Polish>Ty wykryto oszustwo i zostały zgłoszone do serwera. Miłego dnia.</Polish>
+			<Portuguese>Está foram detectados por engano e têm sido relatados para o servidor. Aproveite seu dia.</Portuguese>
+			<Russian>Вы были обнаружены для мошенничества и было сообщено на сервер. Удачного дня.</Russian>
+			<German>Sie wurden für Betrug erkannt und haben an den Server gemeldet. Genieße deinen Tag.</German>
+		</Key>
+	</Package>
+	<Package name="TextNotifications">
+		<Key ID="STR_MedicalRequestEmerg_Title">
+			<Original>EMS Requested</Original>
+			<Czech>EMS Požadované</Czech>
+			<French>EMS demandé</French>
+			<Spanish>ccsme solicitada</Spanish>
+			<Italian>EMS richiesto</Italian>
+			<Polish>EMS Zamówiony</Polish>
+			<Portuguese>EMS solicitada</Portuguese>
+			<Russian>EMS Запрошенный</Russian>
+			<German>EMS Gewünscht</German>
+		</Key>
+		<Key ID="STR_DeliveryAssigned_Title">
+			<Original>Delivery Job Accepted</Original>
+			<Czech>Dodávka Job Accepted</Czech>
+			<French>Livraison emploi Accepted</French>
+			<Spanish>Entrega de trabajo aceptada</Spanish>
+			<Italian>Consegna Job accettate</Italian>
+			<Polish>Dostawa Praca Zaakceptowany</Polish>
+			<Portuguese>Entrega aceitado Job</Portuguese>
+			<Russian>Доставка Работа Принято</Russian>
+			<German>Lieferung Job angenommen</German>
+		</Key>
+		<Key ID="STR_DeliveryFailed_Title">
+			<Original>Delivery Job Failed</Original>
+			<Czech>Nepodařilo dodávka Job</Czech>
+			<French>Livraison Job Failed</French>
+			<Spanish>Falló la entrega de empleo</Spanish>
+			<Italian>Consegna di lavoro non riuscito</Italian>
+			<Polish>Dostawa Praca Failed</Polish>
+			<Portuguese>Falha de entrega Job</Portuguese>
+			<Russian>Доставка Работа Ошибка</Russian>
+			<German>Lieferung Job fehlgeschlagen</German>
+		</Key>
+		<Key ID="STR_DeliverySucceeded_Title">
+			<Original>Delivery Job Completed</Original>
+			<Czech>Dokončena dodávka Job</Czech>
+			<French>Livraison Tâche terminée</French>
+			<Spanish>Finalizada la entrega de empleo</Spanish>
+			<Italian>Consegna Processo completato</Italian>
+			<Polish>Dostawa Praca Zakończony</Polish>
+			<Portuguese>Concluída a entrega Job</Portuguese>
+			<Russian>Доставка Работа Завершено</Russian>
+			<German>Lieferung Auftrag abgeschlossen</German>
+		</Key>
+		<Key ID="STR_TextMessage_Title">
+			<Original>Received A Text Message</Original>
+			<Czech>Přijetí textové zprávy</Czech>
+			<French>A reçu un message texte</French>
+			<Spanish>Recibió un mensaje de texto</Spanish>
+			<Italian>Ricevuto un messaggio di testo</Italian>
+			<Polish>Otrzymał wiadomość tekstową</Polish>
+			<Portuguese>Recebeu uma mensagem de texto</Portuguese>
+			<Russian>Получено текстовое сообщение</Russian>
+			<German>Erhielt eine Textnachricht</German>
+		</Key>
+		<Key ID="STR_PoliceDispatch_Title">
+			<Original>911 Dispatch Center</Original>
+			<Czech>911 Dispatch Center</Czech>
+			<French>911 Dispatch Centre</French>
+			<Spanish>911 Centro de Despacho</Spanish>
+			<Italian>911 centro di spedizione</Italian>
+			<Polish>911 Dispatch Center</Polish>
+			<Portuguese>911 Centro de Despacho</Portuguese>
+			<Russian>911 диспетчерский центр</Russian>
+			<German>911 Dispatch-Center</German>
+		</Key>
+		<Key ID="STR_AdminDispatch_Title">
+			<Original>Admin Dispatch Center</Original>
+			<Czech>Admin Dispatch Center</Czech>
+			<French>Administrateur Dispatch Centre</French>
+			<Spanish>Administrador Centro de Despacho</Spanish>
+			<Italian>Admin centro di spedizione</Italian>
+			<Polish>Administrator Dispatch Center</Polish>
+			<Portuguese>Administrador Centro de Despacho</Portuguese>
+			<Russian>Администратор диспетчерский центр</Russian>
+			<German>Admin Verteilzentrum</German>
+		</Key>
+		<Key ID="STR_AdminMessage_Title">
+			<Original>Admin Message</Original>
+			<Czech>Admin Message</Czech>
+			<French>Administrateur message</French>
+			<Spanish>Mensaje de administración</Spanish>
+			<Italian>Admin Message</Italian>
+			<Polish>Administrator Wiadomość</Polish>
+			<Portuguese>Mensagem de administração</Portuguese>
+			<Russian>Администратор Сообщение</Russian>
+			<German>Admin Nachricht</German>
 		</Key>
 	</Package>
 </Project>
