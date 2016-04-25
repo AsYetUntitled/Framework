@@ -3708,28 +3708,6 @@
 			<Russian>Никто не был выбран!</Russian>
 			<German>Niemand wurde ausgewählt!</German>
 		</Key>
-		<Key ID="STR_NOTF_notWearingVest">
-			<Original>You aren't wearing a suicide vest.</Original>
-			<Czech>Nejste na sobě sebevražedný vestu.</Czech>
-			<French>Vous ne portez pas un gilet de suicide.</French>
-			<Spanish>Usted no está usando un chaleco suicida.</Spanish>
-			<Italian>Non si indossa un giubbotto di suicidio.</Italian>
-			<Polish>Nie masz na sobie kamizelkę samobójstwo.</Polish>
-			<Portuguese>Você não está usando um colete suicida.</Portuguese>
-			<Russian>Вы не носить жилет смертника.</Russian>
-			<German>Sie sind nicht eine Selbstmordweste tragen.</German>
-		</Key>
-		<Key ID="STR_NOTF_cannotDetonateBombHere">
-			<Original>Some supernatural force prevents you from detonating a bomb in this holy place!</Original>
-			<Czech>Některé nadpřirozená síla brání odpálí bombu v tomto svatém místě!</Czech>
-			<French>Une force surnaturelle vous empêche de faire exploser une bombe dans ce lieu saint!</French>
-			<Spanish>Una fuerza sobrenatural que impide la detonación de una bomba en este lugar santo!</Spanish>
-			<Italian>Alcuni forza soprannaturale vi impedisce di far esplodere una bomba in questo luogo santo!</Italian>
-			<Polish>Niektóre nadprzyrodzona siła uniemożliwia detonować bombę w tym świętym miejscu!</Polish>
-			<Portuguese>Alguma força sobrenatural impede de detonar uma bomba neste lugar santo!</Portuguese>
-			<Russian>Некоторые сверхъестественная сила мешает вам взорвав бомбу в этом святом месте!</Russian>
-			<German>Einige übernatürliche Kraft verhindert, dass Sie eine Bombe in diesem heiligen Ort Detonation!</German>
-		</Key>
 		<Key ID="STR_NOTF_didNotSelectItemToGive">
 			<Original>You didn't select an item you wanted to give.</Original>
 			<Czech>Nevybrali jste položku, kterou chtěl dát.</Czech>
