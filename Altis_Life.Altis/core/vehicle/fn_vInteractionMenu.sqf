@@ -38,7 +38,7 @@ _dlcVehicles = ["C_Kart_01_Blu_F","C_Kart_01_Red_F","C_Kart_01_Fuel_F","C_Kart_0
 _Btn1 ctrlSetText localize "STR_vInAct_Repair";
 _Btn1 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_repairTruck;";
 
-if((life_inv_toolkit >= 1) && (damage _curTarget < 1) && (damage _curTarget > 0)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
+if((life_inv_toolkit >= 1) && ([life_vInact_curTarget] call life_fnc_getDamage) && alive life_vInact_curTarget) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
 
 if(playerSide == west) then {
 	_Btn2 ctrlSetText localize "STR_vInAct_Registration";
@@ -70,14 +70,14 @@ if(playerSide == west) then {
 		} else {
 			_Btn6 ctrlSetText localize "STR_vInAct_Unflip";
 			_Btn6 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
-			if(count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn6 ctrlEnable false;} else {_Btn6 ctrlEnable true;};
+			if(alive _curTarget && count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn6 ctrlEnable false;} else {_Btn6 ctrlEnable true;};
 		};
 	};
 } else {
 	if(_curTarget isKindOf "Ship") then {
 		_Btn2 ctrlSetText localize "STR_vInAct_PushBoat";
 		_Btn2 buttonSetAction "[] spawn life_fnc_pushObject; closeDialog 0;";
-		if(_curTarget isKindOf "Ship" && {local _curTarget} && {count crew _curTarget == 0}) then { _Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
+		if(alive _curTarget && _curTarget isKindOf "Ship" && {local _curTarget} && {count crew _curTarget == 0}) then { _Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
 	} else {
 		if((typeOf (_curTarget) in _dlcVehicles) && !(288520 in getDLCs 1)) then {
 			if(_curTarget isKindOf "Air") then {
@@ -90,7 +90,7 @@ if(playerSide == west) then {
 		} else {
 			_Btn2 ctrlSetText localize "STR_vInAct_Unflip";
 			_Btn2 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
-			if(count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn2 ctrlEnable false;} else {_Btn2 ctrlEnable true;};
+			if(alive _curTarget && count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn2 ctrlEnable false;} else {_Btn2 ctrlEnable true;};
 		};
 	};
 	if(typeOf _curTarget == "O_Truck_03_device_F") then {

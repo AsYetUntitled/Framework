@@ -27,7 +27,7 @@ if(vehicle player != player) then {
 
 if(isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
 if(isNull _vehicle) exitWith {};
-
+if(!alive _vehicle) exitWith {hint localize "STR_Garage_SQLError_Destroyed"};
 
 _storetext = localize "STR_Garage_Store_Success";
 

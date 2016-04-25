@@ -7824,14 +7824,6 @@
 			<Portuguese>Minerar</Portuguese>
 			<Polish>Uruchom wydobycie</Polish>
 		</Key>
-		<Key ID="STR_Vehicle_StoreMSG">
-			<Original>Your vehicle contains items,if you store this car, you will have to wait 20 minutes before returning your car in your garage (prevent duplication)</Original>
-			<Czech>Vaše vozidlo obsahuje položky, pokud budete ukládat tento vůz, budete muset počkat 20 minut před návratem své auto v garáži (zabránit zdvojování)</Czech>
-			<Spanish>Tu vehículo contiene objetos, si lo guardas, deberas esperar 20 minutos antes de retirar el carro del garaje (prevención de duplicación)</Spanish>
-			<Russian></Russian>
-			<French>Votre vehicule contient des items,si vous stockez cette voiture, vous allez devoir attendre 20 minutes avant de retrouver votre voiture dans votre garage</French>
-			<Portuguese>Seu veículo contém itens, se você guardá-lo, terá de esperar 20 minutos para poder retirá-lo novamente.</Portuguese>
-		</Key>
 		<Key ID="STR_Vehicle_StoreVehicle">
 			<Original>Store your vehicle</Original>
 			<Czech>Ukládat vaše vozidlo</Czech>
