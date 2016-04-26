@@ -164,7 +164,6 @@ class WeaponShops {
             { "arifle_MX_F", "", 35000, 7500 },
             { "SMG_02_ACO_F", "", 30000, -1 },
             { "HandGrenade_Stone", "Flashbang", 1700, -1 },
-            { "MineDetector", "", 1000, 500 },
             { "acc_flashlight", "", 750, 100 },
             { "optic_Holosight", "", 1200, 275 },
             { "optic_Arco", "", 2500, -1 },
