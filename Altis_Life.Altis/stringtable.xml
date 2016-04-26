@@ -2931,14 +2931,14 @@
 		</Key>
 		<Key ID="STR_NOTF_HS_PopUp">
 			<Original>Spend $%1 to be fully healed?</Original>
-			<Czech>Útrata $% 1 musí být zcela vyléčit?</Czech>
-			<French>Spend $% 1 à être complètement guéri?</French>
-			<Spanish>Gastar $ 1% que se haya recuperado por completo?</Spanish>
-			<Italian>Spendere $% 1 di essere completamente guarito?</Italian>
-			<Polish>Wydać $% 1 w pełni uzdrowiony?</Polish>
-			<Portuguese>Gastar US $% 1 para ser totalmente curado?</Portuguese>
-			<Russian>Потратит $ 1%, чтобы быть полностью зажила?</Russian>
-			<German>Spend $% 1 vollständig geheilt zu werden?</German>
+			<Czech>Útrata $%1 musí být zcela vyléčit?</Czech>
+			<French>Spend $%1 à être complètement guéri?</French>
+			<Spanish>Gastar $%1 que se haya recuperado por completo?</Spanish>
+			<Italian>Spendere $%1 di essere completamente guarito?</Italian>
+			<Polish>Wydać $%1 w pełni uzdrowiony?</Polish>
+			<Portuguese>Gastar US $%1 para ser totalmente curado?</Portuguese>
+			<Russian>Потратит $%1, чтобы быть полностью зажила?</Russian>
+			<German>Spend $%1 vollständig geheilt zu werden?</German>
 		</Key>
 		<Key ID="STR_NOTF_HS_TITLE">
 			<Original>Doctor</Original>
