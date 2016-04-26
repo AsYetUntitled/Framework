@@ -21,3 +21,7 @@ _str = M_CONFIG(getText,"VirtualItems","goldbar","displayName");
 _shrt = M_CONFIG(getText,"VirtualItems","goldbar","variable");
 _tInv lbAdd format["[%1] - %2",_safeInfo,(localize _str)];
 _tInv lbSetData [(lbSize _tInv)-1,_shrt];
+_icon = M_CONFIG(getText,"VirtualItems","goldbar","icon");
+if(!(EQUAL(_icon,""))) then {
+	_tInv lbSetPicture [(lbSize _tInv)-1,_icon];
+};
