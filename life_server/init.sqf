@@ -1,5 +1,4 @@
 #include "script_macros.hpp"
-#define __EXIT(condition) if(condition) exitWith {}
 /*
 	File: init.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -48,7 +47,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 		life_server_extDB_notLoaded = [true, _exception];
 		PVAR_ALL("life_server_extDB_notLoaded");
 	};
-		__EXIT(!(EQUAL(life_server_extDB_notLoaded,"")));
+	if(life_server_extDB_notLoaded isEqualType []) exitWith {};
 	EXTDB "9:LOCK";
 	diag_log "extDB2: Connected to Database";
 } else {
@@ -57,7 +56,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 	diag_log "extDB2: Still Connected to Database";
 };
 
-if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB did not fully initialize so terminate the rest of the initialization process.
+if(life_server_extDB_notLoaded isEqualType []) exitWith {};
 
 if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	/* Run stored procedures for SQL side cleanup */
