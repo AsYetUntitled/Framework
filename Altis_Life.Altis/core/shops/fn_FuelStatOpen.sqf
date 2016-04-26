@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_FuelStatOpen.sqf
+	File: fn_fuelStatOpen.sqf
 	Author : NiiRoZz
 
 	Description:
@@ -25,6 +25,7 @@ ctrlSetText [20301,"Fuel Station"];
 if (isNil "life_fuelPrices") then {
 	life_fuelPrices = _fuelCost;
 };
+
 //Fetch the shop config.
 vehicleFuelList =[];
 {
@@ -37,6 +38,7 @@ lbClear _control; //Flush the list.
 
 ctrlSetText [20322,format [localize "STR_Price_Fuel_Pump",life_fuelPrices]];
 ctrlSetText [20323,format ["Total : %1$",life_fuelPrices * 0.1]];
+
 //Loop through
 {
 	_className = typeOf (_x select 0);

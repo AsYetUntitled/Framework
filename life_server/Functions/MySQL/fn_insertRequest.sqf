@@ -7,7 +7,7 @@
 	Adds a player to the database upon first joining of the server.
 	Recieves information from core\sesison\fn_insertPlayerInfo.sqf
 */
-private["_handler","_thread","_queryResult","_query","_alias"];
+private["_queryResult","_query","_alias"];
 params [
 	"_uid",
 	"_name",
