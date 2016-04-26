@@ -2920,12 +2920,36 @@
 		</Key>
 		<Key ID="STR_NOTF_HS_FullHealth">
 			<Original>You do not need to be healed!</Original>
+			<Czech>Nemusíte být uzdraven!</Czech>
+			<French>Vous ne devez pas être guéri!</French>
+			<Spanish>Usted no necesita ser sanado!</Spanish>
+			<Italian>Non è necessario essere guarito!</Italian>
+			<Polish>Nie trzeba się wyleczyć!</Polish>
+			<Portuguese>Você não precisa ser curado!</Portuguese>
+			<Russian>Вам не нужно быть исцелены!</Russian>
+			<German>Sie brauchen nicht geheilt zu werden!</German>
 		</Key>
 		<Key ID="STR_NOTF_HS_PopUp">
 			<Original>Spend $%1 to be fully healed?</Original>
+			<Czech>Útrata $% 1 musí být zcela vyléčit?</Czech>
+			<French>Spend $% 1 à être complètement guéri?</French>
+			<Spanish>Gastar $ 1% que se haya recuperado por completo?</Spanish>
+			<Italian>Spendere $% 1 di essere completamente guarito?</Italian>
+			<Polish>Wydać $% 1 w pełni uzdrowiony?</Polish>
+			<Portuguese>Gastar US $% 1 para ser totalmente curado?</Portuguese>
+			<Russian>Потратит $ 1%, чтобы быть полностью зажила?</Russian>
+			<German>Spend $% 1 vollständig geheilt zu werden?</German>
 		</Key>
 		<Key ID="STR_NOTF_HS_TITLE">
 			<Original>Doctor</Original>
+			<Czech>Doktor</Czech>
+			<French>Docteur</French>
+			<Spanish>Doctor</Spanish>
+			<Italian>Medico</Italian>
+			<Polish>Lekarz</Polish>
+			<Portuguese>Médico</Portuguese>
+			<Russian>Врач</Russian>
+			<German>Arzt</German>
 		</Key>
 		<Key ID="STR_NOTF_HS_Healing">
 			<Original>Please stay still</Original>
@@ -6656,6 +6680,17 @@
 			<Spanish>Debes abrir las puertas de afuera antes de abrir esta!</Spanish>
 			<Russian></Russian>
 			<Portuguese>Você deve abrir as portas externas antes de abrir essa!</Portuguese>
+		</Key>
+		<Key ID="STR_ISTR_defuseKit_NotNear">
+			<Original>You are not looking at a vault.</Original>
+			<Czech>Nejste při pohledu na klenbu.</Czech>
+			<French>Vous ne cherchez pas à un coffre-fort.</French>
+			<Spanish>Usted no está buscando en una cámara acorazada.</Spanish>
+			<Italian>Non cercate in un caveau.</Italian>
+			<Polish>Nie jesteś patrząc na sklepieniu.</Polish>
+			<Portuguese>Você não está olhando para um cofre.</Portuguese>
+			<Russian>Вы не смотрите на хранилище.</Russian>
+			<German>Вы не смотрите на хранилище.</German>
 		</Key>
 		<Key ID="STR_ISTR_Defuse_Nothing">
 			<Original>There is no charge on the vault?</Original>

@@ -10,7 +10,7 @@ private["_vault","_ui","_title","_progressBar","_cP","_titleText"];
 _vault = param [0,ObjNull,[ObjNull]];
 
 if(isNull _vault) exitWith {};
-if(typeOf _vault != "Land_CargoBox_V1_F") exitWith {};
+if(typeOf _vault != "Land_CargoBox_V1_F") exitWith {hint localize "STR_ISTR_defuseKit_NotNear"};
 if(!(_vault GVAR ["chargeplaced",false])) exitWith {hint localize "STR_ISTR_Defuse_Nothing"};
 
 life_action_inUse = true;
