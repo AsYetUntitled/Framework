@@ -8,7 +8,7 @@
 	Updates ALL player information in the database.
 	Information gets passed here from the client side file: core\session\fn_updateRequest.sqf
 */
-private["_uid","_side","_cash","_bank","_licenses","_gear","_stats","_name","_alive","_position","_query","_thread"];
+private["_uid","_side","_cash","_bank","_licenses","_gear","_stats","_name","_alive","_position","_query"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;

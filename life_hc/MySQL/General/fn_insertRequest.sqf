@@ -9,7 +9,7 @@
 	Does something with inserting... Don't have time for
 	descriptions... Need to write it...
 */
-private["_handler","_thread","_queryResult","_query","_alias"];
+private["_queryResult","_query","_alias"];
 params [
 	"_uid",
 	"_name",

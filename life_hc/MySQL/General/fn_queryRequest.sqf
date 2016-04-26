@@ -13,21 +13,20 @@
 	ARRAY - If array has 0 elements it should be handled as an error in client-side files.
 	STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
-private["_uid","_side","_query","_return","_queryResult","_qResult","_handler","_thread","_tickTime","_loops","_returnCount"];
+private["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _ownerID = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 if(isNull _ownerID) exitWith {};
 
-/*
-	_returnCount is the count of entries we are expecting back from the async call.
-	The other part is well the SQL statement.
-*/
 _query = switch(_side) do {
-	case west: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE playerid='%1'",_uid];};
-	case independent: {_returnCount = 10; format["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE playerid='%1'",_uid];};
+	// West - 11 entries returned
+	case west: {format["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE playerid='%1'",_uid];};
+	// Civilian - 12 entries returned
+	case civilian: {format["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE playerid='%1'",_uid];};
+	// Independent - 10 entries returned
+	case independent: {format["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE playerid='%1'",_uid];};
 };
 
 
@@ -43,7 +42,6 @@ if(count _queryResult == 0) exitWith {
 };
 
 //Blah conversion thing from a2net->extdb
-private["_tmp"];
 _tmp = _queryResult select 2;
 _queryResult set[2,[_tmp] call HC_fnc_numberSafe];
 _tmp = _queryResult select 3;
@@ -56,8 +54,7 @@ _queryResult set[6,_new];
 
 //Convert tinyint to boolean
 _old = _queryResult select 6;
-for "_i" from 0 to (count _old)-1 do
-{
+for "_i" from 0 to (count _old)-1 do {
 	_data = _old select _i;
 	_old set[_i,[_data select 0, ([_data select 1,1] call HC_fnc_bool)]];
 };
@@ -133,6 +130,7 @@ switch (_side) do {
 		_new = [(_queryResult select 9)] call HC_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[9,_new];
+
 		//Playtime
 		_new = [(_queryResult select 10)] call HC_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
