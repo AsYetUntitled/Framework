@@ -2918,6 +2918,15 @@
 			<Portuguese>Você não tem R$%1 para ser curado</Portuguese>
 			<Polish>Nie masz $%1 na leczenie</Polish>
 		</Key>
+		<Key ID="STR_NOTF_HS_FullHealth">
+			<Original>You do not need to be healed!</Original>
+		</Key>
+		<Key ID="STR_NOTF_HS_PopUp">
+			<Original>Spend $%1 to be fully healed?</Original>
+		</Key>
+		<Key ID="STR_NOTF_HS_TITLE">
+			<Original>Doctor</Original>
+		</Key>
 		<Key ID="STR_NOTF_HS_Healing">
 			<Original>Please stay still</Original>
 			<Czech>Prosím, zůstat v klidu</Czech>
