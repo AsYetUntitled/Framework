@@ -56,7 +56,7 @@ diag_log "::Life Client:: Waiting for the server to be ready..";
 waitUntil{!isNil "life_server_isReady"};
 waitUntil{(life_server_isReady OR !isNil "life_server_extDB_notLoaded")};
 
-if(!isNil "life_server_extDB_notLoaded" && life_server_extDB_notLoaded isEqualType []) exitWith {
+if(!isNil "life_server_extDB_notLoaded" && {life_server_extDB_notLoaded isEqualType []}) exitWith {
 	diag_log life_server_extDB_notLoaded;
 	999999 cutText [life_server_extDB_notLoaded,"BLACK FADED"];
 	999999 cutFadeOut 99999999;
