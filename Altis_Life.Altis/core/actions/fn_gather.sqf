@@ -19,7 +19,7 @@ _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 _exit = false;
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
-for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
+for "_i" from 0 to count(_resourceCfg)-1 do {
 
 	_curConfig = (_resourceCfg select _i);
 	_resource = configName _curConfig;

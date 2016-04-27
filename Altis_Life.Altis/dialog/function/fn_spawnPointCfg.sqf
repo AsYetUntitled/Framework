@@ -22,7 +22,7 @@ _return = [];
 
 _spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> _side;
 
-for[{_i = 0},{_i < count(_spawnCfg)},{_i = _i + 1}] do {
+for "_i" from 0 to count(_spawnCfg)-1 do {
     _flag = true;
     _tempConfig = [];
 		_curConfig = (_spawnCfg select _i);
