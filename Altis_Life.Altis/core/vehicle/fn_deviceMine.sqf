@@ -52,16 +52,16 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
 	private ["_curConfig","_resourceZones","_resources","_resourceCfg","_mined"];
 	_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 
-  if (!_isMineral) exitWith {};
+	if (!_isMineral) exitWith {};
 	_curConfig = (_resourceCfg select _i);
 	_resources = getArray(_curConfig >> "mined");
 	_resourceZones = getArray(_curConfig >> "zones");
 
-	if (!(_resources select 0) isEqualType []) then {
-    _mined = _resources select 0;
-  } else {
-  	_mined = _resources select 0 select 0;
-  };
+	if (!(_resources select 0 isEqualType [])) then {
+		_mined = _resources select 0;
+	} else {
+		_mined = _resources select 0 select 0;
+	};
 
 	{
 		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
