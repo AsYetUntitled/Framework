@@ -69,7 +69,7 @@ if (_requiredItem != "") then {
     if (_valItem < 1) exitWith {
 		switch (_requiredItem) do {
 			case "pickaxe": {
-			titleText[(localize "STR_NOTF_Pickaxe"), "PLAIN"];
+				titleText[(localize "STR_NOTF_Pickaxe"), "PLAIN"];
 			};
 		};
 		life_action_inUse = false;
