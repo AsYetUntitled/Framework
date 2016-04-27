@@ -147,6 +147,8 @@ switch (_side) do {
 	};
 };
 
+publicVariable "TON_fnc_playtime_values_request";
+
 life_keyreceived = false;
 life_keyreceivedvar = [];
 [_uid,_side] remoteExecCall ["TON_fnc_recupkeyforHC",RSERV];

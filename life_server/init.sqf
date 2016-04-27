@@ -143,7 +143,13 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	[] spawn TON_fnc_cleanup;
 };
 
-[] call TON_fnc_initPlayTime;
+TON_fnc_playtime_values = [];
+TON_fnc_playtime_values_request = [];
+
+//Just incase the Headless Client connects before anyone else
+publicVariable "TON_fnc_playtime_values";
+publicVariable "TON_fnc_playtime_values_request";
+
 
 /* Setup the federal reserve building(s) */
 private["_dome","_rsb"];
