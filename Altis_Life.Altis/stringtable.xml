@@ -4,6 +4,7 @@
 		<Key ID="STR_Shops_C_Bruce">
 			<Original>Bruce's Outback Outfits</Original>
 			<Czech>Bruceovy Outback Oblečení</Czech>
+			<French>Outback Tenues de Bruce</French>
 			<Spanish>Tienda de Ropa</Spanish>
 			<Russian></Russian>
 			<Portuguese>Loja de Roupas</Portuguese>
@@ -13,15 +14,17 @@
 		<Key ID="STR_Shops_C_Police">
 			<Original>Altis Police Department Shop</Original>
 			<Czech>Altis policejní oddělení Shop</Czech>
+			<French>Altis Police Department Boutique</French>
 			<Spanish>Tienda del Departamento de Policía</Spanish>
 			<Russian></Russian>
 			<Portuguese>Loja de Roupas Policiais</Portuguese>
 			<Polish>Sklep Policyjny</Polish>
-			<Italian></Italian>
+			<Italian>Altis Police Department negozio</Italian>
 		</Key>
 		<Key ID="STR_Shops_C_Rebel">
 			<Original>Mohammed's Jihadi Shop</Original>
 			<Czech>Mohamedův džihád Shop</Czech>
+			<French>Jihad Shop Muhammad</French>
 			<Spanish>Tienda Jihadi de Mohamed</Spanish>
 			<Russian></Russian>
 			<Portuguese>Loja de Roupas Rebeldes</Portuguese>
@@ -30,6 +33,7 @@
 		<Key ID="STR_Shops_C_Diving">
 			<Original>Steve's Diving Shop</Original>
 			<Czech>Steve je potápění obchod</Czech>
+			<French>Plongée Shop Steve</French>
 			<Spanish>Tienda de Buceo</Spanish>
 			<Russian></Russian>
 			<German>Steve's Taucherequipment</German>
@@ -61,6 +65,7 @@
 		<Key ID="STR_Shops_C_Kart">
 			<Original>Bobby's Kart-Racing Outfits</Original>
 			<Czech>Billy Joe Střelné zbraně</Czech>
+			<French>Kart-Racing Tenues de Bobby</French>
 			<Spanish>Tienda de Trajes de Carreras</Spanish>
 			<Russian></Russian>
 			<German>Bobby's Go-Kart Rennklamotten</German>
@@ -246,6 +251,7 @@
 		<Key ID="STR_Shop_Station_Coffee">
 			<Original>Fuel Station Coffee</Original>
 			<Czech>Palivo Coffee Station</Czech>
+			<French>Fuel Station Coffee</French>
 			<Spanish>Cafeteria de Gasolinera</Spanish>
 			<Russian></Russian>
 			<German>Tankstellen Café</German>
@@ -290,6 +296,7 @@
 		<Key ID="STR_Global_Mags">
 			<Original>Magazines</Original>
 			<Czech>časopisy</Czech>
+			<French>Les magazines</French>
 			<Spanish>Cargadores</Spanish>
 			<Russian></Russian>
 			<Portuguese>Munições</Portuguese>
@@ -297,6 +304,7 @@
 		<Key ID="STR_Global_Accs">
 			<Original>Accessories</Original>
 			<Czech>Příslušenství</Czech>
+			<French>Accessoires</French>
 			<Spanish>Accesorios</Spanish>
 			<Russian></Russian>
 			<Portuguese>Acessórios</Portuguese>
@@ -304,6 +312,7 @@
 		<Key ID="STR_Global_Weapons">
 			<Original>Weapons</Original>
 			<Czech>Zbraně</Czech>
+			<French>Armes</French>
 			<Spanish>Armas</Spanish>
 			<Russian></Russian>
 			<Portuguese>Armas</Portuguese>
@@ -434,6 +443,7 @@
 		<Key ID="STR_Admin_Amount">
 			<Original>Put the amount you want to compensate:</Original>
 			<Czech>Vložte částku, kterou chcete kompenzovat:</Czech>
+			<French>Mettez le montant que vous souhaitez compenser:</French>
 			<Spanish>Pon la cantidad que quieres compensar:</Spanish>
 			<Russian></Russian>
 			<German>Trage den Wert zum Entschädigen des Spielers ein:</German>
@@ -660,6 +670,7 @@
 		<Key ID="STR_ANOTF_MDisabled">
 			<Original>Player Markers Disabled.</Original>
 			<Czech>Hráč Markers pro invalidy.</Czech>
+			<French>Joueur Marqueurs handicapés.</French>
 			<Spanish>Marcadores de Jugadores Desabilitados</Spanish>
 			<Russian></Russian>
 			<German>Spieler Markierungen ausgeschaltet.</German>
@@ -669,7 +680,8 @@
 		<Key ID="STR_ANOTF_MEnabled">
 			<Original>Player Markers Enabled.</Original>
 			<Czech>Hráč Markers Povoleno.</Czech>
-			<Spanish></Spanish>
+			<French>Joueur Marqueurs Enabled.</French>
+			<Spanish>Jugador marcadores Activado.</Spanish>
 			<Russian></Russian>
 			<German>Spieler Markierungen aktiviert.</German>
 			<Portuguese>Marcações dos jogadores habilitada.</Portuguese>
@@ -719,6 +731,7 @@
 		<Key ID="STR_NOTF_notAllowed">
 			<Original>Your faction is not allowed to chop vehicles!</Original>
 			<Czech>Váš frakce není povoleno sekat vozidla!</Czech>
+			<French>Votre faction ne peut pas couper les véhicules!</French>
 			<Spanish>Tu facción no tiene permitido usar esta tienda! </Spanish>
 			<Russian></Russian>
 			<Portuguese>Sua facção não têm direito de usar essa loja</Portuguese>
@@ -827,6 +840,7 @@
 		<Key ID="STR_ATM_WithdrawGang">
 			<Original>Withdraw: Gang</Original>
 			<Czech>Odstoupit: Gang</Czech>
+			<French>Retirer: Gang</French>
 			<Spanish>Retirar: Pandilla</Spanish>
 			<Russian></Russian>
 			<Portuguese>Sacar: gangue</Portuguese>
@@ -835,6 +849,7 @@
 		<Key ID="STR_ATM_DepositGang">
 			<Original>Deposit: Gang</Original>
 			<Czech>Záloha: Gang</Czech>
+			<French>Caution: Gang</French>
 			<Spanish>Depositar: Pandilla</Spanish>
 			<Russian></Russian>
 			<Portuguese>Depositar: Gangue</Portuguese>
@@ -887,6 +902,7 @@
 		<Key ID="STR_ATM_DoesntExist">
 			<Original>The player selected doesn't seem to exist?</Original>
 			<Czech>Hráč vybraný Nezdá se, že neexistuje?</Czech>
+			<French>Le joueur sélectionné ne semble pas exister?</French>
 			<Spanish>El jugador que seleccionastes no existe?</Spanish>
 			<Russian></Russian>
 			<German>Der Spieler scheint nicht zu existieren?</German>
@@ -988,11 +1004,12 @@
 			<Portuguese>Você sacou R$%1 da sua gangue</Portuguese>
 		</Key>
 		<Key ID="STR_ATM_WithdrawInUseG">
-			<Original>Someone is already trying to withdraw from your gang</Original>
-			<Czech>Někdo se již snaží ustoupit od svého gangu</Czech>
-			<Spanish>Alguien ya esta tratando de retirar dinero de tu pandilla</Spanish>
+			<Original>Someone is already trying to withdraw from your gang.</Original>
+			<Czech>Někdo se již snaží ustoupit od svého gangu.</Czech>
+			<French>Quelqu'un essaie déjà de se retirer de votre gang.</French>
+			<Spanish>Alguien ya esta tratando de retirar dinero de tu pandilla.</Spanish>
 			<Russian></Russian>
-			<Portuguese>Alguém já está tentando sacar da sua gangue</Portuguese>
+			<Portuguese>Alguém já está tentando sacar da sua gangue.</Portuguese>
 		</Key>
 		<Key ID="STR_ATM_NotEnoughCash">
 			<Original>You do not have that much cash on you.</Original>
@@ -1028,11 +1045,12 @@
 			<Polish>Zdeponowałeś na koncie gangu kwotę $%1 </Polish>
 		</Key>
 		<Key ID="STR_ATM_DepositInUseG">
-			<Original>Someone is already trying to deposit into your gang's bank account</Original>
-			<Czech>Někdo se již snaží vložit na bankovní účet svého gangu</Czech>
-			<Spanish>Alguien ya esta tratando de depositar en la cuenta de banco de tu pandilla</Spanish>
+			<Original>Someone is already trying to deposit into your gang's bank account.</Original>
+			<Czech>Někdo se již snaží vložit na bankovní účet svého gangu.</Czech>
+			<French>Quelqu'un essaie déjà de déposer dans le compte bancaire de votre gang.</French>
+			<Spanish>Alguien ya esta tratando de depositar en la cuenta de banco de tu pandilla.</Spanish>
 			<Russian></Russian>
-			<Portuguese>Alguém já está tentando depositar na conta da sua gangue</Portuguese>
+			<Portuguese>Alguém já está tentando depositar na conta da sua gangue.</Portuguese>
 		</Key>
 	</Package>
 	<Package name="Cell_Phone">
@@ -2285,6 +2303,7 @@
 		<Key ID="STR_SM_SC">
 			<Original>Sidechat Switch</Original>
 			<Czech>Sidechat Spínač</Czech>
+			<French>Commutateur Sidechat</French>
 			<Spanish>Habilitar Sidechat</Spanish>
 			<Russian></Russian>
 			<Portuguese>Habilitar Sidechat</Portuguese>
@@ -2292,6 +2311,7 @@
 		<Key ID="STR_SM_RNObj">
 			<Original>Reveal Nearest Objects</Original>
 			<Czech>Reveal Nejbližší objekty</Czech>
+			<French>Révéler les objets les plus proches</French>
 			<Spanish>Revelar Objetos Cercanos</Spanish>
 			<Russian></Russian>
 			<Portuguese>Mostrar Objetos Próximos</Portuguese>
@@ -2516,6 +2536,7 @@
 		<Key ID="STR_Wanted_Add">
 			<Original>Add</Original>
 			<Czech>Přidat</Czech>
+			<French>Ajouter</French>
 			<Spanish>Agregar</Spanish>
 			<Russian></Russian>
 			<Portuguese>Adicionar</Portuguese>
@@ -2523,6 +2544,7 @@
 		<Key ID="STR_Wanted_People">
 			<Original>Wanted People</Original>
 			<Czech>chtěl, aby lidé</Czech>
+			<French>Les gens voulaient</French>
 			<Spanish>Gente Buscada</Spanish>
 			<Russian></Russian>
 			<Portuguese>Pessoas Procuradas</Portuguese>
@@ -2530,6 +2552,7 @@
 		<Key ID="STR_Wanted_Citizens">
 			<Original>Citizens</Original>
 			<Czech>občané</Czech>
+			<French>Citoyens</French>
 			<Spanish>Ciudadanos</Spanish>
 			<Russian></Russian>
 			<Portuguese>Cidadãos</Portuguese>
@@ -2537,6 +2560,7 @@
 		<Key ID="STR_Wanted_Crimes">
 			<Original>Crimes</Original>
 			<Czech>Zločiny</Czech>
+			<French>Crimes</French>
 			<Spanish>Crimenes</Spanish>
 			<Russian></Russian>
 			<Portuguese>Crimes</Portuguese>
@@ -2544,6 +2568,7 @@
 		<Key ID="STR_Wanted_AddP">
 			<Original>%1 has been added to the wanted list.</Original>
 			<Czech>%1 byl přidán do seznamu hledaných.</Czech>
+			<French>%1 a été ajouté à la liste des personnes recherchées.</French>
 			<Spanish>%1 ha sido agregado a la Lista de Busqueda.</Spanish>
 			<Russian></Russian>
 			<Portuguese>%1 foi adicionado a lista de procurados.</Portuguese>
@@ -2551,6 +2576,7 @@
 		<Key ID="STR_Wanted_Count">
 			<Original>%1 count(s) of %2</Original>
 			<Czech>Počet%1 (y) z%2</Czech>
+			<French>%1 chef (s) de 2%</French>
 			<Spanish>%1 cuenta(s) de %2</Spanish>
 			<Russian></Russian>
 			<Portuguese>%1 contagem(s) de %2</Portuguese>
@@ -2558,6 +2584,7 @@
 		<Key ID="STR_Wanted_Bounty">
 			<Original>Current Bounty Price: $%1</Original>
 			<Czech>Aktuální Bounty Cena: $ %1</Czech>
+			<French>Current Bounty Prix: $%1</French>
 			<Spanish>Recompensa Actual: $%1</Spanish>
 			<Russian></Russian>
 			<Portuguese>Atual recompensa: R$%1</Portuguese>
@@ -3040,16 +3067,17 @@
 			<Polish>%1 usunął %2's %3</Polish>
 		</Key>
 		<Key ID="STR_NOTF_OwnImpounded">
-			<Original>You paid $%1 for impounding your own %2</Original>
-			<Czech>Zaplatil jste $%1 pro vzdouvání vlastní%2</Czech>
-			<Spanish>Has pagado $%2 para embargar tu propio %1</Spanish>
+			<Original>You paid $%1 for impounding your own %2.</Original>
+			<Czech>Zaplatil jste $%1 pro vzdouvání vlastní %2.</Czech>
+			<French>Vous avez payé $%1 pour la mise en fourrière de votre propre %2.</French>
+			<Spanish>Has pagado $%2 para embargar tu propio %1.</Spanish>
 			<Russian></Russian>
 			<German>Du hast %1 $ bezahlt, weil du dein eigenen %2 beschlagnahmt hast.</German>
-			<Portuguese>Você pagou R$%1 para guardar seu próprio %2</Portuguese>
+			<Portuguese>Você pagou R$%1 para guardar seu próprio %2.</Portuguese>
 		</Key>
 		<Key ID="STR_NOTF_AbortESC">
 			<Original>Abort available in %1</Original>
-			<Czech>Přerušit k dispozici v%1</Czech>
+			<Czech>Přerušit k dispozici v %1</Czech>
 			<Spanish>Aborto disponible en %1</Spanish>
 			<Russian></Russian>
 			<German>Abbruch möglich in %1</German>
@@ -3215,6 +3243,7 @@
 		<Key ID="STR_NOTF_PlayerNear">
 			<Original>You can't chop a vehicle while a player is near!</Original>
 			<Czech>Nemůžeš sekat vozidla, zatímco hráč je blízko!</Czech>
+			<French>Vous ne pouvez pas hacher un véhicule alors que le joueur est proche!</French>
 			<Spanish>No puedes vender este vehículo mientras hay un jugador cerca!</Spanish>
 			<Russian></Russian>
 			<Portuguese>Você não pode usar o desmanche enquanto um jogador está próximo!</Portuguese>
@@ -3409,6 +3438,7 @@
 		<Key ID="STR_NOTF_ActionDelay">
 			<Original>You're doing it too fast!</Original>
 			<Czech>Děláte to příliš rychle!</Czech>
+			<French>Vous le faites trop vite!</French>
 			<Spanish>Lo estas haciendo muy rapido!</Spanish>
 			<Russian></Russian>
 			<German>Du bist ganz aus der Puste! Warte ein paar Sekunden!</German>
@@ -3643,6 +3673,7 @@
 		<Key ID="STR_NOTF_CannotSeizePerson">
 			<Original>You couldn't effectively seize any items. Try again.</Original>
 			<Czech>Dalo by se efektivně využily všech položek. Zkus to znovu.</Czech>
+			<French>Vous ne pouviez pas saisir efficacement les articles. Réessayer.</French>
 			<Spanish>No pudistes efectivamente, confiscar algun objeto. Prueba de nuevo.</Spanish>
 			<Russian></Russian>
 			<Portuguese>Você não pode apreender nenhum item, efetivamente. Tente de novo.</Portuguese>
@@ -3661,6 +3692,7 @@
 		<Key ID="STR_NOTF_ActionInVehicle">
 			<Original>You can't do that from inside the vehicle!</Original>
 			<Czech>Můžete to udělat zevnitř vozu!</Czech>
+			<French>Vous ne pouvez pas le faire à l'intérieur du véhicule!</French>
 			<Spanish>No puedes hacer eso desde adentro del vehículo!</Spanish>
 			<Russian></Russian>
 			<German>Du kannst das nicht tun während du in einem Fahrzeug sitzt!</German>
@@ -3679,17 +3711,19 @@
 			<Polish>Naprawiłeś pojazd</Polish>
 		</Key>
 		<Key ID="STR_NOTF_Gather_Success">
-			<Original>You have gathered %2 %1(s)</Original>
-			<Czech>Jste shromáždili% %2 1 (y)</Czech>
-			<Spanish>Has recolectado %2 %1(s)</Spanish>
+			<Original>You have gathered %2 %1(s).</Original>
+			<Czech>Jste shromáždili %2 %1(y).</Czech>
+			<French>Vous avez recueilli %2 %1(s).</French>
+			<Spanish>Has recolectado %2 %1(s).</Spanish>
 			<Russian></Russian>
-			<German>Du hast %2 %1(s) gesammelt</German>
-			<Portuguese>Você colheu %2 %1(s)</Portuguese>
-			<Polish>Zebrałeś %2 %1 (s)</Polish>
+			<German>Du hast %2 %1(s) gesammelt.</German>
+			<Portuguese>Você colheu %2 %1(s).</Portuguese>
+			<Polish>Zebrałeś %2 %1 (s).</Polish>
 		</Key>
 		<Key ID="STR_NOTF_GatherVeh">
 			<Original>You can't gather from inside a car!</Original>
 			<Czech>Nemůžete sbírat zevnitř vozu!</Czech>
+			<French>Vous ne pouvez pas rassembler à l'intérieur d'une voiture!</French>
 			<Spanish>No puedes recolectar desde adentro de un vehículo!</Spanish>
 			<Russian></Russian>
 			<German>Wie soll das von hier aus gehen? Du sitzt in einem Fahrzeug!</German>
@@ -3699,6 +3733,7 @@
 		<Key ID="STR_NOTF_NoLootingPerson">
 			<Original>You are not allowed to loot dead bodies.</Original>
 			<Czech>Ty jsou není dovoleno kořist mrtvoly.</Czech>
+			<French>Vous n'êtes pas autorisé à piller des cadavres.</French>
 			<Spanish>No puedes buscar cuerpos muertos.</Spanish>
 			<Russian></Russian>
 			<German>Du darfst keine Leichen durchsuchen</German>
@@ -3708,6 +3743,7 @@
 		<Key ID="STR_NOTF_Frozen">
 			<Original>You have been frozen by an administrator.</Original>
 			<Czech>Vy byly zmrazeny správcem.</Czech>
+			<French>Vous avez été gelé par un administrateur.</French>
 			<Spanish>Un admin te ha congelado!</Spanish>
 			<Russian></Russian>
 			<German>Du wurdest von einem Admin eingefroren</German>
@@ -3717,6 +3753,7 @@
 		<Key ID="STR_NOTF_Teleport">
 			<Original>You have teleported to your selected position.</Original>
 			<Czech>Jste teleported do vašeho zvolené poloze.</Czech>
+			<French>Vous avez téléporté à votre position sélectionnée.</French>
 			<Spanish>Te has teletransportado a la posisción seleccionada.</Spanish>
 			<Russian></Russian>
 			<Portuguese>Você foi teleportado para a posição que você selecionou</Portuguese>
@@ -3724,6 +3761,7 @@
 		<Key ID="STR_NOTF_Unfrozen">
 			<Original>You have been unfrozen by an administrator.</Original>
 			<Czech>Byli jste zmrzlá správcem.</Czech>
+			<French>Vous avez été dégelés par un administrateur.</French>
 			<Spanish>Un admin te ha descongelado!</Spanish>
 			<Russian></Russian>
 			<German>Ein Admin hat dich wieder aufgetaut</German>
@@ -4287,12 +4325,13 @@
 			<Polish>Mandat dla %1</Polish>
 		</Key>
 		<Key ID="STR_COP_BlackListedVehicle">
-			<Original>%2 got back a blacklisted vehicle near %1</Original>
-			<Czech>%2 dostat zpět na černou listinu vozidlo nedaleko%1</Czech>
-			<Spanish>%2 tiene un vehículo prohibido cerca de %1</Spanish>
+			<Original>%2 got back a blacklisted vehicle near %1.</Original>
+			<Czech>%2 dostat zpět na černou listinu vozidlo nedaleko%1.</Czech>
+			<French>%2 revenir un véhicule près de la liste noire %1.</French>
+			<Spanish>%2 tiene un vehículo prohibido cerca de %1.</Spanish>
 			<Russian></Russian>
-			<Italian>%2 ha ritirato un veicolo blacklistato vicino %1</Italian>
-			<Portuguese>%2 tem um veículo proíbido nas proximidades %1</Portuguese>
+			<Italian>%2 ha ritirato un veicolo blacklistato vicino %1.</Italian>
+			<Portuguese>%2 tem um veículo proíbido nas proximidades %1.</Portuguese>
 		</Key>
 		<Key ID="STR_Cop_TicketNil">
 			<Original>Person to ticket is nil</Original>
@@ -5077,6 +5116,7 @@
 		<Key ID="STR_MISC_soundnormal">
 			<Original>Your sound was set to normal mode!</Original>
 			<Czech>Váš zvuk byl nastaven do normálního režimu!</Czech>
+			<French>Votre son a été réglé en mode normal!</French>
 			<Spanish>Tu sonido fue puesto en modo normal!</Spanish>
 			<Russian></Russian>
 			<German>Die Lautstärke ist wieder normal!</German>
@@ -5086,6 +5126,7 @@
 		<Key ID="STR_MISC_soundfade">
 			<Original>Your sound was set to fade mode!</Original>
 			<Czech>Váš zvuk byl nastaven do režimu slábnout!</Czech>
+			<French>Votre son a été réglé en mode fondu!</French>
 			<Spanish>Tu sonido fue puesto en modo bajo!</Spanish>
 			<Russian></Russian>
 			<German>Deine Lautstärke wurde in den "Fade-Mode" geändert!</German>
@@ -5278,6 +5319,7 @@
 		<Key ID="STR_House_FedDoor_Locked">
 			<Original>The door is already locked!</Original>
 			<Czech>Dveře jsou již zamčené!</Czech>
+			<French>La porte est déjà fermée!</French>
 			<Spanish>La puerta ya esta cerrada con llave!</Spanish>
 			<Russian></Russian>
 			<German>Die Tür ist bereits verriegelt!</German>
@@ -5408,6 +5450,7 @@
 		<Key ID="STR_House_LockedUp">
 			<Original>House has been locked up.</Original>
 			<Czech>Dům byl zamčený.</Czech>
+			<French>House a été enfermé.</French>
 			<Spanish>La casa se a cerrado con llave.</Spanish>
 			<Russian></Russian>
 			<German>Haus wurde abgeschlossen.</German>
@@ -5461,6 +5504,7 @@
 		<Key ID="STR_HUD_Food">
 			<Original>Food</Original>
 			<Czech>Jídlo</Czech>
+			<French>Aliments</French>
 			<Spanish>Comida</Spanish>
 			<Russian></Russian>
 			<German>Hunger</German>
@@ -5469,6 +5513,7 @@
 		<Key ID="STR_HUD_Health">
 			<Original>Health</Original>
 			<Czech>Zdraví</Czech>
+			<French>Santé</French>
 			<Spanish>Vida</Spanish>
 			<Russian></Russian>
 			<German>Gesundheit</German>
@@ -5477,6 +5522,7 @@
 		<Key ID="STR_HUD_Water">
 			<Original>Water</Original>
 			<Czech>Voda</Czech>
+			<French>Eau</French>
 			<Spanish>Agua</Spanish>
 			<Russian></Russian>
 			<German>Durst</German>
@@ -6626,6 +6672,7 @@
 		<Key ID="STR_ISTR_Blast_Exploit">
 			<Original>You must open the container before placing the charger!</Original>
 			<Czech>Je nutné otevřít nádobu před umístěním nabíječku!</Czech>
+			<French>Vous devez ouvrir le conteneur avant de placer le chargeur!</French>
 			<Spanish>Debes abrir el contenedor antes de poner el explosivo!</Spanish>
 			<Russian></Russian>
 			<Portuguese>Você deve abrir o container antes de colocar o explosivo!</Portuguese>
@@ -6677,6 +6724,7 @@
 		<Key ID="STR_ISTR_Bolt_Exploit">
 			<Original>You must open the outside doors before opening it!</Original>
 			<Czech>Je nutné otevřít venkovní dveře před otevřením!</Czech>
+			<French>Vous devez ouvrir les portes extérieures avant de l'ouvrir!</French>
 			<Spanish>Debes abrir las puertas de afuera antes de abrir esta!</Spanish>
 			<Russian></Russian>
 			<Portuguese>Você deve abrir as portas externas antes de abrir essa!</Portuguese>
@@ -6690,7 +6738,7 @@
 			<Polish>Nie jesteś patrząc na sklepieniu.</Polish>
 			<Portuguese>Você não está olhando para um cofre.</Portuguese>
 			<Russian>Вы не смотрите на хранилище.</Russian>
-			<German>Вы не смотрите на хранилище.</German>
+			<German>Sie sind nicht in einem Tresor suchen.</German>
 		</Key>
 		<Key ID="STR_ISTR_Defuse_Nothing">
 			<Original>There is no charge on the vault?</Original>
@@ -7417,6 +7465,7 @@
 		<Key ID="STR_GUI_SideSwitch">
 			<Original>Switch side-channel mode, turn this off if you don't want to talk with players from your side.</Original>
 			<Czech>Přepnout do režimu side-channel, tuto funkci vypnout, pokud nechcete mluvit s hráči z vaší strany.</Czech>
+			<French>Passez en mode à canal latéral, désactiver cette fonction si vous ne voulez pas parler avec des joueurs de votre côté.</French>
 			<Spanish>Habilita/Desabilita el SideChannel, apaga esto si no quieres hablar con jugador de tu lado.</Spanish>
 			<Russian></Russian>
 			<Portuguese>Habilita/Desabilita o side-channel, desabilite caso você não queira conversar com os jogadores da sua facção.</Portuguese>
@@ -7873,6 +7922,7 @@
 		<Key ID="STR_NPC_Protected">
 			<original>This vehicle is NPC protected.</Original>
 			<Czech>Toto vozidlo je chráněno NPC.</Czech>
+			<French>Ce véhicule est protégé NPC.</French>
 			<Spanish>Este vehículo esta protegido.</Spanish>
 			<Russian></Russian>
 			<Portuguese>Esse veículo está protegido.</Portuguese>
@@ -8641,6 +8691,7 @@
 		<Key ID="STR_Fuel_Tank_Vehicle">
 			<Original>Current Fuel Amount:</Original>
 			<Czech>Aktuální výše Palivo:</Czech>
+			<French>Montant Courant de carburant:</French>
 			<Spanish>Actual cantidad de combustible:</Spanish>
 			<Russian></Russian>
 			<Portuguese>Quantidade Atual de Combustível:</Portuguese>
@@ -8698,6 +8749,7 @@
 		<Key ID="STR_MAR_Fish_Market">
 			<Original>Fish Market</Original>
 			<Czech>Rybí trh</Czech>
+			<French>Marché aux poissons</French>
 			<Spanish>Mercado de Pescado</Spanish>
 			<Russian></Russian>
 			<German>Fischmarkt</German>
@@ -8708,6 +8760,7 @@
 		<Key ID="STR_MAR_Hospital">
 			<Original>Hospital</Original>
 			<Czech>Nemocnice</Czech>
+			<French>Hôpital</French>
 			<Spanish>Hospital</Spanish>
 			<Russian></Russian>
 			<German>Krankenhaus</German>
@@ -8718,6 +8771,7 @@
 		<Key ID="STR_MAR_Police_Station">
 			<Original>Police Station</Original>
 			<Czech>Policejní stanice</Czech>
+			<French>Poste de police</French>
 			<Spanish>Estación de Policia</Spanish>
 			<Russian></Russian>
 			<German>Polizei Revier</German>
@@ -8728,6 +8782,7 @@
 		<Key ID="STR_MAR_Police_Air_HQ">
 			<Original>Police Air HQ</Original>
 			<Czech>Police Air HQ</Czech>
+			<French>HQ Air Police</French>
 			<Spanish>Cuartel Aéreo Policial</Spanish>
 			<Russian></Russian>
 			<German>Polizei HQ Flughafen</German>
@@ -8737,6 +8792,7 @@
 		<Key ID="STR_MAR_Iron_Mine">
 			<Original>Iron Mine</Original>
 			<Czech>Železný důl</Czech>
+			<French>Mine de fer</French>
 			<Spanish>Mina de Hierro</Spanish>
 			<Russian></Russian>
 			<German>Eisenmine</German>
@@ -8747,6 +8803,7 @@
 		<Key ID="STR_MAR_Salt_Mine">
 			<Original>Salt Mine</Original>
 			<Czech>Solný důl</Czech>
+			<French>Mine de sel</French>
 			<Spanish>Mina de Sal</Spanish>
 			<Russian></Russian>
 			<German>Salzmine</German>
@@ -8757,6 +8814,7 @@
 		<Key ID="STR_MAR_Salt_Processing">
 			<Original>Salt Processing</Original>
 			<Czech>sůl Processing</Czech>
+			<French>traitement de sel</French>
 			<Spanish>Procesador de Sal</Spanish>
 			<Russian></Russian>
 			<German>Salzverarbeitung</German>
@@ -8767,6 +8825,7 @@
 		<Key ID="STR_MAR_Altis_Corrections">
 			<Original>Altis Corrections</Original>
 			<Czech>Altis Opravy</Czech>
+			<French>Corrections Altis</French>
 			<Spanish>Prisión de Altis</Spanish>
 			<Russian></Russian>
 			<German>Altis Bundesgefängnis</German>
@@ -8777,6 +8836,7 @@
 		<Key ID="STR_MAR_Police_HQ">
 			<Original>Police HQ</Original>
 			<Czech>Police HQ</Czech>
+			<French>QG de la police</French>
 			<Spanish>Comisaria de Policía</Spanish>
 			<Russian></Russian>
 			<German>Polizei HauptQuartier</German>
@@ -8786,6 +8846,7 @@
 		<Key ID="STR_MAR_Coast_Guard">
 			<Original>Coast Guard</Original>
 			<Czech>pobřežní hlídka</Czech>
+			<French>garde-côte</French>
 			<Spanish>Guardia Costera</Spanish>
 			<Russian></Russian>
 			<German>Küstenwache</German>
@@ -8796,6 +8857,7 @@
 		<Key ID="STR_MAR_Rebel_Outpost">
 			<Original>Rebel Outpost</Original>
 			<Czech>Rebel Outpost</Czech>
+			<French>Outpost Rebel</French>
 			<Spanish>Base Rebelde</Spanish>
 			<Russian></Russian>
 			<German>Rebellen Außenposten</German>
@@ -8805,6 +8867,7 @@
 		<Key ID="STR_MAR_Air_Shop">
 			<Original>Air Shop</Original>
 			<Czech>Air Shop</Czech>
+			<French>Air Boutique</French>
 			<Spanish>Tienda Aérea</Spanish>
 			<Russian></Russian>
 			<German>Luftfahrzeug Händler</German>
@@ -8814,6 +8877,7 @@
 		<Key ID="STR_MAR_Truck_Shop">
 			<Original>Truck Shop</Original>
 			<Czech>Truck Shop</Czech>
+			<French>Truck Boutique</French>
 			<Spanish>Tienda de Camiones</Spanish>
 			<Russian></Russian>
 			<German>LKW Händler</German>
@@ -8824,16 +8888,18 @@
 		<Key ID="STR_MAR_Oil_Processing">
 			<Original>Oil Processing</Original>
 			<Czech>Zpracování olej</Czech>
+			<French>Traitement de l'huile</French>
 			<Spanish>Procesador de Petróleo</Spanish>
 			<Russian></Russian>
 			<German>Öl Verarbeiter</German>
 			<Portuguese>Processador de Petróleo</Portuguese>
 			<Polish>Rafineria ropy naftowej</Polish>
-			<Italian></Italian>
+			<Italian>lavorazione del petrolio</Italian>
 		</Key>
 		<Key ID="STR_MAR_Iron_processing">
 			<Original>Iron Processing</Original>
 			<Czech>Zpracování Iron</Czech>
+			<French>traitement de fer</French>
 			<Spanish>Procesador de Hierro</Spanish>
 			<Russian></Russian>
 			<German>Eisenschmelze</German>
@@ -8843,6 +8909,7 @@
 		<Key ID="STR_MAR_Sand_Mine">
 			<Original>Sand Mine</Original>
 			<Czech>písek Mine</Czech>
+			<French>Mine de sable</French>
 			<Spanish>Mina de Arena</Spanish>
 			<Russian></Russian>
 			<German>Sand Mine</German>
@@ -8852,6 +8919,7 @@
 		<Key ID="STR_MAR_Chop_Shop">
 			<Original>Chop Shop</Original>
 			<Czech>Chop Shop</Czech>
+			<French>Chop Shop</French>
 			<Spanish>Desguace Clandestino</Spanish>
 			<Russian></Russian>
 			<German>Schrotthändler</German>
@@ -8861,6 +8929,7 @@
 		<Key ID="STR_MAR_Cocaine_Processing">
 			<Original>Cocaine Processing</Original>
 			<Czech>Zpracování kokain</Czech>
+			<French>Traitement de la cocaïne</French>
 			<Spanish>Procesador de Cocaína</Spanish>
 			<Russian></Russian>
 			<German>Kokain Verarbeiter</German>
@@ -8870,6 +8939,7 @@
 		<Key ID="STR_MAR_Copper_Mine">
 			<Original>Copper Mine</Original>
 			<Czech>měděný důl</Czech>
+			<French>Mine de cuivre</French>
 			<Spanish>Mina de Cobre</Spanish>
 			<Russian></Russian>
 			<German>Kupfermine</German>
@@ -8879,6 +8949,7 @@
 		<Key ID="STR_MAR_ATM">
 			<Original>ATM</Original>
 			<Czech>bankomat</Czech>
+			<French>AU M</French>
 			<Spanish>ATM</Spanish>
 			<Russian></Russian>
 			<German>Geldautomat</German>
@@ -8888,6 +8959,7 @@
 		<Key ID="STR_MAR_Local_Bank">
 			<Original>Local Bank</Original>
 			<Czech>místní bankovní</Czech>
+			<French>Banque locale</French>
 			<Spanish>Banco Local</Spanish>
 			<Russian></Russian>
 			<German>Zentralbank</German>
@@ -8897,6 +8969,7 @@
 		<Key ID="STR_MAR_Car_Shop">
 			<Original>Car Shop</Original>
 			<Czech>Auto Shop</Czech>
+			<French>Boutique de voitures</French>
 			<Spanish>Tienda de Coches</Spanish>
 			<Russian></Russian>
 			<German>Autohändler</German>
@@ -8906,6 +8979,7 @@
 		<Key ID="STR_MAR_Hospital_Clinic">
 			<Original>Hospital/Clinic</Original>
 			<Czech>Nemocnice / Klinika</Czech>
+			<French>Hôpital / Clinique</French>
 			<Spanish>Hospital/Clínica</Spanish>
 			<Russian></Russian>
 			<German>Krankenhaus</German>
@@ -8915,6 +8989,7 @@
 		<Key ID="STR_MAR_Diamond_Mine">
 			<Original>Diamond Mine</Original>
 			<Czech>Diamond Mine</Czech>
+			<French>diamond mine</French>
 			<Spanish>Mina de Diamantes</Spanish>
 			<Russian></Russian>
 			<German>Diamanten Mine</German>
@@ -8924,6 +8999,7 @@
 		<Key ID="STR_MAR_General_Store">
 			<Original>General Store</Original>
 			<Czech>Obchod se smíšeným zbožím</Czech>
+			<French>Magasin général</French>
 			<Spanish>Tienda General</Spanish>
 			<Russian></Russian>
 			<German>Supermarkt</German>
@@ -8933,6 +9009,7 @@
 		<Key ID="STR_MAR_Civilian_Shops">
 			<Original>Civilian Shops</Original>
 			<Czech>civilní Obchody</Czech>
+			<French>Magasins civils</French>
 			<Spanish>Tiendas Civiles</Spanish>
 			<Russian></Russian>
 			<German>Laden für Zivilisten</German>
@@ -8942,6 +9019,7 @@
 		<Key ID="STR_MAR_Boat_Shop">
 			<Original>Boat Shop</Original>
 			<Czech>Lodní Shop</Czech>
+			<French>Boat Shop</French>
 			<Spanish>Tienda de Barcos</Spanish>
 			<Russian></Russian>
 			<German>Boot Händler</German>
@@ -8951,6 +9029,7 @@
 		<Key ID="STR_MAR_Bruce_Outfits">
 			<Original>Bruce's Outback Outfits</Original>
 			<Czech>Bruceovy Outback Oblečení</Czech>
+			<French>Outback Tenues de Bruce</French>
 			<Spanish>Tienda de Ropa</Spanish>
 			<Russian></Russian>
 			<Portuguese>Loja de Roupas</Portuguese>
@@ -8959,6 +9038,7 @@
 		<Key ID="STR_MAR_Apple_Field">
 			<Original>Apple Field</Original>
 			<Czech>Apple Field</Czech>
+			<French>Pomme Champ</French>
 			<Spanish>Campo de Manzanas</Spanish>
 			<Russian></Russian>
 			<German>Apfel Plantage</German>
@@ -8968,6 +9048,7 @@
 		<Key ID="STR_MAR_Peaches_Field">
 			<Original>Peaches Field</Original>
 			<Czech>broskve Field</Czech>
+			<French>Peaches Champ</French>
 			<Spanish>Campo de Melocotones</Spanish>
 			<Russian></Russian>
 			<German>Pfirsich Plantage</German>
@@ -8977,6 +9058,7 @@
 		<Key ID="STR_MAR_Market">
 			<Original>Market</Original>
 			<Czech>Trh</Czech>
+			<French>Marché</French>
 			<Spanish>Mercado</Spanish>
 			<Russian></Russian>
 			<German>Markt</German>
@@ -8986,6 +9068,7 @@
 		<Key ID="STR_MAR_Air_Service">
 			<Original>Air Service Station</Original>
 			<Czech>Stanice Air Service</Czech>
+			<French>Service Station Air</French>
 			<Spanish>Estación de Servicio Aéreo</Spanish>
 			<Russian></Russian>
 			<German>Werkstatt für Luftfahrzeuge</German>
@@ -8995,6 +9078,7 @@
 		<Key ID="STR_MAR_Channel_News">
 			<Original>Channel 7 News</Original>
 			<Czech>Channel 7 News</Czech>
+			<French>Channel 7 Nouvelles</French>
 			<Spanish>Canal de Noticias 7</Spanish>
 			<Russian></Russian>
 			<German>Kanal 7 Nachrichtensender</German>
@@ -9004,6 +9088,7 @@
 		<Key ID="STR_MAR_DMV">
 			<Original>DMV</Original>
 			<Czech>DMV</Czech>
+			<French>DMV</French>
 			<Spanish>Registro de Licencias</Spanish>
 			<Russian></Russian>
 			<German>Zulassungstelle für Lizenzen</German>
@@ -9014,6 +9099,7 @@
 		<Key ID="STR_MAR_Delivery_Missions">
 			<Original>Delivery Missions</Original>
 			<Czech>Dodací mise</Czech>
+			<French>Missions de livraison</French>
 			<Spanish>Misiones de Entrega</Spanish>
 			<Russian></Russian>
 			<German>Kurier Mission</German>
@@ -9024,6 +9110,7 @@
 		<Key ID="STR_MAR_Deliver_Package">
 			<Original>Deliver Package</Original>
 			<Czech>doručit balíček</Czech>
+			<French>Livrer package</French>
 			<Spanish>Entregar Paquete</Spanish>
 			<Russian></Russian>
 			<German>Paket ausliefern</German>
@@ -9034,6 +9121,7 @@
 		<Key ID="STR_MAR_Get_Delivery_Mission">
 			<Original>Get Delivery Mission</Original>
 			<Czech>Získat Delivery mise</Czech>
+			<French>Obtenez Mission de livraison</French>
 			<Spanish>Empezar Misión de Entrega</Spanish>
 			<Russian></Russian>
 			<German>Starte Kurier Mission</German>
@@ -9044,6 +9132,7 @@
 		<Key ID="STR_MAR_Diving_Shop">
 			<Original>Diving Shop</Original>
 			<Czech>Potápění Shop</Czech>
+			<French>plongée sous-marine Boutique</French>
 			<Spanish>Tienda de Buceo</Spanish>
 			<Russian></Russian>
 			<German>Taucherladen</German>
@@ -9054,6 +9143,7 @@
 		<Key ID="STR_MAR_Drug_Dealer">
 			<Original>Drug Dealer</Original>
 			<Czech>Drug prodejce</Czech>
+			<French>Dealer de drogue</French>
 			<Spanish>Narcotraficante</Spanish>
 			<Russian></Russian>
 			<German>Drogendealer</German>
@@ -9064,6 +9154,7 @@
 		<Key ID="STR_MAR_Diamond_Processing">
 			<Original>Diamond Processing</Original>
 			<Czech>Diamond Processing</Czech>
+			<French>traitement de diamant</French>
 			<Spanish>Procesador de Diamante</Spanish>
 			<Russian></Russian>
 			<German>Diamantenschleifer</German>
@@ -9074,6 +9165,7 @@
 		<Key ID="STR_MAR_Oil_Field">
 			<Original>Oil Field</Original>
 			<Czech>Ropné poles</Czech>
+			<French>Oil Field</French>
 			<Spanish>Campo de Petróleo</Spanish>
 			<Russian></Russian>
 			<German>Öl Felder</German>
@@ -9084,6 +9176,7 @@
 		<Key ID="STR_MAR_Weed_Field">
 			<Original>Marijuana Field</Original>
 			<Czech>Marihuana Field</Czech>
+			<French>marijuana Champ</French>
 			<Spanish>Campo de Marihuana</Spanish>
 			<Russian></Russian>
 			<German>Gras Plantage</German>
@@ -9094,6 +9187,7 @@
 		<Key ID="STR_MAR_Weed_Processing">
 			<Original>Marijuana Processing</Original>
 			<Czech>Zpracování marihuana</Czech>
+			<French>Traitement de la marijuana</French>
 			<Spanish>Procesador de Marihuana</Spanish>
 			<Russian></Russian>
 			<German>Gras Verarbeitung</German>
@@ -9104,6 +9198,7 @@
 		<Key ID="STR_MAR_Boat_Spawn">
 			<Original>Boat Spawn</Original>
 			<Czech>Lodní potěr</Czech>
+			<French>Bateau Spawn</French>
 			<Spanish>Spawn de Barcos</Spanish>
 			<Russian></Russian>
 			<German>Boot Spawn</German>
@@ -9114,6 +9209,7 @@
 		<Key ID="STR_MAR_Copper_Processing">
 			<Original>Copper Processing</Original>
 			<Czech>Zpracování měď</Czech>
+			<French>Traitement de cuivre</French>
 			<Spanish>Procesador de Cobre</Spanish>
 			<Russian></Russian>
 			<German>Kupferschmelze</German>
@@ -9124,6 +9220,7 @@
 		<Key ID="STR_MAR_Cocaine_Field">
 			<Original>Coca Field</Original>
 			<Czech>Coca Field</Czech>
+			<French>Coca Champ</French>
 			<Spanish>Campo de Cocaína</Spanish>
 			<Russian></Russian>
 			<German>Koks Plantage</German>
@@ -9134,6 +9231,7 @@
 		<Key ID="STR_MAR_Oil_Trader">
 			<Original>Oil Trader</Original>
 			<Czech>olej Trader</Czech>
+			<French>Trader huile</French>
 			<Spanish>Comerciante de Petróleo</Spanish>
 			<Russian></Russian>
 			<German>Öl Händler</German>
@@ -9144,6 +9242,7 @@
 		<Key ID="STR_MAR_Salt_Trader">
 			<Original>Salt Trader</Original>
 			<Czech>sůl Trader</Czech>
+			<French>sel Trader</French>
 			<Spanish>Comerciante de Sal</Spanish>
 			<Russian></Russian>
 			<German>Salz Händler</German>
@@ -9154,6 +9253,7 @@
 		<Key ID="STR_MAR_Diamond_Trader">
 			<Original>Diamond Trader</Original>
 			<Czech>Diamond Trader</Czech>
+			<French>diamond Trader</French>
 			<Spanish>Comerciante de Diamantes</Spanish>
 			<Russian></Russian>
 			<German>Juwelier</German>
@@ -9164,6 +9264,7 @@
 		<Key ID="STR_MAR_Glass_Trader">
 			<Original>Glass Trader</Original>
 			<Czech>sklo Trader</Czech>
+			<French>Trader verre</French>
 			<Spanish>Comerciante de Vidrio</Spanish>
 			<Russian></Russian>
 			<German>Glasbläserei</German>
@@ -9174,6 +9275,7 @@
 		<Key ID="STR_MAR_Iron_Copper_Trader">
 			<Original>Iron / Copper Trader</Original>
 			<Czech>Žehlička / Měď Trader</Czech>
+			<French>Fer / Trader Cuivre</French>
 			<Spanish>Comerciante de Hierro / Cobre</Spanish>
 			<Russian></Russian>
 			<German>Händler für Eisen / Kupfer</German>
@@ -9184,6 +9286,7 @@
 		<Key ID="STR_MAR_Sand_Processing">
 			<Original>Sand Processing</Original>
 			<Czech>Zpracování písek</Czech>
+			<French>Traitement de sable</French>
 			<Spanish>Procesador de Arena</Spanish>
 			<Russian></Russian>
 			<German>Sand Verarbeiter</German>
@@ -9194,6 +9297,7 @@
 		<Key ID="STR_MAR_Gun_Store">
 			<Original>Gun Store</Original>
 			<Czech>Gun Store</Czech>
+			<French>Gun Magasin</French>
 			<Spanish>Tienda de Armas</Spanish>
 			<Russian></Russian>
 			<German>Waffenladen</German>
@@ -9204,6 +9308,7 @@
 		<Key ID="STR_MAR_Heroin_Field">
 			<Original>Opium Poppy Field</Original>
 			<Czech>Opium Poppy Field</Czech>
+			<French>Opium Poppy Field</French>
 			<Spanish>Campo de Opio</Spanish>
 			<Russian></Russian>
 			<German>Heroin Plantage</German>
@@ -9213,6 +9318,7 @@
 		<Key ID="STR_MAR_Heroin_Processing">
 			<Original>Heroin Processing</Original>
 			<Czech>Zpracování heroin</Czech>
+			<French>Traitement d'héroïne</French>
 			<Spanish>Procesador de Heroina</Spanish>
 			<Russian></Russian>
 			<German>Heroin Verarbeitung</German>
@@ -9222,6 +9328,7 @@
 		<Key ID="STR_MAR_Garage">
 			<Original>Garage</Original>
 			<Czech>Garáž</Czech>
+			<French>Garage</French>
 			<Spanish>Garaje</Spanish>
 			<Russian></Russian>
 			<German>Garage</German>
@@ -9231,6 +9338,7 @@
 		<Key ID="STR_MAR_Federal_Reserve">
 			<Original>Federal Reserve</Original>
 			<Czech>federální rezervní systém</Czech>
+			<French>Réserve fédérale</French>
 			<Spanish>Reserva Federal</Spanish>
 			<Russian></Russian>
 			<German>Federal Reserve Bank</German>
@@ -9241,6 +9349,7 @@
 		<Key ID="STR_MAR_Highway_Patrol">
 			<Original>Highway Patrol Outpost</Original>
 			<Czech>Dálniční hlídka Outpost</Czech>
+			<French>Highway Patrol Outpost</French>
 			<Spanish>Puesto de Patrulla de Carretera</Spanish>
 			<Russian></Russian>
 			<German>Mautstation</German>
@@ -9251,6 +9360,7 @@
 		<Key ID="STR_MAR_Rock_Quarry">
 			<Original>Rock Quarry</Original>
 			<Czech>kamenolomu</Czech>
+			<French>rock Quarry</French>
 			<Spanish>Mina de Piedra</Spanish>
 			<Russian></Russian>
 			<German>Steinbruch</German>
@@ -9261,6 +9371,7 @@
 		<Key ID="STR_MAR_Rock_Processing">
 			<Original>Rock Processing</Original>
 			<Czech>rock Processing</Czech>
+			<French>rock Processing</French>
 			<Spanish>Procesador de Piedra</Spanish>
 			<Russian></Russian>
 			<German>Stein Verarbeitung</German>
@@ -9271,6 +9382,7 @@
 		<Key ID="STR_MAR_Cement_Trader">
 			<Original>Cement Trader</Original>
 			<Czech>cement Trader</Czech>
+			<French>Ciment Trader</French>
 			<Spanish>Comerciante de Cemento</Spanish>
 			<Russian></Russian>
 			<German>Zement Händler</German>
@@ -9281,6 +9393,7 @@
 		<Key ID="STR_MAR_Turtle_Poaching">
 			<Original>Turtle Poaching</Original>
 			<Czech>Turtle pytláctví</Czech>
+			<French>Tortue braconnage</French>
 			<Spanish>Caza de Tortugas</Spanish>
 			<Russian></Russian>
 			<German>Wilderei für Schildkröten</German>
@@ -9290,6 +9403,7 @@
 		<Key ID="STR_MAR_Turtle_Dealer">
 			<Original>Turtle Dealer</Original>
 			<Czech>Turtle prodejce</Czech>
+			<French>Tortue Dealer</French>
 			<Spanish>Traficante de Tortugas</Spanish>
 			<Russian></Russian>
 			<German>Schildkröten Händler</German>
@@ -9300,6 +9414,7 @@
 		<Key ID="STR_MAR_GoKart_Shop">
 			<Original>Go-Kart Shop</Original>
 			<Czech>Go-Kart Shop</Czech>
+			<French>Go-Kart Shop</French>
 			<Spanish>Tienda de Go-Kart</Spanish>
 			<Russian></Russian>
 			<German>Go-Kart Händler</German>
@@ -9310,6 +9425,7 @@
 		<Key ID="STR_MAR_Gold_Bars_Buyer">
 			<Original>Gold Bars Buyer</Original>
 			<Czech>Gold Bary kupujícího</Czech>
+			<French>Or Bars Acheteur</French>
 			<Spanish>Comprador de Oro</Spanish>
 			<Russian></Russian>
 			<German>Händler für Goldbarren</German>
@@ -9320,6 +9436,7 @@
 		<Key ID="STR_MAR_Gang_Hideout1">
 			<Original>Gang Hideout 1</Original>
 			<Czech>Gang Hideout 1</Czech>
+			<French>Gang Hideout 1</French>
 			<Spanish>Escondite de Pandillas 1</Spanish>
 			<Russian></Russian>
 			<German>Gang Versteck 1</German>
@@ -9330,6 +9447,7 @@
 		<Key ID="STR_MAR_Gang_Hideout2">
 			<Original>Gang Hideout 2</Original>
 			<Czech>Gang Hideout 2</Czech>
+			<French>Gang Hideout 2</French>
 			<Spanish>Escondite de Pandillas 2</Spanish>
 			<Russian></Russian>
 			<German>Gang Versteck 2</German>
@@ -9340,6 +9458,7 @@
 		<Key ID="STR_MAR_Gang_Hideout3">
 			<Original>Gang Hideout 3</Original>
 			<Czech>Gang Hideout 3</Czech>
+			<French>Gang Hideout 3</French>
 			<Spanish>Escondite de Pandillas 3</Spanish>
 			<Russian></Russian>
 			<German>Gang Versteck 3</German>
@@ -9350,6 +9469,7 @@
 		<Key ID="STR_MAR_Hunting_Grounds">
 			<Original>Hunting Grounds</Original>
 			<Czech>honební revír</Czech>
+			<French>Terrain de chasse</French>
 			<Spanish>Zona de Caza</Spanish>
 			<Russian></Russian>
 			<German>Jagtgründe</German>
@@ -9360,6 +9480,7 @@
 		<Key ID="STR_MAR_Bruce_New_Used_Auto">
 			<Original>Bruce's New and Used Auto's</Original>
 			<Czech>Bruceovy nových i ojetých Autos</Czech>
+			<French>Neufs et d'occasion Autos de Bruce</French>
 			<Spanish>Tienda de Autos Nuevos y Usados</Spanish>
 			<Russian></Russian>
 			<German>Bruce's Gebrauchtwagen</German>
@@ -9370,6 +9491,7 @@
 		<Key ID="STR_MAR_Rebel_Clothing_Shop">
 			<Original>Rebel Clothing Shop</Original>
 			<Czech>Rebel Oblečení Shop</Czech>
+			<French>Rebel Vêtements Boutique</French>
 			<Spanish>Tienda de Ropa Rebelde</Spanish>
 			<Russian></Russian>
 			<German>Rebellen Klamottenladen</German>
@@ -9379,6 +9501,7 @@
 		<Key ID="STR_MAR_Rebel_Weapon_Shop">
 			<Original>Rebel Weapon Shop</Original>
 			<Czech>Rebel obchodu se zbraněmi</Czech>
+			<French>Rebel Weapon Boutique</French>
 			<Spanish>Tienda de Armas Rebeldes</Spanish>
 			<Russian></Russian>
 			<German>Rebellen Waffenladen</German>
@@ -9389,6 +9512,7 @@
 		<Key ID="STR_MAR_Helicopter_Shop">
 			<Original>Helicopter Shop</Original>
 			<Czech>vrtulník Shop</Czech>
+			<French>hélicoptère Boutique</French>
 			<Spanish>Tienda de Helicópteros</Spanish>
 			<Russian></Russian>
 			<German>Verkäufer für Heli's</German>
@@ -9398,6 +9522,7 @@
 		<Key ID="STR_MAR_Station_Shop">
 			<Original>Fuel Station Store</Original>
 			<Czech>Palivo Store Station</Czech>
+			<French>Fuel Station magasin</French>
 			<Spanish>Tienda de Gasolinera</Spanish>
 			<Russian></Russian>
 			<German>Tankstelle</German>
@@ -9407,6 +9532,7 @@
 		<Key ID="STR_MAR_Rebel_Market">
 			<Original>Rebel Market</Original>
 			<Czech>Rebel Market</Czech>
+			<French>marché Rebel</French>
 			<Spanish>Mercado Rebelde</Spanish>
 			<Russian></Russian>
 			<German>Rebellen Markt</German>
@@ -9416,6 +9542,7 @@
 		<Key ID="STR_MAR_Question_Dealer">
 			<Original>Question Dealer</Original>
 			<Czech>Otázka prodejce</Czech>
+			<French>question Dealer</French>
 			<Spanish>Informante</Spanish>
 			<Russian></Russian>
 			<German>Informant</German>
@@ -9426,6 +9553,7 @@
 		<Key ID="STR_MAR_Service_helicopter">
 			<Original>Service Helicopter</Original>
 			<Czech>Service Vrtulník</Czech>
+			<French>Hélicoptère Service</French>
 			<Spanish>Helicóptero de Servicio</Spanish>
 			<Russian></Russian>
 			<German>Heli Werkstatt</German>
@@ -9436,6 +9564,7 @@
 		<Key ID="STR_MAR_Clothing_Store">
 			<Original>Clothing Store</Original>
 			<Czech>Obchod s oblečením</Czech>
+			<French>Magasin de vêtements</French>
 			<Spanish>Tienda de Ropa</Spanish>
 			<Russian></Russian>
 			<German>Klamottenladen</German>
@@ -9446,6 +9575,7 @@
 		<Key ID="STR_MAR_Medical_Assistance">
 			<Original>Medical Assistance</Original>
 			<Czech>lékařská pomoc</Czech>
+			<French>Assistance médicale</French>
 			<Spanish>Asistencia Médica</Spanish>
 			<Russian></Russian>
 			<German>Medizinischer Ersthelfer</German>
@@ -9456,6 +9586,7 @@
 		<Key ID="STR_MAR_Store_vehicle_in_Garage">
 			<Original>Store vehicle in Garage</Original>
 			<Czech>Skladovat vozidlo v garáži</Czech>
+			<French>véhicule de magasin dans le garage</French>
 			<Spanish>Guardar vehículo en el Garaje</Spanish>
 			<Russian></Russian>
 			<German>Fahrzeug in Garage einparken</German>
@@ -9466,6 +9597,7 @@
 		<Key ID="STR_MAR_Cop_Item_Shop">
 			<Original>Cop Item Shop</Original>
 			<Czech>Cop Item Shop</Czech>
+			<French>Cop Point Boutique</French>
 			<Spanish>Tienda de Objetos de Policía</Spanish>
 			<Russian></Russian>
 			<German>Polizei Ausrüstung</German>
@@ -9475,6 +9607,7 @@
 		<Key ID="STR_MAR_Cop_Clothing_Shop">
 			<Original>Cop Clothing Shop</Original>
 			<Czech>Cop Oblečení Shop</Czech>
+			<French>Cop Vêtements Boutique</French>
 			<Spanish>Tienda de Ropa de Policía</Spanish>
 			<Russian></Russian>
 			<German>Polizei Uniformen</German>
@@ -9484,6 +9617,7 @@
 		<Key ID="STR_MAR_Cop_Weapon_Shop">
 			<Original>Cop Weapon Shop</Original>
 			<Czech>Cop obchodu se zbraněmi</Czech>
+			<French>Cop Weapon Boutique</French>
 			<Spanish>Tienda de Armas de Policía</Spanish>
 			<Russian></Russian>
 			<German>Polizei Waffenhändler</German>
@@ -9493,6 +9627,7 @@
 		<Key ID="STR_MAR_Patrol_Officer_Weapon_Shop">
 			<Original>Patrol Officer Weapon Shop</Original>
 			<Czech>Policistou obchodu se zbraněmi</Czech>
+			<French>Patrol Officer Arme boutique</French>
 			<Spanish>Tienda de Armas de Oficial de Patrulla</Spanish>
 			<Russian></Russian>
 			<Portuguese>Loja de Armas de Patrulha</Portuguese>
@@ -9501,6 +9636,7 @@
 		<Key ID="STR_MAR_Sergeant_Weapon_Shop">
 			<Original>Sergeant Weapon Shop</Original>
 			<Czech>Seržant obchodu se zbraněmi</Czech>
+			<French>Sergent d'armes Boutique</French>
 			<Spanish>Tienda de Armas de Oficial de Sargento</Spanish>
 			<Russian></Russian>
 			<Portuguese>Lojas de Armas de Sargento</Portuguese>
@@ -9509,6 +9645,7 @@
 		<Key ID="STR_MAR_W_E_Vehicle Shop">
 			<Original>Vehicle Shop</Original>
 			<Czech>Shop Vehicle</Czech>
+			<French>Boutique de véhicules</French>
 			<Spanish>Tienda de Vehículos</Spanish>
 			<Russian></Russian>
 			<German>Autohändler</German>
@@ -9518,6 +9655,7 @@
 		<Key ID="STR_MAR_Process_Sand">
 			<Original>Process Sand</Original>
 			<Czech>proces Písek</Czech>
+			<French>processus de sable</French>
 			<Spanish>Procesar Arena</Spanish>
 			<Russian></Russian>
 			<German>Verarbeite Sand</German>
@@ -9528,6 +9666,7 @@
 		<Key ID="STR_MAR_Process_Rock">
 			<Original>Process Rock</Original>
 			<Czech>proces rock</Czech>
+			<French>processus Rocher</French>
 			<Spanish>Procesar Piedra</Spanish>
 			<Russian></Russian>
 			<German>Verarbeite Stein</German>
@@ -9536,8 +9675,9 @@
 			<Italian>Processo Roccia</Italian>
 		</Key>
 		<Key ID="STR_MAR_Wong_Food_Cart">
-			<Original>Wongs Food Cart</Original>
+			<Original>Wong's Food Cart</Original>
 			<Czech>Křídla Food košík</Czech>
+			<French>Alimentation du panier de Wong</French>
 			<Spanish>Kiosko de Wong</Spanish>
 			<Russian></Russian>
 			<German>Wongs Spezialitäten</German>
@@ -9547,6 +9687,7 @@
 		<Key ID="STR_MAR_Open_Vault">
 			<Original>Open Vault</Original>
 			<Czech>otevřená Vault</Czech>
+			<French>Ouvrir Vault</French>
 			<Spanish>Abrir Bóveda</Spanish>
 			<Russian></Russian>
 			<German>Offener Tresor</German>
@@ -9556,6 +9697,7 @@
 		<Key ID="STR_MAR_Fix_Vault">
 			<Original>Fix Vault</Original>
 			<Czech>Fix Vault</Czech>
+			<French>Fix Vault</French>
 			<Spanish>Reparar Bóveda</Spanish>
 			<Russian></Russian>
 			<German>Tresor reparieren</German>
@@ -9566,6 +9708,7 @@
 		<Key ID="STR_MAR_FED_Front">
 			<Original>Federal Reserve - Front Entrance</Original>
 			<Czech>Federální rezervní systém - přední vchod</Czech>
+			<French>Réserve fédérale - Entrée avant</French>
 			<Spanish>Reserva Federal - Entrada Principal</Spanish>
 			<Russian></Russian>
 			<German>Federal Reserve Bank - Haupteingang</German>
@@ -9575,6 +9718,7 @@
 		<Key ID="STR_MAR_FED_Side">
 			<Original>Federal Reserve - Side Entrance</Original>
 			<Czech>Federální rezervní systém - Boční vchod</Czech>
+			<French>Réserve fédérale - Entrée latérale</French>
 			<Spanish>Reserva Federal - Entrada Lateral</Spanish>
 			<Russian></Russian>
 			<German>Federal Reserve Bank - Seiteneingang</German>
@@ -9584,6 +9728,7 @@
 		<Key ID="STR_MAR_FED_Back">
 			<Original>Federal Reserve - Back Entrance</Original>
 			<Czech>Federální rezervní systém - zadní vchod</Czech>
+			<French>Réserve fédérale - Retour entrée</French>
 			<Spanish>Reserva Federal - Entrada Trasera</Spanish>
 			<Russian></Russian>
 			<German>Federal Reserve Bank - Hintereingang</German>
@@ -9593,6 +9738,7 @@
 		<Key ID="STR_MAR_FED_Vault">
 			<Original>Federal Reserve - Vault View</Original>
 			<Czech>Federální rezervní systém - Vault View</Czech>
+			<French>Réserve fédérale - Vault Voir</French>
 			<Spanish>Reserva Federal - Vista a la Bóveda</Spanish>
 			<Russian></Russian>
 			<German>Federal Reserve Bank - Tresor</German>
@@ -9602,6 +9748,7 @@
 		<Key ID="STR_MAR_FED_Off_display">
 			<Original>Turn Off Display</Original>
 			<Czech>Vypnout displej</Czech>
+			<French>Désactiver l'affichage</French>
 			<Spanish>Apagar el Display</Spanish>
 			<Russian></Russian>
 			<German>Bildschirm ausschalten</German>
@@ -9611,6 +9758,7 @@
 		<Key ID="STR_MAR_Armament">
 			<Original>Armament</Original>
 			<Czech>Vyzbrojení</Czech>
+			<French>Armement</French>
 			<Spanish>Armamento</Spanish>
 			<Russian></Russian>
 			<German>Rüstkammer</German>
@@ -9620,6 +9768,7 @@
 		<Key ID="STR_MAR_EMS_Item_Shop">
 			<Original>EMS Item Shop</Original>
 			<Czech>EMS Item Shop</Czech>
+			<French>EMS article Boutique</French>
 			<Spanish>Tienda de Objetos de Médico</Spanish>
 			<Russian></Russian>
 			<German>EMS Ausrüstung</German>
@@ -9629,6 +9778,7 @@
 		<Key ID="STR_MAR_EMS_Clothing_Shop">
 			<Original>EMS Clothing Shop</Original>
 			<Czech>EMS Oblečení Shop</Czech>
+			<French>EMS Vêtements Boutique</French>
 			<Spanish>Tienda de Ropa de Médico</Spanish>
 			<Russian></Russian>
 			<German>EMS Kleidungs-System</German>
@@ -9638,6 +9788,7 @@
 		<Key ID="STR_MAR_Helicopter_Garage">
 			<Original>Helicopter Garage</Original>
 			<Czech>vrtulník Garáž</Czech>
+			<French>hélicoptère Garage</French>
 			<Spanish>Garaje de Helicóptero</Spanish>
 			<Russian></Russian>
 			<German>Helikopter Hangar</German>
@@ -9647,6 +9798,7 @@
 		<Key ID="STR_MAR_W_Car_Garage">
 			<Original>Car Garage</Original>
 			<Czech>Car Garage</Czech>
+			<French>Garage à voiture</French>
 			<Spanish>Garaje de Coches</Spanish>
 			<Russian></Russian>
 			<German>Fahrzeug Garage</German>
@@ -9657,6 +9809,7 @@
 		<Key ID="STR_MAR_Pay_Bail">
 			<Original>Pay Bail</Original>
 			<Czech>Pay Bail</Czech>
+			<French>Pay Bail</French>
 			<Spanish>Pagar Fianza</Spanish>
 			<Russian></Russian>
 			<German>Zahle Kaution</German>
@@ -9669,6 +9822,7 @@
 		<Key ID="STR_Crime_187V">
 			<Original>Vehicular Manslaughter</Original>
 			<Czech>dopravní zabití</Czech>
+			<French>Manslaughter Vehicular</French>
 			<Spanish>Homicidio Vehicular</Spanish>
 			<Russian></Russian>
 			<Portuguese>Atropelamento</Portuguese>
@@ -9677,6 +9831,7 @@
 		<Key ID="STR_Crime_187">
 			<Original>Manslaughter</Original>
 			<Czech>Zabití</Czech>
+			<French>Homicide involontaire</French>
 			<Spanish>Homicidio</Spanish>
 			<Russian></Russian>
 			<Portuguese>Homicidio Involuntario</Portuguese>
@@ -9685,6 +9840,7 @@
 		<Key ID="STR_Crime_901">
 			<Original>Escaping Jail</Original>
 			<Czech>Jak uniknout vězení</Czech>
+			<French>Jail Échapper</French>
 			<Spanish>Escaparse de la Cárcel</Spanish>
 			<Russian></Russian>
 			<Portuguese>Fuga da Prisão</Portuguese>
@@ -9693,6 +9849,7 @@
 		<Key ID="STR_Crime_215">
 			<Original>Attempted Auto Theft</Original>
 			<Czech>Pokusili Theft Auto</Czech>
+			<French>Tentative de vol d'automobiles</French>
 			<Spanish>Atentado: Robo de Vehículo</Spanish>
 			<Russian></Russian>
 			<Portuguese>Tentativa de Roubo de Veiculo</Portuguese>
@@ -9701,6 +9858,7 @@
 		<Key ID="STR_Crime_213">
 			<Original>Use of illegal explosives</Original>
 			<Czech>Používání nelegálních výbušnin</Czech>
+			<French>L'utilisation d'explosifs illégaux</French>
 			<Spanish>Uso de Explosivos Ilegales</Spanish>
 			<Russian></Russian>
 			<Portuguese>Uso de explosivos ilegais</Portuguese>
@@ -9709,6 +9867,7 @@
 		<Key ID="STR_Crime_211">
 			<Original>Robbery</Original>
 			<Czech>Loupež</Czech>
+			<French>Vol</French>
 			<Spanish>Robo</Spanish>
 			<Russian></Russian>
 			<Portuguese>Roubo</Portuguese>
@@ -9717,6 +9876,7 @@
 		<Key ID="STR_Crime_207">
 			<Original>Kidnapping</Original>
 			<Czech>Únos</Czech>
+			<French>Enlèvement</French>
 			<Spanish>Secuestro</Spanish>
 			<Russian></Russian>
 			<Portuguese>Sequestro</Portuguese>
@@ -9725,6 +9885,7 @@
 		<Key ID="STR_Crime_207A">
 			<Original>Attempted Kidnapping</Original>
 			<Czech>pokus o únos</Czech>
+			<French>Kidnapping Tentative</French>
 			<Spanish>Atentado: Secuestro</Spanish>
 			<Russian></Russian>
 			<Portuguese>Tentativa de Sequestro</Portuguese>
@@ -9734,6 +9895,7 @@
 		<Key ID="STR_Crime_390">
 			<Original>Public Intoxication</Original>
 			<Czech>veřejné Intoxikace</Czech>
+			<French>Intoxication publique</French>
 			<Spanish>Intoxicación Pública</Spanish>
 			<Russian></Russian>
 			<Portuguese>Uso de Droga em Publico</Portuguese>
@@ -9743,6 +9905,7 @@
 		<Key ID="STR_Crime_487">
 			<Original>Grand Theft</Original>
 			<Czech>velká loupež</Czech>
+			<French>grand Theft</French>
 			<Spanish>Robo Mayor</Spanish>
 			<Russian></Russian>
 			<Portuguese>Grande Roubo</Portuguese>
@@ -9751,6 +9914,7 @@
 		<Key ID="STR_Crime_488">
 			<Original>Petty Theft</Original>
 			<Czech>Petty Theft</Czech>
+			<French>Chapardage</French>
 			<Spanish>Robo Menor</Spanish>
 			<Russian></Russian>
 			<Portuguese>Pequeno Roubo</Portuguese>
@@ -9759,6 +9923,7 @@
 		<Key ID="STR_Crime_480">
 			<Original>Hit and run</Original>
 			<Czech>Zavinit nehodu a ujet</Czech>
+			<French>Délit de fuite</French>
 			<Spanish>Pega y Corre</Spanish>
 			<Russian></Russian>
 			<Portuguese>Fugir de Batida</Portuguese>
@@ -9767,6 +9932,7 @@
 		<Key ID="STR_Crime_481">
 			<Original>Drug Possession</Original>
 			<Czech>držení drog</Czech>
+			<French>Possession de drogue</French>
 			<Spanish>Posesión de Drogas</Spanish>
 			<Russian></Russian>
 			<Portuguese>Posse de Droga</Portuguese>
@@ -9775,6 +9941,7 @@
 		<Key ID="STR_Crime_482">
 			<Original>Intent to distribute</Original>
 			<Czech>Intent distribuovat</Czech>
+			<French>Intention de distribuer</French>
 			<Spanish>Intención de Distribuir</Spanish>
 			<Russian></Russian>
 			<Portuguese>Tentativa de Trafico</Portuguese>
@@ -9784,6 +9951,7 @@
 		<Key ID="STR_Crime_483">
 			<Original>Drug Trafficking</Original>
 			<Czech>Obchodování s drogami</Czech>
+			<French>Trafic de drogue</French>
 			<Spanish>Tráfico de Drogas</Spanish>
 			<Russian></Russian>
 			<Portuguese>Trafico de Drogas</Portuguese>
@@ -9793,6 +9961,7 @@
 		<Key ID="STR_Crime_459">
 			<Original>Burglary</Original>
 			<Czech>loupež</Czech>
+			<French>Cambriolage</French>
 			<Spanish>Robo de Casa</Spanish>
 			<Russian></Russian>
 			<Portuguese>Arrombamento</Portuguese>
@@ -9801,6 +9970,7 @@
 		<Key ID="STR_Crime_666">
 			<Original>Tax Evasion</Original>
 			<Czech>Daňový únik</Czech>
+			<French>Évasion fiscale</French>
 			<Spanish>Evadir Impuestos</Spanish>
 			<Russian></Russian>
 			<Portuguese>Evasão Fiscal</Portuguese>
@@ -9810,6 +9980,7 @@
 		<Key ID="STR_Crime_667">
 			<Original>Terrorism</Original>
 			<Czech>Terorismus</Czech>
+			<French>Terrorisme</French>
 			<Spanish>Terrorismo</Spanish>
 			<Russian></Russian>
 			<Portuguese>Terrorismo</Portuguese>
@@ -9819,6 +9990,7 @@
 		<Key ID="STR_Crime_668">
 			<Original>Unlicensed Hunting</Original>
 			<Czech>Volně prodejné Hunting</Czech>
+			<French>Chasse Unlicensed</French>
 			<Spanish>Caza sin Licencia</Spanish>
 			<Russian></Russian>
 			<Portuguese>Caça sem Licença</Portuguese>
@@ -9828,6 +10000,7 @@
 		<Key ID="STR_Crime_919">
 			<Original>Organ Theft</Original>
 			<Czech>Organ Krádež</Czech>
+			<French>Le vol d'organes</French>
 			<Spanish>Robo de Organos</Spanish>
 			<Russian></Russian>
 			<Portuguese>Roubo de Orgãos</Portuguese>
@@ -9836,6 +10009,7 @@
 		<Key ID="STR_Crime_919A">
 			<Original>Attempted Organ Theft</Original>
 			<Czech>Pokus o krádež Organ</Czech>
+			<French>Le vol d'organes Tentative</French>
 			<Spanish>Atentado: Robo de Organos</Spanish>
 			<Russian></Russian>
 			<Portuguese>Tentativa de Roubo de Orgãos</Portuguese>
@@ -10091,6 +10265,7 @@
 		<Key ID="STR_MAR_FuelTank_Storage">
 			<Original>Gas Storage</Original>
 			<Czech>Gas Storage</Czech>
+			<French>Stockage de gaz</French>
 			<Spanish>Almacenamiento de Combustible</Spanish>
 			<Russian></Russian>
 			<German>Treibstofflager</German>
@@ -10099,6 +10274,7 @@
 			<Key ID="STR_FuelTank_Supply">
 			<Original>Supply</Original>
 			<Czech>Zásobování</Czech>
+			<French>La fourniture</French>
 			<Spanish>Suministro</Spanish>
 			<Russian></Russian>
 			<German>Liefern</German>
@@ -10107,6 +10283,7 @@
 		<Key ID="STR_FuelTank_Store">
 			<Original>Store</Original>
 			<Czech>Obchod</Czech>
+			<French>boutique</French>
 			<Spanish>Guardar</Spanish>
 			<Russian></Russian>
 			<German>Lagern</German>
@@ -10115,74 +10292,83 @@
 		<Key ID="STR_FuelTank_Stop">
 			<Original>Stop</Original>
 			<Czech>Stop</Czech>
+			<French>Arrêtez</French>
 			<Spanish>Parar</Spanish>
 			<Russian></Russian>
 			<German>Stoppen</German>
 			<Portuguese>Parar</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_InUse">
-			<Original>Tankers is already in use</Original>
-			<Czech>Tankery je již používán</Czech>
-			<Spanish>El tanque ya esta siendo usado</Spanish>
+			<Original>Tanker is already in use.</Original>
+			<Czech>Tankery je již používán.</Czech>
+			<French>Tanker est déjà en cours d'utilisation.</French>
+			<Spanish>El tanque ya esta siendo usado.</Spanish>
 			<Russian></Russian>
-			<German>Tankwagen wird bereits benutzt</German>
-			<Portuguese>Os tanques já estão em uso</Portuguese>
+			<German>Tankwagen wird bereits benutzt.</German>
+			<Portuguese>Os tanques já estão em uso.</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_AnotherInUse">
-			<Original>Gas Station is in use</Original>
-			<Czech>Čerpací stanice je v provozu</Czech>
-			<Spanish>La estación ya se esta usando</Spanish>
+			<Original>Gas station is in use.</Original>
+			<Czech>Čerpací stanice je v provozu.</Czech>
+			<French>Gas station est en cours d'utilisation.</French>
+			<Spanish>La estación ya se esta usando.</Spanish>
 			<Russian></Russian>
-			<German>Tankstelle wird bereits beliefert</German>
-			<Portuguese>O posto já está sendo usado</Portuguese>
+			<German>Tankstelle wird bereits beliefert.</German>
+			<Portuguese>O posto já está sendo usado.</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Empty">
-			<Original>Tankers is empty</Original>
-			<Czech>Tankery je prázdný</Czech>
-			<Spanish>El tanque esta vacío</Spanish>
+			<Original>Tanker is empty.</Original>
+			<Czech>Tankery je prázdný.</Czech>
+			<French>Tanker est vide.</French>
+			<Spanish>El tanque esta vacío.</Spanish>
 			<Russian></Russian>
-			<German>Treibstofftank ist leer</German>
-			<Portuguese>Os tanques estão vazios</Portuguese>
+			<German>Treibstofftank ist leer.</German>
+			<Portuguese>Os tanques estão vazios.</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Full">
-			<Original>Tankers is full</Original>
-			<Czech>Tankery je plná</Czech>
-			<Spanish>El Tanque esta lleno</Spanish>
+			<Original>Tankers is full.</Original>
+			<Czech>Tankery je plná.</Czech>
+			<French>Tankers est plein.</French>
+			<Spanish>El Tanque esta lleno.</Spanish>
 			<Russian></Russian>
-			<German>Treibstofftank ist voll</German>
-			<Portuguese>Os tanques estão cheios</Portuguese>
+			<German>Treibstofftank ist voll.</German>
+			<Portuguese>Os tanques estão cheios.</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_FeedFull">
-			<Original>Gas station has enough fuel</Original>
-			<Czech>Čerpací stanice má dostatek paliva</Czech>
-			<Spanish>La estación tiene suficiente gasolina</Spanish>
+			<Original>Gas station has enough fuel.</Original>
+			<Czech>Čerpací stanice má dostatek paliva.</Czech>
+			<French>Gas station a suffisamment de carburant.</French>
+			<Spanish>La estación tiene suficiente gasolina.</Spanish>
 			<Russian></Russian>
-			<German>Tankstelle hat genug Treibstoff</German>
-			<Portuguese>O posto tem combustível suficiente</Portuguese>
+			<German>Tankstelle hat genug Treibstoff.</German>
+			<Portuguese>O posto tem combustível suficiente.</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_PipeLine">
-			<Original>This Gas Station is supplied through a pipeline</Original>
-			<Czech>Tento Čerpací stanice se dodává potrubím</Czech>
-			<Spanish>Esta estación es suministrada por una tubería</Spanish>
+			<Original>This gas station is supplied through a pipeline.</Original>
+			<Czech>Tento Čerpací stanice se dodává potrubím.</Czech>
+			<French>Cette station de gaz est fourni par un pipeline</French>
+			<Spanish>Esta estación es suministrada por una tubería.</Spanish>
 			<Russian></Russian>
-			<German>Diese Tankstelle wird über eine Pipeline versorgt</German>
-			<Portuguese>Esse posto é abastecido através de uma mangueira</Portuguese>
+			<German>Diese Tankstelle wird über eine Pipeline versorgt.</German>
+			<Portuguese>Esse posto é abastecido através de uma mangueira.</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Stopped">
-			<Original>Discontinued operation</Original>
-			<Czech>Ukončená činnost</Czech>
-			<Spanish>Operación discontinuada</Spanish>
+			<Original>Discontinued operation.</Original>
+			<Czech>Ukončená činnost.</Czech>
+			<French>Activité abandonnée.</French>
+			<Spanish>Operación discontinuada.</Spanish>
 			<Russian></Russian>
-			<German>Vorgang abgebrochen</German>
-			<Portuguese>Operação descontinuada</Portuguese>
+			<German>Vorgang abgebrochen.</German>
+			<Portuguese>Operação descontinuada.</Portuguese>
 		</Key>
 		<Key ID="STR_FuelTank_Money">
-			<Original>Your share is $%1</Original>
-			<Czech>Váš podíl $%1</Czech>
-			<Spanish>Tu ganancia es $%1</Spanish>
+			<Original>Your share is $%1.</Original>
+			<Czech>Váš podíl $%1.</Czech>
+			<French>Votre part est de $%1.</French>
+			<Spanish>Tu ganancia es $%1.</Spanish>
 			<Russian></Russian>
-			<German>Dein Anteil beträgt $%1</German>
-			<Portuguese>A sua parte é de R$%1</Portuguese>
+			<German>Dein Anteil beträgt $%1.</German>
+			<Portuguese>A sua parte é de R$%1.</Portuguese>
 		</Key>
 	</Package>
 	<Package name="NotWhitelisted">
