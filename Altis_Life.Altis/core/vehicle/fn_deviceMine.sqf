@@ -43,7 +43,6 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
 		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
 			_zone = _x;
 		};
-
 	} forEach _resourceZones;
 
 	if(_zone != "") exitWith {_isMineral = false;};
