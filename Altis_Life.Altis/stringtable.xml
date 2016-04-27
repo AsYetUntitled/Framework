@@ -9061,15 +9061,6 @@
 			<Polish>Diler narkotyków</Polish>
 			<Italian>Spacciatore</Italian>
 		</Key>
-		<Key ID="STR_MAR_Sofia_Freight_Yard">
-			<Original>Sofia Freight Yard</Original>
-			<Czech>Sofia Freight Yard</Czech>
-			<Spanish>Patio de Carga</Spanish>
-			<Russian></Russian>
-			<German>Sofia Transportzentrum</German>
-			<Portuguese>Área de Carga e Descarga</Portuguese>
-			<Polish>Terminal transportowy</Polish>
-		</Key>
 		<Key ID="STR_MAR_Diamond_Processing">
 			<Original>Diamond Processing</Original>
 			<Czech>Diamond Processing</Czech>
