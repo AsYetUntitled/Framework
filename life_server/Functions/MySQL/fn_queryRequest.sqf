@@ -153,6 +153,8 @@ switch (_side) do {
 	};
 };
 
+publicVariable "TON_fnc_playtime_values_request";
+
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
 _queryResult set[15,_keyArr];
 
