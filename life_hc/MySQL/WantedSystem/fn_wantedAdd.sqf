@@ -6,7 +6,7 @@
 	Stress Tests by: Midgetgrimm
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Adds or appends a unit to the wanted list.
 */
@@ -83,7 +83,7 @@ if(count _queryResult != 0) then
 	_crime = format["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
 	_crimeresult = [_crime,2] call HC_fnc_asyncCall;
 	_pastcrimess = [_crimeresult select 0] call HC_fnc_mresToArray;
-	if(typeName _pastcrimess == "STRING") then {_pastcrimess = call compile format["%1", _pastcrimess];};
+	if(_pastcrimess isEqualType "") then {_pastcrimess = call compile format["%1", _pastcrimess];};
 	_pastCrimes = _pastcrimess;
 	_pastCrimes pushBack _number;
 	_pastCrimes = [_pastCrimes] call HC_fnc_mresArray;

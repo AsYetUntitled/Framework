@@ -20,7 +20,7 @@ _ret = owner _ret;
 _crimesArr = [];
 
 _type = [_queryResult select 0] call DB_fnc_mresToArray;
-if(typeName _type == "STRING") then {_type = call compile format["%1", _type];};
+if(_type isEqualType "") then {_type = call compile format["%1", _type];};
 {
 	switch(_x) do
 	{

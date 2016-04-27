@@ -18,7 +18,7 @@ if(life_session_tries > 3) exitWith {cutText[localize "STR_Session_Error","BLACK
 
 //Error handling and junk..
 if(isNil "_this") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
-if(EQUAL(typeName _this,"STRING")) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
+if(_this isEqualType "") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if(EQUAL(count _this,0)) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if(EQUAL(SEL(_this,0),"Error")) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if(!(EQUAL(steamid,SEL(_this,0)))) exitWith {[] call SOCK_fnc_dataQuery;};

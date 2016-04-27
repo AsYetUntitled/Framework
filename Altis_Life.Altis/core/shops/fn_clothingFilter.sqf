@@ -68,7 +68,8 @@ _array = switch(_selection) do {
 
 	if(!(EQUAL(_levelValue,-1))) then {
 		_level = GVAR_MNS _levelName;
-		if(typeName _level == typeName {}) then {_level = FETCH_CONST(_level);};
+		if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
+
 
 		_bool = switch(_levelType) do {
 			case "SCALAR": {_level >= _levelValue};

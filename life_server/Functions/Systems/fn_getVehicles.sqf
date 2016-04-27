@@ -45,7 +45,7 @@ if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
 	diag_log "------------------------------------------------";
 };
 
-if(typeName _queryResult == "STRING") exitWith {
+if(_queryResult isEqualType "") exitWith {
 	[[]] remoteExecCall ["life_fnc_impoundMenu",(owner _unit)];
 };
 

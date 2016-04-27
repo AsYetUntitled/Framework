@@ -4,7 +4,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Sends a request to query the database information and returns vehicles.
 */
@@ -37,7 +37,7 @@ _query = format["SELECT id, side, classname, type, pid, alive, active, plate, co
 _tickTime = diag_tickTime;
 _queryResult = [_query,2,true] call HC_fnc_asyncCall;
 
-if(typeName _queryResult == "STRING") exitWith {
+if(_queryResult isEqualType "") exitWith {
 	[[]] remoteExecCall ["life_fnc_impoundMenu",_unit];
 };
 

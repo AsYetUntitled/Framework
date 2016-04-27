@@ -21,7 +21,7 @@ if(_localize) exitWith {
 		case 4: {format[localize _message,_arr select 0, _arr select 1, _arr select 2, _arr select 3];};
 	};
 
-	if(typeName _type == typeName []) then {
+	if(_type isEqualType []) then {
 		for "_i" from 0 to (count _type)-1 do
 		{
 			switch((_type select _i)) do
@@ -41,8 +41,7 @@ if(_localize) exitWith {
 	};
 };
 
-if(typeName _type == typeName []) then
-{
+if(_type isEqualType []) then {
 	for "_i" from 0 to (count _type)-1 do
 	{
 		switch((_type select _i)) do
@@ -52,9 +51,7 @@ if(typeName _type == typeName []) then
 			case 2: {titleText[format["%1",_message],"PLAIN"];};
 		};
 	};
-}
-	else
-{
+} else {
 	switch (_type) do
 	{
 		case 0: {systemChat _message};

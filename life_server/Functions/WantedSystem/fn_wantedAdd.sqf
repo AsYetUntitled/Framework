@@ -81,7 +81,7 @@ if(count _queryResult != 0) then
 	_crime = format["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
 	_crimeresult = [_crime,2] call DB_fnc_asyncCall;
 	_pastcrimess = [_crimeresult select 0] call DB_fnc_mresToArray;
-	if(typeName _pastcrimess == "STRING") then {_pastcrimess = call compile format["%1", _pastcrimess];};
+	if(_pastcrimess isEqualType "") then {_pastcrimess = call compile format["%1", _pastcrimess];};
 	_pastCrimes = _pastcrimess;
 	_pastCrimes pushBack _number;
 	_pastCrimes = [_pastCrimes] call DB_fnc_mresArray;

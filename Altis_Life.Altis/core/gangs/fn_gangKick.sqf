@@ -2,7 +2,7 @@
 /*
 	File: fn_gangKick.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	32 hours...
 */
@@ -18,7 +18,7 @@ if(_unit == player) exitWith {hint localize "STR_GNOTF_KickSelf"};
 _unitID = getPlayerUID _unit;
 _members = grpPlayer GVAR "gang_members";
 if(isNil "_members") exitWith {};
-if(!(EQUAL(typeName _members,"ARRAY"))) exitWith {};
+if(!(_members isEqualType [])) exitWith {};
 
 SUB(_members,[_unitID]);
 grpPlayer SVAR ["gang_members",_members,true];

@@ -33,10 +33,10 @@ switch(playerSide) do {
 };
 _price = _purchasePrice * _storageFee;
 
-if(!(EQUAL(typeName _price,typeName 0)) OR _price < 1) then {_price = 1000};
+if(!(_price isEqualType 0)) OR _price < 1) then {_price = 500;};
 if(BANK < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
 
-if(EQUAL(typeName life_garage_sp,typeName [])) then {
+if(life_garage_sp isEqualType []) then {
 	if(life_HC_isActive) then {
 		[_vid,_pid,SEL(life_garage_sp,0),_unit,_price,SEL(life_garage_sp,1),_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
 	} else {

@@ -12,7 +12,7 @@ if(EQUAL(steamid,(grpPlayer GVAR "gang_owner"))) exitWith {hint localize "STR_GN
 _unitID = getPlayerUID player;
 _members = grpPlayer GVAR "gang_members";
 if(isNil "_members") exitWith {};
-if(!(EQUAL(typeName _members,"ARRAY"))) exitWith {};
+if(!(_members isEqualType [])) exitWith {};
 
 SUB(_members,[_unitID]);
 grpPlayer SVAR ["gang_members",_members,true];

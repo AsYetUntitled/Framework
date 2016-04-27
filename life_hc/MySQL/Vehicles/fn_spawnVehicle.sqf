@@ -42,7 +42,7 @@ if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
 	diag_log "------------------------------------------------";
 };
 
-if(EQUAL(typeName _queryResult,typeName "")) exitWith {};
+if(_queryResult isEqualType "") exitWith {};
 
 _vInfo = _queryResult;
 if(isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
@@ -58,7 +58,7 @@ if(EQUAL(SEL(_vInfo,6),1)) exitWith {
 	[1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-if!(EQUAL(typeName _sp,typeName "")) then {
+if(!(_sp isEqualType "")) then {
 	_nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
 } else {
 	_nearVehicles = [];
@@ -79,7 +79,7 @@ _wasIllegal = _vInfo select 13;
 _wasIllegal = if (_wasIllegal == 1) then { true } else { false };
 
 [_query,1] spawn HC_fnc_asyncCall;
-if(typeName _sp == "STRING") then {
+if(_sp isEqualType "") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 	_vehicle allowDamage false;
@@ -110,9 +110,9 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 // Avoid problems if u keep changing which stuff to save!
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
 	_vehicle setVariable["Trunk",_trunk,true];
-	if (_wasIllegal) then { 
+	if (_wasIllegal) then {
 		private "_location";
-		if(typeName _sp == "STRING") then {
+		if(_sp isEqualType "") then {
 			_location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
 		} else {
 			_location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;

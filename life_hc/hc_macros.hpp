@@ -30,8 +30,8 @@
 #define GVAR_UINS uiNamespace getVariable
 
 //Scripting Macros
-#define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
-#define CONSTVAR(var) var = compileFinal (if(typeName var == "STRING") then {var} else {str(var)})
+#define CONST(var1,var2) var1 = compileFinal (if(var2 isEqualType "") then {var2} else {str(var2)})
+#define CONSTVAR(var) var = compileFinal (if(var isEqualType "") then {var} else {str(var)})
 #define FETCH_CONST(var) (call var)
 #define PVAR_ALL(var) publicVariable var
 #define PVAR_SERV(var) publicVariableServer var
@@ -49,10 +49,6 @@
 //Condition Macros
 #define EQUAL(condition1,condition2) condition1 isEqualTo condition2
 #define CONFIG_BOOL(NUMBER) [##NUMBER] call { _ret = false; if((_this select 0) in [0,1] && EQUAL((_this select 0),1)) then { _ret = true; }; _ret;}
-
-// Arrays
-#define ARRAY_TYPE(a) [##a] call {if((typeName (_this select 0)) == "ARRAY") then {true;} else {false;};}
-#define ARRAY_EMPTY(a) [##a] call {if(count (_this select 0) == 0) then {true;} else {false;};}
 
 // extDB2 Macros
 #define EXTDB "extDB2" callExtension

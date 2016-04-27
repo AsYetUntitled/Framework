@@ -20,7 +20,7 @@ _names = "";
 	} else {
 		_val = ["483",_crimes] call TON_fnc_index;
 		_val = SEL(SEL(_crimes,_val),1);
-		if(typeName _val == "STRING") then {
+		if (_val isEqualType "") then {
 			_val = parseNumber _val;
 		};
 	};

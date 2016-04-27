@@ -44,7 +44,7 @@ switch(playerSide) do {
 
 _sellPrice = _purchasePrice * _multiplier;
 
-if(!(EQUAL(typeName _sellPrice,typeName 0)) OR _sellPrice < 1) then {_sellPrice = 500;};
+if(!(_sellPrice isEqualType 0)) OR _sellPrice < 1) then {_sellPrice = 500;};
 
 if(life_HC_isActive) then {
 	[_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
