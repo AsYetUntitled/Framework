@@ -32,7 +32,7 @@ _zone = "";
 _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
-for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
+for "_i" from 0 to count(_resourceCfg)-1 do {
 
 	_curConfig = (_resourceCfg select _i);
 	_resource = configName(_curConfig);
@@ -49,7 +49,7 @@ for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
 	if(_zone != "") exitWith {_isMineral = false;};
 }; 
 
-for[{_i = 0},{_i < count(_resourceCfg)},{_i = _i + 1}] do {
+for "_i" from 0 to count(_resourceCfg)-1 do 
 	private ["_curConfig","_resourceZones","_resources","_resourceCfg","_mined"];
 	_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 
