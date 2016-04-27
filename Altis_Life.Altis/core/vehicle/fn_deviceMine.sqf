@@ -27,13 +27,13 @@ if((_weight select 1) >= (_weight select 0)) exitWith {
 	hint localize "STR_NOTF_DeviceFull";
 	life_action_inUse = false;
 };
+
 //check if we are in the resource zone for any of the resources
 _zone = "";
 _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-
 	_curConfig = (_resourceCfg select _i);
 	_resource = configName(_curConfig);
 	_resourceZones = getArray(_curConfig >> "zones");
@@ -53,33 +53,25 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
 	private ["_curConfig","_resourceZones","_resources","_resourceCfg","_mined"];
 	_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 
-    if (!_isMineral) exitWith {};
+  if (!_isMineral) exitWith {};
 	_curConfig = (_resourceCfg select _i);
 	_resources = getArray(_curConfig >> "mined");
 	_resourceZones = getArray(_curConfig >> "zones");
 
-
-
-	if (typeName(_resources select 0) != "ARRAY") then {
-                    _mined = _resources select 0;
-                }
-                else {
-                    _mined = _resources select 0 select 0;
-                };
+	if (!(_resources select 0) isEqualType []) then {
+    _mined = _resources select 0;
+  } else {
+  	_mined = _resources select 0 select 0;
+  };
 
 	{
 		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
 			_zone = _x;
 		};
-
 	} forEach _resourceZones;
 
 	if(_zone != "") exitWith {_resource = _mined};
 };
-
-
-
-
 
 if(_zone == "") exitWith {
 	hint localize "STR_NOTF_notNearResource";
@@ -92,7 +84,6 @@ _vehicle remoteExec ["life_fnc_soundDevice",RCLIENT]; //Broadcast the 'mining' s
 life_action_inUse = false; //Unlock it since it's going to do it's own thing...
 
 for "_i" from 0 to 1 step 0 do {
-
 	if(!alive _vehicle || isNull _vehicle) exitWith {};
 
 	if((isEngineOn _vehicle) || ((speed _vehicle) > 5)) exitWith {
