@@ -30,10 +30,10 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 	} catch {
 		diag_log _exception;
 		life_server_extDB_notLoaded = [true, _exception];
-		PVAR_ALL("life_server_extDB_notLoaded");
 	};
-
-	if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {};
+	
+	PVAR_ALL("life_server_extDB_notLoaded");
+	if(life_server_extDB_notLoaded isEqualType []) exitWith {};
 	EXTDB "9:LOCK";
 	diag_log "extDB2: Connected to Database";
 } else {
@@ -42,7 +42,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 	diag_log "extDB2: Still Connected to Database";
 };
 
-if(!(EQUAL(life_server_extDB_notLoaded,""))) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
+if(life_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
