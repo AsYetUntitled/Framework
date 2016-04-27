@@ -6533,6 +6533,17 @@
 			<Portuguese>Licença de Cimento</Portuguese>
 			<Polish>Wytwórca cementu</Polish>
 		</Key>
+		<Key ID="STR_License_Medmarijuana">
+			<Original>Medical Marijuana License</Original>
+			<Czech>Medical Marihuana Licence</Czech>
+			<Spanish>Licencia de Marihuana Medicinal</Spanish>
+			<Russian></Russian>
+			<German>Medical Marijuana-Lizenz</German>
+			<French>Marijuana Médicale License</French>
+			<Italian>Medical Marijuana Licenza</Italian>
+			<Portuguese>Licença Medical Marijuana</Portuguese>
+			<Polish>Medical Marijuana Licencji</Polish>
+		</Key>
 		<Key ID="STR_License_Home">
 			<Original>Home Owners License</Original>
 			<Czech>Home Majitelé licence</Czech>
