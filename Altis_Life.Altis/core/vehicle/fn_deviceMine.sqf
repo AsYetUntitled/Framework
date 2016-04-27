@@ -47,9 +47,9 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
 	} forEach _resourceZones;
 
 	if(_zone != "") exitWith {_isMineral = false;};
-}; 
+};
 
-for "_i" from 0 to count(_resourceCfg)-1 do 
+for "_i" from 0 to count(_resourceCfg)-1 do {
 	private ["_curConfig","_resourceZones","_resources","_resourceCfg","_mined"];
 	_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 
@@ -57,8 +57,8 @@ for "_i" from 0 to count(_resourceCfg)-1 do
 	_curConfig = (_resourceCfg select _i);
 	_resources = getArray(_curConfig >> "mined");
 	_resourceZones = getArray(_curConfig >> "zones");
-	
-	
+
+
 
 	if (typeName(_resources select 0) != "ARRAY") then {
                     _mined = _resources select 0;
@@ -66,7 +66,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do
                 else {
                     _mined = _resources select 0 select 0;
                 };
-                
+
 	{
 		if((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
 			_zone = _x;
@@ -75,7 +75,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do
 	} forEach _resourceZones;
 
 	if(_zone != "") exitWith {_resource = _mined};
-}; 
+};
 
 
 
@@ -169,7 +169,7 @@ for "_i" from 0 to 1 step 0 do {
 		titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
 		_vehicle SVAR["mining",nil,true];
 	};
-	
+
 	_itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
 	titleText[format[localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
 	_itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
@@ -181,7 +181,7 @@ for "_i" from 0 to 1 step 0 do {
 		_vehicle SVAR["mining",nil,true];
 		titleText[localize "STR_NOTF_DeviceFull","PLAIN"];
 	};
-	
+
 	sleep 2;
 };
 
