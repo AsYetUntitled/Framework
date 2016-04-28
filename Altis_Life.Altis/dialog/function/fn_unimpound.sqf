@@ -33,7 +33,7 @@ switch(playerSide) do {
 };
 _price = _purchasePrice * _storageFee;
 
-if(!(_price isEqualType 0)) OR _price < 1) then {_price = 500;};
+if(!(_price isEqualType 0) OR _price < 1) then {_price = 500;};
 if(BANK < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
 
 if(life_garage_sp isEqualType []) then {
