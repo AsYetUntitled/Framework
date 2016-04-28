@@ -1368,7 +1368,7 @@
 			<Portuguese>Sua gangue já tem controle sobre esse esconderijo!</Portuguese>
 			<Polish>Twój gang aktualnie kontroluje tę kryjówkę !</Polish>
 		</Key>
-		<Key ID="STR_GNOTF_Captured">
+		<Key ID="STR_GNOTF_onePersonAtATime">
 			<Original>Only one person shall capture at once!</Original>
 			<Czech>Pouze jedna osoba musí být schopná zachytit najednou!</Czech>
 			<Spanish>Solo una persona puede capturar a la vez!</Spanish>
@@ -6584,7 +6584,7 @@
 			<Czech>Medical Marihuana Licence</Czech>
 			<Spanish>Licencia de Marihuana Medicinal</Spanish>
 			<Russian></Russian>
-			<German>Medical Marijuana-Lizenz</German>
+			<German>Medizinisches Marijuana-Lizenz</German>
 			<French>Marijuana Médicale License</French>
 			<Italian>Medical Marijuana Licenza</Italian>
 			<Portuguese>Licença Medical Marijuana</Portuguese>

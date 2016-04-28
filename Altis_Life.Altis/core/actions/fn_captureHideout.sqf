@@ -12,7 +12,7 @@ _group = _hideout GVAR ["gangOwner",grpNull];
 
 if(isNil {grpPlayer GVAR "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
 if(_group == grpPlayer) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
-if((_hideout GVAR ["inCapture",FALSE])) exitWith {hint localize "STR_GNOTF_Captured";};
+if((_hideout GVAR ["inCapture",FALSE])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
 if(!isNull _group) then {
 	_gangName = _group GVAR ["gang_name",""];
 	_action = [
