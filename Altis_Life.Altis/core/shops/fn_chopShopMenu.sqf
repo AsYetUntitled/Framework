@@ -6,7 +6,7 @@
 	Description:
 	Opens & initializes the chop shop menu.
 */
-private["_control","_price","_nearVehicles","_chopMultiplier","chopable","_nearUnits"];
+private["_control","_price","_nearVehicles","_chopMultiplier","_chopable","_nearUnits"];
 if(life_action_inUse) exitWith {hint localize "STR_NOTF_ActionInProc"};
 if(playerSide != civilian) exitWith {hint localize "STR_NOTF_notAllowed"};
 disableSerialization;
