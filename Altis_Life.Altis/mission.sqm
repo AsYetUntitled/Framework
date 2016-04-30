@@ -25192,7 +25192,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=769;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item1
 				{
@@ -25213,7 +25213,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=770;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item2
 				{
@@ -25234,7 +25234,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=771;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item3
 				{
@@ -25255,7 +25255,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=772;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item4
 				{
@@ -25276,7 +25276,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=773;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item5
 				{
@@ -25297,7 +25297,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=774;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item6
 				{
@@ -25318,7 +25318,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=775;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item7
 				{
@@ -25339,7 +25339,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=776;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item8
 				{
@@ -25360,7 +25360,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=777;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item9
 				{
@@ -25381,7 +25381,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=778;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item10
 				{
@@ -25402,7 +25402,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=779;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item11
 				{
@@ -25423,7 +25423,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=780;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item12
 				{
@@ -25444,7 +25444,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=781;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item13
 				{
@@ -25465,7 +25465,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=782;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item14
 				{
@@ -25486,7 +25486,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=783;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item15
 				{
@@ -25507,7 +25507,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=784;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item16
 				{
@@ -25528,7 +25528,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=785;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item17
 				{
@@ -25549,7 +25549,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=786;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item18
 				{
@@ -25570,7 +25570,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=787;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 			};
 			class Attributes
@@ -38318,7 +38318,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=1058;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item1
 				{
@@ -38338,7 +38338,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=1059;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item2
 				{
@@ -38358,7 +38358,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=1060;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item3
 				{
@@ -38378,7 +38378,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=1061;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item4
 				{
@@ -38398,7 +38398,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=1162;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 				class Item5
 				{
@@ -38418,7 +38418,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=1164;
-					type="B_medic_F";
+					type="B_RangeMaster_F";
 				};
 			};
 			class Attributes
