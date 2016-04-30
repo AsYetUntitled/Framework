@@ -23,7 +23,8 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1 OR (GVAR_UINS ["Weapon_Accessories",0]
 	if((GVAR_UINS ["Weapon_Magazine",0]) == 1) then {
 		_config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
 		{
-			_count = {_x == SEL(_x,0)} count (uiNamespace getVariable ["Magazine_Array",[]]);
+			_var = SEL(_x,0);
+			_count = {_x == _var} count (uiNamespace getVariable ["Magazine_Array",[]]);
 			if(_count > 0) then {
 				_itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
 				_itemList lbAdd format["%1",if(!(EQUAL(SEL(_x,1),""))) then {SEL(_x,1)} else {_itemInfo select 1}];
@@ -38,7 +39,8 @@ if((GVAR_UINS ["Weapon_Magazine",0]) == 1 OR (GVAR_UINS ["Weapon_Accessories",0]
 	} else {
 		_config = M_CONFIG(getArray,"WeaponShops",_shop,"accs");
 		{
-			_count = {_x == SEL(_x,0)} count (uiNamespace getVariable ["Accessories_Array",[]]);
+			_var = SEL(_x,0);
+			_count = {_x == _var} count (uiNamespace getVariable ["Accessories_Array",[]]);
 			if(_count > 0) then {
 				_itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
 				_itemList lbAdd format["%1",if(!(EQUAL(SEL(_x,1),""))) then {SEL(_x,1)} else {_itemInfo select 1}];
