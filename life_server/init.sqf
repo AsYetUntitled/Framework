@@ -66,6 +66,13 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 };
 
+if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position_restart"),1)) then {
+    [] spawn {
+        _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";
+        [_query,1] call DB_fnc_asyncCall;
+    };
+};
+
 /* Map-based server side initialization. */
 master_group attachTo[bank_obj,[0,0,0]];
 
