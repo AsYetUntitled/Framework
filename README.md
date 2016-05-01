@@ -12,6 +12,10 @@
         <img src="https://img.shields.io/badge/arma%203-1.58-orange.svg" alt="Arma 3 Version">
     </a>
     &nbsp;&nbsp;&nbsp;
+    <a href="https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
+        <img src="https://img.shields.io/badge/chat-on%20discord-738BD7.svg" alt="Join the chat at https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
+    </a>
+    &nbsp;&nbsp;&nbsp;
     <a href="https://gitter.im/ArmaLife/Framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
         <img src="https://badges.gitter.im/ArmaLife/Framework.svg" alt="Join the chat at https://gitter.im/ArmaLife/Framework">
     </a>
@@ -22,10 +26,6 @@
     &nbsp;&nbsp;&nbsp;
     <a href="https://waffle.io/ArmaLife/Framework">
         <img src="https://img.shields.io/badge/issues-on%20waffle-red.svg" alt="Stories in Ready">
-    </a>
-    &nbsp;&nbsp;&nbsp;
-    <a href="https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
-        <img src="https://img.shields.io/badge/chat-on%20discord-738BD7.svg" alt="Join the chat at https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
     </a>
 </p>
 
