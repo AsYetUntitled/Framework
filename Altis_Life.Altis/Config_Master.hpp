@@ -21,6 +21,8 @@ class Life_Settings {
     save_playerStats = true; //Save food, water and damage (all sides)?
     save_civilian_weapons = false; //Allow civilians to save weapons on them?
     save_civilian_position = false; //Save civilian location?
+    save_civilian_position_restart = false; //Save civilian location only between restarts. After a server restart you'll have to spawn again.
+    /* !!!TO SAVE POSITION BETWEEN RESTARTS save_civilian_position MUST BE TRUE!!! */
     save_civilian_positionStrict = false; //Strip the player if possible combat-log?  WARNING: Server crashes and lack of reliable syncing can trigger this.
 
     /* Vehicle Data Saving */
