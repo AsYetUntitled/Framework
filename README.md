@@ -23,6 +23,10 @@
     <a href="https://waffle.io/ArmaLife/Framework">
         <img src="https://img.shields.io/badge/issues-on%20waffle-red.svg" alt="Stories in Ready">
     </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
+        <img src="https://img.shields.io/badge/chat-on%20discord-738BD7.svg" alt="Join the chat at https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
+    </a>
 </p>
 
 <b>Altis Life</b> or <b>[Altis Life RPG] (http://www.altisliferpg.com)</b> was created and mainly developed by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
