@@ -1,69 +1,72 @@
 /*
 	File : fn_PlayerInBuilding.sqf
-	Author: NiiRoZz
+	Author: Mad_Cheese
 	Description:
-	This function indicates whether a player is in a building
-	Don't spam this function because it can be heavy on performance and it's not optimized yet
+	Indicates whether a player is in a building
+    Edit: BoGuu - lineIntersectsWith returns an array ordered by distance from farthest to closest.
+    Script needed to check the last index for each wallCheck array.
 
 	Parameter(s):
 	0: OBJECT - Unit
 
 	Returns:
-	BOOL - True if player are in building else false
+	BOOL - True if player is in a building, else false
 
 	Example
-	//--- Find if unit are in building
+	//--- Find if a unit is in building
 	[player] call life_fnc_PlayerInBuilding
 
 */
-private ["_unit","_pos","_roofcheck","_bolean"];
+
+private ["_unit","_position","_roofCheck","_return"];
 
 _unit = _this select 0;
 
-_pos = getposASL _unit;
+_position = getposASL _unit;
 
-_eyepos = eyepos _unit;
+_eyePosition = eyePos _unit;
 
-_bolean = false;
+_return = false;
 
-_Array = [];
+_array = [];
 
-_roof= [_eyepos select 0,_eyepos select 1, (_eyepos select 2) + 20];
+_roof = [_eyePosition select 0,_eyePosition select 1, (_eyePosition select 2) + 20];
 
-_WallFront = [(_eyepos select 0) + (((25)*sin(getDir _unit))), (_eyepos select 1) + ((25)*cos(getDir _unit)),(_eyepos select 2)];
+_wallFront = [(_eyePosition select 0) + (((25)*sin(getDir _unit))), (_eyePosition select 1) + ((25)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_WallBack = [(_eyepos select 0) + (((-25)*sin(getDir _unit))), (_eyepos select 1) + ((-25)*cos(getDir _unit)),(_eyepos select 2)];
+_wallBack = [(_eyePosition select 0) + (((-25)*sin(getDir _unit))), (_eyePosition select 1) + ((-25)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_WallRight = [(_eyepos select 0) + (((25)*sin(getDir _unit + 90))), (_eyepos select 1) + ((0)*cos(getDir _unit)),(_eyepos select 2)];
+_wallRight = [(_eyePosition select 0) + (((25)*sin(getDir _unit + 90))), (_eyePosition select 1) + ((0)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_WallLeft = [(_eyepos select 0) + (((-25)*sin(getDir _unit + 90))), (_eyepos select 1) + ((0)*cos(getDir _unit)),(_eyepos select 2)];
+_wallLeft = [(_eyePosition select 0) + (((-25)*sin(getDir _unit + 90))), (_eyePosition select 1) + ((0)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_roofcheck = (lineIntersectsWith [_eyepos,_roof,_unit,_unit,true]);
+_roofCheck = (lineIntersectsWith [_eyePosition,_roof,_unit,_unit,true]);
 
-if (count _roofcheck == 0) exitWith {
-	_bolean
+if (count _roofCheck == 0) exitWith {
+    _return
 };
 
-_wallcheckFront = (lineIntersectsWith [_eyepos,_WallFront,_unit,_unit,true]);
+_wallCheck_Front = (lineIntersectsWith [_eyePosition,_wallFront,_unit,_unit,true]);
 
-_wallcheckBack = (lineIntersectsWith [_eyepos,_WallBack,_unit,_unit,true]);
+_wallCheck_Back = (lineIntersectsWith [_eyePosition,_wallBack,_unit,_unit,true]);
 
-_wallcheckRight = (lineIntersectsWith [_eyepos,_WallRight,_unit,_unit,true]);
+_wallCheck_Right = (lineIntersectsWith [_eyePosition,_wallRight,_unit,_unit,true]);
 
-_wallcheckLeft = (lineIntersectsWith [_eyepos,_WallLeft,_unit,_unit,true]);
+_wallCheck_Left = (lineIntersectsWith [_eyePosition,_wallLeft,_unit,_unit,true]);
 
-if ((_roofcheck select 0) isKindOf "building") then {
-	{
-		if ((_x select 0) isKindOf "building") then {
-			_Array = _Array + [_x select 0];
-		};
-	} forEach [_wallcheckFront,_wallcheckBack,_wallcheckRight,_wallcheckLeft];
+if ((_roofCheck select 0) isKindOf "building") then {
+    {
+        _index = (count _x) - 1;
+        if ((_x select _index) isKindOf "building") then {
+            _array = _array + [_x select _index];
+        };
+    } forEach [_wallCheck_Front,_wallCheck_Back,_wallCheck_Right,_wallCheck_Left];
 
-	if ({_x == (_roofcheck select 0)} count _Array >= 2) then {
-		_bolean = true;
-	} else {
-		_bolean = false;
-	};
+    if ({_x == (_roofCheck select 0)} count _array >= 2) then {
+        _return = true;
+    } else {
+        _return = false;
+    };
 };
 
-_bolean;
+_return;
