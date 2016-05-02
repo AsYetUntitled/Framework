@@ -58,7 +58,7 @@ if ((_roofCheck select 0) isKindOf "building") then {
     {
         _index = (count _x) - 1;
         if ((_x select _index) isKindOf "building") then {
-            _array pushBack [_x select _index];
+            _array pushBack (_x select _index);
         };
     } forEach [_wallCheck_Front,_wallCheck_Back,_wallCheck_Right,_wallCheck_Left];
 
