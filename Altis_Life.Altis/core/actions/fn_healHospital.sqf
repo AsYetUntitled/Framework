@@ -2,9 +2,12 @@
 /*
 	File: fn_healHospital.sqf
 	Author: Bryan "Tonic" Boardwine
+	Reworked: Jesse "TKCJesse" Schultz
 
 	Description:
-	Doesn't matter, will be revised later.
+	Prompts user with a confirmation dialog to heal themselves.
+	Used at the hospitals to restore health to full.
+	Note: Dialog helps stop a few issues regarding money loss.
 */
 private ["_healCost","_action"];
 if(life_action_inUse) exitWith {};
