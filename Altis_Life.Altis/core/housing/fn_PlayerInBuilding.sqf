@@ -53,8 +53,10 @@ _wallCheck_Left = lineIntersectsWith [_eyePosition,_wallLeft,_unit,_unit,true];
 if ((_roofCheck select 0) isKindOf "House_F") then {
     {
         _index = (count _x) - 1;
-        if ((_x select _index) isKindOf "House_F") then {
-            _array pushBack (_x select _index);
+        if(_index > -1) then {
+            if ((_x select _index) isKindOf "House_F") then {
+                _array pushBack (_x select _index);
+            };
         };
     } forEach [_wallCheck_Front,_wallCheck_Back,_wallCheck_Right,_wallCheck_Left];
 
