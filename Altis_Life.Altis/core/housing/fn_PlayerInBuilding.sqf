@@ -21,13 +21,9 @@
 private ["_unit","_position","_roofCheck","_return"];
 
 _unit = _this select 0;
-
 _position = getposASL _unit;
-
 _eyePosition = eyePos _unit;
-
 _return = false;
-
 _array = [];
 
 _roof = [_eyePosition select 0,_eyePosition select 1, (_eyePosition select 2) + 20];
@@ -40,19 +36,19 @@ _wallRight = [(_eyePosition select 0) + (((25)*sin(getDir _unit + 90))), (_eyePo
 
 _wallLeft = [(_eyePosition select 0) + (((-25)*sin(getDir _unit + 90))), (_eyePosition select 1) + ((0)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_roofCheck = (lineIntersectsWith [_eyePosition,_roof,_unit,_unit,true]);
+_roofCheck = lineIntersectsWith [_eyePosition,_roof,_unit,_unit,true];
 
 if (count _roofCheck == 0) exitWith {
     _return
 };
 
-_wallCheck_Front = (lineIntersectsWith [_eyePosition,_wallFront,_unit,_unit,true]);
+_wallCheck_Front = lineIntersectsWith [_eyePosition,_wallFront,_unit,_unit,true];
 
-_wallCheck_Back = (lineIntersectsWith [_eyePosition,_wallBack,_unit,_unit,true]);
+_wallCheck_Back = lineIntersectsWith [_eyePosition,_wallBack,_unit,_unit,true];
 
-_wallCheck_Right = (lineIntersectsWith [_eyePosition,_wallRight,_unit,_unit,true]);
+_wallCheck_Right = lineIntersectsWith [_eyePosition,_wallRight,_unit,_unit,true];
 
-_wallCheck_Left = (lineIntersectsWith [_eyePosition,_wallLeft,_unit,_unit,true]);
+_wallCheck_Left = lineIntersectsWith [_eyePosition,_wallLeft,_unit,_unit,true];
 
 if ((_roofCheck select 0) isKindOf "House_F") then {
     {
