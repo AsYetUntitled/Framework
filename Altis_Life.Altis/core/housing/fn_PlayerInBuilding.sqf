@@ -3,8 +3,8 @@
 	Author: Mad_Cheese
 	Description:
 	Indicates whether a player is in a building
-    Edit: BoGuu - lineIntersectsWith returns an array ordered by distance from farthest to closest.
-    Script needed to check the last index for each wallCheck array.
+	Edit: BoGuu - lineIntersectsWith returns an array ordered by distance from farthest to closest.
+	Script needed to check the last index for each wallCheck array.
 
 	Parameter(s):
 	0: OBJECT - Unit
@@ -58,7 +58,7 @@ if ((_roofCheck select 0) isKindOf "building") then {
     {
         _index = (count _x) - 1;
         if ((_x select _index) isKindOf "building") then {
-            _array = _array + [_x select _index];
+            _array = _array pushBack [_x select _index];
         };
     } forEach [_wallCheck_Front,_wallCheck_Back,_wallCheck_Right,_wallCheck_Left];
 
