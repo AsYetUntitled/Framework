@@ -255,12 +255,9 @@ class Life_Client_Core {
 		class flashbang {};
 		class jerryRefuel {};
 		class lockpick {};
-		class placedefinestorage {};
-		class placestorageBig {};
-		class placestorageSmall {};
+		class placestorage {};
 		class spikeStrip {};
-		class storageBoxBig {};
-		class storageBoxSmall {};
+		class storageBox {};
 	};
 
 	class Medical_System {
