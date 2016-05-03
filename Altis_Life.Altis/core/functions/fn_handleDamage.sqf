@@ -44,5 +44,5 @@ if(!isNull _source) then {
 	};
 };
 
-[] call life_fnc_hudUpdate;
+[] spawn life_fnc_hudUpdate;
 _damage;
