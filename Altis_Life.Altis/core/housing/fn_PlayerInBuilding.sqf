@@ -28,13 +28,13 @@ _array = [];
 
 _roof = [_eyePosition select 0,_eyePosition select 1, (_eyePosition select 2) + 20];
 
-_wallFront = [(_eyePosition select 0) + (((25)*sin(getDir _unit))), (_eyePosition select 1) + ((25)*cos(getDir _unit)),(_eyePosition select 2)];
+_wallFront = [(_eyePosition select 0) + (((50)*sin(getDir _unit))), (_eyePosition select 1) + ((50)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_wallBack = [(_eyePosition select 0) + (((-25)*sin(getDir _unit))), (_eyePosition select 1) + ((-25)*cos(getDir _unit)),(_eyePosition select 2)];
+_wallBack = [(_eyePosition select 0) + (((-50)*sin(getDir _unit))), (_eyePosition select 1) + ((-50)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_wallRight = [(_eyePosition select 0) + (((25)*sin(getDir _unit + 90))), (_eyePosition select 1) + ((0)*cos(getDir _unit)),(_eyePosition select 2)];
+_wallRight = [(_eyePosition select 0) + (((50)*sin(getDir _unit + 90))), (_eyePosition select 1) + ((0)*cos(getDir _unit)),(_eyePosition select 2)];
 
-_wallLeft = [(_eyePosition select 0) + (((-25)*sin(getDir _unit + 90))), (_eyePosition select 1) + ((0)*cos(getDir _unit)),(_eyePosition select 2)];
+_wallLeft = [(_eyePosition select 0) + (((-50)*sin(getDir _unit + 90))), (_eyePosition select 1) + ((0)*cos(getDir _unit)),(_eyePosition select 2)];
 
 _roofCheck = lineIntersectsWith [_eyePosition,_roof,_unit,_unit,true];
 
@@ -60,7 +60,7 @@ if ((_roofCheck select 0) isKindOf "House_F") then {
         };
     } forEach [_wallCheck_Front,_wallCheck_Back,_wallCheck_Right,_wallCheck_Left];
 
-    if ({_x == (_roofCheck select 0)} count _array >= 2) then {
+    if ({_x == (_roofCheck select 0)} count _array >= 3) then {
         _return = true;
     } else {
         _return = false;
