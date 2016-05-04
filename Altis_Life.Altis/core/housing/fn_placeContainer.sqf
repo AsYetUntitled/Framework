@@ -17,21 +17,21 @@ _uid = steamid;
 _house = nearestObject [player, "House"];
 
 switch(true) do {
-	case ((typeOf _container) == "B_supplyCrate_F"): {_type = "storagebig"};
-	case ((typeOf _container) == "Box_IND_Grenades_F") : {_type = "storagesmall"};
-	default {_type = ""};
+    case ((typeOf _container) == "B_supplyCrate_F"): {_type = "storagebig"};
+    case ((typeOf _container) == "Box_IND_Grenades_F") : {_type = "storagesmall"};
+    default {_type = ""};
 };
 
 if (!isNull _house) then {
-	if(([player] call life_fnc_PlayerInBuilding) && {([_container] call life_fnc_PlayerInBuilding)}) then {
-		if(!(_house in life_vehicles) OR isNil {_house GVAR "house_owner"}) then {
-			deleteVehicle _container;
-			[true,_type,_number] call life_fnc_handleInv;
-			hint localize "STR_House_Container_House_Near_Owner";
-		} else {
-			_containers = _house GVAR ["containers",[]];
-			_houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
-			if(count _houseCfg == 0) exitWith {}; //What the fuck happened?
+    if(([player] call life_fnc_PlayerInBuilding) && {([_container] call life_fnc_PlayerInBuilding)}) then {
+        if(!(_house in life_vehicles) OR isNil {_house GVAR "house_owner"}) then {
+            deleteVehicle _container;
+            [true,_type,_number] call life_fnc_handleInv;
+            hint localize "STR_House_Container_House_Near_Owner";
+        } else {
+            _containers = _house GVAR ["containers",[]];
+            _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
+            if(count _houseCfg == 0) exitWith {}; //What the fuck happened?
             if(!_isFloating) then {
                 if(count _containers >= (_houseCfg select 1)) then {
                     deleteVehicle _container;
@@ -58,14 +58,14 @@ if (!isNull _house) then {
             };
         };
         
-	} else {
-		deleteVehicle _container;
-		[true,_type,_number] call life_fnc_handleInv;
-		hint localize "STR_House_Container_House_Near";
-	};
+    } else {
+        deleteVehicle _container;
+        [true,_type,_number] call life_fnc_handleInv;
+        hint localize "STR_House_Container_House_Near";
+    };
     
 } else {
-	deleteVehicle _container;
-	[true,_type,_number] call life_fnc_handleInv;
-	hint localize "STR_House_Container_House_Near";
+    deleteVehicle _container;
+    [true,_type,_number] call life_fnc_handleInv;
+    hint localize "STR_House_Container_House_Near";
 };
