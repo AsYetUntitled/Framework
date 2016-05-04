@@ -5176,6 +5176,9 @@
 			<French>Il n'y a aucune maison près de vous.</French>
 			<Portuguese>Não há casas perto  de você.</Portuguese>
 		</Key>
+        <Key ID="STR_House_Container_Floating">
+			<Original>The storage box is over the stairs!</Original>
+		</Key>
 		<Key ID="STR_House_Container_House_Near_Owner">
 			<Original>You are not the owner of the house.</Original>
 			<Czech>Nejste vlastníkem domu.</Czech>
