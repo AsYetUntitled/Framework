@@ -371,8 +371,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
                 };
                 deleteMarkerLocal _Marker;
                 if (_PlayersOrVehicles in life_markers_Vehicles) then {
-                  life_markers_Vehicles set[(life_markers_Vehicles find _PlayersOrVehicles), -1];
-                  life_markers_Vehicles = life_markers_Vehicles - [-1];
+									life_markers_Vehicles deleteAt (life_markers_Vehicles find _PlayersOrVehicles);
                 };
                 true;
               };
@@ -411,8 +410,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
             };
             deleteMarkerLocal _Marker;
             if (_PlayersOrVehicles in life_markers_Players) then {
-              life_markers_Players set[(life_markers_Players find _PlayersOrVehicles), -1];
-              life_markers_Players = life_markers_Players - [-1];
+							life_markers_Players deleteAt (life_markers_Players find _PlayersOrVehicles);
             };
             true;
           };
