@@ -54,9 +54,9 @@ if (!isNull _house) then {
             } else {
                 deleteVehicle _container;
                 [true,_type,_number] call life_fnc_handleInv;
-                hint "Storage boxes are not meant to fly!";
+                hint localize "STR_House_Container_Floating";
             };
-		};
+        };
         
 	} else {
 		deleteVehicle _container;
