@@ -18,7 +18,7 @@ if(_size) then {
 	_object = "Box_IND_Grenades_F" createVehicle [0,0,0];
 };
 life_container_activeObj = _object;
-_attachPos = [0, 3, 0.5];
+_attachPos = [0, 3, ((boundingBoxReal _object) select 1) select 2];
 _object attachTo[player, _attachPos];
 _object enableSimulation false;
 clearWeaponCargoGlobal _object;
