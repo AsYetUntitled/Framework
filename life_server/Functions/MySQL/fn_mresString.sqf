@@ -1,7 +1,7 @@
 /*
 	File: fn_mresString.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Makes the string safe to be passed to MySQL (strips various stuff).
 */
@@ -14,7 +14,7 @@ _filter = toArray _filter; //Blow it up to an array
 
 {
 	if(_x in _filter) then {
-		_string set[_forEachIndex,-1];
+		_string deleteAt _forEachIndex;
 	};
 } forEach _string;
 
