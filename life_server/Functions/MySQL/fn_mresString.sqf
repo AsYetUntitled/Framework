@@ -18,5 +18,4 @@ _filter = toArray _filter; //Blow it up to an array
 	};
 } forEach _string;
 
-_string = _string - [-1];
 toString _string;
