@@ -2,7 +2,7 @@
 /*
 	File: fn_raidHouse.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Raids the players house?
 */
@@ -57,11 +57,10 @@ _value = 0;
 {
 	_var = SEL(_x,0);
 	_val = SEL(_x,1);
-	
+
 	if(EQUAL(ITEM_ILLEGAL(_var),1)) then {
 		if(!(EQUAL(ITEM_SELLPRICE(_var),-1))) then {
-			_houseInvData set[_forEachIndex,-1];
-			SUB(_houseInvData,[-1]);
+			_houseInvData deleteAt _forEachIndex;
 			SUB(_houseInvVal,(([_var] call life_fnc_itemWeight) * _val));
 			ADD(_value,(_val * ITEM_SELLPRICE(_var)));
 		};
@@ -71,15 +70,15 @@ _value = 0;
 if(_value > 0) then {
 	[0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 	ADD(BANK,round(_value / 2));
-	
+
 	_house SVAR ["Trunk",[_houseInvData,_houseInvVal],true];
-	
+
 	if(life_HC_isActive) then {
 		[_house] remoteExecCall ["HC_fnc_updateHouseTrunk",HC_Life];
 	} else {
 		[_house] remoteExecCall ["TON_fnc_updateHouseTrunk",RSERV];
 	};
-	
+
 } else {
 	hint localize "STR_House_Raid_NoIllegal";
 };

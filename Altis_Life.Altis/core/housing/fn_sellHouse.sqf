@@ -52,14 +52,12 @@ if(_action) then {
 	};
 
 	if(_index != -1) then {
-		life_vehicles set[_index,-1];
-		life_vehicles = life_vehicles - [-1];
+		life_vehicles deleteAt _index;
 	};
 
 	_index = [str(getPosATL _house),life_houses] call TON_fnc_index;
 	if(_index != -1) then {
-		life_houses set[_index,-1];
-		life_houses = life_houses - [-1];
+		life_houses deleteAt _index;
 	};
 	_numOfDoors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _house), "numberOfDoors");
 	for "_i" from 1 to _numOfDoors do {

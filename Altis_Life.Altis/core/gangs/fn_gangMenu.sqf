@@ -2,7 +2,7 @@
 /*
 	File: fn_gangMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	31 hours of no sleep screw your description.
 */
@@ -49,10 +49,9 @@ _allUnits = playableUnits;
 //Clear out the list..
 {
 	if(_x in _grpMembers OR side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {
-		_allUnits set[_forEachIndex,-1];
+		_allUnits deleteAt _forEachIndex;
 	};
 } forEach _allUnits;
-SUB(_allUnits,[-1]);
 
 _ctrl = CONTROL(2620,2632);
 lbClear _ctrl; //Purge the list

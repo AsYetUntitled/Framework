@@ -126,16 +126,9 @@ switch(playerSide) do {
 
 _vehicle allowDamage true;
 
-//life_vehicles set[count life_vehicles,_vehicle]; //Add err to the chain.
 life_vehicles pushBack _vehicle;
 
-/*if(life_HC_isActive) then {
-	[getPlayerUID player,playerSide,_vehicle,1] remoteExecCall ["HC_fnc_keyManagement",HC_Life];
-} else {
-	[getPlayerUID player,playerSide,_vehicle,1] remoteExecCall ["TON_fnc_keyManagement",RSERV];
-};
-
-Always handle key management by the server */
+//Always handle key management by the server
 [getPlayerUID player,playerSide,_vehicle,1] remoteExecCall ["TON_fnc_keyManagement",RSERV];
 
 if(_mode) then {

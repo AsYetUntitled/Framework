@@ -32,8 +32,7 @@ if(_num == 0) exitWith {hint localize "STR_NOTF_InvFull"};
 _weight = ([_ctrl] call life_fnc_itemWeight) * _num;
 if(_ctrl == "money") then {
 	if(_num == _value) then {
-		_data set[_index,-1];
-		_data = _data - [-1];
+		_data deleteAt _index;
 	} else {
 		_data set[_index,[_ctrl,(_value - _num)]];
 	};
@@ -44,8 +43,7 @@ if(_ctrl == "money") then {
 } else {
 	if([true,_ctrl,_num] call life_fnc_handleInv) then {
 		if(_num == _value) then {
-			_data set[_index,-1];
-			_data = _data - [-1];
+			_data deleteAt _index;
 		} else {
 			_data set[_index,[_ctrl,(_value - _num)]];
 		};

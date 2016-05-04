@@ -39,10 +39,9 @@ if(_action) then {
 
 	{
 		if (_x == _container) then {
-			_containers set [_forEachIndex,666];
+			_containers deleteAt _forEachIndex;
 		};
 	} forEach _containers;
-	_containers = _containers - [666];
 	_house SVAR ["containers",_containers,true];
 
 	[true,_box,1] call life_fnc_handleInv;
