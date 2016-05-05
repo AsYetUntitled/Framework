@@ -9,7 +9,7 @@
 	Return:
 	[Spawn Marker,Spawn Name,Image Path]
 */
-private["_side","_return","_spawnCfg","_curConfig","_name","_license","_licenseName","_licenseType","_level","_levelName","_levelValue","_levelType","_tempConfig","_flag"];
+private["_side","_return","_spawnCfg","_curConfig","_name","_licenses","_level","_levelName","_levelValue","_levelType","_tempConfig","_flag"];
 _side = param [0,civilian,[civilian]];
 
 switch (_side) do {
@@ -26,23 +26,25 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
     _flag = true;
     _tempConfig = [];
 		_curConfig = (_spawnCfg select _i);
-    _license = getArray(_curConfig >> "license");
-    _licenseName = SEL(_license,0);
-    _licenseType = SEL(_license,1);
+    _licenses = getArray(_curConfig >> "licenses");
     _level = getArray(_curConfig >> "level");
 		_levelName = SEL(_level,0);
 		_levelType = SEL(_level,1);
 		_levelValue = SEL(_level,2);
 
-    if(!(EQUAL(_licenseName,""))) then {
+    {
+      if(!(EQUAL(SEL(_x,0),""))) then {
+        _licenseName = SEL(_x,0);
+        _licenseType = SEL(_x,1);
         if(_licenseType == 0) then {
-            if(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) then {_flag = false;};
+          if(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
         } else {
-            if(!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) then {_flag = false;};
+          if(!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) exitWith {_flag = false};
         };
-    };
+      };
+    } foreach _licenses;
 
-    if(!(_flag)) then {
+    if(_flag) then {
     	if(!(EQUAL(_levelValue,-1))) then {
 				_level = GVAR_MNS _levelName;
 				if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
