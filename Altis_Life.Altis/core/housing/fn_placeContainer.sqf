@@ -45,7 +45,6 @@ if (!isNull _house) then {
                     };
                     _container SVAR ["Trunk",[[],0],true];
                     _container SVAR ["container_owner",[_uid],true];
-                    _container SVAR ["trunk_in_use_by",-1,true];
                     _containers pushBack _container;
                     _house setVariable["containers",_containers,true];
                     sleep 1;
