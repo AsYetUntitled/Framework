@@ -15,7 +15,7 @@ if(_medicsOnline) then {
 	[life_corpse,profileName] remoteExecCall ["life_fnc_medicRequest",independent];
 } else {
 	//No medics were online, send it to the police.
-	[life_corpse,profileName] remoteExecCall ["life_fnc_copMedicRequest",west];
+	[life_corpse,profileName] remoteExecCall ["life_fnc_MedicRequest",west];
 };
 
 //Create a thread to monitor duration since last request (prevent spammage).
