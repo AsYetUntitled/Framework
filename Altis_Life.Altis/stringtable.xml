@@ -10,6 +10,7 @@
 			<Portuguese>Loja de Roupas</Portuguese>
 			<Polish>Sklep odzieżowy</Polish>
 			<Italian>Emporio di Bruce</Italian>
+			<German>Bruce Outback Outfits</German>
 		</Key>
 		<Key ID="STR_Shops_C_Police">
 			<Original>Altis Police Department Shop</Original>
@@ -20,6 +21,7 @@
 			<Portuguese>Loja de Roupas Policiais</Portuguese>
 			<Polish>Sklep Policyjny</Polish>
 			<Italian>Altis Police Department negozio</Italian>
+			<German>Altis Police Department-Shop</German>
 		</Key>
 		<Key ID="STR_Shops_C_Rebel">
 			<Original>Mohammed's Jihadi Shop</Original>
@@ -30,6 +32,7 @@
 			<Russian></Russian>
 			<Portuguese>Loja de Roupas Rebeldes</Portuguese>
 			<Polish>Sklep samobójców AKBAR</Polish>
+			<German>Mohammeds Jihad-Shop</German>
 		</Key>
 		<Key ID="STR_Shops_C_Diving">
 			<Original>Steve's Diving Shop</Original>
@@ -305,6 +308,7 @@
 			<Italian>riviste</Italian>
 			<Russian></Russian>
 			<Portuguese>Munições</Portuguese>
+			<German>Zeitschriften</German>
 		</Key>
 		<Key ID="STR_Global_Accs">
 			<Original>Accessories</Original>
@@ -314,6 +318,7 @@
 			<Italian>Accessori</Italian>
 			<Russian></Russian>
 			<Portuguese>Acessórios</Portuguese>
+			<German>Zubehör</German>
 		</Key>
 		<Key ID="STR_Global_Weapons">
 			<Original>Weapons</Original>
@@ -323,6 +328,7 @@
 			<Italian>Armi</Italian>
 			<Russian></Russian>
 			<Portuguese>Armas</Portuguese>
+			<German>Bewaffnung</German>
 		</Key>
 		<Key ID="STR_Global_Give">
 			<Original>Give</Original>
@@ -660,9 +666,9 @@
 		</Key>
 		<Key ID="STR_ANOTF_Unfrozen">
 			<Original>You have enabled %1's input.</Original>
-			<Czech>Jste povolili vstup%1 je.</Czech>
+			<Czech>Jste povolili vstup %1 je.</Czech>
 			<Spanish>Has abilitado los controles de %1</Spanish>
-			<Italian>È stata attivata ingresso% 1 di.</Italian>
+			<Italian>È stata attivata ingresso %1 di.</Italian>
 			<Russian></Russian>
 			<German>du hast %1 wieder aufgetaut.</German>
 			<French>Vous avez activé les controles de %1</French>
@@ -765,6 +771,7 @@
 			<Italian>La vostra fazione non è permesso di tagliare i veicoli!</Italian>
 			<Russian></Russian>
 			<Portuguese>Sua facção não têm direito de usar essa loja</Portuguese>
+			<German>Ihre Fraktion ist nicht zu hacken Fahrzeuge erlaubt!</German>
 		</Key>
 		<Key ID="STR_NOTF_Pickaxe">
 			<Original>A pickaxe is required</Original>
@@ -875,6 +882,7 @@
 			<Russian></Russian>
 			<Portuguese>Sacar: gangue</Portuguese>
 			<Italian>Ritira: Gang</Italian>
+			<German>Ziehen Sie: Gang</German>
 		</Key>
 		<Key ID="STR_ATM_DepositGang">
 			<Original>Deposit: Gang</Original>
@@ -884,6 +892,7 @@
 			<Russian></Russian>
 			<Portuguese>Depositar: Gangue</Portuguese>
 			<Italian>Deposita: Gang</Italian>
+			<German>Kaution: Gang</German>
 		</Key>
 		<Key ID="STR_ATM_Transfer">
 			<Original>Transfer</Original>
@@ -970,6 +979,7 @@
 			<Russian></Russian>
 			<French>Vous n'avez pas autant dans votre gang!</French>
 			<Portuguese>Você não tem todo esse dinhero na sua gangue!</Portuguese>
+			<German>Sie haben nicht so viel in Ihre Bande Bankkonto !</German>
 		</Key>
 		<Key ID="STR_ATM_SentMoneyFail">
 			<Original>You do not have enough money in your bank account, to transfer $%1 you will need $%2 as a tax fee.</Original>
@@ -1034,6 +1044,7 @@
 			<Russian></Russian>
 			<French>Vous avez retiré $%1 de votre gang</French>
 			<Portuguese>Você sacou R$%1 da sua gangue</Portuguese>
+			<German>Sie haben $%1 aus unserer Bande zurückgezogen.</German>
 		</Key>
 		<Key ID="STR_ATM_WithdrawInUseG">
 			<Original>Someone is already trying to withdraw from your gang.</Original>
@@ -1043,6 +1054,7 @@
 			<Italian>Qualcuno sta già cercando di ritirarsi dalla vostra banda.</Italian>
 			<Russian></Russian>
 			<Portuguese>Alguém já está tentando sacar da sua gangue.</Portuguese>
+			<German>Jemand ist bereits versucht, sich von Ihrer Bande zu entziehen.</German>
 		</Key>
 		<Key ID="STR_ATM_NotEnoughCash">
 			<Original>You do not have that much cash on you.</Original>
@@ -1085,6 +1097,7 @@
 			<Italian>Qualcuno sta già cercando di depositare sul conto bancario del gruppo.</Italian>
 			<Russian></Russian>
 			<Portuguese>Alguém já está tentando depositar na conta da sua gangue.</Portuguese>
+			<German>Jemand ist bereits versucht, in Ihre Bande Bankkonto einzuzahlen.</German>
 		</Key>
 	</Package>
 	<Package name="Cell_Phone">
@@ -2320,6 +2333,7 @@
 			<Italian>Interruttore Sidechat</Italian>
 			<Russian></Russian>
 			<Portuguese>Habilitar Sidechat</Portuguese>
+			<German>Sidechat Schalter</German>
 		</Key>
 		<Key ID="STR_SM_RNObj">
 			<Original>Reveal Nearest Objects</Original>
@@ -2329,6 +2343,7 @@
 			<Italian>Rivela oggetti più vicini</Italian>
 			<Russian></Russian>
 			<Portuguese>Mostrar Objetos Próximos</Portuguese>
+			<German>Reveal Nächster Objekte</German>
 		</Key>
 		<Key ID="STR_SM_SCOFF">
 			<Original>Sidechat OFF</Original>
@@ -2555,6 +2570,7 @@
 			<Italian>Aggiungere</Italian>
 			<Russian></Russian>
 			<Portuguese>Adicionar</Portuguese>
+			<German>Hinzufügen</German>
 		</Key>
 		<Key ID="STR_Wanted_People">
 			<Original>Wanted People</Original>
@@ -2564,6 +2580,7 @@
 			<Italian>La gente voleva</Italian>
 			<Russian></Russian>
 			<Portuguese>Pessoas Procuradas</Portuguese>
+			<German>Wanted</German>
 		</Key>
 		<Key ID="STR_Wanted_Citizens">
 			<Original>Citizens</Original>
@@ -2573,6 +2590,7 @@
 			<Italian>cittadini</Italian>
 			<Russian></Russian>
 			<Portuguese>Cidadãos</Portuguese>
+			<German>Die Bürger</German>
 		</Key>
 		<Key ID="STR_Wanted_Crimes">
 			<Original>Crimes</Original>
@@ -2582,6 +2600,7 @@
 			<Italian>crimini</Italian>
 			<Russian></Russian>
 			<Portuguese>Crimes</Portuguese>
+			<German>Verbrechen</German>
 		</Key>
 		<Key ID="STR_Wanted_AddP">
 			<Original>%1 has been added to the wanted list.</Original>
@@ -2591,6 +2610,7 @@
 			<Italian>%1 è stato aggiunto alla lista dei ricercati.</Italian>
 			<Russian></Russian>
 			<Portuguese>%1 foi adicionado a lista de procurados.</Portuguese>
+			<German>%1 wurde auf der Fahndungsliste hinzugefügt.</German>
 		</Key>
 		<Key ID="STR_Wanted_Count">
 			<Original>%1 count(s) of %2</Original>
@@ -2600,6 +2620,7 @@
 			<Italian>%1 count (s) del 2%</Italian>
 			<Russian></Russian>
 			<Portuguese>%1 contagem(s) de %2</Portuguese>
+			<German>%1 count (s) von %2</German>
 		</Key>
 		<Key ID="STR_Wanted_Bounty">
 			<Original>Current Bounty Price: $%1</Original>
@@ -2609,6 +2630,7 @@
 			<Italian>Corrente Bounty Prezzo: $%1</Italian>
 			<Russian></Russian>
 			<Portuguese>Atual recompensa: R$%1</Portuguese>
+			<German>Aktuelle Bounty Preis: $%1</German>
 		</Key>
 	</Package>
 	<Package name="Animals">
@@ -3270,6 +3292,7 @@
 			<Italian>Non si può tritare un veicolo mentre un giocatore è vicino!</Italian>
 			<Russian></Russian>
 			<Portuguese>Você não pode usar o desmanche enquanto um jogador está próximo!</Portuguese>
+			<German>Sie können ein Fahrzeug hacken, während ein Spieler in der Nähe ist!</German>
 		</Key>
 		<Key ID="STR_NOTF_Restrained">
 			<Original>%1 was restrained by %2</Original>
@@ -3532,6 +3555,7 @@
 			<Russian></Russian>
 			<French>Vous n'avez pas assez d'item!</French>
 			<Portuguese>Você não tem itens suficientes!</Portuguese>
+			<German>Sie haben nicht genug Artikel!</German>
 		</Key>
 		<Key ID="STR_NOTF_ItemProcess">
 			<Original>You have processed your item(s)!</Original>
@@ -3541,6 +3565,7 @@
 			<French>Vous avez traité vos item(s)!</French>
 			<Italian>Hai processato i tuoi oggetti!</Italian>
 			<Portuguese>Você processou seu(s) item(s)</Portuguese>
+			<German>Sie haben Ihre Position (en) verarbeitet!</German>
 		</Key>
 		<Key ID="STR_NOTF_RapidAction">
 			<Original>You can't rapidly use action keys!</Original>
@@ -3704,6 +3729,7 @@
 			<Italian>Non si poteva cogliere in modo efficace tutti gli articoli. Riprova.</Italian>
 			<Russian></Russian>
 			<Portuguese>Você não pode apreender nenhum item, efetivamente. Tente de novo.</Portuguese>
+			<German>Sie könnten nicht effektiv alle Elemente greifen. Versuch es noch einmal.</German>
 		</Key>
 		<Key ID="STR_NOTF_Repairing">
 			<Original>Repairing %1</Original>
@@ -3790,6 +3816,7 @@
 			<Italian>Hai teletrasportato alla posizione selezionata.</Italian>
 			<Russian></Russian>
 			<Portuguese>Você foi teleportado para a posição que você selecionou</Portuguese>
+			<German>Sie haben zu Ihrer gewählten Position teleportiert.</German>
 		</Key>
 		<Key ID="STR_NOTF_Unfrozen">
 			<Original>You have been unfrozen by an administrator.</Original>
@@ -4366,6 +4393,7 @@
 			<Russian></Russian>
 			<Italian>%2 ha ritirato un veicolo blacklistato vicino %1.</Italian>
 			<Portuguese>%2 tem um veículo proíbido nas proximidades %1.</Portuguese>
+			<German>%2 erhalten eine schwarze Liste gesetzt Fahrzeug in der Nähe %1 zurück.</German>
 		</Key>
 		<Key ID="STR_Cop_TicketNil">
 			<Original>Person to ticket is nil</Original>
@@ -4621,13 +4649,14 @@
 			<Polish>Nie znaleziono niczego nielegalnego w pojeździe</Polish>
 		</Key>
 		<Key ID="STR_Cop_NoIllegalCOntainer">
-			<Original>Nothing illegal in this coontainer</Original>
+			<Original>Nothing illegal in this container.</Original>
 			<Czech>Nic nezákonného v tomto kontejneru</Czech>
 			<Spanish>Nada ilegal en este contenedor</Spanish>
 			<Italian>Nulla di illegale in questo contenitore</Italian>
 			<Russian></Russian>
 			<Portuguese>Nada ilegal dentro do container</Portuguese>
 			<French>Rien d'illégal dans ce conteneur</French>
+			<German>Nichts illegal in diesem Container.</German>
 		</Key>
 		<Key ID="STR_Cop_VehEmpty">
 			<Original>This vehicle is empty</Original>
@@ -5019,7 +5048,7 @@
 		<Key ID="STR_MISC_VehLock">
 			<Original>You have locked your vehicle.</Original>
 			<Czech>Jste zamkli své vozidlo.</Czech>
-			<Spanish>Has cerrado tu vehículo .</Spanish>
+			<Spanish>Has cerrado tu vehículo.</Spanish>
 			<Russian></Russian>
 			<German>Du hast dein Fahrzeug abgeschlossen.</German>
 			<French>Vous avez verrouillé votre véhicule.</French>
@@ -5213,6 +5242,7 @@
 			<Russian></Russian>
 			<French>Il n'y a aucune maison près de vous.</French>
 			<Portuguese>Não há casas perto  de você.</Portuguese>
+			<German>Es gibt keine Häuser in Ihrer Nähe.</German>
 		</Key>
 		<Key ID="STR_House_Container_Floating">
 			<Original>The storage box is over the stairs!</Original>
@@ -5233,6 +5263,7 @@
 			<Russian></Russian>
 			<French>Vous n'êtes pas le propriétaire de la maison.</French>
 			<Portuguese>Você não é o dono da casa.</Portuguese>
+			<German>Sie sind nicht der Eigentümer des Hauses.</German>
 		</Key>
 		<Key ID="STR_House_Door_Unlock">
 			<Original>You have unlocked the door.</Original>
@@ -5528,6 +5559,7 @@
 			<Russian></Russian>
 			<French>Etes-vous sûr de vouloir delete le container?</French>
 			<Portuguese>Você tem certeza que quer remover isso?</Portuguese>
+			<German>Sind Sie sicher, dass Sie es zu entfernen?</German>
 		</Key>
 		<Key ID="STR_House_alreadyOwned">
 			<Original>This house is already owned even though you shouldn't be seeing this hint...</Original>
@@ -5649,7 +5681,7 @@
 			<Polish>Nie masz $ 500 w gotówce lub na koncie bankowym.</Polish>
 			<Portuguese>Você não tem R $ 500 em dinheiro ou em sua conta bancária.</Portuguese>
 			<Russian>Вам не нужно $ 500 наличными или на банковском счете.</Russian>
-			<German>Sie haben noch 500 $ in bar oder in Ihrem Bankkonto .</German>
+			<German>Sie haben noch 500 $ in bar oder in Ihrem Bankkonto.</German>
 		</Key>
 		<Key ID="STR_pumpRepair_Repaired">
 			<Original>You have repaired your vehicle for $500.</Original>
@@ -6736,13 +6768,14 @@
 			<Polish>Skarbiec otwarty</Polish>
 		</Key>
 		<Key ID="STR_ISTR_Blast_Exploit">
-			<Original>You must open the container before placing the charger!</Original>
+			<Original>You must open the container before placing the charge!</Original>
 			<Czech>Je nutné otevřít nádobu před umístěním nabíječku!</Czech>
 			<French>Vous devez ouvrir le conteneur avant de placer le chargeur!</French>
 			<Spanish>Debes abrir el contenedor antes de poner el explosivo!</Spanish>
 			<Italian>È necessario aprire il contenitore prima di mettere il caricabatterie!</Italian>
 			<Russian></Russian>
 			<Portuguese>Você deve abrir o container antes de colocar o explosivo!</Portuguese>
+			<German>Sie müssen den Behälter zu öffnen, bevor die Ladung platzieren!</German>
 		</Key>
 		<Key ID="STR_ISTR_Bolt_NotNear">
 			<Original>You are not looking at a house door.</Original>
@@ -6796,6 +6829,7 @@
 			<Italian>È necessario aprire le porte esterne prima di aprirlo!</Italian>
 			<Russian></Russian>
 			<Portuguese>Você deve abrir as portas externas antes de abrir essa!</Portuguese>
+			<German>Sie müssen die Außentüren öffnen, bevor es zu öffnen!</German>
 		</Key>
 		<Key ID="STR_ISTR_defuseKit_NotNear">
 			<Original>You are not looking at a vault.</Original>
@@ -7473,6 +7507,7 @@
 			<Italian>Interruttore modalità side-channel, disattivare questa funzione se non si vuole parlare con i giocatori da parte vostra.</Italian>
 			<Russian></Russian>
 			<Portuguese>Habilita/Desabilita o side-channel, desabilite caso você não queira conversar com os jogadores da sua facção.</Portuguese>
+			<German>Schalten Seitenkanalmodus , schalten Sie diese aus, wenn Sie nicht mit den Spielern von Ihrer Seite zu sprechen wollen.</German>
 		</Key>
 		<Key ID="STR_GUI_PlayTags">
 			<Original>Controls whether or not players will have name tags above their head.</Original>
@@ -7693,6 +7728,7 @@
 			<Russian></Russian>
 			<French>Supprimer le conteneur</French>
 			<Portuguese>Remover Caixa</Portuguese>
+			<German>entfernen Sie Behälter</German>
 		</Key>
 		<Key ID="STR_pInAct_AccessGarage">
 			<Original>Garage</Original>
@@ -7868,6 +7904,7 @@
 			<Russian></Russian>
 			<French>Fouiller Container</French>
 			<Portuguese>Vasculhar Container</Portuguese>
+			<German>Suchen Container</German>
 		</Key>
 		<Key ID="STR_vInAct_PullOut">
 			<Original>Pullout Players</Original>
@@ -7910,6 +7947,7 @@
 			<Russian></Russian>
 			<French>Rangez votre véhicule</French>
 			<Portuguese>Guardar seu veículo</Portuguese>
+			<German>Bewahren Sie Ihr Fahrzeug</German>
 		</Key>
 		<Key ID="STR_Vehicle_Store">
 			<Original>Store</Original>
@@ -7919,6 +7957,7 @@
 			<Russian></Russian>
 			<French>Ranger</French>
 			<Portuguese>Guardar</Portuguese>
+			<German>Geschäft</German>
 		</Key>
 		<Key ID="STR_Vehicle_Clean">
 			<Original>Clean</Original>
@@ -7928,6 +7967,7 @@
 			<Russian></Russian>
 			<French>Nettoyer</French>
 			<Portuguese>Limpar</Portuguese>
+			<German>Reinigen</German>
 		</Key>
 		<Key ID="STR_NPC_Protected">
 			<original>This vehicle is NPC protected.</Original>
@@ -7937,6 +7977,7 @@
 			<Italian>Questo veicolo è protetto NPC.</Italian>
 			<Russian></Russian>
 			<Portuguese>Esse veículo está protegido.</Portuguese>
+			<German>Dieses Fahrzeug ist NPC geschützt.</German>
 		</Key>
 	</Package>
 	<Package name="Session_Strings">
@@ -8680,6 +8721,7 @@
 			<Russian></Russian>
 			<Portuguese>Reabastecer Veículo</Portuguese>
 			<French>Ravitaillez en essence le Véhicule</French>
+			<German>auftanken Fahrzeug</German>
 		</Key>
 		<Key ID="STR_Price_Fuel_Pump">
 			<Original>Price per Liter: $%1</Original>
@@ -8689,6 +8731,7 @@
 			<Russian></Russian>
 			<Portuguese>Preço por Litro : R$%1</Portuguese>
 			<French>Prix au Litre : $%1</French>
+			<German>Preis pro Liter: $%1</German>
 		</Key>
 		<Key ID="STR_Fuel_Tank_Vehicle">
 			<Original>Current Fuel Amount:</Original>
@@ -8698,6 +8741,7 @@
 			<Italian>Corrente Importo Carburante:</Italian>
 			<Russian></Russian>
 			<Portuguese>Quantidade Atual de Combustível:</Portuguese>
+			<German>Aktuelle Kraftstoffmenge :</German>
 		</Key>
 		<Key ID="STR_Select_Vehicle_Pump">
 			<Original>Select a vehicle</Original>
@@ -8707,6 +8751,7 @@
 			<Russian></Russian>
 			<Portuguese>Selecione um veículo</Portuguese>
 			<French>Selectionne un vehicule!</French>
+			<German>Wählen Sie ein Fahrzeug</German>
 		</Key>
 		<Key ID="STR_Distance_Vehicle_Pump">
 			<Original>The vehicle is too far or you are in!</Original>
@@ -8716,6 +8761,7 @@
 			<Russian></Russian>
 			<Portuguese>O veículo está muito longe ou você está nele!</Portuguese>
 			<French>Le vehicule est trop loin ou tu es dedans!</French>
+			<German>Das Fahrzeug ist zu weit oder Sie sind in!</German>
 		</Key>
 		<Key ID="STR_Vehicle_Ready_Pump">
 			<Original>The vehicle is full!</Original>
@@ -8725,6 +8771,7 @@
 			<Russian></Russian>
 			<Portuguese>O veículo está cheio!</Portuguese>
 			<French>Le véhicule est plein!</French>
+			<German>Das Fahrzeug ist voll!</German>
 		</Key>
 	</Package>
 	<Package name="Player_Actions">
@@ -9058,6 +9105,7 @@
 			<Russian></Russian>
 			<Portuguese>Loja de Roupas</Portuguese>
 			<Polish>Sklep odzieżowy</Polish>
+			<German>Bruce Outback Outfits</German>
 		</Key>
 		<Key ID="STR_MAR_Apple_Field">
 			<Original>Apple Field</Original>
@@ -9662,6 +9710,7 @@
 			<Russian></Russian>
 			<Portuguese>Loja de Armas de Patrulha</Portuguese>
 			<Polish>Broń patrolowa</Polish>
+			<German>Streifenpolizist Waffenladen</German>
 		</Key>
 		<Key ID="STR_MAR_Sergeant_Weapon_Shop">
 			<Original>Sergeant Weapon Shop</Original>
@@ -9672,6 +9721,7 @@
 			<Russian></Russian>
 			<Portuguese>Lojas de Armas de Sargento</Portuguese>
 			<Polish>Broń sierżanta</Polish>
+			<German>Sergeant Waffenladen</German>
 		</Key>
 		<Key ID="STR_MAR_W_E_Vehicle Shop">
 			<Original>Vehicle Shop</Original>
@@ -10440,7 +10490,7 @@
 			<Czech>Váš podíl $%1.</Czech>
 			<French>Votre part est de $%1.</French>
 			<Spanish>Tu ganancia es $%1.</Spanish>
-			<Italian>La vostra quota è di $% 1.</Italian>
+			<Italian>La vostra quota è di $%1.</Italian>
 			<Russian></Russian>
 			<German>Dein Anteil beträgt $%1.</German>
 			<Portuguese>A sua parte é de R$%1.</Portuguese>
