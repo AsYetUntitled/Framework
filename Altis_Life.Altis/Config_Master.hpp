@@ -13,6 +13,7 @@ class Life_Settings {
     battlEye_friendlyLogging = false; //Set to true if you plan to read the data in your BattlEye log files. Otherwise use the SERVER RPT.
     player_advancedLog = false; //Logs the following: Houses(purchase/sale), Vehicle(Purchase/Sale/Chopping), Cop Arrests and Gang Creations. SEARCH USING: advanced_log
     player_moneyLog = false; //Logs player and gang bank(deposits/withdrawals/transfers). Logs money picked up off the ground. Logs player robbery. SEARCH USING: money_log
+    player_deathLog = false; //Logs victim and killer when someone dies. Search for "whoDoneit" in server RPT.
 
 /* Database Related Settings */
     /* Player Data Saving */

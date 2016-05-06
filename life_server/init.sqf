@@ -16,6 +16,7 @@ life_server_extDB_notLoaded = "";
 serv_sv_use = [];
 PVAR_ALL("life_server_isReady");
 life_save_civilian_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position"),0)) then {false} else {true};
+fn_whoDoneit = compile preprocessFileLineNumbers "\life_server\Functions\Systems\fn_whoDoneit.sqf";
 
 /*
 	Prepare the headless client.
