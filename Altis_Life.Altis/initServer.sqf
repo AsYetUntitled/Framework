@@ -1,7 +1,7 @@
 /*
 	File: initServer.sqf
-	Author: 
-	
+	Author:
+
 	Description:
 	Starts the initialization of the server.
 */
