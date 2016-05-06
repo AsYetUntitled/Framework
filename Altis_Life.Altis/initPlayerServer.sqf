@@ -1,3 +1,4 @@
+#define EQUAL(condition1,condition2) condition1 isEqualTo condition2
 #define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)
 /*
 	File: initPlayerServer.sqf
