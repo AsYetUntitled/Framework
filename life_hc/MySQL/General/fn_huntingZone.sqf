@@ -36,7 +36,7 @@ for "_i" from 0 to 1 step 0 do {
 	if(_unitsNear && !_animalsActive) then {
 		_animalsActive = true;
 		for "_i" from 1 to _maxAnimals do {
-			_animalClass = _animalList select floor random count _animalList;
+			_animalClass = selectRandom _animalList;
 			_position = [((_zone select 0) - _radius + random (_radius * 2)), ((_zone select 1) - _radius + random (_radius * 2)),0];
 			_animal = createAgent [_animalClass,_position,[],0,"FORM"];
 			_animal setDir (random 360);
