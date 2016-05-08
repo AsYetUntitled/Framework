@@ -15,7 +15,7 @@
 	Returns:
 	Nothing
 */
-private["_headgear","_headCount","_clothes","_uniform"];
+private["_headgear","_headCount","_clothes"];
 _headgear = ["H_Cap_tan", "H_Cap_blk", "H_Cap_blk_CMMG", "H_Cap_brn_SPECOPS",  "H_Cap_tan_specops_US", "H_Cap_khaki_specops_UK", "H_Cap_red", "H_Cap_grn", 
 			 "H_Cap_blu", "H_Cap_grn_BI", "H_Cap_blk_Raven", "H_Cap_blk_ION", "H_Bandanna_khk", "H_Bandanna_sgg", "H_Bandanna_cbr", "H_Bandanna_gry", "H_Bandanna_camo", "H_Bandanna_mcamo", 
 			 "H_Bandanna_surfer", "H_Beret_blk", "H_Beret_red", "H_Beret_grn", "H_TurbanO_blk", "H_StrawHat", 
@@ -39,8 +39,7 @@ if (isServer) then
 	//Random clothing for our NPC's to add a bit of spice.
 	if(local _this && !isPlayer _this) then
 	{
-		_uniform = _clothes call BIS_fnc_selectRandom;
-		_this addUniform _uniform;
+		_this addUniform (selectRandom _clothes);
 	};
 };
 
