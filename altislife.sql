@@ -18,41 +18,41 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `altislife` DEFAULT CHARACTER SET utf8mb4;
 USE `altislife`;
 
+--
+-- Drop procedures to ensure to conflicts
+--
+DROP PROCEDURE IF EXISTS `resetLifeVehicles`;
+DROP PROCEDURE IF EXISTS `deleteDeadVehicles`;
+DROP PROCEDURE IF EXISTS `deleteOldHouses`;
+DROP PROCEDURE IF EXISTS `deleteOldGangs`;
+DROP PROCEDURE IF EXISTS `deleteOldContainers`;
+
 DELIMITER $$
 --
 -- Procedures
 -- Edit arma3 to match a user in MySQL
 -- For external databases: Edit localhost to match arma3server IP
 --
-DROP PROCEDURE IF EXISTS `resetLifeVehicles`;
 
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
 BEGIN
   UPDATE `vehicles` SET `active`= 0;
 END$$
 
-DROP PROCEDURE IF EXISTS `deleteDeadVehicles`;
-
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteDeadVehicles`()
 BEGIN
   DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
-
-DROP PROCEDURE IF EXISTS `deleteOldHouses`;
 
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldHouses`()
 BEGIN
   DELETE FROM `houses` WHERE `owned` = 0;
 END$$
 
-DROP PROCEDURE IF EXISTS `deleteOldGangs`;
-
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldGangs`()
 BEGIN
   DELETE FROM `gangs` WHERE `active` = 0;
 END$$
-
-DROP PROCEDURE IF EXISTS `deleteOldContainers`;
 
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldContainers`()
 BEGIN
