@@ -14,7 +14,7 @@ DB_Async_ExtraLock = false;
 life_server_isReady = false;
 life_server_extDB_notLoaded = "";
 serv_sv_use = [];
-PVAR_ALL("life_server_isReady");
+publicVariable "life_server_isReady";
 life_save_civilian_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position"),0)) then {false} else {true};
 fn_whoDoneit = compile preprocessFileLineNumbers "\life_server\Functions\Systems\fn_whoDoneit.sqf";
 
@@ -22,10 +22,11 @@ fn_whoDoneit = compile preprocessFileLineNumbers "\life_server\Functions\Systems
 	Prepare the headless client.
 */
 life_HC_isActive = false;
-PVAR_ALL("life_HC_isActive");
+publicVariable "life_HC_isActive";
 HC_Life = false;
-PVAR_ALL("HC_Life");
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),1)) then {
+publicVariable "HC_Life";
+
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessSupport"),1)) then {
 	[] execVM "\life_server\initHC.sqf";
 };
 
@@ -47,7 +48,7 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 		diag_log _exception;
 		life_server_extDB_notLoaded = [true, _exception];
 	};
-	PVAR_ALL("life_server_extDB_notLoaded");
+	publicVariable "life_server_extDB_notLoaded";
 	if(life_server_extDB_notLoaded isEqualType []) exitWith {};
 	EXTDB "9:LOCK";
 	diag_log "extDB2: Connected to Database";
@@ -59,13 +60,11 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 
 if(life_server_extDB_notLoaded isEqualType []) exitWith {};
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
-	/* Run stored procedures for SQL side cleanup */
-	["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
-	["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
-	["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
-	["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
-};
+/* Run stored procedures for SQL side cleanup */
+["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
+["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
+["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
+["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position_restart"),1)) then {
     [] spawn {
@@ -134,9 +133,8 @@ TON_fnc_requestClientID =
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
-	[] execFSM "\life_server\FSM\cleanup.fsm";
-};
+cleanupFSM = [] execFSM "\life_server\FSM\cleanup.fsm";
+    
 [] spawn {
 	for "_i" from 0 to 1 step 0 do {
 		uiSleep (30 * 60);
@@ -146,10 +144,8 @@ if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
 	};
 };
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
-	[] spawn TON_fnc_initHouses;
-	[] spawn TON_fnc_cleanup;
-};
+[] spawn TON_fnc_initHouses;
+cleanup = [] spawn TON_fnc_cleanup;
 
 TON_fnc_playtime_values = [];
 TON_fnc_playtime_values_request = [];
@@ -171,16 +167,12 @@ _rsb setVariable["bis_disabled_Door_1",1,true];
 _dome allowDamage false;
 _rsb allowDamage false;
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
-	/* Tell clients that the server is ready and is accepting queries */
-	life_server_isReady = true;
-	PVAR_ALL("life_server_isReady");
-};
+/* Tell clients that the server is ready and is accepting queries */
+life_server_isReady = true;
+publicVariable "life_server_isReady";
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) then {
-	/* Initialize hunting zone(s) */
-	["hunting_zone",30] spawn TON_fnc_huntingZone;
-};
+/* Initialize hunting zone(s) */
+aiSpawn = ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
 // We create the attachment point to be used for objects to attachTo load virtually in vehicles.
 life_attachment_point = "Land_HelipadEmpty_F" createVehicle [0,0,0];

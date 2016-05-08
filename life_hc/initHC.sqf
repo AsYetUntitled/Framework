@@ -6,11 +6,12 @@
 	Description:
 	Initialize the headless client.
 */
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessMode"),0)) exitWith {};
+if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessSupport"),0)) exitWith {};
 
 [] execVM "\life_hc\KRON_Strings.sqf";
 
-life_server_extDB_notLoaded = "";
+life_HC_server_extDB_notLoaded = "";
+
 life_save_civilian_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position"),0)) then {false} else {true};
 
 diag_log "-------------------------------------------------------------------------------------------------------------------";
@@ -29,11 +30,11 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
 	} catch {
 		diag_log _exception;
-		life_server_extDB_notLoaded = [true, _exception];
+		life_HC_server_extDB_notLoaded = [true, _exception];
 	};
-	
-	PVAR_ALL("life_server_extDB_notLoaded");
-	if(life_server_extDB_notLoaded isEqualType []) exitWith {};
+
+	publicVariable "life_HC_server_extDB_notLoaded";
+	if(life_HC_server_extDB_notLoaded isEqualType []) exitWith {};
 	EXTDB "9:LOCK";
 	diag_log "extDB2: Connected to Database";
 } else {
@@ -42,11 +43,20 @@ if(isNil {GVAR_UINS "life_sql_id"}) then {
 	diag_log "extDB2: Still Connected to Database";
 };
 
-if(life_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
+if(life_HC_server_extDB_notLoaded isEqualType []) then {
+    [] spawn {
+        for "_i" from 0 to 1 step 0 do {
+            [0,"There is a problem with the Headless Client, please contact an administrator."] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+            sleep 120;
+        };
+    };
+};
+
+if(life_HC_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
-        PVAR_SERV("serv_sv_use");
+        publicVariableServer "serv_sv_use";
         uiSleep 60;
     };
 };
@@ -59,7 +69,6 @@ if(life_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not 
 [] execFSM "\life_hc\FSM\cleanup.fsm";
 
 [] spawn HC_fnc_cleanup;
-[] spawn HC_fnc_initHouses;
 
 /* Initialize hunting zone(s) */
 ["hunting_zone",30] spawn HC_fnc_huntingZone;
@@ -118,5 +127,5 @@ diag_log "---------------------------- HC is Ready -----------------------------
 diag_log "Published the needed vars over the network, ready for queries to recieve!";
 diag_log "-------------------------------------------------------------------------";
 
-life_server_isReady = true;
-publicVariable "life_server_isReady";
+life_HC_server_isReady = true;
+publicVariable "life_HC_server_isReady";

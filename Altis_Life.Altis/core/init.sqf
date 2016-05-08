@@ -1,11 +1,22 @@
 #include "..\script_macros.hpp"
 /*
-	File: init.sqf
+    File: init.sqf
 	Author:
 
 	Description:
 	Master client initialization file
 */
+
+private["_server_isReady","_extDB_notLoaded"];
+
+if (life_HC_isActive) then {
+    _server_isReady = life_HC_server_isReady;
+    _extDB_notLoaded = life_HC_server_extDB_notLoaded;
+} else {
+    _server_isReady = life_server_isReady;
+    _extDB_notLoaded = life_server_extDB_notLoaded;
+};
+
 life_firstSpawn = true;
 life_session_completed = false;
 private["_handle","_timeStamp"];
@@ -53,12 +64,12 @@ diag_log "::Life Client:: Received server functions.";
 0 cutFadeOut 99999999;
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
-waitUntil{!isNil "life_server_isReady"};
-waitUntil{(life_server_isReady OR !isNil "life_server_extDB_notLoaded")};
+waitUntil{!isNil "_server_isReady"};
+waitUntil{(_server_isReady OR !isNil "_extDB_notLoaded")};
 
-if(!isNil "life_server_extDB_notLoaded" && {life_server_extDB_notLoaded isEqualType []}) exitWith {
-	diag_log life_server_extDB_notLoaded;
-	999999 cutText [life_server_extDB_notLoaded,"BLACK FADED"];
+if(!isNil "_extDB_notLoaded" && {_extDB_notLoaded isEqualType []}) exitWith {
+	diag_log _extDB_notLoaded;
+	999999 cutText ["extDB failed to load, please contact an administrator.","BLACK FADED"];
 	999999 cutFadeOut 99999999;
 };
 
