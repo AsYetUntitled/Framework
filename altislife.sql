@@ -19,7 +19,7 @@ CREATE DATABASE IF NOT EXISTS `altislife` DEFAULT CHARACTER SET utf8mb4;
 USE `altislife`;
 
 --
--- Drop procedures to ensure to conflicts
+-- Drop procedures to ensure no conflicts
 --
 DROP PROCEDURE IF EXISTS `resetLifeVehicles`;
 DROP PROCEDURE IF EXISTS `deleteDeadVehicles`;
