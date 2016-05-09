@@ -69,7 +69,7 @@ class CfgRemoteExec {
         F(TON_fnc_player_query,CLIENT)
 
         /* Server only functions */
-        F(bis_fnc_execvm,SERVER)
+        F(BIS_fnc_execVM,SERVER)
         F(DB_fnc_insertRequest,SERVER)
         F(DB_fnc_queryRequest,SERVER)
         F(DB_fnc_updatePartial,SERVER)
@@ -142,6 +142,8 @@ class CfgRemoteExec {
         F(HC_fnc_wantedRemove,HC)
 
         /* Functions for everyone */
+        F(BIS_fnc_effectKilledAirDestruction,ANYONE)
+        F(BIS_fnc_effectKilledSecondaries,ANYONE)
         F(life_fnc_animSync,ANYONE)
         F(life_fnc_broadcast,ANYONE)
         F(life_fnc_colorVehicle,ANYONE)
