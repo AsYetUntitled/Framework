@@ -47,7 +47,7 @@ for "_i" from 0 to 1 step 0 do {
 					_uid = _dbInfo select 0;
 					_plate = _dbInfo select 1;
 
-					_query = format["UPDATE vehicles SET active='0' fuel='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_fuel];
+					_query = format["UPDATE vehicles SET active='0', fuel='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_fuel];
 
 					[_query,1] call HC_fnc_asyncCall;
 				};
