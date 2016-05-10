@@ -14,12 +14,12 @@ life_preview_3D_vehicle_cam camCommit 0;
 
 life_preview_3D_vehicle_object = objNull;
 
-// Thread execution performing a continuous rotation of the camra around the view object.
+// Thread execution performing a continuous rotation of the camera around the view object.
 0 spawn
 {
 	// Until we left the visualization.
-	while {!isNull life_preview_3D_vehicle_cam} do
-	{
+	for "_i" from 0 to 1 step 0 do {
+		if (isNull life_preview_3D_vehicle_cam) exitWith {};
 		private ["_object","_distanceCam","_azimuthCam"];
 
 		// Waiting for a view object.
@@ -39,9 +39,9 @@ life_preview_3D_vehicle_object = objNull;
 		life_preview_3D_vehicle_cam camCommit 0;
 
 		// Rotation around the object.
-		while {life_preview_3D_vehicle_object == _object} do
-		{
-			_azimuthCam = _azimuthCam + .70;
+		for "_i" from 0 to 1 step 0 do {
+			if (!(life_preview_3D_vehicle_object isEqualTo _object)) exitWith {};
+			_azimuthCam = _azimuthCam + 3.25;
 
 			life_preview_3D_vehicle_cam camSetPos (_object modelToWorld [_distanceCam * sin _azimuthCam, _distanceCam * cos _azimuthCam, _distanceCam * 0.33]);
 			life_preview_3D_vehicle_cam camCommit 0.05;

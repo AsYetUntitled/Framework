@@ -334,7 +334,8 @@ TON_fnc_MapMarkersAdmin = compileFinal "
     life_markers = false;
     hint localize ""STR_ANOTF_MDisabled"";
   };
-  while {life_markers} do {
+	for ""_i"" from 0 to 1 step 0 do {
+		if (!life_markers) exitWith {};
     {
       if ((vehicle _x isKindOf ""LandVehicle"") || (vehicle _x isKindOf ""Air"") || (vehicle _x isKindOf ""Ship"")) then {
         if (count(crew vehicle _x) > 0) then {
@@ -363,7 +364,8 @@ TON_fnc_MapMarkersAdmin = compileFinal "
                 _PlayersOrVehicles = _this select 0;
                 _Marker = _this select 1;
 								_TypeVehicle = _this select 3;
-                while {life_markers && (alive _PlayersOrVehicles) && (vehicle _PlayersOrVehicles != _PlayersOrVehicles) && (getPlayerUID _PlayersOrVehicles != """")} do {
+								for ""_i"" from 0 to 1 step 0 do {
+									if (!life_markers && !(alive _PlayersOrVehicles) && (vehicle _PlayersOrVehicles == _PlayersOrVehicles) && (getPlayerUID _PlayersOrVehicles != """")) exitWith {};
                   _CrewVehicle = ((crew vehicle _PlayersOrVehicles) find _PlayersOrVehicles);
                   _Marker setMarkerPosLocal([(visiblePosition _PlayersOrVehicles select 0) + 20, (visiblePosition _PlayersOrVehicles select 1) - (25 + _CrewVehicle * 20), 0]);
 									_Marker setMarkerTextLocal format['%1---%2---%3m', name _PlayersOrVehicles, _TypeVehicle, round(_PlayersOrVehicles distance player)];
@@ -403,7 +405,8 @@ TON_fnc_MapMarkersAdmin = compileFinal "
             private[""_PlayersOrVehicles"", ""_Marker""];
             _PlayersOrVehicles = _this select 0;
             _Marker = _this select 1;
-            while {life_markers && (alive _PlayersOrVehicles) && (vehicle _PlayersOrVehicles == _PlayersOrVehicles) && (getPlayerUID _PlayersOrVehicles != """")} do {
+						for ""_i"" from 0 to 1 step 0 do {
+							if (!life_markers && !(alive _PlayersOrVehicles) && (vehicle _PlayersOrVehicles != _PlayersOrVehicles) && (getPlayerUID _PlayersOrVehicles != """")) exitWith {};
               _Marker setMarkerPosLocal([visiblePosition _PlayersOrVehicles select 0, visiblePosition _PlayersOrVehicles select 1, 0]);
               _Marker setMarkerTextLocal format[""%1---%2"", name _PlayersOrVehicles, round(_PlayersOrVehicles distance player)];
               sleep 0.01;
