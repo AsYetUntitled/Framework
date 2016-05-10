@@ -1,11 +1,11 @@
 #include "..\script_macros.hpp"
 /*
-	File: configuration.sqf
-	Author:
+    File: configuration.sqf
+    Author:
 
-	Description:
-	Master Life Configuration File
-	This file is to setup variables for the client, there are still other configuration files in the system
+    Description:
+    Master Life Configuration File
+    This file is to setup variables for the client, there are still other configuration files in the system
 
 *****************************
 ****** Backend Variables *****
@@ -85,17 +85,17 @@ life_isknocked = false;
 life_vehicles = [];
 
 /*
-	Master Array of items?
+    Master Array of items?
 */
 //Setup variable inv vars.
 {
-	SVAR_MNS [ITEM_VARNAME(configName _x),0];
+    SVAR_MNS [ITEM_VARNAME(configName _x),0];
 } forEach ("true" configClasses (missionConfigFile >> "VirtualItems"));
 
 /* Setup the BLAH! */
 {
-	_varName = getText(_x >> "variable");
-	_sideFlag = getText(_x >> "side");
+    _varName = getText(_x >> "variable");
+    _sideFlag = getText(_x >> "side");
 
-	SVAR_MNS [LICENSE_VARNAME(_varName,_sideFlag),false];
+    SVAR_MNS [LICENSE_VARNAME(_varName,_sideFlag),false];
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));

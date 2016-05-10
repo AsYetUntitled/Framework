@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_adminQuery.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_adminQuery.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Starts the query on a player.
+    Description:
+    Starts the query on a player.
 */
 private["_text","_info","_prim","_sec","_vest","_uni","_bp","_attach","_tmp"];
 disableSerialization;

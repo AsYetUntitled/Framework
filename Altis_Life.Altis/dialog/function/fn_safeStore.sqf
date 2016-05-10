@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_safeStore.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_safeStore.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Gateway copy of fn_vehStoreItem but designed for the safe.
+    Description:
+    Gateway copy of fn_vehStoreItem but designed for the safe.
 */
 private["_ctrl","_num"];
 disableSerialization;

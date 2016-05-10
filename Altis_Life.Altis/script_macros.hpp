@@ -79,8 +79,8 @@
 
 //SpyGlass Macros
 #define SPYGLASS_END \
-	vehicle player setVelocity[1e10,1e14,1e18]; \
-	sleep 3; \
-	preProcessFile "SpyGlass\endoftheline.sqf"; \
-	sleep 2.5; \
-	failMission "SpyGlass";
+    vehicle player setVelocity[1e10,1e14,1e18]; \
+    sleep 3; \
+    preProcessFile "SpyGlass\endoftheline.sqf"; \
+    sleep 2.5; \
+    failMission "SpyGlass";

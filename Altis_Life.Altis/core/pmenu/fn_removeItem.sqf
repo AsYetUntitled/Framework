@@ -1,11 +1,11 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_removeItem.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Removes the selected item & amount to remove from the players
-	virtual inventory.
+    File: fn_removeItem.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Removes the selected item & amount to remove from the players
+    virtual inventory.
 */
 private["_data","_value","_obj"];
 disableSerialization;
@@ -20,5 +20,5 @@ if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_cannotRemove
 if(!([false,_data,(parseNumber _value)] call life_fnc_handleInv)) exitWith {hint localize "STR_NOTF_couldNotRemoveThatMuch";};
 
 hint format [localize "STR_NOTF_removedFromInventory",(parseNumber _value),(localize ITEM_NAME(_data))];
-	
+    
 [] call life_fnc_p_updateMenu;

@@ -42,7 +42,7 @@ _bag = [];
 if(!(EQUAL(uniform player,""))) then {
     {
         if (_x in (magazines player)) then {
-			ADD(_uMags,[_x]);
+            ADD(_uMags,[_x]);
         } else {
             ADD(_uItems,[_x]);
         };
@@ -52,9 +52,9 @@ if(!(EQUAL(uniform player,""))) then {
 if(!(EQUAL(backpack player,""))) then {
     {
         if (_x in (magazines player)) then {
-			ADD(_bMags,[_x]);
+            ADD(_bMags,[_x]);
         } else {
-			ADD(_bItems,[_x]);
+            ADD(_bItems,[_x]);
         };
     } forEach (backpackItems player);
 };
@@ -62,9 +62,9 @@ if(!(EQUAL(backpack player,""))) then {
 if(!(EQUAL(vest player,""))) then {
     {
         if (_x in (magazines player)) then {
-			ADD(_vMags,[_x]);
+            ADD(_vMags,[_x]);
         } else {
-			ADD(_vItems,[_x]);
+            ADD(_vItems,[_x]);
         };
     } forEach (vestItems player);
 };
@@ -79,17 +79,17 @@ if(count (primaryWeaponMagazine player) > 0 && alive player) then {
         _handled = false;
 
         if(_ves) then {
-			ADD(_vMags,[_pMag]);
+            ADD(_vMags,[_pMag]);
             _handled = true;
         };
 
         if(_uni && !_handled) then {
-			ADD(_uMags,[_pMag]);
+            ADD(_uMags,[_pMag]);
             _handled = true;
         };
 
         if(_bag && !_handled) then {
-			ADD(_bMags,[_pMag]);
+            ADD(_bMags,[_pMag]);
             _handled = true;
         };
     };
@@ -105,12 +105,12 @@ if(count (handgunMagazine player) > 0 && alive player) then {
         _handled = false;
 
         if(_ves) then {
-			ADD(_vMags,[_hMag]);
+            ADD(_vMags,[_hMag]);
             _handled = true;
         };
 
         if(_uni && !_handled) then {
-			ADD(_uMags,[_hMag]);
+            ADD(_uMags,[_hMag]);
             _handled = true;
         };
 
@@ -123,20 +123,20 @@ if(count (handgunMagazine player) > 0 && alive player) then {
 
 if(count (RIFLE_ITEMS) > 0) then {
     {
-		ADD(_pItems,[_x]);
+        ADD(_pItems,[_x]);
     } forEach (primaryWeaponItems player);
 };
 
 if(count (PISTOL_ITEMS) > 0) then {
     {
-		ADD(_hItems,[_x]);
+        ADD(_hItems,[_x]);
     } forEach (handGunItems player);
 };
 
 {
     _val = ITEM_VALUE(_x);
     if (_val > 0) then {
-		_yItems pushBack [_x,_val];
+        _yItems pushBack [_x,_val];
     };
 } forEach _savedVirtualItems;
 

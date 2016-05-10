@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_garageLBChange.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_garageLBChange.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Can't be bothered to answer it.. Already deleted it by accident..
+    Description:
+    Can't be bothered to answer it.. Already deleted it by accident..
 */
 disableSerialization;
 private["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_sellMultiplier","_price","_storageFee","_purchasePrice"];
@@ -18,8 +18,8 @@ _className = SEL(_dataArr,0);
 _classNameLife = _className;
 
 if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then {
-	_classNameLife = "Default"; //Use Default class if it doesn't exist
-	diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
+    _classNameLife = "Default"; //Use Default class if it doesn't exist
+    diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
 _vehicleColor = SEL(SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures"),SEL(_dataArr,1)),0);
@@ -32,39 +32,39 @@ _price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
 _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
 switch(playerSide) do {
-	case civilian: {
-		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
-		_sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");
-	};
-	case west: {
-		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");
-		_sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_COP");
-	};
-	case independent: {
-		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");
-		_sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_MEDIC");
-	};
-	case east: {
-		_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
-		_sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPFOR");
-	};
+    case civilian: {
+        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
+        _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");
+    };
+    case west: {
+        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");
+        _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_COP");
+    };
+    case independent: {
+        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");
+        _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_MEDIC");
+    };
+    case east: {
+        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPF||");
+        _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPF||");
+    };
 };
 _retrievePrice = _purchasePrice * _storageFee;
 _sellPrice = _purchasePrice * _sellMultiplier;
 
-if(!(_sellPrice isEqualType 0) OR _sellPrice < 1) then {_sellPrice = 500;};
-if(!(_retrievePrice isEqualType 0) OR _retrievePrice < 1) then {_retrievePrice = 500;};
+if(!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
+if(!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice = 500;};
 
 (CONTROL(2800,2803)) ctrlSetStructuredText parseText format[
-	(localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>
-	" +(localize "STR_Shop_Veh_UI_SellP")+ " <t color='#8cff9b'>$%2</t><br/>
-	" +(localize "STR_Shop_Veh_UI_Color")+ " %8<br/>
-	" +(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>
-	" +(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>
-	" +(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>
-	" +(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>
-	" +(localize "STR_Shop_Veh_UI_Fuel")+ " %7
-	",
+    (localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>
+    " +(localize "STR_Shop_Veh_UI_SellP")+ " <t color='#8cff9b'>$%2</t><br/>
+    " +(localize "STR_Shop_Veh_UI_Color")+ " %8<br/>
+    " +(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>
+    " +(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>
+    " +(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>
+    " +(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>
+    " +(localize "STR_Shop_Veh_UI_Fuel")+ " %7
+    ",
 [_retrievePrice] call life_fnc_numberText,
 [_sellPrice] call life_fnc_numberText,
 SEL(_vehicleInfo,8),

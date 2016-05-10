@@ -1,5 +1,5 @@
 /*
-	Master UI Resource File
+    Master UI Resource File
 */
 #include "common.hpp"
 #include "shop_items.hpp"

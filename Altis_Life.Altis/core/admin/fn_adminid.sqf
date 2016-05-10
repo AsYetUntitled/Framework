@@ -1,9 +1,9 @@
 /*
-	File: fn_adminid.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Output information received to admin menu.
+    File: fn_adminid.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Output information received to admin menu.
 */
 private["_display","_ret","_text"];
 disableSerialization;

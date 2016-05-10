@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_giveMoney.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Gives the selected amount of money to the selected player.
+    File: fn_giveMoney.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Gives the selected amount of money to the selected player.
 */
 private["_unit","_amount"];
 _amount = ctrlText 2018;

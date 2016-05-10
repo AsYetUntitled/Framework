@@ -1,19 +1,19 @@
 #include "\life_hc\hc_macros.hpp"
 /*
-	File: fn_addHouse.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_addHouse.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	This file is for Nanou's HeadlessClient.
-	
-	Description:
-	Blah
+    This file is for Nanou's HeadlessClient.
+    
+    Description:
+    Blah
 */
 private["_housePos","_query"];
 params [
-	["_uid","",[""]],
-	["_house",objNull,[objNull]]
+    ["_uid","",[""]],
+    ["_house",objNull,[objNull]]
 ];
-if(isNull _house OR _uid == "") exitWith {};
+if(isNull _house || _uid == "") exitWith {};
 
 _housePos = getPosATL _house;
 

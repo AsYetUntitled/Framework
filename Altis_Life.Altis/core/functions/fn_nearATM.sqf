@@ -1,13 +1,13 @@
 /*
-	File: fn_nearATM.sqf
-	Author: Bryan "Tonic" Boardwine
-	Modified : NiiRoZz : for use with new command cursorObject
+    File: fn_nearATM.sqf
+    Author: Bryan "Tonic" Boardwine
+    Modified : NiiRoZz : for use with new command cursorObject
 
-	Description:
-	Checks if the player is near an ATM object on the map.
+    Description:
+    Checks if the player is near an ATM object on the map.
 
-	RETURNS:
-		0: BOOL (True for yes, false for no)
+    RETURNS:
+        0: BOOL (True for yes, false for no)
 */
 private ["_objs","_return"];
 _obj = cursorObject;

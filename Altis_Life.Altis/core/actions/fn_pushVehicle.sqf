@@ -1,6 +1,6 @@
 /*
-	Does it matter? Needs to be replaced.
-	Built for Feint's Push functionality
+    Does it matter? Needs to be replaced.
+    Built for Feint's Push functionality
 */
 private["_target","_caller","_posCaller","_dir"];
 _target = cursorObject;
@@ -12,7 +12,7 @@ if(isNull _target) exitWith {};
 if(_caller distance _target > 5) exitWith {};
 
 if(local _target) then {
-	[_caller,_target,_posCaller,_dir] spawn life_fnc_pushFunction;
+    [_caller,_target,_posCaller,_dir] spawn life_fnc_pushFunction;
 } else {
-	[_caller,_target,_posCaller,_dir] remoteExec ["life_fnc_pushFunction",_target];
+    [_caller,_target,_posCaller,_dir] remoteExec ["life_fnc_pushFunction",_target];
 };

@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_serviceChopper.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_serviceChopper.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Main functionality for the chopper service paid, to be replaced in later version.
+    Description:
+    Main functionality for the chopper service paid, to be replaced in later version.
 */
 private ["_serviceCost"];
 disableSerialization;
@@ -27,20 +27,20 @@ _progress progressSetPosition 0.01;
 _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
-	sleep  0.2;
-	_cP = _cP + 0.01;
-	_progress progressSetPosition _cP;
-	_pgText ctrlSetText format[localize "STR_Service_Chopper_Servicing",round(_cP * 100)];
-	if(_cP >= 1) exitWith {};
+    sleep  0.2;
+    _cP = _cP + 0.01;
+    _progress progressSetPosition _cP;
+    _pgText ctrlSetText format[localize "STR_Service_Chopper_Servicing",round(_cP * 100)];
+    if(_cP >= 1) exitWith {};
 };
 
 if(!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
 
 SUB(CASH,_serviceCost);
 if(!local SEL(_search,0)) then {
-	[SEL(_search,0),1] remoteExecCall ["life_fnc_setFuel",SEL(_search,0)];
+    [SEL(_search,0),1] remoteExecCall ["life_fnc_setFuel",SEL(_search,0)];
 } else {
-	SEL(_search,0) setFuel 1;
+    SEL(_search,0) setFuel 1;
 };
 
 SEL(_search,0) setDamage 0;

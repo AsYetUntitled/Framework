@@ -1,13 +1,13 @@
 #include "\life_hc\hc_macros.hpp"
 /*
-	File: fn_spawnVehicle.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_spawnVehicle.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	This file is for Nanou's HeadlessClient.
+    This file is for Nanou's HeadlessClient.
 
-	Description:
-	Sends the query request to the database, if an array is returned then it creates
-	the vehicle if it's not in use or dead.
+    Description:
+    Sends the query request to the database, if an array is returned then it creates
+    the vehicle if it's not in use or dead.
 */
 private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage","_wasIllegal","_location"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
@@ -24,7 +24,7 @@ _side = side _unit;
 
 //_unit = owner _unit;
 
-if(EQUAL(_vid,-1) OR EQUAL(_pid,"")) exitWith {};
+if(EQUAL(_vid,-1) || EQUAL(_pid,"")) exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
@@ -35,11 +35,11 @@ _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
-	diag_log "------------- Client Query Request -------------";
-	diag_log format["QUERY: %1",_query];
-	diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
-	diag_log format["Result: %1",_queryResult];
-	diag_log "------------------------------------------------";
+    diag_log "------------- Client Query Request -------------";
+    diag_log format["QUERY: %1",_query];
+    diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
+    diag_log format["Result: %1",_queryResult];
+    diag_log "------------------------------------------------";
 };
 
 if(_queryResult isEqualType "") exitWith {};
@@ -49,25 +49,25 @@ if(isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
 if(EQUAL(count _vInfo,0)) exitWith {serv_sv_use deleteAt _servIndex;};
 
 if(EQUAL(SEL(_vInfo,5),0)) exitWith {
-	serv_sv_use deleteAt _servIndex;
-	[1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
+    serv_sv_use deleteAt _servIndex;
+    [1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if(EQUAL(SEL(_vInfo,6),1)) exitWith {
-	serv_sv_use deleteAt _servIndex;
-	[1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
+    serv_sv_use deleteAt _servIndex;
+    [1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if(!(_sp isEqualType "")) then {
-	_nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
+    _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
 } else {
-	_nearVehicles = [];
+    _nearVehicles = [];
 };
 
 if(count _nearVehicles > 0) exitWith {
-	serv_sv_use deleteAt _servIndex;
-	[_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
-	[1,(localize "STR_Garage_SpawnPointError")] remoteExecCall ["life_fnc_broadcast",_unit];
+    serv_sv_use deleteAt _servIndex;
+    [_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
+    [1,(localize "STR_Garage_SpawnPointError")] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 _query = format["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
@@ -80,19 +80,19 @@ _wasIllegal = if (_wasIllegal == 1) then { true } else { false };
 
 [_query,1] call HC_fnc_asyncCall;
 if(_sp isEqualType "") then {
-	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
-	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
-	_vehicle allowDamage false;
-	_hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
-	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
-	sleep 0.6;
+    _vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
+    waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
+    _vehicle allowDamage false;
+    _hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
+    _vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
+    sleep 0.6;
 } else {
-	_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
-	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
-	_vehicle allowDamage false;
-	_vehicle setPos _sp;
-	_vehicle setVectorUp (surfaceNormal _sp);
-	_vehicle setDir _dir;
+    _vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
+    waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
+    _vehicle allowDamage false;
+    _vehicle setPos _sp;
+    _vehicle setVectorUp (surfaceNormal _sp);
+    _vehicle setDir _dir;
 };
 _vehicle allowDamage true;
 //Send keys over the network.
@@ -109,71 +109,71 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 
 // Avoid problems if u keep changing which stuff to save!
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
-	_vehicle setVariable["Trunk",_trunk,true];
-	if (_wasIllegal) then {
-		private "_location";
-		if(_sp isEqualType "") then {
-			_location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
-		} else {
-			_location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
-		   };
-		   _location = text _location;
-		  _msg = format[localize "STR_NOTF_BlackListedVehicle", _location, _name];
+    _vehicle setVariable["Trunk",_trunk,true];
+    if (_wasIllegal) then {
+        private "_location";
+        if(_sp isEqualType "") then {
+            _location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
+        } else {
+            _location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
+           };
+           _location = text _location;
+          _msg = format[localize "STR_NOTF_BlackListedVehicle", _location, _name];
 
-		 [1,_msg,false] remoteExecCall ["life_fnc_broadcast",west];
-				_query = format["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
-				_thread = [_query,1] call HC_fnc_asyncCall;
+         [1,_msg,false] remoteExecCall ["life_fnc_broadcast",west];
+                _query = format["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
+                _thread = [_query,1] call HC_fnc_asyncCall;
 
-		};
-	}else{
-	_vehicle setVariable["Trunk",[[],0],true];
+        };
+    }else{
+    _vehicle setVariable["Trunk",[[],0],true];
 };
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {
-	_vehicle setFuel (_vInfo select 11);
-	}else{
-	_vehicle setFuel 1;
+    _vehicle setFuel (_vInfo select 11);
+    }else{
+    _vehicle setFuel 1;
 };
 
 if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),1))) then {
-	_items = _gear select 0;
-	_mags = _gear select 1;
-	_weapons = _gear select 2;
-	_backpacks = _gear select 3;
+    _items = _gear select 0;
+    _mags = _gear select 1;
+    _weapons = _gear select 2;
+    _backpacks = _gear select 3;
 
-	for "_i" from 0 to ((count (_items select 0)) - 1) do {
-		_vehicle addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
-	};
-	for "_i" from 0 to ((count (_mags select 0)) - 1) do {
-		_vehicle addMagazineCargoGlobal [((_mags select 0) select _i), ((_mags select 1) select _i)];
-	};
-	for "_i" from 0 to ((count (_weapons select 0)) - 1) do {
-		_vehicle addWeaponCargoGlobal [((_weapons select 0) select _i), ((_weapons select 1) select _i)];
-	};
-	for "_i" from 0 to ((count (_backpacks select 0)) - 1) do {
-		_vehicle addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
-	};
+    for "_i" from 0 to ((count (_items select 0)) - 1) do {
+        _vehicle addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
+    };
+    for "_i" from 0 to ((count (_mags select 0)) - 1) do {
+        _vehicle addMagazineCargoGlobal [((_mags select 0) select _i), ((_mags select 1) select _i)];
+    };
+    for "_i" from 0 to ((count (_weapons select 0)) - 1) do {
+        _vehicle addWeaponCargoGlobal [((_weapons select 0) select _i), ((_weapons select 1) select _i)];
+    };
+    for "_i" from 0 to ((count (_backpacks select 0)) - 1) do {
+        _vehicle addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
+    };
 };
 
 if (count _damage > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_damage"),1))) then {
-	_parts = getAllHitPointsDamage _vehicle;
+    _parts = getAllHitPointsDamage _vehicle;
 
-	for "_i" from 0 to ((count _damage) - 1) do {
-		_vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],(_damage select _i)];
-	};
+    for "_i" from 0 to ((count _damage) - 1) do {
+        _vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],(_damage select _i)];
+    };
 };
 
 //Sets of animations
 if(EQUAL(SEL(_vInfo,1),"civ") && EQUAL(SEL(_vInfo,2),"B_Heli_Light_01_F") && !(EQUAL(SEL(_vInfo,8),13))) then {
-	[_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
+    [_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
 if(EQUAL(SEL(_vInfo,1),"cop") && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
-	[_vehicle,"cop_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
+    [_vehicle,"cop_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
 if(EQUAL(SEL(_vInfo,1),"med") && EQUAL(SEL(_vInfo,2),"C_Offroad_01_F")) then {
-	[_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
+    [_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
 [1,_spawntext] remoteExecCall ["life_fnc_broadcast",_unit];

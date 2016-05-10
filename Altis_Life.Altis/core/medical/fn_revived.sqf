@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_revived.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_revived.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	THANK YOU JESUS I WAS SAVED!
+    Description:
+    THANK YOU JESUS I WAS SAVED!
 */
 private["_medic","_dir","_reviveCost"];
 _medic = param [0,"Unknown Medic",[""]];
@@ -23,9 +23,9 @@ camDestroy life_deathCamera;
 
 //Take fee for services.
 if(BANK > _reviveCost) then {
-	SUB(BANK,_reviveCost);
+    SUB(BANK,_reviveCost);
 } else {
-	BANK = 0;
+    BANK = 0;
 };
 
 //Bring me back to life.

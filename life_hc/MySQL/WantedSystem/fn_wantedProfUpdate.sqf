@@ -1,20 +1,20 @@
 #include "\life_hc\hc_macros.hpp"
 /*
-	File: fn_wantedProfUpdate.sqf
-	Author: [midgetgrimm]
-	Persistence by: ColinM
+    File: fn_wantedProfUpdate.sqf
+    Author: [midgetgrimm]
+    Persistence by: ColinM
 
-	This file is for Nanou's HeadlessClient.
+    This file is for Nanou's HeadlessClient.
 
-	Description:
-	Updates name of player if they change profiles
+    Description:
+    Updates name of player if they change profiles
 */
 private["_uid","_name","_query","_tickTime","_wantedCheck","_wantedQuery"];
 
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 //Bad data check
-if(_uid == "" OR  _name == "") exitWith {};
+if(_uid == "" ||  _name == "") exitWith {};
 
 _wantedCheck = format["SELECT wantedName FROM wanted WHERE wantedID='%1'",_uid];
 _wantedQuery = [_wantedCheck,2] call HC_fnc_asyncCall;
@@ -22,6 +22,6 @@ if(_wantedQuery isEqualTo []) exitWith {};
 _wantedQuery = call compile format["%1",_wantedQuery];
 
 if(_name != (_wantedQuery select 0)) then {
-	_query = format["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_name,_uid];
-	[_query,2] call HC_fnc_asyncCall;
+    _query = format["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_name,_uid];
+    [_query,2] call HC_fnc_asyncCall;
 };

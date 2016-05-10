@@ -1,9 +1,9 @@
 /*
-	File: fn_progressBar.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Initializes the progress bar.
+    File: fn_progressBar.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Initializes the progress bar.
 */
 disableSerialization;
 private["_ui","_progress"];

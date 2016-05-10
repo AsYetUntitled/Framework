@@ -1,23 +1,23 @@
 #include "\life_server\script_macros.hpp"
 /*
-	File: fn_addHouse.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_addHouse.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Inserts the players newly bought house in the database.
+    Description:
+    Inserts the players newly bought house in the database.
 */
 private["_housePos","_query"];
 params [
-	["_uid","",[""]],
-	["_house",objNull,[objNull]]
+    ["_uid","",[""]],
+    ["_house",objNull,[objNull]]
 ];
-if(isNull _house OR _uid == "") exitWith {};
+if(isNull _house || _uid == "") exitWith {};
 
 _housePos = getPosATL _house;
 
 _query = format["INSERT INTO houses (pid, pos, owned) VALUES('%1', '%2', '1')",_uid,_housePos];
 if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
-	diag_log format["Query: %1",_query];
+    diag_log format["Query: %1",_query];
 };
 
 [_query,1] call DB_fnc_asyncCall;

@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_buyLicense.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Called when purchasing a license. May need to be revised.
+    File: fn_buyLicense.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Called when purchasing a license. May need to be revised.
 */
 private["_type","_varName","_displayName","_sideFlag","_price"];
 _type = SEL(_this,3);

@@ -1,9 +1,9 @@
 /*
-	File: player_sys.sqf
-	Author: 
-	
-	Description:
-	
+    File: player_sys.sqf
+    Author: 
+    
+    Description:
+    
 */
 #define playersys_DIALOG 2001
 #define money_text 2002

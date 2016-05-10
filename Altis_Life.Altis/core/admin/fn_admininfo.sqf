@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_admininfo.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_admininfo.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Output information received to admin menu.
+    Description:
+    Output information received to admin menu.
 */
 private["_ret","_unit","_prim","_sec","_vest","_uni","_bp","_attach","_steamName","_secondary"];
 _ret = _this;
@@ -20,24 +20,24 @@ _bp = if(!(EQUAL(backpack _unit,""))) then {FETCH_CONFIG2(getText,CONFIG_VEHICLE
 _attach = [];
 _secondary = [];
 if(!(EQUAL(primaryWeapon _unit,""))) then {
-	{
-		if(!(EQUAL(_x,""))) then {
-			_attach pushBack (FETCH_CONFIG2(getText,CONFIG_WEAPONS,_x,"displayName"));
-		};
-	} forEach (primaryWeaponItems _unit);
+    {
+        if(!(EQUAL(_x,""))) then {
+            _attach pushBack (FETCH_CONFIG2(getText,CONFIG_WEAPONS,_x,"displayName"));
+        };
+    } forEach (primaryWeaponItems _unit);
 };
 
 if(!(EQUAL(handgunItems _unit,""))) then {
-	{
-		if(!(EQUAL(_x,""))) then {
-			_secondary pushBack (FETCH_CONFIG2(getText,CONFIG_WEAPONS,_x,"displayName"));
-		};
-	} forEach (handgunItems _unit);
+    {
+        if(!(EQUAL(_x,""))) then {
+            _secondary pushBack (FETCH_CONFIG2(getText,CONFIG_WEAPONS,_x,"displayName"));
+        };
+    } forEach (handgunItems _unit);
 };
 
 _steamName = SEL(_ret,4);
 if(!(SEL(_ret,4) isEqualType "")) then {
-	_steamName = "Not a Steam User!";
+    _steamName = "Not a Steam User!";
 };
 
 if(EQUAL(count _attach,0)) then {_attach = "None"};

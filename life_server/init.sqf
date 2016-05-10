@@ -1,13 +1,13 @@
 #include "script_macros.hpp"
 /*
-	File: init.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: init.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Edit: Nanou for HeadlessClient optimization.
-	Please read support for more informations.
+    Edit: Nanou for HeadlessClient optimization.
+    Please read support for more informations.
 
-	Description:
-	Initialize the server and required systems.
+    Description:
+    Initialize the server and required systems.
 */
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
@@ -19,7 +19,7 @@ life_save_civilian_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_po
 fn_whoDoneit = compile preprocessFileLineNumbers "\life_server\Functions\Systems\fn_whoDoneit.sqf";
 
 /*
-	Prepare the headless client.
+    Prepare the headless client.
 */
 life_HC_isActive = false;
 publicVariable "life_HC_isActive";
@@ -27,35 +27,35 @@ HC_Life = false;
 publicVariable "HC_Life";
 
 if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessSupport"),1)) then {
-	[] execVM "\life_server\initHC.sqf";
+    [] execVM "\life_server\initHC.sqf";
 };
 
 /*
-	Prepare extDB before starting the initialization process
-	for the server.
+    Prepare extDB before starting the initialization process
+    for the server.
 */
 
 if(isNil {GVAR_UINS "life_sql_id"}) then {
-	life_sql_id = round(random(9999));
-	CONSTVAR(life_sql_id);
-	SVAR_UINS ["life_sql_id",life_sql_id];
-		try {
-		_result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
-		_result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-		if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
-	} catch {
-		diag_log _exception;
-		life_server_extDB_notLoaded = [true, _exception];
-	};
-	publicVariable "life_server_extDB_notLoaded";
-	if(life_server_extDB_notLoaded isEqualType []) exitWith {};
-	EXTDB "9:LOCK";
-	diag_log "extDB2: Connected to Database";
+    life_sql_id = round(random(9999));
+    CONSTVAR(life_sql_id);
+    SVAR_UINS ["life_sql_id",life_sql_id];
+        try {
+        _result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
+        if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+        _result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+        if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+    } catch {
+        diag_log _exception;
+        life_server_extDB_notLoaded = [true, _exception];
+    };
+    publicVariable "life_server_extDB_notLoaded";
+    if(life_server_extDB_notLoaded isEqualType []) exitWith {};
+    EXTDB "9:LOCK";
+    diag_log "extDB2: Connected to Database";
 } else {
-	life_sql_id = GVAR_UINS "life_sql_id";
-	CONSTVAR(life_sql_id);
-	diag_log "extDB2: Still Connected to Database";
+    life_sql_id = GVAR_UINS "life_sql_id";
+    CONSTVAR(life_sql_id);
+    diag_log "extDB2: Still Connected to Database";
 };
 
 if(life_server_extDB_notLoaded isEqualType []) exitWith {};
@@ -77,26 +77,26 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position_restart"),1)) then {
 master_group attachTo[bank_obj,[0,0,0]];
 
 {
-	_hs = createVehicle ["Land_Hospital_main_F", [0,0,0], [], 0, "NONE"];
-	_hs setDir (markerDir _x);
-	_hs setPosATL (getMarkerPos _x);
-	_var = createVehicle ["Land_Hospital_side1_F", [0,0,0], [], 0, "NONE"];
-	_var attachTo [_hs, [4.69775,32.6045,-0.1125]];
-	detach _var;
-	_var = createVehicle ["Land_Hospital_side2_F", [0,0,0], [], 0, "NONE"];
-	_var attachTo [_hs, [-28.0336,-10.0317,0.0889387]];
-	detach _var;
+    _hs = createVehicle ["Land_Hospital_main_F", [0,0,0], [], 0, "NONE"];
+    _hs setDir (markerDir _x);
+    _hs setPosATL (getMarkerPos _x);
+    _var = createVehicle ["Land_Hospital_side1_F", [0,0,0], [], 0, "NONE"];
+    _var attachTo [_hs, [4.69775,32.6045,-0.1125]];
+    detach _var;
+    _var = createVehicle ["Land_Hospital_side2_F", [0,0,0], [], 0, "NONE"];
+    _var attachTo [_hs, [-28.0336,-10.0317,0.0889387]];
+    detach _var;
 } forEach ["hospital_2","hospital_3"];
 
 {
-	if(!isPlayer _x) then {
-		_npc = _x;
-		{
-			if(_x != "") then {
-				_npc removeWeapon _x;
-			};
-		} forEach [primaryWeapon _npc,secondaryWeapon _npc,handgunWeapon _npc];
-	};
+    if(!isPlayer _x) then {
+        _npc = _x;
+        {
+            if(_x != "") then {
+                _npc removeWeapon _x;
+            };
+        } forEach [primaryWeapon _npc,secondaryWeapon _npc,handgunWeapon _npc];
+    };
 } forEach allUnits;
 
 [8,true,12] execFSM "\life_server\FSM\timeModule.fsm";
@@ -122,7 +122,7 @@ addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect;
 /* Set OwnerID players for Headless Client */
 TON_fnc_requestClientID =
 {
-	(_this select 1) setVariable ["life_clientID", owner (_this select 1), true];
+    (_this select 1) setVariable ["life_clientID", owner (_this select 1), true];
 };
 "life_fnc_RequestClientId" addPublicVariableEventHandler TON_fnc_requestClientID;
 
@@ -136,12 +136,12 @@ life_wanted_list = [];
 cleanupFSM = [] execFSM "\life_server\FSM\cleanup.fsm";
     
 [] spawn {
-	for "_i" from 0 to 1 step 0 do {
-		uiSleep (30 * 60);
-		{
-			_x setVariable["sellers",[],true];
-		} forEach [Dealer_1,Dealer_2,Dealer_3];
-	};
+    for "_i" from 0 to 1 step 0 do {
+        uiSleep (30 * 60);
+        {
+            _x setVariable["sellers",[],true];
+        } forEach [Dealer_1,Dealer_2,Dealer_3];
+    };
 };
 
 [] spawn TON_fnc_initHouses;

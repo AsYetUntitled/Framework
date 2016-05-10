@@ -1,13 +1,13 @@
 /*
-	File: fn_huntingZone.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_huntingZone.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Spawns animals around the marker when a player
-	is near. Very basic WIP
+    Description:
+    Spawns animals around the marker when a player
+    is near. Very basic WIP
 
-	TODO:
-	Change it up so animals repopulate over time.
+    TODO:
+    Change it up so animals repopulate over time.
 */
 
 private["_animalList","_dist","_radius","_zoneName","_unitsNear","_animalsActive"];
@@ -37,7 +37,7 @@ for "_i" from 0 to 1 step 0 do {
         for "_i" from 1 to _maxAnimals do {
             _animalClass = selectRandom _animalList;
             _position = [((_zone select 0) - _radius + random (_radius * 2)), ((_zone select 1) - _radius + random (_radius * 2)),0];
-            _animal = createAgent [_animalClass,_position,[],0,"FORM"];
+            _animal = createAgent [_animalClass,_position,[],0,"F||M"];
             _animal setDir (random 360);
             animals pushBack _animal;
         };

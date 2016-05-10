@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_fuelStatOpen.sqf
-	Author : NiiRoZz
+    File: fn_fuelStatOpen.sqf
+    Author : NiiRoZz
 
-	Description:
-	Open dialog Pump.
+    Description:
+    Open dialog Pump.
 */
 private["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy","_fuelCost"];
 
@@ -23,14 +23,14 @@ _fuelCost = LIFE_SETTINGS(getNumber,"fuel_cost");
 [] spawn {waitUntil {!dialog}; life_action_inUse = false;};
 ctrlSetText [20301,"Fuel Station"];
 if (isNil "life_fuelPrices") then {
-	life_fuelPrices = _fuelCost;
+    life_fuelPrices = _fuelCost;
 };
 
 //Fetch the shop config.
 vehicleFuelList =[];
 {
-	_fuel = fuel _x;
-	vehicleFuelList pushBack [_x,_fuel];
+    _fuel = fuel _x;
+    vehicleFuelList pushBack [_x,_fuel];
 } forEach _vehicleList;
 
 _control = ((findDisplay 20300) displayCtrl 20302);
@@ -41,12 +41,12 @@ ctrlSetText [20323,format ["Total : %1$",life_fuelPrices * 0.1]];
 
 //Loop through
 {
-	_className = typeOf (_x select 0);
-	_fuelleft = _x select 1;
+    _className = typeOf (_x select 0);
+    _fuelleft = _x select 1;
 
-	_vehicleInfo = [_className]call life_fnc_fetchVehInfo;
-	_control lbAdd (_vehicleInfo select 3);
-	_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
-	_control lbSetData [(lbSize _control)-1,_className];
-	_control lbSetValue [(lbSize _control)-1,_ForEachIndex];
+    _vehicleInfo = [_className]call life_fnc_fetchVehInfo;
+    _control lbAdd (_vehicleInfo select 3);
+    _control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
+    _control lbSetData [(lbSize _control)-1,_className];
+    _control lbSetValue [(lbSize _control)-1,_ForEachIndex];
 } forEach vehicleFuelList;

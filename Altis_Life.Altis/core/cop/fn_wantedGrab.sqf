@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_wantedGrab.sqf
-	Author: ColinM
+    File: fn_wantedGrab.sqf
+    Author: ColinM
 
-	Description:
-	Prepare the array to query the crimes.
+    Description:
+    Prepare the array to query the crimes.
 */
 private["_display","_tab","_criminal"];
 disableSerialization;
@@ -15,7 +15,7 @@ _criminal = call compile format["%1", _criminal];
 if(isNil "_criminal") exitWith {};
 
 if(life_HC_isActive) then {
-	[player,_criminal] remoteExec ["HC_fnc_wantedCrimes",HC_Life];
+    [player,_criminal] remoteExec ["HC_fnc_wantedCrimes",HC_Life];
 } else {
-	[player,_criminal] remoteExec ["life_fnc_wantedCrimes",RSERV];
+    [player,_criminal] remoteExec ["life_fnc_wantedCrimes",RSERV];
 };

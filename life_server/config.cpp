@@ -29,32 +29,32 @@ class CfgFunctions {
         };
     };
 
-	class Life_System {
-		tag = "life";
-		class Wanted_Sys {
-			file = "\life_server\Functions\WantedSystem";
-			class wantedFetch {};
-			class wantedPerson {};
-			class wantedBounty {};
-			class wantedRemove {};
-			class wantedAdd {};
-			class wantedCrimes {};
-			class wantedProfUpdate {};
-		};
+    class Life_System {
+        tag = "life";
+        class Wanted_Sys {
+            file = "\life_server\Functions\WantedSystem";
+            class wantedFetch {};
+            class wantedPerson {};
+            class wantedBounty {};
+            class wantedRemove {};
+            class wantedAdd {};
+            class wantedCrimes {};
+            class wantedProfUpdate {};
+        };
 
-		class Jail_Sys {
-			file = "\life_server\Functions\Jail";
-			class jailSys {};
-		};
+        class Jail_Sys {
+            file = "\life_server\Functions\Jail";
+            class jailSys {};
+        };
 
-		class Client_Code {
-			file = "\life_server\Functions\Client";
-		};
-	};
+        class Client_Code {
+            file = "\life_server\Functions\Client";
+        };
+    };
 
-	class TON_System {
-		tag = "TON";
-		class Systems {
+    class TON_System {
+        tag = "TON";
+        class Systems {
             file = "\life_server\Functions\Systems";
             class managesc {};
             class cleanup {};

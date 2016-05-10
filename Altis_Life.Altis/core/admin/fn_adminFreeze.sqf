@@ -1,9 +1,9 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_adminFreeze.sqf
-	Author: ColinM9991
+    File: fn_adminFreeze.sqf
+    Author: ColinM9991
 
-	Description: Freezes selected player
+    Description: Freezes selected player
 */
 if(FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
 

@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_stopEscorting.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_stopEscorting.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Detaches player(_unit) from the Escorter(player) and sets them back down.
+    Description:
+    Detaches player(_unit) from the Escorter(player) and sets them back down.
 */
 private["_unit"];
 _unit = player GVAR ["escortingPlayer",objNull];

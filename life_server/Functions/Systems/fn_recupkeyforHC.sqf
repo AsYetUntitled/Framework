@@ -1,10 +1,10 @@
 #include "\life_server\script_macros.hpp"
 /*
-	File: fn_recupkeyforHC.sqf
-	Author : NiiRoZz
+    File: fn_recupkeyforHC.sqf
+    Author : NiiRoZz
 
-	Description:
-	Tells the server to recup the Key of player
+    Description:
+    Tells the server to recup the Key of player
 */
 private["_uid","_side"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;

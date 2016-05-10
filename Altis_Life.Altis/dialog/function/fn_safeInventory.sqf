@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_safeInventory.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_safeInventory.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Fills up the safes inventory.
+    Description:
+    Fills up the safes inventory.
 */
 private["_safe","_tInv","_pInv","_safeInfo","_str","_shrt","_icon"];
 _safe = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
@@ -23,5 +23,5 @@ _tInv lbAdd format["[%1] - %2",_safeInfo,(localize _str)];
 _tInv lbSetData [(lbSize _tInv)-1,_shrt];
 _icon = M_CONFIG(getText,"VirtualItems","goldbar","icon");
 if(!(EQUAL(_icon,""))) then {
-	_tInv lbSetPicture [(lbSize _tInv)-1,_icon];
+    _tInv lbSetPicture [(lbSize _tInv)-1,_icon];
 };

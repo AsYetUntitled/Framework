@@ -1,14 +1,14 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_seizePlayerAction.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_seizePlayerAction.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Starts the seize process..
-	Based off Tonic's fn_searchAction.sqf
+    Description:
+    Starts the seize process..
+    Based off Tonic's fn_searchAction.sqf
 */
 params [
-	["_unit",objNull,[objNull]]
+    ["_unit",objNull,[objNull]]
 ];
 if(isNull _unit) exitWith {};
 sleep 2;

@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_blastingCharge.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_blastingCharge.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Blasting charge is used for the federal reserve vault and nothing  more.. Yet.
+    Description:
+    Blasting charge is used for the federal reserve vault and nothing  more.. Yet.
 */
 private["_vault","_handle"];
 _vault = param [0,ObjNull,[ObjNull]];
@@ -14,7 +14,7 @@ if(typeOf _vault != "Land_CargoBox_V1_F") exitWith {hint localize "STR_ISTR_Blas
 if(_vault GVAR ["chargeplaced",false]) exitWith {hint localize "STR_ISTR_Blast_AlreadyPlaced"};
 if(_vault GVAR ["safe_open",false]) exitWith {hint localize "STR_ISTR_Blast_AlreadyOpen"};
 if({side _x == west} count playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops"))) exitWith {
- 	hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))]
+     hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))]
 };
 if((nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) GVAR ["locked",true]) exitWith {hint localize "STR_ISTR_Blast_Exploit"};
 if(!([false,"blastingcharge",1] call life_fnc_handleInv)) exitWith {}; //Error?

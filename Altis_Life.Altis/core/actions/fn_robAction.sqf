@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_robAction.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_robAction.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Starts the robbing process?
+    Description:
+    Starts the robbing process?
 */
 private["_target"];
 _target = cursorObject;

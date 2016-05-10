@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_revivePlayer.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_revivePlayer.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Starts the revive process on the player.
+    Description:
+    Starts the revive process on the player.
 */
 private["_target","_revivable","_targetName","_ui","_progressBar","_titleText","_cP","_title","_reviveCost"];
 _target = param [0,ObjNull,[ObjNull]];
@@ -34,23 +34,23 @@ _cP = 0.01;
 
 //Lets reuse the same thing!
 for "_i" from 0 to 1 step 0 do {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[player,"AinvPknlMstpSnonWnonDnon_medic_1"] remoteExecCall ["life_fnc_animSync",RCLIENT];
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-	};
+    if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+        [player,"AinvPknlMstpSnonWnonDnon_medic_1"] remoteExecCall ["life_fnc_animSync",RCLIENT];
+        player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+    };
 
-	sleep .15;
-	_cP = _cP + .01;
-	_progressBar progressSetPosition _cP;
-	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-	if(_cP >= 1 OR !alive player) exitWith {};
-	if(life_istazed) exitWith {}; //Tazed
-	if(life_isknocked) exitWith {}; //Knocked
-	if(life_interrupted) exitWith {};
-	if((player GVAR ["restrained",false])) exitWith {};
-	if(player distance _target > 4) exitWith {_badDistance = true;};
-	if(_target GVAR ["Revive",FALSE]) exitWith {};
-	if(_target GVAR ["Reviving",ObjNull] != player) exitWith {};
+    sleep .15;
+    _cP = _cP + .01;
+    _progressBar progressSetPosition _cP;
+    _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    if(_cP >= 1 || !alive player) exitWith {};
+    if(life_istazed) exitWith {}; //Tazed
+    if(life_isknocked) exitWith {}; //Knocked
+    if(life_interrupted) exitWith {};
+    if((player GVAR ["restrained",false])) exitWith {};
+    if(player distance _target > 4) exitWith {_badDistance = true;};
+    if(_target GVAR ["Revive",FALSE]) exitWith {};
+    if(_target GVAR ["Reviving",ObjNull] != player) exitWith {};
 };
 
 //Kill the UI display and check for various states
@@ -60,7 +60,7 @@ player playActionNow "stop";
 if(_target GVAR ["Reviving",ObjNull] != player) exitWith {hint localize "STR_Medic_AlreadyReviving"};
 _target SVAR ["Reviving",NIL,TRUE];
 
-if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;};
+if(!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
 if(_target GVAR ["Revive",FALSE]) exitWith {hint localize "STR_Medic_RevivedRespawned"};
 if((player GVAR ["restrained",false])) exitWith {life_action_inUse = false;};
 if(!isNil "_badDistance") exitWith {titleText[localize "STR_Medic_TooFar","PLAIN"]; life_action_inUse = false;};

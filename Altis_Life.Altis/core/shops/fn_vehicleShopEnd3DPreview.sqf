@@ -1,9 +1,9 @@
 /*
-	File: fn_vehicleShopEnd3DPreview.sqf
-	Author: NiiRoZz
+    File: fn_vehicleShopEnd3DPreview.sqf
+    Author: NiiRoZz
 
-	Description:
-	Called when a player end the vehicle shop and destroy cam and vehicle
+    Description:
+    Called when a player end the vehicle shop and destroy cam and vehicle
 */
 if (!isNull life_preview_3D_vehicle_object) then {detach life_preview_3D_vehicle_object; deleteVehicle life_preview_3D_vehicle_object;};
 life_preview_3D_vehicle_object = objNull;

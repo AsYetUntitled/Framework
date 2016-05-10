@@ -1,9 +1,9 @@
 /*
-	File : fn_updateHouseTrunk.sqf
-	Author: NiiRoZz
+    File : fn_updateHouseTrunk.sqf
+    Author: NiiRoZz
 
-	Description:
-	Update inventory "y" in container
+    Description:
+    Update inventory "y" in container
 */
 private["_house"];
 _container = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;

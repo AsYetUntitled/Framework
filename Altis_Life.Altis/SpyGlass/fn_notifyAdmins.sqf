@@ -1,11 +1,11 @@
 #include "..\script_macros.hpp"
 /*
-	File: fn_notifyAdmins.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_notifyAdmins.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Checks if player is admin and notifies them that of the
-	flagged person.
+    Description:
+    Checks if player is admin and notifies them that of the
+    flagged person.
 */
 if(isServer && !hasInterface) exitWith {}; //NO SERVER DO NOT EXECUTE IT!
 if(FETCH_CONST(life_adminlevel) < 1) exitWith {};

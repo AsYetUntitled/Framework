@@ -1,13 +1,13 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_spikeStrip.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Creates a spike strip and preps it.
+    File: fn_spikeStrip.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Creates a spike strip and preps it.
 */
 private["_spikeStrip"];
-if(!isnil "life_action_spikeStripPickup") exitWith {hint localize "STR_ISTR_SpikesDeployment"};	// avoid conflicts with addactions allowing duplication.
+if(!isnil "life_action_spikeStripPickup") exitWith {hint localize "STR_ISTR_SpikesDeployment"};    // avoid conflicts with addactions allowing duplication.
 _spikeStrip = "Land_Razorwire_F" createVehicle [0,0,0];
 _spikeStrip attachTo[player,[0,5.5,0]];
 _spikeStrip setDir 90;
@@ -27,7 +27,7 @@ life_action_spikeStripPickup = player addAction[localize "STR_ISTR_Spike_Pack",l
 ' _spikes = nearestObjects[getPos player,["Land_Razorwire_F"],8] select 0; !isNil "_spikes" && !isNil {(_spikes getVariable "item")}'];
 
 if(life_HC_isActive) then {
-	[_spikeStrip] remoteExec ["HC_fnc_spikeStrip",HC_Life]; //Send it to the HeadlessClient for monitoring.
+    [_spikeStrip] remoteExec ["HC_fnc_spikeStrip",HC_Life]; //Send it to the HeadlessClient for monitoring.
 } else {
-	[_spikeStrip] remoteExec ["TON_fnc_spikeStrip",RSERV]; //Send it to the server for monitoring.
+    [_spikeStrip] remoteExec ["TON_fnc_spikeStrip",RSERV]; //Send it to the server for monitoring.
 };

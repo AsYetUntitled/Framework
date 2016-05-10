@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_licenseCheck.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Returns the licenses to the cop.
+    File: fn_licenseCheck.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Returns the licenses to the cop.
 */
 private["_cop","_licenses","_licensesConfigs"];
 _cop = param [0,ObjNull,[ObjNull]];
@@ -16,9 +16,9 @@ _licenses = "";
 _licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses (missionConfigFile >> "Licenses");
 
 {
-	if(LICENSE_VALUE(configName _x,"civ")) then {
-		ADD(_licenses,localize getText(_x >> "displayName") + "<br/>");
-	};
+    if(LICENSE_VALUE(configName _x,"civ")) then {
+        ADD(_licenses,localize getText(_x >> "displayName") + "<br/>");
+    };
 } forEach _licensesConfigs;
 
 if(EQUAL(_licenses,"")) then {_licenses = (localize "STR_Cop_NoLicensesFound");};

@@ -1,10 +1,10 @@
 #include "..\script_macros.hpp"
 /*
     File: init.sqf
-	Author:
+    Author:
 
-	Description:
-	Master client initialization file
+    Description:
+    Master client initialization file
 */
 
 private["_server_isReady","_extDB_notLoaded"];
@@ -36,15 +36,15 @@ diag_log "::Life Client:: Initialization Variables";
 
 //Set bank amount for new players
 switch (playerSide) do {
-	case west: {
-		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
-	};
-	case civilian: {
-		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
-	};
-	case independent: {
-		life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
-	};
+    case west: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
+    };
+    case civilian: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
+    };
+    case independent: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
+    };
 };
 
 diag_log "::Life Client:: Variables initialized";
@@ -65,12 +65,12 @@ diag_log "::Life Client:: Received server functions.";
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
 waitUntil{!isNil "_server_isReady"};
-waitUntil{(_server_isReady OR !isNil "_extDB_notLoaded")};
+waitUntil{(_server_isReady || !isNil "_extDB_notLoaded")};
 
 if(!isNil "_extDB_notLoaded" && {_extDB_notLoaded isEqualType []}) exitWith {
-	diag_log _extDB_notLoaded;
-	999999 cutText ["extDB failed to load, please contact an administrator.","BLACK FADED"];
-	999999 cutFadeOut 99999999;
+    diag_log _extDB_notLoaded;
+    999999 cutText ["extDB failed to load, please contact an administrator.","BLACK FADED"];
+    999999 cutFadeOut 99999999;
 };
 
 [] call SOCK_fnc_dataQuery;
@@ -82,20 +82,20 @@ waitUntil {life_session_completed};
 [] spawn life_fnc_escInterupt;
 
 switch (playerSide) do {
-	case west: {
-		_handle = [] spawn life_fnc_initCop;
-		waitUntil {scriptDone _handle};
-	};
-	case civilian: {
-		//Initialize Civilian Settings
-		_handle = [] spawn life_fnc_initCiv;
-		waitUntil {scriptDone _handle};
-	};
-	case independent: {
-		//Initialize Medics and blah
-		_handle = [] spawn life_fnc_initMedic;
-		waitUntil {scriptDone _handle};
-	};
+    case west: {
+        _handle = [] spawn life_fnc_initCop;
+        waitUntil {scriptDone _handle};
+    };
+    case civilian: {
+        //Initialize Civilian Settings
+        _handle = [] spawn life_fnc_initCiv;
+        waitUntil {scriptDone _handle};
+    };
+    case independent: {
+        //Initialize Medics and blah
+        _handle = [] spawn life_fnc_initMedic;
+        waitUntil {scriptDone _handle};
+    };
 };
 
 player SVAR ["restrained",false,true];
@@ -129,9 +129,9 @@ player SVAR ["realname",profileName,true];
 
 life_fnc_moveIn = compileFinal
 "
-	life_disable_getIn = false;
-	player moveInCargo (_this select 0);
-	life_disable_getOut = true;
+    life_disable_getIn = false;
+    player moveInCargo (_this select 0);
+    life_disable_getOut = true;
 ";
 
 life_fnc_RequestClientId = player;
@@ -140,22 +140,22 @@ publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for Headless
 [] spawn life_fnc_survival;
 
 [] spawn {
-	for "_i" from 0 to 1 step 0 do {
-		waitUntil{(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
-		(findDisplay 49) closeDisplay 2; // Close ESC dialog
-		(findDisplay 602) closeDisplay 2; // Close Inventory dialog
-	};
+    for "_i" from 0 to 1 step 0 do {
+        waitUntil{(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
+        (findDisplay 49) closeDisplay 2; // Close ESC dialog
+        (findDisplay 602) closeDisplay 2; // Close Inventory dialog
+    };
 };
 
 CONSTVAR(life_paycheck); //Make the paycheck static.
 if(EQUAL(LIFE_SETTINGS(getNumber,"enable_fatigue"),0)) then {player enableFatigue false;};
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"pump_service"),1)) then{
-	[] execVM "core\fn_setupStationService.sqf";
+    [] execVM "core\fn_setupStationService.sqf";
 };
 
 if(life_HC_isActive) then {
-	[getPlayerUID player,player getVariable["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate",HC_Life];
+    [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate",HC_Life];
 } else {
-	[getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
+    [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
 };

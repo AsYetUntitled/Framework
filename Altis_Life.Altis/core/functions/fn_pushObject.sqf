@@ -5,7 +5,7 @@
 
   Descrition :
   © 2013 ALL RIGHTS RESERVED
-  TO MODIFY OR COPY FROM THIS FILE - CONTACT JON HILLENBRAND THROUGH HIS WEBSITE - WWW.JONHILLENBRAND.COM
+  TO MODIFY || COPY FROM THIS FILE - CONTACT JON HILLENBRAND THROUGH HIS WEBSITE - WWW.JONHILLENBRAND.COM
 
   Cleaned by NiiRoZz for Altis Life
 */
@@ -22,7 +22,7 @@ _thingToPushType = typeOf _thingToPush;
 _nameOfThingToPush = (getText (configFile >> "cfgVehicles" >> (_thingToPushType) >> "displayname"));
 // _weightOfThing = (getText (configFile >> "cfgVehicles" >> (_thingToPushType)  >> "weight"));
 
-if (!(isNull _thingToPush) && ((_thingToPush isKindOf "AllVehicles") OR (_thingToPush isKindOf "Thing") OR (_thingToPush isKindOf "Object") )) then {
+if (!(isNull _thingToPush) && ((_thingToPush isKindOf "AllVehicles") || (_thingToPush isKindOf "Thing") || (_thingToPush isKindOf "Object") )) then {
   _targetDistance = _caller distance _thingToPush;
   // ***************************** RELATIVE MODEL POSITION CODE****************************************
   _thingToPushLimits = boundingBox _thingToPush;
@@ -46,7 +46,7 @@ if (!(isNull _thingToPush) && ((_thingToPush isKindOf "AllVehicles") OR (_thingT
   _yRPM = _relativePosModel select 1;
   _zRPM = _relativePosModel select 2;
 
-  if (((_xRPM > _minX) && (_xRPM < _maxX) && (_yRPM > _minY) && (_yRPM < _maxY) && (_zRPM > _minZ) && (_zRPM < _maxZ)) OR (_targetDistance <= 3.5)) then {
+  if (((_xRPM > _minX) && (_xRPM < _maxX) && (_yRPM > _minY) && (_yRPM < _maxY) && (_zRPM > _minZ) && (_zRPM < _maxZ)) || (_targetDistance <= 3.5)) then {
 
     _headPos=screenToWorld [0.5,0.5];
     _headDir=[(_headPos select 0)-(getPos _caller select 0), (_headPos select 1)-(getPos _caller select 1), (_headPos select 2)-(getPos _caller select 2)];

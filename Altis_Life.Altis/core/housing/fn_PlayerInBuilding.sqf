@@ -1,20 +1,20 @@
 /*
-	File : fn_PlayerInBuilding.sqf
-	Author: Mad_Cheese
-	Description:
-	Indicates whether a player is in a building
-	Edit: BoGuu - lineIntersectsWith returns an array ordered by distance from farthest to closest.
-	Script needed to check the last index for each wallCheck array.
+    File : fn_PlayerInBuilding.sqf
+    Author: Mad_Cheese
+    Description:
+    Indicates whether a player is in a building
+    Edit: BoGuu - lineIntersectsWith returns an array ordered by distance from farthest to closest.
+    Script needed to check the last index for each wallCheck array.
 
-	Parameter(s):
-	0: OBJECT - Unit
+    Parameter(s):
+    0: OBJECT - Unit
 
-	Returns:
-	BOOL - True if player is in a building, else false
+    Returns:
+    BOOL - True if player is in a building, else false
 
-	Example
-	//--- Find if a unit is in building
-	[player] call life_fnc_PlayerInBuilding
+    Example
+    //--- Find if a unit is in building
+    [player] call life_fnc_PlayerInBuilding
 
 */
 
