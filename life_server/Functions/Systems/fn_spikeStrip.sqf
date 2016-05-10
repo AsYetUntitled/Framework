@@ -1,12 +1,12 @@
 #include "\life_server\script_macros.hpp"
 /*
-	File: fn_spikeStrip.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	This is the server-side part of it which constantly monitors the spike strip and vehicles near it.
-	First originally tried triggers but I was never any good at those nor do I like them as they 
-	have a global effect.
+    File: fn_spikeStrip.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    This is the server-side part of it which constantly monitors the spike strip and vehicles near it.
+    First originally tried triggers but I was never any good at those nor do I like them as they 
+    have a global effect.
 */
 private["_nearVehicles","_spikeStrip"];
 _spikeStrip = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;

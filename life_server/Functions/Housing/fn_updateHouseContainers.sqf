@@ -1,9 +1,9 @@
 /*
-	File : fn_updateHouseContainers.sqf
-	Author: NiiRoZz
+    File : fn_updateHouseContainers.sqf
+    Author: NiiRoZz
 
-	Description:
-	Update inventory "i" in container
+    Description:
+    Update inventory "i" in container
 */
 private["_containerID","_containers","_query","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo"];
 _container = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;

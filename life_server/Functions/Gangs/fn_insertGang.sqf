@@ -1,16 +1,16 @@
 #include "\life_server\script_macros.hpp"
 /*
-	File: fn_insertGang.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_insertGang.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Inserts the gang into the database.
+    Description:
+    Inserts the gang into the database.
 */
 private ["_query","_queryResult","_gangMembers","_group"];
 params [
-	["_ownerID",objNull,[objNull]],
-	["_uid","",[""]],
-	["_gangName","",[""]]
+    ["_ownerID",objNull,[objNull]],
+    ["_uid","",[""]],
+    ["_gangName","",[""]]
 ];
 _group = group _ownerID;
 
@@ -24,9 +24,9 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 //Check to see if the gang name already exists.
 if(!(EQUAL(count _queryResult,0))) exitWith {
-	[1,"There is already a gang created with that name please pick another name."] remoteExecCall ["life_fnc_broadcast",_ownerID];
-	life_action_gangInUse = nil;
-	PVAR_ID("life_action_gangInUse",_ownerID);
+    [1,"There is already a gang created with that name please pick another name."] remoteExecCall ["life_fnc_broadcast",_ownerID];
+    life_action_gangInUse = nil;
+    PVAR_ID("life_action_gangInUse",_ownerID);
 };
 
 _query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
@@ -35,9 +35,9 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 //Check to see if this person already owns or belongs to a gang.
 if(!(EQUAL(count _queryResult,0))) exitWith {
-	[1,"You are currently already active in a gang, please leave the gang first."] remoteExecCall ["life_fnc_broadcast",_ownerID];
-	life_action_gangInUse = nil;
-	PVAR_ID("life_action_gangInUse",_ownerID);
+    [1,"You are currently already active in a gang, please leave the gang first."] remoteExecCall ["life_fnc_broadcast",_ownerID];
+    life_action_gangInUse = nil;
+    PVAR_ID("life_action_gangInUse",_ownerID);
 };
 
 //Check to see if a gang with that name already exists but is inactive.
@@ -47,9 +47,9 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 _gangMembers = [[_uid]] call DB_fnc_mresArray;
 
 if(!(EQUAL(count _queryResult,0))) then {
-	_query = format["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)];
+    _query = format["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)];
 } else {
-	_query = format["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers];
+    _query = format["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers];
 };
 
 _queryResult = [_query,1] call DB_fnc_asyncCall;

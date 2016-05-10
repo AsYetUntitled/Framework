@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_putInCar.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Finds the nearest vehicle and loads the target into the vehicle.
+    File: fn_putInCar.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Finds the nearest vehicle and loads the target into the vehicle.
 */
 private["_unit"];
 _unit = param [0,ObjNull,[ObjNull]];

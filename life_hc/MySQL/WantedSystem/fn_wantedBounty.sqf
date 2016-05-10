@@ -1,14 +1,14 @@
 /*
-	File: fn_wantedBounty.sqf
-	Author: Bryan "Tonic" Boardwine"
-	Database Persistence By: ColinM
-	Assistance by: Paronity
-	Stress Tests by: Midgetgrimm
+    File: fn_wantedBounty.sqf
+    Author: Bryan "Tonic" Boardwine"
+    Database Persistence By: ColinM
+    Assistance by: Paronity
+    Stress Tests by: Midgetgrimm
 
-	This file is for Nanou's HeadlessClient.
-	
-	Description:
-	Checks if the person is on the bounty list and awards the cop for killing them.
+    This file is for Nanou's HeadlessClient.
+    
+    Description:
+    Checks if the person is on the bounty list and awards the cop for killing them.
 */
 private["_civ","_cop","_id","_half","_result","_queryResult","_amount"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
@@ -22,12 +22,12 @@ _queryResult = [_query,2,true] call HC_fnc_asyncCall;
 
 if(count _queryResult != 0) then
 {
-	_amount = _queryResult select 3;
-	if(_amount != 0) then {
-		if(_half) then {
-			[((_amount) / 2),_amount] remoteExecCall ["life_fnc_bountyReceive",_cop];
-		} else {
-			[_amount,_amount] remoteExecCall ["life_fnc_bountyReceive",_cop];
-		};
-	};
+    _amount = _queryResult select 3;
+    if(_amount != 0) then {
+        if(_half) then {
+            [((_amount) / 2),_amount] remoteExecCall ["life_fnc_bountyReceive",_cop];
+        } else {
+            [_amount,_amount] remoteExecCall ["life_fnc_bountyReceive",_cop];
+        };
+    };
 };

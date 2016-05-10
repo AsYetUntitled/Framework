@@ -1,18 +1,18 @@
 /*
-	File: fn_insertVehicle.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_insertVehicle.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Inserts the vehicle into the database
+    Description:
+    Inserts the vehicle into the database
 */
 private["_query","_sql"];
 params [
-	"_uid",
-	"_side",
-	"_type",
-	"_className",
-	["_color",-1,[0]],
-	["_plate",-1,[0]]
+    "_uid",
+    "_side",
+    "_type",
+    "_className",
+    ["_color",-1,[0]],
+    ["_plate",-1,[0]]
 ];
 
 //Stop bad data being passed.

@@ -7,9 +7,9 @@
 #define GANG_FUNDS grpPlayer getVariable ["gang_bank",0];
 
 /*
-	remoteExec Section
-	When uncommented it enables proper testing via local testing
-	Otherwise leave it commented out for "LIVE" servers
+    remoteExec Section
+    When uncommented it enables proper testing via local testing
+    Otherwise leave it commented out for "LIVE" servers
 */
 #define DEBUG 1
 
@@ -54,6 +54,6 @@
 #define EXTDB "extDB2" callExtension
 #define EXTDB_SETTING(TYPE,SETTING) TYPE(missionConfigFile >> "CfgServer" >> SETTING)
 #define EXTDB_FAILED(MESSAGE) \
-	life_server_extDB_notLoaded = [true,##MESSAGE]; \
-	PVAR_ALL("life_server_extDB_notLoaded"); \
-	diag_log MESSAGE;
+    life_server_extDB_notLoaded = [true,##MESSAGE]; \
+    PVAR_ALL("life_server_extDB_notLoaded"); \
+    diag_log MESSAGE;

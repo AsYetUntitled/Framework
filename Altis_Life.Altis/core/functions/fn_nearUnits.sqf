@@ -1,13 +1,13 @@
 /*
-	File: fn_nearUnits.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Checks for units near (human units)
-	
-	Returns:
-	TRUE - Units are near
-	FALSE - No units near
+    File: fn_nearUnits.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Checks for units near (human units)
+    
+    Returns:
+    TRUE - Units are near
+    FALSE - No units near
 */
 private["_faction","_position","_radius","_ret"];
 _faction = [_this,0,sideUnknown,[sideUnknown]] call BIS_fnc_param;

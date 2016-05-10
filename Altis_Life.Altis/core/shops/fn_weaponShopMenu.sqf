@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_weaponShopMenu.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_weaponShopMenu.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Something
+    Description:
+    Something
 */
 private["_shopSide","_shopSide","_license","_itemInfo","_itemList","_license","_flag","_exit","_level","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg"];
 _exit = false;
@@ -18,37 +18,37 @@ _levelValue = SEL(_levelAssert,2);
 _levelMsg = SEL(_levelAssert,3);
 
 if(!(EQUAL(_shopSide,""))) then {
-	_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-	if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
+    _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+    if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
 };
 if(_exit) exitWith {};
 
 if(!(EQUAL(_license,""))) then {
-	_flag = M_CONFIG(getText,"Licenses",_license,"side");
-	if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
+    _flag = M_CONFIG(getText,"Licenses",_license,"side");
+    if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
 };
 if(_exit) exitWith {};
 
 if(!(EQUAL(_levelValue,-1))) then {
-	_level = GVAR_MNS _levelName;
-	if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
+    _level = GVAR_MNS _levelName;
+    if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
-	_flag = switch(_levelType) do {
-		case "SCALAR": {_level >= _levelValue};
-		case "BOOL": {_level};
-		case "EQUAL": {EQUAL(_level,_levelValue)};
-		default {false};
-	};
-	if(!(_flag)) then {
-		_exit = true;
-		if(EQUAL(_levelMsg,"")) then {
-			_levelMsg = (localize "STR_Shop_Veh_NotAllowed");
-		} else {
-			if(isLocalized _levelMsg) then {
-				_levelMsg = (localize _levelMsg);
-			};
-		};
-	};
+    _flag = switch(_levelType) do {
+        case "SCALAR": {_level >= _levelValue};
+        case "BOOL": {_level};
+        case "EQUAL": {EQUAL(_level,_levelValue)};
+        default {false};
+    };
+    if(!(_flag)) then {
+        _exit = true;
+        if(EQUAL(_levelMsg,"")) then {
+            _levelMsg = (localize "STR_Shop_Veh_NotAllowed");
+        } else {
+            if(isLocalized _levelMsg) then {
+                _levelMsg = (localize _levelMsg);
+            };
+        };
+    };
 };
 if(_exit) exitWith {hint _levelMsg;};
 

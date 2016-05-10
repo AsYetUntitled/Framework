@@ -1,12 +1,12 @@
 /*
-	File: fn_searchAction.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Starts the searching process.
+    File: fn_searchAction.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Starts the searching process.
 */
 params [
-	["_unit",objNull,[objNull]]
+    ["_unit",objNull,[objNull]]
 ];
 if(isNull _unit) exitWith {};
 hint localize "STR_NOTF_Searching";

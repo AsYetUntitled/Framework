@@ -1,9 +1,9 @@
 /*
-	File: fn_displayHandler.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_displayHandler.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Master display handler
+    Description:
+    Master display handler
 */
 private["_control","_code","_shift","_ctrlKey","_alt","_handled"];
 _handled = false;

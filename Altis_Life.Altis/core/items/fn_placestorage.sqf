@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File : fn_placestorage.sqf
-	Author: NiiRoZz
+    File : fn_placestorage.sqf
+    Author: NiiRoZz
 
-	Description:
-	PLace container were player select with preview
+    Description:
+    PLace container were player select with preview
 
 */
 private["_container","_isFloating"];

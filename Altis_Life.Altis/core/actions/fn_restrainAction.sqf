@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_restrainAction.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_restrainAction.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Retrains the target.
+    Description:
+    Retrains the target.
 */
 private["_unit"];
 _unit = cursorObject;

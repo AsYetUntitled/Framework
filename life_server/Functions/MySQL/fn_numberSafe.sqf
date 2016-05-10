@@ -1,15 +1,15 @@
 /*
-	File: fn_numberSafe.sqf
-	Author: Karel Moricky
+    File: fn_numberSafe.sqf
+    Author: Karel Moricky
 
-	Description:
-	Convert a number into string (avoiding scientific notation)
+    Description:
+    Convert a number into string (avoiding scientific notation)
 
-	Parameter(s):
-	_this: NUMBER
+    Parameter(s):
+    _this: NUMBER
 
-	Returns:
-	STRING
+    Returns:
+    STRING
 */
 private ["_number","_mod","_digots","_digitsCount","_modBase","_numberText"];
 
@@ -22,7 +22,7 @@ _digitsCount = count _digits - 1;
 _modBase = _digitsCount % _mod;
 _numberText = "";
 {
-	_numberText = _numberText + str _x;
-	if ((_foreachindex - _modBase) % (_mod) == 0 && _foreachindex != _digitsCount) then {_numberText = _numberText + "";};
+    _numberText = _numberText + str _x;
+    if ((_foreachindex - _modBase) % (_mod) == 0 && _foreachindex != _digitsCount) then {_numberText = _numberText + "";};
 } forEach _digits;
 _numberText

@@ -1,9 +1,9 @@
 /*
-	File: fn_gangDisbanded.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_gangDisbanded.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Notifies members that the gang has been disbanded.
+    Description:
+    Notifies members that the gang has been disbanded.
 */
 private "_group";
 _group = param [0,grpNull,[grpNull]];
@@ -14,5 +14,5 @@ hint localize "STR_GNOTF_DisbandWarn_2";
 [player] joinSilent (createGroup civilian);
 
 if(units _group isEqualTo []) then {
-	deleteGroup _group;
+    deleteGroup _group;
 };

@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_copInteractionMenu.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_copInteractionMenu.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Replaces the mass addactions for various cop actions towards another player.
+    Description:
+    Replaces the mass addactions for various cop actions towards another player.
 */
 #define Btn1 37450
 #define Btn2 37451
@@ -23,13 +23,13 @@ _curTarget = param [0,objNull,[objNull]];
 _seizeRank = LIFE_SETTINGS(getNumber,"seize_minimum_rank");
 
 if(player GVAR ["Escorting", false]) then {
-	if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-	if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
-	if(player distance _curTarget > 4 ) exitWith {closeDialog 0;}; // Prevents menu accessing from far distances.
+    if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
+    if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
+    if(player distance _curTarget > 4 ) exitWith {closeDialog 0;}; // Prevents menu accessing from far distances.
 };
 
 if(!dialog) then {
-	createDialog "pInteraction_Menu";
+    createDialog "pInteraction_Menu";
 };
 
 _display = findDisplay 37400;
@@ -44,7 +44,7 @@ _Btn8 = _display displayCtrl Btn8;
 life_pInact_curTarget = _curTarget;
 
 if((player getVariable["isEscorting",false])) then {
-	{ _x ctrlShow false; } forEach [_Btn1,_Btn2,_Btn3,_Btn5,_Btn6,_Btn7,_Btn8];
+    { _x ctrlShow false; } forEach [_Btn1,_Btn2,_Btn3,_Btn5,_Btn6,_Btn7,_Btn8];
 };
 
 //Set Unrestrain Button
@@ -61,11 +61,11 @@ _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; clos
 
 //Set Escort Button
 if((player getVariable["isEscorting",false])) then {
-	_Btn4 ctrlSetText localize "STR_pInAct_StopEscort";
-	_Btn4 buttonSetAction "[] call life_fnc_stopEscorting; closeDialog 0;";
+    _Btn4 ctrlSetText localize "STR_pInAct_StopEscort";
+    _Btn4 buttonSetAction "[] call life_fnc_stopEscorting; closeDialog 0;";
 } else {
-	_Btn4 ctrlSetText localize "STR_pInAct_Escort";
-	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
+    _Btn4 ctrlSetText localize "STR_pInAct_Escort";
+    _Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
 };
 
 //Set Ticket Button
@@ -86,5 +86,5 @@ if(FETCH_CONST(life_coplevel) < _seizeRank) then {_Btn8 ctrlEnable false;};
 
 //Check that you are near a place to jail them.
 if(!((player distance (getMarkerPos "police_hq_1") < 30) OR  (player distance (getMarkerPos "police_hq_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30) OR (player distance (getMarkerPos "cop_spawn_5") < 30))) then  {
-	_Btn6 ctrlEnable false;
+    _Btn6 ctrlEnable false;
 };

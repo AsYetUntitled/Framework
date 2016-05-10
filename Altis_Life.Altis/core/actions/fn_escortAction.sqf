@@ -1,9 +1,9 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_escortAction.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_escortAction.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description: Attaches the desired person(_unit) to the player(player) and "escorts them".
+    Description: Attaches the desired person(_unit) to the player(player) and "escorts them".
 */
 private ["_unit"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
@@ -21,8 +21,8 @@ _unit SVAR ["Escorting",true,true];
 player reveal _unit;
 
 [_unit] spawn {
-	_unit = _this select 0;
-	waitUntil {(!(_unit GVAR ["Escorting",false]))};
-	player SVAR ["escortingPlayer",nil];
-	player SVAR ["isEscorting",false];
+    _unit = _this select 0;
+    waitUntil {(!(_unit GVAR ["Escorting",false]))};
+    player SVAR ["escortingPlayer",nil];
+    player SVAR ["isEscorting",false];
 };

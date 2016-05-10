@@ -1,12 +1,12 @@
 /*
-	File: fn_ticketAction.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Starts the ticketing process.
+    File: fn_ticketAction.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Starts the ticketing process.
 */
 params [
-	["_unit",objNull,[objNull]]
+    ["_unit",objNull,[objNull]]
 ];
 disableSerialization;
 if(!(createDialog "life_ticket_give")) exitWith {hint localize "STR_Cop_TicketFail"};

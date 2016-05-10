@@ -1,9 +1,9 @@
 /*
-	File: fn_whoDoneit.sqf
-	Description: Save log file of units killed.
-	Author: Å  ColinM - Help of BI Wiki & Forums.
+    File: fn_whoDoneit.sqf
+    Description: Save log file of units killed.
+    Author: Å  ColinM - Help of BI Wiki & Forums.
 
-	Credits:	KillzoneKid for his Debug_Console v3.0 file. Cuel from the BI Forums for his current & previous posts.
+    Credits:    KillzoneKid for his Debug_Console v3.0 file. Cuel from the BI Forums for his current & previous posts.
 */
 params [
     ["_victim",objNull,[objNull]],

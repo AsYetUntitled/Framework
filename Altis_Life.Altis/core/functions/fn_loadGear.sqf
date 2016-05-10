@@ -30,23 +30,23 @@ if(EQUAL(count _itemArray,0)) exitWith {
 };
 
 _itemArray params [
-	"_uniform",
-	"_vest",
-	"_backpack",
-	"_goggles",
-	"_headgear",
-	["_items",[]],
-	"_prim",
-	"_seco",
-	["_uItems",[]],
-	["_uMags",[]],
-	["_bItems",[]],
-	["_bMags",[]],
-	["_vItems",[]],
-	["_vMags",[]],
-	["_pItems",[]],
-	["_hItems",[]],
-	["_yItems",[]]
+    "_uniform",
+    "_vest",
+    "_backpack",
+    "_goggles",
+    "_headgear",
+    ["_items",[]],
+    "_prim",
+    "_seco",
+    ["_uItems",[]],
+    ["_uMags",[]],
+    ["_bItems",[]],
+    ["_bMags",[]],
+    ["_vItems",[]],
+    ["_vMags",[]],
+    ["_pItems",[]],
+    ["_hItems",[]],
+    ["_yItems",[]]
 ];
 
 if(!(EQUAL(_goggles,""))) then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
@@ -57,7 +57,7 @@ if(!(EQUAL(_backpack,""))) then {_handle = [_backpack,true,false,false,false] sp
 
 /* Hotfix for losing virtual items on login */
 if(!isNil {SEL(_this,0)}) then {
-	ADD(life_maxWeight,(round(FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(backpack player),"maximumload") / 4)));
+    ADD(life_maxWeight,(round(FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(backpack player),"maximumload") / 4)));
 };
 
 {_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} forEach _items;

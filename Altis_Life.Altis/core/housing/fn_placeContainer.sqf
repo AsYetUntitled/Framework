@@ -4,8 +4,8 @@
     Author: NiiRoZz
     Credits: BoGuu
 
-	Description:
-	Check container if are in house and if house are owner of player and if all this conditions are true add container in database
+    Description:
+    Check container if are in house and if house are owner of player and if all this conditions are true add container in database
 */
 private["_container","_isFloating","_number","_type","_house","_containers","_houseCfg","_message","_isPlaced"];
 params [
@@ -18,9 +18,9 @@ _uid = steamid;
 _house = nearestObject [player, "House"];
 
 switch (true) do {
-	case (typeOf _container isEqualTo "B_supplyCrate_F"): {_type = "storagebig"};
-	case (typeOf _container isEqualTo "Box_IND_Grenades_F") : {_type = "storagesmall"};
-	default {_type = ""};
+    case (typeOf _container isEqualTo "B_supplyCrate_F"): {_type = "storagebig"};
+    case (typeOf _container isEqualTo "Box_IND_Grenades_F") : {_type = "storagesmall"};
+    default {_type = ""};
 };
 
 _message = 0;

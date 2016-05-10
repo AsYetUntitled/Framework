@@ -1,12 +1,12 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_giveItem.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Gives the selected item & amount to the selected player and
-	removes the item & amount of it from the players virtual
-	inventory.
+    File: fn_giveItem.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Gives the selected item & amount to the selected player and
+    removes the item & amount of it from the players virtual
+    inventory.
 */
 private["_unit","_val"];
 _val = ctrlText 2010;

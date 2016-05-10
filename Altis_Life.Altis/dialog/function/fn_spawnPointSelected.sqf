@@ -1,9 +1,9 @@
 /*
-	File: fn_spawnPointSelected.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Sorts out the spawn point selected and does a map zoom.
+    File: fn_spawnPointSelected.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Sorts out the spawn point selected and does a map zoom.
 */
 disableSerialization;
 private["_control","_selection","_spCfg","_sp"];

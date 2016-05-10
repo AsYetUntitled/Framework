@@ -1,11 +1,11 @@
 #include "..\..\script_macros.hpp"
 #define INUSE(ENTITY) ENTITY SVAR ["inUse",false,true]
 /*
-	File: fn_pickupItem.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_pickupItem.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Master handling for picking up an item.
+    Description:
+    Master handling for picking up an item.
 */
 private ["_itemInfo","_itemName","_illegal","_diff"];
 if((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDelay"; INUSE(_this);};
@@ -16,10 +16,10 @@ _itemName = ITEM_NAME(SEL(_itemInfo,0));
 _illegal = ITEM_ILLEGAL(SEL(_itemInfo,0));
 
 if(playerSide == west && (EQUAL(_illegal,1))) exitWith {
-	titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2)] call life_fnc_numberText],"PLAIN"];
-	ADD(BANK,round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2));
-	deleteVehicle _this;
-	life_action_delay = time;
+    titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2)] call life_fnc_numberText],"PLAIN"];
+    ADD(BANK,round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2));
+    deleteVehicle _this;
+    life_action_delay = time;
 };
 
 life_action_delay = time;
@@ -27,32 +27,32 @@ _diff = [SEL(_itemInfo,0),SEL(_itemInfo,1),life_carryWeight,life_maxWeight] call
 if(_diff <= 0) exitWith {hint localize "STR_NOTF_InvFull"; INUSE(_this);};
 
 if(!(EQUAL(_diff,SEL(_itemInfo,1)))) then {
-	if(([true,SEL(_itemInfo,0),_diff] call life_fnc_handleInv)) then {
-		player playMove "AinvPknlMstpSlayWrflDnon";
+    if(([true,SEL(_itemInfo,0),_diff] call life_fnc_handleInv)) then {
+        player playMove "AinvPknlMstpSlayWrflDnon";
 
-		_this SVAR ["item",[SEL(_itemInfo,0),(SEL(_itemInfo,1)) - _diff],true];
-		titleText[format[localize "STR_NOTF_Picked",_diff,localize _itemName],"PLAIN"];
-		INUSE(_this);
-	} else {
-		INUSE(_this);
-	};
+        _this SVAR ["item",[SEL(_itemInfo,0),(SEL(_itemInfo,1)) - _diff],true];
+        titleText[format[localize "STR_NOTF_Picked",_diff,localize _itemName],"PLAIN"];
+        INUSE(_this);
+    } else {
+        INUSE(_this);
+    };
 } else {
-	if(([true,SEL(_itemInfo,0),SEL(_itemInfo,1)] call life_fnc_handleInv)) then {
-		deleteVehicle _this;
-		//waitUntil{isNull _this};
-		player playMove "AinvPknlMstpSlayWrflDnon";
+    if(([true,SEL(_itemInfo,0),SEL(_itemInfo,1)] call life_fnc_handleInv)) then {
+        deleteVehicle _this;
+        //waitUntil{isNull _this};
+        player playMove "AinvPknlMstpSlayWrflDnon";
 
-		titleText[format[localize "STR_NOTF_Picked",_diff,localize _itemName],"PLAIN"];
-	} else {
-		INUSE(_this);
-	};
+        titleText[format[localize "STR_NOTF_Picked",_diff,localize _itemName],"PLAIN"];
+    } else {
+        INUSE(_this);
+    };
 };
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
-		advanced_log = format ["picked up %1 %2",_diff,localize _itemName];
-	} else {
-		advanced_log = format ["%1 - %2 picked up %3 %4",profileName,(getPlayerUID player),_diff,localize _itemName];
-		};
-	publicVariableServer "advanced_log";
+    if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
+        advanced_log = format ["picked up %1 %2",_diff,localize _itemName];
+    } else {
+        advanced_log = format ["%1 - %2 picked up %3 %4",profileName,(getPlayerUID player),_diff,localize _itemName];
+        };
+    publicVariableServer "advanced_log";
 };

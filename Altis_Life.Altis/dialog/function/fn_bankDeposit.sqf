@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_bankDeposit.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_bankDeposit.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Figure it out.
+    Description:
+    Figure it out.
 */
 private ["_value"];
 _value = parseNumber(ctrlText 2702);
@@ -23,10 +23,10 @@ hint format[localize "STR_ATM_DepositSuccess",[_value] call life_fnc_numberText]
 [6] call SOCK_fnc_updatePartial;
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_moneyLog"),1)) then {
-	if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
-		money_log = format ["deposited %1 to their bank. Bank Balance: %2  On Hand Balance: %3",_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
-	} else {
-		money_log = format ["%1 - %2 deposited %3 to their bank. Bank Balance: %4  On Hand Balance: %5",profileName,(getPlayerUID player),_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
-	};
-	publicVariableServer "money_log";
+    if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
+        money_log = format ["deposited %1 to their bank. Bank Balance: %2  On Hand Balance: %3",_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+    } else {
+        money_log = format ["%1 - %2 deposited %3 to their bank. Bank Balance: %4  On Hand Balance: %5",profileName,(getPlayerUID player),_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+    };
+    publicVariableServer "money_log";
 };

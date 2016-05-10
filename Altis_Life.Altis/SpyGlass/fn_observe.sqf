@@ -1,10 +1,10 @@
 /*
-	File: fn_observe.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	This is the observation part of SPY-GLASS, it reports to the RPT log
-	of unusual activity by the player.
+    File: fn_observe.sqf
+    Author: Bryan "Tonic" Boardwine
+
+    Description:
+    This is the observation part of SPY-GLASS, it reports to the RPT log
+    of unusual activity by the player.
 */
 private["_pName","_pUID","_pReason"];
 _pName = [_this,0,"",[""]] call BIS_fnc_param;

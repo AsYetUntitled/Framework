@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_loadDeadGear.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	BLAH
+    File: fn_loadDeadGear.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    BLAH
 */
 private["_allowedItems","_loadout","_primary","_launcher","_handgun","_magazines","_uniform","_vest","_backpack","_items","_primitems","_secitems","_handgunitems","_uitems","_vitems","_bitems","_handle"];
 _loadout = [_this,0,[],[[]]] call BIS_fnc_param;
@@ -35,8 +35,8 @@ removeBackpack player;
 removeGoggles player;
 removeHeadGear player;
 {
-	player unassignItem _x;
-	player removeItem _x;
+    player unassignItem _x;
+    player removeItem _x;
 } forEach (assignedItems player);
 
 //Add the gear
@@ -44,8 +44,8 @@ if(!(EQUAL(_uniform,""))) then {_handle = [_uniform,true,false,false,false] spaw
 if(!(EQUAL(_vest,""))) then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(!(EQUAL(_backpack,""))) then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 {
-	_handle = [_x,true,false,false,false] spawn life_fnc_handleItem;
-	waitUntil {scriptDone _handle};
+    _handle = [_x,true,false,false,false] spawn life_fnc_handleItem;
+    waitUntil {scriptDone _handle};
 } forEach _magazines;
 
 if(!(EQUAL(_primary,""))) then {[_primary,true,false,false,false] spawn life_fnc_handleItem;};

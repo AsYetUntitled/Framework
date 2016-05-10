@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_seizeClient.sqf
-	Author: Daniel "Skalicon" Larusso
+    File: fn_seizeClient.sqf
+    Author: Daniel "Skalicon" Larusso
 
-	Description:
-	Removes the players weapons client side
+    Description:
+    Removes the players weapons client side
 */
 private ["_exempt","_uniform","_vest","_headgear"];
 _exempt = LIFE_SETTINGS(getArray,"seize_exempt");
@@ -13,27 +13,27 @@ _vest = LIFE_SETTINGS(getArray,"seize_vest");
 _uniform = LIFE_SETTINGS(getArray,"seize_uniform");
 
 {
-	if(!(_x in _exempt)) then {
-		player removeWeapon _x;
-	};
+    if(!(_x in _exempt)) then {
+        player removeWeapon _x;
+    };
 } forEach weapons player;
 
 {
-	if(!(_x in _exempt)) then {
-		player removeItemFromUniform _x;
-	};
+    if(!(_x in _exempt)) then {
+        player removeItemFromUniform _x;
+    };
 } forEach uniformItems player;
 
 {
-	if(!(_x in _exempt)) then {
-		player removeItemFromVest _x;
-	};
+    if(!(_x in _exempt)) then {
+        player removeItemFromVest _x;
+    };
 } forEach vestItems player;
 
 {
-	if(!(_x in _exempt)) then {
-		player removeItemFromBackpack _x;
-	};
+    if(!(_x in _exempt)) then {
+        player removeItemFromBackpack _x;
+    };
 } forEach backpackItems player;
 
 {

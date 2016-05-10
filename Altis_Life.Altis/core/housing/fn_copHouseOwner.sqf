@@ -1,9 +1,9 @@
 /*
-	File: fn_copHouseOwner.sqf
-	Author: 
-	
-	Description:
-	Displays the house owner
+    File: fn_copHouseOwner.sqf
+    Author: 
+    
+    Description:
+    Displays the house owner
 */
 private["_house"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;

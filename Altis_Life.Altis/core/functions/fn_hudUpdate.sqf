@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_hudUpdate.sqf
-	Author: Daniel Stuart
+    File: fn_hudUpdate.sqf
+    Author: Daniel Stuart
 
-	Description:
-	Updates the HUD when it needs to.
+    Description:
+    Updates the HUD when it needs to.
 */
 disableSerialization;
 

@@ -1,9 +1,9 @@
 /*
-	File: fn_teleport.sqf
-	Author: ColinM9991
-	Credits: To original script author(s)
-	Description:
-	Teleport to chosen position.
+    File: fn_teleport.sqf
+    Author: ColinM9991
+    Credits: To original script author(s)
+    Description:
+    Teleport to chosen position.
 */
 private ["_pos"];
 _pos = [_this select 0, _this select 1, _this select 2];

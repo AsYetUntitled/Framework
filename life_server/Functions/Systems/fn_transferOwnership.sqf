@@ -1,11 +1,11 @@
 #include "..\..\script_macros.hpp"
 /*
 
-	File: fn_transferOwnership.sqf
-	Author: BoGuu
+    File: fn_transferOwnership.sqf
+    Author: BoGuu
 
-	Description:
-	Transfer agent ownership to HC upon it's connection
+    Description:
+    Transfer agent ownership to HC upon it's connection
     
 */
 

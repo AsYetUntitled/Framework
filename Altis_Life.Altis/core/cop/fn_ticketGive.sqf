@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_ticketGive.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_ticketGive.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Gives a ticket to the targeted player.
+    Description:
+    Gives a ticket to the targeted player.
 */
 private["_val"];
 if(isNil "life_ticket_unit") exitWith {hint localize "STR_Cop_TicketNil"};

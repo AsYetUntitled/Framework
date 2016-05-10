@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_knockoutAction.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_knockoutAction.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Knocks out the target.
+    Description:
+    Knocks out the target.
 */
 private "_target";
 _target = param [0,ObjNull,[ObjNull]];

@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_defuseKit.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Defuses blasting charges for the cops?
+    File: fn_defuseKit.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Defuses blasting charges for the cops?
 */
 private["_vault","_ui","_title","_progressBar","_cP","_titleText"];
 _vault = param [0,ObjNull,[ObjNull]];
@@ -27,23 +27,23 @@ _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[player,"AinvPknlMstpSnonWnonDnon_medic_1",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
-		player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-	};
-	sleep 0.26;
-	if(isNull _ui) then {
-		5 cutRsc ["life_progress","PLAIN"];
-		_ui = GVAR_UINS "life_progress";
-		_progressBar = _ui displayCtrl 38201;
-		_titleText = _ui displayCtrl 38202;
-	};
-	_cP = _cP + .0035;
-	_progressBar progressSetPosition _cP;
-	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-	if(_cP >= 1 OR !alive player) exitWith {};
-	if(life_interrupted) exitWith {};
+    if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+        [player,"AinvPknlMstpSnonWnonDnon_medic_1",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
+        player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+        player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+    };
+    sleep 0.26;
+    if(isNull _ui) then {
+        5 cutRsc ["life_progress","PLAIN"];
+        _ui = GVAR_UINS "life_progress";
+        _progressBar = _ui displayCtrl 38201;
+        _titleText = _ui displayCtrl 38202;
+    };
+    _cP = _cP + .0035;
+    _progressBar progressSetPosition _cP;
+    _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    if(_cP >= 1 OR !alive player) exitWith {};
+    if(life_interrupted) exitWith {};
 };
 
 //Kill the UI display and check for various states

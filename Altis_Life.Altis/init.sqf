@@ -1,9 +1,9 @@
 /*
-	File: init.sqf
-	Author: 
-	
-	Description:
-	
+    File: init.sqf
+    Author: 
+    
+    Description:
+    
 */
 StartProgress = false;
 

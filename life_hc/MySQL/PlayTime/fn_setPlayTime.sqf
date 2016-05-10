@@ -1,14 +1,14 @@
 /*
-		File : fn_setPlayTime.sqf
-		Author : NiiRoZz
+        File : fn_setPlayTime.sqf
+        Author : NiiRoZz
 
-		This file is for Nanou's HeadlessClient.
+        This file is for Nanou's HeadlessClient.
 
-		Description :
-		Sets gathered time of player
+        Description :
+        Sets gathered time of player
 
-		GATHERED - Loaded from DB and NOT changed
-		JOIN - Time, the player joined - the newly gathered playtime will be calculated using difference
+        GATHERED - Loaded from DB and NOT changed
+        JOIN - Time, the player joined - the newly gathered playtime will be calculated using difference
 
 */
 
@@ -22,9 +22,9 @@ _time_gathered = ((_this select 1) * 60);
 
 //set value no 1
 {
-	if((_x select 0) == _uid) exitWith
-	{
-		_x set [1, _time_gathered];
-		_x set [2, time];
-	};
+    if((_x select 0) == _uid) exitWith
+    {
+        _x set [1, _time_gathered];
+        _x set [2, time];
+    };
 } forEach TON_fnc_playtime_values;

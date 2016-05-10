@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_fuelLBChange.sqf
-	Author: NiiRoZz
+    File: fn_fuelLBChange.sqf
+    Author: NiiRoZz
 
-	Description:
-	Change when slide change. That descripotion
+    Description:
+    Change when slide change. That descripotion
 */
 disableSerialization;
 private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
@@ -25,18 +25,18 @@ if (_vehicle isKindOf "I_Truck_02_covered_F" || _vehicle isKindOf "I_Truck_02_tr
 ctrlShow [20330,true];
 
 (CONTROL(20300,20303)) ctrlSetStructuredText parseText format[
-	(localize "STR_Shop_Veh_UI_Fuel")+ " %1l<br/>" +
-	(localize "STR_Fuel_Tank_Vehicle")+ " %2l",
-	_fueltank,
-	round(_fueltank * _fuel)
+    (localize "STR_Shop_Veh_UI_Fuel")+ " %1l<br/>" +
+    (localize "STR_Fuel_Tank_Vehicle")+ " %2l",
+    _fueltank,
+    round(_fueltank * _fuel)
 ];
 
 {
-	slidersetRange [_x,(floor(_fuel * _fueltank)),_fueltank];
+    slidersetRange [_x,(floor(_fuel * _fueltank)),_fueltank];
 } forEach [20901];
 
 {
-	sliderSetPosition[_x ,(floor(_fuel * _fueltank))];
+    sliderSetPosition[_x ,(floor(_fuel * _fueltank))];
 } forEach [20901];
 
 ctrlSetText [20323,format ["Total : %1$",life_fuelPrices * ((SliderPosition 20901) -(floor(_fuel * _fueltank))) ]];

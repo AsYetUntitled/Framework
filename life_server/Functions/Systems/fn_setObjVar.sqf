@@ -1,10 +1,10 @@
 /*
-	File: fn_setObjVar.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Sets a variable on the given object from the server,
-	workaround for brokenness of ARMA 3, yes Brokenness is a word!
+    File: fn_setObjVar.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Sets a variable on the given object from the server,
+    workaround for brokenness of ARMA 3, yes Brokenness is a word!
 */
 private["_obj","_varValue","_global","_varName"];
 _obj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;

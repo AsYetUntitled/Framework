@@ -1,12 +1,12 @@
 /*
-	File: fn_wantedRemove.sqf
-	Author: Bryan "Tonic" Boardwine"
-	Database Persistence By: ColinM
-	Assistance by: Paronity
-	Stress Tests by: Midgetgrimm
+    File: fn_wantedRemove.sqf
+    Author: Bryan "Tonic" Boardwine"
+    Database Persistence By: ColinM
+    Assistance by: Paronity
+    Stress Tests by: Midgetgrimm
 
-	Description:
-	Removes a person from the wanted list.
+    Description:
+    Removes a person from the wanted list.
 */
 private["_uid","_query"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;

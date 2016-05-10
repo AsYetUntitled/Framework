@@ -1,13 +1,13 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_spawnPointCfg.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_spawnPointCfg.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Master configuration for available spawn points depending on the units side.
+    Description:
+    Master configuration for available spawn points depending on the units side.
 
-	Return:
-	[Spawn Marker,Spawn Name,Image Path]
+    Return:
+    [Spawn Marker,Spawn Name,Image Path]
 */
 private["_side","_return","_spawnCfg","_curConfig","_name","_licenses","_level","_levelName","_levelValue","_levelType","_tempConfig","_flag"];
 _side = param [0,civilian,[civilian]];
@@ -25,12 +25,12 @@ _spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> _side;
 for "_i" from 0 to count(_spawnCfg)-1 do {
     _flag = true;
     _tempConfig = [];
-		_curConfig = (_spawnCfg select _i);
+        _curConfig = (_spawnCfg select _i);
     _licenses = getArray(_curConfig >> "licenses");
     _level = getArray(_curConfig >> "level");
-		_levelName = SEL(_level,0);
-		_levelType = SEL(_level,1);
-		_levelValue = SEL(_level,2);
+        _levelName = SEL(_level,0);
+        _levelType = SEL(_level,1);
+        _levelValue = SEL(_level,2);
 
     {
       if(!(EQUAL(SEL(_x,0),""))) then {
@@ -45,25 +45,25 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
     } foreach _licenses;
 
     if(_flag) then {
-    	if(!(EQUAL(_levelValue,-1))) then {
-				_level = GVAR_MNS _levelName;
-				if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
-				_flag = switch(_levelType) do {
-					case "SCALAR": {_level >= _levelValue};
-					case "BOOL": {_level};
-					case "EQUAL": {EQUAL(_level,_levelValue)};
-					case "INVERSE": {_level <= _levelValue};
-					default {false};
-				};
-			};
+        if(!(EQUAL(_levelValue,-1))) then {
+                _level = GVAR_MNS _levelName;
+                if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
+                _flag = switch(_levelType) do {
+                    case "SCALAR": {_level >= _levelValue};
+                    case "BOOL": {_level};
+                    case "EQUAL": {EQUAL(_level,_levelValue)};
+                    case "INVERSE": {_level <= _levelValue};
+                    default {false};
+                };
+            };
     };
 
-		if(_flag) then {
-			_tempConfig pushBack getText(_curConfig >> "spawnMarker");
+        if(_flag) then {
+            _tempConfig pushBack getText(_curConfig >> "spawnMarker");
       _tempConfig pushBack getText(_curConfig >> "displayName");
       _tempConfig pushBack getText(_curConfig >> "icon");
       _return pushBack _tempConfig;
-		};
+        };
 };
 
 if(playerSide == civilian) then {

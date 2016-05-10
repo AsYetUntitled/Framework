@@ -1,23 +1,23 @@
 #include "..\..\script_macros.hpp"
 /*
-	File : fn_storageBox.sqf
-	Author: NiiRoZz
+    File : fn_storageBox.sqf
+    Author: NiiRoZz
 
-	Description:
-	Create Storage and attachto player;
+    Description:
+    Create Storage and attachto player;
 */
 private["_object","_attachPos"];
 params [
-	["_size",false,[false]]
+    ["_size",false,[false]]
 ];
 
 life_container_active = true;
 closeDialog 0;
 
 if(_size) then {
-	_object = "B_supplyCrate_F" createVehicle [0,0,0];
+    _object = "B_supplyCrate_F" createVehicle [0,0,0];
 } else {
-	_object = "Box_IND_Grenades_F" createVehicle [0,0,0];
+    _object = "Box_IND_Grenades_F" createVehicle [0,0,0];
 };
 
 life_container_activeObj = _object;

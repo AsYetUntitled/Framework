@@ -1,16 +1,16 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_receiveMoney.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Receives money
+    File: fn_receiveMoney.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Receives money
 */
 
 params [
-	["_unit",objNull,[objNull]],
-	["_val","",[""]],
-	["_from",objNull,[objNull]]
+    ["_unit",objNull,[objNull]],
+    ["_val","",[""]],
+    ["_from",objNull,[objNull]]
 ];
 
 if(isNull _unit OR isNull _from OR EQUAL(_val,"")) exitWith {};

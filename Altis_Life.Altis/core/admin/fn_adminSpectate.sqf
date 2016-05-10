@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_adminSpectate.sqf
-	Author: ColinM9991
-	
-	Description:
-	Spectate the chosen player.
+    File: fn_adminSpectate.sqf
+    Author: ColinM9991
+    
+    Description:
+    Spectate the chosen player.
 */
 if(FETCH_CONST(life_adminlevel) < 3) exitWith {closeDialog 0;};
 

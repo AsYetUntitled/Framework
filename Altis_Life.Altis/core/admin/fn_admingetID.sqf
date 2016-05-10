@@ -1,11 +1,11 @@
 /*
-	File: fn_admingetID.sqf
-	Author: Bryan "Tonic" Boardwine
+    File: fn_admingetID.sqf
+    Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Fetches the selected ID of the player.
-	Used by in-game admins to issue bans/kicks.
-	https://community.bistudio.com/wiki/Multiplayer_Server_Commands
+    Description:
+    Fetches the selected ID of the player.
+    Used by in-game admins to issue bans/kicks.
+    https://community.bistudio.com/wiki/Multiplayer_Server_Commands
 */
 private "_unit";
 _unit = lbData[2902,lbCurSel (2902)];

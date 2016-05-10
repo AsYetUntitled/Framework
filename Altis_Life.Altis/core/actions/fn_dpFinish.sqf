@@ -1,11 +1,11 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_dpFinish.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Finishes the DP Mission and calculates the money earned based
-	on distance between A->B
+    File: fn_dpFinish.sqf
+    Author: Bryan "Tonic" Boardwine
+    
+    Description:
+    Finishes the DP Mission and calculates the money earned based
+    on distance between A->B
 */
 private["_dp","_dis","_price"];
 _dp = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
