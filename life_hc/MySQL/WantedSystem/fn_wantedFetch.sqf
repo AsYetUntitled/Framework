@@ -7,7 +7,7 @@
 	Stress Tests by: Midgetgrimm
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Displays wanted list information sent from the server.
 */
@@ -19,7 +19,7 @@ _list = [];
 _units = [];
 {if((side _x) == civilian) then {_units pushBack (getPlayerUID _x)};} forEach playableUnits;
 
-if(count _units == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if(_units isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 {
     if (count _units > 1) then {
@@ -44,6 +44,6 @@ diag_log format["Query: %1",_query];
 }
 forEach _queryResult;
 
-if(count _list == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if(_list isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 [_list] remoteExec ["life_fnc_wantedList",_ret];

@@ -37,7 +37,7 @@ if(_queryResult isEqualType "") exitWith {
 	[] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
-if(count _queryResult == 0) exitWith {
+if(_queryResult isEqualTo []) exitWith {
 	[] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 

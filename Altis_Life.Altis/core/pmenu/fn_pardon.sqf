@@ -16,7 +16,7 @@ _data = lbData[2401,(lbCurSel 2401)];
 _data = call compile format["%1", _data];
 if(isNil "_data") exitWith {};
 if(!(_data isEqualType [])) exitWith {};
-if(count _data == 0) exitWith {};
+if(_data isEqualTo []) exitWith {};
 
 _uid = _data select 0;
 

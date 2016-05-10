@@ -41,7 +41,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {
 };
 
 if(_impound) exitWith {
-	if(count _vInfo == 0) then  {
+	if(_vInfo isEqualTo []) then  {
 		life_impound_inuse = false;
 		_ownerID publicVariableClient "life_impound_inuse";
 
@@ -62,7 +62,7 @@ if(_impound) exitWith {
 };
 
 // not persistent so just do this!
-if(count _vInfo == 0) exitWith {
+if(_vInfo isEqualTo []) exitWith {
 	[1,(localize "STR_Garage_Store_NotPersistent")] remoteExecCall ["life_fnc_broadcast",_ownerID];
 	life_garage_store = false;
 	_ownerID publicVariableClient "life_garage_store";
@@ -84,7 +84,7 @@ if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_virtualItems"), 1)) then {
 		_blacklist = false;
 		_profileQuery = format["SELECT name FROM players WHERE playerid='%1'", _uid];
 		_profileName = [_profileQuery, 2] call DB_fnc_asyncCall;
-		_profileName = _profileName select 0; 
+		_profileName = _profileName select 0;
 		{
 			_var = _x select 0;
 			_isIllegal = M_CONFIG(getNumber, "VirtualItems", _var, "illegal");
@@ -139,7 +139,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),1)) then {
 	_vehBackpacks = getBackpackCargo _vehicle;
 	_cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 	// no items? clean the array so the database looks pretty
-	if((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {_cargo = [];};
+	if(((_vehItems select 0) isEqualTo []) && ((_vehMags select 0) isEqualTo []) && ((_vehWeapons select 0) isEqualTo []) && ((_vehBackpacks select 0) isEqualTo [])) then {_cargo = [];};
 	} else {
 	_cargo = [];
 };

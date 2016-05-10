@@ -125,7 +125,7 @@ class FSM
                          "" \n
                          "//Group cleanup." \n
                          "{" \n
-                         "	if(count units _x == 0 && local _x) then {" \n
+                         "	if(units _x isEqualTo [] && local _x) then {" \n
                          "		deleteGroup _x;" \n
                          "	};" \n
                          "} forEach allGroups;"/*%FSM</STATEINIT""">*/;

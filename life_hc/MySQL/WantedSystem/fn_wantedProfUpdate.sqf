@@ -3,9 +3,9 @@
 	File: fn_wantedProfUpdate.sqf
 	Author: [midgetgrimm]
 	Persistence by: ColinM
-	
+
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Updates name of player if they change profiles
 */
@@ -18,7 +18,7 @@ if(_uid == "" OR  _name == "") exitWith {};
 
 _wantedCheck = format["SELECT wantedName FROM wanted WHERE wantedID='%1'",_uid];
 _wantedQuery = [_wantedCheck,2] call HC_fnc_asyncCall;
-if(count _wantedQuery == 0) exitWith {};
+if(_wantedQuery isEqualTo []) exitWith {};
 _wantedQuery = call compile format["%1",_wantedQuery];
 
 if(_name != (_wantedQuery select 0)) then {

@@ -26,7 +26,7 @@ for "_i" from 0 to 1 step 0 do {
 			if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {_fuel = (fuel _veh);};
 			_dbInfo = _veh getVariable["dbInfo",[]];
 			_units = {(_x distance _veh < 300)} count playableUnits;
-			if(count crew _x == 0) then {
+			if(crew _x isEqualTo []) then {
 				switch (true) do {
 					case ((_x getHitPointDamage "HitEngine") > 0.7 && _units == 0) : {deleteVehicle _x; _deleted = true;};
 					case ((_x getHitPointDamage "HitLFWheel") > 0.98 && _units == 0) : {deleteVehicle _x; _deleted = true;};

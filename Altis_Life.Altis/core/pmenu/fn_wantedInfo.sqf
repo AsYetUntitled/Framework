@@ -15,7 +15,7 @@ _mylist = [];
 _data = call compile format["%1", _data];
 if(isNil "_data") exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
 if(!(_data isEqualType [])) exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
-if(count _data == 0) exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
+if(_data isEqualTo []) exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
 lbClear _list;
 
 _crimes = _data select 0;

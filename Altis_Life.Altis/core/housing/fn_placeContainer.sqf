@@ -35,7 +35,7 @@ if (!isNull _house) then {
                 _message = 4;
                 _containers = _house GVAR ["containers",[]];
                 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
-                if (count _houseCfg == 0) exitWith {};
+                if (_houseCfg isEqualTo []) exitWith {};
                 if (count _containers < (_houseCfg select 1)) then {
                     _isPlaced = true;
                     if (life_HC_isActive) then {

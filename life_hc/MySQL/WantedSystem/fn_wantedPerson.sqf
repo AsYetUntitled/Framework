@@ -6,7 +6,7 @@
 	Stress Tests by: Midgetgrimm
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Fetches a specific person from the wanted array.
 */
@@ -17,5 +17,5 @@ _uid = getPlayerUID player;
 
 _query = format["SELECT wantedID, wantedName, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_uid];
 _queryResult = [_query,2] call HC_fnc_asyncCall;
-if(count _queryResult == 0) exitWith {[]};
+if(_queryResult isEqualTo []) exitWith {[]};
 _queryResult;

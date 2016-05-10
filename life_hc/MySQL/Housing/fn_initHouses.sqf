@@ -13,7 +13,7 @@ _count = (["SELECT COUNT(*) FROM houses WHERE owned='1'",2] call HC_fnc_asyncCal
 for [{_x=0},{_x<=_count},{_x=_x+10}] do {
 	_query = format["SELECT houses.id, houses.pid, houses.pos, players.name FROM houses INNER JOIN players WHERE houses.owned='1' AND houses.pid = players.playerid LIMIT %1,10",_x];
 	_queryResult = [_query,2,true] call HC_fnc_asyncCall;
-	if(count _queryResult == 0) exitWith {};
+	if(_queryResult isEqualTo []) exitWith {};
 	{
 		_pos = call compile format["%1",_x select 2];
 		_house = nearestObject [_pos, "House"];

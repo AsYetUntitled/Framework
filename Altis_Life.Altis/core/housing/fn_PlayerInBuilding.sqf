@@ -35,7 +35,7 @@ _wallLeft = [(_eyePosition select 0) + (((-50)*sin(getDir _unit + 90))), (_eyePo
 
 _roofCheck = lineIntersectsWith [_eyePosition,_roof,_unit,_unit,true];
 
-if (count _roofCheck == 0) exitWith {
+if (_roofCheck isEqualTo []) exitWith {
     _return
 };
 

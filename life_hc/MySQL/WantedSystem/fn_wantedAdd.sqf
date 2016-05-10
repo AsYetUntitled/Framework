@@ -68,7 +68,7 @@ switch(_type) do
 	default {_type = [];};
 };
 
-if(count _type == 0) exitWith {}; //Not our information being passed...
+if(_type isEqualTo []) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
 if(_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.

@@ -33,7 +33,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _requiredItem = getText(_curConfig >> "item");
     _mined = "";
 
-    if (count _resources == 0) exitWith {}; //Smart guy :O
+    if (_resources isEqualTo []) exitWith {}; //Smart guy :O
     for "_i" from 0 to count (_resources) do {
 		if (EQUAL(count _resources, 1)) exitWith {
 			if (!((_resources select 0) isEqualType [])) then {

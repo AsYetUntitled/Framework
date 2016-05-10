@@ -8,7 +8,7 @@
 private["_spCfg","_sp","_spawnPos"];
 closeDialog 0;
 cutText ["","BLACK IN"];
-if(count life_spawn_point == 0) then {
+if(life_spawn_point isEqualTo []) then {
 	private["_sp","_spCfg"];
 	_spCfg = [playerSide] call life_fnc_spawnPointCfg;
 	_sp = _spCfg select 0;
@@ -33,7 +33,7 @@ if(count life_spawn_point == 0) then {
 				_house = nearestObjects [getMarkerPos (life_spawn_point select 0),["House_F"],10] select 0;
 				_bPos = [_house] call life_fnc_getBuildingPositions;
 
-				if(count _bPos == 0) exitWith {
+				if(_bPos isEqualTo []) exitWith {
 					player setPos (getMarkerPos (life_spawn_point select 0));
 				};
 

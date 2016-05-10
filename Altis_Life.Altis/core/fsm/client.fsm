@@ -73,7 +73,7 @@ class FSM
            "" \n
            "//Group clean (Local)" \n
            "{" \n
-           "	if(local _x && {(count units _x == 0)}) then {" \n
+           "	if(local _x && {(units _x isEqualTo [])}) then {" \n
            "		deleteGroup _x;" \n
            "	};" \n
            "} forEach allGroups;" \n
