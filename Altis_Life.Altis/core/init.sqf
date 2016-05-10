@@ -57,7 +57,7 @@ diag_log "::Life Client:: Setting up user actions";
 
 diag_log "::Life Client:: User actions completed";
 diag_log "::Life Client:: Waiting for server functions to transfer..";
-waitUntil {(!isNil {TON_fnc_clientGangLeader})};
+waitUntil {(!isNil "TON_fnc_clientGangLeader")};
 
 diag_log "::Life Client:: Received server functions.";
 0 cutText ["Waiting for the server to be ready...","BLACK FADED"];

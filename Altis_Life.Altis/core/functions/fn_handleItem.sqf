@@ -52,7 +52,7 @@ if(_bool) then {
 			player addBackpack _item;
 			clearAllItemsFromBackpack player;
 
-			if(!isNil {_items}) then {
+			if(!isNil "_items") then {
 				{[_x,true,true,false,true] call life_fnc_handleItem; } forEach _items;
 			};
 		};
@@ -181,7 +181,7 @@ if(_bool) then {
 
 									player addVest _item;
 
-									if(!isNil {_items}) then {
+									if(!isNil "_items") then {
 										{[_x,true,false,false,true] spawn life_fnc_handleItem;} forEach _items;
 									};
 								};

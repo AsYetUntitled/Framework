@@ -3,7 +3,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	This file is for Nanou's HeadlessClient.
-	
+
 	Description:
 	Spawns animals around the marker when a player
 	is near. Very basic WIP
@@ -23,7 +23,7 @@ _radius = (getMarkerSize _zoneName) select 0;
 _dist = _radius + 100;
 _zone = getMarkerPos _zoneName;
 
-if(!isNil {animals} && {count animals != 0}) then {
+if(!isNil "animals" && {count animals != 0}) then {
     _maxAnimals = _maxAnimals - count(animals);
 } else {
     animals = [];

@@ -95,7 +95,7 @@ switch (_section) do
 
 		_muzzles = getArray(_config >> "muzzles");
 		_magazines = getArray(_config >> "magazines");
-		if(!isNil {_muzzles}) then {
+		if(!isNil "_muzzles") then {
 			private["_tmp"];
 			{
 				if(_x != "this") then {

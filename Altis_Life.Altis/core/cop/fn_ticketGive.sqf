@@ -2,12 +2,12 @@
 /*
 	File: fn_ticketGive.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Gives a ticket to the targeted player.
 */
 private["_val"];
-if(isNil {life_ticket_unit}) exitWith {hint localize "STR_Cop_TicketNil"};
+if(isNil "life_ticket_unit") exitWith {hint localize "STR_Cop_TicketNil"};
 if(isNull life_ticket_unit) exitWith {hint localize "STR_Cop_TicketExist"};
 
 _val = ctrlText 2652;
