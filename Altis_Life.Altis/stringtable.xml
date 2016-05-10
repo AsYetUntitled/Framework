@@ -306,6 +306,7 @@
 			<French>Chargeurs</French>
 			<Spanish>Cargadores</Spanish>
 			<Italian>riviste</Italian>
+			<Polish>Magazyny</Polish>
 			<Russian></Russian>
 			<Portuguese>Munições</Portuguese>
 			<German>Zeitschriften</German>
@@ -316,6 +317,7 @@
 			<French>Accessoires</French>
 			<Spanish>Accesorios</Spanish>
 			<Italian>Accessori</Italian>
+			<Polish>Akcesoria</Polish>
 			<Russian></Russian>
 			<Portuguese>Acessórios</Portuguese>
 			<German>Zubehör</German>
@@ -326,6 +328,7 @@
 			<French>Armes</French>
 			<Spanish>Armas</Spanish>
 			<Italian>Armi</Italian>
+			<Polish>Broń</Polish>
 			<Russian></Russian>
 			<Portuguese>Armas</Portuguese>
 			<German>Bewaffnung</German>
@@ -769,6 +772,7 @@
 			<French>Votre faction ne peut pas vendre les véhicules!</French>
 			<Spanish>Tu facción no tiene permitido usar esta tienda! </Spanish>
 			<Italian>La vostra fazione non è permesso di tagliare i veicoli!</Italian>
+			<Polish>Twoja frakcja nie może posiekać pojazdy!</Polish>
 			<Russian></Russian>
 			<Portuguese>Sua facção não têm direito de usar essa loja</Portuguese>
 			<German>Ihre Fraktion ist nicht zu hacken Fahrzeuge erlaubt!</German>
@@ -882,6 +886,7 @@
 			<Russian></Russian>
 			<Portuguese>Sacar: gangue</Portuguese>
 			<Italian>Ritira: Gang</Italian>
+			<Polish>Wycofaj: Gang</Polish>
 			<German>Ziehen Sie: Gang</German>
 		</Key>
 		<Key ID="STR_ATM_DepositGang">
@@ -892,6 +897,7 @@
 			<Russian></Russian>
 			<Portuguese>Depositar: Gangue</Portuguese>
 			<Italian>Deposita: Gang</Italian>
+			<Polish>Depozyt: Gang</Polish>
 			<German>Kaution: Gang</German>
 		</Key>
 		<Key ID="STR_ATM_Transfer">
@@ -976,6 +982,7 @@
 			<Czech>Nemusíte to hodně ve svém gang bankovní účet!</Czech>
 			<Spanish>No hay tanto dinero en la cuenta de tu pandilla!</Spanish>
 			<Italian>Non avete più di tanto nel vostro conto in banca banda!</Italian>
+			<Polish>Nie ma tego dużo na koncie bankowym gang!</Polish>
 			<Russian></Russian>
 			<French>Vous n'avez pas autant dans votre gang!</French>
 			<Portuguese>Você não tem todo esse dinhero na sua gangue!</Portuguese>
@@ -1041,6 +1048,7 @@
 			<Czech>Jste staženy $%1 z naší bandy</Czech>
 			<Spanish>Has retirado $%1 de tu pandilla</Spanish>
 			<Italian>Hai ritirato $%1 dal nostro gruppo.</Italian>
+			<Polish>Masz %1 $ wycofane z naszego gangu.</Polish>
 			<Russian></Russian>
 			<French>Vous avez retiré $%1 de votre gang</French>
 			<Portuguese>Você sacou R$%1 da sua gangue</Portuguese>
@@ -1052,6 +1060,7 @@
 			<French>Quelqu'un essaie déjà de retirer de l'argent de votre gang.</French>
 			<Spanish>Alguien ya esta tratando de retirar dinero de tu pandilla.</Spanish>
 			<Italian>Qualcuno sta già cercando di ritirarsi dalla vostra banda.</Italian>
+			<Polish>Ktoś już próbował wycofać się ze swojego gangu.</Polish>
 			<Russian></Russian>
 			<Portuguese>Alguém já está tentando sacar da sua gangue.</Portuguese>
 			<German>Jemand ist bereits versucht, sich von Ihrer Bande zu entziehen.</German>
@@ -1095,6 +1104,7 @@
 			<French>Quelqu'un essaie déjà de déposer dans le compte bancaire de votre gang.</French>
 			<Spanish>Alguien ya esta tratando de depositar en la cuenta de banco de tu pandilla.</Spanish>
 			<Italian>Qualcuno sta già cercando di depositare sul conto bancario del gruppo.</Italian>
+			<Polish>Ktoś jest już stara się o wpłatę na rachunek bankowy swojego gangu.</Polish>
 			<Russian></Russian>
 			<Portuguese>Alguém já está tentando depositar na conta da sua gangue.</Portuguese>
 			<German>Jemand ist bereits versucht, in Ihre Bande Bankkonto einzuzahlen.</German>
@@ -2331,6 +2341,7 @@
 			<French>Canal camp</French>
 			<Spanish>Habilitar Sidechat</Spanish>
 			<Italian>Interruttore Sidechat</Italian>
+			<Polish>Sidechat Przełącznik</Polish>
 			<Russian></Russian>
 			<Portuguese>Habilitar Sidechat</Portuguese>
 			<German>Sidechat Schalter</German>
@@ -2341,6 +2352,7 @@
 			<French>Révéler les objets les plus proches</French>
 			<Spanish>Revelar Objetos Cercanos</Spanish>
 			<Italian>Rivela oggetti più vicini</Italian>
+			<Polish>Odsłonić Najbliższa Przedmioty</Polish>
 			<Russian></Russian>
 			<Portuguese>Mostrar Objetos Próximos</Portuguese>
 			<German>Reveal Nächster Objekte</German>
@@ -2550,6 +2562,7 @@
 			<German>Fahndungsliste</German>
 			<French>Interpol</French>
 			<Italian>Lista Ricercati</Italian>
+			<Polish>Lista APD Poszukiwane</Polish>
 			<Portuguese>Lista de Procurados</Portuguese>
 		</Key>
 		<Key ID="STR_Wanted_Pardon">
@@ -2560,6 +2573,7 @@
 			<German>Erlassen</German>
 			<French>Excuser</French>
 			<Italian>Perdona</Italian>
+			<Polish>Pardon</Polish>
 			<Portuguese>Perdão</Portuguese>
 		</Key>
 		<Key ID="STR_Wanted_Add">
@@ -2568,6 +2582,7 @@
 			<French>Ajouter</French>
 			<Spanish>Agregar</Spanish>
 			<Italian>Aggiungere</Italian>
+			<Polish>Dodaj</Polish>
 			<Russian></Russian>
 			<Portuguese>Adicionar</Portuguese>
 			<German>Hinzufügen</German>
@@ -2578,6 +2593,7 @@
 			<French>Les personnes recherchées</French>
 			<Spanish>Gente Buscada</Spanish>
 			<Italian>La gente voleva</Italian>
+			<Polish>Ludzie chcieli</Polish>
 			<Russian></Russian>
 			<Portuguese>Pessoas Procuradas</Portuguese>
 			<German>Wanted</German>
@@ -2588,6 +2604,7 @@
 			<French>Citoyens</French>
 			<Spanish>Ciudadanos</Spanish>
 			<Italian>cittadini</Italian>
+			<Polish>Obywatele</Polish>
 			<Russian></Russian>
 			<Portuguese>Cidadãos</Portuguese>
 			<German>Die Bürger</German>
@@ -2598,6 +2615,7 @@
 			<French>Crimes</French>
 			<Spanish>Crimenes</Spanish>
 			<Italian>crimini</Italian>
+			<Polish>Zbrodnie</Polish>
 			<Russian></Russian>
 			<Portuguese>Crimes</Portuguese>
 			<German>Verbrechen</German>
@@ -2608,6 +2626,7 @@
 			<French>%1 a été ajouté à la liste des personnes recherchées.</French>
 			<Spanish>%1 ha sido agregado a la Lista de Busqueda.</Spanish>
 			<Italian>%1 è stato aggiunto alla lista dei ricercati.</Italian>
+			<Polish>%1 został dodany do listy pożądanego.</Polish>
 			<Russian></Russian>
 			<Portuguese>%1 foi adicionado a lista de procurados.</Portuguese>
 			<German>%1 wurde auf der Fahndungsliste hinzugefügt.</German>
@@ -2618,6 +2637,7 @@
 			<French>%1 chef (s) de 2%</French>
 			<Spanish>%1 cuenta(s) de %2</Spanish>
 			<Italian>%1 count (s) del 2%</Italian>
+			<Polish>%1 count (ów) z %2</Polish>
 			<Russian></Russian>
 			<Portuguese>%1 contagem(s) de %2</Portuguese>
 			<German>%1 count (s) von %2</German>
@@ -2628,6 +2648,7 @@
 			<French>Prix de la prime: $%1</French>
 			<Spanish>Recompensa Actual: $%1</Spanish>
 			<Italian>Corrente Bounty Prezzo: $%1</Italian>
+			<Polish>Aktualny Bounty Cena: $%1</Polish>
 			<Russian></Russian>
 			<Portuguese>Atual recompensa: R$%1</Portuguese>
 			<German>Aktuelle Bounty Preis: $%1</German>
@@ -3115,6 +3136,7 @@
 			<French>Vous avez payé $%1 pour la mise en fourrière de votre propre %2.</French>
 			<Spanish>Has pagado $%2 para embargar tu propio %1.</Spanish>
 			<Italian>Hai pagato $%1 per sequestro la propria %2.</Italian>
+			<Polish>Zapłaciłeś $%1 do zatrzymywania własną %2.</Polish>
 			<Russian></Russian>
 			<German>Du hast %1 $ bezahlt, weil du dein eigenen %2 beschlagnahmt hast.</German>
 			<Portuguese>Você pagou R$%1 para guardar seu próprio %2.</Portuguese>
@@ -3290,6 +3312,7 @@
 			<French>Vous ne pouvez pas vendre un véhicule alors qu'un le joueur est proche!</French>
 			<Spanish>No puedes vender este vehículo mientras hay un jugador cerca!</Spanish>
 			<Italian>Non si può tritare un veicolo mentre un giocatore è vicino!</Italian>
+			<Polish>Nie można posiekać pojazd podczas gdy gracz jest w pobliżu!</Polish>
 			<Russian></Russian>
 			<Portuguese>Você não pode usar o desmanche enquanto um jogador está próximo!</Portuguese>
 			<German>Sie können ein Fahrzeug hacken, während ein Spieler in der Nähe ist!</German>
@@ -3548,10 +3571,11 @@
 			<Polish>Potrzebujesz $%1 w celu przetworzenia bez licencji</Polish>
 		</Key>
 		<Key ID="STR_NOTF_NotEnoughItemProcess">
-			<Original>You don't have enough item!</Original>
+			<Original>You don't have enough items!</Original>
 			<Czech>Ty nemají dostatek položku!</Czech>
 			<Spanish>No tienes suficientes objetos!</Spanish>
 			<Italian>Non si dispone di abbastanza articolo!</Italian>
+			<Polish>Nie masz wystarczająco dużo rzeczy!</Polish>
 			<Russian></Russian>
 			<French>Vous n'avez pas assez d'item!</French>
 			<Portuguese>Você não tem itens suficientes!</Portuguese>
@@ -3564,6 +3588,7 @@
 			<Russian></Russian>
 			<French>Vous avez traité vos item(s)!</French>
 			<Italian>Hai processato i tuoi oggetti!</Italian>
+			<Polish>Przetworzeniu swój przedmiot (y)!</Polish>
 			<Portuguese>Você processou seu(s) item(s)</Portuguese>
 			<German>Sie haben Ihre Position (en) verarbeitet!</German>
 		</Key>
@@ -3727,6 +3752,7 @@
 			<French>Vous ne pouviez pas saisir les articles. Réessayer.</French>
 			<Spanish>No pudistes efectivamente, confiscar algun objeto. Prueba de nuevo.</Spanish>
 			<Italian>Non si poteva cogliere in modo efficace tutti gli articoli. Riprova.</Italian>
+			<Polish>Nie można skutecznie wykorzystać żadnych przedmiotów. Spróbuj ponownie.</Polish>
 			<Russian></Russian>
 			<Portuguese>Você não pode apreender nenhum item, efetivamente. Tente de novo.</Portuguese>
 			<German>Sie könnten nicht effektiv alle Elemente greifen. Versuch es noch einmal.</German>
@@ -3814,6 +3840,7 @@
 			<French>Vous avez téléporté à votre position sélectionnée.</French>
 			<Spanish>Te has teletransportado a la posisción seleccionada.</Spanish>
 			<Italian>Hai teletrasportato alla posizione selezionata.</Italian>
+			<Polish>Masz teleportowany do wybranej pozycji.</Polish>
 			<Russian></Russian>
 			<Portuguese>Você foi teleportado para a posição que você selecionou</Portuguese>
 			<German>Sie haben zu Ihrer gewählten Position teleportiert.</German>
@@ -4392,6 +4419,7 @@
 			<Spanish>%2 tiene un vehículo prohibido cerca de %1.</Spanish>
 			<Russian></Russian>
 			<Italian>%2 ha ritirato un veicolo blacklistato vicino %1.</Italian>
+			<Polish>%2 wrócić do czarnej listy pojazd pobliżu %1.</Polish>
 			<Portuguese>%2 tem um veículo proíbido nas proximidades %1.</Portuguese>
 			<German>%2 erhalten eine schwarze Liste gesetzt Fahrzeug in der Nähe %1 zurück.</German>
 		</Key>
@@ -4653,6 +4681,7 @@
 			<Czech>Nic nezákonného v tomto kontejneru</Czech>
 			<Spanish>Nada ilegal en este contenedor</Spanish>
 			<Italian>Nulla di illegale in questo contenitore</Italian>
+			<Polish>Nic nielegalnego w tym pojemniku.</Polish>
 			<Russian></Russian>
 			<Portuguese>Nada ilegal dentro do container</Portuguese>
 			<French>Rien d'illégal dans ce conteneur</French>
@@ -5239,6 +5268,7 @@
 			<Czech>Nejsou žádné domy u vás.</Czech>
 			<Spanish>No hay casas cerca de ti.</Spanish>
 			<Italian>Non ci sono case vicino a voi.</Italian>
+			<Polish>Brak domy w pobliżu ciebie.</Polish>
 			<Russian></Russian>
 			<French>Il n'y a aucune maison près de vous.</French>
 			<Portuguese>Não há casas perto  de você.</Portuguese>
@@ -5260,6 +5290,7 @@
 			<Czech>Nejste vlastníkem domu.</Czech>
 			<Spanish>No eres el dueño de la casa.</Spanish>
 			<Italian>Non sei il proprietario della casa.</Italian>
+			<Polish>Nie jesteś właścicielem domu.</Polish>
 			<Russian></Russian>
 			<French>Vous n'êtes pas le propriétaire de la maison.</French>
 			<Portuguese>Você não é o dono da casa.</Portuguese>
@@ -5556,6 +5587,7 @@
 			<Czech>Jsou si jisti, že jej chcete odstranit?</Czech>
 			<Spanish>Estas seguro de que lo quieres remover?</Spanish>
 			<Italian>Sei sicuro di voler rimuovere esso?</Italian>
+			<Polish>Czy na pewno chcesz go usunąć?</Polish>
 			<Russian></Russian>
 			<French>Etes-vous sûr de vouloir delete le container?</French>
 			<Portuguese>Você tem certeza que quer remover isso?</Portuguese>
@@ -5591,6 +5623,7 @@
 			<French>Faim</French>
 			<Spanish>Comida</Spanish>
 			<Italian>Cibo</Italian>
+			<Polish>Jedzenie</Polish>
 			<Russian></Russian>
 			<German>Hunger</German>
 			<Portuguese>Comida</Portuguese>
@@ -5601,6 +5634,7 @@
 			<French>Vie</French>
 			<Spanish>Vida</Spanish>
 			<Italian>Salute</Italian>
+			<Polish>Zdrowie</Polish>
 			<Russian></Russian>
 			<German>Gesundheit</German>
 			<Portuguese>Vida</Portuguese>
@@ -5611,6 +5645,7 @@
 			<French>Soif</French>
 			<Spanish>Agua</Spanish>
 			<Italian>acqua</Italian>
+			<Polish>Woda</Polish>
 			<Russian></Russian>
 			<German>Durst</German>
 			<Portuguese>Água</Portuguese>
@@ -6773,6 +6808,7 @@
 			<French>Vous devez ouvrir le conteneur avant de placer le chargeur!</French>
 			<Spanish>Debes abrir el contenedor antes de poner el explosivo!</Spanish>
 			<Italian>È necessario aprire il contenitore prima di mettere il caricabatterie!</Italian>
+			<Polish>Musisz otworzyć pojemnik przed wprowadzeniem opłat!</Polish>
 			<Russian></Russian>
 			<Portuguese>Você deve abrir o container antes de colocar o explosivo!</Portuguese>
 			<German>Sie müssen den Behälter zu öffnen, bevor die Ladung platzieren!</German>
@@ -6827,6 +6863,7 @@
 			<French>Vous devez ouvrir les portes extérieures avant de l'ouvrir!</French>
 			<Spanish>Debes abrir las puertas de afuera antes de abrir esta!</Spanish>
 			<Italian>È necessario aprire le porte esterne prima di aprirlo!</Italian>
+			<Polish>Musisz otworzyć zewnętrzne drzwi przed otwarciem!</Polish>
 			<Russian></Russian>
 			<Portuguese>Você deve abrir as portas externas antes de abrir essa!</Portuguese>
 			<German>Sie müssen die Außentüren öffnen, bevor es zu öffnen!</German>
@@ -7505,6 +7542,7 @@
 			<French>Passez en mode à canal latéral, désactiver cette fonction si vous ne voulez pas parler avec des joueurs de votre côté.</French>
 			<Spanish>Habilita/Desabilita el SideChannel, apaga esto si no quieres hablar con jugador de tu lado.</Spanish>
 			<Italian>Interruttore modalità side-channel, disattivare questa funzione se non si vuole parlare con i giocatori da parte vostra.</Italian>
+			<Polish>Przełącznik trybu side-channel, to wyłączyć, jeśli nie chce rozmawiać z graczami z boku.</Polish>
 			<Russian></Russian>
 			<Portuguese>Habilita/Desabilita o side-channel, desabilite caso você não queira conversar com os jogadores da sua facção.</Portuguese>
 			<German>Schalten Seitenkanalmodus , schalten Sie diese aus, wenn Sie nicht mit den Spielern von Ihrer Seite zu sprechen wollen.</German>
@@ -7725,6 +7763,7 @@
 			<Czech>Nádobu</Czech>
 			<Spanish>Remover Contenedor</Spanish>
 			<Italian>rimuovere Container</Italian>
+			<Polish>Wyjąć pojemnik</Polish>
 			<Russian></Russian>
 			<French>Supprimer le conteneur</French>
 			<Portuguese>Remover Caixa</Portuguese>
@@ -7847,6 +7886,7 @@
 			<Czech>Získat vrtulník</Czech>
 			<Spanish>Entrar en el Helicóptero</Spanish>
 			<Italian>Get In elicottero</Italian>
+			<Polish>Wchodzić Śmigłowiec</Polish>
 			<Russian></Russian>
 			<German>In den Helikopter einsteigen</German>
 			<French>Monter dans l'hélicoptere</French>
@@ -7901,6 +7941,7 @@
 			<Czech>Vyhledávání Container</Czech>
 			<Spanish>Buscar Contenedor</Spanish>
 			<Italian>Ricerca Container</Italian>
+			<Polish>Szukaj Kontener</Polish>
 			<Russian></Russian>
 			<French>Fouiller Container</French>
 			<Portuguese>Vasculhar Container</Portuguese>
@@ -7944,6 +7985,7 @@
 			<Czech>Ukládat vaše vozidlo</Czech>
 			<Spanish>Guardar tu Vehículo</Spanish>
 			<Italian>Conservare il veicolo</Italian>
+			<Polish>Przechowuj swój pojazd</Polish>
 			<Russian></Russian>
 			<French>Rangez votre véhicule</French>
 			<Portuguese>Guardar seu veículo</Portuguese>
@@ -7954,6 +7996,7 @@
 			<Czech>Obchod</Czech>
 			<Spanish>Guardar</Spanish>
 			<Italian>Negozio</Italian>
+			<Polish>Sklep</Polish>
 			<Russian></Russian>
 			<French>Ranger</French>
 			<Portuguese>Guardar</Portuguese>
@@ -7964,6 +8007,7 @@
 			<Czech>Čistý</Czech>
 			<Spanish>Limpiar</Spanish>
 			<Italian>Pulito</Italian>
+			<Polish>Czysty</Polish>
 			<Russian></Russian>
 			<French>Nettoyer</French>
 			<Portuguese>Limpar</Portuguese>
@@ -7975,6 +8019,7 @@
 			<French>Ce véhicule est protégé NPC.</French>
 			<Spanish>Este vehículo esta protegido.</Spanish>
 			<Italian>Questo veicolo è protetto NPC.</Italian>
+			<Polish>Pojazd ten jest chroniony NPC.</Polish>
 			<Russian></Russian>
 			<Portuguese>Esse veículo está protegido.</Portuguese>
 			<German>Dieses Fahrzeug ist NPC geschützt.</German>
@@ -8718,6 +8763,7 @@
 			<Czech>tankovací Vehicle</Czech>
 			<Spanish>Llenar Vehículo</Spanish>
 			<Italian>Fare rifornimento di veicoli</Italian>
+			<Polish>Tankowanie samochodów</Polish>
 			<Russian></Russian>
 			<Portuguese>Reabastecer Veículo</Portuguese>
 			<French>Ravitaillez en essence le Véhicule</French>
@@ -8728,6 +8774,7 @@
 			<Czech>Cena za litr: $ %1</Czech>
 			<Spanish>Precio por Litro: $%1</Spanish>
 			<Italian>Prezzo al litro: $%1</Italian>
+			<Polish>Cena za litr: $%1</Polish>
 			<Russian></Russian>
 			<Portuguese>Preço por Litro : R$%1</Portuguese>
 			<French>Prix au Litre : $%1</French>
@@ -8739,6 +8786,7 @@
 			<French>Montant Courant de carburant:</French>
 			<Spanish>Actual cantidad de combustible:</Spanish>
 			<Italian>Corrente Importo Carburante:</Italian>
+			<Polish>Aktualny Ilość paliwa:</Polish>
 			<Russian></Russian>
 			<Portuguese>Quantidade Atual de Combustível:</Portuguese>
 			<German>Aktuelle Kraftstoffmenge :</German>
@@ -8748,6 +8796,7 @@
 			<Czech>Vyberte si vůz</Czech>
 			<Spanish>Selecciona un Vehículo</Spanish>
 			<Italian>Selezionare un veicolo</Italian>
+			<Polish>Wybierz pojazd</Polish>
 			<Russian></Russian>
 			<Portuguese>Selecione um veículo</Portuguese>
 			<French>Selectionne un vehicule!</French>
@@ -8758,6 +8807,7 @@
 			<Czech>Vozidlo je příliš daleko, nebo jste se!</Czech>
 			<Spanish>El Vehículo esta muy lejos o tu estas adentro!</Spanish>
 			<Italian>Il veicolo è troppo lontano o siete in!</Italian>
+			<Polish>Pojazd jest zbyt daleko lub jesteś w!</Polish>
 			<Russian></Russian>
 			<Portuguese>O veículo está muito longe ou você está nele!</Portuguese>
 			<French>Le vehicule est trop loin ou tu es dedans!</French>
@@ -8768,6 +8818,7 @@
 			<Czech>Vozidlo je plná!</Czech>
 			<Spanish>El Vehículo esta lleno!</Spanish>
 			<Italian>Il veicolo è pieno!</Italian>
+			<Polish>Pojazd jest pełna!</Polish>
 			<Russian></Russian>
 			<Portuguese>O veículo está cheio!</Portuguese>
 			<French>Le véhicule est plein!</French>
@@ -9918,6 +9969,7 @@
 			<French>Voleur de vehicules</French>
 			<Spanish>Homicidio Vehicular</Spanish>
 			<Italian>Omicidio colposo veicolare</Italian>
+			<Polish>Kołowego Manslaughter</Polish>
 			<Russian></Russian>
 			<Portuguese>Atropelamento</Portuguese>
 			<German>Fahrlässige Tötung</German>
@@ -9928,6 +9980,7 @@
 			<French>Homicide involontaire</French>
 			<Spanish>Homicidio</Spanish>
 			<Italian>Omicidio colposo</Italian>
+			<Polish>Zabójstwo</Polish>
 			<Russian></Russian>
 			<Portuguese>Homicidio Involuntario</Portuguese>
 			<German>Totschlag</German>
@@ -9938,6 +9991,7 @@
 			<French>Échappé de prison</French>
 			<Spanish>Escaparse de la Cárcel</Spanish>
 			<Italian>Escaping Jail</Italian>
+			<Polish>Uciekając Jail</Polish>
 			<Russian></Russian>
 			<Portuguese>Fuga da Prisão</Portuguese>
 			<German>Ausbruch</German>
@@ -9948,6 +10002,7 @@
 			<French>Tentative de vol d'automobiles</French>
 			<Spanish>Atentado: Robo de Vehículo</Spanish>
 			<Italian>Theft Auto Tentativo</Italian>
+			<Polish>Próba Theft Auto</Polish>
 			<Russian></Russian>
 			<Portuguese>Tentativa de Roubo de Veiculo</Portuguese>
 			<German>Versuchter Autodiebstahl</German>
@@ -9958,6 +10013,7 @@
 			<French>L'utilisation d'explosifs illégaux</French>
 			<Spanish>Uso de Explosivos Ilegales</Spanish>
 			<Italian>L'uso di esplosivi illegali</Italian>
+			<Polish>Używanie nielegalnych materiałów wybuchowych</Polish>
 			<Russian></Russian>
 			<Portuguese>Uso de explosivos ilegais</Portuguese>
 			<German>Verwendung von illegalen Sprengstoff</German>
@@ -9968,6 +10024,7 @@
 			<French>Vol</French>
 			<Spanish>Robo</Spanish>
 			<Italian>Rapina</Italian>
+			<Polish>Rozbój</Polish>
 			<Russian></Russian>
 			<Portuguese>Roubo</Portuguese>
 			<German>Raub</German>
@@ -9978,6 +10035,7 @@
 			<French>Enlèvement</French>
 			<Spanish>Secuestro</Spanish>
 			<Italian>Rapimento</Italian>
+			<Polish>Porwanie</Polish>
 			<Russian></Russian>
 			<Portuguese>Sequestro</Portuguese>
 			<German>Entführung</German>
@@ -9991,6 +10049,7 @@
 			<Portuguese>Tentativa de Sequestro</Portuguese>
 			<German>Versuchte Entführung</German>
 			<Italian>Tentativo di rapimento</Italian>
+			<Polish>Próba porwania</Polish>
 		</Key>
 		<Key ID="STR_Crime_390">
 			<Original>Public Intoxication</Original>
@@ -10001,6 +10060,7 @@
 			<Portuguese>Uso de Droga em Publico</Portuguese>
 			<German>Öffentlicher Drogenmissbrauch</German>
 			<Italian>Uso di stupefacenti in pubblico</Italian>
+			<Polish>Upojenie publiczny</Polish>
 		</Key>
 		<Key ID="STR_Crime_487">
 			<Original>Grand Theft</Original>
@@ -10008,6 +10068,7 @@
 			<French>Vol de voiture</French>
 			<Spanish>Robo Mayor</Spanish>
 			<Italian>grande furto</Italian>
+			<Polish>Wielka kradzież</Polish>
 			<Russian></Russian>
 			<Portuguese>Grande Roubo</Portuguese>
 			<German>Auto Diebstahl</German>
@@ -10018,6 +10079,7 @@
 			<French>Petit vol</French>
 			<Spanish>Robo Menor</Spanish>
 			<Italian>piccoli furti</Italian>
+			<Polish>Drobnych kradzieży</Polish>
 			<Russian></Russian>
 			<Portuguese>Pequeno Roubo</Portuguese>
 			<German>Kleiner Diebstahl</German>
@@ -10028,6 +10090,7 @@
 			<French>Délit de fuite</French>
 			<Spanish>Pega y Corre</Spanish>
 			<Italian>Mordi e fuggi</Italian>
+			<Polish>Uderz i uciekaj</Polish>
 			<Russian></Russian>
 			<Portuguese>Fugir de Batida</Portuguese>
 			<German>Fahrerflucht</German>
@@ -10038,6 +10101,7 @@
 			<French>Possession de drogues</French>
 			<Spanish>Posesión de Drogas</Spanish>
 			<Italian>possesso di droga</Italian>
+			<Polish>Posiadanie narkotyków</Polish>
 			<Russian></Russian>
 			<Portuguese>Posse de Droga</Portuguese>
 			<German>Drogenbesitz</German>
@@ -10051,6 +10115,7 @@
 			<Portuguese>Tentativa de Trafico</Portuguese>
 			<German>Versuchter Drogenhandel</German>
 			<Italian>Tentativo di spaccio</Italian>
+			<Polish>Zamiarem dystrybucji</Polish>
 		</Key>
 		<Key ID="STR_Crime_483">
 			<Original>Drug Trafficking</Original>
@@ -10061,6 +10126,7 @@
 			<Portuguese>Trafico de Drogas</Portuguese>
 			<German>Drogenhandel</German>
 			<Italian>Vendita di droga</Italian>
+			<Polish>Handel narkotykami</Polish>
 		</Key>
 		<Key ID="STR_Crime_459">
 			<Original>Burglary</Original>
@@ -10068,6 +10134,7 @@
 			<French>Cambriolage</French>
 			<Spanish>Robo de Casa</Spanish>
 			<Italian>furto con scasso</Italian>
+			<Polish>Włamanie</Polish>
 			<Russian></Russian>
 			<Portuguese>Arrombamento</Portuguese>
 			<German>Einbruch</German>
@@ -10081,6 +10148,7 @@
 			<Portuguese>Evasão Fiscal</Portuguese>
 			<German>Steuerhinterziehung</German>
 			<Italian>Evasione delle tasse</Italian>
+			<Polish>Unikanie podatków</Polish>
 		</Key>
 		<Key ID="STR_Crime_667">
 			<Original>Terrorism</Original>
@@ -10091,6 +10159,7 @@
 			<Portuguese>Terrorismo</Portuguese>
 			<German>Terrorismus</German>
 			<Italian>Terrorismo</Italian>
+			<Polish>Terroryzm</Polish>
 		</Key>
 		<Key ID="STR_Crime_668">
 			<Original>Unlicensed Hunting</Original>
@@ -10101,6 +10170,7 @@
 			<Portuguese>Caça sem Licença</Portuguese>
 			<German>Jagen ohne Lizenz</German>
 			<Italian>Caccia senza licenza</Italian>
+			<Polish>Polowanie nielicencjonowane</Polish>
 		</Key>
 		<Key ID="STR_Crime_919">
 			<Original>Organ Theft</Original>
@@ -10108,6 +10178,7 @@
 			<French>Vol d'organes</French>
 			<Spanish>Robo de Organos</Spanish>
 			<Italian>organo furto</Italian>
+			<Polish>Narząd kradzieżą</Polish>
 			<Russian></Russian>
 			<Portuguese>Roubo de Orgãos</Portuguese>
 			<German>Organ Diebstahl</German>
@@ -10118,6 +10189,7 @@
 			<French>Tentative de vol d'organes</French>
 			<Spanish>Atentado: Robo de Organos</Spanish>
 			<Italian>Tentativo furto di organi</Italian>
+			<Polish>Próba kradzieży narządów</Polish>
 			<Russian></Russian>
 			<Portuguese>Tentativa de Roubo de Orgãos</Portuguese>
 			<German>Versuchte Organ-Diebstahl</German>
@@ -10131,15 +10203,17 @@
 			<Portuguese>Dirigir sem Licença</Portuguese>
 			<German>Fahren ohne Führerschein</German>
 			<Italian>Guida senza patente</Italian>
+			<Polish>Jazda bez licencji</Polish>
 		</Key>
 		<Key ID="STR_Crime_2">
-			<Original>Driving in the wrong way of the street</Original>
+			<Original>Driving on the wrong side of the road</Original>
 			<Czech>Jízda v špatným směrem do ulice</Czech>
 			<Spanish>Conducir en el lado incorrecto de la calle</Spanish>
 			<Russian></Russian>
 			<French>Conduite sur le mauvais côté de la route</French>
 			<Portuguese>Dirigindo no sentido contrario</Portuguese>
 			<Italian>Guida Contromano</Italian>
+			<Polish>Jazda po niewłaściwej stronie drogi</Polish>
 			<German>Fahren in die falsche Richtung der Straße</German>
 		</Key>
 		<Key ID="STR_Crime_3">
@@ -10151,6 +10225,7 @@
 			<Portuguese>Não respeitar as sinalizações</Portuguese>
 			<German>Nicht unter Beachtung der Signalisierungen</German>
 			<Italian>Mancato rispetto dei segnali stradali</Italian>
+			<Polish>Nie przestrzegając sygnalizacji czy</Polish>
 		</Key>
 		<Key ID="STR_Crime_4">
 			<Original>Speeding</Original>
@@ -10161,6 +10236,7 @@
 			<Portuguese>Excesso de Velocidade</Portuguese>
 			<German>Geschwindigkeitsüberschreitung</German>
 			<Italian>Eccesso di velocità</Italian>
+			<Polish>Przyśpieszenie</Polish>
 		</Key>
 		<Key ID="STR_Crime_5">
 			<Original>No headlight in the night</Original>
@@ -10171,6 +10247,7 @@
 			<Portuguese>Farois Apagados Durante a Noite</Portuguese>
 			<German>Fahren ohne Licht</German>
 			<Italian>Luci spente durante la notte</Italian>
+			<Polish>Brak świateł w nocy</Polish>
 		</Key>
 		<Key ID="STR_Crime_6">
 			<Original>Driving kart without helmet</Original>
@@ -10181,6 +10258,7 @@
 			<Portuguese>Dirigindo Kart Sem Capacete</Portuguese>
 			<German>Fahren ohne Helm</German>
 			<Italian>Guida di Kart senza casco</Italian>
+			<Polish>Jazda bez kasku gokarta</Polish>
 		</Key>
 		<Key ID="STR_Crime_7">
 			<Original>Badly parked vehicle</Original>
@@ -10191,6 +10269,7 @@
 			<Portuguese>Veículo Mal Estacionado</Portuguese>
 			<German>Parksünder</German>
 			<Italian>Veicolo mal parcheggiato</Italian>
+			<Polish>Źle zaparkowany samochód</Polish>
 		</Key>
 		<Key ID="STR_Crime_8">
 			<Original>Rebel vehicle (Not armed)</Original>
@@ -10201,6 +10280,7 @@
 			<Portuguese>Veículo Rebelde(Não Armado)</Portuguese>
 			<German>Rebelen Fahrzeug (nicht bewaffnet)</German>
 			<Italian>Veicolo blindato(Non armato)</Italian>
+			<Polish>Rebel pojeździe (nie czuwa)</Polish>
 		</Key>
 		<Key ID="STR_Crime_9">
 			<Original>Grand Theft (Civilian Vehicle)</Original>
@@ -10211,6 +10291,7 @@
 			<Portuguese>Roubo de Veículo (Veículo Civil)</Portuguese>
 			<German>Schwerer Diebstahl (Zivilfahrzeug)</German>
 			<Italian>Furto di veicolo (Civile)</Italian>
+			<Polish>Grand Theft (Cywilny Vehicle)</Polish>
 
 		</Key>
 		<Key ID="STR_Crime_10">
@@ -10222,6 +10303,7 @@
 			<Portuguese>Roubo de Veículo(Militar)</Portuguese>
 			<German>Schwerer Diebstahl (Dienstfahrzeug)</German>
 			<Italian>Furto di veicolo militare</Italian>
+			<Polish>Grand Theft (pojazd wojskowy)</Polish>
 		</Key>
 		<Key ID="STR_Crime_11">
 			<Original>Armored Vehicle</Original>
@@ -10232,6 +10314,7 @@
 			<Portuguese>Veículo Armado</Portuguese>
 			<German>Panzerfahrzeug</German>
 			<Italian>Veicolo D'assalto</Italian>
+			<Polish>Opancerzony pojazd</Polish>
 		</Key>
 		<Key ID="STR_Crime_12">
 			<Original>Flying over the city without authorization</Original>
@@ -10242,6 +10325,7 @@
 			<Portuguese>Sobrevoando sobre a cidade sem autorização</Portuguese>
 			<German>Fliegen über die Stadt ohne Genehmigung</German>
 			<Italian>Guida di velivolo su città abitata senza autorizzazione</Italian>
+			<Polish>Latające nad miastem bez zezwolenia</Polish>
 		</Key>
 		<Key ID="STR_Crime_13">
 			<Original>Closing the street without authorization</Original>
@@ -10252,12 +10336,14 @@
 			<Portuguese>Fechar Rua Sem Autorização</Portuguese>
 			<German>Das Schließen der Straße ohne Genehmigung</German>
 			<Italian>Impedimento del traffico senza permesso</Italian>
+			<Polish>Zamknięcie ulicy bez zezwolenia</Polish>
 		</Key>
 		<Key ID="STR_Crime_14">
 			<Original>Open carry in city (Legal Weapon)</Original>
 			<Czech>open carry ve městě (právní Weapon)</Czech>
 			<Spanish>Cargar Arma Abiertamente en la Ciudad (Arma Legal)</Spanish>
 			<Italian>Aprire il trasporto in città (Arma Legale)</Italian>
+			<Polish>Otwarty Carry w mieście (prawny Weapon)</Polish>
 			<Russian></Russian>
 			<French>Arme légale visible en ville</French>
 			<Portuguese>Portar em Cidades(Arma Legal)</Portuguese>
@@ -10272,12 +10358,14 @@
 			<Portuguese>Arma Rebelde</Portuguese>
 			<German>Rebellen Waffe</German>
 			<Italian>Arma Ribelle</Italian>
+			<Polish>Rebel bronią</Polish>
 		</Key>
 		<Key ID="STR_Crime_16">
 			<Original>Illegal clothing</Original>
 			<Czech>Nelegální oblečení</Czech>
 			<Spanish>Ropa Ilegal</Spanish>
 			<Italian>abbigliamento illegale</Italian>
+			<Polish>Nielegalna odzież</Polish>
 			<Russian></Russian>
 			<French>Vêtements illégaux</French>
 			<Portuguese>Roupas Ilegais</Portuguese>
@@ -10288,6 +10376,7 @@
 			<Czech>Schovává tvář (Mask)</Czech>
 			<Spanish>Ocultar su Cara (Máscara)</Spanish>
 			<Italian>Nascondere faccia (Mask)</Italian>
+			<Polish>Ukrywając twarz (maska)</Polish>
 			<Russian></Russian>
 			<French>Cacher son visage</French>
 			<Portuguese>Esconder o Rosto(Mascara)</Portuguese>
@@ -10298,6 +10387,7 @@
 			<Czech>Odmítá spolupracovat</Czech>
 			<Spanish>Reusa a Cooperar</Spanish>
 			<Italian>Si rifiuta di collaborare</Italian>
+			<Polish>Odmawia współpracy</Polish>
 			<Russian></Russian>
 			<French>Refus d'obtempérer</French>
 			<Portuguese>Recusou-se a Cooperar</Portuguese>
@@ -10308,6 +10398,7 @@
 			<Czech>Zavinit nehodu a ujet</Czech>
 			<Spanish>Golpea y Corre</Spanish>
 			<Italian>Mordi e fuggi</Italian>
+			<Polish>Uderz i uciekaj</Polish>
 			<Russian></Russian>
 			<French>Délit de fuite</French>
 			<Portuguese>Bater e Fugir</Portuguese>
@@ -10322,6 +10413,7 @@
 			<Portuguese>Insulto a Civil</Portuguese>
 			<German>Beleidigung</German>
 			<Italian>Insulto a civile</Italian>
+			<Polish>Obrażanie cywilem</Polish>
 		</Key>
 		<Key ID="STR_Crime_21">
 			<Original>Insulting a soldier</Original>
@@ -10332,6 +10424,7 @@
 			<Portuguese>Insulto as Autoridades</Portuguese>
 			<German>Beamtenbeleidigung</German>
 			<Italian>Insulto a pubblico ufficiale</Italian>
+			<Polish>Znieważenie żołnierza</Polish>
 		</Key>
 		<Key ID="STR_Crime_22">
 			<Original>Drug dealing</Original>
@@ -10342,6 +10435,7 @@
 			<Portuguese>Trafico de Drogas</Portuguese>
 			<German>Drogenhandel</German>
 			<Italian>Traffico di droga</Italian>
+			<Polish>Handel narkotykami</Polish>
 		</Key>
 		<Key ID="STR_Crime_23">
 			<Original>Federal Reserve breaking</Original>
@@ -10352,12 +10446,14 @@
 			<Portuguese>Invasão a Reserva Federal</Portuguese>
 			<German>Bankeinbruch</German>
 			<Italian>Rapina alla Riserva Federale</Italian>
+			<Polish>Rezerwa Federalna łamanie</Polish>
 		</Key>
 		<Key ID="STR_Crime_24">
 			<Original>Killing of a civilian</Original>
 			<Czech>Zabíjení civilní</Czech>
 			<Spanish>Homicidio de un Civil</Spanish>
 			<Italian>Uccisione di un civile</Italian>
+			<Polish>Zabójstwo cywilnej</Polish>
 			<Russian></Russian>
 			<French>Meurtre d'un civil</French>
 			<Portuguese>Matou um Civil</Portuguese>
@@ -10372,6 +10468,7 @@
 			<Portuguese>Matou um Policial</Portuguese>
 			<German>Das Töten eines Beamten</German>
 			<Italian>Omicidio di un agente</Italian>
+			<Polish>Zabijając żołnierza</Polish>
 		</Key>
 	</Package>
 	<Package name="FuelTank_Mission">
@@ -10381,6 +10478,7 @@
 			<French>Stockage de gaz</French>
 			<Spanish>Almacenamiento de Combustible</Spanish>
 			<Italian>stoccaggio di gas</Italian>
+			<Polish>Magazynów gazu</Polish>
 			<Russian></Russian>
 			<German>Treibstofflager</German>
 			<Portuguese>Posto de Combustível</Portuguese>
@@ -10391,6 +10489,7 @@
 			<French>La fourniture</French>
 			<Spanish>Suministro</Spanish>
 			<Italian>Fornitura</Italian>
+			<Polish>Dostawa</Polish>
 			<Russian></Russian>
 			<German>Liefern</German>
 			<Portuguese>Abastecer</Portuguese>
@@ -10401,6 +10500,7 @@
 			<French>Deposer</French>
 			<Spanish>Guardar</Spanish>
 			<Italian>Negozio</Italian>
+			<Polish>Sklep</Polish>
 			<Russian></Russian>
 			<German>Lagern</German>
 			<Portuguese>Guardar</Portuguese>
@@ -10411,6 +10511,7 @@
 			<French>Arrêtez</French>
 			<Spanish>Parar</Spanish>
 			<Italian>Stop</Italian>
+			<Polish>Zatrzymać</Polish>
 			<Russian></Russian>
 			<German>Stoppen</German>
 			<Portuguese>Parar</Portuguese>
@@ -10421,6 +10522,7 @@
 			<French>Tanker est déjà en cours d'utilisation.</French>
 			<Spanish>El tanque ya esta siendo usado.</Spanish>
 			<Italian>Petroliera è già in uso.</Italian>
+			<Polish>Cysterna jest już w użyciu.</Polish>
 			<Russian></Russian>
 			<German>Tankwagen wird bereits benutzt.</German>
 			<Portuguese>Os tanques já estão em uso.</Portuguese>
@@ -10431,6 +10533,7 @@
 			<French>Gas station est en cours d'utilisation.</French>
 			<Spanish>La estación ya se esta usando.</Spanish>
 			<Italian>Stazione di gas è in uso.</Italian>
+			<Polish>Stacja benzynowa jest w użyciu.</Polish>
 			<Russian></Russian>
 			<German>Tankstelle wird bereits beliefert.</German>
 			<Portuguese>O posto já está sendo usado.</Portuguese>
@@ -10441,6 +10544,7 @@
 			<French>Tanker est vide.</French>
 			<Spanish>El tanque esta vacío.</Spanish>
 			<Italian>Cisterna è vuoto.</Italian>
+			<Polish>Cysterna jest pusta.</Polish>
 			<Russian></Russian>
 			<German>Treibstofftank ist leer.</German>
 			<Portuguese>Os tanques estão vazios.</Portuguese>
@@ -10451,6 +10555,7 @@
 			<French>Tankers est plein.</French>
 			<Spanish>El Tanque esta lleno.</Spanish>
 			<Italian>Tankers è piena.</Italian>
+			<Polish>Zbiornikowce jest pełna.</Polish>
 			<Russian></Russian>
 			<German>Treibstofftank ist voll.</German>
 			<Portuguese>Os tanques estão cheios.</Portuguese>
@@ -10461,6 +10566,7 @@
 			<French>Gas station a suffisamment de carburant.</French>
 			<Spanish>La estación tiene suficiente gasolina.</Spanish>
 			<Italian>Distributore di benzina ha abbastanza carburante.</Italian>
+			<Polish>Stacja benzynowa ma wystarczającą ilość paliwa.</Polish>
 			<Russian></Russian>
 			<German>Tankstelle hat genug Treibstoff.</German>
 			<Portuguese>O posto tem combustível suficiente.</Portuguese>
@@ -10471,6 +10577,7 @@
 			<French>Cette station de gaz est fourni par un pipeline</French>
 			<Spanish>Esta estación es suministrada por una tubería.</Spanish>
 			<Italian>Questa stazione di gas è alimentato attraverso una tubazione.</Italian>
+			<Polish>Ta stacja gaz jest dostarczany rurociągiem.</Polish>
 			<Russian></Russian>
 			<German>Diese Tankstelle wird über eine Pipeline versorgt.</German>
 			<Portuguese>Esse posto é abastecido através de uma mangueira.</Portuguese>
@@ -10481,6 +10588,7 @@
 			<French>Activité abandonnée.</French>
 			<Spanish>Operación discontinuada.</Spanish>
 			<Italian>discontinued operation.</Italian>
+			<Polish>Działalność zaniechana.</Polish>
 			<Russian></Russian>
 			<German>Vorgang abgebrochen.</German>
 			<Portuguese>Operação descontinuada.</Portuguese>
@@ -10491,6 +10599,7 @@
 			<French>Votre part est de $%1.</French>
 			<Spanish>Tu ganancia es $%1.</Spanish>
 			<Italian>La vostra quota è di $%1.</Italian>
+			<Polish>Twój udział jest $%1.</Polish>
 			<Russian></Russian>
 			<German>Dein Anteil beträgt $%1.</German>
 			<Portuguese>A sua parte é de R$%1.</Portuguese>
