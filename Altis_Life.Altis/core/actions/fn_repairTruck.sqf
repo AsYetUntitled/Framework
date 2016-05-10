@@ -10,7 +10,7 @@ private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test"];
 _veh = cursorObject;
 life_interrupted = false;
 if(isNull _veh) exitWith {};
-if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) then {
+if((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) then {
     if(life_inv_toolkit > 0) then {
         life_action_inUse = true;
         _displayName = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _veh),"displayName");

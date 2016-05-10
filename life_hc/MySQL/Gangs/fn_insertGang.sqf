@@ -16,7 +16,7 @@ params [
 ];
 _group = group _ownerID;
 
-if(isNull _ownerID OR EQUAL(_uid,"") OR EQUAL(_gangName,"")) exitWith {}; //Fail
+if(isNull _ownerID || EQUAL(_uid,"") || EQUAL(_gangName,"")) exitWith {}; //Fail
 
 _gangName = [_gangName] call HC_fnc_mresString;
 _query = format["SELECT id FROM gangs WHERE name='%1' AND active='1'",_gangName];

@@ -55,7 +55,7 @@ _unit spawn {
         };
     _RespawnBtn ctrlEnable false;
     waitUntil {_Timer ctrlSetText format[localize "STR_Medic_Respawn",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
-    round(_maxTime - time) <= 0 OR isNull _this};
+    round(_maxTime - time) <= 0 || isNull _this};
     _RespawnBtn ctrlEnable true;
     _Timer ctrlSetText localize "STR_Medic_Respawn_2";
 };

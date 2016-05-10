@@ -12,7 +12,7 @@ params [
     ["_shooter",objNull,[objNull]]
 ];
 
-if(isNull _unit OR isNull _shooter) exitWith {player allowDamage true; life_istazed = false;};
+if(isNull _unit || isNull _shooter) exitWith {player allowDamage true; life_istazed = false;};
 
 if(_shooter isKindOf "Man" && alive player) then {
     if(!life_istazed) then {

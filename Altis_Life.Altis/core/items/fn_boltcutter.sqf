@@ -11,7 +11,7 @@ _building = param [0,ObjNull,[ObjNull]];
 
 if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
-if(((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) && ({side _x == west} count playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
+if(((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) && ({side _x == west} count playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
     hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))]
 };
 if((typeOf _building) == "Land_Research_house_V1_F" && (nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) GVAR ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
@@ -28,7 +28,7 @@ for "_i" from 1 to _doors do {
 if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 if((_building GVAR [format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
-if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then {
+if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then {
     [[1,2],"STR_ISTR_Bolt_AlertFed",true,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 } else {
     [0,"STR_ISTR_Bolt_AlertHouse",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
@@ -68,7 +68,7 @@ for "_i" from 0 to 1 step 0 do {
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-    if(_cP >= 1 OR !alive player) exitWith {};
+    if(_cP >= 1 || !alive player) exitWith {};
     if(life_istazed) exitWith {}; //Tazed
     if(life_isknocked) exitWith {}; //Knocked
     if(life_interrupted) exitWith {};
@@ -77,7 +77,7 @@ for "_i" from 0 to 1 step 0 do {
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;};
+if(!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
 if((player GVAR ["restrained",false])) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 life_boltcutter_uses = life_boltcutter_uses + 1;

@@ -13,7 +13,7 @@ _price = [_this,2,500,[0]] call BIS_fnc_param;
 _cash = [_this,3,0,[0]] call BIS_fnc_param;
 
 //Error checks
-if(isNull _vehicle OR isNull _unit) exitWith  {
+if(isNull _vehicle || isNull _unit) exitWith  {
     life_action_inUse = false;
     PVAR_ID("life_action_inUse",owner _unit);
 };

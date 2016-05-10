@@ -9,7 +9,7 @@
 private["_vehicle","_vehicleInfo","_value","_list"];
 _vehicle = cursorObject;
 _list = ["Air","Ship","LandVehicle"];
-if(isNull _vehicle OR {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
+if(isNull _vehicle || {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
 
 _vehicleInfo = _vehicle GVAR ["Trunk",[]];
 if(EQUAL(count _vehicleInfo,0)) exitWith {hint localize "STR_Cop_VehEmpty"};

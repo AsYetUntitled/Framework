@@ -21,7 +21,7 @@ disableSerialization;
 
 _curTarget = param [0,ObjNull,[ObjNull]];
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-_isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
+_isVehicle = if((_curTarget isKindOf "landVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
 if(!_isVehicle) exitWith {closeDialog 0;};
 
 _display = findDisplay 37400;
@@ -96,7 +96,7 @@ if(playerSide == west) then {
     if(typeOf _curTarget == "O_Truck_03_device_F") then {
         _Btn3 ctrlSetText localize "STR_vInAct_DeviceMine";
         _Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_deviceMine";
-        if(!isNil {(_curTarget getVariable "mining")} OR !local _curTarget && {_curTarget in life_vehicles}) then {
+        if(!isNil {(_curTarget getVariable "mining")} || !local _curTarget && {_curTarget in life_vehicles}) then {
             _Btn3 ctrlEnable false;
         } else {
             _Btn3 ctrlEnable true;

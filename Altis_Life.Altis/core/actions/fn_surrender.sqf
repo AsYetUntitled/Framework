@@ -18,7 +18,7 @@ if(player GVAR ["playerSurrender",false]) then {
 
 while {player GVAR ["playerSurrender",false]} do {
     player playMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
-    if(!alive player OR (vehicle player) != player) then { player SVAR ["playerSurrender",false,true]; };
+    if(!alive player || (vehicle player) != player) then { player SVAR ["playerSurrender",false,true]; };
 };
 
 player playMoveNow "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";

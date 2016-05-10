@@ -10,7 +10,7 @@
 */
 private["_ctrl","_num","_index","_data","_old","_value","_weight","_diff"];
 disableSerialization;
-if(isNull life_trunk_vehicle OR !alive life_trunk_vehicle) exitWith {hint localize "STR_MISC_VehDoesntExist"};
+if(isNull life_trunk_vehicle || !alive life_trunk_vehicle) exitWith {hint localize "STR_MISC_VehDoesntExist"};
 if(!alive player) exitWith {closeDialog 0;};
 if((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith {  closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 

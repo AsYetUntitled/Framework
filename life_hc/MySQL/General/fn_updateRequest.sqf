@@ -21,7 +21,7 @@ _alive = [_this,9,0,[0]] call BIS_fnc_param;
 _position = [_this,10,[],[[]]] call BIS_fnc_param;
 
 //Get to those error checks.
-if((_uid == "") OR (_name == "")) exitWith {};
+if((_uid == "") || (_name == "")) exitWith {};
 
 //Parse and setup some data.
 _name = [_name] call HC_fnc_mresString;

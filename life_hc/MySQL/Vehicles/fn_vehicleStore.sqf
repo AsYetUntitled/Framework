@@ -16,7 +16,7 @@ _storetext = [_this,3,"",[""]] call BIS_fnc_param;
 _ownerID = _unit GVAR["life_clientID",-1];
 _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
-if(isNull _vehicle OR isNull _unit) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.
+if(isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.
 _vInfo = _vehicle getVariable["dbInfo",[]];
 
 if(count _vInfo > 0) then {
@@ -90,7 +90,7 @@ if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_virtualItems"), 1)) then {
 
             _isIllegal = if (_isIllegal == 1) then { true }    else { false };
 
-            if (((_x select 0) in _resourceItems) OR  (_isIllegal)) then {
+            if (((_x select 0) in _resourceItems) ||  (_isIllegal)) then {
                 _items pushback[(_x select 0), (_x select 1)];
                 _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;

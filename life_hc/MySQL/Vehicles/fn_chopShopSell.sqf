@@ -17,7 +17,7 @@ _cash = [_this,3,0,[0]] call BIS_fnc_param;
 _ownerUnit = _unit getVariable "life_clientID";
 
 //Error checks
-if(isNull _vehicle OR isNull _unit) exitWith  {
+if(isNull _vehicle || isNull _unit) exitWith  {
     life_action_inUse = false;
     PVAR_ID("life_action_inUse",_ownerUnit);
 };

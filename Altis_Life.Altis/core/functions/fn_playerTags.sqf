@@ -11,7 +11,7 @@ private["_ui","_units","_masks"];
 #define iconID 78000
 #define scale 0.8
 
-if(visibleMap OR {!alive player} OR {dialog}) exitWith {
+if(visibleMap || {!alive player} || {dialog}) exitWith {
     500 cutText["","PLAIN"];
 };
 
@@ -37,7 +37,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
         };
         _sPos = worldToScreen _pos;
         _distance = _pos distance player;
-        if(!((headgear _x) in _masks OR (goggles _x) in _masks OR (uniform _x) in _masks)) then {
+        if(!((headgear _x) in _masks || (goggles _x) in _masks || (uniform _x) in _masks)) then {
             if(count _sPos > 1 && {_distance < 15}) then {
                 _text = switch (true) do {
                     case (_x in (units grpPlayer) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x GVAR ["realname",name _x])];};

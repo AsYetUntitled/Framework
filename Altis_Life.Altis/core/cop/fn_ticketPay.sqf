@@ -6,7 +6,7 @@
     Description:
     Pays the ticket.
 */
-if(isNil "life_ticket_val" OR isNil "life_ticket_cop") exitWith {};
+if(isNil "life_ticket_val" || isNil "life_ticket_cop") exitWith {};
 if(CASH < life_ticket_val) exitWith {
     if(BANK < life_ticket_val) exitWith {
         hint localize "STR_Cop_Ticket_NotEnough";

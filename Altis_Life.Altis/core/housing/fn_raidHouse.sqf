@@ -9,7 +9,7 @@
 private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
 _house = param [0,ObjNull,[ObjNull]];
 
-if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
+if(isNull _house || !(_house isKindOf "House_F")) exitWith {};
 if(isNil {(_house GVAR "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
 _uid = SEL((_house GVAR "house_owner"),0);
@@ -41,7 +41,7 @@ for "_i" from 0 to 1 step 0 do {
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-    if(_cP >= 1 OR !alive player) exitWith {};
+    if(_cP >= 1 || !alive player) exitWith {};
     if(player distance _house > 13) exitWith {};
 };
 

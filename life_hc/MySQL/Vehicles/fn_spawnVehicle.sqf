@@ -24,7 +24,7 @@ _side = side _unit;
 
 //_unit = owner _unit;
 
-if(EQUAL(_vid,-1) OR EQUAL(_pid,"")) exitWith {};
+if(EQUAL(_vid,-1) || EQUAL(_pid,"")) exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;

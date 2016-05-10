@@ -13,7 +13,7 @@ _value = [_this,1,-1,[0]] call BIS_fnc_param;
 _cWeight = [_this,2,-1,[0]] call BIS_fnc_param;
 _mWeight = [_this,3,-1,[0]] call BIS_fnc_param;
 
-if(EQUAL(_item,"") OR EQUAL(_value,-1) OR EQUAL(_cWeight,-1) OR EQUAL(_mWeight,-1)) exitWith {};
+if(EQUAL(_item,"") || EQUAL(_value,-1) || EQUAL(_cWeight,-1) || EQUAL(_mWeight,-1)) exitWith {};
 _weight = ([_item] call life_fnc_itemWeight) * _value;
 _sum = _value;
 

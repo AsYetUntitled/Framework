@@ -14,7 +14,7 @@ params [
 ];
 _group = group _ownerID;
 
-if(isNull _ownerID OR EQUAL(_uid,"") OR EQUAL(_gangName,"")) exitWith {}; //Fail
+if(isNull _ownerID || EQUAL(_uid,"") || EQUAL(_gangName,"")) exitWith {}; //Fail
 
 _ownerID = owner _ownerID;
 _gangName = [_gangName] call DB_fnc_mresString;

@@ -17,7 +17,7 @@ params [
 ];
 
 //Error checks
-if((_uid == "") OR (_name == "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
+if((_uid == "") || (_name == "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
 if(isNull _returnToSender) exitWith {systemChat "ReturnToSender is Null!";}; //No one to send this to!
 
 _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];

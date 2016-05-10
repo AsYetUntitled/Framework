@@ -61,7 +61,7 @@ compileFinal "
     private[""_unit"",""_group""];
     _unit = _this select 0;
     _group = _this select 1;
-    if(isNil ""_unit"" OR isNil ""_group"") exitWith {};
+    if(isNil ""_unit"" || isNil ""_group"") exitWith {};
     if(player == _unit && (group player) == _group) then
     {
         life_my_gang = ObjNull;
@@ -78,7 +78,7 @@ compileFinal "
     _vehicle = _this select 0;
     _unit = _this select 1;
     _giver = _this select 2;
-    if(isNil ""_unit"" OR isNil ""_giver"") exitWith {};
+    if(isNil ""_unit"" || isNil ""_giver"") exitWith {};
     if(player == _unit && !(_vehicle in life_vehicles)) then
     {
         _name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
@@ -95,7 +95,7 @@ compileFinal "
     private[""_unit"",""_group""];
     _unit = _this select 0;
     _group = _this select 1;
-    if(isNil ""_unit"" OR isNil ""_group"") exitWith {};
+    if(isNil ""_unit"" || isNil ""_group"") exitWith {};
     if(player == _unit && (group player) == _group) then
     {
         player setRank ""COLONEL"";
@@ -111,7 +111,7 @@ compileFinal "
     private[""_unit"",""_group""];
     _unit = _this select 0;
     _group = _this select 1;
-    if(isNil ""_unit"" OR isNil ""_group"") exitWith {};
+    if(isNil ""_unit"" || isNil ""_group"") exitWith {};
     if(player == _unit && (group player) == _group) then
     {
         life_my_gang = ObjNull;
@@ -355,7 +355,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
                 _Markers setMarkerColorLocal (""ColorCivilian"");
               };
               if (side _x == west) then {
-                _Markers setMarkerColorLocal (""ColorBLUFOR"");
+                _Markers setMarkerColorLocal (""ColorBLUF||"");
               };
               _Markers setMarkerSizeLocal[1, 1];
               life_markers_Vehicles pushback _x;
@@ -394,7 +394,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
             _Markers setMarkerColorLocal (""ColorCivilian"");
           };
           if (side _x == west) then {
-            _Markers setMarkerColorLocal (""ColorBLUFOR"");
+            _Markers setMarkerColorLocal (""ColorBLUF||"");
           };
           _Markers setMarkerTextLocal format[""%1---%2"", name _x, round(_x distance player)];
           if (_x == player) then {

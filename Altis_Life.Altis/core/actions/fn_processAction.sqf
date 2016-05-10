@@ -10,7 +10,7 @@ private["_vendor","_type","_itemInfo","_oldItem","_newItem","_cost","_upp","_has
 _vendor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,3,"",[""]] call BIS_fnc_param;
 //Error check
-if(isNull _vendor OR EQUAL(_type,"") OR (player distance _vendor > 10)) exitWith {};
+if(isNull _vendor || EQUAL(_type,"") || (player distance _vendor > 10)) exitWith {};
 
 
 if(isClass (missionConfigFile >> "ProcessAction" >> _type)) then {

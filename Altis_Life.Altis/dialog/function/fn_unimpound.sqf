@@ -29,11 +29,11 @@ switch(playerSide) do {
     case civilian: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");};
     case west: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");};
     case independent: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");};
-    case east: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");};
+    case east: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPF||");};
 };
 _price = _purchasePrice * _storageFee;
 
-if(!(_price isEqualType 0) OR _price < 1) then {_price = 500;};
+if(!(_price isEqualType 0) || _price < 1) then {_price = 500;};
 if(BANK < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
 
 if(life_garage_sp isEqualType []) then {

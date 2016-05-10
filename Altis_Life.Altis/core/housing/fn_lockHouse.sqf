@@ -8,7 +8,7 @@
 */
 private["_house"];
 _house = param [0,ObjNull,[ObjNull]];
-if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
+if(isNull _house || !(_house isKindOf "House_F")) exitWith {};
 
 _state = _house GVAR ["locked",true];
 if(_state) then {

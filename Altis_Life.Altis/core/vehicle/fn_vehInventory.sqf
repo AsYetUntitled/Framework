@@ -8,7 +8,7 @@
 */
 private["_veh","_tInv","_pInv","_veh_data"];
 _veh = param [0,ObjNull,[ObjNull]];
-if(isNull _veh OR !alive _veh) exitWith {closeDialog 0;}; //If null / dead exit menu
+if(isNull _veh || !alive _veh) exitWith {closeDialog 0;}; //If null / dead exit menu
 disableSerialization;
 
 _tInv = CONTROL(3500,3502);

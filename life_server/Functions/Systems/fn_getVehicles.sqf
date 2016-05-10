@@ -13,7 +13,7 @@ _type = [_this,2,"",[""]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 //Error checks
-if(_pid == "" OR _side == sideUnknown OR _type == "" OR isNull _unit) exitWith {
+if(_pid == "" || _side == sideUnknown || _type == "" || isNull _unit) exitWith {
     if(!isNull _unit) then {
         [[]] remoteExec ["life_fnc_impoundMenu",(owner _unit)];
     };

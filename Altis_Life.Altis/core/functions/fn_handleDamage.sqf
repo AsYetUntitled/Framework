@@ -37,7 +37,7 @@ if(!isNull _source) then {
             };
 
             //Temp fix for super tasers on cops.
-            if(side _source == west && (playerSide == west OR playerSide == independent)) then {
+            if(side _source == west && (playerSide == west || playerSide == independent)) then {
                 _damage = false;
             };
         };

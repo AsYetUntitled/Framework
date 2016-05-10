@@ -15,7 +15,7 @@ if(isNull _curTarget) exitWith {}; //Bad type
 _distance = ((boundingBox _curTarget select 1) select 0) + 2;
 if(player distance _curTarget > _distance) exitWith {}; //Too far
 
-_isVehicle = if((_curTarget isKindOf "LandVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
+_isVehicle = if((_curTarget isKindOf "LandVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
 if(_isVehicle && _curTarget in life_vehicles) exitWith {hint localize "STR_ISTR_Lock_AlreadyHave"};
 
 //More error checks
@@ -55,7 +55,7 @@ for "_i" from 0 to 1 step 0 do {
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 
-    if(_cP >= 1 OR !alive player) exitWith {};
+    if(_cP >= 1 || !alive player) exitWith {};
     if(life_istazed) exitWith {}; //Tazed
     if(life_isknocked) exitWith {}; //Knocked
     if(life_interrupted) exitWith {};
@@ -67,7 +67,7 @@ for "_i" from 0 to 1 step 0 do {
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 
-if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;};
+if(!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
 if((player GVAR ["restrained",false])) exitWith {life_action_inUse = false;};
 if(!isNil "_badDistance") exitWith {titleText[localize "STR_ISTR_Lock_TooFar","PLAIN"]; life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};

@@ -12,7 +12,7 @@ params [
     ["_group",grpNull,[grpNull]]
 ];
 
-if(EQUAL(_name,"") OR isNull _group) exitWith {}; //Fail horn anyone?
+if(EQUAL(_name,"") || isNull _group) exitWith {}; //Fail horn anyone?
 if(!isNil {(group player) GVAR "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
 
 _gangName = _group GVAR "gang_name";

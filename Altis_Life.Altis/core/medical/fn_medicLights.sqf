@@ -9,7 +9,7 @@
 Private ["_vehicle","_lightRed","_lightBlue","_lightleft","_lightright","_leftRed"];
 _vehicle = _this select 0;
     
-if(isNil "_vehicle" OR isNull _vehicle OR !(_vehicle getVariable "lights")) exitWith {};
+if(isNil "_vehicle" || isNull _vehicle || !(_vehicle getVariable "lights")) exitWith {};
 _lightRed = [0.1, 0.1, 20];
 _lightBlue = [0.1, 0.1, 20];
 

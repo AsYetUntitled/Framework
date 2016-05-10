@@ -37,14 +37,14 @@ switch(playerSide) do {
         _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");
     };
     case east: {
-        _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPFOR");
-        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
+        _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPF||");
+        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPF||");
     };
 };
 
 _sellPrice = _purchasePrice * _multiplier;
 
-if(!(_sellPrice isEqualType 0) OR _sellPrice < 1) then {_sellPrice = 500;};
+if(!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 
 if(life_HC_isActive) then {
     [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];

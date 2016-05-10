@@ -13,7 +13,7 @@ params [
     ["_uid","",[""]],
     ["_house",objNull,[objNull]]
 ];
-if(isNull _house OR _uid == "") exitWith {};
+if(isNull _house || _uid == "") exitWith {};
 
 _housePos = getPosATL _house;
 

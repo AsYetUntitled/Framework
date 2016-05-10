@@ -58,7 +58,7 @@ for "_i" from 0 to 1 step 0 do {
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
     _hideout SVAR ["inCapture",true,true];
-    if(_cP >= 1 OR !alive player) exitWith {_hideout SVAR ["inCapture",false,true];};
+    if(_cP >= 1 || !alive player) exitWith {_hideout SVAR ["inCapture",false,true];};
     if(life_istazed) exitWith {_hideout SVAR ["inCapture",false,true];}; //Tazed
     if(life_isknocked) exitWith {_hideout SVAR ["inCapture",false,true];}; //Knocked
     if(life_interrupted) exitWith {_hideout SVAR ["inCapture",false,true];};
@@ -67,7 +67,7 @@ for "_i" from 0 to 1 step 0 do {
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive player OR life_istazed OR life_isknocked) exitWith {life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
+if(!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_GNOTF_CaptureCancel","PLAIN"]; life_action_inUse = false;_hideout SVAR ["inCapture",false,true];};
 life_action_inUse = false;

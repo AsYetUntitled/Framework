@@ -26,7 +26,7 @@ _escSync = {
             round(_timeStamp - time) <= 0 || isNull (findDisplay 49)
         };
 
-        _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
+        _abortButton ctrlSetText localize "STR_DISP_INT_AB||T";
         _abortButton ctrlCommit 0;
     };
 
@@ -34,14 +34,14 @@ _escSync = {
 
     if(_this) then {
         _thread = [] spawn _syncManager;
-        waitUntil{scriptDone _thread OR isNull (findDisplay 49)};
+        waitUntil{scriptDone _thread || isNull (findDisplay 49)};
         _abortButton ctrlEnable true;
     };
 };
 
 _canUseControls = {
     if(playerSide == west) exitWith {true};
-    if((player GVAR ["restrained",FALSE]) OR (player GVAR ["Escorting",FALSE]) OR (player GVAR ["transporting",FALSE]) OR (life_is_arrested) OR (life_istazed) OR (life_isknocked)) then {false} else {true};
+    if((player GVAR ["restrained",FALSE]) || (player GVAR ["Escorting",FALSE]) || (player GVAR ["transporting",FALSE]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
 };
 
 for "_i" from 0 to 1 step 0 do {

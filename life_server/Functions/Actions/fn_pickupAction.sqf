@@ -12,7 +12,7 @@ params [
     ["_cash",false,[true]]
 ];
 
-if(isNull _obj OR {isNull _client}) exitWith {systemChat "Obj or client is null?";}; //No.
+if(isNull _obj || {isNull _client}) exitWith {systemChat "Obj or client is null?";}; //No.
 if(!(_obj GVAR ["inUse",false])) exitWith {
     _client = owner _client;
     _obj SVAR ["inUse",true,true];

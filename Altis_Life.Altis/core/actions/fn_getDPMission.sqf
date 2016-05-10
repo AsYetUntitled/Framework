@@ -32,7 +32,7 @@ player setCurrentTask life_cur_task;
 ["DeliveryAssigned",[format[localize "STR_NOTF_DPTask",toUpper _dp]]] call bis_fnc_showNotification;
 
 [] spawn {
-    waitUntil {!life_delivery_in_progress OR !alive player};
+    waitUntil {!life_delivery_in_progress || !alive player};
     if(!alive player) then {
         life_cur_task setTaskState "Failed";
         player removeSimpleTask life_cur_task;

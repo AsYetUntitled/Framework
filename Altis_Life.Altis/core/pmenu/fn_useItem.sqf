@@ -21,7 +21,7 @@ switch (true) do {
                     life_redgull_effect = time;
                     titleText[localize "STR_ISTR_RedGullEffect","PLAIN"];
                     player enableFatigue false;
-                    waitUntil {!alive player OR ((time - life_redgull_effect) > (3 * 60))};
+                    waitUntil {!alive player || ((time - life_redgull_effect) > (3 * 60))};
                     player enableFatigue true;
                 };
             };

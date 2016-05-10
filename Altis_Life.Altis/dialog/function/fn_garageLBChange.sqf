@@ -45,15 +45,15 @@ switch(playerSide) do {
         _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_MEDIC");
     };
     case east: {
-        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
-        _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPFOR");
+        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPF||");
+        _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPF||");
     };
 };
 _retrievePrice = _purchasePrice * _storageFee;
 _sellPrice = _purchasePrice * _sellMultiplier;
 
-if(!(_sellPrice isEqualType 0) OR _sellPrice < 1) then {_sellPrice = 500;};
-if(!(_retrievePrice isEqualType 0) OR _retrievePrice < 1) then {_retrievePrice = 500;};
+if(!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
+if(!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice = 500;};
 
 (CONTROL(2800,2803)) ctrlSetStructuredText parseText format[
     (localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>

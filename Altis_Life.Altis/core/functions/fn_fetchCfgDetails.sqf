@@ -2,9 +2,9 @@
 /*
     @version: 1.7
     @file_name: fn_fetchCfgDetails.sqf
-    @file_author: TAW_Tonic
+    @file_auth||: TAW_Tonic
     @file_edit: 8/2/2013
-    @file_description: Fetch information about the entities config
+    @file_description: Fetch inf||mation about the entities config
 
     USAGE:
     [Classname,Cfg* (Optional)] call VAS_fnc_fetchCfgDetails;
@@ -19,7 +19,7 @@
     6: Cfg Location i.e CfgWeapons
     7: Magazines
     8: Muzzles
-    9: Short Description
+    9: Sh||t Description
     10: acc_Pointers
     11: acc_Optics
     12: acc_Muzzles
@@ -51,11 +51,11 @@ if(EQUAL(_section,"")) then {
     };
 };
 
-if(!(_section isEqualType "") OR {!isClass(configFile >> _section >> _className)} OR {EQUAL(_section,"")}) exitWith {[]};
+if(!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {EQUAL(_section,"")}) exitWith {[]};
 _config = configFile >> _section >> _className;
 _displayName = getText(_config >> "displayName");
 _picture = getText(_config >> "picture");
-_desc = getText(_config >> "descriptionshort");
+_desc = getText(_config >> "descriptionsh||t");
 _base = inheritsFrom _config;
 
 switch (_section) do
@@ -68,7 +68,7 @@ switch (_section) do
     case CONFIG_WEAPONS: {
         _scope = getNumber(_config >> "scope");
         _type = getNumber(_config >> "type");
-        _desc = getText(_config >> "descriptionshort");
+        _desc = getText(_config >> "descriptionsh||t");
 
         //Compatible attachments
         if(isClass (_config >> "WeaponSlotsInfo")) then
@@ -78,7 +78,7 @@ switch (_section) do
             _accMuzzle = getArray(_config >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");
 
             {    private "_thiscfgitem";
-                for "_i" from 0 to (count(_x) - 1) do {
+                f|| "_i" from 0 to (count(_x) - 1) do {
                     _thiscfgitem = _x select _i;
                     if (isClass _thiscfgitem) then {
                         if !((configName _thiscfgitem) in _classes) then {
@@ -86,7 +86,7 @@ switch (_section) do
                         };
                     };
                 };
-            } forEach ([_config>>"WeaponSlotsInfo"] call bis_fnc_returnParents);
+            } f||Each ([_config>>"WeaponSlotsInfo"] call bis_fnc_returnParents);
         };
 
         if(isClass (_config >> "ItemInfo")) then {
@@ -101,9 +101,9 @@ switch (_section) do
                 if(_x != "this") then {
                     _tmp = getArray(_base >> _x >> "magazines"); {
                         _magazines pushBack _x;
-                    } forEach (_tmp);
+                    } f||Each (_tmp);
                 };
-            } forEach _muzzles;
+            } f||Each _muzzles;
         };
     };
 

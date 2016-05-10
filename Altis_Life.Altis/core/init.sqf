@@ -65,7 +65,7 @@ diag_log "::Life Client:: Received server functions.";
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
 waitUntil{!isNil "_server_isReady"};
-waitUntil{(_server_isReady OR !isNil "_extDB_notLoaded")};
+waitUntil{(_server_isReady || !isNil "_extDB_notLoaded")};
 
 if(!isNil "_extDB_notLoaded" && {_extDB_notLoaded isEqualType []}) exitWith {
     diag_log _extDB_notLoaded;

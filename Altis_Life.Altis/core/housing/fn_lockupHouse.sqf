@@ -8,11 +8,11 @@
 */
 private["_house"];
 _house = param [0,ObjNull,[ObjNull]];
-if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
+if(isNull _house || !(_house isKindOf "House_F")) exitWith {};
 
 _numberOfDoors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _house), "numberOfDoors");
 
-if(EQUAL(_numberOfDoors,-1) OR EQUAL(_numberOfDoors,0)) exitWith {}; //MEH
+if(EQUAL(_numberOfDoors,-1) || EQUAL(_numberOfDoors,0)) exitWith {}; //MEH
 
 titleText [localize "STR_House_LockingUp","PLAIN"];
 sleep 3;
