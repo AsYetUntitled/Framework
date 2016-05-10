@@ -74,7 +74,7 @@ _damage = [_vInfo select 12] call DB_fnc_mresToArray;
 _wasIllegal = _vInfo select 13;
 _wasIllegal = if (_wasIllegal == 1) then { true } else { false };
 
-[_query,1] spawn DB_fnc_asyncCall;
+[_query,1] call DB_fnc_asyncCall;
 if(_sp isEqualType "") then {
 	_vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
