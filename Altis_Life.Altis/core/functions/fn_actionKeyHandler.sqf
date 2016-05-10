@@ -1,19 +1,19 @@
 #include "..\..\script_macros.hpp"
 /*
     File: fn_actionKeyHandler.sqf
-    Auth||: Bryan "Tonic" Boardwine
+    Author: Bryan "Tonic" Boardwine
 
     Description:
-    Master action key handler, handles requests f|| picking up various items and
-    interacting with other players (Cops = Cop Menu f|| unrestrain,esc||t,stop esc||t, arrest (if near cop hq), etc).
+    Master action key handler, handles requests for picking up various items and
+    interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
 private["_curObject","_isWater","_CrateModelNames","_crate","_fish","_animal","_whatIsIt","_handle"];
-_curObject = curs||Object;
+_curObject = cursorObject;
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if(life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
 
-if((player getVariable["isEsc||ting",false])) exitWith {
+if((player getVariable["isEscorting",false])) exitWith {
     [] call life_fnc_copInteractionMenu;
 };
 
@@ -79,7 +79,7 @@ life_action_inUse = true;
 if(_curObject isKindOf "Man" && {!alive _curObject} && !(_curObject GVAR["Revive",false]) && {playerSide in [west,independent]}) exitWith {
     //Hotfix code by ins0
     if(((playerSide == west && {(EQUAL(LIFE_SETTINGS(getNumber,"revive_cops"),1))}) || playerSide == independent)) then {
-        if(life_inv_defibrillat|| > 0) then {
+        if(life_inv_defibrillator > 0) then {
             [_curObject] call life_fnc_revivePlayer;
         };
     };

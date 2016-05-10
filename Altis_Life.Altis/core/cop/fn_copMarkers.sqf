@@ -17,7 +17,7 @@ if(visibleMap) then {
     {
         if(_x != player) then {
             _marker = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
-            _marker setMarkerColorLocal "ColorBLUF||";
+            _marker setMarkerColorLocal "ColorBLUFOR";
             _marker setMarkerTypeLocal "Mil_dot";
             _marker setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
 

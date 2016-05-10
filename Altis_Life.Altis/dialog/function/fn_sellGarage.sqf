@@ -37,8 +37,8 @@ switch(playerSide) do {
         _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");
     };
     case east: {
-        _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPF||");
-        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPF||");
+        _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPFOR");
+        _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
     };
 };
 

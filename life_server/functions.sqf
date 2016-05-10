@@ -355,7 +355,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
                 _Markers setMarkerColorLocal (""ColorCivilian"");
               };
               if (side _x == west) then {
-                _Markers setMarkerColorLocal (""ColorBLUF||"");
+                _Markers setMarkerColorLocal (""ColorBLUFOR"");
               };
               _Markers setMarkerSizeLocal[1, 1];
               life_markers_Vehicles pushback _x;
@@ -394,7 +394,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
             _Markers setMarkerColorLocal (""ColorCivilian"");
           };
           if (side _x == west) then {
-            _Markers setMarkerColorLocal (""ColorBLUF||"");
+            _Markers setMarkerColorLocal (""ColorBLUFOR"");
           };
           _Markers setMarkerTextLocal format[""%1---%2"", name _x, round(_x distance player)];
           if (_x == player) then {

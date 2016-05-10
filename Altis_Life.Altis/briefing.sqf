@@ -498,7 +498,7 @@ player createDiarySubject ["controls","Controls"];
             "Teamspeak Rule",
                 "
                 1. All cops must be on Teamspeak 3 in a designated cop channel. Failure to be on Teamspeak during an admin check will result in your immediate dismissal from the server.<br/>
-                2. Please join Teamspeak BEF||E you spawn in as a cop, heck, join Teamspeak before you even join the server.<br/><br/>
+                2. Please join Teamspeak BEFORE you spawn in as a cop, heck, join Teamspeak before you even join the server.<br/><br/>
                 "
         ]
     ];
