@@ -24,8 +24,6 @@ _containerss = [];
 	_position = call compile format["%1",_x select 1];
 	_house = nearestObject [_position, "House"];
 	_direction = call compile format["%1",_x select 5];
-	_owner = _x select 0;
-	_id = _x select 6;
 	_trunk = [_x select 3] call HC_fnc_mresToArray;
 	if(_trunk isEqualType "") then {_trunk = call compile format["%1", _trunk];};
 	_gear = [_x select 4] call HC_fnc_mresToArray;
@@ -47,8 +45,8 @@ _containerss = [];
 	_container setPosATL [(_posX - _fixX), (_posY - _fixY), (_posZ - _fixZ)];
 	_container setVectorDirAndUp _direction;
 	_container setVariable["Trunk",_trunk,true];
-	_container setVariable["container_owner",[_owner],true];
-	_container setVariable["container_id",_id,true];
+	_container setVariable["container_owner",[(_x select 0)],true];
+	_container setVariable["container_id",(_x select 6),true];
 	clearWeaponCargoGlobal _container;
 	clearItemCargoGlobal _container;
 	clearMagazineCargoGlobal _container;
@@ -61,13 +59,13 @@ _containerss = [];
 		for "_i" from 0 to ((count (_items select 0)) - 1) do {
 			_container addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
 		};
-		for "_i" from 0 to ((count (_mags select 0)) - 1) do{
+		for "_i" from 0 to ((count (_mags select 0)) - 1) do {
 			_container addMagazineCargoGlobal [((_mags select 0) select _i), ((_mags select 1) select _i)];
 		};
-		for "_i" from 0 to ((count (_weapons select 0)) - 1) do{
+		for "_i" from 0 to ((count (_weapons select 0)) - 1) do {
 			_container addWeaponCargoGlobal [((_weapons select 0) select _i), ((_weapons select 1) select _i)];
 		};
-		for "_i" from 0 to ((count (_backpacks select 0)) - 1) do{
+		for "_i" from 0 to ((count (_backpacks select 0)) - 1) do {
 			_container addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
 		};
 	};

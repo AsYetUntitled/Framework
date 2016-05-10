@@ -20,7 +20,7 @@ if(isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
 	_matsGive = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsGive");
 	_noliccost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
 	_text = M_CONFIG(getText,"ProcessAction",_type,"Text");
-	
+
 } else {_filter = true;};
 
 if(_filter) exitWith {};
@@ -40,21 +40,18 @@ _exit = false;
 _ArrayItem = [];
 _ItemName = [];
 {
-	_ItemSelected = _x select 0;
-	_ItemName pushBack _ItemSelected;
+	_ItemName pushBack (_x select 0);
 } forEach _oldItem;
 
 _itemNameInv = [];
 {
-	_item = _x select 0;
-	_var = ITEM_VARNAME(_item);
+	_var = ITEM_VARNAME((_x select 0));
 	_itemNameInv pushBack [_var];
 } forEach _oldItem;
 
 _ItemNumber = [];
 {
-	_itemNumberNow = _x select 1;
-	_ItemNumber pushBack [_itemNumberNow];
+	_ItemNumber pushBack [(_x select 1)];
 } forEach _oldItem;
 
 

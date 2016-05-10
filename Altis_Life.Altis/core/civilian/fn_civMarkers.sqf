@@ -1,6 +1,6 @@
 /*
 	File: fn_civMarkers.sqf
-	Author: 
+	Author:
 
 	Description:
 	Add markers for civilians in groups.
@@ -27,11 +27,10 @@ for "_i" from 0 to 1 step 0 do {
 		while {visibleMap} do
 		{
 			{
-				private["_marker","_unit"];
-				_marker = _x select 0;
+				private["_unit"];
 				_unit = _x select 1;
 				if(!isNil "_unit" && !isNull _unit) then {
-					  _marker setMarkerPosLocal (visiblePosition _unit);
+					  (_x select 0) setMarkerPosLocal (visiblePosition _unit);
 				};
 			} forEach _markers;
 			if(!visibleMap) exitWith {};

@@ -44,13 +44,10 @@ if(visibleMap) then {
 
 	while {visibleMap} do {
 		{
-			private["_marker","_unit"];
-			_markersss = _x select 0;
+			private["_unit"];
 			_unit = _x select 1;
-			if(!isNil "_unit") then {
-				if(!isNull _unit) then {
-					_markersss setMarkerPosLocal (visiblePosition _unit);
-				};
+			if(!isNil "_unit" && !isNull _unit) then {
+				(_x select 0) setMarkerPosLocal (visiblePosition _unit);
 			};
 		} forEach _markersMedecin;
 		if(!visibleMap) exitWith {};

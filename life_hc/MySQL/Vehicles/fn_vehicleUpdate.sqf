@@ -37,7 +37,6 @@ switch (_mode) do {
 	case 2: {
 		_resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 		_trunk = _vehicle getVariable["Trunk",[[],0]];
-		_itemList = _trunk select 0;
 		_totalweight = 0;
 		_items = [];
 		{
@@ -46,7 +45,7 @@ switch (_mode) do {
 				_weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
 				_totalweight = _weight + _totalweight;
 			};
-		}forEach _itemList;
+		}forEach (_trunk select 0);
 		_trunk = [_items,_totalweight];
 		_trunk = [_trunk] call HC_fnc_mresArray;
 

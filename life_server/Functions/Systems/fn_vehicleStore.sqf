@@ -84,18 +84,11 @@ if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_virtualItems"), 1)) then {
 		_profileName = _profileName select 0;
 
 		{
-			_var = _x select 0;
-			_isIllegal = M_CONFIG(getNumber, "VirtualItems", _var, "illegal");
+			_isIllegal = M_CONFIG(getNumber, "VirtualItems", (_x select 0), "illegal");
 
-			_isIllegal =
-				if (_isIllegal == 1) then {
-					true
-				}
-				else {
-					false
-				};
+			_isIllegal = if (_isIllegal == 1) then { true } else { false };
 
-			if ((_var in _resourceItems) OR (_isIllegal)) then {
+			if (((_x select 0) in _resourceItems) OR (_isIllegal)) then {
 				_items pushback[(_x select 0), (_x select 1)];
 				_weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
 				_totalweight = _weight + _totalweight;

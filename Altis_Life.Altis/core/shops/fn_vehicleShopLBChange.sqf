@@ -9,14 +9,12 @@
 	displays various bits of information about the vehicle.
 */
 disableSerialization;
-private["_control","_index","_className","_classNameLife","_initalPrice","_buyMultiplier","_rentMultiplier","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
-_control = _this select 0;
-_index = _this select 1;
+private["_className","_classNameLife","_initalPrice","_buyMultiplier","_rentMultiplier","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
 
 //Fetch some information.
-_className = _control lbData _index;
+_className = (_this select 0) lbData (_this select 1);
 _classNameLife = _className;
-_vIndex = _control lbValue _index;
+_vIndex = (_this select 0) lbValue (_this select 1);
 
 _initalPrice = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
 

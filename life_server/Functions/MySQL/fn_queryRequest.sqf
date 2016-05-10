@@ -91,8 +91,7 @@ switch (_side) do {
 		} else {
 			TON_fnc_playtime_values_request pushBack [_uid, _new];
 		};
-		_new = _new select 0;
-		[_uid, _new] call TON_fnc_setPlayTime;
+		[_uid, (_new select 0)] call TON_fnc_setPlayTime;
 	};
 
 	case civilian: {
@@ -120,8 +119,7 @@ switch (_side) do {
 		} else {
 			TON_fnc_playtime_values_request pushBack [_uid, _new];
 		};
-		_new = _new select 2;
-		[_uid, _new] call TON_fnc_setPlayTime;
+		[_uid, (_new select 2)] call TON_fnc_setPlayTime;
 
 		_houseData = _uid spawn TON_fnc_fetchPlayerHouses;
 		waitUntil {scriptDone _houseData};
@@ -148,8 +146,7 @@ switch (_side) do {
 		} else {
 			TON_fnc_playtime_values_request pushBack [_uid, _new];
 		};
-		_new = _new select 1;
-		[_uid, _new] call TON_fnc_setPlayTime;
+		[_uid, (_new select 1)] call TON_fnc_setPlayTime;
 	};
 };
 

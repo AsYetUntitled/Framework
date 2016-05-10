@@ -13,8 +13,7 @@
 private["_uid", "_time_gathered"];
 
 _uid = _this select 0;
-_time_gathered = _this select 1;
-_time_gathered = (_time_gathered*60);
+_time_gathered = ((_this select 1) * 60);
 
 //create value using get
 [_uid] call TON_fnc_getPlayTime;
