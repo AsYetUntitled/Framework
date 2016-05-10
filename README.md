@@ -11,6 +11,7 @@
     <a href="https://dev.arma3.com/post/spotrep-00054">
         <img src="https://img.shields.io/badge/arma%203-1.58-orange.svg" alt="Arma 3 Version">
     </a>
+    </br>
     &nbsp;&nbsp;&nbsp;
     <a href="https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
         <img src="https://img.shields.io/badge/chat-on%20discord-738BD7.svg" alt="Join the chat at https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
@@ -23,9 +24,14 @@
     <a href="https://gitter.im/ArmaLife/Framework/Support?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
         <img src="https://img.shields.io/badge/support-on%20gitter-blue.svg" alt="Join the support chat at https://gitter.im/ArmaLife/Framework/Support">
     </a>
+    </br>
     &nbsp;&nbsp;&nbsp;
     <a href="https://waffle.io/ArmaLife/Framework">
         <img src="https://img.shields.io/badge/issues-on%20waffle-red.svg" alt="Stories in Ready">
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://travis-ci.org/ArmaLife/Framework">
+        <img src="https://api.travis-ci.org/ArmaLife/Framework.svg" alt="Build Status">
     </a>
 </p>
 
