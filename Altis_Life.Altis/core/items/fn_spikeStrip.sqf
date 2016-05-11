@@ -7,7 +7,7 @@
     Creates a spike strip and preps it.
 */
 private["_spikeStrip"];
-if(!isnil "life_action_spikeStripPickup") exitWith {hint localize "STR_ISTR_SpikesDeployment"};    // avoid conflicts with addactions allowing duplication.
+if(!isNil "life_action_spikeStripPickup") exitWith {hint localize "STR_ISTR_SpikesDeployment"};    // avoid conflicts with addactions allowing duplication.
 _spikeStrip = "Land_Razorwire_F" createVehicle [0,0,0];
 _spikeStrip attachTo[player,[0,5.5,0]];
 _spikeStrip setDir 90;

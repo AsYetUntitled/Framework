@@ -341,7 +341,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
               _Vehicle = vehicle _x;
               _pos = visiblePosition _x;
               _Markers = createMarkerLocal[format[""CRW%1%2"", _pos select 0, _pos select 1], [(_pos select 0) + 20, _pos select 1, 0]];
-              _TypeVehicle = (gettext(configFile >> 'CfgVehicles' >> (typeof vehicle _x) >> 'displayName'));
+              _TypeVehicle = (getText(configFile >> 'CfgVehicles' >> (typeOf vehicle _x) >> 'displayName'));
               _Markers setMarkerTextLocal format['%1---%2---%3m', name _x, _TypeVehicle, round(_x distance player)];
               _Markers setMarkerTypeLocal ""mil_dot"";
               if (side _x == independent) then {
@@ -354,7 +354,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
                 _Markers setMarkerColorLocal (""ColorBLUFOR"");
               };
               _Markers setMarkerSizeLocal[1, 1];
-              life_markers_Vehicles pushback _x;
+              life_markers_Vehicles pushBack _x;
               [_x, _Markers, _Vehicle, _TypeVehicle] spawn {
                 private[""_PlayersOrVehicles"", ""_Marker"", ""_CrewVehicle""];
                 _PlayersOrVehicles = _this select 0;
@@ -396,7 +396,7 @@ TON_fnc_MapMarkersAdmin = compileFinal "
           if (_x == player) then {
             _Markers setMarkerColorLocal ""ColorGreen"";
           };
-          life_markers_Players pushback _x;
+          life_markers_Players pushBack _x;
           [_x, _Markers] spawn {
             private[""_PlayersOrVehicles"", ""_Marker""];
             _PlayersOrVehicles = _this select 0;

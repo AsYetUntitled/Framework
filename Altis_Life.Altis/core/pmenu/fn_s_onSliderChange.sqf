@@ -39,7 +39,7 @@ switch (_mode) do {
 
     case 3: {
         _classname = lbData[20302,(lbCurSel 20302)];
-        _index =  lbvalue[20302,(lbCurSel 20302)];
+        _index =  lbValue[20302,(lbCurSel 20302)];
         if((lbCurSel 20302) == -1) exitWith {hint localize "STR_Select_Vehicle_Pump";};
         if (!isNil "_classname" || _classname =="") then {
             _car = (vehiclefuelList select _index) select 0;

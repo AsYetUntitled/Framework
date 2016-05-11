@@ -5718,28 +5718,6 @@
             <Portuguese>Sua aeronave está reparada e com o tanque cheio!</Portuguese>
             <Polish>Helikopter został naprawiony i natankowany</Polish>
         </Key>
-        <Key ID="STR_pumpRepair_notEnoughMoney">
-            <Original>You do not have $500 in cash or in your bank account.</Original>
-            <Czech>Nemusíte $ 500 v hotovosti nebo na bankovní účet.</Czech>
-            <French>Vous ne disposez pas de 500$ en espèces ou dans votre compte bancaire.</French>
-            <Spanish>Usted no tiene $ 500 en efectivo o en su cuenta bancaria.</Spanish>
-            <Italian>Non si dispone di $ 500 in contanti o nel tuo conto bancario.</Italian>
-            <Polish>Nie masz $ 500 w gotówce lub na koncie bankowym.</Polish>
-            <Portuguese>Você não tem R $ 500 em dinheiro ou em sua conta bancária.</Portuguese>
-            <Russian>Вам не нужно $ 500 наличными или на банковском счете.</Russian>
-            <German>Sie haben noch 500 $ in bar oder in Ihrem Bankkonto.</German>
-        </Key>
-        <Key ID="STR_pumpRepair_Repaired">
-            <Original>You have repaired your vehicle for $500.</Original>
-            <Czech>Máte opravit vůz za 500 $.</Czech>
-            <French>Vous avez réparer votre véhicule pour 500$.</French>
-            <Spanish>Hay que reparar su vehículo por $ 500.</Spanish>
-            <Italian>Hai riparare il veicolo per $ 500.</Italian>
-            <Polish>Trzeba naprawić swój pojazd za 500 $.</Polish>
-            <Portuguese>Você tem reparar seu veículo por US $ 500.</Portuguese>
-            <Russian>Вы должны отремонтировать ваш автомобиль за $ 500.</Russian>
-            <German>Sie haben Ihr Fahrzeug für $ 500 zu reparieren.</German>
-        </Key>
     </Package>
     <Package name="Life_Items">
         <Key ID="STR_Item_Cannabis">

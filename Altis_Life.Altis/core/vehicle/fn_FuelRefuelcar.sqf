@@ -9,7 +9,7 @@
 disableSerialization;
 private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
 _classname = lbData[20302,(lbCurSel 20302)];
-_index =  lbvalue[20302,(lbCurSel 20302)];
+_index =  lbValue[20302,(lbCurSel 20302)];
 
 if (isNil "_classname" || _classname == "") exitWith {
     hint localize "STR_Select_Vehicle_Pump";

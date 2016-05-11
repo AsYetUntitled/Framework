@@ -42,7 +42,7 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
           if(!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) exitWith {_flag = false};
         };
       };
-    } foreach _licenses;
+    } forEach _licenses;
 
     if(_flag) then {
         if(!(EQUAL(_levelValue,-1))) then {

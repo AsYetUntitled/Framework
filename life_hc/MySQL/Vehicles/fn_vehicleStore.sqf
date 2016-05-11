@@ -91,7 +91,7 @@ if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_virtualItems"), 1)) then {
             _isIllegal = if (_isIllegal == 1) then { true }    else { false };
 
             if (((_x select 0) in _resourceItems) ||  (_isIllegal)) then {
-                _items pushback[(_x select 0), (_x select 1)];
+                _items pushBack[(_x select 0), (_x select 1)];
                 _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;
             };

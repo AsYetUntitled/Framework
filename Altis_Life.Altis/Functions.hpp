@@ -46,7 +46,6 @@ class Life_Client_Core {
         class postBail {};
         class processAction {};
         class pulloutAction {};
-        class pushVehicle {};
         class putInCar {};
         class removeContainer {};
         class repairTruck {};

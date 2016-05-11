@@ -10,8 +10,8 @@
 */
 private["_civ","_cop","_id","_half","_result","_queryResult","_amount"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
-_civ = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;
-_cop = [_this,2,Objnull,[Objnull]] call BIS_fnc_param;
+_civ = [_this,1,objNull,[objNull]] call BIS_fnc_param;
+_cop = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 _half = [_this,3,false,[false]] call BIS_fnc_param;
 if(isNull _civ || isNull _cop) exitWith {};
 
