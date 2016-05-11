@@ -36,7 +36,7 @@
 <b>Altis Life</b> or <b>[Altis Life RPG] (http://www.altisliferpg.com)</b> was created and mainly developed by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
 Altis Life is currently being maintained by [Arma Life RPG] (https://github.com/ArmaLife).<br/>
 <br/>
-Altis Life RPG is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International] (http://creativecommons.org/licenses/by-nc/4.0/deed.en_US)<br/>
+Altis Life RPG is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)<br/>
 By using the framework and/or code inside the framework, you agree to the [terms of agreement] (README.md/#usage--terms-of-agreement).<br/>
 The terms are subjected to be changed over time.<br/>
 
