@@ -33,9 +33,6 @@
 #define CONST(var1,var2) var1 = compileFinal (if(var2 isEqualType "") then {var2} else {str(var2)})
 #define CONSTVAR(var) var = compileFinal (if(var isEqualType "") then {var} else {str(var)})
 #define FETCH_CONST(var) (call var)
-#define PVAR_ALL(var) publicVariable var
-#define PVAR_SERV(var) publicVariableServer var
-#define PVAR_ID(var,id) id publicVariableClient var
 #define GVAR getVariable
 #define SVAR setVariable
 #define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)

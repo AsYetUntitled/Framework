@@ -26,7 +26,7 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 if(!(EQUAL(count _queryResult,0))) exitWith {
     [1,"There is already a gang created with that name please pick another name."] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_action_gangInUse = nil;
-    PVAR_ID("life_action_gangInUse",_ownerID);
+    _ownerID publicVariableClient "life_action_gangInUse";
 };
 
 _query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
@@ -37,7 +37,7 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 if(!(EQUAL(count _queryResult,0))) exitWith {
     [1,"You are currently already active in a gang, please leave the gang first."] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_action_gangInUse = nil;
-    PVAR_ID("life_action_gangInUse",_ownerID);
+    _ownerID publicVariableClient "life_action_gangInUse";
 };
 
 //Check to see if a gang with that name already exists but is inactive.
