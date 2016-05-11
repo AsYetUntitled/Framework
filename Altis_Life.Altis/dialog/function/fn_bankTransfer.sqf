@@ -16,7 +16,7 @@ if(_value > 999999) exitWith {hint localize "STR_ATM_TransferMax";};
 if(_value < 0) exitWith {};
 if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_ATM_notnumeric"};
 if(_value > BANK) exitWith {hint localize "STR_ATM_NotEnough"};
-_tax = [_value] call life_fnc_taxRate;
+_tax = _value * LIFE_SETTINGS(getNumber,"bank_transferTax");
 if((_value + _tax) > BANK) exitWith {hint format[localize "STR_ATM_SentMoneyFail",_value,_tax]};
 
 BANK = BANK - (_value + _tax);

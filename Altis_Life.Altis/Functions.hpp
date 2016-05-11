@@ -100,7 +100,6 @@ class Life_Client_Core {
         file = "core\config";
         class houseConfig {};
         class itemWeight {};
-        class taxRate {};
         class vehicleAnimate {};
         class vehicleWeightCfg {};
     };
