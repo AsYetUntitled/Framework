@@ -25,14 +25,14 @@ _key = SEL(_key,1);
 _queryResult = EXTDB format["4:%1", _key];
 
 //Make sure the data is received
-if(EQUAL(_queryResult,"[3]")) then {
+if(_queryResult isEqualTo "[3]") then {
     for "_i" from 0 to 1 step 0 do {
         if (!(_queryResult isEqualTo "[3]")) exitWith {};
         _queryResult = EXTDB format["4:%1", _key];
     };
 };
 
-if(EQUAL(_queryResult,"[5]")) then {
+if(_queryResult isEqualTo "[5]") then {
     _loop = true;
     for "_i" from 0 to 1 step 0 do { // extDB2 returned that result is Multi-Part Message
         _queryResult = "";
@@ -41,7 +41,7 @@ if(EQUAL(_queryResult,"[5]")) then {
             if(_pipe == "") exitWith {_loop = false};
             _queryResult = _queryResult + _pipe;
         };
-    if(!(_loop)) exitWith {};
+    if(!_loop) exitWith {};
     };
 };
 _queryResult = call compile _queryResult;
