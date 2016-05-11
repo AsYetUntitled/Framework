@@ -22,24 +22,26 @@ if(EQUAL(_mode,1)) exitWith {true};
 
 _key = call compile format["%1",_key];
 _key = SEL(_key,1);
+_queryResult = EXTDB format["4:%1", _key];
 
-//What the heck is going on with the double while loop? I don't remember this...
-_queryResult = "";
-_loop = true;
-while{_loop} do {
-    _queryResult = EXTDB format["4:%1", _key];
-    if (EQUAL(_queryResult,"[5]")) then {
-        // extDB2 returned that result is Multi-Part Message
+//Make sure the data is received
+if(EQUAL(_queryResult,"[3]")) then {
+    for "_i" from 0 to 1 step 0 do {
+        if (!(_queryResult isEqualTo "[3]")) exitWith {};
+        _queryResult = EXTDB format["4:%1", _key];
+    };
+};
+
+if(EQUAL(_queryResult,"[5]")) then {
+    _loop = true;
+    for "_i" from 0 to 1 step 0 do { // extDB2 returned that result is Multi-Part Message
         _queryResult = "";
         for "_i" from 0 to 1 step 0 do {
             _pipe = EXTDB format["5:%1", _key];
             if(_pipe == "") exitWith {_loop = false};
             _queryResult = _queryResult + _pipe;
         };
-    } else {
-        if (!(EQUAL(_queryResult,"[3]"))) then {
-            _loop = false;
-        };
+    if(!(_loop)) exitWith {};
     };
 };
 _queryResult = call compile _queryResult;
