@@ -28,18 +28,18 @@ if(count _invs > 0) then {
             _price = M_CONFIG(getNumber,"VirtualItems",_processed,"sellPrice");
         };
 
-        if(!(EQUAL(_price,-1))) then {
+        if(!(_price isEqualTo -1)) then {
             ADD(_illegal,(SEL(_x,1) * _price));
         };
     } forEach _invs;
     if(_illegal > 6000) then {
-    
+
         if(life_HC_isActive) then {
             [getPlayerUID _civ,_civ GVAR ["realname",name _civ],"482"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
         } else {
             [getPlayerUID _civ,_civ GVAR ["realname",name _civ],"482"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
         };
-        
+
     };
 
     if(life_HC_isActive) then {
@@ -47,7 +47,7 @@ if(count _invs > 0) then {
     } else {
         [getPlayerUID _civ,_civ GVAR ["realname",name _civ],"481"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
     };
-    
+
     [0,"STR_Cop_Contraband",true,[(_civ GVAR ["realname",name _civ]),[_illegal] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",west];
 } else {
     _inv = localize "STR_Cop_NoIllegal";

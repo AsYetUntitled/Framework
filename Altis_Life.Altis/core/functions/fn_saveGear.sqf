@@ -18,7 +18,7 @@ _return pushBack backpack player;
 _return pushBack goggles player;
 _return pushBack headgear player;
 _return pushBack assignedITems player;
-if(playerSide == west || playerSide == civilian && {EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_weapons"),1)}) then {
+if(playerSide == west || playerSide == civilian && {LIFE_SETTINGS(getNumber,"save_civilian_weapons") isEqualTo 1}) then {
     _return pushBack RIFLE;
     _return pushBack PISTOL;
 } else {
@@ -39,7 +39,7 @@ _uni = [];
 _ves = [];
 _bag = [];
 
-if(!(EQUAL(uniform player,""))) then {
+if(!(uniform player isEqualTo "")) then {
     {
         if (_x in (magazines player)) then {
             ADD(_uMags,[_x]);
@@ -49,7 +49,7 @@ if(!(EQUAL(uniform player,""))) then {
     } forEach (uniformItems player);
 };
 
-if(!(EQUAL(backpack player,""))) then {
+if(!(backpack player isEqualTo "")) then {
     {
         if (_x in (magazines player)) then {
             ADD(_bMags,[_x]);
@@ -59,7 +59,7 @@ if(!(EQUAL(backpack player,""))) then {
     } forEach (backpackItems player);
 };
 
-if(!(EQUAL(vest player,""))) then {
+if(!(vest player isEqualTo "")) then {
     {
         if (_x in (magazines player)) then {
             ADD(_vMags,[_x]);
@@ -72,7 +72,7 @@ if(!(EQUAL(vest player,""))) then {
 if(count (primaryWeaponMagazine player) > 0 && alive player) then {
     _pMag = SEL((primaryWeaponMagazine player),0);
 
-    if(!(EQUAL(_pMag,""))) then {
+    if(!(_pMag isEqualTo "")) then {
         _uni = player canAddItemToUniform _pMag;
         _ves = player canAddItemToVest _pMag;
         _bag = player canAddItemToBackpack _pMag;
@@ -98,7 +98,7 @@ if(count (primaryWeaponMagazine player) > 0 && alive player) then {
 if(count (handgunMagazine player) > 0 && alive player) then {
     _hMag = ((handgunMagazine player) select 0);
 
-    if(!(EQUAL(_hMag,""))) then {
+    if(!(_hMag isEqualTo "")) then {
         _uni = player canAddItemToUniform _hMag;
         _ves = player canAddItemToVest _hMag;
         _bag = player canAddItemToBackpack _hMag;
@@ -148,7 +148,7 @@ _return pushBack _vItems;
 _return pushBack _vMags;
 _return pushBack _pItems;
 _return pushBack _hItems;
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_virtualItems"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_virtualItems") isEqualTo 1) then {
     _return pushBack _yItems;
 } else {
     _return pushBack [];

@@ -2,7 +2,7 @@
 /*
     File: fn_receiveMoney.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Receives money
 */
@@ -13,7 +13,7 @@ params [
     ["_from",objNull,[objNull]]
 ];
 
-if(isNull _unit || isNull _from || EQUAL(_val,"")) exitWith {};
+if(isNull _unit || isNull _from || _val isEqualTo "") exitWith {};
 if(player != _unit) exitWith {};
 if(!([_val] call TON_fnc_isnumber)) exitWith {};
 if(_unit == _from) exitWith {}; //Bad boy, trying to exploit his way to riches.

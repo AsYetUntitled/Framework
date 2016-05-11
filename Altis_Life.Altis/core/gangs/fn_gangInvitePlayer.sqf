@@ -2,14 +2,14 @@
 /*
     File: fn_gangInvitePlayer.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Starts the invite process?
 */
 private "_unit";
 disableSerialization;
 
-if(EQUAL((lbCurSel 2632),-1)) exitWith {hint localize "STR_GNOTF_SelectPerson"};
+if((lbCurSel 2632) isEqualTo -1) exitWith {hint localize "STR_GNOTF_SelectPerson"};
 _unit = call compile format["%1",CONTROL_DATA(2632)];
 
 if(isNull _unit) exitWith {}; //Bad unit?

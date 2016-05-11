@@ -14,7 +14,7 @@ params [
 
 if(isNull _target) exitWith {};
 if(_target != player) exitWith {};
-if(EQUAL(_who,"")) exitWith {};
+if(_who isEqualTo "") exitWith {};
 
 titleText[format[localize "STR_Civ_KnockedOut",_who],"PLAIN"];
 player playMoveNow "Incapacitated";

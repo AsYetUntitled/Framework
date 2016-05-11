@@ -10,7 +10,7 @@ private["_vendor","_type","_itemInfo","_oldItem","_newItem","_cost","_upp","_has
 _vendor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,3,"",[""]] call BIS_fnc_param;
 //Error check
-if(isNull _vendor || EQUAL(_type,"") || (player distance _vendor > 10)) exitWith {};
+if(isNull _vendor || _type isEqualTo "" || (player distance _vendor > 10)) exitWith {};
 
 
 if(isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
@@ -28,7 +28,7 @@ if(_filter) exitWith {};
 _itemInfo = [_matsReq,_matsGive,_noliccost,(localize format["%1",_text])];
 
 //Error checking
-if(EQUAL(count _itemInfo,0)) exitWith {};
+if(count _itemInfo isEqualTo 0) exitWith {};
 
 //Setup vars.
 _oldItem = SEL(_itemInfo,0);
@@ -60,7 +60,7 @@ _IndexNow = -1;
     _IndexNow = _IndexNow + 1;
     _ItemNameLife = (_itemNameInv select _IndexNow) select 0;
     _var = ITEM_VALUE2(_ItemNameLife);
-    if(EQUAL(_var,0)) exitWith {
+    if(_var isEqualTo 0) exitWith {
         _exit = true;
     };
     _ItemNumberLife = (_ItemNumber select _IndexNow) select 0;
@@ -80,7 +80,7 @@ _oldVal = count _ItemName;
 
 _cost = _cost * _oldVal;
 //Some more checks
-if(EQUAL(_oldVal,0)) exitWith {};
+if(_oldVal isEqualTo 0) exitWith {};
 
 //Setup our progress bar.
 disableSerialization;

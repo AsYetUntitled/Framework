@@ -21,7 +21,7 @@ disableSerialization;
 _curTarget = param [0,ObjNull,[ObjNull]];
 if(isNull _curTarget) exitWith {}; //Bad target
 _houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
-if(EQUAL(count _houseCfg,0) && playerSide == civilian) exitWith {};
+if(count _houseCfg isEqualTo 0 && playerSide == civilian) exitWith {};
 
 if(!dialog) then {
     createDialog "pInteraction_Menu";

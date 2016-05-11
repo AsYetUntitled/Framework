@@ -29,7 +29,7 @@ _shopItems = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
         _item_list lbSetData [(lbSize _item_list)-1,_x];
         _item_list lbSetValue [(lbSize _item_list)-1,_price];
         _icon = M_CONFIG(getText,"VirtualItems",_x,"icon");
-        if(!(EQUAL(_icon,""))) then {
+        if(!(_icon isEqualTo "")) then {
             _item_list lbSetPicture [(lbSize _item_list)-1,_icon];
         };
     };
@@ -43,7 +43,7 @@ _shopItems = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
         _gear_list lbAdd format["%2 [x%1]",_val,(localize _name)];
         _gear_list lbSetData [(lbSize _gear_list)-1,_x];
         _icon = M_CONFIG(getText,"VirtualItems",_x,"icon");
-        if(!(EQUAL(_icon,""))) then {
+        if(!(_icon isEqualTo "")) then {
             _gear_list lbSetPicture [(lbSize _gear_list)-1,_icon];
         };
     };

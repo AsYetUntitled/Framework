@@ -7,7 +7,7 @@
     32 hours later...
 */
 private["_unitID ","_members"];
-if(EQUAL(steamid,(grpPlayer GVAR "gang_owner"))) exitWith {hint localize "STR_GNOTF_LeaderLeave"};
+if(steamid isEqualTo (grpPlayer GVAR "gang_owner")) exitWith {hint localize "STR_GNOTF_LeaderLeave"};
 
 _unitID = getPlayerUID player;
 _members = grpPlayer GVAR "gang_members";

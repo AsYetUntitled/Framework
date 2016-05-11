@@ -27,8 +27,8 @@ detach _unit;
 [_unit,false] remoteExecCall ["life_fnc_jail",_unit];
 [0,"STR_NOTF_Arrested_1",true, [_unit GVAR ["realname",name _unit], profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-    if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
+if(LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
+    if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
         advanced_log = format ["arrested %1",_unit GVAR ["realname",name _unit]];
     } else {
         advanced_log = format ["%1 - %2 arrested %3",profileName,(getPlayerUID player),_unit GVAR ["realname",name _unit]];

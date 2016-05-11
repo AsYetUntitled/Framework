@@ -23,7 +23,7 @@
 */
 private["_class","_scope","_picture","_displayName","_vehicleClass","_side","_faction","_superClass","_speed","_armor","_seats","_hp","_fuel"];
 _class = [_this,0,"",[""]] call BIS_fnc_param;
-if(EQUAL(_class,"")) exitWith {[]}; //Bad class passed.
+if(_class isEqualTo "") exitWith {[]}; //Bad class passed.
 if(!isClass (configFile >> CONFIG_VEHICLES >> _class)) exitWith {[]}; //Class doesn't exist in CfgVehicles
 
 //Predefine some stuff.

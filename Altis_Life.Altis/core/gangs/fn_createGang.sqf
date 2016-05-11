@@ -25,8 +25,8 @@ if(life_HC_isActive) then {
     [player,getPlayerUID player,_gangName] remoteExec ["TON_fnc_insertGang",RSERV];
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-    if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
+if(LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
+    if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
         advanced_log = format ["created a gang named: %1 for %2",_gangName,(LIFE_SETTINGS(getNumber,"gang_price"))];
     } else {
         advanced_log = format ["%1 - %2 created a gang named: %3 for %4",profileName,(getPlayerUID player),_gangName,(LIFE_SETTINGS(getNumber,"gang_price"))];

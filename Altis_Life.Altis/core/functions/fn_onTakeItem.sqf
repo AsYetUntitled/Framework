@@ -23,12 +23,12 @@ switch(playerSide) do
         };
     };
     case civilian: {
-        if(EQUAL(LIFE_SETTINGS(getNumber,"restrict_clothingPickup"),1)) then {
+        if(LIFE_SETTINGS(getNumber,"restrict_clothingPickup") isEqualTo 1) then {
             if(_item in _restrictedClothing) then {
                 [_item,false,false,false,false] call life_fnc_handleItem;
             };
         };
-        if(EQUAL(LIFE_SETTINGS(getNumber,"restrict_weaponPickup"),1)) then {
+        if(LIFE_SETTINGS(getNumber,"restrict_weaponPickup") isEqualTo 1) then {
             if(_item in _restrictedWeapons) then {
                 [_item,false,false,false,false] call life_fnc_handleItem;
             };

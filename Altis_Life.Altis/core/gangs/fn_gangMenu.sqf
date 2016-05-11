@@ -13,7 +13,7 @@ if(isNull (findDisplay 2620)) then {
 };
 
 _ownerID = grpPlayer GVAR ["gang_owner",""];
-if(EQUAL(_ownerID,"")) exitWith {closeDialog 0;}; //Bad juju
+if(_ownerID isEqualTo "") exitWith {closeDialog 0;}; //Bad juju
 
 _gangName = grpPlayer getVariable "gang_name";
 _gangBank = GANG_FUNDS;

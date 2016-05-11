@@ -17,7 +17,7 @@ if(isNil {_house getVariable "house_owner"}) exitWith {hint localize "STR_House_
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
-if(EQUAL(count _houseCfg,0)) exitWith {};
+if(count _houseCfg isEqualTo 0) exitWith {};
 
 _action = [
     format[localize "STR_House_SellHouseMSG",
@@ -42,8 +42,8 @@ if(_action) then {
     [1] call SOCK_fnc_updatePartial;
     _index = life_vehicles find _house;
 
-    if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-        if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
+    if(LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
+        if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
             advanced_log = format ["sold a house for %1. Bank Balance: %2",(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
         } else {
             advanced_log = format ["%1 - %2 sold a house for %3. Bank Balance: %4",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];

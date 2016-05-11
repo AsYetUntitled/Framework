@@ -23,7 +23,7 @@ if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     if((_container isKindOf "Car") || (_container isKindOf "Air") || (_container isKindOf "Ship")) then {
         [] call SOCK_fnc_updateRequest;
 

@@ -2,7 +2,7 @@
 /*
     File: fn_copBreakDoor.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Allows cops to 'kick' in the door?
 */
@@ -16,7 +16,7 @@ _uid = (_house GVAR "house_owner") select 0;
 if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
 
 _door = [_house] call life_fnc_nearestDoor;
-if(EQUAL(_door,0)) exitWith {hint localize "STR_Cop_NotaDoor"};
+if(_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"};
 if((_house GVAR [format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
 life_action_inUse = true;

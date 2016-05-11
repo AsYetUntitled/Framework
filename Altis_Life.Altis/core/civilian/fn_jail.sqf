@@ -46,7 +46,7 @@ if(player distance (getMarkerPos "jail_marker") > 40) then {
 
 life_is_arrested = true;
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"jail_seize_inventory"),1)) then {
+if(LIFE_SETTINGS(getNumber,"jail_seize_inventory") isEqualTo 1) then {
     [] spawn life_fnc_seizeClient;
 } else {
     removeAllWeapons player;

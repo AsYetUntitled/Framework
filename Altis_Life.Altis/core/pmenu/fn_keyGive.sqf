@@ -29,7 +29,7 @@ if(_unit == player) exitWith {};
 _uid = getPlayerUID _unit;
 _owners = _vehicle GVAR "vehicle_info_owners";
 _index = [_uid,_owners] call TON_fnc_index;
-if(EQUAL(_index,-1)) then  {
+if(_index isEqualTo -1) then  {
     _owners pushBack [_uid,_unit GVAR ["realname",name _unit]];
     _vehicle SVAR ["vehicle_info_owners",_owners,true];
 };

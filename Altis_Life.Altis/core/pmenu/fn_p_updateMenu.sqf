@@ -2,7 +2,7 @@
 /*
     File: fn_p_updateMenu.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Updates the player menu (Virtual Interaction Menu)
 */
@@ -46,7 +46,7 @@ ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
         _inv lbAdd format["%2 [x%1]",ITEM_VALUE(configName _x),localize (getText(_x >> "displayName"))];
         _inv lbSetData [(lbSize _inv)-1,configName _x];
         _icon = M_CONFIG(getText,"VirtualItems",configName _x,"icon");
-        if(!(EQUAL(_icon,""))) then {
+        if(!(_icon isEqualTo "")) then {
             _inv lbSetPicture [(lbSize _inv)-1,_icon];
         };
     };
@@ -54,13 +54,13 @@ ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 
 {
     _displayName = getText(_x >> "displayName");
-    
+
     if(LICENSE_VALUE(configName _x,_side)) then {
         _struct = _struct + format["%1<br/>",localize _displayName];
     };
 } forEach (format["getText(_x >> 'side') isEqualTo '%1'",_side] configClasses (missionConfigFile >> "Licenses"));
 
-if(EQUAL(_struct,"")) then {
+if(_struct isEqualTo "") then {
     _struct = "No Licenses";
 };
 

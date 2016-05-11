@@ -10,7 +10,7 @@ private["_skinName"];
 
 switch(playerSide) do {
     case civilian: {
-        if(EQUAL(LIFE_SETTINGS(getNumber,"civ_skins"),1)) then {
+        if(LIFE_SETTINGS(getNumber,"civ_skins") isEqualTo 1) then {
             if(uniform player == "U_C_Poloshirt_blue") then {
                 player setObjectTextureGlobal [0, "textures\civilian_uniform_1.jpg"];
             };
@@ -38,7 +38,7 @@ switch(playerSide) do {
     case west: {
         if(uniform player == "U_Rangemaster") then {
             _skinName = "textures\cop_uniform.jpg";
-            if(EQUAL(LIFE_SETTINGS(getNumber,"cop_extendedSkins"),1)) then {
+            if(LIFE_SETTINGS(getNumber,"cop_extendedSkins") isEqualTo 1) then {
                 if(FETCH_CONST(life_coplevel) >= 1) then {
                     _skinName = ["textures\cop_uniform_",(FETCH_CONST(life_coplevel)),".jpg"] joinString "";
                 };

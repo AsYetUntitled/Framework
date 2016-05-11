@@ -8,7 +8,7 @@
 */
 private["_sellers","_crimes","_names"];
 _sellers = (SEL(_this,0)) GVAR ["sellers",[]];
-if(EQUAL(count _sellers,0)) exitWith {hint localize "STR_Cop_DealerQuestion"}; //No data.
+if(count _sellers isEqualTo 0) exitWith {hint localize "STR_Cop_DealerQuestion"}; //No data.
 life_action_inUse = true;
 _crimes = LIFE_SETTINGS(getArray,"crimes");
 

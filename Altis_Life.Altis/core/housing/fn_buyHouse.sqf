@@ -19,7 +19,7 @@ if(count life_houses >= (LIFE_SETTINGS(getNumber,"house_limit"))) exitWith {hint
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
-if(EQUAL(count _houseCfg,0)) exitWith {};
+if(count _houseCfg isEqualTo 0) exitWith {};
 
 _action = [
     format[localize "STR_House_BuyMSG",
@@ -37,8 +37,8 @@ if(_action) then {
         [_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
     };
 
-    if(EQUAL(LIFE_SETTINGS(getNumber,"player_advancedLog"),1)) then {
-        if(EQUAL(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging"),1)) then {
+    if(LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
+        if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
             advanced_log = format ["bought a house for %1. Bank Balance: %2  On Hand Cash: %3",[(SEL(_houseCfg,0))] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
         } else {
             advanced_log = format ["%1 - %2 bought a house for %3. Bank Balance: %4  On Hand Cash: %5",profileName,(getPlayerUID player),_gangName,[(SEL(_houseCfg,0))] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];

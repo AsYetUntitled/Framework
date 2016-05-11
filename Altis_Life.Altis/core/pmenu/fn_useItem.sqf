@@ -8,15 +8,15 @@
 */
 private "_item";
 disableSerialization;
-if(EQUAL(lbCurSel 2005,-1)) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
+if((lbCurSel 2005) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
 _item = CONTROL_DATA(2005);
 
 switch (true) do {
     case (_item in ["waterBottle","coffee","redgull"]): {
         if(([false,_item,1] call life_fnc_handleInv)) then {
             life_thirst = 100;
-            if(EQUAL(LIFE_SETTINGS(getNumber,"enable_fatigue"),1)) then {player setFatigue 0;};
-            if(EQUAL(_item,"redgull") && {EQUAL(LIFE_SETTINGS(getNumber,"enable_fatigue"),1)}) then {
+            if(LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1) then {player setFatigue 0;};
+            if(_item isEqualTo "redgull" && {LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1}) then {
                 [] spawn {
                     life_redgull_effect = time;
                     titleText[localize "STR_ISTR_RedGullEffect","PLAIN"];
@@ -28,37 +28,37 @@ switch (true) do {
         };
     };
 
-    case (EQUAL(_item,"boltcutter")): {
+    case (_item isEqualTo "boltcutter"): {
         [cursorObject] spawn life_fnc_boltcutter;
         closeDialog 0;
     };
 
-    case (EQUAL(_item,"blastingcharge")): {
+    case (_item isEqualTo "blastingcharge"): {
         player reveal fed_bank;
         (group player) reveal fed_bank;
         [cursorObject] spawn life_fnc_blastingCharge;
     };
 
-    case (EQUAL(_item,"defusekit")): {
+    case (_item isEqualTo "defusekit"): {
         [cursorObject] spawn life_fnc_defuseKit;
     };
 
-    case (EQUAL(_item,"storagesmall")): {
+    case (_item isEqualTo "storagesmall"): {
         [false] call life_fnc_storageBox;
     };
 
-    case (EQUAL(_item,"storagebig")): {
+    case (_item isEqualTo "storagebig"): {
         [true] call life_fnc_storageBox;
     };
 
-    case (EQUAL(_item,"spikeStrip")): {
+    case (_item isEqualTo "spikeStrip"): {
         if(!isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"};
         if(([false,_item,1] call life_fnc_handleInv)) then {
             [] spawn life_fnc_spikeStrip;
         };
     };
 
-    case (EQUAL(_item,"fuelFull")): {
+    case (_item isEqualTo "fuelFull"): {
         if(vehicle player != player) exitWith {hint localize "STR_ISTR_RefuelInVehicle"};
         [] spawn life_fnc_jerryRefuel;
     };
@@ -68,7 +68,7 @@ switch (true) do {
     };
 
     case (_item in ["apple","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat","donuts","tbacon","peach"]): {
-        if(!(EQUAL(M_CONFIG(getNumber,"VirtualItems",_item,"edible"),-1))) then {
+        if(!(M_CONFIG(getNumber,"VirtualItems",_item,"edible") isEqualTo -1)) then {
             if([false,_item,1] call life_fnc_handleInv) then {
                 _val = M_CONFIG(getNumber,"VirtualItems",_item,"edible");
                 _sum = life_hunger + _val;

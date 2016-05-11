@@ -2,7 +2,7 @@
 /*
     File: fn_loadGear.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
@@ -13,12 +13,12 @@ waitUntil {!(isNull (findDisplay 46))};
 _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
-if(EQUAL(count _itemArray,0)) exitWith {
+if(count _itemArray isEqualTo 0) exitWith {
     switch(playerSide) do {
         case west: {
             [] call life_fnc_copLoadout;
         };
-        
+
         case civilian: {
             [] call life_fnc_civLoadout;
         };
@@ -49,11 +49,11 @@ _itemArray params [
     ["_yItems",[]]
 ];
 
-if(!(EQUAL(_goggles,""))) then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(!(EQUAL(_headgear,""))) then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(!(EQUAL(_uniform,""))) then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(!(EQUAL(_vest,""))) then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(!(EQUAL(_backpack,""))) then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(!(_goggles isEqualTo "")) then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(!(_headgear isEqualTo "")) then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(!(_uniform isEqualTo "")) then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(!(_vest isEqualTo "")) then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(!(_backpack isEqualTo "")) then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 
 /* Hotfix for losing virtual items on login */
 if(!isNil {SEL(_this,0)}) then {
@@ -76,16 +76,16 @@ life_maxWeight = 100;
 
 life_maxWeight = 24;
 //Primary & Secondary (Handgun) should be added last as magazines do not automatically load into the gun.
-if(!(EQUAL(_prim,""))) then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(!(EQUAL(_seco,""))) then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(!(_prim isEqualTo "")) then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(!(_seco isEqualTo "")) then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 
 {
-    if (!(EQUAL(_x,""))) then {
+    if (!(_x isEqualTo "")) then {
         player addPrimaryWeaponItem _x;
     };
 } forEach (_pItems);
 {
-    if (!(EQUAL(_x,""))) then {
+    if (!(_x isEqualTo "")) then {
         player addHandgunItem _x;
     };
 } forEach (_hItems);

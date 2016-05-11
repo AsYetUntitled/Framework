@@ -12,7 +12,7 @@ _container = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if(isNull _container) exitWith {};
 
 _containerInfo = _container GVAR ["Trunk",[]];
-if(EQUAL(count _containerInfo,0)) exitWith {hint localize "STR_Cop_ContainerEmpty"};
+if(count _containerInfo isEqualTo 0) exitWith {hint localize "STR_Cop_ContainerEmpty"};
 
 _value = 0;
 _illegalValue = 0;

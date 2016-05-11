@@ -17,7 +17,7 @@ if((player getVariable["isEscorting",false])) exitWith {
     [] call life_fnc_copInteractionMenu;
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"global_ATM"),1)) then{
+if(LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
     //Check if the player is near an ATM.
     if((call life_fnc_nearATM) && {!dialog}) exitWith {
         [] call life_fnc_atmMenu;
@@ -78,7 +78,7 @@ life_action_inUse = true;
 //Check if it's a dead body.
 if(_curObject isKindOf "Man" && {!alive _curObject} && !(_curObject GVAR["Revive",false]) && {playerSide in [west,independent]}) exitWith {
     //Hotfix code by ins0
-    if(((playerSide == west && {(EQUAL(LIFE_SETTINGS(getNumber,"revive_cops"),1))}) || playerSide == independent)) then {
+    if(((playerSide == west && {(LIFE_SETTINGS(getNumber,"revive_cops") isEqualTo 1)}) || playerSide == independent)) then {
         if(life_inv_defibrillator > 0) then {
             [_curObject] call life_fnc_revivePlayer;
         };
@@ -97,7 +97,6 @@ if(isPlayer _curObject && _curObject isKindOf "Man") then {
     _list = ["landVehicle","Ship","Air"];
     _isVehicle = if(KINDOF_ARRAY(_curObject,_list)) then {true} else {false};
     _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
-    _money = "Land_Money_F";
 
     //It's a vehicle! open the vehicle interaction key!
     if(_isVehicle) then {
@@ -112,7 +111,7 @@ if(isPlayer _curObject && _curObject isKindOf "Man") then {
             [_curObject,player,false] remoteExecCall ["TON_fnc_pickupAction",RSERV];
         } else {
             //It wasn't a misc item so is it money?
-            if(EQUAL((typeOf _curObject),_money) && {!(_curObject GVAR ["inUse",false])}) then {
+            if((typeOf _curObject) isEqualTo "Land_Money_F" && {!(_curObject GVAR ["inUse",false])}) then {
                 [_curObject,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
             };
         };

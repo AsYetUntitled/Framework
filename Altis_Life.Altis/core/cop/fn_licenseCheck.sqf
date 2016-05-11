@@ -2,7 +2,7 @@
 /*
     File: fn_licenseCheck.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Returns the licenses to the cop.
 */
@@ -21,5 +21,5 @@ _licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses (missio
     };
 } forEach _licensesConfigs;
 
-if(EQUAL(_licenses,"")) then {_licenses = (localize "STR_Cop_NoLicensesFound");};
+if(_licenses isEqualTo "") then {_licenses = (localize "STR_Cop_NoLicensesFound");};
 [profileName,_licenses] remoteExecCall ["life_fnc_licensesRead",_cop];

@@ -48,7 +48,7 @@ if((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) the
         player playActionNow "stop";
         if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
         if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
-        if(EQUAL(LIFE_SETTINGS(getNumber,"vehicle_infiniteRepair"),0)) then {
+        if(LIFE_SETTINGS(getNumber,"vehicle_infiniteRepair") isEqualTo 0) then {
             [false,"toolkit",1] call life_fnc_handleInv;
         };
         _veh setDamage 0;

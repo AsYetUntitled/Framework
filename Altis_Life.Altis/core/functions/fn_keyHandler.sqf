@@ -15,7 +15,7 @@ _alt = SEL(_this,4);
 _speed = speed cursorObject;
 _handled = false;
 
-_interactionKey = if((EQUAL(count (actionKeys "User10"),0))) then {219} else {(actionKeys "User10") select 0};
+_interactionKey = if(count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
 _mapKey = SEL(actionKeys "ShowMap",0);
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
@@ -31,7 +31,7 @@ if(life_action_inUse) exitWith {
 };
 
 //Hotfix for Interaction key not being able to be bound on some operation systems.
-if(!(EQUAL(count (actionKeys "User10"),0)) && {(inputAction "User10" > 0)}) exitWith {
+if(!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) exitWith {
     //Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
     if(!life_action_inUse) then {
         [] spawn {
@@ -58,7 +58,7 @@ switch (_code) do {
     //Space key for Jumping
     case 57: {
         if(isNil "jumpActionTime") then {jumpActionTime = 0;};
-        if(_shift && {!(EQUAL(animationState player,"AovrPercMrunSrasWrflDf"))} && {isTouchingGround player} && {EQUAL(stance player,"STAND")} && {speed player > 2} && {!life_is_arrested} && {SEL((velocity player),2) < 2.5} && {time - jumpActionTime > 1.5}) then {
+        if(_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {SEL((velocity player),2) < 2.5} && {time - jumpActionTime > 1.5}) then {
             jumpActionTime = time; //Update the time.
             [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
             _handled = true;
@@ -88,13 +88,13 @@ switch (_code) do {
 
     //Holster / recall weapon. (Shift + H)
     case 35: {
-        if(_shift && !_ctrlKey && !(EQUAL(currentWeapon player,""))) then {
+        if(_shift && !_ctrlKey && !(currentWeapon player isEqualTo "")) then {
             life_curWep_h = currentWeapon player;
             player action ["SwitchWeapon", player, player, 100];
             player switchCamera cameraView;
         };
 
-        if(!_shift && _ctrlKey && !isNil "life_curWep_h" && {!(EQUAL(life_curWep_h,""))}) then {
+        if(!_shift && _ctrlKey && !isNil "life_curWep_h" && {!(life_curWep_h isEqualTo "")}) then {
             if(life_curWep_h in [RIFLE,LAUNCHER,PISTOL]) then {
                 player selectWeapon life_curWep_h;
             };
@@ -241,10 +241,10 @@ switch (_code) do {
             if(_veh isKindOf "House_F" && {playerSide == civilian}) then {
                 if(_veh in life_vehicles && player distance _veh < 8) then {
                     _door = [_veh] call life_fnc_nearestDoor;
-                    if(EQUAL(_door,0)) exitWith {hint localize "STR_House_Door_NotNear"};
+                    if(_door isEqualTo 0) exitWith {hint localize "STR_House_Door_NotNear"};
                     _locked = _veh GVAR [format["bis_disabled_Door_%1",_door],0];
 
-                    if(EQUAL(_locked,0)) then {
+                    if(_locked isEqualTo 0) then {
                         _veh SVAR [format["bis_disabled_Door_%1",_door],1,true];
                         _veh animate [format["door_%1_rot",_door],0];
                         systemChat localize "STR_House_Door_Lock";
@@ -257,7 +257,7 @@ switch (_code) do {
             } else {
                 _locked = locked _veh;
                 if(_veh in life_vehicles && player distance _veh < 8) then {
-                    if(EQUAL(_locked,2)) then {
+                    if(_locked isEqualTo 2) then {
                         if(local _veh) then {
                             _veh lock 0;
 

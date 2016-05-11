@@ -58,8 +58,8 @@ _value = 0;
     _var = SEL(_x,0);
     _val = SEL(_x,1);
 
-    if(EQUAL(ITEM_ILLEGAL(_var),1)) then {
-        if(!(EQUAL(ITEM_SELLPRICE(_var),-1))) then {
+    if(ITEM_ILLEGAL(_var) isEqualTo 1) then {
+        if(!(ITEM_SELLPRICE(_var) isEqualTo -1)) then {
             _houseInvData deleteAt _forEachIndex;
             SUB(_houseInvVal,(([_var] call life_fnc_itemWeight) * _val));
             ADD(_value,(_val * ITEM_SELLPRICE(_var)));

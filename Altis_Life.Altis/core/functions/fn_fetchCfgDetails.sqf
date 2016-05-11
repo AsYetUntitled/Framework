@@ -29,7 +29,7 @@
 private["_className","_section","_type","_accPointer","_accMuzzle","_accOptic","_classes","_itemInfo","_magazines","_scope","_config","_displayName"];
 _className = [_this,0,"",[""]] call BIS_fnc_param;
 _section = [_this,1,"",[""]] call BIS_fnc_param;
-if((EQUAL(_className,""))) exitWith {[]};
+if(_className isEqualTo "") exitWith {[]};
 
 _type = -1;
 _accPointer = [];
@@ -42,7 +42,7 @@ _muzzles = [];
 _magazines = [];
 _return = [];
 
-if(EQUAL(_section,"")) then {
+if(_section isEqualTo "") then {
     _section = switch(true) do {
         case (isClass(configFile >> CONFIG_MAGAZINES >> _className)): {CONFIG_MAGAZINES};
         case (isClass(configFile >> CONFIG_WEAPONS >> _className)): {CONFIG_WEAPONS};
@@ -51,7 +51,7 @@ if(EQUAL(_section,"")) then {
     };
 };
 
-if(!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {EQUAL(_section,"")}) exitWith {[]};
+if(!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {_section isEqualTo ""}) exitWith {[]};
 _config = configFile >> _section >> _className;
 _displayName = getText(_config >> "displayName");
 _picture = getText(_config >> "picture");

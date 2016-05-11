@@ -2,14 +2,14 @@
 /*
     File: fn_initGang.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Main initialization for gangs?
 */
 private["_exitLoop","_group","_wait"];
 if(playerSide != civilian) exitWith {}; //What in the hell?
 [player] join (createGroup civilian);
-if(EQUAL(count life_gangData,0)) exitWith {}; //Dafuq?
+if(count life_gangData isEqualTo 0) exitWith {}; //Dafuq?
 
 _wait = round(random(8));
 sleep _wait;
@@ -21,14 +21,14 @@ _exitLoop = false;
     if(!isNil "_groupName") then {
         _groupOwner = _x GVAR ["gang_owner",""];
         _groupID = _x GVAR "gang_id";
-        if(EQUAL(_groupOwner,"") || isNil "_groupID") exitWith {}; //Seriously?
-        if(EQUAL(SEL(life_gangData,0),_groupID) && {EQUAL(SEL(life_gangData,1),_groupOwner)}) exitWith {_group = _x; _exitLoop = true;};
+        if(_groupOwner isEqualTo "") || isNil "_groupID") exitWith {}; //Seriously?
+        if(SEL(life_gangData,0) isEqualTo _groupID && {SEL(life_gangData,1) isEqualTo _groupOwner}) exitWith {_group = _x; _exitLoop = true;};
     };
 } forEach allGroups;
 
 if(!isNil "_group") then {
     [player] join _group;
-    if(EQUAL(SEL(life_gangData,1),steamid)) then {
+    if(SEL(life_gangData,1) isEqualTo steamid) then {
         _group selectLeader player;
         [player,_group] remoteExecCall ["TON_fnc_clientGangLeader",(units _group)];
     };

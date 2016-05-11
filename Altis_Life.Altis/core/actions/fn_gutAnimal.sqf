@@ -23,7 +23,7 @@ switch(typeOf _animalCorpse) do {
     default {_displayName = ""; _item = "";};
 };
 
-if(EQUAL(_displayName,"")) exitWith {life_action_inUse = false;};
+if(_displayName isEqualTo "") exitWith {life_action_inUse = false;};
 
 _upp = format[localize "STR_NOTF_Gutting",_displayName];
 //Setup our progress bar.

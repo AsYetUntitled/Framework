@@ -7,12 +7,12 @@
     For the mean time it blocks the player from opening another persons backpack
 */
 private["_container","_unit","_list"];
-if(EQUAL(count _this,1)) exitWith {false};
+if(count _this isEqualTo 1) exitWith {false};
 _unit = SEL(_this,0);
 _container = SEL(_this,1);
 
 _isPack = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,typeOf _container,"isBackpack");
-if(EQUAL(_isPack,1)) exitWith {
+if(_isPack isEqualTo 1) exitWith {
     hint localize "STR_MISC_Backpack";
     true;
 };

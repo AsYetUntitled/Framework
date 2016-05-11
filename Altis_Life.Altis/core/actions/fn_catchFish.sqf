@@ -2,7 +2,7 @@
 /*
     File: fn_catchFish.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Catches a fish that is near by.
 */
@@ -22,7 +22,7 @@ switch(true) do {
     default {_type = ""};
 };
 
-if(EQUAL(_type,"")) exitWith {}; //Couldn't get a type
+if(_type isEqualTo "") exitWith {}; //Couldn't get a type
 
 if(([true,_type,1] call life_fnc_handleInv)) then {
     deleteVehicle _fish;

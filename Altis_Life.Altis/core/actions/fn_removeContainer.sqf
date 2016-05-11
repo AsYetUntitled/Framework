@@ -29,7 +29,7 @@ if(_action) then {
     if(_box == "None") exitWith {};
 
     _diff = [_box,1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-    if(EQUAL(_diff,0)) exitWith {hint localize "STR_NOTF_InvFull"};
+    if(_diff isEqualTo 0) exitWith {hint localize "STR_NOTF_InvFull"};
 
     if(life_HC_isActive) then {
         [_container] remoteExecCall ["HC_fnc_deleteDBContainer",HC_Life];
