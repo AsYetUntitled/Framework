@@ -512,8 +512,15 @@
             <Polish>Do Mnie</Polish>
         </Key>
         <Key ID="STR_Admin_CannotTpHere">
-            <Original>You cannot TP player here because player are inside vehice</Original>
-            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule</French>
+            <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
+            <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
+            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule.</French>
+            <Spanish>No se puede teletransportarse al jugador aquí porque están dentro de un vehículo.</Spanish>
+            <Italian>Non si può teletrasportarsi il giocatore qui perché sono all'interno di un veicolo.</Italian>
+            <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
+            <Portuguese>Você não pode se teletransportar o jogador aqui, porque eles estão dentro de um veículo.</Portuguese>
+            <Russian>Вы не можете телепортировать игрока здесь, потому что они находятся внутри автомобиля.</Russian>
+            <German>Sie können den Player hier nicht teleportieren , weil sie im Inneren eines Fahrzeugs sind.</German>
         </Key>
         <Key ID="STR_Admin_Debug">
             <Original>Debug</Original>
