@@ -11,7 +11,7 @@ _building = param [0,ObjNull,[ObjNull]];
 
 if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
-if(((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) && ({side _x == west} count playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
+if(((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) && (west countSide playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
     hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))]
 };
 if((typeOf _building) == "Land_Research_house_V1_F" && (nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) GVAR ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
