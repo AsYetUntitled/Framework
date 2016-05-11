@@ -2,7 +2,7 @@
 /*
     File: fn_adminCompensate.sqf
     Author: ColinM9991
-    
+
     Description:
     Figure it out.
 */
@@ -11,7 +11,6 @@ if(FETCH_CONST(life_adminlevel) < 2) exitWith {closeDialog 0; hint localize "STR
 _value = parseNumber(ctrlText 9922);
 if(_value < 0) exitWith {};
 if(_value > 999999) exitWith {hint localize "STR_ANOTF_Fail"};
-//if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_AIM_notnumeric"};
 
 _action = [
     format [localize "STR_ANOTF_CompWarn",[_value] call life_fnc_numberText],

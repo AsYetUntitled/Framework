@@ -182,7 +182,6 @@ class Life_Client_Core {
         class hudUpdate {};
         class inventoryClosed {};
         class inventoryOpened {};
-        class isnumeric {};
         class isUIDActive {};
         class keyHandler {};
         class loadDeadGear {};
