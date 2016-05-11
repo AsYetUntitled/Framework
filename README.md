@@ -28,12 +28,12 @@
         <img src="https://img.shields.io/badge/issues-on%20waffle-red.svg" alt="Stories in Ready">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://travis-ci.org/ArmaLife/Framework">
-        <img src="https://api.travis-ci.org/ArmaLife/Framework.svg" alt="Build Status">
-    </a>
-    &nbsp;&nbsp;&nbsp;
     <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US">
         <img src="https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-yellow.svg" alt="License Type">
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://travis-ci.org/ArmaLife/Framework">
+        <img src="https://api.travis-ci.org/ArmaLife/Framework.svg" alt="Build Status">
     </a>
 </p>
 
