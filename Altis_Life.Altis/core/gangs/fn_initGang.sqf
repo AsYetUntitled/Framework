@@ -21,7 +21,7 @@ _exitLoop = false;
     if(!isNil "_groupName") then {
         _groupOwner = _x GVAR ["gang_owner",""];
         _groupID = _x GVAR "gang_id";
-        if(_groupOwner isEqualTo "") || isNil "_groupID") exitWith {}; //Seriously?
+        if(_groupOwner isEqualTo "" || isNil "_groupID") exitWith {}; //Seriously?
         if(SEL(life_gangData,0) isEqualTo _groupID && {SEL(life_gangData,1) isEqualTo _groupOwner}) exitWith {_group = _x; _exitLoop = true;};
     };
 } forEach allGroups;
