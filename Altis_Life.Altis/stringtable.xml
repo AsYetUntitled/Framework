@@ -511,6 +511,10 @@
             <Portuguese>TP Aqui</Portuguese>
             <Polish>Do Mnie</Polish>
         </Key>
+        <Key ID="STR_Admin_CannotTpHere">
+            <Original>You cannot TP player here because player are inside vehice</Original>
+            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule</French>
+        </Key>
         <Key ID="STR_Admin_Debug">
             <Original>Debug</Original>
             <Czech>Ladit</Czech>

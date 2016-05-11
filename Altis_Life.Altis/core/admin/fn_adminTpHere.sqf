@@ -15,5 +15,6 @@ if(isNil "_target") exitWith {};
 if(isNull _target) exitWith {};
 if(_target == player) exitWith {hint localize "STR_ANOTF_Error";};
 
+if (vehicle _target isEqualTo _target) exitWith {hint localize "STR_Admin_CannotTpHere"};
 _target setPos (getPos player);
 hint format["You have teleported %1 to your location",_target getVariable["realname",name _target]];
