@@ -16,12 +16,12 @@ if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint localize "STR_GNOTF_KickSelf"};
 
 _unitID = getPlayerUID _unit;
-_members = group player GVAR "gang_members";
+_members = group player getVariable "gang_members";
 if(isNil "_members") exitWith {};
 if(!(_members isEqualType [])) exitWith {};
 
 SUB(_members,[_unitID]);
-group player SVAR ["gang_members",_members,true];
+group player setVariable ["gang_members",_members,true];
 
 [_unit,group player] remoteExec ["TON_fnc_clientGangKick",_unit]; //Boot that bitch!
 

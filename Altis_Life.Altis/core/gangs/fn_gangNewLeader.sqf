@@ -16,7 +16,7 @@ if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint localize "STR_GNOTF_TransferSelf"};
 
 _action = [
-    format[localize "STR_GNOTF_TransferMSG",_unit GVAR ["realname",name _unit]],
+    format[localize "STR_GNOTF_TransferMSG",_unit getVariable ["realname",name _unit]],
     localize "STR_Gang_Transfer",
     localize "STR_Global_Yes",
     localize "STR_Global_No"
@@ -25,7 +25,7 @@ _action = [
 if(_action) then {
     _unitID = getPlayerUID _unit;
     if(_unitID isEqualTo "") exitWith {hint localize "STR_GNOTF_badUID";}; //Unlikely?
-    group player SVAR ["gang_owner",_unitID,true];
+    group player setVariable ["gang_owner",_unitID,true];
     group player selectLeader _unit;
     [_unit,group player] remoteExec ["TON_fnc_clientGangLeader",_unit]; //Boot that bitch!
 

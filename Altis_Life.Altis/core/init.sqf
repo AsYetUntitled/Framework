@@ -98,10 +98,10 @@ switch (playerSide) do {
     };
 };
 
-player SVAR ["restrained",false,true];
-player SVAR ["Escorting",false,true];
-player SVAR ["transporting",false,true];
-player SVAR ["playerSurrender",false,true];
+player setVariable ["restrained",false,true];
+player setVariable ["Escorting",false,true];
+player setVariable ["transporting",false,true];
+player setVariable ["playerSurrender",false,true];
 
 diag_log "Past Settings Init";
 [] execFSM "core\fsm\client.fsm";
@@ -124,8 +124,8 @@ diag_log "----------------------------------------------------------------------
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
 
-player SVAR ["steam64ID",getPlayerUID player];
-player SVAR ["realname",profileName,true];
+player setVariable ["steam64ID",getPlayerUID player];
+player setVariable ["realname",profileName,true];
 
 life_fnc_moveIn = compileFinal
 "

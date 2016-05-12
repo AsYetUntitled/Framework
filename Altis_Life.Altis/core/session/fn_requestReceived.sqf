@@ -32,8 +32,8 @@ if(!isServer && (!isNil "life_adminlevel" || !isNil "life_coplevel" || !isNil "l
 };
 
 //Parse basic player information.
-CASH = parseNumber (SEL(_this,2));
-BANK = parseNumber (SEL(_this,3));
+life_cash = parseNumber (SEL(_this,2));
+life_atmbank = parseNumber (SEL(_this,3));
 CONST(life_adminlevel,parseNumber (SEL(_this,4)));
 if(EQUAL(LIFE_SETTINGS(getNumber,"donor_level"),1)) then {
     CONST(life_donorlevel,parseNumber (SEL(_this,5)));
@@ -43,7 +43,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"donor_level"),1)) then {
 
 //Loop through licenses
 if(count (SEL(_this,6)) > 0) then {
-    {SVAR_MNS [SEL(_x,0),SEL(_x,1)];} forEach (SEL(_this,6));
+    {missionNamespace setVariable [SEL(_x,0),SEL(_x,1)];} forEach (SEL(_this,6));
 };
 
 life_gear = SEL(_this,8);

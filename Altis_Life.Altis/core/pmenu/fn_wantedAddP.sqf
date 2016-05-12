@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
     File: fn_wantedAddP.sqf
-    Author: 
-    
+    Author:
+
     Description:
-    
+
 */
 private["_unit","_amount"];
 if(playerSide != west) exitWith {hint localize "STR_Cop_wantedList_notCop";};
@@ -18,10 +18,10 @@ if(isNil "_unit") exitWith {};
 //if(_unit == player) exitWith {hint "You can't make yourself wanted, dipshit";};
 if(isNull _unit) exitWith {};
 
-[1,"STR_Wanted_AddP",true,[_unit GVAR ["realname",name _unit],_amount,getPlayerUID _unit]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+[1,"STR_Wanted_AddP",true,[_unit getVariable ["realname",name _unit],_amount,getPlayerUID _unit]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 
 if(life_HC_isActive) then {
-    [getPlayerUID _unit,_unit GVAR ["realname",name _unit],_amount] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
+    [getPlayerUID _unit,_unit getVariable ["realname",name _unit],_amount] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
 } else {
-    [getPlayerUID _unit,_unit GVAR ["realname",name _unit],_amount] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+    [getPlayerUID _unit,_unit getVariable ["realname",name _unit],_amount] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 };

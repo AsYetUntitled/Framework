@@ -12,7 +12,7 @@ if(isNull (findDisplay 2620)) then {
     if(!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
 };
 
-_ownerID = group player GVAR ["gang_owner",""];
+_ownerID = group player getVariable ["gang_owner",""];
 if(_ownerID isEqualTo "") exitWith {closeDialog 0;}; //Bad juju
 
 _gangName = group player getVariable "gang_name";
@@ -35,10 +35,10 @@ _members = CONTROL(2620,2621);
 lbClear _members;
 {
     if((getPlayerUID _x) == _ownerID) then {
-        _members lbAdd format["%1 " +(localize "STR_GNOTF_GangLeader"),(_x GVAR ["realname",name _x])];
+        _members lbAdd format["%1 " +(localize "STR_GNOTF_GangLeader"),(_x getVariable ["realname",name _x])];
         _members lbSetData [(lbSize _members)-1,str(_x)];
     } else {
-        _members lbAdd format["%1",(_x GVAR ["realname",name _x])];
+        _members lbAdd format["%1",(_x getVariable ["realname",name _x])];
         _members lbSetData [(lbSize _members)-1,str(_x)];
     };
 } forEach (units group player);
@@ -56,6 +56,6 @@ _allUnits = playableUnits;
 _ctrl = CONTROL(2620,2632);
 lbClear _ctrl; //Purge the list
 {
-    _ctrl lbAdd format["%1",_x GVAR ["realname",name _x]];
+    _ctrl lbAdd format["%1",_x getVariable ["realname",name _x]];
     _ctrl lbSetData [(lbSize _ctrl)-1,str(_x)];
 } forEach _allUnits;

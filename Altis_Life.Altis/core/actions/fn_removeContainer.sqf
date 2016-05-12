@@ -12,7 +12,7 @@ _containerType = typeOf _container;
 _house = nearestObject [player, "House"];
 if(!(_house in life_vehicles)) exitWith {hint localize "STR_ISTR_Box_NotinHouse"};
 if(isNull _container) exitWith {};
-_containers = _house GVAR ["containers",[]];
+_containers = _house getVariable ["containers",[]];
 closeDialog 0;
 
 _action = [
@@ -42,7 +42,7 @@ if(_action) then {
             _containers deleteAt _forEachIndex;
         };
     } forEach _containers;
-    _house SVAR ["containers",_containers,true];
+    _house setVariable ["containers",_containers,true];
 
     [true,_box,1] call life_fnc_handleInv;
 };

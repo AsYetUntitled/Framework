@@ -23,7 +23,7 @@ if(!isNull _source) then {
                 _distance = if(_projectile == "B_556x45_dual") then {100} else {35};
                 _damage = false;
                 if(_unit distance _source < _distance) then {
-                    if(!life_istazed && !life_isknocked && !(_unit GVAR ["restrained",false])) then {
+                    if(!life_istazed && !life_isknocked && !(_unit getVariable ["restrained",false])) then {
                         if (vehicle player != player) then {
                             if (typeOf (vehicle player) == "B_Quadbike_01_F") then {
                                 player action ["Eject",vehicle player];

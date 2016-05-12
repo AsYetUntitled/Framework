@@ -3,8 +3,6 @@
 #define SUB(var1,var2) var1 = var1 - var2
 #define ADD(var1,var2) var1 = var1 + var2
 #define SEL(ARRAY,INDEX) (ARRAY select INDEX)
-#define CASH life_cash
-#define BANK life_atmbank
 #define GANG_FUNDS group player getVariable ["gang_bank",0];
 
 /*
@@ -23,19 +21,10 @@
 #define RSERV 2
 #define RANY 0
 
-//Namespace Macros
-#define SVAR_MNS missionNamespace setVariable
-#define SVAR_UINS uiNamespace setVariable
-#define SVAR_PNS parsingNamespace setVariable
-#define GVAR_MNS missionNamespace getVariable
-#define GVAR_UINS uiNamespace getVariable
-
 //Scripting Macros
 #define CONST(var1,var2) var1 = compileFinal (if(var2 isEqualType "") then {var2} else {str(var2)})
 #define CONSTVAR(var) var = compileFinal (if(var isEqualType "") then {var} else {str(var)})
 #define FETCH_CONST(var) (call var)
-#define GVAR getVariable
-#define SVAR setVariable
 #define EXTDB "extDB2" callExtension
 #define EXTDB_SETTING(TYPE,SETTING) TYPE(missionConfigFile >> "CfgServer" >> SETTING)
 #define EXTDB_FAILED(MESSAGE) \
@@ -50,9 +39,9 @@
 
 //System Macros
 #define LICENSE_VARNAME(varName,flag) format["license_%1_%2",flag,M_CONFIG(getText,"Licenses",varName,"variable")]
-#define LICENSE_VALUE(varName,flag) GVAR_MNS [LICENSE_VARNAME(varName,flag),false]
+#define LICENSE_VALUE(varName,flag) missionNamespace getVariable [LICENSE_VARNAME(varName,flag),false]
 #define ITEM_VARNAME(varName) format["life_inv_%1",M_CONFIG(getText,"VirtualItems",varName,"variable")]
-#define ITEM_VALUE(varName) GVAR_MNS [ITEM_VARNAME(varName),0]
+#define ITEM_VALUE(varName) missionNamespace getVariable [ITEM_VARNAME(varName),0]
 #define ITEM_ILLEGAL(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"illegal")
 #define ITEM_SELLPRICE(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"sellPrice")
 #define ITEM_BUYPRICE(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"buyPrice")

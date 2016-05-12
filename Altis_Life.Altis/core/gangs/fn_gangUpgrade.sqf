@@ -7,7 +7,7 @@
     Determinds the upgrade price and blah
 */
 private["_maxMembers","_slotUpgrade","_upgradePrice"];
-_maxMembers = group player GVAR ["gang_maxMembers",8];
+_maxMembers = group player getVariable ["gang_maxMembers",8];
 _slotUpgrade = _maxMembers + 4;
 _upgradePrice = round(_slotUpgrade * ((LIFE_SETTINGS(getNumber,"gang_upgradeBase"))) / ((LIFE_SETTINGS(getNumber,"gang_upgradeMultiplier"))));
 
@@ -19,15 +19,15 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
-    if(BANK < _upgradePrice) exitWith {
+    if(life_atmbank < _upgradePrice) exitWith {
         hint parseText format[
             (localize "STR_GNOTF_NotEoughMoney_2")+ "<br/><br/>" +(localize "STR_GNOTF_Current")+ " <t color='#8cff9b'>$%1</t><br/>" +(localize "STR_GNOTF_Lacking")+ " <t color='#FF0000'>$%2</t>",
-            [BANK] call life_fnc_numberText,
-            [_upgradePrice - BANK] call life_fnc_numberText
+            [life_atmbank] call life_fnc_numberText,
+            [_upgradePrice - life_atmbank] call life_fnc_numberText
         ];
     };
-    SUB(BANK,_upgradePrice);
-    group player SVAR ["gang_maxMembers",_slotUpgrade,true];
+    SUB(life_atmbank,_upgradePrice);
+    group player setVariable ["gang_maxMembers",_slotUpgrade,true];
     hint parseText format[localize "STR_GNOTF_UpgradeSuccess",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText];
 
     if(life_HC_isActive) then {

@@ -21,7 +21,7 @@ if(isNull _vehicle || isNull _unit) exitWith  {
 _displayName = FETCH_CONFIG2(getText,"CfgVehicles",typeOf _vehicle, "displayName");
 _unit = owner _unit;
 
-_dbInfo = _vehicle GVAR ["dbInfo",[]];
+_dbInfo = _vehicle getVariable ["dbInfo",[]];
 if(count _dbInfo > 0) then {
     _uid = SEL(_dbInfo,0);
     _plate = SEL(_dbInfo,1);
@@ -34,6 +34,6 @@ if(count _dbInfo > 0) then {
 deleteVehicle _vehicle;
 life_action_inUse = false;
 _unit publicVariableClient "life_action_inUse";
-CASH = _cash;
+life_cash = _cash;
 _unit publicVariableClient "life_cash";
 [2,format[(localize "STR_NOTF_ChopSoldCar"),_displayName,[_price] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",_unit];

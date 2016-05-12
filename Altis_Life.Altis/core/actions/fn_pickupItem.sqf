@@ -1,5 +1,5 @@
 #include "..\..\script_macros.hpp"
-#define INUSE(ENTITY) ENTITY SVAR ["inUse",false,true]
+#define INUSE(ENTITY) ENTITY setVariable ["inUse",false,true]
 /*
     File: fn_pickupItem.sqf
     Author: Bryan "Tonic" Boardwine
@@ -11,13 +11,13 @@ private ["_itemInfo","_itemName","_illegal","_diff"];
 if((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDelay"; INUSE(_this);};
 if(isNull _this || {player distance _this > 3}) exitWith {INUSE(_this);};
 
-_itemInfo = _this GVAR ["item",[]]; if(count _itemInfo isEqualTo 0) exitWith {deleteVehicle _this;};
+_itemInfo = _this getVariable ["item",[]]; if(count _itemInfo isEqualTo 0) exitWith {deleteVehicle _this;};
 _itemName = ITEM_NAME(SEL(_itemInfo,0));
 _illegal = ITEM_ILLEGAL(SEL(_itemInfo,0));
 
 if(playerSide == west && _illegal isEqualTo 1) exitWith {
     titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2)] call life_fnc_numberText],"PLAIN"];
-    ADD(BANK,round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2));
+    ADD(life_atmbank,round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2));
     deleteVehicle _this;
     life_action_delay = time;
 };
@@ -30,7 +30,7 @@ if(!(_diff isEqualTo SEL(_itemInfo,1))) then {
     if(([true,SEL(_itemInfo,0),_diff] call life_fnc_handleInv)) then {
         player playMove "AinvPknlMstpSlayWrflDnon";
 
-        _this SVAR ["item",[SEL(_itemInfo,0),(SEL(_itemInfo,1)) - _diff],true];
+        _this setVariable ["item",[SEL(_itemInfo,0),(SEL(_itemInfo,1)) - _diff],true];
         titleText[format[localize "STR_NOTF_Picked",_diff,localize _itemName],"PLAIN"];
         INUSE(_this);
     } else {
