@@ -28,12 +28,12 @@ _exitLoop = false;
 
 if(!isNil "_group") then {
     [player] join _group;
-    if(SEL(life_gangData,1) isEqualTo steamid) then {
+    if(SEL(life_gangData,1) isEqualTo getPlayerUID player) then {
         _group selectLeader player;
         [player,_group] remoteExecCall ["TON_fnc_clientGangLeader",(units _group)];
     };
 } else {
-    _group = grpPlayer;
+    _group = group player;
     _group SVAR ["gang_id",SEL(life_gangData,0),true];
     _group SVAR ["gang_owner",SEL(life_gangData,1),true];
     _group SVAR ["gang_name",SEL(life_gangData,2),true];

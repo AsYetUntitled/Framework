@@ -13,7 +13,7 @@ if(isNull _veh) exitWith {};
 if((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) then {
     if(life_inv_toolkit > 0) then {
         life_action_inUse = true;
-        _displayName = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _veh),"displayName");
+        _displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _veh),"displayName");
         _upp = format[localize "STR_NOTF_Repairing",_displayName];
 
         //Setup our progress bar.

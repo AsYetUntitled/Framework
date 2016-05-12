@@ -33,9 +33,9 @@ if(_action) then {
     };
 
 } else {
-    _grpMembers = grpPlayer GVAR "gang_members";
-    SUB(_grpMembers,[steamid]);
-    grpPlayer SVAR ["gang_members",_grpMembers,true];
+    _grpMembers = group player GVAR "gang_members";
+    SUB(_grpMembers,[getPlayerUID player]);
+    group player SVAR ["gang_members",_grpMembers,true];
 
     if(life_HC_isActive) then {
         [4,_grpMembers] remoteExecCall ["HC_fnc_updateGang",HC_Life];

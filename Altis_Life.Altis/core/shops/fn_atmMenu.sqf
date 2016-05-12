@@ -37,7 +37,7 @@ CONTROL(2700,2701) ctrlSetStructuredText parseText format["<img size='1.7' image
 
 lbSetCurSel [2703,0];
 
-if(isNil {(grpPlayer GVAR "gang_bank")}) then {
+if(isNil {(group player GVAR "gang_bank")}) then {
     (CONTROL(2700,2705)) ctrlEnable false;
     (CONTROL(2700,2706)) ctrlEnable false;
 };

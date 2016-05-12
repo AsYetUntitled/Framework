@@ -17,7 +17,7 @@ if(((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building || (nea
 if((typeOf _building) == "Land_Research_house_V1_F" && (nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) GVAR ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
 if(isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 
-_doors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _building),"numberOfDoors");
+_doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors");
 _door = 0;
 //Find the nearest door
 for "_i" from 1 to _doors do {

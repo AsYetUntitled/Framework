@@ -91,7 +91,7 @@ if(!(_curTarget in life_vehicles) || isNil {_curTarget GVAR "house_owner"}) then
         _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouse; closeDialog 0;";
         _Btn1 ctrlShow true;
 
-        if(SEL(_curTarget GVAR "house_owner",0) != steamid) then {
+        if(SEL(_curTarget GVAR "house_owner",0) != getPlayerUID player) then {
             _Btn1 ctrlEnable false;
         };
 

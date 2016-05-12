@@ -17,18 +17,18 @@ _dataArr = call compile format["%1",_dataArr];
 _className = SEL(_dataArr,0);
 _classNameLife = _className;
 
-if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then {
+if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
     diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
-_vehicleColor = SEL(SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures"),SEL(_dataArr,1)),0);
+_vehicleColor = SEL(SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures"),SEL(_dataArr,1)),0);
 if(isNil "_vehicleColor") then {_vehicleColor = "Default";};
 
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 
-_price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
+_price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
 _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
 switch(playerSide) do {

@@ -10,7 +10,7 @@ private["_house"];
 _house = param [0,ObjNull,[ObjNull]];
 if(isNull _house || !(_house isKindOf "House_F")) exitWith {};
 
-_numberOfDoors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _house), "numberOfDoors");
+_numberOfDoors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _house), "numberOfDoors");
 
 if(_numberOfDoors isEqualTo -1 || _numberOfDoors isEqualTo 0) exitWith {}; //MEH
 

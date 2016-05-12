@@ -10,8 +10,8 @@ private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_
 _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 _group = _hideout GVAR ["gangOwner",grpNull];
 
-if(isNil {grpPlayer GVAR "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
-if(_group == grpPlayer) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
+if(isNil {group player GVAR "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
+if(_group == group player) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
 if((_hideout GVAR ["inCapture",FALSE])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
 if(!isNull _group) then {
     _gangName = _group GVAR ["gang_name",""];
@@ -86,4 +86,4 @@ _flagTexture = [
 _this select 0 setFlagTexture _flagTexture;
 [[0,1],"STR_GNOTF_CaptureSuccess",true,[name player,(group player) getVariable "gang_name"]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 _hideout SVAR ["inCapture",false,true];
-_hideout SVAR ["gangOwner",grpPlayer,true];
+_hideout SVAR ["gangOwner",group player,true];

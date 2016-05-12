@@ -2,7 +2,7 @@
 /*
     File: fn_gangDisband.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Prompts the user about disbanding the gang and if the user accepts the gang will be
     disbanded and removed from the database.
@@ -17,13 +17,13 @@ _action = [
 
 if(_action) then {
     hint localize "STR_GNOTF_DisbandGangPro";
-    
+
     if(life_HC_isActive) then {
-        [grpPlayer] remoteExec ["HC_fnc_removeGang",HC_Life];
+        [group player] remoteExec ["HC_fnc_removeGang",HC_Life];
     } else {
-        [grpPlayer] remoteExec ["TON_fnc_removeGang",RSERV];
+        [group player] remoteExec ["TON_fnc_removeGang",RSERV];
     };
-    
+
 } else {
     hint localize "STR_GNOTF_DisbandGangCanc";
 };

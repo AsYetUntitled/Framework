@@ -11,7 +11,7 @@ if(count _this isEqualTo 1) exitWith {false};
 _unit = SEL(_this,0);
 _container = SEL(_this,1);
 
-_isPack = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,typeOf _container,"isBackpack");
+_isPack = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _container,"isBackpack");
 if(_isPack isEqualTo 1) exitWith {
     hint localize "STR_MISC_Backpack";
     true;

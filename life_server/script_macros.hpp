@@ -5,7 +5,7 @@
 #define SEL(ARRAY,INDEX) (ARRAY select INDEX)
 #define CASH life_cash
 #define BANK life_atmbank
-#define GANG_FUNDS grpPlayer getVariable ["gang_bank",0];
+#define GANG_FUNDS group player getVariable ["gang_bank",0];
 
 /*
     remoteExec Section
@@ -36,11 +36,6 @@
 #define FETCH_CONST(var) (call var)
 #define GVAR getVariable
 #define SVAR setVariable
-#define RIFLE primaryWeapon player
-#define RIFLE_ITEMS primaryWeaponItems player
-#define PISTOL handgunWeapon player
-#define PISTOL_ITEMS handgunItems player
-#define LAUNCHER secondaryWeapon player
 #define EXTDB "extDB2" callExtension
 #define EXTDB_SETTING(TYPE,SETTING) TYPE(missionConfigFile >> "CfgServer" >> SETTING)
 #define EXTDB_FAILED(MESSAGE) \
@@ -54,8 +49,6 @@
 #define CONTROL_DATAI(ctrl,index) ctrl lbData index
 
 //System Macros
-#define grpPlayer group player
-#define steamid getPlayerUID player
 #define LICENSE_VARNAME(varName,flag) format["license_%1_%2",flag,M_CONFIG(getText,"Licenses",varName,"variable")]
 #define LICENSE_VALUE(varName,flag) GVAR_MNS [LICENSE_VARNAME(varName,flag),false]
 #define ITEM_VARNAME(varName) format["life_inv_%1",M_CONFIG(getText,"VirtualItems",varName,"variable")]
@@ -78,8 +71,17 @@
 #define M_CONFIG(TYPE,CFG,CLASS,ENTRY) TYPE(missionConfigFile >> CFG >> CLASS >> ENTRY)
 #define BASE_CONFIG(CFG,CLASS) inheritsFrom(configFile >> CFG >> CLASS)
 #define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)
+
+//Unused - Supported Macros
+#define grpPlayer group player
+#define steamid getPlayerUID player
 #define CONFIG_VEHICLES "CfgVehicles"
 #define CONFIG_LIFE_VEHICLES "LifeCfgVehicles"
 #define CONFIG_WEAPONS "CfgWeapons"
 #define CONFIG_MAGAZINES "CfgMagazines"
 #define CONFIG_GLASSES "CfgGlasses"
+#define RIFLE primaryWeapon player
+#define RIFLE_ITEMS primaryWeaponItems player
+#define PISTOL handgunWeapon player
+#define PISTOL_ITEMS handgunItems player
+#define LAUNCHER secondaryWeapon player

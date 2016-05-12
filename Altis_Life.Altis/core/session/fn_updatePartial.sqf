@@ -10,7 +10,7 @@
 */
 private["_mode","_packet","_array","_flag"];
 _mode = param [0,0,[0]];
-_packet = [steamid,playerSide,nil,_mode];
+_packet = [getPlayerUID player,playerSide,nil,_mode];
 _array = [];
 _flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 
