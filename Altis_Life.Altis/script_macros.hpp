@@ -69,17 +69,3 @@
     preProcessFile "SpyGlass\endoftheline.sqf"; \
     sleep 2.5; \
     failMission "SpyGlass";
-
-//Unused - Supported Macros
-#define grpPlayer group player
-#define steamid getPlayerUID player
-#define CONFIG_VEHICLES "CfgVehicles"
-#define CONFIG_LIFE_VEHICLES "LifeCfgVehicles"
-#define CONFIG_WEAPONS "CfgWeapons"
-#define CONFIG_MAGAZINES "CfgMagazines"
-#define CONFIG_GLASSES "CfgGlasses"
-#define RIFLE primaryWeapon player
-#define RIFLE_ITEMS primaryWeaponItems player
-#define PISTOL handgunWeapon player
-#define PISTOL_ITEMS handgunItems player
-#define LAUNCHER secondaryWeapon player

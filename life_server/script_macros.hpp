@@ -71,17 +71,3 @@
 #define M_CONFIG(TYPE,CFG,CLASS,ENTRY) TYPE(missionConfigFile >> CFG >> CLASS >> ENTRY)
 #define BASE_CONFIG(CFG,CLASS) inheritsFrom(configFile >> CFG >> CLASS)
 #define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)
-
-//Unused - Supported Macros
-#define grpPlayer group player
-#define steamid getPlayerUID player
-#define CONFIG_VEHICLES "CfgVehicles"
-#define CONFIG_LIFE_VEHICLES "LifeCfgVehicles"
-#define CONFIG_WEAPONS "CfgWeapons"
-#define CONFIG_MAGAZINES "CfgMagazines"
-#define CONFIG_GLASSES "CfgGlasses"
-#define RIFLE primaryWeapon player
-#define RIFLE_ITEMS primaryWeaponItems player
-#define PISTOL handgunWeapon player
-#define PISTOL_ITEMS handgunItems player
-#define LAUNCHER secondaryWeapon player
