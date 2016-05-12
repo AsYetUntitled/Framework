@@ -14,7 +14,7 @@ params [
 ];
 
 _number = 1;
-_uid = steamid;
+_uid = getPlayerUID player;
 _house = nearestObject [player, "House"];
 
 switch (true) do {

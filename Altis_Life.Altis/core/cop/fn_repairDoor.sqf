@@ -12,7 +12,7 @@ if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
 
 _doors = 1;
-_doors = FETCH_CONFIG2(getNumber,CONFIG_VEHICLES,(typeOf _building),"NumberOfDoors");
+_doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"NumberOfDoors");
 _door = 0;
 //Find the nearest door
 for "_i" from 1 to _doors do {

@@ -7,22 +7,22 @@
     32 hours later...
 */
 private["_unitID ","_members"];
-if(steamid isEqualTo (grpPlayer GVAR "gang_owner")) exitWith {hint localize "STR_GNOTF_LeaderLeave"};
+if(getPlayerUID player isEqualTo (group player GVAR "gang_owner")) exitWith {hint localize "STR_GNOTF_LeaderLeave"};
 
 _unitID = getPlayerUID player;
-_members = grpPlayer GVAR "gang_members";
+_members = group player GVAR "gang_members";
 if(isNil "_members") exitWith {};
 if(!(_members isEqualType [])) exitWith {};
 
 SUB(_members,[_unitID]);
-grpPlayer SVAR ["gang_members",_members,true];
+group player SVAR ["gang_members",_members,true];
 
-[player,grpPlayer] remoteExec ["TON_fnc_clientGangLeft",player];
+[player,group player] remoteExec ["TON_fnc_clientGangLeft",player];
 
 if(life_HC_isActive) then {
-    [4,grpPlayer] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
+    [4,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
 } else {
-    [4,grpPlayer] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
+    [4,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
 };
 
 closeDialog 0;

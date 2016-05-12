@@ -28,12 +28,12 @@ _control = CONTROL(39400,39402);
         _displayName = getText(configFile >> "CfgVehicles" >> _className >> "displayName");
         _picture = getText(configFile >> "CfgVehicles" >> _className >> "picture");
 
-        if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then {
+        if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
             _classNameLife = "Default"; //Use Default class if it doesn't exist
             diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
         };
 
-        _price = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
+        _price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
         _chopMultiplier = LIFE_SETTINGS(getNumber,"vehicle_chopShop_multiplier");
 
         _price = _price * _chopMultiplier;

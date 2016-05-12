@@ -9,7 +9,7 @@
 private["_value"];
 _value = parseNumber(ctrlText 2702);
 _gFund = GANG_FUNDS;
-grpPlayer setVariable["gbank_in_use_by",player,true];
+group player setVariable["gbank_in_use_by",player,true];
 
 //Series of stupid checks
 if(_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
@@ -17,16 +17,16 @@ if(_value < 0) exitWith {};
 if(!([str(_value)] call TON_fnc_isnumber)) exitWith {hint localize "STR_ATM_notnumeric"};
 if(_value > _gFund) exitWith {hint localize "STR_ATM_NotEnoughFundsG"};
 if(_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
-if((grpPlayer getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawInUseG"}; //Check if it's in use.
+if((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawInUseG"}; //Check if it's in use.
 
 SUB(_gFund,_value);
 ADD(CASH,_value);
-grpPlayer setVariable ["gang_bank",_gFund,true];
+group player setVariable ["gang_bank",_gFund,true];
 
 if(life_HC_isActive) then {
-    [1,grpPlayer] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
+    [1,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
 } else {
-    [1,grpPlayer] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
+    [1,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
 };
 
 hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText];

@@ -20,7 +20,7 @@ _unit SVAR ["restrained",false,true];
 _unit SVAR ["Escorting",false,true];
 _unit SVAR ["transporting",false,true];
 _unit SVAR ["playerSurrender",false,true];
-_unit SVAR ["steam64id",steamid,true]; //Reset the UID.
+_unit SVAR ["steam64id",getPlayerUID player,true]; //Reset the UID.
 _unit SVAR ["realname",profileName,true]; //Reset the players name.
 
 _unit addRating 1e12; //Set our rating to a high value, this is for a ARMA engine thing.

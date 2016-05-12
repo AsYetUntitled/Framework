@@ -124,7 +124,7 @@ diag_log "----------------------------------------------------------------------
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
 
-player SVAR ["steam64ID",steamid];
+player SVAR ["steam64ID",getPlayerUID player];
 player SVAR ["realname",profileName,true];
 
 life_fnc_moveIn = compileFinal

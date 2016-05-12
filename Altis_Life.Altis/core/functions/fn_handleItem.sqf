@@ -25,7 +25,7 @@ if(count _details isEqualTo 0) exitWith {};
 
 if(_bool) then {
     switch((_details select 6)) do {
-        case CONFIG_GLASSES: {
+        case "CfgGlasses": {
             if(_toUniform) exitWith {player addItemToUniform _item;};
             if(_toVest) exitWith {player addItemToVest _item;};
 
@@ -43,7 +43,7 @@ if(_bool) then {
             };
         };
 
-        case CONFIG_VEHICLES: {
+        case "CfgVehicles": {
             if(!(backpack player isEqualTo "")) then {
                 _items = (backpackItems player);
                 removeBackpack player;
@@ -57,7 +57,7 @@ if(_bool) then {
             };
         };
 
-        case CONFIG_MAGAZINES: {
+        case "CfgMagazines": {
             if(_toUniform) exitWith {player addItemToUniform _item;};
             if(_toVest) exitWith {player addItemToVest _item;};
             if(_ispack) exitWith {player addItemToBackpack _item;};
@@ -65,7 +65,7 @@ if(_bool) then {
             player addMagazine _item;
         };
 
-        case CONFIG_WEAPONS: {
+        case "CfgWeapons": {
             //New addition
             if(_toUniform) exitWith {player addItemToUniform _item;};
             if(_toVest) exitWith {player addItemToVest _item;};
@@ -206,7 +206,7 @@ if(_bool) then {
                                     player addItem _item;
                                 } else {
                                     private["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch(_type) do {case 1:{RIFLE_ITEMS}; case 2:{secondaryWeaponItems player}; case 3:{PISTOL_ITEMS}; default {["","",""]};};
+                                    _wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
                                     if(!(SEL(_wepItems,2) isEqualTo "")) then {_slotTaken = true;};
@@ -254,7 +254,7 @@ if(_bool) then {
                                     player addItem _item;
                                 } else {
                                     private["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch(_type) do {case 1:{RIFLE_ITEMS}; case 2:{secondaryWeaponItems player}; case 3:{PISTOL_ITEMS}; default {["","",""]};};
+                                    _wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
                                     if(!(SEL(_wepItems,1) isEqualTo "")) then {_slotTaken = true;};
@@ -302,7 +302,7 @@ if(_bool) then {
                                     player addItem _item;
                                 } else {
                                     private["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch(_type) do {case 1:{RIFLE_ITEMS}; case 2:{secondaryWeaponItems player}; case 3:{PISTOL_ITEMS}; default {["","",""]};};
+                                    _wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
                                     if(!(SEL(_wepItems,0) isEqualTo "")) then {_slotTaken = true;};
@@ -371,15 +371,15 @@ if(_bool) then {
     };
 } else {
     switch(SEL(_details,6)) do {
-        case CONFIG_VEHICLES: {
+        case "CfgVehicles": {
             removeBackpack player;
         };
 
-        case CONFIG_MAGAZINES: {
+        case "CfgMagazines": {
             player removeMagazine _item;
         };
 
-        case CONFIG_GLASSES: {
+        case "CfgGlasses": {
             if(_item isEqualTo goggles player) then {
                 removeGoggles player;
             } else {
@@ -387,7 +387,7 @@ if(_bool) then {
             };
         };
 
-        case CONFIG_WEAPONS: {
+        case "CfgWeapons": {
             if(SEL(_details,4) in [1,2,4,5,4096]) then {
                 if(SEL(_details,4) isEqualTo 4096) then {
                     if(SEL(_details,5) isEqualTo 1) then {
@@ -400,9 +400,9 @@ if(_bool) then {
 
             if(_isgun) then {
                 switch(true) do {
-                    case (RIFLE isEqualTo _item) : {_ispack = false;};
+                    case (primaryWeapon player isEqualTo _item) : {_ispack = false;};
                     case (LAUNCHER isEqualTo _item) : {_ispack = false;};
-                    case (PISTOL isEqualTo _item) : {_ispack = false;};
+                    case (handgunWeapon player isEqualTo _item) : {_ispack = false;};
                     case (_item in assignedItems player) : {_ispack = false;};
                     default {_ispack = true;};
                 };
@@ -484,8 +484,8 @@ if(_bool) then {
                     case 616: {player unassignItem _item; player removeItem _item;};
                     default {
                         switch (true) do {
-                            case (_item in RIFLE_ITEMS) : {player removePrimaryWeaponItem _item;};
-                            case (_item in PISTOL_ITEMS) : {player removeHandgunItem _item;};
+                            case (_item in primaryWeaponItems player) : {player removePrimaryWeaponItem _item;};
+                            case (_item in handgunItems player) : {player removeHandgunItem _item;};
                             default {player removeItem _item;};
                         };
                     };

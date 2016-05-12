@@ -24,13 +24,13 @@ _type = [_this,1,0,[0]] call BIS_fnc_param;
 if(_item isEqualTo "" || _type isEqualTo 0) exitWith {0};
 _ret = 0;
 
-_weaponArray = [RIFLE, LAUNCHER, PISTOL];
+_weaponArray = [primaryWeapon player, LAUNCHER, handgunWeapon player];
 {
     if(!(_ret isEqualTo 0)) exitWith {}; //Make sure we exit the loop since there was already a match.
     if(!(_x isEqualTo "")) then
     {
         _weapon = _x;
-        _cfgInfo = [_weapon,CONFIG_WEAPONS] call life_fnc_fetchCfgDetails;
+        _cfgInfo = [_weapon,"CfgWeapons"] call life_fnc_fetchCfgDetails;
 
         _legacyItems = (SEL(_cfgInfo,10) + SEL(_cfgInfo,11) + SEL(_cfgInfo,12));
         _newItems = SEL(_cfgInfo,14);
@@ -41,7 +41,7 @@ _weaponArray = [RIFLE, LAUNCHER, PISTOL];
                 _legacyItems set[_i,toLower(SEL(_legacyItems,_i))];
             };
 
-            if((toLower _item) in _legacyItems) exitWith {_ret = switch(_weapon) do {case (RIFLE): {1};case (LAUNCHER) : {2};case (PISTOL): {3};default {0};};};
+            if((toLower _item) in _legacyItems) exitWith {_ret = switch(_weapon) do {case (primaryWeapon player): {1};case (LAUNCHER) : {2};case (handgunWeapon player): {3};default {0};};};
         };
 
         //Check new compatibleItems class structure
@@ -49,11 +49,11 @@ _weaponArray = [RIFLE, LAUNCHER, PISTOL];
             //This gets weird with forEach in forEach :\
             {
                 if(!(_ret isEqualTo 0)) exitWith {};
-                _cfg = FETCH_CONFIG4(getNumber,CONFIG_WEAPONS,_weapon,"WeaponSlotsInfo",_x,"compatibleItems",_item);
+                _cfg = FETCH_CONFIG4(getNumber,"CfgWeapons",_weapon,"WeaponSlotsInfo",_x,"compatibleItems",_item);
 
                 if(isNil "_cfg") then {_cfg = 0;};
                 if(_cfg isEqualTo 1) exitWith {
-                    _ret = switch(_weapon) do {case (RIFLE): {1};case (LAUNCHER) : {2};case (PISTOL): {3};default {0};};
+                    _ret = switch(_weapon) do {case (primaryWeapon player): {1};case (LAUNCHER) : {2};case (handgunWeapon player): {3};default {0};};
                 };
             } forEach _newItems;
             if(!(_ret isEqualTo 0)) exitWith {}; //Make sure we exit the loop

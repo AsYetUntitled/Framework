@@ -12,14 +12,14 @@ if(isNull (findDisplay 2620)) then {
     if(!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
 };
 
-_ownerID = grpPlayer GVAR ["gang_owner",""];
+_ownerID = group player GVAR ["gang_owner",""];
 if(_ownerID isEqualTo "") exitWith {closeDialog 0;}; //Bad juju
 
-_gangName = grpPlayer getVariable "gang_name";
+_gangName = group player getVariable "gang_name";
 _gangBank = GANG_FUNDS;
-_gangMax = grpPlayer getVariable "gang_maxMembers";
+_gangMax = group player getVariable "gang_maxMembers";
 
-if(_ownerID != steamid) then {
+if(_ownerID != getPlayerUID player) then {
     (CONTROL(2620,2622)) ctrlEnable false; //Upgrade
     (CONTROL(2620,2624)) ctrlEnable false; // Kick
     (CONTROL(2620,2625)) ctrlEnable false; //Set New Leader
@@ -41,9 +41,9 @@ lbClear _members;
         _members lbAdd format["%1",(_x GVAR ["realname",name _x])];
         _members lbSetData [(lbSize _members)-1,str(_x)];
     };
-} forEach (units grpPlayer);
+} forEach (units group player);
 
-_grpMembers = units grpPlayer;
+_grpMembers = units group player;
 _allUnits = playableUnits;
 
 //Clear out the list..

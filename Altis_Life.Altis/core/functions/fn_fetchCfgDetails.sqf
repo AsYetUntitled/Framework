@@ -44,10 +44,10 @@ _return = [];
 
 if(_section isEqualTo "") then {
     _section = switch(true) do {
-        case (isClass(configFile >> CONFIG_MAGAZINES >> _className)): {CONFIG_MAGAZINES};
-        case (isClass(configFile >> CONFIG_WEAPONS >> _className)): {CONFIG_WEAPONS};
-        case (isClass(configFile >> CONFIG_VEHICLES >> _className)): {CONFIG_VEHICLES};
-        case (isClass(configFile >> CONFIG_GLASSES >> _className)): {CONFIG_GLASSES};
+        case (isClass(configFile >> "CfgMagazines" >> _className)): {"CfgMagazines"};
+        case (isClass(configFile >> "CfgWeapons" >> _className)): {"CfgWeapons"};
+        case (isClass(configFile >> "CfgVehicles" >> _className)): {"CfgVehicles"};
+        case (isClass(configFile >> "CfgGlasses" >> _className)): {"CfgGlasses"};
     };
 };
 
@@ -60,12 +60,12 @@ _base = inheritsFrom _config;
 
 switch (_section) do
 {
-    case CONFIG_VEHICLES: {
+    case "CfgVehicles": {
         _type = getText(_config >> "vehicleClass");
         _scope = getNumber(_config >> "scope");
     };
 
-    case CONFIG_WEAPONS: {
+    case "CfgWeapons": {
         _scope = getNumber(_config >> "scope");
         _type = getNumber(_config >> "type");
         _desc = getText(_config >> "descriptionshort");
@@ -107,7 +107,7 @@ switch (_section) do
         };
     };
 
-    case CONFIG_MAGAZINES: {
+    case "CfgMagazines": {
         _scope = getNumber(_config >> "scope");
     };
 };

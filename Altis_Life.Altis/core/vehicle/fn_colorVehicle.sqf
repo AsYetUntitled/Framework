@@ -29,12 +29,12 @@ if(local _vehicle) then {
     };
 };
 
-if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then {
+if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
     diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
-_textures = SEL(SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures"),_index),2);
+_textures = SEL(SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures"),_index),2);
 if(isNil "_textures" || {EQUAL(count _textures,0)}) exitWith {};
 
 _vehicle SVAR ["Life_VEH_color",_index,true];

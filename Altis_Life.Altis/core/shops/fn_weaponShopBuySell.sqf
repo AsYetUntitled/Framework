@@ -2,7 +2,7 @@
 /*
     File: fn_weaponShopBuySell.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Master handling of the weapon shop for buying / selling an item.
 */
@@ -31,10 +31,10 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then {
 } else {
     private["_hideout"];
     _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
-    if(!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") >= _price}) then {
+    if(!isNil "_hideout" && {!isNil {group player getVariable "gang_bank"}} && {(group player getVariable "gang_bank") >= _price}) then {
         _action = [
             format[(localize "STR_Shop_Virt_Gang_FundsMSG")+ "<br/><br/>" +(localize "STR_Shop_Virt_Gang_Funds")+ " <t color='#8cff9b'>$%1</t><br/>" +(localize "STR_Shop_Virt_YourFunds")+ " <t color='#8cff9b'>$%2</t>",
-                [(grpPlayer getVariable "gang_bank")] call life_fnc_numberText,
+                [(group player getVariable "gang_bank")] call life_fnc_numberText,
                 [CASH] call life_fnc_numberText
             ],
             localize "STR_Shop_Virt_YourorGang",
@@ -43,18 +43,18 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then {
         ] call BIS_fnc_guiMessage;
         if(_action) then {
             hint parseText format[localize "STR_Shop_Weapon_BoughtGang",_itemInfo select 1,[_price] call life_fnc_numberText];
-            _funds = grpPlayer getVariable "gang_bank";
+            _funds = group player getVariable "gang_bank";
             _funds = _funds - _price;
-            grpPlayer setVariable["gang_bank",_funds,true];
+            group player setVariable["gang_bank",_funds,true];
             [_item,true] spawn life_fnc_handleItem;
-            
+
             if(life_HC_isActive) then {
-                [1,grpPlayer] remoteExecCall ["HC_fnc_updateGang",HC_Life];
+                [1,group player] remoteExecCall ["HC_fnc_updateGang",HC_Life];
             } else {
-                [1,grpPlayer] remoteExecCall ["TON_fnc_updateGang",RSERV];
+                [1,group player] remoteExecCall ["TON_fnc_updateGang",RSERV];
             };
 
-            
+
         } else {
             if(_price > CASH) exitWith {hint localize "STR_NOTF_NotEnoughMoney"};
             hint parseText format[localize "STR_Shop_Weapon_BoughtItem",_itemInfo select 1,[_price] call life_fnc_numberText];

@@ -16,19 +16,19 @@ if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint localize "STR_GNOTF_KickSelf"};
 
 _unitID = getPlayerUID _unit;
-_members = grpPlayer GVAR "gang_members";
+_members = group player GVAR "gang_members";
 if(isNil "_members") exitWith {};
 if(!(_members isEqualType [])) exitWith {};
 
 SUB(_members,[_unitID]);
-grpPlayer SVAR ["gang_members",_members,true];
+group player SVAR ["gang_members",_members,true];
 
-[_unit,grpPlayer] remoteExec ["TON_fnc_clientGangKick",_unit]; //Boot that bitch!
+[_unit,group player] remoteExec ["TON_fnc_clientGangKick",_unit]; //Boot that bitch!
 
 if(life_HC_isActive) then {
-    [4,grpPlayer] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
+    [4,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
 } else {
-    [4,grpPlayer] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
+    [4,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
 };
 
 [] call life_fnc_gangMenu;

@@ -17,15 +17,15 @@ _vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
 _shopSide = M_CONFIG(getText,"CarShops",SEL(life_veh_shop,0),"side");
 
 _licenses = switch(playerSide) do {
-    case civilian: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),0)};
-    case west: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),1)};
-    case independent: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),2)};
-    case east: {SEL(M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"licenses"),3)};
+    case civilian: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),0)};
+    case west: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),1)};
+    case independent: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),2)};
+    case east: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),3)};
 };
 
 hint format ["%1",_licenses];
 
-_initalPrice = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
+_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
 
 switch(playerSide) do {
     case civilian: {

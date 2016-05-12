@@ -17,7 +17,7 @@ if(player distance _vehicle > 7.5) exitWith {hint localize "STR_ISTR_Jerry_NotNe
 if(!([false,"fuelFull",1] call life_fnc_handleInv)) exitWith {};
 life_action_inUse = true;
 
-_displayName = FETCH_CONFIG2(getText,CONFIG_VEHICLES,(typeOf _vehicle),"displayName");
+_displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 
 _upp = format[localize "STR_ISTR_Jerry_Process",_displayName];
 

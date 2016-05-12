@@ -16,7 +16,7 @@ _className = (_this select 0) lbData (_this select 1);
 _classNameLife = _className;
 _vIndex = (_this select 0) lbValue (_this select 1);
 
-_initalPrice = M_CONFIG(getNumber,CONFIG_LIFE_VEHICLES,_classNameLife,"price");
+_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
 
 switch(playerSide) do {
     case civilian: {
@@ -69,11 +69,11 @@ ctrlShow [2330,true];
 _ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
 
-if(!isClass (missionConfigFile >> CONFIG_LIFE_VEHICLES >> _classNameLife)) then {
+if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
     diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 };
-_colorArray = M_CONFIG(getArray,CONFIG_LIFE_VEHICLES,_classNameLife,"textures");
+_colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 
 {
     _flag = SEL(_x,1);

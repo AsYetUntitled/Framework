@@ -19,12 +19,12 @@ if(_shooter isKindOf "Man" && alive player) then {
         life_istazed = true;
         _curWep = currentWeapon player;
         _curMags = magazines player;
-        _attach = if(!(RIFLE isEqualTo "")) then {RIFLE_ITEMS} else {[]};
+        _attach = if(!(primaryWeapon player isEqualTo "")) then {primaryWeaponItems player} else {[]};
 
         {player removeMagazine _x} forEach _curMags;
         player removeWeapon _curWep;
         player addWeapon _curWep;
-        if(!(count _attach isEqualTo 0) && !(RIFLE isEqualTo "")) then {
+        if(!(count _attach isEqualTo 0) && !(primaryWeapon player isEqualTo "")) then {
             {
                 _unit addPrimaryWeaponItem _x;
             } forEach _attach;
