@@ -65,12 +65,12 @@ if(count crew _vehicle isEqualTo 0) then {
             [0,"STR_NOTF_HasImpounded",true,[profileName,SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
             if(_vehicle in life_vehicles) then {
                 hint format[localize "STR_NOTF_OwnImpounded",[_value] call life_fnc_numberText,_type];
-                SUB(life_atmbank,_value);
+                SUB(BANK,_value);
             } else {
                 hint format[localize "STR_NOTF_Impounded",[_value] call life_fnc_numberText,_type];
-                ADD(life_atmbank,_value);
+                ADD(BANK,_value);
             };
-            if(life_atmbank < 0) then {life_atmbank = 0;};
+            if(BANK < 0) then {BANK = 0;};
             [1] call SOCK_fnc_updatePartial;
     };
 } else {

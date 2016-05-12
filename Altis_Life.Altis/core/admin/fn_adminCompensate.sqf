@@ -20,7 +20,7 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
-    life_cash = life_cash + _value;
+    CASH = CASH + _value;
     hint format [localize "STR_ANOTF_Success",[_value] call life_fnc_numberText];
     closeDialog 0;
 } else {

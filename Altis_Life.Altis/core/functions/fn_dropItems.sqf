@@ -89,14 +89,14 @@ _unit = SEL(_this,0);
         };
 
         case "life_cash": {
-            if(life_cash > 0) then {
+            if(CASH > 0) then {
                 _pos = _unit modelToWorld[0,3,0];
                 _pos = [SEL(_pos,0), SEL(_pos,1), 0];
                 _obj = "Land_Money_F" createVehicle _pos;
                 _obj setVariable ["item",["money",missionNamespace getVariable [_item,0]],true];
                 _obj setPos _pos;
                 [_obj] remoteExecCall ["life_fnc_simDisable",RANY];
-                missionNamespace setVariable ["life_cash",0];
+                missionNamespace setVariable ["CASH",0];
             };
         };
 
@@ -112,4 +112,4 @@ _unit = SEL(_this,0);
             };
         };
     };
-} forEach (("true" configClasses (missionConfigFile >> "VirtualItems")) + ["life_cash"]);
+} forEach (("true" configClasses (missionConfigFile >> "VirtualItems")) + ["CASH"]);

@@ -66,7 +66,7 @@ if((player getVariable ["restrained",false])) exitWith {life_action_inUse = fals
 if(!isNil "_badDistance") exitWith {titleText[localize "STR_Medic_TooFar","PLAIN"]; life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
-ADD(life_atmbank,_reviveCost);
+ADD(BANK,_reviveCost);
 
 life_action_inUse = false;
 _target setVariable ["Revive",TRUE,TRUE];

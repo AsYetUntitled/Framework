@@ -69,7 +69,7 @@ _value = 0;
 
 if(_value > 0) then {
     [0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-    ADD(life_atmbank,round(_value / 2));
+    ADD(BANK,round(_value / 2));
 
     _house setVariable ["Trunk",[_houseInvData,_houseInvVal],true];
 

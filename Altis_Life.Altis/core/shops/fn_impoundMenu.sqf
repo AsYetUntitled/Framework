@@ -1,7 +1,7 @@
 /*
     File: fn_impoundMenu.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Lists impounded vehicles.
     DUE TO BE REWROTE IN NEW SYSTEM
@@ -32,8 +32,8 @@ for "_i" from 0 to (count life_vehicles)-1 do
             case (_veh isKindOf "Air") : {_price = _price + 650;};
             case (_veh isKindOf "Ship") : {_price = _price + 50;};
         };
-    
-        if(_price > life_cash) then
+
+        if(_price > CASH) then
         {
             _price = _price + 200;
         };
@@ -43,7 +43,7 @@ for "_i" from 0 to (count life_vehicles)-1 do
         {
             _text = "";
         };
-        
+
         _name = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
         _pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
         _cars lbAdd format["%1 %2 - Cost: $%3",_name,_text,[_price] call life_fnc_numberText];

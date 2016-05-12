@@ -7,7 +7,7 @@
     Passes ALL player information to the server to save player data to the database.
 */
 private["_packet","_array","_flag","_alive","_position"];
-_packet = [getPlayerUID player,(profileName),playerSide,life_cash,life_atmbank];
+_packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
 _array = [];
 _alive = alive player;
 _position = getPosATL player;

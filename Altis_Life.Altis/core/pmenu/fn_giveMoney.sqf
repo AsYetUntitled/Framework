@@ -20,12 +20,12 @@ if(isNull _unit) exitWith {ctrlShow[2001,true];};
 if(!life_use_atm) exitWith {hint localize "STR_NOTF_recentlyRobbedBank";ctrlShow[2001,true];};
 if(!([_amount] call TON_fnc_isnumber)) exitWith {hint localize "STR_NOTF_notNumberFormat";ctrlShow[2001,true];};
 if(parseNumber(_amount) <= 0) exitWith {hint localize "STR_NOTF_enterAmount";ctrlShow[2001,true];};
-if(parseNumber(_amount) > life_cash) exitWith {hint localize "STR_NOTF_notEnoughtToGive";ctrlShow[2001,true];};
+if(parseNumber(_amount) > CASH) exitWith {hint localize "STR_NOTF_notEnoughtToGive";ctrlShow[2001,true];};
 if(isNull _unit) exitWith {ctrlShow[2001,true];};
 if(isNil "_unit") exitWith {ctrlShow[2001,true]; hint localize "STR_NOTF_notWithinRange";};
 
 hint format [localize "STR_NOTF_youGaveMoney",[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable["realname",name _unit]];
-life_cash = life_cash - (parseNumber(_amount));
+CASH = CASH - (parseNumber(_amount));
 
 [0] call SOCK_fnc_updatePartial;
 [_unit,_amount,player] remoteExecCall ["life_fnc_receiveMoney",_unit];

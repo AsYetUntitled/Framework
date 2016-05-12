@@ -37,6 +37,6 @@ if(count _dbInfo > 0) then {
 deleteVehicle _vehicle;
 life_action_inUse = false;
 _ownerUnit publicVariableClient "life_action_inUse";
-life_cash = _cash;
+CASH = _cash;
 _ownerUnit publicVariableClient "life_cash";
 [2,format[(localize "STR_NOTF_ChopSoldCar"),_displayName,[_price] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",_unit];
