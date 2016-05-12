@@ -62,9 +62,9 @@ class FSM
            "} else {" \n
            "	if(player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide == west) then {" \n
            "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
-           "		life_atmbank = life_atmbank + (call life_paycheck) + 1500;" \n
+           "		BANK = BANK + (call life_paycheck) + 1500;" \n
            "	} else {" \n
-           "		life_atmbank = life_atmbank + (call life_paycheck);" \n
+           "		BANK = BANK + (call life_paycheck);" \n
            "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck)] call life_fnc_numberText];" \n
            "	};" \n
            "};" \n

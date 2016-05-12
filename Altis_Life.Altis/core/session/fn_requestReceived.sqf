@@ -32,8 +32,8 @@ if(!isServer && (!isNil "life_adminlevel" || !isNil "life_coplevel" || !isNil "l
 };
 
 //Parse basic player information.
-life_cash = parseNumber (SEL(_this,2));
-life_atmbank = parseNumber (SEL(_this,3));
+CASH = parseNumber (SEL(_this,2));
+BANK = parseNumber (SEL(_this,3));
 CONST(life_adminlevel,parseNumber (SEL(_this,4)));
 if(EQUAL(LIFE_SETTINGS(getNumber,"donor_level"),1)) then {
     CONST(life_donorlevel,parseNumber (SEL(_this,5)));

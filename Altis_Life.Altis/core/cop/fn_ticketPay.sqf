@@ -7,15 +7,15 @@
     Pays the ticket.
 */
 if(isNil "life_ticket_val" || isNil "life_ticket_cop") exitWith {};
-if(life_cash < life_ticket_val) exitWith {
-    if(life_atmbank < life_ticket_val) exitWith {
+if(CASH < life_ticket_val) exitWith {
+    if(BANK < life_ticket_val) exitWith {
         hint localize "STR_Cop_Ticket_NotEnough";
         [1,"STR_Cop_Ticket_NotEnoughNOTF",true,[profileName]] remoteExecCall ["life_fnc_broadcast",life_ticket_cop];
         closeDialog 0;
     };
 
     hint format[localize "STR_Cop_Ticket_Paid",[life_ticket_val] call life_fnc_numberText];
-    SUB(life_atmbank,life_ticket_val);
+    SUB(BANK,life_ticket_val);
     life_ticket_paid = true;
 
     [0,"STR_Cop_Ticket_PaidNOTF",true,[profileName,[life_ticket_val] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",west];
@@ -31,7 +31,7 @@ if(life_cash < life_ticket_val) exitWith {
     closeDialog 0;
 };
 
-SUB(life_cash,life_ticket_val);
+SUB(CASH,life_ticket_val);
 life_ticket_paid = true;
 
 if(life_HC_isActive) then {

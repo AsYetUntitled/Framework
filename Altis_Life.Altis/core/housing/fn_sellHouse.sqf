@@ -38,15 +38,15 @@ if(_action) then {
     deleteMarkerLocal format["house_%1",_house getVariable "uid"];
     _house setVariable ["uid",nil,true];
 
-    life_atmbank = life_atmbank + (round((_houseCfg select 0)/2));
+    BANK = BANK + (round((_houseCfg select 0)/2));
     [1] call SOCK_fnc_updatePartial;
     _index = life_vehicles find _house;
 
     if(LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
         if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-            advanced_log = format ["sold a house for %1. Bank Balance: %2",(round((_houseCfg select 0)/2)),[life_atmbank] call life_fnc_numberText];
+            advanced_log = format ["sold a house for %1. Bank Balance: %2",(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
         } else {
-            advanced_log = format ["%1 - %2 sold a house for %3. Bank Balance: %4",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[life_atmbank] call life_fnc_numberText];
+            advanced_log = format ["%1 - %2 sold a house for %3. Bank Balance: %4",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
             };
         publicVariableServer "advanced_log";
     };

@@ -12,5 +12,5 @@ params [
 ];
 
 if(EQUAL(_value,0) || EQUAL(_from,"") || EQUAL(_from,profileName)) exitWith {}; //No
-ADD(life_atmbank,_value);
+ADD(BANK,_value);
 hint format["%1 has wire transferred $%2 to you",_from,[_value] call life_fnc_numberText];
