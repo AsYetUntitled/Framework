@@ -7,7 +7,7 @@
     Questions the drug dealer and sets the sellers wanted.
 */
 private["_sellers","_crimes","_names"];
-_sellers = (SEL(_this,0)) GVAR ["sellers",[]];
+_sellers = (SEL(_this,0)) getVariable ["sellers",[]];
 if(count _sellers isEqualTo 0) exitWith {hint localize "STR_Cop_DealerQuestion"}; //No data.
 life_action_inUse = true;
 _crimes = LIFE_SETTINGS(getArray,"crimes");
@@ -29,5 +29,5 @@ _names = "";
 } forEach _sellers;
 
 hint parseText format[(localize "STR_Cop_DealerMSG")+ "<br/><br/>%1",_names];
-SEL(_this,0) SVAR ["sellers",[],true];
+SEL(_this,0) setVariable ["sellers",[],true];
 life_action_inUse = false;

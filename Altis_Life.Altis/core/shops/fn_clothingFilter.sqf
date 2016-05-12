@@ -67,7 +67,7 @@ _array = switch(_selection) do {
     };
 
     if(!(EQUAL(_levelValue,-1))) then {
-        _level = GVAR_MNS _levelName;
+        _level = missionNamespace getVariable _levelName;
         if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
 

@@ -22,7 +22,7 @@ for "_i" from 0 to 1 step 0 do {
         _targetDisplay = _x select 0;
         _targetName = _x select 1;
         switch(typeName _targetDisplay) do {
-            case ("STRING"): {if(!isNull (GVAR_UINS [_targetDisplay,displayNull])) exitWith {_detection = true;};};
+            case ("STRING"): {if(!isNull (uiNamespace getVariable [_targetDisplay,displayNull])) exitWith {_detection = true;};};
             default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
         };
 

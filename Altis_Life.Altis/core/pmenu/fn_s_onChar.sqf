@@ -2,12 +2,12 @@
 /*
     File: fn_s_onChar.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     When a character is entered it is validated and changes the
     correct slider it is associated with. I probably over-complicated
     this more then I had to but onChar behaves weird.
-    
+
     PARAMS:
         0: CONTROL
         1: SCALAR (INT)
@@ -32,7 +32,7 @@ if(_onKeyUp) then {
         default {"life_settings_viewDistanceFoot"};
     };
 
-    SVAR_MNS [_varName,_value];
+    missionNamespace setVariable [_varName,_value];
     [] call life_fnc_settingsMenu;
     [] call life_fnc_updateViewDistance;
 };

@@ -13,16 +13,16 @@ life_use_atm = true;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
-CASH = 0; //Make sure we don't get our cash back.
+life_cash = 0; //Make sure we don't get our cash back.
 life_respawned = false;
 player playMove "AmovPercMstpSnonWnonDnon";
 
-life_corpse SVAR ["Revive",nil,TRUE];
-life_corpse SVAR ["name",nil,TRUE];
-life_corpse SVAR ["Reviving",nil,TRUE];
-player SVAR ["Revive",nil,TRUE];
-player SVAR ["name",nil,TRUE];
-player SVAR ["Reviving",nil,TRUE];
+life_corpse setVariable ["Revive",nil,TRUE];
+life_corpse setVariable ["name",nil,TRUE];
+life_corpse setVariable ["Reviving",nil,TRUE];
+player setVariable ["Revive",nil,TRUE];
+player setVariable ["name",nil,TRUE];
+player setVariable ["Reviving",nil,TRUE];
 
 //Load gear for a 'new life'
 switch(playerSide) do
@@ -42,7 +42,7 @@ switch(playerSide) do
 //Cleanup of weapon containers near the body & hide it.
 if(!isNull life_corpse) then {
     private "_containers";
-    life_corpse SVAR ["Revive",TRUE,TRUE];
+    life_corpse setVariable ["Revive",TRUE,TRUE];
     _containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
     {deleteVehicle _x;} forEach _containers; //Delete the containers.
     deleteVehicle life_corpse;
@@ -80,7 +80,7 @@ if(life_removeWanted) then {
     } else {
         [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
     };
-    
+
 };
 
 [] call SOCK_fnc_updateRequest;

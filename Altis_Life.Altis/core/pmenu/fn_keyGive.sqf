@@ -27,12 +27,12 @@ if(isNull _unit || isNil "_unit") exitWith {};
 if(_unit == player) exitWith {};
 
 _uid = getPlayerUID _unit;
-_owners = _vehicle GVAR "vehicle_info_owners";
+_owners = _vehicle getVariable "vehicle_info_owners";
 _index = [_uid,_owners] call TON_fnc_index;
 if(_index isEqualTo -1) then  {
-    _owners pushBack [_uid,_unit GVAR ["realname",name _unit]];
-    _vehicle SVAR ["vehicle_info_owners",_owners,true];
+    _owners pushBack [_uid,_unit getVariable ["realname",name _unit]];
+    _vehicle setVariable ["vehicle_info_owners",_owners,true];
 };
 
-hint format [localize "STR_NOTF_givenKeysTo",_unit GVAR ["realname",name _unit],typeOf _vehicle];
+hint format [localize "STR_NOTF_givenKeysTo",_unit getVariable ["realname",name _unit],typeOf _vehicle];
 [_vehicle,_unit,profileName] remoteExecCAll ["TON_fnc_clientGetKey",_unit];

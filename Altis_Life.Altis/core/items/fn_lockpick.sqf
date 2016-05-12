@@ -20,7 +20,7 @@ if(_isVehicle && _curTarget in life_vehicles) exitWith {hint localize "STR_ISTR_
 
 //More error checks
 if(!_isVehicle && !isPlayer _curTarget) exitWith {};
-if(!_isVehicle && !(_curTarget GVAR ["restrained",false])) exitWith {};
+if(!_isVehicle && !(_curTarget getVariable ["restrained",false])) exitWith {};
 if(_curTarget getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 
 _title = format[localize "STR_ISTR_Lock_Process",if(!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
@@ -29,7 +29,7 @@ life_action_inUse = true; //Lock out other actions
 //Setup the progress bar
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
-_ui = GVAR_UINS "life_progress";
+_ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
@@ -47,7 +47,7 @@ for "_i" from 0 to 1 step 0 do {
 
     if(isNull _ui) then {
         5 cutRsc ["life_progress","PLAIN"];
-        _ui = GVAR_UINS "life_progress";
+        _ui = uiNamespace getVariable "life_progress";
         _progressBar = _ui displayCtrl 38201;
         _titleText = _ui displayCtrl 38202;
     };
@@ -59,7 +59,7 @@ for "_i" from 0 to 1 step 0 do {
     if(life_istazed) exitWith {}; //Tazed
     if(life_isknocked) exitWith {}; //Knocked
     if(life_interrupted) exitWith {};
-    if((player GVAR ["restrained",false])) exitWith {};
+    if((player getVariable ["restrained",false])) exitWith {};
     if(player distance _curTarget > _distance) exitWith {_badDistance = true;};
 };
 
@@ -68,7 +68,7 @@ for "_i" from 0 to 1 step 0 do {
 player playActionNow "stop";
 
 if(!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
-if((player GVAR ["restrained",false])) exitWith {life_action_inUse = false;};
+if((player getVariable ["restrained",false])) exitWith {life_action_inUse = false;};
 if(!isNil "_badDistance") exitWith {titleText[localize "STR_ISTR_Lock_TooFar","PLAIN"]; life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 if(!([false,"lockpick",1] call life_fnc_handleInv)) exitWith {life_action_inUse = false;};
@@ -76,9 +76,9 @@ if(!([false,"lockpick",1] call life_fnc_handleInv)) exitWith {life_action_inUse 
 life_action_inUse = false;
 
 if(!_isVehicle) then {
-    _curTarget SVAR ["restrained",false,true];
-    _curTarget SVAR ["Escorting",false,true];
-    _curTarget SVAR ["transporting",false,true];
+    _curTarget setVariable ["restrained",false,true];
+    _curTarget setVariable ["Escorting",false,true];
+    _curTarget setVariable ["transporting",false,true];
 } else {
     _dice = random(100);
     if(_dice < 30) then {

@@ -13,9 +13,9 @@ params [
 ];
 
 if(_name isEqualTo "" || isNull _group) exitWith {}; //Fail horn anyone?
-if(!isNil {(group player) GVAR "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
+if(!isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
 
-_gangName = _group GVAR "gang_name";
+_gangName = _group getVariable "gang_name";
 _action = [
     format[localize "STR_GNOTF_InviteMSG",_name,_gangName],
     localize "STR_Gang_Invitation",
@@ -33,9 +33,9 @@ if(_action) then {
     };
 
 } else {
-    _grpMembers = group player GVAR "gang_members";
+    _grpMembers = group player getVariable "gang_members";
     SUB(_grpMembers,[getPlayerUID player]);
-    group player SVAR ["gang_members",_grpMembers,true];
+    group player setVariable ["gang_members",_grpMembers,true];
 
     if(life_HC_isActive) then {
         [4,_grpMembers] remoteExecCall ["HC_fnc_updateGang",HC_Life];

@@ -19,8 +19,8 @@ sleep 3;
 
 for "_i" from 1 to _numberOfDoors do {
     _house animate[format["door_%1_rot",_i],0];
-    _house SVAR [format["bis_disabled_Door_%1",_i],1,true];
+    _house setVariable [format["bis_disabled_Door_%1",_i],1,true];
 };
 
-_house SVAR ["locked",true,true];
+_house setVariable ["locked",true,true];
 titleText[localize "STR_House_LockedUp","PLAIN"];

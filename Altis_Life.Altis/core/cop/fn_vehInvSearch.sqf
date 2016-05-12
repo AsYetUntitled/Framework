@@ -11,7 +11,7 @@ _vehicle = cursorObject;
 _list = ["Air","Ship","LandVehicle"];
 if(isNull _vehicle || {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
 
-_vehicleInfo = _vehicle GVAR ["Trunk",[]];
+_vehicleInfo = _vehicle getVariable ["Trunk",[]];
 if(count _vehicleInfo isEqualTo 0) exitWith {hint localize "STR_Cop_VehEmpty"};
 
 _value = 0;
@@ -33,8 +33,8 @@ _illegalValue = 0;
 _value = _illegalValue;
 if(_value > 0) then {
     [0,"STR_NOTF_VehContraband",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-    ADD(BANK,_value);
-    _vehicle SVAR ["Trunk",[[],0],true];
+    ADD(life_atmbank,_value);
+    _vehicle setVariable ["Trunk",[[],0],true];
 } else {
     hint localize "STR_Cop_NoIllegalVeh";
 };

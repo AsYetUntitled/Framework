@@ -20,7 +20,7 @@ if(_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin
 if((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawInUseG"}; //Check if it's in use.
 
 SUB(_gFund,_value);
-ADD(CASH,_value);
+ADD(life_cash,_value);
 group player setVariable ["gang_bank",_gFund,true];
 
 if(life_HC_isActive) then {
@@ -35,9 +35,9 @@ hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberTe
 
 if(EQUAL(LIFE_SETTINGS(getNumber,"player_moneyLog"),1)) then {
     if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        money_log = format ["withdrew %1 from their gang bank. Gang Bank Balance: %2  Bank Balance: %3  On Hand Balance: %4",_value,[_gFund] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        money_log = format ["withdrew %1 from their gang bank. Gang Bank Balance: %2  Bank Balance: %3  On Hand Balance: %4",_value,[_gFund] call life_fnc_numberText,[life_atmbank] call life_fnc_numberText,[life_cash] call life_fnc_numberText];
     } else {
-        money_log = format ["%1 - %2 withdrew %3 from their gang bank. Gang Bank Balance: %4  Bank Balance: %5  On Hand Balance: %6",profileName,(getPlayerUID player),_value,[_gFund] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        money_log = format ["%1 - %2 withdrew %3 from their gang bank. Gang Bank Balance: %4  Bank Balance: %5  On Hand Balance: %6",profileName,(getPlayerUID player),_value,[_gFund] call life_fnc_numberText,[life_atmbank] call life_fnc_numberText,[life_cash] call life_fnc_numberText];
     };
     publicVariableServer "money_log";
 };

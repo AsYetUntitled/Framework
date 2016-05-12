@@ -76,7 +76,7 @@ life_action_inUse = true;
 };
 
 //Check if it's a dead body.
-if(_curObject isKindOf "Man" && {!alive _curObject} && !(_curObject GVAR["Revive",false]) && {playerSide in [west,independent]}) exitWith {
+if(_curObject isKindOf "Man" && {!alive _curObject} && !(_curObject getVariable["Revive",false]) && {playerSide in [west,independent]}) exitWith {
     //Hotfix code by ins0
     if(((playerSide == west && {(LIFE_SETTINGS(getNumber,"revive_cops") isEqualTo 1)}) || playerSide == independent)) then {
         if(life_inv_defibrillator > 0) then {
@@ -87,7 +87,7 @@ if(_curObject isKindOf "Man" && {!alive _curObject} && !(_curObject GVAR["Revive
 
 //If target is a player then check if we can use the cop menu.
 if(isPlayer _curObject && _curObject isKindOf "Man") then {
-    if((_curObject GVAR ["restrained",false]) && !dialog && playerSide == west) then {
+    if((_curObject getVariable ["restrained",false]) && !dialog && playerSide == west) then {
         [_curObject] call life_fnc_copInteractionMenu;
     };
 } else {
@@ -101,7 +101,7 @@ if(isPlayer _curObject && _curObject isKindOf "Man") then {
     //It's a vehicle! open the vehicle interaction key!
     if(_isVehicle) then {
         if(!dialog) then {
-            if(player distance _curObject < SEL(SEL(boundingBox _curObject,1),0)+2 && (!(player GVAR ["restrained",false])) && (!(player GVAR ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
+            if(player distance _curObject < SEL(SEL(boundingBox _curObject,1),0)+2 && (!(player getVariable ["restrained",false])) && (!(player getVariable ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
                 [_curObject] call life_fnc_vInteractionMenu;
             };
         };
@@ -111,7 +111,7 @@ if(isPlayer _curObject && _curObject isKindOf "Man") then {
             [_curObject,player,false] remoteExecCall ["TON_fnc_pickupAction",RSERV];
         } else {
             //It wasn't a misc item so is it money?
-            if((typeOf _curObject) isEqualTo "Land_Money_F" && {!(_curObject GVAR ["inUse",false])}) then {
+            if((typeOf _curObject) isEqualTo "Land_Money_F" && {!(_curObject getVariable ["inUse",false])}) then {
                 [_curObject,player,true] remoteExecCall ["TON_fnc_pickupAction",RSERV];
             };
         };

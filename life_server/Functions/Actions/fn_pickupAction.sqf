@@ -2,7 +2,7 @@
 /*
     File: fn_pickupAction.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Validates that the cash is not a lie
 */
@@ -13,9 +13,9 @@ params [
 ];
 
 if(isNull _obj || {isNull _client}) exitWith {systemChat "Obj or client is null?";}; //No.
-if(!(_obj GVAR ["inUse",false])) exitWith {
+if(!(_obj getVariable ["inUse",false])) exitWith {
     _client = owner _client;
-    _obj SVAR ["inUse",true,true];
+    _obj setVariable ["inUse",true,true];
     if(_cash) then {
         _obj remoteExecCall ["life_fnc_pickupMoney",_client];
     } else {

@@ -17,7 +17,7 @@ _diff = [_item,(parseNumber _val),life_carryWeight,life_maxWeight] call life_fnc
 
 if(!(_diff isEqualTo (parseNumber _val))) then {
     if(([true,_item,_diff] call life_fnc_handleInv)) then {
-        hint format[localize "STR_MISC_TooMuch_3",_from GVAR ["realname",name _from],_val,_diff,((parseNumber _val) - _diff)];
+        hint format[localize "STR_MISC_TooMuch_3",_from getVariable ["realname",name _from],_val,_diff,((parseNumber _val) - _diff)];
         [_from,_item,str((parseNumber _val) - _diff),_unit] remoteExecCall ["life_fnc_giveDiff",_from];
     } else {
         [_from,_item,_val,_unit,false] remoteExecCall ["life_fnc_giveDiff",_from];
@@ -26,7 +26,7 @@ if(!(_diff isEqualTo (parseNumber _val))) then {
     if(([true,_item,(parseNumber _val)] call life_fnc_handleInv)) then {
         private "_type";
         _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
-        hint format[localize "STR_NOTF_GivenItem",_from GVAR ["realname",name _from],_val,(localize _type)];
+        hint format[localize "STR_NOTF_GivenItem",_from getVariable ["realname",name _from],_val,(localize _type)];
     } else {
         [_from,_item,_val,_unit,false] remoteExecCall ["life_fnc_giveDiff",_from];
     };

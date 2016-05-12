@@ -29,11 +29,11 @@ if (!isNull _house) then {
     _message = 1;
     if (([player] call life_fnc_PlayerInBuilding) && {([_container] call life_fnc_PlayerInBuilding)}) then {
         _message = 2;
-        if ((_house in life_vehicles) || !(isNil {_house GVAR "house_owner"})) then {
+        if ((_house in life_vehicles) || !(isNil {_house getVariable "house_owner"})) then {
             _message = 3;
             if (!_isFloating) then {
                 _message = 4;
-                _containers = _house GVAR ["containers",[]];
+                _containers = _house getVariable ["containers",[]];
                 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
                 if (_houseCfg isEqualTo []) exitWith {};
                 if (count _containers < (_houseCfg select 1)) then {
@@ -43,8 +43,8 @@ if (!isNull _house) then {
                     } else {
                         [_uid,_container] remoteExec ["TON_fnc_addContainer",RSERV];
                     };
-                    _container SVAR ["Trunk",[[],0],true];
-                    _container SVAR ["container_owner",[_uid],true];
+                    _container setVariable ["Trunk",[[],0],true];
+                    _container setVariable ["container_owner",[_uid],true];
                     _containers pushBack _container;
                     _house setVariable["containers",_containers,true];
                     sleep 1;
