@@ -49,7 +49,10 @@ _weaponArray = [primaryWeapon player, LAUNCHER, handgunWeapon player];
             //This gets weird with forEach in forEach :\
             {
                 if(!(_ret isEqualTo 0)) exitWith {};
-                _cfg = FETCH_CONFIG4(getNumber,"CfgWeapons",_weapon,"WeaponSlotsInfo",_x,"compatibleItems",_item);
+                
+                if(isClass (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> _x >> "compatibleItems")) then {
+                    _cfg = FETCH_CONFIG4(getNumber,"CfgWeapons",_weapon,"WeaponSlotsInfo",_x,"compatibleItems",_item);
+                };
 
                 if(isNil "_cfg") then {_cfg = 0;};
                 if(_cfg isEqualTo 1) exitWith {
