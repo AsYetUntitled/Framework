@@ -6,13 +6,13 @@
     Description:
     Initialize the headless client.
 */
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessSupport"),0)) exitWith {};
+if(EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
 
 [] execVM "\life_hc\KRON_Strings.sqf";
 
 life_HC_server_extDB_notLoaded = "";
 
-life_save_civilian_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position"),0)) then {false} else {true};
+life_save_civilian_position = if(LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 
 diag_log "-------------------------------------------------------------------------------------------------------------------";
 diag_log "-------------------------------- Starting initialization of 'extDB2-HC' by NANOU ----------------------------------";
@@ -25,9 +25,9 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
 
     try {
         _result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+        if(!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
         _result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+        if(!(_result isEqualTo "[1]"))) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
         life_HC_server_extDB_notLoaded = [true, _exception];

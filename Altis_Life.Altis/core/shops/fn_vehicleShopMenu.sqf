@@ -49,14 +49,14 @@ ctrlShow [2304,false];
     _levelValue = SEL(_levelAssert,2);
     _showall = true;
 
-    if(!(EQUAL(_levelValue,-1))) then {
+    if(!(_levelValue isEqualTo -1)) then {
         _level = missionNamespace getVariable _levelName;
         if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
         _showall = switch(_levelType) do {
             case "SCALAR": {_level >= _levelValue};
             case "BOOL": {_level};
-            case "EQUAL": {EQUAL(_level,_levelValue)};
+            case "EQUAL": {_level isEqualTo _levelValue};
             default {false};
         };
     };

@@ -63,7 +63,7 @@ switch (true) do {
         [] spawn life_fnc_jerryRefuel;
     };
 
-    case (EQUAL(_item,"lockpick")): {
+    case (_item isEqualTo "lockpick"): {
         [] spawn life_fnc_lockpick;
     };
 

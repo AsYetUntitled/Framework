@@ -26,7 +26,7 @@ BANK = BANK - (_value + _tax);
 hint format[localize "STR_ATM_SentMoneySuccess",[_value] call life_fnc_numberText,_unit getVariable ["realname",name _unit],[_tax] call life_fnc_numberText];
 [1] call SOCK_fnc_updatePartial;
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"player_moneyLog"),1)) then {
+if(LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {
     if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
         money_log = format ["transferred $%1 to %2. Bank Balance: $%3  On Hand Balance: $%4",_value,_unit getVariable ["realname",name _unit],[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     } else {

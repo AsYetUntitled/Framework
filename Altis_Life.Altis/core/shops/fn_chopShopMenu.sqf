@@ -17,7 +17,7 @@ if(count _nearUnits > 1) exitWith {hint localize "STR_NOTF_PlayerNear"};
 
 life_chopShop = SEL(_this,3);
 //Error check
-if(EQUAL(count _nearVehicles,0)) exitWith {titleText[localize "STR_Shop_NoVehNear","PLAIN"];};
+if(count _nearVehicles isEqualTo 0) exitWith {titleText[localize "STR_Shop_NoVehNear","PLAIN"];};
 if(!(createDialog "Chop_Shop")) exitWith {hint localize "STR_Shop_ChopShopError"};
 
 _control = CONTROL(39400,39402);
@@ -37,7 +37,7 @@ _control = CONTROL(39400,39402);
         _chopMultiplier = LIFE_SETTINGS(getNumber,"vehicle_chopShop_multiplier");
 
         _price = _price * _chopMultiplier;
-        if(!isNil "_price" && EQUAL(count crew _x,0)) then {
+        if(!isNil "_price" && count crew _x isEqualTo 0) then {
             _control lbAdd _displayName;
             _control lbSetData [(lbSize _control)-1,str(_forEachIndex)];
             _control lbSetPicture [(lbSize _control)-1,_picture];

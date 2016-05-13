@@ -33,7 +33,7 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
         _levelValue = SEL(_level,2);
 
     {
-      if(!(EQUAL(SEL(_x,0),""))) then {
+      if(!(SEL(_x,0) isEqualTo "")) then {
         _licenseName = SEL(_x,0);
         _licenseType = SEL(_x,1);
         if(_licenseType == 0) then {
@@ -45,13 +45,13 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
     } forEach _licenses;
 
     if(_flag) then {
-        if(!(EQUAL(_levelValue,-1))) then {
+        if(!(_levelValue isEqualTo -1)) then {
                 _level = missionNamespace getVariable _levelName;
                 if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
                 _flag = switch(_levelType) do {
                     case "SCALAR": {_level >= _levelValue};
                     case "BOOL": {_level};
-                    case "EQUAL": {EQUAL(_level,_levelValue)};
+                    case "EQUAL": {_level isEqualTo _levelValue};
                     case "INVERSE": {_level <= _levelValue};
                     default {false};
                 };

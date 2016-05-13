@@ -78,7 +78,7 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 {
     _flag = SEL(_x,1);
     _textureName = SEL(_x,0);
-    if(EQUAL(SEL(life_veh_shop,2),_flag)) then {
+    if(SEL(life_veh_shop,2) isEqualTo _flag) then {
         _ctrl lbAdd _textureName;
         _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
     };

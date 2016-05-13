@@ -35,8 +35,7 @@
 #define ITEM_WEIGHT(varName) M_CONFIG(getNumber,"VirtualItems",varName,"weight")
 
 //Condition Macros
-#define EQUAL(condition1,condition2) condition1 isEqualTo condition2
-#define CONFIG_BOOL(NUMBER) [##NUMBER] call { _ret = false; if((_this select 0) in [0,1] && EQUAL((_this select 0),1)) then { _ret = true; }; _ret;}
+#define CONFIG_BOOL(NUMBER) [##NUMBER] call { _ret = false; if((_this select 0) in [0,1] && (_this select 0) isEqualTo 1) then { _ret = true; }; _ret;}
 
 // extDB2 Macros
 #define EXTDB "extDB2" callExtension

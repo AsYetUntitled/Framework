@@ -20,7 +20,7 @@ _name = name _unit;
 _side = side _unit;
 _unit = owner _unit;
 
-if(EQUAL(_vid,-1) || EQUAL(_pid,"")) exitWith {};
+if(_vid isEqualTo -1 || _pid isEqualTo "") exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
@@ -42,14 +42,14 @@ if(_queryResult isEqualType "") exitWith {};
 
 _vInfo = _queryResult;
 if(isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
-if(EQUAL(count _vInfo,0)) exitWith {serv_sv_use deleteAt _servIndex;};
+if(count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
 
-if(EQUAL(SEL(_vInfo,5),0)) exitWith {
+if(SEL(_vInfo,5) isEqualTo 0) exitWith {
     serv_sv_use deleteAt _servIndex;
     [1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-if(EQUAL(SEL(_vInfo,6),1)) exitWith {
+if(SEL(_vInfo,6) isEqualTo 1) exitWith {
     serv_sv_use deleteAt _servIndex;
     [1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
@@ -103,7 +103,7 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 // Avoid problems if u keep changing which stuff to save!
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     _vehicle setVariable["Trunk",_trunk,true];
     if (_wasIllegal) then {
         if(_sp isEqualType "") then {
@@ -122,13 +122,13 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems"),1)) then {
     _vehicle setVariable["Trunk",[[],0],true];
 };
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel (_vInfo select 11);
     }else{
     _vehicle setFuel 1;
 };
 
-if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),1))) then {
+if (count _gear > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1)) then {
     _items = _gear select 0;
     _mags = _gear select 1;
     _weapons = _gear select 2;
@@ -148,7 +148,7 @@ if (count _gear > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),
     };
 };
 
-if (count _damage > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_damage"),1))) then {
+if (count _damage > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1)) then {
     _parts = getAllHitPointsDamage _vehicle;
 
     for "_i" from 0 to ((count _damage) - 1) do {
@@ -157,15 +157,15 @@ if (count _damage > 0 && (EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_damage"),1
 };
 
 //Sets of animations
-if(EQUAL(SEL(_vInfo,1),"civ") && EQUAL(SEL(_vInfo,2),"B_Heli_Light_01_F") && !(EQUAL(SEL(_vInfo,8),13))) then {
+if(SEL(_vInfo,1) isEqualTo "civ" && SEL(_vInfo,2) isEqualTo "B_Heli_Light_01_F" && !(SEL(_vInfo,8) isEqualTo 13)) then {
     [_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
-if(EQUAL(SEL(_vInfo,1),"cop") && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
+if(SEL(_vInfo,1) isEqualTo "cop" && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
     [_vehicle,"cop_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
-if(EQUAL(SEL(_vInfo,1),"med") && EQUAL(SEL(_vInfo,2),"C_Offroad_01_F")) then {
+if(SEL(_vInfo,1) isEqualTo "med" && SEL(_vInfo,2) isEqualTo "C_Offroad_01_F") then {
     [_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 

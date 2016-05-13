@@ -18,7 +18,7 @@ _multiarr = [_this,2,false,[false]] call BIS_fnc_param;
 
 _key = EXTDB format["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStmt];
 
-if(EQUAL(_mode,1)) exitWith {true};
+if(_mode isEqualTo 1) exitWith {true};
 
 _key = call compile format["%1",_key];
 _key = SEL(_key,1);
@@ -45,7 +45,7 @@ if(_queryResult isEqualTo "[5]") then {
     };
 };
 _queryResult = call compile _queryResult;
-if(EQUAL(SEL(_queryResult,0),0)) exitWith {diag_log format ["extDB2: Protocol Error: %1", _queryResult]; []};
+if(SEL(_queryResult,0) isEqualTo 0) exitWith {diag_log format ["extDB2: Protocol Error: %1", _queryResult]; []};
 _return = SEL(_queryResult,1);
 if(!_multiarr && count _return > 0) then {
     _return = SEL(_return,0);

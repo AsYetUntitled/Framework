@@ -55,7 +55,7 @@ _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
 _licensesName = "";
 {
-    if(!(EQUAL(_x,"")) && {!(LICENSE_VALUE(_x,_shopSide))}) then {
+    if(!(_x isEqualTo "") && {!(LICENSE_VALUE(_x,_shopSide))}) then {
         ADD(_licensesName,localize M_CONFIG(getText,"Licenses",_x,"displayName") + "<br/>");
         _exit = true;
     };
@@ -82,7 +82,7 @@ if((SEL(life_veh_shop,0) == "med_air_hs")) then {
 };
 
 
-if(EQUAL(_spawnPoint,"")) exitWith {hint localize "STR_Shop_Veh_Block";closeDialog 0;};
+if(_spawnPoint isEqualTo "") exitWith {hint localize "STR_Shop_Veh_Block";closeDialog 0;};
 SUB(CASH,_purchasePrice);
 hint format[localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
 
@@ -115,7 +115,7 @@ switch(playerSide) do {
         [_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
     };
     case civilian: {
-        if(EQUAL(SEL(life_veh_shop,2),"civ") && {_className == "B_Heli_Light_01_F"}) then {
+        if(SEL(life_veh_shop,2) isEqualTo "civ" && {_className == "B_Heli_Light_01_F"}) then {
             [_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
         };
     };

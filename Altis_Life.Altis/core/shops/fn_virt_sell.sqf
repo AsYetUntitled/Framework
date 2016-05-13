@@ -7,10 +7,10 @@
     Sell a virtual item to the store / shop
 */
 private["_type","_index","_price","_amount","_name"];
-if(EQUAL(lbCurSel 2402,-1)) exitWith {};
+if((lbCurSel 2402) isEqualTo -1) exitWith {};
 _type = lbData[2402,(lbCurSel 2402)];
 _price = M_CONFIG(getNumber,"VirtualItems",_type,"sellPrice");
-if(EQUAL(_price,-1)) exitWith {};
+if(_price isEqualTo -1) exitWith {};
 
 _amount = ctrlText 2405;
 if(!([_amount] call TON_fnc_isnumber)) exitWith {hint localize "STR_Shop_Virt_NoNum";};
@@ -27,11 +27,11 @@ if(([false,_type,_amount] call life_fnc_handleInv)) then {
     [] call life_fnc_virt_update;
 };
 
-if(EQUAL(life_shop_type,"drugdealer")) then {
+if(life_shop_type isEqualTo "drugdealer") then {
     private["_array","_ind","_val"];
     _array = life_shop_npc getVariable["sellers",[]];
     _ind = [getPlayerUID player,_array] call TON_fnc_index;
-    if(!(EQUAL(_ind,-1))) then {
+    if(!(_ind isEqualTo -1)) then {
         _val = SEL(SEL(_array,_ind),2);
         ADD(_val,_price);
         _array set[_ind,[getPlayerUID player,profileName,_val]];
@@ -42,7 +42,7 @@ if(EQUAL(life_shop_type,"drugdealer")) then {
     };
 };
 
-if(EQUAL(life_shop_type,"gold") && (LIFE_SETTINGS(getNumber,"noatm_timer")) > 0) then {
+if(life_shop_type isEqualTo "gold" && (LIFE_SETTINGS(getNumber,"noatm_timer")) > 0) then {
     [] spawn {
         life_use_atm = false;
         sleep ((LIFE_SETTINGS(getNumber,"noatm_timer")) * 60);

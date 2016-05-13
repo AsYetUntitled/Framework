@@ -19,31 +19,31 @@ _levelMsg = SEL(_levelAssert,3);
 life_shop_type = SEL(_this,3);
 life_shop_npc = SEL(_this,0);
 
-if(!(EQUAL(_shopSide,""))) then {
+if(!(_shopSide isEqualTo "")) then {
     _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
     if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
 };
 if(_exit) exitWith {};
 
-if(!(EQUAL(_license,""))) then {
+if(!(_license isEqualTo "")) then {
     _flag = M_CONFIG(getText,"Licenses",_license,"side");
     if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
 };
 if(_exit) exitWith {};
 
-if(!(EQUAL(_levelValue,-1))) then {
+if(!(_levelValue isEqualTo -1)) then {
     _level = missionNamespace getVariable _levelName;
     if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
     _flag = switch(_levelType) do {
         case "SCALAR": {_level >= _levelValue};
         case "BOOL": {_level};
-        case "EQUAL": {EQUAL(_level,_levelValue)};
+        case "EQUAL": {_level isEqualTo _levelValue};
         default {false};
     };
     if(!(_flag)) then {
         _exit = true;
-        if(EQUAL(_levelMsg,"")) then {
+        if(_levelMsg isEqualTo "") then {
             _levelMsg = (localize "STR_Shop_Veh_NotAllowed");
         } else {
             if(isLocalized _levelMsg) then {

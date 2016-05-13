@@ -2,7 +2,7 @@
 /*
     File: fn_impoundMenu.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Not actually a impound menu, may act as confusion to some but that is what I wanted.
     The purpose of this menu is it is now called a 'Garage' where vehicles are stored (persistent ones).
@@ -15,7 +15,7 @@ ctrlShow[2803,false];
 ctrlShow[2830,false];
 waitUntil {!isNull (findDisplay 2800)};
 
-if(EQUAL(count _vehicles,0)) exitWith {
+if(count _vehicles isEqualTo 0) exitWith {
     ctrlSetText[2811,localize "STR_Garage_NoVehicles"];
 };
 

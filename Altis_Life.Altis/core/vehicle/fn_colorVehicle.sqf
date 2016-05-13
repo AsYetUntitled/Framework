@@ -15,7 +15,7 @@ params [
 _className = typeOf _vehicle;
 _classNameLife = _className;
 
-if(isNull _vehicle || !alive _vehicle || EQUAL(_index,-1)) exitWith {};
+if(isNull _vehicle || !alive _vehicle || _index isEqualTo -1) exitWith {};
 //Does the vehicle already have random styles? Halt till it's set.
 
 if(local _vehicle) then {
@@ -35,7 +35,7 @@ if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
 };
 
 _textures = SEL(SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures"),_index),2);
-if(isNil "_textures" || {EQUAL(count _textures,0)}) exitWith {};
+if(isNil "_textures" || {count _textures isEqualTo 0}) exitWith {};
 
 _vehicle setVariable ["Life_VEH_color",_index,true];
 

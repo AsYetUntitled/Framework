@@ -25,7 +25,7 @@ if(count _vInfo > 0) then {
 };
 
 // save damage.
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_damage"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
     _damage = getAllHitPointsDamage _vehicle;
     _damage = _damage select 2;
     } else {
@@ -34,7 +34,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_damage"),1)) then {
 _damage = [_damage] call HC_fnc_mresArray;
 
 // because fuel price!
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_fuel"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _fuel = (fuel _vehicle);
     } else {
     _fuel = 1;
@@ -79,8 +79,8 @@ _trunk = _vehicle getVariable["Trunk", [[], 0]];
 _itemList = _trunk select 0;
 _totalweight = 0;
 _items = [];
-if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_virtualItems"), 1)) then {
-    if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_illegal"), 1)) then {
+if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
+    if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
         _blacklist = false;
         _profileQuery = format["SELECT name FROM players WHERE playerid='%1'", _uid];
         _profileName = [_profileQuery, 2] call DB_fnc_asyncCall;
@@ -125,7 +125,7 @@ if (EQUAL(LIFE_SETTINGS(getNumber, "save_vehicle_virtualItems"), 1)) then {
     else {
         _trunk = [[], 0];
     };
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_vehicle_inventory"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     _vehItems = getItemCargo _vehicle;
     _vehMags = getMagazineCargo _vehicle;
     _vehWeapons = getWeaponCargo _vehicle;

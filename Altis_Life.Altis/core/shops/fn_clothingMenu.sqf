@@ -17,13 +17,13 @@ _shopTitle = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"title");
 _shopSide = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"side");
 _license = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"license");
 
-if(!(EQUAL(_shopSide,""))) then {
+if(!(_shopSide isEqualTo "")) then {
     _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
     if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
 };
 if(_exit) exitWith {};
 
-if(!(EQUAL(_license,""))) then {
+if(!(_license isEqualTo "")) then {
     _flag = M_CONFIG(getText,"Licenses",_license,"side");
     if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
 };
@@ -44,10 +44,10 @@ if((SEL(_this,3) == "reb" && !license_civ_rebel)) exitWith {hint localize "STR_S
 if((SEL(_this,3) in ["cop"] && playerSide != west)) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
 if((SEL(_this,3) in ["dive"] && !license_civ_dive)) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_noTP"),1)) then {
+if(LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
     _pos = getPosATL player;
 } else {
-    if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
+    if(LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 1) then {
         _pos = [1000,1000,10000];
     } else {
         switch(SEL(_this,3)) do {
@@ -67,7 +67,7 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_noTP"),1)) then {
 
     _nearVeh = _testLogic nearEntities ["AllVehicles", 20];
 
-    if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
+    if(LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 1) then {
         _ut1 = "UserTexture10m_F" createVehicleLocal (_testLogic modelToWorld [0,5,10]);
         _ut1 attachTo [_testLogic,[0,5,5]];
         _ut1 setDir 0;
@@ -94,11 +94,11 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_noTP"),1)) then {
     _light lightAttachObject [_testLogic, [0,0,0]];
 
     {if(_x != player) then {_x hideObject true;};} forEach playableUnits;
-    if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
+    if(LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 0) then {
         {if(_x != player && _x != _light) then {_x hideObject true;};} forEach _nearVeh;
     };
 
-    if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
+    if(LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 1) then {
         {_x setObjectTexture [0,"#(argb,8,8,3)color(0,0,0,1)"];} forEach [_ut1,_ut2,_ut3,_ut4];
     };
 
@@ -157,16 +157,16 @@ life_oldHat = headgear player;
 [] call life_fnc_playerSkins;
 
 waitUntil {isNull (findDisplay 3100)};
-if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_noTP"),0)) then {
+if(LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 0) then {
     {if(_x != player) then {_x hideObject false;};} forEach playableUnits;
-    if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),0)) then {
+    if(LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 0) then {
         {if(_x != player && _x != _light) then {_x hideObject false;};} forEach _nearVeh;
     };
     detach player;
     player setBehaviour _oldBev;
     player setPosASL _oldPos;
     player setDir _oldDir;
-    if(EQUAL(LIFE_SETTINGS(getNumber,"clothing_box"),1)) then {
+    if(LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 1) then {
         {deleteVehicle _x;} forEach [_testLogic,_ut1,_ut2,_ut3,_ut4,_ut5,_light];
     } else {
         {deleteVehicle _x;} forEach [_testLogic,_light];

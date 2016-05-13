@@ -36,7 +36,7 @@ for "_i" from 1 to 125 do {
                         if(!(_x in _BIS_UI_Functions)) then {
                             _varType = typeName (uiNamespace getVariable _x);
                             _find = _allowedVariables find [_x,_varType];
-                            if(EQUAL(_find,-1)) then {
+                            if(_find isEqualTo -1) then {
                                 uiNamespace setVariable [_x,nil];
                             };
                         };
@@ -57,7 +57,7 @@ _checkFunction = {
                         if(!(_x in _DB_Functions)) then {
                             _varType = typeName (missionNamespace getVariable _x);
                             _find = _allowedVariables find [_x,_varType];
-                            if(EQUAL(_find,-1)) then {
+                            if(_find isEqualTo -1) then {
                                 diag_log format["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
                                 failMission "SpyGlass";
                             };
@@ -79,7 +79,7 @@ _uiCheckFunction = {
                             if(!(_x in _BIS_UI_Functions)) then {
                                 _varType = typeName (uiNamespace getVariable _x);
                                 _find = _allowedVariables_UI find [_x,_varType];
-                                if(EQUAL(_find,-1)) then {
+                                if(_find isEqualTo -1) then {
                                     diag_log format["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
                                     failMission "SpyGlass";
                                 };
@@ -96,7 +96,7 @@ for "_i" from 0 to 1 step 0 do {
     objNull call _checkFunction;
     uiSleep 10;
     objNull call _uiCheckFunction;
-    if(!(EQUAL((count allVariables profileNameSpace),_profileCount)) || ((count allVariables parsingNamespace) > 0)) then {
+    if(!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0)) then {
         failMission "SpyGlass";
     };
     uiSleep (5 * 60); //Wait 5 minutes

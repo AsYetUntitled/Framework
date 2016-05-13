@@ -15,7 +15,7 @@ life_server_isReady = false;
 life_server_extDB_notLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
-life_save_civilian_position = if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position"),0)) then {false} else {true};
+life_save_civilian_position = if(LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 fn_whoDoneit = compile preprocessFileLineNumbers "\life_server\Functions\Systems\fn_whoDoneit.sqf";
 
 /*
@@ -26,7 +26,7 @@ publicVariable "life_HC_isActive";
 HC_Life = false;
 publicVariable "HC_Life";
 
-if(EQUAL(EXTDB_SETTING(getNumber,"HeadlessSupport"),1)) then {
+if(EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 1) then {
     [] execVM "\life_server\initHC.sqf";
 };
 
@@ -41,9 +41,9 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
     uiNamespace setVariable ["life_sql_id",life_sql_id];
         try {
         _result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+        if(!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
         _result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(EQUAL(_result,"[1]"))) then {throw "extDB2: Error with Database Connection"};
+        if(!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
         life_server_extDB_notLoaded = [true, _exception];
@@ -66,7 +66,7 @@ if(life_server_extDB_notLoaded isEqualType []) exitWith {};
 ["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
 ["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 
-if(EQUAL(LIFE_SETTINGS(getNumber,"save_civilian_position_restart"),1)) then {
+if(LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
         _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";
         [_query,1] call DB_fnc_asyncCall;

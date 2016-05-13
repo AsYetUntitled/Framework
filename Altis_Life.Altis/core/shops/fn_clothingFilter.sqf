@@ -61,12 +61,12 @@ _array = switch(_selection) do {
     _levelType = SEL(_levelAssert,1);
     _levelValue = SEL(_levelAssert,2);
 
-    if(!(EQUAL(_className,"NONE"))) then {
+    if(!(_className isEqualTo "NONE")) then {
         _details = [_className] call life_fnc_fetchCfgDetails;
         _pic = SEL(_details,2);
     };
 
-    if(!(EQUAL(_levelValue,-1))) then {
+    if(!(_levelValue isEqualTo -1)) then {
         _level = missionNamespace getVariable _levelName;
         if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
@@ -79,7 +79,7 @@ _array = switch(_selection) do {
         };
 
         if(_bool && {!isNil "_details"}) then {
-            if(EQUAL(_displayName,"")) then {
+            if(_displayName isEqualTo "") then {
                 _list lbAdd (SEL(_details,1));
             } else {
                 _list lbAdd _displayName;
@@ -94,7 +94,7 @@ _array = switch(_selection) do {
             _list lbAdd _displayName;
             _list lbSetData [(lbSize _list)-1,_className];
         } else {
-            if(EQUAL(_displayName,"")) then {
+            if(_displayName isEqualTo "") then {
                 _list lbAdd (SEL(_details,1));
             } else {
                 _list lbAdd _displayName;
