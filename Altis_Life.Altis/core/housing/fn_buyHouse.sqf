@@ -41,7 +41,7 @@ if(_action) then {
         if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
             advanced_log = format ["bought a house for %1. Bank Balance: %2  On Hand Cash: %3",[(SEL(_houseCfg,0))] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
         } else {
-            advanced_log = format ["%1 - %2 bought a house for %3. Bank Balance: %4  On Hand Cash: %5",profileName,(getPlayerUID player),_gangName,[(SEL(_houseCfg,0))] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+            advanced_log = format ["%1 - %2 bought a house for %3. Bank Balance: %4  On Hand Cash: %5",profileName,(getPlayerUID player),[(SEL(_houseCfg,0))] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
             };
         publicVariableServer "advanced_log";
     };
