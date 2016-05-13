@@ -177,7 +177,7 @@ class VirtualItems {
         displayName = "STR_Item_Defibrillator";
         weight = 4;
         buyPrice = 900;
-        sellPrice = -1;
+        sellPrice = 450;
         illegal = false;
         edible = -1;
         icon = "icons\ico_defibrillator.paa";
@@ -199,7 +199,7 @@ class VirtualItems {
         displayName = "STR_Item_FuelE";
         weight = 2;
         buyPrice = -1;
-        sellPrice = -1;
+        sellPrice = 10;
         illegal = false;
         edible = -1;
         icon = "icons\ico_fuelEmpty.paa";
@@ -276,7 +276,7 @@ class VirtualItems {
         displayName = "STR_Item_DefuseKit";
         weight = 2;
         buyPrice = 2500;
-        sellPrice = -1;
+        sellPrice = 2000;
         illegal = true;
         edible = -1;
         icon = "icons\ico_defuseKit.paa";
@@ -287,7 +287,7 @@ class VirtualItems {
         displayName = "STR_Item_StorageBS";
         weight = 5;
         buyPrice = 75000;
-        sellPrice = -1;
+        sellPrice = 50000;
         illegal = false;
         edible = -1;
         icon = "icons\ico_storageSmall.paa";
@@ -298,7 +298,7 @@ class VirtualItems {
         displayName = "STR_Item_StorageBL";
         weight = 10;
         buyPrice = 150000;
-        sellPrice = -1;
+        sellPrice = 125000;
         illegal = false;
         edible = -1;
         icon = "icons\ico_storageBig.paa";
