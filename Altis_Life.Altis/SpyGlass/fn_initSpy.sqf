@@ -11,9 +11,7 @@
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-#define uiNamespace getVariable uiNamespace getVariable
 #define CONST(var1,var2) var1 = compileFinal (if(var2 isEqualType "") then {var2} else {str(var2)})
-#define getPlayerUID player getPlayerUID player
 #define RCLIENT -2
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
