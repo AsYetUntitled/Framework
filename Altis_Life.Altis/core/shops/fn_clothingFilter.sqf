@@ -74,7 +74,7 @@ _array = switch(_selection) do {
         _bool = switch(_levelType) do {
             case "SCALAR": {_level >= _levelValue};
             case "BOOL": {_level};
-            case "EQUAL": {EQUAL(_level,_levelValue)};
+            case "EQUAL": {_level isEqualTo _levelValue};
             default {false};
         };
 

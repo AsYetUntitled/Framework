@@ -19,7 +19,7 @@ _license = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"license");
 
 if(!(_shopSide isEqualTo "")) then {
     _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-    if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
+    if(!(_flag isEqualTo _shopSide)) then {_exit = true;};
 };
 if(_exit) exitWith {};
 
