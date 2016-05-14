@@ -6,26 +6,23 @@
     Description:
     Does something with vehicle purchasing.
 */
-private["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_classNameLife","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
+private["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
 _mode = SEL(_this,0);
 _exit = false;
 if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
-_classNameLife = _className;
 _vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
 _shopSide = M_CONFIG(getText,"CarShops",SEL(life_veh_shop,0),"side");
 
 _licenses = switch(playerSide) do {
-    case civilian: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),0)};
-    case west: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),1)};
-    case independent: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),2)};
-    case east: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"licenses"),3)};
+    case civilian: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),0)};
+    case west: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),1)};
+    case independent: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),2)};
+    case east: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),3)};
 };
 
-hint format ["%1",_licenses];
-
-_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
+_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
 switch(playerSide) do {
     case civilian: {
