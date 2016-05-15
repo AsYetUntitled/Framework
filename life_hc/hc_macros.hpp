@@ -41,6 +41,6 @@
 #define EXTDB "extDB2" callExtension
 #define EXTDB_SETTING(TYPE,SETTING) TYPE(missionConfigFile >> "CfgServer" >> SETTING)
 #define EXTDB_FAILED(MESSAGE) \
-    life_server_extDB_notLoaded = [true,##MESSAGE]; \
-    PVAR_ALL("life_server_extDB_notLoaded"); \
+    life_HC_server_extDB_notLoaded = [true,##MESSAGE]; \
+    publicVariable "life_HC_server_extDB_notLoaded"; \
     diag_log MESSAGE;
