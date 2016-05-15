@@ -8,8 +8,8 @@
 */
 private["_fish","_type","_typeName"];
 _fish = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _fish) exitWith {}; //Object passed is null?
-if(player distance _fish > 3.5) exitWith {};
+if (isNull _fish) exitWith {}; //Object passed is null?
+if (player distance _fish > 3.5) exitWith {};
 
 switch(true) do {
     case ((typeOf _fish) == "Salema_F"): {_typeName = localize "STR_ANIM_Salema"; _type = "salema_raw";};
@@ -22,9 +22,9 @@ switch(true) do {
     default {_type = ""};
 };
 
-if(_type isEqualTo "") exitWith {}; //Couldn't get a type
+if (_type isEqualTo "") exitWith {}; //Couldn't get a type
 
-if(([true,_type,1] call life_fnc_handleInv)) then {
+if (([true,_type,1] call life_fnc_handleInv)) then {
     deleteVehicle _fish;
     titleText[format[(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
 };

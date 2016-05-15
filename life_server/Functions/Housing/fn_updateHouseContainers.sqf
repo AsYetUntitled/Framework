@@ -7,9 +7,9 @@
 */
 private["_containerID","_containers","_query","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo"];
 _container = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _container) exitWith {};
+if (isNull _container) exitWith {};
 _containerID = _container getVariable["container_id",-1];
-if(_houseID == -1) exitWith {};
+if (_houseID == -1) exitWith {};
 
 _vehItems = getItemCargo _container;
 _vehMags = getMagazineCargo _container;

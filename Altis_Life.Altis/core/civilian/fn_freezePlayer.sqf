@@ -8,7 +8,7 @@
 private["_admin"];
 _admin = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
-if(life_frozen) then {
+if (life_frozen) then {
     hint localize "STR_NOTF_Unfrozen";
     [1,format[localize "STR_ANOTF_Unfrozen",profileName]] remoteExecCall ["life_fnc_broadcast",_admin];
     disableUserInput false;

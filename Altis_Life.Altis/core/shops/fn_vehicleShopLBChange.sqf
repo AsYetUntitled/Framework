@@ -61,7 +61,7 @@ ctrlShow [2330,true];
     _maxspeed,
     _horsepower,
     _passengerseats,
-    if(_trunkSpace == -1) then {"None"} else {_trunkSpace},
+    if (_trunkSpace == -1) then {"None"} else {_trunkSpace},
     _fuel,
     _armor
 ];
@@ -69,7 +69,7 @@ ctrlShow [2330,true];
 _ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
 
-if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
+if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
     diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 };
@@ -78,7 +78,7 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 {
     _flag = SEL(_x,1);
     _textureName = SEL(_x,0);
-    if(SEL(life_veh_shop,2) isEqualTo _flag) then {
+    if (SEL(life_veh_shop,2) isEqualTo _flag) then {
         _ctrl lbAdd _textureName;
         _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
     };
@@ -95,15 +95,15 @@ for "_i" from 0 to (count(_colorArray) - 1) do {
 _indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
 _ctrl lbSetCurSel _indexrandom;
 
-if(_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
+if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
     ctrlEnable [2309,false];
 } else {
-    if(!(life_veh_shop select 3)) then {
+    if (!(life_veh_shop select 3)) then {
         ctrlEnable [2309,true];
     };
 };
 
-if((lbSize _ctrl)-1 != -1) then {
+if ((lbSize _ctrl)-1 != -1) then {
     ctrlShow[2304,true];
 } else {
     ctrlShow[2304,false];

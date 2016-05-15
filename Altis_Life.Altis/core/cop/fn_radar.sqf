@@ -5,12 +5,12 @@
     Description:
     Looks like weird but radar?
 */
-if(playerSide != west) exitWith {};
+if (playerSide != west) exitWith {};
 private ["_speed","_vehicle"];
 _vehicle = cursorObject;
 _speed = round speed _vehicle;
 
-if((_vehicle isKindOf "Car") && (currentWeapon player) == "hgun_P07_snds_F") then
+if ((_vehicle isKindOf "Car") && (currentWeapon player) == "hgun_P07_snds_F") then
 {
     switch (true) do
     {

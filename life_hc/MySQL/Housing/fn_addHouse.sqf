@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     This file is for Nanou's HeadlessClient.
-    
+
     Description:
     Blah
 */
@@ -13,7 +13,7 @@ params [
     ["_uid","",[""]],
     ["_house",objNull,[objNull]]
 ];
-if(isNull _house || _uid == "") exitWith {};
+if (isNull _house || _uid == "") exitWith {};
 
 _housePos = getPosATL _house;
 

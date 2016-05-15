@@ -15,7 +15,7 @@ ctrlShow[2803,false];
 ctrlShow[2830,false];
 waitUntil {!isNull (findDisplay 2800)};
 
-if(count _vehicles isEqualTo 0) exitWith {
+if (count _vehicles isEqualTo 0) exitWith {
     ctrlSetText[2811,localize "STR_Garage_NoVehicles"];
 };
 

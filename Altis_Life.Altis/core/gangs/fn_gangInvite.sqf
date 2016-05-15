@@ -12,8 +12,8 @@ params [
     ["_group",grpNull,[grpNull]]
 ];
 
-if(_name isEqualTo "" || isNull _group) exitWith {}; //Fail horn anyone?
-if(!isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
+if (_name isEqualTo "" || isNull _group) exitWith {}; //Fail horn anyone?
+if (!isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
 
 _gangName = _group getVariable "gang_name";
 _action = [
@@ -23,10 +23,10 @@ _action = [
     localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;
 
-if(_action) then {
+if (_action) then {
     [player] join _group;
 
-    if(life_HC_isActive) then {
+    if (life_HC_isActive) then {
         [4,_group] remoteExecCall ["HC_fnc_updateGang",HC_Life];
     } else {
         [4,_group] remoteExecCall ["TON_fnc_updateGang",RSERV];
@@ -37,7 +37,7 @@ if(_action) then {
     SUB(_grpMembers,[getPlayerUID player]);
     group player setVariable ["gang_members",_grpMembers,true];
 
-    if(life_HC_isActive) then {
+    if (life_HC_isActive) then {
         [4,_grpMembers] remoteExecCall ["HC_fnc_updateGang",HC_Life];
     } else {
         [4,_grpMembers] remoteExecCall ["TON_fnc_updateGang",RSERV];

@@ -10,9 +10,9 @@ params [
     ["_killer",objNull,[objNull]]
 ];
 
-if(isServer) then {
+if (isServer) then {
     private["_killerWep","_killerVeh","_distance","_message"];
-    if(isNull _victim || isNull _killer) exitWith {};
+    if (isNull _victim || isNull _killer) exitWith {};
 
     _killerWep = currentWeapon _killer;
     _killerVeh = vehicle _killer;

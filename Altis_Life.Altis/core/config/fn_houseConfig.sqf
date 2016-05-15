@@ -1,13 +1,13 @@
 /*
     File: fn_houseConfig.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Master config file for buyable houses?
 */
 private["_house"];
 _house = [_this,0,"",[""]] call BIS_fnc_param;
-if(_house == "") exitWith {[]};
+if (_house == "") exitWith {[]};
 
 /*
     Return Format:

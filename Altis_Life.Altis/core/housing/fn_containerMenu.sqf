@@ -19,9 +19,9 @@
 private["_container","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 disableSerialization;
 _container = param [0,ObjNull,[ObjNull]];
-if(isNull _container) exitWith {}; //Bad target
+if (isNull _container) exitWith {}; //Bad target
 
-if(!dialog) then {
+if (!dialog) then {
     createDialog "pInteraction_Menu";
 };
 
@@ -36,7 +36,7 @@ _Btn8 = CONTROL(37400,Btn8);
 {_x ctrlShow false;} forEach [_Btn1,_Btn2,_Btn3,_Btn4,_Btn5,_Btn6,_Btn7,_Btn8];
 
 life_pInact_container = _container;
-if(playerSide == west) then {
+if (playerSide == west) then {
     _Btn1 ctrlSetText localize "STR_vInAct_SearchContainer";
     _Btn1 buttonSetAction "[life_pInact_container] spawn life_fnc_containerInvSearch; closeDialog 0;";
     _Btn1 ctrlShow true;

@@ -22,7 +22,7 @@ life_deathCamera cameraEffect ["TERMINATE","BACK"];
 camDestroy life_deathCamera;
 
 //Take fee for services.
-if(BANK > _reviveCost) then {
+if (BANK > _reviveCost) then {
     SUB(BANK,_reviveCost);
 } else {
     BANK = 0;

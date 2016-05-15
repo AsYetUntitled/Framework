@@ -9,12 +9,12 @@
 */
 private ["_vehicle","_trueorfalse"];
 _vehicle = param [0,ObjNull,[ObjNull]];
-if(isNull _vehicle) exitWith {}; //Bad entry!
-if(!(typeOf _vehicle in ["C_Offroad_01_F"])) exitWith {}; //Last chance check to prevent something from defying humanity and creating a monster.
+if (isNull _vehicle) exitWith {}; //Bad entry!
+if (!(typeOf _vehicle in ["C_Offroad_01_F"])) exitWith {}; //Last chance check to prevent something from defying humanity and creating a monster.
 
 _trueorfalse = _vehicle getVariable ["lights",FALSE];
 
-if(_trueorfalse) then {
+if (_trueorfalse) then {
     _vehicle setVariable ["lights",FALSE,TRUE];
 } else {
     _vehicle setVariable ["lights",TRUE,TRUE];

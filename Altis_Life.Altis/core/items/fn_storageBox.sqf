@@ -14,7 +14,7 @@ params [
 life_container_active = true;
 closeDialog 0;
 
-if(_size) then {
+if (_size) then {
     _object = "B_supplyCrate_F" createVehicle [0,0,0];
 } else {
     _object = "Box_IND_Grenades_F" createVehicle [0,0,0];

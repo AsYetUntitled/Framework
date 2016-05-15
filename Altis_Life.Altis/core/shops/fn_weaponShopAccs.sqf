@@ -8,31 +8,31 @@
 */
 disableSerialization;
 
-if((uiNamespace getVariable ["Weapon_Accessories",0]) == 0) then {
+if ((uiNamespace getVariable ["Weapon_Accessories",0]) == 0) then {
     private["_weapon","_slotArray","_weaponArray"];
     _weapon = lbData[38403,lbCurSel (38403)];
     _slotArray = [];
     _weaponArray = [];
 
-    if(isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
+    if (isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
         _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_weapon,"WeaponSlotsInfo","CowsSlot","compatibleItems");
         {
             _weaponArray pushBack _x;
         } forEach _slotArray;
     };
-    if(isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems")) then {
+    if (isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems")) then {
         _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_weapon,"WeaponSlotsInfo","MuzzleSlot","compatibleItems");
         {
             _weaponArray pushBack _x;
         } forEach _slotArray;
     };
-    if(isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems")) then {
+    if (isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems")) then {
         _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_weapon,"WeaponSlotsInfo","PointerSlot","compatibleItems");
         {
             _weaponArray pushBack _x;
         } forEach _slotArray;
     };
-    if(isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "UnderBarrelSlot" >> "compatibleItems")) then {
+    if (isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "UnderBarrelSlot" >> "compatibleItems")) then {
         _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_weapon,"WeaponSlotsInfo","UnderBarrelSlot","compatibleItems");
         {
             _weaponArray pushBack _x;

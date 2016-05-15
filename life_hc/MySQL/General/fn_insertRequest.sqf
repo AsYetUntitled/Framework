@@ -19,8 +19,8 @@ params [
 ];
 
 //Error checks
-if((_uid == "") || (_name == "")) exitWith {};
-if(isNull _returnToSender) exitWith {};
+if ((_uid == "") || (_name == "")) exitWith {};
+if (isNull _returnToSender) exitWith {};
 
 _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
 
@@ -28,8 +28,8 @@ _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 //Double check to make sure the client isn't in the database...
-if(_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",_returnToSender];}; //There was an entry!
-if(count _queryResult != 0) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",_returnToSender];};
+if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",_returnToSender];}; //There was an entry!
+if (count _queryResult != 0) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",_returnToSender];};
 
 //Clense and prepare some information.
 _name = [_name] call HC_fnc_mresString; //Clense the name of bad chars.

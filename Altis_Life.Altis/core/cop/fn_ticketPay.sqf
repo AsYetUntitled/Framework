@@ -6,9 +6,9 @@
     Description:
     Pays the ticket.
 */
-if(isNil "life_ticket_val" || isNil "life_ticket_cop") exitWith {};
-if(CASH < life_ticket_val) exitWith {
-    if(BANK < life_ticket_val) exitWith {
+if (isNil "life_ticket_val" || isNil "life_ticket_cop") exitWith {};
+if (CASH < life_ticket_val) exitWith {
+    if (BANK < life_ticket_val) exitWith {
         hint localize "STR_Cop_Ticket_NotEnough";
         [1,"STR_Cop_Ticket_NotEnoughNOTF",true,[profileName]] remoteExecCall ["life_fnc_broadcast",life_ticket_cop];
         closeDialog 0;
@@ -22,7 +22,7 @@ if(CASH < life_ticket_val) exitWith {
     [1,"STR_Cop_Ticket_PaidNOTF_2",true,[profileName]] remoteExecCall ["life_fnc_broadcast",life_ticket_cop];
     [life_ticket_val,player,life_ticket_cop] remoteExecCall ["life_fnc_ticketPaid",life_ticket_cop];
 
-    if(life_HC_isActive) then {
+    if (life_HC_isActive) then {
         [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
     } else {
         [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
@@ -34,7 +34,7 @@ if(CASH < life_ticket_val) exitWith {
 SUB(CASH,life_ticket_val);
 life_ticket_paid = true;
 
-if(life_HC_isActive) then {
+if (life_HC_isActive) then {
     [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
 } else {
     [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];

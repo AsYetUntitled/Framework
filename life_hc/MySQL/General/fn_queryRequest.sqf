@@ -18,7 +18,7 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _ownerID = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 
-if(isNull _ownerID) exitWith {};
+if (isNull _ownerID) exitWith {};
 
 _query = switch(_side) do {
     // West - 11 entries returned
@@ -33,11 +33,11 @@ _query = switch(_side) do {
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-if(_queryResult isEqualType "") exitWith {
+if (_queryResult isEqualType "") exitWith {
     [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
-if(_queryResult isEqualTo []) exitWith {
+if (_queryResult isEqualTo []) exitWith {
     [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
@@ -49,7 +49,7 @@ _queryResult set[3,[_tmp] call HC_fnc_numberSafe];
 
 //Parse licenses (Always index 6)
 _new = [(_queryResult select 6)] call HC_fnc_mresToArray;
-if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+if (_new isEqualType "") then {_new = call compile format["%1", _new];};
 _queryResult set[6,_new];
 
 //Convert tinyint to boolean
@@ -62,7 +62,7 @@ for "_i" from 0 to (count _old)-1 do {
 _queryResult set[6,_old];
 
 _new = [(_queryResult select 8)] call HC_fnc_mresToArray;
-if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+if (_new isEqualType "") then {_new = call compile format["%1", _new];};
 _queryResult set[8,_new];
 //Parse data for specific side.
 switch (_side) do {
@@ -71,14 +71,14 @@ switch (_side) do {
 
         //Parse Stats
         _new = [(_queryResult select 10)] call HC_fnc_mresToArray;
-        if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+        if (_new isEqualType "") then {_new = call compile format["%1", _new];};
         _queryResult set[10,_new];
 
         //Playtime
         _new = [(_queryResult select 11)] call HC_fnc_mresToArray;
-        if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+        if (_new isEqualType "") then {_new = call compile format["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if(_index != -1) then {
+        if (_index != -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -94,20 +94,20 @@ switch (_side) do {
 
         //Parse Stats
         _new = [(_queryResult select 9)] call HC_fnc_mresToArray;
-        if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+        if (_new isEqualType "") then {_new = call compile format["%1", _new];};
         _queryResult set[9,_new];
 
         //Position
         _queryResult set[10,([_queryResult select 10,1] call HC_fnc_bool)];
         _new = [(_queryResult select 11)] call HC_fnc_mresToArray;
-        if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+        if (_new isEqualType "") then {_new = call compile format["%1", _new];};
         _queryResult set[11,_new];
 
         //Playtime
         _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
-        if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+        if (_new isEqualType "") then {_new = call compile format["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if(_index != -1) then {
+        if (_index != -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -128,14 +128,14 @@ switch (_side) do {
     case independent: {
         //Parse Stats
         _new = [(_queryResult select 9)] call HC_fnc_mresToArray;
-        if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+        if (_new isEqualType "") then {_new = call compile format["%1", _new];};
         _queryResult set[9,_new];
 
         //Playtime
         _new = [(_queryResult select 10)] call HC_fnc_mresToArray;
-        if(_new isEqualType "") then {_new = call compile format["%1", _new];};
+        if (_new isEqualType "") then {_new = call compile format["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if(_index != -1) then {
+        if (_index != -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];

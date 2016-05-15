@@ -21,7 +21,7 @@ _queryResult = [_query,2] call HC_fnc_asyncCall;
 _crimesArr = [];
 
 _type = [_queryResult select 0] call HC_fnc_mresToArray;
-if(_type isEqualType "") then {_type = call compile format["%1", _type];};
+if (_type isEqualType "") then {_type = call compile format["%1", _type];};
 {
     switch(_x) do
     {

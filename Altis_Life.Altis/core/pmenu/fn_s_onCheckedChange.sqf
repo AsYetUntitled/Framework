@@ -12,7 +12,7 @@ _state = SEL(_this,1);
 
 switch(_option) do {
     case "tags": {
-        if(_state isEqualTo 1) then {
+        if (_state isEqualTo 1) then {
             life_settings_tagson = true;
             profileNamespace setVariable["life_settings_tagson",true];
             LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
@@ -24,7 +24,7 @@ switch(_option) do {
     };
 
     case "objects": {
-        if(_state isEqualTo 1) then {
+        if (_state isEqualTo 1) then {
             life_settings_revealObjects = true;
             profileNamespace setVariable["life_settings_revealObjects",true];
             LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
@@ -36,7 +36,7 @@ switch(_option) do {
     };
 
     case "sidechat": {
-        if(_state isEqualTo 1) then {
+        if (_state isEqualTo 1) then {
             life_enableSidechannel = true;
             profileNamespace setVariable["life_enableSidechannel",true];
             life_settings_enableSidechannel = profileNamespace getVariable["life_enableSidechannel",true];

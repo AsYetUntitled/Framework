@@ -17,7 +17,7 @@ _cash = [_this,3,0,[0]] call BIS_fnc_param;
 _ownerUnit = _unit getVariable "life_clientID";
 
 //Error checks
-if(isNull _vehicle || isNull _unit) exitWith  {
+if (isNull _vehicle || isNull _unit) exitWith  {
     life_action_inUse = false;
     _ownerUnit publicVariableClient "life_action_inUse";
 };
@@ -25,7 +25,7 @@ if(isNull _vehicle || isNull _unit) exitWith  {
 _displayName = FETCH_CONFIG2(getText,"CfgVehicles",typeOf _vehicle, "displayName");
 
 _dbInfo = _vehicle getVariable ["dbInfo",[]];
-if(count _dbInfo > 0) then {
+if (count _dbInfo > 0) then {
     _uid = SEL(_dbInfo,0);
     _plate = SEL(_dbInfo,1);
 

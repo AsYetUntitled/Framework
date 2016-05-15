@@ -2,14 +2,14 @@
 /*
     File: fn_getDPMission.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
     Selects a random DP point for a delivery mission.
     Needs to be revised.
 */
 private["_dp","_target"];
 _target = param [0,ObjNull,[ObjNull]];
-if(str(_target) in LIFE_SETTINGS(getArray,"delivery_points")) then {
+if (str(_target) in LIFE_SETTINGS(getArray,"delivery_points")) then {
     private "_point";
     _point = LIFE_SETTINGS(getArray,"delivery_points");
     _point deleteAt (_point find (str(_target)));
@@ -33,7 +33,7 @@ player setCurrentTask life_cur_task;
 
 [] spawn {
     waitUntil {!life_delivery_in_progress || !alive player};
-    if(!alive player) then {
+    if (!alive player) then {
         life_cur_task setTaskState "Failed";
         player removeSimpleTask life_cur_task;
         ["DeliveryFailed",[localize "STR_NOTF_DPFailed"]] call BIS_fnc_showNotification;

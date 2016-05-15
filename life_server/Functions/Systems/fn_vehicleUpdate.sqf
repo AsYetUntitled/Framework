@@ -9,10 +9,10 @@
 private["_vehicle","_plate","_uid","_query","_sql","_dbInfo","_thread","_cargo","_trunk","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _mode = [_this,1,1,[0]] call BIS_fnc_param;
-if(isNull _vehicle) exitWith {}; //NULL
+if (isNull _vehicle) exitWith {}; //NULL
 
 _dbInfo = _vehicle getVariable["dbInfo",[]];
-if(count _dbInfo == 0) exitWith {};
+if (count _dbInfo == 0) exitWith {};
 _uid = _dbInfo select 0;
 _plate = _dbInfo select 1;
 switch (_mode) do {
@@ -24,7 +24,7 @@ switch (_mode) do {
         _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 
         // Keep it clean!
-        if((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {
+        if ((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {
             _cargo = [];
         };
 
@@ -41,7 +41,7 @@ switch (_mode) do {
         _totalweight = 0;
         _items = [];
         {
-            if((_x select 0) in _resourceItems) then {
+            if ((_x select 0) in _resourceItems) then {
                 _items pushBack [(_x select 0),(_x select 1)];
                 _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;

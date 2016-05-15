@@ -11,10 +11,10 @@ params [
     ["_group",grpNull,[grpNull]]
 ];
 
-if(isNull _group) exitWith {}; //FAIL
+if (isNull _group) exitWith {}; //FAIL
 
 _groupID = _group getVariable["gang_id",-1];
-if(_groupID == -1) exitWith {};
+if (_groupID == -1) exitWith {};
 
 switch (_mode) do {
     case 0: {
@@ -22,7 +22,7 @@ switch (_mode) do {
         _maxMembers = _group getVariable ["gang_maxMembers",8];
         _members = [(_group getVariable "gang_members")] call DB_fnc_mresArray;
         _owner = _group getVariable ["gang_owner",""];
-        if(_owner == "") exitWith {};
+        if (_owner == "") exitWith {};
 
         _query = format["UPDATE gangs SET bank='%1', maxmembers='%2', owner='%3' WHERE id='%4'",_bank,_maxMembers,_owner,_groupID];
     };
@@ -37,13 +37,13 @@ switch (_mode) do {
 
     case 3: {
         _owner = _group getVariable["gang_owner",""];
-        if(_owner == "") exitWith {};
+        if (_owner == "") exitWith {};
         _query = format["UPDATE gangs SET owner='%1' WHERE id='%2'",_owner,_groupID];
     };
 
     case 4: {
         _members = _group getVariable "gang_members";
-        if(count _members > (_group getVariable ["gang_maxMembers",8])) then {
+        if (count _members > (_group getVariable ["gang_maxMembers",8])) then {
             _membersFinal = [];
             for "_i" from 0 to _maxMembers -1 do {
                 _membersFinal pushBack (_members select _i);
@@ -56,6 +56,6 @@ switch (_mode) do {
     };
 };
 
-if(!isNil "_query") then {
+if (!isNil "_query") then {
     [_query,1] call DB_fnc_asyncCall;
 };

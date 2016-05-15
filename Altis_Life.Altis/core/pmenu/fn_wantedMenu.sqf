@@ -9,7 +9,7 @@
 private["_display","_list","_list2","_name","_crimes","_bounty","_units"];
 disableSerialization;
 
-if(playerSide != west) exitWith {}; // Only for cops open this menu
+if (playerSide != west) exitWith {}; // Only for cops open this menu
 
 createDialog "life_wanted_menu";
 
@@ -32,7 +32,7 @@ lbClear _list2; //Purge the list
 
 _crimes = LIFE_SETTINGS(getArray,"crimes");
 {
-  if(isLocalized (_x select 0)) then {
+  if (isLocalized (_x select 0)) then {
     _list2 lbAdd format["%1 - $%2 (%3)",localize (_x select 0),(_x select 1),(_x select 2)];
   } else {
     _list2 lbAdd format["%1 - $%2 (%3)",(_x select 0),(_x select 1),(_x select 2)];
@@ -42,12 +42,12 @@ _crimes = LIFE_SETTINGS(getArray,"crimes");
 
 ctrlSetText[2404,"Establishing connection..."];
 
-if(FETCH_CONST(life_coplevel) < 3 && FETCH_CONST(life_adminlevel) == 0) then
+if (FETCH_CONST(life_coplevel) < 3 && FETCH_CONST(life_adminlevel) == 0) then
 {
     ctrlShow[2405,false];
 };
 
-if(life_HC_isActive) then {
+if (life_HC_isActive) then {
     [player] remoteExec ["HC_fnc_wantedFetch",HC_Life];
 } else {
     [player] remoteExec ["life_fnc_wantedFetch",RSERV];

@@ -20,9 +20,9 @@ _slider = SEL(_this,2);
 _onKeyUp = SEL(_this,3);
 
 disableSerialization;
-if(isNull _control) exitWith {};
+if (isNull _control) exitWith {};
 
-if(_onKeyUp) then {
+if (_onKeyUp) then {
     _value = parseNumber(ctrlText _control);
     _varName = switch(_slider) do {
         case "ground": {"life_settings_viewDistanceFoot";};

@@ -29,7 +29,7 @@
 private["_className","_section","_type","_accPointer","_accMuzzle","_accOptic","_classes","_itemInfo","_magazines","_scope","_config","_displayName"];
 _className = [_this,0,"",[""]] call BIS_fnc_param;
 _section = [_this,1,"",[""]] call BIS_fnc_param;
-if(_className isEqualTo "") exitWith {[]};
+if (_className isEqualTo "") exitWith {[]};
 
 _type = -1;
 _accPointer = [];
@@ -42,7 +42,7 @@ _muzzles = [];
 _magazines = [];
 _return = [];
 
-if(_section isEqualTo "") then {
+if (_section isEqualTo "") then {
     _section = switch(true) do {
         case (isClass(configFile >> "CfgMagazines" >> _className)): {"CfgMagazines"};
         case (isClass(configFile >> "CfgWeapons" >> _className)): {"CfgWeapons"};
@@ -51,7 +51,7 @@ if(_section isEqualTo "") then {
     };
 };
 
-if(!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {_section isEqualTo ""}) exitWith {[]};
+if (!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {_section isEqualTo ""}) exitWith {[]};
 _config = configFile >> _section >> _className;
 _displayName = getText(_config >> "displayName");
 _picture = getText(_config >> "picture");
@@ -71,7 +71,7 @@ switch (_section) do
         _desc = getText(_config >> "descriptionshort");
 
         //Compatible attachments
-        if(isClass (_config >> "WeaponSlotsInfo")) then
+        if (isClass (_config >> "WeaponSlotsInfo")) then
         {
             _accPointer = getArray(_config >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems");
             _accOptic = getArray(_config >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems");
@@ -89,16 +89,16 @@ switch (_section) do
             } forEach ([_config>>"WeaponSlotsInfo"] call bis_fnc_returnParents);
         };
 
-        if(isClass (_config >> "ItemInfo")) then {
+        if (isClass (_config >> "ItemInfo")) then {
             _itemInfo = getNumber(_config >> "ItemInfo" >> "Type");
         };
 
         _muzzles = getArray(_config >> "muzzles");
         _magazines = getArray(_config >> "magazines");
-        if(!isNil "_muzzles") then {
+        if (!isNil "_muzzles") then {
             private["_tmp"];
             {
-                if(_x != "this") then {
+                if (_x != "this") then {
                     _tmp = getArray(_base >> _x >> "magazines"); {
                         _magazines pushBack _x;
                     } forEach (_tmp);
@@ -112,7 +112,7 @@ switch (_section) do
     };
 };
 
-if(!isNil "_classes") then {
+if (!isNil "_classes") then {
     _classes = _classes - ["MuzzleSlot"];
     _classes = _classes - ["CowsSlot"];
     _classes = _classes - ["PointerSlot"];

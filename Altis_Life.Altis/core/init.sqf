@@ -67,7 +67,7 @@ diag_log "::Life Client:: Waiting for the server to be ready..";
 waitUntil{!isNil "_server_isReady"};
 waitUntil{(_server_isReady || !isNil "_extDB_notLoaded")};
 
-if(!isNil "_extDB_notLoaded" && {_extDB_notLoaded isEqualType []}) exitWith {
+if (!isNil "_extDB_notLoaded" && {_extDB_notLoaded isEqualType []}) exitWith {
     diag_log _extDB_notLoaded;
     999999 cutText ["extDB failed to load, please contact an administrator.","BLACK FADED"];
     999999 cutFadeOut 99999999;
@@ -148,13 +148,13 @@ publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for Headless
 };
 
 CONSTVAR(life_paycheck); //Make the paycheck static.
-if(LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
+if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
 
-if(LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then{
+if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then{
     [] execVM "core\fn_setupStationService.sqf";
 };
 
-if(life_HC_isActive) then {
+if (life_HC_isActive) then {
     [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate",HC_Life];
 } else {
     [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];

@@ -7,9 +7,9 @@
     Prompts the player that he is being ticketed.
 */
 private["_cop","_val"];
-if(!isNull (findDisplay 2600)) exitWith {}; //Already at the ticket menu, block for abuse?
+if (!isNull (findDisplay 2600)) exitWith {}; //Already at the ticket menu, block for abuse?
 _cop = SEL(_this,0);
-if(isNull _cop) exitWith {};
+if (isNull _cop) exitWith {};
 _val = SEL(_this,1);
 
 createDialog "life_ticket_pay";
@@ -24,7 +24,7 @@ CONTROL(2600,2601) ctrlSetStructuredText parseText format["<t align='center'><t 
 [] spawn {
     disableSerialization;
     waitUntil {life_ticket_paid || (isNull (findDisplay 2600))};
-    if(isNull (findDisplay 2600) && !life_ticket_paid) then {
+    if (isNull (findDisplay 2600) && !life_ticket_paid) then {
         [0,"STR_Cop_Ticket_Refuse",true,[profileName]] remoteExecCall ["life_fnc_broadcast",west];
         [1,"STR_Cop_Ticket_Refuse",true,[profileName]] remoteExecCall ["life_fnc_broadcast",life_ticket_cop];
     };

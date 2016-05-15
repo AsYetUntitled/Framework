@@ -1,12 +1,12 @@
 /*
     File: fn_pullOutVeh.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     Description:
-    
+
 */
-if(playerSide == west || (isNull objectParent player)) exitWith {};
-if(player getVariable "restrained") then {
+if (playerSide == west || (isNull objectParent player)) exitWith {};
+if (player getVariable "restrained") then {
     detach player;
     player setVariable["Escorting",false,true];
     player setVariable["transporting",false,true];

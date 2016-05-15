@@ -6,35 +6,35 @@
     Description:
     Initialize the headless client.
 */
-if(EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
+if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
 
 [] execVM "\life_hc\KRON_Strings.sqf";
 
 life_HC_server_extDB_notLoaded = "";
 
-life_save_civilian_position = if(LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
+life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 
 diag_log "-------------------------------------------------------------------------------------------------------------------";
 diag_log "-------------------------------- Starting initialization of 'extDB2-HC' by NANOU ----------------------------------";
 diag_log "-------------------------------------------------------------------------------------------------------------------";
 
-if(isNil {uiNamespace getVariable "life_sql_id"}) then {
+if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     life_sql_id = round(random(9999));
     CONSTVAR(life_sql_id);
     uiNamespace setVariable ["life_sql_id",life_sql_id];
 
     try {
         _result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
+        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
         _result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
+        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
         life_HC_server_extDB_notLoaded = [true, _exception];
     };
 
     publicVariable "life_HC_server_extDB_notLoaded";
-    if(life_HC_server_extDB_notLoaded isEqualType []) exitWith {};
+    if (life_HC_server_extDB_notLoaded isEqualType []) exitWith {};
     EXTDB "9:LOCK";
     diag_log "extDB2: Connected to Database";
 } else {
@@ -43,7 +43,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
     diag_log "extDB2: Still Connected to Database";
 };
 
-if(life_HC_server_extDB_notLoaded isEqualType []) then {
+if (life_HC_server_extDB_notLoaded isEqualType []) then {
     [] spawn {
         for "_i" from 0 to 1 step 0 do {
             [0,"There is a problem with the Headless Client, please contact an administrator."] remoteExecCall ["life_fnc_broadcast",RCLIENT];
@@ -52,7 +52,7 @@ if(life_HC_server_extDB_notLoaded isEqualType []) then {
     };
 };
 
-if(life_HC_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
+if (life_HC_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {

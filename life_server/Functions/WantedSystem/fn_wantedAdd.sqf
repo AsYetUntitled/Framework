@@ -13,7 +13,7 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;
 _customBounty = [_this,3,-1,[0]] call BIS_fnc_param;
-if(_uid == "" || _type == "" || _name == "") exitWith {}; //Bad data passed.
+if (_uid == "" || _type == "" || _name == "") exitWith {}; //Bad data passed.
 
 //What is the crime?
 switch(_type) do
@@ -66,9 +66,9 @@ switch(_type) do
     default {_type = [];};
 };
 
-if(count _type == 0) exitWith {}; //Not our information being passed...
+if (count _type == 0) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
-if(_customBounty != -1) then {_type set[1,_customBounty];};
+if (_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
 _query = format["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
@@ -76,12 +76,12 @@ _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 _val = [(_type select 1)] call DB_fnc_numberSafe;
 _number = _type select 0;
 
-if(count _queryResult != 0) then
+if (count _queryResult != 0) then
 {
     _crime = format["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
     _crimeresult = [_crime,2] call DB_fnc_asyncCall;
     _pastcrimess = [_crimeresult select 0] call DB_fnc_mresToArray;
-    if(_pastcrimess isEqualType "") then {_pastcrimess = call compile format["%1", _pastcrimess];};
+    if (_pastcrimess isEqualType "") then {_pastcrimess = call compile format["%1", _pastcrimess];};
     _pastCrimes = _pastcrimess;
     _pastCrimes pushBack _number;
     _pastCrimes = [_pastCrimes] call DB_fnc_mresArray;

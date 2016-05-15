@@ -10,7 +10,7 @@ private["_ammoType","_projectile"];
 _ammoType = SEL(_this,4);
 _projectile = SEL(_this,6);
 
-if(_ammoType isEqualTo "GrenadeHand_stone") then {
+if (_ammoType isEqualTo "GrenadeHand_stone") then {
     _projectile spawn {
         private "_position";
         while {!isNull _this} do {

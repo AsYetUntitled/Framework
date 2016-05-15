@@ -18,36 +18,36 @@ _multiarr = [_this,2,false,[false]] call BIS_fnc_param;
 
 _key = EXTDB format["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStmt];
 
-if(_mode isEqualTo 1) exitWith {true};
+if (_mode isEqualTo 1) exitWith {true};
 
 _key = call compile format["%1",_key];
 _key = SEL(_key,1);
 _queryResult = EXTDB format["4:%1", _key];
 
 //Make sure the data is received
-if(_queryResult isEqualTo "[3]") then {
+if (_queryResult isEqualTo "[3]") then {
     for "_i" from 0 to 1 step 0 do {
         if (!(_queryResult isEqualTo "[3]")) exitWith {};
         _queryResult = EXTDB format["4:%1", _key];
     };
 };
 
-if(_queryResult isEqualTo "[5]") then {
+if (_queryResult isEqualTo "[5]") then {
     _loop = true;
     for "_i" from 0 to 1 step 0 do { // extDB2 returned that result is Multi-Part Message
         _queryResult = "";
         for "_i" from 0 to 1 step 0 do {
             _pipe = EXTDB format["5:%1", _key];
-            if(_pipe == "") exitWith {_loop = false};
+            if (_pipe == "") exitWith {_loop = false};
             _queryResult = _queryResult + _pipe;
         };
-    if(!_loop) exitWith {};
+    if (!_loop) exitWith {};
     };
 };
 _queryResult = call compile _queryResult;
-if(SEL(_queryResult,0) isEqualTo 0) exitWith {diag_log format ["extDB2: Protocol Error: %1", _queryResult]; []};
+if (SEL(_queryResult,0) isEqualTo 0) exitWith {diag_log format ["extDB2: Protocol Error: %1", _queryResult]; []};
 _return = SEL(_queryResult,1);
-if(!_multiarr && count _return > 0) then {
+if (!_multiarr && count _return > 0) then {
     _return = SEL(_return,0);
 };
 
