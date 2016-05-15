@@ -15,21 +15,21 @@ _list = _dialog displayCtrl 2701;
 _plist = _dialog displayCtrl 2702;
 
 _sel = lbCurSel _list;
-if((_list lbData _sel) == "") exitWith {hint localize "STR_NOTF_didNotSelectVehicle";};
+if ((_list lbData _sel) == "") exitWith {hint localize "STR_NOTF_didNotSelectVehicle";};
 _vehicle = _list lbData _sel;
 _vehicle = life_vehicles select parseNumber(_vehicle);
 
-if((lbCurSel 2702) == -1) exitWith {hint localize "STR_NOTF_didNotSelectPlayer";};
+if ((lbCurSel 2702) == -1) exitWith {hint localize "STR_NOTF_didNotSelectPlayer";};
 _sel = lbCurSel _plist;
 _unit = _plist lbData _sel;
 _unit = call compile format["%1", _unit];
-if(isNull _unit || isNil "_unit") exitWith {};
-if(_unit == player) exitWith {};
+if (isNull _unit || isNil "_unit") exitWith {};
+if (_unit == player) exitWith {};
 
 _uid = getPlayerUID _unit;
 _owners = _vehicle getVariable "vehicle_info_owners";
 _index = [_uid,_owners] call TON_fnc_index;
-if(_index isEqualTo -1) then  {
+if (_index isEqualTo -1) then  {
     _owners pushBack [_uid,_unit getVariable ["realname",name _unit]];
     _vehicle setVariable ["vehicle_info_owners",_owners,true];
 };

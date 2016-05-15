@@ -10,10 +10,10 @@ private["_vendor","_type","_itemInfo","_oldItem","_newItem","_cost","_upp","_has
 _vendor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,3,"",[""]] call BIS_fnc_param;
 //Error check
-if(isNull _vendor || _type isEqualTo "" || (player distance _vendor > 10)) exitWith {};
+if (isNull _vendor || _type isEqualTo "" || (player distance _vendor > 10)) exitWith {};
 
 
-if(isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
+if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
 
     _filter = false;
     _matsReq = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsReq");
@@ -23,12 +23,12 @@ if(isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
 
 } else {_filter = true;};
 
-if(_filter) exitWith {};
+if (_filter) exitWith {};
 
 _itemInfo = [_matsReq,_matsGive,_noliccost,(localize format["%1",_text])];
 
 //Error checking
-if(count _itemInfo isEqualTo 0) exitWith {};
+if (count _itemInfo isEqualTo 0) exitWith {};
 
 //Setup vars.
 _oldItem = SEL(_itemInfo,0);
@@ -60,7 +60,7 @@ _IndexNow = -1;
     _IndexNow = _IndexNow + 1;
     _ItemNameLife = (_itemNameInv select _IndexNow) select 0;
     _var = ITEM_VALUE2(_ItemNameLife);
-    if(_var isEqualTo 0) exitWith {
+    if (_var isEqualTo 0) exitWith {
         _exit = true;
     };
     _ItemNumberLife = (_ItemNumber select _IndexNow) select 0;
@@ -70,7 +70,7 @@ _IndexNow = -1;
 } forEach _itemNameInv;
 if (_exit) exitWith {life_is_processing = false;hint localize "STR_NOTF_NotEnoughItemProcess";};
 
-if(_vendor in [mari_processor,coke_processor,heroin_processor]) then {
+if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
     _hasLicense = true;
 } else {
     _hasLicense = LICENSE_VALUE(_type,"civ");
@@ -80,7 +80,7 @@ _oldVal = count _ItemName;
 
 _cost = _cost * _oldVal;
 //Some more checks
-if(_oldVal isEqualTo 0) exitWith {};
+if (_oldVal isEqualTo 0) exitWith {};
 
 //Setup our progress bar.
 disableSerialization;
@@ -94,16 +94,16 @@ _cP = 0.01;
 
 life_is_processing = true;
 
-if(_hasLicense) then {
+if (_hasLicense) then {
     for "_i" from 0 to 1 step 0 do {
         sleep  0.28;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
-        if(_cP >= 1) exitWith {};
-        if(player distance _vendor > 10) exitWith {};
+        if (_cP >= 1) exitWith {};
+        if (player distance _vendor > 10) exitWith {};
     };
-    if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
     _IndexNow = -1;
     _ItemMax = [];
     {
@@ -134,19 +134,19 @@ if(_hasLicense) then {
     hint localize "STR_NOTF_ItemProcess";
     life_is_processing = false;
 } else {
-    if(CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 
     for "_i" from 0 to 1 step 0 do {
         sleep  0.9;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
-        if(_cP >= 1) exitWith {};
-        if(player distance _vendor > 10) exitWith {};
+        if (_cP >= 1) exitWith {};
+        if (player distance _vendor > 10) exitWith {};
     };
 
-    if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-    if(CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
     _IndexNow = -1;
     _ItemMax = [];
     {

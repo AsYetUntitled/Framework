@@ -6,6 +6,6 @@
     Description:
     Opens the player's phone menu
 */
-if(!alive player || dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
+if (!alive player || dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
 createDialog "altisPhone";
 disableSerialization;

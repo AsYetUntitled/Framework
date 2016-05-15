@@ -13,17 +13,17 @@
 */
 private["_ret","_list","_result","_queryResult","_units","_inStatement"];
 _ret = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _ret) exitWith {};
+if (isNull _ret) exitWith {};
 _inStatement = "";
 _list = [];
 _units = [];
-{if((side _x) == civilian) then {_units pushBack (getPlayerUID _x)};} forEach playableUnits;
+{if ((side _x) == civilian) then {_units pushBack (getPlayerUID _x)};} forEach playableUnits;
 
-if(_units isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if (_units isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 {
     if (count _units > 1) then {
-    if(_inStatement == "") then {
+    if (_inStatement == "") then {
             _inStatement = "'" + _x + "'";
         } else {
             _inStatement = _inStatement + ", '" + _x + "'";
@@ -44,6 +44,6 @@ diag_log format["Query: %1",_query];
 }
 forEach _queryResult;
 
-if(_list isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if (_list isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 [_list] remoteExec ["life_fnc_wantedList",_ret];

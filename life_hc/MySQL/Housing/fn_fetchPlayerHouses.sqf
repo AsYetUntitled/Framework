@@ -14,7 +14,7 @@ private["_query","_containers","_containerss","_houses"];
 params [
     ["_uid","",[""]]
 ];
-if(_uid == "") exitWith {};
+if (_uid == "") exitWith {};
 
 _query = format["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid];
 _containers = [_query,2,true] call HC_fnc_asyncCall;
@@ -25,9 +25,9 @@ _containerss = [];
     _house = nearestObject [_position, "House"];
     _direction = call compile format["%1",_x select 5];
     _trunk = [_x select 3] call HC_fnc_mresToArray;
-    if(_trunk isEqualType "") then {_trunk = call compile format["%1", _trunk];};
+    if (_trunk isEqualType "") then {_trunk = call compile format["%1", _trunk];};
     _gear = [_x select 4] call HC_fnc_mresToArray;
-    if(_gear isEqualType "") then {_gear = call compile format["%1", _gear];};
+    if (_gear isEqualType "") then {_gear = call compile format["%1", _gear];};
     _container = createVehicle[(_x select 2),[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_container" && {!isNull _container}};
     _containerss pushBack _container;

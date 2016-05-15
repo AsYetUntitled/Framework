@@ -53,7 +53,7 @@ class FSM
     class Apply_Time_Multi
     {
       name = "Apply_Time_Multi";
-      init = /*%FSM<STATEINIT""">*/"if(_fastNight && {sunOrMoon == 0}) then {" \n
+      init = /*%FSM<STATEINIT""">*/"if (_fastNight && {sunOrMoon == 0}) then {" \n
        "	setTimeMultiplier _skipNight;" \n
        "} else {" \n
        "	setTimeMultiplier _skipDay;" \n

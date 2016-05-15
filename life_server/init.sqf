@@ -15,7 +15,7 @@ life_server_isReady = false;
 life_server_extDB_notLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
-life_save_civilian_position = if(LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
+life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 fn_whoDoneit = compile preprocessFileLineNumbers "\life_server\Functions\Systems\fn_whoDoneit.sqf";
 
 /*
@@ -26,7 +26,7 @@ publicVariable "life_HC_isActive";
 HC_Life = false;
 publicVariable "HC_Life";
 
-if(EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 1) then {
+if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 1) then {
     [] execVM "\life_server\initHC.sqf";
 };
 
@@ -35,21 +35,21 @@ if(EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 1) then {
     for the server.
 */
 
-if(isNil {uiNamespace getVariable "life_sql_id"}) then {
+if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     life_sql_id = round(random(9999));
     CONSTVAR(life_sql_id);
     uiNamespace setVariable ["life_sql_id",life_sql_id];
         try {
         _result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
+        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
         _result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-        if(!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
+        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
         life_server_extDB_notLoaded = [true, _exception];
     };
     publicVariable "life_server_extDB_notLoaded";
-    if(life_server_extDB_notLoaded isEqualType []) exitWith {};
+    if (life_server_extDB_notLoaded isEqualType []) exitWith {};
     EXTDB "9:LOCK";
     diag_log "extDB2: Connected to Database";
 } else {
@@ -58,7 +58,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then {
     diag_log "extDB2: Still Connected to Database";
 };
 
-if(life_server_extDB_notLoaded isEqualType []) exitWith {};
+if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 
 /* Run stored procedures for SQL side cleanup */
 ["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
@@ -66,7 +66,7 @@ if(life_server_extDB_notLoaded isEqualType []) exitWith {};
 ["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
 ["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 
-if(LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
+if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
         _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";
         [_query,1] call DB_fnc_asyncCall;
@@ -89,10 +89,10 @@ master_group attachTo[bank_obj,[0,0,0]];
 } forEach ["hospital_2","hospital_3"];
 
 {
-    if(!isPlayer _x) then {
+    if (!isPlayer _x) then {
         _npc = _x;
         {
-            if(_x != "") then {
+            if (_x != "") then {
                 _npc removeWeapon _x;
             };
         } forEach [primaryWeapon _npc,secondaryWeapon _npc,handgunWeapon _npc];

@@ -11,12 +11,12 @@ private["_ui","_units","_masks"];
 #define iconID 78000
 #define scale 0.8
 
-if(visibleMap || {!alive player} || {dialog}) exitWith {
+if (visibleMap || {!alive player} || {dialog}) exitWith {
     500 cutText["","PLAIN"];
 };
 
 _ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
-if(isNull _ui) then {
+if (isNull _ui) then {
     500 cutRsc["Life_HUD_nameTags","PLAIN"];
     _ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 };
@@ -29,7 +29,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 {
     private "_text";
     _idc = _ui displayCtrl (iconID + _forEachIndex);
-    if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && alive _x && {!isNil {_x getVariable "realname"}}) then {
+    if (!(lineIntersects [eyePos player, eyePos _x, player, _x]) && alive _x && {!isNil {_x getVariable "realname"}}) then {
         _pos = switch(typeOf _x) do {
             case "Land_Pallet_MilBoxes_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
             case "Land_Sink_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 2]};
@@ -37,8 +37,8 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
         };
         _sPos = worldToScreen _pos;
         _distance = _pos distance player;
-        if(!((headgear _x) in _masks || (goggles _x) in _masks || (uniform _x) in _masks)) then {
-            if(count _sPos > 1 && {_distance < 15}) then {
+        if (!((headgear _x) in _masks || (goggles _x) in _masks || (uniform _x) in _masks)) then {
+            if (count _sPos > 1 && {_distance < 15}) then {
                 _text = switch (true) do {
                     case (_x in (units group player) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x getVariable ["realname",name _x])];};
                     case (side _x == west && {!isNil {_x getVariable "rank"}}): {format["<img image='%1' size='1'></img> %2",switch ((_x getVariable "rank")) do {
@@ -53,7 +53,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
                         },_x getVariable ["realname",name _x]]};
                     case (side _x == independent): {format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t> %1",_x getVariable ["realname",name _x]]};
                     default {
-                        if(!isNil {(group _x) getVariable "gang_name"}) then {
+                        if (!isNil {(group _x) getVariable "gang_name"}) then {
                             format["%1<br/><t size='0.8' color='#B6B6B6'>%2</t>",_x getVariable ["realname",name _x],(group _x) getVariable ["gang_name",""]];
                         } else {
                             _x getVariable ["realname",name _x];

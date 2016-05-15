@@ -85,9 +85,9 @@ class FSM
                         name = "Delete_Dead_Cars";
                         itemno = 5;
                         init = /*%FSM<STATEINIT""">*/"{" \n
-                         "	if(!alive _x) then {" \n
+                         "	if (!alive _x) then {" \n
                          "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
-                         "		if(count _dbInfo > 0) then {" \n
+                         "		if (count _dbInfo > 0) then {" \n
                          "			_uid = _dbInfo select 0;" \n
                          "			_plate = _dbInfo select 1;" \n
                          "" \n
@@ -97,16 +97,16 @@ class FSM
                          "				_thread = [_this,1] call DB_fnc_asyncCall;" \n
                          "			};" \n
                          "		};" \n
-                         "		if(!isNil ""_x"" && {!isNull _x}) then {" \n
+                         "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n
                          "	};" \n
                          "} forEach allMissionObjects ""LandVehicle"";" \n
                          "" \n
                          "{" \n
-                         "	if(!alive _x) then {" \n
+                         "	if (!alive _x) then {" \n
                          "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
-                         "		if(count _dbInfo > 0) then {" \n
+                         "		if (count _dbInfo > 0) then {" \n
                          "			_uid = _dbInfo select 0;" \n
                          "			_plate = _dbInfo select 1;" \n
                          "" \n
@@ -116,7 +116,7 @@ class FSM
                          "				_thread = [_this,1] call DB_fnc_asyncCall;" \n
                          "			};" \n
                          "		};" \n
-                         "		if(!isNil ""_x"" && {!isNull _x}) then {" \n
+                         "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n
                          "	};" \n
@@ -125,7 +125,7 @@ class FSM
                          "" \n
                          "//Group cleanup." \n
                          "{" \n
-                         "	if(units _x isEqualTo [] && local _x) then {" \n
+                         "	if (units _x isEqualTo [] && local _x) then {" \n
                          "		deleteGroup _x;" \n
                          "	};" \n
                          "} forEach allGroups;"/*%FSM</STATEINIT""">*/;

@@ -12,18 +12,18 @@ _units = [];
 _medics = [];
 
 sleep 0.25;
-if(visibleMap) then {
-    {if(side _x == independent) then {_medics pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
+if (visibleMap) then {
+    {if (side _x == independent) then {_medics pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
     {
         _name = _x getVariable "name";
         _down = _x getVariable ["Revive",false];
-        if(!isNil "_name" && !_down) then {
+        if (!isNil "_name" && !_down) then {
             _units pushBack _x;
         };
     } forEach allDeadMen;
 
     {
-        if(_x != player) then {
+        if (_x != player) then {
             _markerss = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
             _markerss setMarkerColorLocal "ColorIndependent";
             _markerss setMarkerTypeLocal "Mil_dot";
@@ -46,11 +46,11 @@ if(visibleMap) then {
         {
             private["_unit"];
             _unit = _x select 1;
-            if(!isNil "_unit" && !isNull _unit) then {
+            if (!isNil "_unit" && !isNull _unit) then {
                 (_x select 0) setMarkerPosLocal (visiblePosition _unit);
             };
         } forEach _markersMedecin;
-        if(!visibleMap) exitWith {};
+        if (!visibleMap) exitWith {};
         sleep 0.02;
     };
     {deleteMarkerLocal (_x select 0);} forEach _markersMedecin;

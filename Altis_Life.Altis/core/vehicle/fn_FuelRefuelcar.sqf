@@ -53,9 +53,9 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%","Refuel:"];
-        if(_cP >= 1) exitWith {};
-        if(player distance _car > 10) exitWith {};
-        if(vehicle player != player) exitWith {};
+        if (_cP >= 1) exitWith {};
+        if (player distance _car > 10) exitWith {};
+        if (vehicle player != player) exitWith {};
         if !((BANK - round(0.01 * _totalcost))> 0) exitWith {};
         BANK = BANK - round((0.01 * _totalcost));
         _tp = _tp +1;

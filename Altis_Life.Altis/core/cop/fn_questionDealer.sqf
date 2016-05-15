@@ -8,14 +8,14 @@
 */
 private["_sellers","_crimes","_names"];
 _sellers = (SEL(_this,0)) getVariable ["sellers",[]];
-if(count _sellers isEqualTo 0) exitWith {hint localize "STR_Cop_DealerQuestion"}; //No data.
+if (count _sellers isEqualTo 0) exitWith {hint localize "STR_Cop_DealerQuestion"}; //No data.
 life_action_inUse = true;
 _crimes = LIFE_SETTINGS(getArray,"crimes");
 
 _names = "";
 {
     _val = 0;
-    if(SEL(_x,2) > 150000) then {
+    if (SEL(_x,2) > 150000) then {
         _val = round((SEL(_x,2)) / 16);
     } else {
         _val = ["483",_crimes] call TON_fnc_index;

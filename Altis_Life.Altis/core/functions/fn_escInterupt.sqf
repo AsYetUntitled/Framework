@@ -32,7 +32,7 @@ _escSync = {
 
     _abortButton = CONTROL(49,104);
 
-    if(_this) then {
+    if (_this) then {
         _thread = [] spawn _syncManager;
         waitUntil{scriptDone _thread || isNull (findDisplay 49)};
         _abortButton ctrlEnable true;
@@ -40,8 +40,8 @@ _escSync = {
 };
 
 _canUseControls = {
-    if(playerSide == west) exitWith {true};
-    if((player getVariable ["restrained",FALSE]) || (player getVariable ["Escorting",FALSE]) || (player getVariable ["transporting",FALSE]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
+    if (playerSide == west) exitWith {true};
+    if ((player getVariable ["restrained",FALSE]) || (player getVariable ["Escorting",FALSE]) || (player getVariable ["transporting",FALSE]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
 };
 
 for "_i" from 0 to 1 step 0 do {
@@ -58,7 +58,7 @@ for "_i" from 0 to 1 step 0 do {
 
     _usebleCtrl = call _canUseControls;
     _usebleCtrl spawn _escSync;
-    if(_usebleCtrl) then {
+    if (_usebleCtrl) then {
         _respawnButton ctrlEnable true; //Enable the button.
     };
     waitUntil{isNull (findDisplay 49)};

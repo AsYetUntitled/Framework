@@ -16,7 +16,7 @@ params [
 ];
 _group = group _ownerID;
 
-if(isNull _ownerID || _uid isEqualTo "" || _gangName isEqualTo "") exitWith {}; //Fail
+if (isNull _ownerID || _uid isEqualTo "" || _gangName isEqualTo "") exitWith {}; //Fail
 
 _gangName = [_gangName] call HC_fnc_mresString;
 _query = format["SELECT id FROM gangs WHERE name='%1' AND active='1'",_gangName];
@@ -24,7 +24,7 @@ _query = format["SELECT id FROM gangs WHERE name='%1' AND active='1'",_gangName]
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 //Check to see if the gang name already exists.
-if(!(count _queryResult isEqualTo 0)) exitWith {
+if (!(count _queryResult isEqualTo 0)) exitWith {
     [1,"There is already a gang created with that name please pick another name."] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_action_gangInUse = nil;
     _ownerID publicVariableClient "life_action_gangInUse";
@@ -35,7 +35,7 @@ _query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 //Check to see if this person already owns or belongs to a gang.
-if(!(count _queryResult isEqualTo 0)) exitWith {
+if (!(count _queryResult isEqualTo 0)) exitWith {
     [1,"You are currently already active in a gang, please leave the gang first."] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_action_gangInUse = nil;
     _ownerID publicVariableClient "life_action_gangInUse";
@@ -47,7 +47,7 @@ _query = format["SELECT id, active FROM gangs WHERE name='%1' AND active='0'",_g
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 _gangMembers = [[_uid]] call HC_fnc_mresArray;
 
-if(!(count _queryResult isEqualTo 0)) then {
+if (!(count _queryResult isEqualTo 0)) then {
     _query = format["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)];
 } else {
     _query = format["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers];

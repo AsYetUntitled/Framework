@@ -16,13 +16,13 @@ params [
         ["_maxAnimals",10,[0]]
 ];
 
-if(_zoneName == "") exitWith {};
+if (_zoneName == "") exitWith {};
 _animalList = ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F"];
 _radius = (getMarkerSize _zoneName) select 0;
 _dist = _radius + 100;
 _zone = getMarkerPos _zoneName;
 
-if(!isNil "animals" && {count animals != 0}) then {
+if (!isNil "animals" && {count animals != 0}) then {
     _maxAnimals = _maxAnimals - count(animals);
 } else {
     animals = [];
@@ -31,8 +31,8 @@ if(!isNil "animals" && {count animals != 0}) then {
 _unitsNear = false;
 _animalsActive = false;
 for "_i" from 0 to 1 step 0 do {
-    {if((_x distance _zone) < _dist) exitWith {_unitsNear = true;}; _unitsNear = false;} forEach playableUnits;
-    if(_unitsNear && !_animalsActive) then {
+    {if ((_x distance _zone) < _dist) exitWith {_unitsNear = true;}; _unitsNear = false;} forEach playableUnits;
+    if (_unitsNear && !_animalsActive) then {
         _animalsActive = true;
         for "_i" from 1 to _maxAnimals do {
             _animalClass = selectRandom _animalList;
@@ -42,7 +42,7 @@ for "_i" from 0 to 1 step 0 do {
             animals pushBack _animal;
         };
     } else {
-        if(!_unitsNear && _animalsActive) then {
+        if (!_unitsNear && _animalsActive) then {
             {deleteVehicle _x;} forEach animals;
             animals = [];
             _animalsActive = false;

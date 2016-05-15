@@ -17,21 +17,21 @@ _levelType = SEL(_levelAssert,1);
 _levelValue = SEL(_levelAssert,2);
 _levelMsg = SEL(_levelAssert,3);
 
-if(!(_shopSide isEqualTo "")) then {
+if (!(_shopSide isEqualTo "")) then {
     _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-    if(!(_flag isEqualTo _shopSide)) then {_exit = true;};
+    if (!(_flag isEqualTo _shopSide)) then {_exit = true;};
 };
-if(_exit) exitWith {};
+if (_exit) exitWith {};
 
-if(!(_license isEqualTo "")) then {
+if (!(_license isEqualTo "")) then {
     _flag = M_CONFIG(getText,"Licenses",_license,"side");
-    if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
+    if (!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
 };
-if(_exit) exitWith {};
+if (_exit) exitWith {};
 
-if(!(_levelValue isEqualTo -1)) then {
+if (!(_levelValue isEqualTo -1)) then {
     _level = missionNamespace getVariable _levelName;
-    if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
+    if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
     _flag = switch(_levelType) do {
         case "SCALAR": {_level >= _levelValue};
@@ -39,18 +39,18 @@ if(!(_levelValue isEqualTo -1)) then {
         case "EQUAL": {_level isEqualTo _levelValue};
         default {false};
     };
-    if(!(_flag)) then {
+    if (!(_flag)) then {
         _exit = true;
-        if(_levelMsg isEqualTo "") then {
+        if (_levelMsg isEqualTo "") then {
             _levelMsg = (localize "STR_Shop_Veh_NotAllowed");
         } else {
-            if(isLocalized _levelMsg) then {
+            if (isLocalized _levelMsg) then {
                 _levelMsg = (localize _levelMsg);
             };
         };
     };
 };
-if(_exit) exitWith {hint _levelMsg;};
+if (_exit) exitWith {hint _levelMsg;};
 
 uiNamespace setVariable ["Weapon_Shop",SEL(_this,3)];
 uiNamespace setVariable["Weapon_Magazine",0];
@@ -58,8 +58,8 @@ uiNamespace setVariable["Weapon_Accessories",0];
 uiNamespace setVariable["Magazine_Array",[]];
 uiNamespace setVariable["Accessories_Array",[]];
 
-if(!(createDialog "life_weapon_shop")) exitWith {};
-if(!isClass(missionConfigFile >> "WeaponShops" >> (SEL(_this,3)))) exitWith {}; //Bad config entry.
+if (!(createDialog "life_weapon_shop")) exitWith {};
+if (!isClass(missionConfigFile >> "WeaponShops" >> (SEL(_this,3)))) exitWith {}; //Bad config entry.
 
 disableSerialization;
 

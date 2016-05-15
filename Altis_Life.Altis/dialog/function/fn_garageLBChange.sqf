@@ -17,13 +17,13 @@ _dataArr = call compile format["%1",_dataArr];
 _className = SEL(_dataArr,0);
 _classNameLife = _className;
 
-if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
+if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
     diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
 _vehicleColor = SEL(SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures"),SEL(_dataArr,1)),0);
-if(isNil "_vehicleColor") then {_vehicleColor = "Default";};
+if (isNil "_vehicleColor") then {_vehicleColor = "Default";};
 
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
@@ -52,8 +52,8 @@ switch(playerSide) do {
 _retrievePrice = _purchasePrice * _storageFee;
 _sellPrice = _purchasePrice * _sellMultiplier;
 
-if(!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
-if(!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice = 500;};
+if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
+if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice = 500;};
 
 (CONTROL(2800,2803)) ctrlSetStructuredText parseText format[
     (localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>
@@ -70,7 +70,7 @@ if(!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice =
 SEL(_vehicleInfo,8),
 SEL(_vehicleInfo,11),
 SEL(_vehicleInfo,10),
-if(_trunkSpace == -1) then {"None"} else {_trunkSpace},
+if (_trunkSpace == -1) then {"None"} else {_trunkSpace},
 SEL(_vehicleInfo,12),
 _vehicleColor
 ];

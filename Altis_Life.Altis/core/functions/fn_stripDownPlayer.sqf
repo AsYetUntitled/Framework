@@ -17,6 +17,6 @@ removeHeadGear player;
     player removeItem _x;
 } forEach (assignedItems player);
 
-if(hmd player != "") then {
+if (hmd player != "") then {
     player unlinkItem (hmd player);
 };

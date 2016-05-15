@@ -10,7 +10,7 @@ HC_UID = nil;
 
 // JIP integration of an hc
 "life_HC_isActive" addPublicVariableEventHandler {
-    if(_this select 1) then {
+    if (_this select 1) then {
         HC_UID = getPlayerUID hc_1;
         HC_Life = owner hc_1;
         publicVariable "HC_Life";
@@ -26,7 +26,7 @@ HC_UID = nil;
 
 HC_DC = ["HC_Disconnected","onPlayerDisconnected",
     {
-        if(!isNil "HC_UID" && {_uid == HC_UID}) then {
+        if (!isNil "HC_UID" && {_uid == HC_UID}) then {
             life_HC_isActive = false;
             publicVariable "life_HC_isActive";
             HC_Life = false;

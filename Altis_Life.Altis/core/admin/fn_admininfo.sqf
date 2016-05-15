@@ -11,36 +11,36 @@ _ret = _this;
 disableSerialization;
 
 _unit = SEL(_ret,3);
-_prim = if(!(primaryWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",primaryWeapon _unit,"displayName")} else {"None"};
-_sec = if(!(handgunWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",handgunWeapon _unit,"displayName")} else {"None"};
-_vest = if(!(vest _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",vest _unit,"displayName")} else {"None"};
-_uni = if(!(uniform _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",uniform _unit,"displayName")} else {"None"};
-_bp = if(!(backpack _unit isEqualTo "")) then {FETCH_CONFIG2(getText,"CfgVehicles",backpack _unit,"displayName")} else {"None"};
+_prim = if (!(primaryWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",primaryWeapon _unit,"displayName")} else {"None"};
+_sec = if (!(handgunWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",handgunWeapon _unit,"displayName")} else {"None"};
+_vest = if (!(vest _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",vest _unit,"displayName")} else {"None"};
+_uni = if (!(uniform _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",uniform _unit,"displayName")} else {"None"};
+_bp = if (!(backpack _unit isEqualTo "")) then {FETCH_CONFIG2(getText,"CfgVehicles",backpack _unit,"displayName")} else {"None"};
 
 _attach = [];
 _secondary = [];
-if(!(primaryWeapon _unit isEqualTo "")) then {
+if (!(primaryWeapon _unit isEqualTo "")) then {
     {
-        if(!(_x isEqualTo "")) then {
+        if (!(_x isEqualTo "")) then {
             _attach pushBack (FETCH_CONFIG2(getText,"CfgWeapons",_x,"displayName"));
         };
     } forEach (primaryWeaponItems _unit);
 };
 
-if(!(handgunItems _unit isEqualTo "")) then {
+if (!(handgunItems _unit isEqualTo "")) then {
     {
-        if(!(_x isEqualTo "")) then {
+        if (!(_x isEqualTo "")) then {
             _secondary pushBack (FETCH_CONFIG2(getText,"CfgWeapons",_x,"displayName"));
         };
     } forEach (handgunItems _unit);
 };
 
 _steamName = SEL(_ret,4);
-if(!(SEL(_ret,4) isEqualType "")) then {
+if (!(SEL(_ret,4) isEqualType "")) then {
     _steamName = "Not a Steam User!";
 };
 
-if(count _attach isEqualTo 0) then {_attach = "None"};
-if(count _secondary isEqualTo 0) then {_secondary = "None"};
+if (count _attach isEqualTo 0) then {_attach = "None"};
+if (count _secondary isEqualTo 0) then {_secondary = "None"};
 CONTROL(2900,2903) ctrlSetStructuredText parseText format["<t size='.7'>Name: %1<br/>Steam Name: %10<br/>Player UID: %11<br/>Player Side: %12<br/>Bank: %2<br/>Money: %3<br/>Uniform: %4<br/>Vest: %5<br/>Backpack: %6<br/>Primary: %7<br/>Handgun: %8<br/><t align='center'>Primary Attachments</t><br/>%9<br/><t align='center'>Secondary Attachments</t><br/>%13<br/></t>",
 _unit getVariable ["realname",name _unit],[SEL(_ret,0)] call life_fnc_numberText,[SEL(_ret,1)] call life_fnc_numberText, _uni,_vest,_bp,_prim,_sec,_attach,_steamName,SEL(_ret,5),SEL(_ret,6),_secondary];

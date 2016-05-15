@@ -6,7 +6,7 @@
     Description:
     Teleport to chosen position.
 */
-if(FETCH_CONST(life_adminlevel) < 3) exitWith {closeDialog 0;};
+if (FETCH_CONST(life_adminlevel) < 3) exitWith {closeDialog 0;};
 
 [] spawn {
   while {dialog} do {

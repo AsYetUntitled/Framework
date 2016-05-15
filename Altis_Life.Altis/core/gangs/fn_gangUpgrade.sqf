@@ -18,8 +18,8 @@ _action = [
     localize "STR_Global_Cancel"
 ] call BIS_fnc_guiMessage;
 
-if(_action) then {
-    if(BANK < _upgradePrice) exitWith {
+if (_action) then {
+    if (BANK < _upgradePrice) exitWith {
         hint parseText format[
             (localize "STR_GNOTF_NotEoughMoney_2")+ "<br/><br/>" +(localize "STR_GNOTF_Current")+ " <t color='#8cff9b'>$%1</t><br/>" +(localize "STR_GNOTF_Lacking")+ " <t color='#FF0000'>$%2</t>",
             [BANK] call life_fnc_numberText,
@@ -30,7 +30,7 @@ if(_action) then {
     group player setVariable ["gang_maxMembers",_slotUpgrade,true];
     hint parseText format[localize "STR_GNOTF_UpgradeSuccess",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText];
 
-    if(life_HC_isActive) then {
+    if (life_HC_isActive) then {
         [2,group player] remoteExec ["HC_fnc_updateGang",HC_Life];
     } else {
         [2,group player] remoteExec ["TON_fnc_updateGang",RSERV];

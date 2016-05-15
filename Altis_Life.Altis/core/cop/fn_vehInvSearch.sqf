@@ -9,10 +9,10 @@
 private["_vehicle","_vehicleInfo","_value","_list"];
 _vehicle = cursorObject;
 _list = ["Air","Ship","LandVehicle"];
-if(isNull _vehicle || {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
+if (isNull _vehicle || {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
 
 _vehicleInfo = _vehicle getVariable ["Trunk",[]];
-if(count _vehicleInfo isEqualTo 0) exitWith {hint localize "STR_Cop_VehEmpty"};
+if (count _vehicleInfo isEqualTo 0) exitWith {hint localize "STR_Cop_VehEmpty"};
 
 _value = 0;
 _illegalValue = 0;
@@ -20,9 +20,9 @@ _illegalValue = 0;
     _var = SEL(_x,0);
     _val = SEL(_x,1);
     _isIllegalItem = M_CONFIG(getNumber,"VirtualItems",_var,"illegal");
-    if(_isIllegalItem == 1 ) then{
+    if (_isIllegalItem == 1 ) then{
         _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_var,"sellPrice");
-        if(!isNull (missionConfigFile >> "VirtualItems" >> _var >> "processedItem")) then {
+        if (!isNull (missionConfigFile >> "VirtualItems" >> _var >> "processedItem")) then {
             _illegalItemProcessed = M_CONFIG(getText,"VirtualItems",_var,"processedItem");
             _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_illegalItemProcessed,"sellPrice");
         };
@@ -31,7 +31,7 @@ _illegalValue = 0;
     };
 } forEach (SEL(_vehicleInfo,0));
 _value = _illegalValue;
-if(_value > 0) then {
+if (_value > 0) then {
     [0,"STR_NOTF_VehContraband",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
     ADD(BANK,_value);
     _vehicle setVariable ["Trunk",[[],0],true];

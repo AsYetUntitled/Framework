@@ -8,12 +8,12 @@
 */
 private["_units","_type"];
 
-if(!life_use_atm) exitWith {
+if (!life_use_atm) exitWith {
     hint format [localize "STR_Shop_ATMRobbed",(LIFE_SETTINGS(getNumber,"noatm_timer"))];
 };
 
-if(!dialog) then {
-    if(!(createDialog "Life_atm_management")) exitWith {};
+if (!dialog) then {
+    if (!(createDialog "Life_atm_management")) exitWith {};
 };
 
 disableSerialization;
@@ -24,7 +24,7 @@ CONTROL(2700,2701) ctrlSetStructuredText parseText format["<img size='1.7' image
 
 {
     _name = _x getVariable ["realname",name _x];
-    if(alive _x && (!(_name isEqualTo profileName))) then {
+    if (alive _x && (!(_name isEqualTo profileName))) then {
         switch (side _x) do {
             case west: {_type = "Cop"};
             case civilian: {_type = "Civ"};
@@ -37,7 +37,7 @@ CONTROL(2700,2701) ctrlSetStructuredText parseText format["<img size='1.7' image
 
 lbSetCurSel [2703,0];
 
-if(isNil {(group player getVariable "gang_bank")}) then {
+if (isNil {(group player getVariable "gang_bank")}) then {
     (CONTROL(2700,2705)) ctrlEnable false;
     (CONTROL(2700,2706)) ctrlEnable false;
 };

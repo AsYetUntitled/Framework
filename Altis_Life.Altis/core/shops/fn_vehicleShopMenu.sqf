@@ -18,16 +18,16 @@ private["_shop","_sideCheck","_spawnPoints","_shopFlag","_shopTitle","_disableBu
 
 disableSerialization;
 //Long boring series of checks
-if(dialog) exitWith {};
-if(_shop == "") exitWith {};
-if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
-if(!createDialog "Life_Vehicle_Shop_v2") exitWith {};
+if (dialog) exitWith {};
+if (_shop == "") exitWith {};
+if (_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
+if (!createDialog "Life_Vehicle_Shop_v2") exitWith {};
 
 life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
 
 ctrlSetText [2301,_shopTitle];
 
-if(_disableBuy) then {
+if (_disableBuy) then {
     //Disable the buy button.
     ctrlEnable [2309,false];
 };
@@ -49,9 +49,9 @@ ctrlShow [2304,false];
     _levelValue = SEL(_levelAssert,2);
     _showall = true;
 
-    if(!(_levelValue isEqualTo -1)) then {
+    if (!(_levelValue isEqualTo -1)) then {
         _level = missionNamespace getVariable _levelName;
-        if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
+        if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
         _showall = switch(_levelType) do {
             case "SCALAR": {_level >= _levelValue};
@@ -61,7 +61,7 @@ ctrlShow [2304,false];
         };
     };
 
-    if(_showall) then {
+    if (_showall) then {
         _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
         _control lbAdd (_vehicleInfo select 3);
         _control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];

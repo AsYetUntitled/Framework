@@ -7,11 +7,11 @@
 */
 private["_pos","_eyeDir","_pPos","_impactPos","_norm","_angle","_blurEffect","_ppEffect"];
 _pos = [_this,0,[],[[]]] call BIS_fnc_param;
-if(_pos isEqualTo []) exitWith {}; //Badddd
-if(player distance _pos > 25) exitWith {}; //Bad again.
+if (_pos isEqualTo []) exitWith {}; //Badddd
+if (player distance _pos > 25) exitWith {}; //Bad again.
 
 _pos set[2,(_pos select 2)+0.2];
-if(lineIntersects [eyePos player, ATLtoASL _pos,player]) exitWith {};
+if (lineIntersects [eyePos player, ATLtoASL _pos,player]) exitWith {};
 
 _eyeDir = eyeDirection player;
 _pPos = getPosATL player;
@@ -24,7 +24,7 @@ _blurEffect = ppEffectCreate ["DynamicBlur",500];
 _blurEffect ppEffectForceInNVG true;
 _blurEffect ppEffectEnable true;
 
-if(_angle < 90) then {
+if (_angle < 90) then {
     //Create white-screen
     _ppEffect = ppEffectCreate ["ColorCorrections",2500];
     _ppEffect ppEffectAdjust [1, 1, -0.01, [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]];

@@ -19,14 +19,14 @@ _time_gathered = nil;
 _time_join = nil;
 
 {
-    if((_x select 0) == _uid) exitWith
+    if ((_x select 0) == _uid) exitWith
     {
         _time_gathered = _x select 1;
         _time_join = _x select 2;
     };
 } forEach TON_fnc_playtime_values;
 
-if(isNil "_time_gathered" || isNil "_time_join") then
+if (isNil "_time_gathered" || isNil "_time_join") then
 {
     _time_gathered = 0;
     _time_join = time;

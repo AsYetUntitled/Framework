@@ -40,7 +40,7 @@ switch(playerSide) do
 };
 
 //Cleanup of weapon containers near the body & hide it.
-if(!isNull life_corpse) then {
+if (!isNull life_corpse) then {
     private "_containers";
     life_corpse setVariable ["Revive",TRUE,TRUE];
     _containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
@@ -53,7 +53,7 @@ life_deathCamera cameraEffect ["TERMINATE","BACK"];
 camDestroy life_deathCamera;
 
 //Bad boy
-if(life_is_arrested) exitWith {
+if (life_is_arrested) exitWith {
     hint localize "STR_Jail_Suicide";
     life_is_arrested = false;
     [player,TRUE] spawn life_fnc_jail;
@@ -61,9 +61,9 @@ if(life_is_arrested) exitWith {
 };
 
 //Johnny law got me but didn't let the EMS revive me, reward them half the bounty.
-if(!isNil "life_copRecieve") then {
+if (!isNil "life_copRecieve") then {
 
-    if(life_HC_isActive) then {
+    if (life_HC_isActive) then {
         [getPlayerUID player,player,life_copRecieve,true] remoteExecCall ["HC_fnc_wantedBounty",HC_Life];
     } else {
         [getPlayerUID player,player,life_copRecieve,true] remoteExecCall ["life_fnc_wantedBounty",RSERV];
@@ -73,9 +73,9 @@ if(!isNil "life_copRecieve") then {
 };
 
 //So I guess a fellow gang member, cop or myself killed myself so get me off that Altis Most Wanted
-if(life_removeWanted) then {
+if (life_removeWanted) then {
 
-    if(life_HC_isActive) then {
+    if (life_HC_isActive) then {
         [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
     } else {
         [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];

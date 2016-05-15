@@ -8,7 +8,7 @@
 */
 private "_vault";
 _vault = SEL(_this,0);
-if(!(_vault getVariable ["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
+if (!(_vault getVariable ["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
 
 life_action_inUse = true;
 
@@ -24,7 +24,7 @@ _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
-    if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+    if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
         [player,"AinvPknlMstpSnonWnonDnon_medic_1",true] remoteExecCall ["life_fnc_animSync",RCLIENT];
         player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
         player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
@@ -32,7 +32,7 @@ for "_i" from 0 to 1 step 0 do {
 
     sleep 0.26;
 
-    if(isNull _ui) then {
+    if (isNull _ui) then {
         5 cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
         _progressBar = _ui displayCtrl 38201;
@@ -41,15 +41,15 @@ for "_i" from 0 to 1 step 0 do {
     _cP = _cP + .012;
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-    if(_cP >= 1 || !alive player) exitWith {};
-    if(life_interrupted) exitWith {};
+    if (_cP >= 1 || !alive player) exitWith {};
+    if (life_interrupted) exitWith {};
 };
 
 //Kill the UI display and check for various states
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive player) exitWith {life_action_inUse = false;};
-if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+if (!alive player) exitWith {life_action_inUse = false;};
+if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
 life_action_inUse = false;
 

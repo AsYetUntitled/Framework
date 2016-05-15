@@ -10,16 +10,16 @@ private["_house","_uid","_action","_houseCfg"];
 _house = param [0,ObjNull,[ObjNull]];
 _uid = getPlayerUID player;
 
-if(isNull _house) exitWith {};
-if(!(_house isKindOf "House_F")) exitWith {};
-if((_house getVariable ["house_owned",false])) exitWith {hint localize "STR_House_alreadyOwned";};
-if(!isNil {(_house getVariable "house_sold")}) exitWith {hint localize "STR_House_Sell_Process"};
-if(!license_civ_home) exitWith {hint localize "STR_House_License"};
-if(count life_houses >= (LIFE_SETTINGS(getNumber,"house_limit"))) exitWith {hint format[localize "STR_House_Max_House",LIFE_SETTINGS(getNumber,"house_limit")]};
+if (isNull _house) exitWith {};
+if (!(_house isKindOf "House_F")) exitWith {};
+if ((_house getVariable ["house_owned",false])) exitWith {hint localize "STR_House_alreadyOwned";};
+if (!isNil {(_house getVariable "house_sold")}) exitWith {hint localize "STR_House_Sell_Process"};
+if (!license_civ_home) exitWith {hint localize "STR_House_License"};
+if (count life_houses >= (LIFE_SETTINGS(getNumber,"house_limit"))) exitWith {hint format[localize "STR_House_Max_House",LIFE_SETTINGS(getNumber,"house_limit")]};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
-if(count _houseCfg isEqualTo 0) exitWith {};
+if (count _houseCfg isEqualTo 0) exitWith {};
 
 _action = [
     format[localize "STR_House_BuyMSG",
@@ -27,18 +27,18 @@ _action = [
     (_houseCfg select 1)],localize "STR_House_Purchase",localize "STR_Global_Buy",localize "STR_Global_Cancel"
 ] call BIS_fnc_guiMessage;
 
-if(_action) then {
-    if(BANK < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
+if (_action) then {
+    if (BANK < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
     SUB(BANK,(SEL(_houseCfg,0)));
 
-    if(life_HC_isActive) then {
+    if (life_HC_isActive) then {
         [_uid,_house] remoteExec ["HC_fnc_addHouse",HC_Life];
     } else {
         [_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
     };
 
-    if(LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
-        if(LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
+    if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
+        if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
             advanced_log = format ["bought a house for $%1. Bank Balance: $%2  On Hand Cash: $%3",[(SEL(_houseCfg,0))] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
         } else {
             advanced_log = format ["%1 - %2 bought a house for $%3. Bank Balance: $%4  On Hand Cash: $%5",profileName,(getPlayerUID player),[(SEL(_houseCfg,0))] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];

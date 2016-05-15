@@ -1,9 +1,9 @@
 /*
     File: fn_vehicleCreate.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     This file is for Nanou's HeadlessClient.
-    
+
     Description:
     Answers the query request to create the vehicle in the database.
 */
@@ -14,8 +14,8 @@ _vehicle = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 _color = [_this,3,-1,[0]] call BIS_fnc_param;
 
 //Error checks
-if(_uid == "" || _side == sideUnknown || isNull _vehicle) exitWith {};
-if(!alive _vehicle) exitWith {};
+if (_uid == "" || _side == sideUnknown || isNull _vehicle) exitWith {};
+if (!alive _vehicle) exitWith {};
 _className = typeOf _vehicle;
 _type = switch(true) do {
     case (_vehicle isKindOf "Car"): {"Car"};

@@ -15,7 +15,7 @@ _caller = player;
 _thingToPush = cursorObject;
 _posCaller = visiblePosition _caller;
 _dir = getDir _caller;
-if(!local _thingToPush) exitWith {};
+if (!local _thingToPush) exitWith {};
 
 // _distanceFromTarget = _caller distance _thingToPush;
 _thingToPushType = typeOf _thingToPush;

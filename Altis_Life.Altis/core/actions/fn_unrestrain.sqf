@@ -8,7 +8,7 @@
 */
 private["_unit"];
 _unit = param [0,ObjNull,[ObjNull]];
-if(isNull _unit || !(_unit getVariable ["restrained",FALSE])) exitWith {}; //Error check?
+if (isNull _unit || !(_unit getVariable ["restrained",FALSE])) exitWith {}; //Error check?
 
 _unit setVariable ["restrained",FALSE,TRUE];
 _unit setVariable ["Escorting",FALSE,TRUE];

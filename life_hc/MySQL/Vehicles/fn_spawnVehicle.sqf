@@ -24,8 +24,8 @@ _side = side _unit;
 
 //_unit = owner _unit;
 
-if(_vid isEqualTo -1 || _pid isEqualTo "") exitWith {};
-if(_vid in serv_sv_use) exitWith {};
+if (_vid isEqualTo -1 || _pid isEqualTo "") exitWith {};
+if (_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
 
@@ -34,7 +34,7 @@ _query = format["SELECT id, side, classname, type, pid, alive, active, plate, co
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+if (EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
     diag_log "------------- Client Query Request -------------";
     diag_log format["QUERY: %1",_query];
     diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
@@ -42,29 +42,29 @@ if(EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
     diag_log "------------------------------------------------";
 };
 
-if(_queryResult isEqualType "") exitWith {};
+if (_queryResult isEqualType "") exitWith {};
 
 _vInfo = _queryResult;
-if(isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
-if(count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
+if (isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
+if (count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
 
-if(SEL(_vInfo,5) isEqualTo 0) exitWith {
+if (SEL(_vInfo,5) isEqualTo 0) exitWith {
     serv_sv_use deleteAt _servIndex;
     [1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-if(SEL(_vInfo,6) isEqualTo 1) exitWith {
+if (SEL(_vInfo,6) isEqualTo 1) exitWith {
     serv_sv_use deleteAt _servIndex;
     [1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-if(!(_sp isEqualType "")) then {
+if (!(_sp isEqualType "")) then {
     _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
 } else {
     _nearVehicles = [];
 };
 
-if(count _nearVehicles > 0) exitWith {
+if (count _nearVehicles > 0) exitWith {
     serv_sv_use deleteAt _servIndex;
     [_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
     [1,(localize "STR_Garage_SpawnPointError")] remoteExecCall ["life_fnc_broadcast",_unit];
@@ -79,7 +79,7 @@ _wasIllegal = _vInfo select 13;
 _wasIllegal = if (_wasIllegal == 1) then { true } else { false };
 
 [_query,1] call HC_fnc_asyncCall;
-if(_sp isEqualType "") then {
+if (_sp isEqualType "") then {
     _vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
     _vehicle allowDamage false;
@@ -108,11 +108,11 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 // Avoid problems if u keep changing which stuff to save!
-if(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
+if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     _vehicle setVariable["Trunk",_trunk,true];
     if (_wasIllegal) then {
         private "_location";
-        if(_sp isEqualType "") then {
+        if (_sp isEqualType "") then {
             _location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
         } else {
             _location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
@@ -129,7 +129,7 @@ if(LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     _vehicle setVariable["Trunk",[[],0],true];
 };
 
-if(LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
+if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel (_vInfo select 11);
     }else{
     _vehicle setFuel 1;
@@ -164,15 +164,15 @@ if (count _damage > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqual
 };
 
 //Sets of animations
-if(SEL(_vInfo,1) isEqualTo "civ" && SEL(_vInfo,2) isEqualTo "B_Heli_Light_01_F" && !(SEL(_vInfo,8) isEqualTo 13)) then {
+if (SEL(_vInfo,1) isEqualTo "civ" && SEL(_vInfo,2) isEqualTo "B_Heli_Light_01_F" && !(SEL(_vInfo,8) isEqualTo 13)) then {
     [_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
-if(SEL(_vInfo,1) isEqualTo "cop" && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
+if (SEL(_vInfo,1) isEqualTo "cop" && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
     [_vehicle,"cop_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
-if(SEL(_vInfo,1) isEqualTo "med" && SEL(_vInfo,2) isEqualTo "C_Offroad_01_F") then {
+if (SEL(_vInfo,1) isEqualTo "med" && SEL(_vInfo,2) isEqualTo "C_Offroad_01_F") then {
     [_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 

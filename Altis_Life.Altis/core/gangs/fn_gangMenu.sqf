@@ -8,18 +8,18 @@
 */
 private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
 disableSerialization;
-if(isNull (findDisplay 2620)) then {
-    if(!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
+if (isNull (findDisplay 2620)) then {
+    if (!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
 };
 
 _ownerID = group player getVariable ["gang_owner",""];
-if(_ownerID isEqualTo "") exitWith {closeDialog 0;}; //Bad juju
+if (_ownerID isEqualTo "") exitWith {closeDialog 0;}; //Bad juju
 
 _gangName = group player getVariable "gang_name";
 _gangBank = GANG_FUNDS;
 _gangMax = group player getVariable "gang_maxMembers";
 
-if(_ownerID != getPlayerUID player) then {
+if (_ownerID != getPlayerUID player) then {
     (CONTROL(2620,2622)) ctrlEnable false; //Upgrade
     (CONTROL(2620,2624)) ctrlEnable false; // Kick
     (CONTROL(2620,2625)) ctrlEnable false; //Set New Leader
@@ -34,7 +34,7 @@ if(_ownerID != getPlayerUID player) then {
 _members = CONTROL(2620,2621);
 lbClear _members;
 {
-    if((getPlayerUID _x) == _ownerID) then {
+    if ((getPlayerUID _x) == _ownerID) then {
         _members lbAdd format["%1 " +(localize "STR_GNOTF_GangLeader"),(_x getVariable ["realname",name _x])];
         _members lbSetData [(lbSize _members)-1,str(_x)];
     } else {
@@ -48,7 +48,7 @@ _allUnits = playableUnits;
 
 //Clear out the list..
 {
-    if(_x in _grpMembers || side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {
+    if (_x in _grpMembers || side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {
         _allUnits deleteAt _forEachIndex;
     };
 } forEach _allUnits;

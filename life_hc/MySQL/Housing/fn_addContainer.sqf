@@ -4,7 +4,7 @@
     Author: NiiRoZz
 
     This file is for Nanou's HeadlessClient.
-    
+
     Description:
     Add container in Database
 */
@@ -14,7 +14,7 @@ params [
     ["_container",objNull,[objNull]]
 ];
 
-if(isNull _container || _uid == "") exitWith {};
+if (isNull _container || _uid == "") exitWith {};
 
 _containerPos = getPosATL _container;
 _className = typeOf _container;

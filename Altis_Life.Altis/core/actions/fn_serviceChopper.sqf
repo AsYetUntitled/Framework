@@ -9,13 +9,13 @@
 private ["_serviceCost"];
 disableSerialization;
 private["_search","_ui","_progress","_cP","_pgText"];
-if(life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
+if (life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 
 _serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");
 _search = nearestObjects[getPos air_sp, ["Air"],10];
 
-if(count _search isEqualTo 0) exitWith {hint localize "STR_Service_Chopper_NoAir"};
-if(CASH < _serviceCost) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
+if (count _search isEqualTo 0) exitWith {hint localize "STR_Service_Chopper_NoAir"};
+if (CASH < _serviceCost) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
 
 life_action_inUse = true;
 5 cutRsc ["life_progress","PLAIN"];
@@ -31,13 +31,13 @@ for "_i" from 0 to 1 step 0 do {
     _cP = _cP + 0.01;
     _progress progressSetPosition _cP;
     _pgText ctrlSetText format[localize "STR_Service_Chopper_Servicing",round(_cP * 100)];
-    if(_cP >= 1) exitWith {};
+    if (_cP >= 1) exitWith {};
 };
 
-if(!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
+if (!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
 
 SUB(CASH,_serviceCost);
-if(!local SEL(_search,0)) then {
+if (!local SEL(_search,0)) then {
     [SEL(_search,0),1] remoteExecCall ["life_fnc_setFuel",SEL(_search,0)];
 } else {
     SEL(_search,0) setFuel 1;

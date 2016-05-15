@@ -33,21 +33,21 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
         _levelValue = SEL(_level,2);
 
     {
-      if(!(SEL(_x,0) isEqualTo "")) then {
+      if (!(SEL(_x,0) isEqualTo "")) then {
         _licenseName = SEL(_x,0);
         _licenseType = SEL(_x,1);
-        if(_licenseType == 0) then {
-          if(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
+        if (_licenseType == 0) then {
+          if (LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
         } else {
-          if(!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) exitWith {_flag = false};
+          if (!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) exitWith {_flag = false};
         };
       };
     } forEach _licenses;
 
-    if(_flag) then {
-        if(!(_levelValue isEqualTo -1)) then {
+    if (_flag) then {
+        if (!(_levelValue isEqualTo -1)) then {
                 _level = missionNamespace getVariable _levelName;
-                if(_level isEqualType {}) then {_level = FETCH_CONST(_level);};
+                if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
                 _flag = switch(_levelType) do {
                     case "SCALAR": {_level >= _levelValue};
                     case "BOOL": {_level};
@@ -58,7 +58,7 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
             };
     };
 
-        if(_flag) then {
+        if (_flag) then {
             _tempConfig pushBack getText(_curConfig >> "spawnMarker");
       _tempConfig pushBack getText(_curConfig >> "displayName");
       _tempConfig pushBack getText(_curConfig >> "icon");
@@ -66,8 +66,8 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
         };
 };
 
-if(playerSide == civilian) then {
-  if(count life_houses > 0) then {
+if (playerSide == civilian) then {
+  if (count life_houses > 0) then {
     {
       _pos = call compile format["%1",_x select 0];
       _house = nearestObject [_pos, "House"];
