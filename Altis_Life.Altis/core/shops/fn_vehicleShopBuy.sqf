@@ -15,7 +15,7 @@ _vIndex = lbValue[2302,(lbCurSel 2302)];
 _vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
 _shopSide = M_CONFIG(getText,"CarShops",SEL(life_veh_shop,0),"side");
 
-_licenses = switch(playerSide) do {
+_licenses = switch (playerSide) do {
     case civilian: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),0)};
     case west: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),1)};
     case independent: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),2)};
@@ -24,7 +24,7 @@ _licenses = switch(playerSide) do {
 
 _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
-switch(playerSide) do {
+switch (playerSide) do {
     case civilian: {
         _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
         _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_CIVILIAN");
@@ -107,7 +107,7 @@ _vehicle lock 2;
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 
 //Side Specific actions.
-switch(playerSide) do {
+switch (playerSide) do {
     case west: {
         [_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
     };

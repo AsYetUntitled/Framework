@@ -18,7 +18,7 @@ _shopSide = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"side");
 _license = M_CONFIG(getText,"Clothing",(SEL(_this,3)),"license");
 
 if (!(_shopSide isEqualTo "")) then {
-    _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+    _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
     if (!(_flag isEqualTo _shopSide)) then {_exit = true;};
 };
 if (_exit) exitWith {};
@@ -50,7 +50,7 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 1) then {
         _pos = [1000,1000,10000];
     } else {
-        switch(SEL(_this,3)) do {
+        switch (SEL(_this,3)) do {
             case "reb": {_pos = [13590,12214.6,0.00141621];};
             case "cop": {_pos = [12817.5,16722.9,0.00151062];};
             case "kart": {_pos = [14120.5,16440.3,0.00139236];};

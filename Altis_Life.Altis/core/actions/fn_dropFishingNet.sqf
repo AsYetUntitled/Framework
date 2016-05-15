@@ -15,7 +15,7 @@ if (_fish isEqualTo []) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLA
 {
     if (_x isKindOf "Fish_Base_F") then
     {
-        switch(true) do
+        switch (true) do
         {
             case ((typeOf _x) == "Salema_F"): {_typeName = localize "STR_ANIM_Salema"; _type = "salema_raw";};
             case ((typeOf _x) == "Ornate_random_F") : {_typeName = localize "STR_ANIM_Ornate"; _type = "ornate_raw";};

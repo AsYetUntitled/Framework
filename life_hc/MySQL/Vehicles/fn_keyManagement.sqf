@@ -14,7 +14,7 @@ _mode = [_this,3,0,[0]] call BIS_fnc_param;
 
 if (_uid == "" || _side == sideUnknown) exitWith {}; //BAAAAAAAAADDDDDDDD
 
-switch(_mode) do {
+switch (_mode) do {
     case 0: {
         _input = [_this,2,[],[[]]] call BIS_fnc_param;
         _arr = [];

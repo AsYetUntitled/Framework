@@ -50,7 +50,7 @@ life_gear = SEL(_this,8);
 [true] call life_fnc_loadGear;
 
 //Parse side specific information.
-switch(playerSide) do {
+switch (playerSide) do {
     case west: {
         CONST(life_coplevel, parseNumber(SEL(_this,7)));
         CONST(life_medicLevel,0);

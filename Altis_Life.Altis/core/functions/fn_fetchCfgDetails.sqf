@@ -43,7 +43,7 @@ _magazines = [];
 _return = [];
 
 if (_section isEqualTo "") then {
-    _section = switch(true) do {
+    _section = switch (true) do {
         case (isClass(configFile >> "CfgMagazines" >> _className)): {"CfgMagazines"};
         case (isClass(configFile >> "CfgWeapons" >> _className)): {"CfgWeapons"};
         case (isClass(configFile >> "CfgVehicles" >> _className)): {"CfgVehicles"};

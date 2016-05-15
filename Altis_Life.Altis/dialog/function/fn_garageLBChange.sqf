@@ -31,7 +31,7 @@ _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 _price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
 _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
-switch(playerSide) do {
+switch (playerSide) do {
     case civilian: {
         _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
         _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");

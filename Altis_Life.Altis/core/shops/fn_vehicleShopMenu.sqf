@@ -53,7 +53,7 @@ ctrlShow [2304,false];
         _level = missionNamespace getVariable _levelName;
         if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
-        _showall = switch(_levelType) do {
+        _showall = switch (_levelType) do {
             case "SCALAR": {_level >= _levelValue};
             case "BOOL": {_level};
             case "EQUAL": {_level isEqualTo _levelValue};

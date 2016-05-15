@@ -14,7 +14,7 @@ _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 if (count _itemArray isEqualTo 0) exitWith {
-    switch(playerSide) do {
+    switch (playerSide) do {
         case west: {
             [] call life_fnc_copLoadout;
         };

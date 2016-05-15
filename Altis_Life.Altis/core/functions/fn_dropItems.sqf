@@ -14,7 +14,7 @@ _unit = SEL(_this,0);
     _value = ITEM_VALUE(_item);
     _itemName = ITEM_VARNAME(_item);
 
-    switch(_item) do {
+    switch (_item) do {
         case "waterBottle": {
             if (_value > 0) then {
                 _pos = _unit modelToWorld[0,3,0];
