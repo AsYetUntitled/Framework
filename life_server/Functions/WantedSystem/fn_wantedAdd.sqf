@@ -16,7 +16,7 @@ _customBounty = [_this,3,-1,[0]] call BIS_fnc_param;
 if (_uid == "" || _type == "" || _name == "") exitWith {}; //Bad data passed.
 
 //What is the crime?
-switch(_type) do
+switch (_type) do
 {
     case "187V": {_type = ["187V",650]};
     case "187": {_type = ["187",2000]};

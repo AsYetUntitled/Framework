@@ -13,7 +13,7 @@ if (_message == "") exitWith {};
 
 if (_localize) exitWith {
     _arr = _this select 3;
-    _msg = switch(count _arr) do {
+    _msg = switch (count _arr) do {
         case 0: {localize _message;};
         case 1: {format[localize _message,_arr select 0];};
         case 2: {format[localize _message,_arr select 0, _arr select 1];};
@@ -24,7 +24,7 @@ if (_localize) exitWith {
     if (_type isEqualType []) then {
         for "_i" from 0 to (count _type)-1 do
         {
-            switch((_type select _i)) do
+            switch ((_type select _i)) do
             {
                 case 0: {systemChat _msg;};
                 case 1: {hint _msg;};
@@ -44,7 +44,7 @@ if (_localize) exitWith {
 if (_type isEqualType []) then {
     for "_i" from 0 to (count _type)-1 do
     {
-        switch((_type select _i)) do
+        switch ((_type select _i)) do
         {
             case 0: {systemChat _message};
             case 1: {hint format["%1", _message]};

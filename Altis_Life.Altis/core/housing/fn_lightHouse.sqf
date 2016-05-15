@@ -20,7 +20,7 @@ _exit = false;
 if (_mode) then {
     _lightSource = "#lightpoint" createVehicleLocal [0,0,0];
 
-    switch(true) do {
+    switch (true) do {
         case ((typeOf _house) in ["Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_i_House_Big_01_V3_F"]): {_lightSource lightAttachObject [_house,[0,-2,3.8]];};
         case ((typeOf _house) in ["Land_i_House_Big_02_V1_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_02_V3_F"]): {_lightSource lightAttachObject [_house,[2,0,3.5]];};
         case ((typeOf _house) in ["Land_i_House_Small_01_V1_F","Land_i_House_Small_01_V2_F","Land_i_House_Small_01_V3_F"]): {_lightSource lightAttachObject [_house,[-1.5,0,2]]};

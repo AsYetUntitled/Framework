@@ -18,7 +18,7 @@ _levelValue = SEL(_levelAssert,2);
 _levelMsg = SEL(_levelAssert,3);
 
 if (!(_shopSide isEqualTo "")) then {
-    _flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+    _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
     if (!(_flag isEqualTo _shopSide)) then {_exit = true;};
 };
 if (_exit) exitWith {};
@@ -33,7 +33,7 @@ if (!(_levelValue isEqualTo -1)) then {
     _level = missionNamespace getVariable _levelName;
     if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
-    _flag = switch(_levelType) do {
+    _flag = switch (_levelType) do {
         case "SCALAR": {_level >= _levelValue};
         case "BOOL": {_level};
         case "EQUAL": {_level isEqualTo _levelValue};

@@ -14,7 +14,7 @@ life_interrupted = false;
 if (player distance _animalCorpse > 3.5) exitWith {}; //WTF need check with nearest objects I love Arma
 life_action_inUse = true;
 
-switch(typeOf _animalCorpse) do {
+switch (typeOf _animalCorpse) do {
     case "Hen_random_F": {_displayName = localize "STR_ANIM_chicken"; _item = "hen_raw";};
     case "Cock_random_F": {_displayName = localize "STR_ANIM_Rooster"; _item = "rooster_raw";};
     case "Goat_random_F": {_displayName = localize "STR_ANIM_Goat"; _item = "goat_raw";};

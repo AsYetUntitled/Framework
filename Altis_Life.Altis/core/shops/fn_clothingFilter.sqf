@@ -44,7 +44,7 @@ _list = CONTROL(3100,3101);
 lbClear _filter;
 lbClear _list;
 
-_array = switch(_selection) do {
+_array = switch (_selection) do {
     case 0: {M_CONFIG(getArray,"Clothing",life_clothing_store,"uniforms");};
     case 1: {M_CONFIG(getArray,"Clothing",life_clothing_store,"headgear");};
     case 2: {M_CONFIG(getArray,"Clothing",life_clothing_store,"goggles");};
@@ -71,7 +71,7 @@ _array = switch(_selection) do {
         if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
 
 
-        _bool = switch(_levelType) do {
+        _bool = switch (_levelType) do {
             case "SCALAR": {_level >= _levelValue};
             case "BOOL": {_level};
             case "EQUAL": {_level isEqualTo _levelValue};

@@ -14,7 +14,7 @@ _fnc_food =  {
         SUB(life_hunger,10);
         [] call life_fnc_hudUpdate;
         if (life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";};
-        switch(life_hunger) do {
+        switch (life_hunger) do {
             case 30: {hint localize "STR_NOTF_EatMSG_1";};
             case 20: {hint localize "STR_NOTF_EatMSG_2";};
             case 10: {
@@ -32,7 +32,7 @@ _fnc_water = {
         SUB(life_thirst,10);
         [] call life_fnc_hudUpdate;
         if (life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";};
-        switch(life_thirst) do  {
+        switch (life_thirst) do  {
             case 30: {hint localize "STR_NOTF_DrinkMSG_1";};
             case 20: {
                 hint localize "STR_NOTF_DrinkMSG_2";

@@ -24,7 +24,7 @@ _details = [_item] call life_fnc_fetchCfgDetails;
 if (count _details isEqualTo 0) exitWith {};
 
 if (_bool) then {
-    switch((_details select 6)) do {
+    switch ((_details select 6)) do {
         case "CfgGlasses": {
             if (_toUniform) exitWith {player addItemToUniform _item;};
             if (_toVest) exitWith {player addItemToVest _item;};
@@ -89,7 +89,7 @@ if (_bool) then {
                     player addWeapon _item;
                 };
             } else {
-                switch(SEL(_details,5)) do {
+                switch (SEL(_details,5)) do {
                     case 0:  {
                         if (_ispack) then {
                             player addItemToBackpack _item;
@@ -206,7 +206,7 @@ if (_bool) then {
                                     player addItem _item;
                                 } else {
                                     private["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+                                    _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
                                     if (!(SEL(_wepItems,2) isEqualTo "")) then {_slotTaken = true;};
@@ -214,7 +214,7 @@ if (_bool) then {
                                     if (_slotTaken) then {
                                         _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
                                         if (_action) then {
-                                            switch(_type) do {
+                                            switch (_type) do {
                                                 case 1: {player addPrimaryWeaponItem _item;};
                                                 case 2: {player addSecondaryWeaponItem _item;};
                                                 case 3: {player addHandgunItem _item;};
@@ -224,7 +224,7 @@ if (_bool) then {
                                             player addItem _item; //Add it to any available container
                                         };
                                     } else {
-                                        switch(_type) do {
+                                        switch (_type) do {
                                             case 1: {player addPrimaryWeaponItem _item;};
                                             case 2: {player addSecondaryWeaponItem _item;};
                                             case 3: {player addHandgunItem _item;};
@@ -254,7 +254,7 @@ if (_bool) then {
                                     player addItem _item;
                                 } else {
                                     private["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+                                    _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
                                     if (!(SEL(_wepItems,1) isEqualTo "")) then {_slotTaken = true;};
@@ -262,7 +262,7 @@ if (_bool) then {
                                     if (_slotTaken) then {
                                         _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
                                         if (_action) then {
-                                            switch(_type) do {
+                                            switch (_type) do {
                                                 case 1: {player addPrimaryWeaponItem _item;};
                                                 case 2: {player addSecondaryWeaponItem _item;};
                                                 case 3: {player addHandgunItem _item;};
@@ -272,7 +272,7 @@ if (_bool) then {
                                             player addItem _item; //Add it to any available container
                                         };
                                     } else {
-                                        switch(_type) do {
+                                        switch (_type) do {
                                             case 1: {player addPrimaryWeaponItem _item;};
                                             case 2: {player addSecondaryWeaponItem _item;};
                                             case 3: {player addHandgunItem _item;};
@@ -302,7 +302,7 @@ if (_bool) then {
                                     player addItem _item;
                                 } else {
                                     private["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+                                    _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
                                     if (!(SEL(_wepItems,0) isEqualTo "")) then {_slotTaken = true;};
@@ -310,7 +310,7 @@ if (_bool) then {
                                     if (_slotTaken) then {
                                         _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
                                         if (_action) then {
-                                            switch(_type) do {
+                                            switch (_type) do {
                                                 case 1: {player addPrimaryWeaponItem _item;};
                                                 case 2: {player addSecondaryWeaponItem _item;};
                                                 case 3: {player addHandgunItem _item;};
@@ -320,7 +320,7 @@ if (_bool) then {
                                             player addItem _item; //Add it to any available container
                                         };
                                     } else {
-                                        switch(_type) do {
+                                        switch (_type) do {
                                             case 1: {player addPrimaryWeaponItem _item;};
                                             case 2: {player addSecondaryWeaponItem _item;};
                                             case 3: {player addHandgunItem _item;};
@@ -370,7 +370,7 @@ if (_bool) then {
         };
     };
 } else {
-    switch(SEL(_details,6)) do {
+    switch (SEL(_details,6)) do {
         case "CfgVehicles": {
             removeBackpack player;
         };
@@ -399,7 +399,7 @@ if (_bool) then {
             };
 
             if (_isgun) then {
-                switch(true) do {
+                switch (true) do {
                     case (primaryWeapon player isEqualTo _item) : {_ispack = false;};
                     case (LAUNCHER isEqualTo _item) : {_ispack = false;};
                     case (handgunWeapon player isEqualTo _item) : {_ispack = false;};
@@ -415,7 +415,7 @@ if (_bool) then {
                     private "_tmpfunction";
                     _tmpfunction = {
                         private["_tWeapons","_tWeaponCount"];
-                        switch(true) do {
+                        switch (true) do {
                             case (_this in (uniformItems player)): {
                                 _tWeapons = (getWeaponCargo (uniformContainer player)) select 0;
                                 _tWeaponCount = (getWeaponCargo (uniformContainer  player)) select 1;
@@ -466,7 +466,7 @@ if (_bool) then {
                     if (_ispack) then {
                         _item call _tmpfunction;
                     } else {
-                        switch(true) do {
+                        switch (true) do {
                             case (_item in (uniformItems player)): {_item call _tmpfunction;};
                             case (_item in (vestItems player)) : {_item call _tmpfunction;};
                             case (_item in (backpackItems player)) : {_item call _tmpfunction;};
@@ -475,7 +475,7 @@ if (_bool) then {
                     };
                 };
             } else {
-                switch(SEL(_details,5)) do {
+                switch (SEL(_details,5)) do {
                     case 0: {player unassignItem _item; player removeItem _item;};
                     case 605: {if (headgear player isEqualTo _item) then {removeHeadgear player} else {player removeItem _item};};
                     case 801: {if (uniform player isEqualTo _item) then {removeUniform player} else {player removeItem _item};};

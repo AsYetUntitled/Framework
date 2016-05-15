@@ -21,7 +21,7 @@ if (_pid == "" || _side == sideUnknown || _type == "" || isNull _unit) exitWith 
     };
 };
 
-_side = switch(_side) do {
+_side = switch (_side) do {
     case west:{"cop"};
     case civilian: {"civ"};
     case independent: {"med"};

@@ -48,7 +48,7 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
         if (!(_levelValue isEqualTo -1)) then {
                 _level = missionNamespace getVariable _levelName;
                 if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
-                _flag = switch(_levelType) do {
+                _flag = switch (_levelType) do {
                     case "SCALAR": {_level >= _levelValue};
                     case "BOOL": {_level};
                     case "EQUAL": {_level isEqualTo _levelValue};

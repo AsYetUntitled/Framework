@@ -21,7 +21,7 @@ life_clothing_purchase set[life_clothing_filter,(_control lbValue _selection)];
 _data = _control lbData _selection;
 
 if (_data isEqualTo "NONE") then {
-    _item = switch(life_clothing_filter) do {
+    _item = switch (life_clothing_filter) do {
         case 0: {uniform player};
         case 1: {headGear player};
         case 2: {goggles player};

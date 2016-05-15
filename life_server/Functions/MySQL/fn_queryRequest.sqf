@@ -19,7 +19,7 @@ _ownerID = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 if (isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
 
-_query = switch(_side) do {
+_query = switch (_side) do {
     // West - 11 entries returned
     case west: {format["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE playerid='%1'",_uid];};
     // Civilian - 12 entries returned

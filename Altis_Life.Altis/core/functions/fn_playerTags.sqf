@@ -30,7 +30,7 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
     private "_text";
     _idc = _ui displayCtrl (iconID + _forEachIndex);
     if (!(lineIntersects [eyePos player, eyePos _x, player, _x]) && alive _x && {!isNil {_x getVariable "realname"}}) then {
-        _pos = switch(typeOf _x) do {
+        _pos = switch (typeOf _x) do {
             case "Land_Pallet_MilBoxes_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
             case "Land_Sink_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 2]};
             default {[visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2)+.5]};
