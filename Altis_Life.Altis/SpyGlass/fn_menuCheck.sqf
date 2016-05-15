@@ -22,11 +22,11 @@ for "_i" from 0 to 1 step 0 do {
         _targetDisplay = _x select 0;
         _targetName = _x select 1;
         switch (typeName _targetDisplay) do {
-            case ("STRING"): {if(!isNull (uiNamespace getVariable [_targetDisplay,displayNull])) exitWith {_detection = true;};};
-            default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
+            case ("STRING"): {if (!isNull (uiNamespace getVariable [_targetDisplay,displayNull])) exitWith {_detection = true;};};
+            default {if (!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
         };
 
-        if(_detection) exitWith {
+        if (_detection) exitWith {
             [profileName,getPlayerUID player,format["MenuBasedHack_%1",_targetName]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
             [profileName,format["Menu Hack: %1",_targetName]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
             sleep 0.5;
@@ -34,16 +34,16 @@ for "_i" from 0 to 1 step 0 do {
         };
     } forEach _displays;
 
-    if(_detection) exitWith {};
+    if (_detection) exitWith {};
 
     /* A very old menu that can cause false-positives so we close it */
-    if(!isNull (findDisplay 129)) then {
+    if (!isNull (findDisplay 129)) then {
         closeDialog 0;
     };
 
     /* Check to see if RscDisplayInventory has more controls then it should */
     _display = findDisplay 602;
-    if(!isNull _display && {count (allControls _display) > 87}) then {
+    if (!isNull _display && {count (allControls _display) > 87}) then {
         _count = count allControls _display;
         [profileName,getPlayerUID player,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
         [profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
@@ -51,9 +51,9 @@ for "_i" from 0 to 1 step 0 do {
         SPYGLASS_END
     };
 
-    if(!isNull (findDisplay 148)) then {
+    if (!isNull (findDisplay 148)) then {
         sleep 0.5;
-        if((lbSize 104)-1 > 3) exitWith {
+        if ((lbSize 104)-1 > 3) exitWith {
             [profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureControllers"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
             [profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
             closeDialog 0;
@@ -62,7 +62,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _display = findDisplay 54;
-    if(!isNull _display) then {
+    if (!isNull _display) then {
         {
             if (_x && !isNull _display) exitWith {
                 [profileName,getPlayerUID player,"MenuBasedHack_RscDisplayInsertMarker"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
@@ -77,7 +77,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _display = findDisplay 131;
-    if(!isNull _display) then {
+    if (!isNull _display) then {
         //These shouldn't be here...
         (_display displayCtrl 102) ctrlRemoveAllEventHandlers "LBDblClick";
         (_display displayCtrl 102) ctrlRemoveAllEventHandlers "LBSelChanged";
@@ -96,7 +96,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _display = findDisplay 163;
-    if(!isNull _display) then {
+    if (!isNull _display) then {
         (_display displayCtrl 101) ctrlRemoveAllEventHandlers "LBDblClick";
         (_display displayCtrl 101) ctrlRemoveAllEventHandlers "LBSelChanged";
 
@@ -114,7 +114,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _display = findDisplay 316000;
-    if(!isNull _display && !isNil "life_admin_debug" && !life_admin_debug) exitWith {
+    if (!isNull _display && !isNil "life_admin_debug" && !life_admin_debug) exitWith {
         [profileName,getPlayerUID player,"MenuBasedHack_RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
         [profileName,"Menu Hack: RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
         closeDialog 0;
@@ -122,7 +122,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     /* We'll just move the no-recoil check into this thread. */
-    if((unitRecoilCoefficient player) < 1) then {
+    if ((unitRecoilCoefficient player) < 1) then {
         [profileName,getPlayerUID player,"No_recoil_hack"] remoteExec ["SPY_fnc_cookieJar",RSERV];
         [profileName,"No recoil hack"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
         sleep 0.5;
@@ -135,12 +135,12 @@ for "_i" from 0 to 1 step 0 do {
 
         Checks every 5 minutes.
     */
-    if((time - _timeStamp) > 300) then {
+    if ((time - _timeStamp) > 300) then {
         _timeStamp = time;
         {
             _onLoad = getText(configFile >> (_x select 0) >> "onLoad");
             _onUnload = getText(configFile >> (_x select 0) >> "onUnload");
-            if(_onLoad != (_x select 1) || _onUnload != (_x select 2)) exitWith {
+            if (_onLoad != (_x select 1) || _onUnload != (_x select 2)) exitWith {
                 [profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
                 [profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
                 sleep 0.5;

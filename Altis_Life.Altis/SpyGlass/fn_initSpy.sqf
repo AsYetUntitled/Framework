@@ -10,8 +10,8 @@
     Will also become a standalone system which is why it's setup like this.
 */
 private["_binConfigPatches","_cfgPatches","_endM"];
-if(isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-#define CONST(var1,var2) var1 = compileFinal (if(var2 isEqualType "") then {var2} else {str(var2)})
+if (isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
+#define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})
 #define RCLIENT -2
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
@@ -38,8 +38,8 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
     _binConfigPatches = configFile >> "CfgPatches";
     for "_i" from 0 to count (_binConfigPatches)-1 do {
         _patchEntry = _binConfigPatches select _i;
-        if(isClass _patchEntry) then {
-            if(!((configName _patchEntry) in SPY_cfg_patchList)) then {
+        if (isClass _patchEntry) then {
+            if (!((configName _patchEntry) in SPY_cfg_patchList)) then {
                 _cfgPatches set[count _cfgPatches,(configName _patchEntry)];
             };
         };
@@ -137,8 +137,8 @@ uiNamespace setVariable["RscDisplayMultiplayer",displayNull];
 _binConfigPatches = configFile >> "CfgPatches";
 for "_i" from 0 to count (_binConfigPatches)-1 do {
     _patchEntry = _binConfigPatches select _i;
-    if(isClass _patchEntry) then {
-        if(!((configName _patchEntry) in _patchList)) exitWith {
+    if (isClass _patchEntry) then {
+        if (!((configName _patchEntry) in _patchList)) exitWith {
             [profileName,getPlayerUID player,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",RSERV];
             [profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
             sleep 0.5;
@@ -158,7 +158,7 @@ _allowedChildren = [
 ];
 
 {
-    if(!((configName _x) in _allowedChildren)) exitWith {
+    if (!((configName _x) in _allowedChildren)) exitWith {
         [profileName,getPlayerUID player,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",RSERV];
         [profileName,"Devcon like executor detected"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
         sleep 0.5;
@@ -175,7 +175,7 @@ _allowedChildren = [
 {
     _onLoad = getText(configFile >> (_x select 0) >> "onLoad");
     _onUnload = getText(configFile >> (_x select 0) >> "onUnload");
-    if(_onLoad != (_x select 1) || _onUnload != (_x select 2)) exitWith {
+    if (_onLoad != (_x select 1) || _onUnload != (_x select 2)) exitWith {
         [profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
         [profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
         sleep 0.5;
@@ -212,7 +212,7 @@ forEach [
 ];
 
 /* Forgot to include this but this is also also a popular method for "unreleased" stuff */
-if(getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunctions.sqf") then {
+if (getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunctions.sqf") then {
     [profileName,getPlayerUID player,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
     [profileName,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
     sleep 0.5;
