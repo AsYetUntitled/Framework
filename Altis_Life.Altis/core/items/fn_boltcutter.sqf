@@ -78,7 +78,7 @@ for "_i" from 0 to 1 step 0 do {
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
-if ((player getVariable ["restrained",false])) exitWith {life_action_inUse = false;};
+if (player getVariable["restrained",false]) exitWith {life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 life_boltcutter_uses = life_boltcutter_uses + 1;
 life_action_inUse = false;

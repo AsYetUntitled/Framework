@@ -10,11 +10,11 @@
 private["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
 if (life_action_inUse) exitWith {};
 if ((vehicle player) != player) exitWith {};
-if ((player getVariable "restrained")) exitWith {
+if (player getVariable "restrained") exitWith {
     hint localize "STR_NOTF_isrestrained";
 };
 _exit = false;
-if ((player getVariable "playerSurrender")) exitWith {
+if (player getVariable "playerSurrender") exitWith {
     hint localize "STR_NOTF_surrender";
 };
 life_action_inUse = true;

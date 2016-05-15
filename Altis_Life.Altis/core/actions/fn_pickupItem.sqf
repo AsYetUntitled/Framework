@@ -27,7 +27,7 @@ _diff = [SEL(_itemInfo,0),SEL(_itemInfo,1),life_carryWeight,life_maxWeight] call
 if (_diff <= 0) exitWith {hint localize "STR_NOTF_InvFull"; INUSE(_this);};
 
 if (!(_diff isEqualTo SEL(_itemInfo,1))) then {
-    if (([true,SEL(_itemInfo,0),_diff] call life_fnc_handleInv)) then {
+    if ([true,SEL(_itemInfo,0),_diff] call life_fnc_handleInv) then {
         player playMove "AinvPknlMstpSlayWrflDnon";
 
         _this setVariable ["item",[SEL(_itemInfo,0),(SEL(_itemInfo,1)) - _diff],true];
@@ -37,7 +37,7 @@ if (!(_diff isEqualTo SEL(_itemInfo,1))) then {
         INUSE(_this);
     };
 } else {
-    if (([true,SEL(_itemInfo,0),SEL(_itemInfo,1)] call life_fnc_handleInv)) then {
+    if ([true,SEL(_itemInfo,0),SEL(_itemInfo,1)] call life_fnc_handleInv) then {
         deleteVehicle _this;
         //waitUntil{isNull _this};
         player playMove "AinvPknlMstpSlayWrflDnon";

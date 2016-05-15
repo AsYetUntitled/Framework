@@ -16,7 +16,7 @@ _units = _display displayCtrl 3004;
 ctrlSetText [3003, ""];
 lbClear _units;
 
-if ((FETCH_CONST(life_adminlevel) < 1)) then {
+if (FETCH_CONST(life_adminlevel) < 1) then {
     ctrlShow[3020,false];
     ctrlShow[3021,false];
 };

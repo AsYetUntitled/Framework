@@ -24,7 +24,7 @@ _details = [_item] call life_fnc_fetchCfgDetails;
 if (count _details isEqualTo 0) exitWith {};
 
 if (_bool) then {
-    switch ((_details select 6)) do {
+    switch (_details select 6) do {
         case "CfgGlasses": {
             if (_toUniform) exitWith {player addItemToUniform _item;};
             if (_toVest) exitWith {player addItemToVest _item;};
@@ -71,7 +71,7 @@ if (_bool) then {
             if (_toVest) exitWith {player addItemToVest _item;};
             if (_ispack) exitWith {player addItemToBackpack _item;};
 
-            if ((SEL(_details,4)) in [1,2,4,5,4096]) then {
+            if (SEL(_details,4) in [1,2,4,5,4096]) then {
                 if (SEL(_details,4) isEqualTo 4096) then {
                     if (SEL(_details,5) isEqualTo -1) then {
                         _isgun = true;

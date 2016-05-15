@@ -24,7 +24,7 @@ switch (true) do {
 
 if (_type isEqualTo "") exitWith {}; //Couldn't get a type
 
-if (([true,_type,1] call life_fnc_handleInv)) then {
+if ([true,_type,1] call life_fnc_handleInv) then {
     deleteVehicle _fish;
     titleText[format[(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
 };

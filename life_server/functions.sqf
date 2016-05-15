@@ -1,10 +1,9 @@
 #include "script_macros.hpp"
 /*
     File: functions.sqf
-    Author:
+    Author: Bryan "Tonic" Boardwine
 
-    Description:
-
+    Description: They are functions.
 */
 TON_fnc_index =
 compileFinal "
@@ -14,8 +13,7 @@ compileFinal "
     _return = -1;
 
     {
-        if (_item in _x) exitWith
-        {
+        if (_item in _x) exitWith {
             _return = _forEachIndex;
         };
     } forEach _stack;
@@ -58,8 +56,7 @@ compileFinal "
     _unit = _this select 0;
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
-    if (player == _unit && (group player) == _group) then
-    {
+    if (player == _unit && (group player) == _group) then {
         life_my_gang = ObjNull;
         [player] joinSilent (createGroup civilian);
         hint ""You have been kicked out of the gang."";
@@ -75,8 +72,7 @@ compileFinal "
     _unit = _this select 1;
     _giver = _this select 2;
     if (isNil ""_unit"" || isNil ""_giver"") exitWith {};
-    if (player == _unit && !(_vehicle in life_vehicles)) then
-    {
+    if (player == _unit && !(_vehicle in life_vehicles)) then {
         _name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
         hint format[""%1 has gave you keys for a %2"",_giver,_name];
         life_vehicles pushBack _vehicle;
@@ -92,8 +88,7 @@ compileFinal "
     _unit = _this select 0;
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
-    if (player == _unit && (group player) == _group) then
-    {
+    if (player == _unit && (group player) == _group) then {
         player setRank ""COLONEL"";
         _group selectLeader _unit;
         hint ""You have been made the new leader."";
@@ -108,8 +103,7 @@ compileFinal "
     _unit = _this select 0;
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
-    if (player == _unit && (group player) == _group) then
-    {
+    if (player == _unit && (group player) == _group) then {
         life_my_gang = ObjNull;
         [player] joinSilent (createGroup civilian);
         hint ""You have quit the gang."";
@@ -242,10 +236,8 @@ compileFinal "
     _from = _this select 1;
     _type = _this select 2;
     if (_from == """") exitWith {};
-    switch (_type) do
-    {
-        case 0 :
-        {
+    switch (_type) do {
+        case 0 : {
             private[""_message""];
             _message = format["">>>MESSAGE FROM %1: %2"",_from,_msg];
             hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>New Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
@@ -254,8 +246,7 @@ compileFinal "
             systemChat _message;
         };
 
-        case 1 :
-        {
+        case 1 : {
             if (side player != west) exitWith {};
             private[""_message"",""_loc"",""_unit""];
             _loc = _this select 3;
@@ -268,8 +259,7 @@ compileFinal "
             systemChat _message;
         };
 
-        case 2 :
-        {
+        case 2 : {
             if ((call life_adminlevel) < 1) exitWith {};
             private[""_message"",""_loc"",""_unit""];
             _loc = _this select 3;
@@ -282,8 +272,7 @@ compileFinal "
             systemChat _message;
         };
 
-        case 3 :
-        {
+        case 3 : {
             private[""_message""];
             _message = format[""!!! ADMIN MESSAGE: %1"",_msg];
             _admin = format[""Sent by admin: %1"", _from];
@@ -294,8 +283,7 @@ compileFinal "
             if ((call life_adminlevel) > 0) then {systemChat _admin;};
         };
 
-        case 4 :
-        {
+        case 4 : {
             private[""_message"",""_admin""];
             _message = format[""!!!ADMIN MESSAGE: %1"",_msg];
             _admin = format[""Sent by admin: %1"", _from];

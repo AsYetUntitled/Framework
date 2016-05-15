@@ -12,7 +12,7 @@ _uid = getPlayerUID player;
 
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
-if ((_house getVariable ["house_owned",false])) exitWith {hint localize "STR_House_alreadyOwned";};
+if (_house getVariable ["house_owned",false]) exitWith {hint localize "STR_House_alreadyOwned";};
 if (!isNil {(_house getVariable "house_sold")}) exitWith {hint localize "STR_House_Sell_Process"};
 if (!license_civ_home) exitWith {hint localize "STR_House_License"};
 if (count life_houses >= (LIFE_SETTINGS(getNumber,"house_limit"))) exitWith {hint format[localize "STR_House_Max_House",LIFE_SETTINGS(getNumber,"house_limit")]};

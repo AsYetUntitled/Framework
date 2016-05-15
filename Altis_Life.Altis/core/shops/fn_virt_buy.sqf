@@ -23,8 +23,7 @@ life_action_delay = time;
 
 _name = M_CONFIG(getText,"VirtualItems",_type,"displayName");
 
-if (([true,_type,_amount] call life_fnc_handleInv)) then
-{
+if ([true,_type,_amount] call life_fnc_handleInv) then {
     if (!isNil "_hideout" && {!isNil {group player getVariable "gang_bank"}} && {(group player getVariable "gang_bank") >= _price}) then {
         _action = [
             format[(localize "STR_Shop_Virt_Gang_FundsMSG")+ "<br/><br/>" +(localize "STR_Shop_Virt_Gang_Funds")+ " <t color='#8cff9b'>$%1</t><br/>" +(localize "STR_Shop_Virt_YourFunds")+ " <t color='#8cff9b'>$%2</t>",
