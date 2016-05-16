@@ -1,6 +1,4 @@
 #define SYSTEM_TAG "HC"
-#define SUB(var1,var2) var1 = var1 - var2
-#define ADD(var1,var2) var1 = var1 + var2
 #define SEL(ARRAY,INDEX) (ARRAY select INDEX)
 #define CASH life_cash
 #define BANK life_atmbank

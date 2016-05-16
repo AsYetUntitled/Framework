@@ -26,7 +26,7 @@ if (_action) then {
             [_upgradePrice - BANK] call life_fnc_numberText
         ];
     };
-    SUB(BANK,_upgradePrice);
+    BANK = BANK - _upgradePrice;
     group player setVariable ["gang_maxMembers",_slotUpgrade,true];
     hint parseText format[localize "STR_GNOTF_UpgradeSuccess",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText];
 

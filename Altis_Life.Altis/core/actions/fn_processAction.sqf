@@ -175,6 +175,6 @@ if (_hasLicense) then {
     } forEach _newItem;
     5 cutText ["","PLAIN"];
     hint localize "STR_NOTF_ItemProcess";
-    SUB(CASH,_cost);
+    CASH = CASH - _cost;
     life_is_processing = false;
 };

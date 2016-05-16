@@ -1,7 +1,5 @@
 #define SYSTEM_TAG "life"
 #define ITEM_TAG format["%1%2",SYSTEM_TAG,"item_"]
-#define SUB(var1,var2) var1 = var1 - var2
-#define ADD(var1,var2) var1 = var1 + var2
 #define SEL(ARRAY,INDEX) (ARRAY select INDEX)
 #define CASH life_cash
 #define BANK life_atmbank

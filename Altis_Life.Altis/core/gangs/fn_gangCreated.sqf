@@ -14,6 +14,6 @@ if (BANK < (LIFE_SETTINGS(getNumber,"gang_price"))) exitWith {
     {group player setVariable [_x,nil,true];} forEach ["gang_id","gang_owner","gang_name","gang_members","gang_maxmembers","gang_bank"];
 };
 
-SUB(BANK,(LIFE_SETTINGS(getNumber,"gang_price")));
+BANK = BANK - LIFE_SETTINGS(getNumber,"gang_price");
 
 hint format[localize "STR_GNOTF_CreateSuccess",(group player) getVariable "gang_name",[(LIFE_SETTINGS(getNumber,"gang_price"))] call life_fnc_numberText];

@@ -42,9 +42,9 @@ _bag = [];
 if (!(uniform player isEqualTo "")) then {
     {
         if (_x in (magazines player)) then {
-            ADD(_uMags,[_x]);
+            _uMags pushBack _x;
         } else {
-            ADD(_uItems,[_x]);
+            _uItems pushBack _x;
         };
     } forEach (uniformItems player);
 };
@@ -52,9 +52,9 @@ if (!(uniform player isEqualTo "")) then {
 if (!(backpack player isEqualTo "")) then {
     {
         if (_x in (magazines player)) then {
-            ADD(_bMags,[_x]);
+            _bMags pushBack _x;
         } else {
-            ADD(_bItems,[_x]);
+            _bItems pushBack _x;
         };
     } forEach (backpackItems player);
 };
@@ -62,9 +62,9 @@ if (!(backpack player isEqualTo "")) then {
 if (!(vest player isEqualTo "")) then {
     {
         if (_x in (magazines player)) then {
-            ADD(_vMags,[_x]);
+            _vMags pushBack _x;
         } else {
-            ADD(_vItems,[_x]);
+            _vItems pushBack _x;
         };
     } forEach (vestItems player);
 };
@@ -79,17 +79,17 @@ if (count (primaryWeaponMagazine player) > 0 && alive player) then {
         _handled = false;
 
         if (_ves) then {
-            ADD(_vMags,[_pMag]);
+            _vMags pushBack _pMag;
             _handled = true;
         };
 
         if (_uni && !_handled) then {
-            ADD(_uMags,[_pMag]);
+            _uMags pushBack _pMag;
             _handled = true;
         };
 
         if (_bag && !_handled) then {
-            ADD(_bMags,[_pMag]);
+            _bMags pushBack _pMag;
             _handled = true;
         };
     };
@@ -105,17 +105,17 @@ if (count (handgunMagazine player) > 0 && alive player) then {
         _handled = false;
 
         if (_ves) then {
-            ADD(_vMags,[_hMag]);
+            _vMags pushBack _hMag;
             _handled = true;
         };
 
         if (_uni && !_handled) then {
-            ADD(_uMags,[_hMag]);
+            _uMags pushBack _hMag;
             _handled = true;
         };
 
         if (_bag && !_handled) then {
-            ADD(_uMags,[_hMag]);
+            _bMags pushBack _hMag;
             _handled = true;
         };
     };
@@ -123,13 +123,13 @@ if (count (handgunMagazine player) > 0 && alive player) then {
 
 if (count (primaryWeaponItems player) > 0) then {
     {
-        ADD(_pItems,[_x]);
+        _pItems pushBack _x;
     } forEach (primaryWeaponItems player);
 };
 
 if (count (handgunItems player) > 0) then {
     {
-        ADD(_hItems,[_x]);
+        _hItems pushBack _x;
     } forEach (handGunItems player);
 };
 

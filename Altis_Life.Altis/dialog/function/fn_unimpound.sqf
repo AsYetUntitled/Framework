@@ -59,6 +59,6 @@ if (life_garage_sp isEqualType []) then {
 };
 
 hint localize "STR_Garage_SpawningVeh";
-SUB(BANK,_price);
+BANK = BANK - _price;
 [1] call SOCK_fnc_updatePartial;
 closeDialog 0;

@@ -14,8 +14,8 @@ if (!([str(_value)] call TON_fnc_isnumber)) exitWith {hint localize "STR_ATM_not
 if (_value > BANK) exitWith {hint localize "STR_ATM_NotEnoughFunds"};
 if (_value < 100 && BANK > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
 
-ADD(CASH,_value);
-SUB(BANK,_value);
+CASH = CASH + _price;
+BANK = BANK - _value;
 hint format [localize "STR_ATM_WithdrawSuccess",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial;

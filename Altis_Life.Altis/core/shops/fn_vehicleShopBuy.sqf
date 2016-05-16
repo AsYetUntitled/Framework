@@ -53,7 +53,7 @@ _colorIndex = lbValue[2304,(lbCurSel 2304)];
 _licensesName = "";
 {
     if (!(_x isEqualTo "") && {!(LICENSE_VALUE(_x,_shopSide))}) then {
-        ADD(_licensesName,localize M_CONFIG(getText,"Licenses",_x,"displayName") + "<br/>");
+        _licensesName = _licensesName + localize M_CONFIG(getText,"Licenses",_x,"displayName") + "<br/>";
         _exit = true;
     };
 } forEach _licenses;
@@ -80,7 +80,7 @@ if ((SEL(life_veh_shop,0) == "med_air_hs")) then {
 
 
 if (_spawnPoint isEqualTo "") exitWith {hint localize "STR_Shop_Veh_Block";closeDialog 0;};
-SUB(CASH,_purchasePrice);
+CASH = CASH - _purchasePrice;
 hint format[localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
 
 //Spawn the vehicle and prep it.

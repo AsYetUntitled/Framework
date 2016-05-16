@@ -11,7 +11,7 @@ _fnc_food =  {
     if (life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";}
     else
     {
-        SUB(life_hunger,10);
+        life_hunger = life_hunger - 10;
         [] call life_fnc_hudUpdate;
         if (life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";};
         switch (life_hunger) do {
@@ -29,7 +29,7 @@ _fnc_water = {
     if (life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";}
     else
     {
-        SUB(life_thirst,10);
+        life_thirst = life_thirst - 10;
         [] call life_fnc_hudUpdate;
         if (life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";};
         switch (life_thirst) do  {
@@ -93,11 +93,11 @@ for "_i" from 0 to 1 step 0 do {
         _curPos = visiblePosition player;
         _curPos = (SEL(_curPos,0)) + (SEL(_curPos,1));
         if (!(_curPos isEqualTo _lastPos) && {(isNull objectParent player)}) then {
-            ADD(_walkDis,1);
+            _walkDis = _walkDis + 1;
             if (_walkDis isEqualTo 650) then {
                 _walkDis = 0;
-                SUB(life_thirst,5);
-                SUB(life_hunger,5);
+                life_thirst = life_thirst - 5;
+                life_hunger = life_hunger - 5;
                 [] call life_fnc_hudUpdate;
             };
         };

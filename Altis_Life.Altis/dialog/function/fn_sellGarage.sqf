@@ -53,7 +53,7 @@ if (life_HC_isActive) then {
 };
 
 hint format[localize "STR_Garage_SoldCar",[_sellPrice] call life_fnc_numberText];
-ADD(BANK,_sellPrice);
+BANK = BANK + _sellPrice;
 [1] call SOCK_fnc_updatePartial;
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {

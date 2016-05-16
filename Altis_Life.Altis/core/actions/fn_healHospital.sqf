@@ -30,7 +30,7 @@ if (_action) then {
     if (player distance (_this select 0) > 5) exitWith {life_action_inUse = false; titleText[localize "STR_NOTF_HS_ToFar","PLAIN"]};
     titleText[localize "STR_NOTF_HS_Healed","PLAIN"];
     player setDamage 0;
-    SUB(CASH,_healCost);
+    CASH = CASH - _healCost;
     life_action_inUse = false;
 } else {
     hint localize "STR_NOTF_ActionCancel";

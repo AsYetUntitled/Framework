@@ -14,7 +14,7 @@ _members = group player getVariable "gang_members";
 if (isNil "_members") exitWith {};
 if (!(_members isEqualType [])) exitWith {};
 
-SUB(_members,[_unitID]);
+_members = _members - [_unitID];
 group player setVariable ["gang_members",_members,true];
 
 [player,group player] remoteExec ["TON_fnc_clientGangLeft",player];

@@ -19,7 +19,7 @@ _sum = _value;
 
 if ((_cweight + _weight) > _mWeight) then {
     for "_i" from 0 to 1 step 0 do {
-        SUB(_sum,1);
+        _sum = _sum - 1;
         if (_sum < 1) exitWith {};
         _weight = ([_item] call life_fnc_itemweight) * _sum;
         if ((_cWeight + _weight) <= _mWeight) exitWith {};

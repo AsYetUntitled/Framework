@@ -25,7 +25,7 @@ _names = "";
         };
     };
     [SEL(_x,0),SEL(_x,1),"483",_val] remoteExecCall ["life_fnc_wantedAdd",RSERV];
-    ADD(_names,format["%1<br/>",SEL(_x,1)]);
+    _names = _names + format["%1<br/>",SEL(_x,1)];
 } forEach _sellers;
 
 hint parseText format[(localize "STR_Cop_DealerMSG")+ "<br/><br/>%1",_names];

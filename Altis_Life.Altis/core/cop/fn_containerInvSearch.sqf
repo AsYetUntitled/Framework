@@ -33,7 +33,7 @@ _illegalValue = 0;
 _value = _illegalValue;
 if (_value > 0) then {
     [0,"STR_NOTF_ContainerContraband",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-    ADD(BANK,_value);
+    BANK = BANK + _value;
     _container setVariable ["Trunk",[[],0],true];
     [_container] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
 } else {

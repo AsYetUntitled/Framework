@@ -17,7 +17,7 @@ _illegal = ITEM_ILLEGAL(SEL(_itemInfo,0));
 
 if (playerSide == west && _illegal isEqualTo 1) exitWith {
     titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2)] call life_fnc_numberText],"PLAIN"];
-    ADD(BANK,round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2));
+    BANK = BANK + round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2);
     deleteVehicle _this;
     life_action_delay = time;
 };

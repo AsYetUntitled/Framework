@@ -19,8 +19,8 @@ if (_value > _gFund) exitWith {hint localize "STR_ATM_NotEnoughFundsG"};
 if (_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
 if ((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawInUseG"}; //Check if it's in use.
 
-SUB(_gFund,_value);
-ADD(CASH,_value);
+_gFund = _gFund - _value;
+CASH = CASH + _value;
 group player setVariable ["gang_bank",_gFund,true];
 
 if (life_HC_isActive) then {

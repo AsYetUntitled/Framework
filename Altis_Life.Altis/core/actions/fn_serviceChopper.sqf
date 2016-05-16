@@ -36,7 +36,7 @@ for "_i" from 0 to 1 step 0 do {
 
 if (!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
 
-SUB(CASH,_serviceCost);
+CASH = CASH - _serviceCost;
 if (!local SEL(_search,0)) then {
     [SEL(_search,0),1] remoteExecCall ["life_fnc_setFuel",SEL(_search,0)];
 } else {

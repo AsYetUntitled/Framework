@@ -22,7 +22,7 @@ if (isNull _ui) then {
 };
 
 _units = nearestObjects[(visiblePosition player),["Man","Land_Pallet_MilBoxes_F","Land_Sink_F"],50];
-SUB(_units,[player]);
+_units = _units - [player];
 
 _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 

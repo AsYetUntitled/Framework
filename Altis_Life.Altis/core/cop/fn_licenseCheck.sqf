@@ -17,7 +17,7 @@ _licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses (missio
 
 {
     if (LICENSE_VALUE(configName _x,"civ")) then {
-        ADD(_licenses,localize getText(_x >> "displayName") + "<br/>");
+        _licenses = _licenses + localize getText(_x >> "displayName") + "<br/>";
     };
 } forEach _licensesConfigs;
 

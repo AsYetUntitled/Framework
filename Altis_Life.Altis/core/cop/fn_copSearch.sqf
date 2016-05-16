@@ -29,7 +29,7 @@ if (count _invs > 0) then {
         };
 
         if (!(_price isEqualTo -1)) then {
-            ADD(_illegal,(SEL(_x,1) * _price));
+            _illegal = _illegal + (SEL(_x,1) * _price);
         };
     } forEach _invs;
     if (_illegal > 6000) then {

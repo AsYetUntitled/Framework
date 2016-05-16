@@ -16,9 +16,9 @@ if (!([str(_value)] call TON_fnc_isnumber)) exitWith {hint localize "STR_ATM_not
 if (_value > CASH) exitWith {hint localize "STR_ATM_NotEnoughCash"};
 if ((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Check if it's in use.
 
-SUB(CASH,_value);
+CASH = CASH - _value;
 _gFund = GANG_FUNDS;
-ADD(_gFund,_value);
+_gFund = _gFund + _value;
 group player setVariable ["gang_bank",_gFund,true];
 
 if (life_HC_isActive) then {

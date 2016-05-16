@@ -15,7 +15,7 @@ params [
 if (_robber == _victim) exitWith {};
 if (_cash isEqualTo 0) exitWith {titleText[localize "STR_Civ_RobFail","PLAIN"]};
 
-ADD(CASH,_cash);
+CASH = CASH + _cash;
 titleText[format[localize "STR_Civ_Robbed",[_cash] call life_fnc_numberText],"PLAIN"];
 
 if (LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {

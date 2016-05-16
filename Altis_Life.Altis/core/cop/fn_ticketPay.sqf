@@ -15,7 +15,7 @@ if (CASH < life_ticket_val) exitWith {
     };
 
     hint format[localize "STR_Cop_Ticket_Paid",[life_ticket_val] call life_fnc_numberText];
-    SUB(BANK,life_ticket_val);
+    BANK = BANK - life_ticket_val;
     life_ticket_paid = true;
 
     [0,"STR_Cop_Ticket_PaidNOTF",true,[profileName,[life_ticket_val] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",west];
@@ -31,7 +31,7 @@ if (CASH < life_ticket_val) exitWith {
     closeDialog 0;
 };
 
-SUB(CASH,life_ticket_val);
+CASH = CASH - life_ticket_val;
 life_ticket_paid = true;
 
 if (life_HC_isActive) then {

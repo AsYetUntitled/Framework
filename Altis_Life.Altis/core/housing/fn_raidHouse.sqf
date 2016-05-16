@@ -61,15 +61,15 @@ _value = 0;
     if (ITEM_ILLEGAL(_var) isEqualTo 1) then {
         if (!(ITEM_SELLPRICE(_var) isEqualTo -1)) then {
             _houseInvData deleteAt _forEachIndex;
-            SUB(_houseInvVal,(([_var] call life_fnc_itemWeight) * _val));
-            ADD(_value,(_val * ITEM_SELLPRICE(_var)));
+            _houseInvVal = _houseInvVal - (([_var] call life_fnc_itemWeight) * _val);
+            _value = _value + (_val * ITEM_SELLPRICE(_var));
         };
     };
 } forEach (SEL(_houseInv,0));
 
 if (_value > 0) then {
     [0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-    ADD(BANK,round(_value / 2));
+    BANK = BANK + round(_value / 2);
 
     _house setVariable ["Trunk",[_houseInvData,_houseInvVal],true];
 
