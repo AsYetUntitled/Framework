@@ -22,9 +22,9 @@ if (dialog) exitWith {};
 if (_shop == "") exitWith {};
 if (_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
 if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
-  createDialog "Life_Vehicle_Shop_v2";
-} else {
   createDialog "Life_Vehicle_Shop_v2_3D";
+} else {
+  createDialog "Life_Vehicle_Shop_v2";
 };
 
 life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
