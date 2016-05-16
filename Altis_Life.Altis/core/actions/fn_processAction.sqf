@@ -2,9 +2,11 @@
 /*
     File: fn_processAction.sqf
     Author: Bryan "Tonic" Boardwine
+    Modified : NiiRoZz
 
     Description:
     Master handling for processing an item.
+    NiiRoZz : Added multiprocess
 */
 private["_vendor","_type","_itemInfo","_oldItem","_newItem","_cost","_upp","_hasLicense","_itemName","_oldVal","_ui","_progress","_pgText","_cP","_matsReq","_matsGive","_noliccost","_text","_filter"];
 _vendor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
@@ -37,37 +39,29 @@ _cost = SEL(_itemInfo,2);
 _upp = SEL(_itemInfo,3);
 _exit = false;
 
-_ArrayItem = [];
-_ItemName = [];
-{
-    _ItemName pushBack (_x select 0);
-} forEach _oldItem;
-
 _itemNameInv = [];
 {
-    _var = ITEM_VARNAME((_x select 0));
-    _itemNameInv pushBack [_var];
+    _var = ITEM_VARNAME(_x select 0);
+    _itemNameInv pushBack (_var);
 } forEach _oldItem;
 
 _ItemNumber = [];
 {
-    _ItemNumber pushBack [(_x select 1)];
+    _ItemNumber pushBack (_x select 1);
 } forEach _oldItem;
 
-
-_IndexNow = -1;
-{
-    _IndexNow = _IndexNow + 1;
-    _ItemNameLife = (_itemNameInv select _IndexNow) select 0;
-    _var = ITEM_VALUE2(_ItemNameLife);
-    if (_var isEqualTo 0) exitWith {
-        _exit = true;
-    };
-    _ItemNumberLife = (_ItemNumber select _IndexNow) select 0;
-    if (_var < _ItemNumberLife) exitWith {
-        _exit = true;
-    };
-} forEach _itemNameInv;
+for "_i" from 0 to (count(_itemNameInv) - 1) do {
+  if (_exit) exitWith {};
+  _ItemNameLife = _itemNameInv select _i;
+  _var = ITEM_VALUE2(_ItemNameLife);
+  if (_var isEqualTo 0) exitWith {
+      _exit = true;
+  };
+  _ItemNumberLife = _ItemNumber select _i;
+  if (_var < _ItemNumberLife) exitWith {
+      _exit = true;
+  };
+};
 if (_exit) exitWith {life_is_processing = false;hint localize "STR_NOTF_NotEnoughItemProcess";};
 
 if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
@@ -76,7 +70,7 @@ if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
     _hasLicense = LICENSE_VALUE(_type,"civ");
 };
 
-_oldVal = count _ItemName;
+_oldVal = count _itemNameInv;
 
 _cost = _cost * _oldVal;
 //Some more checks
@@ -104,31 +98,23 @@ if (_hasLicense) then {
         if (player distance _vendor > 10) exitWith {};
     };
     if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-    _IndexNow = -1;
     _ItemMax = [];
-    {
-        _IndexNow = _IndexNow + 1;
-        _ItemNameLife = (_itemNameInv select _IndexNow) select 0;
-        _var = ITEM_VALUE2(_ItemNameLife);
-        _ItemNumberLife = (_ItemNumber select _IndexNow) select 0;
-        _calcul = (floor ((_var)/(_ItemNumberLife)));
-        _ItemMax pushBack _calcul;
-    } forEach _itemNameInv;
+    for "_i" from 0 to (count(_itemNameInv) - 1) do {
+      _ItemNameLife = _itemNameInv select _i;
+      _var = ITEM_VALUE2(_ItemNameLife);
+      _ItemNumberLife = _ItemNumber select _i;
+      _calcul = (floor ((_var)/(_ItemNumberLife)));
+      _ItemMax pushBack _calcul;
+    };
     _ItemMin = _ItemMax select 0;
     {
         if (_x<_ItemMin) then {_ItemMin=_x};
     } forEach _ItemMax;
-    _IndexNow = -1;
     {
-        _IndexNow = _IndexNow + 1;
-        _ItemNameHandle = _x select 0;
-        _ItemNumberHandle = _x select 1;
-        [false,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMin))] call life_fnc_handleInv;
+        [false,(_x select 0),((_x select 1)*(_ItemMin))] call life_fnc_handleInv;
     } forEach _oldItem;
     {
-        _ItemNameHandle = _x select 0;
-        _ItemNumberHandle = _x select 1;
-        [true,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMin))] call life_fnc_handleInv;
+        [true,(_x select 0),((_x select 1)*(_ItemMin))] call life_fnc_handleInv;
     } forEach _newItem;
     5 cutText ["","PLAIN"];
     hint localize "STR_NOTF_ItemProcess";
@@ -147,31 +133,23 @@ if (_hasLicense) then {
 
     if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
     if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-    _IndexNow = -1;
     _ItemMax = [];
-    {
-        _IndexNow = _IndexNow + 1;
-        _ItemNameLife = (_itemNameInv select _IndexNow) select 0;
-        _var = ITEM_VALUE2(_ItemNameLife);
-        _ItemNumberLife = (_ItemNumber select _IndexNow) select 0;
-        _calcul = (floor ((_var)/(_ItemNumberLife)));
-        _ItemMax pushBack _calcul;
-    } forEach _itemNameInv;
+    for "_i" from 0 to (count(_itemNameInv) - 1) do {
+      _ItemNameLife = _itemNameInv select _i;
+      _var = ITEM_VALUE2(_ItemNameLife);
+      _ItemNumberLife = _ItemNumber select _i;
+      _calcul = (floor ((_var)/(_ItemNumberLife)));
+      _ItemMax pushBack _calcul;
+    };
     _ItemMin = _ItemMax select 0;
     {
         if (_x<_ItemMin) then {_ItemMin=_x};
     } forEach _ItemMax;
-    _IndexNow = -1;
     {
-        _IndexNow = _IndexNow + 1;
-        _ItemNameHandle = _x select 0;
-        _ItemNumberHandle = _x select 1;
-        [false,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMin))] call life_fnc_handleInv;
+        [false,(_x select 0),((_x select 1)*(_ItemMin))] call life_fnc_handleInv;
     } forEach _oldItem;
     {
-        _ItemNameHandle = _x select 0;
-        _ItemNumberHandle = _x select 1;
-        [true,_ItemNameHandle,((_ItemNumberHandle)*(_ItemMin))] call life_fnc_handleInv;
+        [true,(_x select 0),((_x select 1)*(_ItemMin))] call life_fnc_handleInv;
     } forEach _newItem;
     5 cutText ["","PLAIN"];
     hint localize "STR_NOTF_ItemProcess";
