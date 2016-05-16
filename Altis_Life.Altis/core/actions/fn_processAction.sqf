@@ -55,7 +55,7 @@ if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
     _hasLicense = LICENSE_VALUE(_type,"civ");
 };
 
-_oldVal = count _itemNameInv;
+_oldVal = count _oldItem;
 
 _cost = _cost * _oldVal;
 //Some more checks
