@@ -21,7 +21,11 @@ disableSerialization;
 if (dialog) exitWith {};
 if (_shop == "") exitWith {};
 if (_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
-if (!createDialog "Life_Vehicle_Shop_v2") exitWith {};
+if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+  createDialog "Life_Vehicle_Shop_v2";
+} else {
+  createDialog "Life_Vehicle_Shop_v2_3D";
+};
 
 life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
 
@@ -70,5 +74,7 @@ ctrlShow [2304,false];
     };
 } forEach _vehicleList;
 
-[] call life_fnc_vehicleShopInit3DPreview;
+if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+  [] call life_fnc_vehicleShopInit3DPreview;
+};
 ((findDisplay 2300) displayCtrl 2302) lbSetCurSel 0;

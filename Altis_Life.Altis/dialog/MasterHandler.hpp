@@ -22,6 +22,7 @@
 #include "pInteraction.hpp"
 #include "deathScreen.hpp"
 #include "vehicleShop.hpp"
+#include "vehicleShop3D.hpp"
 #include "settings.hpp"
 #include "federalReserve.hpp"
 #include "compensate.hpp"
