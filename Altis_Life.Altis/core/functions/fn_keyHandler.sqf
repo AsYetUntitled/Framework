@@ -95,7 +95,7 @@ switch (_code) do {
         };
 
         if (!_shift && _ctrlKey && !isNil "life_curWep_h" && {!(life_curWep_h isEqualTo "")}) then {
-            if (life_curWep_h in [primaryWeapon player,LAUNCHER,handgunWeapon player]) then {
+            if (life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
                 player selectWeapon life_curWep_h;
             };
         };

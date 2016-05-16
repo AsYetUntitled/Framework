@@ -401,7 +401,7 @@ if (_bool) then {
             if (_isgun) then {
                 switch (true) do {
                     case (primaryWeapon player isEqualTo _item) : {_ispack = false;};
-                    case (LAUNCHER isEqualTo _item) : {_ispack = false;};
+                    case (secondaryWeapon player isEqualTo _item) : {_ispack = false;};
                     case (handgunWeapon player isEqualTo _item) : {_ispack = false;};
                     case (_item in assignedItems player) : {_ispack = false;};
                     default {_ispack = true;};
