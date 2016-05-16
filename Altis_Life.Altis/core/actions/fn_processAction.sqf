@@ -106,10 +106,7 @@ if (_hasLicense) then {
       _calcul = (floor ((_var)/(_ItemNumberLife)));
       _ItemMax pushBack _calcul;
     };
-    _ItemMin = _ItemMax select 0;
-    {
-        if (_x<_ItemMin) then {_ItemMin=_x};
-    } forEach _ItemMax;
+    _ItemMin = (_ItemMax call BIS_fnc_sortNum) select 0;
     {
         [false,(_x select 0),((_x select 1)*(_ItemMin))] call life_fnc_handleInv;
     } forEach _oldItem;
@@ -141,10 +138,7 @@ if (_hasLicense) then {
       _calcul = (floor ((_var)/(_ItemNumberLife)));
       _ItemMax pushBack _calcul;
     };
-    _ItemMin = _ItemMax select 0;
-    {
-        if (_x<_ItemMin) then {_ItemMin=_x};
-    } forEach _ItemMax;
+    _ItemMin = (_ItemMax call BIS_fnc_sortNum) select 0;
     {
         [false,(_x select 0),((_x select 1)*(_ItemMin))] call life_fnc_handleInv;
     } forEach _oldItem;
