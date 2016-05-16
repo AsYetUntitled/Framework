@@ -48,7 +48,6 @@ _ItemNumber = [];
 } forEach _oldItem;
 
 for "_i" from 0 to (count(_itemNameInv) - 1) do {
-  if (_exit) exitWith {};
   _ItemNameLife = _itemNameInv select _i;
   _var = ITEM_VALUE2(_ItemNameLife);
   if (_var isEqualTo 0) exitWith {
