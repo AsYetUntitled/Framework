@@ -33,7 +33,7 @@ switch (playerSide) do {
     };
     case east: {
         _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
-        _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_OPF");
+        _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_OPFOR");
     };
 };
 
