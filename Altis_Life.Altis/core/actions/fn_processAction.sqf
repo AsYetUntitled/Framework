@@ -39,24 +39,14 @@ _cost = SEL(_itemInfo,2);
 _upp = SEL(_itemInfo,3);
 _exit = false;
 
-_itemNameInv = [];
-_ItemNumber = [];
 _AllNumber = [];
 {
-    _var = ITEM_VARNAME(_x select 0);
-    _itemNameInv pushBack (_var);
-    _ItemNumber pushBack (_x select 1);
+    _var = ITEM_VALUE(_x select 0);
+    if (_var isEqualTo 0) exitWith {_exit = true;};
+    if (_var < (_x select 1)) exitWith {_exit = true;};
+    _calcul = (floor (_var/(_x select 1)));
+    _AllNumber pushBack _calcul;
 } forEach _oldItem;
-
-for "_i" from 0 to (count(_itemNameInv) - 1) do {
-  _ItemNameLife = _itemNameInv select _i;
-  _var = ITEM_VALUE2(_ItemNameLife);
-  if (_var isEqualTo 0) exitWith {_exit = true;};
-  _ItemNumberLife = _ItemNumber select _i;
-  if (_var < _ItemNumberLife) exitWith {_exit = true;};
-  _calcul = (floor ((_var)/(_ItemNumberLife)));
-  _AllNumber pushBack _calcul;
-};
 if (_exit) exitWith {life_is_processing = false;hint localize "STR_NOTF_NotEnoughItemProcess";};
 
 if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
