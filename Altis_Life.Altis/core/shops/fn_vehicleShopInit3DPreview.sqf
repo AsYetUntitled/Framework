@@ -1,6 +1,16 @@
+/**
+ * Bibliothèque de fonctions permettant la visualisation 3D d'objets
+ * 
+ * Copyright (C) 2014 Team ~R3F~
+ * 
+ * This program is free software under the terms of the GNU General Public License version 3.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /*
     File: fn_vehicleShopInit3DPreview.sqf
-    Author: NiiRoZz
+    Modified By: NiiRoZz
 
     Description:
     Called when a player open the vehicle shop and setup cam and the while for rotate around the vehicle

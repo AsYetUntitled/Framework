@@ -1,11 +1,23 @@
-/*
+/**
+ * Bibliothèque de fonctions permettant la visualisation 3D d'objets
+ * 
+ * Copyright (C) 2014 Team ~R3F~
+ * 
+ * This program is free software under the terms of the GNU General Public License version 3.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+ /*
     File: fn_vehicleShop3DPreview.sqf
-    Author: NiiRoZz
+    Modified By: NiiRoZz
 
     Description:
     Called when a new selection is made in the list box and
     displays the new vehicle selected.
 */
+ 
+ 
 private ["_classView","_object","_id"];
 
 if (isNil "life_preview_3D_vehicle_cam") then
