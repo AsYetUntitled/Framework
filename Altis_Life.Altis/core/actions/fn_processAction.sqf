@@ -40,13 +40,10 @@ _upp = SEL(_itemInfo,3);
 _exit = false;
 
 _itemNameInv = [];
+_ItemNumber = [];
 {
     _var = ITEM_VARNAME(_x select 0);
     _itemNameInv pushBack (_var);
-} forEach _oldItem;
-
-_ItemNumber = [];
-{
     _ItemNumber pushBack (_x select 1);
 } forEach _oldItem;
 
