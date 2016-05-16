@@ -84,14 +84,10 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
     };
 } forEach _colorArray;
 
-_numberindexcolor = 0;
 _numberindexcolorarray = [];
-
 for "_i" from 0 to (count(_colorArray) - 1) do {
-    _numberindexcolorarray pushBack _numberindexcolor;
-    _numberindexcolor = _numberindexcolor + 1;
+    _numberindexcolorarray pushBack _i;
 };
-
 _indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
 _ctrl lbSetCurSel _indexrandom;
 
