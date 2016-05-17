@@ -13,12 +13,12 @@
 *       Text = "STR_Process_Example";
 *       //ScrollText = "Process Example";
 *       NoLicenseCost = 4000;
-*    };
+*   };
 */
 
 class ProcessAction {
     class oil {
-         MaterialsReq[] = {{"oil_unprocessed",1}};
+        MaterialsReq[] = {{"oil_unprocessed",1}};
         MaterialsGive[] = {{"oil_processed",1}};
         Text = "STR_Process_Oil";
         //ScrollText = "Process Oil";
