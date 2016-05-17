@@ -1,4 +1,4 @@
-
+#include "..\..\script_macros.hpp"
 /*
     File: fn_fuelSupply.sqf
     Author: Ulrich "Zero" Werren
