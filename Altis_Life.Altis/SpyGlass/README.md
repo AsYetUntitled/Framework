@@ -1,6 +1,6 @@
 Spyglass
 ================
-<b>Spyglass an anticheat system for [Altis Life RPG](https://github.com/ArmaLife/Framework)</b>.</br></br>
+<b>Spyglass an anti-cheat system for [Altis Life RPG](https://github.com/ArmaLife/Framework)</b>.</br></br>
 <b>Any modification</b> to the Altis Life RPG mission files will require changes to Config_Spyglass.
 
 <b>Notes</b>
@@ -17,13 +17,15 @@ If you encounter errors regarding variables, whitelist them via Config_Spyglass 
 
 allowedVariables[] = { { "reb_1_4", "OBJECT" }, { "ggs_shop", "OBJECT" },{ "reb_helicopter_1", "OBJECT" }};
  
-If ARMA 3 has updated, it may be possable they have included new files into the game. If this is the case,
-Launch Arma 3 and goto the editor, (you do not need to load your mission)
-Press escape and put into init:
-http://hastebin.com/povasuvizo.coffee
+If Arma 3 has updated, it may be possible Bohemia Interactive have included new files into the game. 
+If this is the case then launch Arma 3 and go to the editor (you do not need to load a mission.)
+Press escape and put into init: 
+
+_cfgPatches = [];	_binConfigPatches = configFile >> "CfgPatches";	for "_i" from 0 to count (_binConfigPatches)-1 do {		_patchEntry = _binConfigPatches select _i;		if(isClass _patchEntry) then {			_cfgPatches set[count _cfgPatches,(configName _patchEntry)];		};	};	copyToClipboard str(_cfgPatches);
+
 Paste the results into a notepad. 
 Open Mission fn_initSpy.sqf and find 
 _patchList =
 Edit the result that you got from your notepad to include at the start ["life_server",
 Paste in your results and follow the existing structure.
-This should fix any issues. Any other problems, refer to (https://gitter.im/ArmaLife/Framework/Support) for help
+This should fix any issues. Any other problems, refer to (https://gitter.im/ArmaLife/Framework/Support) for help. 
