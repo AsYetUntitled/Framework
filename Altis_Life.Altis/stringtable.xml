@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
     <Package name="Shop_Names">
         <Key ID="STR_Shops_C_Bruce">
@@ -7276,6 +7276,28 @@
             <Italian>Devi stare entro 10m per processare.</Italian>
             <Portuguese>Você precisa ficar a menos de 10m para processar.</Portuguese>
             <Polish>Musisz być w odległości 10 m aby przetwarzanie się odbyło.</Polish>
+        </Key>
+        <Key ID="STR_Process_Weight">
+            <Original>You have no inventory space to process your materials.</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+            <Italian></Italian>
+            <German></German>
+        </Key>
+		<Key ID="STR_Process_Partial">
+            <Original>Only part of your materials could be processed due to reaching your maximum weight.</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+            <Italian></Italian>
+            <German></German>
         </Key>
         <Key ID="STR_Process_License">
             <Original>You need $%1 to process without a license!</Original>
