@@ -8,7 +8,7 @@
 */
 disableSerialization;
 
-2 cutRsc ["playerHUD","PLAIN"];
+cutRsc ["playerHUD", "PLAIN", 2, false];
 [] call life_fnc_hudUpdate;
 
 [] spawn
