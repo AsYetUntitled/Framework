@@ -4423,16 +4423,16 @@
             <Portuguese>Multando %1</Portuguese>
             <Polish>Mandat dla %1</Polish>
         </Key>
-        <Key ID="STR_COP_BlackListedVehicle">
+        <Key ID="STR_NOTF_BlackListedVehicle">
             <Original>%2 got back a blacklisted vehicle near %1.</Original>
-            <Czech>%2 dostat zpět na černou listinu vozidlo nedaleko%1.</Czech>
+            <Czech>%2 dostat zpět na černou listinu vozidlo nedaleko %1.</Czech>
             <French>%2 revenir un véhicule près de la liste noire %1.</French>
-            <Spanish>%2 tiene un vehículo prohibido cerca de %1.</Spanish>
-            <Russian></Russian>
+            <Spanish>%2 volver un vehículo en la lista negra cerca de %1.</Spanish>
             <Italian>%2 ha ritirato un veicolo blacklistato vicino %1.</Italian>
             <Polish>%2 wrócić do czarnej listy pojazd pobliżu %1.</Polish>
-            <Portuguese>%2 tem um veículo proíbido nas proximidades %1.</Portuguese>
-            <German>%2 erhalten eine schwarze Liste gesetzt Fahrzeug in der Nähe %1 zurück.</German>
+            <Portuguese>%2 retirou um veículo que se encontra na lista negra, perto de %1.</Portuguese>
+            <Russian>%2 получить обратно в черный список автомобиль возле %1.</Russian>
+            <German>%2 hat ein gesuchtes Fahrzeug nahe %1 ausgeparkt.</German>
         </Key>
         <Key ID="STR_Cop_TicketNil">
             <Original>Person to ticket is nil</Original>
