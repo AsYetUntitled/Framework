@@ -37,5 +37,5 @@ if (_value > 0) then {
     _container setVariable ["Trunk",[[],0],true];
     [_container] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
 } else {
-    hint localize "STR_Cop_NoIllegalCOntainer";
+    hint localize "STR_Cop_NoIllegalContainer";
 };
