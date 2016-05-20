@@ -14,10 +14,13 @@ _uid = getPlayerUID player;
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
 if (isNil {_house getVariable "house_owner"}) exitWith {hint localize "STR_House_noOwner";};
+if (playerSide != civilian) exitWith {hint "Only civilian.";}; // Only civilians can sell house.
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0) exitWith {};
+if ((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDelay";}; // No glitch.
+life_action_delay = time;
 
 _action = [
     format[localize "STR_House_SellHouseMSG",
