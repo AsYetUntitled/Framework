@@ -929,7 +929,7 @@
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 gleichzeitig einzahlen</German>
             <French>Vous ne pouvez pas déposer plus de $999,999</French>
-            <Italian>Non puoi depositare più di €999,999 alla volta</Italian>
+            <Italian>Non puoi depositare più di $999,999 alla volta</Italian>
             <Portuguese>Você não pode transferir mais de R$999.999 em uma transação</Portuguese>
             <Polish>Możesz jednorazowo zdeponować nie więcej niż $999,999 </Polish>
         </Key>
@@ -973,7 +973,7 @@
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 überweisen</German>
             <French>Vous ne pouvez pas transférer plus de $999,999</French>
-            <Italian>Non puoi trasferire più di €999.000 alla volta</Italian>
+            <Italian>Non puoi trasferire più di $999.000 alla volta</Italian>
             <Portuguese>Você pode trasferir no máximo R$999.999.</Portuguese>
             <Polish>Możesz jednorazowo przelać nie więcej niż $999,999 </Polish>
         </Key>
@@ -1006,7 +1006,7 @@
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Konto, es kostet $%2, um $%1 zu überweisen.</German>
             <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxe</French>
-            <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire €%1 necessiti di €%2 per pagare la tassa di trasferimento.</Italian>
+            <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire $%1 necessiti di $%2 per pagare la tassa di trasferimento.</Italian>
             <Portuguese>Você não tem dinheiro suficiente na suca conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
             <Polish>Nie masz wystarczająco dużo środków na końcie, do przelewu $%1 będziesz potrzebował jeszcze $%2 na opłatę</Polish>
         </Key>
@@ -1017,7 +1017,7 @@
             <Russian></Russian>
             <German>Du hast $%1 an %2 überwiesen.\n\nEine Gebühr von $%3 wurde verrechnet.</German>
             <French>Vous avez transférer $%1 à %2.\n\nA La taxe de $%3 vous à été prélevée pendant le transfert.</French>
-            <Italian>Hai trasferito €%1 a €%2.\n\nSono stati trattenuti €%3 di tassa per il trasferimento.</Italian>
+            <Italian>Hai trasferito $%1 a $%2.\n\nSono stati trattenuti $%3 di tassa per il trasferimento.</Italian>
             <Portuguese>Você trasferiu R$%1 para %2.\n\nA taxa de trasferência foi de: R$%3.</Portuguese>
             <Polish>Przelałeś $%1 do %2.\n\nA opłata $%3 pobrana przez WIRE TRANSFER </Polish>
         </Key>
@@ -1028,7 +1028,7 @@
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 abheben</German>
             <French>Vous ne pouvez pas retirer plus de $999,999</French>
-            <Italian>Non puoi prelevare più di €999.000 in una volta</Italian>
+            <Italian>Non puoi prelevare più di $999.000 in una volta</Italian>
             <Portuguese>Você pode sacar no máximo R$999.999</Portuguese>
             <Polish>Możesz jednorazowo pobrać maks $999,999 </Polish>
         </Key>
@@ -1039,7 +1039,7 @@
             <Russian></Russian>
             <German>Du kannst nicht weniger als $100 abheben</German>
             <French>Vous ne pouvez pas retirer moins de $100</French>
-            <Italian>Non puoi prelevare meno di €100</Italian>
+            <Italian>Non puoi prelevare meno di $100</Italian>
             <Portuguese>Você não pode sacar menos de R$100.</Portuguese>
             <Polish>Nie możesz pobrać mniej niż $100 </Polish>
         </Key>
@@ -1050,7 +1050,7 @@
             <Russian></Russian>
             <German>Du hast $%1 von deinem Bankkonto abgehoben</German>
             <French>Vous avez retiré $%1 de votre compte en banque</French>
-            <Italian>Hai prelevato €%1 dal tuo conto in banca</Italian>
+            <Italian>Hai prelevato $%1 dal tuo conto in banca</Italian>
             <Portuguese>Você sacou R$%1 de sua conta bancária.</Portuguese>
             <Polish>Pobrałeś z konta kwotę $%1 </Polish>
         </Key>
@@ -1094,7 +1094,7 @@
             <Russian></Russian>
             <German>Du hast $%1 auf dein Bankkonto überwiesen</German>
             <French>Vous avez déposé $%1 dans votre compte bancaire</French>
-            <Italian>Hai despositato €%1 nel tuo conto bancario</Italian>
+            <Italian>Hai despositato $%1 nel tuo conto bancario</Italian>
             <Portuguese>Você depositou R$%1 na sua conta bancária</Portuguese>
             <Polish>Zdeponowałeś na koncie bankowym $%1</Polish>
         </Key>
@@ -1105,7 +1105,7 @@
             <Russian></Russian>
             <German>Du hast $%1 auf das Gang-Konto überwiesen.</German>
             <French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
-            <Italian>Hai despositato €%1 nel conto bancario della tua gang</Italian>
+            <Italian>Hai despositato $%1 nel conto bancario della tua gang</Italian>
             <Portuguese>Você depositou R$%1 na conta da sua gangue.</Portuguese>
             <Polish>Zdeponowałeś na koncie gangu kwotę $%1 </Polish>
         </Key>
@@ -1309,7 +1309,7 @@
             <Russian></Russian>
             <German>Eine Gang zu erstellen kostet $%1</German>
             <French>Pour créer un gang ça coute %1$</French>
-            <Italian>Creare una gang costa €%1</Italian>
+            <Italian>Creare una gang costa $%1</Italian>
             <Portuguese>Criar uma Gangue custa R$%1</Portuguese>
             <Polish>Koszt ustanowienia gangu to $%1</Polish>
         </Key>
@@ -1520,7 +1520,7 @@
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto.\n\nDir fehlen: $%1</German>
             <French>Vous n'avez pas assez d'argent dans votre compte bancaire.\n\nIl vous manque: $%1</French>
-            <Italian>Non hai abbastanza fondi nel tuo conto in banca.\n\nTi mancano: €%1</Italian>
+            <Italian>Non hai abbastanza fondi nel tuo conto in banca.\n\nTi mancano: $%1</Italian>
             <Portuguese>Você não tem dinheiro suficiente na sua conta bancária.\n\nFaltam: R$%1</Portuguese>
             <Polish>Nie masz tyle pieniędzy na koncie.\n\nYou brakuje: $%1</Polish>
         </Key>
@@ -1531,7 +1531,7 @@
             <Russian></Russian>
             <German>Du hast die Gang %1 für $%2 erstellt</German>
             <French>Vous avez créé le gang %1 pour $%2</French>
-            <Italian>Hai creato la Gang %1 al costo di €%2</Italian>
+            <Italian>Hai creato la Gang %1 al costo di $%2</Italian>
             <Portuguese>Você criou a gangue %1 por R$%2</Portuguese>
             <Polish>Stworzyłeś gang %1 za $%2</Polish>
         </Key>
@@ -1806,7 +1806,7 @@
             <Russian></Russian>
             <German>Du hast für &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt; von %1 auf %2 Plätze erhöht</German>
             <French>Vous avez mis à niveau à partir de %1 à %2 membres maximum pour &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</French>
-            <Italian>Hai aumentato i posti massimi da %1 a %2 per &lt;t color='#8cff9b'&gt;€%3&lt;/t&gt;</Italian>
+            <Italian>Hai aumentato i posti massimi da %1 a %2 per &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Italian>
             <Portuguese>Limite de membros atualizado de %1 para %2 por &lt;t color='#8cff9b'&gt;R$%3&lt;/t&gt;</Portuguese>
             <Polish>Zwiększyłeś ilość możliwych członków gangu z %1 do %2 for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Polish>
         </Key>
@@ -1951,7 +1951,7 @@
             <Russian></Russian>
             <German>Du hast keine $%1 auf deinem Bankkonto</German>
             <French>Tu n'as pas %1$ sur ton compte en banque.</French>
-            <Italian>Non hai €%1 nel tuo conto in banca</Italian>
+            <Italian>Non hai $%1 nel tuo conto in banca</Italian>
             <Portuguese>Você não tem R$%1 na sua conta bancária</Portuguese>
             <Polish>Nie masz %1 na koncie bankowym:</Polish>
         </Key>
@@ -2006,7 +2006,7 @@
             <Russian></Russian>
             <German>Du verkaufst dein Fahrzeug für $%1</German>
             <French>Vous avez vendu votre véhicule pour $%1</French>
-            <Italian>Hai venduto il veicolo per €%1</Italian>
+            <Italian>Hai venduto il veicolo per $%1</Italian>
             <Portuguese>Você vendeu um veículo por R$%1</Portuguese>
             <Polish>Sprzedałeś pojazd za %1</Polish>
         </Key>
@@ -2807,7 +2807,7 @@
             <Russian></Russian>
             <German>Du hast keine $%1 für einen %2</German>
             <French>Tu n'as pas %1$ pour cet élément : %2</French>
-            <Italian>Non hai €%1 per $2</Italian>
+            <Italian>Non hai $%1 per $2</Italian>
             <Portuguese>Você não tem R$%1 para %2</Portuguese>
             <Polish>Nie masz $%1 na %2</Polish>
         </Key>
@@ -2818,7 +2818,7 @@
             <Russian></Russian>
             <German>Du hast einen %1 für $%2 gekauft</German>
             <French>Tu as acheté cet élément : %1 pour %2$</French>
-            <Italian>Hai comprato un %1 per €%2</Italian>
+            <Italian>Hai comprato un %1 per $%2</Italian>
             <Portuguese>Você comprou %1 por R$%2</Portuguese>
             <Polish>Kupiłeś %1 za $%2</Polish>
         </Key>
@@ -2884,7 +2884,7 @@
             <Russian></Russian>
             <German>Du hast $%1 verdient</German>
             <French>Tu as gagné %1$</French>
-            <Italian>Hai guadagnato €%1</Italian>
+            <Italian>Hai guadagnato $%1</Italian>
             <Portuguese>Você ganhou R$%1</Portuguese>
             <Polish>Otrzymałeś $%1</Polish>
         </Key>
@@ -2950,7 +2950,7 @@
             <Russian></Russian>
             <German>Du hast einen %1 für $%2 verkauft</German>
             <French>Tu as vendu cet élément : %1 pour $%2</French>
-            <Italian>Hai venduto un %1 per %2€</Italian>
+            <Italian>Hai venduto un %1 per %2$</Italian>
             <Portuguese>Você vendeu %1 por R$%2</Portuguese>
             <Polish>Sprzedałeś %1 za $%2</Polish>
         </Key>
@@ -3016,7 +3016,7 @@
             <Russian></Russian>
             <German>Du hast keine $%1, um geheilt zu werden.</German>
             <French>Vous n'avez pas $%1 pour vous soignez.</French>
-            <Italian>Non hai €%1 per essere curato</Italian>
+            <Italian>Non hai $%1 per essere curato</Italian>
             <Portuguese>Você não tem R$%1 para ser curado</Portuguese>
             <Polish>Nie masz $%1 na leczenie</Polish>
         </Key>
@@ -3126,7 +3126,7 @@
             <Russian></Russian>
             <German>Du hast einen %1 beschlagnahmt\n\nDu hast $%2 für das Aufräumen der Straßen bekommen!</German>
             <French>Vous avez mis en fourrière un(e) %1\n\nVous avez reçus $%2 pour avoir nettoyé les rues!</French>
-            <Italian>Hai sequestrato un %1\n\nHai ricevuto €%2 per aver mantenuto l'ordine nelle strade!</Italian>
+            <Italian>Hai sequestrato un %1\n\nHai ricevuto $%2 per aver mantenuto l'ordine nelle strade!</Italian>
             <Portuguese>Você apreendeu %1\n\nVocê recebeu R$%2 por deixar as ruas mais seguras!</Portuguese>
             <Polish>Usunąłeś %1\n\n Otrzymujesz    $%2 za oczyszczanie mapy</Polish>
         </Key>
@@ -3258,7 +3258,7 @@
             <Russian></Russian>
             <German>%1 hat Beweise hinterlassen, du hast eine Belohnung von $%2 erhalten.</German>
             <French>Vous avez ramassé la drogue de %1, vous avez reçu $%2 comme une récompense.</French>
-            <Italian>E' stata trovata della merce illegale: %1, hai ricevuto €%2 come ricompensa.</Italian>
+            <Italian>E' stata trovata della merce illegale: %1, hai ricevuto $%2 come ricompensa.</Italian>
             <Portuguese>%1 foi pego como evidência, você recebeu R$%2 como recompensa.</Portuguese>
             <Polish>%1 umieszczony w dowodach, otrzymujesz w nagrodę $%2</Polish>
         </Key>
@@ -3269,7 +3269,7 @@
             <Russian></Russian>
             <German>Du hast $%1 aufgehoben</German>
             <French>Vous avez ramassé $%1</French>
-            <Italian>Hai raccolto €%1</Italian>
+            <Italian>Hai raccolto $%1</Italian>
             <Portuguese>Você pegou R$%1</Portuguese>
             <Polish>Podniosłeś $%1</Polish>
         </Key>
@@ -3291,7 +3291,7 @@
             <Russian></Russian>
             <German>Du hast keine $%1 auf deinem Bankkonto, um die Kaution zu bezahlen.</German>
             <French>Vous n'avez pas $%1 dans votre compte en banque pour payer la caution.</French>
-            <Italian>Non hai €%1 nel tuo conto in banca per poter pagare la cauzione.</Italian>
+            <Italian>Non hai $%1 nel tuo conto in banca per poter pagare la cauzione.</Italian>
             <Portuguese>Você não tem R$%1 em sua conta bancária para pagar a fiança.</Portuguese>
             <Polish>Nie masz $%1 na koncie aby zapłacić kaucję.</Polish>
         </Key>
@@ -3412,7 +3412,7 @@
             <Russian></Russian>
             <German>%1 hat $%3 von %2 geraubt</German>
             <French>%1 a volés %2 pour $%3</French>
-            <Italian>%1 ha rapinato %2 di €%3</Italian>
+            <Italian>%1 ha rapinato %2 di $%3</Italian>
             <Portuguese>%1 roubou R$%3 de %2</Portuguese>
             <Polish>%1 obrabował $%2 na $%3</Polish>
         </Key>
@@ -3445,7 +3445,7 @@
             <Russian></Russian>
             <German>Ein Fahrzeug wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
             <French>Un véhicule venant d'être fouillé avait $%1 de drogue / contrebande.</French>
-            <Italian>Un veicolo è stato ispezionato e sono stati sequestrati €%1 in materiale illegale.</Italian>
+            <Italian>Un veicolo è stato ispezionato e sono stati sequestrati $%1 in materiale illegale.</Italian>
             <Portuguese>O veículo foi revistado e tem R$%1 em drogas ou contrabandos</Portuguese>
             <Polish>Podczas przeszukania znalezono narkotyki/kontrabandę o wartości $%1</Polish>
         </Key>
@@ -3456,7 +3456,7 @@
             <Russian></Russian>
             <German>Ein Fahrzeug wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
             <French>Un conteneur de maison venant d'être fouillé avait $%1 de drogue / contrebande.</French>
-            <Italian>Un veicolo è stato ispezionato e sono stati sequestrati €%1 in materiale illegale.</Italian>
+            <Italian>Un veicolo è stato ispezionato e sono stati sequestrati $%1 in materiale illegale.</Italian>
             <Portuguese>O veículo foi revistado e tem R$%1 em drogas ou contrabandos</Portuguese>
             <Polish>Podczas przeszukania znalezono narkotyki/kontrabandę o wartości $%1</Polish>
         </Key>
@@ -3489,7 +3489,7 @@
             <Russian></Russian>
             <German>%1 hat dir $%2 gegeben</German>
             <French>%1 vous a donné $%2</French>
-            <Italian>%1 ti ha dato €%2</Italian>
+            <Italian>%1 ti ha dato $%2</Italian>
             <Portuguese>%1 lhe deu R$%2</Portuguese>
             <Polish>%1 dał ci $%2</Polish>
         </Key>
@@ -3971,7 +3971,7 @@
             <Czech>Dal jsi $%1 do %2.</Czech>
             <French>Vous avez donné $%1 à %2.</French>
             <Spanish>Usted le dio $%1 a %2.</Spanish>
-            <Italian>Hai dato €%1 a %2.</Italian>
+            <Italian>Hai dato $%1 a %2.</Italian>
             <Polish>Dałeś $%1 do %2.</Polish>
             <Portuguese>Você deu $%1 para %2.</Portuguese>
             <Russian>Вы дали $%1 %2.</Russian>
@@ -4329,7 +4329,7 @@
             <Russian></Russian>
             <German>Du hast $%1 geraubt.</German>
             <French>Vous avez volé $%1</French>
-            <Italian>Hai rubato €%1</Italian>
+            <Italian>Hai rubato $%1</Italian>
             <Portuguese>Você roubou R$%1</Portuguese>
             <Polish>Ukradłeś %1</Polish>
         </Key>
@@ -4474,7 +4474,7 @@
             <Russian></Russian>
             <German>Strafzettel können nicht mehr als $200.000 betragen!</German>
             <French>Les billets ne peuvent être plus de $200,000!</French>
-            <Italian>La multa non può essere più di €200.000!</Italian>
+            <Italian>La multa non può essere più di $200.000!</Italian>
             <Portuguese>A multa não pode ser maior que R$200.000!</Portuguese>
             <Polish>Mandat nie może być wyższy niż $200.000!</Polish>
         </Key>
@@ -4485,7 +4485,7 @@
             <Russian></Russian>
             <German>%1 hat %3 einen Strafzettel über $%2 ausgestellt</German>
             <French>%1 a mis une contravention de $%2 à %3</French>
-            <Italian>%1 ha dato una multa di €%2 a %3</Italian>
+            <Italian>%1 ha dato una multa di $%2 a %3</Italian>
             <Portuguese>%1 deu uma multa de R$%2 para %3</Portuguese>
             <Polish>%1 Wystawił mandat w wysokości %2 dla %3</Polish>
         </Key>
@@ -4518,7 +4518,7 @@
             <Russian></Russian>
             <German>Du hast den Strafzettel von $%1 bezahlt</German>
             <French>Vous avez payé l'amende de $%1</French>
-            <Italian>Hai pagato la multa di €%1</Italian>
+            <Italian>Hai pagato la multa di $%1</Italian>
             <Portuguese>Você pagou a multa de R$%1</Portuguese>
             <Polish>Zapłaciłeś mandat w wysokości $%1</Polish>
         </Key>
@@ -4529,7 +4529,7 @@
             <Russian></Russian>
             <German>%1 zahlte einen Strafzettel von $%2</German>
             <French>%1 payé la contravention de $%2</French>
-            <Italian>%1 ha pagato la multa di €%2</Italian>
+            <Italian>%1 ha pagato la multa di $%2</Italian>
             <Portuguese>%1 pagou a multa de R$%2</Portuguese>
             <Polish>%1 zapłacił mandat w wyskości $%2</Polish>
         </Key>
@@ -4551,7 +4551,7 @@
             <Russian></Russian>
             <German>%1 hat dir einen Strafzettel von $%2 gegeben</German>
             <French>%1 vous a donné une amende de $%2</French>
-            <Italian>%1 ti ha dato una multa di €%2</Italian>
+            <Italian>%1 ti ha dato una multa di $%2</Italian>
             <Portuguese>%1 lhe aplicou uma multa de R$%2</Portuguese>
             <Polish>%1 dał ci mandat w wysokości $%2</Polish>
         </Key>
@@ -4573,7 +4573,7 @@
             <Russian></Russian>
             <German>Du hast ein Kopfgeld von $%1 für die Festnahme eines Kriminellen bekommen.</German>
             <French>Vous avez reçu une prime de $%1 pour avoir arrêté un criminel.</French>
-            <Italian>Hai ricevuto il pagamento di una taglia di €%1 per aver arrestato un criminale ricercato.</Italian>
+            <Italian>Hai ricevuto il pagamento di una taglia di $%1 per aver arrestato un criminale ricercato.</Italian>
             <Portuguese>Você ganhou uma recompensa de R$%1 por prender um criminoso.</Portuguese>
             <Polish>Otrzymujesz nagrodę w wysokości $%1 za aresztowanie poszukiwanego kryminalisty.</Polish>
         </Key>
@@ -4584,7 +4584,7 @@
             <Russian></Russian>
             <German>Du hast ein Kopfgeld von $%1 für das Töten eines gesuchten Verbrechers erhalten, für eine Festnahme hättest du $%2 bekommen.</German>
             <French>Vous avez reçu une prime de $%1 pour le meurtre d'un criminel recherché, si vous l'aviez arrêté, vous auriez reçu $%2.</French>
-            <Italian>Hai ricevuto il pagamento di una taglia di €%1 per aver ucciso un criminale ricercato, se lo avessi arrestato avresti ricevuto €%2.</Italian>
+            <Italian>Hai ricevuto il pagamento di una taglia di $%1 per aver ucciso un criminale ricercato, se lo avessi arrestato avresti ricevuto $%2.</Italian>
             <Portuguese>Você ganhou uma recompensa de $%1 por matar um criminoso procurado, se você tivesse o prendido ganharia R$%2.</Portuguese>
             <Polish>Otrzymujesz nagrodę w wysokości $%1 za zabicie poszukiwanego kryminalisty, w przypadku gdybyś go aresztował otrzymałbyć $%2.</Polish>
         </Key>
@@ -4595,7 +4595,7 @@
             <Russian></Russian>
             <German>%1 hatte Schmuggelware im Wert von $%2 bei sich.</German>
             <French>%1 a $%2 de contrebande sur lui.</French>
-            <Italian>%1 ha €%2 in materiali illegali con se.</Italian>
+            <Italian>%1 ha $%2 in materiali illegali con se.</Italian>
             <Portuguese>%1 tem R$%1 em contrabando.</Portuguese>
             <Polish>%1 miał przy sobie kontrabandę o wartości $%2.</Polish>
         </Key>
@@ -4727,7 +4727,7 @@
             <Russian></Russian>
             <German>$%1 wurden in die Staatsbank zurückgebracht.</German>
             <French>$%1 du vol de la Réserve fédérale est récupéré du voleur qui vient d'être tué.</French>
-            <Italian>€%1 della rapina alla Riserva Federale sono stati recuperati dal rapinatore ucciso.</Italian>
+            <Italian>$%1 della rapina alla Riserva Federale sono stati recuperati dal rapinatore ucciso.</Italian>
             <Portuguese>R$%1 que foi roubado da Reserva Federal retornou a ela após a morte do ladrão.</Portuguese>
             <Polish>$%1 z kradzieży w Banku zostało zwrócone po zabiciu włamywacza.</Polish>
         </Key>
@@ -5523,7 +5523,7 @@
             <Russian></Russian>
             <German>Ein Haus wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $% gefunden.</German>
             <French>Une maison a été perquisitionné et avait $%1 de drogue / contrebande.</French>
-            <Italian>Una casa è stata perquisita e sono stati trovati €%1 in materiali illegali.</Italian>
+            <Italian>Una casa è stata perquisita e sono stati trovati $%1 in materiali illegali.</Italian>
             <Portuguese>A casa assaltada tem R$%1 em drogas ou contrabandos.</Portuguese>
             <Polish>Podczas przeszukania domu znaleziono kontrabandę o wartości $%1.</Polish>
         </Key>
@@ -5589,7 +5589,7 @@
             <Russian></Russian>
             <German>Bist Du sicher, dass du dein Haus verkaufen möchtest? Es wird für &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt; verkauft</German>
             <French>Etes-vous sûr de vouloir vendre votre maison? Elle se vendra pour: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</French>
-            <Italian>Sei sicuro di voler vendere la tua casa? La venderai per: &lt;t color='#8cff9b'&gt;€1&lt;/t&gt;</Italian>
+            <Italian>Sei sicuro di voler vendere la tua casa? La venderai per: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</Italian>
             <Portuguese>Você tem certeza que deseja vender a casa? O valor de venda é: &lt;t color='#8cff9b'&gt;R$%1&lt;/t&gt;</Portuguese>
             <Polish>Jesteś pewny że chcesz sprzedać dom za &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</Polish>
         </Key>
@@ -5681,7 +5681,7 @@
             <Russian></Russian>
             <German>Du benötigst $1,000, um deinen Helikopter zu warten</German>
             <French>Vous devez $1000 pour l'entretien de votre hélicoptère</French>
-            <Italian>Necessiti di €1.000 per fare manutenzione al tuo elicottero</Italian>
+            <Italian>Necessiti di $1.000 per fare manutenzione al tuo elicottero</Italian>
             <Portuguese>Você precisa de R$1.000 para reparar a sua aeronave</Portuguese>
             <Polish>Potrzebujesz $1000 aby serwisować helikopter</Polish>
         </Key>
@@ -7279,25 +7279,25 @@
         </Key>
         <Key ID="STR_Process_Weight">
             <Original>You have no inventory space to process your materials.</Original>
-            <Czech></Czech>
-            <French></French>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
-            <Italian></Italian>
-            <German></German>
+            <Czech>Nemáš zásob prostor ke zpracování vašich materiálů.</Czech>
+            <French>Vous avez pas d'espace d'inventaire pour traiter vos matériaux.</French>
+            <Spanish>Usted no tiene espacio en el inventario para procesar sus materiales.</Spanish>
+            <Italian>Non hai spazio nell'inventario per elaborare i materiali.</Italian>
+            <Polish>Nie masz miejsca na przetwarzanie swoich zapasów materiałów.</Polish>
+            <Portuguese>Você não tem espaço no inventário para processar seus materiais.</Portuguese>
+            <Russian>У вас нет места инвентаря для обработки ваших материалов.</Russian>
+            <German>Du hast keinen Platz im Inventar, um die Materialien zu verarbeiten.</German>
         </Key>
         <Key ID="STR_Process_Partial">
             <Original>Only part of your materials could be processed due to reaching your maximum weight.</Original>
-            <Czech></Czech>
-            <French></French>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
-            <Italian></Italian>
-            <German></German>
+            <Czech>Pouze část svých materiálů by mohla být zpracována z důvodu dosažení maximální váhu.</Czech>
+            <French>Seule une partie de votre matériel pourrait être traitée en raison d'atteindre votre poids maximum.</French>
+            <Spanish>Sólo una parte de los materiales se ha podido procesar debido a alcanzar su peso máximo.</Spanish>
+            <Italian>Solo una parte del tuo materiali possono essere trattati a causa di raggiungere il vostro peso massimo.</Italian>
+            <Polish>Tylko część swoich materiałów może być przetwarzane ze względu na osiągnięcie maksymalnej wadze.</Polish>
+            <Portuguese>Apenas uma parte de seus materiais poderia ser processado devido a atingir o seu peso máximo.</Portuguese>
+            <Russian>Только часть ваших материалов может быть обработан из-за достижения вашего максимального веса.</Russian>
+            <German>Nur ein Teil der Materialien kann verarbeitet werden, da das maximale Gewicht sonst erreicht würde.</German>
         </Key>
         <Key ID="STR_Process_License">
             <Original>You need $%1 to process without a license!</Original>
@@ -7306,7 +7306,7 @@
             <Russian></Russian>
             <German>Du brauchst $%1, um ohne eine Lizenz verarbeiten zu können!</German>
             <French>Vous devez $%1 pour traiter sans permis!</French>
-            <Italian>Hai bisogno di €%1 per processare senza la dovuta licenza!</Italian>
+            <Italian>Hai bisogno di $%1 per processare senza la dovuta licenza!</Italian>
             <Portuguese>Você precisa de R$%1 para processar sem licença!</Portuguese>
             <Polish>Musisz mieć $%1 aby przetworzyć bez odpowiedniej licencji</Polish>
         </Key>
@@ -7328,7 +7328,7 @@
             <Russian></Russian>
             <German>Du hast %1 für $%3 in %2 verarbeitet</German>
             <French>Vous avez traité %1 en %2 pour $%3</French>
-            <Italian>Hai processato %1 in %2 al costo di €%3</Italian>
+            <Italian>Hai processato %1 in %2 al costo di $%3</Italian>
             <Portuguese>Você trasformou %1 em %2 por R$%3</Portuguese>
             <Polish>Przetworzyłeś %1 na % za $%3</Polish>
         </Key>
@@ -7396,7 +7396,7 @@
             <Russian></Russian>
             <German>%1 hat dich wiederbelebt und dafür eine Gebühr von $%2 von deinem Bankkonto eingezogen.</German>
             <French>%1 vous à réanimé, les fraits de $%2 sont transféré depuit votre compte bancaire pour son service.</French>
-            <Italian>%1 ti ha rianimato e sono stati prelevati €%2 dal tuo conto in banca per pagare la prestazione.</Italian>
+            <Italian>%1 ti ha rianimato e sono stati prelevati $%2 dal tuo conto in banca per pagare la prestazione.</Italian>
             <Portuguese>%1 reviveu você e uma taxa de R$%2 foi cobrada da sua conta bancária para os serviços prestados.</Portuguese>
             <Polish>%1 pobrał opłatę w wysokości $%2 za reanimację i przywrócenie funkcji życiowych.</Polish>
         </Key>
@@ -7440,7 +7440,7 @@
             <Russian></Russian>
             <German>Du hast %1 wiederbelebt und $%2 für deine Dienste erhalten.</German>
             <French>Vous avez réanimé %1 vous avez reçu $%2 pour votre aide</French>
-            <Italian>Hai rianimato %1 e hai ricevuto €%2 per la tua prestazione.</Italian>
+            <Italian>Hai rianimato %1 e hai ricevuto $%2 per la tua prestazione.</Italian>
             <Portuguese>Você reviveu %1 e recebeu R$%2 pelo seus serviços prestados.</Portuguese>
             <Polish>Reanimowałeś %1 i za uratowanie życia otrzymałeś $%2.</Polish>
         </Key>
@@ -7475,7 +7475,7 @@
             <Russian></Russian>
             <German>$%1 wurden von den Räubern aus der Zentralbank gestohlen</German>
             <French>$%1 a été volé à la réserve fédérale.</French>
-            <Italian>€%1 sono stati rubati durante la rapina alla banca</Italian>
+            <Italian>$%1 sono stati rubati durante la rapina alla banca</Italian>
             <Portuguese>R$%1 foi roubado da Reserva Federal.</Portuguese>
             <Polish>$%1 ukradziono z Rezerwy Federalnej</Polish>
         </Key>
@@ -8343,7 +8343,7 @@
             <Russian></Russian>
             <German>Du hast deinen %1 für $%3 ausgelöst</German>
             <French>Vous avez sorti votre %1 pour $%3</French>
-            <Italian>Hai ritirato dal sequestro il tuo %1 al costo di €%3</Italian>
+            <Italian>Hai ritirato dal sequestro il tuo %1 al costo di $%3</Italian>
             <Portuguese>Você liberou %1 for R$%3</Portuguese>
             <Polish>Przywróciłeś swój %1 za $%3</Polish>
         </Key>
@@ -8365,7 +8365,7 @@
             <Russian></Russian>
             <German>Du hast nicht genug Geld, um das Fahrzeug zu kaufen.\n\nFehlender Betrag: $%1</German>
             <French>Vous n'avez pas assez d'argent pour acheter ce véhicule \n\nArgent Manquant: $%1</French>
-            <Italian>Non hai fondi sufficienti per comprare questo veicolo.\n\nTi mancano: €%1</Italian>
+            <Italian>Non hai fondi sufficienti per comprare questo veicolo.\n\nTi mancano: $%1</Italian>
             <Portuguese>Você não tem dinheiro suficiente para comprar esse veiculo.\n\nFaltam: R$%1</Portuguese>
             <Polish>Nie masz tyle pieniędzy by kupić ten pojazd.\n\nBrakuje: $%1</Polish>
         </Key>
@@ -8398,7 +8398,7 @@
             <Russian></Russian>
             <German>Du kaufst eine(n) %1 für $%2</German>
             <French>Vous avez acheté un %1 pour $%2</French>
-            <Italian>Hai comprato un %1 al costo di €%2</Italian>
+            <Italian>Hai comprato un %1 al costo di $%2</Italian>
             <Portuguese>Você comprou %1 por R$%2</Portuguese>
             <Polish>Kupiłeś %1 za $%2</Polish>
         </Key>
@@ -8640,7 +8640,7 @@
             <Russian></Russian>
             <German>Du kaufst %1 %2 für $%3 mit dem Geld der Gang</German>
             <French>Vous avez acheté %1 %2 pour $%3 avec les fonds gangs</French>
-            <Italian>Hai comprato %1 %2 al costo di €%3 con i fondi della Gang</Italian>
+            <Italian>Hai comprato %1 %2 al costo di $%3 con i fondi della Gang</Italian>
             <Portuguese>Você comprou %1 %2 por R$%3 com o dinheiro da gangue</Portuguese>
             <Polish>Kupiłeś %1 %2 za $%3 ze środków gangu</Polish>
         </Key>
@@ -8651,7 +8651,7 @@
             <Russian></Russian>
             <German>Du kaufst %1 %2 für $%3</German>
             <French>Vous avez acheté %1 %2 pour $%3</French>
-            <Italian>Hai comprato %1 %2 al costo di €%3</Italian>
+            <Italian>Hai comprato %1 %2 al costo di $%3</Italian>
             <Portuguese>Voce comprou %1 %2 por R$%3</Portuguese>
             <Polish>Kupiłeś %1 %2 za $%3</Polish>
         </Key>
@@ -8662,7 +8662,7 @@
             <Russian></Russian>
             <German>Du verkaufst %1 %2 für $%3</German>
             <French>Vous avez vendu %1 %2 pour $%3</French>
-            <Italian>Hai venduto %1 %2 al prezzo di €%3</Italian>
+            <Italian>Hai venduto %1 %2 al prezzo di $%3</Italian>
             <Portuguese>Você vendeu %1 %2 por R$%3</Portuguese>
             <Polish>Sprzedałeś %1 %2 za $%3</Polish>
         </Key>
@@ -8763,7 +8763,7 @@
             <Russian></Russian>
             <German>Du hast deinen Gehaltscheck in Höhe von $%1 erhalten.</German>
             <French>Vous avez reçu un salaire de $%1.</French>
-            <Italian>Hai ricevuto uno stipendio di €%1.</Italian>
+            <Italian>Hai ricevuto uno stipendio di $%1.</Italian>
             <Portuguese>Você recebeu seu pagamento de R$%1.</Portuguese>
             <Polish>Otrzymałeś wypłatę w kwocie $%1.</Polish>
         </Key>
@@ -8784,7 +8784,7 @@
             <Original>Price per Liter: $%1</Original>
             <Czech>Cena za litr: $ %1</Czech>
             <Spanish>Precio por Litro: $%1</Spanish>
-            <Italian>Prezzo al litro: €%1</Italian>
+            <Italian>Prezzo al litro: $%1</Italian>
             <Polish>Cena za litr: $%1</Polish>
             <Russian></Russian>
             <Portuguese>Preço por Litro : R$%1</Portuguese>
