@@ -36,6 +36,8 @@ if (_action) then {
     } else {
         [_uid,_house] remoteExec ["TON_fnc_addHouse",RSERV];
     };
+    
+    [1] call SOCK_fnc_updatePartial;
 
     if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
         if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
