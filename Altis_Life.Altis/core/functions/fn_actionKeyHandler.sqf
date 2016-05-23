@@ -76,7 +76,7 @@ life_action_inUse = true;
 };
 
 //Check if it's a dead body.
-if (_curObject isKindOf "Man" && {!alive _curObject} && !(_curObject getVariable["Revive",false]) && {playerSide in [west,independent]}) exitWith {
+if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _curObject} && !(_curObject getVariable["Revive",false]) && {playerSide in [west,independent]}) exitWith {
     //Hotfix code by ins0
     if (((playerSide == west && {(LIFE_SETTINGS(getNumber,"revive_cops") isEqualTo 1)}) || playerSide == independent)) then {
         if (life_inv_defibrillator > 0) then {
