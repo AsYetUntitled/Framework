@@ -7,13 +7,12 @@
     Description:
     Check container if are in house and if house are owner of player and if all this conditions are true add container in database
 */
-private["_container","_isFloating","_number","_type","_house","_containers","_houseCfg","_message","_isPlaced"];
+private["_container","_isFloating","_type","_house","_containers","_houseCfg","_message","_isPlaced"];
 params [
         ["_container",ObjNull,[ObjNull]],
         ["_isFloating",true,[true]]
 ];
 
-_number = 1;
 _uid = getPlayerUID player;
 _house = nearestObject [player, "House"];
 
@@ -29,7 +28,7 @@ if (!isNull _house) then {
     _message = 1;
     if (([player] call life_fnc_PlayerInBuilding) && {([_container] call life_fnc_PlayerInBuilding)}) then {
         _message = 2;
-        if ((_house in life_vehicles) || !(isNil {_house getVariable "house_owner"})) then {
+        if ((_house in life_vehicles) && !(isNil {_house getVariable "house_owner"})) then {
             _message = 3;
             if (!_isFloating) then {
                 _message = 4;
@@ -57,23 +56,18 @@ if (!isNull _house) then {
 
 if (_isPlaced) exitWith {};
 
-if (_message == 0 || _message == 1) then {
-    deleteVehicle _container;
-    [true,_type,_number] call life_fnc_handleInv;
+deleteVehicle _container;
+[true,_type,1] call life_fnc_handleInv;
+
+if (_message isEqualTo 0 || _message isEqualTo 1) then {
     hint localize "STR_House_Container_House_Near";
 };
-if (_message == 2) then {
-    deleteVehicle _container;
-    [true,_type,_number] call life_fnc_handleInv;
+if (_message isEqualTo 2) then {
     hint localize "STR_House_Container_House_Near_Owner";
 };
-if (_message == 3) then {
-    deleteVehicle _container;
-    [true,_type,_number] call life_fnc_handleInv;
+if (_message isEqualTo 3) then {
     hint localize "STR_House_Container_Floating";
 };
-if (_message == 4) then {
-    deleteVehicle _container;
-    [true,_type,_number] call life_fnc_handleInv;
+if (_message isEqualTo 4) then {
     hint localize "STR_ISTR_Box_HouseFull";
 };
