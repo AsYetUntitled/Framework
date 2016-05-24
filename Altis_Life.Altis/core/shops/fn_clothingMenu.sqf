@@ -34,7 +34,7 @@ ctrlSetText [3103,localize _shopTitle];
 createDialog "Life_Clothing";
 disableSerialization;
 
-(findDisplay 3100) displaySetEventHandler ["KeyDown","if ((_this select 1) == 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
+(findDisplay 3100) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
 
 sliderSetRange [3107, 0, 360];
 
@@ -181,7 +181,7 @@ if (isNil "life_clothesPurchased") exitWith {
     if (life_oldHat != "") then {player addHeadgear life_oldHat} else {removeHeadgear player;};
     if (life_oldGlasses != "") then {player addGoggles life_oldGlasses;} else {removeGoggles player};
     if (backpack player != "") then {
-        if (life_oldBackpack == "") then {
+        if (life_oldBackpack isEqualTo "") then {
             removeBackpack player;
         } else {
             removeBackpack player;
@@ -200,7 +200,7 @@ if (isNil "life_clothesPurchased") exitWith {
     };
 
     if (vest player != "") then {
-        if (life_oldVest == "") then {
+        if (life_oldVest isEqualTo "") then {
             removeVest player;
         } else {
             player addVest life_oldVest;
@@ -214,17 +214,17 @@ if (isNil "life_clothesPurchased") exitWith {
 life_clothesPurchased = nil;
 
 //Check uniform purchase.
-if ((life_clothing_purchase select 0) == -1) then {
+if ((life_clothing_purchase select 0) isEqualTo -1) then {
     if (life_oldClothes != uniform player) then {player addUniform life_oldClothes;};
 };
 //Check hat
-if ((life_clothing_purchase select 1) == -1) then {
-    if (life_oldHat != headgear player) then {if (life_oldHat == "") then {removeHeadGear player;} else {player addHeadGear life_oldHat;};};
+if ((life_clothing_purchase select 1) isEqualTo -1) then {
+    if (life_oldHat != headgear player) then {if (life_oldHat isEqualTo "") then {removeHeadGear player;} else {player addHeadGear life_oldHat;};};
 };
 //Check glasses
-if ((life_clothing_purchase select 2) == -1) then {
+if ((life_clothing_purchase select 2) isEqualTo -1) then {
     if (life_oldGlasses != goggles player) then {
-        if (life_oldGlasses == "") then  {
+        if (life_oldGlasses isEqualTo "") then  {
             removeGoggles player;
         } else {
             player addGoggles life_oldGlasses;
@@ -232,9 +232,9 @@ if ((life_clothing_purchase select 2) == -1) then {
     };
 };
 //Check Vest
-if ((life_clothing_purchase select 3) == -1) then {
+if ((life_clothing_purchase select 3) isEqualTo -1) then {
     if (life_oldVest != vest player) then {
-        if (life_oldVest == "") then {removeVest player;} else {
+        if (life_oldVest isEqualTo "") then {removeVest player;} else {
             player addVest life_oldVest;
             {[_x,true,false,false,true] call life_fnc_handleItem;} forEach life_oldVestItems;
         };
@@ -242,9 +242,9 @@ if ((life_clothing_purchase select 3) == -1) then {
 };
 
 //Check Backpack
-if ((life_clothing_purchase select 4) == -1) then {
+if ((life_clothing_purchase select 4) isEqualTo -1) then {
     if (life_oldBackpack != backpack player) then {
-        if (life_oldBackpack == "") then {removeBackpack player;} else {
+        if (life_oldBackpack isEqualTo "") then {removeBackpack player;} else {
             removeBackpack player;
             player addBackpack life_oldBackpack;
             {[_x,true,true] call life_fnc_handleItem;} forEach life_oldBackpackItems;

@@ -70,7 +70,7 @@ if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice 
 SEL(_vehicleInfo,8),
 SEL(_vehicleInfo,11),
 SEL(_vehicleInfo,10),
-if (_trunkSpace == -1) then {"None"} else {_trunkSpace},
+if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
 SEL(_vehicleInfo,12),
 _vehicleColor
 ];

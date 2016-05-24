@@ -17,7 +17,7 @@ params [
         ["_maxAnimals",10,[0]]
 ];
 
-if (_zoneName == "") exitWith {};
+if (_zoneName isEqualTo "") exitWith {};
 _animalList = ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F"];
 _radius = (getMarkerSize _zoneName) select 0;
 _dist = _radius + 100;

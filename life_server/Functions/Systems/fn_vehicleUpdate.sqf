@@ -12,7 +12,7 @@ _mode = [_this,1,1,[0]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {}; //NULL
 
 _dbInfo = _vehicle getVariable["dbInfo",[]];
-if (count _dbInfo == 0) exitWith {};
+if (count _dbInfo isEqualTo 0) exitWith {};
 _uid = _dbInfo select 0;
 _plate = _dbInfo select 1;
 switch (_mode) do {
@@ -24,7 +24,7 @@ switch (_mode) do {
         _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 
         // Keep it clean!
-        if ((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {
+        if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {
             _cargo = [];
         };
 

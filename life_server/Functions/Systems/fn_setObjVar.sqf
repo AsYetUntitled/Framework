@@ -12,5 +12,5 @@ _varName = [_this,1,"",[""]] call BIS_fnc_param;
 _varValue = _this select 2;
 _global = [_this,3,false,[true]] call BIS_fnc_param;
 
-if (isNull _obj || _varName == "") exitWith {}; //Bad.
+if (isNull _obj || _varName isEqualTo "") exitWith {}; //Bad.
 _obj setVariable[_varName,_varValue,_global];

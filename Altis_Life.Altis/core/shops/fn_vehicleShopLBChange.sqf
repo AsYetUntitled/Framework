@@ -61,7 +61,7 @@ ctrlShow [2330,true];
     _maxspeed,
     _horsepower,
     _passengerseats,
-    if (_trunkSpace == -1) then {"None"} else {_trunkSpace},
+    if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
     _fuel,
     _armor
 ];

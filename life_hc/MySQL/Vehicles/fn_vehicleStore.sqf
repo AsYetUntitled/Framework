@@ -88,7 +88,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         {
             _isIllegal = M_CONFIG(getNumber, "VirtualItems", (_x select 0), "illegal");
 
-            _isIllegal = if (_isIllegal == 1) then { true }    else { false };
+            _isIllegal = if (_isIllegal isEqualTo 1) then { true }    else { false };
 
             if (((_x select 0) in _resourceItems) ||  (_isIllegal)) then {
                 _items pushBack[(_x select 0), (_x select 1)];

@@ -13,7 +13,7 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;
 _customBounty = [_this,3,-1,[0]] call BIS_fnc_param;
-if (_uid == "" || _type == "" || _name == "") exitWith {}; //Bad data passed.
+if (_uid isEqualTo "" || _type isEqualTo "" || _name isEqualTo "") exitWith {}; //Bad data passed.
 
 //What is the crime?
 switch (_type) do
@@ -66,7 +66,7 @@ switch (_type) do
     default {_type = [];};
 };
 
-if (count _type == 0) exitWith {}; //Not our information being passed...
+if (count _type isEqualTo 0) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
 if (_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.

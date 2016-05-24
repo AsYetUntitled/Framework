@@ -10,7 +10,7 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[sideUnknown]] call BIS_fnc_param;
 _mode = [_this,3,0,[0]] call BIS_fnc_param;
 
-if (_uid == "" || _side == sideUnknown) exitWith {}; //BAAAAAAAAADDDDDDDD
+if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //BAAAAAAAAADDDDDDDD
 
 switch (_mode) do {
     case 0: {

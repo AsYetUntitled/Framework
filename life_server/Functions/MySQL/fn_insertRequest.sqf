@@ -17,7 +17,7 @@ params [
 ];
 
 //Error checks
-if ((_uid == "") || (_name == "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
+if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
 if (isNull _returnToSender) exitWith {systemChat "ReturnToSender is Null!";}; //No one to send this to!
 
 _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
@@ -26,7 +26,7 @@ _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-if (EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Insert Query Request -------------";
     diag_log format["QUERY: %1",_query];
     diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];

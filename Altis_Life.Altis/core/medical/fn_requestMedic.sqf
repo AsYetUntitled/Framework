@@ -7,7 +7,7 @@
     N/A
 */
 private "_medicsOnline";
-_medicsOnline = {_x != player && {side _x == independent} && {alive _x}} count playableUnits > 0; //Check if medics (indep) are in the room.
+_medicsOnline = {_x != player && {side _x isEqualTo independent} && {alive _x}} count playableUnits > 0; //Check if medics (indep) are in the room.
 
 life_corpse setVariable ["Revive",false,true]; //Set the corpse to a revivable state.
 if (_medicsOnline) then {

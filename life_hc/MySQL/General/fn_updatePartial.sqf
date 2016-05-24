@@ -13,7 +13,7 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _mode = [_this,3,-1,[0]] call BIS_fnc_param;
 
-if (_uid == "" || _side == sideUnknown) exitWith {}; //Bad.
+if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
 _query = "";
 
 switch (_mode) do {
@@ -58,7 +58,7 @@ switch (_mode) do {
         _value = [_this,2,false,[true]] call BIS_fnc_param;
         _value = [_value] call HC_fnc_bool;
         _value2 = [_this,4,[],[[]]] call BIS_fnc_param;
-        _value2 = if (count _value2 == 3) then {_value2} else {[0,0,0]};
+        _value2 = if (count _value2 isEqualTo 3) then {_value2} else {[0,0,0]};
         _value2 = [_value2] call HC_fnc_mresArray;
         _query = format["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE playerid='%3'",_value,_value2,_uid];
     };
@@ -83,6 +83,6 @@ switch (_mode) do {
     };
 };
 
-if (_query == "") exitWith {};
+if (_query isEqualTo "") exitWith {};
 
 [_query,1] call HC_fnc_asyncCall;

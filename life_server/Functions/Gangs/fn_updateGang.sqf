@@ -14,7 +14,7 @@ params [
 if (isNull _group) exitWith {}; //FAIL
 
 _groupID = _group getVariable["gang_id",-1];
-if (_groupID == -1) exitWith {};
+if (_groupID isEqualTo -1) exitWith {};
 
 switch (_mode) do {
     case 0: {
@@ -22,7 +22,7 @@ switch (_mode) do {
         _maxMembers = _group getVariable ["gang_maxMembers",8];
         _members = [(_group getVariable "gang_members")] call DB_fnc_mresArray;
         _owner = _group getVariable ["gang_owner",""];
-        if (_owner == "") exitWith {};
+        if (_owner isEqualTo "") exitWith {};
 
         _query = format["UPDATE gangs SET bank='%1', maxmembers='%2', owner='%3' WHERE id='%4'",_bank,_maxMembers,_owner,_groupID];
     };
@@ -37,7 +37,7 @@ switch (_mode) do {
 
     case 3: {
         _owner = _group getVariable["gang_owner",""];
-        if (_owner == "") exitWith {};
+        if (_owner isEqualTo "") exitWith {};
         _query = format["UPDATE gangs SET owner='%1' WHERE id='%2'",_owner,_groupID];
     };
 

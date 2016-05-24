@@ -10,7 +10,7 @@ private["_value","_unit","_tax"];
 _value = parseNumber(ctrlText 2702);
 _unit = call compile format["%1",(lbData[2703,(lbCurSel 2703)])];
 if (isNull _unit) exitWith {};
-if ((lbCurSel 2703) == -1) exitWith {hint localize "STR_ATM_NoneSelected"};
+if ((lbCurSel 2703) isEqualTo -1) exitWith {hint localize "STR_ATM_NoneSelected"};
 if (isNil "_unit") exitWith {hint localize "STR_ATM_DoesntExist"};
 if (_value > 999999) exitWith {hint localize "STR_ATM_TransferMax";};
 if (_value < 0) exitWith {};

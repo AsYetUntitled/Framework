@@ -40,7 +40,7 @@ _Btn1 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_repairTruck;";
 
 if ((life_inv_toolkit >= 1) && {alive life_vInact_curTarget} && {([life_vInact_curTarget] call life_fnc_isDamaged)}) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
 
-if (playerSide == west) then {
+if (playerSide isEqualTo west) then {
     _Btn2 ctrlSetText localize "STR_vInAct_Registration";
     _Btn2 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_searchVehAction;";
 
@@ -66,7 +66,7 @@ if (playerSide == west) then {
                 _Btn6 ctrlSetText localize "STR_vInAct_GetInKart";
             };
             _Btn6 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
-            if (crew _curTarget isEqualTo [] && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
+            if (crew _curTarget isEqualTo [] && {canMove _curTarget} && {locked _curTarget isEqualTo 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
         } else {
             _Btn6 ctrlSetText localize "STR_vInAct_Unflip";
             _Btn6 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
@@ -86,7 +86,7 @@ if (playerSide == west) then {
                 _Btn2 ctrlSetText localize "STR_vInAct_GetInKart";
             };
             _Btn2 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
-            if (crew _curTarget isEqualTo [] && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
+            if (crew _curTarget isEqualTo [] && {canMove _curTarget} && {locked _curTarget isEqualTo 0}) then {_Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
         } else {
             _Btn2 ctrlSetText localize "STR_vInAct_Unflip";
             _Btn2 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";

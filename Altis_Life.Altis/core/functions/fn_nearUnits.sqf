@@ -16,7 +16,7 @@ _radius = [_this,2,30,[0]] call BIS_fnc_param;
 _ret = false;
 
 //Error check
-if (_faction == sideUnknown) exitWith {_ret};
+if (_faction isEqualTo sideUnknown) exitWith {_ret};
 
-_ret = {_x != player && side _x == _faction && alive _x && _position distance _x < _radius} count playableUnits > 0;
+_ret = {_x != player && side _x isEqualTo _faction && alive _x && _position distance _x < _radius} count playableUnits > 0;
 _ret;

@@ -14,7 +14,7 @@ private["_uid","_name","_query","_tickTime","_wantedCheck","_wantedQuery"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 //Bad data check
-if (_uid == "" ||  _name == "") exitWith {};
+if (_uid isEqualTo "" ||  _name isEqualTo "") exitWith {};
 
 _wantedCheck = format["SELECT wantedName FROM wanted WHERE wantedID='%1'",_uid];
 _wantedQuery = [_wantedCheck,2] call HC_fnc_asyncCall;

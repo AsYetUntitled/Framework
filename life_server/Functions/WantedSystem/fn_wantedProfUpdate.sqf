@@ -11,11 +11,11 @@ private["_uid","_name","_query","_tickTime","_wantedCheck","_wantedQuery"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 //Bad data check
-if (_uid == "" ||  _name == "") exitWith {};
+if (_uid isEqualTo "" ||  _name isEqualTo "") exitWith {};
 
 _wantedCheck = format["SELECT wantedName FROM wanted WHERE wantedID='%1'",_uid];
 _wantedQuery = [_wantedCheck,2] call DB_fnc_asyncCall;
-if (count _wantedQuery == 0) exitWith {};
+if (count _wantedQuery isEqualTo 0) exitWith {};
 _wantedQuery = call compile format["%1",_wantedQuery];
 
 if (_name != (_wantedQuery select 0)) then {

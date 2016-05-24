@@ -7,7 +7,7 @@
 */
 private["_house"];
 _house = [_this,0,"",[""]] call BIS_fnc_param;
-if (_house == "") exitWith {[]};
+if (_house isEqualTo "") exitWith {[]};
 
 /*
     Return Format:

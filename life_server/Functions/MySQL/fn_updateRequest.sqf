@@ -19,7 +19,7 @@ _alive = [_this,9,0,[0]] call BIS_fnc_param;
 _position = [_this,10,[],[[]]] call BIS_fnc_param;
 
 //Get to those error checks.
-if ((_uid == "") || (_name == "")) exitWith {};
+if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
 
 //Parse and setup some data.
 _name = [_name] call DB_fnc_mresString;
@@ -27,7 +27,7 @@ _gear = [_gear] call DB_fnc_mresArray;
 _stats = [_stats] call DB_fnc_mresArray;
 _cash = [_cash] call DB_fnc_numberSafe;
 _bank = [_bank] call DB_fnc_numberSafe;
-_position = if (_side == civilian) then {[_position] call DB_fnc_mresArray} else {[]};
+_position = if (_side isEqualTo civilian) then {[_position] call DB_fnc_mresArray} else {[]};
 
 //Does something license related but I can't remember I only know it's important?
 for "_i" from 0 to count(_licenses)-1 do {
@@ -41,7 +41,7 @@ _licenses = [_licenses] call DB_fnc_mresArray;
 _playtime = [_uid] call TON_fnc_getPlayTime;
 _playtime_update = [];
 {
-    if ((_x select 0) == _uid) exitWith
+    if ((_x select 0) isEqualTo _uid) exitWith
     {
         _playtime_update pushBack [_x select 1];
     };

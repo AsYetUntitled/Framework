@@ -16,13 +16,13 @@ _ret = owner _ret;
 _inStatement = "";
 _list = [];
 _units = [];
-{if ((side _x) == civilian) then {_units pushBack (getPlayerUID _x)};} forEach playableUnits;
+{if ((side _x) isEqualTo civilian) then {_units pushBack (getPlayerUID _x)};} forEach playableUnits;
 
-if (count _units == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if (count _units isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 {
     if (count _units > 1) then {
-    if (_inStatement == "") then {
+    if (_inStatement isEqualTo "") then {
             _inStatement = "'" + _x + "'";
         } else {
             _inStatement = _inStatement + ", '" + _x + "'";
@@ -34,7 +34,7 @@ if (count _units == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret]
 
 _query = format["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement];
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
-if (EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log format["Query: %1",_query];
 };
 
@@ -43,6 +43,6 @@ if (EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
 }
 forEach _queryResult;
 
-if (count _list == 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if (count _list isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 [_list] remoteExec ["life_fnc_wantedList",_ret];

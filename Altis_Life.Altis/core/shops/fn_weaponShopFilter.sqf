@@ -9,7 +9,7 @@
 private["_itemList","_index","_config","_priceTag","_itemArray"];
 _index = (lbCurSel 38402);
 _shop = uiNamespace getVariable ["Weapon_Shop",""];
-if (_index == -1 || _shop == "") exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
+if (_index isEqualTo -1 || _shop isEqualTo "") exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
 
 uiNamespace setVariable["Weapon_Shop_Filter",_index];
 //Setup List Control & Purge it.
@@ -19,8 +19,8 @@ _priceTag ctrlSetStructuredText parseText "";
 _itemList = ((findDisplay 38400) displayCtrl 38403);
 lbClear _itemList;
 
-if ((uiNamespace getVariable ["Weapon_Magazine",0]) == 1 || (uiNamespace getVariable ["Weapon_Accessories",0]) == 1) then {
-    if ((uiNamespace getVariable ["Weapon_Magazine",0]) == 1) then {
+if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace getVariable ["Weapon_Accessories",0]) isEqualTo 1) then {
+    if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1) then {
         _config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
         {
             _var = SEL(_x,0);

@@ -33,7 +33,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     if (_zone != "") exitWith {};
 };
 
-if (_zone == "") exitWith {life_action_inUse = false;};
+if (_zone isEqualTo "") exitWith {life_action_inUse = false;};
 
 if (_requiredItem != "") then {
     _valItem = missionNamespace getVariable "life_inv_" + _requiredItem;
@@ -51,7 +51,7 @@ if (_exit) exitWith {life_action_inUse = false;};
 
 _amount = round(random(_maxGather)) + 1;
 _diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if (_diff == 0) exitWith {
+if (_diff isEqualTo 0) exitWith {
     hint localize "STR_NOTF_InvFull";
     life_action_inUse = false;
 };

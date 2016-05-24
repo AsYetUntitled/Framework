@@ -17,7 +17,7 @@ if (!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid
 
 _door = [_house] call life_fnc_nearestDoor;
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"};
-if ((_house getVariable [format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+if ((_house getVariable [format["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
 life_action_inUse = true;
 

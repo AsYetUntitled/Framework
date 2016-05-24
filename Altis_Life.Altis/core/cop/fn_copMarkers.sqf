@@ -11,7 +11,7 @@ _cops = [];
 
 sleep 0.5;
 if (visibleMap) then {
-    {if (side _x == west) then {_cops pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
+    {if (side _x isEqualTo west) then {_cops pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
 
     //Create markers
     {

@@ -15,7 +15,7 @@ if (!isNil {_vehicle getVariable "mining"}) exitWith {
     hint localize "STR_NOTF_DeviceIsMining";
 };
 
-if (fuel _vehicle == 0) exitWith {
+if (fuel _vehicle isEqualTo 0) exitWith {
     titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
 };
 
@@ -72,7 +72,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     if (_zone != "") exitWith {_resource = _mined};
 };
 
-if (_zone == "") exitWith {
+if (_zone isEqualTo "") exitWith {
     hint localize "STR_NOTF_notNearResource";
     life_action_inUse = false;
 };
@@ -89,7 +89,7 @@ for "_i" from 0 to 1 step 0 do {
         titleText[localize "STR_NOTF_MiningStopped","PLAIN"];
     };
 
-    if (fuel _vehicle == 0) exitWith {
+    if (fuel _vehicle isEqualTo 0) exitWith {
         titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
     };
 
@@ -136,7 +136,7 @@ for "_i" from 0 to 1 step 0 do {
         _vehicle setVariable["mining",nil,true];
     };
 
-    if (_itemIndex == -1) then {
+    if (_itemIndex isEqualTo -1) then {
         _inv pushBack [_resource,_sum];
     } else {
         _val = _inv select _itemIndex select 1;

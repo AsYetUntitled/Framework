@@ -38,7 +38,7 @@ if (_queryResult isEqualTo "[5]") then {
         _queryResult = "";
         for "_i" from 0 to 1 step 0 do {
             _pipe = EXTDB format["5:%1", _key];
-            if (_pipe == "") exitWith {_loop = false};
+            if (_pipe isEqualTo "") exitWith {_loop = false};
             _queryResult = _queryResult + _pipe;
         };
     if (!_loop) exitWith {};

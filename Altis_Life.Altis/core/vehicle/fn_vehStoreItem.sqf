@@ -29,7 +29,7 @@ if (_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle")}) exitWi
 if (_ctrl == "money") then {
     _index = [_ctrl,_inv] call TON_fnc_index;
     if (CASH < _num) exitWith {hint localize "STR_NOTF_notEnoughCashToStoreInVeh";};
-    if (_index == -1) then {
+    if (_index isEqualTo -1) then {
         _inv pushBack [_ctrl,_num];
     } else {
         _val = _inv select _index select 1;
@@ -44,7 +44,7 @@ if (_ctrl == "money") then {
 
     if (!([false,_ctrl,_num] call life_fnc_handleInv)) exitWith {hint localize "STR_CouldNotRemoveItemsToPutInVeh";};
     _index = [_ctrl,_inv] call TON_fnc_index;
-    if (_index == -1) then {
+    if (_index isEqualTo -1) then {
         _inv pushBack [_ctrl,_num];
     } else {
         _val = _inv select _index select 1;

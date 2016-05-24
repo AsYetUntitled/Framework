@@ -74,7 +74,7 @@ _building setVariable [format["bis_disabled_Door_%1",_door],1,true]; //Lock the 
 
 _locked = true;
 for "_i" from 1 to _doors do {
-    if ((_building getVariable [format["bis_disabled_Door_%1",_i],0]) == 0) exitWith {_locked = false};
+    if ((_building getVariable [format["bis_disabled_Door_%1",_i],0]) isEqualTo 0) exitWith {_locked = false};
 };
 
 if (_locked) then {

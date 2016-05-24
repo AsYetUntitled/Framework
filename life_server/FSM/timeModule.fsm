@@ -53,7 +53,7 @@ class FSM
     class Apply_Time_Multi
     {
       name = "Apply_Time_Multi";
-      init = /*%FSM<STATEINIT""">*/"if (_fastNight && {sunOrMoon == 0}) then {" \n
+      init = /*%FSM<STATEINIT""">*/"if (_fastNight && {sunOrMoon isEqualTo 0}) then {" \n
        "	setTimeMultiplier _skipNight;" \n
        "} else {" \n
        "	setTimeMultiplier _skipDay;" \n
@@ -80,7 +80,7 @@ class FSM
           priority = 0.000000;
           to="Apply_Time_Multi";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"sunOrMoon == 1 - _sunState"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"sunOrMoon isEqualTo 1 - _sunState"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/

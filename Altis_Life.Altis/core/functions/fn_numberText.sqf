@@ -23,6 +23,6 @@ _modBase = _digitsCount % _mod;
 _numberText = "";
 {
     _numberText = _numberText + str _x;
-    if ((_foreachindex - _modBase) % (_mod) == 0 && _foreachindex != _digitsCount) then {_numberText = _numberText + ",";};
+    if ((_foreachindex - _modBase) % (_mod) isEqualTo 0 && _foreachindex != _digitsCount) then {_numberText = _numberText + ",";};
 } forEach _digits;
 _numberText

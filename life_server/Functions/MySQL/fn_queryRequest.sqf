@@ -31,7 +31,7 @@ _query = switch (_side) do {
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-if (EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
     diag_log format["QUERY: %1",_query];
     diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
@@ -43,7 +43,7 @@ if (_queryResult isEqualType "") exitWith {
     [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
-if (count _queryResult == 0) exitWith {
+if (count _queryResult isEqualTo 0) exitWith {
     [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 

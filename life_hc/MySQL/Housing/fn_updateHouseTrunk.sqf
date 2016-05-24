@@ -14,7 +14,7 @@ if (isNull _container) exitWith {};
 _trunkData = _container getVariable["Trunk",[[],0]];
 _containerID = _container getVariable["container_id",-1];
 
-if (_containerID == -1) exitWith {}; //Dafuq?
+if (_containerID isEqualTo -1) exitWith {}; //Dafuq?
 
 _trunkData = [_trunkData] call HC_fnc_mresArray;
 _query = format["UPDATE containers SET inventory='%1' WHERE id='%2'",_trunkData,_containerID];

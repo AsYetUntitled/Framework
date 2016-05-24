@@ -10,4 +10,4 @@ _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _container = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 _item = [_this,2,"",[""]] call BIS_fnc_param;
 
-if (isNull _unit || _item == "") exitWith {}; //Bad thingies?
+if (isNull _unit || _item isEqualTo "") exitWith {}; //Bad thingies?

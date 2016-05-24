@@ -51,7 +51,7 @@ if (_zone != "") exitWith {
     _resource = "resource";
     _resource;
 };
-if (_zone == "") exitWith {
+if (_zone isEqualTo "") exitWith {
     _nothing = "nothing";
     _nothing;
 };

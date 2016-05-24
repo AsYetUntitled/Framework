@@ -60,7 +60,7 @@ class FSM
           action=/*%FSM<ACTION""">*/"if (!alive player) then {" \n
            "	systemChat localize ""STR_FSM_MissedPay"";" \n
            "} else {" \n
-           "	if (player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide == west) then {" \n
+           "	if (player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide isEqualTo west) then {" \n
            "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
            "		life_atmbank = life_atmbank + (call life_paycheck) + 1500;" \n
            "	} else {" \n

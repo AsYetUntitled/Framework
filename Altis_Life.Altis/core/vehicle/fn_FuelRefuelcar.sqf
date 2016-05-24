@@ -11,7 +11,7 @@ private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArra
 _classname = lbData[20302,(lbCurSel 20302)];
 _index =  lbValue[20302,(lbCurSel 20302)];
 
-if (isNil "_classname" || _classname == "") exitWith {
+if (isNil "_classname" || _classname isEqualTo "") exitWith {
     hint localize "STR_Select_Vehicle_Pump";
     vehiclefuelList = [];
     life_action_inUse = false;

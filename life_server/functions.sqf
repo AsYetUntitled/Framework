@@ -56,7 +56,7 @@ compileFinal "
     _unit = _this select 0;
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
-    if (player == _unit && (group player) == _group) then {
+    if (player isEqualTo _unit && (group player) == _group) then {
         life_my_gang = ObjNull;
         [player] joinSilent (createGroup civilian);
         hint ""You have been kicked out of the gang."";
@@ -72,7 +72,7 @@ compileFinal "
     _unit = _this select 1;
     _giver = _this select 2;
     if (isNil ""_unit"" || isNil ""_giver"") exitWith {};
-    if (player == _unit && !(_vehicle in life_vehicles)) then {
+    if (player isEqualTo _unit && !(_vehicle in life_vehicles)) then {
         _name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
         hint format[""%1 has gave you keys for a %2"",_giver,_name];
         life_vehicles pushBack _vehicle;
@@ -88,7 +88,7 @@ compileFinal "
     _unit = _this select 0;
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
-    if (player == _unit && (group player) == _group) then {
+    if (player isEqualTo _unit && (group player) == _group) then {
         player setRank ""COLONEL"";
         _group selectLeader _unit;
         hint ""You have been made the new leader."";
@@ -103,7 +103,7 @@ compileFinal "
     _unit = _this select 0;
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
-    if (player == _unit && (group player) == _group) then {
+    if (player isEqualTo _unit && (group player) == _group) then {
         life_my_gang = ObjNull;
         [player] joinSilent (createGroup civilian);
         hint ""You have quit the gang."";
@@ -128,7 +128,7 @@ private[""_msg"",""_to""];
     ctrlShow[3022,false];
     _msg = ctrlText 3003;
     _to = ""EMS Units"";
-    if (_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3022,true];};
+    if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3022,true];};
 
     [_msg,name player,5,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",independent];
     [] call life_fnc_cellphone;
@@ -141,11 +141,11 @@ compileFinal "
     private[""_msg"",""_to""];
     ctrlShow[3015,false];
     _msg = ctrlText 3003;
-    if (lbCurSel 3004 == -1) exitWith {hint ""You must select a player you are sending the text to!""; ctrlShow[3015,true];};
+    if (lbCurSel 3004 isEqualTo -1) exitWith {hint ""You must select a player you are sending the text to!""; ctrlShow[3015,true];};
     _to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
     if (isNull _to) exitWith {ctrlShow[3015,true];};
     if (isNil ""_to"") exitWith {ctrlShow[3015,true];};
-    if (_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3015,true];};
+    if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3015,true];};
 
     [_msg,name player,0] remoteExecCall [""TON_fnc_clientMessage"",_to];
     [] call life_fnc_cellphone;
@@ -159,7 +159,7 @@ compileFinal "
     ctrlShow[3016,false];
     _msg = ctrlText 3003;
     _to = ""The Police"";
-    if (_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
+    if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
 
     [_msg,name player,1,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
@@ -173,7 +173,7 @@ compileFinal "
     ctrlShow[3017,false];
     _msg = ctrlText 3003;
     _to = ""The Admins"";
-    if (_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3017,true];};
+    if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3017,true];};
 
     [_msg,name player,2,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
@@ -191,7 +191,7 @@ compileFinal "
     _to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
     if (isNull _to) exitWith {ctrlShow[3020,true];};
     if (isNil ""_to"") exitWith {ctrlShow[3020,true];};
-    if (_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3020,true];};
+    if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3020,true];};
 
     [_msg,name player,3] remoteExecCall [""TON_fnc_clientMessage"",_to];
     [] call life_fnc_cellphone;
@@ -206,7 +206,7 @@ compileFinal "
     private[""_msg"",""_from""];
     ctrlShow[3021,false];
     _msg = ctrlText 3003;
-    if (_msg == """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3021,true];};
+    if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3021,true];};
 
     [_msg,name player,4] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
@@ -235,7 +235,7 @@ compileFinal "
     _msg = _this select 0;
     _from = _this select 1;
     _type = _this select 2;
-    if (_from == """") exitWith {};
+    if (_from isEqualTo """") exitWith {};
     switch (_type) do {
         case 0 : {
             private[""_message""];
@@ -332,13 +332,13 @@ TON_fnc_MapMarkersAdmin = compileFinal "
               _TypeVehicle = (getText(configFile >> 'CfgVehicles' >> (typeOf vehicle _x) >> 'displayName'));
               _Markers setMarkerTextLocal format['%1---%2---%3m', name _x, _TypeVehicle, round(_x distance player)];
               _Markers setMarkerTypeLocal ""mil_dot"";
-              if (side _x == independent) then {
+              if (side _x isEqualTo independent) then {
                 _Markers setMarkerColorLocal (""ColorIndependent"");
               };
-              if (side _x == civilian) then {
+              if (side _x isEqualTo civilian) then {
                 _Markers setMarkerColorLocal (""ColorCivilian"");
               };
-              if (side _x == west) then {
+              if (side _x isEqualTo west) then {
                 _Markers setMarkerColorLocal (""ColorBLUFOR"");
               };
               _Markers setMarkerSizeLocal[1, 1];
@@ -371,13 +371,13 @@ TON_fnc_MapMarkersAdmin = compileFinal "
           _Markers = createMarkerLocal[format[""PLR%1%2"", _pos select 0, _pos select 1], [(_pos select 0) + 20, _pos select 1, 0]];
           _Markers setMarkerTypeLocal ""mil_dot"";
           _Markers setMarkerSizeLocal[1, 1];
-          if (side _x == independent) then {
+          if (side _x isEqualTo independent) then {
             _Markers setMarkerColorLocal (""ColorIndependent"");
           };
-          if (side _x == civilian) then {
+          if (side _x isEqualTo civilian) then {
             _Markers setMarkerColorLocal (""ColorCivilian"");
           };
-          if (side _x == west) then {
+          if (side _x isEqualTo west) then {
             _Markers setMarkerColorLocal (""ColorBLUFOR"");
           };
           _Markers setMarkerTextLocal format[""%1---%2"", name _x, round(_x distance player)];

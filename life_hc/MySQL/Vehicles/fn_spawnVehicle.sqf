@@ -34,7 +34,7 @@ _query = format["SELECT id, side, classname, type, pid, alive, active, plate, co
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-if (EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
     diag_log format["QUERY: %1",_query];
     diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
@@ -76,7 +76,7 @@ _trunk = [_vInfo select 9] call HC_fnc_mresToArray;
 _gear = [_vInfo select 10] call HC_fnc_mresToArray;
 _damage = [_vInfo select 12] call HC_fnc_mresToArray;
 _wasIllegal = _vInfo select 13;
-_wasIllegal = if (_wasIllegal == 1) then { true } else { false };
+_wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
 
 [_query,1] call HC_fnc_asyncCall;
 if (_sp isEqualType "") then {

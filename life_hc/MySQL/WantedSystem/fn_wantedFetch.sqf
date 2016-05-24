@@ -17,13 +17,13 @@ if (isNull _ret) exitWith {};
 _inStatement = "";
 _list = [];
 _units = [];
-{if ((side _x) == civilian) then {_units pushBack (getPlayerUID _x)};} forEach playableUnits;
+{if ((side _x) isEqualTo civilian) then {_units pushBack (getPlayerUID _x)};} forEach playableUnits;
 
 if (_units isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 {
     if (count _units > 1) then {
-    if (_inStatement == "") then {
+    if (_inStatement isEqualTo "") then {
             _inStatement = "'" + _x + "'";
         } else {
             _inStatement = _inStatement + ", '" + _x + "'";

@@ -13,7 +13,7 @@ _type = [_this,2,"",[""]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 //Error checks
-if (_pid == "" || _side == sideUnknown || _type == "" || isNull _unit) exitWith {
+if (_pid isEqualTo "" || _side isEqualTo sideUnknown || _type isEqualTo "" || isNull _unit) exitWith {
     if (!isNull _unit) then {
         [[]] remoteExec ["life_fnc_impoundMenu",(owner _unit)];
     };
@@ -37,7 +37,7 @@ _query = format["SELECT id, side, classname, type, pid, alive, active, plate, co
 _tickTime = diag_tickTime;
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
-if (EXTDB_SETTING(getNumber,"DebugMode") == 1) then {
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
     diag_log format["QUERY: %1",_query];
     diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];

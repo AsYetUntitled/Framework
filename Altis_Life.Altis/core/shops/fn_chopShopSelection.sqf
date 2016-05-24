@@ -11,7 +11,7 @@ _control = [_this,0,controlNull,[controlNull]] call BIS_fnc_param;
 _selection = [_this,1,-1,[0]] call BIS_fnc_param;
 
 //Error checks
-if (isNull _control || _selection == -1) exitWith {};
+if (isNull _control || _selection isEqualTo -1) exitWith {};
 
 _price = _control lbValue _selection;
 

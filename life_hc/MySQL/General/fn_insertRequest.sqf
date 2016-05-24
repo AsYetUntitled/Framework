@@ -19,7 +19,7 @@ params [
 ];
 
 //Error checks
-if ((_uid == "") || (_name == "")) exitWith {};
+if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
 if (isNull _returnToSender) exitWith {};
 
 _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];

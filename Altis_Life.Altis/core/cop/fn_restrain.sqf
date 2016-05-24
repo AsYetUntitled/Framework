@@ -67,7 +67,7 @@ while {player getVariable  "restrained"} do {
         player moveInCargo _vehicle;
     };
 
-    if ((vehicle player != player) && life_disable_getOut && (driver (vehicle player) == player)) then {
+    if ((vehicle player != player) && life_disable_getOut && (driver (vehicle player) isEqualTo player)) then {
         player action["eject",vehicle player];
         player moveInCargo _vehicle;
     };
@@ -75,7 +75,7 @@ while {player getVariable  "restrained"} do {
     if (vehicle player != player && life_disable_getOut) then {
         _turrets = [[-1]] + allTurrets _vehicle;
         {
-            if (_vehicle turretUnit [_x select 0] == player) then {
+            if (_vehicle turretUnit [_x select 0] isEqualTo player) then {
                 player action["eject",vehicle player];
                 sleep 1;
                 player moveInCargo _vehicle;

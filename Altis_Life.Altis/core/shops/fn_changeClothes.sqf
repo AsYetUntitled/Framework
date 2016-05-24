@@ -12,7 +12,7 @@ _control = (_this select 0) select 0;
 _selection = (_this select 0) select 1;
 _price = (findDisplay 3100) displayCtrl 3102;
 _total = (findDisplay 3100) displayCtrl 3106;
-if (_selection == -1) exitWith {hint localize "STR_Shop_NoSelection";};
+if (_selection isEqualTo -1) exitWith {hint localize "STR_Shop_NoSelection";};
 if (isNull _control) exitWith {hint localize "STR_Shop_NoDisplay"};
 if (life_cMenu_lock) exitWith {};
 life_cMenu_lock = true;

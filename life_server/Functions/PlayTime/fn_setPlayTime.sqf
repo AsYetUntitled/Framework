@@ -20,7 +20,7 @@ _time_gathered = ((_this select 1) * 60);
 
 //set value no 1
 {
-    if ((_x select 0) == _uid) exitWith {
+    if ((_x select 0) isEqualTo _uid) exitWith {
         _x set [1, _time_gathered];
         _x set [2, time];
     };

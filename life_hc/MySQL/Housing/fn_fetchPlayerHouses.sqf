@@ -14,7 +14,7 @@ private["_query","_containers","_containerss","_houses"];
 params [
     ["_uid","",[""]]
 ];
-if (_uid == "") exitWith {};
+if (_uid isEqualTo "") exitWith {};
 
 _query = format["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid];
 _containers = [_query,2,true] call HC_fnc_asyncCall;

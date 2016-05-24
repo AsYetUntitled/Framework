@@ -9,7 +9,7 @@
 */
 private["_array"];
 _array = [_this,0,"",[""]] call BIS_fnc_param;
-if (_array == "") exitWith {[]};
+if (_array isEqualTo "") exitWith {[]};
 _array = toArray(_array);
 
 for "_i" from 0 to (count _array)-1 do

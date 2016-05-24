@@ -13,7 +13,7 @@ _medics = [];
 
 sleep 0.25;
 if (visibleMap) then {
-    {if (side _x == independent) then {_medics pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
+    {if (side _x isEqualTo independent) then {_medics pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
     {
         _name = _x getVariable "name";
         _down = _x getVariable ["Revive",false];

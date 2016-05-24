@@ -15,7 +15,7 @@ _itemInfo = _this getVariable ["item",[]]; if (count _itemInfo isEqualTo 0) exit
 _itemName = ITEM_NAME(SEL(_itemInfo,0));
 _illegal = ITEM_ILLEGAL(SEL(_itemInfo,0));
 
-if (playerSide == west && _illegal isEqualTo 1) exitWith {
+if (playerSide isEqualTo west && _illegal isEqualTo 1) exitWith {
     titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2)] call life_fnc_numberText],"PLAIN"];
     BANK = BANK + round(ITEM_SELLPRICE(SEL(_itemInfo,0)) / 2);
     deleteVehicle _this;

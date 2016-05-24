@@ -37,7 +37,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
 };
 
 if (_impound) exitWith {
-    if (count _vInfo == 0) then  {
+    if (count _vInfo isEqualTo 0) then  {
         life_impound_inuse = false;
         (owner _unit) publicVariableClient "life_impound_inuse";
 
@@ -58,7 +58,7 @@ if (_impound) exitWith {
 };
 
 // not persistent so just do this!
-if (count _vInfo == 0) exitWith {
+if (count _vInfo isEqualTo 0) exitWith {
     [1,(localize "STR_Garage_Store_NotPersistent")] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
     life_garage_store = false;
     (owner _unit) publicVariableClient "life_garage_store";
@@ -86,7 +86,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         {
             _isIllegal = M_CONFIG(getNumber, "VirtualItems", (_x select 0), "illegal");
 
-            _isIllegal = if (_isIllegal == 1) then { true } else { false };
+            _isIllegal = if (_isIllegal isEqualTo 1) then { true } else { false };
 
             if (((_x select 0) in _resourceItems) || (_isIllegal)) then {
                 _items pushBack[(_x select 0), (_x select 1)];
@@ -131,7 +131,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     _vehBackpacks = getBackpackCargo _vehicle;
     _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
     // no items? clean the array so the database looks pretty
-    if ((count (_vehItems select 0) == 0) && (count (_vehMags select 0) == 0) && (count (_vehWeapons select 0) == 0) && (count (_vehBackpacks select 0) == 0)) then {_cargo = [];};
+    if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {_cargo = [];};
     } else {
     _cargo = [];
 };

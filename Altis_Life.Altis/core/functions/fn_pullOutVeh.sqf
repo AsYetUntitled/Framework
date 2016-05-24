@@ -5,7 +5,7 @@
     Description:
 
 */
-if (playerSide == west || (isNull objectParent player)) exitWith {};
+if (playerSide isEqualTo west || (isNull objectParent player)) exitWith {};
 if (player getVariable "restrained") then {
     detach player;
     player setVariable["Escorting",false,true];

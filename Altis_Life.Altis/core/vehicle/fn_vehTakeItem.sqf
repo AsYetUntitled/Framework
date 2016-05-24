@@ -14,7 +14,7 @@ if (isNull life_trunk_vehicle || !alive life_trunk_vehicle) exitWith {hint local
 if (!alive player) exitWith {closeDialog 0;};
 if ((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith {  closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
-if ((lbCurSel 3502) == -1) exitWith {hint localize "STR_Global_NoSelection";};
+if ((lbCurSel 3502) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection";};
 _ctrl = ctrlSelData(3502);
 _num = ctrlText 3505;
 if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
@@ -24,11 +24,11 @@ if (_num < 1) exitWith {hint localize "STR_MISC_Under1";};
 _index = [_ctrl,((life_trunk_vehicle getVariable "Trunk") select 0)] call TON_fnc_index;
 _data = (life_trunk_vehicle getVariable "Trunk") select 0;
 _old = life_trunk_vehicle getVariable "Trunk";
-if (_index == -1) exitWith {};
+if (_index isEqualTo -1) exitWith {};
 _value = _data select _index select 1;
 if (_num > _value) exitWith {hint localize "STR_MISC_NotEnough"};
 _num = [_ctrl,_num,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if (_num == 0) exitWith {hint localize "STR_NOTF_InvFull"};
+if (_num isEqualTo 0) exitWith {hint localize "STR_NOTF_InvFull"};
 _weight = ([_ctrl] call life_fnc_itemWeight) * _num;
 if (_ctrl == "money") then {
     if (_num == _value) then {

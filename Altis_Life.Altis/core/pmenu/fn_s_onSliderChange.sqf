@@ -9,7 +9,7 @@
 private["_mode","_value"];
 _mode = [_this,0,-1,[0]] call BIS_fnc_param;
 _value = [_this,1,-1,[0]] call BIS_fnc_param;
-if (_mode == -1 || _value == -1) exitWith {};
+if (_mode isEqualTo -1 || _value isEqualTo -1) exitWith {};
 disableSerialization;
 
 switch (_mode) do {
@@ -40,7 +40,7 @@ switch (_mode) do {
     case 3: {
         _classname = lbData[20302,(lbCurSel 20302)];
         _index =  lbValue[20302,(lbCurSel 20302)];
-        if ((lbCurSel 20302) == -1) exitWith {hint localize "STR_Select_Vehicle_Pump";};
+        if ((lbCurSel 20302) isEqualTo -1) exitWith {hint localize "STR_Select_Vehicle_Pump";};
         if (!isNil "_classname" || _classname =="") then {
             _car = (vehiclefuelList select _index) select 0;
             _vehicleInfo = [_className] call life_fnc_fetchVehInfo;

@@ -36,7 +36,7 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
       if (!(SEL(_x,0) isEqualTo "")) then {
         _licenseName = SEL(_x,0);
         _licenseType = SEL(_x,1);
-        if (_licenseType == 0) then {
+        if (_licenseType isEqualTo 0) then {
           if (LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
         } else {
           if (!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) exitWith {_flag = false};
@@ -66,7 +66,7 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
         };
 };
 
-if (playerSide == civilian) then {
+if (playerSide isEqualTo civilian) then {
   if (count life_houses > 0) then {
     {
       _pos = call compile format["%1",_x select 0];

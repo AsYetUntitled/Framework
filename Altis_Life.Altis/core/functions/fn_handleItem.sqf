@@ -407,7 +407,7 @@ if (_bool) then {
                     default {_ispack = true;};
                 };
 
-                if (_item == "MineDetector") then {
+                if (_item isEqualTo "MineDetector") then {
                     player removeItem _item;
                 } else {
 

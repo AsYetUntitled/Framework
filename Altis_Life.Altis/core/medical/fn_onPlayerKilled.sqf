@@ -39,7 +39,7 @@ life_deathCamera camSetFOV .5;
 life_deathCamera camSetFocus [50,0];
 life_deathCamera camCommit 0;
 
-(findDisplay 7300) displaySetEventHandler ["KeyDown","if ((_this select 1) == 1) then {true}"]; //Block the ESC menu
+(findDisplay 7300) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {true}"]; //Block the ESC menu
 
 //Create a thread for something?
 _unit spawn {
@@ -66,7 +66,7 @@ _unit spawn {
 [_unit] spawn {
     private["_unit"];
     _unit = _this select 0;
-    waitUntil {if (speed _unit == 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
+    waitUntil {if (speed _unit isEqualTo 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
 };
 
 //Make the killer wanted
@@ -103,7 +103,7 @@ _containers = nearestObjects[getPosATL player,["WeaponHolderSimulated"],5];
 {deleteVehicle _x;} forEach _containers;
 
 //Killed by cop stuff...
-if (side _killer == west && playerSide != west) then {
+if (side _killer isEqualTo west && playerSide != west) then {
     life_copRecieve = _killer;
     //Did I rob the federal reserve?
     if (!life_use_atm && {CASH > 0}) then {
