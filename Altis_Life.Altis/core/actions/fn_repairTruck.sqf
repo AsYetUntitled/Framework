@@ -6,7 +6,7 @@
     Description:
     Main functionality for toolkits, to be revised in later version.
 */
-private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test"];
+private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test", "_sideRepairArray"];
 _veh = cursorObject;
 life_interrupted = false;
 if (isNull _veh) exitWith {};
@@ -49,9 +49,22 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
         player playActionNow "stop";
         if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
         if (player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
-        if (LIFE_SETTINGS(getNumber,"vehicle_infiniteRepair") isEqualTo 0) then {
+        _sideRepairArray = LIFE_SETTINGS(getArray,vehicle_infiniteRepair);
+
+        //Check if playerSide has infinite repair enabled
+        if (playerSide isEqualTo civilian && (_sideRepairArray select 0) isEqualTo 0) then {
             [false,"toolkit",1] call life_fnc_handleInv;
         };
+        if (playerSide isEqualTo west && (_sideRepairArray select 1) isEqualTo 0) then {
+            [false,"toolkit",1] call life_fnc_handleInv;
+        };
+        if (playerSide isEqualTo independent && (_sideRepairArray select 2) isEqualTo 0) then {
+            [false,"toolkit",1] call life_fnc_handleInv;
+        };
+        if (playerSide isEqualTo east && (_sideRepairArray select 3) isEqualTo 0) then {
+            [false,"toolkit",1] call life_fnc_handleInv;
+        };
+
         _veh setDamage 0;
         titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
     };
