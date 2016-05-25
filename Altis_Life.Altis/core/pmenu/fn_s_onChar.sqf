@@ -14,10 +14,10 @@
         2: STRING (Case option)
 */
 private["_control","_code","_slider","_value","_varName","_onKeyUp"];
-_control = (_this select 0);
-_code = (_this select 1);
-_slider = (_this select 2);
-_onKeyUp = (_this select 3);
+_control = _this select 0;
+_code = _this select 1;
+_slider = _this select 2;
+_onKeyUp = _this select 3;
 
 disableSerialization;
 if (isNull _control) exitWith {};

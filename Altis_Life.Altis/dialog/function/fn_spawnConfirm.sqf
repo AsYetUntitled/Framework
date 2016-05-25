@@ -14,10 +14,10 @@ if (life_spawn_point isEqualTo []) then {
     _sp = _spCfg select 0;
 
     if (playerSide isEqualTo civilian) then {
-        if (isNil {(call compile format["%1", _sp select 0])}) then {
+        if (isNil {(call compile format["%1",_sp select 0])}) then {
             player setPos (getMarkerPos (_sp select 0));
         } else {
-            _spawnPos = (call compile format["%1", _sp select 0]) call BIS_fnc_selectRandom;
+            _spawnPos = (call compile format["%1",_sp select 0]) call BIS_fnc_selectRandom;
             _spawnPos = _spawnPos buildingPos 0;
             player setPos _spawnPos;
         };

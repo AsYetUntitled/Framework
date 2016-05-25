@@ -26,7 +26,7 @@ _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 _percent = (floor random 100) + 1; //Make sure it's not 0
 
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    _curConfig = (_resourceCfg select _i);
+    _curConfig = _resourceCfg select _i;
     _resources = getArray(_curConfig >> "mined");
     _maxGather = getNumber(_curConfig >> "amount");
     _resourceZones = getArray(_curConfig >> "zones");
@@ -39,12 +39,12 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
             if (!((_resources select 0) isEqualType [])) then {
                 _mined = _resources select 0;
             } else {
-                _mined = _resources select 0 select 0;
+                _mined = (_resources select 0) select 0;
             };
         };
-        _resource = _resources select _i select 0;
-        _prob = _resources select _i select 1;
-        _probdiff = _resources select _i select 2;
+        _resource = (_resources select _i) select 0;
+        _prob = (_resources select _i) select 1;
+        _probdiff = (_resources select _i) select 2;
         if ((_percent >= _prob) && (_percent <= _probdiff)) exitWith {
             _mined = _resource;
         };

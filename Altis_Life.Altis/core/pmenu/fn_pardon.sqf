@@ -19,7 +19,7 @@ if (!(_data isEqualType [])) exitWith {};
 if (_data isEqualTo []) exitWith {};
 
 if (life_HC_isActive) then {
-    [(_data select 0)] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
+    [_data select 0] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
 } else {
-    [(_data select 0)] remoteExecCall ["life_fnc_wantedRemove",RSERV];
+    [_data select 0] remoteExecCall ["life_fnc_wantedRemove",RSERV];
 };

@@ -130,7 +130,7 @@ player setVariable ["realname",profileName,true];
 life_fnc_moveIn = compileFinal
 "
     life_disable_getIn = false;
-    player moveInCargo (_this select 0);
+    player moveInCargo _this select 0;
     life_disable_getOut = true;
 ";
 

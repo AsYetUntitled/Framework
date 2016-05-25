@@ -33,7 +33,7 @@ _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon play
         _cfgInfo = [_weapon,"CfgWeapons"] call life_fnc_fetchCfgDetails;
 
         _legacyItems = ((_cfgInfo select 10) + (_cfgInfo select 11) + (_cfgInfo select 12));
-        _newItems = (_cfgInfo select 14);
+        _newItems = _cfgInfo select 14;
 
         //Check Legacy Items first
         if (count _legacyItems > 0) then {

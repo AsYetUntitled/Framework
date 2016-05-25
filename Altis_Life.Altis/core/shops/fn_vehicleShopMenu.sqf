@@ -46,11 +46,11 @@ ctrlShow [2304,false];
 
 //Loop through
 {
-    _className = (_x select 0);
-    _levelAssert = (_x select 1);
-    _levelName = (_levelAssert select 0);
-    _levelType = (_levelAssert select 1);
-    _levelValue = (_levelAssert select 2);
+    _className = _x select 0;
+    _levelAssert = _x select 1;
+    _levelName = _levelAssert select 0;
+    _levelType = _levelAssert select 1;
+    _levelValue = _levelAssert select 2;
     _showall = true;
 
     if (!(_levelValue isEqualTo -1)) then {
@@ -67,8 +67,8 @@ ctrlShow [2304,false];
 
     if (_showall) then {
         _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-        _control lbAdd (_vehicleInfo select 3);
-        _control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
+        _control lbAdd _vehicleInfo select 3;
+        _control lbSetPicture [(lbSize _control)-1,_vehicleInfo select 2];
         _control lbSetData [(lbSize _control)-1,_className];
         _control lbSetValue [(lbSize _control)-1,_ForEachIndex];
     };

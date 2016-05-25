@@ -8,8 +8,8 @@
 */
 disableSerialization;
 private["_control","_selection","_list","_filter","_pic","_details"];
-_control = (_this select 0);
-_selection = (_this select 1);
+_control = _this select 0;
+_selection = _this select 1;
 life_clothing_filter = _selection;
 
 switch (_selection) do {
@@ -53,17 +53,17 @@ _array = switch (_selection) do {
 };
 
 {
-    _className = (_x select 0);
-    _displayName = (_x select 1);
-    _price = (_x select 2);
-    _levelAssert = (_x select 3);
-    _levelName = (_levelAssert select 0);
-    _levelType = (_levelAssert select 1);
-    _levelValue = (_levelAssert select 2);
+    _className = _x select 0;
+    _displayName = _x select 1;
+    _price = _x select 2;
+    _levelAssert = _x select 3;
+    _levelName = _levelAssert select 0;
+    _levelType = _levelAssert select 1;
+    _levelValue = _levelAssert select 2;
 
     if (!(_className isEqualTo "NONE")) then {
         _details = [_className] call life_fnc_fetchCfgDetails;
-        _pic = (_details select 2);
+        _pic = _details select 2;
     };
 
     if (!(_levelValue isEqualTo -1)) then {

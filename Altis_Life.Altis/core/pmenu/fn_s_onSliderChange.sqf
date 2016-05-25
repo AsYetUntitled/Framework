@@ -45,7 +45,7 @@ switch (_mode) do {
             _car = (vehiclefuelList select _index) select 0;
             _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
             _fuel = fuel _car;
-            _fueltank = (_vehicleInfo select 12);
+            _fueltank = _vehicleInfo select 12;
             if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {
                 _fueltank = 450;
             };

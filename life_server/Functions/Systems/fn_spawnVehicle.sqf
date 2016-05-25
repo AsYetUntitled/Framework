@@ -76,14 +76,14 @@ _wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
 
 [_query,1] call DB_fnc_asyncCall;
 if (_sp isEqualType "") then {
-    _vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
+    _vehicle = createVehicle[_vInfo select 2,[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
     _vehicle allowDamage false;
     _hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
     _vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
     uiSleep 0.6;
 } else {
-    _vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
+    _vehicle = createVehicle [_vInfo select 2,_sp,[],0,"NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
     _vehicle allowDamage false;
     _vehicle setPos _sp;
@@ -98,7 +98,7 @@ _vehicle lock 2;
 //Reskin the vehicle
 [_vehicle,_vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",_unit];
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7],true];
+_vehicle setVariable["dbInfo",[_vInfo select 4,_vInfo select 7],true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
@@ -123,7 +123,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
-    _vehicle setFuel (_vInfo select 11);
+    _vehicle setFuel _vInfo select 11;
     }else{
     _vehicle setFuel 1;
 };
@@ -152,7 +152,7 @@ if (count _damage > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqual
     _parts = getAllHitPointsDamage _vehicle;
 
     for "_i" from 0 to ((count _damage) - 1) do {
-        _vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],(_damage select _i)];
+        _vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],_damage select _i];
     };
 };
 

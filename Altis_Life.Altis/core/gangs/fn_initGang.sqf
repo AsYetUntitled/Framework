@@ -34,10 +34,10 @@ if (!isNil "_group") then {
     };
 } else {
     _group = group player;
-    _group setVariable ["gang_id",(life_gangData select 0),true];
-    _group setVariable ["gang_owner",(life_gangData select 1),true];
-    _group setVariable ["gang_name",(life_gangData select 2),true];
-    _group setVariable ["gang_maxMembers",(life_gangData select 3),true];
-    _group setVariable ["gang_bank",(life_gangData select 4),true];
-    _group setVariable ["gang_members",(life_gangData select 5),true];
+    _group setVariable ["gang_id",life_gangData select 0,true];
+    _group setVariable ["gang_owner",life_gangData select 1,true];
+    _group setVariable ["gang_name",life_gangData select 2,true];
+    _group setVariable ["gang_maxMembers",life_gangData select 3,true];
+    _group setVariable ["gang_bank",life_gangData select 4,true];
+    _group setVariable ["gang_members",life_gangData select 5,true];
 };

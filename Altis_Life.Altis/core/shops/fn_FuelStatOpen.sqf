@@ -46,7 +46,7 @@ ctrlSetText [20323,format ["Total : %1$",life_fuelPrices * 0.1]];
 
     _vehicleInfo = [_className]call life_fnc_fetchVehInfo;
     _control lbAdd (_vehicleInfo select 3);
-    _control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
+    _control lbSetPicture [(lbSize _control)-1,_vehicleInfo select 2];
     _control lbSetData [(lbSize _control)-1,_className];
     _control lbSetValue [(lbSize _control)-1,_ForEachIndex];
 } forEach vehicleFuelList;

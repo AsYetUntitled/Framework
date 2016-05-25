@@ -23,7 +23,7 @@ closeDialog 0; //Close the interaction menu.
 life_action_inUse = true; //Lock out the interaction menu for a bit..
 
 _weight = [_vehicle] call life_fnc_vehicleWeight;
-if ((_weight select 1) >= (_weight select 0)) exitWith {
+if (_weight select 1 >= _weight select 0) exitWith {
     hint localize "STR_NOTF_DeviceFull";
     life_action_inUse = false;
 };
@@ -34,7 +34,7 @@ _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    _curConfig = (_resourceCfg select _i);
+    _curConfig = _resourceCfg select _i;
     _resource = configName(_curConfig);
     _resourceZones = getArray(_curConfig >> "zones");
     _amount = getNumber(_curConfig >> "amount");
@@ -53,7 +53,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     private ["_curConfig","_resourceZones","_resources","_mined"];
 
     if (!_isMineral) exitWith {};
-    _curConfig = (_resourceCfg select _i);
+    _curConfig = _resourceCfg select _i;
     _resources = getArray(_curConfig >> "mined");
     _resourceZones = getArray(_curConfig >> "zones");
 

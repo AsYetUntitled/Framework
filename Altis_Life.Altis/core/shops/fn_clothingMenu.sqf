@@ -13,9 +13,9 @@ _exit = false;
 
 /* License check & config validation */
 if (!isClass(missionConfigFile >> "Clothing" >> (_this select 3))) exitWith {}; //Bad config entry.
-_shopTitle = M_CONFIG(getText,"Clothing",(_this select 3),"title");
-_shopSide = M_CONFIG(getText,"Clothing",(_this select 3),"side");
-_license = M_CONFIG(getText,"Clothing",(_this select 3),"license");
+_shopTitle = M_CONFIG(getText,"Clothing",_this select 3,"title");
+_shopSide = M_CONFIG(getText,"Clothing",_this select 3,"side");
+_license = M_CONFIG(getText,"Clothing",_this select 3,"license");
 
 if (!(_shopSide isEqualTo "")) then {
     _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
@@ -108,7 +108,7 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
     player setDir 360;
 };
 
-life_clothing_store = (_this select 3);
+life_clothing_store = _this select 3;
 
 /* Store license check */
 if (isClass(missionConfigFile >> "Licenses" >> life_clothing_store)) then {

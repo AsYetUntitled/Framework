@@ -51,12 +51,12 @@ if (player distance _house > 13) exitWith {life_action_inUse = false; titleText[
 if (!alive player) exitWith {life_action_inUse = false;};
 life_action_inUse = false;
 
-_houseInvData = (_houseInv select 0);
-_houseInvVal = (_houseInv select 1);
+_houseInvData = _houseInv select 0;
+_houseInvVal = _houseInv select 1;
 _value = 0;
 {
-    _var = (_x select 0);
-    _val = (_x select 1);
+    _var = _x select 0;
+    _val = _x select 1;
 
     if (ITEM_ILLEGAL(_var) isEqualTo 1) then {
         if (!(ITEM_SELLPRICE(_var) isEqualTo -1)) then {

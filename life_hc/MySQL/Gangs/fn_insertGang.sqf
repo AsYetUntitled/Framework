@@ -48,7 +48,7 @@ _queryResult = [_query,2] call HC_fnc_asyncCall;
 _gangMembers = [[_uid]] call HC_fnc_mresArray;
 
 if (!(count _queryResult isEqualTo 0)) then {
-    _query = format["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)];
+    _query = format["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,_queryResult select 0];
 } else {
     _query = format["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers];
 };
@@ -67,4 +67,4 @@ _query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
 
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-_group setVariable ["gang_id",(_queryResult select 0),true];
+_group setVariable ["gang_id",_queryResult select 0,true];

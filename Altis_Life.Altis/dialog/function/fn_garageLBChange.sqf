@@ -8,13 +8,13 @@
 */
 disableSerialization;
 private["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_sellMultiplier","_price","_storageFee","_purchasePrice"];
-_control = (_this select 0);
-_index = (_this select 1);
+_control = _this select 0;
+_index = _this select 1;
 
 //Fetch some information.
 _dataArr = CONTROL_DATAI(_control,_index);
 _dataArr = call compile format["%1",_dataArr];
-_className = (_dataArr select 0);
+_className = _dataArr select 0;
 _classNameLife = _className;
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
@@ -67,11 +67,11 @@ if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice 
     ",
 [_retrievePrice] call life_fnc_numberText,
 [_sellPrice] call life_fnc_numberText,
-(_vehicleInfo select 8),
-(_vehicleInfo select 11),
-(_vehicleInfo select 10),
+_vehicleInfo select 8,
+_vehicleInfo select 11,
+_vehicleInfo select 10,
 if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
-(_vehicleInfo select 12),
+_vehicleInfo select 12,
 _vehicleColor
 ];
 

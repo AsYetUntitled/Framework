@@ -17,8 +17,8 @@ if (count _containerInfo isEqualTo 0) exitWith {hint localize "STR_Cop_Container
 _value = 0;
 _illegalValue = 0;
 {
-    _var = (_x select 0);
-    _val = (_x select 1);
+    _var = _x select 0;
+    _val = _x select 1;
     _isIllegalItem = M_CONFIG(getNumber,"VirtualItems",_var,"illegal");
     if (_isIllegalItem isEqualTo 1 ) then {
         _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_var,"sellPrice");

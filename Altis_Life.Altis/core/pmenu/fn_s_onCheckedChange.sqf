@@ -7,8 +7,8 @@
     Switching it up and making it prettier..
 */
 private["_option","_state"];
-_option = (_this select 0);
-_state = (_this select 1);
+_option = _this select 0;
+_state = _this select 1;
 
 switch (_option) do {
     case "tags": {

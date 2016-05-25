@@ -21,7 +21,7 @@ _exit = false;
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
 
-    _curConfig = (_resourceCfg select _i);
+    _curConfig = _resourceCfg select _i;
     _resource = configName _curConfig;
     _maxGather = getNumber(_curConfig >> "amount");
     _resourceZones = getArray(_curConfig >> "zones");

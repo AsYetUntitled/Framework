@@ -86,12 +86,12 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         _profileName = [_profileQuery, 2] call DB_fnc_asyncCall;
         _profileName = _profileName select 0;
         {
-            _isIllegal = M_CONFIG(getNumber, "VirtualItems", (_x select 0), "illegal");
+            _isIllegal = M_CONFIG(getNumber,"VirtualItems",_x select 0,"illegal");
 
             _isIllegal = if (_isIllegal isEqualTo 1) then { true }    else { false };
 
             if (((_x select 0) in _resourceItems) ||  (_isIllegal)) then {
-                _items pushBack[(_x select 0), (_x select 1)];
+                _items pushBack[_x select 0, _x select 1];
                 _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;
             };
@@ -112,7 +112,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     else {
             {
                 if ((_x select 0) in _resourceItems) then {
-                    _items pushBack[(_x select 0), (_x select 1)];
+                    _items pushBack[_x select 0,_x select 1];
                     _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                     _totalweight = _weight + _totalweight;
                 };

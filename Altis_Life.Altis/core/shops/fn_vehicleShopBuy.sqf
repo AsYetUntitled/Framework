@@ -7,13 +7,13 @@
     Does something with vehicle purchasing.
 */
 private["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
-_mode = (_this select 0);
+_mode = _this select 0;
 _exit = false;
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
-_vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"vehicles");
-_shopSide = M_CONFIG(getText,"CarShops",(life_veh_shop select 0),"side");
+_vehicleList = M_CONFIG(getArray,"CarShops",life_veh_shop select 0,"vehicles");
+_shopSide = M_CONFIG(getText,"CarShops",life_veh_shop select 0,"side");
 
 _licenses = switch (playerSide) do {
     case civilian: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 0)};
@@ -63,7 +63,7 @@ if (_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ 
 if (_purchasePrice < 0) exitWith {closeDialog 0;}; //Bad price entry
 if (CASH < _purchasePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_purchasePrice - CASH] call life_fnc_numberText];closeDialog 0;};
 
-_spawnPoints = (life_veh_shop select 1);
+_spawnPoints = life_veh_shop select 1;
 _spawnPoint = "";
 
 if (((life_veh_shop select 0) == "med_air_hs")) then {
