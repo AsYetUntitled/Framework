@@ -46,8 +46,8 @@ ctrlShow [2304,false];
 
 //Loop through
 {
-    _className = (x select 0);
-    _levelAssert = (x select 1);
+    _className = (_x select 0);
+    _levelAssert = (_x select 1);
     _levelName = (_levelAssert select 0);
     _levelType = (_levelAssert select 1);
     _levelValue = (_levelAssert select 2);

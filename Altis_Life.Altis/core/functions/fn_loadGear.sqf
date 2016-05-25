@@ -71,7 +71,7 @@ if (!isNil {(_this select 0)}) then {
 life_maxWeight = 100;
 
 {
-    [true,(x select 0),(x select 1)] call life_fnc_handleInv;
+    [true,(_x select 0),(_x select 1)] call life_fnc_handleInv;
 } forEach (_yItems);
 
 life_maxWeight = 24;

@@ -37,7 +37,7 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
                     _itemArray = FETCH_CONFIG2(getArray,"CfgWeapons",_item,"magazines");
                     _bool = false;
                     {
-                        _var = (x select 0);
+                        _var = (_x select 0);
                         _count = {_x == _var} count _itemArray;
                         if (_count > 0) exitWith {_bool = true};
                     } forEach M_CONFIG(getArray,"WeaponShops",_shop,"mags");
@@ -81,7 +81,7 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
 
                     _bool = false;
                     {
-                        _var = (x select 0);
+                        _var = (_x select 0);
                         _count = {_x == _var} count _itemArray;
                         if (_count > 0) exitWith {_bool = true};
                     } forEach M_CONFIG(getArray,"WeaponShops",_shop,"accs");

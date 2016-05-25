@@ -55,8 +55,8 @@ _houseInvData = (_houseInv select 0);
 _houseInvVal = (_houseInv select 1);
 _value = 0;
 {
-    _var = (x select 0);
-    _val = (x select 1);
+    _var = (_x select 0);
+    _val = (_x select 1);
 
     if (ITEM_ILLEGAL(_var) isEqualTo 1) then {
         if (!(ITEM_SELLPRICE(_var) isEqualTo -1)) then {

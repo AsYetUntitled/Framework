@@ -53,10 +53,10 @@ _array = switch (_selection) do {
 };
 
 {
-    _className = (x select 0);
-    _displayName = (x select 1);
-    _price = (x select 2);
-    _levelAssert = (x select 3);
+    _className = (_x select 0);
+    _displayName = (_x select 1);
+    _price = (_x select 2);
+    _levelAssert = (_x select 3);
     _levelName = (_levelAssert select 0);
     _levelType = (_levelAssert select 1);
     _levelValue = (_levelAssert select 2);

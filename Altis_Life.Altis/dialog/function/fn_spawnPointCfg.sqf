@@ -33,9 +33,9 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
         _levelValue = (_level select 2);
 
     {
-      if (!((x select 0) isEqualTo "")) then {
-        _licenseName = (x select 0);
-        _licenseType = (x select 1);
+      if (!((_x select 0) isEqualTo "")) then {
+        _licenseName = (_x select 0);
+        _licenseType = (_x select 1);
         if (_licenseType isEqualTo 0) then {
           if (LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
         } else {
