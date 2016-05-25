@@ -13,7 +13,7 @@ _vendor = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,3,"",[""]] call BIS_fnc_param;
 //Error check
 if (isNull _vendor || _type isEqualTo "" || (player distance _vendor > 10)) exitWith {};
-
+life_action_inUse = true;//Lock out other actions during processing.
 
 if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
     _filter = false;
@@ -23,10 +23,10 @@ if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
     _text = M_CONFIG(getText,"ProcessAction",_type,"Text");
 } else {_filter = true;};
 
-if (_filter) exitWith {};
+if (_filter) exitWith {life_action_inUse = false;};
 
 _itemInfo = [_materialsRequired,_materialsGiven,_noLicenseCost,(localize format["%1",_text])];
-if (count _itemInfo isEqualTo 0) exitWith {};
+if (count _itemInfo isEqualTo 0) exitWith {life_action_inUse = false;};
 
 //Setup vars.
 _oldItem = SEL(_itemInfo,0);
@@ -34,7 +34,7 @@ _newItem = SEL(_itemInfo,1);
 _cost = SEL(_itemInfo,2);
 _upp = SEL(_itemInfo,3);
 _exit = false;
-if (count _oldItem isEqualTo 0) exitWith {};
+if (count _oldItem isEqualTo 0) exitWith {life_action_inUse = false;};
 
 _totalConversions = [];
 {
@@ -44,7 +44,7 @@ _totalConversions = [];
     _totalConversions pushBack (floor (_var/(_x select 1)));
 } forEach _oldItem;
 
-if (_exit) exitWith {life_is_processing = false;hint localize "STR_NOTF_NotEnoughItemProcess";};
+if (_exit) exitWith {life_is_processing = false; hint localize "STR_NOTF_NotEnoughItemProcess"; life_action_inUse = false;};
 
 if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
     _hasLicense = true;
@@ -76,7 +76,7 @@ if (_newItemWeight > _oldItemWeight) then {
     _minimumConversions = floor(_freeSpace / _netChange);
 };
 
-if (_exit) exitWith {hint localize "STR_Process_Weight";  life_is_processing = false;};
+if (_exit) exitWith {hint localize "STR_Process_Weight"; life_is_processing = false; life_action_inUse = false;};
 
 //Setup our progress bar.
 disableSerialization;
@@ -99,7 +99,7 @@ if (_hasLicense) then {
         if (_cP >= 1) exitWith {};
         if (player distance _vendor > 10) exitWith {};
     };
-    if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
 
     {
         [false,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
@@ -111,9 +111,9 @@ if (_hasLicense) then {
 
     5 cutText ["","PLAIN"];
     if (_minimumConversions isEqualTo (_totalConversions call BIS_fnc_lowestNum)) then {hint localize "STR_NOTF_ItemProcess";} else {hint localize "STR_Process_Partial";};
-    life_is_processing = false;
+    life_is_processing = false; life_action_inUse = false;
 } else {
-    if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
 
     for "_i" from 0 to 1 step 0 do {
         sleep  0.9;
@@ -124,8 +124,8 @@ if (_hasLicense) then {
         if (player distance _vendor > 10) exitWith {};
     };
 
-    if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-    if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+    if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
+    if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
 
     {
         [false,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
@@ -138,5 +138,5 @@ if (_hasLicense) then {
     5 cutText ["","PLAIN"];
     if (_minimumConversions isEqualTo (_totalConversions call BIS_fnc_lowestNum)) then {hint localize "STR_NOTF_ItemProcess";} else {hint localize "STR_Process_Partial";};
     CASH = CASH - _cost;
-    life_is_processing = false;
+    life_is_processing = false; life_action_inUse = false;
 };
