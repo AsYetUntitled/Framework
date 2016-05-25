@@ -37,10 +37,12 @@ switch (true) do {
         player reveal fed_bank;
         (group player) reveal fed_bank;
         [cursorObject] spawn life_fnc_blastingCharge;
+        closeDialog 0;
     };
 
     case (_item isEqualTo "defusekit"): {
         [cursorObject] spawn life_fnc_defuseKit;
+        closeDialog 0;
     };
 
     case (_item isEqualTo "storagesmall"): {
@@ -52,19 +54,22 @@ switch (true) do {
     };
 
     case (_item isEqualTo "spikeStrip"): {
-        if (!isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"};
+        if (!isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"; closeDialog 0};
         if ([false,_item,1] call life_fnc_handleInv) then {
             [] spawn life_fnc_spikeStrip;
+            closeDialog 0;
         };
     };
 
     case (_item isEqualTo "fuelFull"): {
         if (vehicle player != player) exitWith {hint localize "STR_ISTR_RefuelInVehicle"};
         [] spawn life_fnc_jerryRefuel;
+        closeDialog 0;
     };
 
     case (_item isEqualTo "lockpick"): {
         [] spawn life_fnc_lockpick;
+        closeDialog 0;
     };
 
     case (_item in ["apple","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat","donuts","tbacon","peach"]): {
