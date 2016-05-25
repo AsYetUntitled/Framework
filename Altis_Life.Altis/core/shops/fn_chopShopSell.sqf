@@ -14,7 +14,7 @@ _vehicle = _control lbData (lbCurSel _control);
 _vehicle = call compile format["%1", _vehicle];
 _chopable = LIFE_SETTINGS(getArray,"chopShop_vehicles");
 _nearVehicles = nearestObjects [getMarkerPos life_chopShop,_chopable,25];
-_vehicle = SEL(_nearVehicles,_vehicle);
+_vehicle = (_nearVehicles select _vehicle);
 if (isNull _vehicle) exitWith {};
 
 hint localize "STR_Shop_ChopShopSelling";

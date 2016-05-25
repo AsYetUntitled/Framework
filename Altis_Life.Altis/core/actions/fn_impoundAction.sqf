@@ -17,7 +17,7 @@ _vehicleData = _vehicle getVariable ["vehicle_info_owners",[]];
 if (_vehicleData isEqualTo 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 _vehicleName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 _price = M_CONFIG(getNumber,"LifeCfgVehicles",(typeOf _vehicle),"price");
-[0,"STR_NOTF_BeingImpounded",true,[SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+[0,"STR_NOTF_BeingImpounded",true,[((_vehicleData select 0) select 1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 life_action_inUse = true;
 
 _upp = localize "STR_NOTF_Impounding";
@@ -62,7 +62,7 @@ if (count crew _vehicle isEqualTo 0) then {
     if (playerSide isEqualTo west) then {
             _impoundMultiplier = LIFE_SETTINGS(getNumber,"vehicle_cop_impound_multiplier");
             _value = _price * _impoundMultiplier;
-            [0,"STR_NOTF_HasImpounded",true,[profileName,SEL(SEL(_vehicleData,0),1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+            [0,"STR_NOTF_HasImpounded",true,[profileName,((_vehicleData select 0) select 1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
             if (_vehicle in life_vehicles) then {
                 hint format[localize "STR_NOTF_OwnImpounded",[_value] call life_fnc_numberText,_type];
                 BANK = BANK - _value;

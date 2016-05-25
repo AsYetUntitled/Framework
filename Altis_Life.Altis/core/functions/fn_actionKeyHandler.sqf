@@ -101,7 +101,7 @@ if (isPlayer _curObject && _curObject isKindOf "Man") then {
     //It's a vehicle! open the vehicle interaction key!
     if (_isVehicle) then {
         if (!dialog) then {
-            if (player distance _curObject < SEL(SEL(boundingBox _curObject,1),0)+2 && (!(player getVariable ["restrained",false])) && (!(player getVariable ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
+            if (player distance _curObject < ((boundingBox _curObject select 1) select 0)+2 && (!(player getVariable ["restrained",false])) && (!(player getVariable ["playerSurrender",false])) && !life_isknocked && !life_istazed) then {
                 [_curObject] call life_fnc_vInteractionMenu;
             };
         };

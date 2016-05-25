@@ -76,9 +76,9 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
 _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 
 {
-    _flag = SEL(_x,1);
-    _textureName = SEL(_x,0);
-    if (SEL(life_veh_shop,2) isEqualTo _flag) then {
+    _flag = (x select 1);
+    _textureName = (x select 0);
+    if ((life_veh_shop select 2) isEqualTo _flag) then {
         _ctrl lbAdd _textureName;
         _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
     };

@@ -34,7 +34,7 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
-_textures = SEL(SEL(M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures"),_index),2);
+_textures = ((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures") select _index) select 2);
 if (isNil "_textures" || {count _textures isEqualTo 0}) exitWith {};
 
 _vehicle setVariable ["Life_VEH_color",_index,true];

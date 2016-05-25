@@ -22,22 +22,22 @@ _exitLoop = false;
         _groupOwner = _x getVariable ["gang_owner",""];
         _groupID = _x getVariable "gang_id";
         if (_groupOwner isEqualTo "" || isNil "_groupID") exitWith {}; //Seriously?
-        if (SEL(life_gangData,0) isEqualTo _groupID && {SEL(life_gangData,1) isEqualTo _groupOwner}) exitWith {_group = _x; _exitLoop = true;};
+        if ((life_gangData select 0) isEqualTo _groupID && {(life_gangData select 1) isEqualTo _groupOwner}) exitWith {_group = _x; _exitLoop = true;};
     };
 } forEach allGroups;
 
 if (!isNil "_group") then {
     [player] join _group;
-    if (SEL(life_gangData,1) isEqualTo getPlayerUID player) then {
+    if ((life_gangData select 1) isEqualTo getPlayerUID player) then {
         _group selectLeader player;
         [player,_group] remoteExecCall ["TON_fnc_clientGangLeader",(units _group)];
     };
 } else {
     _group = group player;
-    _group setVariable ["gang_id",SEL(life_gangData,0),true];
-    _group setVariable ["gang_owner",SEL(life_gangData,1),true];
-    _group setVariable ["gang_name",SEL(life_gangData,2),true];
-    _group setVariable ["gang_maxMembers",SEL(life_gangData,3),true];
-    _group setVariable ["gang_bank",SEL(life_gangData,4),true];
-    _group setVariable ["gang_members",SEL(life_gangData,5),true];
+    _group setVariable ["gang_id",(life_gangData select 0),true];
+    _group setVariable ["gang_owner",(life_gangData select 1),true];
+    _group setVariable ["gang_name",(life_gangData select 2),true];
+    _group setVariable ["gang_maxMembers",(life_gangData select 3),true];
+    _group setVariable ["gang_bank",(life_gangData select 4),true];
+    _group setVariable ["gang_members",(life_gangData select 5),true];
 };

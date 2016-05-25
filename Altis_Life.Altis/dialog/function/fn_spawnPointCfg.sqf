@@ -28,14 +28,14 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
         _curConfig = (_spawnCfg select _i);
     _licenses = getArray(_curConfig >> "licenses");
     _level = getArray(_curConfig >> "level");
-        _levelName = SEL(_level,0);
-        _levelType = SEL(_level,1);
-        _levelValue = SEL(_level,2);
+        _levelName = (_level select 0);
+        _levelType = (_level select 1);
+        _levelValue = (_level select 2);
 
     {
-      if (!(SEL(_x,0) isEqualTo "")) then {
-        _licenseName = SEL(_x,0);
-        _licenseType = SEL(_x,1);
+      if (!((x select 0) isEqualTo "")) then {
+        _licenseName = (x select 0);
+        _licenseType = (x select 1);
         if (_licenseType isEqualTo 0) then {
           if (LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
         } else {

@@ -32,7 +32,7 @@ if (life_shop_type isEqualTo "drugdealer") then {
     _array = life_shop_npc getVariable["sellers",[]];
     _ind = [getPlayerUID player,_array] call TON_fnc_index;
     if (!(_ind isEqualTo -1)) then {
-        _val = SEL(SEL(_array,_ind),2);
+        _val = ((_array select _ind) select 2);
         _val = _val + _price;
         _array set[_ind,[getPlayerUID player,profileName,_val]];
         life_shop_npc setVariable["sellers",_array,true];

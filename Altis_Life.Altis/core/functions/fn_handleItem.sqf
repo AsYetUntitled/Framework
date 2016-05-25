@@ -71,9 +71,9 @@ if (_bool) then {
             if (_toVest) exitWith {player addItemToVest _item;};
             if (_ispack) exitWith {player addItemToBackpack _item;};
 
-            if (SEL(_details,4) in [1,2,4,5,4096]) then {
-                if (SEL(_details,4) isEqualTo 4096) then {
-                    if (SEL(_details,5) isEqualTo -1) then {
+            if ((_details select 4) in [1,2,4,5,4096]) then {
+                if ((_details select 4) isEqualTo 4096) then {
+                    if ((_details select 5) isEqualTo -1) then {
                         _isgun = true;
                     };
                 } else {
@@ -89,7 +89,7 @@ if (_bool) then {
                     player addWeapon _item;
                 };
             } else {
-                switch (SEL(_details,5)) do {
+                switch (_details select 5) do {
                     case 0:  {
                         if (_ispack) then {
                             player addItemToBackpack _item;
@@ -209,7 +209,7 @@ if (_bool) then {
                                     _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
-                                    if (!(SEL(_wepItems,2) isEqualTo "")) then {_slotTaken = true;};
+                                    if (!((_wepItems select 2) isEqualTo "")) then {_slotTaken = true;};
 
                                     if (_slotTaken) then {
                                         _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
@@ -257,7 +257,7 @@ if (_bool) then {
                                     _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
-                                    if (!(SEL(_wepItems,1) isEqualTo "")) then {_slotTaken = true;};
+                                    if (!((_wepItems select 1) isEqualTo "")) then {_slotTaken = true;};
 
                                     if (_slotTaken) then {
                                         _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
@@ -305,7 +305,7 @@ if (_bool) then {
                                     _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
                                     _slotTaken = false;
 
-                                    if (!(SEL(_wepItems,0) isEqualTo "")) then {_slotTaken = true;};
+                                    if (!((_wepItems select 0) isEqualTo "")) then {_slotTaken = true;};
 
                                     if (_slotTaken) then {
                                         _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
@@ -370,7 +370,7 @@ if (_bool) then {
         };
     };
 } else {
-    switch (SEL(_details,6)) do {
+    switch (_details select 6) do {
         case "CfgVehicles": {
             removeBackpack player;
         };
@@ -388,9 +388,9 @@ if (_bool) then {
         };
 
         case "CfgWeapons": {
-            if (SEL(_details,4) in [1,2,4,5,4096]) then {
-                if (SEL(_details,4) isEqualTo 4096) then {
-                    if (SEL(_details,5) isEqualTo 1) then {
+            if ((_details select 4) in [1,2,4,5,4096]) then {
+                if ((_details select 4) isEqualTo 4096) then {
+                    if ((_details select 5) isEqualTo 1) then {
                         _isgun = true;
                     };
                 } else {
@@ -475,7 +475,7 @@ if (_bool) then {
                     };
                 };
             } else {
-                switch (SEL(_details,5)) do {
+                switch (_details select 5) do {
                     case 0: {player unassignItem _item; player removeItem _item;};
                     case 605: {if (headgear player isEqualTo _item) then {removeHeadgear player} else {player removeItem _item};};
                     case 801: {if (uniform player isEqualTo _item) then {removeUniform player} else {player removeItem _item};};

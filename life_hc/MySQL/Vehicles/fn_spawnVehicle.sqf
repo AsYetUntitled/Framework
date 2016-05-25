@@ -48,12 +48,12 @@ _vInfo = _queryResult;
 if (isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
 if (count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
 
-if (SEL(_vInfo,5) isEqualTo 0) exitWith {
+if ((_vInfo select 5) isEqualTo 0) exitWith {
     serv_sv_use deleteAt _servIndex;
     [1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-if (SEL(_vInfo,6) isEqualTo 1) exitWith {
+if ((_vInfo select 6) isEqualTo 1) exitWith {
     serv_sv_use deleteAt _servIndex;
     [1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
@@ -164,15 +164,15 @@ if (count _damage > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqual
 };
 
 //Sets of animations
-if (SEL(_vInfo,1) isEqualTo "civ" && SEL(_vInfo,2) isEqualTo "B_Heli_Light_01_F" && !(SEL(_vInfo,8) isEqualTo 13)) then {
+if ((_vInfo select 1) isEqualTo "civ" && (_vInfo select 2) isEqualTo "B_Heli_Light_01_F" && !((_vInfo select 8) isEqualTo 13)) then {
     [_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
-if (SEL(_vInfo,1) isEqualTo "cop" && (SEL(_vInfo,2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
+if ((_vInfo select 1) isEqualTo "cop" && ((_vInfo select 2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
     [_vehicle,"cop_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
-if (SEL(_vInfo,1) isEqualTo "med" && SEL(_vInfo,2) isEqualTo "C_Offroad_01_F") then {
+if ((_vInfo select 1) isEqualTo "med" && (_vInfo select 2) isEqualTo "C_Offroad_01_F") then {
     [_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
