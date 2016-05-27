@@ -62,7 +62,7 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
             _config = M_CONFIG(getArray,"WeaponShops",_shop,"items");
             {
                 _itemInfo = [(_x select 0)] call life_fnc_fetchCfgDetails;
-                _itemList lbAdd format["%1",if (!((_x select 1) isEqualTo "")) then {(_x select 1)} else {(_itemInfo select 1))}];
+                _itemList lbAdd format["%1",if (!((_x select 1) isEqualTo "")) then {(_x select 1)} else {(_itemInfo select 1)}];
                 _itemList lbSetData[(lbSize _itemList)-1,(_itemInfo select 0)];
                 _itemList lbSetPicture[(lbSize _itemList)-1,(_itemInfo select 2)];
                 _itemList lbSetValue[(lbSize _itemList)-1,(_x select 2)];
