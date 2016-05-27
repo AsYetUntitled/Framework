@@ -24,7 +24,7 @@ _names = "";
             _val = parseNumber _val;
         };
     };
-    [_x select 0,_x select 1,"483",_val] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+    [(_x select 0),(_x select 1),"483",_val] remoteExecCall ["life_fnc_wantedAdd",RSERV];
     _names = _names + format["%1<br/>",(_x select 1)];
 } forEach _sellers;
 

@@ -21,7 +21,7 @@ if (isNil "_classname" || _classname isEqualTo "") exitWith {
 _car = (vehiclefuelList select _index) select 0;
 _vehicleInfo = [_className]call life_fnc_fetchVehInfo;
 _fuelNow = fuel _car;
-_fueltank = _vehicleInfo select 12;
+_fueltank = (_vehicleInfo select 12);
 if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fueltank = 350;};//hemtt
 if (_car isKindOf "C_Van_01_box_F") then {_fueltank = 100;};
 if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fueltank = 175;};

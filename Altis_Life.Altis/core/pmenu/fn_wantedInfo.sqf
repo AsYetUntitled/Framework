@@ -29,4 +29,4 @@ _crimes = _data select 0;
     };
 } forEach _crimes;
 
-ctrlSetText[2403,format[localize "STR_Wanted_Bounty",[_data select 1] call life_fnc_numberText]];
+ctrlSetText[2403,format[localize "STR_Wanted_Bounty",[(_data select 1)] call life_fnc_numberText]];

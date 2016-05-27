@@ -16,7 +16,7 @@ _speed = speed cursorObject;
 _handled = false;
 
 _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
-_mapKey = actionKeys "ShowMap" select 0;
+_mapKey = (actionKeys "ShowMap" select 0);
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 

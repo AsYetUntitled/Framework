@@ -43,7 +43,7 @@ if (LIFE_SETTINGS(getNumber,"donor_level") isEqualTo 1) then {
 
 //Loop through licenses
 if (count (_this select 6) > 0) then {
-    {missionNamespace setVariable [_x select 0,_x select 1];} forEach (_this select 6);
+    {missionNamespace setVariable [(_x select 0),(_x select 1)];} forEach (_this select 6);
 };
 
 life_gear = _this select 8;
@@ -84,7 +84,7 @@ switch (playerSide) do {
         };
 
         {
-            _house = nearestObject [(call compile format["%1",_x select 0]), "House"];
+            _house = nearestObject [(call compile format["%1",(_x select 0)]), "House"];
             life_vehicles pushBack _house;
         } forEach life_houses;
 

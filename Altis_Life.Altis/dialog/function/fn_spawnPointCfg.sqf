@@ -25,17 +25,17 @@ _spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> _side;
 for "_i" from 0 to count(_spawnCfg)-1 do {
     _flag = true;
     _tempConfig = [];
-        _curConfig = _spawnCfg select _i;
+        _curConfig = (_spawnCfg select _i);
     _licenses = getArray(_curConfig >> "licenses");
     _level = getArray(_curConfig >> "level");
-        _levelName = _level select 0;
-        _levelType = _level select 1;
-        _levelValue = _level select 2;
+        _levelName = (_level select 0);
+        _levelType = (_level select 1);
+        _levelValue = (_level select 2);
 
     {
       if (!((_x select 0) isEqualTo "")) then {
-        _licenseName = _x select 0;
-        _licenseType = _x select 1;
+        _licenseName = (_x select 0);
+        _licenseType = (_x select 1);
         if (_licenseType isEqualTo 0) then {
           if (LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
         } else {
@@ -69,7 +69,7 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
 if (playerSide isEqualTo civilian) then {
   if (count life_houses > 0) then {
     {
-      _pos = call compile format["%1",_x select 0];
+      _pos = call compile format["%1",(_x select 0)];
       _house = nearestObject [_pos, "House"];
       _houseName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 

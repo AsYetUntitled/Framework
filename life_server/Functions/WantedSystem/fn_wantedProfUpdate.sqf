@@ -18,7 +18,7 @@ _wantedQuery = [_wantedCheck,2] call DB_fnc_asyncCall;
 if (count _wantedQuery isEqualTo 0) exitWith {};
 _wantedQuery = call compile format["%1",_wantedQuery];
 
-if (_name != _wantedQuery select 0) then {
+if (_name != (_wantedQuery select 0)) then {
     _query = format["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_name,_uid];
     [_query,2] call DB_fnc_asyncCall;
 };

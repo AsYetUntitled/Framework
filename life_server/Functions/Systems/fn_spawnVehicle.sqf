@@ -46,12 +46,12 @@ if (count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
 
 if ((_vInfo select 5) isEqualTo 0) exitWith {
     serv_sv_use deleteAt _servIndex;
-    [1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
+    [1,format[(localize "STR_Garage_SQLError_Destroyed"),(_vInfo select 2)]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if ((_vInfo select 6) isEqualTo 1) exitWith {
     serv_sv_use deleteAt _servIndex;
-    [1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
+    [1,format[(localize "STR_Garage_SQLError_Active"),(_vInfo select 2)]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if (!(_sp isEqualType "")) then {
@@ -68,22 +68,22 @@ if (count _nearVehicles > 0) exitWith {
 
 _query = format["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
-_trunk = [_vInfo select 9] call DB_fnc_mresToArray;
-_gear = [_vInfo select 10] call DB_fnc_mresToArray;
-_damage = [_vInfo select 12] call DB_fnc_mresToArray;
-_wasIllegal = _vInfo select 13;
+_trunk = [(_vInfo select 9)] call DB_fnc_mresToArray;
+_gear = [(_vInfo select 10)] call DB_fnc_mresToArray;
+_damage = [(_vInfo select 12)] call DB_fnc_mresToArray;
+_wasIllegal = (_vInfo select 13);
 _wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
 
 [_query,1] call DB_fnc_asyncCall;
 if (_sp isEqualType "") then {
-    _vehicle = createVehicle[_vInfo select 2,[0,0,999],[],0,"NONE"];
+    _vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
     _vehicle allowDamage false;
     _hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
     _vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
     uiSleep 0.6;
 } else {
-    _vehicle = createVehicle [_vInfo select 2,_sp,[],0,"NONE"];
+    _vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
     _vehicle allowDamage false;
     _vehicle setPos _sp;
@@ -96,9 +96,9 @@ _vehicle allowDamage true;
 [_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
 _vehicle lock 2;
 //Reskin the vehicle
-[_vehicle,_vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",_unit];
+[_vehicle,(_vInfo select 8)] remoteExecCall ["life_fnc_colorVehicle",_unit];
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable["dbInfo",[_vInfo select 4,_vInfo select 7],true];
+_vehicle setVariable["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
