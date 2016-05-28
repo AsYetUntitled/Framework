@@ -24,5 +24,5 @@ life_safeObj setVariable ["inUse",true,true];
 
 [life_safeObj] spawn {
     waitUntil {isNull (findDisplay 3500)};
-    SEL(_this,0) setVariable ["inUse",false,true];
+    (_this select 0) setVariable ["inUse",false,true];
 };

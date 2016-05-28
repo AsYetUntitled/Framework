@@ -7,17 +7,17 @@
     Initialize the virtual shop menu.
 */
 private["_exit","_shopSide","_license","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg","_flag"];
-if (isNil {SEL(_this,3)}) exitWith {};
+if (isNil {(_this select 3)}) exitWith {};
 _exit = false;
-_shopSide = M_CONFIG(getText,"VirtualShops",(SEL(_this,3)),"side");
-_license = M_CONFIG(getText,"VirtualShops",(SEL(_this,3)),"license");
-_levelAssert = M_CONFIG(getArray,"VirtualShops",(SEL(_this,3)),"level");
-_levelName = SEL(_levelAssert,0);
-_levelType = SEL(_levelAssert,1);
-_levelValue = SEL(_levelAssert,2);
-_levelMsg = SEL(_levelAssert,3);
-life_shop_type = SEL(_this,3);
-life_shop_npc = SEL(_this,0);
+_shopSide = M_CONFIG(getText,"VirtualShops",(_this select 3),"side");
+_license = M_CONFIG(getText,"VirtualShops",(_this select 3),"license");
+_levelAssert = M_CONFIG(getArray,"VirtualShops",(_this select 3),"level");
+_levelName = (_levelAssert select 0);
+_levelType = (_levelAssert select 1);
+_levelValue = (_levelAssert select 2);
+_levelMsg = (_levelAssert select 3);
+life_shop_type = _this select 3;
+life_shop_npc = _this select 0;
 
 if (!(_shopSide isEqualTo "")) then {
     _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};

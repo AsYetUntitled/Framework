@@ -7,19 +7,19 @@
     Does something with vehicle purchasing.
 */
 private["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
-_mode = SEL(_this,0);
+_mode = _this select 0;
 _exit = false;
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
-_vehicleList = M_CONFIG(getArray,"CarShops",SEL(life_veh_shop,0),"vehicles");
-_shopSide = M_CONFIG(getText,"CarShops",SEL(life_veh_shop,0),"side");
+_vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"vehicles");
+_shopSide = M_CONFIG(getText,"CarShops",(life_veh_shop select 0),"side");
 
 _licenses = switch (playerSide) do {
-    case civilian: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),0)};
-    case west: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),1)};
-    case independent: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),2)};
-    case east: {SEL(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses"),3)};
+    case civilian: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 0)};
+    case west: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 1)};
+    case independent: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 2)};
+    case east: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 3)};
 };
 
 _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
@@ -63,10 +63,10 @@ if (_exit) exitWith {hint parseText format[(localize "STR_Shop_Veh_NoLicense")+ 
 if (_purchasePrice < 0) exitWith {closeDialog 0;}; //Bad price entry
 if (CASH < _purchasePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_purchasePrice - CASH] call life_fnc_numberText];closeDialog 0;};
 
-_spawnPoints = SEL(life_veh_shop,1);
+_spawnPoints = life_veh_shop select 1;
 _spawnPoint = "";
 
-if ((SEL(life_veh_shop,0) == "med_air_hs")) then {
+if (((life_veh_shop select 0) == "med_air_hs")) then {
     if ((nearestObjects[(getMarkerPos _spawnPoints),["Air"],35]) isEqualTo []) exitWith {_spawnPoint = _spawnPoints};
 } else {
     //Check if there is multiple spawn points and find a suitable spawnpoint.
@@ -112,7 +112,7 @@ switch (playerSide) do {
         [_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
     };
     case civilian: {
-        if (SEL(life_veh_shop,2) isEqualTo "civ" && {_className == "B_Heli_Light_01_F"}) then {
+        if ((life_veh_shop select 2) isEqualTo "civ" && {_className == "B_Heli_Light_01_F"}) then {
             [_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
         };
     };

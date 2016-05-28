@@ -7,7 +7,7 @@
     Called when purchasing a license. May need to be revised.
 */
 private["_type","_varName","_displayName","_sideFlag","_price"];
-_type = SEL(_this,3);
+_type = _this select 3;
 
 if (!isClass (missionConfigFile >> "Licenses" >> _type)) exitWith {}; //Bad entry?
 _varName = M_CONFIG(getText,"Licenses",_type,"variable");

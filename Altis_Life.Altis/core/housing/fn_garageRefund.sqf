@@ -6,7 +6,7 @@
     Description:
     I don't know?
 */
-_price = SEL(_this,0);
-_unit = SEL(_this,1);
+_price = _this select 0;
+_unit = _this select 1;
 if (_unit != player) exitWith {};
 BANK = BANK + _price;

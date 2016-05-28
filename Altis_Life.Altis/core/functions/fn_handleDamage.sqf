@@ -7,11 +7,11 @@
     Handles damage, specifically for handling the 'tazer' pistol and nothing else.
 */
 private["_unit","_damage","_source","_projectile","_part","_curWep"];
-_unit = SEL(_this,0);
-_part = SEL(_this,1);
-_damage = SEL(_this,2);
-_source = SEL(_this,3);
-_projectile = SEL(_this,4);
+_unit = _this select 0;
+_part = _this select 1;
+_damage = _this select 2;
+_source = _this select 3;
+_projectile = _this select 4;
 
 //Handle the tazer first (Top-Priority).
 if (!isNull _source) then {

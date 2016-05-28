@@ -7,8 +7,8 @@
     Handles various different ammo types being fired.
 */
 private["_ammoType","_projectile"];
-_ammoType = SEL(_this,4);
-_projectile = SEL(_this,6);
+_ammoType = _this select 4;
+_projectile = _this select 6;
 
 if (_ammoType isEqualTo "GrenadeHand_stone") then {
     _projectile spawn {

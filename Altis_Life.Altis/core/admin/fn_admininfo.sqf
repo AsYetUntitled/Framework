@@ -10,7 +10,7 @@ private["_ret","_unit","_prim","_sec","_vest","_uni","_bp","_attach","_steamName
 _ret = _this;
 disableSerialization;
 
-_unit = SEL(_ret,3);
+_unit = _ret select 3;
 _prim = if (!(primaryWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",primaryWeapon _unit,"displayName")} else {"None"};
 _sec = if (!(handgunWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",handgunWeapon _unit,"displayName")} else {"None"};
 _vest = if (!(vest _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",vest _unit,"displayName")} else {"None"};
@@ -35,12 +35,12 @@ if (!(handgunItems _unit isEqualTo "")) then {
     } forEach (handgunItems _unit);
 };
 
-_steamName = SEL(_ret,4);
-if (!(SEL(_ret,4) isEqualType "")) then {
+_steamName = _ret select 4;
+if (!((_ret select 4) isEqualType "")) then {
     _steamName = "Not a Steam User!";
 };
 
 if (count _attach isEqualTo 0) then {_attach = "None"};
 if (count _secondary isEqualTo 0) then {_secondary = "None"};
 CONTROL(2900,2903) ctrlSetStructuredText parseText format["<t size='.7'>Name: %1<br/>Steam Name: %10<br/>Player UID: %11<br/>Player Side: %12<br/>Bank: %2<br/>Money: %3<br/>Uniform: %4<br/>Vest: %5<br/>Backpack: %6<br/>Primary: %7<br/>Handgun: %8<br/><t align='center'>Primary Attachments</t><br/>%9<br/><t align='center'>Secondary Attachments</t><br/>%13<br/></t>",
-_unit getVariable ["realname",name _unit],[SEL(_ret,0)] call life_fnc_numberText,[SEL(_ret,1)] call life_fnc_numberText, _uni,_vest,_bp,_prim,_sec,_attach,_steamName,SEL(_ret,5),SEL(_ret,6),_secondary];
+_unit getVariable ["realname",name _unit],[(_ret select 0)] call life_fnc_numberText,[(_ret select 1)] call life_fnc_numberText, _uni,_vest,_bp,_prim,_sec,_attach,_steamName,(_ret select 5),(_ret select 6),_secondary];

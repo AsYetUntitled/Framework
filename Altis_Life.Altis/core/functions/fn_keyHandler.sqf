@@ -7,16 +7,16 @@
 *    Main key handler for event 'keyDown'
 */
 private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys"];
-_ctrl = SEL(_this,0);
-_code = SEL(_this,1);
-_shift = SEL(_this,2);
-_ctrlKey = SEL(_this,3);
-_alt = SEL(_this,4);
+_ctrl = _this select 0;
+_code = _this select 1;
+_shift = _this select 2;
+_ctrlKey = _this select 3;
+_alt = _this select 4;
 _speed = speed cursorObject;
 _handled = false;
 
 _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
-_mapKey = SEL(actionKeys "ShowMap",0);
+_mapKey = (actionKeys "ShowMap" select 0);
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
@@ -58,7 +58,7 @@ switch (_code) do {
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
-        if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {SEL((velocity player),2) < 2.5} && {time - jumpActionTime > 1.5}) then {
+        if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {((velocity player) select 2) < 2.5} && {time - jumpActionTime > 1.5}) then {
             jumpActionTime = time; //Update the time.
             [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
             _handled = true;

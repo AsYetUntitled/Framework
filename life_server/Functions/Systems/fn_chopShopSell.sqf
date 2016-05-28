@@ -23,8 +23,8 @@ _unit = owner _unit;
 
 _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if (count _dbInfo > 0) then {
-    _uid = SEL(_dbInfo,0);
-    _plate = SEL(_dbInfo,1);
+    _uid = (_dbInfo select 0);
+    _plate = (_dbInfo select 1);
 
     _query = format["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
 

@@ -39,11 +39,11 @@ switch (playerSide) do {
 
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
-_maxspeed = _vehicleInfo select 8;
-_horsepower = _vehicleInfo select 11;
-_passengerseats = _vehicleInfo select 10;
-_fuel = _vehicleInfo select 12;
-_armor = _vehicleInfo select 9;
+_maxspeed = (_vehicleInfo select 8);
+_horsepower = (_vehicleInfo select 11);
+_passengerseats = (_vehicleInfo select 10);
+_fuel = (_vehicleInfo select 12);
+_armor = (_vehicleInfo select 9);
 [_className] call life_fnc_vehicleShop3DPreview;
 
 ctrlShow [2330,true];
@@ -76,9 +76,9 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
 _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 
 {
-    _flag = SEL(_x,1);
-    _textureName = SEL(_x,0);
-    if (SEL(life_veh_shop,2) isEqualTo _flag) then {
+    _flag = (_x select 1);
+    _textureName = (_x select 0);
+    if ((life_veh_shop select 2) isEqualTo _flag) then {
         _ctrl lbAdd _textureName;
         _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
     };

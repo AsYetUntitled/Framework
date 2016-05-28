@@ -12,7 +12,7 @@ _house = param [0,ObjNull,[ObjNull]];
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
 if (isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
-_uid = SEL((_house getVariable "house_owner"),0);
+_uid = ((_house getVariable "house_owner") select 0);
 
 if (!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
 
@@ -51,12 +51,12 @@ if (player distance _house > 13) exitWith {life_action_inUse = false; titleText[
 if (!alive player) exitWith {life_action_inUse = false;};
 life_action_inUse = false;
 
-_houseInvData = SEL(_houseInv,0);
-_houseInvVal = SEL(_houseInv,1);
+_houseInvData = (_houseInv select 0);
+_houseInvVal = (_houseInv select 1);
 _value = 0;
 {
-    _var = SEL(_x,0);
-    _val = SEL(_x,1);
+    _var = _x select 0;
+    _val = _x select 1;
 
     if (ITEM_ILLEGAL(_var) isEqualTo 1) then {
         if (!(ITEM_SELLPRICE(_var) isEqualTo -1)) then {
@@ -65,7 +65,7 @@ _value = 0;
             _value = _value + (_val * ITEM_SELLPRICE(_var));
         };
     };
-} forEach (SEL(_houseInv,0));
+} forEach (_houseInv select 0);
 
 if (_value > 0) then {
     [0,"STR_House_Raid_Successful",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];

@@ -8,9 +8,9 @@
 */
 private["_cop","_val"];
 if (!isNull (findDisplay 2600)) exitWith {}; //Already at the ticket menu, block for abuse?
-_cop = SEL(_this,0);
+_cop = _this select 0;
 if (isNull _cop) exitWith {};
-_val = SEL(_this,1);
+_val = _this select 1;
 
 createDialog "life_ticket_pay";
 disableSerialization;

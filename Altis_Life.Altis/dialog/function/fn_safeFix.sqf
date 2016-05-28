@@ -7,7 +7,7 @@
     Piece of functionality for the cops to close the safe (lock it)
 */
 private "_vault";
-_vault = SEL(_this,0);
+_vault = _this select 0;
 if (!(_vault getVariable ["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
 
 life_action_inUse = true;

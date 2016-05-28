@@ -8,11 +8,11 @@
     clean up their storage boxes in their house. Also, saves player infos & position.
 */
 private["_unit","_id","_uid","_name","_alive","_position","_side"];
-_unit = SEL(_this,0);
+_unit = _this select 0;
 if (isNull _unit) exitWith {};
-_id = SEL(_this,1);
-_uid = SEL(_this,2);
-_name = SEL(_this,3);
+_id = _this select 1;
+_uid = _this select 2;
+_name = _this select 3;
 _side = side _unit;
 
 //Save player info

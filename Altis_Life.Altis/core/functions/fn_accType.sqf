@@ -32,13 +32,13 @@ _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon play
         _weapon = _x;
         _cfgInfo = [_weapon,"CfgWeapons"] call life_fnc_fetchCfgDetails;
 
-        _legacyItems = (SEL(_cfgInfo,10) + SEL(_cfgInfo,11) + SEL(_cfgInfo,12));
-        _newItems = SEL(_cfgInfo,14);
+        _legacyItems = ((_cfgInfo select 10) + (_cfgInfo select 11) + (_cfgInfo select 12));
+        _newItems = _cfgInfo select 14;
 
         //Check Legacy Items first
         if (count _legacyItems > 0) then {
             for "_i" from 0 to (count _legacyItems)-1 do {
-                _legacyItems set[_i,toLower(SEL(_legacyItems,_i))];
+                _legacyItems set[_i,toLower(_legacyItems select _i)];
             };
 
             if ((toLower _item) in _legacyItems) exitWith {_ret = switch (_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};};

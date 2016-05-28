@@ -18,9 +18,9 @@ ctrlSetText[2922, format["%1", life_settings_viewDistanceAir]];
 
 /* Set up the sliders */
 {
-    slidersetRange [SEL(_x,0),100,8000];
-    CONTROL(2900,SEL(_x,0)) sliderSetSpeed [100,100,100];
-    sliderSetPosition [SEL(_x,0),SEL(_x,1)];
+    slidersetRange [(_x select 0),100,8000];
+    CONTROL(2900,(_x select 0)) sliderSetSpeed [100,100,100];
+    sliderSetPosition [(_x select 0),(_x select 1)];
 } forEach [[2901,life_settings_viewDistanceFoot],[2911,life_settings_viewDistanceCar],[2921,life_settings_viewDistanceAir]];
 
 

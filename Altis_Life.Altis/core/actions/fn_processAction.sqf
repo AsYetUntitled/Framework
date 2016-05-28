@@ -29,10 +29,10 @@ _itemInfo = [_materialsRequired,_materialsGiven,_noLicenseCost,(localize format[
 if (count _itemInfo isEqualTo 0) exitWith {life_action_inUse = false;};
 
 //Setup vars.
-_oldItem = SEL(_itemInfo,0);
-_newItem = SEL(_itemInfo,1);
-_cost = SEL(_itemInfo,2);
-_upp = SEL(_itemInfo,3);
+_oldItem = _itemInfo select 0;
+_newItem = _itemInfo select 1;
+_cost = _itemInfo select 2;
+_upp = _itemInfo select 3;
 _exit = false;
 if (count _oldItem isEqualTo 0) exitWith {life_action_inUse = false;};
 

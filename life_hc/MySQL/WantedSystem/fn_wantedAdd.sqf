@@ -75,7 +75,7 @@ if (_customBounty != -1) then {_type set[1,_customBounty];};
 
 _query = format["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
 _queryResult = [_query,2,true] call HC_fnc_asyncCall;
-_val = [(_type select 1)] call HC_fnc_numberSafe;
+_val = [_type select 1] call HC_fnc_numberSafe;
 _number = _type select 0;
 
 if (count _queryResult != 0) then

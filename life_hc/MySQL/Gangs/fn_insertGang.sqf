@@ -67,4 +67,4 @@ _query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
 
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-_group setVariable ["gang_id",SEL(_queryResult,0),true];
+_group setVariable ["gang_id",(_queryResult select 0),true];

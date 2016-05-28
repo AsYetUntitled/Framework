@@ -60,7 +60,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     if (!(_resources select 0 isEqualType [])) then {
         _mined = _resources select 0;
     } else {
-        _mined = _resources select 0 select 0;
+        _mined = (_resources select 0) select 0;
     };
 
     {
@@ -124,12 +124,12 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _vehicle_data = _vehicle getVariable ["Trunk",[[],0]];
-    _inv = _vehicle_data select 0;
-    _space = _vehicle_data select 1;
+    _inv = (_vehicle_data select 0);
+    _space = (_vehicle_data select 1);
     _itemIndex = [_resource,_inv] call TON_fnc_index;
     _weight = [_vehicle] call life_fnc_vehicleWeight;
     _random = 10 + round((random(10)));
-    _sum = [_resource,_random,_weight select 1,_weight select 0] call life_fnc_calWeightDiff; // Get a sum base of the remaining weight..
+    _sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; // Get a sum base of the remaining weight..
 
     if (_sum < 1) exitWith {
         titleText[localize "STR_NOTF_DeviceFull","PLAIN"];
@@ -139,7 +139,7 @@ for "_i" from 0 to 1 step 0 do {
     if (_itemIndex isEqualTo -1) then {
         _inv pushBack [_resource,_sum];
     } else {
-        _val = _inv select _itemIndex select 1;
+        _val = (_inv select _itemIndex) select 1;
         _inv set[_itemIndex,[_resource,_val + _sum]];
     };
 
@@ -165,7 +165,7 @@ for "_i" from 0 to 1 step 0 do {
     _itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
     _vehicle setVariable["Trunk",[_inv,_space + _itemWeight],true];
     _weight = [_vehicle] call life_fnc_vehicleWeight;
-    _sum = [_resource,_random,_weight select 1,_weight select 0] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight..
+    _sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight..
 
     if (_sum < 1) exitWith {
         _vehicle setVariable["mining",nil,true];

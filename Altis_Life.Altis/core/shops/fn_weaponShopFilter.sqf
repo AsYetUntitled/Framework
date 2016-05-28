@@ -23,14 +23,14 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
     if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1) then {
         _config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
         {
-            _var = SEL(_x,0);
+            _var = _x select 0;
             _count = {_x == _var} count (uiNamespace getVariable ["Magazine_Array",[]]);
             if (_count > 0) then {
-                _itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
-                _itemList lbAdd format["%1",if (!(SEL(_x,1) isEqualTo "")) then {SEL(_x,1)} else {_itemInfo select 1}];
-                _itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
-                _itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
-                _itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
+                _itemInfo = [(_x select 0)] call life_fnc_fetchCfgDetails;
+                _itemList lbAdd format["%1",if (!((_x select 1) isEqualTo "")) then {(_x select 1)} else {(_itemInfo select 1)}];
+                _itemList lbSetData[(lbSize _itemList)-1,(_itemInfo select 0)];
+                _itemList lbSetPicture[(lbSize _itemList)-1,(_itemInfo select 2)];
+                _itemList lbSetValue[(lbSize _itemList)-1,(_x select 2)];
             };
         } forEach (_config);
         ((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
@@ -39,14 +39,14 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
     } else {
         _config = M_CONFIG(getArray,"WeaponShops",_shop,"accs");
         {
-            _var = SEL(_x,0);
+            _var = _x select 0;
             _count = {_x == _var} count (uiNamespace getVariable ["Accessories_Array",[]]);
             if (_count > 0) then {
-                _itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
-                _itemList lbAdd format["%1",if (!(SEL(_x,1) isEqualTo "")) then {SEL(_x,1)} else {_itemInfo select 1}];
-                _itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
-                _itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
-                _itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
+                _itemInfo = [(_x select 0)] call life_fnc_fetchCfgDetails;
+                _itemList lbAdd format["%1",if (!((_x select 1) isEqualTo "")) then {(_x select 1)} else {(_itemInfo select 1)}];
+                _itemList lbSetData[(lbSize _itemList)-1,(_itemInfo select 0)];
+                _itemList lbSetPicture[(lbSize _itemList)-1,(_itemInfo select 2)];
+                _itemList lbSetValue[(lbSize _itemList)-1,(_x select 2)];
             };
         } forEach (_config);
         ((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Weapons";
@@ -61,11 +61,11 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
         case 0: {
             _config = M_CONFIG(getArray,"WeaponShops",_shop,"items");
             {
-                _itemInfo = [SEL(_x,0)] call life_fnc_fetchCfgDetails;
-                _itemList lbAdd format["%1",if (!(SEL(_x,1) isEqualTo "")) then {SEL(_x,1)} else {_itemInfo select 1}];
-                _itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
-                _itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
-                _itemList lbSetValue[(lbSize _itemList)-1,SEL(_x,2)];
+                _itemInfo = [(_x select 0)] call life_fnc_fetchCfgDetails;
+                _itemList lbAdd format["%1",if (!((_x select 1) isEqualTo "")) then {(_x select 1)} else {(_itemInfo select 1)}];
+                _itemList lbSetData[(lbSize _itemList)-1,(_itemInfo select 0)];
+                _itemList lbSetPicture[(lbSize _itemList)-1,(_itemInfo select 2)];
+                _itemList lbSetValue[(lbSize _itemList)-1,(_x select 2)];
             } forEach (_config);
 
             ((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
@@ -102,18 +102,18 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
                 if (!(_x in _listedItems) && _x != "") then {
                     _iS = [_x,_itemArray] call TON_fnc_index;
                     if (_iS != -1) then {
-                        if (!(SEL(SEL(_itemArray,_iS),3) isEqualTo -1)) then {
+                        if (!(((_itemArray select _iS) select 3) isEqualTo -1)) then {
                             _itemInfo = [_x] call life_fnc_fetchCfgDetails;
                             _listedItems pushBack _x;
 
                             _itemCount = {_x == (_itemInfo select 0)} count _config;
                             if (_itemCount > 1) then {
-                                _itemList lbAdd format["[%2] %1",_itemInfo select 1,_itemCount];
+                                _itemList lbAdd format["[%2] %1",(_itemInfo select 1),_itemCount];
                             } else {
-                                _itemList lbAdd format["%1",_itemInfo select 1];
+                                _itemList lbAdd format["%1",(_itemInfo select 1)];
                             };
-                            _itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];
-                            _itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
+                            _itemList lbSetData[(lbSize _itemList)-1,(_itemInfo select 0)];
+                            _itemList lbSetPicture[(lbSize _itemList)-1,(_itemInfo select 2)];
                         };
                     };
                 };

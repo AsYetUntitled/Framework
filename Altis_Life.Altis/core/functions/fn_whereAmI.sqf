@@ -17,7 +17,7 @@ _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 for "_i" from 0 to count(_resourceCfg)-1 do {
     private["_curConfig", "_resourceZones", "_requiredItem"];
     _zonem = "";
-    _curConfig = (_resourceCfg select _i);
+    _curConfig = _resourceCfg select _i;
     _resourceZones = getArray(_curConfig >> "zones");
     {
         if ((player distance(getMarkerPos _x)) < _zoneSize) exitWith {
@@ -38,7 +38,7 @@ _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
     private["_curConfig", "_resourceZones", "_requiredItem"];
     _zone = "";
-    _curConfig = (_resourceCfg select _i);
+    _curConfig = _resourceCfg select _i;
     _resourceZones = getArray(_curConfig >> "zones");
     {
         if ((player distance(getMarkerPos _x)) < _zoneSize) exitWith {

@@ -7,11 +7,11 @@
     Receive an item from a player.
 */
 private["_unit","_val","_item","_from","_diff"];
-_unit = SEL(_this,0);
+_unit = _this select 0;
 if (_unit != player) exitWith {};
-_val = SEL(_this,1);
-_item = SEL(_this,2);
-_from = SEL(_this,3);
+_val = _this select 1;
+_item = _this select 2;
+_from = _this select 3;
 
 _diff = [_item,(parseNumber _val),life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 

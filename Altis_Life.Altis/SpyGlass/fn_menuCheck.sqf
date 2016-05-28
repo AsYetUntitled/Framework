@@ -140,7 +140,7 @@ for "_i" from 0 to 1 step 0 do {
         {
             _onLoad = getText(configFile >> (_x select 0) >> "onLoad");
             _onUnload = getText(configFile >> (_x select 0) >> "onUnload");
-            if (_onLoad != (_x select 1) || _onUnload != (_x select 2)) exitWith {
+            if (_onLoad != _x select 1 || _onUnload != _x select 2) exitWith {
                 [profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
                 [profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
                 sleep 0.5;

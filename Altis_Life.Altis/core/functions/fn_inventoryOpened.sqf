@@ -8,8 +8,8 @@
 */
 private["_container","_unit","_list"];
 if (count _this isEqualTo 1) exitWith {false};
-_unit = SEL(_this,0);
-_container = SEL(_this,1);
+_unit = _this select 0;
+_container = _this select 1;
 
 _isPack = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _container,"isBackpack");
 if (_isPack isEqualTo 1) exitWith {

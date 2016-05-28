@@ -52,7 +52,7 @@ _waterTime = time;
 _walkDis = 0;
 _bp = "";
 _lastPos = visiblePosition player;
-_lastPos = (SEL(_lastPos,0)) + (SEL(_lastPos,1));
+_lastPos = (_lastPos select 0) + (_lastPos select 1);
 _lastState = vehicle player;
 
 for "_i" from 0 to 1 step 0 do {
@@ -91,7 +91,7 @@ for "_i" from 0 to 1 step 0 do {
     /* Travelling distance to decrease thirst/hunger which is captured every second so the distance is actually greater then 650 */
     if (!alive player) then {_walkDis = 0;} else {
         _curPos = visiblePosition player;
-        _curPos = (SEL(_curPos,0)) + (SEL(_curPos,1));
+        _curPos = (_curPos select 0) + (_curPos select 1);
         if (!(_curPos isEqualTo _lastPos) && {(isNull objectParent player)}) then {
             _walkDis = _walkDis + 1;
             if (_walkDis isEqualTo 650) then {
@@ -102,7 +102,7 @@ for "_i" from 0 to 1 step 0 do {
             };
         };
         _lastPos = visiblePosition player;
-        _lastPos = (SEL(_lastPos,0)) + (SEL(_lastPos,1));
+        _lastPos = (_lastPos select 0) + (_lastPos select 1);
     };
     uiSleep 1;
 };

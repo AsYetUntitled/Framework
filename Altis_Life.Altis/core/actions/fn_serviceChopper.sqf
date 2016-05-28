@@ -34,16 +34,16 @@ for "_i" from 0 to 1 step 0 do {
     if (_cP >= 1) exitWith {};
 };
 
-if (!alive SEL(_search,0) || SEL(_search,0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
+if (!alive (_search select 0) || (_search select 0) distance air_sp > 15) exitWith {life_action_inUse = false; hint localize "STR_Service_Chopper_Missing"};
 
 CASH = CASH - _serviceCost;
-if (!local SEL(_search,0)) then {
-    [SEL(_search,0),1] remoteExecCall ["life_fnc_setFuel",SEL(_search,0)];
+if (!local (_search select 0)) then {
+    [(_search select 0),1] remoteExecCall ["life_fnc_setFuel",(_search select 0)];
 } else {
-    SEL(_search,0) setFuel 1;
+    (_search select 0) setFuel 1;
 };
 
-SEL(_search,0) setDamage 0;
+(_search select 0) setDamage 0;
 
 5 cutText ["","PLAIN"];
 titleText [localize "STR_Service_Chopper_Done","PLAIN"];

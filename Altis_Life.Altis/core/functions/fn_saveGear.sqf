@@ -70,7 +70,7 @@ if (!(vest player isEqualTo "")) then {
 };
 
 if (count (primaryWeaponMagazine player) > 0 && alive player) then {
-    _pMag = SEL((primaryWeaponMagazine player),0);
+    _pMag = ((primaryWeaponMagazine player) select 0);
 
     if (!(_pMag isEqualTo "")) then {
         _uni = player canAddItemToUniform _pMag;

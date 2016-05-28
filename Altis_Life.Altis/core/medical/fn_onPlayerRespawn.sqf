@@ -7,8 +7,8 @@
     Does something but I won't know till I write it...
 */
 private["_unit","_corpse","_containers"];
-_unit = SEL(_this,0);
-_corpse = SEL(_this,1);
+_unit = _this select 0;
+_corpse = _this select 1;
 life_corpse = _corpse;
 
 //Comment this code out if you want them to keep the weapon on the ground.
