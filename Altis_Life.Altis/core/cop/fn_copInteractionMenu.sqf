@@ -74,6 +74,7 @@ _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
 _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
 _Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction; closeDialog 0;";
+_Btn6 ctrlEnable false;
 
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
@@ -84,7 +85,6 @@ _Btn8 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_seizePlayerAction;
 
 if (FETCH_CONST(life_coplevel) < _seizeRank) then {_Btn8 ctrlEnable false;};
 
-//Check that you are near a place to jail them.
-if (!((player distance (getMarkerPos "police_hq_1") < 30) ||  (player distance (getMarkerPos "police_hq_2") < 30) || (player distance (getMarkerPos "cop_spawn_3") < 30) || (player distance (getMarkerPos "cop_spawn_5") < 30))) then  {
-    _Btn6 ctrlEnable false;
-};
+{
+    if ((player distance (getMarkerPos _x) <30)) exitWith { _Btn6 ctrlEnable true;};
+} forEach LIFE_SETTINGS(getArray,"sendtoJail_locations");

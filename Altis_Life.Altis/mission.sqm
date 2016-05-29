@@ -321,7 +321,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={22150.52,3.150569,14475.64};
-			name="Correctional Facility";
+			name="Correctional_Facility";
 			text="@STR_MAR_Altis_Corrections";
 			type="mil_dot";
 			colorName="Color4_FD_F";
