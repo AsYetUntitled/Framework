@@ -249,6 +249,7 @@ class Life_Client_Core {
         class boltcutter {};
         class defuseKit {};
         class flashbang {};
+        class jerrycanRefuel {};
         class jerryRefuel {};
         class lockpick {};
         class placestorage {};

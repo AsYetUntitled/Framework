@@ -67,6 +67,11 @@ switch (true) do {
         closeDialog 0;
     };
 
+    case (_item isEqualTo "fuelEmpty"): {
+        [] spawn life_fnc_jerrycanRefuel;
+        closeDialog 0;
+    };
+
     case (_item isEqualTo "lockpick"): {
         [] spawn life_fnc_lockpick;
         closeDialog 0;

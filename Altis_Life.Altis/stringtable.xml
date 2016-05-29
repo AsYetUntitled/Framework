@@ -6923,6 +6923,39 @@
             <Portuguese>Você precisa estar mais perto do veículo!</Portuguese>
             <Polish>Musisz być bliżej pojazdu!</Polish>
         </Key>
+        <Key ID="STR_ISTR_Jerry_Refuel">
+            <Original>Refuelling Jerry Can</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_ISTR_Jerry_Distance">
+            <Original>You must be closer to the fuel pump!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_ISTR_Jerry_Refueled">
+            <Original>You have successfully refueled the Jerry Can!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
         <Key ID="STR_ISTR_Jerry_Process">
             <Original>Refuelling %1</Original>
             <Czech>Doplňování paliva%1</Czech>
@@ -8769,6 +8802,17 @@
         </Key>
     </Package>
     <Package name="Fuel_Pump">
+        <Key ID="STR_Action_PumpJerry">
+            <Original>Refuel Jerry Can</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Russian></Russian>
+            <Portuguese></Portuguese>
+            <French></French>
+            <German></German>
+        </Key>
         <Key ID="STR_Action_Pump">
             <Original>Refuel Vehicle</Original>
             <Czech>tankovací Vehicle</Czech>
