@@ -6924,7 +6924,29 @@
             <Polish>Musisz być bliżej pojazdu!</Polish>
         </Key>
         <Key ID="STR_ISTR_Jerry_Refuel">
-            <Original>Refuelling Jerry Can</Original>
+            <Original>Refuelling Fuel Can</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_ISTR_Jerry_StationPump">
+            <Original>Fuel Station Pump</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_ISTR_Jerry_PopUp">
+            <Original>Spend $%1 to refuel your Empty Fuel Can?</Original>
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
@@ -6946,7 +6968,7 @@
             <Polish></Polish>
         </Key>
         <Key ID="STR_ISTR_Jerry_Refueled">
-            <Original>You have successfully refueled the Jerry Can!</Original>
+            <Original>You have successfully refueled the Fuel Can!</Original>
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
