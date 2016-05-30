@@ -66,6 +66,9 @@ if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 ["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
 ["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 
+diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
+diag_log "------------------------------------------ Version 4.4R2 -------------------------------------------";
+
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
         _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";

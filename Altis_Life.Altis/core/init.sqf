@@ -23,9 +23,9 @@ private["_handle","_timeStamp"];
 0 cutText["Setting up client, please wait...","BLACK FADED"];
 0 cutFadeOut 9999999;
 _timeStamp = diag_tickTime;
-diag_log "------------------------------------------------------------------------------------------------------";
+diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "--------------------------------- Starting Altis Life Client Init ----------------------------------";
-diag_log "------------------------------------------------------------------------------------------------------";
+diag_log "------------------------------------------ Version 4.4R2 -------------------------------------------";
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
 [] call compile PreprocessFileLineNumbers "core\clientValidator.sqf";
 enableSentences false;
