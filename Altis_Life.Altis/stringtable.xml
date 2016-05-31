@@ -6161,7 +6161,7 @@
             <Polish>Pączki</Polish>
         </Key>
         <Key ID="STR_Item_FuelE">
-            <Original>Empty Fuel Can</Original>
+            <Original>Empty Fuel Canister</Original>
             <Czech>Prázdný palivo může</Czech>
             <Spanish>Envase de Combustible Vacio</Spanish>
             <Russian></Russian>
@@ -6172,7 +6172,7 @@
             <Polish>Pusty kanister</Polish>
         </Key>
         <Key ID="STR_Item_FuelF">
-            <Original>Full Fuel Can</Original>
+            <Original>Full Fuel Canister</Original>
             <Czech>Plná palivo může</Czech>
             <Spanish>Envase de Combustible Lleno</Spanish>
             <Russian></Russian>
@@ -6924,59 +6924,59 @@
             <Polish>Musisz być bliżej pojazdu!</Polish>
         </Key>
         <Key ID="STR_ISTR_Jerry_Refuel">
-            <Original>Refuelling Fuel Can</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <German></German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <Original>Refuelling Fuel Canister</Original>
+            <Czech>Tankování paliva kanystr</Czech>
+            <French>Ravitaillement carburant Bidon</French>
+            <Spanish>Echar la bombona de combustible</Spanish>
+            <Italian>Rifornimento carburante scatola metallica</Italian>
+            <Polish>Tankowanie paliwa Kanister</Polish>
+            <Portuguese>O reabastecimento de combustível vasilha</Portuguese>
+            <Russian>Дозаправка топлива канистра</Russian>
+            <German>Benzinkanister betanken</German>
         </Key>
         <Key ID="STR_ISTR_Jerry_StationPump">
             <Original>Fuel Station Pump</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <German></German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <Czech>Čerpací stanice čerpadla</Czech>
+            <French>Pompe à essence station</French>
+            <Spanish>Estación de bombeo de combustible</Spanish>
+            <Italian>Pompa Stazione di rifornimento</Italian>
+            <Polish>Paliwo przepompowni</Polish>
+            <Portuguese>Bomba de Combustível Station</Portuguese>
+            <Russian>Топливная Насосная станция</Russian>
+            <German>Tankstelle Pumpe</German>
         </Key>
         <Key ID="STR_ISTR_Jerry_PopUp">
-            <Original>Spend $%1 to refuel your Empty Fuel Can?</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <German></German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <Original>Spend $%1 to refuel your Empty Fuel Canister?</Original>
+            <Czech>Utratit $%1 natankovat vaše prázdné palivové kanystr?</Czech>
+            <French>Passez $%1 pour faire le plein de votre réservoir de combustible vide?</French>
+            <Spanish>Gastar $%1 para recargar su cartucho de combustible vacía?</Spanish>
+            <Italian>Spendere $%1 per rifornire di carburante la vostra scatola metallica del combustibile vuoto?</Italian>
+            <Polish>Wydać $%1 zatankować swój pustego zasobnika paliwa?</Polish>
+            <Portuguese>Gastar R$%1 para reabastecer a sua vasilha de combustível vazio?</Portuguese>
+            <Russian>Потратить $%1 для дозаправки ваш Пусто баллон с горючим?</Russian>
+            <German>Verbringen Sie $%1 Ihre leeren Kraftstoffkanister tanken?</German>
         </Key>
         <Key ID="STR_ISTR_Jerry_Distance">
             <Original>You must be closer to the fuel pump!</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <German></German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <Czech>Musíte být blíže k palivovému čerpadlu!</Czech>
+            <French>Vous devez être plus proche de la pompe à carburant!</French>
+            <Spanish>Debe estar más cerca de la bomba de combustible!</Spanish>
+            <Italian>È necessario essere più vicino alla pompa del carburante!</Italian>
+            <Polish>Você deve estar mais perto da bomba de combustível!</Polish>
+            <Portuguese>Você deve estar mais perto da bomba de combustível!</Portuguese>
+            <Russian>Вы должны быть ближе к топливному насосу!</Russian>
+            <German>Du musst dich näher an der Zapfsäule befinden!</German>
         </Key>
         <Key ID="STR_ISTR_Jerry_Refueled">
-            <Original>You have successfully refueled the Fuel Can!</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <German></German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <Original>You have successfully refuelled the Fuel Canister!</Original>
+            <Czech>Úspěšně jste tankovat palivový kanystr!</Czech>
+            <French>Vous avez ravitaillé avec succès le Bidon carburant!</French>
+            <Spanish>Usted ha puesto gasolina con éxito el cartucho de combustible!</Spanish>
+            <Italian>Hai rifornimento con successo il canestro del combustibile!</Italian>
+            <Polish>Pomyślnie zatankowany kanistra paliwa!</Polish>
+            <Portuguese>Você reabastecido com sucesso a vasilha de combustível!</Portuguese>
+            <Russian>Вы успешно заправились на баллон с горючим!</Russian>
+            <German>Der Benzinkanister wurde betankt!</German>
         </Key>
         <Key ID="STR_ISTR_Jerry_Process">
             <Original>Refuelling %1</Original>
@@ -8825,15 +8825,15 @@
     </Package>
     <Package name="Fuel_Pump">
         <Key ID="STR_Action_PumpJerry">
-            <Original>Refuel Jerry Can</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Italian></Italian>
-            <Polish></Polish>
-            <Russian></Russian>
-            <Portuguese></Portuguese>
-            <French></French>
-            <German></German>
+            <Original>Refuel Fuel Canister</Original>
+            <Czech>Tankovat paliva kanystr</Czech>
+            <French>Refuel carburant Bidon</French>
+            <Spanish>Abastecerse de combustible bombona de combustible</Spanish>
+            <Italian>Fare rifornimento di carburante scatola metallica</Italian>
+            <Polish>Tankowanie paliwa Canister</Polish>
+            <Portuguese>Reabastecer de combustível vasilha</Portuguese>
+            <Russian>Заправить баллон с горючим</Russian>
+            <German>Benzinkanister betanken</German>
         </Key>
         <Key ID="STR_Action_Pump">
             <Original>Refuel Vehicle</Original>
