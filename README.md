@@ -8,8 +8,8 @@
         <img src="https://img.shields.io/badge/release-3-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://dev.arma3.com/post/spotrep-00054">
-        <img src="https://img.shields.io/badge/arma%203-1.58-orange.svg" alt="Arma 3 Version">
+    <a href="https://dev.arma3.com/post/spotrep-00056">
+        <img src="https://img.shields.io/badge/arma%203-1.60-orange.svg" alt="Arma 3 Version">
     </a>
     </br>
     <a href="https://discordapp.com/invite/0z4k0hcAcvMl2SQx">
