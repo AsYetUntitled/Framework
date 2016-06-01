@@ -34,9 +34,12 @@ ArmaLife is a GitHub project which aims to update and keep adding new features t
 
     player createDiaryRecord["changelog",
         [
-            "Altis Life Change Log",
+            "Altis Life Changelog",
                 "
 The official changelog can be found in ArmaLife github. https://git.io/vVkhe<br/><br/>
+v4.4 release 3!<br/>
+By: danielstuart14<br/>
+Date: 31. May 2016<br/><br/>
 v4.4 release 2!<br/>
 By: danielstuart14<br/>
 Date: 20. March 2016<br/><br/>

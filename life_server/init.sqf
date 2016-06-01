@@ -9,6 +9,7 @@
     Description:
     Initialize the server and required systems.
 */
+private["_dome","_rsb","_timeStamp"];
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
@@ -66,8 +67,11 @@ if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 ["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
 ["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 
+_timeStamp = diag_tickTime;
+diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
-diag_log "------------------------------------------ Version 4.4R2 -------------------------------------------";
+diag_log "------------------------------------------ Version 4.4R3 -------------------------------------------";
+diag_log "----------------------------------------------------------------------------------------------------";
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
@@ -159,7 +163,6 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-private["_dome","_rsb"];
 _dome = nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"];
 _rsb = nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"];
 
@@ -184,3 +187,7 @@ life_attachment_point setVectorDirAndUp [[0,1,0], [0,0,1]];
 
 // Sharing the point of attachment with all players.
 publicVariable "life_attachment_point";
+
+diag_log "----------------------------------------------------------------------------------------------------";
+diag_log format["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log "----------------------------------------------------------------------------------------------------";

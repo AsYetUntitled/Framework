@@ -7,7 +7,7 @@
     Master client initialization file
 */
 
-private["_server_isReady","_extDB_notLoaded"];
+private["_handle","_timeStamp","_server_isReady","_extDB_notLoaded"];
 
 if (life_HC_isActive) then {
     _server_isReady = life_HC_server_isReady;
@@ -19,13 +19,13 @@ if (life_HC_isActive) then {
 
 life_firstSpawn = true;
 life_session_completed = false;
-private["_handle","_timeStamp"];
 0 cutText["Setting up client, please wait...","BLACK FADED"];
 0 cutFadeOut 9999999;
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "--------------------------------- Starting Altis Life Client Init ----------------------------------";
-diag_log "------------------------------------------ Version 4.4R2 -------------------------------------------";
+diag_log "------------------------------------------ Version 4.4R3 -------------------------------------------";
+diag_log "----------------------------------------------------------------------------------------------------";
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
 [] call compile PreprocessFileLineNumbers "core\clientValidator.sqf";
 enableSentences false;
@@ -112,9 +112,6 @@ waitUntil {!(isNull (findDisplay 46))};
 diag_log "Display 46 Found";
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 player addRating 99999999;
-diag_log "------------------------------------------------------------------------------------------------------";
-diag_log format["                End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
-diag_log "------------------------------------------------------------------------------------------------------";
 
 [player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_managesc",RSERV];
 0 cutText ["","BLACK IN"];
@@ -159,3 +156,7 @@ if (life_HC_isActive) then {
 } else {
     [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
 };
+
+diag_log "----------------------------------------------------------------------------------------------------";
+diag_log format["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log "----------------------------------------------------------------------------------------------------";

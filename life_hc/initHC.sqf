@@ -6,6 +6,7 @@
     Description:
     Initialize the headless client.
 */
+private "_timeStamp";
 if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
 
 [] execVM "\life_hc\KRON_Strings.sqf";
@@ -13,10 +14,6 @@ if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
 life_HC_server_extDB_notLoaded = "";
 
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
-
-diag_log "-------------------------------------------------------------------------------------------------------------------";
-diag_log "-------------------------------- Starting initialization of 'extDB2-HC' by NANOU ----------------------------------";
-diag_log "-------------------------------------------------------------------------------------------------------------------";
 
 if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     life_sql_id = round(random(9999));
@@ -65,6 +62,12 @@ if (life_HC_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did 
 ["CALL deleteDeadVehicles",1] call HC_fnc_asyncCall;
 ["CALL deleteOldHouses",1] call HC_fnc_asyncCall;
 ["CALL deleteOldGangs",1] call HC_fnc_asyncCall;
+
+_timeStamp = diag_tickTime;
+diag_log "----------------------------------------------------------------------------------------------------";
+diag_log "------------------------------------ Starting Altis Life HC Init -----------------------------------";
+diag_log "-------------------------------------------- Version 4.4R3 -----------------------------------------";
+diag_log "----------------------------------------------------------------------------------------------------";
 
 [] execFSM "\life_hc\FSM\cleanup.fsm";
 
@@ -122,10 +125,8 @@ CONSTVAR(HC_MPAllowedFuncs);
 
 life_HC_isActive = true;
 publicVariable "life_HC_isActive";
-
-diag_log "---------------------------- HC is Ready --------------------------------";
-diag_log "Published the needed vars over the network, ready for queries to recieve!";
-diag_log "-------------------------------------------------------------------------";
-
 life_HC_server_isReady = true;
 publicVariable "life_HC_server_isReady";
+diag_log "----------------------------------------------------------------------------------------------------";
+diag_log format["                 End of Altis Life HC Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log "----------------------------------------------------------------------------------------------------";
