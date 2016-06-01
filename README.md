@@ -5,7 +5,7 @@
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://github.com/ArmaLife/Framework/releases">
-        <img src="https://img.shields.io/badge/release-2-yellowgreen.svg" alt="Altis Life Release">
+        <img src="https://img.shields.io/badge/release-3-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://dev.arma3.com/post/spotrep-00054">
