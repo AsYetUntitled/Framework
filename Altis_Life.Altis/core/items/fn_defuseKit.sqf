@@ -54,4 +54,4 @@ if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "ST
 
 life_action_inUse = false;
 _vault setVariable["chargeplaced",false,true];
-[0,"STR_ISTR_Defuse_Success"] remoteExecCall ["life_fnc_broadcast",west];
+[0,localize "STR_ISTR_Defuse_Success"] remoteExecCall ["life_fnc_broadcast",west];
