@@ -67,7 +67,7 @@ if (count crew _vehicle isEqualTo 0) then {
                 hint format[localize "STR_NOTF_OwnImpounded",[_value] call life_fnc_numberText,_type];
                 BANK = BANK - _value;
             } else {
-                hint format[localize "STR_NOTF_Impounded",[_value] call life_fnc_numberText,_type];
+                hint format[localize "STR_NOTF_Impounded",_type,[_value] call life_fnc_numberText];
                 BANK = BANK + _value;
             };
             if (BANK < 0) then {BANK = 0;};
