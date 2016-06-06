@@ -46,12 +46,12 @@ if (count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
 
 if ((_vInfo select 5) isEqualTo 0) exitWith {
     serv_sv_use deleteAt _servIndex;
-    [1,format[(localize "STR_Garage_SQLError_Destroyed"),(_vInfo select 2)]] remoteExecCall ["life_fnc_broadcast",_unit];
+    [1,"STR_Garage_SQLError_Destroyed",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if ((_vInfo select 6) isEqualTo 1) exitWith {
     serv_sv_use deleteAt _servIndex;
-    [1,format[(localize "STR_Garage_SQLError_Active"),(_vInfo select 2)]] remoteExecCall ["life_fnc_broadcast",_unit];
+    [1,"STR_Garage_SQLError_Active",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 if (!(_sp isEqualType "")) then {
@@ -63,7 +63,7 @@ if (!(_sp isEqualType "")) then {
 if (count _nearVehicles > 0) exitWith {
     serv_sv_use deleteAt _servIndex;
     [_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
-    [1,(localize "STR_Garage_SpawnPointError")] remoteExecCall ["life_fnc_broadcast",_unit];
+    [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
 _query = format["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
@@ -112,9 +112,8 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             _location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
            };
            _location = text _location;
-          _msg = format[localize "STR_NOTF_BlackListedVehicle", _location ,_name];
+           [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
-         [1,_msg,false] remoteExecCall ["life_fnc_broadcast",west];
          _query = format["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
         _thread = [_query,1] call DB_fnc_asyncCall;
         };

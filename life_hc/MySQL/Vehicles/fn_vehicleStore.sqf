@@ -63,13 +63,13 @@ if (_impound) exitWith {
 
 // not persistent so just do this!
 if (_vInfo isEqualTo []) exitWith {
-    [1,(localize "STR_Garage_Store_NotPersistent")] remoteExecCall ["life_fnc_broadcast",_ownerID];
+        [1,"STR_Garage_Store_NotPersistent",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_garage_store = false;
     _ownerID publicVariableClient "life_garage_store";
 };
 
 if (_uid != getPlayerUID _unit) exitWith {
-    [1,(localize "STR_Garage_Store_NoOwnership")] remoteExecCall ["life_fnc_broadcast",_ownerID];
+    [1,"STR_Garage_Store_NoOwnership",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_garage_store = false;
     _ownerID publicVariableClient "life_garage_store";
 };
