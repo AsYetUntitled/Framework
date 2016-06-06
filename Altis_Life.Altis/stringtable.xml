@@ -4182,7 +4182,7 @@
             <Spanish>Ahora está de espectador %1.\n\nPulse F10 para dejar de spectating.</Spanish>
             <Italian>Si è ora spectating %1.\n\nPremere F10 per smettere di spettatori.</Italian>
             <Polish>Grasz teraz spectating %1.\n\nNaciśnij klawisz F10, aby zatrzymać spectating.</Polish>
-            <Portuguese>Você agora está espectador %1.\n\nPressione F10 para parar espectador.</Portuguese>
+            <Portuguese>Você agora está como espectador %1.\n\nPressione F10 para sair.</Portuguese>
             <Russian>Теперь вы spectating %1.\n\nНажмите F10, чтобы остановить spectating.</Russian>
             <German>Du beobachtest nun %1.\n\nDrücke F10, um das Beobachten zu beenden.</German>
         </Key>
@@ -4193,7 +4193,7 @@
             <Spanish>Usted ha teletransportado %1 a su ubicación.</Spanish>
             <Italian>Hai teletrasportato %1 alla vostra posizione.</Italian>
             <Polish>Masz teleportował %1 na swoim miejscu.</Polish>
-            <Portuguese>Você teletransportado %1 para a sua localização.</Portuguese>
+            <Portuguese>Você teletransportou %1 para a sua localização.</Portuguese>
             <Russian>Вы телепортированы %1 к вашему положению.</Russian>
             <German>Du hast %1 zu deiner Position teleportiert.</German>
         </Key>
@@ -4215,7 +4215,7 @@
             <Spanish>Captura de la cuadrilla de Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
-            <Portuguese>Capturar Quadrilha Esconderijo</Portuguese>
+            <Portuguese>Capturar Esconderijo de Gangue</Portuguese>
             <Russian>Захват шайка укрытие</Russian>
             <German>Ganggebiet einnehmen</German>
         </Key>
