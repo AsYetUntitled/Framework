@@ -28,16 +28,18 @@ for "_i" from 1 to 125 do {
 
 /* First lets clear out the memory of potentially bad variables */
 {
-    if (!(_x in _BIS_Functions)) then {
-        if (!(_x in _LIFE_Functions)) then {
-            if (!(_x in _SERVER_Functions)) then {
-                if (!(_x in _SOCK_Functions)) then {
-                    if (!(_x in _DB_Functions)) then {
-                        if (!(_x in _BIS_UI_Functions)) then {
-                            _varType = typeName (uiNamespace getVariable _x);
-                            _find = _allowedVariables find [_x,_varType];
-                            if (_find isEqualTo -1) then {
-                                uiNamespace setVariable [_x,nil];
+    if (!isNil _x) then {
+        if (!(_x in _BIS_Functions)) then {
+            if (!(_x in _LIFE_Functions)) then {
+                if (!(_x in _SERVER_Functions)) then {
+                    if (!(_x in _SOCK_Functions)) then {
+                        if (!(_x in _DB_Functions)) then {
+                            if (!(_x in _BIS_UI_Functions)) then {
+                                _varType = typeName (uiNamespace getVariable _x);
+                                _find = _allowedVariables find [_x,_varType];
+                                if (_find isEqualTo -1) then {
+                                    uiNamespace setVariable [_x,nil];
+                                };
                             };
                         };
                     };
@@ -50,16 +52,18 @@ for "_i" from 1 to 125 do {
 /* Some people may be like WTF ALL DEM Checks... It was either this or lazy eval which could have a performance impact on the client. */
 _checkFunction = {
     {
-        if (!(_x in _BIS_Functions)) then {
-            if (!(_x in _LIFE_Functions)) then {
-                if (!(_x in _SERVER_Functions)) then {
-                    if (!(_x in _SOCK_Functions)) then {
-                        if (!(_x in _DB_Functions)) then {
-                            _varType = typeName (missionNamespace getVariable _x);
-                            _find = _allowedVariables find [_x,_varType];
-                            if (_find isEqualTo -1) then {
-                                diag_log format["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
-                                failMission "SpyGlass";
+        if (!isNil _x) then {
+            if (!(_x in _BIS_Functions)) then {
+                if (!(_x in _LIFE_Functions)) then {
+                    if (!(_x in _SERVER_Functions)) then {
+                        if (!(_x in _SOCK_Functions)) then {
+                            if (!(_x in _DB_Functions)) then {
+                                _varType = typeName (missionNamespace getVariable _x);
+                                _find = _allowedVariables find [_x,_varType];
+                                if (_find isEqualTo -1) then {
+                                    diag_log format["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
+                                    failMission "SpyGlass";
+                                };
                             };
                         };
                     };
@@ -71,17 +75,19 @@ _checkFunction = {
 
 _uiCheckFunction = {
     {
-        if (!(_x in _BIS_Functions)) then {
-            if (!(_x in _LIFE_Functions)) then {
-                if (!(_x in _SERVER_Functions)) then {
-                    if (!(_x in _SOCK_Functions)) then {
-                        if (!(_x in _DB_Functions)) then {
-                            if (!(_x in _BIS_UI_Functions)) then {
-                                _varType = typeName (uiNamespace getVariable _x);
-                                _find = _allowedVariables_UI find [_x,_varType];
-                                if (_find isEqualTo -1) then {
-                                    diag_log format["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
-                                    failMission "SpyGlass";
+        if (!isNil _x) then {
+            if (!(_x in _BIS_Functions)) then {
+                if (!(_x in _LIFE_Functions)) then {
+                    if (!(_x in _SERVER_Functions)) then {
+                        if (!(_x in _SOCK_Functions)) then {
+                            if (!(_x in _DB_Functions)) then {
+                                if (!(_x in _BIS_UI_Functions)) then {
+                                    _varType = typeName (uiNamespace getVariable _x);
+                                    _find = _allowedVariables_UI find [_x,_varType];
+                                    if (_find isEqualTo -1) then {
+                                        diag_log format["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
+                                        failMission "SpyGlass";
+                                    };
                                 };
                             };
                         };
