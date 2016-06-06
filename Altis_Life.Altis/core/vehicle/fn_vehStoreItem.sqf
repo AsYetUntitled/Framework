@@ -37,6 +37,7 @@ if (_ctrl == "money") then {
     };
 
     CASH = CASH - _num;
+    [0] call SOCK_fnc_updatePartial;
     life_trunk_vehicle setVariable ["Trunk",[_inv,(_veh_data select 1) + _itemWeight],true];
     [life_trunk_vehicle] call life_fnc_vehInventory;
 } else {

@@ -24,6 +24,7 @@ _name = M_CONFIG(getText,"VirtualItems",_type,"displayName");
 if ([false,_type,_amount] call life_fnc_handleInv) then {
     hint format[localize "STR_Shop_Virt_SellItem",_amount,(localize _name),[_price] call life_fnc_numberText];
     CASH = CASH + _price;
+    [0] call SOCK_fnc_updatePartial;
     [] call life_fnc_virt_update;
 };
 
@@ -50,5 +51,4 @@ if (life_shop_type isEqualTo "gold" && (LIFE_SETTINGS(getNumber,"noatm_timer")) 
     };
 };
 
-[0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;

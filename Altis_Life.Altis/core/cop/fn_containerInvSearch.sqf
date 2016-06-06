@@ -34,6 +34,7 @@ _value = _illegalValue;
 if (_value > 0) then {
     [0,"STR_NOTF_ContainerContraband",true,[[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
     BANK = BANK + _value;
+    [1] call SOCK_fnc_updatePartial;
     _container setVariable ["Trunk",[[],0],true];
     [_container] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
 } else {

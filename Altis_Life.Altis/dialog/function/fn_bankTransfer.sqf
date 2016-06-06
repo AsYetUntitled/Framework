@@ -23,8 +23,9 @@ BANK = BANK - (_value + _tax);
 
 [_value,profileName] remoteExecCall ["life_fnc_wireTransfer",_unit];
 [] call life_fnc_atmMenu;
-hint format[localize "STR_ATM_SentMoneySuccess",[_value] call life_fnc_numberText,_unit getVariable ["realname",name _unit],[_tax] call life_fnc_numberText];
 [1] call SOCK_fnc_updatePartial;
+hint format[localize "STR_ATM_SentMoneySuccess",[_value] call life_fnc_numberText,_unit getVariable ["realname",name _unit],[_tax] call life_fnc_numberText];
+
 
 if (LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {

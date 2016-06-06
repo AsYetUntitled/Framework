@@ -1021,6 +1021,17 @@
             <Portuguese>Você trasferiu R$%1 para %2.\n\nA taxa de trasferência foi de: R$%3.</Portuguese>
             <Polish>Przelałeś $%1 do %2.\n\nA opłata $%3 pobrana przez WIRE TRANSFER </Polish>
         </Key>
+        <Key ID="STR_ATM_WireTransfer">
+            <Original>%1 has wire transferred $%2 to you.</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
         <Key ID="STR_ATM_WithdrawMax">
             <Original>You can't withdraw more then $999,999</Original>
             <Czech>Nemůžete zrušit více než 999.999 $</Czech>

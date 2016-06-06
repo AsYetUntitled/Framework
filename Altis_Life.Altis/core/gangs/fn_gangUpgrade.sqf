@@ -27,6 +27,7 @@ if (_action) then {
         ];
     };
     BANK = BANK - _upgradePrice;
+    [1] call SOCK_fnc_updatePartial;
     group player setVariable ["gang_maxMembers",_slotUpgrade,true];
     hint parseText format[localize "STR_GNOTF_UpgradeSuccess",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText];
 

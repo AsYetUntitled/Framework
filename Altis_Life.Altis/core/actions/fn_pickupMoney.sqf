@@ -23,6 +23,7 @@ if (!isNil "_value") exitWith {
     player playMove "AinvPknlMstpSlayWrflDnon";
     titleText[format[localize "STR_NOTF_PickedMoney",[_value] call life_fnc_numberText],"PLAIN"];
     CASH = CASH + _value;
+    [0] call SOCK_fnc_updatePartial;
     life_action_delay = time;
 
     if (LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {
@@ -32,5 +33,5 @@ if (!isNil "_value") exitWith {
             money_log = format ["%1 - %2 picked up $%3 from the ground. Bank Balance: $%4  On Hand Balance $%5",profileName,(getPlayerUID player),[_value] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
         };
     publicVariableServer "money_log";
-};
+    };
 };

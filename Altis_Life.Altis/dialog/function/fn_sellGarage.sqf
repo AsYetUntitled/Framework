@@ -61,7 +61,7 @@ if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
         advanced_log = format ["sold vehicle %1 for $%2. Bank Balance: $%3  On Hand Balance: $%4",_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     } else {
         advanced_log = format ["%1 - %2 sold vehicle %3 for $%4. Bank Balance: $%5  On Hand Balance: $%6",profileName,(getPlayerUID player),_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
-        };
+    };
     publicVariableServer "advanced_log";
 };
 

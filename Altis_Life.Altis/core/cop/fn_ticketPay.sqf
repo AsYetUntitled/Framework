@@ -16,6 +16,7 @@ if (CASH < life_ticket_val) exitWith {
 
     hint format[localize "STR_Cop_Ticket_Paid",[life_ticket_val] call life_fnc_numberText];
     BANK = BANK - life_ticket_val;
+    [1] call SOCK_fnc_updatePartial;
     life_ticket_paid = true;
 
     [0,"STR_Cop_Ticket_PaidNOTF",true,[profileName,[life_ticket_val] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",west];
@@ -27,11 +28,11 @@ if (CASH < life_ticket_val) exitWith {
     } else {
         [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
     };
-
     closeDialog 0;
 };
 
 CASH = CASH - life_ticket_val;
+[0] call SOCK_fnc_updatePartial;
 life_ticket_paid = true;
 
 if (life_HC_isActive) then {

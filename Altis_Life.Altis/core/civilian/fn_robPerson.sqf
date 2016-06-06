@@ -22,8 +22,7 @@ if (CASH > 0) then {
 
     [1,"STR_NOTF_Robbed",true,[_robber getVariable ["realname",name _robber],profileName,[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
     CASH = 0;
+    [0] call SOCK_fnc_updatePartial;
 } else {
     [2,"STR_NOTF_RobFail",true,[profileName]] remoteExecCall ["life_fnc_broadcast",_robber];
 };
-
-[0] call SOCK_fnc_updatePartial;
