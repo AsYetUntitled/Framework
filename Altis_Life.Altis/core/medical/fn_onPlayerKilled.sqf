@@ -60,6 +60,16 @@ _unit spawn {
     _Timer ctrlSetText localize "STR_Medic_Respawn_2";
 };
 
+_unit spawn {
+    private["_requestBtn","_requestTime"];
+    disableSerialization;
+    _requestBtn = ((findDisplay 7300) displayCtrl 7303);
+    _requestBtn ctrlEnable false;
+    _requestTime = time + 5;
+    waitUntil {round(_requestTime - time) <= 0 || isNull _this};
+    _requestBtn ctrlEnable true;
+};
+
 [] spawn life_fnc_deathScreen;
 
 //Create a thread to follow with some what precision view of the corpse.
