@@ -6,25 +6,26 @@
     Description:
     Handles damage, specifically for handling the 'tazer' pistol and nothing else.
 */
-private["_unit","_damage","_source","_projectile","_part","_curWep"];
-_unit = _this select 0;
-_part = _this select 1;
-_damage = _this select 2;
-_source = _this select 3;
-_projectile = _this select 4;
+params [
+    ["_unit",objNull,[objNull]],
+    ["_part","",[""]],
+    ["_damage",0,[0]],
+    ["_source",objNull,[objNull]],
+    ["_projectile","",[""]],
+    ["_index",0,[0]]
+];
 
 //Handle the tazer first (Top-Priority).
 if (!isNull _source) then {
     if (_source != _unit) then {
-        if (_unit getVariable["Revive",false]) exitWith {};
-        _curWep = currentWeapon _source;
-        if (_projectile in ["B_9x21_Ball","B_556x45_dual"] && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then {
+        if (currentWeapon _source in ["hgun_P07_snds_F","arifle_SDAR_F"] && _projectile in ["B_9x21_Ball","B_556x45_dual"]) then {
             if (side _source isEqualTo west && playerSide isEqualTo civilian) then {
-                private["_distance"];
-                _distance = if (_projectile == "B_556x45_dual") then {100} else {35};
-                _damage = false;
-                if (_unit distance _source < _distance) then {
-                    if (!life_istazed && !life_isknocked && !(_unit getVariable ["restrained",false])) then {
+                _damage = 0;
+                if (alive player && !life_istazed && !life_isknocked && !(_unit getVariable ["restrained",false])) then {
+                    private["_distance"];
+                    _distance = 35;
+                    if (_projectile == "B_556x45_dual") then {_distance = 100;};
+                    if (_unit distance _source < _distance) then {
                         if (vehicle player != player) then {
                             if (typeOf (vehicle player) == "B_Quadbike_01_F") then {
                                 player action ["Eject",vehicle player];
@@ -39,7 +40,7 @@ if (!isNull _source) then {
 
             //Temp fix for super tasers on cops.
             if (side _source isEqualTo west && (playerSide isEqualTo west || playerSide isEqualTo independent)) then {
-                _damage = false;
+                _damage = 0;
             };
         };
     };
