@@ -32,7 +32,7 @@ if (!isNull _source) then {
                                 [_unit,_source] spawn life_fnc_tazed;
                             };
                         } else {
-                                [_unit,_source] spawn life_fnc_tazed;
+                            [_unit,_source] spawn life_fnc_tazed;
                         };
                     };
                 };
