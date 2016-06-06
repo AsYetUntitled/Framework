@@ -28,4 +28,4 @@ sleep 0.3;
 _query = format["SELECT id FROM containers WHERE pos='%1' AND pid='%2' AND owned='1'",_containerPos,_uid];
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-_container setVariable["container_id",(_queryResult select 0),true];
+_container setVariable ["container_id",(_queryResult select 0),true];

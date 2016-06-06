@@ -7,7 +7,7 @@
     Re-locks the door mainly for the federal reserve structures.
 */
 private["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText","_locked"];
-_building = param [0,ObjNull,[ObjNull]];
+_building = param [0,objNull,[objNull]];
 if (isNull _building) exitWith {};
 if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
 
@@ -78,5 +78,5 @@ for "_i" from 1 to _doors do {
 };
 
 if (_locked) then {
-    _building setVariable["locked",true,true];
+    _building setVariable ["locked",true,true];
 };

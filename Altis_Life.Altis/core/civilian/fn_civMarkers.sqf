@@ -19,7 +19,7 @@ for "_i" from 0 to 1 step 0 do {
                 _marker = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
                 _marker setMarkerColorLocal "ColorCivilian";
                 _marker setMarkerTypeLocal "Mil_dot";
-                _marker setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
+                _marker setMarkerTextLocal format["%1", _x getVariable ["realname",name _x]];
                 _markers pushBack [_marker,_x];
             };
         } forEach _members;

@@ -10,7 +10,7 @@ private["_pid","_side","_type","_unit","_ret","_tickTime","_queryResult"];
 _pid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[west]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;
-_unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
+_unit = [_this,3,objNull,[objNull]] call BIS_fnc_param;
 
 //Error checks
 if (_pid isEqualTo "" || _side isEqualTo sideUnknown || _type isEqualTo "" || isNull _unit) exitWith {

@@ -16,4 +16,4 @@ if (count _queryResult != 0) then {
     if (_tmp isEqualType "") then {_tmp = call compile format["%1", _tmp];};
     _queryResult set[5, _tmp];
 };
-missionNamespace setVariable[format["gang_%1",_this],_queryResult];
+missionNamespace setVariable [format["gang_%1",_this],_queryResult];

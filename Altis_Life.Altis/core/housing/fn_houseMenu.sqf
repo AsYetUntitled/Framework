@@ -18,7 +18,7 @@
 
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 disableSerialization;
-_curTarget = param [0,ObjNull,[ObjNull]];
+_curTarget = param [0,objNull,[objNull]];
 if (isNull _curTarget) exitWith {}; //Bad target
 _houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0 && playerSide isEqualTo civilian) exitWith {};
@@ -118,7 +118,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
         _Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_lockHouse; closeDialog 0;";
         _Btn2 ctrlShow true;
 
-        if (isNull (_curTarget getVariable ["lightSource",ObjNull])) then {
+        if (isNull (_curTarget getVariable ["lightSource",objNull])) then {
             _Btn3 ctrlSetText localize "STR_pInAct_LightsOn";
         } else {
             _Btn3 ctrlSetText localize "STR_pInAct_LightsOff";

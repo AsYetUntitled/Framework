@@ -9,7 +9,7 @@
 */
 private["_container","_isFloating","_type","_house","_containers","_houseCfg","_message","_isPlaced"];
 params [
-        ["_container",ObjNull,[ObjNull]],
+        ["_container",objNull,[objNull]],
         ["_isFloating",true,[true]]
 ];
 
@@ -45,7 +45,7 @@ if (!isNull _house) then {
                     _container setVariable ["Trunk",[[],0],true];
                     _container setVariable ["container_owner",[_uid],true];
                     _containers pushBack _container;
-                    _house setVariable["containers",_containers,true];
+                    _house setVariable ["containers",_containers,true];
                     sleep 1;
                     [_container] remoteExecCall ["life_fnc_simDisable",RANY];
                 };

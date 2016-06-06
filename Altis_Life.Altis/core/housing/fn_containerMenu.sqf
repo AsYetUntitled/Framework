@@ -18,7 +18,7 @@
 
 private["_container","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 disableSerialization;
-_container = param [0,ObjNull,[ObjNull]];
+_container = param [0,objNull,[objNull]];
 if (isNull _container) exitWith {}; //Bad target
 
 if (!dialog) then {

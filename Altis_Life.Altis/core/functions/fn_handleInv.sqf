@@ -37,7 +37,7 @@ if (_math) then {
 } else {
     //Lets SUB!
     if ((_value - _num) < 0) then { _return = false;} else {
-        missionNamespace setVariable[_var,(_value - _num)];
+        missionNamespace setVariable [_var,(_value - _num)];
 
         if ((missionNamespace getVariable _var) < _value) then {
             life_carryWeight = life_carryWeight - _weight;

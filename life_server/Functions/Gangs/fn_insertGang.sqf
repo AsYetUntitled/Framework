@@ -54,11 +54,11 @@ if (!(count _queryResult isEqualTo 0)) then {
 
 _queryResult = [_query,1] call DB_fnc_asyncCall;
 
-_group setVariable["gang_name",_gangName,true];
-_group setVariable["gang_owner",_uid,true];
-_group setVariable["gang_bank",0,true];
-_group setVariable["gang_maxMembers",8,true];
-_group setVariable["gang_members",[_uid],true];
+_group setVariable ["gang_name",_gangName,true];
+_group setVariable ["gang_owner",_uid,true];
+_group setVariable ["gang_bank",0,true];
+_group setVariable ["gang_maxMembers",8,true];
+_group setVariable ["gang_members",[_uid],true];
 [_group] remoteExecCall ["life_fnc_gangCreated",_ownerID];
 
 uiSleep 0.35;

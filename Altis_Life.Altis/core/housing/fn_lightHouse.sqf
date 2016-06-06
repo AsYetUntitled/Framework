@@ -37,8 +37,8 @@ if (_mode) then {
     _lightSource setLightUseFlare true;
     _lightSource setLightFlareSize 0.2;
     _lightSource setLightFlareMaxDistance 50;
-    _house setVariable["lightSource",_lightSource];
+    _house setVariable ["lightSource",_lightSource];
 } else {
-    if (isNull (_house getVariable["lightSource",ObjNull])) exitWith {};
-    deleteVehicle (_house getVariable["lightSource",ObjNull]);
+    if (isNull (_house getVariable ["lightSource",objNull])) exitWith {};
+    deleteVehicle (_house getVariable ["lightSource",objNull]);
 };

@@ -43,7 +43,7 @@ class life_timer {
     duration = 99999999999;
     fadeout = 1;
     movingEnable = 0;
-    onLoad = "uiNamespace setVariable['life_timer',_this select 0]";
+    onLoad = "uiNamespace setVariable ['life_timer',_this select 0]";
     objects[] = {};
 
     class controlsBackground {

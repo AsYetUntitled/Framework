@@ -9,7 +9,7 @@
 
 
 private["_vehicle","_fuelSpace","_fuelState","_fuelFeedState","_fuelLevel","_distance","_shortest","_random","_another","_ui","_progress","_pgText","_win","_price","_pricem"];
-_vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};
 if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse","PLAIN"];};
 closeDialog 0;

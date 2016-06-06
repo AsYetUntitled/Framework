@@ -7,7 +7,7 @@
     Arrests the targeted person.
 */
 private["_unit","_id"];
-_unit = param [0,ObjNull,[ObjNull]];
+_unit = param [0,objNull,[objNull]];
 if (isNull _unit) exitWith {}; //Not valid
 if (isNil "_unit") exitWith {}; //Not Valid
 if (!(_unit isKindOf "Man")) exitWith {}; //Not a unit

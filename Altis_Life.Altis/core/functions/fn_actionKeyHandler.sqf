@@ -13,7 +13,7 @@ if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming
 if (life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
 
-if (player getVariable["isEscorting",false]) exitWith {
+if (player getVariable ["isEscorting",false]) exitWith {
     [] call life_fnc_copInteractionMenu;
 };
 
@@ -76,7 +76,7 @@ life_action_inUse = true;
 };
 
 //Check if it's a dead body.
-if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _curObject} && !(_curObject getVariable["Revive",false]) && {playerSide in [west,independent]}) exitWith {
+if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _curObject} && !(_curObject getVariable ["Revive",false]) && {playerSide in [west,independent]}) exitWith {
     //Hotfix code by ins0
     if (((playerSide isEqualTo west && {(LIFE_SETTINGS(getNumber,"revive_cops") isEqualTo 1)}) || playerSide isEqualTo independent)) then {
         if (life_inv_defibrillator > 0) then {

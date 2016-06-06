@@ -31,16 +31,16 @@ if (BANK > _reviveCost) then {
 //Bring me back to life.
 player setDir _dir;
 player setPosASL (visiblePositionASL life_corpse);
-life_corpse setVariable ["Revive",nil,TRUE];
-life_corpse setVariable ["name",nil,TRUE];
+life_corpse setVariable ["Revive",nil,true];
+life_corpse setVariable ["name",nil,true];
 [life_corpse] remoteExecCall ["life_fnc_corpse",RANY];
 deleteVehicle life_corpse;
 
 life_is_alive = true;
 
-player setVariable ["Revive",nil,TRUE];
-player setVariable ["name",nil,TRUE];
-player setVariable ["Reviving",nil,TRUE];
+player setVariable ["Revive",nil,true];
+player setVariable ["name",nil,true];
+player setVariable ["Reviving",nil,true];
 [] call life_fnc_playerSkins;
 [] call life_fnc_hudUpdate; //Request update of hud.
 [] call SOCK_fnc_updateRequest;

@@ -7,10 +7,10 @@
     stored procedure on restart.
 */
 private["_house","_houseID","_ownerID","_housePos","_query","_radius","_containers"];
-_container = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_container = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _container) exitWith {};
 
-_containerID = _container getVariable["container_id",-1];
+_containerID = _container getVariable ["container_id",-1];
 if (_containerID isEqualTo -1) then {
     _containerPos = getPosATL _container;
     _ownerID = (_container getVariable "container_owner") select 0;
@@ -19,8 +19,8 @@ if (_containerID isEqualTo -1) then {
     _query = format["UPDATE containers SET owned='0', pos='[]' WHERE id='%1'",_containerID];
 };
 
-_container setVariable["container_id",nil,true];
-_container setVariable["container_owner",nil,true];
+_container setVariable ["container_id",nil,true];
+_container setVariable ["container_owner",nil,true];
 deleteVehicle _container;
 
 [_query,1] call DB_fnc_asyncCall;

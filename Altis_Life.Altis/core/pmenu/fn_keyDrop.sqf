@@ -21,6 +21,6 @@ _owners = _vehicle getVariable "vehicle_info_owners";
 _index2 = [(getPlayerUID player),_owners] call TON_fnc_index;
 life_vehicles = life_vehicles - [_vehicle];
 _owners deleteAt _index;
-_vehicle setVariable["vehicle_info_owners",_owners,true];
+_vehicle setVariable ["vehicle_info_owners",_owners,true];
 
 [] spawn life_fnc_keyMenu;

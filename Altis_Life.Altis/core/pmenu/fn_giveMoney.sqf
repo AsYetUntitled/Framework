@@ -24,7 +24,7 @@ if (parseNumber(_amount) > CASH) exitWith {hint localize "STR_NOTF_notEnoughtToG
 if (isNull _unit) exitWith {ctrlShow[2001,true];};
 if (isNil "_unit") exitWith {ctrlShow[2001,true]; hint localize "STR_NOTF_notWithinRange";};
 
-hint format [localize "STR_NOTF_youGaveMoney",[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable["realname",name _unit]];
+hint format [localize "STR_NOTF_youGaveMoney",[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable ["realname",name _unit]];
 CASH = CASH - (parseNumber(_amount));
 
 [0] call SOCK_fnc_updatePartial;

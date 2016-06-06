@@ -31,7 +31,7 @@ if (!([false,_item,(parseNumber _val)] call life_fnc_handleInv)) exitWith {hint 
 
 [_unit,_val,_item,player] remoteExecCall ["life_fnc_receiveItem",_unit];
 _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
-hint format [localize "STR_NOTF_youGaveItem",_unit getVariable["realname",name _unit],_val,(localize _type)];
+hint format [localize "STR_NOTF_youGaveItem",_unit getVariable ["realname",name _unit],_val,(localize _type)];
 [] call life_fnc_p_updateMenu;
 
 ctrlShow[2002,true];

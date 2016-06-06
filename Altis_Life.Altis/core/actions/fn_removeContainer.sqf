@@ -7,7 +7,7 @@
     Delete Container from house storage
 */
 private["_house","_action","_container","_containerType","_containers"];
-_container = param [0,ObjNull,[ObjNull]];
+_container = param [0,objNull,[objNull]];
 _containerType = typeOf _container;
 _house = nearestObject [player, "House"];
 if (!(_house in life_vehicles)) exitWith {hint localize "STR_ISTR_Box_NotinHouse"};

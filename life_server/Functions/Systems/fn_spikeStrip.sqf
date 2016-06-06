@@ -9,7 +9,7 @@
     have a global effect.
 */
 private["_nearVehicles","_spikeStrip"];
-_spikeStrip = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_spikeStrip = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _spikeStrip) exitWith {}; //Bad vehicle type passed.
 
 waitUntil {_nearVehicles = nearestObjects[getPos _spikeStrip,["Car"],5]; count _nearVehicles > 0 || isNull _spikeStrip};

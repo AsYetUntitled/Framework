@@ -8,15 +8,15 @@
     then you have failed me and therefor I lose all faith in humanity.. No pressure.
 */
 private ["_vehicle","_trueorfalse"];
-_vehicle = param [0,ObjNull,[ObjNull]];
+_vehicle = param [0,objNull,[objNull]];
 if (isNull _vehicle) exitWith {}; //Bad entry!
 if (!(typeOf _vehicle in ["C_Offroad_01_F"])) exitWith {}; //Last chance check to prevent something from defying humanity and creating a monster.
 
-_trueorfalse = _vehicle getVariable ["lights",FALSE];
+_trueorfalse = _vehicle getVariable ["lights",false];
 
 if (_trueorfalse) then {
-    _vehicle setVariable ["lights",FALSE,TRUE];
+    _vehicle setVariable ["lights",false,true];
 } else {
-    _vehicle setVariable ["lights",TRUE,TRUE];
+    _vehicle setVariable ["lights",true,true];
     [_vehicle,0.22] remoteExec ["life_fnc_medicLights",RCLIENT];
 };

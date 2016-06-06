@@ -12,7 +12,7 @@ _group = _hideout getVariable ["gangOwner",grpNull];
 
 if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
 if (_group == group player) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
-if ((_hideout getVariable ["inCapture",FALSE])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
+if ((_hideout getVariable ["inCapture",false])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
 if (!isNull _group) then {
     _gangName = _group getVariable ["gang_name",""];
     _action = [
@@ -68,7 +68,7 @@ for "_i" from 0 to 1 step 0 do {
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
-if (player getVariable["restrained",false]) exitWith {life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
+if (player getVariable ["restrained",false]) exitWith {life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_GNOTF_CaptureCancel","PLAIN"]; life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
 life_action_inUse = false;
 

@@ -42,9 +42,9 @@ _containerss = [];
     _fixZ = (_currentPos select 2) - _posZ;
     _container setPosATL [(_posX - _fixX), (_posY - _fixY), (_posZ - _fixZ)];
     _container setVectorDirAndUp _direction;
-    _container setVariable["Trunk",_trunk,true];
-    _container setVariable["container_owner",[_x select 0],true];
-    _container setVariable["container_id",_x select 6,true];
+    _container setVariable ["Trunk",_trunk,true];
+    _container setVariable ["container_owner",[_x select 0],true];
+    _container setVariable ["container_id",_x select 6,true];
     clearWeaponCargoGlobal _container;
     clearItemCargoGlobal _container;
     clearMagazineCargoGlobal _container;
@@ -67,7 +67,7 @@ _containerss = [];
             _container addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
         };
     };
-    _house setVariable["containers",_containerss,true];
+    _house setVariable ["containers",_containerss,true];
 } forEach _containers;
 
 _query = format["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid];
@@ -81,4 +81,4 @@ _return = [];
     _return pushBack [_x select 1,_containerss];
 } forEach _houses;
 
-missionNamespace setVariable[format["houses_%1",_uid],_return];
+missionNamespace setVariable [format["houses_%1",_uid],_return];

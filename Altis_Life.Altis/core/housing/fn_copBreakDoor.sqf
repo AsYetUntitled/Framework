@@ -7,7 +7,7 @@
     Allows cops to 'kick' in the door?
 */
 private["_house","_door","_title","_titleText","_progressBar","_cpRate","_cP","_uid"];
-_house = param [0,ObjNull,[ObjNull]];
+_house = param [0,objNull,[objNull]];
 
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
 if (isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};

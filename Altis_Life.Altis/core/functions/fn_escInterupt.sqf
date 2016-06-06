@@ -41,7 +41,7 @@ _escSync = {
 
 _canUseControls = {
     if (playerSide isEqualTo west) exitWith {true};
-    if ((player getVariable ["restrained",FALSE]) || (player getVariable ["Escorting",FALSE]) || (player getVariable ["transporting",FALSE]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
+    if ((player getVariable ["restrained",false]) || (player getVariable ["Escorting",false]) || (player getVariable ["transporting",false]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
 };
 
 for "_i" from 0 to 1 step 0 do {

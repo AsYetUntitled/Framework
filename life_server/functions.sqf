@@ -57,7 +57,7 @@ compileFinal "
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
     if (player isEqualTo _unit && (group player) == _group) then {
-        life_my_gang = ObjNull;
+        life_my_gang = objNull;
         [player] joinSilent (createGroup civilian);
         hint ""You have been kicked out of the gang."";
     };
@@ -104,7 +104,7 @@ compileFinal "
     _group = _this select 1;
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
     if (player isEqualTo _unit && (group player) == _group) then {
-        life_my_gang = ObjNull;
+        life_my_gang = objNull;
         [player] joinSilent (createGroup civilian);
         hint ""You have quit the gang."";
     };

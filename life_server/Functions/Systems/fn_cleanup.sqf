@@ -22,7 +22,7 @@ for "_i" from 0 to 1 step 0 do {
 
         if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
             if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {_fuel = (fuel _veh);};
-            _dbInfo = _veh getVariable["dbInfo",[]];
+            _dbInfo = _veh getVariable ["dbInfo",[]];
             _units = {(_x distance _veh < 300)} count playableUnits;
             if (count crew _x isEqualTo 0) then {
                 switch (true) do {

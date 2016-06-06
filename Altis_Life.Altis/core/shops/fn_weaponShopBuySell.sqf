@@ -17,17 +17,17 @@ _bad = "";
 
 if ((_itemInfo select 6) != "CfgVehicles") then {
     if ((_itemInfo select 4) in [4096,131072]) then {
-        if (!(player canAdd _item) && (uiNamespace getVariable["Weapon_Shop_Filter",0]) != 1) exitWith {_bad = (localize "STR_NOTF_NoRoom")};
+        if (!(player canAdd _item) && (uiNamespace getVariable ["Weapon_Shop_Filter",0]) != 1) exitWith {_bad = (localize "STR_NOTF_NoRoom")};
     };
 };
 
 if (_bad != "") exitWith {hint _bad};
 
-if ((uiNamespace getVariable["Weapon_Shop_Filter",0]) isEqualTo 1) then {
+if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
     CASH = CASH + _price;
     [_item,false] call life_fnc_handleItem;
     hint parseText format[localize "STR_Shop_Weapon_Sold",_itemInfo select 1,[_price] call life_fnc_numberText];
-    [nil,(uiNamespace getVariable["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
+    [nil,(uiNamespace getVariable ["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
 } else {
     private["_hideout"];
     _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
@@ -45,7 +45,7 @@ if ((uiNamespace getVariable["Weapon_Shop_Filter",0]) isEqualTo 1) then {
             hint parseText format[localize "STR_Shop_Weapon_BoughtGang",_itemInfo select 1,[_price] call life_fnc_numberText];
             _funds = group player getVariable "gang_bank";
             _funds = _funds - _price;
-            group player setVariable["gang_bank",_funds,true];
+            group player setVariable ["gang_bank",_funds,true];
             [_item,true] spawn life_fnc_handleItem;
 
             if (life_HC_isActive) then {

@@ -152,9 +152,9 @@ if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then{
 };
 
 if (life_HC_isActive) then {
-    [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate",HC_Life];
+    [getPlayerUID player,player getVariable ["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate",HC_Life];
 } else {
-    [getPlayerUID player,player getVariable["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
+    [getPlayerUID player,player getVariable ["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
 };
 
 diag_log "----------------------------------------------------------------------------------------------------";

@@ -10,7 +10,7 @@
     Displays wanted list information sent from the server.
 */
 private["_ret","_list","_result","_queryResult","_units","_inStatement"];
-_ret = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_ret = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _ret) exitWith {};
 _ret = owner _ret;
 _inStatement = "";

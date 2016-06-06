@@ -11,7 +11,7 @@ _index = (lbCurSel 38402);
 _shop = uiNamespace getVariable ["Weapon_Shop",""];
 if (_index isEqualTo -1 || _shop isEqualTo "") exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
 
-uiNamespace setVariable["Weapon_Shop_Filter",_index];
+uiNamespace setVariable ["Weapon_Shop_Filter",_index];
 //Setup List Control & Purge it.
 
 _priceTag = ((findDisplay 38400) displayCtrl 38404);

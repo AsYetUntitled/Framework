@@ -86,7 +86,7 @@ class FSM
                         itemno = 5;
                         init = /*%FSM<STATEINIT""">*/"{" \n
                          "	if (!alive _x) then {" \n
-                         "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
+                         "		_dbInfo = _x getVariable [""dbInfo"",[]];" \n
                          "		if (count _dbInfo > 0) then {" \n
                          "			_uid = _dbInfo select 0;" \n
                          "			_plate = _dbInfo select 1;" \n
@@ -105,7 +105,7 @@ class FSM
                          "" \n
                          "{" \n
                          "	if (!alive _x) then {" \n
-                         "		_dbInfo = _x getVariable[""dbInfo"",[]];" \n
+                         "		_dbInfo = _x getVariable [""dbInfo"",[]];" \n
                          "		if (count _dbInfo > 0) then {" \n
                          "			_uid = _dbInfo select 0;" \n
                          "			_plate = _dbInfo select 1;" \n

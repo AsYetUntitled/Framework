@@ -18,7 +18,7 @@ switch (_mode) do {
         life_settings_viewDistanceFoot = round(_value);
         ctrlSetText[2902,format["%1",round(_value)]];
         [] call life_fnc_updateViewDistance;
-        profileNamespace setVariable["life_viewDistanceFoot",round(_value)];
+        profileNamespace setVariable ["life_viewDistanceFoot",round(_value)];
     };
 
     case 1:
@@ -26,7 +26,7 @@ switch (_mode) do {
         life_settings_viewDistanceCar = round(_value);
         ctrlSetText[2912,format["%1",round(_value)]];
         [] call life_fnc_updateViewDistance;
-        profileNamespace setVariable["life_viewDistanceCar",round(_value)];
+        profileNamespace setVariable ["life_viewDistanceCar",round(_value)];
     };
 
     case 2:
@@ -34,7 +34,7 @@ switch (_mode) do {
         life_settings_viewDistanceAir = round(_value);
         ctrlSetText[2922,format["%1",round(_value)]];
         [] call life_fnc_updateViewDistance;
-        profileNamespace setVariable["life_viewDistanceAir",round(_value)];
+        profileNamespace setVariable ["life_viewDistanceAir",round(_value)];
     };
 
     case 3: {

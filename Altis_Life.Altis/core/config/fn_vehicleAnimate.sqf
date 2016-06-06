@@ -49,14 +49,14 @@ if (!_preset) then
         case "med_offroad":
         {
             _vehicle animate ["HidePolice", 0];
-            _vehicle setVariable["lights",false,true];
+            _vehicle setVariable ["lights",false,true];
         };
 
         case "cop_offroad":
         {
             _vehicle animate ["HidePolice", 0];
             _vehicle animate ["HideBumper1", 0];
-            _vehicle setVariable["lights",false,true];
+            _vehicle setVariable ["lights",false,true];
         };
     };
 };

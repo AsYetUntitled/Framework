@@ -53,10 +53,10 @@ if (!(_levelValue isEqualTo -1)) then {
 if (_exit) exitWith {hint _levelMsg;};
 
 uiNamespace setVariable ["Weapon_Shop",(_this select 3)];
-uiNamespace setVariable["Weapon_Magazine",0];
-uiNamespace setVariable["Weapon_Accessories",0];
-uiNamespace setVariable["Magazine_Array",[]];
-uiNamespace setVariable["Accessories_Array",[]];
+uiNamespace setVariable ["Weapon_Magazine",0];
+uiNamespace setVariable ["Weapon_Accessories",0];
+uiNamespace setVariable ["Magazine_Array",[]];
+uiNamespace setVariable ["Accessories_Array",[]];
 
 if (!(createDialog "life_weapon_shop")) exitWith {};
 if (!isClass(missionConfigFile >> "WeaponShops" >> (_this select 3))) exitWith {}; //Bad config entry.

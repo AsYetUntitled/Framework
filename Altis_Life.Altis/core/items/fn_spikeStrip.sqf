@@ -11,14 +11,14 @@ if (!isNil "life_action_spikeStripPickup") exitWith {hint localize "STR_ISTR_Spi
 _spikeStrip = "Land_Razorwire_F" createVehicle [0,0,0];
 _spikeStrip attachTo[player,[0,5.5,0]];
 _spikeStrip setDir 90;
-_spikeStrip setVariable["item","spikeDeployed",true];
+_spikeStrip setVariable ["item","spikeDeployed",true];
 
-life_action_spikeStripDeploy = player addAction[localize "STR_ISTR_Spike_Place",{if (!isNull life_spikestrip) then {detach life_spikeStrip; life_spikeStrip = ObjNull;}; player removeAction life_action_spikeStripDeploy; life_action_spikeStripDeploy = nil;},"",999,false,false,"",'!isNull life_spikestrip'];
+life_action_spikeStripDeploy = player addAction[localize "STR_ISTR_Spike_Place",{if (!isNull life_spikestrip) then {detach life_spikeStrip; life_spikeStrip = objNull;}; player removeAction life_action_spikeStripDeploy; life_action_spikeStripDeploy = nil;},"",999,false,false,"",'!isNull life_spikestrip'];
 life_spikestrip = _spikeStrip;
 waitUntil {isNull life_spikeStrip};
 
 if (!isNil "life_action_spikeStripDeploy") then {player removeAction life_action_spikeStripDeploy;};
-if (isNull _spikeStrip) exitWith {life_spikestrip = ObjNull;};
+if (isNull _spikeStrip) exitWith {life_spikestrip = objNull;};
 
 _spikeStrip setPos [(getPos _spikeStrip select 0),(getPos _spikeStrip select 1),0];
 _spikeStrip setDamage 1;

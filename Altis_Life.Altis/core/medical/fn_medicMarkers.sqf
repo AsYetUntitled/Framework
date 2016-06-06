@@ -27,7 +27,7 @@ if (visibleMap) then {
             _markerss = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
             _markerss setMarkerColorLocal "ColorIndependent";
             _markerss setMarkerTypeLocal "Mil_dot";
-            _markerss setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
+            _markerss setMarkerTextLocal format["%1", _x getVariable ["realname",name _x]];
 
             _markersMedecin pushBack [_markerss,_x];
         };
@@ -38,7 +38,7 @@ if (visibleMap) then {
         _marker = createMarkerLocal [format["%1_dead_marker",_x],visiblePosition _x];
         _marker setMarkerColorLocal "ColorRed";
         _marker setMarkerTypeLocal "loc_Hospital";
-        _marker setMarkerTextLocal format["%1",(_x getVariable["name","Unknown Player"])];
+        _marker setMarkerTextLocal format["%1",(_x getVariable ["name","Unknown Player"])];
         _markers pushBack _marker;
     } forEach _units;
 

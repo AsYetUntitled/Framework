@@ -38,8 +38,8 @@ if ((uiNamespace getVariable ["Weapon_Accessories",0]) isEqualTo 0) then {
             _weaponArray pushBack _x;
         } forEach _slotArray;
     };
-    uiNamespace setVariable["Accessories_Array",_weaponArray];
-    uiNamespace setVariable["Weapon_Accessories",1];
+    uiNamespace setVariable ["Accessories_Array",_weaponArray];
+    uiNamespace setVariable ["Weapon_Accessories",1];
 } else {
-    uiNamespace setVariable["Weapon_Accessories",0];
+    uiNamespace setVariable ["Weapon_Accessories",0];
 };

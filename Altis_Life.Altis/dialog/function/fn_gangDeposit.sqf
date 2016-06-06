@@ -7,7 +7,7 @@
 */
 private["_value"];
 _value = parseNumber(ctrlText 2702);
-group player setVariable["gbank_in_use_by",player,true];
+group player setVariable ["gbank_in_use_by",player,true];
 
 //Series of stupid checks
 if (_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};

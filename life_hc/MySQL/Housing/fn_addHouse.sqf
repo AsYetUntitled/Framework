@@ -25,4 +25,4 @@ sleep 0.3;
 _query = format["SELECT id FROM houses WHERE pos='%1' AND pid='%2' AND owned='1'",_housePos,_uid];
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-_house setVariable["house_id",(_queryResult select 0),true];
+_house setVariable ["house_id",(_queryResult select 0),true];

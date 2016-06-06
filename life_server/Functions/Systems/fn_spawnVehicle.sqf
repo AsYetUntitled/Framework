@@ -11,7 +11,7 @@ private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
-_unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
+_unit = [_this,3,objNull,[objNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
 _spawntext = _this select 6;
@@ -97,14 +97,14 @@ _vehicle allowDamage true;
 _vehicle lock 2;
 //Reskin the vehicle
 [_vehicle,(_vInfo select 8)] remoteExecCall ["life_fnc_colorVehicle",_unit];
-_vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
+_vehicle setVariable ["vehicle_info_owners",[[_pid,_name]],true];
+_vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 // Avoid problems if u keep changing which stuff to save!
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
-    _vehicle setVariable["Trunk",_trunk,true];
+    _vehicle setVariable ["Trunk",_trunk,true];
     if (_wasIllegal) then {
         if (_sp isEqualType "") then {
         _location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
@@ -118,7 +118,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         _thread = [_query,1] call DB_fnc_asyncCall;
         };
     }else{
-    _vehicle setVariable["Trunk",[[],0],true];
+    _vehicle setVariable ["Trunk",[[],0],true];
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {

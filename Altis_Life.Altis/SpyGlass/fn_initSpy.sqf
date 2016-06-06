@@ -159,8 +159,8 @@ _patchList =
 "CuratorOnly_Structures_F_Mil_Cargo","CuratorOnly_Structures_F_Mil_Fortification","CuratorOnly_Structures_F_Mil_Radar","CuratorOnly_Structures_F_Mil_Shelters","CuratorOnly_Structures_F_Research","CuratorOnly_Structures_F_Walls",
 "CuratorOnly_Structures_F_Wrecks","A3_Missions_F_Exp_A","A3_Missions_F_Exp_A_Data"];
 
-uiNamespace setVariable["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
-uiNamespace setVariable["RscDisplayMultiplayer",displayNull];
+uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
+uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
 
 _binConfigPatches = configFile >> "CfgPatches";
 for "_i" from 0 to count (_binConfigPatches)-1 do {

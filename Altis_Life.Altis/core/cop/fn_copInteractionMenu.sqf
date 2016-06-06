@@ -43,7 +43,7 @@ _Btn7 = _display displayCtrl Btn7;
 _Btn8 = _display displayCtrl Btn8;
 life_pInact_curTarget = _curTarget;
 
-if (player getVariable["isEscorting",false]) then {
+if (player getVariable ["isEscorting",false]) then {
     { _x ctrlShow false; } forEach [_Btn1,_Btn2,_Btn3,_Btn5,_Btn6,_Btn7,_Btn8];
 };
 
@@ -60,7 +60,7 @@ _Btn3 ctrlSetText localize "STR_pInAct_SearchPlayer";
 _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; closeDialog 0;";
 
 //Set Escort Button
-if (player getVariable["isEscorting",false]) then {
+if (player getVariable ["isEscorting",false]) then {
     _Btn4 ctrlSetText localize "STR_pInAct_StopEscort";
     _Btn4 buttonSetAction "[] call life_fnc_stopEscorting; closeDialog 0;";
 } else {

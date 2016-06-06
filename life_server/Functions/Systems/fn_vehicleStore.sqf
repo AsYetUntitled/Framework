@@ -6,14 +6,14 @@
     Stores the vehicle in the 'Garage'
 */
 private["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_sql","_unit","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo","_saveItems","_storetext","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight","_thread"];
-_vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;
-_unit = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
+_unit = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 _storetext = [_this,3,"",[""]] call BIS_fnc_param;
 _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
-_vInfo = _vehicle getVariable["dbInfo",[]];
+_vInfo = _vehicle getVariable ["dbInfo",[]];
 
 if (count _vInfo > 0) then {
     _plate = _vInfo select 1;
@@ -71,7 +71,7 @@ if (_uid != getPlayerUID _unit) exitWith {
 };
 
 // sort out whitelisted items!
-_trunk = _vehicle getVariable["Trunk", [[], 0]];
+_trunk = _vehicle getVariable ["Trunk", [[], 0]];
 _itemList = _trunk select 0;
 _totalweight = 0;
 _items = [];

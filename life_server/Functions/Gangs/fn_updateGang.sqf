@@ -13,7 +13,7 @@ params [
 
 if (isNull _group) exitWith {}; //FAIL
 
-_groupID = _group getVariable["gang_id",-1];
+_groupID = _group getVariable ["gang_id",-1];
 if (_groupID isEqualTo -1) exitWith {};
 
 switch (_mode) do {
@@ -36,7 +36,7 @@ switch (_mode) do {
     };
 
     case 3: {
-        _owner = _group getVariable["gang_owner",""];
+        _owner = _group getVariable ["gang_owner",""];
         if (_owner isEqualTo "") exitWith {};
         _query = format["UPDATE gangs SET owner='%1' WHERE id='%2'",_owner,_groupID];
     };

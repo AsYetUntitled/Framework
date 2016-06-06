@@ -32,9 +32,9 @@ if (isServer) then
     _rnd1 = floor random 3;
 
     //Hotfix patch, We don't want players getting a 'random' hat, just our NPC's
-    _this setVariable["BIS_randomSeed1",3,TRUE];
+    _this setVariable ["BIS_randomSeed1",3,true];
     _rnd2 = floor random _headCount;
-    _this setVariable ["BIS_randomSeed2", _rnd2, TRUE];
+    _this setVariable ["BIS_randomSeed2", _rnd2, true];
 
     //Random clothing for our NPC's to add a bit of spice.
     if (local _this && !isPlayer _this) then

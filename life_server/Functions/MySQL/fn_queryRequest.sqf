@@ -14,7 +14,7 @@
 private["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
+_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
 if (isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
@@ -123,10 +123,10 @@ switch (_side) do {
 
         _houseData = _uid spawn TON_fnc_fetchPlayerHouses;
         waitUntil {scriptDone _houseData};
-        _queryResult pushBack (missionNamespace getVariable[format["houses_%1",_uid],[]]);
+        _queryResult pushBack (missionNamespace getVariable [format["houses_%1",_uid],[]]);
         _gangData = _uid spawn TON_fnc_queryPlayerGang;
         waitUntil{scriptDone _gangData};
-        _queryResult pushBack (missionNamespace getVariable[format["gang_%1",_uid],[]]);
+        _queryResult pushBack (missionNamespace getVariable [format["gang_%1",_uid],[]]);
     };
 
     case independent: {

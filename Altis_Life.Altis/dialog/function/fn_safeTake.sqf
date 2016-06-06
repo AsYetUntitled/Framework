@@ -28,5 +28,5 @@ if (_num isEqualTo 0) exitWith {hint localize "STR_NOTF_InvFull"};
 
 //Take it
 if (!([true,_ctrl,_num] call life_fnc_handleInv)) exitWith {hint localize "STR_NOTF_CouldntAdd";};
-life_safeObj setVariable ["safe",_safeInfo - _num,TRUE];
+life_safeObj setVariable ["safe",_safeInfo - _num,true];
 [life_safeObj] call life_fnc_safeInventory;

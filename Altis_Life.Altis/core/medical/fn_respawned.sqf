@@ -17,12 +17,12 @@ CASH = 0; //Make sure we don't get our cash back.
 life_respawned = false;
 player playMove "AmovPercMstpSnonWnonDnon";
 
-life_corpse setVariable ["Revive",nil,TRUE];
-life_corpse setVariable ["name",nil,TRUE];
-life_corpse setVariable ["Reviving",nil,TRUE];
-player setVariable ["Revive",nil,TRUE];
-player setVariable ["name",nil,TRUE];
-player setVariable ["Reviving",nil,TRUE];
+life_corpse setVariable ["Revive",nil,true];
+life_corpse setVariable ["name",nil,true];
+life_corpse setVariable ["Reviving",nil,true];
+player setVariable ["Revive",nil,true];
+player setVariable ["name",nil,true];
+player setVariable ["Reviving",nil,true];
 
 //Load gear for a 'new life'
 switch (playerSide) do
@@ -42,7 +42,7 @@ switch (playerSide) do
 //Cleanup of weapon containers near the body & hide it.
 if (!isNull life_corpse) then {
     private "_containers";
-    life_corpse setVariable ["Revive",TRUE,TRUE];
+    life_corpse setVariable ["Revive",true,true];
     _containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
     {deleteVehicle _x;} forEach _containers; //Delete the containers.
     deleteVehicle life_corpse;
@@ -56,7 +56,7 @@ camDestroy life_deathCamera;
 if (life_is_arrested) exitWith {
     hint localize "STR_Jail_Suicide";
     life_is_arrested = false;
-    [player,TRUE] spawn life_fnc_jail;
+    [player,true] spawn life_fnc_jail;
     [] call SOCK_fnc_updateRequest;
 };
 

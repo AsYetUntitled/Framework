@@ -38,7 +38,7 @@ if ([true,_type,_amount] call life_fnc_handleInv) then {
             hint format[localize "STR_Shop_Virt_BoughtGang",_amount,(localize _name),[(_price * _amount)] call life_fnc_numberText];
             _funds = group player getVariable "gang_bank";
             _funds = _funds - (_price * _amount);
-            group player setVariable["gang_bank",_funds,true];
+            group player setVariable ["gang_bank",_funds,true];
 
             if (life_HC_isActive) then {
                 [1,group player] remoteExecCall ["HC_fnc_updateGang",HC_Life];
