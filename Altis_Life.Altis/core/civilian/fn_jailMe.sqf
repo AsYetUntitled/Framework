@@ -27,7 +27,7 @@ _bail = false;
     } else {
         sleep (5 * 60);
     };
-    life_canpay_bail = nil;
+    life_canpay_bail = true;
 };
 
 for "_i" from 0 to 1 step 0 do {
