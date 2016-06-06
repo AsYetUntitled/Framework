@@ -8,7 +8,7 @@
         <img src="https://img.shields.io/badge/release-3-yellowgreen.svg" alt="Altis Life Release">
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="https://dev.arma3.com/post/spotrep-00056">
+    <a href="https://dev.arma3.com/post/spotrep-00057">
         <img src="https://img.shields.io/badge/arma%203-1.60-orange.svg" alt="Arma 3 Version">
     </a>
     </br>
@@ -62,7 +62,7 @@ Usage / Terms of agreement
 ---------------------------
 >   The branding of the mission is to stay ‘Altis Life RPG’. This means you cannot modify it to say something else. i.e Atlis Life by YOURCOMMUNITYNAME/TAG. Everything about the naming / branding is to be left untouched.
 
->   Naturally all credit is to remain intact on all files. Author cannot be modified via Description.ext but can be extended in briefing.sqf
+>   Naturally all credit is to remain intact on all files. Author cannot be modified via Description.ext / Mission.sqm, but can be extended in briefing.sqf
 
 >   All of my code is not to be used outside of the mission in another ‘Life’ like mission. It is to stay the Altis Life RPG Framework / my framework or you don’t use it and direct branding.
 
