@@ -47,6 +47,11 @@ class Life_Settings {
     total_maxWeight = 24; //Static variable for the maximum weight allowed without having a backpack
     respawn_timer = 30; //How many seconds a player should wait, before being able to respawn. Minimum 5 seconds.
 
+    /* Channel 7 News Station Configurations */
+    news_broadcast_cost = 150000; //Cost for a player to send a news station broadcast.
+    news_broadcast_cooldown = 20; //Time in minutes that is required between news station broadcasts. (Default = 20 minutes)
+    news_broadcast_header_length = 60; //Number of characters that a header can consist of. Anything over this may clip. This depends on the font size and various other factors. Adjust with caution.
+
     /* Clothing System Configurations */
     civ_skins = false; //Enable or disable civilian skins. Before enabling, you must add all the SEVEN files to textures folder. (It must be named as: civilian_uniform_1.jpg, civilian_uniform_2.jpg...civilian_uniform_6.jpg, civilian_uniform_7.jpg)
     cop_extendedSkins = false; //Enable or disable cop skins by level. Before enabling, you must add all the EIGHT files to textures folder. (It must be named as: cop_uniform.jpg + cop_uniform_1.jpg, cop_uniform_2.jpg...cop_uniform_6.jpg, cop_uniform_7.jpg; meaning cop_uniform = life_coplevel=0, cop_uniform_1 = life_coplevel=1, cop_uniform_2 = life_coplevel=2, etc...)

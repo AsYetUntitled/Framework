@@ -40,6 +40,7 @@ class Life_Client_Core {
         class healHospital {};
         class impoundAction {};
         class mine {};
+        class newsBroadcast {};
         class packupSpikes {};
         class pickupItem {};
         class pickupMoney {};
@@ -159,8 +160,9 @@ class Life_Client_Core {
         class wireTransfer {};
     };
 
-    class Functions    {
+    class Functions {
         file = "core\functions";
+        class AAN {};
         class accType {};
         class actionKeyHandler {};
         class animSync {};
@@ -193,6 +195,7 @@ class Life_Client_Core {
         class onTakeItem {};
         class playerSkins {};
         class playerTags {};
+        class postNewsBroadcast {};
         class pullOutVeh {};
         class pushObject {};
         class receiveItem {};
@@ -207,7 +210,7 @@ class Life_Client_Core {
         class whereAmI {};
     };
 
-    class Gangs    {
+    class Gangs {
         file = "core\gangs";
         class createGang {};
         class gangCreated {};
@@ -243,7 +246,7 @@ class Life_Client_Core {
         class sellHouse {};
     };
 
-    class Items    {
+    class Items {
         file = "core\items";
         class blastingCharge {};
         class boltcutter {};
@@ -309,7 +312,7 @@ class Life_Client_Core {
         class wantedMenu {};
     };
 
-    class Shops    {
+    class Shops {
         file = "core\shops";
         class atmMenu {};
         class buyClothes {};

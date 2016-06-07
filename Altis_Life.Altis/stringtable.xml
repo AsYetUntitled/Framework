@@ -4231,6 +4231,129 @@
             <German>Ganggebiet einnehmen</German>
         </Key>
     </Package>
+    <Package name="News_Strings">
+        <Key ID="STR_News_AddAction">
+            <Original>News Station Broadcast</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_DialogTitle">
+            <Original>Channel 7 News Station</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_MsgHeader">
+            <Original>Message Heading:</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_MsgContent">
+            <Original>Message Content:</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_Broadcast">
+            <Original>Broadcast Message</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_StructuredText">
+            <Original>Broadcast Cost: %1&lt;br /&gt;Next Broadcast Available: %2</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_HeaderLength">
+            <Original>The header cannot be over %1 characters</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_UnsupportedCharacter">
+            <Original>You've entered an unsupported character!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_Now">
+            <Original>Now</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_NotEnough">
+            <Original>You need $%1 to send a broadcast!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_News_BroadcastedBy">
+            <Original>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Broadcasted by: %2</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+    </Package>
     <Package name="Jail_Strings">
         <Key ID="STR_Jail_Warn">
             <Original>You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!</Original>
