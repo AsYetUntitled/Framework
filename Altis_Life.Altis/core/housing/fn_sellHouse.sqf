@@ -44,9 +44,9 @@ if (_action) then {
 
     if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
         if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-            advanced_log = format ["sold a house for $%1. Bank Balance: $%2",(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
+            advanced_log = format [localize "STR_DL_AL_soldHouse_BEF",(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
         } else {
-            advanced_log = format ["%1 - %2 sold a house for $%3. Bank Balance: $%4",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
+            advanced_log = format [localize "STR_DL_AL_soldHouse",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
             };
         publicVariableServer "advanced_log";
     };

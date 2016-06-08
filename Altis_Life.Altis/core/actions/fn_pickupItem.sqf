@@ -51,9 +51,9 @@ if (!(_diff isEqualTo (_itemInfo select 1))) then {
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        advanced_log = format ["picked up %1 %2",_diff,localize _itemName];
+        advanced_log = format [localize "STR_DL_AL_pickedUp_BEF",_diff,localize _itemName];
     } else {
-        advanced_log = format ["%1 - %2 picked up %3 %4",profileName,(getPlayerUID player),_diff,localize _itemName];
+        advanced_log = format [localize "STR_DL_AL_pickedUp",profileName,(getPlayerUID player),_diff,localize _itemName];
     };
     publicVariableServer "advanced_log";
 };

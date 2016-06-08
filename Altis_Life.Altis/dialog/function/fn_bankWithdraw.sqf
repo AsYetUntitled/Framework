@@ -22,9 +22,9 @@ hint format [localize "STR_ATM_WithdrawSuccess",[_value] call life_fnc_numberTex
 
 if (LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        money_log = format ["withdrew $%1 from their bank. Bank Balance: $%2  On Hand Balance: $%3",_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        money_log = format [localize "STR_DL_ML_withdrewBank_BEF",_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     } else {
-        money_log = format ["%1 - %2 withdrew $%3 from their bank. Bank Balance: $%4  On Hand Balance: $%5",profileName,(getPlayerUID player),_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        money_log = format [localize "STR_DL_ML_withdrewBank",profileName,(getPlayerUID player),_value,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     };
     publicVariableServer "money_log";
 };
