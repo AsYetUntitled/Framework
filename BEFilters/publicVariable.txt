@@ -1,3 +1,3 @@
-//new
+//regex
 1 ""
-5 "" !=life_fnc_RequestClientId !=money_log !=advanced_log !=(cop|civ)_[\d]{1,3} !=medic_[1-6]
+5 "" !=life_fnc_RequestClientId !=money_log !=advanced_log !=(cop|civ)_[\d]{1,3} !=medic_[1-6] !=life_broadcastTimer

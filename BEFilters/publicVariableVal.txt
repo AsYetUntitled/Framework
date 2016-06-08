@@ -1,3 +1,3 @@
 //regex
-1 "" !=(cop|civ)_[\d]{1,3} !=medic_[1-6] !"arrested ." !"picked up [\d]{1,3} [a-z ]{1,17}" !"created a gang named: [a-z0-9_ ]{1,32} for \$[\d]" !"(bought|sold) a house for \$" !"(bought|chopped|sold) vehicle ." !"(deposited|picked up|robbed|transferred|withdrew) \$"
-5 "" !=(cop|civ)_[\d]{1,3} !=medic_[1-6] !"arrested ." !"picked up [\d]{1,3} [a-z ]{1,17}" !"created a gang named: [a-z0-9_ ]{1,32} for \$[\d]" !"(bought|sold) a house for \$" !"(bought|chopped|sold) vehicle ." !"(deposited|picked up|robbed|transferred|withdrew) \$"
+1 "" !=(cop|civ)_[\d]{1,3} !=medic_[1-6] !"arrested ." !"picked up [\d]{1,3} [a-z ]{1,17}" !"created a gang named: [a-z0-9_ ]{1,32} for \$[\d]" !"(bought|sold) a house for \$" !"(bought|chopped|sold) vehicle ." !"(deposited|picked up|robbed|transferred|withdrew) \$" ![\d]{1,5}\.[\d]{1,3}
+5 "" !=(cop|civ)_[\d]{1,3} !=medic_[1-6] !"arrested ." !"picked up [\d]{1,3} [a-z ]{1,17}" !"created a gang named: [a-z0-9_ ]{1,32} for \$[\d]" !"(bought|sold) a house for \$" !"(bought|chopped|sold) vehicle ." !"(deposited|picked up|robbed|transferred|withdrew) \$" ![\d]{1,5}\.[\d]{1,3}
