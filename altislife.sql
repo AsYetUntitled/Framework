@@ -204,6 +204,68 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `economy`
+-- Needed for extDB latest update on git
+--
+
+CREATE TABLE IF NOT EXISTS `economy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `resource` varchar(50) NOT NULL,
+  `buyprice` int(12) NOT NULL DEFAULT '1',
+  `sellprice` int(12) NOT NULL DEFAULT '1',
+  `varprice` int(12) NOT NULL DEFAULT '1',
+  `minprice` int(12) NOT NULL DEFAULT '1',
+  `maxprice` int(12) NOT NULL DEFAULT '1',
+  `factor` int(12) NOT NULL DEFAULT '1',
+  `shoptype` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`, `resource`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;
+
+INSERT INTO `economy` VALUES (1, 'apple', 200, 150, 1, 50, 150, 3, 'market');
+INSERT INTO `economy` VALUES (3, 'heroin_processed', 4500, 2798, 2, 1480, 4050, 2, 'drugdealer');
+INSERT INTO `economy` VALUES (12, 'turtle_raw', 17000, 9918, 2, 6390, 15000, 0, 'raw');
+INSERT INTO `economy` VALUES (13, 'waterBottle', 10, 10, 2, 5, 10, 0, 'market');
+INSERT INTO `economy` VALUES (15, 'turtle_soup', 2500, 2500, 2, 1000, 2500, 0, 'wongs');
+INSERT INTO `economy` VALUES (17, 'marijuana', 4000, 2728, 2, 1480, 3500, 2, 'drugdealer');
+INSERT INTO `economy` VALUES (18, 'tbacon', 500, 25, 2, 25, 500, 0, 'market');
+INSERT INTO `economy` VALUES (19, 'lockpick', 1500, 1500, 2, 75, 1500, 0, 'rebel');
+INSERT INTO `economy` VALUES (20, 'redgull', 1500, 1500, 2, 200, 1500, 0, 'market');
+INSERT INTO `economy` VALUES (21, 'peach', 175, 50, 2, 50, 150, 3, 'market');
+INSERT INTO `economy` VALUES (29, 'glass', 3000, 3000, 2, 1000, 3000, 3, 'glass');
+INSERT INTO `economy` VALUES (30, 'fuelFull', 850, 850, 2, 300, 850, 0, 'market');
+INSERT INTO `economy` VALUES (31, 'spikeStrip', 2500, 2500, 2, 1200, 2500, 0, 'cop');
+INSERT INTO `economy` VALUES (33, 'goldbar', 100000, 95000, 150, 35000, 95000, 2, 'gold');
+INSERT INTO `economy` VALUES (34, 'blastingcharge', 35000, 24996, 2, 15000, 35000, 0, 'rebel');
+INSERT INTO `economy` VALUES (35, 'boltcutter', 7500, 7500, 2, 3000, 7500, 0, 'rebel');
+INSERT INTO `economy` VALUES (36, 'defusekit', 2500, 2500, 2, 1500, 2500, 0, 'cop');
+INSERT INTO `economy` VALUES (37, 'storagesmall', 75000, 70878, 2, 60000, 75000, 0, 'market');
+INSERT INTO `economy` VALUES (38, 'storagebig', 150000, 131172, 2, 120000, 150000, 0, 'market');
+INSERT INTO `economy` VALUES (39, 'pickaxe', 750, 750, 2, 500, 750, 0, 'market');
+INSERT INTO `economy` VALUES (45, 'oil_unprocessed', 3500, 1500, 2, 500, 1500, 0, 'raw');
+INSERT INTO `economy` VALUES (46, 'oil_processed', 3500, 3000, 2, 1500, 3000, 3, 'oil');
+INSERT INTO `economy` VALUES (47, 'copper_unrefined', 150, 150, 2, 59, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (48, 'copper_refined', 3000, 2500, 2, 1000, 2500, 3, 'iron');
+INSERT INTO `economy` VALUES (49, 'iron_unrefined', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (50, 'iron_refined', 3000, 2500, 2, 1000, 2500, 3, 'iron');
+INSERT INTO `economy` VALUES (51, 'salt_unrefined', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (52, 'salt_refined', 3000, 2200, 2, 1000, 2500, 3, 'salt');
+INSERT INTO `economy` VALUES (53, 'sand', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (55, 'diamond_uncut', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (56, 'diamond_cut', 3000, 2500, 2, 1000, 2500, 3, 'diamond');
+INSERT INTO `economy` VALUES (57, 'rock', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (58, 'cement', 3000, 2500, 2, 1000, 2500, 3, 'cement');
+INSERT INTO `economy` VALUES (59, 'mushroom', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (60, 'heroin_unprocessed', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (62, 'cannabis', 4000, 3500, 2, 2500, 3500, 0, 'raw');
+INSERT INTO `economy` VALUES (64, 'cocaine_unprocessed', 150, 150, 2, 57, 150, 0, 'raw');
+INSERT INTO `economy` VALUES (65, 'cocaine_processed', 5000, 4574, 2, 1950, 5000, 2, 'drugdealer');
+INSERT INTO `economy` VALUES (68, 'ziptie', 1500, 900, 0, 1, 1500, 0, 'vigilante');
+INSERT INTO `economy` VALUES (73, 'gpstracker', 15000, 0, 0, 0, 0, 0, 'market');
+INSERT INTO `economy` VALUES (74, 'speedbomb', 50000, 0, 0, 0, 0, 0, 'rebel');
+
+-- --------------------------------------------------------
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
