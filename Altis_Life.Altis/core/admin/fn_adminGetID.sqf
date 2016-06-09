@@ -1,5 +1,5 @@
 /*
-    File: fn_admingetID.sqf
+    File: fn_adminGetID.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

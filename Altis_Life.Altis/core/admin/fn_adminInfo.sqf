@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_admininfo.sqf
+    File: fn_adminInfo.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

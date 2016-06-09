@@ -26,7 +26,7 @@ _message = 0;
 _isPlaced = false;
 if (!isNull _house) then {
     _message = 1;
-    if (([player] call life_fnc_PlayerInBuilding) && {([_container] call life_fnc_PlayerInBuilding)}) then {
+    if (([player] call life_fnc_playerInBuilding) && {([_container] call life_fnc_playerInBuilding)}) then {
         _message = 2;
         if ((_house in life_vehicles) && !(isNil {_house getVariable "house_owner"})) then {
             _message = 3;

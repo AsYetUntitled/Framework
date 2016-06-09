@@ -1,8 +1,9 @@
 /*
+    File: fn_searchPosEmpty.sqf
     Author: R3F_Team
 
     Description:
-    Return a clear position in the sky
+    Return a clear position in the sky.
 
     Parameter(s):
     0: (Optional) offset 3D cube in which to look for a location (default [0,0,0])

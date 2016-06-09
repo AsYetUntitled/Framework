@@ -100,7 +100,7 @@ class Life_Vehicle_Shop_v2_3D {
 
         class ColorList: Life_RscCombo {
             idc = 2304;
-            onLBSelChanged = "[] call life_fnc_vehiclecolor3DRefresh;";
+            onLBSelChanged = "[] call life_fnc_vehicleColor3DRefresh;";
             x = 0.0204687 * safezoneW + safezoneX;
             y = 0.6034 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;

@@ -40,7 +40,7 @@ class life_admin_menu {
         class RscButtonMenu_2402: Life_RscButtonMenu {
             idc = -1;
             text = "$STR_Admin_GetID";
-            onButtonClick = "[] call life_fnc_admingetID;";
+            onButtonClick = "[] call life_fnc_adminGetID;";
             x = 0.396875 * safezoneW + safezoneX;
             y = 0.643 * safezoneH + safezoneY;
             w = 0.061875 * safezoneW;

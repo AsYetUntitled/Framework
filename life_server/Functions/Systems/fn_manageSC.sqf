@@ -1,5 +1,5 @@
 /*
-    File: fn_managesc.sqf
+    File: fn_manageSC.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

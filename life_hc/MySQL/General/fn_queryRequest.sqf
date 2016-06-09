@@ -151,7 +151,7 @@ publicVariable "TON_fnc_playtime_values_request";
 
 life_keyreceived = false;
 life_keyreceivedvar = [];
-[_uid,_side] remoteExecCall ["TON_fnc_recupkeyforHC",RSERV];
+[_uid,_side] remoteExecCall ["TON_fnc_recupKeyForHC",RSERV];
 waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
 _queryResult set[15,_keyArr];

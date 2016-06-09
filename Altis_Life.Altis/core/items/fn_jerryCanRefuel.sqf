@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_jerrycanRefuel.sqf
+    File: fn_jerryCanRefuel.sqf
     Author: Bryan "Tonic" Boardwine
     Modified: Jesse "tkcjesse" Schultz
 

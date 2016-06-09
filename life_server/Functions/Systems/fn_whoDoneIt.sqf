@@ -1,5 +1,5 @@
 /*
-    File: fn_whoDoneit.sqf
+    File: fn_whoDoneIt.sqf
     Description: Save log file of units killed.
     Author: Å  ColinM - Help of BI Wiki & Forums.
 

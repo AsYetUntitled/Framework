@@ -1,10 +1,10 @@
 #include "\life_server\script_macros.hpp"
 /*
-    File : fn_addContainer
+    File: fn_addContainer.sqf
     Author: NiiRoZz
 
     Description:
-    Add container in Database
+    Add container in Database.
 */
 private["_containerPos","_query","_className","_dir"];
 params [

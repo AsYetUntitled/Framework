@@ -1,6 +1,6 @@
 #include "\life_server\script_macros.hpp"
 /*
-    File: fn_recupkeyforHC.sqf
+    File: fn_recupKeyForHC.sqf
     Author : NiiRoZz
 
     Description:

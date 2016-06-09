@@ -27,5 +27,5 @@ _unit addRating 1e12; //Set our rating to a high value, this is for a ARMA engin
 player playMoveNow "AmovPpneMstpSrasWrflDnon";
 
 [] call life_fnc_setupActions;
-[_unit,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_managesc",RSERV];
+[_unit,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};

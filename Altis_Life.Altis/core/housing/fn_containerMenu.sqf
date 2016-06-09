@@ -1,10 +1,10 @@
 #include "..\..\script_macros.hpp"
 /*
-    File : containerMenu.sqf
+    File: fn_containerMenu.sqf
     Author: NiiRoZz
 
     Description:
-    Container interaction menu
+    Container interaction menu.
 */
 #define Btn1 37450
 #define Btn2 37451

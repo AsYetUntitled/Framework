@@ -1,8 +1,9 @@
 /*
-    File : fn_PlayerInBuilding.sqf
+    File: fn_playerInBuilding.sqf
     Author: Mad_Cheese
+
     Description:
-    Indicates whether a player is in a building
+    Indicates whether a player is in a building.
     Edit: BoGuu - lineIntersectsWith returns an array ordered by distance from farthest to closest.
     Script needed to check the last index for each wallCheck array.
 
@@ -14,8 +15,7 @@
 
     Example
     //--- Find if a unit is in building
-    [player] call life_fnc_PlayerInBuilding
-
+    [player] call life_fnc_playerInBuilding
 */
 
 private ["_unit","_position","_roofCheck","_return"];

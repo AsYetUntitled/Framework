@@ -91,7 +91,7 @@ class Life_FuelStat {
         class refuelCar: Life_RscButtonMenu {
             idc = 20309;
             text = "Refuel";
-            onButtonClick = "[] spawn life_fnc_FuelRefuelcar;";
+            onButtonClick = "[] spawn life_fnc_fuelRefuelCar;";
             x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
             y = 0.9 - (1 / 25);
             w = (6.25 / 40);

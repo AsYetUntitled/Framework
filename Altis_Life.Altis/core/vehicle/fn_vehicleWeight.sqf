@@ -1,5 +1,5 @@
 /*
-    File: fn_calVehWeight.sqf
+    File: fn_vehicleWeight.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

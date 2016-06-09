@@ -1,12 +1,12 @@
 #include "\life_hc\hc_macros.hpp"
 /*
-    File : fn_addContainer
+    File: fn_addContainer.sqf
     Author: NiiRoZz
 
     This file is for Nanou's HeadlessClient.
 
     Description:
-    Add container in Database
+    Add container in Database.
 */
 private["_containerPos","_query","_className","_dir"];
 params [
