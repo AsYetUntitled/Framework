@@ -29,3 +29,4 @@
 #include "FuelStat.hpp"
 #include "AltisPhone.hpp"
 #include "newsStation.hpp"
+#include "market.hpp"
