@@ -22,7 +22,7 @@ Structure of each price variable
 8 - recent sell price
 9 - server start sell price
 */
-_query = format["loadPrices"];
+_query = "SELECT resource, buyprice, sellprice, varprice, minprice, maxprice, factor, shoptype FROM economy";
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
@@ -41,12 +41,12 @@ _marketPrices = [];
 
 {
     _marketPrices pushBack [SEL(_x,0),SEL(_x,6),SEL(_x,7)];
-    _name = format["%1MeccaMarketGoodPrice",SEL(_x,0)];
+    _name = format["%1MarketGoodPrice",SEL(_x,0)];
     _x pushBack SEL(_x,2);
     _x pushBack SEL(_x,2);
     missionNamespace setVariable [_name, _x];
     publicVariable _name;
 } forEach _queryResult;
 
-missionNamespace setVariable ["MeccaMarketPrices", _marketPrices];
-publicVariable "MeccaMarketPrices";
+missionNamespace setVariable ["MarketPrices", _marketPrices];
+publicVariable "MarketPrices";

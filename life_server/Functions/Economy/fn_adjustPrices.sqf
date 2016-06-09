@@ -8,7 +8,7 @@ Updates the variables serverside.
 */
 
 
-//[[0,player,life_shop_type,_amount,_price,_var],"TON_fnc_Adjustprices",false,false] spawn life_fnc_MP;
+//[[0,player,life_shop_type,_amount,_price,_var],"TON_fnc_adjustPrices",false,false] spawn life_fnc_MP;
 private["_type","_side","_data","_unit","_ret","_tickTime","_queryResult","_var","_price","_amount","_market","_factor","_good","_itemArray","_priceChanges","_delay","_changeco","_endtime","_diff"];
 _type = [_this,0,0,[0]] call BIS_fnc_param;
 _unit = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
@@ -40,9 +40,9 @@ diag_log "data or unit null";
 
 _unit = owner _unit; //for hack purpose!
 
-_market = missionNamespace getVariable "MeccaMarketPrices";
+_market = missionNamespace getVariable "MarketPrices";
 
-_good = missionNamespace getVariable format["%1MeccaMarketGoodPrice",_var];
+_good = missionNamespace getVariable format["%1MarketGoodPrice",_var];
 
 if(isNil "_good") exitWith {format["ERROR: _good variable was nil in adjust prices. _var = %1", _var]};
 _itemArray = [];
@@ -65,7 +65,7 @@ if (_factor == 0) exitwith {};//the factor 0 is not a real group
 
 {
     if(SEL(_x,1) == _factor) then {
-        _name = format["%1MeccaMarketGoodPrice",SEL(_x,0)];
+        _name = format["%1MarketGoodPrice",SEL(_x,0)];
         _itemArray pushBack (missionNamespace getVariable _name);
     };
 } forEach _market;
@@ -107,7 +107,7 @@ _sellingfactor =((count _itemArray)-1);
     };
     
     _x set [2, _sellprice];
-    _name = format["%1MeccaMarketGoodPrice",SEL(_x,0)];
+    _name = format["%1MarketGoodPrice",SEL(_x,0)];
     missionNamespace setVariable [_name,_x];
     publicVariable _name;
 } forEach _itemArray;

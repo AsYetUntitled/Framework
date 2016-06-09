@@ -10,18 +10,18 @@ refreshes the SQL database with the new sell prices
 
 while {true} do {
     diag_log format["Sync prices at uptime: %1",round(time/60)];
-    _market = missionNamespace getVariable "MeccaMarketPrices";
+    _market = missionNamespace getVariable "MarketPrices";
     
     if (isNil "_market") then {
         [] call TON_fnc_loadPrices;
-        _market = missionNamespace getVariable "MeccaMarketPrices";
+        _market = missionNamespace getVariable "MarketPrices";
     };
     
     _goods = [];
     
     {
         if (SEL(_x,1) != 0) then {
-            _name = format["%1MeccaMarketGoodPrice",SEL(_x,0)];
+            _name = format["%1MarketGoodPrice",SEL(_x,0)];
             _price = missionNamespace getVariable _name;
             _goods pushBack [SEL(_price,0),SEL(_price,2)];
         };
@@ -30,7 +30,7 @@ while {true} do {
     {
         _name = SEL(_x,0);
         _price = SEL(_x,1);
-        _query = format["syncPrices:%1:%2",_price,_name];
+        _query = format["UPDATE economy SET sellprice=%1 WHERE resource=%2",_price,_name];
         
         waitUntil{sleep (random 0.3); !DB_Async_Active};
         _tickTime = diag_tickTime;
