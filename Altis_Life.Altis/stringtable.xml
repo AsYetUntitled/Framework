@@ -309,7 +309,7 @@
             <Polish>Magazyny</Polish>
             <Russian></Russian>
             <Portuguese>Munições</Portuguese>
-            <German>Zeitschriften</German>
+            <German>Magazine</German>
         </Key>
         <Key ID="STR_Global_Accs">
             <Original>Accessories</Original>
@@ -11065,7 +11065,7 @@
             <Polish></Polish>
             <Portuguese>prendeu %1</Portuguese>
             <Russian>арестовано %1</Russian>
-            <German></German>
+            <German>hat %1 verhaftet</German>
         </Key>
         <Key ID="STR_DL_AL_Arrested">
             <Original>%1 - %2 arrested %3</Original>
@@ -11076,7 +11076,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 prendeu %3</Portuguese>
             <Russian>%1 - %2 %3 арестовано</Russian>
-            <German></German>
+            <German>%1 - %2 hat %3 verhaftet</German>
         </Key>
         <Key ID="STR_DL_AL_pickedUp_BEF">
             <Original>picked up %1 %2</Original>
@@ -11087,7 +11087,7 @@
             <Polish></Polish>
             <Portuguese>pegou %1 %2</Portuguese>
             <Russian>поднял %1 %2</Russian>
-            <German></German>
+            <German>hat $%1 $%2 aufgehoben</German>
         </Key>
         <Key ID="STR_DL_AL_pickedUp">
             <Original>%1 - %2 picked up %3 %4</Original>
@@ -11098,7 +11098,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 pegou %3 %4</Portuguese>
             <Russian>взял $%1 от земли. Банковский баланс: $%2 на руку Баланс: $%3</Russian>
-            <German></German>
+            <German>%1 - %2 hat %3 %4 aufgehoben</German>
         </Key>
         <Key ID="STR_DL_ML_pickedUpMoney_BEF">
             <Original>picked up $%1 from the ground. Bank Balance: $%2  On Hand Balance: $%3</Original>
@@ -11109,7 +11109,7 @@
             <Polish></Polish>
             <Portuguese>pegou R$%1 do chão. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
             <Russian>взял $%1 от земли. Банковский баланс: $%2 на руку Баланс: $%3</Russian>
-            <German></German>
+            <German>hat $%1 vom Boden aufgehoben. Bank-Konto: $%2  Bargeld: $%3</German>
         </Key>
         <Key ID="STR_DL_ML_pickedUpMoney">
             <Original>%1 - %2 picked up $%3 from the ground. Bank Balance: $%4  On Hand Balance $%5</Original>
@@ -11120,7 +11120,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 pegou R$%3 do chão. Quantia no Banco: R$%4 Quantia na mão: R$%5</Portuguese>
             <Russian>%1 - %2 взял $%3 от земли. Банковский баланс: $%4 На Hand Баланс $%5</Russian>
-            <German></German>
+            <German>%1 - %2 hat $%3 vom Boden aufgehoben. Bank-Konto: $%4  Bargeld: $%5</German>
         </Key>
         <Key ID="STR_DL_ML_Robbed_BEF">
             <Original>robbed $%1 from %2. Bank Balance: $%3  On Hand Balance: $%4</Original>
@@ -11131,7 +11131,7 @@
             <Polish></Polish>
             <Portuguese>roubou R$%1 de %2. Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
             <Russian>ограбил $%1 из %2. Банковский баланс: $%3 на руку Баланс: $%4</Russian>
-            <German></German>
+            <German>hat $%1 von $%2 geraubt. Bank-Konto: $%3  Bargeld: $%4</German>
         </Key>
         <Key ID="STR_DL_ML_Robbed">
             <Original>%1 - %2 robbed $%3 from %4. Bank Balance: $%5  On Hand Balance: $%6</Original>
@@ -11142,7 +11142,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 roubou R$%3 de %4. Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
             <Russian>%1 - %2 ограбил $%3 от %4. Банковский баланс: $%5 на руку Баланс: $%6</Russian>
-            <German></German>
+            <German>%1 - %2 hat $%3 von %4 geraubt. Bank-Konto: $%5  Bargeld: $%6</German>
         </Key>
         <Key ID="STR_DL_AL_createdGang_BEF">
             <Original>created a gang named: %1 for $%2</Original>
@@ -11153,7 +11153,7 @@
             <Polish></Polish>
             <Portuguese>criou uma gangue chamada: %1 por R$%2</Portuguese>
             <Russian>создали банду под названием: %1 за $%2</Russian>
-            <German></German>
+            <German>hat eine Gang namens $1 für $%2 erstellt</German>
         </Key>
         <Key ID="STR_DL_AL_createdGang">
             <Original>%1 - %2 created a gang named: %3 for $%4</Original>
@@ -11164,7 +11164,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 criou uma gangue chamada: %3 por R$%4</Portuguese>
             <Russian>%1 - %2 создали банду под названием: %3 за $%4</Russian>
-            <German></German>
+            <German>%1 - %2 hat eine Gang namens %3 für $%4 erstellt</German>
         </Key>
         <Key ID="STR_DL_AL_boughtHouse_BEF">
             <Original>bought a house for $%1. Bank Balance: $%2  On Hand Cash: $%3</Original>
@@ -11175,7 +11175,7 @@
             <Polish></Polish>
             <Portuguese>comprou uma casa por R$%1. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
             <Russian>купил дом за $%1. Банковский баланс: $%2 на руках наличные деньги: $%3</Russian>
-            <German></German>
+            <German>hat sich ein Haus für $%1 gekauft. Bank-Konto: $%2  Bargeld: $%3</German>
         </Key>
         <Key ID="STR_DL_AL_boughtHouse">
             <Original>%1 - %2 bought a house for $%3. Bank Balance: $%4  On Hand Cash: $%5</Original>
@@ -11186,7 +11186,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 comprou uma casa por R$%3. Quantia no Banco: R$%4 Quantia na Mão: R$%5</Portuguese>
             <Russian>%1 - %2 купил дом за $%3. Банковский баланс: $%4 на руках наличные деньги: $%5</Russian>
-            <German></German>
+            <German>%1 - %2 hat sich ein Haus für $%3 gekauft. Bank-Konto: $%4  Bargeld: $%5</German>
         </Key>
         <Key ID="STR_DL_AL_soldHouse_BEF">
             <Original>sold a house for $%1. Bank Balance: $%2</Original>
@@ -11197,7 +11197,7 @@
             <Polish></Polish>
             <Portuguese>vendeu uma casa por R$%1. Quantia no Banco: R$%2</Portuguese>
             <Russian>продал дом за $%1. Банковский баланс: $%2</Russian>
-            <German></German>
+            <German>hat sein Haus für $%1 verkauft. Bank-Konto: $%2</German>
         </Key>
         <Key ID="STR_DL_AL_soldHouse">
             <Original>%1 - %2 sold a house for $%3. Bank Balance: $%4</Original>
@@ -11208,7 +11208,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 vendeu uma casa por R$%3. Quantia no Banco: R$%4</Portuguese>
             <Russian>%1 - %2 продал дом за $%3. Банковский баланс: $%4</Russian>
-            <German></German>
+            <German>%1 - %2 hat sich ein Haus für $%3 verkauft. Bank-Konto: $%4</German>
         </Key>
         <Key ID="STR_DL_AL_choppedVehicle_BEF">
             <Original>chopped vehicle %1 for $%2  On Hand Cash(pre-chop): $%3</Original>
@@ -11219,7 +11219,7 @@
             <Polish></Polish>
             <Portuguese>desmanchou um %1 por R$%2 Quantia na Mão (antes do desmanche): R$%3</Portuguese>
             <Russian>нарезанного машина %1 или $%2 на руках Cash (предварительно отбивной): $%3</Russian>
-            <German></German>
+            <German>hat das Fahrzeug %1 für $%2 im Chop-Shop verkauft. Bargeld(vor Chop): $%3</German>
         </Key>
         <Key ID="STR_DL_AL_choppedVehicle">
             <Original>%1 - %2 chopped vehicle %3 for $%4  On Hand Cash(pre-chop): $%5</Original>
@@ -11230,7 +11230,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 desmanchou um %3 por R$%4 Quantia na Mão(antes do desmanche): R$%5</Portuguese>
             <Russian>%1 - %2 нарезанной автомобиля %3 за $%4 на руку Cash (предварительно отбивной): $%5</Russian>
-            <German></German>
+            <German>%1 - %2 hat das Fahrzeug %3 für $%4 im Chop-Shop verkauft. Bargeld(vor Chop): $%6</German>
         </Key>
         <Key ID="STR_DL_AL_boughtVehicle_BEF">
             <Original>bought vehicle %1 for $%2. On Hand Cash: $%3  Bank Balance: $%4</Original>
@@ -11241,7 +11241,7 @@
             <Polish></Polish>
             <Portuguese>comprou um %1 por R$%2. Quantia na Mão: R$%3 Quantia no Banco: R$%4</Portuguese>
             <Russian>купил автомобиль %1 или $%2. На Hand Cash: $%3 банка Баланс: $%4</Russian>
-            <German></German>
+            <German>hat sich das Fahrzeug %1 für $%2 gekauft. Bargeld: $%3  Bank-Konto: $%4</German>
         </Key>
         <Key ID="STR_DL_AL_boughtVehicle">
             <Original>%1 - %2 bought vehicle %3 for $%4. On Hand Cash: $%5  Bank Balance $%6</Original>
@@ -11252,7 +11252,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 comprou um %3 por R$%4. Quantia na Mão: R$%5 Quantia no Banco: R$%6</Portuguese>
             <Russian>%1 - %2 купил автомобиль за $%3 %4. На Hand наличных: $%5 баланса банка $%6</Russian>
-            <German></German>
+            <German>%1 - %2 hat sich das Fahrzeug %3 für $%4 gekauft. Bargeld: $%5 Bank-Konto: $%6</German>
         </Key>
         <Key ID="STR_DL_AL_soldVehicle_BEF">
             <Original>sold vehicle %1 for $%2. Bank Balance: $%3  On Hand Balance: $%4</Original>
@@ -11263,7 +11263,7 @@
             <Polish></Polish>
             <Portuguese>vendeu um %1 por R$%2. Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
             <Russian>продается автомобиль %1 за $%2. Банковский баланс: $%3 на руку Баланс: $%4</Russian>
-            <German></German>
+            <German>hat das Fahrzeug %1 für $%2 verkauft. Bank-Konto: $%3  Bargeld: $%4</German>
         </Key>
         <Key ID="STR_DL_AL_soldVehicle">
             <Original>%1 - %2 sold vehicle %3 for $%4. Bank Balance: $%5  On Hand Balance: $%6</Original>
@@ -11274,7 +11274,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 vendeu um %3 por R$%4. Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
             <Russian>%1 - %2 продал автомобиль за $%3 %4. Банковский баланс: $%5 на руку Баланс: $%6</Russian>
-            <German></German>
+            <German>%1 - %2 hat das Fahrzeug %3 für %4 verkauft. Bank-Konto: $%5  Bargeld: $%6</German>
         </Key>
         <Key ID="STR_DL_ML_withdrewGang_BEF">
             <Original>withdrew $%1 from their gang bank. Gang Bank Balance: $%2  Bank Balance: $%3  On Hand Balance: $%4</Original>
@@ -11285,7 +11285,7 @@
             <Polish></Polish>
             Portuguese>sacou R$%1 no banco da sua gangue. Quantia no Banco da Gangue: R$%2 Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
             <Russian>снял $%1 от их банды банка. Gang Bank Баланс: $%2 банка Баланс: $%3 на руку Баланс: $%4</Russian>
-            <German></German>
+            <German>hat $%1 von seinem Gang-Konto abgehoben. Gang-Konto: $%2  Bank-Konto: $%3  Bargeld: $%4</German>
         </Key>
         <Key ID="STR_DL_ML_withdrewGang">
             <Original>%1 - %2 withdrew $%3 from their gang bank. Gang Bank Balance: $%4  Bank Balance: $%5  On Hand Balance: $%6</Original>
@@ -11296,7 +11296,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 sacou R$%3 no banco da sua gangue. Quantia no Banco da Gangue: R$%4 Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
             <Russian>%1 - %2 отозвала $%3 из их банды банка. Gang Bank Баланс: $%4 банка Баланс: $%5 на руку Баланс: $%6</Russian>
-            <German></German>
+            <German>%1 - %2 hat $%3 von seinem Bankkonto abgehoben. Gang-Konto: $%4  Bank-Konto: $%5  Bargeld: $%6</German>
         </Key>
         <Key ID="STR_DL_ML_depositeGang_BEF">
             <Original>deposited $%1 into their gang bank. Gang Bank Balance: $%2  Bank Balance: $%3  On Hand Balance: $%4</Original>
@@ -11307,7 +11307,7 @@
             <Polish></Polish>
             <Portuguese>depositou R$%1 no banco da sua gangue. Quantia no Banco da Gangue: R$%2 Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
             <Russian>депозит в размере $%1 в их банде банка. Gang Bank Баланс: $%2 банка Баланс: $%3 на руку Баланс: $%4</Russian>
-            <German></German>
+            <German>hat $%1 auf sein Gang-Konto eingezahlt. Gang-Konto: $%2  Bank-Konto: $%3  Bargeld: $%4</German>
         </Key>
         <Key ID="STR_DL_ML_depositeGang">
             <Original>%1 - %2 deposited $%3 into their gang bank. Gang Bank Balance: $%4  Bank Balance: $%5  On Hand Balance: $%6</Original>
@@ -11318,7 +11318,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 depositou R$%3 no banco da sua gangue. Quantia no Banco da Gangue: R$%4 Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
             <Russian>%1 - %2 депозит в размере $%3 в их банде банка. Gang Bank Баланс: $%4 банка Баланс: $%5 на руку Баланс: $%6</Russian>
-            <German></German>
+            <German>%1 - %2 hat $%3 auf sein Gang-Konto überwiesen. Gang-Konto: $%4  Bank-Konto: $%5  Bargeld: $%6</German>
         </Key>
         <Key ID="STR_DL_ML_withdrewBank_BEF">
             <Original>withdrew $%1 from their bank. Bank Balance: $%2  On Hand Balance: $%3</Original>
@@ -11329,7 +11329,7 @@
             <Polish></Polish>
             <Portuguese>sacou R$%1 do seu banco. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
             <Russian>снял $%1 от своего банка. Банковский баланс: $%2 на руку Баланс: $%3</Russian>
-            <German></German>
+            <German>hat $%1 von seinem Bankkonto abgehoben. Bank-Konto: $%2  Bargeld: $%3</German>
         </Key>
         <Key ID="STR_DL_ML_withdrewBank">
             <Original>%1 - %2 withdrew $%3 from their bank. Bank Balance: $%4  On Hand Balance: $%5</Original>
@@ -11340,7 +11340,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 sacou R$%3 do seu banco. Quantia no Banco: R$%4 Quantia na Mão: R$%5</Portuguese>
             <Russian>%1 - %2 отозвала $%3 из своего банка. Банковский баланс: $%4 на руку Баланс: $%5</Russian>
-            <German></German>
+            <German>%1 - %2 hat $%3 von seinem Bankkonto abgehoben. Bank-Konto: $%4  Bargeld: $%5</German>
         </Key>
         <Key ID="STR_DL_ML_transferredBank_BEF">
             <Original>transferred $%1 to %2. Bank Balance: $%3  On Hand Balance: $%4</Original>
@@ -11351,7 +11351,7 @@
             <Polish></Polish>
             <Portuguese>transferiu R$%1 para %2. Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
             <Russian>перечислил $%1 %2. Банковский баланс: $%3 на руку Баланс: $%4</Russian>
-            <German></German>
+            <German>hat %2 $%1 überwiesen. Bank-Konto: $%3  Bargeld: $%4</German>
         </Key>
         <Key ID="STR_DL_ML_transferredBank">
             <Original>%1 - %2 transferred $%3 to %4. Bank Balance: $%5  On Hand Balance: $%6</Original>
@@ -11362,7 +11362,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 transferiu R$%3 para %4. Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
             <Russian>%1 -%2 перевели $%3 до %4. Банковский баланс: $%5 на руку Баланс: $%6</Russian>
-            <German></German>
+            <German>%1 - %2 hat %4 $%3 überwiesen. Bank-Konto: $%5  Bargeld: $%6</German>
         </Key>
         <Key ID="STR_DL_ML_depositedBank_BEF">
             <Original>deposited $%1 into their bank. Bank Balance: $%2  On Hand Balance: $%3</Original>
@@ -11373,7 +11373,7 @@
             <Polish></Polish>
             <Portuguese>depositou R$%1 no seu banco. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
             <Russian>депозит в размере $%1 в их банке. Банковский баланс: $%2 на руку Баланс: $%3</Russian>
-            <German></German>
+            <German>hat $%1 auf sein Bankkonto eingezahlt. Bank-Konto: $%2  Bargeld: $%3</German>
         </Key>
         <Key ID="STR_DL_ML_depositedBank">
             <Original>%1 - %2 deposited $%3 into their bank. Bank Balance: $%4  On Hand Balance: $%5</Original>
@@ -11384,7 +11384,7 @@
             <Polish></Polish>
             <Portuguese>%1 - %2 depositou R$%3 no seu banco. Quantia no Banco: R$%4 Quantia na Mão: R$%5</Portuguese>
             <Russian>%1 - %2 депозит в размере $%3 в свой банк. Банковский баланс: $%4 на руку Баланс: $%5</Russian>
-            <German></German>
+            <German>%1 - %2 hat $%3 auf sein Konto eingezahlt. Bank-Konto: $%4  Bargeld: $%5</German>
         </Key>
     </Package>
 </Project>
