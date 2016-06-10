@@ -6,7 +6,7 @@ Author: Derek
 Description:
 Send a query to retrieve the price of stuff on the server
 */
-private["_type","_side","_data","_ret","_tickTime","_queryResult","_market","_shoptype","_priceArray"];
+private["_type","_side","_data","_ret","_tickTime","_queryResult","_market","_shoptype","_priceArray","_varname"];
 _type = [_this,0,0,[0]] call BIS_fnc_param;
 _data= [_this,1,"",[""]] call BIS_fnc_param;
 
@@ -28,50 +28,23 @@ _itemArray = [];
 _factor = [];
 _shoptype = [];
 _shoptype pushBack _data;
+_shopItems = [];
 
-_query = switch (_data) do {
-
-
-case "market" :{
-    _shoptype pushBack "civ";
-};
-
-case "rebel" :{ 
-    _shoptype pushBack "market";
-    _shoptype pushBack "vigilante";
-    _shoptype pushBack "special";
-    _shoptype pushBack "civ";
-};
-
-case "cop" :{ 
-    _shoptype pushBack "market";
-    _shoptype pushBack "coffee";
-    _shoptype pushBack "special";
-};
-
-case "gang" :{ 
-    _shoptype pushBack "rebel";
-    _shoptype pushBack "market";
-    _shoptype pushBack "special";
-    _shoptype pushBack "civ";
-};    
-case "economy" :{ 
-    _factor = [2,3,4];
-};
-case "vigilante" :{ 
-    _shoptype pushBack "market";
-    _shoptype pushBack "civ";
-};
-default {""};
+switch (_data) do { 
+    case "economy" :{ 
+        _factor = [2,3,4];
+    };
+    default {
+        _shopItems = M_CONFIG(getArray,"VirtualShops",_data, "items");
+    };
 };
 
 {
     _name = SEL(_x,0);
     _fact = SEL(_x,1);
-    _shop = SEL(_x,2);
-    if ((_fact in _factor) or (_shop in _shoptype)) then {
-        _name = format["%1MarketGoodPrice",SEL(_x,0)];
-        _priceArray = missionNamespace getVariable (_name);
+    if ((_fact in _factor) or (_name in _shopItems)) then {
+        _varname = format["%1MarketGoodPrice",_name];
+        _priceArray = missionNamespace getVariable (_varname);
         _itemArray pushBack _priceArray;
     };
 } forEach _market;

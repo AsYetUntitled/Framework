@@ -177,6 +177,12 @@ _rsb allowDamage false;
 life_server_isReady = true;
 publicVariable "life_server_isReady";
 
+/* Start dynamic market syncing */
+[] spawn TON_fnc_syncPrices;
+
+
+
+
 /* Initialize hunting zone(s) */
 aiSpawn = ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
