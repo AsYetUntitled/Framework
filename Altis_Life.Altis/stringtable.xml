@@ -2379,6 +2379,17 @@
             <Portuguese>Mostrar Objetos Próximos</Portuguese>
             <German>Nahe Objekte anzeigen</German>
         </Key>
+        <Key ID="STR_SM_BCSW">
+            <Original>Broadcast Switch</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Russian></Russian>
+            <Portuguese>Habilitar Transmissões</Portuguese>
+            <German></German>
+        </Key>
         <Key ID="STR_SM_SCOFF">
             <Original>Sidechat OFF</Original>
             <Czech>Sidechat OFF</Czech>
@@ -7790,6 +7801,17 @@
             <Russian></Russian>
             <Portuguese>Habilita/Desabilita o side-channel, desabilite caso você não queira conversar com os jogadores da sua facção.</Portuguese>
             <German>Sidechat aktivieren. Ausschalten, wenn du nicht mit Spielern deiner Fraktion sprechen möchtest.</German>
+        </Key>
+        <Key ID="STR_GUI_BroadcastSwitch">
+          <Original>Switch player's broadcast mode, turn this off if you don't want to see any broadcast from other players.</Original>
+          <Czech></Czech>
+          <French></French>
+          <Spanish></Spanish>
+          <Italian></Italian>
+          <Polish></Polish>
+          <Russian></Russian>
+          <Portuguese>Habilita/Desabilita as transmissões dos jogadores, desabilite caso você não queira ver as transmissões dos outros jogadores.</Portuguese>
+          <German></German>
         </Key>
         <Key ID="STR_GUI_PlayTags">
             <Original>Controls whether or not players will have name tags above their head.</Original>
