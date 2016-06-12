@@ -33,7 +33,7 @@ _goodlist lbSetValue [(lbSize _goodlist)-1,3.5];
 
 {
 	if ((_x select 2) > 1 ) then {
-		_name = ITEM_NAME(SEL(_x,0));
+		_name = ITEM_NAME((_x select 0));
 		_goodlist lbAdd format["%1",(localize _name)];
 		_goodlist lbSetData [(lbSize _goodlist)-1,_x select 0];
 		_goodlist lbSetValue [(lbSize _goodlist)-1,_x select 6];

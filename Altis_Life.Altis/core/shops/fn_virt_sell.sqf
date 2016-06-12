@@ -26,7 +26,7 @@ if ([false,_type,_amount] call life_fnc_handleInv) then {
     CASH = CASH + _price;
     [0] call SOCK_fnc_updatePartial;
     [] call life_fnc_virt_update;
-    [[0,player,life_shop_type,_amount,_price,_type],"TON_fnc_Ajustprices",false,false] spawn life_fnc_MP;
+    [0,player,life_shop_type,_amount,_price,_type] remoteExec ["TON_fnc_adjustPrices",RSERV];
 };
 
 if (life_shop_type isEqualTo "drugdealer") then {

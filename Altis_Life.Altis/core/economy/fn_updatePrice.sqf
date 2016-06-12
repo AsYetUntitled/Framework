@@ -29,7 +29,7 @@ if (count _array == 0 ) exitwith {};
 
 {
 if ((_x select 1) > 1 ) then {
-	_name = ITEM_NAME(SEL(_x,0));
+	_name = ITEM_NAME((_x select 0));
 		_price = _x select 1;
 		_item_list lbAdd format["%1  ($%2)",(localize _name),[_price] call life_fnc_numberText];
 		_item_list lbSetData [(lbSize _item_list)-1,_x select 0];
@@ -40,8 +40,8 @@ if ((_x select 1) > 1 ) then {
 
 {
 	if ((_x select 2) > 1 ) then {
-	_val = ITEM_VALUE(SEL(_x,0));
-	_name = ITEM_NAME(SEL(_x,0));
+	_val = ITEM_VALUE((_x select 0));
+	_name = ITEM_NAME((_x select 0));
 	
 	if(_val > 0) then
 	{

@@ -40,8 +40,8 @@ switch (_data) do {
 };
 
 {
-    _name = SEL(_x,0);
-    _fact = SEL(_x,1);
+    _name = (_x select 0);
+    _fact = (_x select 1);
     if ((_fact in _factor) or (_name in _shopItems)) then {
         _varname = format["%1MarketGoodPrice",_name];
         _priceArray = missionNamespace getVariable (_varname);

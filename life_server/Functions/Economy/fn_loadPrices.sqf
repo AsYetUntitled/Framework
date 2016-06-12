@@ -26,8 +26,8 @@ _query = "SELECT resource, buyprice, sellprice, varprice, minprice, maxprice, fa
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
-
-if((EQUAL(EXTDB_SETTINGS("MySQL_Query"),1))) then {
+/*
+if(((EXTDB_SETTINGS("MySQL_Query") isEqualTo 1))) then {
 	["diag_log",[
 		"------------- Load Prices Request -------------",
 		format["QUERY: %1",_query],
@@ -35,14 +35,14 @@ if((EQUAL(EXTDB_SETTINGS("MySQL_Query"),1))) then {
 		format["Result: %1",_queryResult],
 		"-------------------------------------------------"
 	]] call TON_fnc_logIt;
-};
+};*/
 _marketPrices = [];
 
 {
-    _marketPrices pushBack [SEL(_x,0),SEL(_x,6)];
-    _name = format["%1MarketGoodPrice",SEL(_x,0)];
-    _x pushBack SEL(_x,2);
-    _x pushBack SEL(_x,2);
+    _marketPrices pushBack [(_x select 0),(_x select 6)];
+    _name = format["%1MarketGoodPrice",(_x select 0)];
+    _x pushBack (_x select 2);
+    _x pushBack (_x select 2);
     missionNamespace setVariable [_name, _x];
     publicVariable _name;
 } forEach _queryResult;
