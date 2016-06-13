@@ -1,5 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
+    <Package name="Init">
+        <Key ID="STR_Init_ClientSetup">
+            <Original>Setting up client, please wait...</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <Italian></Italian>
+            <French></French>
+            <Portuguese>Configurando o cliente. Por favor, aguarde...</Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_Init_ServerReady">
+            <Original>Waiting for the server to be ready...</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <Italian></Italian>
+            <French></French>
+            <Portuguese>Esperando o servidor estar pronto...</Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_Init_ExtdbFail">
+            <Original>extDB failed to load, please contact an administrator.</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <Italian></Italian>
+            <French></French>
+            <Portuguese>O extDB falhou ao carregar, por favor, contacte um administrador.</Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_Init_ClientFinish">
+            <Original>Finishing client setup procedure...</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <Italian></Italian>
+            <French></French>
+            <Portuguese>Terminando o processo de configuração do cliente...</Portuguese>
+            <Polish></Polish>
+        </Key>
+    </Package>
     <Package name="Shop_Names">
         <Key ID="STR_Shops_C_Bruce">
             <Original>Bruce's Outback Outfits</Original>
