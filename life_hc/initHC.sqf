@@ -71,6 +71,7 @@ diag_log "----------------------------------------------------------------------
 
 [] execFSM "\life_hc\FSM\cleanup.fsm";
 
+[] spawn HC_fnc_initHouses;
 [] spawn HC_fnc_cleanup;
 
 /* Initialize hunting zone(s) */
