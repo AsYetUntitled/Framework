@@ -71,7 +71,6 @@ diag_log "----------------------------------------------------------------------
 
 [] execFSM "\life_hc\FSM\cleanup.fsm";
 
-[] spawn HC_fnc_initHouses;
 [] spawn HC_fnc_cleanup;
 
 /* Initialize hunting zone(s) */
@@ -93,7 +92,6 @@ HC_MPAllowedFuncs = [
     "hc_fnc_queryplayergang",
     "hc_fnc_removegang",
     "hc_fnc_updategang",
-    "hc_fnc_inithouses",
     "hc_fnc_addcontainer",
     "hc_fnc_addhouse",
     "hc_fnc_deletedbcontainer",
