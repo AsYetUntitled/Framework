@@ -8,15 +8,6 @@
 */
 
 private["_handle","_timeStamp","_server_isReady","_extDB_notLoaded"];
-
-if (life_HC_isActive) then {
-    _server_isReady = life_HC_server_isReady;
-    _extDB_notLoaded = life_HC_server_extDB_notLoaded;
-} else {
-    _server_isReady = life_server_isReady;
-    _extDB_notLoaded = life_server_extDB_notLoaded;
-};
-
 life_firstSpawn = true;
 life_session_completed = false;
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED"];
@@ -64,6 +55,15 @@ diag_log "::Life Client:: Received server functions.";
 0 cutFadeOut 99999999;
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
+waitUntil{!isNil "life_HC_isActive"};
+if (life_HC_isActive) then {
+    _server_isReady = life_HC_server_isReady;
+    _extDB_notLoaded = life_HC_server_extDB_notLoaded;
+} else {
+    _server_isReady = life_server_isReady;
+    _extDB_notLoaded = life_server_extDB_notLoaded;
+};
+
 waitUntil{!isNil "_server_isReady"};
 waitUntil{(_server_isReady || !isNil "_extDB_notLoaded")};
 
