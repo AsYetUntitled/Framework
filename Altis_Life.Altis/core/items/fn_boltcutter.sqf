@@ -23,7 +23,7 @@ _door = 0;
 for "_i" from 1 to _doors do {
     _selPos = _building selectionPosition format["Door_%1_trigger",_i];
     _worldSpace = _building modelToWorld _selPos;
-        if (player distance _worldSpace < 5) exitWith {_door = _i;};
+        if (player distance _worldSpace < 2) exitWith {_door = _i;};
 };
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 if ((_building getVariable [format["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
