@@ -57,9 +57,11 @@ diag_log "::Life Client:: Received server functions.";
 diag_log "::Life Client:: Waiting for the server to be ready..";
 waitUntil{!isNil "life_HC_isActive"};
 if (life_HC_isActive) then {
+    waitUntil{!isNil "life_HC_server_isReady" && !isNil "life_HC_server_extDB_notLoaded"};
     _server_isReady = life_HC_server_isReady;
     _extDB_notLoaded = life_HC_server_extDB_notLoaded;
 } else {
+    waitUntil{!isNil "life_server_isReady" && !isNil "life_server_extDB_notLoaded"};
     _server_isReady = life_server_isReady;
     _extDB_notLoaded = life_server_extDB_notLoaded;
 };
