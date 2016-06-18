@@ -40,11 +40,9 @@ while {true} do {
 
     _endtime = 4*60*60;
     _diff = _endtime - time;
-    diag_log format["Sleeping sync prices at uptime: %1",round(time/60)];
     if (_diff > 15*60 || time > _endtime+5) then {
         sleep (15*60);
     } else {
         sleep (_diff - 5);
     };
-    diag_log format["Waking sync prices at uptime: %1",round(time/60)];
 };

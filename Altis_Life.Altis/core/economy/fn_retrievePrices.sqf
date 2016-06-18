@@ -6,7 +6,7 @@ Author: Derek
 Description:
 Send a query to retrieve the price of stuff on the server
 */
-private["_type","_side","_data","_ret","_tickTime","_queryResult","_market","_shoptype","_priceArray","_varname"];
+private["_type","_side","_data","_ret","_tickTime","_queryResult","_market","_priceArray","_varname"];
 _type = [_this,0,0,[0]] call BIS_fnc_param;
 _data= [_this,1,"",[""]] call BIS_fnc_param;
 
@@ -26,12 +26,10 @@ _market = missionNamespace getVariable "MarketPrices";
 
 _itemArray = [];
 _factor = [];
-_shoptype = [];
-_shoptype pushBack _data;
 _shopItems = [];
 
-switch (_data) do { 
-    case "economy" :{ 
+switch (_data) do {
+    case "economy" :{
         _factor = [2,3,4];
     };
     default {
