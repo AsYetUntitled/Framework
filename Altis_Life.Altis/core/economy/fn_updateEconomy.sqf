@@ -7,7 +7,7 @@
 	Description:
 	Update and fill the Economy gui menu.
 */
-private["_display","_achatliste","_gear_list","_shop_data","_name","_price","_market"];
+private["_display","_achatliste","_gear_list","_shop_data","_name","_price","_market","_factor","_categories"];
 disableSerialization;
 
 //Setup control vars.
@@ -24,20 +24,21 @@ life_market = [_this,1,[],[[]]] call BIS_fnc_param;
 
 if (count life_market == 0 ) exitwith {};
 
-_goodlist lbAdd format["------------Illegal Goods------------"];
-_goodlist lbSetValue [(lbSize _goodlist)-1,1.5];
-_goodlist lbAdd format["--------Natural Resources--------"];
-_goodlist lbSetValue [(lbSize _goodlist)-1,2.9];
-_goodlist lbAdd format["-----Hunting and Gathering-----"];
-_goodlist lbSetValue [(lbSize _goodlist)-1,3.5];
+_categories = (LIFE_SETTINGS(getArray, "market_categories"));
+_factor = 1;
+{
+	_goodlist lbAdd _x;
+	_goodlist lbSetValue [(lbSize _goodlist)-1,(_factor*2)-1];
+	_factor = _factor + 1;
+} forEach _categories;
 
 {
 	if ((_x select 2) > 1 ) then {
 		_name = ITEM_NAME((_x select 0));
 		_goodlist lbAdd format["%1",(localize _name)];
 		_goodlist lbSetData [(lbSize _goodlist)-1,_x select 0];
-		_goodlist lbSetValue [(lbSize _goodlist)-1,_x select 6];
-	
+		_goodlist lbSetValue [(lbSize _goodlist)-1,2*(_x select 6)];
+
 	};
 } foreach life_market;
 

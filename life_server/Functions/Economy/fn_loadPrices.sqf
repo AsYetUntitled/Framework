@@ -26,16 +26,6 @@ _query = "SELECT resource, buyprice, sellprice, varprice, minprice, maxprice, fa
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
-/*
-if(((EXTDB_SETTINGS("MySQL_Query") isEqualTo 1))) then {
-	["diag_log",[
-		"------------- Load Prices Request -------------",
-		format["QUERY: %1",_query],
-		format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)],
-		format["Result: %1",_queryResult],
-		"-------------------------------------------------"
-	]] call TON_fnc_logIt;
-};*/
 _marketPrices = [];
 
 {
