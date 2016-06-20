@@ -10,20 +10,12 @@ private["_type","_side","_data","_ret","_tickTime","_queryResult","_market","_pr
 _type = [_this,0,0,[0]] call BIS_fnc_param;
 _data= [_this,1,"",[""]] call BIS_fnc_param;
 
-
-//Error checks
-
-diag_log format ["%1   %2",_type,_data];
-if( _data == "") exitWith
-{
-    diag_log "data null";
-};
+if( _data == "") exitWith {diag_log "Shoptype is null";};
 
 
 _market = missionNamespace getVariable "MarketPrices";
 
 _itemArray = [];
-_shopItems = [];
 
 switch (_data) do {
     case "economy" :{

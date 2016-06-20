@@ -1,11 +1,11 @@
 #include "..\..\script_macros.hpp"
 
 /*
-	File: fn_marketGrab.sqf
-	Author: Derek
+    File: fn_marketGrab.sqf
+    Author: Derek
 
-	Description:
-	Gets the data for the market item you are looking at
+    Description:
+    Gets the data for the market item you are looking at
 */
 private["_display","_tab","_good","_currgood","_currprice","_recprice","_recchange","_startprice","_startchange","_cp","_rp","_sp","_name"];
 disableSerialization;
@@ -17,12 +17,15 @@ _recchange = 39005;
 _startprice = 39006;
 _startchange = 39007;
 _value = lbValue[39001,(lbCurSel 39001)];
-if (_value in [1.5,2.9,3.5]) exitWith {};
+
+// Ignore the market types defined in Master_Config
+if ((_value mod 2) = 1)  exitWith {};
+
 _good = lbData[39001,(lbCurSel 39001)];
 
 {
-	if ((_x select 0) isEqualTo _good) exitWith {_good = _x;};
-}forEach life_market;
+    if ((_x select 0) isEqualTo _good) exitWith {_good = _x;};
+} forEach life_market;
 
 _name = ITEM_NAME((_good select 0));
 

@@ -26,7 +26,6 @@ _shop_data = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
 
 if (count _array == 0 ) exitwith {};
 
-
 {
     if ((_x select 1) > 1 ) then {
         _name = ITEM_NAME((_x select 0));
@@ -40,7 +39,7 @@ if (count _array == 0 ) exitwith {};
             _item_list lbSetPicture [(lbSize _item_list)-1,_icon];
         };
     };
-} foreach _array;
+} forEach _array;
 
 {
     if ((_x select 2) > 1 ) then {
@@ -59,7 +58,7 @@ if (count _array == 0 ) exitwith {};
             };
         };
     };
-} foreach (_array);
+} forEach (_array);
 
 lbSort _item_list;
 lbSort _gear_list;
