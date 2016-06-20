@@ -66,10 +66,8 @@ if (life_HC_isActive) then {
     _extDB_notLoaded = life_server_extDB_notLoaded;
 };
 
-waitUntil{!isNil "_server_isReady"};
-waitUntil{(_server_isReady || !isNil "_extDB_notLoaded")};
-
-if (!isNil "_extDB_notLoaded" && {_extDB_notLoaded isEqualType []}) exitWith {
+waitUntil{_server_isReady};
+if (_extDB_notLoaded isEqualType []) exitWith {
     diag_log _extDB_notLoaded;
     999999 cutText [localize "STR_Init_ExtdbFail","BLACK FADED"];
     999999 cutFadeOut 99999999;
