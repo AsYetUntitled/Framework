@@ -68,7 +68,7 @@ if (life_HC_isActive) then {
 
 waitUntil{_server_isReady};
 if (_extDB_notLoaded isEqualType []) exitWith {
-    diag_log _extDB_notLoaded;
+    diag_log (_extDB_notLoaded select 1);
     999999 cutText [localize "STR_Init_ExtdbFail","BLACK FADED"];
     999999 cutFadeOut 99999999;
 };
