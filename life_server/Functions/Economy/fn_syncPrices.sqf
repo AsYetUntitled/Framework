@@ -1,12 +1,13 @@
 #include "\life_server\script_macros.hpp"
-private["_market", "_query", "_price", "_name", "_goods","_endtime", "_syncRate"];
 /*
-File: fn_syncPrices.sqf
-Author: Derek Benson
+	File: fn_syncPrices.sqf
+	Author: Derek Benson
 
-Description:
-refreshes the SQL database with the new sell prices
+	Description:
+	refreshes the SQL database with the new sell prices
 */
+private["_market", "_query", "_price", "_name", "_goods","_endtime", "_syncRate"];
+
 [] call TON_fnc_loadPrices;
 if ((LIFE_SETTINGS(getNumber, "dynamic_market")) isEqualTo 1) then {
     while {true} do {
