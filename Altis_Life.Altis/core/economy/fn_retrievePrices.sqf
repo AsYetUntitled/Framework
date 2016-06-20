@@ -6,13 +6,13 @@ Author: Derek
 Description:
 Searches through the economy public variables to locate the correct ones
 */
-private["_type","_side","_data","_ret","_tickTime","_queryResult","_market","_priceArray","_varname"];
+private["_market","_priceArray","_varname","_itemArray","_shopItems"];
 params [
     ["_type", 0],
     ["_data", ""]
 ];
 
-if( _data == "") exitWith {diag_log "Shoptype is null";};
+if( _data isEqualTo "") exitWith {diag_log "Shoptype is null";};
 
 _market = missionNamespace getVariable "MarketPrices";
 _itemArray = [];
@@ -43,5 +43,5 @@ switch (_data) do {
     };
 };
 
-if (_data == "economy") exitwith {[_type,_itemArray] spawn life_fnc_updateEconomy};
+if (_data isEqualTo "economy") exitwith {[_type,_itemArray] spawn life_fnc_updateEconomy};
 [_type,_itemArray] spawn life_fnc_updatePrice;

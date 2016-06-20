@@ -7,7 +7,7 @@
     Description:
     Gets the data for the market item you are looking at
 */
-private["_display","_tab","_good","_currgood","_currprice","_recprice","_recchange","_startprice","_startchange","_cp","_rp","_sp","_name"];
+private["_display","_good","_currgood","_currprice","_recprice","_recchange","_startprice","_startchange","_name"];
 disableSerialization;
 _display = findDisplay 39000;
 _currgood = 39002;
@@ -27,7 +27,7 @@ _good = lbData[39001,(lbCurSel 39001)];
     if ((_x select 0) isEqualTo _good) exitWith {_good = _x;};
 } forEach life_market;
 
-_name = ITEM_NAME((_good select 0));
+_name = ITEM_NAME(_good select 0);
 
 ctrlSetText[_currgood, format["Current Good: %1",(localize _name)]];
 ctrlSetText[_currprice, format["Current Price: $%1", (_good select 2)]];

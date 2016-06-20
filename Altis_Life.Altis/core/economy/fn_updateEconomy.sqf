@@ -4,10 +4,11 @@
 	Author: Worldtrade1101
 	Edited by: Derek
 	Base on Tonic script
+
 	Description:
 	Update and fill the Economy gui menu.
 */
-private["_display","_achatliste","_gear_list","_shop_data","_name","_price","_market","_factor","_categories","_type"];
+private["_display","_name","_factor","_categories","_goodlist"];
 disableSerialization;
 params [
 	["_type", 0],
