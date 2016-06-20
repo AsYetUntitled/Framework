@@ -1,14 +1,13 @@
 #include "\life_server\script_macros.hpp"
 /*
-File: fn_adjustPrices.sqf
-Author: worldtrade1101
-Edited by: Derek Benson
-Description:
-Updates the variables serverside.
-*/
+	File: fn_adjustPrices.sqf
+	Author: worldtrade1101
+	Edited by: Derek Benson
 
-//[[0,player,life_shop_type,_amount,_price,_var],"TON_fnc_adjustPrices",false,false] spawn life_fnc_MP;
-private["_type","_side","_data","_unit","_ret","_tickTime","_queryResult","_var","_price","_amount","_market","_cfgDelay","_factor","_good","_itemArray","_priceChanges","_delay","_changeco","_endtime","_diff"];
+	Description:
+	Updates the variables serverside.
+*/
+private["_market","_cfgDelay","_factor","_good","_itemArray","_priceChanges","_delay","_changeco","_endtime","_diff"];
 params [
     ["_type", 0],
     ["_unit", ObjNull],
@@ -34,19 +33,14 @@ if (_diff < _delay) then {
 sleep _delay;
 //Error checks
 
-diag_log format ["%1   %2    %3    %4      %5      %6",_unit,_type,_data,_amount,_price,_var];
-if( (_data isEqualTo "") OR (isNull _unit)) exitWith
-{
-diag_log "data or unit null";
-};
+diag_log format ["%1   %2    %3    %4    %5    %6",_unit,_type,_data,_amount,_price,_var];
+if ((_data isEqualTo "") || (isNull _unit)) exitWith { diag_log "data or unit null"; };
 
 _unit = owner _unit; //for hack purpose!
-
 _market = missionNamespace getVariable "MarketPrices";
-
 _good = missionNamespace getVariable format["%1MarketGoodPrice",_var];
 
-if(isNil "_good") exitWith {format["ERROR: _good variable was nil in adjust prices. _var = %1", _var]};
+if (isNil "_good") exitWith { diag_log format["ERROR: _good variable was nil in adjust prices. _var = %1", _var]; };
 _itemArray = [];
 
 //we check the factor of the object
@@ -63,15 +57,15 @@ if (_factor isEqualTo 0) exitwith {};//the factor 0 is not a real group
 _sellingfactor = (count _itemArray) - 1;
 
 {
-    _ressource = _x select 0;
-    _buyprice =  (_x select 1);
-    _sellprice =  (_x select 2);
-    _varprice =  (_x select 3);
-    _minprice = (_x select 4);
-    _maxprice = (_x select 5);
+    _resource = _x select 0;
+    _buyprice = _x select 1;
+    _sellprice = _x select 2;
+    _varprice = _x select 3;
+    _minprice = _x select 4;
+    _maxprice = _x select 5;
     _changeco = 0.3 + random 1.4;
     _x set [7, _sellprice];
-    if (_ressource isEqualTo _var) then {
+    if (_resource isEqualTo _var) then {
         if (_type isEqualTo 0) then {
             if ((_sellprice - (_varprice * _amount * _sellingfactor)) > _minprice) then {
                 _sellprice = _sellprice - (_varprice * _amount * _sellingfactor);
