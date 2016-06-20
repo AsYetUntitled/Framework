@@ -7,14 +7,14 @@
     Description:
     add or remove one from the rscEdit
 */
-private["_amount", "_item_list", "_gear_list", "_shop_data", "_name", "_price"];
+private["_amount","_display","_amounttext","_type","_add"];
 disableSerialization;
 params [
     ["_type", -1], //buy or sell
     ["_add", -1]   //add or substract
 ];
 
-if (_type == -1) exitwith {};
+if (_type isEqualTo -1) exitwith {};
 
 switch (_add) do {
     case 0: {
@@ -55,7 +55,7 @@ switch (_add) do {
                 hint localize "STR_Shop_Virt_NoNum";
             };
 
-            if (parseNumber _amount == 0) exitwith {};
+            if (parseNumber _amount isEqualTo 0) exitwith {};
             _amount = parseNumber _amount - 1;
             _display = findDisplay 2400;
             _amounttext = _display displayCtrl 2405;
