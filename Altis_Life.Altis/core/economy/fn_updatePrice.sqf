@@ -9,6 +9,10 @@
 */
 private["_display","_item_list","_gear_list","_shop_data","_name","_price","_icon"];
 disableSerialization;
+params [
+    ["_type", 0],
+    ["_array", []]
+];
 
 //Setup control vars.
 _display = findDisplay 2400;
@@ -18,9 +22,6 @@ _gear_list = _display displayCtrl 2402;
 //Purge list
 lbClear _item_list;
 lbClear _gear_list;
-
-_type= [_this,0,0,[0]] call BIS_fnc_param;
-_array= [_this,1,[],[[]]] call BIS_fnc_param;
 
 _shop_data = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
 

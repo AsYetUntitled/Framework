@@ -8,16 +8,17 @@
     add or remove one from the rscEdit
 */
 private["_amount", "_item_list", "_gear_list", "_shop_data", "_name", "_price"];
-
-_type = [_this, 0, -1, [0]] call BIS_fnc_param; //buy or sell
-_add = [_this, 1, -1, [0]] call BIS_fnc_param; // add or substract
 disableSerialization;
+params [
+    ["_type", -1], //buy or sell
+    ["_add", -1]   //add or substract
+];
 
 if (_type == -1) exitwith {};
 
 switch (_add) do {
     case 0: {
-        if (_type == 0) then {
+        if (_type isEqualTo 0) then {
             _amount = ctrlText 2404;
             if (!([_amount] call TON_fnc_isnumber)) exitWith {
                 hint localize "STR_Shop_Virt_NoNum";
@@ -39,7 +40,7 @@ switch (_add) do {
         };
     };
     case 1: {
-        if (_type == 0) then {
+        if (_type isEqualTo 0) then {
             _amount = ctrlText 2404;
             if (!([_amount] call TON_fnc_isnumber)) exitWith {
                 hint localize "STR_Shop_Virt_NoNum";

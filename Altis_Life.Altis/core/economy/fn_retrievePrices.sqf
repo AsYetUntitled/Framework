@@ -7,14 +7,14 @@ Description:
 Searches through the economy public variables to locate the correct ones
 */
 private["_type","_side","_data","_ret","_tickTime","_queryResult","_market","_priceArray","_varname"];
-_type = [_this,0,0,[0]] call BIS_fnc_param;
-_data= [_this,1,"",[""]] call BIS_fnc_param;
+params [
+    ["_type", 0],
+    ["_data", ""]
+];
 
 if( _data == "") exitWith {diag_log "Shoptype is null";};
 
-
 _market = missionNamespace getVariable "MarketPrices";
-
 _itemArray = [];
 
 switch (_data) do {
@@ -43,10 +43,5 @@ switch (_data) do {
     };
 };
 
-
-
-
-
 if (_data == "economy") exitwith {[_type,_itemArray] spawn life_fnc_updateEconomy};
-
 [_type,_itemArray] spawn life_fnc_updatePrice;
