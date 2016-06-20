@@ -19,7 +19,7 @@ _startchange = 39007;
 _value = lbValue[39001,(lbCurSel 39001)];
 
 // Ignore the market types defined in Master_Config
-if ((_value mod 2) = 1)  exitWith {};
+if ((_value mod 2) isEqualTo 1)  exitWith {};
 
 _good = lbData[39001,(lbCurSel 39001)];
 
