@@ -215,8 +215,8 @@ CREATE TABLE IF NOT EXISTS `economy` (
   `buyprice` int(12) NOT NULL DEFAULT '1',
   `sellprice` int(12) NOT NULL DEFAULT '1',
   `varprice` int(12) NOT NULL DEFAULT '1',
-  `minprice` int(12) NOT NULL DEFAULT '1',
   `maxprice` int(12) NOT NULL DEFAULT '1',
+  `minprice` int(12) NOT NULL DEFAULT '1',
   `factor` int(12) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`, `resource`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1;

@@ -72,8 +72,8 @@ _sellingfactor = (count _itemArray) - 1;
             } else {
                 _sellprice = _minprice;
             };
-            if (_buyprice != 0) then {
-                if ((_sellprice >= _buyprice)) then {
+            if (_buyprice > 0) then {
+                if (_sellprice >= _buyprice) then {
                     _buyprice=_sellprice + 15;
                 };
             };
