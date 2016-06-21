@@ -1,10 +1,10 @@
 language: python
 python:
-- '3.4'
+- '3.5'
 before_script:
 # Credits to ACE3 for these validators
-- wget https://www.dropbox.com/s/wzj5js0kc2xlanc/sqf_validator.py
-- wget https://www.dropbox.com/s/jza43yuxswvx2hz/config_style_checker.py
+- wget https://raw.githubusercontent.com/ArmaLife/travis_files/master/sqf_validator.py
+- wget https://raw.githubusercontent.com/ArmaLife/travis_files/master/config_style_checker.py
 script:
 - python3 sqf_validator.py
 - python3 config_style_checker.py
