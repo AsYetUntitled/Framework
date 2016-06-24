@@ -52,7 +52,7 @@ class CfgSpawnPoints {
             level[] = { "", "", -1 };
         };
 
-        class RebelS {
+        class RebelN {
             displayName = "Northern Rebel Base";
             spawnMarker = "Rebelop";
             icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
@@ -60,7 +60,7 @@ class CfgSpawnPoints {
             level[] = { "", "", -1 };
         };
 
-        class RebelN {
+        class RebelS {
             displayName = "Southern Rebel Base";
             spawnMarker = "Rebelop_1";
             icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
