@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Retrains the target.
+    Restrains the target.
 */
 private["_unit"];
 _unit = cursorObject;
