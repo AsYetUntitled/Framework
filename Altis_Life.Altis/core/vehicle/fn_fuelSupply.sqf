@@ -6,8 +6,6 @@
     Description:
     Fuel Tank Job, Fill Gas Station with Fuel.
 */
-
-
 private["_vehicle","_fuelSpace","_fuelState","_fuelFeedState","_fuelLevel","_distance","_shortest","_random","_another","_ui","_progress","_pgText","_win","_price","_pricem"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};

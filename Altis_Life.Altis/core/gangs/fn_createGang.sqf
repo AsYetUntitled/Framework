@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Pulls up the menu and creates the gang?
+    Pulls up the menu and creates the gang with the name the user enters in.
 */
 private["_gangName","_length","_badChar","_chrByte","_allowed"];
 disableSerialization;

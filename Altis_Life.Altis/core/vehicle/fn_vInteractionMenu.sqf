@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Replaces the mass addactions for various vehicle actions
+    Replaces the mass add actions for various vehicle actions.
 */
 #define Btn1 37450
 #define Btn2 37451

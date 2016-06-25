@@ -3,7 +3,8 @@
     File: fn_freezePlayer.sqf
     Author: ColinM9991
 
-    Description: Freezes selected player
+    Description: 
+    Freezes selected player.
 */
 private["_admin"];
 _admin = [_this,0,objNull,[objNull]] call BIS_fnc_param;

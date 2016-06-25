@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    32 hours...
+    Kicks a player from your gang.
 */
 private["_unit","_unitID","_members"];
 disableSerialization;

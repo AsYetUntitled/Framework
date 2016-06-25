@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Starts the invite process?
+    Invites the player into the gang.
 */
 private "_unit";
 disableSerialization;

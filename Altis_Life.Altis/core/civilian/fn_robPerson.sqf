@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Getting tired of adding descriptions...
+    Robs a person.
 */
 params [
     ["_robber",objNull,[objNull]]

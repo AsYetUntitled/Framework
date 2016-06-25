@@ -3,7 +3,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Starting to lose track on shit I wrote a year ago..
+    Calculates Vehicle Weight.
 */
 private["_vehicle","_weight","_used"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
