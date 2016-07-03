@@ -20,7 +20,6 @@ if (player getVariable "playerSurrender") exitWith {
 life_action_inUse = true;
 _zone = "";
 _requiredItem = "";
-_zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 _percent = (floor random 100) + 1; //Make sure it's not 0
@@ -29,6 +28,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _curConfig = _resourceCfg select _i;
     _resources = getArray(_curConfig >> "mined");
     _maxGather = getNumber(_curConfig >> "amount");
+    _zoneSize = getNumber(_curConfig >> "zoneSize");
     _resourceZones = getArray(_curConfig >> "zones");
     _requiredItem = getText(_curConfig >> "item");
     _mined = "";
