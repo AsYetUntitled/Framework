@@ -15,7 +15,6 @@ if (player getVariable "playerSurrender") exitWith {hint localize "STR_NOTF_surr
 life_action_inUse = true;
 _zone = "";
 _requiredItem = "";
-_zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 _exit = false;
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
@@ -24,6 +23,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _curConfig = _resourceCfg select _i;
     _resource = configName _curConfig;
     _maxGather = getNumber(_curConfig >> "amount");
+    _zoneSize = getNumber(_curConfig >> "zoneSize");
     _resourceZones = getArray(_curConfig >> "zones");
     _requiredItem = getText(_curConfig >> "item");
     {

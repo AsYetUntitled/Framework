@@ -30,7 +30,6 @@ if ((_weight select 1) >= (_weight select 0)) exitWith {
 
 //check if we are in the resource zone for any of the resources
 _zone = "";
-_zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
@@ -38,6 +37,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _resource = configName(_curConfig);
     _resourceZones = getArray(_curConfig >> "zones");
     _amount = getNumber(_curConfig >> "amount");
+    _zoneSize = getNumber(_curConfig >> "zoneSize");
 
     {
         if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
