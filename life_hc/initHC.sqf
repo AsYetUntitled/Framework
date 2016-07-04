@@ -8,12 +8,11 @@
 */
 private "_timeStamp";
 if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
-
-[] execVM "\life_hc\KRON_Strings.sqf";
-
+life_HC_server_isReady = false;
 life_HC_server_extDB_notLoaded = "";
-
+publicVariable "life_HC_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
+[] execVM "\life_hc\KRON_Strings.sqf";
 
 if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     life_sql_id = round(random(9999));
@@ -50,13 +49,6 @@ if (life_HC_server_extDB_notLoaded isEqualType []) then {
 };
 
 if (life_HC_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
-
-[] spawn {
-    for "_i" from 0 to 1 step 0 do {
-        publicVariableServer "serv_sv_use";
-        uiSleep 60;
-    };
-};
 
 ["CALL resetLifeVehicles",1] call HC_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] call HC_fnc_asyncCall;
@@ -122,10 +114,16 @@ HC_MPAllowedFuncs = [
 
 CONSTVAR(HC_MPAllowedFuncs);
 
-life_HC_isActive = true;
-publicVariable "life_HC_isActive";
 life_HC_server_isReady = true;
 publicVariable "life_HC_server_isReady";
+
+[] spawn {
+    waitUntil{!isNil "serv_sv_use"};
+    for "_i" from 0 to 1 step 0 do {
+        publicVariableServer "serv_sv_use";
+        uiSleep 60;
+    };
+};
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format["                 End of Altis Life HC Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";

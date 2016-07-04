@@ -9,17 +9,19 @@
 HC_UID = nil;
 
 // JIP integration of an hc
-"life_HC_isActive" addPublicVariableEventHandler {
+"life_HC_server_isReady" addPublicVariableEventHandler {
     if (_this select 1) then {
         HC_UID = getPlayerUID hc_1;
         HC_Life = owner hc_1;
         publicVariable "HC_Life";
-        HC_Life publicVariableClient "serv_sv_use";
         cleanupFSM setFSMVariable ["stopfsm",true];
         terminate cleanup;
         terminate aiSpawn;
         [true] call TON_fnc_transferOwnership;
         HC_Life publicVariableClient "animals";
+        HC_Life publicVariableClient "serv_sv_use";
+        life_HC_isActive = true;
+        publicVariable "life_HC_isActive";
         diag_log "Headless client is connected and ready to work!";
     };
 };
@@ -40,4 +42,3 @@ HC_DC = ["HC_Disconnected","onPlayerDisconnected",
         };
     }
 ] call BIS_fnc_addStackedEventHandler;
-
