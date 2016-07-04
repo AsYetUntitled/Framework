@@ -4,7 +4,7 @@
         <Key ID="STR_Init_ClientSetup">
             <Original>Setting up client, please wait...</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Configurando cliente. Por favor espere...</Spanish>
             <Russian></Russian>
             <German></German>
             <Italian></Italian>
@@ -15,7 +15,7 @@
         <Key ID="STR_Init_ServerReady">
             <Original>Waiting for the server to be ready...</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Esperando a que el servidor esté listo...</Spanish>
             <Russian></Russian>
             <German></German>
             <Italian></Italian>
@@ -26,7 +26,7 @@
         <Key ID="STR_Init_ExtdbFail">
             <Original>extDB failed to load, please contact an administrator.</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>extDB no se pudo cargar, por favor contacte a un administrador.</Spanish>
             <Russian></Russian>
             <German></German>
             <Italian></Italian>
@@ -37,7 +37,7 @@
         <Key ID="STR_Init_ClientFinish">
             <Original>Finishing client setup procedure...</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Finalizando configuración del cliente...</Spanish>
             <Russian></Russian>
             <German></German>
             <Italian></Italian>
@@ -561,7 +561,7 @@
             <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
             <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule.</French>
-            <Spanish>No se puede teletransportarse al jugador aquí porque están dentro de un vehículo.</Spanish>
+            <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Non si può teletrasportarsi il giocatore qui perché sono all'interno di un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
             <Portuguese>Você não pode se teletransportar o jogador aqui, porque eles estão dentro de um veículo.</Portuguese>
@@ -716,7 +716,7 @@
         <Key ID="STR_ANOTF_Frozen">
             <Original>You have disabled %1's input.</Original>
             <Czech>Jste zakázali vstup%1 je.</Czech>
-            <Spanish>Has desabilitado los controles de %1</Spanish>
+            <Spanish>Has deshabilitado los controles de %1</Spanish>
             <Italian>Hai disattivato ingresso%1 di.</Italian>
             <Russian></Russian>
             <German>Du hast %1 Schock-Gefrostet. Er kann sich nichtmehr bewegen.</German>
@@ -727,7 +727,7 @@
         <Key ID="STR_ANOTF_Unfrozen">
             <Original>You have enabled %1's input.</Original>
             <Czech>Jste povolili vstup %1 je.</Czech>
-            <Spanish>Has abilitado los controles de %1</Spanish>
+            <Spanish>Has habilitado los controles de %1</Spanish>
             <Italian>È stata attivata ingresso %1 di.</Italian>
             <Russian></Russian>
             <German>du hast %1 wieder aufgetaut.</German>
@@ -761,7 +761,7 @@
             <Original>Player Markers Disabled.</Original>
             <Czech>Hráč Markers pro invalidy.</Czech>
             <French>Marqueurs désactivés.</French>
-            <Spanish>Marcadores de Jugadores Desabilitados</Spanish>
+            <Spanish>Marcadores de Jugadores Deshabilitados</Spanish>
             <Italian>Player Marcatori disabili.</Italian>
             <Russian></Russian>
             <German>Spieler Markierungen ausgeschaltet.</German>
@@ -772,7 +772,7 @@
             <Original>Player Markers Enabled.</Original>
             <Czech>Hráč Markers Povoleno.</Czech>
             <French>Marqueurs activés.</French>
-            <Spanish>Jugador marcadores Activado.</Spanish>
+            <Spanish>Marcadores de Jugadores habilitados.</Spanish>
             <Italian>Player Marcatori abilitato.</Italian>
             <Russian></Russian>
             <German>Spieler Markierungen aktiviert.</German>
@@ -783,7 +783,7 @@
             <Original>God mode enabled</Original>
             <Czech>nesmrtelnost povolen</Czech>
             <French>Dieu activé</French>
-            <Spanish>Modo Dios capacitó</Spanish>
+            <Spanish>Modo Dios habilitado</Spanish>
             <Italian>God mode abilitato</Italian>
             <Polish>God mode włączony</Polish>
             <Portuguese>Modo Deus capacitou</Portuguese>
@@ -794,7 +794,7 @@
             <Original>God mode disabled"</Original>
             <Czech>nesmrtelnost zakázán</Czech>
             <French>Dieu désactivé</French>
-            <Spanish>Modo Dios desactivado</Spanish>
+            <Spanish>Modo Dios deshabilitado</Spanish>
             <Italian>God mode disabilitato</Italian>
             <Polish>God mode wyłączony</Polish>
             <Portuguese>Modo Deus desativada</Portuguese>
@@ -882,7 +882,7 @@
             <Original>You have no business using this.</Original>
             <Czech>Nemáš podnikání pomocí tohoto.</Czech>
             <French>Vous n'avez pas le niveau pour faire cette action.</French>
-            <Spanish>No tiene sentido utilizar este.</Spanish>
+            <Spanish>No tienes permiso de usar esto.</Spanish>
             <Italian>Non hai il permesso di farlo.</Italian>
             <Polish>Nie masz działalność z wykorzystaniem tego produktu.</Polish>
             <Portuguese>Você não tem nenhum negócio usando este.</Portuguese>
@@ -1070,7 +1070,7 @@
         <Key ID="STR_ATM_WireTransfer">
             <Original>%1 has wire transferred $%2 to you.</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>%1 ha transferido $%2 a tu cuenta.</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -1926,7 +1926,7 @@
             <Original>This player is already in a gang.</Original>
             <Czech>Tento hráč je již v gangu.</Czech>
             <French>Ce joueur est déjà dans un gang.</French>
-            <Spanish>Este jugador ya está en una banda.</Spanish>
+            <Spanish>Este jugador ya está en una pandilla.</Spanish>
             <Italian>Questo giocatore è già in una banda.</Italian>
             <Polish>Ten gracz jest już w gangu.</Polish>
             <Portuguese>Este jogador já está em uma gangue.</Portuguese>
@@ -2429,7 +2429,7 @@
             <Original>Broadcast Switch</Original>
             <Czech></Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>Habilitar Transmisiones</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Russian></Russian>
@@ -3092,7 +3092,7 @@
             <Original>You do not need to be healed!</Original>
             <Czech>Nemusíte být uzdraven!</Czech>
             <French>Vous ne devez pas être guéri!</French>
-            <Spanish>Usted no necesita ser sanado!</Spanish>
+            <Spanish>Usted no necesita ser curado!</Spanish>
             <Italian>Non è necessario essere guarito!</Italian>
             <Polish>Nie trzeba się wyleczyć!</Polish>
             <Portuguese>Você não precisa ser curado!</Portuguese>
@@ -3103,7 +3103,7 @@
             <Original>Spend $%1 to be fully healed?</Original>
             <Czech>Útrata $%1 musí být zcela vyléčit?</Czech>
             <French>Donnez $%1 pour être complètement guéri?</French>
-            <Spanish>Gastar $%1 que se haya recuperado por completo?</Spanish>
+            <Spanish>Gastar $%1 para ser curado por completo?</Spanish>
             <Italian>Spendere $%1 di essere completamente guarito?</Italian>
             <Polish>Wydać $%1 w pełni uzdrowiony?</Polish>
             <Portuguese>Gastar US $%1 para ser totalmente curado?</Portuguese>
@@ -3114,7 +3114,7 @@
             <Original>Doctor</Original>
             <Czech>Doktor</Czech>
             <French>Docteur</French>
-            <Spanish>Doctor</Spanish>
+            <Spanish>Médico</Spanish>
             <Italian>Medico</Italian>
             <Polish>Lekarz</Polish>
             <Portuguese>Médico</Portuguese>
@@ -3950,7 +3950,7 @@
             <Original>You didn't select an item you wanted to give.</Original>
             <Czech>Nevybrali jste položku, kterou chtěl dát.</Czech>
             <French>Vous ne l'avez pas sélectionné un item que vous vouliez donner.</French>
-            <Spanish>No ha seleccionado un elemento que quería dar.</Spanish>
+            <Spanish>No ha seleccionado el objeto que quiere dar.</Spanish>
             <Italian>non è stato selezionato un elemento che si voleva dare.</Italian>
             <Polish>Nie wybrano element, który chciał dać.</Polish>
             <Portuguese>Você não selecionou um item que você queria dar.</Portuguese>
@@ -4247,7 +4247,7 @@
             <Original>You are now spectating %1.\n\nPress F10 to stop spectating.</Original>
             <Czech>Nyní diváck é%1.\n\nStisknutím klávesy F10 k zastavení divácké.</Czech>
             <French>Vous êtes maintenant spectating %1.\n\nAppuyez sur F10 pour arrêter spectating.</French>
-            <Spanish>Ahora está de espectador %1.\n\nPulse F10 para dejar de spectating.</Spanish>
+            <Spanish>Ahora está como espectador de %1.\n\nPulse F10 para salir de modo espectador.</Spanish>
             <Italian>Si è ora spectating %1.\n\nPremere F10 per smettere di spettatori.</Italian>
             <Polish>Grasz teraz spectating %1.\n\nNaciśnij klawisz F10, aby zatrzymać spectating.</Polish>
             <Portuguese>Você agora está como espectador %1.\n\nPressione F10 para sair.</Portuguese>
@@ -4280,7 +4280,7 @@
             <Original>Capture Gang Hideout</Original>
             <Czech>Zachyťte Gang skrýš</Czech>
             <French>Capturez Gang Cachette</French>
-            <Spanish>Captura de la cuadrilla de Escondite</Spanish>
+            <Spanish>Capturar Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
             <Portuguese>Capturar Esconderijo de Gangue</Portuguese>
@@ -4292,7 +4292,7 @@
         <Key ID="STR_News_AddAction">
             <Original>News Station Broadcast</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Anuncio de la Estación de Noticias</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4303,7 +4303,7 @@
         <Key ID="STR_News_DialogTitle">
             <Original>Channel 7 News Station</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Estación del Canal de Noticias 7</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4314,7 +4314,7 @@
         <Key ID="STR_News_MsgHeader">
             <Original>Message Heading:</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Título del Mensaje</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4325,7 +4325,7 @@
         <Key ID="STR_News_MsgContent">
             <Original>Message Content:</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Contenido del Anuncio</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4336,7 +4336,7 @@
         <Key ID="STR_News_Broadcast">
             <Original>Broadcast Message</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Transmitir Anuncio</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4347,7 +4347,7 @@
         <Key ID="STR_News_StructuredText">
             <Original>Broadcast Cost: %1&lt;br /&gt;Next Broadcast Available: %2</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Costo de Transmisión: %1&lt;br /&gt;Siguiente Transmisión Disponible en: %2</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4358,7 +4358,7 @@
         <Key ID="STR_News_HeaderLength">
             <Original>The header cannot be over %1 characters</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>El título no puede tener mas de %1 caracteres</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4369,7 +4369,7 @@
         <Key ID="STR_News_UnsupportedCharacter">
             <Original>You've entered an unsupported character!</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Has introducido un carácter inválido</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4380,7 +4380,7 @@
         <Key ID="STR_News_Now">
             <Original>Now</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Ahora</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4391,7 +4391,7 @@
         <Key ID="STR_News_NotEnough">
             <Original>You need $%1 to send a broadcast!</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>Necesitas %1 para transmitir un anuncio!</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -4402,7 +4402,7 @@
         <Key ID="STR_News_BroadcastedBy">
             <Original>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Broadcasted by: %2</Original>
             <Czech></Czech>
-            <Spanish></Spanish>
+            <Spanish>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Spanish>
             <Russian></Russian>
             <German></German>
             <French></French>
@@ -5524,7 +5524,7 @@
             <Original>The storage box is over the stairs!</Original>
             <Czech>Úložný box je u konce schodů!</Czech>
             <French>La boîte de rangement est dans les escaliers!</French>
-            <Spanish>La caja de almacenamiento es sobre las escaleras!</Spanish>
+            <Spanish>La caja de almacenamiento está sobre las escaleras!</Spanish>
             <Italian>Il contenitore è sopra le scale!</Italian>
             <Polish>Schowek jest na schodach!</Polish>
             <Portuguese>A caixa de armazenamento é sobre as escadas!</Portuguese>
@@ -6398,7 +6398,7 @@
         <Key ID="STR_Item_FuelE">
             <Original>Empty Fuel Canister</Original>
             <Czech>Prázdný palivo může</Czech>
-            <Spanish>Envase de Combustible Vacio</Spanish>
+            <Spanish>Bidón de Combustible Vacío</Spanish>
             <Russian></Russian>
             <German>Leerer Benzinkanister</German>
             <French>Jerrican Vide</French>
@@ -6409,7 +6409,7 @@
         <Key ID="STR_Item_FuelF">
             <Original>Full Fuel Canister</Original>
             <Czech>Plná palivo může</Czech>
-            <Spanish>Envase de Combustible Lleno</Spanish>
+            <Spanish>Bidón de Combustible Lleno</Spanish>
             <Russian></Russian>
             <German>Gefüllter Benzinkanister</German>
             <French>Jerrican de Carburant</French>
@@ -7096,7 +7096,7 @@
             <Original>You are not looking at a vault.</Original>
             <Czech>Nejste při pohledu na klenbu.</Czech>
             <French>Vous ne cherchez pas à un coffre-fort.</French>
-            <Spanish>Usted no está buscando en una cámara acorazada.</Spanish>
+            <Spanish>No estas apuntando a la bóveda.</Spanish>
             <Italian>Non cercate in un caveau.</Italian>
             <Polish>Nie jesteś patrząc na sklepieniu.</Polish>
             <Portuguese>Você não está olhando para um cofre.</Portuguese>
@@ -7162,7 +7162,7 @@
             <Original>Refuelling Fuel Canister</Original>
             <Czech>Tankování paliva kanystr</Czech>
             <French>Ravitaillement carburant Bidon</French>
-            <Spanish>Echar la bombona de combustible</Spanish>
+            <Spanish>Llenando Bidón de Combustible</Spanish>
             <Italian>Rifornimento carburante scatola metallica</Italian>
             <Polish>Tankowanie paliwa Kanister</Polish>
             <Portuguese>O reabastecimento de combustível vasilha</Portuguese>
@@ -7184,7 +7184,7 @@
             <Original>Spend $%1 to refuel your Empty Fuel Canister?</Original>
             <Czech>Utratit $%1 natankovat vaše prázdné palivové kanystr?</Czech>
             <French>Passez $%1 pour faire le plein de votre réservoir de combustible vide?</French>
-            <Spanish>Gastar $%1 para recargar su cartucho de combustible vacía?</Spanish>
+            <Spanish>Gastar $%1 para llenar el Bidón de Combustible?</Spanish>
             <Italian>Spendere $%1 per rifornire di carburante la vostra scatola metallica del combustibile vuoto?</Italian>
             <Polish>Wydać $%1 zatankować swój pustego zasobnika paliwa?</Polish>
             <Portuguese>Gastar R$%1 para reabastecer a sua vasilha de combustível vazio?</Portuguese>
@@ -7206,7 +7206,7 @@
             <Original>You have successfully refuelled the Fuel Canister!</Original>
             <Czech>Úspěšně jste tankovat palivový kanystr!</Czech>
             <French>Vous avez ravitaillé avec succès le Bidon carburant!</French>
-            <Spanish>Usted ha puesto gasolina con éxito el cartucho de combustible!</Spanish>
+            <Spanish>Usted ha llenado con exito el Bidón de Combustible!</Spanish>
             <Italian>Hai rifornimento con successo il canestro del combustibile!</Italian>
             <Polish>Pomyślnie zatankowany kanistra paliwa!</Polish>
             <Portuguese>Você reabastecido com sucesso a vasilha de combustível!</Portuguese>
@@ -7216,7 +7216,7 @@
         <Key ID="STR_ISTR_Jerry_Process">
             <Original>Refuelling %1</Original>
             <Czech>Doplňování paliva%1</Czech>
-            <Spanish>Llenado el tanque %1</Spanish>
+            <Spanish>Llenado el Bidón %1</Spanish>
             <Russian></Russian>
             <German>Wird betankt %1</German>
             <French>Ravitaillement %1</French>
@@ -7582,7 +7582,7 @@
             <Original>Only part of your materials could be processed due to reaching your maximum weight.</Original>
             <Czech>Pouze část svých materiálů by mohla být zpracována z důvodu dosažení maximální váhu.</Czech>
             <French>Seule une partie de votre matériel pourrait être traitée en raison d'atteindre votre poids maximum.</French>
-            <Spanish>Sólo una parte de los materiales se ha podido procesar debido a alcanzar su peso máximo.</Spanish>
+            <Spanish>Sólo una parte de los materiales se han podido procesar debido a alcanzar tu peso máximo.</Spanish>
             <Italian>Solo una parte del tuo materiali possono essere trattati a causa di raggiungere il vostro peso massimo.</Italian>
             <Polish>Tylko część swoich materiałów może być przetwarzane ze względu na osiągnięcie maksymalnej wadze.</Polish>
             <Portuguese>Apenas uma parte de seus materiais puderam ser processados, devido o peso máximo ter sido atingido.</Portuguese>
@@ -7841,7 +7841,7 @@
             <Original>Switch side-channel mode, turn this off if you don't want to talk with players from your side.</Original>
             <Czech>Přepnout do režimu side-channel, tuto funkci vypnout, pokud nechcete mluvit s hráči z vaší strany.</Czech>
             <French>Passez en mode à canal latéral, désactiver cette fonction si vous ne voulez pas parler avec des joueurs de votre côté.</French>
-            <Spanish>Habilita/Desabilita el SideChannel, apaga esto si no quieres hablar con jugador de tu lado.</Spanish>
+            <Spanish>Habilita/Deshabilita el SideChannel, apaga esto si no quieres hablar con jugador de tu lado.</Spanish>
             <Italian>Interruttore modalità side-channel, disattivare questa funzione se non si vuole parlare con i giocatori da parte vostra.</Italian>
             <Polish>Przełącznik trybu side-channel, to wyłączyć, jeśli nie chce rozmawiać z graczami z boku.</Polish>
             <Russian></Russian>
@@ -7852,7 +7852,7 @@
           <Original>Switch player's broadcast mode, turn this off if you don't want to see any broadcast from other players.</Original>
           <Czech></Czech>
           <French></French>
-          <Spanish></Spanish>
+          <Spanish>Habilitar/Deshabilitar transmisiones, deshabilita esto si no quieres ver transmisiones de otros jugadores. </Spanish>
           <Italian></Italian>
           <Polish></Polish>
           <Russian></Russian>
@@ -9074,7 +9074,7 @@
             <Original>Refuel Fuel Canister</Original>
             <Czech>Tankovat paliva kanystr</Czech>
             <French>Refuel carburant Bidon</French>
-            <Spanish>Abastecerse de combustible bombona de combustible</Spanish>
+            <Spanish>Llenar Bidón de Combustible</Spanish>
             <Italian>Fare rifornimento di carburante scatola metallica</Italian>
             <Polish>Tankowanie paliwa Canister</Polish>
             <Portuguese>Reabastecer de combustível vasilha</Portuguese>
@@ -10843,7 +10843,7 @@
             <Original>Tanker is already in use.</Original>
             <Czech>Tankery je již používán.</Czech>
             <French>Tanker est déjà en cours d'utilisation.</French>
-            <Spanish>El tanque ya esta siendo usado.</Spanish>
+            <Spanish>El Camión Cisterna ya esta siendo usado.</Spanish>
             <Italian>La cisterna è già in uso.</Italian>
             <Polish>Cysterna jest już w użyciu.</Polish>
             <Russian></Russian>
@@ -10865,7 +10865,7 @@
             <Original>Tanker is empty.</Original>
             <Czech>Tankery je prázdný.</Czech>
             <French>Tanker est vide.</French>
-            <Spanish>El tanque esta vacío.</Spanish>
+            <Spanish>El Camión cisterna esta vacío.</Spanish>
             <Italian>La cisterna è vuota.</Italian>
             <Polish>Cysterna jest pusta.</Polish>
             <Russian></Russian>
@@ -10876,7 +10876,7 @@
             <Original>Tankers is full.</Original>
             <Czech>Tankery je plná.</Czech>
             <French>Tankers est plein.</French>
-            <Spanish>El Tanque esta lleno.</Spanish>
+            <Spanish>El Camión cisterna esta lleno.</Spanish>
             <Italian>La cisterna è piena.</Italian>
             <Polish>Zbiornikowce jest pełna.</Polish>
             <Russian></Russian>
@@ -10944,7 +10944,7 @@
             <Original>You are not white-listed to use this slot.</Original>
             <Czech>Mise selhala</Czech>
             <French>Mission échouée</French>
-            <Spanish>Misión fallida</Spanish>
+            <Spanish>No tienes permiso de usar este slot.</Spanish>
             <Italian>Missione fallita</Italian>
             <Polish>Misja nie powiodła się</Polish>
             <Portuguese>Missão fracassada</Portuguese>
@@ -10955,7 +10955,7 @@
             <Original>You are not allowed to use this slot because you do not have the appropriate permissions. Try another slot.</Original>
             <Czech>Ty jsou není dovoleno používat tento slot, protože nemáte příslušná oprávnění. Zkuste použít jiný slot.</Czech>
             <French>Vous n'êtes pas autorisé à utiliser cet emplacement parce que vous ne disposez pas des autorisations appropriées. Essayez un autre emplacement.</French>
-            <Spanish>No se le permite utilizar esta ranura, ya que no tiene los permisos adecuados. Pruebe con otra ranura.</Spanish>
+            <Spanish>No puede usar este slot porque no tiene los permisos requeridos. Por favor trate con otro slot.</Spanish>
             <Italian>Non è consentito usare questo slot, perché non si dispone delle autorizzazioni appropriate. Prova un altro slot.</Italian>
             <Polish>Nie wolno korzystać z tego gniazda, ponieważ nie masz odpowiednich uprawnień. Spróbuj użyć innego gniazda.</Polish>
             <Portuguese>Você não tem permissão para usar esse slot, porque você não tem as permissões apropriadas. Tente outro slot.</Portuguese>
@@ -10990,7 +10990,7 @@
             <Original>You are not allowed to be a cop due to previous actions and the admins have removed you from being a cop.</Original>
             <Czech>Ty jsou nesmí být policajt vzhledem k předcházejícími akcemi a administrátoři vám odstraní z bytí policista.</Czech>
             <French>Vous n'êtes pas autorisé à être un flic en raison des actions précédentes et les admins vous avez supprimé d'être un flic.</French>
-            <Spanish>No se le permite ser un policía debido a las acciones anteriores y los administradores de haber quitado de ser un policía.</Spanish>
+            <Spanish>No tiene permiso a ser policía por acciones anteriores. Los administradores han bloqueado su acceso.</Spanish>
             <Italian>Non è consentito fare il poliziotto a causa di azioni precedenti e gli amministratori di aver rimosso da essere un poliziotto.</Italian>
             <Polish>Nie mogą być policjantem z powodu wcześniejszych działań oraz administratorzy usunęli cię od bycia policjantem.</Polish>
             <Portuguese>Você não tem permissão para ser um policial devido a ações anteriores e os admins ter removido-lo de ser um policial.</Portuguese>
@@ -11014,7 +11014,7 @@
             <Original>You were detected by the SpyGlass.</Original>
             <Czech>Vy byly detekovány dalekohled.</Czech>
             <French>Vous avez été détecté par SpyGlass.</French>
-            <Spanish>Le fue detectada por el catalejo.</Spanish>
+            <Spanish>Fue detectado por el SpyGlass.</Spanish>
             <Italian>Lei è stato rilevato dal SpyGlass.</Italian>
             <Polish>Ty zostały wykryte przez lunetę.</Polish>
             <Portuguese>Você foi detectado pelo SpyGlass.</Portuguese>
@@ -11025,7 +11025,7 @@
             <Original>You were detected for cheating and have been reported to the server. Enjoy your day.</Original>
             <Czech>Vy byly detekovány za podvádění a byly zaznamenány na server. Užijte si svůj den.</Czech>
             <French>Vous avez été détecté pour tricher et ont été signalés au serveur. Profitez de votre journée.</French>
-            <Spanish>Le fue detectada por hacer trampas y se ha informado al servidor. Disfruta tu día.</Spanish>
+            <Spanish>Fue detectada por hacer trampas y se le ha informado al servidor. Disfruta tu día.</Spanish>
             <Italian>Lei è stato rilevato per truffa e sono stati segnalati per il server. Buona giornata.</Italian>
             <Polish>Ty wykryto oszustwo i zostały zgłoszone do serwera. Miłego dnia.</Polish>
             <Portuguese>Está foram detectados por engano e têm sido relatados para o servidor. Aproveite seu dia.</Portuguese>
@@ -11038,7 +11038,7 @@
             <Original>EMS Requested</Original>
             <Czech>EMS Požadované</Czech>
             <French>Medecin demandé</French>
-            <Spanish>ccsme solicitada</Spanish>
+            <Spanish>Medico Solicitado</Spanish>
             <Italian>EMS richiesto</Italian>
             <Polish>EMS Zamówiony</Polish>
             <Portuguese>EMS solicitada</Portuguese>
@@ -11049,7 +11049,7 @@
             <Original>Delivery Job Accepted</Original>
             <Czech>Dodávka Job Accepted</Czech>
             <French>Livraison emploi Accepté</French>
-            <Spanish>Entrega de trabajo aceptada</Spanish>
+            <Spanish>Misión de Entrega Aceptada</Spanish>
             <Italian>Incarico Postale accettato</Italian>
             <Polish>Dostawa Praca Zaakceptowany</Polish>
             <Portuguese>Entrega aceitado Job</Portuguese>
@@ -11060,7 +11060,7 @@
             <Original>Delivery Job Failed</Original>
             <Czech>Nepodařilo dodávka Job</Czech>
             <French>Livraison Job échoué</French>
-            <Spanish>Falló la entrega de empleo</Spanish>
+            <Spanish>Misión de Entrega Fallada</Spanish>
             <Italian>Incarico Postale Fallito</Italian>
             <Polish>Dostawa Praca Failed</Polish>
             <Portuguese>Falha de entrega Job</Portuguese>
@@ -11071,7 +11071,7 @@
             <Original>Delivery Job Completed</Original>
             <Czech>Dokončena dodávka Job</Czech>
             <French>Livraison terminée</French>
-            <Spanish>Finalizada la entrega de empleo</Spanish>
+            <Spanish>Misión de Entrega Completada</Spanish>
             <Italian>Incarico Postale Completato</Italian>
             <Polish>Dostawa Praca Zakończony</Polish>
             <Portuguese>Concluída a entrega Job</Portuguese>
@@ -11104,7 +11104,7 @@
             <Original>Admin Dispatch Center</Original>
             <Czech>Admin Dispatch Center</Czech>
             <French>Administrateur Dispatch Centre</French>
-            <Spanish>Administrador Centro de Despacho</Spanish>
+            <Spanish>Centro de Despacho de Administradores</Spanish>
             <Italian>Admin centro di spedizione</Italian>
             <Polish>Administrator Dispatch Center</Polish>
             <Portuguese>Administrador Centro de Despacho</Portuguese>
@@ -11115,7 +11115,7 @@
             <Original>Admin Message</Original>
             <Czech>Admin Message</Czech>
             <French>Administrateur message</French>
-            <Spanish>Mensaje de administración</Spanish>
+            <Spanish>Mensaje de Administrador</Spanish>
             <Italian>Messaggio dall'Admin</Italian>
             <Polish>Administrator Wiadomość</Polish>
             <Portuguese>Mensagem de administração</Portuguese>
@@ -11128,7 +11128,7 @@
             <Original>arrested %1</Original>
             <Czech>zadržen %1</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>arrestó a %1</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>prendeu %1</Portuguese>
@@ -11139,7 +11139,7 @@
             <Original>%1 - %2 arrested %3</Original>
             <Czech>%1 - %2 %3 zatčen</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 arrestó a %3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 prendeu %3</Portuguese>
@@ -11150,7 +11150,7 @@
             <Original>picked up %1 %2</Original>
             <Czech>vyzvednout %1 %2</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>recogió %1 %2</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>pegou %1 %2</Portuguese>
@@ -11161,7 +11161,7 @@
             <Original>%1 - %2 picked up %3 %4</Original>
             <Czech>%1 - %2 vyzvednout%3 %4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 recogió %3 %4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 pegou %3 %4</Portuguese>
@@ -11172,7 +11172,7 @@
             <Original>picked up $%1 from the ground. Bank Balance: $%2  On Hand Balance: $%3</Original>
             <Czech>zvedl $%1 ze země. Banka Zůstatek: $%2 po zralé úvaze rukou: $%3</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>recogió $%1 del suelo. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>pegou R$%1 do chão. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
@@ -11183,7 +11183,7 @@
             <Original>%1 - %2 picked up $%3 from the ground. Bank Balance: $%4  On Hand Balance $%5</Original>
             <Czech>%1 - %2 vyzvednout $%3 ze země. Banka Zůstatek: $%4 po ruce Balance $%5</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 recogió $%3 del suelo. Saldo Bancario: $%4 Saldo en Efectivo: $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 pegou R$%3 do chão. Quantia no Banco: R$%4 Quantia na mão: R$%5</Portuguese>
@@ -11194,7 +11194,7 @@
             <Original>robbed $%1 from %2. Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>oloupen $%1 z %2. Banka Zůstatek: $%3 po zralé úvaze rukou: $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>robó $%1 de $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>roubou R$%1 de %2. Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
@@ -11205,7 +11205,7 @@
             <Original>%1 - %2 robbed $%3 from %4. Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 okraden $%3 z %4. Banka Zůstatek: $%5 po zralé úvaze rukou: $%6</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 robó $%3 de $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 roubou R$%3 de %4. Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
@@ -11216,7 +11216,7 @@
             <Original>created a gang named: %1 for $%2</Original>
             <Czech>Vytvořili gang s názvem: %1 za $%2</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>creó una pandilla llamada: %1 por $%2</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>criou uma gangue chamada: %1 por R$%2</Portuguese>
@@ -11227,7 +11227,7 @@
             <Original>%1 - %2 created a gang named: %3 for $%4</Original>
             <Czech>%1 - %2 vytvořili gang s názvem: %3 za $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 creó una pandilla llamada: %3 por $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 criou uma gangue chamada: %3 por R$%4</Portuguese>
@@ -11238,7 +11238,7 @@
             <Original>bought a house for $%1. Bank Balance: $%2  On Hand Cash: $%3</Original>
             <Czech>koupil dům za $%1. Banka Zůstatek: $%2 On Hand Cash: $%3</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>compró una casa por $%1. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>comprou uma casa por R$%1. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
@@ -11249,7 +11249,7 @@
             <Original>%1 - %2 bought a house for $%3. Bank Balance: $%4  On Hand Cash: $%5</Original>
             <Czech>%1 - %2 koupil dům za $%3. Banka Zůstatek: $%4 On Hand Cash: $%5</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 compró una casa por $%3. Saldo Bancario: $%4 Saldo en Efectivo: $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 comprou uma casa por R$%3. Quantia no Banco: R$%4 Quantia na Mão: R$%5</Portuguese>
@@ -11260,7 +11260,7 @@
             <Original>sold a house for $%1. Bank Balance: $%2</Original>
             <Czech>prodal dům za $%1. Banka Zůstatek: $%2</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>vendió una casa por $%1. Saldo Bancario: $%2</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>vendeu uma casa por R$%1. Quantia no Banco: R$%2</Portuguese>
@@ -11271,7 +11271,7 @@
             <Original>%1 - %2 sold a house for $%3. Bank Balance: $%4</Original>
             <Czech>%1 - %2 prodal dům za $%3. Banka Zůstatek: $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 vendió una casa por $%3. Saldo Bancario: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 vendeu uma casa por R$%3. Quantia no Banco: R$%4</Portuguese>
@@ -11282,7 +11282,7 @@
             <Original>chopped vehicle %1 for $%2  On Hand Cash(pre-chop): $%3</Original>
             <Czech>nasekané vozidlo %1 nebo $%2 na ruce hotovosti (pre-CHOP): $%3</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>vendió el vehiculo %1 en el desguace por $%2. Saldo en Efectivo(antes de la venta): $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>desmanchou um %1 por R$%2 Quantia na Mão (antes do desmanche): R$%3</Portuguese>
@@ -11293,7 +11293,7 @@
             <Original>%1 - %2 chopped vehicle %3 for $%4  On Hand Cash(pre-chop): $%5</Original>
             <Czech>%1 - %2 nasekané vozidla %3 za $%4 po ruce hotovosti (před-kotleta): $%5</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 vendió el vehiculo %3 en el desguace por $%4. Saldo en Efectivo(antes de la venta): $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 desmanchou um %3 por R$%4 Quantia na Mão(antes do desmanche): R$%5</Portuguese>
@@ -11304,7 +11304,7 @@
             <Original>bought vehicle %1 for $%2. On Hand Cash: $%3  Bank Balance: $%4</Original>
             <Czech>koupil vozidla %1 nebo $%2. On Hand Cash: $%3 bankovní konto: $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>compró el vehiculo %1 por $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>comprou um %1 por R$%2. Quantia na Mão: R$%3 Quantia no Banco: R$%4</Portuguese>
@@ -11315,7 +11315,7 @@
             <Original>%1 - %2 bought vehicle %3 for $%4. On Hand Cash: $%5  Bank Balance $%6</Original>
             <Czech>%1 - %2 koupilo vozidla %3 za $%4. On Hand Cash: $%5 bankovní konto $%6</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 compró el vehiculo %3 por $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 comprou um %3 por R$%4. Quantia na Mão: R$%5 Quantia no Banco: R$%6</Portuguese>
@@ -11326,7 +11326,7 @@
             <Original>sold vehicle %1 for $%2. Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>prodával vozidla %1 pro $%2. Banka Zůstatek: $%3 po zralé úvaze rukou: $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>vendió el vehiculo %1 por $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>vendeu um %1 por R$%2. Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
@@ -11337,7 +11337,7 @@
             <Original>%1 - %2 sold vehicle %3 for $%4. Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 prodával vozidla %3 za $%4. Banka Zůstatek: $%5 po zralé úvaze rukou: $%6</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 vendió el vehiculo %3 por $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 vendeu um %3 por R$%4. Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
@@ -11348,7 +11348,7 @@
             <Original>withdrew $%1 from their gang bank. Gang Bank Balance: $%2  Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>stáhl $%1 z jejich gangu banky. Gang bankovní konto: $%2 bankovní konto: $%3 po zralé úvaze rukou: $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>sacó $%1 de la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%2 Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>sacou R$%1 no banco da sua gangue. Quantia no Banco da Gangue: R$%2 Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
@@ -11359,7 +11359,7 @@
             <Original>%1 - %2 withdrew $%3 from their gang bank. Gang Bank Balance: $%4  Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 stáhl $%3 z jejich gangu banky. Gang bankovní konto: $%4 bankovní konto: $%5 po zralé úvaze rukou: $%6</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 sacó $%3 de la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%4 Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 sacou R$%3 no banco da sua gangue. Quantia no Banco da Gangue: R$%4 Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
@@ -11370,7 +11370,7 @@
             <Original>deposited $%1 into their gang bank. Gang Bank Balance: $%2  Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>uložen $%1 do svého gangu banky. Gang bankovní konto: $%2 bankovní konto: $%3 po zralé úvaze rukou: $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>depositó $%1 a la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%2 Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>depositou R$%1 no banco da sua gangue. Quantia no Banco da Gangue: R$%2 Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
@@ -11381,7 +11381,7 @@
             <Original>%1 - %2 deposited $%3 into their gang bank. Gang Bank Balance: $%4  Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 uloženy $%3 do jejich gangu banky. Gang bankovní konto: $%4 bankovní konto: $%5 po zralé úvaze rukou: $%6</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 depositó $%3 a la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%4 Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 depositou R$%3 no banco da sua gangue. Quantia no Banco da Gangue: R$%4 Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
@@ -11392,7 +11392,7 @@
             <Original>withdrew $%1 from their bank. Bank Balance: $%2  On Hand Balance: $%3</Original>
             <Czech>stáhl $%1 z jejich banky. Banka Zůstatek: $%2 po zralé úvaze rukou: $%3</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>sacó $%1 de su cuenta de banco. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>sacou R$%1 do seu banco. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
@@ -11403,7 +11403,7 @@
             <Original>%1 - %2 withdrew $%3 from their bank. Bank Balance: $%4  On Hand Balance: $%5</Original>
             <Czech>%1 - %2 stáhl $%3 od své banky. Banka Zůstatek: $%4 po zralé úvaze rukou: $%5</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 sacó $%3 de su cuenta de banco. Saldo Bancario: $%4 Saldo en Efectivo: $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 sacou R$%3 do seu banco. Quantia no Banco: R$%4 Quantia na Mão: R$%5</Portuguese>
@@ -11414,7 +11414,7 @@
             <Original>transferred $%1 to %2. Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>přestoupil $%1 do %2. Banka Zůstatek: $%3 po zralé úvaze rukou: $%4</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>transferió $%1 a $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>transferiu R$%1 para %2. Quantia no Banco: R$%3 Quantia na Mão: R$%4</Portuguese>
@@ -11425,7 +11425,7 @@
             <Original>%1 - %2 transferred $%3 to %4. Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 převedena $%3 až %4. Banka Zůstatek: $%5 po zralé úvaze rukou: $%6</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 transferió $%3 a $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 transferiu R$%3 para %4. Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
@@ -11436,7 +11436,7 @@
             <Original>deposited $%1 into their bank. Bank Balance: $%2  On Hand Balance: $%3</Original>
             <Czech>uložen $%1 do své banky. Banka Zůstatek: $%2 po zralé úvaze rukou: $%3</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>depositó $%1 a su cuenta de banco. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>depositou R$%1 no seu banco. Quantia no Banco: R$%2 Quantia na Mão: R$%3</Portuguese>
@@ -11447,7 +11447,7 @@
             <Original>%1 - %2 deposited $%3 into their bank. Bank Balance: $%4  On Hand Balance: $%5</Original>
             <Czech>%1 - %2 uloženy $%3 do své banky. Banka Zůstatek: $%4 po zralé úvaze rukou: $%5</Czech>
             <French></French>
-            <Spanish></Spanish>
+            <Spanish>%1 - %2 depositó $%3 a su cuenta de banco. Saldo Bancario: $%4 Saldo en Efectivo: $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
             <Portuguese>%1 - %2 depositou R$%3 no seu banco. Quantia no Banco: R$%4 Quantia na Mão: R$%5</Portuguese>
