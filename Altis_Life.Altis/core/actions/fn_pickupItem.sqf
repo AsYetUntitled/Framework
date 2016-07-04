@@ -12,8 +12,11 @@ if ((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDela
 if (isNull _this || {player distance _this > 3}) exitWith {INUSE(_this);};
 
 _itemInfo = _this getVariable ["item",[]]; if (count _itemInfo isEqualTo 0) exitWith {deleteVehicle _this;};
-_itemName = ITEM_NAME(_itemInfo select 0);
 _illegal = ITEM_ILLEGAL(_itemInfo select 0);
+_itemName = ITEM_NAME(_itemInfo select 0);
+if (isLocalized _itemName) then {
+    _itemName = (localize _itemName);
+};
 
 if (playerSide isEqualTo west && _illegal isEqualTo 1) exitWith {
     titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(_itemInfo select 0) / 2)] call life_fnc_numberText],"PLAIN"];
