@@ -47,6 +47,13 @@ diag_log "::Life Client:: Setting up user actions";
 [] call life_fnc_setupActions;
 
 diag_log "::Life Client:: User actions completed";
+diag_log "::Life Client:: Setting up cellphone";
+
+if(getNumber(missionConfigFile >> "CellPhone_Settings" >> "sqlMessages_toggle") == 1) then
+{
+    [] call life_fnc_cellPhoneCheck;
+};
+
 diag_log "::Life Client:: Waiting for server functions to transfer..";
 waitUntil {(!isNil "TON_fnc_clientGangLeader")};
 

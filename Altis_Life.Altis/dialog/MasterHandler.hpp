@@ -29,3 +29,5 @@
 #include "FuelStat.hpp"
 #include "AltisPhone.hpp"
 #include "newsStation.hpp"
+#include "oldmessages.hpp"
+#include "cell_phone_new.hpp"
