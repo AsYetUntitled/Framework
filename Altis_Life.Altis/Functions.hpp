@@ -159,10 +159,9 @@ class Life_Client_Core {
         class vehicleGarage {};
         class wireTransfer {};
     };
-    
+
     class Economy {
         file="core\economy";
-        class addsubtract {};
         class marketGrab {};
         class openEconomy {};
         class retrievePrices {};
