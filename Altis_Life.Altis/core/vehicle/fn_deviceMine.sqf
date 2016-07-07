@@ -124,7 +124,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _vehicle_data = _vehicle getVariable ["Trunk",[[],0]];
-    _inv = (_vehicle_data select 0);
+    _inv = +(_vehicle_data select 0);
     _space = (_vehicle_data select 1);
     _itemIndex = [_resource,_inv] call TON_fnc_index;
     _weight = [_vehicle] call life_fnc_vehicleWeight;
