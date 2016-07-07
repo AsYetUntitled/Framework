@@ -204,6 +204,22 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `cellphone`
+-- Only run this if you already have a database made on your server.
+-- Made by GetSomePanda / Panda
+--
+
+CREATE TABLE IF NOT EXISTS `cellphone` (
+  `pid` varchar(64) NOT NULL,
+  `playerName` varchar(32) NOT NULL,
+  `messages` text NOT NULL,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
