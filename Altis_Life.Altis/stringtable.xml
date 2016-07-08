@@ -3503,7 +3503,7 @@
             <German>%1 wurde von %2 getazert</German>
             <French>%1 a été tazé par %2</French>
             <Italian>%1 è stato taserato da %2</Italian>
-            <Portuguese>%1 foi tazed por %2</Portuguese>
+            <Portuguese>%1 foi eletrocutado por %2</Portuguese>
             <Polish>%1 został potraktowany paralizatorem przez %2</Polish>
         </Key>
         <Key ID="STR_NOTF_VehContraband">
@@ -5139,7 +5139,7 @@
             <German>Du wurdest von %1 festgenommen</German>
             <French>Vous avez été menotté par %1</French>
             <Italian>%1 ti ha messo le manette</Italian>
-            <Portuguese>Você foi solto por %1</Portuguese>
+            <Portuguese>Você foi imobilizado por %1</Portuguese>
             <Polish>Zostałeś rozkuty przez %1</Polish>
         </Key>
         <Key ID="STR_Cop_wantedList_notCop">
