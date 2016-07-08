@@ -126,6 +126,7 @@ class Life_cell_phone_new {
         class AdminMsgAllButton: Life_RscButtonMenu {
             idc = 3021;
             text = "$STR_CELL_AdminMSGAll";
+            onButtonClick = "[] call TON_fnc_cell_adminmsgall";
             x = 0.505156 * safezoneW + safezoneX;
             y = 0.599 * safezoneH + safezoneY;
             w = 0.0721875 * safezoneW;
