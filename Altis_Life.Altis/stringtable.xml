@@ -4297,7 +4297,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Estação de Transmissão de Notícias</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_DialogTitle">
@@ -4308,7 +4308,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Estação de Notícias do Canal 7</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_MsgHeader">
@@ -4319,7 +4319,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Titulo da Mensagem:</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_MsgContent">
@@ -4330,7 +4330,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Conteúdo da Mensagem:</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_Broadcast">
@@ -4341,7 +4341,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Transmitir Anúncio</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_StructuredText">
@@ -4352,7 +4352,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Custo de Trasnmissão: %1&lt;br /&gt;Próxima transmissão disponível em: %2</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_HeaderLength">
@@ -4363,7 +4363,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>O cabeçalho não pode ter mais que %1 caracteres</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_UnsupportedCharacter">
@@ -4374,7 +4374,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Você inseriu um caractere inválido</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_Now">
@@ -4385,7 +4385,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Agora</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_NotEnough">
@@ -4396,7 +4396,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>Você precisa de $%1 para enviar uma transmissão!</Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_News_BroadcastedBy">
@@ -4407,7 +4407,7 @@
             <German></German>
             <French></French>
             <Italian></Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Portuguese>
             <Polish></Polish>
         </Key>
     </Package>
