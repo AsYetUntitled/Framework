@@ -130,7 +130,7 @@ life_vehicles pushBack _vehicle;
 [getPlayerUID player,playerSide,_vehicle,1] remoteExecCall ["TON_fnc_keyManagement",RSERV];
 
 if (_mode) then {
-    if (!(_className in ["B_G_Offroad_01_armed_F","B_MRAP_01_hmg_F"])) then {
+    if (!(_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly")))) then {
         if (life_HC_isActive) then {
             [(getPlayerUID player),playerSide,_vehicle,_colorIndex] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
         } else {
