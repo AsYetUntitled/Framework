@@ -25,19 +25,6 @@ enableSentences false;
 diag_log "::Life Client:: Initialization Variables";
 [] call compile PreprocessFileLineNumbers "core\configuration.sqf";
 
-//Set bank amount for new players
-switch (playerSide) do {
-    case west: {
-        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
-    };
-    case civilian: {
-        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
-    };
-    case independent: {
-        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
-    };
-};
-
 diag_log "::Life Client:: Variables initialized";
 diag_log "::Life Client:: Setting up Eventhandlers";
 [] call life_fnc_setupEVH;
@@ -80,6 +67,19 @@ waitUntil {life_session_completed};
 
 //diag_log "::Life Client:: Group Base Execution";
 [] spawn life_fnc_escInterupt;
+
+//Set bank amount for new players
+switch (playerSide) do {
+    case west: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
+    };
+    case civilian: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
+    };
+    case independent: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
+    };
+};
 
 switch (playerSide) do {
     case west: {
