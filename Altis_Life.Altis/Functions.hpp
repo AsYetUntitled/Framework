@@ -324,6 +324,7 @@ class Life_Client_Core {
         class clothingMenu {};
         class fuelLBchange {};
         class fuelStatOpen {};
+        class levelCheck {};
         class vehicleShop3DPreview {};
         class vehicleShopBuy {};
         class vehicleShopEnd3DPreview {};
