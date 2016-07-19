@@ -22,19 +22,19 @@ class WeaponShops {
         license = "gun";
         level[] = { "", "", -1, "" };
         items[] = {
-            { "hgun_Rook40_F", "", 6500, 500 },
-            { "hgun_Pistol_heavy_02_F", "", 9850, -1 },
-            { "hgun_ACPC2_F", "", 11500, -1 },
-            { "hgun_PDW2000_F", "", 20000, -1 }
+            { "hgun_Rook40_F", "", 6500, 500, { "", "", -1 } },
+            { "hgun_Pistol_heavy_02_F", "", 9850, -1, { "", "", -1 } },
+            { "hgun_ACPC2_F", "", 11500, -1, { "", "", -1 } },
+            { "hgun_PDW2000_F", "", 20000, -1, { "", "", -1 } }
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25 },
-            { "6Rnd_45ACP_Cylinder", "", 50 },
-            { "9Rnd_45ACP_Mag", "", 45 },
-            { "30Rnd_9x21_Mag", "", 75 }
+            { "16Rnd_9x21_Mag", "", 25, 100, { "", "", -1 } },
+            { "6Rnd_45ACP_Cylinder", "", 50, 100, { "", "", -1 } },
+            { "9Rnd_45ACP_Mag", "", 45, 100, { "", "", -1 } },
+            { "30Rnd_9x21_Mag", "", 75, 100, { "", "", -1 } }
         };
         accs[] = {
-            { "optic_ACO_grn_smg", "", 2500 }
+            { "optic_ACO_grn_smg", "", 2500, 100, { "", "", -1 } }
         };
     };
 
@@ -44,22 +44,22 @@ class WeaponShops {
         license = "rebel";
         level[] = { "", "", -1, "" };
         items[] = {
-            { "arifle_TRG20_F", "", 25000, 2500 },
-            { "arifle_Katiba_F", "", 30000, 5000 },
-            { "srifle_DMR_01_F", "", 50000, -1 },
-            { "arifle_SDAR_F", "", 20000, 7500 }
+            { "arifle_TRG20_F", "", 25000, 2500, { "", "", -1 } },
+            { "arifle_Katiba_F", "", 30000, 5000, { "", "", -1 } },
+            { "srifle_DMR_01_F", "", 50000, -1, { "", "", -1 } },
+            { "arifle_SDAR_F", "", 20000, 7500, { "", "", -1 } }
         };
         mags[] = {
-            { "30Rnd_556x45_Stanag", "", 300 },
-            { "30Rnd_65x39_caseless_green", "", 275 },
-            { "10Rnd_762x54_Mag", "", 500 },
-            { "20Rnd_556x45_UW_mag", "", 125 }
+            { "30Rnd_556x45_Stanag", "", 300, 100, { "", "", -1 } },
+            { "30Rnd_65x39_caseless_green", "", 275, 100, { "", "", -1 } },
+            { "10Rnd_762x54_Mag", "", 500, 100, { "", "", -1 } },
+            { "20Rnd_556x45_UW_mag", "", 125, 100, { "", "", -1 } }
         };
         accs[] = {
-            { "optic_ACO_grn", "", 3500 },
-            { "optic_Holosight", "", 3600 },
-            { "optic_Hamr", "", 7500 },
-            { "acc_flashlight", "", 1000 }
+            { "optic_ACO_grn", "", 3500, 100, { "", "", -1 } },
+            { "optic_Holosight", "", 3600, 100, { "", "", -1 } },
+            { "optic_Hamr", "", 7500, 100, { "", "", -1 } },
+            { "acc_flashlight", "", 1000, 100, { "", "", -1 } }
         };
     };
 
@@ -69,19 +69,19 @@ class WeaponShops {
         license = "";
         level[] = { "", "", -1, "" };
         items[] = {
-            { "hgun_Rook40_F", "", 1500, 500 },
-            { "hgun_Pistol_heavy_02_F", "", 2500, -1 },
-            { "hgun_ACPC2_F", "", 4500, -1 },
-            { "hgun_PDW2000_F", "", 9500, -1 }
+            { "hgun_Rook40_F", "", 1500, 500, { "", "", -1 } },
+            { "hgun_Pistol_heavy_02_F", "", 2500, -1, { "", "", -1 } },
+            { "hgun_ACPC2_F", "", 4500, -1, { "", "", -1 } },
+            { "hgun_PDW2000_F", "", 9500, -1, { "", "", -1 } }
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25 },
-            { "6Rnd_45ACP_Cylinder", "", 50 },
-            { "9Rnd_45ACP_Mag", "", 45 },
-            { "30Rnd_9x21_Mag", "", 75 }
+            { "16Rnd_9x21_Mag", "", 25, 100, { "", "", -1 } },
+            { "6Rnd_45ACP_Cylinder", "", 50, 100, { "", "", -1 } },
+            { "9Rnd_45ACP_Mag", "", 45, 100, { "", "", -1 } },
+            { "30Rnd_9x21_Mag", "", 75, 100, { "", "", -1 } }
         };
         accs[] = {
-            { "optic_ACO_grn_smg", "", 950 }
+            { "optic_ACO_grn_smg", "", 950, 100, { "", "", -1 } }
         };
     };
 
@@ -92,17 +92,17 @@ class WeaponShops {
         license = "";
         level[] = { "", "", -1, "" };
         items[] = {
-            { "Binocular", "", 150, -1 },
-            { "ItemGPS", "", 100, 45 },
-            { "ItemMap", "", 50, 35 },
-            { "ItemCompass", "", 50, 25 },
-            { "ItemWatch", "", 50, -1 },
-            { "FirstAidKit", "", 150, 65 },
-            { "NVGoggles", "", 2000, 980 },
-            { "Chemlight_red", "", 300, -1 },
-            { "Chemlight_yellow", "", 300, 50 },
-            { "Chemlight_green", "", 300, 50 },
-            { "Chemlight_blue", "", 300, 50 }
+            { "Binocular", "", 150, -1, { "", "", -1 } },
+            { "ItemGPS", "", 100, 45, { "", "", -1 } },
+            { "ItemMap", "", 50, 35, { "", "", -1 } },
+            { "ItemCompass", "", 50, 25, { "", "", -1 } },
+            { "ItemWatch", "", 50, -1, { "", "", -1 } },
+            { "FirstAidKit", "", 150, 65, { "", "", -1 } },
+            { "NVGoggles", "", 2000, 980, { "", "", -1 } },
+            { "Chemlight_red", "", 300, -1, { "", "", -1 } },
+            { "Chemlight_yellow", "", 300, 50, { "", "", -1 } },
+            { "Chemlight_green", "", 300, 50, { "", "", -1 } },
+            { "Chemlight_blue", "", 300, 50, { "", "", -1 } }
         };
         mags[] = {};
         accs[] = {};
@@ -114,17 +114,17 @@ class WeaponShops {
         license = "";
         level[] = { "", "", -1, "" };
         items[] = {
-            { "Binocular", "", 750, -1 },
-            { "ItemGPS", "", 500, 45 },
-            { "ItemMap", "", 250, 35 },
-            { "ItemCompass", "", 250, 25 },
-            { "ItemWatch", "", 250, -1 },
-            { "FirstAidKit", "", 750, 65 },
-            { "NVGoggles", "", 10000, 980 },
-            { "Chemlight_red", "", 1500, -1 },
-            { "Chemlight_yellow", "", 1500, 50 },
-            { "Chemlight_green", "", 1500, 50 },
-            { "Chemlight_blue", "", 1500, 50 }
+            { "Binocular", "", 750, -1, { "", "", -1 } },
+            { "ItemGPS", "", 500, 45, { "", "", -1 } },
+            { "ItemMap", "", 250, 35, { "", "", -1 } },
+            { "ItemCompass", "", 250, 25, { "", "", -1 } },
+            { "ItemWatch", "", 250, -1, { "", "", -1 } },
+            { "FirstAidKit", "", 750, 65, { "", "", -1 } },
+            { "NVGoggles", "", 10000, 980, { "", "", -1 } },
+            { "Chemlight_red", "", 1500, -1, { "", "", -1 } },
+            { "Chemlight_yellow", "", 1500, 50, { "", "", -1 } },
+            { "Chemlight_green", "", 1500, 50, { "", "", -1 } },
+            { "Chemlight_blue", "", 1500, 50, { "", "", -1 } }
         };
         mags[] = {};
         accs[] = {};
@@ -137,71 +137,33 @@ class WeaponShops {
         license = "";
         level[] = { "", "", -1, "" };
         items[] = {
-            { "arifle_sdar_F", "Taser Rifle", 20000, 7500 },
-            { "hgun_P07_snds_F", "Stun Pistol", 2000, 650 },
-            { "hgun_P07_F", "", 7500, 1500 },
-            { "HandGrenade_Stone", "Flashbang", 1700, -1 },
-            { "Binocular", "", 150, -1 },
-            { "ItemGPS", "", 100, 45 },
-            { "FirstAidKit", "", 150, 65 },
-            { "NVGoggles", "", 2000, 980 }
+            { "Binocular", "", 150, -1, { "", "", -1 } },
+            { "ItemGPS", "", 100, 45, { "", "", -1 } },
+            { "FirstAidKit", "", 150, 65, { "", "", -1 } },
+            { "NVGoggles", "", 2000, 980, { "", "", -1 } },
+            { "HandGrenade_Stone", "Flashbang", 1700, -1, { "", "", -1 } },
+            { "hgun_P07_snds_F", "Stun Pistol", 2000, 650, { "", "", -1 } },
+            { "arifle_sdar_F", "Taser Rifle", 20000, 7500, { "", "", -1 } },
+            { "hgun_P07_F", "", 7500, 1500, { "", "", -1 } },
+            { "SMG_02_ACO_F", "", 30000, -1, {"life_coplevel", "SCALAR", 2 } },
+            { "arifle_MX_F", "", 35000, 7500, {"life_coplevel", "SCALAR", 2 } },
+            { "hgun_ACPC2_F", "", 17500, -1, {"life_coplevel", "SCALAR", 3 } },
+            { "arifle_MXC_F", "", 30000, 5000, {"life_coplevel", "SCALAR", 3 } }
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25 },
-            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 45 }
+            { "16Rnd_9x21_Mag", "", 25, 100, { "", "", -1 } },
+            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 45, 100, { "", "", -1 } },
+            { "30Rnd_65x39_caseless_mag", "", 130, 100, { "", "", -1 } },
+            { "30Rnd_9x21_Mag", "", 250, 100, {"life_coplevel", "SCALAR", 2 } },
+            { "9Rnd_45ACP_Mag", "", 200, 100, {"life_coplevel", "SCALAR", 3 } }
         };
         accs[] = {
-            { "muzzle_snds_L", "", 650 }
-        };
-    };
-
-    class cop_patrol {
-        name = "Altis Patrol Officer Shop";
-        side = "cop";
-        license = "";
-        level[] = { "life_coplevel", "SCALAR", 2, "You must be a Patrol Officer Rank!" };
-        items[] = {
-            { "arifle_MX_F", "", 35000, 7500 },
-            { "SMG_02_ACO_F", "", 30000, -1 },
-            { "HandGrenade_Stone", "Flashbang", 1700, -1 },
-            { "acc_flashlight", "", 750, 100 },
-            { "optic_Holosight", "", 1200, 275 },
-            { "optic_Arco", "", 2500, -1 },
-            { "muzzle_snds_H", "", 2750, -1 }
-        };
-        mags[] = {
-            { "30Rnd_65x39_caseless_mag", "", 130 },
-            { "30Rnd_9x21_Mag", "", 250 }
-        };
-        accs[] = {
-            { "acc_flashlight", "", 750 },
-            { "optic_Holosight", "", 1200 },
-            { "optic_Arco", "", 2500 },
-            { "muzzle_snds_H", "", 2750 }
-        };
-    };
-
-    class cop_sergeant {
-        name = "Altis Sergeant Officer Shop";
-        side = "cop";
-        license = "";
-        level[] = { "life_coplevel", "SCALAR", 3, "You must be a Sergeant Rank!" };
-        items[] = {
-            { "hgun_ACPC2_F", "", 17500, -1 },
-            { "SMG_02_ACO_F", "", 15000, -1 },
-            { "arifle_MXC_F", "", 30000, 5000 },
-            { "HandGrenade_Stone", "Flashbang", 1700, -1 },
-            { "optic_Arco", "", 2500, -1 },
-            { "muzzle_snds_H", "", 2750, -1 }
-        };
-        mags[] = {
-            { "9Rnd_45ACP_Mag", "", 200 },
-            { "30Rnd_9x21_Mag", "", 60 },
-            { "30Rnd_65x39_caseless_mag", "", 100 }
-        };
-        accs[] = {
-            { "optic_Arco", "", 2500 },
-            { "muzzle_snds_H", "", 2750 }
+            { "muzzle_snds_L", "", 650, 100, { "", "", -1 } },
+            { "acc_flashlight", "", 750, 100, {"life_coplevel", "SCALAR", 2 } },
+            { "optic_Holosight", "", 1200, 100, {"life_coplevel", "SCALAR", 2 } },
+            { "optic_Arco", "", 2500, 100, {"life_coplevel", "SCALAR", 2 } },
+            { "muzzle_snds_H", "", 2750, 100, {"life_coplevel", "SCALAR", 2 } },
+            { "optic_MRD", "", 2750, 100, {"life_coplevel", "SCALAR", 2 } }
         };
     };
 
@@ -212,10 +174,10 @@ class WeaponShops {
         license = "";
         level[] = { "", "", -1, "" };
         items[] = {
-            { "ItemGPS", "", 100, 45 },
-            { "Binocular", "", 150, -1 },
-            { "FirstAidKit", "", 150, 65 },
-            { "NVGoggles", "", 1200, 980 }
+            { "ItemGPS", "", 100, 45, { "", "", -1 } },
+            { "Binocular", "", 150, -1, { "", "", -1 } },
+            { "FirstAidKit", "", 150, 65, { "", "", -1 } },
+            { "NVGoggles", "", 1200, 980, { "", "", -1 } }
         };
         mags[] = {};
         accs[] = {};
