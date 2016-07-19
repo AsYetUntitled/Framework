@@ -15,7 +15,7 @@ _return = false;
 
 if (_itemConfig isEqualTo []) exitWith {diag_log "An empty array was passed to fn_levelCheck.sqf"; _return};
 
-if (count _itemConfig > 3) then {
+if (count _itemConfig isEqualTo 5) then {
             
     _levelArray = _itemConfig param [4,[],[]];
     _levelName = _levelArray select 0;
