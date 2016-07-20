@@ -130,7 +130,7 @@ private[""_msg"",""_to""];
     _to = ""EMS Units"";
     if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3022,true];};
 
-    [_msg,name player,5,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",independent];
+    [_msg,name player,5,mapGridPosition player,player] remoteExec [""TON_fnc_clientMessage"",independent];
     [] call life_fnc_cellphone;
     hint format[""You have sent a message to all EMS Units."",_to,_msg];
     ctrlShow[3022,true];
@@ -147,7 +147,7 @@ compileFinal "
     if (isNil ""_to"") exitWith {ctrlShow[3015,true];};
     if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3015,true];};
 
-    [_msg,name player,0] remoteExecCall [""TON_fnc_clientMessage"",_to];
+    [_msg,name player,0] remoteExec [""TON_fnc_clientMessage"",_to];
     [] call life_fnc_cellphone;
     hint format[""You sent %1 a message: %2"",name _to,_msg];
     ctrlShow[3015,true];
@@ -161,7 +161,7 @@ compileFinal "
     _to = ""The Police"";
     if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3016,true];};
 
-    [_msg,name player,1,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
+    [_msg,name player,1,mapGridPosition player,player] remoteExec [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
     hint format[""You sent %1 a message: %2"",_to,_msg];
     ctrlShow[3016,true];
@@ -175,7 +175,7 @@ compileFinal "
     _to = ""The Admins"";
     if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3017,true];};
 
-    [_msg,name player,2,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
+    [_msg,name player,2,mapGridPosition player,player] remoteExec [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
     hint format[""You sent %1 a message: %2"",_to,_msg];
     ctrlShow[3017,true];
@@ -193,7 +193,7 @@ compileFinal "
     if (isNil ""_to"") exitWith {ctrlShow[3020,true];};
     if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3020,true];};
 
-    [_msg,name player,3] remoteExecCall [""TON_fnc_clientMessage"",_to];
+    [_msg,name player,3] remoteExec [""TON_fnc_clientMessage"",_to];
     [] call life_fnc_cellphone;
     hint format[""Admin Message Sent To: %1 - Message: %2"",name _to,_msg];
     ctrlShow[3020,true];
@@ -208,7 +208,7 @@ compileFinal "
     _msg = ctrlText 3003;
     if (_msg isEqualTo """") exitWith {hint ""You must enter a message to send!"";ctrlShow[3021,true];};
 
-    [_msg,name player,4] remoteExecCall [""TON_fnc_clientMessage"",-2];
+    [_msg,name player,4] remoteExec [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
     hint format[""Admin Message Sent To All: %1"",_msg];
     ctrlShow[3021,true];
@@ -244,6 +244,20 @@ compileFinal "
 
             [""TextMessage"",[format[""You Received A New Private Message From %1"",_from]]] call bis_fnc_showNotification;
             systemChat _message;
+            
+            _messages = player getVariable ""cellphone_messages"";
+            player remoteExecCall [""DB_fnc_getRealTime"",2];
+            waitUntil{!isNil ""realTime""};
+            realTime = call compile realTime;
+            _newArray = [[_from,_msg,realTime]];
+            
+            {
+                _newArray pushback _x;
+            }   foreach _messages;
+            
+            player setVariable [""cellphone_messages"",_newArray];
+            
+            realTime = nil;
         };
 
         case 1 : {
@@ -281,6 +295,20 @@ compileFinal "
             [""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
             systemChat _message;
             if ((call life_adminlevel) > 0) then {systemChat _admin;};
+            
+            _messages = player getVariable ""cellphone_messages"";
+            player remoteExecCall [""DB_fnc_getRealTime"",2];
+            waitUntil{!isNil ""realTime""};
+            realTime = call compile realTime;
+            _newArray = [[_from,_msg,realTime]];
+            
+            {
+                _newArray pushback _x;
+            }   foreach _messages;
+            
+            player setVariable [""cellphone_messages"",_newArray];
+            
+            realTime = nil;
         };
 
         case 4 : {
@@ -292,6 +320,20 @@ compileFinal "
             [""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
             systemChat _message;
             if ((call life_adminlevel) > 0) then {systemChat _admin;};
+            
+            _messages = player getVariable ""cellphone_messages"";
+            player remoteExecCall [""DB_fnc_getRealTime"",2];
+            waitUntil{!isNil ""realTime""};
+            realTime = call compile realTime;
+            _newArray = [[_from,_msg,realTime]];
+            
+            {
+                _newArray pushback _x;
+            }   foreach _messages;
+            
+            player setVariable [""cellphone_messages"",_newArray];
+            
+            realTime = nil;
         };
 
         case 5: {
