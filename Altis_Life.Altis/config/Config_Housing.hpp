@@ -212,7 +212,7 @@ class Housing {
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
         };
-
+        
         class Land_House_Small_02_F {
             price = 160000;
             numberCrates = 2;
