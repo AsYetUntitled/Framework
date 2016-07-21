@@ -1,4 +1,3 @@
-
 class Housing {
   
     class Altis {
