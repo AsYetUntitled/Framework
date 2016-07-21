@@ -2,8 +2,11 @@
     price - Cost of the building
     numberCrates - Allowed number of crates
     restrictedPos[] - Same as the old fn_getBuildingPositions. A list of restricted building positions (i.e, to stop spawning outside, or by windows etc)
+        default: {}
     canGarage - True if the building can be used as a garage (need to buy ontop)
+        default: false
     garageSpawnPos[] - worldToModel position to spawn vehicles, leave {} if canGarage is false.
+        default: {}
     garageSpawnDir - Offset to garage direction to spawn at (+-90 etc). It will be used in the manner: getDir _garage + spawnDir
         default: 0
 */
@@ -83,8 +86,9 @@ class Housing {
 
     };
 
-    class Tanoa {};
-    // Houses with Garages
+    class Tanoa {
+
+        // Houses with Garages
         class Land_Hotel_01_F {
             price = 960000;
             numberCrates = 5;
@@ -230,5 +234,7 @@ class Housing {
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
         };
+
     };
+
 };
