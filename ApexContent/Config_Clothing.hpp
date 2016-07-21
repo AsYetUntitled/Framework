@@ -42,8 +42,8 @@ class Clothing {
             { "U_C_man_sport_1_F", "Casual Wears", 5000, { "", "", -1 } }, //Apex DLC
             { "U_C_man_sport_2_F", "Casual Wears", 5000, { "", "", -1 } }, //Apex DLC
             { "U_C_man_sport_3_F", "Casual Wears", 5000, { "", "", -1 } } //Apex DLC
-			
-			
+            
+            
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, { "", "", -1 } },
@@ -162,7 +162,7 @@ class Clothing {
             { "V_Rangemaster_belt", "", 800, { "", "", -1 } },
             { "V_TacVest_blk_POLICE", "", 1000, { "life_coplevel", "SCALAR", 1 } },
             { "V_PlateCarrier2_rgr", "", 1500, { "life_coplevel", "SCALAR", 2 } },
-			{ "V_TacChestrig_grn_F", "", 1500, { "life_coplevel", "SCALAR", 2 } }
+            { "V_TacChestrig_grn_F", "", 1500, { "life_coplevel", "SCALAR", 2 } }
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, { "", "", -1 } },
@@ -294,7 +294,7 @@ class Clothing {
             { "H_Shemag_olive", "", 850, { "", "", -1 } },
             { "H_MilCap_oucamo", "", 1200, { "", "", -1 } },
             { "H_HelmetO_ocamo", "", 2500, { "", "", -1 } },
-			{ "H_HelmetB_TI_tna_F", "", 2500, { "", "", -1 } }
+            { "H_HelmetB_TI_tna_F", "", 2500, { "", "", -1 } }
         };
         goggles[] = {
             { "NONE", "Remove Glasses", 0, { "", "", -1 } },
@@ -325,8 +325,8 @@ class Clothing {
             { "V_BandollierB_cbr", "", 4500, { "", "", -1 } },
             { "V_HarnessO_brn", "", 7500, { "", "", -1 } },
             { "V_TacVest_khk", "", 12500, { "", "", -1 } },
-			{ "V_TacVest_gen_F", "", 14500, { "", "", -1 } },
-			
+            { "V_TacVest_gen_F", "", 14500, { "", "", -1 } },
+            
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, { "", "", -1 } },
