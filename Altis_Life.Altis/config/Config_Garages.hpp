@@ -46,5 +46,7 @@ class Garages {
             garageSpawnPos[] = {-3.90981,-8.46338,-2.53567};
             garageSpawnDir = 0;
         };
+
     };
+
 };
