@@ -19,7 +19,7 @@ _isHouse = switch (true) do {
     default {nil};
 };
 
-if (isNil _isHouse) exitWith {[]};
+if (isNil "_isHouse") exitWith {[]};
 
 private _config = [_garageConfig,_houseConfig] select _isHouse;
 
