@@ -11,7 +11,7 @@ _house = param[0,"",[""]];
 if (_house isEqualTo "") exitWith {[]};
 
 _houseConfig = missionConfigFile >> "Housing" >> worldName >> _house;
-_garageConfig =missionConfigFile >> "Garages" >> worldName >> _house;
+_garageConfig = missionConfigFile >> "Garages" >> worldName >> _house;
 
 _isHouse = switch (true) do {
     case (isClass (_houseConfig)) : {true};
