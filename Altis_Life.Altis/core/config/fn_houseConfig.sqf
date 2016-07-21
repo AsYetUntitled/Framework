@@ -3,7 +3,7 @@
     Author: BoGuu
 
     Description:
-    Fetch housing data from Config_Housing
+    Fetch data from Config_Housing/Garages
 */
 
 _house = param[0,"",[""]];
