@@ -1,20 +1,19 @@
-/*
-*    ARRAY FORMAT:
-*        0: STRING (Classname)
-*        1: ARRAY (This is for limiting items to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL /EQUAL)
-*            2: What to compare to (-1 = Check Disabled)
-*
-*   BLUFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_WEST
-*   OPFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_EAST
-*   Independent Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_GUER
-*   Civilian Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_CIV
-*   
-*/
-
 class CarShops {
-
+    /*
+    *    ARRAY FORMAT:
+    *        0: STRING (Classname)
+    *        1: ARRAY (This is for limiting items to certain things)
+    *            0: Variable to read from
+    *            1: Variable Value Type (SCALAR / BOOL /EQUAL)
+    *            2: What to compare to (-1 = Check Disabled)
+    *
+    *   BLUFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_WEST
+    *   OPFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_EAST
+    *   Independent Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_GUER
+    *   Civilian Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_CIV
+	*   DLC Vehicles added by [TIG] Alex
+	*   
+    */
     class civ_car {
         side = "civ";
         vehicles[] = {
@@ -24,7 +23,7 @@ class CarShops {
             { "C_SUV_01_F", { "", "", -1 } },
             { "C_Hatchback_01_sport_F", { "", "", -1 } },
             { "C_Van_01_transport_F", { "", "", -1 } },
-			{ "C_Offroad_02_unarmed_F", { "", "", -1 } } //Apex DLC
+            { "C_Offroad_02_unarmed_F", { "", "", -1 } } //Apex DLC
         };
     };
 
@@ -58,10 +57,9 @@ class CarShops {
     class civ_air {
         side = "civ";
         vehicles[] = {
-            { "C_Heli_Light_01_civil_F", { "", "", -1 } },
-            { "B_Heli_Light_01_F", { "", "", -1 } },
-            { "O_Heli_Light_02_unarmed_F", { "", "", -1 } },
-			{ "C_Plane_Civil_01_F", { "", "", -1 } } //Apex DLC
+            { "B_Heli_Light_01_F", 120000, { "pilot" }, { "", "", -1 } },
+            { "O_Heli_Light_02_unarmed_F", 200000, { "pilot" }, { "", "", -1 } },
+            { "C_Plane_Civil_01_F", { "Pilot", "", -1 } } //Apex DLC
         };
     };
 
@@ -71,7 +69,7 @@ class CarShops {
             { "C_Rubberboat", { "", "", -1 } },
             { "C_Boat_Civil_01_F", { "", "", -1 } },
             { "B_SDV_01_F", { "", "", -1 } },
-			{ "C_Scoooter_Transport_01_F", { "", "", -1 } } //Apex DLC
+            { "C_Scoooter_Transport_01_F", { "", "", -1 } } //Apex DLC
 			
         };
     };
@@ -84,7 +82,7 @@ class CarShops {
             { "O_MRAP_02_F", { "", "", -1 } },
             { "B_Heli_Light_01_stripped_F", { "", "", -1 } },
             { "B_G_Offroad_01_armed_F", { "", "", -1 } },
-			{ "O_T_LSV_02_unarmed_F", { "", "", -1 } } //Apex DLC
+            { "O_T_LSV_02_unarmed_F", { "", "", -1 } } //Apex DLC
 			
         };
     };
@@ -171,6 +169,39 @@ class LifeCfgVehicles {
         price = -1;
         textures[] = {};
     };
+	
+    // Apex DLC
+    class C_Offroad_02_unarmed_F { //NEEDS TO BE CHANGED
+        vItemSpace = 180;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = -1;
+        textures[] = {}; 
+    };
+    
+    // Apex DLC
+    class C_Plane_Civil_01_F { //NEEDS TO BE CHANGED
+        vItemSpace = 300;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = -1;
+        textures[] = {};
+    };
+    
+    // Apex DLC
+    class C_Scoooter_Transport_01_F { //NEEDS TO BE CHANGED
+        vItemSpace = 30;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = -1;
+        textures[] = {};
+    };
+    
+    // Apex DLC
+    class O_T_LSV_02_unarmed_F { //NEEDS TO BE CHANGED
+        vItemSpace = 100;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = -1;
+        textures[] = {};
+    };	
+	
 
     class I_Truck_02_medical_F {
         vItemSpace = 150;
