@@ -12,8 +12,8 @@ params [
     ["_type","",[""]]
 ];
 
-private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _house;
-private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _house;
+private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _garageObj;
+private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _garageObj;
 
 _isHouse = switch (true) do {
     case (isClass (_houseConfig)) : {true};
