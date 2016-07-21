@@ -204,5 +204,5 @@ class Life_Settings {
 #include "Config_Gather.hpp"
 #include "Config_SpawnPoints.hpp"
 #include "Config_Process.hpp"
-#include "Config_Houses.hpp"
+#include "Config_Housing.hpp"
 #include "Config_Garages.hpp"
