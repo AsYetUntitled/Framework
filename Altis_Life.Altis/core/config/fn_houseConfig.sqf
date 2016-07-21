@@ -6,14 +6,14 @@
     Fetch data from Config_Housing/Garages
 */
 
-_house = param[0,"",[""]];
+private _house = param[0,"",[""]];
 
 if (_house isEqualTo "") exitWith {[]};
 
-_houseConfig = missionConfigFile >> "Housing" >> worldName >> _house;
-_garageConfig = missionConfigFile >> "Garages" >> worldName >> _house;
+private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _house;
+private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _house;
 
-_isHouse = switch (true) do {
+private _isHouse = switch (true) do {
     case (isClass (_houseConfig)) : {true};
     case (isClass (_garageConfig)) : {false};
     default {nil};
