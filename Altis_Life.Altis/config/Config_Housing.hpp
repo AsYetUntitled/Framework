@@ -2,7 +2,7 @@
 
     price - Cost of the building
     numberCrates - Allowed number of crates
-    restrictedPos[][] - Same as the old fn_getBuildingPositions. A list of restricted building positions (i.e, to stop spawning outside, or by windows etc)
+    restrictedPos[] - Same as the old fn_getBuildingPositions. A list of restricted building positions (i.e, to stop spawning outside, or by windows etc)
     canGarage - True if the building can be used as a garage (need to buy ontop)
     garageSpawnPos[] - worldToModel position to spawn vehicles, leave {} if canGarage is false.
     garageSpawnDir - Offset to garage direction to spawn at (+-90 etc). It will be used in the manner: getDir _garage + spawnDir
