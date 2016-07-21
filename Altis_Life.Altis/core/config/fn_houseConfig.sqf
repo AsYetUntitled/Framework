@@ -11,8 +11,10 @@ _house = param[0,"",[""]];
 if (_house isEqualTo "") exitWith {[]};
 if (!isClass (missionConfigFile >> "Housing" >> "Altis" >> _house)) exitWith {[]};
 
-_price = getNumber(missionConfigFile >> "Housing" >> worldName >> _house >> "price");
-_numberCrates = getNumber(missionConfigFile >> "Housing" >> worldName >> _house >> "numberCrates");
+_houseConfig = missionConfigFile >> "Housing" >> worldName >> _house;
+
+_price = getNumber(_houseConfig >> "price");
+_numberCrates = getNumber(_houseConfig >> "numberCrates");
 
 //Return
 [_price,_numberCrates]
