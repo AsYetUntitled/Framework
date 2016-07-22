@@ -124,7 +124,7 @@ fed_bank setVariable ["safe",count playableUnits,true];
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
-[] call compile PreProcessFileLineNumbers "\life_server\functions.sqf";
+[] call compile preprocessFileLineNumbers "\life_server\functions.sqf";
 
 /* Set OwnerID players for Headless Client */
 TON_fnc_requestClientID =

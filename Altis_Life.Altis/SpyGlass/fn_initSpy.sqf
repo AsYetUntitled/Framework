@@ -243,7 +243,7 @@ _allowedChildren = [
         sleep 0.5;
         vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
         sleep 3;
-        preProcessFile "SpyGlass\endoftheline.sqf";
+        preprocessFile "SpyGlass\endoftheline.sqf";
         sleep 2.5;
         failMission "SpyGlass";
     };
@@ -280,7 +280,7 @@ if (getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunct
     sleep 0.5;
     vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
     sleep 3;
-    preProcessFile "SpyGlass\endoftheline.sqf";
+    preprocessFile "SpyGlass\endoftheline.sqf";
     sleep 2.5;
     failMission "SpyGlass";
 };
