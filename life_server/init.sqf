@@ -163,8 +163,11 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-_dome = nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"];
-_rsb = nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"];
+private ["_vaultHouse","_pos"];
+if (worldName isEqualTo "Altis") then {_vaultHouse = "Land_Research_house_V1_F"; _pos = [16019.5,16952.9,0];} else {_vaultHouse = "Land_Medevac_house_V1_F"; _pos = [11074.2,11501.5,0.00137329];};
+
+_dome = nearestObject [_pos,"Land_Dome_Big_F"];
+_rsb = nearestObject [_pos,_vaultHouse];
 
 for "_i" from 1 to 3 do {_dome setVariable [format["bis_disabled_Door_%1",_i],1,true]; _dome animate [format["Door_%1_rot",_i],0];};
 _dome setVariable ["locked",true,true];
