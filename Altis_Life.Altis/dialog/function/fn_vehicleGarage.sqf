@@ -12,18 +12,15 @@ params [
     ["_type","",[""]]
 ];
 
-private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _garageObj;
-private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _garageObj;
+_className = typeOf _garageObj;
+private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _className;
+private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _className;
 
-_isHouse = switch (true) do {
-    case (isClass (_houseConfig)) : {true};
-    case (isClass (_garageConfig)) : {false};
-    default {nil};
-};
+private _config = [_garageConfig,_houseConfig] select {isClass _x};
 
-if (isNil "_isHouse") exitWith {};
+if (_config isEqualTo []) exitWith {};
 
-private _config = [_garageConfig,_houseConfig] select _isHouse;
+_config = _config select 0;
 private _dir = getNumber(_config >> "garageSpawnDir");
 private _mTwPos = getArray(_config >> "garageSpawnPos");
 
