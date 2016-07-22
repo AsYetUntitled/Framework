@@ -27,8 +27,8 @@ for [{_x=0},{_x<=_count},{_x=_x+10}] do {
     } forEach _queryResult;
 };
 
-_blacklistedHouses = "getArray (_x >> 'garageBlacklists') > 0" configClasses (missionconfigFile >> "Housing" >> worldName);
-_blacklistedGarages pushBack "getArray (_x >> 'garageBlacklists') > 0" configClasses (missionconfigFile >> "Garages" >> worldName);
+_blacklistedHouses = "count (getArray (_x >> 'garageBlacklists')) > 0" configClasses (missionconfigFile >> "Housing" >> worldName);
+_blacklistedGarages = "count (getArray (_x >> 'garageBlacklists')) > 0" configClasses (missionconfigFile >> "Garages" >> worldName);
 _blacklistedHouses = _blacklistedHouses apply {configName _x};
 _blacklistedGarages = _blacklistedGarages apply {configName _x};
 
