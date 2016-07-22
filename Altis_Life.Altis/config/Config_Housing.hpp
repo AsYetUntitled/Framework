@@ -1,3 +1,6 @@
+#define true 1
+#define false 0
+
 /*
     price - Cost of the building
     numberCrates - Allowed number of crates
