@@ -72,6 +72,8 @@ class Life_Settings {
 
     /* Housing System Configurations */
     house_limit = 5; //Maximum number of houses a player can own.
+    houseGarage_buyPrice = 1000000;
+    houseGarage_sellPrice = 350000;
 
     /* Hunting & Fishing System Configurations */
     animaltypes_fish[] = { "Salema_F", "Ornate_random_F", "Mackerel_F", "Tuna_F", "Mullet_F", "CatShark_F", "Turtle_F" }; //Classnames of fish you can catch
