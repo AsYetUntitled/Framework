@@ -15,7 +15,7 @@ life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_Cop_RepairVault";
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
@@ -33,7 +33,7 @@ for "_i" from 0 to 1 step 0 do {
     sleep 0.26;
 
     if (isNull _ui) then {
-        5 cutRsc ["life_progress","PLAIN"];
+        "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
         _progressBar = _ui displayCtrl 38201;
         _titleText = _ui displayCtrl 38202;
@@ -46,7 +46,7 @@ for "_i" from 0 to 1 step 0 do {
 };
 
 //Kill the UI display and check for various states
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player) exitWith {life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};

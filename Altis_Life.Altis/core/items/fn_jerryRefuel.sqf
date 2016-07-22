@@ -23,7 +23,7 @@ _upp = format[localize "STR_ISTR_Jerry_Process",_displayName];
 
 //Setup our progress bar.
 disableSerialization;
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
@@ -39,7 +39,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     sleep 0.2;
     if (isNull _ui) then {
-        5 cutRsc ["life_progress","PLAIN"];
+        "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
         _progressBar = _ui displayCtrl 38201;
         _titleText = _ui displayCtrl 38202;
@@ -52,7 +52,7 @@ for "_i" from 0 to 1 step 0 do {
     if (life_interrupted) exitWith {};
 };
 life_action_inUse = false;
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player) exitWith {};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"];};

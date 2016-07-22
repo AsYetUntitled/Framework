@@ -28,7 +28,7 @@ if (_displayName isEqualTo "") exitWith {life_action_inUse = false;};
 _upp = format[localize "STR_NOTF_Gutting",_displayName];
 //Setup our progress bar.
 disableSerialization;
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
@@ -54,7 +54,7 @@ for "_i" from 0 to 1 step 0 do {
 };
 
 life_action_inUse = false;
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (isNull _animalCorpse) exitWith {life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
