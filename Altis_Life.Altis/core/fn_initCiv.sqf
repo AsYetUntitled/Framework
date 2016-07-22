@@ -6,11 +6,19 @@
     Description:
     Initializes the civilian.
 */
-private["_spawnPos"];
-civ_spawn_1 = nearestObjects[getMarkerPos  "civ_spawn_1", ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F"],250];
-civ_spawn_2 = nearestObjects[getMarkerPos  "civ_spawn_2", ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F"],250];
-civ_spawn_3 = nearestObjects[getMarkerPos  "civ_spawn_3", ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F"],250];
-civ_spawn_4 = nearestObjects[getMarkerPos  "civ_spawn_4", ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F"],250];
+private["_spawnPos","_spawnBuildings"];
+
+if (worldName isEqualTo "Altis") then {
+    _spawnBuildings = ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F"];
+} else {
+    _spawnBuildings = ["Land_i_Shed_Ind_F","Land_House_Small_01_F","Land_Slum_01_F"];
+};
+
+civ_spawn_1 = nearestObjects[getMarkerPos  "civ_spawn_1", _spawnBuildings,250];
+civ_spawn_2 = nearestObjects[getMarkerPos  "civ_spawn_2", _spawnBuildings,250];
+civ_spawn_3 = nearestObjects[getMarkerPos  "civ_spawn_3", _spawnBuildings,250];
+civ_spawn_4 = nearestObjects[getMarkerPos  "civ_spawn_4", _spawnBuildings,250];
+
 waitUntil {!(isNull (findDisplay 46))};
 if (life_is_alive && !life_is_arrested) then {
     /* Spawn at our last position */
