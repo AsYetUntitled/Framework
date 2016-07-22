@@ -229,6 +229,7 @@ class Life_Client_Core {
     class Housing {
         file = "core\housing";
         class buyHouse {};
+        class buyHouseGarage {};
         class containerMenu {};
         class copBreakDoor {};
         class copHouseOwner {};
@@ -244,6 +245,7 @@ class Life_Client_Core {
         class PlayerInBuilding {};
         class raidHouse {};
         class sellHouse {};
+        class sellHouseGarage {};
     };
 
     class Items {

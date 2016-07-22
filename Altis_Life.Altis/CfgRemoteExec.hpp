@@ -109,6 +109,7 @@ class CfgRemoteExec {
         F(TON_fnc_vehicleStore,SERVER)
         F(TON_fnc_vehicleUpdate,SERVER)
         F(TON_fnc_handleBlastingCharge,SERVER)
+        F(TON_fnc_houseGarage,SERVER)
 
         /* HeadlessClient only functions */
         F(HC_fnc_addContainer,HC)
@@ -116,6 +117,7 @@ class CfgRemoteExec {
         F(HC_fnc_chopShopSell,HC)
         F(HC_fnc_deleteDBContainer,HC)
         F(HC_fnc_getVehicles,HC)
+        F(HC_fnc_houseGarage,HC)
         F(HC_fnc_insertGang,HC)
         F(HC_fnc_insertRequest,HC)
         F(HC_fnc_insertVehicle,HC)

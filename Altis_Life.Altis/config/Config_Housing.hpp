@@ -12,6 +12,8 @@
         default: {}
     garageSpawnDir - Offset to garage direction to spawn at (+-90 etc). It will be used in the manner: getDir _garage + spawnDir
         default: 0
+    garageBlacklists[] - List of blacklisted houses for buying garages
+        default: {}
 */
 
 class Housing {
@@ -25,6 +27,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_i_House_Big_02_V2_F : Land_i_House_Big_02_V1_F{};
@@ -37,6 +40,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
 
         class Land_i_House_Big_01_V2_F : Land_i_House_Big_01_V1_F{};
@@ -49,6 +53,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
 
         class Land_i_House_Small_01_V2_F : Land_i_House_Small_01_V1_F{};
@@ -61,6 +66,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
 
         class Land_i_House_Small_02_V2_F : Land_i_House_Small_02_V1_F{};
@@ -73,6 +79,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
 
         class Land_i_Stone_HouseSmall_V1_F {
@@ -82,6 +89,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
 
         class Land_i_Stone_HouseSmall_V2_F : Land_i_Stone_HouseSmall_V1_F{};
@@ -99,6 +107,7 @@ class Housing {
             canGarage = true;
             garageSpawnPos[] = {-1.27246,-11.4361,-5.63821};
             garageSpawnDir = 0;
+            garageBlacklists[] = {{5909.93,10491.9,-0.153875}};
         };
         
         class Land_Hotel_02_F {
@@ -108,6 +117,7 @@ class Housing {
             canGarage = true;
             garageSpawnPos[] = {14.1128,1.51736,-4.18449};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_GarageShelter_01_F {
@@ -117,8 +127,8 @@ class Housing {
             canGarage = true;
             garageSpawnPos[] = {0.241684,-5.72266,-1.46744};
             garageSpawnDir = 0;
+            garageBlacklists[] = {{10998,9698.24,-0.219376}};
         };
-        
         
         class Land_House_Big_02_F {
             price = 450000;
@@ -127,6 +137,7 @@ class Housing {
             canGarage = true;
             garageSpawnPos[] = {12.8365,0.414551,-1.81252};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_School_01_F {
@@ -136,6 +147,7 @@ class Housing {
             canGarage = true;
             garageSpawnPos[] = {-6.91215,-11.5288,-1.70768};
             garageSpawnDir = 0;
+            garageBlacklists[] = {{10957,9532.16,-0.528702}};
         };
         
         class Land_House_Big_04_F {
@@ -145,6 +157,7 @@ class Housing {
             canGarage = true;
             garageSpawnPos[] = {12.308,-0.228027,-3.34715};
             garageSpawnDir = 0;
+            garageBlacklists[] = {{5879.2,10002.7,-0.278984},{9508.48,13082.7,0.021286}};
         };
         
         class Land_House_Big_03_F {
@@ -154,6 +167,7 @@ class Housing {
             canGarage = true;
             garageSpawnPos[] = {14.9072,0.394043,-3.60528};
             garageSpawnDir = 0;
+            garageBlacklists[] = {{11507.2,2447.47,-0.145175}};
         };
         
         // Houses without Garages
@@ -164,6 +178,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_House_Small_03_F {
@@ -173,6 +188,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_House_Small_06_F {
@@ -182,6 +198,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_Slum_03_F {
@@ -191,6 +208,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_Addon_04_F {
@@ -200,6 +218,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_Slum_01_F {
@@ -209,6 +228,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_House_Small_05_F {
@@ -218,6 +238,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_House_Small_02_F {
@@ -227,6 +248,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
         
         class Land_House_Small_04_F {
@@ -236,6 +258,7 @@ class Housing {
             canGarage = false;
             garageSpawnPos[] = {};
             garageSpawnDir = 0;
+            garageBlacklists[] = {};
         };
 
     };

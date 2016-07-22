@@ -82,6 +82,7 @@ class CfgFunctions {
             file = "\life_server\Functions\Housing";
             class addHouse {};
             class addContainer {};
+            class deleteDBContainer {};
             class fetchPlayerHouses {};
             class initHouses {};
             class sellHouse {};
@@ -89,7 +90,7 @@ class CfgFunctions {
             class updateHouseContainers {};
             class updateHouseTrunk {};
             class houseCleanup {};
-            class deleteDBContainer {};
+            class houseGarage {};
         };
 
         class Gangs {
