@@ -360,6 +360,8 @@ class Clothing {
             { "U_O_GhillieSuit", "", 12500, { "", "", -1 } },
             { "U_O_T_Sniper_F", "", 12500, { "", "", -1 } },
             { "U_B_T_Sniper_F", "", 12500, { "", "", -1 } }
+        };
+            
         headgear[] = {
             { "NONE", "Remove Headgear", 0, { "", "", -1 } },
             { "H_MilCap_oucamo", "", 500, { "", "", -1 } },
