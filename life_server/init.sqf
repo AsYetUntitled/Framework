@@ -83,7 +83,6 @@ if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then 
 /* Map-based server side initialization. */
 master_group attachTo[bank_obj,[0,0,0]];
 
-life_fed_scam camSetPos (_dome modelToWorld (_temp select 1));
 {
     _hs = createVehicle ["Land_Hospital_main_F", [0,0,0], [], 0, "NONE"];
     _hs setDir (markerDir _x);
