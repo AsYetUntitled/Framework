@@ -6,10 +6,13 @@
     Description:
     Breaks the lock on a single door (Closet door to the player).
 */
-private["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui","_vaultHouse","_pos"];
+private["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
 _building = param [0,objNull,[objNull]];
 
-if (worldName isEqualTo "Altis") then {_vaultHouse = "Land_Research_house_V1_F"; _pos = [16019.5,16952.9,0];} else {_vaultHouse = "Land_Medevac_house_V1_F"; _pos = [11074.2,11501.5,0.00137329];};
+private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
+_altisArray = [16019.5,16952.9,0];
+_tanoaArray = [11074.2,11501.5,0.00137329];
+private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
 
 if (isNull _building) exitWith {};
 if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
