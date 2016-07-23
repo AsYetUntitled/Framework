@@ -163,8 +163,10 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-private ["_vaultHouse","_pos"];
-if (worldName isEqualTo "Altis") then {_vaultHouse = "Land_Research_house_V1_F"; _pos = [16019.5,16952.9,0];} else {_vaultHouse = "Land_Medevac_house_V1_F"; _pos = [11074.2,11501.5,0.00137329];};
+private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
+_altisArray = [16019.5,16952.9,0];
+_tanoaArray = [11074.2,11501.5,0.00137329];
+private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
 
 _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 _rsb = nearestObject [_pos,_vaultHouse];

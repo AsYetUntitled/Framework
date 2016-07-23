@@ -6,13 +6,10 @@
     Description:
     Initializes the civilian.
 */
-private["_spawnPos","_spawnBuildings"];
-
-if (worldName isEqualTo "Altis") then {
-    _spawnBuildings = ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F"];
-} else {
-    _spawnBuildings = ["Land_i_Shed_Ind_F","Land_House_Small_01_F","Land_Slum_01_F"];
-};
+private "_spawnPos";
+_altisArray = ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F"];
+_tanoaArray = ["Land_i_Shed_Ind_F","Land_House_Small_01_F","Land_Slum_01_F"];
+private _spawnBuildings = ALTIS_TANOA(_altisArray,_tanoaArray);
 
 civ_spawn_1 = nearestObjects[getMarkerPos  "civ_spawn_1", _spawnBuildings,250];
 civ_spawn_2 = nearestObjects[getMarkerPos  "civ_spawn_2", _spawnBuildings,250];
