@@ -9371,6 +9371,17 @@
             <Polish>Więzienie Altis</Polish>
             <Italian>Penitenziario di Altis</Italian>
         </Key>
+        <Key ID="STR_MAR_Tanoa_Corrections">
+            <Original>Tanoa Corrections</Original>
+            <Czech>Tanoa Opravy</Czech>
+            <French>Prison d'Tanoa</French>
+            <Spanish>Prisión de Tanoa</Spanish>
+            <Russian></Russian>
+            <German>Tanoa Bundesgefängnis</German>
+            <Portuguese>Prisão de Tanoa</Portuguese>
+            <Polish>Więzienie Tanoa</Polish>
+            <Italian>Penitenziario di Tanoa</Italian>
+        </Key>
         <Key ID="STR_MAR_Police_HQ">
             <Original>Police HQ</Original>
             <Czech>Police HQ</Czech>

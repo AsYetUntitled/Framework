@@ -7,7 +7,10 @@
     Blah blah.
 */
 private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
-_hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
+_altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
+_tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
+private _hideoutObjs = ALTIS_TANOA(_altisArray,_tanoaArray);
+_hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
 _group = _hideout getVariable ["gangOwner",grpNull];
 
 if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};

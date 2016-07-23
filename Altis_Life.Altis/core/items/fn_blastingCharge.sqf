@@ -6,7 +6,7 @@
     Description:
     Blasting charge is used for the federal reserve vault and nothing  more.. Yet.
 */
-private["_vault","_handle","_vaultHouse","_pos"];
+private["_vault","_handle"];
 _vault = param [0,ObjNull,[ObjNull]];
 
 if (isNull _vault) exitWith {}; //Bad object
@@ -17,7 +17,10 @@ if (west countSide playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops"))) ex
      hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))]
 };
 
-if (worldName isEqualTo "Altis") then {_vaultHouse = "Land_Research_house_V1_F"; _pos = [16019.5,16952.9,0];} else {_vaultHouse = "Land_Medevac_house_V1_F"; _pos = [11074.2,11501.5,0.00137329];};
+private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
+_altisArray = [16019.5,16952.9,0];
+_tanoaArray = [11074.2,11501.5,0.00137329];
+private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
 
 if ((nearestObject [_pos,_vaultHouse]) getVariable ["locked",true]) exitWith {hint localize "STR_ISTR_Blast_Exploit"};
 if (!([false,"blastingcharge",1] call life_fnc_handleInv)) exitWith {}; //Error?
