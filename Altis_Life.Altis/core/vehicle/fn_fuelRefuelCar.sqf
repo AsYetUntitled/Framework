@@ -39,7 +39,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
     life_is_processing = true;
     //Setup our progress bar.
     disableSerialization;
-    5 cutRsc ["life_progress","PLAIN"];
+    "progressBar" cutRsc ["life_progress","PLAIN"];
     _ui = uiNameSpace getVariable "life_progress";
     _progress = _ui displayCtrl 38201;
     _pgText = _ui displayCtrl 38202;
@@ -64,7 +64,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
             [_car,_cp * _setfuell] remoteExecCall ["life_fnc_setFuel",_car];
         };
     };
-    5 cutText ["","PLAIN"];
+    "progressBar" cutText ["","PLAIN"];
     if (_car distance player > 10 || vehicle player != player) then {
         hint localize "STR_Distance_Vehicle_Pump";
         vehiclefuelList = [];

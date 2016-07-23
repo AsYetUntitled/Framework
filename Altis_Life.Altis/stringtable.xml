@@ -1935,6 +1935,83 @@
         </Key>
     </Package>
     <Package name="Garage_Strings">
+        <Key ID="STR_Garage_AlreadyOwned">
+            <Original>This garage has already been bought!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_Garage_NotOwner">
+            <Original>You are not the owner of this house!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_Garage_HouseBuyMSG">
+            <Original>This garage is available for &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_House_SellHouseMSG">
+            <Original>Are you sure you want to sell your garage? It will sell for: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_House_GarageSell">
+            <Original>Sell Garage</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_House_GaragePurchase">
+            <Original>Purchase Garage</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_Garage_NotOwned">
+            <Original>You do not own a garage here!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
         <Key ID="STR_Garage_Title">
             <Original>Vehicle Garage</Original>
             <Czech>Garáž Vehicle</Czech>
@@ -8026,6 +8103,28 @@
             <Portuguese>Quebrar Porta</Portuguese>
             <Polish>Wyważ drzwi</Polish>
         </Key>
+        <Key ID="STR_pInAct_GarageExt">
+            <Original>Garage</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_pInAct_GarageExtNOTF">
+            <Original>You can buy a garage at this house for $%1. You must first purchase the house!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
         <Key ID="STR_pInAct_SearchHouse">
             <Original>Search house</Original>
             <Czech>Vyhledávání dům</Czech>
@@ -8058,6 +8157,17 @@
             <Italian>Compra Casa</Italian>
             <Portuguese>Comprar a Casa</Portuguese>
             <Polish>Kup dom</Polish>
+        </Key>
+        <Key ID="STR_pInAct_BuyGarage">
+            <Original>Buy House Garage</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
         </Key>
         <Key ID="STR_pInAct_SellGarage">
             <Original>Sell Garage</Original>
@@ -8182,27 +8292,16 @@
             <Portuguese>Desvirar Veículo</Portuguese>
             <Polish>Ustaw pojazd</Polish>
         </Key>
-        <Key ID="STR_vInAct_GetInKart">
-            <Original>Get In Kart</Original>
-            <Czech>Dostat do košíku</Czech>
-            <Spanish>Entrar en el Kart</Spanish>
+        <Key ID="STR_vInAct_GetInVehicle">
+            <Original>Get In Vehicle</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
             <Russian></Russian>
-            <German>Ins Kart setzen</German>
-            <French>Monter dans le kart</French>
-            <Italian>Entra nel Kart</Italian>
-            <Portuguese>Entrar no Kart</Portuguese>
-            <Polish>Wejdź do gokarta</Polish>
-        </Key>
-        <Key ID="STR_vInAct_GetInHeli">
-            <Original>Get In Helicopter</Original>
-            <Czech>Získat vrtulník</Czech>
-            <Spanish>Entrar en el Helicóptero</Spanish>
-            <Italian>Get In elicottero</Italian>
-            <Polish>Wchodzić Śmigłowiec</Polish>
-            <Russian></Russian>
-            <German>In den Helikopter einsteigen</German>
-            <French>Monter dans l'hélicoptere</French>
-            <Portuguese>Entrar no Helicóptero</Portuguese>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
         </Key>
         <Key ID="STR_vInAct_PushBoat">
             <Original>Push Boat</Original>
