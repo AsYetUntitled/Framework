@@ -18,12 +18,12 @@ diag_log "--------------------------------- Starting Altis Life Client Init ----
 diag_log "------------------------------------------ Version 4.4R3 -------------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
-[] call compile PreprocessFileLineNumbers "core\clientValidator.sqf";
+[] call compile preprocessFileLineNumbers "core\clientValidator.sqf";
 enableSentences false;
 
 //Setup initial client core functions
 diag_log "::Life Client:: Initialization Variables";
-[] call compile PreprocessFileLineNumbers "core\configuration.sqf";
+[] call compile preprocessFileLineNumbers "core\configuration.sqf";
 
 diag_log "::Life Client:: Variables initialized";
 diag_log "::Life Client:: Setting up Eventhandlers";
