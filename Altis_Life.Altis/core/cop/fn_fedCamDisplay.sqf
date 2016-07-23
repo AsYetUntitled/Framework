@@ -43,7 +43,7 @@ if (_index isEqualTo -1) then {
     life_fed_scam = nil;
 } else {
     _temp = _mTwPositions select _index;
-    life_fed_scam camSetPos (_temp select 1);
-    life_fed_scam camSetTarget (_temp select 2);
+    life_fed_scam camSetPos (_dome modelToWorld (_temp select 1));
+    life_fed_scam camSetTarget (_dome modelToWorld (_temp select 2));
     life_fed_scam camCommit 0;
 };
