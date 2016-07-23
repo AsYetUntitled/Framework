@@ -8292,27 +8292,16 @@
             <Portuguese>Desvirar Veículo</Portuguese>
             <Polish>Ustaw pojazd</Polish>
         </Key>
-        <Key ID="STR_vInAct_GetInKart">
-            <Original>Get In Kart</Original>
-            <Czech>Dostat do košíku</Czech>
-            <Spanish>Entrar en el Kart</Spanish>
+        <Key ID="STR_vInAct_GetInVehicle">
+            <Original>Get In Vehicle</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
             <Russian></Russian>
-            <German>Ins Kart setzen</German>
-            <French>Monter dans le kart</French>
-            <Italian>Entra nel Kart</Italian>
-            <Portuguese>Entrar no Kart</Portuguese>
-            <Polish>Wejdź do gokarta</Polish>
-        </Key>
-        <Key ID="STR_vInAct_GetInHeli">
-            <Original>Get In Helicopter</Original>
-            <Czech>Získat vrtulník</Czech>
-            <Spanish>Entrar en el Helicóptero</Spanish>
-            <Italian>Get In elicottero</Italian>
-            <Polish>Wchodzić Śmigłowiec</Polish>
-            <Russian></Russian>
-            <German>In den Helikopter einsteigen</German>
-            <French>Monter dans l'hélicoptere</French>
-            <Portuguese>Entrar no Helicóptero</Portuguese>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
         </Key>
         <Key ID="STR_vInAct_PushBoat">
             <Original>Push Boat</Original>

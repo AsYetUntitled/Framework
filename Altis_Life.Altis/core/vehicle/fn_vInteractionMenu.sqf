@@ -13,7 +13,7 @@
 #define Btn5 37454
 #define Btn6 37455
 #define Title 37401
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_dlcVehicles","_id"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_id"];
 if (!dialog) then {
     createDialog "vInteraction_Menu";
 };
@@ -60,37 +60,31 @@ if (playerSide isEqualTo west) then {
         if (_curTarget isKindOf "Ship" && {local _curTarget} && {crew _curTarget isEqualTo []}) then { _Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
     } else {
         if (!isNil "_id") then {
-		    if (_id in getDLCs 1) then {
-                if (_curTarget isKindOf "Air") then {
-                    _Btn6 ctrlSetText localize "STR_vInAct_GetInHeli";
-                } else {
-                    _Btn6 ctrlSetText localize "STR_vInAct_GetInKart";
-                };
+            if !(_id in getDLCs 1) then {
+                _Btn6 ctrlSetText localize "STR_vInAct_GetInVehicle";
                 _Btn6 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
                 if (crew _curTarget isEqualTo [] && {canMove _curTarget} && {locked _curTarget isEqualTo 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
             };
-		} else {
+        } else {
             _Btn6 ctrlSetText localize "STR_vInAct_Unflip";
             _Btn6 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
             if (alive _curTarget && {crew _curTarget isEqualTo []} && {canMove _curTarget}) then { _Btn6 ctrlEnable false;} else {_Btn6 ctrlEnable true;};
         };
     };
+    
 } else {
+    
     if (_curTarget isKindOf "Ship") then {
         _Btn2 ctrlSetText localize "STR_vInAct_PushBoat";
         _Btn2 buttonSetAction "[] spawn life_fnc_pushObject; closeDialog 0;";
         if (alive _curTarget && {_curTarget isKindOf "Ship"} && {local _curTarget} && {crew _curTarget isEqualTo []}) then { _Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
     } else {
         if (!isNil "_id") then {
-		    if (_id in getDLCs 1) then {
-				if (_curTarget isKindOf "Air") then {
-					_Btn2 ctrlSetText localize "STR_vInAct_GetInHeli";
-				} else {
-					_Btn2 ctrlSetText localize "STR_vInAct_GetInKart";
-				};
-				_Btn2 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
-				if (crew _curTarget isEqualTo [] && {canMove _curTarget} && {locked _curTarget isEqualTo 0}) then {_Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
-			};
+            if !(_id in getDLCs 1) then {
+                _Btn2 ctrlSetText localize "STR_vInAct_GetInVehicle";
+                _Btn2 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
+                if (crew _curTarget isEqualTo [] && {canMove _curTarget} && {locked _curTarget isEqualTo 0}) then {_Btn2 ctrlEnable true;} else {_Btn2 ctrlEnable false};
+            };
         } else {
             _Btn2 ctrlSetText localize "STR_vInAct_Unflip";
             _Btn2 buttonSetAction "life_vInact_curTarget setPos [getPos life_vInact_curTarget select 0, getPos life_vInact_curTarget select 1, (getPos life_vInact_curTarget select 2)+0.5]; closeDialog 0;";
