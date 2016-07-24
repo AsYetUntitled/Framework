@@ -53,7 +53,7 @@ class Garages {
         class Land_Warehouse_03_F {
             price = 180000;
             garageSpawnPos[] = {-3.90981,-8.46338,-2.53567};
-            garageSpawnDir = 0;
+            garageSpawnDir = 90;
             garageBlacklists[] = {};
         };
 

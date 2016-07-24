@@ -55,9 +55,9 @@ class CarShops {
     class civ_air {
         side = "civ";
         vehicles[] = {
-            { "B_Heli_Light_01_F", 120000, { "pilot" }, { "", "", -1 } },
-            { "O_Heli_Light_02_unarmed_F", 200000, { "pilot" }, { "", "", -1 } },
-            { "C_Plane_Civil_01_F", { "Pilot", "", -1 } } //Apex DLC
+            { "B_Heli_Light_01_F", { "", "", -1 } },
+            { "O_Heli_Light_02_unarmed_F", { "", "", -1 } },
+            { "C_Plane_Civil_01_F", { "", "", -1 } } //Apex DLC
         };
     };
 

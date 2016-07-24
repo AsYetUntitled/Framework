@@ -126,7 +126,7 @@ class Housing {
             restrictedPos[] = {};
             canGarage = true;
             garageSpawnPos[] = {0.241684,-5.72266,-1.46744};
-            garageSpawnDir = 0;
+            garageSpawnDir = 90;
             garageBlacklists[] = {{10998,9698.24,-0.219376}};
         };
         
@@ -154,7 +154,7 @@ class Housing {
             price = 140000;
             numberCrates = 2;
             restrictedPos[] = {};
-            canGarage = true;
+            canGarage = false;
             garageSpawnPos[] = {12.308,-0.228027,-3.34715};
             garageSpawnDir = 0;
             garageBlacklists[] = {{5879.2,10002.7,-0.278984},{9508.48,13082.7,0.021286}};

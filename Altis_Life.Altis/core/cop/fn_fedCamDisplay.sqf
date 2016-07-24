@@ -8,6 +8,8 @@
 */
 params [
     "_laptop",
+    "",
+    "",
     "_mode"
 ];
 
