@@ -291,7 +291,6 @@ class Life_Client_Core {
 
     class Player_Menu {
         file = "core\pmenu";
-        class altisPhone {};
         class cellphone {};
         class giveItem {};
         class giveMoney {};
