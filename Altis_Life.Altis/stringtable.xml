@@ -11244,56 +11244,6 @@
             <German>Admin-Nachricht</German>
         </Key>
     </Package>
-	<Package name="Tanoa Strings">
-	    <Key ID="STR_Civ_Plane">
-            <Original>Civ Plane</Original>
-        </Key>
-        <Key ID="STR_Police_Store">
-            <Original>Police Store</Original>
-        </Key>
-        <Key ID="STR_Police_Car">
-            <Original>Police Car</Original>
-        </Key>
-        <Key ID="STR_Police_Heli">
-            <Original>Police Heli</Original>
-        </Key>
-        <Key ID="STR_Police_Boat">
-            <Original>Police Heli</Original>
-        </Key>
-        <Key ID="STR_Rebel_Car">
-            <Original>Rebel Car</Original>
-        </Key>
-        <Key ID="STR_Rebel_Heli">
-            <Original>Rebel Heli</Original>
-        </Key>
-        <Key ID="STR_Police_Tan">
-            <Original>Police HQ</Original>
-        </Key>
-        <Key ID="STR_Civ_Plane">
-            <Original>Civ Plane</Original>
-        </Key>
-        <Key ID="STR_Police_Store">
-            <Original>Police Store</Original>
-        </Key>
-        <Key ID="STR_Police_Car">
-            <Original>Police Car</Original>
-        </Key>
-        <Key ID="STR_Police_Heli">
-            <Original>Police Heli</Original>
-        </Key>
-        <Key ID="STR_Police_Boat">
-            <Original>Police Heli</Original>
-        </Key>
-        <Key ID="STR_Rebel_Car">
-            <Original>Rebel Car</Original>
-        </Key>
-        <Key ID="STR_Rebel_Heli">
-            <Original>Rebel Heli</Original>
-        </Key>
-        <Key ID="STR_Police__Tan">
-            <Original>Police HQ</Original>
-        </Key>
-	</Package>
     <Package name="Data_Logging">
         <Key ID="STR_DL_AL_Arrested_BEF">
             <Original>arrested %1</Original>
