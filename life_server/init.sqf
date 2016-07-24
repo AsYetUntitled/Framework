@@ -96,14 +96,14 @@ master_group attachTo[bank_obj,[0,0,0]];
     if (_forEachIndex isEqualTo 0) then {
         atm_hospital_2 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
         vendor_hospital_2 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
-        medic_spawn_3 setMarkerPos (_var modelToWorld [8.01172,-5.47852,-8.20022]);
-        med_car_2 setMarkerPos (_var modelToWorld [8.01172,-5.47852,-8.20022]);
+        "medic_spawn_3" setMarkerPos (_var modelToWorld [8.01172,-5.47852,-8.20022]);
+        "med_car_2" setMarkerPos (_var modelToWorld [8.01172,-5.47852,-8.20022]);
         hospital_assis_2 setPos (_hs modelToWorld [0.0175781,0.0234375,-0.231956]);
     } else {
         atm_hospital_3 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
         vendor_hospital_3 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
-        medic_spawn_1 setMarkerPos (_var modelToWorld [-1.85181,-6.07715,-8.24944]);
-        med_car_1 setMarkerPos (_var modelToWorld [5.9624,11.8799,-8.28493]);
+        "medic_spawn_1" setMarkerPos (_var modelToWorld [-1.85181,-6.07715,-8.24944]);
+        "med_car_1" setMarkerPos (_var modelToWorld [5.9624,11.8799,-8.28493]);
         hospital_assis_2 setPos (_hs modelToWorld [0.0175781,0.0234375,-0.231956]);
     };
 } forEach ["hospital_2","hospital_3"];

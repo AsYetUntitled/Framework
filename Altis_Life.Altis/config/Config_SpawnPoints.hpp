@@ -148,5 +148,136 @@ class CfgSpawnPoints {
         };
     };
 
-    class Tanoa {};
+    class Tanoa {
+
+        class Civilian {
+            class Georgetown {
+                displayName = "Georgetown";
+                spawnMarker = "civ_spawn_1";
+                icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
+                licenses[] = { { "rebel", false } };
+                level[] = { "", "", -1 };
+            };
+
+            class Balavu {
+                displayName = "Balavu";
+                spawnMarker = "civ_spawn_3";
+                icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class Tuvanaka {
+                displayName = "Tuvanaka";
+                spawnMarker = "civ_spawn_2";
+                icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class Lijnhaven {
+                displayName = "Lijnhaven";
+                spawnMarker = "civ_spawn_4";
+                icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class RebelNW {
+                displayName = "North Western Rebel Base";
+                spawnMarker = "Rebelop";
+                icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+                licenses[] = { { "rebel", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class RebelS {
+                displayName = "Southern Rebel Base";
+                spawnMarker = "Rebelop_1";
+                icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+                licenses[] = { { "rebel", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class RebelNE {
+                displayName = "North Eastern Rebel Base";
+                spawnMarker = "Rebelop_2";
+                icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+                licenses[] = { { "rebel", true } };
+                level[] = { "", "", -1 };
+            };
+        };
+
+        class Cop {
+            class NAirport {
+                displayName = "North Airport HQ";
+                spawnMarker = "cop_spawn_1";
+                icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class SWAirport {
+                displayName = "South Western Airport HQ";
+                spawnMarker = "cop_spawn_3";
+                icon = "\a3\ui_f\data\map\MapControl\fuelstation_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class GeorgetownHQ {
+                displayName = "Georgetown HQ";
+                spawnMarker = "cop_spawn_2";
+                icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class Air {
+                displayName = "Air HQ";
+                spawnMarker = "cop_spawn_4";
+                icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
+                licenses[] = { { "cAir", true } };
+                level[] = { "life_coplevel", "SCALAR", 2 };
+            };
+
+            class HW {
+                displayName = "HW Patrol";
+                spawnMarker = "cop_spawn_5";
+                icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
+                licenses[] = { { "", true } };
+                level[] = { "life_coplevel", "SCALAR", 3 };
+            };
+        };
+
+        class Medic {
+
+            class SEHospital {
+                displayName = "South East Hospital";
+                spawnMarker = "medic_spawn_1";
+                icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class TanoukaHospital {
+                displayName = "Tanouka Regional";
+                spawnMarker = "medic_spawn_2";
+                icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+            class NEAirportHospital {
+                displayName = "North East Airport Hospital";
+                spawnMarker = "medic_spawn_3";
+                icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
+                licenses[] = { { "", true } };
+                level[] = { "", "", -1 };
+            };
+
+        };
+
+    };
+
 };
