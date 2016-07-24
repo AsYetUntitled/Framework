@@ -3946,6 +3946,17 @@
             <Portuguese>Você reparou esse veículo.</Portuguese>
             <Polish>Naprawiłeś pojazd</Polish>
         </Key>
+        <Key ID="STR_NOTF_Mine_Success">
+            <Original>You have mined %2 %1(s).</Original>
+            <Czech>Jste shromáždili %2 %1(y).</Czech>
+            <French>Vous avez recueilli %2 %1(s).</French>
+            <Spanish>Has recolectado %2 %1(s).</Spanish>
+            <Italian>Hai raccolto %2 unità di %1.</Italian>
+            <Russian></Russian>
+            <German>Du hast %2 %1(s) gesammelt.</German>
+            <Portuguese>Você colheu %2 %1(s).</Portuguese>
+            <Polish>Zebrałeś %2 %1 (s).</Polish>
+        </Key>
         <Key ID="STR_NOTF_Gather_Success">
             <Original>You have gathered %2 %1(s).</Original>
             <Czech>Jste shromáždili %2 %1(y).</Czech>
