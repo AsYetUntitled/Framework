@@ -1968,7 +1968,7 @@
             <Portuguese></Portuguese>
             <Polish></Polish>
         </Key>
-        <Key ID="STR_House_SellHouseMSG">
+        <Key ID="STR_House_SellGarageMSG">
             <Original>Are you sure you want to sell your garage? It will sell for: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</Original>
             <Czech></Czech>
             <Spanish></Spanish>
