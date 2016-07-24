@@ -46,7 +46,7 @@ life_preview_light = objNull;
 life_pos_exist = false;
 life_pos_attach = [];
 life_civ_position = [];
-life_markers = false;
+life_admin_markers = false;
 life_canpay_bail = true;
 
 //Settings
