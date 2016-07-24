@@ -1968,7 +1968,7 @@
             <Portuguese></Portuguese>
             <Polish></Polish>
         </Key>
-        <Key ID="STR_House_SellGarageMSG">
+        <Key ID="STR_House_SellHouseMSG">
             <Original>Are you sure you want to sell your garage? It will sell for: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</Original>
             <Czech></Czech>
             <Spanish></Spanish>
@@ -3945,17 +3945,6 @@
             <Italian>Hai riparato il veicolo.</Italian>
             <Portuguese>Você reparou esse veículo.</Portuguese>
             <Polish>Naprawiłeś pojazd</Polish>
-        </Key>
-        <Key ID="STR_NOTF_Mine_Success">
-            <Original>You have mined %2 %1(s).</Original>
-            <Czech>Jste shromáždili %2 %1(y).</Czech>
-            <French>Vous avez recueilli %2 %1(s).</French>
-            <Spanish>Has recolectado %2 %1(s).</Spanish>
-            <Italian>Hai raccolto %2 unità di %1.</Italian>
-            <Russian></Russian>
-            <German>Du hast %2 %1(s) gesammelt.</German>
-            <Portuguese>Você colheu %2 %1(s).</Portuguese>
-            <Polish>Zebrałeś %2 %1 (s).</Polish>
         </Key>
         <Key ID="STR_NOTF_Gather_Success">
             <Original>You have gathered %2 %1(s).</Original>
@@ -8303,16 +8292,27 @@
             <Portuguese>Desvirar Veículo</Portuguese>
             <Polish>Ustaw pojazd</Polish>
         </Key>
-        <Key ID="STR_vInAct_GetInVehicle">
-            <Original>Get In Vehicle</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
+        <Key ID="STR_vInAct_GetInKart">
+            <Original>Get In Kart</Original>
+            <Czech>Dostat do košíku</Czech>
+            <Spanish>Entrar en el Kart</Spanish>
             <Russian></Russian>
-            <German></German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <German>Ins Kart setzen</German>
+            <French>Monter dans le kart</French>
+            <Italian>Entra nel Kart</Italian>
+            <Portuguese>Entrar no Kart</Portuguese>
+            <Polish>Wejdź do gokarta</Polish>
+        </Key>
+        <Key ID="STR_vInAct_GetInHeli">
+            <Original>Get In Helicopter</Original>
+            <Czech>Získat vrtulník</Czech>
+            <Spanish>Entrar en el Helicóptero</Spanish>
+            <Italian>Get In elicottero</Italian>
+            <Polish>Wchodzić Śmigłowiec</Polish>
+            <Russian></Russian>
+            <German>In den Helikopter einsteigen</German>
+            <French>Monter dans l'hélicoptere</French>
+            <Portuguese>Entrar no Helicóptero</Portuguese>
         </Key>
         <Key ID="STR_vInAct_PushBoat">
             <Original>Push Boat</Original>
@@ -11244,6 +11244,56 @@
             <German>Admin-Nachricht</German>
         </Key>
     </Package>
+	<Package name="Tanoa Strings">
+	    <Key ID="STR_Civ_Plane">
+            <Original>Civ Plane</Original>
+        </Key>
+        <Key ID="STR_Police_Store">
+            <Original>Police Store</Original>
+        </Key>
+        <Key ID="STR_Police_Car">
+            <Original>Police Car</Original>
+        </Key>
+        <Key ID="STR_Police_Heli">
+            <Original>Police Heli</Original>
+        </Key>
+        <Key ID="STR_Police_Boat">
+            <Original>Police Boat</Original>
+        </Key>
+        <Key ID="STR_Rebel_Car">
+            <Original>Rebel Car</Original>
+        </Key>
+        <Key ID="STR_Rebel_Heli">
+            <Original>Rebel Heli</Original>
+        </Key>
+        <Key ID="STR_Police_Tan">
+            <Original>Police HQ</Original>
+        </Key>
+        <Key ID="STR_Civ_Plane">
+            <Original>Civ Plane</Original>
+        </Key>
+        <Key ID="STR_Police_Store">
+            <Original>Police Store</Original>
+        </Key>
+        <Key ID="STR_Police_Car">
+            <Original>Police Car</Original>
+        </Key>
+        <Key ID="STR_Police_Heli">
+            <Original>Police Heli</Original>
+        </Key>
+        <Key ID="STR_Police_Boat">
+            <Original>Police Heli</Original>
+        </Key>
+        <Key ID="STR_Rebel_Car">
+            <Original>Rebel Car</Original>
+        </Key>
+        <Key ID="STR_Rebel_Heli">
+            <Original>Rebel Heli</Original>
+        </Key>
+        <Key ID="STR_Police__Tan">
+            <Original>Police HQ</Original>
+        </Key>
+	</Package>
     <Package name="Data_Logging">
         <Key ID="STR_DL_AL_Arrested_BEF">
             <Original>arrested %1</Original>
