@@ -11234,46 +11234,118 @@
         </Key>
         <Key ID="STR_AdminMessage_Title">
             <Original>Admin Message</Original>
-            <Czech>Admin Message</Czech>
-            <French>Administrateur message</French>
-            <Spanish>Mensaje de Administrador</Spanish>
-            <Italian>Messaggio dall'Admin</Italian>
-            <Polish>Administrator Wiadomość</Polish>
-            <Portuguese>Mensagem de administração</Portuguese>
-            <Russian>Администратор Сообщение</Russian>
-            <German>Admin-Nachricht</German>
         </Key>
     </Package>
 	<Package name="Tanoa Strings">
 	    <Key ID="STR_Civ_Plane">
             <Original>Civ Plane</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
         </Key>
         <Key ID="STR_Police_Tan">
             <Original>Police HQ</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
         <Key ID="STR_Civ_Plane">
             <Original>Civ Plane</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
         <Key ID="STR_Police_Store">
             <Original>Police Store</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
         <Key ID="STR_Police_Car">
             <Original>Police Car</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
         <Key ID="STR_Police_Heli">
             <Original>Police Heli</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
         <Key ID="STR_Police_Boat">
             <Original>Police Boat</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
         <Key ID="STR_Rebel_Car">
             <Original>Rebel Car</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
         <Key ID="STR_Rebel_Heli">
             <Original>Rebel Heli</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
-        <Key ID="STR_Police__Tan">
+        <Key ID="STR_Police_Tanoa">
             <Original>Police HQ</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>            
         </Key>
 	</Package>
     <Package name="Data_Logging">

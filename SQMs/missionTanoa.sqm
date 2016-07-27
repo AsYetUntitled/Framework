@@ -24135,7 +24135,7 @@ class Mission
 			dataType="Marker";
 			position[]={6961.6362,2.6600001,7383.501};
 			name="police_tan_2";
-			text="@STR_Police__Tan";
+			text="@STR_Police_Tanoa";
 			type="hd_objective";
 			colorName="ColorBlue";
 			id=1247;
@@ -24145,7 +24145,7 @@ class Mission
 			dataType="Marker";
 			position[]={11675.041,4.6900001,3040.8533};
 			name="police_tan_4";
-			text="@STR_Police__Tan";
+			text="@STR_Police_Tanoa";
 			type="b_mech_inf";
 			colorName="ColorWEST";
 			id=1249;
