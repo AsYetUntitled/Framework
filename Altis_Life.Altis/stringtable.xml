@@ -165,7 +165,7 @@
             <German>Gang Kleidung</German>
             <Italian>Gang Abbigliamento</Italian>
             <French>Vêtements de Gang</French>
-            <Portuguese>Roupa Gang</Portuguese>
+            <Portuguese>Roupa Gangue</Portuguese>
             <Polish>Gang Odzież</Polish>
         </Key>
         <Key ID="STR_Shops_Wongs">
@@ -786,7 +786,7 @@
             <Spanish>Modo Dios habilitado</Spanish>
             <Italian>God mode abilitato</Italian>
             <Polish>God mode włączony</Polish>
-            <Portuguese>Modo Deus capacitou</Portuguese>
+            <Portuguese>Modo Deus ativado</Portuguese>
             <Russian>Режим бога включен</Russian>
             <German>Gott-Modus aktiviert</German>
         </Key>
@@ -797,7 +797,7 @@
             <Spanish>Modo Dios deshabilitado</Spanish>
             <Italian>God mode disabilitato</Italian>
             <Polish>God mode wyłączony</Polish>
-            <Portuguese>Modo Deus desativada</Portuguese>
+            <Portuguese>Modo Deus desativado</Portuguese>
             <Russian>Режим бога отключен</Russian>
             <German>Gott-Modus deaktiviert</German>
         </Key>
@@ -1053,7 +1053,7 @@
             <German>Du hast nicht genug Geld auf deinem Konto, es kostet $%2, um $%1 zu überweisen.</German>
             <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxe</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire $%1 necessiti di $%2 per pagare la tassa di trasferimento.</Italian>
-            <Portuguese>Você não tem dinheiro suficiente na suca conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
+            <Portuguese>Você não tem dinheiro suficiente na sua conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
             <Polish>Nie masz wystarczająco dużo środków na końcie, do przelewu $%1 będziesz potrzebował jeszcze $%2 na opłatę</Polish>
         </Key>
         <Key ID="STR_ATM_SentMoneySuccess">
