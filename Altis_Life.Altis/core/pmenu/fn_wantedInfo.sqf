@@ -11,7 +11,6 @@ private _data = param [0,[],[[]]];
 private _display = findDisplay 2400;
 private _list = _display displayCtrl 2402;
 private _mylist = [];
-_data = call compile format["%1", _data];
 
 if (isNil "_data") exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
 if !(_data isEqualType []) exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
