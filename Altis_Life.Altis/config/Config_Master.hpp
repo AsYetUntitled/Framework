@@ -59,6 +59,11 @@ class Life_Settings {
     clothing_box = true; //true = teleport to a black box. false = teleport to somewhere on map. (It only affects the game if clothing_noTP is set as false)
     clothing_masks[] = { "H_Shemag_olive", "H_Shemag_khk", "H_Shemag_tan", "H_Shemag_olive_hs", "H_ShemagOpen_khk", "H_ShemagOpen_tan", "G_Balaclava_blk", "G_Balaclava_combat", "G_Balaclava_lowprofile", "G_Balaclava_oli", "G_Bandanna_aviator", "G_Bandanna_beast", "G_Bandanna_blk", "G_Bandanna_khk", "G_Bandanna_oli", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_tan", "U_O_GhillieSuit", "U_I_GhillieSuit", "U_B_GhillieSuit", "H_RacingHelmet_1_black_F", "H_RacingHelmet_1_red_F", "H_RacingHelmet_1_white_F", "H_RacingHelmet_1_blue_F", "H_RacingHelmet_1_yellow_F", "H_RacingHelmet_1_green_F", "H_RacingHelmet_1_F", "H_RacingHelmet_2_F", "H_RacingHelmet_3_F", "H_RacingHelmet_4_F" };
 
+    /* Escape Menu Configuration */
+    escapeMenu_timer = 10; //Time required to pass before you can click the abort button in the escape menu.
+    escapeMenu_displayExtras = true; //Display the players UID & serverName specified below in the escape menu.
+    escapeMenu_serverName = "Thanks for playing!"; //Text displayed in the escape menu. Make it short.. around 20 characters.
+
     /* Fuel System Configurations */
     pump_service = false; //Allow users to use pump service on the map. Default = false
     fuel_cost = 80; //Cost of fuel per liter at fuel stations (if not defined for the vehicle already).
