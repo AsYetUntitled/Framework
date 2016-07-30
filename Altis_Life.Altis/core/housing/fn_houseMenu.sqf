@@ -20,6 +20,7 @@ private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6",
 disableSerialization;
 _curTarget = param [0,objNull,[objNull]];
 if (isNull _curTarget) exitWith {}; //Bad target
+if (playerSide isEqualTo independent) exitWith {};
 _houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0 && playerSide isEqualTo civilian) exitWith {};
 
