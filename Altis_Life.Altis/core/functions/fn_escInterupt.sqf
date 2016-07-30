@@ -58,7 +58,7 @@ for "_i" from 0 to 1 step 0 do {
     if (LIFE_SETTINGS(getNumber,"escapeMenu_displayExtras") isEqualTo 1) then {
         private _topButton = CONTROL(49,2);
         _topButton ctrlEnable false;
-        _topButton ctrlSetText format ["%1",LIFE_SETTINGS(getText,"escapeMenu_serverName")];
+        _topButton ctrlSetText format ["%1",LIFE_SETTINGS(getText,"escapeMenu_displayText")];
         _saveButton ctrlEnable false;
         _saveButton ctrlSetText format ["Player UID: %1",getPlayerUID player];
     };
