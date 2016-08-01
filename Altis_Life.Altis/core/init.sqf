@@ -147,7 +147,7 @@ publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for Headless
 CONSTVAR(life_paycheck); //Make the paycheck static.
 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
 
-if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then{
+if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
     [] execVM "core\fn_setupStationService.sqf";
 };
 
@@ -156,6 +156,12 @@ if (life_HC_isActive) then {
 } else {
     [getPlayerUID player,player getVariable ["realname",name player]] remoteExec ["life_fnc_wantedProfUpdate",RSERV];
 };
+
+life_hideoutBuildings = [];
+{
+	private _building = nearestBuilding getMarkerPos _x;
+	0 = life_hideoutBuildings pushBack _building;
+} count ["gang_area_1","gang_area_2","gang_area_3"];
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
