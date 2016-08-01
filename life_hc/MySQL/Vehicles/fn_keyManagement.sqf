@@ -7,7 +7,7 @@
     Description:
     Keeps track of an array locally on the server of a players keys.
 */
-private["_uid","_side","_input","_mode","_arr"];
+private ["_uid","_side","_input","_mode","_arr"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[sideUnknown]] call BIS_fnc_param;
 _mode = [_this,3,0,[0]] call BIS_fnc_param;

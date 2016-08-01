@@ -5,7 +5,7 @@
     Description:
     Output information received to admin menu.
 */
-private["_display","_ret","_text"];
+private ["_display","_ret","_text"];
 disableSerialization;
 _ret = _this select 0;
 _display = findDisplay 2900;

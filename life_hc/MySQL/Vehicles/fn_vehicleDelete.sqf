@@ -9,7 +9,7 @@
     access so instead we set it to alive=0 so it never shows again.
 */
 diag_log "Script VehicleDelete HC";
-private["_vid","_sp","_pid","_query","_sql","_type","_thread"];
+private ["_vid","_sp","_pid","_query","_sql","_type","_thread"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,2500,[0]] call BIS_fnc_param;

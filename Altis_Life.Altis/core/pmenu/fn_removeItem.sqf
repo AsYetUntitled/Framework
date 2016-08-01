@@ -7,7 +7,7 @@
     Removes the selected item & amount to remove from the players
     virtual inventory.
 */
-private["_data","_value","_obj"];
+private ["_data","_value","_obj"];
 disableSerialization;
 _data = lbData[2005,(lbCurSel 2005)];
 _value = ctrlText 2010;

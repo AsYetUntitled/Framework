@@ -7,7 +7,7 @@
     PLace container were player select with preview
 
 */
-private["_container","_isFloating"];
+private ["_container","_isFloating"];
 
 if (!life_container_active) exitWith {};
 if (life_container_activeObj == objNull) exitWith {};

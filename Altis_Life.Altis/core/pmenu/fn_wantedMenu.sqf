@@ -6,7 +6,7 @@
     Description:
     Opens the Wanted menu and connects to the APD.
 */
-private["_display","_list","_list2","_name","_crimes","_bounty","_units"];
+private ["_display","_list","_list2","_name","_crimes","_bounty","_units"];
 disableSerialization;
 
 if (playerSide != west) exitWith {}; // Only for cops open this menu

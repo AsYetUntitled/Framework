@@ -8,7 +8,7 @@
     Checks against harmful variables, disable this if client-performance is
     to bad in the fn_initSpy.sqf, the menuCheck should be good enough!
 */
-private["_BIS_Functions","_LIFE_Functions","_SERVER_Functions","_SOCK_Functions","_DB_Functions","_allowedVariables","_checkFunction","_BIS_UI_Functions","_allowedVariables_UI","_profileCount"];
+private ["_BIS_Functions","_LIFE_Functions","_SERVER_Functions","_SOCK_Functions","_DB_Functions","_allowedVariables","_checkFunction","_BIS_UI_Functions","_allowedVariables_UI","_profileCount"];
 _BIS_Functions = SPY_SETTINGS(getArray,"BIS_Functions");
 _BIS_UI_Functions = SPY_SETTINGS(getArray,"BIS_UI_Functions");
 _LIFE_Functions = SPY_SETTINGS(getArray,"LIFE_Functions");

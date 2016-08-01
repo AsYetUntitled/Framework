@@ -6,7 +6,7 @@
     Description:
     Does something with vehicle purchasing.
 */
-private["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
+private ["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
 _mode = _this select 0;
 _exit = false;
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};

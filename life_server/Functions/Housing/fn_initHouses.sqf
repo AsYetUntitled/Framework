@@ -4,7 +4,7 @@
     Description:
     Initalizes house setup when player joins the server.
 */
-private["_queryResult","_query","_count","_blacklistedHouses","_blacklistedGarages"];
+private ["_queryResult","_query","_count","_blacklistedHouses","_blacklistedGarages"];
 _count = (["SELECT COUNT(*) FROM houses WHERE owned='1'",2] call DB_fnc_asyncCall) select 0;
 
 for [{_x=0},{_x<=_count},{_x=_x+10}] do {

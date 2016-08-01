@@ -8,7 +8,7 @@
     meant to keep the network traffic down with large sums of data flowing
     through remoteExec
 */
-private["_mode","_packet","_array","_flag"];
+private ["_mode","_packet","_array","_flag"];
 _mode = param [0,0,[0]];
 _packet = [getPlayerUID player,playerSide,nil,_mode];
 _array = [];

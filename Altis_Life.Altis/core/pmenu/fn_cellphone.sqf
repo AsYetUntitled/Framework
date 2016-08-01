@@ -6,7 +6,7 @@
     Description:
     Opens the cellphone menu?
 */
-private["_display","_units","_type"];
+private ["_display","_units","_type"];
 
 disableSerialization;
 waitUntil {!isNull findDisplay 3000};

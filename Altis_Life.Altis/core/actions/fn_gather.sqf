@@ -6,7 +6,7 @@
     Description:
     Main functionality for gathering.
 */
-private["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
+private ["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
 if (life_action_inUse) exitWith {};
 if ((vehicle player) != player) exitWith {};
 if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrained";};

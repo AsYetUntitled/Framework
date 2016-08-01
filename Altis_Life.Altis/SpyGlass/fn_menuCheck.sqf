@@ -6,7 +6,7 @@
     Description:
     Checks for known cheat menus and closes them then reports them to the server.
 */
-private["_displays","_detection","_display","_timeStamp"];
+private ["_displays","_detection","_display","_timeStamp"];
 disableSerialization;
 
 _displays = [

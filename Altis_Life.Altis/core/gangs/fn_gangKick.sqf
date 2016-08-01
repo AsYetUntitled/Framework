@@ -6,7 +6,7 @@
     Description:
     Kicks a player from your gang.
 */
-private["_unit","_unitID","_members"];
+private ["_unit","_unitID","_members"];
 disableSerialization;
 
 if ((lbCurSel 2621) isEqualTo -1) exitWith {hint localize "STR_GNOTF_SelectKick"};

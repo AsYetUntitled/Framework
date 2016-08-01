@@ -6,7 +6,7 @@
     Description:
     Figure it out again.
 */
-private["_value","_unit","_tax"];
+private ["_value","_unit","_tax"];
 _value = parseNumber(ctrlText 2702);
 _unit = call compile format ["%1",(lbData[2703,(lbCurSel 2703)])];
 if (isNull _unit) exitWith {};

@@ -6,7 +6,7 @@
     Description:
     Notifies the player he has received a bounty and gives him the cash.
 */
-private["_val","_total"];
+private ["_val","_total"];
 _val = [_this,0,"",["",0]] call BIS_fnc_param;
 _total = [_this,1,"",["",0]] call BIS_fnc_param;
 

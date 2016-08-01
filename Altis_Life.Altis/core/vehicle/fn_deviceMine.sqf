@@ -6,7 +6,7 @@
     Description:
     Starts automated mining of resource from the tempest device. Not integrated with percents.
 */
-private["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_isMineral"];
+private ["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_isMineral"];
 _vehicle = param [0,objNull,[objNull]];
 _isMineral = true;
 if (isNull _vehicle) exitWith {};

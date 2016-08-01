@@ -7,7 +7,7 @@
     Finishes the DP Mission and calculates the money earned based
     on distance between A->B
 */
-private["_dp","_dis","_price"];
+private ["_dp","_dis","_price"];
 _dp = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 life_delivery_in_progress = false;
 life_dp_point = nil;

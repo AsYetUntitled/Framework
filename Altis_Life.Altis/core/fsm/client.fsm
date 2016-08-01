@@ -21,7 +21,7 @@ class FSM
     class Main_Init
     {
       name = "Main_Init";
-      init = /*%FSM<STATEINIT""">*/"private[""_lastcheck"",""_food"",""_water"",""_lastsync""];" \n
+      init = /*%FSM<STATEINIT""">*/"private [""_lastcheck"",""_food"",""_water"",""_lastsync""];" \n
        "_lastcheck = time;" \n
        "_food = time;" \n
        "_water = time;" \n

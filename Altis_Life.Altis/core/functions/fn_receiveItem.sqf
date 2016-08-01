@@ -6,7 +6,7 @@
     Description:
     Receive an item from a player.
 */
-private["_unit","_val","_item","_from","_diff"];
+private ["_unit","_val","_item","_from","_diff"];
 _unit = _this select 0;
 if (_unit != player) exitWith {};
 _val = _this select 1;

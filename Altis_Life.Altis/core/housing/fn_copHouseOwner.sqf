@@ -5,7 +5,7 @@
     Description:
     Displays the house owner
 */
-private["_house"];
+private ["_house"];
 _house = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
 if (isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};

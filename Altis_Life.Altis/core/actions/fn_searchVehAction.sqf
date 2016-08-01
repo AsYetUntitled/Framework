@@ -6,7 +6,7 @@
     Description:
 
 */
-private["_vehicle","_data"];
+private ["_vehicle","_data"];
 _vehicle = cursorObject;
 if ((_vehicle isKindOf "Car") || !(_vehicle isKindOf "Air") || !(_vehicle isKindOf "Ship")) then {
     _owners = _vehicle getVariable "vehicle_info_owners";

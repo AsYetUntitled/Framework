@@ -7,7 +7,7 @@
         Description:
         Same as fn_gather,but it allows use of probabilities for mining.
     */
-private["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
+private ["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
 if (life_action_inUse) exitWith {};
 if ((vehicle player) != player) exitWith {};
 if (player getVariable "restrained") exitWith {

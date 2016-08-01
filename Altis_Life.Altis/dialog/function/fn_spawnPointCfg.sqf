@@ -9,7 +9,7 @@
     Return:
     [Spawn Marker,Spawn Name,Image Path]
 */
-private["_side","_return","_spawnCfg","_curConfig","_name","_licenses","_level","_levelName","_levelValue","_levelType","_tempConfig","_flag"];
+private ["_side","_return","_spawnCfg","_curConfig","_name","_licenses","_level","_levelName","_levelValue","_levelType","_tempConfig","_flag"];
 _side = param [0,civilian,[civilian]];
 
 switch (_side) do {

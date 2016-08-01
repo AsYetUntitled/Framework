@@ -5,7 +5,7 @@
     Description:
     Add markers for civilians in groups.
 */
-private["_markers","_members"];
+private ["_markers","_members"];
 _markers = [];
 _members = [];
 
@@ -27,7 +27,7 @@ for "_i" from 0 to 1 step 0 do {
         while {visibleMap} do
         {
             {
-                private["_unit"];
+                private ["_unit"];
                 _unit = _x select 1;
                 if (!isNil "_unit" && !isNull _unit) then {
                       (_x select 0) setMarkerPosLocal (visiblePosition _unit);

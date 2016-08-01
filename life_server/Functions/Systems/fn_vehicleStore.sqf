@@ -5,7 +5,7 @@
     Description:
     Stores the vehicle in the 'Garage'
 */
-private["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_sql","_unit","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo","_saveItems","_storetext","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight","_thread"];
+private ["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_sql","_unit","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo","_saveItems","_storetext","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight","_thread"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;
 _unit = [_this,2,objNull,[objNull]] call BIS_fnc_param;
@@ -77,7 +77,7 @@ _totalweight = 0;
 _items = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
-        private["_isIllegal", "_blacklist"];
+        private ["_isIllegal", "_blacklist"];
         _blacklist = false;
         _profileQuery = format ["SELECT name FROM players WHERE playerid='%1'", _uid];
         _profileName = [_profileQuery, 2] call DB_fnc_asyncCall;

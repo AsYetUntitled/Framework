@@ -8,7 +8,7 @@
     Description:
     Grabs a list of crimes committed by a person.
 */
-private["_display","_criminal","_tab","_queryResult","_result","_ret","_crimesDb","_crimesArr","_type"];
+private ["_display","_criminal","_tab","_queryResult","_result","_ret","_crimesDb","_crimesArr","_type"];
 disableSerialization;
 _ret = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _criminal = [_this,1,[],[]] call BIS_fnc_param;

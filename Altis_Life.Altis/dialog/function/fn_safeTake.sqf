@@ -6,7 +6,7 @@
     Description:
     Gateway to fn_vehTakeItem.sqf but for safe(s).
 */
-private["_ctrl","_num","_safeInfo"];
+private ["_ctrl","_num","_safeInfo"];
 disableSerialization;
 
 if ((lbCurSel 3502) isEqualTo -1) exitWith {hint localize "STR_Civ_SelectItem";};

@@ -9,7 +9,7 @@
     Description:
     Initialize the server and required systems.
 */
-private["_dome","_rsb","_timeStamp"];
+private ["_dome","_rsb","_timeStamp"];
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;

@@ -6,7 +6,7 @@
     Description:
     Starts the robbing process?
 */
-private["_target"];
+private ["_target"];
 _target = cursorObject;
 
 //Error checks

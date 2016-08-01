@@ -6,7 +6,7 @@
     Description:
     Pulls up the menu and creates the gang with the name the user enters in.
 */
-private["_gangName","_length","_badChar","_chrByte","_allowed"];
+private ["_gangName","_length","_badChar","_chrByte","_allowed"];
 disableSerialization;
 
 _gangName = ctrlText (CONTROL(2520,2522));

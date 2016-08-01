@@ -5,7 +5,7 @@
     Description:
     Pulled from old system, will be revised for new system.
 */
-private["_return","_format"];
+private ["_return","_format"];
 _return = "";
 
 {

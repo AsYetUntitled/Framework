@@ -10,7 +10,7 @@
     Description:
     Removes a person from the wanted list.
 */
-private["_uid","_query"];
+private ["_uid","_query"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 if (_uid isEqualTo "") exitWith {}; //Bad data
 

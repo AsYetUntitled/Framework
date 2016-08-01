@@ -6,7 +6,7 @@
     Description:
     I forget?
 */
-private["_unit","_bad","_id","_ret"];
+private ["_unit","_bad","_id","_ret"];
 _unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _unit) exitWith {};
 _bad = [_this,1,false,[false]] call BIS_fnc_param;

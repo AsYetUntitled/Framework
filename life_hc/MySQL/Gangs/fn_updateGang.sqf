@@ -7,7 +7,7 @@
     Description:
     Updates the gang information?
 */
-private["_groupID","_bank","_maxMembers","_members","_membersFinal","_query","_owner"];
+private ["_groupID","_bank","_maxMembers","_members","_membersFinal","_query","_owner"];
 params [
     ["_mode",0,[0]],
     ["_group",grpNull,[grpNull]]

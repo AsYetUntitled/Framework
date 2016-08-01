@@ -6,7 +6,7 @@
     Lists impounded vehicles.
     DUE TO BE REWROTE IN NEW SYSTEM
 */
-private["_display","_cars","_name","_pic","_color","_text","_price"];
+private ["_display","_cars","_name","_pic","_color","_text","_price"];
 
 if (!dialog) then
 {

@@ -8,7 +8,7 @@
     Description:
     Blah
 */
-private["_housePos","_query"];
+private ["_housePos","_query"];
 params [
     ["_uid","",[""]],
     ["_house",objNull,[objNull]]

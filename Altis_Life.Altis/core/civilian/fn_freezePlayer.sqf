@@ -6,7 +6,7 @@
     Description:
     Freezes selected player.
 */
-private["_admin"];
+private ["_admin"];
 _admin = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 
 if (life_frozen) then {

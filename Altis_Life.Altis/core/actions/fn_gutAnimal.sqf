@@ -6,7 +6,7 @@
     Description:
     Guts the animal?
 */
-private["_animalCorpse","_upp","_ui","_progress","_pgText","_cP","_displayName","_item"];
+private ["_animalCorpse","_upp","_ui","_progress","_pgText","_cP","_displayName","_item"];
 _animalCorpse = param [0,objNull,[objNull]];
 if (isNull _animalCorpse) exitWith {}; //Object passed is null?
 

@@ -5,7 +5,7 @@
     Description:
     Marks cops on the map for other cops. Only initializes when the actual map is open.
 */
-private["_markers","_cops"];
+private ["_markers","_cops"];
 _markers = [];
 _cops = [];
 
@@ -27,7 +27,7 @@ if (visibleMap) then {
 
     while {visibleMap} do {
         {
-            private["_unit"];
+            private ["_unit"];
             _unit = _x select 1;
             if (!isNil "_unit" && !isNull _unit) then {
                 (_x select 0) setMarkerPosLocal (visiblePosition _unit);

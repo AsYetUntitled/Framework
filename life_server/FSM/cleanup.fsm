@@ -34,7 +34,7 @@ class FSM
                 {
                         name = "init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"private[""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
+                        init = /*%FSM<STATEINIT""">*/"private [""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
                          "_impound = time;" \n
                          "_cars = time;" \n
                          "_objs = time;" \n

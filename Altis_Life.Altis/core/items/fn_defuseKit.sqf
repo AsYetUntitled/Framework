@@ -6,7 +6,7 @@
     Description:
     Defuses blasting charges for the cops?
 */
-private["_vault","_ui","_title","_progressBar","_cP","_titleText"];
+private ["_vault","_ui","_title","_progressBar","_cP","_titleText"];
 _vault = param [0,objNull,[objNull]];
 
 if (isNull _vault) exitWith {};

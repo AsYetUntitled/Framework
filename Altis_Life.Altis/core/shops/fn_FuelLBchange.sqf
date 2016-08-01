@@ -7,7 +7,7 @@
     Change when slide change. That descripotion
 */
 disableSerialization;
-private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
+private ["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
 _control = _this select 0;
 _index = _this select 1;
 

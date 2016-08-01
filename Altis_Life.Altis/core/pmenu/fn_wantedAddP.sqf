@@ -6,7 +6,7 @@
     Description:
 
 */
-private["_unit","_amount"];
+private ["_unit","_amount"];
 if (playerSide != west) exitWith {hint localize "STR_Cop_wantedList_notCop";};
 if ((lbCurSel 2406) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noPlayerSelected";};
 if ((lbCurSel 2407) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noCrimeSelected";};

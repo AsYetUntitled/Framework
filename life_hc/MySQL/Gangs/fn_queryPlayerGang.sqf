@@ -7,7 +7,7 @@
     Description:
     Queries to see if the player belongs to any gang.
 */
-private["_query","_queryResult"];
+private ["_query","_queryResult"];
 
 _query = format ["SELECT id, owner, name, maxmembers, bank, members FROM gangs WHERE active='1' AND members LIKE '%2%1%2'",_this,"%"];
 

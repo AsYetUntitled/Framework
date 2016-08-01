@@ -6,7 +6,7 @@
     Description:
     Breaks the lock on a single door (Closet door to the player).
 */
-private["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
+private ["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
 _building = param [0,objNull,[objNull]];
 
 private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");

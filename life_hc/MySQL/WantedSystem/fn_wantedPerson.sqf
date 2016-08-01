@@ -10,7 +10,7 @@
     Description:
     Fetches a specific person from the wanted array.
 */
-private["_unit","_index","_queryResult","_result"];
+private ["_unit","_index","_queryResult","_result"];
 _unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _unit) exitWith {[]};
 _uid = getPlayerUID player;

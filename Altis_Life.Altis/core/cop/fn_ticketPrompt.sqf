@@ -6,7 +6,7 @@
     Description:
     Prompts the player that he is being ticketed.
 */
-private["_cop","_val"];
+private ["_cop","_val"];
 if (!isNull (findDisplay 2600)) exitWith {}; //Already at the ticket menu, block for abuse?
 _cop = _this select 0;
 if (isNull _cop) exitWith {};

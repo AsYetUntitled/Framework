@@ -9,7 +9,7 @@
     Description:
     Updates name of player if they change profiles
 */
-private["_uid","_name","_query","_tickTime","_wantedCheck","_wantedQuery"];
+private ["_uid","_name","_query","_tickTime","_wantedCheck","_wantedQuery"];
 
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;

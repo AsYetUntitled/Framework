@@ -6,7 +6,7 @@
     Description:
     Withdraws money from the players account
 */
-private["_value"];
+private ["_value"];
 _value = parseNumber(ctrlText 2702);
 if (_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
 if (_value < 0) exitWith {};

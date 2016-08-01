@@ -6,7 +6,7 @@
     Description:
     Finds the nearest vehicle and loads the target into the vehicle.
 */
-private["_unit"];
+private ["_unit"];
 _unit = param [0,objNull,[objNull]];
 if (isNull _unit || !isPlayer _unit) exitWith {};
 

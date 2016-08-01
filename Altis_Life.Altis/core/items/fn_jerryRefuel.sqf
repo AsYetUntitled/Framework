@@ -6,7 +6,7 @@
     Description:
     Refuels the vehicle if the player has a fuel can.
 */
-private["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
+private ["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
 _vehicle = cursorObject;
 life_interrupted = false;
 

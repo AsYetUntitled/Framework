@@ -7,7 +7,7 @@
     Description:
     Sells the house and delete all container near house.
 */
-private["_house","_uid","_action","_houseCfg"];
+private ["_house","_uid","_action","_houseCfg"];
 _house = param [0,objNull,[objNull]];
 _uid = getPlayerUID player;
 

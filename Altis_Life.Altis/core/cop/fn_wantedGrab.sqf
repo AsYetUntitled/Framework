@@ -6,7 +6,7 @@
     Description:
     Prepare the array to query the crimes.
 */
-private["_display","_tab","_criminal"];
+private ["_display","_tab","_criminal"];
 disableSerialization;
 _display = findDisplay 2400;
 _tab = _display displayCtrl 2402;

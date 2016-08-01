@@ -8,7 +8,7 @@
     removes the item & amount of it from the players virtual
     inventory.
 */
-private["_unit","_val"];
+private ["_unit","_val"];
 _val = ctrlText 2010;
 ctrlShow[2002,false];
 if ((lbCurSel 2023) isEqualTo -1) exitWith {hint localize "STR_NOTF_noOneSelected";

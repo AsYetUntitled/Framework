@@ -7,7 +7,7 @@
     Gives a copy of the key for the selected vehicle to the selected player.
     Player must be within range.
 */
-private["_dialog","_list","_plist","_sel","_vehicle","_owners","_index","_unit","_uid"];
+private ["_dialog","_list","_plist","_sel","_vehicle","_owners","_index","_unit","_uid"];
 disableSerialization;
 
 _dialog = findDisplay 2700;

@@ -9,7 +9,7 @@
 
     Will also become a standalone system which is why it's setup like this.
 */
-private["_binConfigPatches","_cfgPatches","_endM"];
+private ["_binConfigPatches","_cfgPatches","_endM"];
 if (isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
 #define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})
 #define RCLIENT -2
@@ -211,7 +211,7 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 
 //Check for copy-pasters of Dev-Con styled execution.
 //Because I am nice, add these to the following below to allow CBA; "CBA_CREDITS_CONT_C","CBA_CREDITS_M_P
-private["_children","_allowedChildren"];
+private ["_children","_allowedChildren"];
 _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
 _allowedChildren = [
 "Title","MissionTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",

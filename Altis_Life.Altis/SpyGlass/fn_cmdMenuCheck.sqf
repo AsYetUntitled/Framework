@@ -8,7 +8,7 @@
     if a non white-listed menu is active it will close it and report it
     to the server and active admins.
 */
-private["_validMenus","_lastMenu"];
+private ["_validMenus","_lastMenu"];
 _validMenus = [
     "RscMainMenu","RscMoveHigh","#WATCH","#WATCH0","RscWatchDir","RscWatchMoveDir","#GETIN","#RscStatus","RscCallSupport","#ACTION",
     "RscCombatMode","RscFormations","RscTeam","RscSelectTeam","RscReply","#User:BIS_Menu_GroupCommunication","#CUSTOM_RADIO",

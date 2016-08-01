@@ -7,7 +7,7 @@
     Adds fuel in car.
 */
 disableSerialization;
-private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
+private ["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
 _classname = lbData[20302,(lbCurSel 20302)];
 _index =  lbValue[20302,(lbCurSel 20302)];
 

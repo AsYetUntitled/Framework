@@ -6,7 +6,7 @@
     Description:
     ??A?SD?ADS?A
 */
-private["_unit","_item","_val","_from","_bool"];
+private ["_unit","_item","_val","_from","_bool"];
 _unit = _this select 0;
 if (_unit != player) exitWith {};
 _item = _this select 1;

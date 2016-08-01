@@ -6,7 +6,7 @@
     Description:
     Delete Container from house storage
 */
-private["_house","_action","_container","_containerType","_containers"];
+private ["_house","_action","_container","_containerType","_containers"];
 _container = param [0,objNull,[objNull]];
 _containerType = typeOf _container;
 _house = nearestObject [player, "House"];

@@ -6,7 +6,7 @@
     Description:
     Gives the selected amount of money to the selected player.
 */
-private["_unit","_amount"];
+private ["_unit","_amount"];
 _amount = ctrlText 2018;
 ctrlShow[2001,false];
 if ((lbCurSel 2022) isEqualTo -1) exitWith {hint localize "STR_NOTF_noOneSelected";ctrlShow[2001,true];};

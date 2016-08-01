@@ -7,7 +7,7 @@
     Master client initialization file
 */
 
-private["_handle","_timeStamp","_server_isReady","_extDB_notLoaded"];
+private ["_handle","_timeStamp","_server_isReady","_extDB_notLoaded"];
 life_firstSpawn = true;
 life_session_completed = false;
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED"];

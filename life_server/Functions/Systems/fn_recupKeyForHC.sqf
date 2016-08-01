@@ -6,7 +6,7 @@
     Description:
     Tells the server to recup the Key of player
 */
-private["_uid","_side"];
+private ["_uid","_side"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 if (_uid isEqualTo "") exitWith {}; //NULL

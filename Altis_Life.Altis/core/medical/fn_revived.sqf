@@ -6,7 +6,7 @@
     Description:
     THANK YOU JESUS I WAS SAVED!
 */
-private["_medic","_dir","_reviveCost"];
+private ["_medic","_dir","_reviveCost"];
 _medic = param [0,"Unknown Medic",[""]];
 _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 

@@ -7,7 +7,7 @@
     Description:
     Applies the filter selected and changes the list.
 */
-private["_itemList","_index","_config","_priceTag","_itemArray"];
+private ["_itemList","_index","_config","_priceTag","_itemArray"];
 _index = (lbCurSel 38402);
 _shop = uiNamespace getVariable ["Weapon_Shop",""];
 if (_index isEqualTo -1 || _shop isEqualTo "") exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
@@ -91,7 +91,7 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
         };
 
         case 1: {
-            private["_listedItems"];
+            private ["_listedItems"];
             _config = [];
             _listedItems = [];
             //Go through weapons

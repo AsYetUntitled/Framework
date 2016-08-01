@@ -8,7 +8,7 @@
     Description:
     Blah
 */
-private["_group","_groupID"];
+private ["_group","_groupID"];
 _group = param [0,grpNull,[grpNull]];
 if (isNull _group) exitWith {};
 

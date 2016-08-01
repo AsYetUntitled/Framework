@@ -6,7 +6,7 @@
     Description:
     Inserts the players newly bought house in the database.
 */
-private["_housePos","_query"];
+private ["_housePos","_query"];
 params [
     ["_uid","",[""]],
     ["_house",objNull,[objNull]]

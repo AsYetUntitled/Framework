@@ -6,7 +6,7 @@
     Description:
     Stores the vehicle in the garage.
 */
-private["_nearVehicles","_vehicle"];
+private ["_nearVehicles","_vehicle"];
 if (vehicle player != player) then {
     _vehicle = vehicle player;
 } else {

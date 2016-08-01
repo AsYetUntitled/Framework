@@ -7,7 +7,7 @@
     Sells the selected vehicle off.
 */
 disableSerialization;
-private["_control","_price","_vehicle","_nearVehicles","_price2","_chopable"];
+private ["_control","_price","_vehicle","_nearVehicles","_price2","_chopable"];
 _control = CONTROL(39400,39402);
 _price = _control lbValue (lbCurSel _control);
 _vehicle = _control lbData (lbCurSel _control);

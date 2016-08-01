@@ -6,7 +6,7 @@
     Description:
     Something
 */
-private["_shopSide","_shopSide","_license","_itemInfo","_itemList","_license","_flag","_exit","_level","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg"];
+private ["_shopSide","_shopSide","_license","_itemInfo","_itemList","_license","_flag","_exit","_level","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg"];
 _exit = false;
 _shopTitle = M_CONFIG(getText,"WeaponShops",(_this select 3),"name");
 _shopSide = M_CONFIG(getText,"WeaponShops",(_this select 3),"side");

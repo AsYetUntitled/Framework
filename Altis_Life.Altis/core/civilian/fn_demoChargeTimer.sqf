@@ -6,7 +6,7 @@
     Description:
     Starts the "Demo" timer for the police.
 */
-private["_uiDisp","_time","_timer"];
+private ["_uiDisp","_time","_timer"];
 disableSerialization;
 "lifeTimer" cutRsc ["life_timer","PLAIN"];
 _uiDisp = uiNamespace getVariable "life_timer";

@@ -6,7 +6,7 @@
     Fetches the nearest door of the building the player is looking
     at.
 */
-private["_house","_door","_numOfDoors"];
+private ["_house","_door","_numOfDoors"];
 _house = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _house) exitWith {0};
 if (!(_house isKindOf "House_F")) exitWith {0};

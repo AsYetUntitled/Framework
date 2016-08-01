@@ -7,7 +7,7 @@
     Description:
     Inserts the vehicle into the database
 */
-private["_query","_sql"];
+private ["_query","_sql"];
 params [
     "_uid",
     "_side",

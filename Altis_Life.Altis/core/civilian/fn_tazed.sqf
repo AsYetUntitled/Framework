@@ -6,7 +6,7 @@
     Description:
     Starts the tazed animation and broadcasts out what it needs to.
 */
-private["_curWep","_curMags","_attach"];
+private ["_curWep","_curMags","_attach"];
 params [
     ["_unit",objNull,[objNull]],
     ["_shooter",objNull,[objNull]]

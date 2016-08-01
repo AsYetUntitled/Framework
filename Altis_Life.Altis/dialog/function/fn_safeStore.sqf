@@ -6,7 +6,7 @@
     Description:
     Gateway copy of fn_vehStoreItem but designed for the safe.
 */
-private["_ctrl","_num"];
+private ["_ctrl","_num"];
 disableSerialization;
 _ctrl = CONTROL_DATA(3503);
 _num = ctrlText 3506;

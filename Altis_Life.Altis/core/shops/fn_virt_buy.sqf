@@ -6,7 +6,7 @@
     Description:
     Buy a virtual item from the store.
 */
-private["_type","_price","_amount","_diff","_name","_hideout"];
+private ["_type","_price","_amount","_diff","_name","_hideout"];
 if ((lbCurSel 2401) isEqualTo -1) exitWith {hint localize "STR_Shop_Virt_Nothing"};
 _type = lbData[2401,(lbCurSel 2401)];
 _price = lbValue[2401,(lbCurSel 2401)];

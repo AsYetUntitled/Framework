@@ -7,7 +7,7 @@
     Fuel Tank Job, Fill Truck with Fuel.
 */
 
-private["_vehicle","_fuelSpace","_fuelState","_fuelLevel","_ui","_progress","_pgText"];
+private ["_vehicle","_fuelSpace","_fuelState","_fuelLevel","_ui","_progress","_pgText"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};
 if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse","PLAIN"];};

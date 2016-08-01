@@ -8,7 +8,7 @@
 */
 if (FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0;};
 
-private["_target"];
+private ["_target"];
 _target = lbData[2902,lbCurSel (2902)];
 _target = call compile format ["%1", _target];
 if (isNil "_target" || isNull _target) exitWith {};

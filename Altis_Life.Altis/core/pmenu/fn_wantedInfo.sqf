@@ -5,7 +5,7 @@
     Description:
     Pulls back information about the wanted criminal.
 */
-private["_display","_list","_crimes","_bounty","_mylist","_data"];
+private ["_display","_list","_crimes","_bounty","_mylist","_data"];
 disableSerialization;
 
 _data = [_this,0,[],[[]]] call BIS_fnc_param;

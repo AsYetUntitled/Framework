@@ -6,7 +6,7 @@
     Description:
     Raids the players house?
 */
-private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
+private ["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
 _house = param [0,objNull,[objNull]];
 
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};

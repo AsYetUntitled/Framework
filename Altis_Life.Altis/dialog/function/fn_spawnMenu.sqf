@@ -5,7 +5,7 @@
     Description:
     Initializes the spawn point selection menu.
 */
-private["_spCfg","_sp","_ctrl"];
+private ["_spCfg","_sp","_ctrl"];
 disableSerialization;
 
 if (life_is_arrested) exitWith {

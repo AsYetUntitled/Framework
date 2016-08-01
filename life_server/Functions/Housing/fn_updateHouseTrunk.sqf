@@ -5,7 +5,7 @@
     Description:
     Update inventory "y" in container
 */
-private["_house"];
+private ["_house"];
 _container = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _container) exitWith {};
 

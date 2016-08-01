@@ -6,7 +6,7 @@
     Description:
     Re-locks the door mainly for the federal reserve structures.
 */
-private["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText","_locked"];
+private ["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText","_locked"];
 _building = param [0,objNull,[objNull]];
 if (isNull _building) exitWith {};
 if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};

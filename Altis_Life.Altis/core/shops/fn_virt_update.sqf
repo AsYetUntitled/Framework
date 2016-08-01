@@ -6,7 +6,7 @@
     Description:
     Update and fill the virtual shop menu.
 */
-private["_item_list","_gear_list","_shopItems","_name","_price"];
+private ["_item_list","_gear_list","_shopItems","_name","_price"];
 disableSerialization;
 
 //Setup control vars.

@@ -6,7 +6,7 @@
     Description:
     Once word is received by the server the rest of the jail execution is completed.
 */
-private["_time","_bail","_esc","_countDown"];
+private ["_time","_bail","_esc","_countDown"];
 
 params [
     ["_ret",[],[[]]],

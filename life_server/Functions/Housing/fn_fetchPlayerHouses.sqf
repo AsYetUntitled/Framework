@@ -8,7 +8,7 @@
     1. Fetches all the players houses and sets them up.
     2. Fetches all the players containers and sets them up.
 */
-private["_query","_containers","_containerss","_houses"];
+private ["_query","_containers","_containerss","_houses"];
 params [
     ["_uid","",[""]]
 ];

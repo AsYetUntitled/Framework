@@ -6,7 +6,7 @@
     Description:
     Pardons the selected player.
 */
-private["_display","_list"];
+private ["_display","_list"];
 disableSerialization;
 if (playerSide != west) exitWith {};
 

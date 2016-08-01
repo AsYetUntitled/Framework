@@ -6,7 +6,7 @@
     Description:
     Add container in Database.
 */
-private["_containerPos","_query","_className","_dir"];
+private ["_containerPos","_query","_className","_dir"];
 params [
     ["_uid","",[""]],
     ["_container",objNull,[objNull]]

@@ -6,7 +6,7 @@
     Description:
     Main functionality for toolkits, to be revised in later version.
 */
-private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test","_sideRepairArray"];
+private ["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_test","_sideRepairArray"];
 _veh = cursorObject;
 life_interrupted = false;
 if (isNull _veh) exitWith {};

@@ -6,7 +6,7 @@
     Reports to the RPT of a confirmed cheater for external programs
     to parse,log or ban automatically.
 */
-private["_pName","_pUID","_pReason"];
+private ["_pName","_pUID","_pReason"];
 _pName = [_this,0,"",[""]] call BIS_fnc_param;
 _pUID = [_this,1,"",[""]] call BIS_fnc_param;
 _pReason = [_this,2,"",[""]] call BIS_fnc_param;

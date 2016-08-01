@@ -43,7 +43,7 @@ life_deathCamera camCommit 0;
 
 //Create a thread for something?
 _unit spawn {
-    private["_maxTime","_RespawnBtn","_Timer"];
+    private ["_maxTime","_RespawnBtn","_Timer"];
     disableSerialization;
     _RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
     _Timer = ((findDisplay 7300) displayCtrl 7301);
@@ -61,7 +61,7 @@ _unit spawn {
 };
 
 _unit spawn {
-    private["_requestBtn","_requestTime"];
+    private ["_requestBtn","_requestTime"];
     disableSerialization;
     _requestBtn = ((findDisplay 7300) displayCtrl 7303);
     _requestBtn ctrlEnable false;
@@ -74,7 +74,7 @@ _unit spawn {
 
 //Create a thread to follow with some what precision view of the corpse.
 [_unit] spawn {
-    private["_unit"];
+    private ["_unit"];
     _unit = _this select 0;
     waitUntil {if (speed _unit isEqualTo 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
 };

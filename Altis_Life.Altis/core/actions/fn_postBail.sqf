@@ -7,7 +7,7 @@
     Called when the player attempts to post bail.
     Needs to be revised.
 */
-private["_unit"];
+private ["_unit"];
 _unit = param [1,objNull,[objNull]];
 if (life_bail_paid) exitWith {};
 if (isNil "life_bail_amount") then {life_bail_amount = 3500;};

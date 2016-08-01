@@ -6,7 +6,7 @@
     Description:
     31 hours of no sleep screw your description.
 */
-private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
+private ["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
 disableSerialization;
 if (isNull (findDisplay 2620)) then {
     if (!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo

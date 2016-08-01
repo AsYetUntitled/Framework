@@ -6,7 +6,7 @@
     Description:
     Sends a request to query the database information and returns vehicles.
 */
-private["_pid","_side","_type","_unit","_ret","_tickTime","_queryResult"];
+private ["_pid","_side","_type","_unit","_ret","_tickTime","_queryResult"];
 _pid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[west]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;

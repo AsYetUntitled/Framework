@@ -6,7 +6,7 @@
     Takes partial data of a player and updates it, this is meant to be
     less network intensive towards data flowing through it for updates.
 */
-private["_uid","_side","_value","_value1","_value2","_mode","_query"];
+private ["_uid","_side","_value","_value1","_value2","_mode","_query"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _mode = [_this,3,-1,[0]] call BIS_fnc_param;

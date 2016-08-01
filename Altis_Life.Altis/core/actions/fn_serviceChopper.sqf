@@ -8,7 +8,7 @@
 */
 private ["_serviceCost"];
 disableSerialization;
-private["_search","_ui","_progress","_cP","_pgText"];
+private ["_search","_ui","_progress","_cP","_pgText"];
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 
 _serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");

@@ -7,7 +7,7 @@
     Initializes the key menu
     Will be revised.
 */
-private["_display","_vehicles","_plist","_near_units","_pic","_name","_text","_color","_index"];
+private ["_display","_vehicles","_plist","_near_units","_pic","_name","_text","_color","_index"];
 disableSerialization;
 
 waitUntil {!isNull (findDisplay 2700)};
