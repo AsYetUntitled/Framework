@@ -9,3 +9,5 @@ Altis Life RPG by Tonic is licensed under a [Creative Commons Attribution-NonCom
         <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/yfAMTFp">
     </a>
 </p>
+
+CI Test
