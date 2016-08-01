@@ -7,7 +7,7 @@
     Starts the initialization of the player.
 */
 if (!hasInterface && !isServer) exitWith {
-    [] call compile PreprocessFileLineNumbers "\life_hc\initHC.sqf";
+    [] call compile preprocessFileLineNumbers "\life_hc\initHC.sqf";
 }; //This is a headless client.
 
 #define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})

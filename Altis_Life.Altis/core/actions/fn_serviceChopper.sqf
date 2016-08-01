@@ -18,7 +18,7 @@ if (count _search isEqualTo 0) exitWith {hint localize "STR_Service_Chopper_NoAi
 if (CASH < _serviceCost) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
 
 life_action_inUse = true;
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
@@ -45,6 +45,6 @@ if (!local (_search select 0)) then {
 
 (_search select 0) setDamage 0;
 
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 titleText [localize "STR_Service_Chopper_Done","PLAIN"];
 life_action_inUse = false;

@@ -9,12 +9,17 @@
 private["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
 _building = param [0,objNull,[objNull]];
 
+private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
+_altisArray = [16019.5,16952.9,0];
+_tanoaArray = [11074.2,11501.5,0.00137329];
+private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
+
 if (isNull _building) exitWith {};
 if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
-if (((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) && (west countSide playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
+if (((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_pos,_vaultHouse]) == _building) && (west countSide playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops")))) exitWith {
     hint format [localize "STR_Civ_NotEnoughCops",(LIFE_SETTINGS(getNumber,"minimum_cops"))]
 };
-if ((typeOf _building) == "Land_Research_house_V1_F" && (nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) getVariable ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
+if ((typeOf _building) == _vaultHouse && (nearestObject [_pos,"Land_Dome_Big_F"]) getVariable ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
 if (isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 
 _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors");
@@ -23,12 +28,12 @@ _door = 0;
 for "_i" from 1 to _doors do {
     _selPos = _building selectionPosition format["Door_%1_trigger",_i];
     _worldSpace = _building modelToWorld _selPos;
-        if (player distance _worldSpace < 5) exitWith {_door = _i;};
+        if (player distance _worldSpace < 2) exitWith {_door = _i;};
 };
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 if ((_building getVariable [format["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
-if ((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then {
+if ((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_pos,_vaultHouse]) == _building) then {
     [[1,2],"STR_ISTR_Bolt_AlertFed",true,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 } else {
     [0,"STR_ISTR_Bolt_AlertHouse",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
@@ -38,7 +43,7 @@ life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_ISTR_Bolt_Process";
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
@@ -48,6 +53,7 @@ _cP = 0.01;
 
 switch (typeOf _building) do {
     case "Land_Dome_Big_F": {_cpRate = 0.003;};
+    case "Land_Medevac_house_V1_F";
     case "Land_Research_house_V1_F": {_cpRate = 0.0015;};
     default {_cpRate = 0.08;}
 };
@@ -60,7 +66,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     sleep 0.26;
     if (isNull _ui) then {
-        5 cutRsc ["life_progress","PLAIN"];
+        "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
         _progressBar = _ui displayCtrl 38201;
         _titleText = _ui displayCtrl 38202;
@@ -75,7 +81,7 @@ for "_i" from 0 to 1 step 0 do {
 };
 
 //Kill the UI display and check for various states
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
 if (player getVariable ["restrained",false]) exitWith {life_action_inUse = false;};

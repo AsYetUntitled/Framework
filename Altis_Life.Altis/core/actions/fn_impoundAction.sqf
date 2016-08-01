@@ -23,7 +23,7 @@ life_action_inUse = true;
 _upp = localize "STR_NOTF_Impounding";
 //Setup our progress bar.
 disableSerialization;
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
@@ -41,7 +41,7 @@ for "_i" from 0 to 1 step 0 do {
     if (!alive player) exitWith {};
 };
 
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 
 if (player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
 if (!alive player) exitWith {life_action_inUse = false;};

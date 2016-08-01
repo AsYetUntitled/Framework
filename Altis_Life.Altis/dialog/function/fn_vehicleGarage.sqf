@@ -2,15 +2,29 @@
 /*
     File: fn_vehicleGarage.sqf
     Author: Bryan "Tonic" Boardwine
+    Updated to Housing/Garage Configs - BoGuu
 
     Description:
     Vehicle Garage, why did I spawn this in an action its self?
 */
-private["_spawnPos","_dir","_type"];
-_type = [_this,1,"",[""]] call BIS_fnc_param;
-_spawnPos = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_garageObj",objNull,[objNull]],
+    ["_type","",[""]]
+];
 
-life_garage_sp = [(_spawnPos modelToWorld [-11.5,0,0]),(getDir _spawnPos)-90];
+_className = typeOf _garageObj;
+private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _className;
+private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _className;
+
+private _config = [_garageConfig,_houseConfig] select {isClass _x};
+
+if (_config isEqualTo []) exitWith {};
+
+_config = _config select 0;
+private _dir = getNumber(_config >> "garageSpawnDir");
+private _mTwPos = getArray(_config >> "garageSpawnPos");
+
+life_garage_sp = [(_garageObj modelToWorld _mTwPos),((getDir _garageObj) + _dir)];
 life_garage_type = _type;
 
 if (life_HC_isActive) then {

@@ -7,7 +7,10 @@
     Blah blah.
 */
 private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
-_hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
+_altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
+_tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
+private _hideoutObjs = ALTIS_TANOA(_altisArray,_tanoaArray);
+_hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
 _group = _hideout getVariable ["gangOwner",grpNull];
 
 if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
@@ -33,7 +36,7 @@ life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_GNOTF_Capturing";
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
@@ -49,7 +52,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     sleep 0.26;
     if (isNull _ui) then {
-        5 cutRsc ["life_progress","PLAIN"];
+        "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
         _progressBar = _ui displayCtrl 38201;
         _titleText = _ui displayCtrl 38202;
@@ -65,7 +68,7 @@ for "_i" from 0 to 1 step 0 do {
 };
 
 //Kill the UI display and check for various states
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};
 if (player getVariable ["restrained",false]) exitWith {life_action_inUse = false;_hideout setVariable ["inCapture",false,true];};

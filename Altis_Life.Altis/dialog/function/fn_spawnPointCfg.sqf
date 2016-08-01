@@ -20,7 +20,7 @@ switch (_side) do {
 
 _return = [];
 
-_spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> _side;
+_spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> worldName >> _side;
 
 for "_i" from 0 to count(_spawnCfg)-1 do {
     _flag = true;

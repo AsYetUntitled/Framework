@@ -47,4 +47,16 @@ switch (_option) do {
         };
         [player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
     };
+
+    case "broadcast": {
+        if (_state isEqualTo 1) then {
+            life_enableNewsBroadcast = true;
+            profileNamespace setVariable ["life_enableNewsBroadcast",true];
+            life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast",true];
+        } else {
+            life_enableNewsBroadcast = false;
+            profileNamespace setVariable ["life_enableNewsBroadcast",false];
+            life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast",false];
+        };
+    };
 };

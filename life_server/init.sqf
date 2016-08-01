@@ -70,7 +70,7 @@ if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
-diag_log "------------------------------------------ Version 4.4R3 -------------------------------------------";
+diag_log "------------------------------------------ Version 4.5 -------------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
@@ -93,6 +93,21 @@ master_group attachTo[bank_obj,[0,0,0]];
     _var = createVehicle ["Land_Hospital_side2_F", [0,0,0], [], 0, "NONE"];
     _var attachTo [_hs, [-28.0336,-10.0317,0.0889387]];
     detach _var;
+    if (worldName isEqualTo "Tanoa") then {
+        if (_forEachIndex isEqualTo 0) then {
+            atm_hospital_2 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
+            vendor_hospital_2 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
+            "medic_spawn_3" setMarkerPos (_var modelToWorld [8.01172,-5.47852,-8.20022]);
+            "med_car_2" setMarkerPos (_var modelToWorld [8.01172,-5.47852,-8.20022]);
+            hospital_assis_2 setPos (_hs modelToWorld [0.0175781,0.0234375,-0.231956]);
+        } else {
+            atm_hospital_3 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
+            vendor_hospital_3 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
+            "medic_spawn_1" setMarkerPos (_var modelToWorld [-1.85181,-6.07715,-8.24944]);
+            "med_car_1" setMarkerPos (_var modelToWorld [5.9624,11.8799,-8.28493]);
+            hospital_assis_2 setPos (_hs modelToWorld [0.0175781,0.0234375,-0.231956]);
+        };
+    };
 } forEach ["hospital_2","hospital_3"];
 
 {
@@ -124,7 +139,7 @@ fed_bank setVariable ["safe",count playableUnits,true];
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
-[] call compile PreProcessFileLineNumbers "\life_server\functions.sqf";
+[] call compile preprocessFileLineNumbers "\life_server\functions.sqf";
 
 /* Set OwnerID players for Headless Client */
 TON_fnc_requestClientID =
@@ -163,8 +178,13 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-_dome = nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"];
-_rsb = nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"];
+private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
+_altisArray = [16019.5,16952.9,0];
+_tanoaArray = [11074.2,11501.5,0.00137329];
+private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
+
+_dome = nearestObject [_pos,"Land_Dome_Big_F"];
+_rsb = nearestObject [_pos,_vaultHouse];
 
 for "_i" from 1 to 3 do {_dome setVariable [format["bis_disabled_Door_%1",_i],1,true]; _dome animate [format["Door_%1_rot",_i],0];};
 _dome setVariable ["locked",true,true];

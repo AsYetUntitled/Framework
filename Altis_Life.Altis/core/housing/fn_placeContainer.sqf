@@ -47,7 +47,6 @@ if (!isNull _house) then {
                     _containers pushBack _container;
                     _house setVariable ["containers",_containers,true];
                     sleep 1;
-                    [_container] remoteExecCall ["life_fnc_simDisable",RANY];
                 };
             };
         };

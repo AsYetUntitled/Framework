@@ -6,7 +6,7 @@
     Description:
     Starts automated mining of resource from the tempest device. Not integrated with percents.
 */
-private["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_amount","_isMineral"];
+private["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_isMineral"];
 _vehicle = param [0,objNull,[objNull]];
 _isMineral = true;
 if (isNull _vehicle) exitWith {};
@@ -30,14 +30,13 @@ if ((_weight select 1) >= (_weight select 0)) exitWith {
 
 //check if we are in the resource zone for any of the resources
 _zone = "";
-_zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
     _curConfig = (_resourceCfg select _i);
     _resource = configName(_curConfig);
     _resourceZones = getArray(_curConfig >> "zones");
-    _amount = getNumber(_curConfig >> "amount");
+    _zoneSize = getNumber(_curConfig >> "zoneSize");
 
     {
         if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
@@ -56,6 +55,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _curConfig = (_resourceCfg select _i);
     _resources = getArray(_curConfig >> "mined");
     _resourceZones = getArray(_curConfig >> "zones");
+    _zoneSize = getNumber(_curConfig >> "zoneSize");
 
     if (!(_resources select 0 isEqualType [])) then {
         _mined = _resources select 0;
@@ -124,7 +124,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _vehicle_data = _vehicle getVariable ["Trunk",[[],0]];
-    _inv = (_vehicle_data select 0);
+    _inv = +(_vehicle_data select 0);
     _space = (_vehicle_data select 1);
     _itemIndex = [_resource,_inv] call TON_fnc_index;
     _weight = [_vehicle] call life_fnc_vehicleWeight;

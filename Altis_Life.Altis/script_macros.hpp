@@ -50,6 +50,9 @@
 #define SPYGLASS_END \
     vehicle player setVelocity[1e10,1e14,1e18]; \
     sleep 3; \
-    preProcessFile "SpyGlass\endoftheline.sqf"; \
+    preprocessFile "SpyGlass\endoftheline.sqf"; \
     sleep 2.5; \
     failMission "SpyGlass";
+
+//Map Macros
+#define ALTIS_TANOA(var1,var2) if (worldName isEqualTo "Altis") then {var1} else {var2}

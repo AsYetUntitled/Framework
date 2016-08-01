@@ -20,6 +20,7 @@ private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6",
 disableSerialization;
 _curTarget = param [0,objNull,[objNull]];
 if (isNull _curTarget) exitWith {}; //Bad target
+if (playerSide isEqualTo independent) exitWith {};
 _houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0 && playerSide isEqualTo civilian) exitWith {};
 
@@ -39,7 +40,13 @@ _Btn8 = CONTROL(37400,Btn8);
 
 life_pInact_curTarget = _curTarget;
 if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
-    if ((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _curTarget || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _curTarget) then {
+
+    private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
+    _altisArray = [16019.5,16952.9,0];
+    _tanoaArray = [11074.2,11501.5,0.00137329];
+    private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
+
+    if ((nearestObject [_pos,"Land_Dome_Big_F"]) isEqualTo _curTarget || (nearestObject [_pos,_vaultHouse]) isEqualTo _curTarget) then {
 
         _Btn1 ctrlSetText localize "STR_pInAct_Repair";
         _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_repairDoor; closeDialog 0;";
@@ -77,15 +84,33 @@ if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
 };
 
 if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner"}) then {
-    _Btn1 ctrlSetText localize "STR_pInAct_BuyHouse";
-    _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse;";
+    
+    private _isHouse = false;
+
+    if (isClass (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget))) then {
+        _Btn1 ctrlSetText localize "STR_pInAct_BuyHouse";
+        _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse;";
+        _isHouse = true;
+    } else {
+        _Btn1 ctrlSetText localize "STR_pInAct_BuyGarage";
+        _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse;";
+    };
     _Btn1 ctrlShow true;
 
     if (!isNil {_curTarget getVariable "house_owner"}) then {
         _Btn1 ctrlEnable false;
     };
+
+    if (_isHouse) then {
+        if (getNumber (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget) >> "canGarage") isEqualTo 1) then {
+            _Btn2 ctrlSetText localize "STR_pInAct_GarageExt";
+            _Btn2 buttonSetAction "hint format [localize 'STR_pInAct_GarageExtNOTF',LIFE_SETTINGS(getNumber,'houseGarage_buyPrice')];";
+            _Btn2 ctrlShow true;
+        };
+    };
+
 } else {
-    if ((typeOf _curTarget) in ["Land_i_Garage_V1_F","Land_i_Garage_V2_F"]) then {
+    if (isClass (missionConfigFile >> "Garages" >> worldName >> (typeOf _curTarget))) then {
         _Btn1 ctrlSetText localize "STR_pInAct_SellGarage";
         _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouse; closeDialog 0;";
         _Btn1 ctrlShow true;
@@ -125,5 +150,32 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
         };
         _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_lightHouseAction; closeDialog 0;";
         _Btn3 ctrlShow true;
+
+        if (getNumber (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget) >> "canGarage") isEqualTo 1 && {!(_curTarget getVariable ["blacklistedGarage",false])}) then {
+            if (_curTarget getVariable ["garageBought",false]) then {
+                _Btn4 ctrlSetText localize "STR_pInAct_SellGarage";
+                _Btn4 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouseGarage; closeDialog 0;";
+                _Btn4 ctrlShow true;
+
+                if (((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {
+                    _Btn4 ctrlEnable false;
+                };
+
+                _Btn5 ctrlSetText localize "STR_pInAct_AccessGarage";
+                _Btn5 buttonSetAction "[life_pInact_curTarget,""Car""] spawn life_fnc_vehicleGarage; closeDialog 0;";
+                _Btn5 ctrlShow true;
+        
+                _Btn6 ctrlSetText localize "STR_pInAct_StoreVeh";
+                _Btn6 buttonSetAction "[life_pInact_curTarget,player] spawn life_fnc_storeVehicle; closeDialog 0;";
+                _Btn6 ctrlShow true;
+            } else {
+                _Btn5 ctrlSetText localize "STR_pInAct_BuyGarage";
+                _Btn5 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouseGarage; closeDialog 0;";
+            };
+
+            _Btn5 ctrlShow true;
+
+        };
+            
     };
 };

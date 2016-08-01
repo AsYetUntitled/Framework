@@ -26,6 +26,7 @@ _units = _units - [player];
 
 _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 
+private _index = -1;
 {
     private "_text";
     _idc = _ui displayCtrl (iconID + _forEachIndex);
@@ -76,4 +77,6 @@ _masks = LIFE_SETTINGS(getArray,"clothing_masks");
     } else {
         _idc ctrlShow false;
     };
+    _index = _forEachIndex;
 } forEach _units;
+(_ui displayCtrl (iconID + _index + 1)) ctrlSetStructuredText parseText "";

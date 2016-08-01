@@ -4,7 +4,7 @@
 *    Author: Bryan "Tonic" Boardwine
 *
 *    Description:
-*    Main key handler for event 'keyDown'
+*    Main key handler for event 'keyDown'.
 */
 private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys"];
 _ctrl = _this select 0;
@@ -197,11 +197,7 @@ switch (_code) do {
     //Y Player Menu
     case 21: {
         if (!_alt && !_ctrlKey && !dialog && !(player getVariable ["restrained",false]) && {!life_action_inUse}) then {
-            if (!_shift) then {
-                [] call life_fnc_p_openMenu;
-            } else {
-                [] call life_fnc_altisPhone;
-            };
+            [] call life_fnc_p_openMenu;
         };
     };
 
@@ -254,7 +250,7 @@ switch (_code) do {
             };
 
             if (_veh isKindOf "House_F" && {playerSide isEqualTo civilian}) then {
-                if (_veh in life_vehicles && player distance _veh < 8) then {
+                if (_veh in life_vehicles && {player distance _veh < 20}) then {
                     _door = [_veh] call life_fnc_nearestDoor;
                     if (_door isEqualTo 0) exitWith {hint localize "STR_House_Door_NotNear"};
                     _locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
@@ -271,7 +267,7 @@ switch (_code) do {
                 };
             } else {
                 _locked = locked _veh;
-                if (_veh in life_vehicles && player distance _veh < 8) then {
+                if (_veh in life_vehicles && {player distance _veh < 20}) then {
                     if (_locked isEqualTo 2) then {
                         if (local _veh) then {
                             _veh lock 0;
@@ -322,7 +318,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',1];
                         };
                         systemChat localize "STR_MISC_VehUnlock";
-                        [_veh,"UnlockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"unlockCarSound"] remoteExec ["life_fnc_say3D",RANY];
                     } else {
                         if (local _veh) then {
                             _veh lock 2;
@@ -372,7 +368,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',0];
                         };
                         systemChat localize "STR_MISC_VehLock";
-                        [_veh,"LockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"lockCarSound"] remoteExec ["life_fnc_say3D",RANY];
                     };
                 };
             };

@@ -238,6 +238,7 @@ class Life_Client_Core {
     class Housing {
         file = "core\housing";
         class buyHouse {};
+        class buyHouseGarage {};
         class containerMenu {};
         class copBreakDoor {};
         class copHouseOwner {};
@@ -253,6 +254,7 @@ class Life_Client_Core {
         class PlayerInBuilding {};
         class raidHouse {};
         class sellHouse {};
+        class sellHouseGarage {};
     };
 
     class Items {
@@ -298,7 +300,6 @@ class Life_Client_Core {
 
     class Player_Menu {
         file = "core\pmenu";
-        class altisPhone {};
         class cellphone {};
         class giveItem {};
         class giveMoney {};
@@ -333,6 +334,7 @@ class Life_Client_Core {
         class clothingMenu {};
         class fuelLBchange {};
         class fuelStatOpen {};
+        class levelCheck {};
         class vehicleShop3DPreview {};
         class vehicleShopBuy {};
         class vehicleShopEnd3DPreview {};

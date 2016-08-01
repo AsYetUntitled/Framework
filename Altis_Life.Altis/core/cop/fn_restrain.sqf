@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Retrains the client.
+    Restrains the client.
 */
 private["_cop","_player","_vehicle"];
 _cop = [_this,0,objNull,[objNull]] call BIS_fnc_param;

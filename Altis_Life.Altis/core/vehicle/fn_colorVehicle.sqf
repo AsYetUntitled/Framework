@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Reskins the vehicle
+    Reskins the vehicle.
 */
 private ["_textures","_className","_classNameLife"];
 params [

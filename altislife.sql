@@ -140,6 +140,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `pid` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `owned` tinyint(1) DEFAULT '0',
+  `garage` tinyint(1) NOT NULL DEFAULT '0',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4 ;

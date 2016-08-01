@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Main initialization for gangs?
+    Main initialization for gangs.
 */
 private["_exitLoop","_group","_wait"];
 if (playerSide != civilian) exitWith {}; //What in the hell?

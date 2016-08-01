@@ -27,20 +27,20 @@ class CfgFunctions {
 
 class CfgSounds {
     sounds[] = {};
-    class SirenLong {
-        name = "SirenLong";
-        sound[] = {"\sounds\Siren_Long.ogg", 1.0, 1};
+    class sirenLong {
+        name = "sirenLong";
+        sound[] = {"\sounds\sirenLong.ogg", 1.0, 1};
         titles[] = {};
     };
 
     class medicSiren {
         name = "medicSiren";
-        sound[] = {"\sounds\medic_siren.ogg", 1.0, 1};
+        sound[] = {"\sounds\medicSiren.ogg", 1.0, 1};
         titles[] = {};
     };
 
-    class tazersound {
-        name = "Tazersound";
+    class tazerSound {
+        name = "tazerSound";
         sound[] = {"\sounds\tazer.ogg", 0.25, 1};
         titles[] = {};
     };
@@ -63,15 +63,15 @@ class CfgSounds {
         titles[] = {};
     };
 
-    class LockCarSound {
-        name = "LockCarSound";
-        sound[] = {"\sounds\car_lock.ogg", 0.25, 1};
+    class lockCarSound {
+        name = "lockCarSound";
+        sound[] = {"\sounds\carLock.ogg", 0.25, 1};
         titles[] = {};
     };
 
-    class UnlockCarSound {
-        name = "UnlockCarSound";
-        sound[] = {"\sounds\unlock.ogg", 0.25, 1};
+    class unlockCarSound {
+        name = "unlockCarSound";
+        sound[] = {"\sounds\carUnlock.ogg", 0.25, 1};
         titles[] = {};
     };
 };

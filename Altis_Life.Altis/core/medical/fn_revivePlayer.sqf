@@ -24,7 +24,7 @@ life_action_inUse = true; //Lockout the controls.
 _target setVariable ["Reviving",player,true];
 //Setup our progress bar
 disableSerialization;
-5 cutRsc ["life_progress","PLAIN"];
+"progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable ["life_progress",displayNull];
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
@@ -54,7 +54,7 @@ for "_i" from 0 to 1 step 0 do {
 };
 
 //Kill the UI display and check for various states
-5 cutText ["","PLAIN"];
+"progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 
 if (_target getVariable ["Reviving",objNull] != player) exitWith {hint localize "STR_Medic_AlreadyReviving"};

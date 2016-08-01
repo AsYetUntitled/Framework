@@ -12,8 +12,11 @@ if ((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDela
 if (isNull _this || {player distance _this > 3}) exitWith {INUSE(_this);};
 
 _itemInfo = _this getVariable ["item",[]]; if (count _itemInfo isEqualTo 0) exitWith {deleteVehicle _this;};
-_itemName = ITEM_NAME(_itemInfo select 0);
 _illegal = ITEM_ILLEGAL(_itemInfo select 0);
+_itemName = ITEM_NAME(_itemInfo select 0);
+if (isLocalized _itemName) then {
+    _itemName = (localize _itemName);
+};
 
 if (playerSide isEqualTo west && _illegal isEqualTo 1) exitWith {
     titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(_itemInfo select 0) / 2)] call life_fnc_numberText],"PLAIN"];
@@ -32,7 +35,7 @@ if (!(_diff isEqualTo (_itemInfo select 1))) then {
         player playMove "AinvPknlMstpSlayWrflDnon";
 
         _this setVariable ["item",[(_itemInfo select 0),(_itemInfo select 1) - _diff],true];
-        titleText[format[localize "STR_NOTF_Picked",_diff,localize _itemName],"PLAIN"];
+        titleText[format[localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
         INUSE(_this);
     } else {
         INUSE(_this);
@@ -43,7 +46,7 @@ if (!(_diff isEqualTo (_itemInfo select 1))) then {
         //waitUntil{isNull _this};
         player playMove "AinvPknlMstpSlayWrflDnon";
 
-        titleText[format[localize "STR_NOTF_Picked",_diff,localize _itemName],"PLAIN"];
+        titleText[format[localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
     } else {
         INUSE(_this);
     };
@@ -51,9 +54,9 @@ if (!(_diff isEqualTo (_itemInfo select 1))) then {
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        advanced_log = format [localize "STR_DL_AL_pickedUp_BEF",_diff,localize _itemName];
+        advanced_log = format [localize "STR_DL_AL_pickedUp_BEF",_diff,_itemName];
     } else {
-        advanced_log = format [localize "STR_DL_AL_pickedUp",profileName,(getPlayerUID player),_diff,localize _itemName];
+        advanced_log = format [localize "STR_DL_AL_pickedUp",profileName,(getPlayerUID player),_diff,_itemName];
     };
     publicVariableServer "advanced_log";
 };

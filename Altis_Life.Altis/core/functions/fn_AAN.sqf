@@ -12,11 +12,13 @@
 	_this select 1: STRUCTURED TEXT: Bottom text (moving)
 	_this select 2: PROFILENAME: Below Header text
 */
-disableSerialization;
-
+private ["_header","_line","_sender","_display","_textHeader","_textLine","_textLinePos","_textClock"];
 _header = _this select 0;
 _line = _this select 1;
 _sender = _this select 2;
+disableSerialization;
+
+if (!life_settings_enableNewsBroadcast || isStreamFriendlyUIEnabled) exitWith {};
 
 30 cutRsc ["rscAAN","plain"];
 _display = uiNamespace getVariable "BIS_AAN";

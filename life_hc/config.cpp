@@ -58,7 +58,7 @@ class CfgFunctions
             class sellHouseContainer {};
             class updateHouseContainers {};
             class updateHouseTrunk {};
-            class initHouses {};
+            class houseGarage {};
         };
 
         class Gangs
