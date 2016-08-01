@@ -1,11 +1,11 @@
 #include "\life_server\script_macros.hpp"
 /*
-	File: fn_adjustPrices.sqf
-	Author: worldtrade1101
-	Edited by: Derek Benson
+    File: fn_adjustPrices.sqf
+    Author: worldtrade1101
+    Edited by: Derek Benson
 
-	Description:
-	Updates the variables serverside.
+    Description:
+    Updates the variables serverside.
 */
 private["_market","_cfgDelay","_factor","_good","_itemArray","_priceChanges","_delay","_changeco","_endtime","_diff"];
 params [
@@ -48,7 +48,7 @@ _factor = (_good select  6);
 if (_factor isEqualTo 0) exitwith {};//the factor 0 is not a real group
 
 {
-    if((_x select 1) isEqualTo _factor) then {
+    if ((_x select 1) isEqualTo _factor) then {
         _name = format["%1MarketGoodPrice",(_x select 0)];
         _itemArray pushBack (missionNamespace getVariable _name);
     };

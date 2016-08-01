@@ -45,7 +45,7 @@ if (count _array isEqualTo 0) exitwith {};
     if ((_x select 2) > 1 ) then {
         _val = ITEM_VALUE(_x select 0);
         _name = ITEM_NAME(_x select 0);
-        if(_val > 0) then {
+        if (_val > 0) then {
             _price = _x select 2;
             _gear_list lbAdd format["%2 [x%1]",_val,(localize _name)];
             _gear_list lbSetData [(lbSize _gear_list)-1,_x select 0];

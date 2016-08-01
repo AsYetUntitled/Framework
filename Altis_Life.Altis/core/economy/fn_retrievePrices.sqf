@@ -12,7 +12,7 @@ params [
     ["_data", ""]
 ];
 
-if( _data isEqualTo "") exitWith {diag_log "Shoptype is null";};
+if ( _data isEqualTo "") exitWith {diag_log "Shoptype is null";};
 
 _market = missionNamespace getVariable "MarketPrices";
 _itemArray = [];

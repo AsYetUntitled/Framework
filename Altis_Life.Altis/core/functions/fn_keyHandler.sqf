@@ -55,7 +55,7 @@ if (life_container_active) then {
 };
 
 switch (_code) do {
-    
+
     //3 Market
 	case 4:
 	{
@@ -65,11 +65,11 @@ switch (_code) do {
 		}
 		else
 		{
-			if(dialog) exitWith {};
+			if (dialog) exitWith {};
 			[] call life_fnc_OpenEconomy;
 		};
 	};
-    
+
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
