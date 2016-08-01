@@ -40,8 +40,8 @@ _Btn8 = CONTROL(37400,Btn8);
 life_pInact_curTarget = _curTarget;
 
 if (_curTarget in life_hideoutBuildings) exitWith {
-	closeDialog 0;
-	hint localize "STR_House_Hideout";
+    closeDialog 0;
+    hint localize "STR_House_Hideout";
 };
 
 if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
