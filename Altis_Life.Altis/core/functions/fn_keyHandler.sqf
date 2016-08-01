@@ -57,18 +57,18 @@ if (life_container_active) then {
 switch (_code) do {
 
     //3 Market
-	case 4:
-	{
-		if (playerSide == civilian && player getVariable["restrained",false]) then
-		{
-			hint "You cannot open the market when you're restrained!";
-		}
-		else
-		{
-			if (dialog) exitWith {};
-			[] call life_fnc_OpenEconomy;
-		};
-	};
+    case 4:
+    {
+        if (playerSide == civilian && player getVariable["restrained",false]) then
+        {
+            hint "You cannot open the market when you're restrained!";
+        }
+        else
+        {
+            if (dialog) exitWith {};
+            [] call life_fnc_OpenEconomy;
+        };
+    };
 
     //Space key for Jumping
     case 57: {
