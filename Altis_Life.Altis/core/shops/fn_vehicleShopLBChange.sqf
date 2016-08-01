@@ -47,7 +47,7 @@ _armor = (_vehicleInfo select 9);
 [_className] call life_fnc_vehicleShop3DPreview;
 
 ctrlShow [2330,true];
-(CONTROL(2300,2303)) ctrlSetStructuredText parseText format[
+(CONTROL(2300,2303)) ctrlSetStructuredText parseText format [
     (localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b'>$%1</t><br/>" +
     (localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +
     (localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +
@@ -71,7 +71,7 @@ lbClear _ctrl;
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
-    diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
+    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 

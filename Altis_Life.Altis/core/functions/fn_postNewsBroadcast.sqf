@@ -16,7 +16,7 @@ _allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567
 _allowedLength = LIFE_SETTINGS(getNumber,"news_broadcast_header_length");
 _badCharacter = false;
 
-if (_length > _allowedLength) exitWith {hint format[localize "STR_News_HeaderLength",_allowedLength];};
+if (_length > _allowedLength) exitWith {hint format [localize "STR_News_HeaderLength",_allowedLength];};
 
 {
     if (!(_x in _allowed)) exitWith {_badCharacter = true;};

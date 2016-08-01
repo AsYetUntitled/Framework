@@ -15,7 +15,7 @@ _list = _display displayCtrl 2401;
 
 {
     _entry = _x;
-    _list lbAdd format["%1", _entry select 1];
+    _list lbAdd format ["%1", _entry select 1];
     _list lbSetData [(lbSize _list)-1,str(_entry)];
 } forEach _info;
 

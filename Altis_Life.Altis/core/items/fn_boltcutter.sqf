@@ -26,12 +26,12 @@ _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors
 _door = 0;
 //Find the nearest door
 for "_i" from 1 to _doors do {
-    _selPos = _building selectionPosition format["Door_%1_trigger",_i];
+    _selPos = _building selectionPosition format ["Door_%1_trigger",_i];
     _worldSpace = _building modelToWorld _selPos;
         if (player distance _worldSpace < 2) exitWith {_door = _i;};
 };
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
-if ((_building getVariable [format["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+if ((_building getVariable [format ["bis_disabled_Door_%1",_door],0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
 if ((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_pos,_vaultHouse]) == _building) then {
     [[1,2],"STR_ISTR_Bolt_AlertFed",true,[]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
@@ -47,7 +47,7 @@ _title = localize "STR_ISTR_Bolt_Process";
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
-_titleText ctrlSetText format["%2 (1%1)...","%",_title];
+_titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
@@ -73,7 +73,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
     if (_cP >= 1 || !alive player) exitWith {};
     if (life_istazed) exitWith {}; //Tazed
     if (life_isknocked) exitWith {}; //Knocked
@@ -94,7 +94,7 @@ if (life_boltcutter_uses >= 5) then {
     life_boltcutter_uses = 0;
 };
 
-_building setVariable [format["bis_disabled_Door_%1",_door],0,true]; //Unlock the door.
+_building setVariable [format ["bis_disabled_Door_%1",_door],0,true]; //Unlock the door.
 _building setVariable ["locked",false,true];
 
 if (life_HC_isActive) then {

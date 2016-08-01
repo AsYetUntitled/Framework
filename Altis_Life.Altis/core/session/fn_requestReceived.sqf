@@ -26,7 +26,7 @@ if (!(getPlayerUID player isEqualTo (_this select 0))) exitWith {[] call SOCK_fn
 //Lets make sure some vars are not set before hand.. If they are get rid of them, hopefully the engine purges past variables but meh who cares.
 if (!isServer && (!isNil "life_adminlevel" || !isNil "life_coplevel" || !isNil "life_donorlevel")) exitWith {
     [profileName,getPlayerUID player,"VariablesAlreadySet"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
-    [profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_coplevel: %2\nlife_donorlevel: %3",life_adminlevel,life_coplevel,life_donorlevel]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+    [profileName,format ["Variables set before client initialization...\nlife_adminlevel: %1\nlife_coplevel: %2\nlife_donorlevel: %3",life_adminlevel,life_coplevel,life_donorlevel]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
     sleep 0.9;
     failMission "SpyGlass";
 };
@@ -78,13 +78,13 @@ switch (playerSide) do {
             life_is_alive = _this select 10;
             life_civ_position = _this select 11;
             if (life_is_alive) then {
-                if (count life_civ_position != 3) then {diag_log format["[requestReceived] Bad position received. Data: %1",life_civ_position];life_is_alive =false;};
+                if (count life_civ_position != 3) then {diag_log format ["[requestReceived] Bad position received. Data: %1",life_civ_position];life_is_alive =false;};
                 if (life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_is_alive = false;};
             };
         };
 
         {
-            _house = nearestObject [(call compile format["%1",(_x select 0)]), "House"];
+            _house = nearestObject [(call compile format ["%1",(_x select 0)]), "House"];
             life_vehicles pushBack _house;
         } forEach life_houses;
 

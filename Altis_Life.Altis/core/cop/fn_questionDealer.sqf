@@ -25,9 +25,9 @@ _names = "";
         };
     };
     [(_x select 0),(_x select 1),"483",_val] remoteExecCall ["life_fnc_wantedAdd",RSERV];
-    _names = _names + format["%1<br/>",(_x select 1)];
+    _names = _names + format ["%1<br/>",(_x select 1)];
 } forEach _sellers;
 
-hint parseText format[(localize "STR_Cop_DealerMSG")+ "<br/><br/>%1",_names];
+hint parseText format [(localize "STR_Cop_DealerMSG")+ "<br/><br/>%1",_names];
 (_this select 0) setVariable ["sellers",[],true];
 life_action_inUse = false;

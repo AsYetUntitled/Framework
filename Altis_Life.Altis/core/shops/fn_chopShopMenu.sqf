@@ -30,7 +30,7 @@ _control = CONTROL(39400,39402);
 
         if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
             _classNameLife = "Default"; //Use Default class if it doesn't exist
-            diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
+            diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
         };
 
         _price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");

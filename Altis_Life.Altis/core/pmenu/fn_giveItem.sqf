@@ -14,7 +14,7 @@ ctrlShow[2002,false];
 if ((lbCurSel 2023) isEqualTo -1) exitWith {hint localize "STR_NOTF_noOneSelected";
 ctrlShow[2002,true];};
 _unit = lbData [2023,lbCurSel 2023];
-_unit = call compile format["%1",_unit];
+_unit = call compile format ["%1",_unit];
 
 if ((lbCurSel 2005) isEqualTo -1) exitWith {hint localize "STR_NOTF_didNotSelectItemToGive";ctrlShow[2002,true];};
 

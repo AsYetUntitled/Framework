@@ -28,7 +28,7 @@ if (_fish isEqualTo []) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLA
 
         if ([true,_type,1] call life_fnc_handleInv) then {
             deleteVehicle _x;
-            titleText[format[(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
+            titleText[format [(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
         };
     };
 } forEach (_fish);

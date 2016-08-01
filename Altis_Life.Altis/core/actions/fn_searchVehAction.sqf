@@ -26,5 +26,5 @@ if ((_vehicle isKindOf "Car") || !(_vehicle isKindOf "Air") || !(_vehicle isKind
     if (_owners == "any<br/>") then {
         _owners = "No owners, impound it<br/>";
     };
-    hint parseText format[localize "STR_NOTF_SearchVeh",_owners];
+    hint parseText format [localize "STR_NOTF_SearchVeh",_owners];
 };

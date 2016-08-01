@@ -73,25 +73,25 @@ if (_type isEqualTo []) exitWith {}; //Not our information being passed...
 if (_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
-_query = format["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
+_query = format ["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
 _queryResult = [_query,2,true] call HC_fnc_asyncCall;
 _val = [_type select 1] call HC_fnc_numberSafe;
 _number = _type select 0;
 
 if (count _queryResult != 0) then
 {
-    _crime = format["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
+    _crime = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
     _crimeresult = [_crime,2] call HC_fnc_asyncCall;
     _pastcrimess = [_crimeresult select 0] call HC_fnc_mresToArray;
-    if (_pastcrimess isEqualType "") then {_pastcrimess = call compile format["%1", _pastcrimess];};
+    if (_pastcrimess isEqualType "") then {_pastcrimess = call compile format ["%1", _pastcrimess];};
     _pastCrimes = _pastcrimess;
     _pastCrimes pushBack _number;
     _pastCrimes = [_pastCrimes] call HC_fnc_mresArray;
-    _query = format["UPDATE wanted SET wantedCrimes = '%1', wantedBounty = wantedBounty + '%2', active = '1' WHERE wantedID='%3'",_pastCrimes,_val,_uid];
+    _query = format ["UPDATE wanted SET wantedCrimes = '%1', wantedBounty = wantedBounty + '%2', active = '1' WHERE wantedID='%3'",_pastCrimes,_val,_uid];
     [_query,1] call HC_fnc_asyncCall;
 } else {
     _crimes = [_type select 0];
     _crimes = [_crimes] call HC_fnc_mresArray;
-    _query = format["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crimes,_val];
+    _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crimes,_val];
     [_query,1] call HC_fnc_asyncCall;
 };

@@ -27,7 +27,7 @@ disableSerialization;
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
-_pgText ctrlSetText format["%2 (1%1)...","%",_upp];
+_pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
 _progress progressSetPosition 0.01;
 _cP = 0.01;
 
@@ -35,7 +35,7 @@ for "_i" from 0 to 1 step 0 do {
     sleep 0.09;
     _cP = _cP + 0.01;
     _progress progressSetPosition _cP;
-    _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
+    _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
     if (_cP >= 1) exitWith {};
     if (player distance _vehicle > 10) exitWith {};
     if (!alive player) exitWith {};
@@ -64,10 +64,10 @@ if (count crew _vehicle isEqualTo 0) then {
             _value = _price * _impoundMultiplier;
             [0,"STR_NOTF_HasImpounded",true,[profileName,((_vehicleData select 0) select 1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
             if (_vehicle in life_vehicles) then {
-                hint format[localize "STR_NOTF_OwnImpounded",[_value] call life_fnc_numberText,_type];
+                hint format [localize "STR_NOTF_OwnImpounded",[_value] call life_fnc_numberText,_type];
                 BANK = BANK - _value;
             } else {
-                hint format[localize "STR_NOTF_Impounded",_type,[_value] call life_fnc_numberText];
+                hint format [localize "STR_NOTF_Impounded",_type,[_value] call life_fnc_numberText];
                 BANK = BANK + _value;
             };
             if (BANK < 0) then {BANK = 0;};

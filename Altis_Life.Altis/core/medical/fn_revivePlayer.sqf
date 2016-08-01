@@ -18,7 +18,7 @@ if (player distance _target > 5) exitWith {}; //Not close enough.
 
 //Fetch their name so we can shout it.
 _targetName = _target getVariable ["name","Unknown"];
-_title = format[localize "STR_Medic_Progress",_targetName];
+_title = format [localize "STR_Medic_Progress",_targetName];
 life_action_inUse = true; //Lockout the controls.
 
 _target setVariable ["Reviving",player,true];
@@ -28,7 +28,7 @@ disableSerialization;
 _ui = uiNamespace getVariable ["life_progress",displayNull];
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
-_titleText ctrlSetText format["%2 (1%1)...","%",_title];
+_titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
@@ -42,7 +42,7 @@ for "_i" from 0 to 1 step 0 do {
     sleep .15;
     _cP = _cP + .01;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
     if (_cP >= 1 || !alive player) exitWith {};
     if (life_istazed) exitWith {}; //Tazed
     if (life_isknocked) exitWith {}; //Knocked
@@ -72,7 +72,7 @@ BANK = BANK + _reviveCost;
 life_action_inUse = false;
 _target setVariable ["Revive",true,true];
 [profileName] remoteExecCall ["life_fnc_revived",_target];
-titleText[format[localize "STR_Medic_RevivePayReceive",_targetName,[_reviveCost] call life_fnc_numberText],"PLAIN"];
+titleText[format [localize "STR_Medic_RevivePayReceive",_targetName,[_reviveCost] call life_fnc_numberText],"PLAIN"];
 
 sleep .6;
 player reveal _target;

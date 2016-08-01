@@ -12,7 +12,7 @@ if (life_session_completed) exitWith {}; //Why did this get executed when the cl
 _sender = player;
 _uid = getPlayerUID _sender;
 _side = playerSide;
-cutText[format[localize "STR_Session_Query",_uid],"BLACK FADED"];
+cutText[format [localize "STR_Session_Query",_uid],"BLACK FADED"];
 0 cutFadeOut 999999999;
 
 if (life_HC_isActive) then {

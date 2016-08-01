@@ -16,9 +16,9 @@ _containerID = _container getVariable ["container_id",-1];
 if (_containerID isEqualTo -1) then {
     _containerPos = getPosATL _container;
     _ownerID = (_container getVariable "container_owner") select 0;
-    _query = format["UPDATE containers SET owned='0', pos='[]' WHERE pid='%1' AND pos='%2' AND owned='1'",_ownerID,_containerPos];
+    _query = format ["UPDATE containers SET owned='0', pos='[]' WHERE pid='%1' AND pos='%2' AND owned='1'",_ownerID,_containerPos];
 } else {
-    _query = format["UPDATE containers SET owned='0', pos='[]' WHERE id='%1'",_containerID];
+    _query = format ["UPDATE containers SET owned='0', pos='[]' WHERE id='%1'",_containerID];
 };
 
 _container setVariable ["container_id",nil,true];

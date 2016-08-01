@@ -16,7 +16,7 @@ switch (_mode) do {
     case 0:
     {
         life_settings_viewDistanceFoot = round(_value);
-        ctrlSetText[2902,format["%1",round(_value)]];
+        ctrlSetText[2902,format ["%1",round(_value)]];
         [] call life_fnc_updateViewDistance;
         profileNamespace setVariable ["life_viewDistanceFoot",round(_value)];
     };
@@ -24,7 +24,7 @@ switch (_mode) do {
     case 1:
     {
         life_settings_viewDistanceCar = round(_value);
-        ctrlSetText[2912,format["%1",round(_value)]];
+        ctrlSetText[2912,format ["%1",round(_value)]];
         [] call life_fnc_updateViewDistance;
         profileNamespace setVariable ["life_viewDistanceCar",round(_value)];
     };
@@ -32,7 +32,7 @@ switch (_mode) do {
     case 2:
     {
         life_settings_viewDistanceAir = round(_value);
-        ctrlSetText[2922,format["%1",round(_value)]];
+        ctrlSetText[2922,format ["%1",round(_value)]];
         [] call life_fnc_updateViewDistance;
         profileNamespace setVariable ["life_viewDistanceAir",round(_value)];
     };
@@ -49,7 +49,7 @@ switch (_mode) do {
             if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {
                 _fueltank = 450;
             };
-            ctrlSetText[20324,format["Fuel : %1 liters",round(_value) - (floor(_fuel * _fueltank))]];
+            ctrlSetText[20324,format ["Fuel : %1 liters",round(_value) - (floor(_fuel * _fueltank))]];
             ctrlSetText [20323,format ["Total : $%1",round (life_fuelPrices * (round(_value) -(floor(_fuel * _fueltank)))) ]];
         } else {
             hint localize "STR_Select_Vehicle_Pump";

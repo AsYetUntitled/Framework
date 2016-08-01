@@ -31,7 +31,7 @@ if (local _vehicle) then {
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
-    diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
+    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
 _textures = ((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures") select _index) select 2);

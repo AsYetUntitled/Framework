@@ -30,7 +30,7 @@ switch (_mode) do {
 
         _cargo = [_cargo] call DB_fnc_mresArray;
 
-        _query = format["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_cargo];
+        _query = format ["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_cargo];
         _thread = [_query,1] call DB_fnc_asyncCall;
     };
 
@@ -50,7 +50,7 @@ switch (_mode) do {
         _trunk = [_items,_totalweight];
         _trunk = [_trunk] call DB_fnc_mresArray;
 
-        _query = format["UPDATE vehicles SET inventory='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk];
+        _query = format ["UPDATE vehicles SET inventory='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk];
         _thread = [_query,1] call DB_fnc_asyncCall;
     };
 };

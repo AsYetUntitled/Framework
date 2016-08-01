@@ -11,7 +11,7 @@ _className = [_this,0,"",[""]] call BIS_fnc_param;
 _classNameLife = _className;
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
-    diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
+    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 _weight = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"vItemSpace");
 

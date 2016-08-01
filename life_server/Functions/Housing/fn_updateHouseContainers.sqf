@@ -19,6 +19,6 @@ _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 
 _cargo = [_cargo] call DB_fnc_mresArray;
 
-_query = format["UPDATE containers SET gear='%1' WHERE id='%2'",_cargo,_containerID];
+_query = format ["UPDATE containers SET gear='%1' WHERE id='%2'",_cargo,_containerID];
 
 [_query,1] call DB_fnc_asyncCall;

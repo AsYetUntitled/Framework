@@ -69,11 +69,11 @@ for "_i" from 0 to count(_spawnCfg)-1 do {
 if (playerSide isEqualTo civilian) then {
   if (count life_houses > 0) then {
     {
-      _pos = call compile format["%1",(_x select 0)];
+      _pos = call compile format ["%1",(_x select 0)];
       _house = nearestObject [_pos, "House"];
       _houseName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 
-      _return pushBack [format["house_%1",_house getVariable "uid"],_houseName,"\a3\ui_f\data\map\MapControl\lighthouse_ca.paa"];
+      _return pushBack [format ["house_%1",_house getVariable "uid"],_houseName,"\a3\ui_f\data\map\MapControl\lighthouse_ca.paa"];
     } forEach life_houses;
   };
 };

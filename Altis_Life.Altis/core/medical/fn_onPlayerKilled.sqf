@@ -54,7 +54,7 @@ _unit spawn {
             _maxTime = time + LIFE_SETTINGS(getNumber,"respawn_timer");
         };
     _RespawnBtn ctrlEnable false;
-    waitUntil {_Timer ctrlSetText format[localize "STR_Medic_Respawn",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
+    waitUntil {_Timer ctrlSetText format [localize "STR_Medic_Respawn",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
     round(_maxTime - time) <= 0 || isNull _this};
     _RespawnBtn ctrlEnable true;
     _Timer ctrlSetText localize "STR_Medic_Respawn_2";
@@ -117,7 +117,7 @@ if (side _killer isEqualTo west && playerSide != west) then {
     life_copRecieve = _killer;
     //Did I rob the federal reserve?
     if (!life_use_atm && {CASH > 0}) then {
-        [format[localize "STR_Cop_RobberDead",[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+        [format [localize "STR_Cop_RobberDead",[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
         CASH = 0;
     };
 };

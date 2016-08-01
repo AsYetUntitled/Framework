@@ -23,21 +23,21 @@ switch (_mode) do {
         } forEach _input;
 
         _arr = _arr - [objNull];
-        missionNamespace setVariable [format["%1_KEYS_%2",_uid,_side],_arr];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side],_arr];
     };
 
     case 1: {
         _input = [_this,2,objNull,[objNull]] call BIS_fnc_param;
         if (isNull _input || _input isKindOf "House") exitWith {};
-        _arr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
+        _arr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
         _arr pushBack _input;
         _arr = _arr - [objNull];
-        missionNamespace setVariable [format["%1_KEYS_%2",_uid,_side],_arr];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side],_arr];
     };
 
     case 2: {
-        _arr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
+        _arr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
         _arr = _arr - [objNull];
-        missionNamespace setVariable [format["%1_KEYS_%2",_uid,_side],_arr];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side],_arr];
     };
 };

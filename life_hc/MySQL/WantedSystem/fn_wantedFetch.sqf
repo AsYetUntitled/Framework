@@ -33,10 +33,10 @@ if (_units isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_re
     };
 } forEach _units;
 
-_query = format["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement];
+_query = format ["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement];
 _queryResult = [_query,2,true] call HC_fnc_asyncCall;
 
-diag_log format["Query: %1",_query];
+diag_log format ["Query: %1",_query];
 
 
 {

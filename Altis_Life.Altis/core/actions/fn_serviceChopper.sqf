@@ -22,7 +22,7 @@ life_action_inUse = true;
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
-_pgText ctrlSetText format[localize "STR_Service_Chopper_Servicing","waiting..."];
+_pgText ctrlSetText format [localize "STR_Service_Chopper_Servicing","waiting..."];
 _progress progressSetPosition 0.01;
 _cP = 0.01;
 
@@ -30,7 +30,7 @@ for "_i" from 0 to 1 step 0 do {
     sleep  0.2;
     _cP = _cP + 0.01;
     _progress progressSetPosition _cP;
-    _pgText ctrlSetText format[localize "STR_Service_Chopper_Servicing",round(_cP * 100)];
+    _pgText ctrlSetText format [localize "STR_Service_Chopper_Servicing",round(_cP * 100)];
     if (_cP >= 1) exitWith {};
 };
 

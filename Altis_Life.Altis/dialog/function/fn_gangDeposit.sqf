@@ -28,7 +28,7 @@ if (life_HC_isActive) then {
     [1,group player] remoteExecCall ["TON_fnc_updateGang",RSERV];
 };
 
-hint format[localize "STR_ATM_DepositSuccessG",[_value] call life_fnc_numberText];
+hint format [localize "STR_ATM_DepositSuccessG",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial; //Silent Sync
 

@@ -26,21 +26,21 @@ switch (_mode) do {
         _owner = _group getVariable ["gang_owner",""];
         if (_owner isEqualTo "") exitWith {};
 
-        _query = format["UPDATE gangs SET bank='%1', maxmembers='%2', owner='%3' WHERE id='%4'",_bank,_maxMembers,_owner,_groupID];
+        _query = format ["UPDATE gangs SET bank='%1', maxmembers='%2', owner='%3' WHERE id='%4'",_bank,_maxMembers,_owner,_groupID];
     };
 
     case 1: {
-        _query = format["UPDATE gangs SET bank='%1' WHERE id='%2'",([(_group getVariable ["gang_bank",0])] call HC_fnc_numberSafe),_groupID];
+        _query = format ["UPDATE gangs SET bank='%1' WHERE id='%2'",([(_group getVariable ["gang_bank",0])] call HC_fnc_numberSafe),_groupID];
     };
 
     case 2: {
-        _query = format["UPDATE gangs SET maxmembers='%1' WHERE id='%2'",(_group getVariable ["gang_maxMembers",8]),_groupID];
+        _query = format ["UPDATE gangs SET maxmembers='%1' WHERE id='%2'",(_group getVariable ["gang_maxMembers",8]),_groupID];
     };
 
     case 3: {
         _owner = _group getVariable ["gang_owner",""];
         if (_owner isEqualTo "") exitWith {};
-        _query = format["UPDATE gangs SET owner='%1' WHERE id='%2'",_owner,_groupID];
+        _query = format ["UPDATE gangs SET owner='%1' WHERE id='%2'",_owner,_groupID];
     };
 
     case 4: {
@@ -54,7 +54,7 @@ switch (_mode) do {
             _membersFinal = _group getVariable "gang_members";
         };
         _membersFinal = [_membersFinal] call HC_fnc_mresArray;
-        _query = format["UPDATE gangs SET members='%1' WHERE id='%2'",_membersFinal,_groupID];
+        _query = format ["UPDATE gangs SET members='%1' WHERE id='%2'",_membersFinal,_groupID];
     };
 };
 

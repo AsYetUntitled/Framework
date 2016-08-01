@@ -18,6 +18,6 @@ _type = [_this,4,"",[""]] call BIS_fnc_param;
 
 if (_vid isEqualTo -1 || _pid isEqualTo "" || _sp isEqualTo 0 || isNull _unit || _type isEqualTo "") exitWith {};
 
-_query = format["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,_vid];
+_query = format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
 _thread = [_query,1] call HC_fnc_asyncCall;

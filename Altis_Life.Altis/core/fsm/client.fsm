@@ -46,7 +46,7 @@ class FSM
     class Split
     {
       name = "Split";
-      init = /*%FSM<STATEINIT""">*/"systemChat format[localize ""STR_FSM_Paycheck"",(getNumber(missionConfigFile >> ""Life_Settings"" >> ""paycheck_period""))];"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"systemChat format [localize ""STR_FSM_Paycheck"",(getNumber(missionConfigFile >> ""Life_Settings"" >> ""paycheck_period""))];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -61,11 +61,11 @@ class FSM
            "	systemChat localize ""STR_FSM_MissedPay"";" \n
            "} else {" \n
            "	if (player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide isEqualTo west) then {" \n
-           "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
+           "		systemChat format [localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
            "		life_atmbank = life_atmbank + (call life_paycheck) + 1500;" \n
            "	} else {" \n
            "		life_atmbank = life_atmbank + (call life_paycheck);" \n
-           "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck)] call life_fnc_numberText];" \n
+           "		systemChat format [localize ""STR_FSM_ReceivedPay"",[(call life_paycheck)] call life_fnc_numberText];" \n
            "	};" \n
            "};" \n
            "" \n
