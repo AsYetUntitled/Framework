@@ -8,10 +8,9 @@
 1. 
 
 ### RPT and/or extDB2 logs (if applicable)
-<if there are error messages in your RPT and/or extDB2 logs then you can either
-paste the error message(s) here 
-or you can upload your RPT or extDB2 log file(s) to GitHub.
-See https://community.bistudio.com/wiki/Crash_Files for where to find your Arma 3 RPT logs.>
+<If there are error messages in your RPT and/or extDB2 logs then you can either paste the error message(s) here or you can upload your RPT or extDB2 log file(s) to GitHub.>
+<See https://community.bistudio.com/wiki/Crash_Files for where to find your Arma 3 RPT logs.>
+<If your error messages or long, or you are posting a full RPT, please use paste/haste-bin!!>
 
 ----
 
