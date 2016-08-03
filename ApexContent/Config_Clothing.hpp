@@ -42,8 +42,8 @@ class Clothing {
             { "U_C_man_sport_1_F", "Casual Wears", 5000, { "", "", -1 } }, //Apex DLC
             { "U_C_man_sport_2_F", "Casual Wears", 5000, { "", "", -1 } }, //Apex DLC
             { "U_C_man_sport_3_F", "Casual Wears", 5000, { "", "", -1 } } //Apex DLC
-            
-            
+
+
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, { "", "", -1 } },
@@ -57,6 +57,7 @@ class Clothing {
             { "H_Cap_oli", "", 150, { "", "", -1 } },
             { "H_Cap_red", "", 150, { "", "", -1 } },
             { "H_Cap_tan", "", 150, { "", "", -1 } },
+            { "H_Helmet_Skate", "", 150, { "", "", -1 } }, //Apex DLC
             { "H_Bandanna_gry", "Grey Bandanna", 150, { "", "", -1 } },
             { "H_Bandanna_sgg", "Sage Bandanna", 160, { "", "", -1 } },
             { "H_Bandanna_cbr", "", 165, { "", "", -1 } },
@@ -67,7 +68,7 @@ class Clothing {
             { "H_BandMask_blk", "Hat & Bandanna", 300, { "", "", -1 } },
             { "H_Hat_blue", "", 310, { "", "", -1 } },
             { "H_Hat_checker", "", 340, { "", "", -1 } },
-            { "H_Booniehat_tan", "", 425, { "", "", -1 } }
+            { "H_Booniehat_grn", "", 425, { "", "", -1 } } // NOT WORKING
         };
         goggles[] = {
             { "NONE", "Remove Glasses", 0, { "", "", -1 } },
@@ -102,6 +103,7 @@ class Clothing {
             { "B_AssaultPack_blk", "", 2000, { "", "", -1 } },
             { "B_AssaultPack_cbr", "", 2000, { "", "", -1 } },
             { "B_AssaultPack_mcamo", "", 2000, { "", "", -1 } },
+            { "B_AssaultPack_tna_f", "", 2000, { "", "", -1 } }, //Apex DLC
             { "B_TacticalPack_oli", "", 2500, { "", "", -1 } },
             { "B_Kitbag_mcamo", "", 3500, { "", "", -1 } },
             { "B_Kitbag_sgg", "", 3500, { "", "", -1 } },
@@ -109,6 +111,7 @@ class Clothing {
             { "B_FieldPack_blk", "", 5000, { "", "", -1 } },
             { "B_FieldPack_ocamo", "", 5000, { "", "", -1 } },
             { "B_FieldPack_oucamo", "", 5000, { "", "", -1 } },
+            { "B_FieldPack_ghex_f", "", 5000, { "", "", -1 } }, //Apex DLC
             { "B_Bergen_sgg", "", 6500, { "", "", -1 } },
             { "B_Bergen_mcamo", "", 6500, { "", "", -1 } },
             { "B_Bergen_rgr", "", 6500, { "", "", -1 } },
@@ -118,7 +121,10 @@ class Clothing {
             { "B_Carryall_mcamo", "", 7500, { "", "", -1 } },
             { "B_Carryall_oli", "", 7500, { "", "", -1 } },
             { "B_Carryall_khk", "", 7500, { "", "", -1 } },
-            { "B_Carryall_cbr", "", 7500, { "", "", -1 } }
+            { "B_Carryall_cbr", "", 7500, { "", "", -1 } },
+            { "B_Carryall_ghex_f", "", 7500, { "", "", -1 } }, //Apex DLC
+            { "B_Bergen_dgtl_f", "", 6500, { "", "", -1 } }, //Apex DLC
+            { "B_Bergen_tna_f", "", 6500, { "", "", -1 } } //Apex DLC
         };
     };
 
@@ -279,6 +285,7 @@ class Clothing {
             { "U_IG_leader", "Guerilla Leader", 15340, { "", "", -1 } },
             { "U_O_PilotCoveralls", "", 15610, { "", "", -1 } },
             { "U_O_SpecopsUniform_ocamo", "", 17500, { "", "", -1 } },
+            { "U_B_T_Soldier_F", "", 50000, { "", "", -1 } }, //Apex DLC
             { "U_I_C_Soldier_Bandit_1_F", "", 50000, { "", "", -1 } },
             { "U_I_C_Soldier_Bandit_2_F", "", 51000, { "", "", -1 } }, //Apex DLC
             { "U_I_C_Soldier_Bandit_3_F", "", 50032, { "", "", -1 } }, //Apex DLC
@@ -293,8 +300,10 @@ class Clothing {
             { "H_ShemagOpen_tan", "", 850, { "", "", -1 } },
             { "H_Shemag_olive", "", 850, { "", "", -1 } },
             { "H_MilCap_oucamo", "", 1200, { "", "", -1 } },
+            { "H_MilCap_gen_F", "", 1200, { "", "", -1 } }, //Apex DLC
+            { "H_MilCap_tna_F", "", 1200, { "", "", -1 } }, //Apex DLC
             { "H_HelmetO_ocamo", "", 2500, { "", "", -1 } },
-            { "H_HelmetB_TI_tna_F", "", 2500, { "", "", -1 } }
+            { "H_HelmetB_Enh_tna_F", "", 8000, { "", "", -1 } } //Apex DLC
         };
         goggles[] = {
             { "NONE", "Remove Glasses", 0, { "", "", -1 } },
@@ -326,7 +335,7 @@ class Clothing {
             { "V_HarnessO_brn", "", 7500, { "", "", -1 } },
             { "V_TacVest_khk", "", 12500, { "", "", -1 } },
             { "V_TacVest_gen_F", "", 14500, { "", "", -1 } },
-            
+
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, { "", "", -1 } },
