@@ -83,7 +83,6 @@ class Life_Client_Core {
     class Civilian {
         file = "core\civilian";
         class civLoadout {};
-        class civMarkers {};
         class demoChargeTimer {};
         class freezePlayer {};
         class jail {};
@@ -111,7 +110,6 @@ class Life_Client_Core {
         class copInteractionMenu {};
         class copLights {};
         class copLoadout {};
-        class copMarkers {};
         class copSearch {};
         class copSiren {};
         class doorAnimate {};
@@ -208,6 +206,7 @@ class Life_Client_Core {
         class tazeSound {};
         class teleport {};
         class whereAmI {};
+        class allMarkers {};
     };
 
     class Gangs {
@@ -267,7 +266,6 @@ class Life_Client_Core {
         class deathScreen {};
         class medicLights {};
         class medicLoadout {};
-        class medicMarkers {};
         class medicRequest {};
         class medicSiren {};
         class medicSirenLights {};
