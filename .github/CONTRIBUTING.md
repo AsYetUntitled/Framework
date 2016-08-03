@@ -31,7 +31,16 @@ AsYetUntitled is an unofficial project spun off from [ArmaLife/Framework](https:
     * ...if not then consider posting a tutorial on how to install it on the [Altis Life RPG forums](http://www.altisliferpg.com/). 
   * ...be sure to thoroughly test your code for any errors and, if applicable, possible exploits. 
   * ...optimise your code to have as little impact on performance as possible. See [code optimisation](https://community.bistudio.com/wiki/Code_Optimisation) on the Bohemia Interactive Wiki for more information. 
-  * ...if applicable, be sure to update the [BattlEye filters](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) and [SpyGlass variables](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp) to be compatible with your changes. If you are unsure on how to do so then ask if someone else would be kind enough to do so for you.
+  * ...if applicable, be sure to update the [BattlEye filters](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) and [SpyGlass variables](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp) to be compatible with your changes. If you are unsure on how to do so then ask if someone else would be kind enough to do so for you. 
+
+### Help! The Travis CI build failed!
+* If the Travis CI build on your pull request fails then Travis may have detected a syntax error in the code. Click "Show all checks" near the bottom of your pull request and then click "Details" next to the check that failed. Search for "ERROR" to find what is causing the check to fail. 
+* If the error is...
+  * ...possible missing white space after if detected then you need to add a space after the `if`. 
+    * Example: `if (condition) then { code } else { code }`
+  * ...possible missing [round/square/curly] [bracket/brace] detected then check the syntax of your code. An [SQF syntax highlighter](https://www.google.com.au/search?q=SQF+syntax+highlighter&rlz=1C1ASRM_enAU584AU584&oq=SQF+syntax+highlighter&aqs=chrome..69i57.620j0j7&sourceid=chrome&ie=UTF-8) may be useful. 
+  * ...tab detected then you need to indent with four (4) spaces for each one (1) tab. 
+  * ...possible missing semi-colon detected then add a `;` where it is needed. 
 
 ## Can I help?
 * If you are knowledgeable in [SQF](https://community.bistudio.com/wiki/SQF_syntax), [SQL](https://en.wikipedia.org/wiki/SQL), [C++](https://en.wikipedia.org/wiki/C%2B%2B), or [regular expressions](http://www.regular-expressions.info/), or are fluent in one or more of [these languages](https://community.bistudio.com/wiki/Stringtable.xml#Languages) then **you** have what it takes to helps us expand and improve upon this mission. 
