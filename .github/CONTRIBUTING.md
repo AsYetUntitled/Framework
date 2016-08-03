@@ -39,8 +39,8 @@ AsYetUntitled is an unofficial project spun off from [ArmaLife/Framework](https:
   * ...possible missing white space after if detected then you need to add a space after the `if`. 
     * Example: `if (condition) then { code } else { code }`
   * ...possible missing [round/square/curly] [bracket/brace] detected then check the syntax of your code. An [SQF syntax highlighter](https://www.google.com.au/search?q=SQF+syntax+highlighter&rlz=1C1ASRM_enAU584AU584&oq=SQF+syntax+highlighter&aqs=chrome..69i57.620j0j7&sourceid=chrome&ie=UTF-8) may be useful. 
-  * ...tab detected then you need to indent with four (4) spaces for each one (1) tab. 
   * ...possible missing semi-colon detected then add a `;` where it is needed. 
+  * ...tab detected then you need to indent with four (4) spaces for each one (1) tab. 
 
 ## Can I help?
 * If you are knowledgeable in [SQF](https://community.bistudio.com/wiki/SQF_syntax), [SQL](https://en.wikipedia.org/wiki/SQL), [C++](https://en.wikipedia.org/wiki/C%2B%2B), or [regular expressions](http://www.regular-expressions.info/), or are fluent in one or more of [these languages](https://community.bistudio.com/wiki/Stringtable.xml#Languages) then **you** have what it takes to helps us expand and improve upon this mission. 
