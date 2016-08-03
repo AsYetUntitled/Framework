@@ -40,6 +40,11 @@ if (!_preset) then
             _vehicle lockCargo [5,true];
         };
 
+        case "reb_hummingbird":
+        {
+            _vehicle animate ["addBenches",1];
+        };
+
         case "service_truck":
         {
             _vehicle animate ["HideServices", 0];
