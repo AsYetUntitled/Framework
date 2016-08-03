@@ -68,7 +68,7 @@ class Clothing {
             { "H_BandMask_blk", "Hat & Bandanna", 300, { "", "", -1 } },
             { "H_Hat_blue", "", 310, { "", "", -1 } },
             { "H_Hat_checker", "", 340, { "", "", -1 } },
-            { "H_Booniehat_grn", "", 425, { "", "", -1 } } // NOT WORKING
+            { "H_Booniehat_grn", "", 425, { "", "", -1 } }
         };
         goggles[] = {
             { "NONE", "Remove Glasses", 0, { "", "", -1 } },
