@@ -11259,17 +11259,6 @@
             <Russian></Russian>
             <German></German>            
         </Key>
-        <Key ID="STR_Civ_Plane">
-            <Original>Civ Plane</Original>
-            <Czech></Czech>
-            <French></French>
-            <Spanish></Spanish>
-            <Italian></Italian>
-            <Polish></Polish>
-            <Portuguese></Portuguese>
-            <Russian></Russian>
-            <German></German>            
-        </Key>
         <Key ID="STR_Police_Store">
             <Original>Police Store</Original>
             <Czech></Czech>
