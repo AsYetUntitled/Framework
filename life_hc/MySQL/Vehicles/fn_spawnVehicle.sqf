@@ -9,7 +9,7 @@
     Sends the query request to the database, if an array is returned then it creates
     the vehicle if it's not in use or dead.
 */
-private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage","_wasIllegal","_location"];
+private ["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage","_wasIllegal","_location"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
@@ -29,16 +29,16 @@ if (_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
 
-_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
-    diag_log format["QUERY: %1",_query];
-    diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
-    diag_log format["Result: %1",_queryResult];
+    diag_log format ["QUERY: %1",_query];
+    diag_log format ["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
+    diag_log format ["Result: %1",_queryResult];
     diag_log "------------------------------------------------";
 };
 
@@ -70,7 +70,7 @@ if (count _nearVehicles > 0) exitWith {
     [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-_query = format["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
+_query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
 _trunk = [(_vInfo select 9)] call HC_fnc_mresToArray;
 _gear = [(_vInfo select 10)] call HC_fnc_mresToArray;
@@ -120,7 +120,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
            _location = text _location;
            [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
-                _query = format["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
+                _query = format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
                 _thread = [_query,1] call HC_fnc_asyncCall;
 
         };
@@ -158,7 +158,7 @@ if (count _damage > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqual
     _parts = getAllHitPointsDamage _vehicle;
 
     for "_i" from 0 to ((count _damage) - 1) do {
-        _vehicle setHitPointDamage [format["%1",((_parts select 0) select _i)],_damage select _i];
+        _vehicle setHitPointDamage [format ["%1",((_parts select 0) select _i)],_damage select _i];
     };
 };
 

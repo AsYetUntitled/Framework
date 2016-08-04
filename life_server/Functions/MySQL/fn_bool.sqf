@@ -6,7 +6,7 @@
     Handles bool conversion for MySQL since MySQL doesn't support 'true' or 'false'
     instead MySQL uses Tinyint for BOOLEAN (0 = false, 1 = true)
 */
-private["_bool","_mode"];
+private ["_bool","_mode"];
 _bool = [_this,0,0,[false,0]] call BIS_fnc_param;
 _mode = [_this,1,0,[0]] call BIS_fnc_param;
 

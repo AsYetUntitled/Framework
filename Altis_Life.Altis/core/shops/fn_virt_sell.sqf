@@ -6,7 +6,7 @@
     Description:
     Sell a virtual item to the store / shop
 */
-private["_type","_index","_price","_amount","_name"];
+private ["_type","_index","_price","_amount","_name"];
 if ((lbCurSel 2402) isEqualTo -1) exitWith {};
 _type = lbData[2402,(lbCurSel 2402)];
 _price = lbValue[2402,(lbCurSel 2402)];
@@ -22,7 +22,7 @@ life_action_delay = time;
 _price = (_price * _amount);
 _name = M_CONFIG(getText,"VirtualItems",_type,"displayName");
 if ([false,_type,_amount] call life_fnc_handleInv) then {
-    hint format[localize "STR_Shop_Virt_SellItem",_amount,(localize _name),[_price] call life_fnc_numberText];
+    hint format [localize "STR_Shop_Virt_SellItem",_amount,(localize _name),[_price] call life_fnc_numberText];
     CASH = CASH + _price;
     [0] call SOCK_fnc_updatePartial;
     [] call life_fnc_virt_update;
@@ -32,7 +32,7 @@ if ([false,_type,_amount] call life_fnc_handleInv) then {
 };
 
 if (life_shop_type isEqualTo "drugdealer") then {
-    private["_array","_ind","_val"];
+    private ["_array","_ind","_val"];
     _array = life_shop_npc getVariable ["sellers",[]];
     _ind = [getPlayerUID player,_array] call TON_fnc_index;
     if (!(_ind isEqualTo -1)) then {

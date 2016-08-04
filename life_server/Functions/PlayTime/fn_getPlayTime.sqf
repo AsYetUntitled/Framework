@@ -10,7 +10,7 @@
 
 */
 
-private["_uid", "_time_gathered", "_time_join","_time"];
+private ["_uid", "_time_gathered", "_time_join","_time"];
 
 _uid = _this select 0;
 _time_gathered = nil;

@@ -7,7 +7,7 @@
     Fuel Tank Job, Fill Truck with Fuel.
 */
 
-private["_vehicle","_fuelSpace","_fuelState","_fuelLevel","_ui","_progress","_pgText"];
+private ["_vehicle","_fuelSpace","_fuelState","_fuelLevel","_ui","_progress","_pgText"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};
 if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse","PLAIN"];};
@@ -31,7 +31,7 @@ disableSerialization;
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
-_pgText ctrlSetText format["Tank  %1 Ltr / %2 Ltr",_fuelState,_fuelSpace];
+_pgText ctrlSetText format ["Tank  %1 Ltr / %2 Ltr",_fuelState,_fuelSpace];
 _fuelLevel = (1 / _fuelSpace) * _fuelState;
 _progress progressSetPosition _fuelLevel;
 
@@ -46,7 +46,7 @@ waitUntil {
     _fuelLevel = (1 / _fuelSpace) * _fuelState;
 
     _progress progressSetPosition _fuelLevel;
-    _pgText ctrlSetText format["Tank  %1 Ltr / %2 Ltr",_fuelState,_fuelSpace];
+    _pgText ctrlSetText format ["Tank  %1 Ltr / %2 Ltr",_fuelState,_fuelSpace];
 
     if (_fuelState >= _fuelSpace) exitWith {titleText [localize "STR_FuelTank_Full","PLAIN"]; true};
     sleep 0.5;

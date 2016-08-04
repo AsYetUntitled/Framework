@@ -7,7 +7,7 @@
         Description:
         Same as fn_gather,but it allows use of probabilities for mining.
     */
-private["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
+private ["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
 if (life_action_inUse) exitWith {};
 if ((vehicle player) != player) exitWith {};
 if (player getVariable "restrained") exitWith {
@@ -99,7 +99,7 @@ for "_i" from 0 to 4 do {
 
 if (([true, _mined, _diff] call life_fnc_handleInv)) then {
     _itemName = M_CONFIG(getText, "VirtualItems", _mined, "displayName");
-    titleText[format[localize "STR_NOTF_Mine_Success", (localize _itemName), _diff], "PLAIN"];
+    titleText[format [localize "STR_NOTF_Mine_Success", (localize _itemName), _diff], "PLAIN"];
 };
 
 sleep 2.5;

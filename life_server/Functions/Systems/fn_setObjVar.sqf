@@ -6,7 +6,7 @@
     Sets a variable on the given object from the server,
     workaround for brokenness of ARMA 3, yes Brokenness is a word!
 */
-private["_obj","_varValue","_global","_varName"];
+private ["_obj","_varValue","_global","_varName"];
 _obj = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _varName = [_this,1,"",[""]] call BIS_fnc_param;
 _varValue = _this select 2;
