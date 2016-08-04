@@ -19,7 +19,7 @@ if (isLocalized _itemName) then {
 };
 
 if (playerSide isEqualTo west && _illegal isEqualTo 1) exitWith {
-    titleText[format[localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(_itemInfo select 0) / 2)] call life_fnc_numberText],"PLAIN"];
+    titleText[format [localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(_itemInfo select 0) / 2)] call life_fnc_numberText],"PLAIN"];
     BANK = BANK + round(ITEM_SELLPRICE(_itemInfo select 0) / 2);
     deleteVehicle _this;
     [1] call SOCK_fnc_updatePartial;
@@ -35,7 +35,7 @@ if (!(_diff isEqualTo (_itemInfo select 1))) then {
         player playMove "AinvPknlMstpSlayWrflDnon";
 
         _this setVariable ["item",[(_itemInfo select 0),(_itemInfo select 1) - _diff],true];
-        titleText[format[localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
+        titleText[format [localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
         INUSE(_this);
     } else {
         INUSE(_this);
@@ -46,7 +46,7 @@ if (!(_diff isEqualTo (_itemInfo select 1))) then {
         //waitUntil{isNull _this};
         player playMove "AinvPknlMstpSlayWrflDnon";
 
-        titleText[format[localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
+        titleText[format [localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
     } else {
         INUSE(_this);
     };

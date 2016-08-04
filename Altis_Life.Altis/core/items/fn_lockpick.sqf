@@ -6,7 +6,7 @@
     Description:
     Main functionality for lock-picking.
 */
-private["_curTarget","_distance","_isVehicle","_title","_progressBar","_cP","_titleText","_dice","_badDistance"];
+private ["_curTarget","_distance","_isVehicle","_title","_progressBar","_cP","_titleText","_dice","_badDistance"];
 _curTarget = cursorObject;
 life_interrupted = false;
 
@@ -23,7 +23,7 @@ if (!_isVehicle && !isPlayer _curTarget) exitWith {};
 if (!_isVehicle && !(_curTarget getVariable ["restrained",false])) exitWith {};
 if (_curTarget getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 
-_title = format[localize "STR_ISTR_Lock_Process",if (!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
+_title = format [localize "STR_ISTR_Lock_Process",if (!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
 life_action_inUse = true; //Lock out other actions
 
 //Setup the progress bar
@@ -32,7 +32,7 @@ disableSerialization;
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
-_titleText ctrlSetText format["%2 (1%1)...","%",_title];
+_titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
@@ -53,7 +53,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     _cP = _cP + 0.01;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
 
     if (_cP >= 1 || !alive player) exitWith {};
     if (life_istazed) exitWith {}; //Tazed

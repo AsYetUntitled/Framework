@@ -13,7 +13,7 @@
 #define Btn5 37454
 #define Btn6 37455
 #define Title 37401
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_id"];
+private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_id"];
 if (!dialog) then {
     createDialog "vInteraction_Menu";
 };
@@ -71,9 +71,9 @@ if (playerSide isEqualTo west) then {
             if (alive _curTarget && {crew _curTarget isEqualTo []} && {canMove _curTarget}) then { _Btn6 ctrlEnable false;} else {_Btn6 ctrlEnable true;};
         };
     };
-    
+
 } else {
-    
+
     if (_curTarget isKindOf "Ship") then {
         _Btn2 ctrlSetText localize "STR_vInAct_PushBoat";
         _Btn2 buttonSetAction "[] spawn life_fnc_pushObject; closeDialog 0;";

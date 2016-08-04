@@ -7,7 +7,7 @@
     Description:
     Check container if are in house and if house are owner of player and if all this conditions are true add container in database
 */
-private["_container","_isFloating","_type","_house","_containers","_houseCfg","_message","_isPlaced"];
+private ["_container","_isFloating","_type","_house","_containers","_houseCfg","_message","_isPlaced"];
 params [
         ["_container",objNull,[objNull]],
         ["_isFloating",true,[true]]

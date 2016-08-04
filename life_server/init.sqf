@@ -9,7 +9,7 @@
     Description:
     Initialize the server and required systems.
 */
-private["_dome","_rsb","_timeStamp"];
+private ["_dome","_rsb","_timeStamp"];
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
@@ -41,9 +41,9 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     CONSTVAR(life_sql_id);
     uiNamespace setVariable ["life_sql_id",life_sql_id];
         try {
-        _result = EXTDB format["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
+        _result = EXTDB format ["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
-        _result = EXTDB format["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
@@ -186,7 +186,7 @@ private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
 _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 _rsb = nearestObject [_pos,_vaultHouse];
 
-for "_i" from 1 to 3 do {_dome setVariable [format["bis_disabled_Door_%1",_i],1,true]; _dome animate [format["Door_%1_rot",_i],0];};
+for "_i" from 1 to 3 do {_dome setVariable [format ["bis_disabled_Door_%1",_i],1,true]; _dome animate [format ["Door_%1_rot",_i],0];};
 _dome setVariable ["locked",true,true];
 _rsb setVariable ["locked",true,true];
 _rsb setVariable ["bis_disabled_Door_1",1,true];
@@ -209,5 +209,5 @@ life_attachment_point setVectorDirAndUp [[0,1,0], [0,0,1]];
 publicVariable "life_attachment_point";
 
 diag_log "----------------------------------------------------------------------------------------------------";
-diag_log format["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log format ["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";

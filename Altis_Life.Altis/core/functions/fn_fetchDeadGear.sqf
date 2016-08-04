@@ -6,7 +6,7 @@
     Description:
     Fetches gear off of a body.
 */
-private["_primary,_launcher","_handgun","_magazines","_uniform","_vest","_backpack","_items","_primitems","_secitems","_handgunitems","_uitems","_vitems","_bitems","_headgear","_goggles","_unit"];
+private ["_primary,_launcher","_handgun","_magazines","_uniform","_vest","_backpack","_items","_primitems","_secitems","_handgunitems","_uitems","_vitems","_bitems","_headgear","_goggles","_unit"];
 _unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _unit) exitWith {};
 _primitems = [];
