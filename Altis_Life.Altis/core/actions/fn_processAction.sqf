@@ -73,7 +73,10 @@ if (_newItemWeight > _oldItemWeight) then {
     _netChange = _newItemWeight - _oldItemWeight;
     _freeSpace = life_maxWeight - life_carryWeight;
     if (_freeSpace < _netChange) exitWith {_exit = true;};
-    _minimumConversions = floor(_freeSpace / _netChange);
+    private _estConversions = floor(_freeSpace / _netChange);
+    if (_estConversions < _minimumConversions) then {
+        _minimumConversions = _estConversions;
+    };
 };
 
 if (_exit) exitWith {hint localize "STR_Process_Weight"; life_is_processing = false; life_action_inUse = false;};
