@@ -67,8 +67,9 @@ class CarShops {
             { "C_Rubberboat", { "", "", -1 } },
             { "C_Boat_Civil_01_F", { "", "", -1 } },
             { "B_SDV_01_F", { "", "", -1 } },
-            { "C_Scoooter_Transport_01_F", { "", "", -1 } } //Apex DLC
-            
+            { "C_Boat_Transport_02_F", { "", "", -1 } }, //Apex DLC
+            { "C_Scooter_Transport_01_F", { "", "", -1 } } //Apex DLC
+
         };
     };
 
@@ -81,7 +82,7 @@ class CarShops {
             { "B_Heli_Light_01_stripped_F", { "", "", -1 } },
             { "B_G_Offroad_01_armed_F", { "", "", -1 } },
             { "O_T_LSV_02_unarmed_F", { "", "", -1 } } //Apex DLC
-            
+
         };
     };
 
@@ -167,39 +168,47 @@ class LifeCfgVehicles {
         price = -1;
         textures[] = {};
     };
-    
+
     // Apex DLC
-    class C_Offroad_02_unarmed_F { //NEEDS TO BE CHANGED
-        vItemSpace = 180;
-        licenses[] = { {""}, {""}, {""}, {""} };
-        price = -1;
-        textures[] = {}; 
-    };
-    
-    // Apex DLC
-    class C_Plane_Civil_01_F { //NEEDS TO BE CHANGED
-        vItemSpace = 300;
-        licenses[] = { {""}, {""}, {""}, {""} };
-        price = -1;
-        textures[] = {};
-    };
-    
-    // Apex DLC
-    class C_Scoooter_Transport_01_F { //NEEDS TO BE CHANGED
-        vItemSpace = 30;
-        licenses[] = { {""}, {""}, {""}, {""} };
-        price = -1;
-        textures[] = {};
-    };
-    
-    // Apex DLC
-    class O_T_LSV_02_unarmed_F { //NEEDS TO BE CHANGED
+    class C_Boat_Transport_02_F {
         vItemSpace = 100;
         licenses[] = { {""}, {""}, {""}, {""} };
-        price = -1;
+        price = 10000;
         textures[] = {};
-    };    
-    
+    };
+
+    // Apex DLC
+    class C_Offroad_02_unarmed_F {
+        vItemSpace = 65;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = 12500;
+        textures[] = {};
+    };
+
+    // Apex DLC
+    class C_Plane_Civil_01_F {
+        vItemSpace = 75;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = 150000;
+        textures[] = {};
+    };
+
+    // Apex DLC
+    class C_Scoooter_Transport_01_F {
+        vItemSpace = 30;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = 2500;
+        textures[] = {};
+    };
+
+    // Apex DLC
+    class O_T_LSV_02_unarmed_F {
+        vItemSpace = 100;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        price = 100000;
+        textures[] = {};
+    };
+
 
     class I_Truck_02_medical_F {
         vItemSpace = 150;
