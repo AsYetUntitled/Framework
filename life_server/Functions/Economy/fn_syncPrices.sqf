@@ -1,15 +1,16 @@
 #include "\life_server\script_macros.hpp"
 /*
-	File: fn_syncPrices.sqf
-	Author: Derek Benson
+    File: fn_syncPrices.sqf
+    Author: Derek Benson
 
-	Description:
-	refreshes the SQL database with the new sell prices
+    Description:
+    refreshes the SQL database with the new sell prices
 */
 private["_market", "_query", "_price", "_name", "_goods","_endtime", "_syncRate"];
 
 [] call TON_fnc_loadPrices;
-if ((LIFE_SETTINGS(getNumber, "dynamic_market")) isEqualTo 1) then {
+if ((LIFE_SETTINGS(getNumber, "dynamic_market")) isEqualTo 1 && 
+    (LIFE_SETTINGS(getNumber, "dynamic_market_persistence")) isEqualTo 1) then {
     while {true} do {
         diag_log format["Sync prices at uptime: %1",round(time/60)];
         _market = missionNamespace getVariable "MarketPrices";

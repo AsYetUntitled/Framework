@@ -23,7 +23,7 @@ _goodlist = _display displayCtrl 39001;
 //Purge list
 lbClear _goodlist;
 
-if (count life_market == 0 ) exitwith {};
+if (count life_market isEqualTo 0) exitwith {};
 
 _categories = LIFE_SETTINGS(getArray, "market_categories");
 _factor = 1;

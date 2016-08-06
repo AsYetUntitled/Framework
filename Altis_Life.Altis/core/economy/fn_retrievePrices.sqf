@@ -31,15 +31,17 @@ switch (_data) do {
     };
     default {
         _shopItems = M_CONFIG(getArray,"VirtualShops",_data, "items");
-        {
-            _name = (_x select 0);
-            _fact = (_x select 1);
-            if (_name in _shopItems) then {
-                _varname = format["%1MarketGoodPrice",_name];
+        if ((LIFE_SETTINGS(getNumber, "dynamic_market")) isEqualTo 1) then {
+            {
+                _varname = format["%1MarketGoodPrice",_x];
                 _priceArray = missionNamespace getVariable (_varname);
                 _itemArray pushBack _priceArray;
-            };
-        } forEach _market;
+            } forEach _shopItems;
+        } else {
+            {
+                _itemArray pushBack [ITEM_BUYPRICE(_x), ITEM_SELLPRICE(_x)];
+            } forEach _shopItems;
+        };
     };
 };
 

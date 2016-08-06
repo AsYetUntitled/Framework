@@ -21,7 +21,7 @@ private["_marketPrices", "_query", "_tickTime", "_queryResult", "_name"];
 	7 - recent sell price
 	8 - server start sell price
 */
-_query = "SELECT resource, buyprice, sellprice, varprice, minprice, maxprice, factor FROM economy";
+_query = "SELECT resource, sellprice FROM economy";
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
@@ -29,11 +29,22 @@ _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 _marketPrices = [];
 
 {
-    _marketPrices pushBack [(_x select 0),(_x select 6)];
-    _name = format["%1MarketGoodPrice",(_x select 0)];
-    _x pushBack (_x select 2);
-    _x pushBack (_x select 2);
-    missionNamespace setVariable [_name, _x];
+	_varName = _x select 0;
+	_sellPrice = _x select 1,
+    _marketPrices pushBack [_varName, ITEM_FACTOR(_varName)];
+    _name = format["%1MarketGoodPrice", _varName];
+    _info = [
+    			_varName,
+    			ITEM_BUYPRICE(_varName),
+    			_sellPrice,
+    			ITEM_VARPRICE(_varName),
+    			ITEM_MINPRICE(_varName),
+    			ITEM_MAXPRICE(_varName),
+    			ITEM_FACTOR(_varName),
+    			_sellPrice,
+    			_sellPrice
+    		]
+    missionNamespace setVariable [_name, _info];
     publicVariable _name;
 } forEach _queryResult;
 

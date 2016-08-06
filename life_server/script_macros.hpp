@@ -46,6 +46,10 @@
 #define ITEM_BUYPRICE(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"buyPrice")
 #define ITEM_NAME(varName) M_CONFIG(getText,"VirtualItems",varName,"displayName")
 #define ITEM_WEIGHT(varName) M_CONFIG(getNumber,"VirtualItems",varName,"weight")
+#define ITEM_VARPRICE(varName) M_CONFIG(getText,"VirtualItems",varName,"varPrice")
+#define ITEM_MAXPRICE(varName) M_CONFIG(getText,"VirtualItems",varName,"maxPrice")
+#define ITEM_MINPRICE(varName) M_CONFIG(getText,"VirtualItems",varName,"minPrice")
+#define ITEM_FACTOR(varName) M_CONFIG(getText,"VirtualItems",varName,"factor")
 
 //Condition Macros
 #define KINDOF_ARRAY(a,b) [##a,##b] call {_veh = _this select 0;_types = _this select 1;_res = false; {if (_veh isKindOf _x) exitWith { _res = true };} forEach _types;_res}
