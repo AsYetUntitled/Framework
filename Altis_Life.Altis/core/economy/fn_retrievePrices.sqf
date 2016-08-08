@@ -14,11 +14,11 @@ params [
 
 if ( _data isEqualTo "") exitWith {diag_log "Shoptype is null";};
 
-_market = missionNamespace getVariable "MarketPrices";
 _itemArray = [];
 
 switch (_data) do {
     case "economy" :{
+        _market = missionNamespace getVariable "MarketPrices";
         {
             _name = (_x select 0);
             _fact = (_x select 1);
@@ -39,7 +39,7 @@ switch (_data) do {
             } forEach _shopItems;
         } else {
             {
-                _itemArray pushBack [ITEM_BUYPRICE(_x), ITEM_SELLPRICE(_x)];
+                _itemArray pushBack [_x, ITEM_BUYPRICE(_x), ITEM_SELLPRICE(_x)];
             } forEach _shopItems;
         };
     };

@@ -23,8 +23,6 @@ private["_marketPrices", "_query", "_tickTime", "_queryResult", "_name"];
 */
 _query = "SELECT resource, sellprice FROM economy";
 
-waitUntil{sleep (random 0.3); !DB_Async_Active};
-_tickTime = diag_tickTime;
 _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 _marketPrices = [];
 
