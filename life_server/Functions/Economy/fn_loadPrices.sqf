@@ -30,7 +30,7 @@ _marketPrices = [];
 
 {
     _varName = _x select 0;
-    _sellPrice = _x select 1,
+    _sellPrice = _x select 1;
     _marketPrices pushBack [_varName, ITEM_FACTOR(_varName)];
     _name = format["%1MarketGoodPrice", _varName];
     _info = [
@@ -43,7 +43,7 @@ _marketPrices = [];
                 ITEM_FACTOR(_varName),
                 _sellPrice,
                 _sellPrice
-            ]
+            ];
     missionNamespace setVariable [_name, _info];
     publicVariable _name;
 } forEach _queryResult;
