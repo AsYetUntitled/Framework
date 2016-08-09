@@ -9,7 +9,7 @@
 private ["_type","_index","_price","_amount","_name"];
 if ((lbCurSel 2402) isEqualTo -1) exitWith {};
 _type = lbData[2402,(lbCurSel 2402)];
-_price = M_CONFIG(getNumber,"VirtualItems",_type,"sellPrice");
+_price = lbValue[2402,(lbCurSel 2402)];
 if (_price isEqualTo -1) exitWith {};
 
 _amount = ctrlText 2405;
@@ -26,6 +26,9 @@ if ([false,_type,_amount] call life_fnc_handleInv) then {
     CASH = CASH + _price;
     [0] call SOCK_fnc_updatePartial;
     [] call life_fnc_virt_update;
+    if ((LIFE_SETTINGS(getNumber, "dynamic_market")) isEqualTo 1) then {
+        [0,player,life_shop_type,_amount,_price,_type] remoteExec ["TON_fnc_adjustPrices",RSERV];
+    };
 };
 
 if (life_shop_type isEqualTo "drugdealer") then {

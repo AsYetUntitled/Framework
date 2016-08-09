@@ -28,3 +28,4 @@
 #include "compensate.hpp"
 #include "FuelStat.hpp"
 #include "newsStation.hpp"
+#include "market.hpp"

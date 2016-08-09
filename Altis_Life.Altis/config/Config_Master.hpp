@@ -34,6 +34,14 @@ class Life_Settings {
     save_vehicle_damage = false; //Save vehicle damage to the database.
     save_vehicle_illegal = false; //This will allow cops to be advised when a vehicle, with illegal items in it, is impounded. This will also save illegal items as proof of crime, and needs "save_vehicle_virtualItems" set as true. Illegal items don't need to be set in save_vehicle_items[] for being saved, if it's enabled.
 
+    /* Dynamic Market */
+    dynamic_market = false; //True enables Dynamic Market
+    dynamic_market_persistence = true; //True makes price changes last across restarts
+    end_time = 14400; //Last time to sync prices (Default: 4 hours)
+    sync_rate = 900; //Seconds between syncs to database (Default: 15 minutes)
+    adjustment_delay = 120; //Seconds it takes for price changes to hit the market (Default: 2 minutes)
+    //Order these by factor starting with a factor of 1 (Default: Illegal - 1, Natural Resources - 2, Hunting - 3)
+    market_categories[] = { "------------Illegal Goods------------","--------Natural Resources--------","-----Hunting and Gathering-----"};
 
 /* System Settings */
     /* ATM & Federal Reserve System Configurations */
