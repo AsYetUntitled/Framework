@@ -160,6 +160,15 @@ class Life_Client_Core {
         class wireTransfer {};
     };
 
+    class Economy {
+        file="core\economy";
+        class marketGrab {};
+        class openEconomy {};
+        class retrievePrices {};
+        class updateEconomy {};
+        class updatePrice {};
+    };
+
     class Functions {
         file = "core\functions";
         class AAN {};
