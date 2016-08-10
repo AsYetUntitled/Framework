@@ -194,7 +194,7 @@ class LifeCfgVehicles {
     };
 
     // Apex DLC
-    class C_Scoooter_Transport_01_F {
+    class C_Scooter_Transport_01_F {
         vItemSpace = 30;
         licenses[] = { {""}, {""}, {""}, {""} };
         price = 2500;
