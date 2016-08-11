@@ -7,7 +7,7 @@
     Loads the SQL database into the economy variable: marketPrices and dynamically
     created variables for each good.
 */
-private["_marketPrices", "_query", "_tickTime", "_queryResult", "_name"];
+private["_marketPrices", "_query", "_tickTime", "_queryResult", "_name", "_varName","_sellPrice", "_info"];
 
 /*
     Structure of each price variable
@@ -21,30 +21,56 @@ private["_marketPrices", "_query", "_tickTime", "_queryResult", "_name"];
     7 - recent sell price
     8 - server start sell price
 */
-_query = "SELECT resource, sellprice FROM economy";
 
-_queryResult = [_query,2,true] call DB_fnc_asyncCall;
 _marketPrices = [];
-
 {
-    _varName = _x select 0;
-    _sellPrice = _x select 1;
-    _marketPrices pushBack [_varName, ITEM_FACTOR(_varName)];
-    _name = format["%1MarketGoodPrice", _varName];
-    _info = [
-                _varName,
-                ITEM_BUYPRICE(_varName),
-                _sellPrice,
-                ITEM_VARPRICE(_varName),
-                ITEM_MINPRICE(_varName),
-                ITEM_MAXPRICE(_varName),
-                ITEM_FACTOR(_varName),
-                _sellPrice,
-                _sellPrice
-            ];
-    missionNamespace setVariable [_name, _info];
-    publicVariable _name;
-} forEach _queryResult;
+    _marketPrices pushBack [configName _x, getNumber(_x >> "factor")];
+} forEach ("true" configClasses (missionConfigFile >> "VirtualItems"));
+
+if ((LIFE_SETTINGS(getNumber, "dynamic_market_persistence")) isEqualTo 1) then {
+    diag_log "Loading prices from the database";
+    _query = "SELECT resource, sellprice FROM economy";
+    _queryResult = [_query,2,true] call DB_fnc_asyncCall;
+
+    {
+        _varName = _x select 0;
+        _sellPrice = _x select 1;
+        _name = format["%1MarketGoodPrice", _varName];
+        _info = [
+                    _varName,
+                    ITEM_BUYPRICE(_varName),
+                    _sellPrice,
+                    ITEM_VARPRICE(_varName),
+                    ITEM_MINPRICE(_varName),
+                    ITEM_MAXPRICE(_varName),
+                    ITEM_FACTOR(_varName),
+                    _sellPrice,
+                    _sellPrice
+                ];
+        missionNamespace setVariable [_name, _info];
+        publicVariable _name;
+    } forEach _queryResult;
+} else {
+    diag_log "Loading prices from the config file";
+    {
+        _varName = _x select 0;
+        _name = format["%1MarketGoodPrice", _varName];
+        _info = [
+                    _varName,
+                    ITEM_BUYPRICE(_varName),
+                    ITEM_SELLPRICE(_varName),
+                    ITEM_VARPRICE(_varName),
+                    ITEM_MINPRICE(_varName),
+                    ITEM_MAXPRICE(_varName),
+                    ITEM_FACTOR(_varName),
+                    ITEM_SELLPRICE(_varName),
+                    ITEM_SELLPRICE(_varName)
+                ];
+        missionNamespace setVariable [_name, _info];
+        publicVariable _name;
+    } forEach _marketPrices;
+};
+
 
 missionNamespace setVariable ["MarketPrices", _marketPrices];
 publicVariable "MarketPrices";
