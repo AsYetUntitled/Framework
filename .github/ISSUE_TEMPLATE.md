@@ -14,5 +14,8 @@
 
 ----
 
-*Arma 3* version: <In the Arma 3 launcher go to OPTIONS and click the version info below to copy it to your clipboard><br/>
-*Arma 3* branch: 
+Launcher version:  <In the Arma 3 launcher go to OPTIONS and click the version info below to copy it to your clipboard>
+
+Game version: 
+
+Branch: 
