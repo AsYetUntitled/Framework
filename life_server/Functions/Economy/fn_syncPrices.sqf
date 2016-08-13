@@ -8,8 +8,6 @@
 */
 private["_market", "_query", "_price", "_name", "_goods","_endtime", "_syncRate"];
 
-diag_log format ["virtual items : %1", _items];
-
 if ((LIFE_SETTINGS(getNumber, "dynamic_market")) isEqualTo 1) then {
     [] call TON_fnc_loadPrices;
 };

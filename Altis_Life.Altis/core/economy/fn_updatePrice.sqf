@@ -28,7 +28,7 @@ _shop_data = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
 if (count _array isEqualTo 0) exitwith {};
 
 {
-    if ((_x select 1) > 1 ) then {
+    if ((_x select 1) > -1 ) then {
         _name = ITEM_NAME(_x select 0);
         _price = _x select 1;
         _item_list lbAdd format["%1  ($%2)",(localize _name),[_price] call life_fnc_numberText];
@@ -42,7 +42,7 @@ if (count _array isEqualTo 0) exitwith {};
 } forEach _array;
 
 {
-    if ((_x select 2) > 1 ) then {
+    if ((_x select 2) > -1 ) then {
         _val = ITEM_VALUE(_x select 0);
         _name = ITEM_NAME(_x select 0);
         if (_val > 0) then {
