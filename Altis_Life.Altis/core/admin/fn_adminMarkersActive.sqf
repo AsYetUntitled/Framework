@@ -13,11 +13,11 @@ private _fnc_deadCount = {
     {
         _name = _x getVariable "name";
         _down = _x getVariable ["Revive",false];
-        if(!isNil "_name" && !_down) then 
+        if (!isNil "_name" && !_down) then 
         {
             _deadCount = _deadCount + 1;	
             };
-        }forEach allDeadMen;
+        } forEach allDeadMen;
         _deadCount;
 };
 
@@ -39,7 +39,7 @@ private _fnc_initMarkers = {
                     {
                         if ((_x isKindOf "LandVehicle") || (_x isKindOf "Air") || (_x isKindOf "Ship")) then { 
                         _units pushBack ["ColorYellow",_x,"mil_triangle",(getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "displayName"))]};
-                    }forEach _vehicles;
+                    } forEach _vehicles;
                 };
             };
             if (life_admin_playerMarkers) then 
@@ -62,7 +62,7 @@ private _fnc_initMarkers = {
             {
             _name = _x getVariable "name";
             _down = _x getVariable ["Revive",false];
-            if(!isNil "_name" && !_down) then 
+            if (!isNil "_name" && !_down) then 
                 {
                     _units pushBack ["ColorRed",_x,"loc_Hospital",_x getVariable["realname",name _x]];
                 };
@@ -70,7 +70,7 @@ private _fnc_initMarkers = {
         };
 
         {
-        if((_x select 1) != player) then 
+        if ((_x select 1) != player) then 
             {
                 private _marker = createMarkerLocal [format["%1_marker",(_x select 1)],visiblePosition (_x select 1)];
                 _marker setMarkerColorLocal (_x select 0);
