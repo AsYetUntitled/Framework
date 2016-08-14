@@ -779,6 +779,28 @@
             <Portuguese>Marcações dos jogadores habilitada.</Portuguese>
             <Polish>Markery 'ON' graczy Włączone </Polish>
         </Key>
+        <Key ID="STR_ANOTF_VMDisabled">
+            <Original>Vehicle Markers Disabled.</Original>
+            <Czech>Značky vozidel zakázán.</Czech>
+            <French>Des marqueurs de véhicule en panne.</French>
+            <Spanish>Marcadores vehículo averiado.</Spanish>
+            <Italian>Marcatori veicoli disabilitati.</Italian>
+            <Russian>Маркеры транспортных средств отключены.</Russian>
+            <German>Fahrzeugmarkendeaktiviert.</German>
+            <Portuguese>Marcadores veículo com deficiência.</Portuguese>
+            <Polish>Markery pojazd wyłączony.</Polish>
+        </Key>
+        <Key ID="STR_ANOTF_VMEnabled">
+            <Original>Vehicle Markers Enabled.</Original>
+            <Czech>Omogućeno markeri vozila.</Czech>
+            <French>Des marqueurs de véhicules activés.</French>
+            <Spanish>Marcadores de vehículos habilitados.</Spanish>
+            <Italian>Marcatori dei veicoli abilitati.</Italian>
+            <Russian>включен маркеры транспортных средств.</Russian>
+            <German>Fahrzeugmarkern.</German>
+            <Portuguese>Marcadores de veículos habilitado.</Portuguese>
+            <Polish>włączona markery pojazdów.</Polish>
+        </Key>
         <Key ID="STR_ANOTF_godModeOn">
             <Original>God mode enabled</Original>
             <Czech>nesmrtelnost povolen</Czech>
