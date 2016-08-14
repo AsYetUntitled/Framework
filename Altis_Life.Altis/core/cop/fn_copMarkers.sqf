@@ -32,7 +32,7 @@ if (side _x isEqualTo west) then
         _marker setMarkerTypeLocal (_x select 2);
         _marker setMarkerTextLocal format["%1", (_x select 3)];
         _markers pushBack [_marker,(_x select 1),_x select 3,_x select 2];
-    };	
+    };
 } forEach _units;
 
 while {(_this select 0)} do 
@@ -43,7 +43,7 @@ while {(_this select 0)} do
         _marker = _x select 0;
         _unit = _x select 1;
         if !(_x select 3 isEqualTo "loc_Hospital") then {
-            if(!isNil "_unit" && !isNull _unit) then 
+            if (!isNil "_unit" && !isNull _unit) then 
             {
                 _marker setMarkerPosLocal (visiblePosition _unit);
             };
