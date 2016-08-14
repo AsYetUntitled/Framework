@@ -23,7 +23,7 @@ private _units = [];
         _marker setMarkerTextLocal format["%1", (_x select 3)];
         _markers pushBack [_marker,(_x select 1),_x select 3];
     };
-} foreach _units;
+} forEach _units;
 
 while {(_this select 0)} do 
 {
@@ -35,6 +35,6 @@ while {(_this select 0)} do
         {
             _marker setMarkerPosLocal (visiblePosition _unit);
         };
-    } foreach _markers;
+    } forEach _markers;
     sleep 0.02;
 };
