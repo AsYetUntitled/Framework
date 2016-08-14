@@ -7,18 +7,18 @@ if (_result) then
         if (life_admin_playerMarkers) then 
         {
             life_admin_playerMarkers = false;
-            hint "player markers off";
+            hint localize "STR_ANOTF_MDisabled";
         } else {
             life_admin_playerMarkers = true;
-            hint "player markers on";
+            hint localize "STR_ANOTF_MEnabled";
         };
     } else {
         if (life_admin_vehicleMarkers) then 
         {
             life_admin_vehicleMarkers = false;
-            hint "vehicle markers off";
+            hint localize "STR_ANOTF_VMDisabled";
         } else {
             life_admin_vehicleMarkers = true;
-            hint "vehicle markers on";
+            hint localize "STR_ANOTF_VMEnabled";
         };    
     };
