@@ -25,7 +25,7 @@ if (side _x isEqualTo independent) then
 } foreach allDeadMen;
 
 {
-	if((_x select 1) != player) then 
+	if ((_x select 1) != player) then 
 	{
 		private _marker = createMarkerLocal [format["%1_marker",(_x select 1)],visiblePosition (_x select 1)];
 		_marker setMarkerColorLocal (_x select 0);
