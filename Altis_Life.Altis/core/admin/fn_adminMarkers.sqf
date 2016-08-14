@@ -1,5 +1,5 @@
 #include "..\..\script_macros.hpp"
-if(FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
+if (FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
 
 _result = ["Player or vehicle markers?", "Admin Markers", "Player", "Vehicle"] call BIS_fnc_guiMessage;
 if (_result) then 
