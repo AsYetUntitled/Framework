@@ -15,7 +15,7 @@ private _fnc_deadCount = {
         _down = _x getVariable ["Revive",false];
         if (!isNil "_name" && !_down) then 
         {
-            _deadCount = _deadCount + 1;	
+            _deadCount = _deadCount + 1;
             };
         } forEach allDeadMen;
         _deadCount;
