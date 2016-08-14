@@ -12,10 +12,10 @@ private _units = [];
     {
         _units pushBack ["ColorCivilian",_x,"Mil_dot",_x getVariable["realname",name _x]];
     };
-}forEach playableUnits;
+} forEach playableUnits;
 	
 {
-	if((_x select 1) != player) then 
+	if ((_x select 1) != player) then 
 	{
 		private _marker = createMarkerLocal [format["%1_marker",(_x select 1)],visiblePosition (_x select 1)];
 		_marker setMarkerColorLocal (_x select 0);
@@ -31,7 +31,7 @@ while {(_this select 0)} do
 	{
 		private _marker = _x select 0;
 		private _unit = _x select 1;
-		if(!isNil "_unit" && !isNull _unit) then 
+		if (!isNil "_unit" && !isNull _unit) then 
 		{
 			_marker setMarkerPosLocal (visiblePosition _unit);
 		};
