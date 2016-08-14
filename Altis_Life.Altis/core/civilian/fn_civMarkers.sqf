@@ -5,40 +5,36 @@
     Description:
     Add markers for civilians in groups.
 */
-private ["_markers","_members"];
-_markers = [];
-_members = [];
-
-for "_i" from 0 to 1 step 0 do {
-    sleep 0.5;
-    if (visibleMap) then
+private _markers = [];
+private _units = [];
+{
+    if ((group _x) isEqualTo (group player)) then 
     {
-        _members = units (group player);
-        {
-            if (_x != player) then {
-                _marker = createMarkerLocal [format ["%1_marker",_x],visiblePosition _x];
-                _marker setMarkerColorLocal "ColorCivilian";
-                _marker setMarkerTypeLocal "Mil_dot";
-                _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
-                _markers pushBack [_marker,_x];
-            };
-        } forEach _members;
-
-        while {visibleMap} do
-        {
-            {
-                private ["_unit"];
-                _unit = _x select 1;
-                if (!isNil "_unit" && !isNull _unit) then {
-                      (_x select 0) setMarkerPosLocal (visiblePosition _unit);
-                };
-            } forEach _markers;
-            if (!visibleMap) exitWith {};
-            sleep 0.02;
-        };
-
-        {deleteMarkerLocal (_x select 0);} forEach _markers;
-        _markers = [];
-        _members = [];
+        _units pushBack ["ColorCivilian",_x,"Mil_dot",_x getVariable["realname",name _x]];
     };
+}forEach playableUnits;
+	
+{
+	if((_x select 1) != player) then 
+	{
+		private _marker = createMarkerLocal [format["%1_marker",(_x select 1)],visiblePosition (_x select 1)];
+		_marker setMarkerColorLocal (_x select 0);
+		_marker setMarkerTypeLocal (_x select 2);
+		_marker setMarkerTextLocal format["%1", (_x select 3)];
+		_markers pushBack [_marker,(_x select 1),_x select 3];
+	};
+} foreach _units;
+
+while {(_this select 0)} do 
+{
+    if (!visibleMap) exitWith {{deleteMarkerLocal (_x select 0);} forEach _markers;};
+	{
+		private _marker = _x select 0;
+		private _unit = _x select 1;
+		if(!isNil "_unit" && !isNull _unit) then 
+		{
+			_marker setMarkerPosLocal (visiblePosition _unit);
+		};
+	} foreach _markers;
+        sleep 0.02;
 };
