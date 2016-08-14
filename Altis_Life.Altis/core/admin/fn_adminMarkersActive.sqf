@@ -66,7 +66,7 @@ private _fnc_initMarkers = {
                 {
                     _units pushBack ["ColorRed",_x,"loc_Hospital",_x getVariable["realname",name _x]];
                 };
-            } foreach allDeadMen;
+            } forEach allDeadMen;
         };
 
         {
@@ -78,7 +78,7 @@ private _fnc_initMarkers = {
                 _marker setMarkerTextLocal format["%1", (_x select 3)];
                 _markers pushBack [_marker,(_x select 1),_x select 3,_x select 2];
             };
-        } foreach _units;
+        } forEach _units;
 };
 
 call _fnc_initMarkers;
@@ -110,6 +110,6 @@ while {(_this select 0)} do
         {
             _marker setMarkerPosLocal (visiblePosition _unit);
         };
-    } foreach _markers;
+    } forEach _markers;
     sleep 0.02;
 };
