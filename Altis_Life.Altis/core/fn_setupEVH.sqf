@@ -33,9 +33,9 @@ addMissionEventHandler["Map",
             {
                 {
                     deleteMarkerLocal format["%1_marker",_x];
-                }forEach vehicles;
+                } forEach vehicles;
             };
-            {deleteMarkerLocal format["%1_marker",_x]} foreach allDeadMen;
+            {deleteMarkerLocal format["%1_marker",_x]} forEach allDeadMen;
         };
     }
 ];
