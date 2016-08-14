@@ -5,57 +5,49 @@
     Description:
     Marks downed players on the map when it's open.
 */
-private ["_markers","_units","_medics"];
-_markers = [];
-_markersMedecin = [];
-_units = [];
-_medics = [];
+private _markers = [];
+private _units = [];
 
-sleep 0.25;
-if (visibleMap) then {
-    {if (side _x isEqualTo independent) then {_medics pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
-    {
-        _name = _x getVariable "name";
-        _down = _x getVariable ["Revive",false];
-        if (!isNil "_name" && !_down) then {
-            _units pushBack _x;
-        };
-    } forEach allDeadMen;
+{
+if (side _x isEqualTo independent) then 
+	{
+		_units pushBack ["ColorIndependent",_x,"Mil_dot",_x getVariable["realname",name _x]];
+	};
+}forEach playableUnits;
 
-    {
-        if (_x != player) then {
-            _markerss = createMarkerLocal [format ["%1_marker",_x],visiblePosition _x];
-            _markerss setMarkerColorLocal "ColorIndependent";
-            _markerss setMarkerTypeLocal "Mil_dot";
-            _markerss setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
+{
+	_name = _x getVariable "name";
+	_down = _x getVariable ["Revive",false];
+	if(!isNil "_name" && !_down) then 
+	{
+		_units pushBack ["ColorRed",_x,"loc_Hospital",_x getVariable["realname",name _x]];
+	};
+} foreach allDeadMen;
 
-            _markersMedecin pushBack [_markerss,_x];
-        };
-    } forEach _medics;
+{
+	if((_x select 1) != player) then 
+	{
+		private _marker = createMarkerLocal [format["%1_marker",(_x select 1)],visiblePosition (_x select 1)];
+		_marker setMarkerColorLocal (_x select 0);
+		_marker setMarkerTypeLocal (_x select 2);
+		_marker setMarkerTextLocal format["%1", (_x select 3)];
+		_markers pushBack [_marker,(_x select 1),_x select 3,_x select 2];
+	};
+} foreach _units;
 
-    //Loop through and create markers.
-    {
-        _marker = createMarkerLocal [format ["%1_dead_marker",_x],visiblePosition _x];
-        _marker setMarkerColorLocal "ColorRed";
-        _marker setMarkerTypeLocal "loc_Hospital";
-        _marker setMarkerTextLocal format ["%1",(_x getVariable ["name","Unknown Player"])];
-        _markers pushBack _marker;
-    } forEach _units;
-
-    while {visibleMap} do {
-        {
-            private ["_unit"];
-            _unit = _x select 1;
-            if (!isNil "_unit" && !isNull _unit) then {
-                (_x select 0) setMarkerPosLocal (visiblePosition _unit);
-            };
-        } forEach _markersMedecin;
-        if (!visibleMap) exitWith {};
-        sleep 0.02;
-    };
-    {deleteMarkerLocal (_x select 0);} forEach _markersMedecin;
-    _markersMedecin = [];
-    _medics = [];
-    waitUntil {!visibleMap};
-    {deleteMarkerLocal _x;} forEach _markers;
+while {(_this select 0)} do 
+{
+	if (!visibleMap) exitWith {{deleteMarkerLocal (_x select 0);} forEach _markers;};
+	{
+		private["_marker","_unit"];
+		_marker = _x select 0;
+		_unit = _x select 1;
+		if !(_x select 3 isEqualTo "loc_Hospital") then {
+		    if(!isNil "_unit" && !isNull _unit) then 
+		    {
+			_marker setMarkerPosLocal (visiblePosition _unit);
+		    };
+		};
+	} foreach _markers;
+	sleep 0.02;
 };
