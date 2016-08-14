@@ -1,7 +1,7 @@
 /*
-	File: fn_adminMarkersActive.sqf
-	Author: Fresqo
-	Description: sorts adminMarkers when activated/deactivated
+    File: fn_adminMarkersActive.sqf
+    Author: Fresqo
+    Description: sorts adminMarkers when activated/deactivated
 */
 private _adminPlayerMarkerStatus = life_admin_playerMarkers;
 private _adminVehicleMarkerStatus = life_admin_vehicleMarkers;
