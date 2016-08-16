@@ -15,14 +15,18 @@ if (side _x isEqualTo west) then
     };
 } forEach playableUnits;
 
+_medicsOnline = {_x != player && {side _x isEqualTo independent} && {alive _x}} count playableUnits > 0;
+if (!_medicsOnline) then 
 {
-    _name = _x getVariable "name";
-    _down = _x getVariable ["Revive",false];
-    if (!isNil "_name" && !_down) then 
     {
-        _units pushBack ["ColorRed",_x,"loc_Hospital",_x getVariable["realname",name _x]];
-    };
-} forEach allDeadMen;
+        _name = _x getVariable "name";
+        _down = _x getVariable ["Revive",false];
+        if (!isNil "_name" && !_down) then 
+        {
+            _units pushBack ["ColorRed",_x,"loc_Hospital",_x getVariable["realname",name _x]];
+        };
+    } forEach allDeadMen;
+};
 
 {
     if ((_x select 1) != player) then 
