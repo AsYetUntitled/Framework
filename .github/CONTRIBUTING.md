@@ -64,10 +64,10 @@ AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com
   * [SQF](https://community.bistudio.com/wiki/SQF_syntax) - Scripting. 
   * [SQL](https://en.wikipedia.org/wiki/SQL) - Database structure. 
   * [C++](https://en.wikipedia.org/wiki/C%2B%2B) - Configs and [dialogs](https://community.bistudio.com/wiki/Dialog_Control). 
-  * [Regular expressions](http://www.regular-expressions.info/) (Regex) - Enhanced [BattlEye filter](https://github.com/ArmaLife/Framework/tree/master/BEFilters) functionality. 
+  * [Regular expressions](http://www.regular-expressions.info/) (Regex) - Enhanced [BattlEye filter](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) functionality. 
   * English, Czech, French, Spanish, Italian, Polish, Portuguese, Russian, or German - [Stringtable](https://community.bistudio.com/wiki/Stringtable.xml) localisation. 
 * If not, but you can setup and run your own server, then you can help us test the build for bugs, exploits, security and performance issues. 
-* See [issues](https://github.com/ArmaLife/Framework/issues) for a full list of all open tasks and bugs. If you would like to work on a solution to an issue then please leave a comment on that issue so that others know a solution is in progress. 
+* See [issues](https://github.com/AsYetUntitled/Framework/issues) for a full list of all open tasks and bugs. If you would like to work on a solution to an issue then please leave a comment on that issue so that others know a solution is in progress. 
 
 ## Contact
 If you need to chat with us in real-time then you can do so on [our Discord server](https://discord.gg/yfAMTFp). 
