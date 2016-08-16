@@ -18,18 +18,10 @@ if (!(_house isKindOf "House_F")) exitWith {};
 
 _exit = false;
 if (_mode) then {
+    _lightPos = (getArray (missionConfigFile >> "Housing" >> worldName >> (typeOf _house) >> "lightPos" ));
+    if (_lightPos isEqualTo []) exitWith {};
     _lightSource = "#lightpoint" createVehicleLocal [0,0,0];
-
-    switch (true) do {
-        case ((typeOf _house) in ["Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_i_House_Big_01_V3_F"]): {_lightSource lightAttachObject [_house,[0,-2,3.8]];};
-        case ((typeOf _house) in ["Land_i_House_Big_02_V1_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_02_V3_F"]): {_lightSource lightAttachObject [_house,[2,0,3.5]];};
-        case ((typeOf _house) in ["Land_i_House_Small_01_V1_F","Land_i_House_Small_01_V2_F","Land_i_House_Small_01_V3_F"]): {_lightSource lightAttachObject [_house,[-1.5,0,2]]};
-        case ((typeOf _house) in ["Land_i_House_Small_02_V1_F","Land_i_House_Small_02_V2_F","Land_i_House_Small_02_V3_F"]): {_lightSource lightAttachObject [_house,[2,0,2.4]]};
-        case ((typeOf _house) in ["Land_i_House_Small_03_V1_F","Land_i_House_Small_03_V3_F","Land_i_House_Small_03_V3_F"]): {_lightSource lightAttachObject [_house,[-3.3,1,2.5]];};
-        default {_exit = true;};
-    };
-    if (_exit) exitWith {deleteVehicle _lightSource;};
-
+    _lightSource lightAttachObject [_house,_lightPos];
     _lightSource setLightColor [250,150,50];
     _lightSource setLightAmbient [1,1,0.2];
     _lightSource setLightAttenuation [1,0,0,0];
