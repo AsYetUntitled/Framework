@@ -1,4 +1,3 @@
-#include "..\..\script_macros.hpp"
 /*
     File: fn_lightHouse.sqf
     Author: Bryan "Tonic" Boardwine
@@ -19,7 +18,7 @@ if (!(_house isKindOf "House_F")) exitWith {};
 
 _exit = false;
 if (_mode) then {
-    _lightPos = (getArray (missionConfigFile >> "Housing" >> ALTIS_TANOA("Altis","Tanoa") >> (typeOf _house) >> "lightPos" ));
+    _lightPos = (getArray (missionConfigFile >> "Housing" >> worldName >> (typeOf _house) >> "lightPos" ));
     if (_lightPos isEqualTo []) exitWith {};
     _lightSource = "#lightpoint" createVehicleLocal [0,0,0];
     _lightSource lightAttachObject [_house,_lightPos];
