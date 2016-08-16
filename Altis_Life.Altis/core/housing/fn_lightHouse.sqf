@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
     File: fn_lightHouse.sqf
     Author: Bryan "Tonic" Boardwine
