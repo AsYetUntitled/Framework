@@ -22,13 +22,30 @@ AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com
 * **...check that you can reproduce the issue**. 
   * If you cannot reproduce the issue then it can be very difficult to fix it. 
 
+#### When creating a new issue make sure to... 
+* **...give your issue a descriptive but concise title.** 
+  * Straightaway anyone should be able to understand what the issue is about just by reading the title. 
+  * Avoid making the title ambiguous or a sentence that is finished in the body of your issue. 
+* **...provide as much detail as necessary about the issue.** 
+  * Describe what should have occurred. Provide screenshots or video footage if applicable. 
+  * Describe what actually occurred. Provide screenshots or video footage if applicable. 
+  * If you can reproduce the behaviour then also provide steps on how to do so. 
+  * If errors or other messages were output to the game's [RPT](https://community.bistudio.com/wiki/Crash_Files) and/or extDB2 log files then paste those messages into your issue. If the errors or other messages are so long that they cover the whole screen then upload the log files to GitHub instead of pasting them into the issue. 
+  * Include the version of *Arma 3* that you are using. You can acquire this info by starting the *Arma 3* launcher, clicking OPTIONS, and then clicking the version information displayed below. This will copy the info to your clipboard which you can then paste at the bottom of your issue. 
+* **...tag your issue with all applicable labels (if you have the permissions to do so).** 
+  * See [applying labels to issues and pull requests](https://help.github.com/articles/applying-labels-to-issues-and-pull-requests/). 
+* **...associate a milestone to better track its progress (if you have the permissions to do so).** 
+  * See [associating milestones with issues and pull requests](https://help.github.com/articles/associating-milestones-with-issues-and-pull-requests/). 
+* **...assign yourself to the issue (if you intend to solve it and if you have the permissions to do so).** 
+  * See [assigning issues and pull requests to other GitHub users](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/). 
+
 ## Pull Requests
 * If your pull request fixes an existing issue then be sure to associate your pull request with the issue. This means that if your pull request is merged then the corresponding issue will automatically be closed. See [closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/) for what keywords to use. 
 * If your pull request fixes an issue that has not been reported then be sure to clearly specify the fix in your pull request message. 
 * If your pull request adds a new feature to the mission then...
   * ...decide if the mission would actually benefit from your new feature. You may wish to create an issue to discuss the implementation of your feature with other contributors. 
     * ...if others think that your feature should be implemented then go ahead and submit a pull request. 
-    * ...if not then consider posting a tutorial on how to install it on the [Altis Life RPG forums](http://www.altisliferpg.com/). 
+    * ...if not then instead consider posting a tutorial on the [Altis Life RPG forums](http://www.altisliferpg.com/) on how to implement it. 
   * ...be sure to thoroughly test your code for any errors and, if applicable, possible exploits. 
   * ...optimise your code to have as little impact on performance as possible. See [code optimisation](https://community.bistudio.com/wiki/Code_Optimisation) on the Bohemia Interactive Wiki for more information. 
   * ...if applicable, be sure to update the [BattlEye filters](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) and [SpyGlass variables](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp) to be compatible with your changes. If you are unsure on how to do so then ask if someone else would be kind enough to do so for you. 
@@ -43,8 +60,14 @@ AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com
   * ...tab detected then you need to indent with four (4) spaces for each one (1) tab. 
 
 ## Can I help?
-* If you are knowledgeable in [SQF](https://community.bistudio.com/wiki/SQF_syntax), [SQL](https://en.wikipedia.org/wiki/SQL), [C++](https://en.wikipedia.org/wiki/C%2B%2B), or [regular expressions](http://www.regular-expressions.info/), or are fluent in one or more of [these languages](https://community.bistudio.com/wiki/Stringtable.xml#Languages) then **you** have what it takes to helps us expand and improve upon this mission. 
-* If not, but you can setup your own server then you can help us test the build for bugs, exploits, security and performance issues. 
+* If you are competent in any of the below then you have what it takes to help us expand and improve upon this framework. 
+  * [SQF](https://community.bistudio.com/wiki/SQF_syntax) - Scripting. 
+  * [SQL](https://en.wikipedia.org/wiki/SQL) - Database structure. 
+  * [C++](https://en.wikipedia.org/wiki/C%2B%2B) - Configs and [dialogs](https://community.bistudio.com/wiki/Dialog_Control). 
+  * [Regular expressions](http://www.regular-expressions.info/) (Regex) - Enhanced [BattlEye filter](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) functionality. 
+  * English, Czech, French, Spanish, Italian, Polish, Portuguese, Russian, or German - [Stringtable](https://community.bistudio.com/wiki/Stringtable.xml) localisation. 
+* If not, but you can setup and run your own server, then you can help us test the build for bugs, exploits, security and performance issues. 
+* See [issues](https://github.com/AsYetUntitled/Framework/issues) for a full list of all open tasks and bugs. If you would like to work on a solution to an issue then please leave a comment on that issue so that others know a solution is in progress. 
 
 ## Contact
 If you need to chat with us in real-time then you can do so on [our Discord server](https://discord.gg/yfAMTFp). 
