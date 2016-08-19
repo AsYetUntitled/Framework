@@ -55,4 +55,4 @@
     failMission "SpyGlass";
 
 //Map Macros
-#define ALTIS_TANOA(var1,var2) if (worldName isEqualTo "Altis") then {var1} else {var2}
+#define ALTIS_TANOA(var1,var2) if (worldName == "Altis") then {var1} else {var2}
