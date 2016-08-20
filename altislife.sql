@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `uid` int(12) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `aliases` text NOT NULL,
-  `playerid` varchar(64) NOT NULL,
+  `playerid` varchar(17) NOT NULL,
   `cash` int(100) NOT NULL DEFAULT '0',
   `bankacc` int(100) NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `side` varchar(16) NOT NULL,
   `classname` varchar(64) NOT NULL,
   `type` varchar(16) NOT NULL,
-  `pid` varchar(32) NOT NULL,
+  `pid` varchar(17) NOT NULL,
   `alive` tinyint(1) NOT NULL DEFAULT '1',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   `active` tinyint(1) NOT NULL DEFAULT '0',
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 
 CREATE TABLE IF NOT EXISTS `houses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` varchar(32) NOT NULL,
+  `pid` varchar(17) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `owned` tinyint(1) DEFAULT '0',
   `garage` tinyint(1) NOT NULL DEFAULT '0',
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `gangs` (
 
 CREATE TABLE IF NOT EXISTS `containers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` varchar(32) NOT NULL,
+  `pid` varchar(17) NOT NULL,
   `classname` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `inventory` text NOT NULL,
