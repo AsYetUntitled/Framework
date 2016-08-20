@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `uid` int(12) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `aliases` text NOT NULL,
-  `playerid` varchar(17) NOT NULL,
+  `pid` varchar(17) NOT NULL,
   `cash` int(100) NOT NULL DEFAULT '0',
   `bankacc` int(100) NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
