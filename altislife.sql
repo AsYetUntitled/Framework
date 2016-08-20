@@ -68,7 +68,7 @@ DELIMITER ;
 --
 
 CREATE TABLE IF NOT EXISTS `players` (
-  `uid` int(12) NOT NULL AUTO_INCREMENT,
+  `uid` int(4) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `aliases` text NOT NULL,
   `pid` varchar(17) NOT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 --
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
-  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `side` varchar(16) NOT NULL,
   `classname` varchar(64) NOT NULL,
   `type` varchar(16) NOT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 --
 
 CREATE TABLE IF NOT EXISTS `houses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `pid` varchar(17) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `owned` tinyint(1) DEFAULT '0',
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
 --
 
 CREATE TABLE IF NOT EXISTS `gangs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `owner` varchar(32) DEFAULT NULL,
   `name` varchar(32) DEFAULT NULL,
   `members` text,
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `gangs` (
 --
 
 CREATE TABLE IF NOT EXISTS `containers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `pid` varchar(17) NOT NULL,
   `classname` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
