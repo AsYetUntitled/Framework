@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`uid`),
-  UNIQUE KEY `playerid` (`playerid`),
+  UNIQUE KEY `pid` (`pid`),
   KEY `name` (`name`),
   KEY `blacklist` (`blacklist`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
