@@ -7192,15 +7192,15 @@
             <German>Der Besitzer ist nicht mehr online , so dass Sie nicht dieses Haus plündern können!</German>
         </Key>  
         <Key ID="STR_ISTR_Bolt_Notify">
-            <Original>%1s house is being broken into!</Original>
-            <Czech>%1s Dům je rozdělen na!</Czech>
-            <French>%1s maison est divisée en!</French>
-            <Spanish>%1s casa se divide en!</Spanish>
-            <Italian>Casa %1s viene suddiviso in!</Italian>
-            <Polish>%1s dom jest podzielony na!</Polish>
-            <Russian>%1s дом быть разбит на</Russian>
+            <Original>%1's house is being broken into!</Original>
+            <Czech>%1's Dům je rozdělen na!</Czech>
+            <French>%1's maison est divisée en!</French>
+            <Spanish>%1's casa se divide en!</Spanish>
+            <Italian>Casa %1's viene suddiviso in!</Italian>
+            <Polish>%1's dom jest podzielony na!</Polish>
+            <Russian>%1's дом быть разбит на</Russian>
             <Portuguese>%1s casa está sendo arrombado!</Portuguese>
-            <German>%1s Haus wird eingebrochen!</German>
+            <German>In %1's Haus wurde eingebrochen!</German>
         </Key>  
         <Key ID="STR_ISTR_defuseKit_NotNear">
             <Original>You are not looking at a vault.</Original>
