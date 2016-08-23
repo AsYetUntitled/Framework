@@ -7189,7 +7189,7 @@
             <Polish>Właściciel nie jest online , więc nie można najechać ten dom!</Polish>
             <Russian>Владелец не на сайте , так что вы не можете совершить набег этот дом</Russian>
             <Portuguese>O proprietário não está on-line para que você não pode invadir esta casa!</Portuguese>
-            <German>Der Besitzer ist nicht mehr online , so dass Sie nicht dieses Haus plündern können!</German>
+            <German>Da der Besitzer nicht mehr online ist, kann in dieses Haus nicht eingebrochen werden!</German>
         </Key>  
         <Key ID="STR_ISTR_Bolt_Notify">
             <Original>%1's house is being broken into!</Original>
