@@ -8,6 +8,8 @@
 */
 private ["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
 _building = param [0,objNull,[objNull]];
+private _home = false;
+private _ownerName = "";
 
 private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
 _altisArray = [16019.5,16952.9,0];
@@ -39,7 +41,25 @@ if ((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_po
     [0,"STR_ISTR_Bolt_AlertHouse",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 };
 
+private _ownerUid = (_building getVariable ["house_owner",["",""]]) select 0;
+if (_ownerUid != "") then {_home = true};
+if (_home && (!([_ownerUid] call life_fnc_isUIDActive))) exitWith {hint "The owner is not online so you cannot raid this house!"};
+private _copsNeeded = LIFE_SETTINGS(getNumber,"copsHouseRaid");
+if (({side _x == west} count playableUnits < _copsNeeded) && _home) exitWith {hint format[localize "STR_Civ_NotEnoughCops",_copsNeeded]};
+
 life_action_inUse = true;
+
+if (_home) then {
+    private _unitsToNotify = [];
+    {
+        if (_uid isEqualTo (getPlayerUID _x) || side _x isEqualTo west) then {_unitsToNotify pushBack _x};
+        if (_uid isEqualTo (getPlayerUID _x)) then {_ownerName = name _x};
+    } forEach playableUnits;
+    if (count _unitsToNotify isEqualTo 0) exitWith {};
+    [1,[_building,60,"Mil_dot","HOUSE ROBBERY IN PROGRESS"]] remoteExec ["life_fnc_markers",_unitsToNotify];
+    [1,format["%1s house is being broken into!",_ownerName]] remoteExec ["life_fnc_broadcast",_unitsToNotify];
+};
+
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_ISTR_Bolt_Process";
