@@ -43,9 +43,9 @@ if ((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_po
 
 private _ownerUid = (_building getVariable ["house_owner",["",""]]) select 0;
 if (_ownerUid != "") then {_home = true};
-if (_home && (!([_ownerUid] call life_fnc_isUIDActive))) exitWith {hint "The owner is not online so you cannot raid this house!"};
+if (_home && (!([_ownerUid] call life_fnc_isUIDActive))) exitWith {hint localize "STR_ISTR_Bolt_Offline"};
 private _copsNeeded = LIFE_SETTINGS(getNumber,"copsHouseRaid");
-if (({side _x == west} count playableUnits < _copsNeeded) && _home) exitWith {hint format[localize "STR_Civ_NotEnoughCops",_copsNeeded]};
+if (({side _x isEqualTo west} count playableUnits < _copsNeeded) && _home) exitWith {hint format[localize "STR_Civ_NotEnoughCops",_copsNeeded]};
 
 life_action_inUse = true;
 
@@ -57,7 +57,7 @@ if (_home) then {
     } forEach playableUnits;
     if (count _unitsToNotify isEqualTo 0) exitWith {};
     [1,[_building,60,"Mil_dot","HOUSE ROBBERY IN PROGRESS"]] remoteExec ["life_fnc_markers",_unitsToNotify];
-    [1,format["%1s house is being broken into!",_ownerName]] remoteExec ["life_fnc_broadcast",_unitsToNotify];
+    [1,format[localize "STR_ISTR_Bolt_Notify",_ownerName]] remoteExec ["life_fnc_broadcast",_unitsToNotify];
 };
 
 //Setup the progress bar
