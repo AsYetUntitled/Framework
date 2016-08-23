@@ -7180,6 +7180,28 @@
             <Portuguese>Você deve abrir as portas externas antes de abrir essa!</Portuguese>
             <German>Du musst die Außentüren öffnen, bevor du weitermachen kannst!</German>
         </Key>
+        <Key ID="STR_ISTR_Bolt_Offline">
+            <Original>The owner is not online so you cannot raid this house!</Original>
+            <Czech>Majitel není on-line , takže nelze nájezd tento dům!</Czech>
+            <French>Le propriétaire est pas en ligne de sorte que vous ne pouvez pas piller cette maison!</French>
+            <Spanish>El propietario no está en línea de modo que no se puede atacar esta casa!</Spanish>
+            <Italian>Il proprietario non è in linea quindi non è possibile irruzione questa casa!</Italian>
+            <Polish>Właściciel nie jest online , więc nie można najechać ten dom!</Polish>
+            <Russian>Владелец не на сайте , так что вы не можете совершить набег этот дом</Russian>
+            <Portuguese>O proprietário não está on-line para que você não pode invadir esta casa!</Portuguese>
+            <German>Der Besitzer ist nicht mehr online , so dass Sie nicht dieses Haus plündern können!</German>
+        </Key>  
+        <Key ID="STR_ISTR_Bolt_Notify">
+            <Original>%1s house is being broken into!</Original>
+            <Czech>%1s Dům je rozdělen na!</Czech>
+            <French>%1s maison est divisée en!</French>
+            <Spanish>%1s casa se divide en!</Spanish>
+            <Italian>Casa %1s viene suddiviso in!</Italian>
+            <Polish>%1s dom jest podzielony na!</Polish>
+            <Russian>%1s дом быть разбит на</Russian>
+            <Portuguese>%1s casa está sendo arrombado!</Portuguese>
+            <German>%1s Haus wird eingebrochen!</German>
+        </Key>  
         <Key ID="STR_ISTR_defuseKit_NotNear">
             <Original>You are not looking at a vault.</Original>
             <Czech>Nejste při pohledu na klenbu.</Czech>
