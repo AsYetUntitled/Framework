@@ -6,7 +6,7 @@
     Tells clients to either turn the lights on for that house
     or off.
 */
-private["_lightSource","_exit"];
+private ["_lightSource","_exit"];
 params [
     ["_house",objNull,[objNull]],
     ["_mode",false,[false]]

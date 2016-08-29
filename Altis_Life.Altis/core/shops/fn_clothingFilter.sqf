@@ -7,7 +7,7 @@
     Functionality for filtering clothing types in the menu.
 */
 disableSerialization;
-private["_control","_selection","_list","_filter","_pic","_details"];
+private ["_control","_selection","_list","_filter","_pic","_details"];
 _control = _this select 0;
 _selection = _this select 1;
 life_clothing_filter = _selection;

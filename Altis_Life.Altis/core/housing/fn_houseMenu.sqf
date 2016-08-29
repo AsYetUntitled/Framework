@@ -16,7 +16,7 @@
 #define Btn8 37457
 #define Title 37401
 
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
+private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 disableSerialization;
 _curTarget = param [0,objNull,[objNull]];
 if (isNull _curTarget) exitWith {}; //Bad target
@@ -89,7 +89,7 @@ if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
 };
 
 if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner"}) then {
-    
+
     private _isHouse = false;
 
     if (isClass (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget))) then {
@@ -169,7 +169,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
                 _Btn5 ctrlSetText localize "STR_pInAct_AccessGarage";
                 _Btn5 buttonSetAction "[life_pInact_curTarget,""Car""] spawn life_fnc_vehicleGarage; closeDialog 0;";
                 _Btn5 ctrlShow true;
-        
+
                 _Btn6 ctrlSetText localize "STR_pInAct_StoreVeh";
                 _Btn6 buttonSetAction "[life_pInact_curTarget,player] spawn life_fnc_storeVehicle; closeDialog 0;";
                 _Btn6 ctrlShow true;
@@ -181,6 +181,6 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
             _Btn5 ctrlShow true;
 
         };
-            
+
     };
 };

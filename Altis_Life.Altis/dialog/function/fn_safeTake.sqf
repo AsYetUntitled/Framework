@@ -6,7 +6,7 @@
     Description:
     Gateway to fn_vehTakeItem.sqf but for safe(s).
 */
-private["_ctrl","_num","_safeInfo"];
+private ["_ctrl","_num","_safeInfo"];
 disableSerialization;
 
 if ((lbCurSel 3502) isEqualTo -1) exitWith {hint localize "STR_Civ_SelectItem";};
@@ -19,7 +19,7 @@ if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumF
 _num = parseNumber(_num);
 if (_num < 1) exitWith {hint localize "STR_Cop_VaultUnder1";};
 if (!(_ctrl isEqualTo "goldBar")) exitWith {hint localize "STR_Cop_OnlyGold"};
-if (_num > _safeInfo) exitWith {hint format[localize "STR_Civ_IsntEnoughGold",_num];};
+if (_num > _safeInfo) exitWith {hint format [localize "STR_Civ_IsntEnoughGold",_num];};
 
 //Secondary checks
 _num = [_ctrl,_num,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;

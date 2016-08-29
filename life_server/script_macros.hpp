@@ -1,5 +1,5 @@
 #define SYSTEM_TAG "life"
-#define ITEM_TAG format["%1%2",SYSTEM_TAG,"item_"]
+#define ITEM_TAG format ["%1%2",SYSTEM_TAG,"item_"]
 #define CASH life_cash
 #define BANK life_atmbank
 #define GANG_FUNDS group player getVariable ["gang_bank",0];
@@ -37,9 +37,9 @@
 #define CONTROL_DATAI(ctrl,index) ctrl lbData index
 
 //System Macros
-#define LICENSE_VARNAME(varName,flag) format["license_%1_%2",flag,M_CONFIG(getText,"Licenses",varName,"variable")]
+#define LICENSE_VARNAME(varName,flag) format ["license_%1_%2",flag,M_CONFIG(getText,"Licenses",varName,"variable")]
 #define LICENSE_VALUE(varName,flag) missionNamespace getVariable [LICENSE_VARNAME(varName,flag),false]
-#define ITEM_VARNAME(varName) format["life_inv_%1",M_CONFIG(getText,"VirtualItems",varName,"variable")]
+#define ITEM_VARNAME(varName) format ["life_inv_%1",M_CONFIG(getText,"VirtualItems",varName,"variable")]
 #define ITEM_VALUE(varName) missionNamespace getVariable [ITEM_VARNAME(varName),0]
 #define ITEM_ILLEGAL(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"illegal")
 #define ITEM_SELLPRICE(varName) M_CONFIG(getNumber,"VirtualItems",ITEM_VARNAME(varName),"sellPrice")

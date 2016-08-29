@@ -6,7 +6,7 @@
     Description:
     Raids the players house?
 */
-private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
+private ["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
 _house = param [0,objNull,[objNull]];
 
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
@@ -27,7 +27,7 @@ _title = localize "STR_House_Raid_Searching";
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
-_titleText ctrlSetText format["%2 (1%1)...","%",_title];
+_titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 _cpRate = 0.0075;
@@ -40,7 +40,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
     if (_cP >= 1 || !alive player) exitWith {};
     if (player distance _house > 13) exitWith {};
 };

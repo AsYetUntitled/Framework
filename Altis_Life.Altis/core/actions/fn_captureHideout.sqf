@@ -6,7 +6,7 @@
     Description:
     Blah blah.
 */
-private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
+private ["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
 _altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
 _tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
 private _hideoutObjs = ALTIS_TANOA(_altisArray,_tanoaArray);
@@ -19,7 +19,7 @@ if ((_hideout getVariable ["inCapture",false])) exitWith {hint localize "STR_GNO
 if (!isNull _group) then {
     _gangName = _group getVariable ["gang_name",""];
     _action = [
-        format[localize "STR_GNOTF_AlreadyControlled",_gangName],
+        format [localize "STR_GNOTF_AlreadyControlled",_gangName],
         localize "STR_GNOTF_CurrentCapture",
         localize "STR_Global_Yes",
         localize "STR_Global_No"
@@ -40,7 +40,7 @@ _title = localize "STR_GNOTF_Capturing";
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
-_titleText ctrlSetText format["%2 (1%1)...","%",_title];
+_titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
@@ -59,7 +59,7 @@ for "_i" from 0 to 1 step 0 do {
     };
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
-    _titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+    _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
     _hideout setVariable ["inCapture",true,true];
     if (_cP >= 1 || !alive player) exitWith {_hideout setVariable ["inCapture",false,true];};
     if (life_istazed) exitWith {_hideout setVariable ["inCapture",false,true];}; //Tazed
