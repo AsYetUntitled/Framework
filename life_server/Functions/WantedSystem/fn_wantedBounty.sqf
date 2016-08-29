@@ -17,7 +17,7 @@ params [
 
 if (isNull _civ || isNull _cop) exitWith {};
 
-private _query = format ["SELECT wantedID, wantedName, wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_uid];
+private _query = format["SELECT wantedID, wantedName, wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_uid];
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 private "_amount";

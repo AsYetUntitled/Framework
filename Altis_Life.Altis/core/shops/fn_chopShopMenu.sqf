@@ -6,7 +6,7 @@
     Description:
     Opens & initializes the chop shop menu.
 */
-private ["_control","_price","_nearVehicles","_chopMultiplier","_chopable","_nearUnits"];
+private["_control","_price","_nearVehicles","_chopMultiplier","_chopable","_nearUnits"];
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_ActionInProc"};
 if (playerSide != civilian) exitWith {hint localize "STR_NOTF_notAllowed"};
 disableSerialization;
@@ -30,7 +30,7 @@ _control = CONTROL(39400,39402);
 
         if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
             _classNameLife = "Default"; //Use Default class if it doesn't exist
-            diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+            diag_log format["%1: LifeCfgVehicles class doesn't exist",_className];
         };
 
         _price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");

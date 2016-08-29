@@ -26,7 +26,7 @@ if (_mode isEqualTo 0) then {
 };
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
-    diag_log format ["Query: %1",_query];
+    diag_log format["Query: %1",_query];
 };
 
 [_query,1] call DB_fnc_asyncCall;

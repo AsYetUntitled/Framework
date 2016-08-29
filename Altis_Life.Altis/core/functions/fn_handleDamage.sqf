@@ -22,7 +22,7 @@ if (!isNull _source) then {
             if (side _source isEqualTo west && playerSide isEqualTo civilian) then {
                 _damage = 0;
                 if (alive player && !life_istazed && !life_isknocked && !(_unit getVariable ["restrained",false])) then {
-                    private ["_distance"];
+                    private["_distance"];
                     _distance = 35;
                     if (_projectile == "B_556x45_dual") then {_distance = 100;};
                     if (_unit distance _source < _distance) then {

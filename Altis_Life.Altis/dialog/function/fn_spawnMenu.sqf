@@ -5,7 +5,7 @@
     Description:
     Initializes the spawn point selection menu.
 */
-private ["_spCfg","_sp","_ctrl"];
+private["_spCfg","_sp","_ctrl"];
 disableSerialization;
 
 if (life_is_arrested) exitWith {
@@ -34,4 +34,4 @@ _sp = _spCfg select 0; //First option is set by default
 [((findDisplay 38500) displayCtrl 38502),1,0.1,getMarkerPos (_sp select 0)] call life_fnc_setMapPosition;
 life_spawn_point = _sp;
 
-ctrlSetText[38501,format ["%2: %1",_sp select 1,localize "STR_Spawn_CSP"]];
+ctrlSetText[38501,format["%2: %1",_sp select 1,localize "STR_Spawn_CSP"]];

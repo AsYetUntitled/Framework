@@ -6,7 +6,7 @@
     Description:
     Starts automated mining of resource from the tempest device. Not integrated with percents.
 */
-private ["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_isMineral"];
+private["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_isMineral"];
 _vehicle = param [0,objNull,[objNull]];
 _isMineral = true;
 if (isNull _vehicle) exitWith {};
@@ -161,7 +161,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
-    titleText[format [localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
+    titleText[format[localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
     _itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
     _vehicle setVariable ["Trunk",[_inv,_space + _itemWeight],true];
     _weight = [_vehicle] call life_fnc_vehicleWeight;

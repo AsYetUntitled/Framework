@@ -19,7 +19,7 @@ _group = group _ownerID;
 if (isNull _ownerID || _uid isEqualTo "" || _gangName isEqualTo "") exitWith {}; //Fail
 
 _gangName = [_gangName] call HC_fnc_mresString;
-_query = format ["SELECT id FROM gangs WHERE name='%1' AND active='1'",_gangName];
+_query = format["SELECT id FROM gangs WHERE name='%1' AND active='1'",_gangName];
 
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
@@ -30,7 +30,7 @@ if (!(count _queryResult isEqualTo 0)) exitWith {
     _ownerID publicVariableClient "life_action_gangInUse";
 };
 
-_query = format ["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
+_query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
 
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
@@ -42,15 +42,15 @@ if (!(count _queryResult isEqualTo 0)) exitWith {
 };
 
 //Check to see if a gang with that name already exists but is inactive.
-_query = format ["SELECT id, active FROM gangs WHERE name='%1' AND active='0'",_gangName];
+_query = format["SELECT id, active FROM gangs WHERE name='%1' AND active='0'",_gangName];
 
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 _gangMembers = [[_uid]] call HC_fnc_mresArray;
 
 if (!(count _queryResult isEqualTo 0)) then {
-    _query = format ["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)];
+    _query = format["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)];
 } else {
-    _query = format ["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers];
+    _query = format["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers];
 };
 
 _queryResult = [_query,1] call HC_fnc_asyncCall;
@@ -63,7 +63,7 @@ _group setVariable ["gang_members",[_uid],true];
 [_group] remoteExecCall ["life_fnc_gangCreated",_ownerID];
 
 sleep 0.35;
-_query = format ["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
+_query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
 
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 

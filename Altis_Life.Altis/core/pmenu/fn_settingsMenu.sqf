@@ -12,9 +12,9 @@ if (isNull (findDisplay 2900)) then {
 
 disableSerialization;
 
-ctrlSetText[2902, format ["%1", life_settings_viewDistanceFoot]];
-ctrlSetText[2912, format ["%1", life_settings_viewDistanceCar]];
-ctrlSetText[2922, format ["%1", life_settings_viewDistanceAir]];
+ctrlSetText[2902, format["%1", life_settings_viewDistanceFoot]];
+ctrlSetText[2912, format["%1", life_settings_viewDistanceCar]];
+ctrlSetText[2922, format["%1", life_settings_viewDistanceAir]];
 
 /* Set up the sliders */
 {

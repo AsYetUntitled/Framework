@@ -7,7 +7,7 @@
     Description:
     Sells the house and delete all container near house.
 */
-private ["_house","_uid","_action","_houseCfg"];
+private["_house","_uid","_action","_houseCfg"];
 _house = param [0,objNull,[objNull]];
 _uid = getPlayerUID player;
 
@@ -20,7 +20,7 @@ _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0) exitWith {};
 
 _action = [
-    format [localize "STR_House_SellHouseMSG",
+    format[localize "STR_House_SellHouseMSG",
     (round((_houseCfg select 0)/2)) call life_fnc_numberText,
     (_houseCfg select 1)],localize "STR_pInAct_SellHouse",localize "STR_Global_Sell",localize "STR_Global_Cancel"
 ] call BIS_fnc_guiMessage;
@@ -35,7 +35,7 @@ if (_action) then {
     };
 
     _house setVariable ["locked",false,true];
-    deleteMarkerLocal format ["house_%1",_house getVariable "uid"];
+    deleteMarkerLocal format["house_%1",_house getVariable "uid"];
     _house setVariable ["uid",nil,true];
 
     BANK = BANK + (round((_houseCfg select 0)/2));
@@ -61,7 +61,7 @@ if (_action) then {
     };
     _numOfDoors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _house), "numberOfDoors");
     for "_i" from 1 to _numOfDoors do {
-        _house setVariable [format ["bis_disabled_Door_%1",_i],0,true];
+        _house setVariable [format["bis_disabled_Door_%1",_i],0,true];
     };
     _containers = _house getVariable ["containers",[]];
     if (count _containers > 0) then {

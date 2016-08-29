@@ -8,7 +8,7 @@
     meant to keep the network traffic down with large sums of data flowing
     through remoteExec
 */
-private ["_mode","_packet","_array","_flag"];
+private["_mode","_packet","_array","_flag"];
 _mode = param [0,0,[0]];
 _packet = [getPlayerUID player,playerSide,nil,_mode];
 _array = [];
@@ -27,7 +27,7 @@ switch (_mode) do {
         {
             _varName = LICENSE_VARNAME(configName _x,_flag);
             _array pushBack [_varName,LICENSE_VALUE(configName _x,_flag)];
-        } forEach (format ["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "Licenses"));
+        } forEach (format["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "Licenses"));
 
         _packet set[2,_array];
     };

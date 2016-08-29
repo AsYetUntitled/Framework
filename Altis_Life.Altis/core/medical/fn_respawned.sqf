@@ -6,7 +6,7 @@
     Description:
     Sets the player up if he/she used the respawn option.
 */
-private ["_handle"];
+private["_handle"];
 //Reset our weight and other stuff
 
 life_use_atm = true;

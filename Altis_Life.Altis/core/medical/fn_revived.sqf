@@ -6,7 +6,7 @@
     Description:
     THANK YOU JESUS I WAS SAVED!
 */
-private ["_medic","_dir","_reviveCost"];
+private["_medic","_dir","_reviveCost"];
 _medic = param [0,"Unknown Medic",[""]];
 _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
@@ -15,7 +15,7 @@ life_corpse setVariable ["realname",nil,true]; //Should correct the double name 
 [life_corpse] remoteExecCall ["life_fnc_corpse",RANY];
 
 _dir = getDir life_corpse;
-hint format [localize "STR_Medic_RevivePay",_medic,[_reviveCost] call life_fnc_numberText];
+hint format[localize "STR_Medic_RevivePay",_medic,[_reviveCost] call life_fnc_numberText];
 
 closeDialog 0;
 life_deathCamera cameraEffect ["TERMINATE","BACK"];

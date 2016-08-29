@@ -18,7 +18,7 @@
     2: Secondary
     3: Handgun
 */
-private ["_item","_type","_tmp","_ret","_weaponArray"];
+private["_item","_type","_tmp","_ret","_weaponArray"];
 _item = [_this,0,"",[""]] call BIS_fnc_param;
 _type = [_this,1,0,[0]] call BIS_fnc_param;
 if (_item isEqualTo "" || _type isEqualTo 0) exitWith {0};

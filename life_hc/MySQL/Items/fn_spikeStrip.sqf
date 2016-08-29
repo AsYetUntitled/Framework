@@ -10,7 +10,7 @@
     First originally tried triggers but I was never any good at those nor do I like them as they
     have a global effect.
 */
-private ["_nearVehicles","_spikeStrip"];
+private["_nearVehicles","_spikeStrip"];
 _spikeStrip = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _spikeStrip) exitWith {}; //Bad vehicle type passed.
 

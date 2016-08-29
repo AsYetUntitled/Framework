@@ -26,7 +26,7 @@
     13: Base (Superclass)
     14: New compatibleItems Structure
 */
-private ["_className","_section","_type","_accPointer","_accMuzzle","_accOptic","_classes","_itemInfo","_magazines","_scope","_config","_displayName"];
+private["_className","_section","_type","_accPointer","_accMuzzle","_accOptic","_classes","_itemInfo","_magazines","_scope","_config","_displayName"];
 _className = [_this,0,"",[""]] call BIS_fnc_param;
 _section = [_this,1,"",[""]] call BIS_fnc_param;
 if (_className isEqualTo "") exitWith {[]};
@@ -96,7 +96,7 @@ switch (_section) do
         _muzzles = getArray(_config >> "muzzles");
         _magazines = getArray(_config >> "magazines");
         if (!isNil "_muzzles") then {
-            private ["_tmp"];
+            private["_tmp"];
             {
                 if (_x != "this") then {
                     _tmp = getArray(_base >> _x >> "magazines"); {

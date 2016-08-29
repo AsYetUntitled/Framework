@@ -7,11 +7,11 @@
     Sells the selected vehicle off.
 */
 disableSerialization;
-private ["_control","_price","_vehicle","_nearVehicles","_price2","_chopable"];
+private["_control","_price","_vehicle","_nearVehicles","_price2","_chopable"];
 _control = CONTROL(39400,39402);
 _price = _control lbValue (lbCurSel _control);
 _vehicle = _control lbData (lbCurSel _control);
-_vehicle = call compile format ["%1", _vehicle];
+_vehicle = call compile format["%1", _vehicle];
 _chopable = LIFE_SETTINGS(getArray,"chopShop_vehicles");
 _nearVehicles = nearestObjects [getMarkerPos life_chopShop,_chopable,25];
 _vehicle = (_nearVehicles select _vehicle);

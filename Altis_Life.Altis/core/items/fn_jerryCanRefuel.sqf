@@ -35,7 +35,7 @@ if (_action) then {
     _ui = uiNamespace getVariable "life_progress";
     _progress = _ui displayCtrl 38201;
     _pgText = _ui displayCtrl 38202;
-    _pgText ctrlSetText format ["%2 (1%1)...","%",_title];
+    _pgText ctrlSetText format["%2 (1%1)...","%",_title];
     _progress progressSetPosition 0.01;
     _cP = 0.01;
 
@@ -54,7 +54,7 @@ if (_action) then {
         };
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
-        _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
+        _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
         if (_cP >= 1) exitWith {};
         if (!alive player) exitWith {life_action_inUse = false;};
         if (life_interrupted) exitWith {life_interrupted = false; life_action_inUse = false;};

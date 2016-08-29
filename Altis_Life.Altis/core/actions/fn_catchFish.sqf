@@ -6,7 +6,7 @@
     Description:
     Catches a fish that is near by.
 */
-private ["_fish","_type","_typeName"];
+private["_fish","_type","_typeName"];
 _fish = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _fish) exitWith {}; //Object passed is null?
 if (player distance _fish > 3.5) exitWith {};
@@ -26,5 +26,5 @@ if (_type isEqualTo "") exitWith {}; //Couldn't get a type
 
 if ([true,_type,1] call life_fnc_handleInv) then {
     deleteVehicle _fish;
-    titleText[format [(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
+    titleText[format[(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
 };

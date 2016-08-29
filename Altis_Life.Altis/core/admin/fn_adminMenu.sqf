@@ -6,7 +6,7 @@
     Description:
     Opens the admin menu and hides buttons based on life_adminlevel.
 */
-private ["_display","_list","_side","_godmode","_markers"];
+private["_display","_list","_side","_godmode","_markers"];
 if (FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
 disableSerialization;
@@ -28,7 +28,7 @@ lbClear _list;
 
 {
     _side = switch (side _x) do {case west: {"Cop"}; case civilian: {"Civ"}; case independent: {"Medic"}; default {"Unknown"};};
-    _list lbAdd format ["%1 - %2", _x getVariable ["realname",name _x],_side];
+    _list lbAdd format["%1 - %2", _x getVariable ["realname",name _x],_side];
     _list lbSetdata [(lbSize _list)-1,str(_x)];
 } forEach playableUnits;
 if (FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};

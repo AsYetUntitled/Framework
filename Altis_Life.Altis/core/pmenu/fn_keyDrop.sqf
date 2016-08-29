@@ -5,7 +5,7 @@
     Description:
     Drops the key.
 */
-private ["_dialog","_list","_sel","_vehicle","_impounded","_owners","_index","_index2","_i"];
+private["_dialog","_list","_sel","_vehicle","_impounded","_owners","_index","_index2","_i"];
 disableSerialization;
 
 _dialog = findDisplay 2700;

@@ -7,7 +7,7 @@
     Adds the tags above other players heads when close and have visible range.
 */
 if (!life_settings_tagson) exitWith {};
-private ["_ui","_units","_masks"];
+private["_ui","_units","_masks"];
 #define iconID 78000
 #define scale 0.8
 
@@ -41,8 +41,8 @@ private _index = -1;
         if (!((headgear _x) in _masks || (goggles _x) in _masks || (uniform _x) in _masks)) then {
             if (count _sPos > 1 && {_distance < 15}) then {
                 _text = switch (true) do {
-                    case (_x in (units group player) && playerSide isEqualTo civilian): {format ["<t color='#00FF00'>%1</t>",(_x getVariable ["realname",name _x])];};
-                    case (side _x isEqualTo west && {!isNil {_x getVariable "rank"}}): {format ["<img image='%1' size='1'></img> %2",switch ((_x getVariable "rank")) do {
+                    case (_x in (units group player) && playerSide isEqualTo civilian): {format["<t color='#00FF00'>%1</t>",(_x getVariable ["realname",name _x])];};
+                    case (side _x isEqualTo west && {!isNil {_x getVariable "rank"}}): {format["<img image='%1' size='1'></img> %2",switch ((_x getVariable "rank")) do {
                         case 2: {"\a3\ui_f\data\gui\cfg\Ranks\corporal_gs.paa"};
                         case 3: {"\a3\ui_f\data\gui\cfg\Ranks\sergeant_gs.paa"};
                         case 4: {"\a3\ui_f\data\gui\cfg\Ranks\lieutenant_gs.paa"};
@@ -52,10 +52,10 @@ private _index = -1;
                         case 8: {"\a3\ui_f\data\gui\cfg\Ranks\general_gs.paa"};
                         default {"\a3\ui_f\data\gui\cfg\Ranks\private_gs.paa"};
                         },_x getVariable ["realname",name _x]]};
-                    case (side _x isEqualTo independent): {format ["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t> %1",_x getVariable ["realname",name _x]]};
+                    case (side _x isEqualTo independent): {format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t> %1",_x getVariable ["realname",name _x]]};
                     default {
                         if (!isNil {(group _x) getVariable "gang_name"}) then {
-                            format ["%1<br/><t size='0.8' color='#B6B6B6'>%2</t>",_x getVariable ["realname",name _x],(group _x) getVariable ["gang_name",""]];
+                            format["%1<br/><t size='0.8' color='#B6B6B6'>%2</t>",_x getVariable ["realname",name _x],(group _x) getVariable ["gang_name",""]];
                         } else {
                             if (alive _x) then {
                                 _x getVariable ["realname",name _x];

@@ -43,7 +43,7 @@ life_deathCamera camCommit 0;
 
 //Create a thread for something?
 _unit spawn {
-    private ["_maxTime","_RespawnBtn","_Timer"];
+    private["_maxTime","_RespawnBtn","_Timer"];
     disableSerialization;
     _RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
     _Timer = ((findDisplay 7300) displayCtrl 7301);
@@ -54,14 +54,14 @@ _unit spawn {
             _maxTime = time + LIFE_SETTINGS(getNumber,"respawn_timer");
         };
     _RespawnBtn ctrlEnable false;
-    waitUntil {_Timer ctrlSetText format [localize "STR_Medic_Respawn",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
+    waitUntil {_Timer ctrlSetText format[localize "STR_Medic_Respawn",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
     round(_maxTime - time) <= 0 || isNull _this};
     _RespawnBtn ctrlEnable true;
     _Timer ctrlSetText localize "STR_Medic_Respawn_2";
 };
 
 _unit spawn {
-    private ["_requestBtn","_requestTime"];
+    private["_requestBtn","_requestTime"];
     disableSerialization;
     _requestBtn = ((findDisplay 7300) displayCtrl 7303);
     _requestBtn ctrlEnable false;
@@ -74,7 +74,7 @@ _unit spawn {
 
 //Create a thread to follow with some what precision view of the corpse.
 [_unit] spawn {
-    private ["_unit"];
+    private["_unit"];
     _unit = _this select 0;
     waitUntil {if (speed _unit isEqualTo 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
 };
@@ -117,7 +117,7 @@ if (side _killer isEqualTo west && playerSide != west) then {
     life_copRecieve = _killer;
     //Did I rob the federal reserve?
     if (!life_use_atm && {CASH > 0}) then {
-        [format [localize "STR_Cop_RobberDead",[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+        [format[localize "STR_Cop_RobberDead",[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
         CASH = 0;
     };
 };

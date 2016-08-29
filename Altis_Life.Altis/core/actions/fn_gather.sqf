@@ -6,7 +6,7 @@
     Description:
     Main functionality for gathering.
 */
-private ["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
+private["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
 if (life_action_inUse) exitWith {};
 if ((vehicle player) != player) exitWith {};
 if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrained";};
@@ -69,7 +69,7 @@ for "_i" from 0 to 4 do {
 
 if ([true,_resource,_diff] call life_fnc_handleInv) then {
     _itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
-    titleText[format [localize "STR_NOTF_Gather_Success",(localize _itemName),_diff],"PLAIN"];
+    titleText[format[localize "STR_NOTF_Gather_Success",(localize _itemName),_diff],"PLAIN"];
 };
 
 sleep 1;

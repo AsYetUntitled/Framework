@@ -6,7 +6,7 @@
     Description:
     Passes ALL player information to the server to save player data to the database.
 */
-private ["_packet","_array","_flag","_alive","_position"];
+private["_packet","_array","_flag","_alive","_position"];
 _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
 _array = [];
 _alive = alive player;
@@ -16,7 +16,7 @@ _flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case
 {
     _varName = LICENSE_VARNAME(configName _x,_flag);
     _array pushBack [_varName,LICENSE_VALUE(configName _x,_flag)];
-} forEach (format ["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "Licenses"));
+} forEach (format["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "Licenses"));
 
 _packet pushBack _array;
 

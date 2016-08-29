@@ -6,7 +6,7 @@
     Description:
     Deposits money into the players gang bank.
 */
-private ["_value"];
+private["_value"];
 _value = parseNumber(ctrlText 2702);
 group player setVariable ["gbank_in_use_by",player,true];
 
@@ -28,7 +28,7 @@ if (life_HC_isActive) then {
     [1,group player] remoteExecCall ["TON_fnc_updateGang",RSERV];
 };
 
-hint format [localize "STR_ATM_DepositSuccessG",[_value] call life_fnc_numberText];
+hint format[localize "STR_ATM_DepositSuccessG",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial; //Silent Sync
 

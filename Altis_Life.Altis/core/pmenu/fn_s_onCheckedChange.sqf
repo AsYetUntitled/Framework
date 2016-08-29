@@ -6,7 +6,7 @@
     Description:
     Switching it up and making it prettier..
 */
-private ["_option","_state"];
+private["_option","_state"];
 _option = _this select 0;
 _state = _this select 1;
 

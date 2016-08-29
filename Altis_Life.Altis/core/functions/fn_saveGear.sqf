@@ -8,7 +8,7 @@
     Description:
     Saves the players gear for syncing to the database for persistence..
 */
-private ["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled","_savedVirtualItems"];
+private["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled","_savedVirtualItems"];
 _return = [];
 _savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
 

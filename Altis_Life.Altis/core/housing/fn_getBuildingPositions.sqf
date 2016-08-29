@@ -6,7 +6,7 @@
     Retrieves all 3D-world positions in a building and also restricts
     certain positions due to window positioning.
 */
-private ["_building","_arr","_restricted","_exitLoop","_i"];
+private["_building","_arr","_restricted","_exitLoop","_i"];
 _building = _this select 0;
 _arr = [];
 

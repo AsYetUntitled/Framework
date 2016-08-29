@@ -7,7 +7,7 @@
     Gives a copy of the key for the selected vehicle to the selected player.
     Player must be within range.
 */
-private ["_dialog","_list","_plist","_sel","_vehicle","_owners","_index","_unit","_uid"];
+private["_dialog","_list","_plist","_sel","_vehicle","_owners","_index","_unit","_uid"];
 disableSerialization;
 
 _dialog = findDisplay 2700;
@@ -22,7 +22,7 @@ _vehicle = life_vehicles select parseNumber(_vehicle);
 if ((lbCurSel 2702) isEqualTo -1) exitWith {hint localize "STR_NOTF_didNotSelectPlayer";};
 _sel = lbCurSel _plist;
 _unit = _plist lbData _sel;
-_unit = call compile format ["%1", _unit];
+_unit = call compile format["%1", _unit];
 if (isNull _unit || isNil "_unit") exitWith {};
 if (_unit == player) exitWith {};
 

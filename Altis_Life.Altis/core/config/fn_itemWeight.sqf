@@ -6,7 +6,7 @@
     Description:
     Gets the items weight and returns it.
 */
-private ["_item"];
+private["_item"];
 _item = [_this,0,"",[""]] call BIS_fnc_param;
 if (_item isEqualTo "") exitWith {};
 

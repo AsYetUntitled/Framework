@@ -18,7 +18,7 @@ if (_value > CASH) exitWith {hint localize "STR_ATM_NotEnoughCash"};
 CASH = CASH - _value;
 BANK = BANK + _value;
 
-hint format [localize "STR_ATM_DepositSuccess",[_value] call life_fnc_numberText];
+hint format[localize "STR_ATM_DepositSuccess",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial;
 

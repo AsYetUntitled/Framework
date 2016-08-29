@@ -7,7 +7,7 @@
     Calculates weight differences in the _cWeight (current Weight) against the _mWeight (Max Weight)
     Multiple purpose system for this life mission.
 */
-private ["_item","_value","_cWeight","_mWeight","_sum","_weight"];
+private["_item","_value","_cWeight","_mWeight","_sum","_weight"];
 _item = [_this,0,"",[""]] call BIS_fnc_param;
 _value = [_this,1,-1,[0]] call BIS_fnc_param;
 _cWeight = [_this,2,-1,[0]] call BIS_fnc_param;
