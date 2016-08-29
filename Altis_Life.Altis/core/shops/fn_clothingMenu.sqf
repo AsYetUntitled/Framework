@@ -7,7 +7,7 @@
     Opens and initializes the clothing store menu.
     Started clean, finished messy.
 */
-private["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_oldBev","_flag","_shopTitle","_license","_shopSide","_exit","_testLogic","_nearVeh","_ut1","_ut2","_ut3","_ut4","_ut5","_light"];
+private ["_list","_clothes","_pic","_filter","_pos","_oldPos","_oldDir","_oldBev","_flag","_shopTitle","_license","_shopSide","_exit","_testLogic","_nearVeh","_ut1","_ut2","_ut3","_ut4","_ut5","_light"];
 if (player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 _exit = false;
 
@@ -115,7 +115,7 @@ if (isClass(missionConfigFile >> "Licenses" >> life_clothing_store)) then {
     _flag = M_CONFIG(getText,"Licenses",life_clothing_store,"side");
     _displayName = M_CONFIG(getText,"Licenses",life_clothing_store,"displayName");
     if (!(LICENSE_VALUE(life_clothing_store,_flag))) exitWith {
-        hint format[localize "STR_Shop_YouNeed",localize _displayName];
+        hint format [localize "STR_Shop_YouNeed",localize _displayName];
         closeDialog 0;
     };
 };

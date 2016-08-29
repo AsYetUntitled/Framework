@@ -7,7 +7,7 @@
     Description:
     Searches the container for illegal items.
 */
-private["_container","_containerInfo","_value"];
+private ["_container","_containerInfo","_value"];
 _container = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _container) exitWith {};
 

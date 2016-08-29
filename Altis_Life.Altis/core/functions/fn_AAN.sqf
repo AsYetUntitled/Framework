@@ -27,7 +27,7 @@ _textHeader ctrlSetStructuredText parseText format [localize "STR_News_Broadcast
 _textHeader ctrlCommit 0;
 
 _textLine = _display displayCtrl 3002;
-_textLine ctrlSetStructuredText parseText format["                         %1                         %1                         %1                         %1",_line];
+_textLine ctrlSetStructuredText parseText format ["                         %1                         %1                         %1                         %1",_line];
 _textLine ctrlCommit 0;
 _textLinePos = ctrlPosition _textLine;
 _textLinePos set [0,-100];

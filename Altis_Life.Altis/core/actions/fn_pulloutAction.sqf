@@ -6,7 +6,7 @@
     Description:
     Pulls civilians out of a car if it's stopped.
 */
-private["_crew"];
+private ["_crew"];
 _crew = crew cursorObject;
 
 {

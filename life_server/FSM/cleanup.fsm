@@ -34,7 +34,7 @@ class FSM
                 {
                         name = "init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"private[""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
+                        init = /*%FSM<STATEINIT""">*/"private [""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
                          "_impound = time;" \n
                          "_cars = time;" \n
                          "_objs = time;" \n
@@ -91,7 +91,7 @@ class FSM
                          "			_uid = _dbInfo select 0;" \n
                          "			_plate = _dbInfo select 1;" \n
                          "" \n
-                         "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+                         "			_query = format [""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
                          "			_query spawn {" \n
                          "				" \n
                          "				_thread = [_this,1] call DB_fnc_asyncCall;" \n
@@ -110,7 +110,7 @@ class FSM
                          "			_uid = _dbInfo select 0;" \n
                          "			_plate = _dbInfo select 1;" \n
                          "" \n
-                         "			_query = format[""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+                         "			_query = format [""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
                          "			_query spawn {" \n
                          "				" \n
                          "				_thread = [_this,1] call DB_fnc_asyncCall;" \n
