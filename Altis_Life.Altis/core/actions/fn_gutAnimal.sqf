@@ -6,7 +6,7 @@
     Description:
     Guts the animal?
 */
-private ["_animalCorpse","_upp","_ui","_progress","_pgText","_cP","_displayName","_item"];
+private["_animalCorpse","_upp","_ui","_progress","_pgText","_cP","_displayName","_item"];
 _animalCorpse = param [0,objNull,[objNull]];
 if (isNull _animalCorpse) exitWith {}; //Object passed is null?
 
@@ -25,14 +25,14 @@ switch (typeOf _animalCorpse) do {
 
 if (_displayName isEqualTo "") exitWith {life_action_inUse = false;};
 
-_upp = format [localize "STR_NOTF_Gutting",_displayName];
+_upp = format[localize "STR_NOTF_Gutting",_displayName];
 //Setup our progress bar.
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
-_pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
+_pgText ctrlSetText format["%2 (1%1)...","%",_upp];
 _progress progressSetPosition 0.01;
 _cP = 0.01;
 
@@ -45,7 +45,7 @@ for "_i" from 0 to 1 step 0 do {
     uiSleep 0.15;
     _cP = _cP + 0.01;
     _progress progressSetPosition _cP;
-    _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
+    _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
     if (_cP >= 1) exitWith {};
     if (!alive player) exitWith {};
     if (isNull _animalCorpse) exitWith {};
@@ -62,7 +62,7 @@ if (player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVeh
 
 if ([true,_item,1] call life_fnc_handleInv) then {
     deleteVehicle _animalCorpse;
-    titleText[format [(localize "STR_NOTF_Guttingfinish"),_displayName],"PLAIN"];
+    titleText[format[(localize "STR_NOTF_Guttingfinish"),_displayName],"PLAIN"];
 } else {
     titleText[(localize "STR_NOTF_InvFull"),"PLAIN"];
 };

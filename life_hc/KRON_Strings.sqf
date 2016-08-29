@@ -64,7 +64,7 @@
 // =========================================================================================================
 
 KRON_StrToArray = {
-    private ["_in","_i","_arr","_out"];
+    private["_in","_i","_arr","_out"];
     _in=_this select 0;
     _arr = toArray(_in);
     _out=[];
@@ -75,7 +75,7 @@ KRON_StrToArray = {
 };
 
 KRON_StrLeft = {
-    private ["_in","_len","_arr","_out"];
+    private["_in","_len","_arr","_out"];
     _in=_this select 0;
     _len=(_this select 1)-1;
     _arr=[_in] call KRON_StrToArray;
@@ -91,7 +91,7 @@ KRON_StrLeft = {
 };
 
 KRON_StrLen = {
-    private ["_in","_arr","_len"];
+    private["_in","_arr","_len"];
     _in=_this select 0;
     _arr=[_in] call KRON_StrToArray;
     _len=count (_arr);
@@ -99,7 +99,7 @@ KRON_StrLen = {
 };
 
 KRON_StrRight = {
-    private ["_in","_len","_arr","_i","_out"];
+    private["_in","_len","_arr","_i","_out"];
     _in=_this select 0;
     _len=_this select 1;
     _arr=[_in] call KRON_StrToArray;
@@ -112,7 +112,7 @@ KRON_StrRight = {
 };
 
 KRON_StrMid = {
-    private ["_in","_pos","_len","_arr","_i","_out"];
+    private["_in","_pos","_len","_arr","_i","_out"];
     _in=_this select 0;
     _pos=abs(_this select 1);
     _arr=[_in] call KRON_StrToArray;
@@ -129,7 +129,7 @@ KRON_StrMid = {
 };
 
 KRON_StrIndex = {
-    private ["_hay","_ndl","_lh","_ln","_arr","_tmp","_i","_j","_out"];
+    private["_hay","_ndl","_lh","_ln","_arr","_tmp","_i","_j","_out"];
     _hay=_this select 0;
     _ndl=_this select 1;
     _out=-1;
@@ -150,14 +150,14 @@ KRON_StrIndex = {
 };
 
 KRON_StrInStr = {
-    private ["_out"];
+    private["_out"];
     _in=_this select 0;
     _out=if (([_this select 0,_this select 1] call KRON_StrIndex)==-1) then {false} else {true};
      _out
 };
 
 KRON_Replace = {
-    private ["_str","_old","_new","_out","_tmp","_jm","_la","_lo","_ln","_i"];
+    private["_str","_old","_new","_out","_tmp","_jm","_la","_lo","_ln","_i"];
     _str=_this select 0;
     _arr=toArray(_str);
     _la=count _arr;
@@ -185,21 +185,21 @@ KRON_Replace = {
 };
 
 KRON_StrUpper = {
-    private ["_in","_out"];
+    private["_in","_out"];
     _in=_this select 0;
     _out=toUpper(_in);
     _out
 };
 
 KRON_StrLower = {
-    private ["_in","_out"];
+    private["_in","_out"];
     _in=_this select 0;
     _out=toLower(_in);
     _out
 };
 
 KRON_ArrayToUpper = {
-    private ["_in","_i","_e","_out"];
+    private["_in","_i","_e","_out"];
     _in=_this select 0;
     _out=[];
     if ((count _in)>0) then {
@@ -215,7 +215,7 @@ KRON_ArrayToUpper = {
 };
 
 KRON_Compare = {
-    private ["_k","_n","_s","_i","_c","_t","_s1","_s2","_l1","_l2","_l"];
+    private["_k","_n","_s","_i","_c","_t","_s1","_s2","_l1","_l2","_l"];
     _k=[_this,"CASE"] call KRON_findFlag;
     _n=0;
     _s=0;
@@ -264,7 +264,7 @@ KRON_Compare = {
 };
 
 KRON_ArraySort = {
-    private ["_a","_d","_k","_s","_i","_vo","_v1","_v2","_j","_c","_x"];
+    private["_a","_d","_k","_s","_i","_vo","_v1","_v2","_j","_c","_x"];
     _a = +(_this select 0);
     _d = if ([_this,"DESC"] call KRON_findFlag) then {-1} else {1};
     _k = if ([_this,"CASE"] call KRON_findFlag) then {"CASE"} else {"nocase"};
@@ -293,7 +293,7 @@ KRON_ArraySort = {
 };
 
 KRON_findFlag = {
-    private ["_in","_flg","_arr","_out"];
+    private["_in","_flg","_arr","_out"];
     _in=_this select 0;
     _flg=toUpper(_this select 1);
     _arr=[_in] call KRON_ArrayToUpper;
@@ -302,7 +302,7 @@ KRON_findFlag = {
 };
 
 KRON_getArg = {
-    private ["_in","_flg","_fl","_def","_arr","_i","_j","_as","_aa","_org","_p","_out"];
+    private["_in","_flg","_fl","_def","_arr","_i","_j","_as","_aa","_org","_p","_out"];
     _in=_this select 0;
     _flg=toUpper(_this select 1);
     _fl=[_flg] call KRON_StrLen;
@@ -329,7 +329,7 @@ KRON_getArg = {
 
 
 KRON_getArgRev = {
-    private ["_in","_flg","_fl","_def","_arr","_i","_j","_as","_aa","_org","_p","_out"];
+    private["_in","_flg","_fl","_def","_arr","_i","_j","_as","_aa","_org","_p","_out"];
     _in=_this select 0;
     _flg=toUpper(_this select 1);
     _fl=[_flg] call KRON_StrLen;

@@ -7,7 +7,7 @@
     Master client initialization file
 */
 
-private ["_handle","_timeStamp","_server_isReady","_extDB_notLoaded"];
+private["_handle","_timeStamp","_server_isReady","_extDB_notLoaded"];
 life_firstSpawn = true;
 life_session_completed = false;
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED"];
@@ -164,5 +164,5 @@ life_hideoutBuildings = [];
 } count ["gang_area_1","gang_area_2","gang_area_3"];
 
 diag_log "----------------------------------------------------------------------------------------------------";
-diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log format["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";

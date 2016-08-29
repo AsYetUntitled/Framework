@@ -6,7 +6,7 @@
     Description:
     32 hours later...
 */
-private ["_unitID ","_members"];
+private["_unitID ","_members"];
 if (getPlayerUID player isEqualTo (group player getVariable "gang_owner")) exitWith {hint localize "STR_GNOTF_LeaderLeave"};
 
 _unitID = getPlayerUID player;

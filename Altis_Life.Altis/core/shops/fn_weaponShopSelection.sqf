@@ -6,7 +6,7 @@
     Description:
     Checks the weapon & adds the price tag.
 */
-private ["_control","_index","_shop","_priceTag","_price","_item","_itemArray","_bool"];
+private["_control","_index","_shop","_priceTag","_price","_item","_itemArray","_bool"];
 _control = [_this,0,controlNull,[controlNull]] call BIS_fnc_param;
 _index = [_this,1,-1,[0]] call BIS_fnc_param;
 _shop = uiNamespace getVariable ["Weapon_Shop",""];
@@ -52,7 +52,7 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
 
                 //Accessories Menu
                 if (isClass (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo")) then {
-                    private ["_slotArray"];
+                    private["_slotArray"];
                     _itemArray = [];
                     if (isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
                         _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","CowsSlot","compatibleItems");

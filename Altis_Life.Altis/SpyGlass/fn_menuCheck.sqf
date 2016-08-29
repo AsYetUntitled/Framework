@@ -6,7 +6,7 @@
     Description:
     Checks for known cheat menus and closes them then reports them to the server.
 */
-private ["_displays","_detection","_display","_timeStamp"];
+private["_displays","_detection","_display","_timeStamp"];
 disableSerialization;
 
 _displays = [
@@ -27,8 +27,8 @@ for "_i" from 0 to 1 step 0 do {
         };
 
         if (_detection) exitWith {
-            [profileName,getPlayerUID player,format ["MenuBasedHack_%1",_targetName]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
-            [profileName,format ["Menu Hack: %1",_targetName]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+            [profileName,getPlayerUID player,format["MenuBasedHack_%1",_targetName]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
+            [profileName,format["Menu Hack: %1",_targetName]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
             sleep 0.5;
             SPYGLASS_END
         };
@@ -45,8 +45,8 @@ for "_i" from 0 to 1 step 0 do {
     _display = findDisplay 602;
     if (!isNull _display && {count (allControls _display) > 87}) then {
         _count = count allControls _display;
-        [profileName,getPlayerUID player,format ["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
-        [profileName,format ["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+        [profileName,getPlayerUID player,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
+        [profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
         closeDialog 0;
         SPYGLASS_END
     };
@@ -141,8 +141,8 @@ for "_i" from 0 to 1 step 0 do {
             _onLoad = getText(configFile >> (_x select 0) >> "onLoad");
             _onUnload = getText(configFile >> (_x select 0) >> "onUnload");
             if (_onLoad != _x select 1 || _onUnload != _x select 2) exitWith {
-                [profileName,getPlayerUID player,format ["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
-                [profileName,format ["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+                [profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
+                [profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
                 sleep 0.5;
                 SPYGLASS_END
             };

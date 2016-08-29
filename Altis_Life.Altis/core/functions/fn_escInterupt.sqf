@@ -7,21 +7,21 @@
     Monitors when the ESC menu is pulled up and blocks off
     certain controls when conditions meet.
 */
-private ["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
+private["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
 disableSerialization;
 
 _escSync = {
-    private ["_abortButton","_thread","_syncManager"];
+    private["_abortButton","_thread","_syncManager"];
     disableSerialization;
 
     _syncManager = {
         disableSerialization;
-        private ["_abortButton","_timeStamp"];
+        private["_abortButton","_timeStamp"];
         _abortButton = CONTROL(49,104);
         _timeStamp = time + 10;
 
         waitUntil {
-            _abortButton ctrlSetText format [localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
+            _abortButton ctrlSetText format[localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
             _abortButton ctrlCommit 0;
             round(_timeStamp - time) <= 0 || isNull (findDisplay 49)
         };

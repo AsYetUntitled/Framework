@@ -7,7 +7,7 @@
     Description:
     Answers the query request to create the vehicle in the database.
 */
-private ["_uid","_side","_type","_classname","_color","_plate"];
+private["_uid","_side","_type","_classname","_color","_plate"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[west]] call BIS_fnc_param;
 _vehicle = [_this,2,objNull,[objNull]] call BIS_fnc_param;

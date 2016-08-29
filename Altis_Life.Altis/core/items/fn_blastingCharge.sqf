@@ -6,7 +6,7 @@
     Description:
     Blasting charge is used for the federal reserve vault and nothing  more.. Yet.
 */
-private ["_vault","_handle"];
+private["_vault","_handle"];
 _vault = param [0,ObjNull,[ObjNull]];
 
 if (isNull _vault) exitWith {}; //Bad object

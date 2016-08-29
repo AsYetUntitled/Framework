@@ -17,7 +17,7 @@ if (!isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "ST
 
 _gangName = _group getVariable "gang_name";
 _action = [
-    format [localize "STR_GNOTF_InviteMSG",_name,_gangName],
+    format[localize "STR_GNOTF_InviteMSG",_name,_gangName],
     localize "STR_Gang_Invitation",
     localize "STR_Global_Yes",
     localize "STR_Global_No"

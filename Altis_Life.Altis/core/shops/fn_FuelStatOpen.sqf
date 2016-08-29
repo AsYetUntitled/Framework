@@ -6,7 +6,7 @@
     Description:
     Open dialog Pump.
 */
-private ["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy","_fuelCost"];
+private["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy","_fuelCost"];
 
 disableSerialization;
 //Long boring series of checks

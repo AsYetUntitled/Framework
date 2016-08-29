@@ -6,7 +6,7 @@
 
     Example:   [_veh,"unlock"] remoteExec ["life_fnc_say3D",RANY];
 */
-private ["_object","_sound"];
+private["_object","_sound"];
 _object = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _sound = [_this,1,"",[""]] call BIS_fnc_param;
 

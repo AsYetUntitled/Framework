@@ -6,7 +6,7 @@
     Description:
     Opens and manages the bank menu.
 */
-private ["_units","_type"];
+private["_units","_type"];
 
 if (!life_use_atm) exitWith {
     hint format [localize "STR_Shop_ATMRobbed",(LIFE_SETTINGS(getNumber,"noatm_timer"))];
@@ -20,7 +20,7 @@ disableSerialization;
 _units = CONTROL(2700,2703);
 
 lbClear _units;
-CONTROL(2700,2701) ctrlSetStructuredText parseText format ["<img size='1.7' image='icons\ico_bank.paa'/> $%1<br/><img size='1.6' image='icons\ico_money.paa'/> $%2",[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+CONTROL(2700,2701) ctrlSetStructuredText parseText format["<img size='1.7' image='icons\ico_bank.paa'/> $%1<br/><img size='1.6' image='icons\ico_money.paa'/> $%2",[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 
 {
     _name = _x getVariable ["realname",name _x];
@@ -30,7 +30,7 @@ CONTROL(2700,2701) ctrlSetStructuredText parseText format ["<img size='1.7' imag
             case civilian: {_type = "Civ"};
             case independent: {_type = "EMS"};
         };
-        _units lbAdd format ["%1 (%2)",_x getVariable ["realname",name _x],_type];
+        _units lbAdd format["%1 (%2)",_x getVariable ["realname",name _x],_type];
         _units lbSetData [(lbSize _units)-1,str(_x)];
     };
 } forEach playableUnits;

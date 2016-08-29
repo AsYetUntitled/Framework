@@ -11,7 +11,7 @@
     TODO:
     Change it up so animals repopulate over time.
 */
-private ["_animalList","_dist","_radius","_zoneName","_unitsNear","_animalsActive"];
+private["_animalList","_dist","_radius","_zoneName","_unitsNear","_animalsActive"];
 params [
         ["_zoneName","",[""]],
         ["_maxAnimals",10,[0]]

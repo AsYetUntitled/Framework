@@ -7,7 +7,7 @@
     Adds fuel in car.
 */
 disableSerialization;
-private ["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
+private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
 _classname = lbData[20302,(lbCurSel 20302)];
 _index =  lbValue[20302,(lbCurSel 20302)];
 
@@ -43,7 +43,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
     _ui = uiNameSpace getVariable "life_progress";
     _progress = _ui displayCtrl 38201;
     _pgText = _ui displayCtrl 38202;
-    _pgText ctrlSetText format ["%2 (1%1)...","%","Refuel:"];
+    _pgText ctrlSetText format["%2 (1%1)...","%","Refuel:"];
     _progress progressSetPosition 0.01;
     _cP = 0.01;
     _tp =0;
@@ -52,7 +52,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
         sleep  _timer;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
-        _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%","Refuel:"];
+        _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%","Refuel:"];
         if (_cP >= 1) exitWith {};
         if (player distance _car > 10) exitWith {};
         if (vehicle player != player) exitWith {};

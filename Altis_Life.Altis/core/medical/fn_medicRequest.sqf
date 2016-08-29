@@ -13,4 +13,4 @@ params [
 
 if (isNull _caller) exitWith {}; //Bad data
 
-["MedicalRequestEmerg",[format [localize "STR_Medic_Request",_callerName]]] call BIS_fnc_showNotification;
+["MedicalRequestEmerg",[format[localize "STR_Medic_Request",_callerName]]] call BIS_fnc_showNotification;

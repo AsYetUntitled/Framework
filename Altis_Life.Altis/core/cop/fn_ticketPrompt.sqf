@@ -6,7 +6,7 @@
     Description:
     Prompts the player that he is being ticketed.
 */
-private ["_cop","_val"];
+private["_cop","_val"];
 if (!isNull (findDisplay 2600)) exitWith {}; //Already at the ticket menu, block for abuse?
 _cop = _this select 0;
 if (isNull _cop) exitWith {};
@@ -19,7 +19,7 @@ waitUntil {!isNull (findDisplay 2600)};
 life_ticket_paid = false;
 life_ticket_val = _val;
 life_ticket_cop = _cop;
-CONTROL(2600,2601) ctrlSetStructuredText parseText format ["<t align='center'><t size='.8px'>" +(localize "STR_Cop_Ticket_GUI_Given"),_cop getVariable ["realname",name _cop],_val];
+CONTROL(2600,2601) ctrlSetStructuredText parseText format["<t align='center'><t size='.8px'>" +(localize "STR_Cop_Ticket_GUI_Given"),_cop getVariable ["realname",name _cop],_val];
 
 [] spawn {
     disableSerialization;

@@ -5,7 +5,7 @@
     Description:
     Marks cops on the map for other cops. Only initializes when the actual map is open.
 */
-private ["_markers","_cops"];
+private["_markers","_cops"];
 _markers = [];
 _cops = [];
 
@@ -16,10 +16,10 @@ if (visibleMap) then {
     //Create markers
     {
         if (_x != player) then {
-            _marker = createMarkerLocal [format ["%1_marker",_x],visiblePosition _x];
+            _marker = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
             _marker setMarkerColorLocal "ColorBLUFOR";
             _marker setMarkerTypeLocal "Mil_dot";
-            _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
+            _marker setMarkerTextLocal format["%1", _x getVariable ["realname",name _x]];
 
             _markers pushBack [_marker,_x];
         };
@@ -27,7 +27,7 @@ if (visibleMap) then {
 
     while {visibleMap} do {
         {
-            private ["_unit"];
+            private["_unit"];
             _unit = _x select 1;
             if (!isNil "_unit" && !isNull _unit) then {
                 (_x select 0) setMarkerPosLocal (visiblePosition _unit);

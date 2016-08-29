@@ -5,7 +5,7 @@
     Description:
     Master display handler
 */
-private ["_control","_code","_shift","_ctrlKey","_alt","_handled"];
+private["_control","_code","_shift","_ctrlKey","_alt","_handled"];
 _handled = false;
 
 //Esc Key Handler

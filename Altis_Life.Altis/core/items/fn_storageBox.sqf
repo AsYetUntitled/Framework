@@ -6,7 +6,7 @@
     Description:
     Create Storage and attachto player;
 */
-private ["_object","_attachPos"];
+private["_object","_attachPos"];
 params [
     ["_size",false,[false]]
 ];

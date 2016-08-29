@@ -7,7 +7,7 @@
     Used in the clothing store to show a 'preview' of the piece of clothing.
 */
 disableSerialization;
-private ["_control","_selection","_data","_price","_total","_totalPrice"];
+private["_control","_selection","_data","_price","_total","_totalPrice"];
 _control = (_this select 0) select 0;
 _selection = (_this select 0) select 1;
 _price = (findDisplay 3100) displayCtrl 3102;

@@ -9,7 +9,7 @@
     Does something with inserting... Don't have time for
     descriptions... Need to write it...
 */
-private ["_queryResult","_query","_alias"];
+private["_queryResult","_query","_alias"];
 params [
     "_uid",
     "_name",
@@ -22,7 +22,7 @@ params [
 if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
 if (isNull _returnToSender) exitWith {};
 
-_query = format ["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
+_query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
 
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
@@ -38,7 +38,7 @@ _money = [_money] call HC_fnc_numberSafe;
 _bank = [_bank] call HC_fnc_numberSafe;
 
 //Prepare the query statement..
-_query = format ["INSERT INTO players (playerid, name, cash, bankacc, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",
+_query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",
     _uid,
     _name,
     _money,

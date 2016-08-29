@@ -6,7 +6,7 @@
     Description:
     Sets skins for players by their side and uniform.
 */
-private ["_skinName"];
+private["_skinName"];
 
 switch (playerSide) do {
     case civilian: {

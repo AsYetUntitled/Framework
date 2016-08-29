@@ -5,7 +5,7 @@
     Description:
     Handles flash-banging yeahhhh..
 */
-private ["_pos","_eyeDir","_pPos","_impactPos","_norm","_angle","_blurEffect","_ppEffect"];
+private["_pos","_eyeDir","_pPos","_impactPos","_norm","_angle","_blurEffect","_ppEffect"];
 _pos = [_this,0,[],[[]]] call BIS_fnc_param;
 if (_pos isEqualTo []) exitWith {}; //Badddd
 if (player distance _pos > 25) exitWith {}; //Bad again.

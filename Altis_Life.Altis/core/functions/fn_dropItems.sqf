@@ -6,7 +6,7 @@
     Description:
     Called on death, player drops any 'virtual' items they may be carrying.
 */
-private ["_obj","_unit","_item","_value"];
+private["_obj","_unit","_item","_value"];
 _unit = _this select 0;
 
 {

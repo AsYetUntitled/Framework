@@ -6,7 +6,7 @@
     Description:
     Searches the vehicle for illegal items.
 */
-private ["_vehicle","_vehicleInfo","_value","_list"];
+private["_vehicle","_vehicleInfo","_value","_list"];
 _vehicle = cursorObject;
 _list = ["Air","Ship","LandVehicle"];
 if (isNull _vehicle || {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};

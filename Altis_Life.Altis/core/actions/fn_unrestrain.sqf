@@ -6,7 +6,7 @@
     Description:
 
 */
-private ["_unit"];
+private["_unit"];
 _unit = param [0,objNull,[objNull]];
 if (isNull _unit || !(_unit getVariable ["restrained",false])) exitWith {}; //Error check?
 
