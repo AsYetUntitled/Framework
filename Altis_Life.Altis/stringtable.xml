@@ -1968,6 +1968,17 @@
             <Portuguese></Portuguese>
             <Polish></Polish>
         </Key>
+        <Key ID="STR_House_Hideout">
+            <Original>This building is a Gang Hideout!</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
         <Key ID="STR_House_SellGarageMSG">
             <Original>Are you sure you want to sell your garage? It will sell for: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</Original>
             <Czech></Czech>
@@ -11257,7 +11268,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Store">
             <Original>Police Store</Original>
@@ -11268,7 +11279,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Car">
             <Original>Police Car</Original>
@@ -11279,7 +11290,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Heli">
             <Original>Police Heli</Original>
@@ -11290,7 +11301,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Boat">
             <Original>Police Boat</Original>
@@ -11301,7 +11312,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Rebel_Car">
             <Original>Rebel Car</Original>
@@ -11312,7 +11323,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Rebel_Heli">
             <Original>Rebel Heli</Original>
@@ -11323,7 +11334,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Tanoa">
             <Original>Police HQ</Original>
@@ -11334,7 +11345,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
 	</Package>
     <Package name="Data_Logging">
