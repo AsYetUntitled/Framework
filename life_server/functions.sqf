@@ -413,3 +413,23 @@ TON_fnc_MapMarkersAdmin = compileFinal "
 ";
 
 publicVariable "TON_fnc_MapMarkersAdmin";
+
+life_fnc_vehicleKind =
+compileFinal "
+    private [""_par"",""_veh""];
+    _par = _this select 0;
+    if (typeName _par == ""STRING"") then {
+    _veh = _par createVehicle [0,0,0];
+    _veh enableSimulation false;
+    } else { if (typeName _par == ""OBJECT"") then { _veh = _par; }; };
+    if (isNull _veh) exitWith {};
+   _kind= switch (true) do {
+        case (_veh isKindOf ""LandVehicle""): {""Car""};
+        case (_veh isKindOf ""Air""): {""Air""};
+        case (_veh isKindOf ""Ship""): {""Ship""};
+    };
+    if (typeName _par == ""STRING"") then { deleteVehicle _veh; };
+    _kind;
+
+";
++publicVariable "life_fnc_vehicleKind";

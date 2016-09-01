@@ -6,7 +6,7 @@
     Description:
     Stores the vehicle in the garage.
 */
-private ["_nearVehicles","_vehicle"];
+private ["_nearVehicles","_vehicle","_room","_vehiclesLimit"];
 if (vehicle player != player) then {
     _vehicle = vehicle player;
 } else {
@@ -28,7 +28,25 @@ if (vehicle player != player) then {
 if (isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
 if (isNull _vehicle) exitWith {};
 if (!alive _vehicle) exitWith {hint localize "STR_Garage_SQLError_Destroyed"};
+if (!isNil "counts") then {
+private ["_sel"];
+_type = [_vehicle] call life_fnc_vehicleKind;
+switch (_type) do {
+case "Air" : {_sel = 0;};
+case "Car" : {_sel = 1;};
+case "Ship" : {_sel = 2;};
+};
+_count = counts select _sel;
+switch (playerSide) do {
+    case east : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_OPFOR"); };
+    case west : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_COP"); };
+    case civilian : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_CIVILIAN"); };
+    case independent : {_vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_MEDIC"); };
+};
+_room = (_count <= _vehiclesLimit && _vehiclesLimit != 0)
+};
 
+if (!_room) exitWith {hint format [localize "STR_NOTF_TooManyVehicles",_vehiclesLimit]};
 _storetext = localize "STR_Garage_Store_Success";
 
 if (life_HC_isActive) then {

@@ -128,7 +128,12 @@ class Life_Settings {
     chopShop_vehicles[] = { "Car", "Air" }; //Vehicles that can be chopped. (Can add: "Ship" and possibly more -> look at the BI wiki...)
     vehicle_infiniteRepair[] = {false, false, true, false}; //Set to true for unlimited repairs with 1 toolkit. False will remove toolkit upon use. civilian, west, independent, east
     vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F", "B_Boat_Armed_01_minigun_F" }; //Vehicles that can only be rented and not purchased. (Last only for the session)
-    vehicleShop_3D = false; //Add preview 3D inside Shop vehicle.       Default : False
+    vehicleShop_3D = false; //Add preview 3D inside Shop vehicle.       Default : False.
+    /* Limits for garages */ //This allows server administrators to set a limit to the number of vehicles that a player can have. Rented vehicles are not affected.
+    garage_limit_COP = false; //Allows false and numerical values. 
+    garage_limit_OPFOR = false; //Allows false and numerical values.
+    garage_limit_MEDIC = false; //Allows false and numerical values.
+    garage_limit_CIVILIAN = false; //Allows false and numerical values.
 
     /* Vehicle Purchase Prices */
     vehicle_purchase_multiplier_CIVILIAN = 1; //Civilian Vehicle Buy Price = Config_Vehicle price * multiplier

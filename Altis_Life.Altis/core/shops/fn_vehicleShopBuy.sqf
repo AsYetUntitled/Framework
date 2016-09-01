@@ -80,6 +80,31 @@ if (((life_veh_shop select 0) == "med_air_hs")) then {
 
 
 if (_spawnPoint isEqualTo "") exitWith {hint localize "STR_Shop_Veh_Block";closeDialog 0;};
+//C'è spazio nel garage?
+if (!isNil "counts" && _mode) then {
+private ["_sel","_vehiclesLimit","_room"];
+_type = [_className] call life_fnc_vehicleKind;
+switch (_type) do {
+case "Air" : {_sel = 0;};
+case "Car" : {_sel = 1;};
+case "Ship" : {_sel = 2;};
+};
+_count = counts select _sel;
+switch (playerSide) do {
+    case east : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_OPFOR"); };
+    case west : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_COP"); };
+    case civilian : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_CIVILIAN"); };
+    case independent : {_vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_MEDIC"); };
+};
+if (_count >= _vehiclesLimit && _vehiclesLimit != 0) then { _exit = true; } else { _room = true; };
+if (!isNil "_room") then { counts set [_sel,(_count + 1)]; };
+};
+
+if (_exit) exitWith {hint localize "STR_NOTF_TooManyVehicles2"};
+
+
+
+
 CASH = CASH - _purchasePrice;
 [0] call SOCK_fnc_updatePartial;
 hint format [localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];

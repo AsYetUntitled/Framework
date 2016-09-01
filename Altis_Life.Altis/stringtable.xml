@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
     <Package name="Init">
         <Key ID="STR_Init_ClientSetup">
@@ -877,6 +877,27 @@
             <Italian>Non puoi raccogliere questa risorsa con questo veicolo !</Italian>
             <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
             <Polish>You can't gather this resource with this vehicle!</Polish>
+        </Key>
+        <Key ID="STR_NOTF_TooManyVehicles">
+			<Original>You can't store more than %1 vehicles</Original>
+			<Italian>Non puoi depositare più di %1 veicoli</Italian>
+			<German>Du kannst nicht mehr als %1 Fahrzeuge einparken</German>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <French></French>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_NOTF_TooManyVehicles2">
+			<Original>You don't have enough space in your garage to buy this vehicle</Original>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+			<Italian>Non puoi comprare questo veicolo perché non hai abbastanza spazio nel tuo garage</Italian>          
+			<Czech></Czech>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
         </Key>
         <Key ID="STR_NOTF_adminDebugCon">
             <Original>You have no business using this.</Original>
@@ -3230,6 +3251,17 @@
             <Italian>Sei stato curato completamente.</Italian>
             <Portuguese>Sua saúde está perfeita</Portuguese>
             <Polish>Zostałeś wyleczony</Polish>
+        </Key>
+        <Key ID="STR_NOTF_ImpoundLimit">
+            <Original>Are you sure you want to impound this vehicle? The owner does not have enough space in his garage,so the vehicle will be deleted</Original>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian>Sei sicuro di voler sequestrare questo veicolo? Il proprietario non ha abbastanza spazio nel garage,di conseguenza il veicolo verrà demolito.</Italian>            
+            <Czech></Czech>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
         </Key>
         <Key ID="STR_NOTF_BeingImpounded">
             <Original>%1 your %2 is being impounded by the police.</Original>
@@ -8724,6 +8756,28 @@
             <Italian>Zaini</Italian>
             <Portuguese>Mochilas</Portuguese>
             <Polish>Plecaki</Polish>
+        </Key>
+        <Key ID="STR_Shop_Unimpound_Limit">
+            <Original>Watch out,are you sure you want to get back this vehicle?&lt;br/&gt;&lt;br/&gt; You are exceeding the vehicles limit in your garage,though you won't be able to store back this vehicle. &lt;br/&gt;&lt;br/&gt;Sell another vehicle if you don't want to lose this one.</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian>Attenzione,sei sicuro di voler ritirare questo veicolo?&lt;br/&gt;&lt;br/&gt; Stai superando il limite dei veicoli che puoi possedere,perciò non sarai più in grado di depositare nuovamente questo veicolo nel tuo garage.&lt;br/&gt;&lt;br/&gt;Vendi un veicolo per ovviare al problema.</Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
+        <Key ID="STR_Shop_Unimpound">
+            <Original>Unimpound</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian>Ritiro</Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
         </Key>
         <Key ID="STR_Shop_Unimpound_VehExist">
             <Original>There is currently a car there.</Original>
