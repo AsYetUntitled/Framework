@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
     <Package name="Init">
         <Key ID="STR_Init_ClientSetup">
@@ -7,7 +7,7 @@
             <Spanish>Configurando cliente. Por favor espere...</Spanish>
             <Russian></Russian>
             <German></German>
-            <Italian></Italian>
+            <Italian>Caricamento dati, attendi...</Italian>
             <French></French>
             <Portuguese>Configurando o cliente. Por favor, aguarde...</Portuguese>
             <Polish></Polish>
@@ -18,7 +18,7 @@
             <Spanish>Esperando a que el servidor esté listo...</Spanish>
             <Russian></Russian>
             <German></German>
-            <Italian></Italian>
+            <Italian>Caricamento Server, attendi...</Italian>
             <French></French>
             <Portuguese>Esperando o servidor estar pronto...</Portuguese>
             <Polish></Polish>
@@ -29,7 +29,7 @@
             <Spanish>extDB no se pudo cargar, por favor contacte a un administrador.</Spanish>
             <Russian></Russian>
             <German></German>
-            <Italian></Italian>
+            <Italian>C'è stato un'errore con extDB, perfavore contatta un amministratore.</Italian>
             <French></French>
             <Portuguese>O extDB falhou ao carregar, por favor, contacte um administrador.</Portuguese>
             <Polish></Polish>
@@ -40,7 +40,7 @@
             <Spanish>Finalizando configuración del cliente...</Spanish>
             <Russian></Russian>
             <German></German>
-            <Italian></Italian>
+            <Italian>Completando procedura d'inizializzazione </Italian>
             <French></French>
             <Portuguese>Terminando o processo de configuração do cliente...</Portuguese>
             <Polish></Polish>
@@ -351,7 +351,7 @@
             <Czech>časopisy</Czech>
             <French>Chargeurs</French>
             <Spanish>Cargadores</Spanish>
-            <Italian>riviste</Italian>
+            <Italian>Caricatori</Italian>
             <Polish>Magazyny</Polish>
             <Russian></Russian>
             <Portuguese>Munições</Portuguese>
@@ -507,7 +507,7 @@
             <Czech>Vložte částku, kterou chcete kompenzovat:</Czech>
             <French>Mettez le montant que vous souhaitez compenser:</French>
             <Spanish>Pon la cantidad que quieres compensar:</Spanish>
-            <Italian>Mettere l'importo che si desidera per compensare:</Italian>
+            <Italian>Inserire l'importo da rimborsare:</Italian>
             <Russian></Russian>
             <German>Trage den Wert zum Entschädigen des Spielers ein:</German>
             <Portuguese>Coloque a quantidade que você quer compensar:</Portuguese>
@@ -528,7 +528,7 @@
             <Original>Spectate</Original>
             <Czech>spectate</Czech>
             <Spanish>Observar</Spanish>
-            <Italian>spectate</Italian>
+            <Italian>Osserva</Italian>
             <Russian></Russian>
             <German>Zuschauen</German>
             <French>Regardez</French>
@@ -562,7 +562,7 @@
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
             <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule.</French>
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
-            <Italian>Non si può teletrasportarsi il giocatore qui perché sono all'interno di un veicolo.</Italian>
+            <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
             <Portuguese>Você não pode se teletransportar o jogador aqui, porque eles estão dentro de um veículo.</Portuguese>
             <Russian>Вы не можете телепортировать игрока здесь, потому что они находятся внутри автомобиля.</Russian>
@@ -572,7 +572,7 @@
             <Original>Debug</Original>
             <Czech>Ladit</Czech>
             <Spanish>Debug</Spanish>
-            <Italian>mettere a punto</Italian>
+            <Italian>Debug</Italian>
             <Russian></Russian>
             <German>Debug</German>
             <French>Debug</French>
@@ -594,7 +594,7 @@
             <Original>GodMode</Original>
             <Czech>Božský mód</Czech>
             <Spanish>Modo Dios</Spanish>
-            <Italian>Modalità Dio</Italian>
+            <Italian>GodMode</Italian>
             <Russian></Russian>
             <German>Gott</German>
             <French>Dieu</French>
@@ -616,7 +616,7 @@
             <Original>Markers</Original>
             <Czech>markery</Czech>
             <Spanish>Marcadores</Spanish>
-            <Italian>marcatori</Italian>
+            <Italian>Indicatori</Italian>
             <Russian></Russian>
             <German>Spieler Markierungen</German>
             <French>Markers</French>
@@ -673,7 +673,7 @@
             <Original>You are about to give yourself $%1 to compensate to another player &lt;br/&gt;&lt;br/&gt;You must give this cash to the person you are compensating manually.</Original>
             <Czech>Chystáte se dát si $%1 kompenzovat jinému hráči &lt; br / &gt; &lt; br / &gt; Musíte dát tuto hotovost na osoby, které jsou kompenzačním ručně.</Czech>
             <Spanish>Estas a punto de darte $%1 para compensar a otro jugador&lt;br/&gt;&lt;br/&gt; Debes darle el dinero a la persona manualmente.</Spanish>
-            <Italian>Stai per darsi $%1 per compensare ad un altro giocatore &lt;br/&gt;&lt;br/&gt; È necessario dare questo denaro alla persona che si sta compensando manualmente.</Italian>
+            <Italian>Stai per donarti €%1 per rimborsare un altro giocatore &lt;br/&gt;&lt;br/&gt; Dovrai donare il denaro manualmente.</Italian>
             <Russian></Russian>
             <German>Du bist dabei dir selbst $%1 zu geben um einen anderen Spieler zu entschädigen.&lt;br/&gt;&lt;br/&gt;Gib das Geld dann an den Spieler weiter.</German>
             <French>Vous êtes sur le point de vous donner $%1 pour compenser un autre joueur &lt;br/&gt;&lt;br/&gt; S'il vous plaît donner à cette personne l'argent, vous compensez manuellement</French>
@@ -684,7 +684,7 @@
             <Original>You have added $%1 to your account.</Original>
             <Czech>Přidali jste $%1 se ke svému účtu.</Czech>
             <Spanish>Has agregado $%1 a tu cuenta.</Spanish>
-            <Italian>È stato aggiunto $%1 al tuo account.</Italian>
+            <Italian>€%1 ti sono stati accreditati.</Italian>
             <Russian></Russian>
             <German>Dir wurden $%1 auf deinem Bankkonto gutgeschrieben.</German>
             <French>Vous avez ajouté $%1 à votre compte</French>
@@ -695,7 +695,7 @@
             <Original>You can not go above $999,999</Original>
             <Czech>Nemůžete jít nad $ 999999</Czech>
             <Spanish>No te puedes dar más de $999,999</Spanish>
-            <Italian>Non si può andare sopra $ 999.999</Italian>
+            <Italian>Non puoi superare i €999.999</Italian>
             <Russian></Russian>
             <German>Maximaler Wert $999,999!</German>
             <French>Vous ne pouvez pas aller au-dessus $999,999!</French>
@@ -706,7 +706,7 @@
             <Original>Please type in the amount to compensate.</Original>
             <Czech>Prosím, zadejte částku, která má kompenzovat.</Czech>
             <Spanish>Por favor pon la cantidad a compensar.</Spanish>
-            <Italian>Si prega di inserire l'importo da compensare.</Italian>
+            <Italian>Si prega di inserire l'importo da rimborsare.</Italian>
             <Russian></Russian>
             <German>Bitte Entschädigungs Betrag eingeben.</German>
             <French>S'il vous plaît entrez la quantité pour compenser</French>
@@ -717,7 +717,7 @@
             <Original>You have disabled %1's input.</Original>
             <Czech>Jste zakázali vstup%1 je.</Czech>
             <Spanish>Has deshabilitado los controles de %1</Spanish>
-            <Italian>Hai disattivato ingresso%1 di.</Italian>
+            <Italian>Hai disattivato l'input di %1.</Italian>
             <Russian></Russian>
             <German>Du hast %1 Schock-Gefrostet. Er kann sich nichtmehr bewegen.</German>
             <French>Vous avez désactivé les controles de %1</French>
@@ -728,7 +728,7 @@
             <Original>You have enabled %1's input.</Original>
             <Czech>Jste povolili vstup %1 je.</Czech>
             <Spanish>Has habilitado los controles de %1</Spanish>
-            <Italian>È stata attivata ingresso %1 di.</Italian>
+            <Italian>Hai riabilitato l'input di %1.</Italian>
             <Russian></Russian>
             <German>du hast %1 wieder aufgetaut.</German>
             <French>Vous avez activé les controles de %1</French>
@@ -739,7 +739,7 @@
             <Original>You can't do that dumbass.</Original>
             <Czech>Můžete to udělat blbec.</Czech>
             <Spanish>No puedes hacer eso, pendejo</Spanish>
-            <Italian>Non si può fare che idiota.</Italian>
+            <Italian>Impossibile.</Italian>
             <Russian></Russian>
             <German>Das geht gerade nicht.</German>
             <French>Vous ne pouvez pas le faire sur vous-même</French>
@@ -750,7 +750,7 @@
             <Original>Your Admin Level is not high enough.</Original>
             <Czech>Váš správce úroveň není dostatečně vysoká.</Czech>
             <Spanish>No tienes suficiente nivel de Admin.</Spanish>
-            <Italian>Il tuo livello di amministrazione non è abbastanza alta.</Italian>
+            <Italian>Il tuo livello amministratore non soddisfa i requisiti.</Italian>
             <Russian></Russian>
             <German>Dein Admin Level ist nicht hoch genug.</German>
             <French>Votre Niveau admin n'est pas suffisamment élevée</French>
@@ -762,7 +762,7 @@
             <Czech>Hráč Markers pro invalidy.</Czech>
             <French>Marqueurs désactivés.</French>
             <Spanish>Marcadores de Jugadores Deshabilitados</Spanish>
-            <Italian>Player Marcatori disabili.</Italian>
+            <Italian>Indicatori Giocatori Disabilitati.</Italian>
             <Russian></Russian>
             <German>Spieler Markierungen ausgeschaltet.</German>
             <Portuguese>Marcações dos jogadores desabilitada.</Portuguese>
@@ -773,7 +773,7 @@
             <Czech>Hráč Markers Povoleno.</Czech>
             <French>Marqueurs activés.</French>
             <Spanish>Marcadores de Jugadores habilitados.</Spanish>
-            <Italian>Player Marcatori abilitato.</Italian>
+            <Italian>Indicatori Giocatori Abilitati.</Italian>
             <Russian></Russian>
             <German>Spieler Markierungen aktiviert.</German>
             <Portuguese>Marcações dos jogadores habilitada.</Portuguese>
@@ -784,7 +784,7 @@
             <Czech>nesmrtelnost povolen</Czech>
             <French>Dieu activé</French>
             <Spanish>Modo Dios habilitado</Spanish>
-            <Italian>God mode abilitato</Italian>
+            <Italian>Godmode abilitata</Italian>
             <Polish>God mode włączony</Polish>
             <Portuguese>Modo Deus ativado</Portuguese>
             <Russian>Режим бога включен</Russian>
@@ -795,7 +795,7 @@
             <Czech>nesmrtelnost zakázán</Czech>
             <French>Dieu désactivé</French>
             <Spanish>Modo Dios deshabilitado</Spanish>
-            <Italian>God mode disabilitato</Italian>
+            <Italian>Godmode disabilitata</Italian>
             <Polish>God mode wyłączony</Polish>
             <Portuguese>Modo Deus desativado</Portuguese>
             <Russian>Режим бога отключен</Russian>
@@ -828,7 +828,7 @@
             <Czech>Váš frakce není povoleno sekat vozidla!</Czech>
             <French>Votre faction ne peut pas vendre les véhicules!</French>
             <Spanish>Tu facción no tiene permitido usar esta tienda! </Spanish>
-            <Italian>La vostra fazione non è permesso di tagliare i veicoli!</Italian>
+            <Italian>La tua fazione non può rubare veicoli!</Italian>
             <Polish>Twoja frakcja nie może posiekać pojazdy!</Polish>
             <Russian></Russian>
             <Portuguese>Sua facção não têm direito de usar essa loja</Portuguese>
@@ -975,7 +975,7 @@
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 gleichzeitig einzahlen</German>
             <French>Vous ne pouvez pas déposer plus de $999,999</French>
-            <Italian>Non puoi depositare più di $999,999 alla volta</Italian>
+            <Italian>Non puoi depositare più di €999,999 alla volta</Italian>
             <Portuguese>Você não pode transferir mais de R$999.999 em uma transação</Portuguese>
             <Polish>Możesz jednorazowo zdeponować nie więcej niż $999,999 </Polish>
         </Key>
@@ -986,7 +986,7 @@
             <Russian></Russian>
             <German>Die eingegebene Zahl ist keine richtige Zahl</German>
             <French>Vous devez entrer un nombre.</French>
-            <Italian>L'importo inserito non è numerico.</Italian>
+            <Italian>Il valore inserito non è numerico.</Italian>
             <Portuguese>O valor digitado não é um número.</Portuguese>
             <Polish>Wprwadzona wartość nie jest liczbą</Polish>
         </Key>
@@ -997,7 +997,7 @@
             <Russian></Russian>
             <German>Du hast niemanden für den Transfer ausgewählt</German>
             <French>Sélectionnez une personne pour le transfert</French>
-            <Italian>Devi selezionare qualcuno a cui trasferire fondi</Italian>
+            <Italian>Devi selezionare qualcuno a cui trasferire l'importo</Italian>
             <Portuguese>Você tem que selecionar para quem deseja transferir</Portuguese>
             <Polish>Musisz wybrać odbiorcę przelewu</Polish>
         </Key>
@@ -1019,7 +1019,7 @@
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 überweisen</German>
             <French>Vous ne pouvez pas transférer plus de $999,999</French>
-            <Italian>Non puoi trasferire più di $999.000 alla volta</Italian>
+            <Italian>Non puoi trasferire più di €999.000 alla volta</Italian>
             <Portuguese>Você pode trasferir no máximo R$999.999.</Portuguese>
             <Polish>Możesz jednorazowo przelać nie więcej niż $999,999 </Polish>
         </Key>
@@ -1052,7 +1052,7 @@
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Konto, es kostet $%2, um $%1 zu überweisen.</German>
             <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxe</French>
-            <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire $%1 necessiti di $%2 per pagare la tassa di trasferimento.</Italian>
+            <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire €%1 necessiti di €%2 per pagare la tassa di trasferimento.</Italian>
             <Portuguese>Você não tem dinheiro suficiente na sua conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
             <Polish>Nie masz wystarczająco dużo środków na końcie, do przelewu $%1 będziesz potrzebował jeszcze $%2 na opłatę</Polish>
         </Key>
@@ -1063,7 +1063,7 @@
             <Russian></Russian>
             <German>Du hast $%1 an %2 überwiesen.\n\nEine Gebühr von $%3 wurde verrechnet.</German>
             <French>Vous avez transférer $%1 à %2.\n\nA La taxe de $%3 vous à été prélevée pendant le transfert.</French>
-            <Italian>Hai trasferito $%1 a $%2.\n\nSono stati trattenuti $%3 di tassa per il trasferimento.</Italian>
+            <Italian>Hai trasferito €%1 a %2.\n\nSono stati trattenuti €%3 di tassa per il trasferimento.</Italian>
             <Portuguese>Você trasferiu R$%1 para %2.\n\nA taxa de trasferência foi de: R$%3.</Portuguese>
             <Polish>Przelałeś $%1 do %2.\n\nA opłata $%3 pobrana przez WIRE TRANSFER </Polish>
         </Key>
@@ -1074,7 +1074,7 @@
             <Russian></Russian>
             <German></German>
             <French></French>
-            <Italian></Italian>
+            <Italian>%1 ha effettuato un bonifico sul tuo conto di €%2</Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
         </Key>
@@ -1085,7 +1085,7 @@
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 abheben</German>
             <French>Vous ne pouvez pas retirer plus de $999,999</French>
-            <Italian>Non puoi prelevare più di $999.000 in una volta</Italian>
+            <Italian>Non puoi prelevare più di €999.000 in una volta</Italian>
             <Portuguese>Você pode sacar no máximo R$999.999</Portuguese>
             <Polish>Możesz jednorazowo pobrać maks $999,999 </Polish>
         </Key>
@@ -1096,7 +1096,7 @@
             <Russian></Russian>
             <German>Du kannst nicht weniger als $100 abheben</German>
             <French>Vous ne pouvez pas retirer moins de $100</French>
-            <Italian>Non puoi prelevare meno di $100</Italian>
+            <Italian>Non puoi prelevare meno di €100</Italian>
             <Portuguese>Você não pode sacar menos de R$100.</Portuguese>
             <Polish>Nie możesz pobrać mniej niż $100 </Polish>
         </Key>
@@ -1107,7 +1107,7 @@
             <Russian></Russian>
             <German>Du hast $%1 von deinem Bankkonto abgehoben</German>
             <French>Vous avez retiré $%1 de votre compte en banque</French>
-            <Italian>Hai prelevato $%1 dal tuo conto in banca</Italian>
+            <Italian>Hai prelevato €%1 dal tuo conto in banca</Italian>
             <Portuguese>Você sacou R$%1 de sua conta bancária.</Portuguese>
             <Polish>Pobrałeś z konta kwotę $%1 </Polish>
         </Key>
@@ -1115,7 +1115,7 @@
             <Original>You have withdrawn $%1 from your gang.</Original>
             <Czech>Jste staženy $%1 z naší bandy</Czech>
             <Spanish>Has retirado $%1 de tu pandilla</Spanish>
-            <Italian>Hai ritirato $%1 dal nostro gruppo.</Italian>
+            <Italian>Hai ritirato €%1 dal nostro gruppo.</Italian>
             <Polish>Masz %1 $ wycofane z naszego gangu.</Polish>
             <Russian></Russian>
             <French>Vous avez retiré $%1 de votre gang</French>
@@ -1127,7 +1127,7 @@
             <Czech>Někdo se již snaží ustoupit od svého gangu.</Czech>
             <French>Quelqu'un essaie déjà de retirer de l'argent de votre gang.</French>
             <Spanish>Alguien ya esta tratando de retirar dinero de tu pandilla.</Spanish>
-            <Italian>Qualcuno sta già cercando di ritirare del denaro dal conto della gang.</Italian>
+            <Italian>Qualcuno sta già cercando di ritirare del denaro dal fondo gang.</Italian>
             <Polish>Ktoś już próbował wycofać się ze swojego gangu.</Polish>
             <Russian></Russian>
             <Portuguese>Alguém já está tentando sacar da sua gangue.</Portuguese>
@@ -1140,7 +1140,7 @@
             <Russian></Russian>
             <German>Du hast nicht so viel Geld bei dir.</German>
             <French>Vous n'avez pas autant d'agent sur vous.</French>
-            <Italian>Non hai abbastanza fondi con te.</Italian>
+            <Italian>Non hai abbastanza denaro con te.</Italian>
             <Portuguese>Você não tem todo esse dinheiro.</Portuguese>
             <Polish>Nie masz przy sobie tyle pieniędzy</Polish>
         </Key>
@@ -1151,7 +1151,7 @@
             <Russian></Russian>
             <German>Du hast $%1 auf dein Bankkonto überwiesen</German>
             <French>Vous avez déposé $%1 dans votre compte bancaire</French>
-            <Italian>Hai despositato $%1 nel tuo conto bancario</Italian>
+            <Italian>Hai despositato €%1 nel tuo conto bancario</Italian>
             <Portuguese>Você depositou R$%1 na sua conta bancária</Portuguese>
             <Polish>Zdeponowałeś na koncie bankowym $%1</Polish>
         </Key>
@@ -1162,7 +1162,7 @@
             <Russian></Russian>
             <German>Du hast $%1 auf das Gang-Konto überwiesen.</German>
             <French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
-            <Italian>Hai despositato $%1 nel conto bancario della tua gang</Italian>
+            <Italian>Hai despositato €%1 nei fondi della tua gang</Italian>
             <Portuguese>Você depositou R$%1 na conta da sua gangue.</Portuguese>
             <Polish>Zdeponowałeś na koncie gangu kwotę $%1 </Polish>
         </Key>
@@ -1197,7 +1197,7 @@
             <Russian></Russian>
             <German>Deine Nachricht:</German>
             <French>SMS à Envoyer :</French>
-            <Italian>Messaggio da mandare:</Italian>
+            <Italian>Messaggio da inviare:</Italian>
             <Portuguese>Mensagem à enviar:</Portuguese>
             <Polish>Treść wiadomości</Polish>
         </Key>
@@ -5607,7 +5607,7 @@
             <Italian>Non sei autorizzato ad accedere a questo contentitore senza il permesso del proprietario.</Italian>
             <Portuguese>Você so pode acessar a caixa se o dono deixar ela aberta.</Portuguese>
             <Polish>Nie masz dostępu do pojemnika dopóki właściciel go nie otworzy.</Polish>
-         </Key>
+        </Key>
         <Key ID="STR_House_Container_House_Near">
             <Original>There are no houses near you.</Original>
             <Czech>Nejsou žádné domy u vás.</Czech>
@@ -7948,15 +7948,15 @@
             <German>Sidechat aktivieren. Ausschalten, wenn du nicht mit Spielern deiner Fraktion sprechen möchtest.</German>
         </Key>
         <Key ID="STR_GUI_BroadcastSwitch">
-          <Original>Switch player's broadcast mode, turn this off if you don't want to see any broadcast from other players.</Original>
-          <Czech></Czech>
-          <French></French>
-          <Spanish>Habilitar/Deshabilitar transmisiones, deshabilita esto si no quieres ver transmisiones de otros jugadores. </Spanish>
-          <Italian></Italian>
-          <Polish></Polish>
-          <Russian></Russian>
-          <Portuguese>Habilita/Desabilita as transmissões dos jogadores, desabilite caso você não queira ver as transmissões dos outros jogadores.</Portuguese>
-          <German></German>
+            <Original>Switch player's broadcast mode, turn this off if you don't want to see any broadcast from other players.</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>Habilitar/Deshabilitar transmisiones, deshabilita esto si no quieres ver transmisiones de otros jugadores. </Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Russian></Russian>
+            <Portuguese>Habilita/Desabilita as transmissões dos jogadores, desabilite caso você não queira ver as transmissões dos outros jogadores.</Portuguese>
+            <German></German>
         </Key>
         <Key ID="STR_GUI_PlayTags">
             <Original>Controls whether or not players will have name tags above their head.</Original>
@@ -8447,7 +8447,7 @@
             <German>Reinigen</German>
         </Key>
         <Key ID="STR_NPC_Protected">
-            <original>This vehicle is NPC protected.</Original>
+            <Original>This vehicle is NPC protected.</Original>
             <Czech>Toto vozidlo je chráněno NPC.</Czech>
             <French>Ce véhicule est protégé NPC.</French>
             <Spanish>Este vehículo esta protegido.</Spanish>
@@ -10938,7 +10938,7 @@
             <German>Treibstofflager</German>
             <Portuguese>Posto de Combustível</Portuguese>
         </Key>
-            <Key ID="STR_FuelTank_Supply">
+        <Key ID="STR_FuelTank_Supply">
             <Original>Supply</Original>
             <Czech>Zásobování</Czech>
             <French>La fourniture</French>
@@ -11247,8 +11247,8 @@
             <Original>Admin Message</Original>
         </Key>
     </Package>
-	<Package name="Tanoa Strings">
-	    <Key ID="STR_Civ_Plane">
+    <Package name="Tanoa Strings">
+        <Key ID="STR_Civ_Plane">
             <Original>Civ Plane</Original>
             <Czech></Czech>
             <French></French>
@@ -11347,7 +11347,7 @@
             <Russian></Russian>
             <German></German>
         </Key>
-	</Package>
+    </Package>
     <Package name="Data_Logging">
         <Key ID="STR_DL_AL_Arrested_BEF">
             <Original>arrested %1</Original>
