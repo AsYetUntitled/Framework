@@ -1,6 +1,6 @@
 <b>The Framework has since been unassociated with the altisliferpg website, and the new domain owners are in no way associated with the production of the repository.</b>
 
-The "Altis Life" main repository has moved and now can be found at [AsYetUntitled] (https://github.com/AsYetUntitled). Regular updates will be merged here for the time being. For current development go there...
+The "Altis Life" main repository has moved and now can be found at [AsYetUntitled] (https://github.com/AsYetUntitled). Regular updates will be merged here for the time being. For current development go there.
 
 <p align="center">
     <a href="https://travis-ci.org/AsYetUntitled/Framework">
