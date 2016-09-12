@@ -11684,5 +11684,9 @@
             <Original>Minimun 5 and maximun 60</Original>
             <Spanish>Mínimo 5 and maximo 60</Spanish>
         </Key>
+        <Key ID="STR_Jail_Time_Failed">
+            <Original>Failed on dialog creation</Original>
+            <Spanish>El diálogo no se pudo crear</Spanish>
+        </Key>
     </Package>
 </Project>
