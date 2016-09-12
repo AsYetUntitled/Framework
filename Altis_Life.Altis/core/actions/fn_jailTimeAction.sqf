@@ -9,5 +9,6 @@
 params [
     ["_unit",objNull,[objNull]]
 ];
+if (!(createDialog "life_jail_time")) exitWith {hint localize "STR_Jail_Time_Failed"};
 if (isNull _unit || !isPlayer _unit) exitWith {};
 life_jailing_unit = _unit;
