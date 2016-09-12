@@ -61,6 +61,7 @@ class Life_Client_Core {
         class surrender {};
         class ticketAction {};
         class unrestrain {};
+        class jailTimeAction {};
     };
 
     class Admin {
@@ -132,6 +133,7 @@ class Life_Client_Core {
         class ticketPrompt {};
         class vehInvSearch {};
         class wantedGrab {};
+        class jailTime {};
     };
 
     class Dialog_Controls {
