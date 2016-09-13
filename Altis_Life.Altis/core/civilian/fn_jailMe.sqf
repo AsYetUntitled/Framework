@@ -40,7 +40,7 @@ for "_i" from 0 to 1 step 0 do {
 
         // -- Teleport back to jail and notify the player
         player setPos (getMarkerPos "jail_marker");
-        hint "You glitched yourself out of jail, this has been logged to the FL Logging System and your account has been flagged. The Staff Team has been notified.";
+        hint "You glitched yourself out of jail, this has been logged. The Staff Team has been notified.";
 
         // -- Log to RPT
         if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
