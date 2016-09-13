@@ -57,7 +57,13 @@ private _index = -1;
                         if (!isNil {(group _x) getVariable "gang_name"}) then {
                             format ["%1<br/><t size='0.8' color='#B6B6B6'>%2</t>",_x getVariable ["realname",name _x],(group _x) getVariable ["gang_name",""]];
                         } else {
-                            _x getVariable ["realname",name _x];
+                            if (alive _x) then {
+                                _x getVariable ["realname",name _x];
+                            } else {
+                                if (!isPlayer _x) then {
+                                    _x getVariable ["realname","ERROR"];
+                                };
+                            };
                         };
                     };
                 };

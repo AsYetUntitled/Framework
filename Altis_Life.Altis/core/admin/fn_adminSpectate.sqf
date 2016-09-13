@@ -15,12 +15,7 @@ if (isNil "_unit") exitWith {};
 if (isNull _unit) exitWith {};
 if (_unit == player) exitWith {hint localize "STR_ANOTF_Error";};
 
-[] spawn {
-  while {dialog} do {
-   closeDialog 0;
-   sleep 0.01;
-  };
-};
+closeDialog 0;
 
 _unit switchCamera "INTERNAL";
 hint format [localize "STR_NOTF_nowSpectating",_unit getVariable ["realname",name _unit]];
