@@ -13,15 +13,15 @@ if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming
 if (life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
 
+if (playerSide isEqualTo west && player getVariable ["isEscorting",false]) exitWith {
+    [] call life_fnc_copInteractionMenu;
+};
+
 if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
     //Check if the player is near an ATM.
     if ((call life_fnc_nearATM) && {!dialog}) exitWith {
         [] call life_fnc_atmMenu;
     };
-};
-
-if (playerSide isEqualTo west && player getVariable ["isEscorting",false]) exitWith {
-    [] call life_fnc_copInteractionMenu;
 };
 
 if (isNull _curObject) exitWith {
