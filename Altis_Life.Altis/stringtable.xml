@@ -1,3 +1,15 @@
+<!--
+@Author: FL <SimZor>
+@Date:   13-Sep-2016
+@Email:  simzors@gmail.com
+@Project: Frogman Life
+@Last modified by:   SimZor
+@Last modified time: 13-Sep-2016
+@License: Copyright (C) SimZor, Frogman Entertainment 2016
+-->
+
+
+
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
     <Package name="Init">
@@ -11656,6 +11668,28 @@
             <Portuguese>%1 - %2 transferiu R$%3 para %4. Quantia no Banco: R$%5 Quantia na Mão: R$%6</Portuguese>
             <Russian>%1 -%2 перевели $%3 до %4. Банковский баланс: $%5 на руку Баланс: $%6</Russian>
             <German>%1 - %2 hat %4 $%3 überwiesen. Bank-Konto: $%5  Bargeld: $%6</German>
+        </Key>
+        <Key ID="STR_DL_JL_glitchjail_BEF">
+            <Original>%1 Glitched his way out of Jail</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
+        <Key ID="STR_DL_JL_glitchjail">
+            <Original>%1 %2 %3 Glitched his way out of jail</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
         </Key>
         <Key ID="STR_DL_ML_depositedBank_BEF">
             <Original>deposited $%1 into their bank. Bank Balance: $%2  On Hand Balance: $%3</Original>

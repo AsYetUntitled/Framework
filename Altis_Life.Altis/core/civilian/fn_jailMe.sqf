@@ -36,6 +36,24 @@ for "_i" from 0 to 1 step 0 do {
         hintSilent parseText format [(localize "STR_Jail_Time")+ "<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>" +(localize "STR_Jail_Pay")+ " %3<br/>" +(localize "STR_Jail_Price")+ " $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if (life_canpay_bail) then {"Yes"} else {"No"}];
     };
 
+    if (!(vehicle player isKindOf "air") && (player distance (getMarkerPos "jail_marker") > 50) && (FETCH_CONST(life_adminlevel) < 1)) then {
+
+        // -- Teleport back to jail and notify the player
+        player setPos (getMarkerPos "jail_marker");
+        hint "You glitched yourself out of jail, this has been logged to the FL Logging System and your account has been flagged. The Staff Team has been notified.";
+
+        // -- Log to RPT
+        if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
+            if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
+                money_log = format [localize "STR_DL_JL_glitchjail_BEF",player getVariable ["realname",name _unit]];
+            } else {
+                money_log = format [localize "STR_DL_JL_glitchjail",profileName,(getPlayerUID player),player getVariable ["realname",name _unit]];
+            };
+            publicVariableServer "advanced_log";
+        };
+
+    };
+
     private _escDist = ALTIS_TANOA(60,145);
     if (player distance (getMarkerPos "jail_marker") > _escDist) exitWith {
         _esc = true;
