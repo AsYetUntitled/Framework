@@ -1,15 +1,3 @@
-<!--
-@Author: FL <SimZor>
-@Date:   13-Sep-2016
-@Email:  simzors@gmail.com
-@Project: Frogman Life
-@Last modified by:   SimZor
-@Last modified time: 13-Sep-2016
-@License: Copyright (C) SimZor, Frogman Entertainment 2016
--->
-
-
-
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
     <Package name="Init">
