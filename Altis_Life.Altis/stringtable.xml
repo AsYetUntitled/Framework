@@ -11679,6 +11679,17 @@
             <Russian></Russian>
             <German></German>
         </Key>
+        <Key ID="STR_DL_JL_glitchjail_message">
+            <Original>Are you a magician? A log entry has been added and your account has been flagged.</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
         <Key ID="STR_DL_ML_depositedBank_BEF">
             <Original>deposited $%1 into their bank. Bank Balance: $%2  On Hand Balance: $%3</Original>
             <Czech>uložen $%1 do své banky. Banka Zůstatek: $%2 po zralé úvaze rukou: $%3</Czech>
