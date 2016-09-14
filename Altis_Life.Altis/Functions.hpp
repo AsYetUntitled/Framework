@@ -39,6 +39,7 @@ class Life_Client_Core {
         class gutAnimal {};
         class healHospital {};
         class impoundAction {};
+        class jailTimeAction {};
         class mine {};
         class newsBroadcast {};
         class packupSpikes {};
@@ -61,7 +62,6 @@ class Life_Client_Core {
         class surrender {};
         class ticketAction {};
         class unrestrain {};
-        class jailTimeAction {};
     };
 
     class Admin {
@@ -117,6 +117,7 @@ class Life_Client_Core {
         class copSiren {};
         class doorAnimate {};
         class fedCamDisplay {};
+        class jailTime {};
         class licenseCheck {};
         class licensesRead {};
         class questionDealer {};
@@ -133,7 +134,6 @@ class Life_Client_Core {
         class ticketPrompt {};
         class vehInvSearch {};
         class wantedGrab {};
-        class jailTime {};
     };
 
     class Dialog_Controls {
