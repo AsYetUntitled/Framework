@@ -41,13 +41,14 @@ for "_i" from 0 to 1 step 0 do {
         // -- Teleport back to jail and notify the player
         player setPos (getMarkerPos "jail_marker");
         hint "You glitched yourself out of jail, this has been logged. The Staff Team has been notified.";
+        hint [localize "STR_DL_JL_glitchjail_message"];
 
         // -- Log to RPT
         if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
             if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-                money_log = format [localize "STR_DL_JL_glitchjail_BEF",player getVariable ["realname",name _unit]];
+                advanced_log = format [localize "STR_DL_JL_glitchjail_BEF",player getVariable ["realname",name _unit]];
             } else {
-                money_log = format [localize "STR_DL_JL_glitchjail",profileName,(getPlayerUID player),player getVariable ["realname",name _unit]];
+                advanced_log = format [localize "STR_DL_JL_glitchjail",profileName,(getPlayerUID player),player getVariable ["realname",name _unit]];
             };
             publicVariableServer "advanced_log";
         };
