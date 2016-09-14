@@ -17,5 +17,5 @@ _unit setVariable ["Escorting",false,true];
 _unit setVariable ["transporting",false,true];
 detach _unit;
 
-if(_isRebel) exitWith {};
+if (_isRebel) exitWith {};
 [0,"STR_NOTF_Unrestrain",true,[_unit getVariable ["realname",name _unit], profileName]] remoteExecCall ["life_fnc_broadcast",west];
