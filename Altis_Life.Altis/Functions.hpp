@@ -94,6 +94,7 @@ class Life_Client_Core {
         class robPerson {};
         class robReceive {};
         class tazed {};
+        class civilInteractionMenu {};
     };
 
     class Config {
@@ -260,6 +261,7 @@ class Life_Client_Core {
         class placestorage {};
         class spikeStrip {};
         class storageBox {};
+        class handcuffKeys {};
     };
 
     class Medical_System {

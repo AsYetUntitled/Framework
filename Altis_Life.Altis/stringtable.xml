@@ -11257,7 +11257,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Store">
             <Original>Police Store</Original>
@@ -11268,7 +11268,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Car">
             <Original>Police Car</Original>
@@ -11279,7 +11279,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Heli">
             <Original>Police Heli</Original>
@@ -11290,7 +11290,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Boat">
             <Original>Police Boat</Original>
@@ -11301,7 +11301,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Rebel_Car">
             <Original>Rebel Car</Original>
@@ -11312,7 +11312,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Rebel_Heli">
             <Original>Rebel Heli</Original>
@@ -11323,7 +11323,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
         <Key ID="STR_Police_Tanoa">
             <Original>Police HQ</Original>
@@ -11334,7 +11334,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>            
+            <German></German>
         </Key>
 	</Package>
     <Package name="Data_Logging">
@@ -11667,6 +11667,14 @@
             <Portuguese>%1 - %2 depositou R$%3 no seu banco. Quantia no Banco: R$%4 Quantia na Mão: R$%5</Portuguese>
             <Russian>%1 - %2 депозит в размере $%3 в свой банк. Банковский баланс: $%4 на руку Баланс: $%5</Russian>
             <German>%1 - %2 hat $%3 auf sein Konto eingezahlt. Bank-Konto: $%4  Bargeld: $%5</German>
+        </Key>
+        <Key ID="STR_Item_handcuff">
+            <Original>Handcuffs</Original>
+            <Spanish>Esposas</Spanish>
+        </Key>
+        <Key ID="STR_Item_handcuff_keys">
+            <Original>Handcuffs keys</Original>
+            <Spanish>Llaves de esposas</Spanish>
         </Key>
     </Package>
 </Project>

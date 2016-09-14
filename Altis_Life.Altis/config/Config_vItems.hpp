@@ -29,7 +29,7 @@ class VirtualShops {
         side = "civ";
         license = "rebel";
         level[] = { "", "", -1, "" };
-        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "toolkit", "fuelFull", "peach", "boltcutter", "blastingcharge" };
+        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "toolkit", "fuelFull", "peach", "boltcutter", "blastingcharge", "handcuff", "handcuffkeys"};
     };
 
     class gang {
@@ -870,5 +870,27 @@ class VirtualItems {
         illegal = false;
         edible = 100;
         icon = "icons\ico_muttonLeg.paa";
+    };
+
+    class handcuff {
+        variable = "handCuff";
+        displayName = "STR_Item_handcuff";
+        weight = 4;
+        buyPrice = 500;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_handcuff.paa";
+    };
+
+    class handcuffkeys {
+        variable = "handCuffKeys";
+        displayName = "STR_Item_handcuff_keys";
+        weight = 2;
+        buyPrice = 100;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_hancuff_keys.paa";
     };
 };

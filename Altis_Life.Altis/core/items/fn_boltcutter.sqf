@@ -6,8 +6,14 @@
     Description:
     Breaks the lock on a single door (Closet door to the player).
 */
-private ["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
-_building = param [0,objNull,[objNull]];
+private ["_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
+params[
+    ["_building",objNull,[objNull]]
+];
+
+if (!(isNull _building) && {_building isKindOf "Man"} && {(isPlayer _building)} && {alive _building} && {_building distance player < 3.5} && {!(_building getVariable "Escorting")} && {(_building getVariable "restrained")} && {speed _building < 1}) exitWith {
+    [_building] call life_fnc_unrestrain;
+};
 
 private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
 _altisArray = [16019.5,16952.9,0];
