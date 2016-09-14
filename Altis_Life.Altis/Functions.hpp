@@ -255,13 +255,13 @@ class Life_Client_Core {
         class boltcutter {};
         class defuseKit {};
         class flashbang {};
+        class handcuffKeys {};
         class jerrycanRefuel {};
         class jerryRefuel {};
         class lockpick {};
         class placestorage {};
         class spikeStrip {};
         class storageBox {};
-        class handcuffKeys {};
     };
 
     class Medical_System {
