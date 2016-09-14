@@ -11669,12 +11669,26 @@
             <German>%1 - %2 hat $%3 auf sein Konto eingezahlt. Bank-Konto: $%4  Bargeld: $%5</German>
         </Key>
         <Key ID="STR_Item_handcuff">
-            <Original>Handcuffs</Original>
+            <Original>Handcuff</Original>
+            <Czech></Czech>
+            <French></French>
             <Spanish>Esposas</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
         </Key>
         <Key ID="STR_Item_handcuff_keys">
-            <Original>Handcuffs keys</Original>
+            <Original>Handcuff keys</Original>
+            <Czech></Czech>
+            <French></French>
             <Spanish>Llaves de esposas</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
         </Key>
     </Package>
 </Project>

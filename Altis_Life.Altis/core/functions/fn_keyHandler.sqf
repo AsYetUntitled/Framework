@@ -117,8 +117,8 @@ switch (_code) do {
     case 19: {
         if (_shift) then {_handled = true;};
         if (_shift && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
-            if ( playerSide isEqualTo west) then { [false] call life_fnc_restrainAction; };
-            if ( playerSide isEqualTo civilian) then { [true] call life_fnc_restrainAction; };
+            if (playerSide isEqualTo west) then { [false] call life_fnc_restrainAction; };
+            if (playerSide isEqualTo civilian) then { [true] call life_fnc_restrainAction; };
         };
     };
 
