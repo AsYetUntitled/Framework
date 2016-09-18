@@ -11679,7 +11679,7 @@
             <Russian></Russian>
             <German></German>
         </Key>
-        <Key ID="STR_Jail_Time">
+        <Key ID="STR_Jail_seTime">
             <Original>Minutes: </Original>
             <Czech></Czech>
             <French></French>

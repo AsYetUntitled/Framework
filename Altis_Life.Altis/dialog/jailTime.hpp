@@ -26,7 +26,7 @@ class Life_jail_time{
         class jailtime_text: Life_RscText
         {
             idc = 1000;
-            text = "$STR_Jail_Time";
+            text = "$STR_Jail_seTime";
             x = 0.368722 * safezoneW + safezoneX;
             y = 0.457996 * safezoneH + safezoneY;
             w = 0.210045 * safezoneW;
