@@ -20,13 +20,13 @@ switch (_mode) do {
     case 0: {
         _value = [_this,2,0,[0]] call BIS_fnc_param;
         _value = [_value] call HC_fnc_numberSafe;
-        _query = format ["UPDATE players SET cash='%1' WHERE playerid='%2'",_value,_uid];
+        _query = format ["UPDATE players SET cash='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 1: {
         _value = [_this,2,0,[0]] call BIS_fnc_param;
         _value = [_value] call HC_fnc_numberSafe;
-        _query = format ["UPDATE players SET bankacc='%1' WHERE playerid='%2'",_value,_uid];
+        _query = format ["UPDATE players SET bankacc='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 2: {
@@ -38,9 +38,9 @@ switch (_mode) do {
         };
         _value = [_value] call HC_fnc_mresArray;
         switch (_side) do {
-            case west: {_query = format ["UPDATE players SET cop_licenses='%1' WHERE playerid='%2'",_value,_uid];};
-            case civilian: {_query = format ["UPDATE players SET civ_licenses='%1' WHERE playerid='%2'",_value,_uid];};
-            case independent: {_query = format ["UPDATE players SET med_licenses='%1' WHERE playerid='%2'",_value,_uid];};
+            case west: {_query = format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'",_value,_uid];};
+            case civilian: {_query = format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid];};
+            case independent: {_query = format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'",_value,_uid];};
         };
     };
 
@@ -48,9 +48,9 @@ switch (_mode) do {
         _value = [_this,2,[],[[]]] call BIS_fnc_param;
         _value = [_value] call HC_fnc_mresArray;
         switch (_side) do {
-            case west: {_query = format ["UPDATE players SET cop_gear='%1' WHERE playerid='%2'",_value,_uid];};
-            case civilian: {_query = format ["UPDATE players SET civ_gear='%1' WHERE playerid='%2'",_value,_uid];};
-            case independent: {_query = format ["UPDATE players SET med_gear='%1' WHERE playerid='%2'",_value,_uid];};
+            case west: {_query = format ["UPDATE players SET cop_gear='%1' WHERE pid='%2'",_value,_uid];};
+            case civilian: {_query = format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid];};
+            case independent: {_query = format ["UPDATE players SET med_gear='%1' WHERE pid='%2'",_value,_uid];};
         };
     };
 
@@ -60,13 +60,13 @@ switch (_mode) do {
         _value2 = [_this,4,[],[[]]] call BIS_fnc_param;
         _value2 = if (count _value2 isEqualTo 3) then {_value2} else {[0,0,0]};
         _value2 = [_value2] call HC_fnc_mresArray;
-        _query = format ["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE playerid='%3'",_value,_value2,_uid];
+        _query = format ["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE pid='%3'",_value,_value2,_uid];
     };
 
     case 5: {
         _value = [_this,2,false,[true]] call BIS_fnc_param;
         _value = [_value] call HC_fnc_bool;
-        _query = format ["UPDATE players SET arrested='%1' WHERE playerid='%2'",_value,_uid];
+        _query = format ["UPDATE players SET arrested='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 6: {
@@ -74,7 +74,7 @@ switch (_mode) do {
         _value2 = [_this,4,0,[0]] call BIS_fnc_param;
         _value1 = [_value1] call HC_fnc_numberSafe;
         _value2 = [_value2] call HC_fnc_numberSafe;
-        _query = format ["UPDATE players SET cash='%1', bankacc='%2' WHERE playerid='%3'",_value1,_value2,_uid];
+        _query = format ["UPDATE players SET cash='%1', bankacc='%2' WHERE pid='%3'",_value1,_value2,_uid];
     };
 
     case 7: {
