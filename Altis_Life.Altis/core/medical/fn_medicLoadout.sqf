@@ -13,12 +13,9 @@ waitUntil {scriptDone _handle};
 player addUniform "U_Rangemaster";
 player addItem "FirstAidKit";
 player addItem "FirstAidKit";
-player addItem "ItemMap";
-player assignItem "ItemMap";
-player addItem "ItemCompass";
-player assignItem "ItemCompass";
-player addItem "ItemWatch";
-player assignItem "ItemWatch";
+player linkItem "ItemMap";
+player linkItem "ItemCompass";
+player linkItem "ItemWatch";
 
 [] call life_fnc_playerSkins;
 [] call life_fnc_saveGear;
