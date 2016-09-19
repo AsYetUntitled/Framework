@@ -5,12 +5,14 @@
 
     Description: Attaches the desired person(_unit) to the player(player) and "escorts them".
 */
-private ["_unit"];
-_unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params[
+    ["_unit",objNull,[objNull]],
+    ["_isRebel",false,[false]]
+];
 
 if (!isNull(player getVariable ["escortingPlayer",objNull])) exitWith {};
 if (isNil "_unit" || isNull _unit || !isPlayer _unit) exitWith {};
-if (!(side _unit in [civilian,independent])) exitWith {};
+if (!(_isRebel) && !(side _unit in [civilian,independent])) exitWith {};
 if (player distance _unit > 3) exitWith {};
 
 _unit attachTo [player,[0.1,1.1,0]];

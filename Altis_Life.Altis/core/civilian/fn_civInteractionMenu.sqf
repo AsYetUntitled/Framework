@@ -38,5 +38,5 @@ if (player getVariable ["isEscorting",false]) then {
     _Btn1 buttonSetAction "[] call life_fnc_stopEscorting; closeDialog 0;";
 } else {
     _Btn1 ctrlSetText localize "STR_pInAct_Escort";
-    _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
+    _Btn1 buttonSetAction "[life_pInact_curTarget,true] call life_fnc_escortAction; closeDialog 0;";
 };
