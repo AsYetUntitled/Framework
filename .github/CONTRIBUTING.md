@@ -1,7 +1,7 @@
 Contributing to AsYetUntitled
 =======================
 
-AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com/ArmaLife/Framework). AsYetUntitled aims to improve upon Tonic's Altis Life RPG mission for both the Altis and Tanoa maps. 
+**AsYetUntitled** is a project spun off from [ArmaLife/Framework](https://github.com/ArmaLife/Framework). AsYetUntitled aims to improve upon [Tonic](https://github.com/TAWTonic)'s Altis Life RPG mission for both the [Altis](https://arma3.com/features/terrain) and [Tanoa](https://arma3.com/apex) maps. 
 
 ## Guidelines
 
