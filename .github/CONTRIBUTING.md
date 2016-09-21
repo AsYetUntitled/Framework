@@ -49,6 +49,7 @@ AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com
   * ...be sure to thoroughly test your code for any errors and, if applicable, possible exploits. 
   * ...optimise your code to have as little impact on performance as possible. See [code optimisation](https://community.bistudio.com/wiki/Code_Optimisation) on the Bohemia Interactive Wiki for more information. 
   * ...if applicable, be sure to update the [BattlEye filters](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) and [SpyGlass variables](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp) to be compatible with your changes. If you are unsure on how to do so then ask if someone else would be kind enough to do so for you. 
+* If you make a change to the [life_server](https://github.com/AsYetUntitled/Framework/tree/master/life_server) files then you (probably) have to make that same change to the corresponding [life_hc](https://github.com/AsYetUntitled/Framework/tree/master/life_hc) files or vice versa. 
 
 ### Help! The Travis CI build failed!
 * If the Travis CI build on your pull request fails then Travis may have detected a syntax error in the code. Click "Show all checks" near the bottom of your pull request and then click "Details" next to the check that failed. Search for "ERROR" to find what is causing the check to fail. 
