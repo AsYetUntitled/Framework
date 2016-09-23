@@ -160,7 +160,8 @@ if (life_HC_isActive) then {
 life_hideoutBuildings = [];
 {
     private _building = nearestBuilding getMarkerPos _x;
-    nil = life_hideoutBuildings pushBack _building;
+    life_hideoutBuildings pushBack _building;
+    false
 } count ["gang_area_1","gang_area_2","gang_area_3"];
 
 diag_log "----------------------------------------------------------------------------------------------------";

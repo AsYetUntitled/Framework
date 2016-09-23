@@ -16,7 +16,8 @@ private _inStatement = "";
 private _list = [];
 private _units = [];
 {
-    nil = if (side _x isEqualTo civilian) then {_units pushBack (getPlayerUID _x)};
+    if (side _x isEqualTo civilian) then {_units pushBack (getPlayerUID _x)};
+    false
 } count playableUnits;
 
 if (count _units isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
@@ -40,7 +41,8 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 {
-    nil = _list pushBack _x;
+    _list pushBack _x;
+    false
 } count _queryResult;
 
 if (count _list isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};

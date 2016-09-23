@@ -26,7 +26,8 @@ if (_type isEqualType "") then {_type = call compile format ["%1", _type];};
 private _crimesArr = [];
 {
     private _str = format ["STR_Crime_%1", _x];
-    nil = _crimesArr pushBack _str;
+    _crimesArr pushBack _str;
+    false
 } count _type;
 
 _queryResult set[0,_crimesArr];
