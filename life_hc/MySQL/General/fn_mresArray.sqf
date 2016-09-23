@@ -9,7 +9,7 @@
 */
 private ["_array"];
 _array = [_this,0,[],[[]]] call BIS_fnc_param;
-_array = str(str(_array));
+_array = str _array;
 _array = toArray(_array);
 
 for "_i" from 0 to (count _array)-1 do
@@ -24,4 +24,4 @@ for "_i" from 0 to (count _array)-1 do
     };
 };
 
-toString(_array);
+str(toString(_array));
