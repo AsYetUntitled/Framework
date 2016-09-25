@@ -21,8 +21,8 @@ link6[] = {5,9};
 link7[] = {6,7};
 link8[] = {7,2};
 link9[] = {9,8};
-globals[] = {0.000000,0,0,0,0,640,480,1,53,6316128,1,-481.887177,425.726196,554.522583,-436.926575,853,757,1};
-window[] = {0,-1,-1,-1,-1,1089,128,1492,128,1,875};
+globals[] = {0.000000,0,0,0,0,640,480,1,53,6316128,1,-481.887177,425.726196,554.522583,-436.926575,703,844,1};
+window[] = {2,-1,-1,-1,-1,1153,192,1556,192,3,725};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -99,7 +99,7 @@ class FSM
                          "		};" \n
                          "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
                          "        _owner= (playableUnits select {getPlayerUID _x == _uid}param[0, objNull]);" \n
-                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countcar = _counts select 1; _countcar = _countcar + 1; _counts set [1,_countcar]; counts = _counts; (owner _owner) publicVariableClient ""counts"";};" \n
+                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countcar = _counts select 1; _countcar = _countcar - 1; _counts set [1,_countcar]; counts = _counts; (owner _owner) publicVariableClient ""counts"";};" \n
                          "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n
@@ -121,7 +121,7 @@ class FSM
                          "		};" \n
                          "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
                          "        _owner= (playableUnits select {getPlayerUID _x == _uid}param[0, objNull]);" \n
-                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countship = _counts select 2; _countship = _countship + 1; _counts set [2,_countship]; counts = _counts; (owner _owner) publicVariableClient ""counts"";};" \n
+                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countship = _counts select 2; _countship = _countship - 1; _counts set [2,_countship]; counts = _counts; (owner _owner) publicVariableClient ""counts"";};" \n
                          "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n
@@ -143,7 +143,7 @@ class FSM
                          "		};" \n
                          "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
                          "        _owner= (playableUnits select {getPlayerUID _x == _uid}param[0, objNull]);" \n
-                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countair = _counts select 0; _countair = _countcar + 1; _counts set [0,_countair]; counts = _counts; (owner _owner) publicVariableClient ""counts"";};" \n
+                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countair = _counts select 0; _countair = _countair - 1; _counts set [0,_countair]; counts = _counts; (owner _owner) publicVariableClient ""counts"";};" \n
                          "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n
