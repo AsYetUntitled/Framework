@@ -1,7 +1,7 @@
 Contributing to AsYetUntitled
 =======================
 
-AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com/ArmaLife/Framework). AsYetUntitled aims to improve upon Tonic's Altis Life RPG mission for both the Altis and Tanoa maps. 
+**AsYetUntitled** is a project spun off from [ArmaLife/Framework](https://github.com/ArmaLife/Framework). AsYetUntitled aims to improve upon [Tonic](https://github.com/TAWTonic)'s Altis Life RPG mission for both the [Altis](https://arma3.com/features/terrain) and [Tanoa](https://arma3.com/apex) maps. 
 
 ## Guidelines
 
@@ -45,10 +45,11 @@ AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com
 * If your pull request adds a new feature to the mission then...
   * ...decide if the mission would actually benefit from your new feature. You may wish to create an issue to discuss the implementation of your feature with other contributors. 
     * ...if others think that your feature should be implemented then go ahead and submit a pull request. 
-    * ...if not then instead consider posting a tutorial on the [Altis Life RPG forums](http://www.altisliferpg.com/) on how to implement it. 
+    * ...if not then instead consider posting a tutorial on the [ArmA RPG Life forums](https://armarpglife.com/forums/) on how to implement it. 
   * ...be sure to thoroughly test your code for any errors and, if applicable, possible exploits. 
   * ...optimise your code to have as little impact on performance as possible. See [code optimisation](https://community.bistudio.com/wiki/Code_Optimisation) on the Bohemia Interactive Wiki for more information. 
   * ...if applicable, be sure to update the [BattlEye filters](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) and [SpyGlass variables](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp) to be compatible with your changes. If you are unsure on how to do so then ask if someone else would be kind enough to do so for you. 
+* If you make a change to the [life_server](https://github.com/AsYetUntitled/Framework/tree/master/life_server) files then you (probably) have to make that same change to the corresponding [life_hc](https://github.com/AsYetUntitled/Framework/tree/master/life_hc) files or vice versa. 
 
 ### Help! The Travis CI build failed!
 * If the Travis CI build on your pull request fails then Travis may have detected a syntax error in the code. Click "Show all checks" near the bottom of your pull request and then click "Details" next to the check that failed. Search for "ERROR" to find what is causing the check to fail. 
@@ -70,4 +71,7 @@ AsYetUntitled is a project spun off from [ArmaLife/Framework](https://github.com
 * See [issues](https://github.com/AsYetUntitled/Framework/issues) for a full list of all open tasks and bugs. If you would like to work on a solution to an issue then please leave a comment on that issue so that others know a solution is in progress. 
 
 ## Contact
-If you need to chat with us in real-time then you can do so on [our Discord server](https://discord.gg/yfAMTFp). 
+* If you need to chat with us in real-time then you can do so on the [ArmA RPG Life Discord server](https://discordapp.com/invite/sEcQdPn). 
+  * Please be sure to read the rules which can be found in the #announcements channel. 
+* Our forums are [ArmA RPG Life](https://armarpglife.com/forums/). 
+  * You will need an account to take full advantage of the features and to view user content. 

@@ -82,7 +82,7 @@ _items = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
         _blacklist = false;
-        _profileQuery = format ["SELECT name FROM players WHERE playerid='%1'", _uid];
+        _profileQuery = format ["SELECT name FROM players WHERE pid='%1'", _uid];
         _profileName = [_profileQuery, 2] call HC_fnc_asyncCall;
         _profileName = _profileName select 0;
         {
