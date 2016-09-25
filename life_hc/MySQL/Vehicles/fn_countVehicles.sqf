@@ -5,7 +5,7 @@
     Description:
     Count vehicles of the player and check if they exceed the limit,return bool.
 */
-#include "\life_server\script_macros.hpp"
+#include "\life_hc\script_macros.hpp"
 
 private ["_query","_vehiclesCount","_vehiclesLimit","_type","_cfgType","_bool","_side"];
 
@@ -24,7 +24,7 @@ switch (_side) do {
 
 if (_vehiclesLimit isEqualTo 0) exitWith { true };
 _query = format ["SELECT COUNT(*) FROM vehicles WHERE pid ='%1' AND alive='1' AND side='%2' AND type='%3'", _uid, _side, _type];
-_vehiclesCount = [_query, 2] call DB_fnc_asyncCall select 0;
+_vehiclesCount = [_query, 2] call HC_fnc_asyncCall select 0;
 
 switch (_mode) do {
  case "compare" : {

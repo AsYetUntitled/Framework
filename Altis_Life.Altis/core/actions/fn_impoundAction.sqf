@@ -59,10 +59,6 @@ if (!_room && (count _vInfo > 0)) exitWith {
 
 };
 
-
-
-
-
 for "_i" from 0 to 1 step 0 do {
     sleep 0.09;
     _cP = _cP + 0.01;
@@ -108,5 +104,4 @@ if (count crew _vehicle isEqualTo 0) then {
 } else {
     hint localize "STR_NOTF_ImpoundingCancelled";
 };
-
 life_action_inUse = false;

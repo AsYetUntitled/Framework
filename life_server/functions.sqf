@@ -432,4 +432,4 @@ compileFinal "
     _kind;
 
 ";
-+publicVariable "life_fnc_vehicleKind";
+publicVariable "life_fnc_vehicleKind";

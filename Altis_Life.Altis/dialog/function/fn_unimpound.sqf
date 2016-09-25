@@ -54,9 +54,7 @@ _box = [
                     localize "STR_Global_Yes", //Gets back
                     localize "STR_Global_No"//Doesn't get back
                 ] call BIS_fnc_guiMessage;
-
 };
-
 if (!_box) exitWith {
         [0,"Aborted",false] call life_fnc_broadcast;
 

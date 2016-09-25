@@ -102,9 +102,6 @@ if (!isNil "_room") then { counts set [_sel,(_count + 1)]; };
 
 if (_exit) exitWith {hint localize "STR_NOTF_TooManyVehicles2"};
 
-
-
-
 CASH = CASH - _purchasePrice;
 [0] call SOCK_fnc_updatePartial;
 hint format [localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
