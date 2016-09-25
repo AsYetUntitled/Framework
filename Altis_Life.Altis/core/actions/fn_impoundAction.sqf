@@ -20,7 +20,7 @@ _price = M_CONFIG(getNumber,"LifeCfgVehicles",(typeOf _vehicle),"price");
 [0,"STR_NOTF_BeingImpounded",true,[((_vehicleData select 0) select 1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 life_action_inUse = true;
 _uid =  (_vehicleData select 0) select 0;
-_owner = (playableUnits select {getPlayerUID _x isEqualTo _uid}param[0, objNull]);
+_owner = (playableUnits select {getPlayerUID _x isEqualTo _uid});
 _upp = localize "STR_NOTF_Impounding";
 //Setup our progress bar.
 disableSerialization;
