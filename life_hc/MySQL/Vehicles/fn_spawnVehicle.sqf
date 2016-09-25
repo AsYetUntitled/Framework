@@ -128,7 +128,7 @@ if (_wasIllegal) then {
 
     _location = text _location;
     [1, "STR_NOTF_BlackListedVehicle", true, [_location, _name]] remoteExecCall["life_fnc_broadcast", west];
-    _query = format["UPDATE vehicles SET blacklist = '0' WHERE id = ' % 1' AND pid = ' % 2'", _vid, _pid];
+    _query = format["UPDATE vehicles SET blacklist = '0' WHERE id = '%1' AND pid = '%2'", _vid, _pid];
     _thread = [_query, 1] call HC_fnc_asyncCall;
 };
  } else {
