@@ -1,4 +1,4 @@
-waitUntil {!isNull player && player isEqualTo player};
+waitUntil {!isServer && !isNull player && player isEqualTo player};
 if (player diarySubjectExists "controls") exitWith {};
 
 player createDiarySubject ["credits","Credits"];
@@ -36,7 +36,7 @@ AsYetUntitled (formerly ArmaLife) is a GitHub project which aims to update and k
         [
             "Altis Life Changelog",
                 "
-The full changelog can be found in AsYetUntitled/Framework repository on GitHub. https://github.com/AsYetUntitled/Framework/<br/><br/>
+The full changelog can be found on the AsYetUntitled/Framework repository on GitHub. https://github.com/AsYetUntitled/Framework/<br/><br/>
 v4.4 release 3!<br/>
 By: danielstuart14<br/>
 Date: 31. May 2016<br/><br/>
