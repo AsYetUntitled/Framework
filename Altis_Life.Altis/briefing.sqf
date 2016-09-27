@@ -25,9 +25,9 @@ TEXT HERE<br/><br/>
 
     player createDiaryRecord ["credits",
         [
-            "ArmaLife",
+            "AsYetUntitled",
                 "
-ArmaLife is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.<br/><br/>
+AsYetUntitled (formerly ArmaLife) is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.<br/><br/>
                 "
         ]
     ];
@@ -36,7 +36,7 @@ ArmaLife is a GitHub project which aims to update and keep adding new features t
         [
             "Altis Life Changelog",
                 "
-The official changelog can be found in ArmaLife github. https://git.io/vVkhe<br/><br/>
+The full changelog can be found in AsYetUntitled/Framework repository on GitHub. https://github.com/AsYetUntitled/Framework/<br/><br/>
 v4.4 release 3!<br/>
 By: danielstuart14<br/>
 Date: 31. May 2016<br/><br/>
