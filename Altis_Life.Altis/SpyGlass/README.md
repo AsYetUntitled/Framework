@@ -1,31 +1,38 @@
-Spyglass
+SpyGlass
 ================
-<b>Spyglass an anti-cheat system for [Altis Life RPG](https://github.com/ArmaLife/Framework)</b>.</br></br>
-<b>Any modification</b> to the Altis Life RPG mission files will require changes to Config_Spyglass.
+<b>SpyGlass is an anti-cheat system for [Altis Life RPG](https://github.com/AsYetUntitled/Framework)</b>.</br></br>
+<b>Any modification</b> to the Altis Life RPG mission files will require changes to [Config_SpyGlass](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp).
 
 <b>Notes</b>
-If Spyglass is kicking on join, make sure that all functions that you have changed in Altis Life have been whitelisted. 
-Check Client RPT to find notes on why you are being kicked. 
+
+If SpyGlass is kicking on join, make sure that all functions that you have changed in Altis Life RPG have been whitelisted. Check the [client RPT](https://community.bistudio.com/wiki/Crash_Files) log file to find notes on why you are being kicked. 
 
 Example:
- 4:50:48 "Variable: reb_1_4 is not allowed TYPE: OBJECT NS: MN"
- 4:50:48 "Variable: ggs_shop is not allowed TYPE: OBJECT NS: MN"
- 4:50:48 "Variable: reb_helicopter_1 is not allowed TYPE: OBJECT NS: MN"
- // Variable: VARIABLENAME is not allowed TYPE: (STRING, CODE, OBJECT, DISPLAY, SCALAR, BOOL)
- 
-If you encounter errors regarding variables, whitelist them via Config_Spyglass under allowedVariables
 
+```
+"Variable: reb_1_4 is not allowed TYPE: OBJECT NS: MN"
+"Variable: ggs_shop is not allowed TYPE: OBJECT NS: MN"
+"Variable: reb_helicopter_1 is not allowed TYPE: OBJECT NS: MN"
+// Variable: VARIABLENAME is not allowed TYPE: (STRING, CODE, OBJECT, DISPLAY, SCALAR, BOOL)
+ ```
+
+If you encounter errors regarding variables, whitelist them via Config_SpyGlass under `allowedVariables`. 
+
+```cpp
 allowedVariables[] = { { "reb_1_4", "OBJECT" }, { "ggs_shop", "OBJECT" },{ "reb_helicopter_1", "OBJECT" }};
- 
-If Arma 3 has updated, it may be possible Bohemia Interactive have included new files into the game. 
-If this is the case then launch Arma 3 and go to the editor (you do not need to load a mission.)
-Press escape and put into init: 
+```
 
-_cfgPatches = [];	_binConfigPatches = configFile >> "CfgPatches";	for "_i" from 0 to count (_binConfigPatches)-1 do {		_patchEntry = _binConfigPatches select _i;		if(isClass _patchEntry) then {			_cfgPatches set[count _cfgPatches,(configName _patchEntry)];		};	};	copyToClipboard str(_cfgPatches);
+If *Arma 3* has updated, it may be possible Bohemia Interactive have included new files into the game. 
+If this is the case then launch *Arma 3* and go to the editor (you do not need to load a mission.)
+Open the debug console and paste the following into the console then locally execute: 
 
-Paste the results into a notepad. 
-Open Mission fn_initSpy.sqf and find 
-_patchList =
-Edit the result that you got from your notepad to include at the start ["life_server",
-Paste in your results and follow the existing structure.
-This should fix any issues. Any other problems, refer to (https://gitter.im/ArmaLife/Framework/Support) for help. 
+```sqf
+_cfgPatches = [];	_binConfigPatches = configFile >> "CfgPatches";	for "_i" from 0 to count (_binConfigPatches)-1 do {		_patchEntry = _binConfigPatches select _i;		if (isClass _patchEntry) then {			_cfgPatches set[count _cfgPatches,(configName _patchEntry)];		};	};	copyToClipboard str(_cfgPatches);
+```
+
+1. Paste the results into a notepad. 
+2. Open mission [fn_initSpy.sqf](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/SpyGlass/fn_initSpy.sqf) and find `_patchList =`
+3. Edit the result that you got from your notepad to include at the start `["life_server",`
+4. Paste in your results and follow the existing structure.
+
+This should fix any issues with SpyGlass. If you continue to experience issues then please see [contact on Contributing to AsYetUntitled](https://github.com/AsYetUntitled/Framework/blob/master/.github/CONTRIBUTING.md#contact). 
