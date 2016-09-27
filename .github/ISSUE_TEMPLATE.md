@@ -1,5 +1,5 @@
-<Please review the guidelines for contributing to this repository. The link is above.
-If you are reporting a bug then you must use the provided issue template.>
+<Please review the guidelines for contributing to this repository. The link is above.>
+<If you are reporting a bug then you must use the provided issue template.>
 
 ### Expected behaviour
 <What should have happened?>
@@ -11,8 +11,8 @@ If you are reporting a bug then you must use the provided issue template.>
 1. <How did you break it?>
 
 ### [RPT](https://community.bistudio.com/wiki/Crash_Files#Arma_3) and/or extDB2 logs (if applicable)
-<Check your client and server RPT and extDB2 logs for errors and warnings.
-If there are relevent messages and they are short then post them here with code formatting.>
+<Check your client and server RPT and extDB2 logs for errors and warnings.>
+<If there are relevent messages and they are short then post them here with code formatting.>
 <If there are relevent messages and they are long then upload the whole file to GitHub, Pastebin, or Hastebin.>
 
 ----
