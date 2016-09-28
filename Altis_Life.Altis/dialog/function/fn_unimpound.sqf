@@ -47,15 +47,17 @@ if (BANK < _price) exitWith {hint format [(localize "STR_Garage_CashError"),[_pr
 
 if (_vehiclesLimit < _count && !(isNil "counts")) then {
 
-_box = [
-                    localize "STR_Shop_Unimpound_Limit",
-                    localize "STR_Shop_Unimpound",
-                    localize "STR_Global_Yes", //Gets back
-                    localize "STR_Global_No"//Doesn't get back
-                ] call BIS_fnc_guiMessage;
+    _box = [
+        localize "STR_Shop_Unimpound_Limit",
+        localize "STR_Shop_Unimpound",
+        localize "STR_Global_Yes", //Gets back
+        localize "STR_Global_No" //Doesn't get back
+    ] call BIS_fnc_guiMessage;
+} else {
+    _box = true
 };
 if (!_box) exitWith {
-        [0,"Aborted",false] call life_fnc_broadcast;
+    [0, "Aborted", false] call life_fnc_broadcast;
 
 };
 

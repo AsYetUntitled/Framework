@@ -156,7 +156,6 @@ publicVariable "TON_fnc_playtime_values_request";
 _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
 _queryResult set[15,_keyArr];
 
-_queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];
 
 _vehiclesLimit = switch (_side) do {
     case east : { LIFE_SETTINGS(getNumber,"garage_limit_OPFOR"); };
@@ -176,3 +175,5 @@ _count_Ship = [_count_Ship,2] call DB_fnc_asyncCall select 0;
 
 counts = [_count_Air,_count_Car,_count_Ship];
 _client setVariable ["counts",_counts,true] };
+
+_queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

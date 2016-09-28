@@ -156,7 +156,6 @@ waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
 _queryResult set[15,_keyArr];
 
-_queryResult remoteExec ["SOCK_fnc_requestReceived",_client];
 
 
 _vehiclesLimit = switch (_side) do {
@@ -176,4 +175,6 @@ _count_Car = [_count_Car,2] call HC_fnc_asyncCall select 0;
 _count_Ship = [_count_Ship,2] call HC_fnc_asyncCall select 0;
 
 _counts = [_count_Air,_count_Car,_count_Ship];
-_client setVariable ["counts",_counts,true]};
+_client setVariable ["counts",_counts,true] };
+
+_queryResult remoteExec ["SOCK_fnc_requestReceived",_client];

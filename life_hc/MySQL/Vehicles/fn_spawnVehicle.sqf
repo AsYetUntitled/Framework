@@ -70,7 +70,7 @@ if (count _nearVehicles > 0) exitWith {
     [_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
     [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
 };
-_room = [_side,_pid,_type,"equal"] call TON_fnc_countVehicles;
+_room = [_side,_pid,_type,"minequal"] call HC_fnc_countVehicles;
 if (_room) then {
 _query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
 } else {

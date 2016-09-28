@@ -30,7 +30,7 @@ switch (_mode) do {
  case "compare" : {
 _bool = _vehiclesCount < _vehiclesLimit;
 };
- case "equal" : { _bool = _vehiclesCount <= _vehiclesLimit; };
+ case "minequal" : { _bool = _vehiclesCount <= _vehiclesLimit; };
  };
 
 _bool;
