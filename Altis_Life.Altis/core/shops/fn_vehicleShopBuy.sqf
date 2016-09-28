@@ -81,7 +81,7 @@ if (((life_veh_shop select 0) == "med_air_hs")) then {
 
 if (_spawnPoint isEqualTo "") exitWith {hint localize "STR_Shop_Veh_Block";closeDialog 0;};
 //C'è spazio nel garage?
-if (!isNil "counts" && _mode) then {
+if (!(isNil "counts") && _mode) then {
 private ["_sel","_vehiclesLimit","_room"];
 _type = [_className] call life_fnc_vehicleKind;
 switch (_type) do {

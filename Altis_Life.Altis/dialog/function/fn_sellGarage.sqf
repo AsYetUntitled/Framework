@@ -44,7 +44,7 @@ switch (playerSide) do {
 
 _sellPrice = _purchasePrice * _multiplier;
 
-if (!isNil "counts") then {
+if (!(isNil "counts")) then {
 private ["_sel","_vehiclesLimit"];
 _type = life_garage_type;
 switch (_type) do {

@@ -16,9 +16,9 @@
 private ["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
+_client = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
-if (isNull _ownerID) exitWith {};
+if (isNull _client) exitWith {};
 
 _query = switch (_side) do {
     // West - 11 entries returned
@@ -34,11 +34,11 @@ _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 if (_queryResult isEqualType "") exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_client];
 };
 
 if (_queryResult isEqualTo []) exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_owner];
 };
 
 //Blah conversion thing from a2net->extdb
@@ -156,7 +156,7 @@ waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
 _queryResult set[15,_keyArr];
 
-_queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];
+_queryResult remoteExec ["SOCK_fnc_requestReceived",_client];
 
 
 _vehiclesLimit = switch (_side) do {
@@ -175,5 +175,5 @@ _count_Air = [_count_Air,2] call HC_fnc_asyncCall select 0;
 _count_Car = [_count_Car,2] call HC_fnc_asyncCall select 0;
 _count_Ship = [_count_Ship,2] call HC_fnc_asyncCall select 0;
 
-counts = [_count_Air,_count_Car,_count_Ship];
-(_ownerID) publicVariableClient "counts"; };
+_counts = [_count_Air,_count_Car,_count_Ship];
+_client setVariable ["counts",_counts,true]};

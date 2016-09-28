@@ -44,8 +44,10 @@ case "Car" : {_sel = 1;};
 case "Ship" : {_sel = 2;};
 };
 _vehiclesLimit = LIFE_SETTINGS(getNumber, _cfgType);
-_vehiclesCount = (_owner getVariable "counts") select _sel; } else { _vehiclesCount = 0; };
-_room = _vehiclesCount < _vehiclesLimit;
+_vehiclesCount = (_owner getVariable "counts") select _sel;
+    
+} else { _vehiclesCount = 0; };
+_room = _vehiclesCount < _vehiclesLimit OR (isNil "counts");
 
 if (!_room && (count _vInfo > 0)) exitWith {
                 _box = [

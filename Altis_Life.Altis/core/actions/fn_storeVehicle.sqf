@@ -28,7 +28,7 @@ if (vehicle player != player) then {
 if (isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
 if (isNull _vehicle) exitWith {};
 if (!alive _vehicle) exitWith {hint localize "STR_Garage_SQLError_Destroyed"};
-if (!isNil "counts") then {
+if (!(isNil "counts")) then {
 private ["_sel"];
 _type = [_vehicle] call life_fnc_vehicleKind;
 switch (_type) do {
@@ -43,7 +43,7 @@ switch (playerSide) do {
     case civilian : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_CIVILIAN"); };
     case independent : {_vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_MEDIC"); };
 };
-_room = (_count <= _vehiclesLimit && _vehiclesLimit != 0)
+_room = (_count <= _vehiclesLimit OR (isNil "counts"))
 };
 
 if (!_room) exitWith {hint format [localize "STR_NOTF_TooManyVehicles",_vehiclesLimit]};

@@ -45,8 +45,7 @@ _price = _purchasePrice * _storageFee;
 if (!(_price isEqualType 0) || _price < 1) then {_price = 500;};
 if (BANK < _price) exitWith {hint format [(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
 
-
-if (_vehiclesLimit < _count) then {
+if (_vehiclesLimit < _count && !(isNil "counts")) then {
 
 _box = [
                     localize "STR_Shop_Unimpound_Limit",

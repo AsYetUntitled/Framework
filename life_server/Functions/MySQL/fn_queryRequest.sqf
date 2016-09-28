@@ -14,10 +14,10 @@
 private ["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
+_client = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
 if (isNull _ownerID) exitWith {};
-_ownerID = owner _ownerID;
+_ownerID = owner _client;
 
 _query = switch (_side) do {
     // West - 11 entries returned
@@ -175,4 +175,4 @@ _count_Car = [_count_Car,2] call DB_fnc_asyncCall select 0;
 _count_Ship = [_count_Ship,2] call DB_fnc_asyncCall select 0;
 
 counts = [_count_Air,_count_Car,_count_Ship];
-(_ownerID) publicVariableClient "counts"; };
+_client setVariable ["counts",_counts,true] };
