@@ -1,20 +1,25 @@
-### Expected behaviour
+<Please review the guidelines for contributing to this repository. The link is above.>
+<If you are reporting a bug then you must use the provided issue template.>
 
+### Expected behaviour
+<What should have happened?>
 
 ### Actual behaviour
-
+<What actually happened?>
 
 ### Steps to reproduce the behaviour 
-1. 
+1. <How did you break it?>
 
-### RPT and/or extDB2 logs (if applicable)
-<If there are error messages in your RPT and/or extDB2 logs then you can either paste the error message(s) here or you can upload your RPT or extDB2 log file(s) to GitHub.>
-<See https://community.bistudio.com/wiki/Crash_Files for where to find your Arma 3 RPT logs.>
-<If your error messages are long, or you are posting a full RPT, please use paste/haste-bin!!>
+### [RPT](https://community.bistudio.com/wiki/Crash_Files#Arma_3) and/or extDB2 logs (if applicable)
+<Check your client and server RPT and extDB2 logs for errors and warnings.>
+<If there are relevent messages and they are short then post them here with code formatting.>
+<If there are relevent messages and they are long then upload the whole file to GitHub, Pastebin, or Hastebin.>
 
 ----
 
-Launcher version:  <In the Arma 3 launcher go to OPTIONS and click the version info below to copy it to your clipboard>
+Mission version: <See core/init.sqf, briefingName in mission.sqm, or changelog in briefing.sqf for your mission version.>
+
+Launcher version: <In the Arma 3 launcher go to ⚙ OPTIONS and click the version info below to copy it to your clipboard.>
 
 Game version: 
 
