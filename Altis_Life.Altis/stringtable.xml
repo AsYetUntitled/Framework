@@ -4353,6 +4353,17 @@
             <Russian>Теперь вы spectating %1.\n\nНажмите F10, чтобы остановить spectating.</Russian>
             <German>Du beobachtest nun %1.\n\nDrücke F10, um das Beobachten zu beenden.</German>
         </Key>
+        <Key ID="STR_NOTF_stoppedSpectating">
+            <Original>You have stopped spectating.</Original>
+            <Czech>Přestali jste divácké úlohy.</Czech>
+            <French>Vous avez arrêté spectating.</French>
+            <Spanish>Usted ha dejado de ser espectador.</Spanish>
+            <Italian>Hai smesso di spettatori.</Italian>
+            <Polish>Zatrzymaniu widzem.</Polish>
+            <Portuguese>Você parou espectador.</Portuguese>
+            <Russian>Вы остановили spectating.</Russian>
+            <German>Sie haben das Zuschauen gestoppt.</German>
+        </Key>
         <Key ID="STR_NOTF_haveTPedToYou">
             <Original>You have teleported %1 to your location.</Original>
             <Czech>Jste teleported %1 do vaší polohy.</Czech>
