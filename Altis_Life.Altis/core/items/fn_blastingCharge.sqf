@@ -26,7 +26,7 @@ if ((nearestObject [_pos,_vaultHouse]) getVariable ["locked",true]) exitWith {hi
 if (!([false,"blastingcharge",1] call life_fnc_handleInv)) exitWith {}; //Error?
 
 _vault setVariable ["chargeplaced",true,true];
-[0,"STR_ISTR_Blast_Placed"] remoteExecCall ["life_fnc_broadcast",west];
+[0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
 hint localize "STR_ISTR_Blast_KeepOff";
 
 [] remoteExec ["life_fnc_demoChargeTimer",[west,player]];
