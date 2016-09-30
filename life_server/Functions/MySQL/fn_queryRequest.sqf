@@ -16,8 +16,9 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _client = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
-if (isNull _ownerID) exitWith {};
+if (isNull _client) exitWith {};
 _ownerID = owner _client;
+
 
 _query = switch (_side) do {
     // West - 11 entries returned
@@ -173,7 +174,7 @@ _count_Air = [_count_Air,2] call DB_fnc_asyncCall select 0;
 _count_Car = [_count_Car,2] call DB_fnc_asyncCall select 0;
 _count_Ship = [_count_Ship,2] call DB_fnc_asyncCall select 0;
 
-counts = [_count_Air,_count_Car,_count_Ship];
+_counts = [_count_Air,_count_Car,_count_Ship];
 _client setVariable ["counts",_counts,true] };
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

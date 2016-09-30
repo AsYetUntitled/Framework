@@ -99,7 +99,7 @@ class FSM
                          "		};" \n
                          "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
                          "        _owner= (playableUnits select {getPlayerUID _x isEqualTo _uid}param[0, objNull]);" \n
-                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countcar = _counts select 1; _countcar = _countcar - 1; _counts set [1,_countcar]; _owner setVariable [""counts"",_counts,true];};" \n
+                         "        if (!isNull _owner && isPlayer _owner && !isNil {_owner getVariable ""counts""}) then { _counts= _owner getVariable ""counts""; _countcar = _counts select 1; _countcar = _countcar - 1; _counts set [1,_countcar]; _owner setVariable [""counts"",_counts,true];};" \n
                          "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n
@@ -121,7 +121,7 @@ class FSM
                          "		};" \n
                          "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
                          "        _owner= (playableUnits select {getPlayerUID _x isEqualTo _uid}param[0, objNull]);" \n
-                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countship = _counts select 2; _countship = _countship - 1; _counts set [2,_countship]; _owner setVariable [""counts"",_counts,true];};" \n
+                         "        if (!isNull _owner && isPlayer _owner && !isNil {_owner getVariable ""counts""}) then { _counts= _owner getVariable ""counts""; _countship = _counts select 2; _countship = _countship - 1; _counts set [2,_countship]; _owner setVariable [""counts"",_counts,true];};" \n
                          "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n
@@ -143,7 +143,7 @@ class FSM
                          "		};" \n
                          "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
                          "        _owner= (playableUnits select {getPlayerUID _x isEqualTo _uid}param[0, objNull]);" \n
-                         "        if (!isNull _owner && isPlayer _owner) then { _counts= _owner getVariable ""counts""; _countair = _counts select 0; _countair = _countair - 1; _counts set [0,_countair]; _owner setVariable [""counts"",_counts,true];};" \n
+                         "        if (!isNull _owner && isPlayer _owner && !isNil {_owner getVariable ""counts""}) then { _counts= _owner getVariable ""counts""; _countair = _counts select 0; _countair = _countair - 1; _counts set [0,_countair]; _owner setVariable [""counts"",_counts,true];};" \n
                          "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
                          "			deleteVehicle _x;" \n
                          "		};" \n

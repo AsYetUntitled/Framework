@@ -6,7 +6,7 @@
     Description:
     Stores the vehicle in the garage.
 */
-private ["_nearVehicles","_vehicle","_room","_vehiclesLimit"];
+private ["_nearVehicles","_vehicle","_room","_vehiclesLimit","_exit"];
 if (vehicle player != player) then {
     _vehicle = vehicle player;
 } else {
@@ -43,10 +43,11 @@ switch (playerSide) do {
     case civilian : { _vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_CIVILIAN"); };
     case independent : {_vehiclesLimit = LIFE_SETTINGS(getNumber,"garage_limit_MEDIC"); };
 };
-_room = (_count <= _vehiclesLimit OR (isNil "counts"))
+_room = ((_count <= _vehiclesLimit) OR (isNil "counts"));
+if (!_room) then { _exit = true };
 };
 
-if (!_room) exitWith {hint format [localize "STR_NOTF_TooManyVehicles",_vehiclesLimit]};
+if (!isNil "_exit") exitWith {hint format [localize "STR_NOTF_TooManyVehicles",_vehiclesLimit]};
 _storetext = localize "STR_Garage_Store_Success";
 
 if (life_HC_isActive) then {
