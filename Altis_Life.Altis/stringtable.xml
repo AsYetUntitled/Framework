@@ -11241,6 +11241,17 @@
             <Russian>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Russian>
             <German>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</German>
         </Key>
+        <Key ID="STR_SpyDetect_VariableSetBeforeClientInitialized">
+            <Original>Variable set before client initialized: %1</Original>
+            <Czech>Variable set before client initialized: %1</Czech>
+            <French>Variable set before client initialized: %1</French>
+            <Spanish>Variable set before client initialized: %1</Spanish>
+            <Italian>Variable set before client initialized: %1</Italian>
+            <Polish>Variable set before client initialized: %1</Polish>
+            <Portuguese>Variable set before client initialized: %1</Portuguese>
+            <Russian>Variable set before client initialized: %1</Russian>
+            <German>Variable set before client initialized: %1</German>
+        </Key>
     </Package>
     <Package name="TextNotifications">
         <Key ID="STR_MedicalRequestEmerg_Title">
