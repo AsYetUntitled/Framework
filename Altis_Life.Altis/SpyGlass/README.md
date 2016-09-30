@@ -1,7 +1,7 @@
 SpyGlass
 ================
 <b>SpyGlass is an anti-cheat system for [Altis Life RPG](https://github.com/AsYetUntitled/Framework)</b>.</br></br>
-<b>Any modification</b> to the Altis Life RPG mission files will require changes to [Config_SpyGlass](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp).
+<b>Any modification</b> to the Altis Life RPG mission files will require changes to [Config_SpyGlass](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp). SpyGlass can be disabled in Altis_Life.Altis/config/Config_Master.hpp → `spyGlass_toggle`. This is **not** recommended. 
 
 <b>Notes</b>
 
