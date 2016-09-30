@@ -11186,6 +11186,17 @@
             <Russian>SPYGLASS-FLAG:%1:%2:%3</Russian>
             <German>SPYGLASS-FLAG:%1:%2:%3</German>
         </Key>
+        <Key ID="STR_SpyDetect_CheaterFlagged">
+            <Original><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Original>
+            <Czech><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Czech>
+            <French><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</French>
+            <Spanish><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Spanish>
+            <Italian><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Italian>
+            <Polish><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Polish>
+            <Portuguese><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Portuguese>
+            <Russian><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Russian>
+            <German><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</German>
+        </Key>
     </Package>
     <Package name="TextNotifications">
         <Key ID="STR_MedicalRequestEmerg_Title">
