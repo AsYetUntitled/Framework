@@ -11175,6 +11175,17 @@
             <Russian>Вы были обнаружены для мошенничества и было сообщено на сервер. Удачного дня.</Russian>
             <German>Sie wurden für Betrug erkannt und haben an den Server gemeldet. Genieße deinen Tag.</German>
         </Key>
+        <Key ID="STR_SpyDetect_cookieJar">
+            <Original>SPYGLASS-FLAG:%1:%2:%3</Original>
+            <Czech>SPYGLASS-FLAG:%1:%2:%3</Czech>
+            <French>SPYGLASS-FLAG:%1:%2:%3</French>
+            <Spanish>SPYGLASS-FLAG:%1:%2:%3</Spanish>
+            <Italian>SPYGLASS-FLAG:%1:%2:%3</Italian>
+            <Polish>SPYGLASS-FLAG:%1:%2:%3</Polish>
+            <Portuguese>SPYGLASS-FLAG:%1:%2:%3</Portuguese>
+            <Russian>SPYGLASS-FLAG:%1:%2:%3</Russian>
+            <German>SPYGLASS-FLAG:%1:%2:%3</German>
+        </Key>
     </Package>
     <Package name="TextNotifications">
         <Key ID="STR_MedicalRequestEmerg_Title">
