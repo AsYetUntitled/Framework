@@ -11230,6 +11230,17 @@
             <Russian>Variable: %1 is not allowed TYPE: %2 NS: UI</Russian>
             <German>Variable: %1 is not allowed TYPE: %2 NS: UI</German>
         </Key>
+        <Key ID="STR_SpyDetect_Observes">
+            <Original>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Original>
+            <Czech>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Czech>
+            <French>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</French>
+            <Spanish>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Spanish>
+            <Italian>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Italian>
+            <Polish>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Polish>
+            <Portuguese>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Portuguese>
+            <Russian>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Russian>
+            <German>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</German>
+        </Key>
     </Package>
     <Package name="TextNotifications">
         <Key ID="STR_MedicalRequestEmerg_Title">
