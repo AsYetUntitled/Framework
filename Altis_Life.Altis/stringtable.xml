@@ -11208,6 +11208,28 @@
             <Russian>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Russian>
             <German>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</German>
         </Key>
+        <Key ID="STR_SpyDetect_Variable_MN">
+            <Original>Variable: %1 is not allowed TYPE: %2 NS: MN</Original>
+            <Czech>Variable: %1 is not allowed TYPE: %2 NS: MN</Czech>
+            <French>Variable: %1 is not allowed TYPE: %2 NS: MN</French>
+            <Spanish>Variable: %1 is not allowed TYPE: %2 NS: MN</Spanish>
+            <Italian>Variable: %1 is not allowed TYPE: %2 NS: MN</Italian>
+            <Polish>Variable: %1 is not allowed TYPE: %2 NS: MN</Polish>
+            <Portuguese>Variable: %1 is not allowed TYPE: %2 NS: MN</Portuguese>
+            <Russian>Variable: %1 is not allowed TYPE: %2 NS: MN</Russian>
+            <German>Variable: %1 is not allowed TYPE: %2 NS: MN</German>
+        </Key>
+        <Key ID="STR_SpyDetect_Variable_UI">
+            <Original>Variable: %1 is not allowed TYPE: %2 NS: UI</Original>
+            <Czech>Variable: %1 is not allowed TYPE: %2 NS: UI</Czech>
+            <French>Variable: %1 is not allowed TYPE: %2 NS: UI</French>
+            <Spanish>Variable: %1 is not allowed TYPE: %2 NS: UI</Spanish>
+            <Italian>Variable: %1 is not allowed TYPE: %2 NS: UI</Italian>
+            <Polish>Variable: %1 is not allowed TYPE: %2 NS: UI</Polish>
+            <Portuguese>Variable: %1 is not allowed TYPE: %2 NS: UI</Portuguese>
+            <Russian>Variable: %1 is not allowed TYPE: %2 NS: UI</Russian>
+            <German>Variable: %1 is not allowed TYPE: %2 NS: UI</German>
+        </Key>
     </Package>
     <Package name="TextNotifications">
         <Key ID="STR_MedicalRequestEmerg_Title">

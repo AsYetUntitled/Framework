@@ -8,7 +8,7 @@
     Checks against harmful variables, disable this if client-performance is
     to bad in the fn_initSpy.sqf, the menuCheck should be good enough!
 */
-private ["_BIS_Functions","_LIFE_Functions","_SERVER_Functions","_SOCK_Functions","_DB_Functions","_allowedVariables","_checkFunction","_BIS_UI_Functions","_allowedVariables_UI","_profileCount"];
+private ["_BIS_Functions", "_LIFE_Functions", "_SERVER_Functions", "_SOCK_Functions", "_DB_Functions", "_allowedVariables", "_checkFunction", "_BIS_UI_Functions", "_allowedVariables_UI", "_profileCount"];
 _BIS_Functions = SPY_SETTINGS(getArray,"BIS_Functions");
 _BIS_UI_Functions = SPY_SETTINGS(getArray,"BIS_UI_Functions");
 _LIFE_Functions = SPY_SETTINGS(getArray,"LIFE_Functions");
@@ -59,9 +59,9 @@ _checkFunction = {
                         if (!(_x in _SOCK_Functions)) then {
                             if (!(_x in _DB_Functions)) then {
                                 _varType = typeName (missionNamespace getVariable _x);
-                                _find = _allowedVariables find [_x,_varType];
+                                _find = _allowedVariables find [_x, _varType];
                                 if (_find isEqualTo -1) then {
-                                    diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
+                                    diag_log format [localize "STR_SpyDetect_Variable_MN", _x, _varType];
                                     failMission "SpyGlass";
                                 };
                             };
@@ -83,9 +83,9 @@ _uiCheckFunction = {
                             if (!(_x in _DB_Functions)) then {
                                 if (!(_x in _BIS_UI_Functions)) then {
                                     _varType = typeName (uiNamespace getVariable _x);
-                                    _find = _allowedVariables_UI find [_x,_varType];
+                                    _find = _allowedVariables_UI find [_x, _varType];
                                     if (_find isEqualTo -1) then {
-                                        diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
+                                        diag_log format [localize "STR_SpyDetect_Variable_UI", _x, _varType];
                                         failMission "SpyGlass";
                                     };
                                 };
