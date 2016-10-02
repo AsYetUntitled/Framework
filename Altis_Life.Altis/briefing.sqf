@@ -1,4 +1,4 @@
-waitUntil {!isNull player && player isEqualTo player};
+waitUntil {!isServer && !isNull player && player isEqualTo player};
 if (player diarySubjectExists "controls") exitWith {};
 
 player createDiarySubject ["credits","Credits"];
@@ -25,18 +25,18 @@ TEXT HERE<br/><br/>
 
     player createDiaryRecord ["credits",
         [
-            "ArmaLife",
+            "AsYetUntitled",
                 "
-ArmaLife is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.<br/><br/>
+AsYetUntitled (formerly ArmaLife) is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.<br/><br/>
                 "
         ]
     ];
 
-    player createDiaryRecord["changelog",
+    player createDiaryRecord ["changelog",
         [
             "Altis Life Changelog",
                 "
-The official changelog can be found in ArmaLife github. https://git.io/vVkhe<br/><br/>
+The full changelog can be found on the AsYetUntitled/Framework repository on GitHub. https://github.com/AsYetUntitled/Framework/<br/><br/>
 v4.4 release 3!<br/>
 By: danielstuart14<br/>
 Date: 31. May 2016<br/><br/>
@@ -62,7 +62,7 @@ Date: 19. January 2016<br/><br/>
         ]
     ];
 
-    player createDiaryRecord["changelog",
+    player createDiaryRecord ["changelog",
         [
             "Server Change Log",
                 "
@@ -85,7 +85,7 @@ These are considered exploits, and you will not be kicked, but banned.<br/><br/>
         ]
     ];
 
-    player createDiaryRecord["safezones",
+    player createDiaryRecord ["safezones",
         [
             "Safe Zones",
                 "
@@ -97,7 +97,6 @@ Rebel Outposts<br/><br/>
                 "
         ]
     ];
-
 
     player createDiaryRecord ["serverrules",
         [
@@ -194,6 +193,7 @@ These are all judged by admins on a case by case basis.<br/><br/>
                 "
         ]
     ];
+
     player createDiaryRecord ["serverrules",
         [
             "New Life Rule",
@@ -230,6 +230,7 @@ Crisis Negotiation must be handled by a Sergeant. If one is not available, the p
                 "
         ]
     ];
+
     player createDiaryRecord ["policerules",
         [
             "The Federal Reserve",
@@ -246,6 +247,7 @@ Crisis Negotiation must be handled by a Sergeant. If one is not available, the p
                 "
         ]
     ];
+
     player createDiaryRecord ["policerules",
         [
             "Aviation",
@@ -465,8 +467,6 @@ Cops in game who are not enrolled/accepted into the SPD are the lowest tier and 
         ]
     ];
 
-
-
 // Illegal Items Section
     player createDiaryRecord ["illegalitems",
         [
@@ -481,6 +481,7 @@ A rebel is one who rises in armed resistance against a government. In this case 
                 "
         ]
     ];
+
     player createDiaryRecord ["illegalitems",
         [
             "Gang Rules",
@@ -494,6 +495,7 @@ A rebel is one who rises in armed resistance against a government. In this case 
                 "
         ]
     ];
+
     player createDiaryRecord ["illegalitems",
         [
             "Illegal Vehicles",
@@ -506,6 +508,7 @@ A civilian in control of the following prohibited vehicles is subject to the con
                 "
         ]
     ];
+
     player createDiaryRecord ["illegalitems",
         [
             "Illegal Weapons",
@@ -523,6 +526,7 @@ A civilian in possession of the following is subject to the consequences as defi
                 "
         ]
     ];
+
     player createDiaryRecord ["illegalitems",
         [
             "Illegal Items",
@@ -536,7 +540,6 @@ The following items are illegal to posses:<br/><br/>
                 "
         ]
     ];
-
 
 // Controls Section
 
