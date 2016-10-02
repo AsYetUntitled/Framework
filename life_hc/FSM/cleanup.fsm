@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Server-Side Cleanup">*/
+/*%FSM<COMPILE "D:\Giochi\LibreriaSteam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, Server-Side Cleanup">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-65.004578,-391.651611,24.995417,-341.651672,0.000000,"init"};
@@ -17,129 +17,166 @@ link4[] = {4,5};
 link5[] = {5,3};
 link6[] = {6,7};
 link7[] = {7,2};
-globals[] = {0.000000,0,0,0,0,640,480,1,46,6316128,1,-629.444153,611.207214,293.309357,-434.050568,1243,885,1};
-window[] = {2,-1,-1,-1,-1,985,225,1868,225,3,1261};
+globals[] = {0.000000,0,0,0,0,640,480,1,46,6316128,1,-629.444153,611.207214,-352.104614,-2079.489014,88,834,1};
+window[] = {0,-1,-1,-1,-1,792,32,1675,32,1,110};
 *//*%FSM</HEAD>*/
 class FSM
 {
-  fsmName = "Server-Side Cleanup";
-  class States
-  {
-    /*%FSM<STATE "init">*/
-    class init
-    {
-      name = "init";
-      init = /*%FSM<STATEINIT""">*/"private [""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
-       "_impound = time;" \n
-       "_cars = time;" \n
-       "_objs = time;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "true">*/
-        class true
+        fsmName = "Server-Side Cleanup";
+        class States
         {
-          priority = 0.000000;
-          to="Share__Work_load";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private [""_impound"",""_cars"",""_objs"",""_totCars"",""_thread""];" \n
+                         "_impound = time;" \n
+                         "_cars = time;" \n
+                         "_objs = time;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Share__Work_load";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Share__Work_load">*/
+                class Share__Work_load
+                {
+                        name = "Share__Work_load";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Time_Check">*/
+                                class Time_Check
+                                {
+                                        itemno = 4;
+                                        priority = 0.000000;
+                                        to="Delete_Dead_Cars";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((time - _cars) > (3 * 60))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Delete_Dead_Cars">*/
+                class Delete_Dead_Cars
+                {
+                        name = "Delete_Dead_Cars";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"{" \n
+                         "	if (!alive _x) then {" \n
+                         "		_dbInfo = _x getVariable [""dbInfo"",[]];" \n
+                         "		if (count _dbInfo > 0) then {" \n
+                         "			_uid = _dbInfo select 0;" \n
+                         "			_plate = _dbInfo select 1;" \n
+                         "" \n
+                         "			_query = format [""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+                         "			_query spawn {" \n
+                         "				" \n
+                         "				_thread = [_this,1] call HC_fnc_asyncCall;" \n
+                         "			};" \n
+                         "		};" \n
+                         "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
+                         "        _owner= (playableUnits select {getPlayerUID _x isEqualTo _uid}param[0, objNull]);" \n
+                         "        if (!isNull _owner && isPlayer _owner && !isNil {_owner getVariable ""counts""}) then { _counts= _owner getVariable ""counts""; _countcar = _counts select 1; _countcar = _countcar - 1; _counts set [1,_countcar]; _owner setVariable [""counts"",_counts,true];};" \n
+                         "" \n
+                         "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
+                         "			deleteVehicle _x;" \n
+                         "		};" \n
+                         "	};" \n
+                         "} forEach allMissionObjects ""LandVehicle"";" \n
+                         "" \n
+                         "{" \n
+                         "	if (!alive _x) then {" \n
+                         "		_dbInfo = _x getVariable [""dbInfo"",[]];" \n
+                         "		if (count _dbInfo > 0) then {" \n
+                         "			_uid = _dbInfo select 0;" \n
+                         "			_plate = _dbInfo select 1;" \n
+                         "" \n
+                         "			_query = format [""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+                         "			_query spawn {" \n
+                         "				" \n
+                         "				_thread = [_this,1] call HC_fnc_asyncCall;" \n
+                         "			};" \n
+                         "		};" \n
+                         "        _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
+                         "        _owner= (playableUnits select {getPlayerUID _x isEqualTo _uid}param[0, objNull]);" \n
+                         "        if (!isNull _owner && isPlayer _owner && !isNil {_owner getVariable ""counts""}) then { _counts= _owner getVariable ""counts""; _countship = _counts select 2; _countship = _countship - 1; _counts set [2,_countship]; _owner setVariable [""counts"",_counts,true];};" \n
+                         "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
+                         "			deleteVehicle _x;" \n
+                         "		};" \n
+                         "	};" \n
+                         "} forEach entities ""Ship"";" \n
+                         "" \n
+                         "{" \n
+                         "	if (!alive _x) then {" \n
+                         "		_dbInfo = _x getVariable [""dbInfo"",[]];" \n
+                         "		if (count _dbInfo > 0) then {" \n
+                         "			_uid = _dbInfo select 0;" \n
+                         "			_plate = _dbInfo select 1;" \n
+                         "" \n
+                         "			_query = format [""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
+                         "			_query spawn {" \n
+                         "				" \n
+                         "				_thread = [_this,1] call HC_fnc_asyncCall;" \n
+                         "			};" \n
+                         "		};" \n
+                         " 		  _uid = _x getVariable ""vehicle_info_owners"" select 0 select 0;" \n
+                         "        _owner= (playableUnits select {getPlayerUID _x isEqualTo _uid}param[0, objNull]);" \n
+                         "        if (!isNull _owner && isPlayer _owner && !isNil {_owner getVariable ""counts""}) then { _counts= _owner getVariable ""counts""; _countair = _counts select 0; _countair = _countair - 1; _counts set [0,_countair]; _owner setVariable [""counts"",_counts,true];};" \n
+                         "" \n
+                         "" \n
+                         "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
+                         "			deleteVehicle _x;" \n
+                         "		};" \n
+                         "	};" \n
+                         "} forEach allMissionObjects ""Air"";" \n
+                         "" \n
+                         "_cars = time;" \n
+                         "" \n
+                         "//Group cleanup." \n
+                         "{" \n
+                         "	if (units _x isEqualTo [] && local _x) then {" \n
+                         "		deleteGroup _x;" \n
+                         "	};" \n
+                         "} forEach allGroups;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Share__Work_load";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
         };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Share__Work_load">*/
-    class Share__Work_load
-    {
-      name = "Share__Work_load";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "Time_Check">*/
-        class Time_Check
+        initState="init";
+        finalStates[] =
         {
-          priority = 0.000000;
-          to="Delete_Dead_Cars";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((time - _cars) > (3 * 60))"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Delete_Dead_Cars">*/
-    class Delete_Dead_Cars
-    {
-      name = "Delete_Dead_Cars";
-      init = /*%FSM<STATEINIT""">*/"{" \n
-       "	if (!alive _x) then {" \n
-       "		_dbInfo = _x getVariable [""dbInfo"",[]];" \n
-       "		if (count _dbInfo > 0) then {" \n
-       "			_uid = _dbInfo select 0;" \n
-       "			_plate = _dbInfo select 1;" \n
-       "" \n
-       "			_query = format [""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
-       "			_query spawn {" \n
-       "				" \n
-       "				_thread = [_this,1] call HC_fnc_asyncCall;" \n
-       "			};" \n
-       "		};" \n
-       "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
-       "			deleteVehicle _x;" \n
-       "		};" \n
-       "	};" \n
-       "} forEach allMissionObjects ""LandVehicle"";" \n
-       "" \n
-       "{" \n
-       "	if (!alive _x) then {" \n
-       "		_dbInfo = _x getVariable [""dbInfo"",[]];" \n
-       "		if (count _dbInfo > 0) then {" \n
-       "			_uid = _dbInfo select 0;" \n
-       "			_plate = _dbInfo select 1;" \n
-       "" \n
-       "			_query = format [""UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'"",_uid,_plate];" \n
-       "			_query spawn {" \n
-       "				" \n
-       "				_thread = [_this,1] call HC_fnc_asyncCall;" \n
-       "			};" \n
-       "		};" \n
-       "		if (!isNil ""_x"" && {!isNull _x}) then {" \n
-       "			deleteVehicle _x;" \n
-       "		};" \n
-       "	};" \n
-       "} forEach allMissionObjects ""Air"";" \n
-       "" \n
-       "_cars = time;" \n
-       "" \n
-       "//Group cleanup." \n
-       "{" \n
-       "	if (units _x isEqualTo [] && local _x) then {" \n
-       "		deleteGroup _x;" \n
-       "	};" \n
-       "} forEach allGroups;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "true">*/
-        class true
-        {
-          priority = 0.000000;
-          to="Share__Work_load";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-  };
-  initState="init";
-  finalStates[] =
-  {
-  };
 };
 /*%FSM</COMPILE>*/

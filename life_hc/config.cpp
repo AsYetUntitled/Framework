@@ -81,6 +81,7 @@ class CfgFunctions
             class vehicleCreate {};
             class vehicleDelete {};
             class vehicleUpdate {};
+            class countVehicles {};
         };
 
         class Wanted_Sys

@@ -14,10 +14,11 @@
 private ["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
+_client = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
-if (isNull _ownerID) exitWith {};
-_ownerID = owner _ownerID;
+if (isNull _client) exitWith {};
+_ownerID = owner _client;
+
 
 _query = switch (_side) do {
     // West - 11 entries returned
@@ -155,5 +156,25 @@ publicVariable "TON_fnc_playtime_values_request";
 
 _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
 _queryResult set[15,_keyArr];
+
+
+_vehiclesLimit = switch (_side) do {
+    case east : { LIFE_SETTINGS(getNumber,"garage_limit_OPFOR"); };
+    case west : {LIFE_SETTINGS(getNumber,"garage_limit_COP"); };
+    case civilian : {  LIFE_SETTINGS(getNumber,"garage_limit_CIVILIAN"); };
+    case independent : { LIFE_SETTINGS(getNumber,"garage_limit_MEDIC"); };
+};
+if (_vehiclesLimit != 0) then {
+_count_Air =  format ["SELECT COUNT(*) FROM vehicles WHERE pid ='%1' AND alive='1' AND side='%2' AND type='%3'", _uid, _side, "Air"];
+_count_Car =  format ["SELECT COUNT(*) FROM vehicles WHERE pid ='%1' AND alive='1' AND side='%2' AND type='%3'", _uid, _side, "Car"];
+_count_Ship = format ["SELECT COUNT(*) FROM vehicles WHERE pid ='%1' AND alive='1' AND side='%2' AND type='%3'", _uid, _side, "Ship"];
+
+
+_count_Air = [_count_Air,2] call DB_fnc_asyncCall select 0;
+_count_Car = [_count_Car,2] call DB_fnc_asyncCall select 0;
+_count_Ship = [_count_Ship,2] call DB_fnc_asyncCall select 0;
+
+_counts = [_count_Air,_count_Car,_count_Ship];
+_client setVariable ["counts",_counts,true] };
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

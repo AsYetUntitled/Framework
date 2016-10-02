@@ -109,5 +109,6 @@ switch (playerSide) do {
 if (count (_this select 15) > 0) then {
     {life_vehicles pushBack _x;} forEach (_this select 15);
 };
+if (!isNil {player getVariable "counts"}) then { counts = player getVariable "counts" };
 
 life_session_completed = true;

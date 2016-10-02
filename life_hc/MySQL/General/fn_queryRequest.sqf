@@ -16,9 +16,9 @@
 private ["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
+_client = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
-if (isNull _ownerID) exitWith {};
+if (isNull _client) exitWith {};
 
 _query = switch (_side) do {
     // West - 11 entries returned
@@ -34,11 +34,11 @@ _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 if (_queryResult isEqualType "") exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_client];
 };
 
 if (_queryResult isEqualTo []) exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_owner];
 };
 
 //Blah conversion thing from a2net->extdb
@@ -156,4 +156,25 @@ waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
 _queryResult set[15,_keyArr];
 
-_queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];
+
+
+_vehiclesLimit = switch (_side) do {
+    case east : { LIFE_SETTINGS(getNumber,"garage_limit_OPFOR"); };
+    case west : {LIFE_SETTINGS(getNumber,"garage_limit_COP"); };
+    case civilian : {  LIFE_SETTINGS(getNumber,"garage_limit_CIVILIAN"); };
+    case independent : { LIFE_SETTINGS(getNumber,"garage_limit_MEDIC"); };
+};
+if (_vehiclesLimit != 0) then {
+_count_Air =  format ["SELECT COUNT(*) FROM vehicles WHERE pid ='%1' AND alive='1' AND side='%2' AND type='%3'", _uid, _side, "Air"];
+_count_Car =  format ["SELECT COUNT(*) FROM vehicles WHERE pid ='%1' AND alive='1' AND side='%2' AND type='%3'", _uid, _side, "Car"];
+_count_Ship = format ["SELECT COUNT(*) FROM vehicles WHERE pid ='%1' AND alive='1' AND side='%2' AND type='%3'", _uid, _side, "Ship"];
+
+
+_count_Air = [_count_Air,2] call HC_fnc_asyncCall select 0;
+_count_Car = [_count_Car,2] call HC_fnc_asyncCall select 0;
+_count_Ship = [_count_Ship,2] call HC_fnc_asyncCall select 0;
+
+_counts = [_count_Air,_count_Car,_count_Ship];
+_client setVariable ["counts",_counts,true] };
+
+_queryResult remoteExec ["SOCK_fnc_requestReceived",_client];

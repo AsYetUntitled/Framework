@@ -9,7 +9,7 @@
     Sends the query request to the database, if an array is returned then it creates
     the vehicle if it's not in use or dead.
 */
-private ["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage","_wasIllegal","_location"];
+private ["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage","_wasIllegal","_location","_room"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
@@ -17,6 +17,7 @@ _unit = [_this,3,objNull,[objNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
 _spawntext = _this select 6;
+_type = _this select 7;
 _ownerID = _unit getVariable ["life_clientID",-1];
 _unit_return = _unit;
 _name = name _unit;
@@ -69,9 +70,12 @@ if (count _nearVehicles > 0) exitWith {
     [_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
     [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
 };
-
+_room = [_side,_pid,_type,"minequal"] call HC_fnc_countVehicles;
+if (_room) then {
 _query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
-
+} else {
+_query = format ["UPDATE vehicles SET alive='0', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
+};
 _trunk = [(_vInfo select 9)] call HC_fnc_mresToArray;
 _gear = [(_vInfo select 10)] call HC_fnc_mresToArray;
 _damage = [(_vInfo select 12)] call HC_fnc_mresToArray;
@@ -102,30 +106,33 @@ _vehicle allowDamage true;
 _vehicle lock 2;
 //Reskin the vehicle
 [_vehicle,_vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",_unit];
-_vehicle setVariable ["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
+_vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
+ if (!_room) then {
+     _vehicle setVariable ["dbInfo",[],true];
+ } else {
+     _vehicle setVariable["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
+  };
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 // Avoid problems if u keep changing which stuff to save!
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
-    _vehicle setVariable ["Trunk",_trunk,true];
-    if (_wasIllegal) then {
-        private "_location";
-        if (_sp isEqualType "") then {
-            _location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
-        } else {
-            _location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
-           };
-           _location = text _location;
-           [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
+_vehicle setVariable ["Trunk",_trunk,true];
+if (_wasIllegal) then {
+    private " _location";
+    if (_sp isEqualType "") then {
+        _location = (nearestLocations[getPos _sp, ["NameCityCapital", "NameCity", "NameVillage"], 1000]) select 0;
+    } else {
+        _location = (nearestLocations[_sp, ["NameCityCapital", "NameCity", "NameVillage"], 1000]) select 0;
+    };
 
-                _query = format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
-                _thread = [_query,1] call HC_fnc_asyncCall;
-
-        };
-    }else{
-    _vehicle setVariable ["Trunk",[[],0],true];
+    _location = text _location;
+    [1, "STR_NOTF_BlackListedVehicle", true, [_location, _name]] remoteExecCall["life_fnc_broadcast", west];
+    _query = format["UPDATE vehicles SET blacklist = '0' WHERE id = '%1' AND pid = '%2'", _vid, _pid];
+    _thread = [_query, 1] call HC_fnc_asyncCall;
+};
+ } else {
+_vehicle setVariable ["Trunk",[[],0],true];
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {

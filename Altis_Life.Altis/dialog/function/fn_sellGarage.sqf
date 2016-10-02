@@ -44,6 +44,18 @@ switch (playerSide) do {
 
 _sellPrice = _purchasePrice * _multiplier;
 
+if (!(isNil "counts")) then {
+private ["_sel","_vehiclesLimit"];
+_type = life_garage_type;
+switch (_type) do {
+case "Air" : {_sel = 0;};
+case "Car" : {_sel = 1;};
+case "Ship" : {_sel = 2;};
+};
+_count = counts select _sel;
+counts set [_sel,(_count - 1)];
+};
+
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 
 if (life_HC_isActive) then {
