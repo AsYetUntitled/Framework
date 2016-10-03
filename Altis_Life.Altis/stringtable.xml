@@ -4397,6 +4397,17 @@
             <Russian>Захват шайка укрытие</Russian>
             <German>Ganggebiet einnehmen</German>
         </Key>
+        <Key ID="STR_NOTF_emptyArray_levelCheck">
+            <Original>An empty array was passed to fn_levelCheck.sqf</Original>
+            <Czech>An empty array was passed to fn_levelCheck.sqf</Czech>
+            <French>An empty array was passed to fn_levelCheck.sqf</French>
+            <Spanish>An empty array was passed to fn_levelCheck.sqf</Spanish>
+            <Italian>An empty array was passed to fn_levelCheck.sqf</Italian>
+            <Polish>An empty array was passed to fn_levelCheck.sqf</Polish>
+            <Portuguese>An empty array was passed to fn_levelCheck.sqf</Portuguese>
+            <Russian>An empty array was passed to fn_levelCheck.sqf</Russian>
+            <German>An empty array was passed to fn_levelCheck.sqf</German>
+        </Key>
     </Package>
     <Package name="News_Strings">
         <Key ID="STR_News_AddAction">

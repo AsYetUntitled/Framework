@@ -13,7 +13,7 @@ _itemConfig = param [0, [], []];
 
 _return = false;
 
-if (_itemConfig isEqualTo []) exitWith {diag_log "An empty array was passed to fn_levelCheck.sqf"; _return};
+if (_itemConfig isEqualTo []) exitWith {diag_log localize "STR_NOTF_emptyArray_levelCheck"; _return};
 
 if (count _itemConfig isEqualTo 5) then {
             
