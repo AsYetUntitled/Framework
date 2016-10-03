@@ -13,7 +13,7 @@ if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming
 if (life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
 
-if (player getVariable ["isEscorting",false]) exitWith {
+if (playerSide isEqualTo west && {player getVariable ["isEscorting",false]}) exitWith {
     [] call life_fnc_copInteractionMenu;
 };
 
