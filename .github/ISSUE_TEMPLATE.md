@@ -12,8 +12,8 @@
 
 ### [RPT](https://community.bistudio.com/wiki/Crash_Files#Arma_3) and/or extDB2 logs (if applicable)
 <Check your client and server RPT and extDB2 logs for errors and warnings.>
-<If there are relevent messages and they are short then post them here with code formatting.>
-<If there are relevent messages and they are long then upload the whole file to GitHub, Pastebin, or Hastebin.>
+<If there are relevant messages and they are short then post them here with code formatting.>
+<If there are relevant messages and they are long then upload the whole file to GitHub, Pastebin, or Hastebin.>
 
 ----
 
