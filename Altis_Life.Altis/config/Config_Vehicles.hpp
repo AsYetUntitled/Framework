@@ -1,13 +1,3 @@
-/**
-* @Author: Daniel P. Stuart
-* @Date:   06-10-2016
-* @Email:  daniel.stuart14@gmail.com
-* @Project: A3 MILITIA RPG
-* @Last modified by:   Daniel P. Stuart
-* @Last modified time: 07-10-2016
-* @License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
-*/
-
 class CarShops {
     /*
     *    ARRAY FORMAT:
