@@ -116,8 +116,9 @@ switch (_code) do {
     //Restraining (Shift + R)
     case 19: {
         if (_shift) then {_handled = true;};
-        if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
-            [] call life_fnc_restrainAction;
+        if (_shift && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
+            if (playerSide isEqualTo west) then { [false] call life_fnc_restrainAction; };
+            if (playerSide isEqualTo civilian) then { [true] call life_fnc_restrainAction; };
         };
     };
 

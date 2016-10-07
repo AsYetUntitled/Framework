@@ -82,6 +82,7 @@ class Life_Client_Core {
 
     class Civilian {
         file = "core\civilian";
+        class civInteractionMenu {};
         class civLoadout {};
         class civMarkers {};
         class demoChargeTimer {};
@@ -254,6 +255,7 @@ class Life_Client_Core {
         class boltcutter {};
         class defuseKit {};
         class flashbang {};
+        class handcuffKeys {};
         class jerrycanRefuel {};
         class jerryRefuel {};
         class lockpick {};

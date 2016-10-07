@@ -11679,5 +11679,27 @@
             <Russian>%1 - %2 депозит в размере $%3 в свой банк. Банковский баланс: $%4 на руку Баланс: $%5</Russian>
             <German>%1 - %2 hat $%3 auf sein Konto eingezahlt. Bank-Konto: $%4  Bargeld: $%5</German>
         </Key>
+        <Key ID="STR_Item_handcuff">
+            <Original>Handcuff</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>Esposas</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
+        <Key ID="STR_Item_handcuff_keys">
+            <Original>Handcuff keys</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>Llaves de esposas</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
     </Package>
 </Project>
