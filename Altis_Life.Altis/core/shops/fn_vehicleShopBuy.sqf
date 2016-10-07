@@ -6,14 +6,16 @@
     Description:
     Does something with vehicle purchasing.
 */
-private ["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
+private ["_mode","_vIndex","_spawnPoints","_customPriceArray","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
 _mode = _this select 0;
 _exit = false;
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
 _vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"vehicles");
+_customPriceArray = (_vehicleList select ([_className,_vehicleList] call TON_fnc_index)) select 1;
 _shopSide = M_CONFIG(getText,"CarShops",(life_veh_shop select 0),"side");
+_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
 _licenses = switch (playerSide) do {
     case civilian: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 0)};
@@ -21,8 +23,6 @@ _licenses = switch (playerSide) do {
     case independent: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 2)};
     case east: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 3)};
 };
-
-_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
 switch (playerSide) do {
     case civilian: {
@@ -44,9 +44,17 @@ switch (playerSide) do {
 };
 
  if (_mode) then {
-     _purchasePrice = round(_initalPrice * _buyMultiplier);
+     if ((_customPriceArray select 0) isEqualTo -1) then {
+          _purchasePrice = round(_initalPrice * _buyMultiplier);
+     } else {
+          _purchasePrice = _customPriceArray select 0;
+     };
  } else {
-     _purchasePrice = round(_initalPrice * _rentMultiplier);
+     if ((_customPriceArray select 1) isEqualTo -1) then {
+          _purchasePrice = round(_initalPrice * _rentMultiplier);
+     } else {
+          _purchasePrice = _customPriceArray select 1;
+     };
  };
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
