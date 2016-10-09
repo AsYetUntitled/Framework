@@ -2,7 +2,7 @@ class CarShops {
     /*
     *    ARRAY FORMAT:
     *        0: STRING (Classname)
-    *        2: ARRAY (Custom Buy/Rent Price)
+    *        1: ARRAY (Custom Buy/Rent Price)
     *            0: Buy Price (-1 = Uses Puchase Multiplier)
     *            1: Rent Price (-1 = Uses Rental Multiplier)
     *        2: ARRAY (This is for limiting items to certain things)
