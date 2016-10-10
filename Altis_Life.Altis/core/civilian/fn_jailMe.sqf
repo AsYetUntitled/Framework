@@ -44,9 +44,9 @@ for "_i" from 0 to 1 step 0 do {
 
             if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
                 if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-                    player_exploitlog = format [localize "STR_DL_EL_JAILGLITCH_BEF",profileName,(getPlayerUID player)];
+                    player_exploitLog = format [localize "STR_DL_EL_JAILGLITCH_BEF",profileName,(getPlayerUID player)];
                 } else {
-                    player_exploitlog = format [localize "STR_DL_EL_JAILGLITCH",profileName,(getPlayerUID player)];
+                    player_exploitLog = format [localize "STR_DL_EL_JAILGLITCH",profileName,(getPlayerUID player)];
                 };
                 publicVariableServer "exploit_log";
             };

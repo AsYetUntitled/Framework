@@ -14,7 +14,7 @@ class Life_Settings {
     player_advancedLog = false; //False [default] - No advanced logging. True - Logs house purchase and sale, vehicle purchase, sale, and chop shopping, police arrests, and gang creations. Search for: advanced_log
     player_moneyLog = false; //False [default] - No money logging. True - Logs player bank deposits, withdraws, and transfers, gang bank deposits and withdraws, money picked up off of the ground, and player robbery. Search for: money_log
     player_deathLog = false; //False [default] - No death logging. True - Logs victim and killer, and vehicle or weapon if used, when a player dies. Search for: death_log
-    player_exploitlog = false; //False [default] - No exploit/glitch logging. True - Will log exploit/glitch both attempts and successful (Jail Wall Glitching). Search for: player_exploitlog
+    player_exploitLog = false; //False [default] - No exploit/glitch logging. True - Will log exploit/glitch both attempts and successful (Jail Wall Glitching). Search for: player_exploitLog
 
 /* Database Related Settings */
     /* Player Data Saving */
