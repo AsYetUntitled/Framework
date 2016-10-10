@@ -913,6 +913,17 @@
             <Portuguese>Você magicamente glitched fora da cadeia. Este foi registado e mais tentativas pode resultar em punição.</Portuguese>
             <Polish>Masz magicznie glitched z więzienia. Zostało rejestrowane i więcej prób może skutkować karą.</Polish>
         </Key>
+        <Key ID="STR_JAIL_NOTIFYANTIJUMP">
+            <Original>You cannot jump since you are wearing an anti-jump suit.</Original>
+            <Czech>Nemůžete skákat, protože jste na sobě anti-skok oblek.</Czech>
+            <Spanish>No se puede saltar desde que usted está usando un traje anti-salto.</Spanish>
+            <Russian>Вы не можете прыгать, так как вы носите анти-полукомбинезона.</Russian>
+            <German>Sie können nicht springen, da Sie ein Anti-Sprung-Anzug tragen.</German>
+            <French>Vous ne pouvez pas sauter puisque vous portez une combinaison anti-saut.</French>
+            <Italian>Non si può saltare da quando si indossa una tuta anti-salto.</Italian>
+            <Portuguese>Você não pode saltar uma vez que você está vestindo um terno anti-salto.</Portuguese>
+            <Polish>Nie można przejść od nosisz garnitur anty-skok.</Polish>
+        </Key>
     </Package>
     <Package name="ATM_Strings">
         <Key ID="STR_ATM_Title">
