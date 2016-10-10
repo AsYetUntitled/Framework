@@ -36,6 +36,23 @@ for "_i" from 0 to 1 step 0 do {
         hintSilent parseText format [(localize "STR_Jail_Time")+ "<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>" +(localize "STR_Jail_Pay")+ " %3<br/>" +(localize "STR_Jail_Price")+ " $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if (life_canpay_bail) then {"Yes"} else {"No"}];
     };
 
+    if (LIFE_SETTINGS(getNumber,"jail_helicopter_only") isEqualTo 1) then {
+        if (!(vehicle player isKindOf "air") && (player distance (getMarkerPos "jail_marker") > 50)) then {
+
+            player setPos (getMarkerPos "jail_marker"); // Teleport the player back to jail
+            hint format [localize "STR_JAIL_NOTIFYGLITCH"]; // Notify the player who glitched out
+
+            if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
+                if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
+                    player_exploitlog = format [localize "STR_DL_EL_JAILGLITCH_BEF",profileName,(getPlayerUID player)];
+                } else {
+                    player_exploitlog = format [localize "STR_DL_EL_JAILGLITCH",profileName,(getPlayerUID player)];
+                };
+                publicVariableServer "exploit_log";
+            };
+        };
+    };
+
     private _escDist = ALTIS_TANOA(60,145);
     if (player distance (getMarkerPos "jail_marker") > _escDist) exitWith {
         _esc = true;

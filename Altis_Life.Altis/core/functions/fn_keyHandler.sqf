@@ -55,14 +55,19 @@ if (life_container_active) then {
 };
 
 switch (_code) do {
+
     //Space key for Jumping
     case 57: {
-        if (isNil "jumpActionTime") then {jumpActionTime = 0;};
-        if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {((velocity player) select 2) < 2.5} && {time - jumpActionTime > 1.5}) then {
-            jumpActionTime = time; //Update the time.
-            [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
-            _handled = true;
-        };
+        if ((LIFE_SETTINGS(getNumber,"jail_disable_jumping") isEqualTo 1) && (life_is_arrested = true)) then {
+            hint "You cannot jump since you are wearing an anti-jump suit.";
+        } else {
+            if (isNil "jumpActionTime") then {jumpActionTime = 0;};
+            if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {((velocity player) select 2) < 2.5} && {time - jumpActionTime > 1.5}) then {
+                jumpActionTime = time; //Update the time.
+                [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
+                _handled = true;
+            };
+        }:
     };
 
     //Surrender (Shift + B)
