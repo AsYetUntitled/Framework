@@ -67,7 +67,7 @@ switch (_code) do {
                 [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
                 _handled = true;
             };
-        }:
+        };
     };
 
     //Surrender (Shift + B)
