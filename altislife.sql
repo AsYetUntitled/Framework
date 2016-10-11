@@ -116,6 +116,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `plate` int(20) NOT NULL,
+  `shop` varchar(64) NOT NULL,
   `color` int(20) NOT NULL,
   `inventory` text NOT NULL,
   `gear` text NOT NULL,

@@ -6,7 +6,7 @@
     Description:
     Opens & initializes the chop shop menu.
 */
-private ["_control","_price","_nearVehicles","_chopMultiplier","_chopable","_nearUnits"];
+private ["_control","_price","_vehicleShop","_vehicleList","_vehicle","_nearVehicles","_chopMultiplier","_chopable","_nearUnits"];
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_ActionInProc"};
 if (playerSide != civilian) exitWith {hint localize "STR_NOTF_notAllowed"};
 disableSerialization;
@@ -35,6 +35,20 @@ _control = CONTROL(39400,39402);
 
         _price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
         _chopMultiplier = LIFE_SETTINGS(getNumber,"vehicle_chopShop_multiplier");
+        _vehicleShop = _x getVariable ["shop_info",""];
+        if (!(_vehicleShop isEqualTo "")) then {
+            if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
+                _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
+                _vehicle = [_className,_vehicleList] call TON_fnc_index;
+
+                if (!(_vehicle isEqualTo -1)) then {
+                    _vehicle = ((_vehicleList select _vehicle) select 1) select 0;
+                    if (!(_vehicle isEqualTo -1)) then {
+                        _price = _vehicle;
+                    };
+                };
+            };
+        };
 
         _price = _price * _chopMultiplier;
         if (!isNil "_price" && count crew _x isEqualTo 0) then {
