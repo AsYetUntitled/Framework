@@ -6,7 +6,7 @@
     Description:
     Opens & initializes the chop shop menu.
 */
-private ["_control","_price","_vehicleShop","_vehicleList","_vehicle","_nearVehicles","_chopMultiplier","_chopable","_nearUnits"];
+private ["_control","_price","_vehicleShop","_vehicleList","_className","_classNameLife","_displayName","_picture","","_vehicleIndex","_vehiclePrice","_nearVehicles","_chopMultiplier","_chopable","_nearUnits"];
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_ActionInProc"};
 if (playerSide != civilian) exitWith {hint localize "STR_NOTF_notAllowed"};
 disableSerialization;
@@ -39,12 +39,12 @@ _control = CONTROL(39400,39402);
         if (!(_vehicleShop isEqualTo "")) then {
             if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
                 _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
-                _vehicle = [_className,_vehicleList] call TON_fnc_index;
+                _vehicleIndex = [_className,_vehicleList] call TON_fnc_index;
 
-                if (!(_vehicle isEqualTo -1)) then {
-                    _vehicle = ((_vehicleList select _vehicle) select 1) select 0;
-                    if (!(_vehicle isEqualTo -1)) then {
-                        _price = _vehicle;
+                if (!(_vehicleIndex isEqualTo -1)) then {
+                    _vehiclePrice = ((_vehicleList select _vehicleIndex) select 1) select 0;
+                    if (!(_vehiclePrice isEqualTo -1)) then {
+                        _price = _vehiclePrice;
                     };
                 };
             };

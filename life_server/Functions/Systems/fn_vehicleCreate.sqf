@@ -7,8 +7,8 @@
 */
 private ["_type","_classname","_plate"];
 params [
-    "_uid",
-    "_shop",
+    ["_uid","",[""]],
+    ["_shop","",[""]],
     ["_side",sideUnknown,[west]],
     ["_vehicle",objNull,[objNull]],
     ["_color",-1,[0]]
