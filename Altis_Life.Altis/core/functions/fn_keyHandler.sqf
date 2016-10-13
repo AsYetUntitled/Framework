@@ -58,7 +58,7 @@ switch (_code) do {
 
     //Space key for Jumping
     case 57: {
-        if ((LIFE_SETTINGS(getNumber,"jail_disable_jumping") isEqualTo 1) && (life_is_arrested = true)) then {
+        if ((LIFE_SETTINGS(getNumber,"jail_disable_jumping") isEqualTo 1) && (life_is_arrested)) then {
             hint format [localize "STR_JAIL_NOTIFYANTIJUMP"];
         } else {
             if (isNil "jumpActionTime") then {jumpActionTime = 0;};
