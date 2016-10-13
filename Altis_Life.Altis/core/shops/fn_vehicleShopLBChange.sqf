@@ -63,8 +63,8 @@ _armor = (_vehicleInfo select 9);
 
 ctrlShow [2330,true];
 (CONTROL(2300,2303)) ctrlSetStructuredText parseText format [
-    (localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +
     (localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b'>$%1</t><br/>" +
+    (localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +
     (localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +
     (localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>" +
     (localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>" +
