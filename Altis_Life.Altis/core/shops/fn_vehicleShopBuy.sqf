@@ -12,7 +12,7 @@ _exit = false;
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
-_shopName = life_veh_shop select 0;
+_shopName = (life_veh_shop select 0);
 _vehicleList = M_CONFIG(getArray,"CarShops",_shopName,"vehicles");
 _customPriceArray = (_vehicleList select ([_className,_vehicleList] call TON_fnc_index)) select 1;
 _shopSide = M_CONFIG(getText,"CarShops",_shopName,"side");

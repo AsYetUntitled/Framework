@@ -7,7 +7,7 @@
     Can't be bothered to answer it.. Already deleted it by accident..
 */
 disableSerialization;
-private ["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_sellMultiplier","_price","_storageFee","_purchasePrice"];
+private ["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehiclePrice","_vehicleList","_vehicleIndex","_vehicleShop","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_sellMultiplier","_price","_storageFee","_purchasePrice"];
 _control = _this select 0;
 _index = _this select 1;
 
@@ -16,6 +16,7 @@ _dataArr = CONTROL_DATAI(_control,_index);
 _dataArr = call compile format ["%1",_dataArr];
 _className = (_dataArr select 0);
 _classNameLife = _className;
+_vehicleShop = (_dataArr select 2);
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
@@ -49,6 +50,21 @@ switch (playerSide) do {
         _sellMultiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_OPFOR");
     };
 };
+
+if (!(_vehicleShop isEqualTo "")) then {
+    if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
+        _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
+        _vehicleIndex = [_className,_vehicleList] call TON_fnc_index;
+
+        if (!(_vehicleIndex isEqualTo -1)) then {
+            _vehiclePrice = ((_vehicleList select _vehicleIndex) select 1) select 0;
+            if (!(_vehiclePrice isEqualTo -1)) then {
+                _purchasePrice = _vehiclePrice;
+            };
+        };
+    };
+};
+
 _retrievePrice = _purchasePrice * _storageFee;
 _sellPrice = _purchasePrice * _sellMultiplier;
 
@@ -56,15 +72,14 @@ if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice = 500;};
 
 (CONTROL(2800,2803)) ctrlSetStructuredText parseText format [
-    (localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>
-    " +(localize "STR_Shop_Veh_UI_SellP")+ " <t color='#8cff9b'>$%2</t><br/>
-    " +(localize "STR_Shop_Veh_UI_Color")+ " %8<br/>
-    " +(localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>
-    " +(localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>
-    " +(localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>
-    " +(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>
-    " +(localize "STR_Shop_Veh_UI_Fuel")+ " %7
-    ",
+    (localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>" +
+    (localize "STR_Shop_Veh_UI_SellP")+ " <t color='#8cff9b'>$%2</t><br/>" +
+    (localize "STR_Shop_Veh_UI_Color")+ " %8<br/>" +
+    (localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +
+    (localize "STR_Shop_Veh_UI_HPower")+ " %4<br/>" +
+    (localize "STR_Shop_Veh_UI_PSeats")+ " %5<br/>" +
+    (localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +
+    (localize "STR_Shop_Veh_UI_Fuel")+ " %7",
 [_retrievePrice] call life_fnc_numberText,
 [_sellPrice] call life_fnc_numberText,
 (_vehicleInfo select 8),
