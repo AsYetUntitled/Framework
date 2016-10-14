@@ -36,6 +36,10 @@ for "_i" from 0 to 1 step 0 do {
         hintSilent parseText format [(localize "STR_Jail_Time")+ "<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>" +(localize "STR_Jail_Pay")+ " %3<br/>" +(localize "STR_Jail_Price")+ " $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if (life_canpay_bail) then {"Yes"} else {"No"}];
     };
 
+    if (LIFE_SETTINGS(getNumber,"forceWalk") isEqualTo 1) then {
+        player forceWalk true;
+    };
+
     if (LIFE_SETTINGS(getNumber,"jail_helicopter_only") isEqualTo 1) then {
         if (!(vehicle player isKindOf "air") && (player distance (getMarkerPos "jail_marker") > 50)) then {
 
