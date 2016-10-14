@@ -6,12 +6,14 @@
     Description:
     Yeah... Gets the vehicle from the garage.
 */
-private ["_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_price","_storageFee","_purchasePrice"];
+private ["_controlData","_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_price","_vehicleShop","_vehicleList","_vehicleIndex","_storageFee","_purchasePrice"];
 disableSerialization;
 if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
-_vehicle = (call compile format ["%1",_vehicle]) select 0;
+_controlData = lbData[2802,(lbCurSel 2802)];
+_controlData = call compile format ["%1",_controlData];
+_vehicle = (_controlData select 0);
 _vehicleLife = _vehicle;
+_vehicleShop = (_controlData select 2);
 _vid = lbValue[2802,(lbCurSel 2802)];
 _pid = getPlayerUID player;
 _unit = player;
@@ -30,6 +32,20 @@ switch (playerSide) do {
     case west: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");};
     case independent: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");};
     case east: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");};
+};
+
+if (!(_vehicleShop isEqualTo "")) then {
+    if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
+        _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
+        _vehicleIndex = [_vehicle,_vehicleList] call TON_fnc_index;
+
+        if (!(_vehicleIndex isEqualTo -1)) then {
+            _vehiclePrice = ((_vehicleList select _vehicleIndex) select 1) select 0;
+            if (!(_vehiclePrice isEqualTo -1)) then {
+                _purchasePrice = _vehiclePrice;
+            };
+        };
+    };
 };
 _price = _purchasePrice * _storageFee;
 
