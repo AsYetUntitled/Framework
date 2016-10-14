@@ -58,15 +58,11 @@ switch (_code) do {
 
     //Space key for Jumping
     case 57: {
-        if ((LIFE_SETTINGS(getNumber,"jail_disable_jumping") isEqualTo 1) && (life_is_arrested)) then {
-            hint format [localize "STR_JAIL_NOTIFYANTIJUMP"];
-        } else {
-            if (isNil "jumpActionTime") then {jumpActionTime = 0;};
-            if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {((velocity player) select 2) < 2.5} && {time - jumpActionTime > 1.5}) then {
-                jumpActionTime = time; //Update the time.
-                [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
-                _handled = true;
-            };
+        if (isNil "jumpActionTime") then {jumpActionTime = 0;};
+        if (_shift && {!(animationState player isEqualTo "AovrPercMrunSrasWrflDf")} && {isTouchingGround player} && {stance player isEqualTo "STAND"} && {speed player > 2} && {!life_is_arrested} && {((velocity player) select 2) < 2.5} && {time - jumpActionTime > 1.5}) then {
+            jumpActionTime = time; //Update the time.
+            [player] remoteExec ["life_fnc_jumpFnc",RANY]; //Global execution
+            _handled = true;
         };
     };
 
