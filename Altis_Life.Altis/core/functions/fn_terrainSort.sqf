@@ -7,7 +7,7 @@
 */
 
 
-if !(params[["_array","",[[],0]]]) exitWith {};
+if !(params[["_array","",[[],0,""]]]) exitWith {};
 
 scopeName "main";
 
