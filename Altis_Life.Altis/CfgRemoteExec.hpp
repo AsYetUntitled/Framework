@@ -41,6 +41,7 @@ class CfgRemoteExec {
         F(life_fnc_moveIn,CLIENT)
         F(life_fnc_pickupItem,CLIENT)
         F(life_fnc_pickupMoney,CLIENT)
+        F(life_fnc_playerQuery,CLIENT)
         F(life_fnc_receiveItem,CLIENT)
         F(life_fnc_receiveMoney,CLIENT)
         F(life_fnc_removeLicenses,CLIENT)
@@ -67,7 +68,6 @@ class CfgRemoteExec {
         F(TON_fnc_clientGangLeft,CLIENT)
         F(TON_fnc_clientGetKey,CLIENT)
         F(TON_fnc_clientMessage,CLIENT)
-        F(TON_fnc_player_query,CLIENT)
 
         /* Server only functions */
         F(BIS_fnc_execVM,SERVER)

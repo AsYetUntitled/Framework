@@ -5,16 +5,6 @@
 
     Description: They are functions.
 */
-TON_fnc_player_query =
-compileFinal "
-    private [""_ret""];
-    _ret = _this select 0;
-    if (isNull _ret) exitWith {};
-    if (isNil ""_ret"") exitWith {};
-
-    [life_atmbank,life_cash,owner player,player,profileNameSteam,getPlayerUID player,playerSide] remoteExecCall [""life_fnc_adminInfo"",_ret];
-";
-publicVariable "TON_fnc_player_query";
 TON_fnc_clientGangKick =
 compileFinal "
     private [""_unit"",""_group""];
