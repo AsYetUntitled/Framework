@@ -47,7 +47,7 @@ switch (playerSide) do {
 if (!(_vehicleShop isEqualTo "")) then {
     if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
         _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
-        _vehicleIndex = [_vehicle,_vehicleList] call TON_fnc_index;
+        _vehicleIndex = [_vehicle,_vehicleList] call life_fnc_getIndex;
 
         if (!(_vehicleIndex isEqualTo -1)) then {
             _vehiclePrice = ((_vehicleList select _vehicleIndex) select 1) select 0;

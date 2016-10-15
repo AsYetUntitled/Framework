@@ -21,7 +21,7 @@ if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumF
 _num = parseNumber(_num);
 if (_num < 1) exitWith {hint localize "STR_MISC_Under1";};
 
-_index = [_ctrl,((life_trunk_vehicle getVariable "Trunk") select 0)] call TON_fnc_index;
+_index = [_ctrl,((life_trunk_vehicle getVariable "Trunk") select 0)] call life_fnc_getIndex;
 _data = (life_trunk_vehicle getVariable "Trunk") select 0;
 _old = life_trunk_vehicle getVariable "Trunk";
 if (_index isEqualTo -1) exitWith {};

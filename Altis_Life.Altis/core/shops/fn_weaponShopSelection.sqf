@@ -18,7 +18,7 @@ _priceTag = CONTROL(38400,38404);
 if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
     _item = CONTROL_DATAI(_control,_index);
     _itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
-    _item = [_item,_itemArray] call TON_fnc_index;
+    _item = [_item,_itemArray] call life_fnc_getIndex;
     _price = ((_itemArray select _item) select 3);
     _priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#8cff9b'>$%1</t></t>",[(_price)] call life_fnc_numberText];
     _control lbSetValue[_index,_price];

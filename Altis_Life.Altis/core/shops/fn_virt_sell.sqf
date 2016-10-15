@@ -31,7 +31,7 @@ if ([false,_type,_amount] call life_fnc_handleInv) then {
 if (life_shop_type isEqualTo "drugdealer") then {
     private ["_array","_ind","_val"];
     _array = life_shop_npc getVariable ["sellers",[]];
-    _ind = [getPlayerUID player,_array] call TON_fnc_index;
+    _ind = [getPlayerUID player,_array] call life_fnc_getIndex;
     if (!(_ind isEqualTo -1)) then {
         _val = ((_array select _ind) select 2);
         _val = _val + _price;

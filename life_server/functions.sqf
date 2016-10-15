@@ -5,22 +5,6 @@
 
     Description: They are functions.
 */
-TON_fnc_index =
-compileFinal "
-    private [""_item"",""_stack""];
-    _item = _this select 0;
-    _stack = _this select 1;
-    _return = -1;
-
-    {
-        if (_item in _x) exitWith {
-            _return = _forEachIndex;
-        };
-    } forEach _stack;
-
-    _return;
-";
-
 TON_fnc_player_query =
 compileFinal "
     private [""_ret""];
@@ -31,7 +15,6 @@ compileFinal "
     [life_atmbank,life_cash,owner player,player,profileNameSteam,getPlayerUID player,playerSide] remoteExecCall [""life_fnc_adminInfo"",_ret];
 ";
 publicVariable "TON_fnc_player_query";
-publicVariable "TON_fnc_index";
 
 TON_fnc_isnumber =
 compileFinal "
