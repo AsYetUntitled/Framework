@@ -174,7 +174,6 @@ class Life_Client_Core {
         class fetchDeadGear {};
         class fetchVehInfo {};
         class getIndex {};
-        class isDamaged {};
         class giveDiff {};
         class handleDamage {};
         class handleInv {};
@@ -184,6 +183,8 @@ class Life_Client_Core {
         class hudUpdate {};
         class inventoryClosed {};
         class inventoryOpened {};
+        class isDamaged {};
+        class isNumber {};
         class isUIDActive {};
         class keyHandler {};
         class loadDeadGear {};

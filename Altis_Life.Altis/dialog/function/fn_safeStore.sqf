@@ -12,7 +12,7 @@ _ctrl = CONTROL_DATA(3503);
 _num = ctrlText 3506;
 
 //Error checks
-if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
+if (!([_num] call life_fnc_isNumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
 _num = parseNumber(_num);
 if (_num < 1) exitWith {hint localize "STR_Cop_VaultUnder1";};
 if (!(_ctrl isEqualTo "goldBar")) exitWith {hint localize "STR_Cop_OnlyGold"};
