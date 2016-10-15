@@ -38,19 +38,19 @@ for "_i" from 0 to 1 step 0 do {
     
     if (LIFE_SETTINGS(getNumber,"jail_disableWalking") isEqualTo 1) then {
         player forceWalk true; // -- Disbale force walking
-	};
+    };
 	
 	if (life_is_arrested && (player distance (getMarkerPos "jail_marker") > 50)) then {
 		hint format [localize "STR_JAIL_NOTIFYGLITCH"]; // -- Notify the player who glitched out
 
       	if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
-        	if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
+       		if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
             	advanced_log = format [localize "STR_DL_EL_JAILGLITCH_BEF",profileName,(getPlayerUID player)];
           	} else {
 	           	advanced_log = format [localize "STR_DL_EL_JAILGLITCH",profileName,(getPlayerUID player)];
 	        };
-	        publicVariableServer "advanced_log";
-		 };
+		    publicVariableServer "advanced_log";
+		};
     };
 
     private _escDist = ALTIS_TANOA(60,145);
