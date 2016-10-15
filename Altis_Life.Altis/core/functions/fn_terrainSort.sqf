@@ -7,7 +7,7 @@
 */
 
 
-if !(params[["_array","",[[],0,""]]]) exitWith {};
+if !(params[["_dictionary","",[[],0,""]]]) exitWith {};
 
 scopeName "main";
 
@@ -15,6 +15,6 @@ scopeName "main";
     if (worldName == _x select 0) then {
         (_x select 1) breakOut "main";
     };
-} count _array;
+} count _dictionary;
 
 [0, []] select ((_array select 0) select 1 isEqualType []);
