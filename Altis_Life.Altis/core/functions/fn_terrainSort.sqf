@@ -17,4 +17,8 @@ scopeName "main";
     };
 } count _dictionary;
 
-[0, []] select ((_array select 0) select 1 isEqualType []);
+switch (typeOf (_array select 0 select 1)) do {
+    case "ARRAY": {[]};
+    case "STRING": {""};
+    case "SCALAR": {-1};
+};
