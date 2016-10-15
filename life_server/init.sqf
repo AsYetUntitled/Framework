@@ -151,7 +151,6 @@ TON_fnc_requestClientID =
 /* Event handler for logs */
 "money_log" addPublicVariableEventHandler {diag_log (_this select 1)};
 "advanced_log" addPublicVariableEventHandler {diag_log (_this select 1)};
-"exploit_log" addPublicVariableEventHandler {diag_log (_this select 1)};
 
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
