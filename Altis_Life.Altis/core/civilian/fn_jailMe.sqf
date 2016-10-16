@@ -61,7 +61,6 @@ switch (true) do {
         life_bail_paid = false;
 
         hint localize "STR_Jail_Paid";
-        serv_wanted_remove = [player];
         player setPos (getMarkerPos "jail_release");
 
         if (life_HC_isActive) then {
