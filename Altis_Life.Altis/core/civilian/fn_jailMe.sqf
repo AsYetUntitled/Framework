@@ -40,21 +40,6 @@ for "_i" from 0 to 1 step 0 do {
         player forceWalk true;
     };
 
-    if (life_is_arrested && (player distance (getMarkerPos "jail_marker") > 200)) then {
-
-        player setPos (getMarkerPos "jail_marker"); // Teleport the player back to jail
-        hint format [localize "STR_JAIL_NOTIFYGLITCH"]; // Notify the player who glitched out
-
-        if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
-            if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-                player_advancedlog = format [localize "STR_DL_EL_JAILGLITCH_BEF",profileName,(getPlayerUID player)];
-            } else {
-                player_advancedlog = format [localize "STR_DL_EL_JAILGLITCH",profileName,(getPlayerUID player)];
-            };
-            publicVariableServer "advanced_log";
-        };
-    };
-
     private _escDist = ALTIS_TANOA(60,145);
     if (player distance (getMarkerPos "jail_marker") > _escDist) exitWith {
         _esc = true;
