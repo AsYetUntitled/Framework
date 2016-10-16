@@ -55,6 +55,7 @@ if (life_container_active) then {
 };
 
 switch (_code) do {
+
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
