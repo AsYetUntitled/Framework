@@ -7,7 +7,7 @@
 */
 
 
-if !(params[["_dictionary","",[[],0,""]]]) exitWith {};
+if !(params[["_dictionary",[],[[],0,""]]]) exitWith {};
 
 scopeName "main";
 
