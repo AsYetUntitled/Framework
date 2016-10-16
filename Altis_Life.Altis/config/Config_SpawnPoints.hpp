@@ -26,7 +26,7 @@ class CfgSpawnPoints {
                 displayName = "Kavala";
                 spawnMarker = "civ_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                conditions = "";
+                conditions = "!license_civ_rebel";
             };
 
             class Athira {
@@ -98,7 +98,7 @@ class CfgSpawnPoints {
                 displayName = "Air HQ";
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
-                conditions = "FETCH_CONST(life_coplevel) >= 2 && license_cop_cAir";
+                conditions = "FETCH_CONST(life_coplevel) >= 2 && {license_cop_cAir}";
             };
 
             class HW {
@@ -140,7 +140,7 @@ class CfgSpawnPoints {
                 displayName = "Georgetown";
                 spawnMarker = "civ_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                conditions = "";
+                conditions = "!license_civ_rebel";
             };
 
             class Balavu {
@@ -212,7 +212,7 @@ class CfgSpawnPoints {
                 displayName = "Air HQ";
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
-                conditions = "license_cop_cAir && FETCH_CONST(life_coplevel) >= 2";
+                conditions = "FETCH_CONST(life_coplevel) >= 2 && {license_cop_cAir}";
             };
 
             class HW {
