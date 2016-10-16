@@ -60,8 +60,6 @@ switch (true) do {
         life_is_arrested = false;
         life_bail_paid = false;
 
-        player forceWalk false; // Enable running / jumping
-
         hint localize "STR_Jail_Paid";
         serv_wanted_remove = [player];
         player setPos (getMarkerPos "jail_release");
@@ -77,7 +75,6 @@ switch (true) do {
 
     case (_esc): {
         life_is_arrested = false;
-        player forceWalk false; // Enable running / jumping
         hint localize "STR_Jail_EscapeSelf";
         [0,"STR_Jail_EscapeNOTF",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 
@@ -92,7 +89,6 @@ switch (true) do {
 
     case (alive player && !_esc && !_bail): {
         life_is_arrested = false;
-        player forceWalk false; // Enable running / jumping
         hint localize "STR_Jail_Released";
 
         if (life_HC_isActive) then {
@@ -105,3 +101,5 @@ switch (true) do {
         [5] call SOCK_fnc_updatePartial;
     };
 };
+
+player forceWalk false; // Enable running & jumping
