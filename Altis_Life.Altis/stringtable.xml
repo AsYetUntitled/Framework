@@ -901,6 +901,19 @@
             <German>Admin %1 hat die Debug-Konsole geöffnet.</German>
         </Key>
     </Package>
+    <Package name="Jail_Strings">
+        <Key ID="STR_JAIL_NOTIFYGLITCH">
+            <Original>You've magically glitched out of jail. This has been logged and more attempts may result in punishment.</Original>
+            <Czech>Vy jste magicky Odvázaný z vězení. Tato skutečnost byla zaznamenána a další pokusy může mít za následek trest.</Czech>
+            <Spanish>Usted ha glitched mágicamente fuera de la cárcel. Esto ha sido registrada y más intentos puede resultar en un castigo.</Spanish>
+            <Russian>Вы волшебным образом сглаженным из тюрьмы. Это было зарегистрировано и больше попыток может привести к наказанию.</Russian>
+            <German>Du hast dich magisch aus dem Gefängnis befreit. Dies wurde protokolliert und weitere Versuche könnten Bestrafungen zur Folge haben.</German>
+            <French>Vous avez par magie glitched sortir de prison. Cela a été noté et plus de tentatives peut entraîner une peine.</French>
+            <Italian>Hai magicamente glitched fuori di prigione. Questo è stato registrato e più tentativi può causare una punizione.</Italian>
+            <Portuguese>Você magicamente glitched fora da cadeia. Este foi registado e mais tentativas pode resultar em punição.</Portuguese>
+            <Polish>Masz magicznie glitched z więzienia. Zostało rejestrowane i więcej prób może skutkować karą.</Polish>
+        </Key>
+    </Package>
     <Package name="ATM_Strings">
         <Key ID="STR_ATM_Title">
             <Original>Bank Account Management</Original>
@@ -11349,6 +11362,28 @@
         </Key>
     </Package>
     <Package name="Data_Logging">
+        <Key ID="STR_DL_EL_JAILGLITCH_BEF">
+            <Original>%1: %2: Glitched out of jail</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
+        <Key ID="STR_DL_EL_JAILGLITCH">
+            <Original>%1: %2: Glitched out of jail</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish></Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
         <Key ID="STR_DL_AL_Arrested_BEF">
             <Original>arrested %1</Original>
             <Czech>zadržen %1</Czech>
