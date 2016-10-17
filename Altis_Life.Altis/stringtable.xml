@@ -1912,7 +1912,7 @@
             <Polish>Jesteś już w gangu.</Polish>
         </Key>
         <Key ID="STR_GNOTF_NotACiv">
-            <Original>%1 is not a civilian.</Original>
+            <Original>You are not a civilian.</Original>
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
