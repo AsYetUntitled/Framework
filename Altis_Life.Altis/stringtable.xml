@@ -1911,6 +1911,17 @@
             <Portuguese>Você já está em uma gangue.</Portuguese>
             <Polish>Jesteś już w gangu.</Polish>
         </Key>
+        <Key ID="STR_GNOTF_NotACiv">
+            <Original>%1 is not a civilian.</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+        </Key>
         <Key ID="STR_GNOTF_badUID">
             <Original>Bad UID?</Original>
             <Czech>Bad UID?</Czech>
