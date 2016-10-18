@@ -1,4 +1,3 @@
-#define ALTIS_TANOA(var1,var2) if (worldName == "Altis") then {var1} else {var2}
 /*
     File: fn_setupStationService.sqf
     Author: NiiRoZz
@@ -151,7 +150,7 @@ private _tanoaPositions = [
     [11637.2,13052.8,-0.228891]
 ];
 
-private _stationPositions = ALTIS_TANOA(_altisPositions,_tanoaPositions);
+private _stationPositions = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call life_fnc_terrainSort;
 
 {
     private _pump = nearestObjects [_x,["Land_fs_feed_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F"],5] select 0;

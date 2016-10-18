@@ -53,6 +53,3 @@
     preprocessFile "SpyGlass\endoftheline.sqf"; \
     sleep 2.5; \
     failMission "SpyGlass";
-
-//Map Macros
-#define ALTIS_TANOA(var1,var2) if (worldName == "Altis") then {var1} else {var2}

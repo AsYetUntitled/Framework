@@ -58,6 +58,3 @@
 #define M_CONFIG(TYPE,CFG,CLASS,ENTRY) TYPE(missionConfigFile >> CFG >> CLASS >> ENTRY)
 #define BASE_CONFIG(CFG,CLASS) inheritsFrom(configFile >> CFG >> CLASS)
 #define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)
-
-//Map Macros
-#define ALTIS_TANOA(var1,var2) if (worldName isEqualTo "Altis") then {var1} else {var2}
