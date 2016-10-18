@@ -12,7 +12,7 @@ if (isNull _unit) exitWith {};
 private _primitems = [];
 private _secitems = [];
 private _handgunitems = [];
-private _dropWeapons = LIFE_SETTINGS(getNumber,"Drop_weapons");
+private _dropWeapons = LIFE_SETTINGS(getNumber,"drop_weapons_onDeath");
 private _primary = [primaryWeapon _unit, ""] select _dropWeapons;
 private _launcher = [secondaryWeapon _unit, ""] select _dropWeapons;
 private _handgun = [handGunWeapon _unit, ""] select _dropWeapons;
