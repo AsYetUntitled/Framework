@@ -11,7 +11,7 @@ private _unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _unit) exitWith {};
 private _primitems = [];
 private _secitems = [];
-private_handgunitems = [];
+private _handgunitems = [];
 private _dropWeapons = LIFE_SETTINGS(getNumber,"Drop_weapons");
 private _primary = [primaryWeapon _unit, ""] select _dropWeapons;
 private _launcher = [secondaryWeapon _unit, ""] select _dropWeapons;
