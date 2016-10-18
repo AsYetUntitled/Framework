@@ -11,10 +11,6 @@ _unit = _this select 0;
 _corpse = _this select 1;
 life_corpse = _corpse;
 
-//Comment this code out if you want them to keep the weapon on the ground.
-_containers = nearestObjects[getPosATL _corpse,["WeaponHolderSimulated"],5]; //Fetch list of containers (Simulated = weapons)
-{deleteVehicle _x;} forEach _containers; //Delete the containers.
-
 //Set some vars on our new body.
 _unit setVariable ["restrained",false,true];
 _unit setVariable ["Escorting",false,true];

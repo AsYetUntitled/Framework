@@ -53,5 +53,11 @@ if (!(handgunWeapon _unit isEqualTo "")) then {
 };
 _unit selectWeapon (primaryWeapon _unit);
 
+if (LIFE_SETTINGS(getNumber,"Drop_weapons") isEqualTo 1) then {
+    _primitems = [];
+    _secitems = [];
+    _handgunitems = [];
+};
+
 if (isNil "_handgunItems") then {_handgunItems = ["","",""];};
 [_primary,_launcher,_handgun,_magazines,_uniform,_vest,_backpack,_items,_primitems,_secitems,_handgunitems,_uitems,_vitems,_bitems,_headgear,_goggles];
