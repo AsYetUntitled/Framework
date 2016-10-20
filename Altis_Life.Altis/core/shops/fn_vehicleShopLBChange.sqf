@@ -9,16 +9,14 @@
     displays various bits of information about the vehicle.
 */
 disableSerialization;
-private ["_className","_classNameLife","_vehicleList","_customPriceArray","_initalPrice","_buyMultiplier","_rentMultiplier","_buyPrice","_rentalPrice","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
+private ["_className","_classNameLife","_shop","_vehicleList","_customPrice","_initalPrice","_buyMultiplier","_rentMultiplier","_buyPrice","_rentalPrice","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
 
 //Fetch some information.
 _className = (_this select 0) lbData (_this select 1);
 _classNameLife = _className;
 _vIndex = (_this select 0) lbValue (_this select 1);
-
-_vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"vehicles");
-_customPriceArray = (_vehicleList select ([_className,_vehicleList] call TON_fnc_index)) select 1;
-
+_shop = (life_veh_shop select 0);
+_vehicleList = M_CONFIG(getArray,"CarShops",_shop,"vehicles");
 _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
 
 switch (playerSide) do {
@@ -40,17 +38,10 @@ switch (playerSide) do {
     };
 };
 
-if ((_customPriceArray select 0) isEqualTo -1) then {
-    _buyPrice = round(_initalPrice * _buyMultiplier);
-} else {
-    _buyPrice = _customPriceArray select 0;
-};
-
-if ((_customPriceArray select 1) isEqualTo -1) then {
-    _rentalPrice = round(_initalPrice * _rentMultiplier);
-} else {
-    _rentalPrice = _customPriceArray select 1;
-};
+_customPrice = [_className,_shop] call life_fnc_vCustomPrice;
+if(_customPrice != -1) then {_initalPrice = _customPrice;};
+_buyPrice = round(_initalPrice * _buyMultiplier);
+_rentalPrice = round(_initalPrice * _rentMultiplier);
 
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;

@@ -35,7 +35,7 @@ switch (playerSide) do {
 };
 
 _customPrice = [_vehicle,_vehicleShop] call life_fnc_vCustomPrice;
-if (_customPrice != -1) then {_price = _customPrice;};
+if (_customPrice != -1) then {_purchasePrice = _customPrice;};
 _price = _purchasePrice * _storageFee;
 
 if (!(_price isEqualType 0) || _price < 1) then {_price = 500;};

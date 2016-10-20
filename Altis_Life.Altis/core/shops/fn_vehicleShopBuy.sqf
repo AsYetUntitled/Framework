@@ -44,12 +44,12 @@ switch (playerSide) do {
 };
 
  if (_mode) then {
-    _customPrice = [_className,_vehicleShop] call life_fnc_vCustomPrice;
+    _customPrice = [_className,_shopName] call life_fnc_vCustomPrice;
     if (_customPrice != -1) then {_initalPrice = _customPrice;};
     _purchasePrice = round(_initalPrice * _buyMultiplier);
  } else {
-   _customPrice = [_className,_vehicleShop] call life_fnc_vCustomPrice;
-   if (_customPrice != -1) then {_initalPrice = _customPrice;}.
+   _customPrice = [_className,_shopName] call life_fnc_vCustomPrice;
+   if (_customPrice != -1) then {_initalPrice = _customPrice;};
    _purchasePrice = round(_initalPrice * _rentMultiplier);
  };
 _colorIndex = lbValue[2304,(lbCurSel 2304)];

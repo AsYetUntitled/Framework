@@ -9,18 +9,16 @@
     Parameter(s):
         0: STRING - Vehicle Class
         1: STRING - Vehicle Shop
-        2: BOOL - Select purchase (true) or rental (false) price.
 
     Returns:
     NUMBER
 */
-private ["_array","_index","_array","_index","_price"];
+private ["_array","_index","_price"];
 params [
     ["_class","",[""]],
     ["_shop","",[""]]
 ];
 _return = -1;
-if(_buy) then {_buy = 0;} else {_buy = 1;};
 
 if (!(_shop isEqualTo "" || _class isEqualTo "")) then {
     if (isClass (missionConfigFile >> "CarShops" >> _shop)) then {
