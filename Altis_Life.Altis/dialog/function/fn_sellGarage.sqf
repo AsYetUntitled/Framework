@@ -6,7 +6,7 @@
     Description:
     Sells a vehicle from the garage.
 */
-private ["_controlData","_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_vehicleShop","_vehicleList","_vehicleIndex","_price","_purchasePrice"];
+private ["_controlData","_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_vehicleShop","_customPrice","_price","_purchasePrice"];
 disableSerialization;
 if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 _controlData = lbData[2802,(lbCurSel 2802)];
@@ -44,19 +44,9 @@ switch (playerSide) do {
     };
 };
 
-if (!(_vehicleShop isEqualTo "")) then {
-    if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
-        _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
-        _vehicleIndex = [_vehicle,_vehicleList] call life_fnc_getIndex;
+_customPrice = [_vehicle,_vehicleShop] call life_fnc_vCustomPrice;
+if (_customPrice != -1) then {_purchasePrice = _customPrice;};
 
-        if (!(_vehicleIndex isEqualTo -1)) then {
-            _vehiclePrice = ((_vehicleList select _vehicleIndex) select 1) select 0;
-            if (!(_vehiclePrice isEqualTo -1)) then {
-                _purchasePrice = _vehiclePrice;
-            };
-        };
-    };
-};
 _sellPrice = _purchasePrice * _multiplier;
 
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};

@@ -7,7 +7,7 @@
     Can't be bothered to answer it.. Already deleted it by accident..
 */
 disableSerialization;
-private ["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehiclePrice","_vehicleList","_vehicleIndex","_vehicleShop","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_sellMultiplier","_price","_storageFee","_purchasePrice"];
+private ["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_customPrice","_vehicleShop","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_sellMultiplier","_price","_storageFee","_purchasePrice"];
 _control = _this select 0;
 _index = _this select 1;
 
@@ -51,19 +51,8 @@ switch (playerSide) do {
     };
 };
 
-if (!(_vehicleShop isEqualTo "")) then {
-    if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
-        _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
-        _vehicleIndex = [_className,_vehicleList] call life_fnc_getIndex;
-
-        if (!(_vehicleIndex isEqualTo -1)) then {
-            _vehiclePrice = ((_vehicleList select _vehicleIndex) select 1) select 0;
-            if (!(_vehiclePrice isEqualTo -1)) then {
-                _purchasePrice = _vehiclePrice;
-            };
-        };
-    };
-};
+_customPrice = [_className,_vehicleShop] call life_fnc_vCustomPrice;
+if (_customPrice != -1) then {_purchasePrice = _customPrice;};
 
 _retrievePrice = _purchasePrice * _storageFee;
 _sellPrice = _purchasePrice * _sellMultiplier;

@@ -6,7 +6,7 @@
     Description:
     Yeah... Gets the vehicle from the garage.
 */
-private ["_controlData","_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_price","_vehicleShop","_vehicleList","_vehicleIndex","_storageFee","_purchasePrice"];
+private ["_controlData","_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_vehicleShop","_storageFee","_purchasePrice","_customPrice"];
 disableSerialization;
 if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 _controlData = lbData[2802,(lbCurSel 2802)];
@@ -34,19 +34,8 @@ switch (playerSide) do {
     case east: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");};
 };
 
-if (!(_vehicleShop isEqualTo "")) then {
-    if (isClass (missionConfigFile >> "CarShops" >> _vehicleShop)) then {
-        _vehicleList = M_CONFIG(getArray,"CarShops",_vehicleShop,"vehicles");
-        _vehicleIndex = [_vehicle,_vehicleList] call life_fnc_getIndex;
-
-        if (!(_vehicleIndex isEqualTo -1)) then {
-            _vehiclePrice = ((_vehicleList select _vehicleIndex) select 1) select 0;
-            if (!(_vehiclePrice isEqualTo -1)) then {
-                _purchasePrice = _vehiclePrice;
-            };
-        };
-    };
-};
+_customPrice = [_vehicle,_vehicleShop] call life_fnc_vCustomPrice;
+if (_customPrice != -1) then {_price = _customPrice;};
 _price = _purchasePrice * _storageFee;
 
 if (!(_price isEqualType 0) || _price < 1) then {_price = 500;};

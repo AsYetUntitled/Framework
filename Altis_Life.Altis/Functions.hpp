@@ -358,6 +358,7 @@ class Life_Client_Core {
         class fuelSupply {};
         class lockVehicle {};
         class openInventory {};
+        class vCustomPrice {};
         class vehiclecolor3DRefresh {};
         class vehicleOwners {};
         class vehicleWeight {};
