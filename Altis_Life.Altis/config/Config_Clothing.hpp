@@ -118,17 +118,17 @@ class Clothing {
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
             { "U_Rangemaster", "Cop Uniform", 25, "" },
-            { "U_B_CombatUniform_mcam_tshirt", "", 350, "call(life_coplevel) >= 1" },
-            { "U_B_CombatUniform_mcam_worn", "", 550, "call(life_coplevel) >= 2" },
-            { "U_B_survival_uniform", "", 1250, "call(life_coplevel) >= 1" }
+            { "U_B_CombatUniform_mcam_tshirt", "", 350, "call life_coplevel >= 1" },
+            { "U_B_CombatUniform_mcam_worn", "", 550, "call life_coplevel >= 2" },
+            { "U_B_survival_uniform", "", 1250, "call life_coplevel >= 1" }
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, "" },
             { "H_Cap_police", "", 25, "" },
-            { "H_Beret_blk_POLICE", "", 50, "call(life_coplevel) >= 2" },
-            { "H_HelmetB_plain_mcamo", "", 75, "call(life_coplevel) >= 1" },
-            { "H_MilCap_mcamo", "", 100, "call(life_coplevel) >= 2" },
-            { "H_Booniehat_mcamo", "", 120, "call(life_coplevel) >= 1" }
+            { "H_Beret_blk_POLICE", "", 50, "call life_coplevel >= 2" },
+            { "H_HelmetB_plain_mcamo", "", 75, "call life_coplevel >= 1" },
+            { "H_MilCap_mcamo", "", 100, "call life_coplevel >= 2" },
+            { "H_Booniehat_mcamo", "", 120, "call life_coplevel >= 1" }
         };
         goggles[] = {
             { "NONE", "Remove Glasses", 0, "" },
@@ -149,8 +149,8 @@ class Clothing {
         vests[] = {
             { "NONE", "Remove Vest", 0, "" },
             { "V_Rangemaster_belt", "", 800, "" },
-            { "V_TacVest_blk_POLICE", "", 1000, "call(life_coplevel) >= 1" },
-            { "V_PlateCarrier2_rgr", "", 1500, "call(life_coplevel) >= 2" }
+            { "V_TacVest_blk_POLICE", "", 1000, "call life_coplevel >= 1" },
+            { "V_PlateCarrier2_rgr", "", 1500, "call life_coplevel >= 2" }
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, "" },
