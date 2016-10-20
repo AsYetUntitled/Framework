@@ -105,7 +105,7 @@ class Life_Clothing {
             onSliderPosChanged = "[4,_this select 1] call life_fnc_s_onSliderChange;";
             tooltip = "";
             x = 0.25 * safezoneW + safezoneX;
-            y = 0.95 * safezoneH + safezoneY;
+            y = 0.93 * safezoneH + safezoneY;
             w = 0.5 * safezoneW;
             h = 0.02 * safezoneH;
         };
