@@ -25,7 +25,7 @@ lbClear _control;
 {
     _vehicleInfo = [(_x select 2)] call life_fnc_fetchVehInfo;
     _control lbAdd (_vehicleInfo select 3);
-    _tmp = [(_x select 2),(_x select 8)];
+    _tmp = [(_x select 2),(_x select 8),(_x select 9)];
     _tmp = str(_tmp);
     _control lbSetData [(lbSize _control)-1,_tmp];
     _control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];

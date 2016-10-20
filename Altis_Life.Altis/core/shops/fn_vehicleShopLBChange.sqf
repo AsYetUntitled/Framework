@@ -9,13 +9,14 @@
     displays various bits of information about the vehicle.
 */
 disableSerialization;
-private ["_className","_classNameLife","_initalPrice","_buyMultiplier","_rentMultiplier","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
+private ["_className","_classNameLife","_shop","_vehicleList","_customPrice","_initalPrice","_buyMultiplier","_rentMultiplier","_buyPrice","_rentalPrice","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
 
 //Fetch some information.
 _className = (_this select 0) lbData (_this select 1);
 _classNameLife = _className;
 _vIndex = (_this select 0) lbValue (_this select 1);
-
+_shop = (life_veh_shop select 0);
+_vehicleList = M_CONFIG(getArray,"CarShops",_shop,"vehicles");
 _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
 
 switch (playerSide) do {
@@ -37,6 +38,11 @@ switch (playerSide) do {
     };
 };
 
+_customPrice = [_className,_shop] call life_fnc_vCustomPrice;
+if (_customPrice != -1) then {_initalPrice = _customPrice;};
+_buyPrice = round(_initalPrice * _buyMultiplier);
+_rentalPrice = round(_initalPrice * _rentMultiplier);
+
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 _maxspeed = (_vehicleInfo select 8);
@@ -56,8 +62,8 @@ ctrlShow [2330,true];
     (localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>" +
     (localize "STR_Shop_Veh_UI_Fuel")+ " %7<br/>" +
     (localize "STR_Shop_Veh_UI_Armor")+ " %8",
-    [round(_initalPrice * _rentMultiplier)] call life_fnc_numberText,
-    [round(_initalPrice * _buyMultiplier)] call life_fnc_numberText,
+    [_rentalPrice] call life_fnc_numberText,
+    [_buyPrice] call life_fnc_numberText,
     _maxspeed,
     _horsepower,
     _passengerseats,

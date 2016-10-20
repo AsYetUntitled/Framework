@@ -29,7 +29,7 @@ if (_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 _servIndex = serv_sv_use find _vid;
 
-_query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format ["SELECT id, side, classname, type, pid, alive, active, plate, shop, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 _tickTime = diag_tickTime;
 _queryResult = [_query,2] call HC_fnc_asyncCall;
@@ -72,10 +72,10 @@ if (count _nearVehicles > 0) exitWith {
 
 _query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
-_trunk = [(_vInfo select 9)] call HC_fnc_mresToArray;
-_gear = [(_vInfo select 10)] call HC_fnc_mresToArray;
-_damage = [(_vInfo select 12)] call HC_fnc_mresToArray;
-_wasIllegal = (_vInfo select 13);
+_trunk = [(_vInfo select 10)] call HC_fnc_mresToArray;
+_gear = [(_vInfo select 11)] call HC_fnc_mresToArray;
+_damage = [(_vInfo select 13)] call HC_fnc_mresToArray;
+_wasIllegal = (_vInfo select 14);
 _wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
 
 [_query,1] call HC_fnc_asyncCall;
@@ -101,9 +101,10 @@ _vehicle allowDamage true;
 [_pid,_side,_vehicle,1] remoteExecCall ["TON_fnc_keyManagement",RSERV];
 _vehicle lock 2;
 //Reskin the vehicle
-[_vehicle,_vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",_unit];
+[_vehicle,_vInfo select 9] remoteExecCall ["life_fnc_colorVehicle",_unit];
 _vehicle setVariable ["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
+_vehicle setVariable ["shop_info",(_vInfo select 8),true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
@@ -129,7 +130,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
-    _vehicle setFuel (_vInfo select 11);
+    _vehicle setFuel (_vInfo select 12);
     }else{
     _vehicle setFuel 1;
 };
@@ -163,7 +164,7 @@ if (count _damage > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqual
 };
 
 //Sets of animations
-if ((_vInfo select 1) isEqualTo "civ" && ((_vInfo select 2)) isEqualTo "B_Heli_Light_01_F" && !((_vInfo select 8) isEqualTo 13)) then {
+if ((_vInfo select 1) isEqualTo "civ" && ((_vInfo select 2)) isEqualTo "B_Heli_Light_01_F" && !((_vInfo select 9) isEqualTo 13)) then {
     [_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 

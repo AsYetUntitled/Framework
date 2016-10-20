@@ -6,14 +6,16 @@
     Description:
     Does something with vehicle purchasing.
 */
-private ["_mode","_vIndex","_spawnPoints","_className","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
+private ["_mode","_vIndex","_shopName","_spawnPoints","_className","_customPrice","_purchasePrice","_buyMultiplier","_rentMultiplier","_colorIndex","_spawnPoint","_vehicle","_vehicleList","_shopSide","_licenses","_licensesName","_exit","_initalPrice"];
 _mode = _this select 0;
 _exit = false;
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 _className = lbData[2302,(lbCurSel 2302)];
 _vIndex = lbValue[2302,(lbCurSel 2302)];
-_vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"vehicles");
-_shopSide = M_CONFIG(getText,"CarShops",(life_veh_shop select 0),"side");
+_shopName = (life_veh_shop select 0);
+_vehicleList = M_CONFIG(getArray,"CarShops",_shopName,"vehicles");
+_shopSide = M_CONFIG(getText,"CarShops",_shopName,"side");
+_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
 _licenses = switch (playerSide) do {
     case civilian: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 0)};
@@ -21,8 +23,6 @@ _licenses = switch (playerSide) do {
     case independent: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 2)};
     case east: {(M_CONFIG(getArray,"LifeCfgVehicles",_className,"licenses") select 3)};
 };
-
-_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
 switch (playerSide) do {
     case civilian: {
@@ -44,9 +44,13 @@ switch (playerSide) do {
 };
 
  if (_mode) then {
-     _purchasePrice = round(_initalPrice * _buyMultiplier);
+    _customPrice = [_className,_shopName] call life_fnc_vCustomPrice;
+    if (_customPrice != -1) then {_initalPrice = _customPrice;};
+    _purchasePrice = round(_initalPrice * _buyMultiplier);
  } else {
-     _purchasePrice = round(_initalPrice * _rentMultiplier);
+   _customPrice = [_className,_shopName] call life_fnc_vCustomPrice;
+   if (_customPrice != -1) then {_initalPrice = _customPrice;};
+   _purchasePrice = round(_initalPrice * _rentMultiplier);
  };
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
@@ -66,7 +70,7 @@ if (CASH < _purchasePrice) exitWith {hint format [localize "STR_Shop_Veh_NotEnou
 _spawnPoints = life_veh_shop select 1;
 _spawnPoint = "";
 
-if (((life_veh_shop select 0) == "med_air_hs")) then {
+if ((_shopName == "med_air_hs")) then {
     if ((nearestObjects[(getMarkerPos _spawnPoints),["Air"],35]) isEqualTo []) exitWith {_spawnPoint = _spawnPoints};
 } else {
     //Check if there is multiple spawn points and find a suitable spawnpoint.
@@ -85,7 +89,7 @@ CASH = CASH - _purchasePrice;
 hint format [localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
 
 //Spawn the vehicle and prep it.
-if ((life_veh_shop select 0) == "med_air_hs") then {
+if (_shopName == "med_air_hs") then {
     _vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}}; //Wait?
     _vehicle allowDamage false;
@@ -105,6 +109,7 @@ _vehicle lock 2;
 [_vehicle] call life_fnc_clearVehicleAmmo;
 [_vehicle,"trunk_in_use",false,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
 [_vehicle,"vehicle_info_owners",[[getPlayerUID player,profileName]],true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
+[_vehicle,"shop_info",_shopName,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 
 //Side Specific actions.
@@ -132,9 +137,9 @@ life_vehicles pushBack _vehicle;
 if (_mode) then {
     if (!(_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly")))) then {
         if (life_HC_isActive) then {
-            [(getPlayerUID player),playerSide,_vehicle,_colorIndex] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
+            [(getPlayerUID player),_shopName,playerSide,_vehicle,_colorIndex] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
         } else {
-            [(getPlayerUID player),playerSide,_vehicle,_colorIndex] remoteExecCall ["TON_fnc_vehicleCreate",RSERV];
+            [(getPlayerUID player),_shopName,playerSide,_vehicle,_colorIndex] remoteExecCall ["TON_fnc_vehicleCreate",RSERV];
         };
     };
 };

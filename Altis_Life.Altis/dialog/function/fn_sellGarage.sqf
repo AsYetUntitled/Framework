@@ -6,12 +6,14 @@
     Description:
     Sells a vehicle from the garage.
 */
-private ["_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_price","_purchasePrice"];
+private ["_controlData","_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_vehicleShop","_customPrice","_price","_purchasePrice"];
 disableSerialization;
 if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
-_vehicle = (call compile format ["%1",_vehicle]) select 0;
+_controlData = lbData[2802,(lbCurSel 2802)];
+_controlData = call compile format ["%1",_controlData];
+_vehicle = (_controlData select 0);
 _vehicleLife = _vehicle;
+_vehicleShop = (_controlData select 2);
 _vid = lbValue[2802,(lbCurSel 2802)];
 _pid = getPlayerUID player;
 
@@ -41,6 +43,9 @@ switch (playerSide) do {
         _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");
     };
 };
+
+_customPrice = [_vehicle,_vehicleShop] call life_fnc_vCustomPrice;
+if (_customPrice != -1) then {_purchasePrice = _customPrice;};
 
 _sellPrice = _purchasePrice * _multiplier;
 

@@ -18,7 +18,7 @@ if (isNull _unit) exitWith {ctrlShow[2001,true];};
 
 //A series of checks *ugh*
 if (!life_use_atm) exitWith {hint localize "STR_NOTF_recentlyRobbedBank";ctrlShow[2001,true];};
-if (!([_amount] call TON_fnc_isnumber)) exitWith {hint localize "STR_NOTF_notNumberFormat";ctrlShow[2001,true];};
+if (!([_amount] call life_fnc_isNumber)) exitWith {hint localize "STR_NOTF_notNumberFormat";ctrlShow[2001,true];};
 if (parseNumber(_amount) <= 0) exitWith {hint localize "STR_NOTF_enterAmount";ctrlShow[2001,true];};
 if (parseNumber(_amount) > CASH) exitWith {hint localize "STR_NOTF_notEnoughtToGive";ctrlShow[2001,true];};
 if (isNull _unit) exitWith {ctrlShow[2001,true];};
