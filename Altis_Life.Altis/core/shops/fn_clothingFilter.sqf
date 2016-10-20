@@ -56,7 +56,6 @@ _array = switch (_selection) do {
     _className = (_x select 0);
     _displayName = (_x select 1);
     _price = (_x select 2);
-    private _conditions = (_x select 3);
 
     if (!(_className isEqualTo "NONE")) then {
         _details = [_className] call life_fnc_fetchCfgDetails;
