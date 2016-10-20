@@ -39,7 +39,7 @@ switch (playerSide) do {
 };
 
 _customPrice = [_className,_shop] call life_fnc_vCustomPrice;
-if(_customPrice != -1) then {_initalPrice = _customPrice;};
+if (_customPrice != -1) then {_initalPrice = _customPrice;};
 _buyPrice = round(_initalPrice * _buyMultiplier);
 _rentalPrice = round(_initalPrice * _rentMultiplier);
 
