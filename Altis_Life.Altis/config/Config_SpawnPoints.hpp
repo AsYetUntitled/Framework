@@ -98,14 +98,14 @@ class CfgSpawnPoints {
                 displayName = "Air HQ";
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
-                conditions = "FETCH_CONST(life_coplevel) >= 2 && {license_cop_cAir}";
+                conditions = "call(life_coplevel) >= 2 && {license_cop_cAir}";
             };
 
             class HW {
                 displayName = "HW Patrol";
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
-                conditions = "FETCH_CONST(life_coplevel) >= 3";
+                conditions = "call(life_coplevel) >= 3";
             };
         };
 
@@ -212,14 +212,14 @@ class CfgSpawnPoints {
                 displayName = "Air HQ";
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
-                conditions = "FETCH_CONST(life_coplevel) >= 2 && {license_cop_cAir}";
+                conditions = "call(life_coplevel) >= 2 && {license_cop_cAir}";
             };
 
             class HW {
                 displayName = "HW Patrol";
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
-                conditions = "FETCH_CONST(life_coplevel) >= 3";
+                conditions = "call(life_coplevel) >= 3";
             };
         };
 

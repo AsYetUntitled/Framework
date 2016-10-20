@@ -47,23 +47,9 @@ ctrlShow [2304,false];
 //Loop through
 {
     _className = _x select 0;
-    _levelAssert = _x select 1;
-    _levelName = _levelAssert select 0;
-    _levelType = _levelAssert select 1;
-    _levelValue = _levelAssert select 2;
     _showall = true;
 
-    if (!(_levelValue isEqualTo -1)) then {
-        _level = missionNamespace getVariable _levelName;
-        if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
-
-        _showall = switch (_levelType) do {
-            case "SCALAR": {_level >= _levelValue};
-            case "BOOL": {_level};
-            case "EQUAL": {_level isEqualTo _levelValue};
-            default {false};
-        };
-    };
+    _showall = [_x] call life_fnc_levelCheck;
 
     if (_showall) then {
         _vehicleInfo = [_className] call life_fnc_fetchVehInfo;

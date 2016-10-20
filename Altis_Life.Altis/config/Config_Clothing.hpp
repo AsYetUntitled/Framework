@@ -15,7 +15,7 @@
 class Clothing {
     class bruce {
         title = "STR_Shops_C_Bruce";
-        license = "";
+        condition = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -113,22 +113,22 @@ class Clothing {
 
     class cop {
         title = "STR_Shops_C_Police";
-        license = "";
+        condition = "";
         side = "cop";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
             { "U_Rangemaster", "Cop Uniform", 25, "" },
-            { "U_B_CombatUniform_mcam_tshirt", "", 350, "FETCH_CONST(life_coplevel) >= 1" },
-            { "U_B_CombatUniform_mcam_worn", "", 550, "FETCH_CONST(life_coplevel) >= 2" },
-            { "U_B_survival_uniform", "", 1250, "FETCH_CONST(life_coplevel) >= 1" }
+            { "U_B_CombatUniform_mcam_tshirt", "", 350, "call(life_coplevel) >= 1" },
+            { "U_B_CombatUniform_mcam_worn", "", 550, "call(life_coplevel) >= 2" },
+            { "U_B_survival_uniform", "", 1250, "call(life_coplevel) >= 1" }
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, "" },
             { "H_Cap_police", "", 25, "" },
-            { "H_Beret_blk_POLICE", "", 50, "FETCH_CONST(life_coplevel) >= 2" },
-            { "H_HelmetB_plain_mcamo", "", 75, "FETCH_CONST(life_coplevel) >= 1" },
-            { "H_MilCap_mcamo", "", 100, "FETCH_CONST(life_coplevel) >= 2" },
-            { "H_Booniehat_mcamo", "", 120, "FETCH_CONST(life_coplevel) >= 1" }
+            { "H_Beret_blk_POLICE", "", 50, "call(life_coplevel) >= 2" },
+            { "H_HelmetB_plain_mcamo", "", 75, "call(life_coplevel) >= 1" },
+            { "H_MilCap_mcamo", "", 100, "call(life_coplevel) >= 2" },
+            { "H_Booniehat_mcamo", "", 120, "call(life_coplevel) >= 1" }
         };
         goggles[] = {
             { "NONE", "Remove Glasses", 0, "" },
@@ -149,8 +149,8 @@ class Clothing {
         vests[] = {
             { "NONE", "Remove Vest", 0, "" },
             { "V_Rangemaster_belt", "", 800, "" },
-            { "V_TacVest_blk_POLICE", "", 1000, "FETCH_CONST(life_coplevel) >= 1" },
-            { "V_PlateCarrier2_rgr", "", 1500, "FETCH_CONST(life_coplevel) >= 2" }
+            { "V_TacVest_blk_POLICE", "", 1000, "call(life_coplevel) >= 1" },
+            { "V_PlateCarrier2_rgr", "", 1500, "call(life_coplevel) >= 2" }
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, "" },
@@ -210,7 +210,7 @@ class Clothing {
 
     class gang_clothing {
         title = "STR_Shops_C_Gang";
-        license = "";
+        condition = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" }
@@ -232,7 +232,7 @@ class Clothing {
 
     class med_clothing {
         title = "STR_MAR_EMS_Clothing_Shop";
-        license = "";
+        condition = "";
         side = "med";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -261,7 +261,7 @@ class Clothing {
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
-            { "U_IG_Guerilla1_1", "", 5000, {"", "", -1} },
+            { "U_IG_Guerilla1_1", "", 5000, "" },
             { "U_I_G_Story_Protagonist_F", "", 7500, "" },
             { "U_I_G_resistanceLeader_F", "", 11500, "" },
             { "U_IG_leader", "Guerilla Leader", 15340, "" },
@@ -340,7 +340,7 @@ class Clothing {
 
     class kart {
         title = "STR_Shops_C_Kart";
-        license = "";
+        condition = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },

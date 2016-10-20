@@ -25,44 +25,16 @@ _spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> worldName >> _side;
 for "_i" from 0 to count(_spawnCfg)-1 do {
     _flag = true;
     _tempConfig = [];
-        _curConfig = (_spawnCfg select _i);
-    _licenses = getArray(_curConfig >> "licenses");
-    _level = getArray(_curConfig >> "level");
-        _levelName = (_level select 0);
-        _levelType = (_level select 1);
-        _levelValue = (_level select 2);
+    _curConfig = (_spawnCfg select _i);
+    private _conditions = getText(_curConfig >> "conditions");
 
-    {
-      if (!((_x select 0) isEqualTo "")) then {
-        _licenseName = (_x select 0);
-        _licenseType = (_x select 1);
-        if (_licenseType isEqualTo 0) then {
-          if (LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side")))) exitWith {_flag = false};
-        } else {
-          if (!(LICENSE_VALUE(_licenseName,(M_CONFIG(getText,"Licenses",_licenseName,"side"))))) exitWith {_flag = false};
-        };
-      };
-    } forEach _licenses;
-
-    if (_flag) then {
-        if (!(_levelValue isEqualTo -1)) then {
-                _level = missionNamespace getVariable _levelName;
-                if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
-                _flag = switch (_levelType) do {
-                    case "SCALAR": {_level >= _levelValue};
-                    case "BOOL": {_level};
-                    case "EQUAL": {_level isEqualTo _levelValue};
-                    case "INVERSE": {_level <= _levelValue};
-                    default {false};
-                };
-            };
-    };
+    _flag = [_conditions] call life_fnc_levelCheck;
 
         if (_flag) then {
-            _tempConfig pushBack getText(_curConfig >> "spawnMarker");
-      _tempConfig pushBack getText(_curConfig >> "displayName");
-      _tempConfig pushBack getText(_curConfig >> "icon");
-      _return pushBack _tempConfig;
+         _tempConfig pushBack getText(_curConfig >> "spawnMarker");
+         _tempConfig pushBack getText(_curConfig >> "displayName");
+         _tempConfig pushBack getText(_curConfig >> "icon");
+         _return pushBack _tempConfig;
         };
 };
 
@@ -79,3 +51,5 @@ if (playerSide isEqualTo civilian) then {
 };
 
 _return;
+
+ 

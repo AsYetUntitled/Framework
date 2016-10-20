@@ -142,10 +142,10 @@ class WeaponShops {
             { "hgun_P07_snds_F", "Stun Pistol", 2000, 650, "" },
             { "arifle_sdar_F", "Taser Rifle", 20000, 7500, "" },
             { "hgun_P07_F", "", 7500, 1500, "" },
-            { "SMG_02_ACO_F", "", 30000, -1, "FETCH_CONST(life_coplevel) >= 2" },
-            { "arifle_MX_F", "", 35000, 7500, "FETCH_CONST(life_coplevel) >= 2" },
-            { "hgun_ACPC2_F", "", 17500, -1, "FETCH_CONST(life_coplevel) >= 3" },
-            { "arifle_MXC_F", "", 30000, 5000, "FETCH_CONST(life_coplevel) >= 3" }
+            { "SMG_02_ACO_F", "", 30000, -1, "call (life_coplevel) >= 2" },
+            { "arifle_MX_F", "", 35000, 7500, "call (life_coplevel) >= 2" },
+            { "hgun_ACPC2_F", "", 17500, -1, "call (life_coplevel) >= 3" },
+            { "arifle_MXC_F", "", 30000, 5000, "call (life_coplevel) >= 3" }
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 25, 100, "" },

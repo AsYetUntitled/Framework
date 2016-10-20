@@ -15,7 +15,7 @@ _exit = false;
 if (!isClass(missionConfigFile >> "Clothing" >> (_this select 3))) exitWith {}; //Bad config entry.
 _shopTitle = M_CONFIG(getText,"Clothing",(_this select 3),"title");
 _shopSide = M_CONFIG(getText,"Clothing",(_this select 3),"side");
-_license = M_CONFIG(getText,"Clothing",(_this select 3),"license");
+private _conditions = M_CONFIG(getText,"Clothing",(_this select 3),"condition");
 
 if (!(_shopSide isEqualTo "")) then {
     _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
@@ -23,11 +23,8 @@ if (!(_shopSide isEqualTo "")) then {
 };
 if (_exit) exitWith {};
 
-if (!(_license isEqualTo "")) then {
-    _flag = M_CONFIG(getText,"Licenses",_license,"side");
-    if (!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
-};
-if (_exit) exitWith {};
+_exit = [_conditions] call life_fnc_levelCheck;
+if !(_exit) exitWith {hint localize "STR_Shop_Veh_NoLicense";};
 
 ctrlSetText [3103,localize _shopTitle];
 /* Open up the menu */
