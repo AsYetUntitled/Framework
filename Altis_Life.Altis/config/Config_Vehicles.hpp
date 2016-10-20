@@ -103,9 +103,9 @@ class CarShops {
         vehicles[] = {
             { "C_Offroad_01_F", "" },
             { "C_SUV_01_F", "" },
-            { "C_Hatchback_01_sport_F", "call(life_coplevel) >= 1" },
-            { "B_MRAP_01_F", "call(life_coplevel) >= 2" },
-            { "B_MRAP_01_hmg_F", "call(life_coplevel) >= 3" }
+            { "C_Hatchback_01_sport_F", "call life_coplevel >= 1" },
+            { "B_MRAP_01_F", "call life_coplevel  >= 2" },
+            { "B_MRAP_01_hmg_F", "call life_coplevel >= 3" }
         };
     };
 
@@ -113,7 +113,7 @@ class CarShops {
         side = "cop";
         vehicles[] = {
             { "B_Heli_Light_01_F", "" },
-            { "B_Heli_Transport_01_F", "call(life_coplevel) >= 3" }
+            { "B_Heli_Transport_01_F", "call life_coplevel >= 3" }
         };
     };
 
@@ -122,7 +122,7 @@ class CarShops {
         vehicles[] = {
             { "B_Boat_Transport_01_F", "" },
             { "C_Boat_Civil_01_police_F", "" },
-            { "B_Boat_Armed_01_minigun_F", "call(life_coplevel) >= 3" },
+            { "B_Boat_Armed_01_minigun_F", "call life_coplevel >= 3" },
             { "B_SDV_01_F", "" }
         };
     };
