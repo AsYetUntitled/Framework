@@ -70,7 +70,7 @@ if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
-diag_log "------------------------------------------ Version 4.5 -------------------------------------------";
+diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
@@ -178,10 +178,10 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
-_altisArray = [16019.5,16952.9,0];
-_tanoaArray = [11074.2,11501.5,0.00137329];
-private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
+private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call life_fnc_terrainSort;
+private _altisArray = [16019.5,16952.9,0];
+private _tanoaArray = [11074.2,11501.5,0.00137329];
+private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call life_fnc_terrainSort;
 
 _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 _rsb = nearestObject [_pos,_vaultHouse];

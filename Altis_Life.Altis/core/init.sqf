@@ -15,7 +15,7 @@ life_session_completed = false;
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "--------------------------------- Starting Altis Life Client Init ----------------------------------";
-diag_log "------------------------------------------ Version 4.5 -------------------------------------------";
+diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
 [] call compile preprocessFileLineNumbers "core\clientValidator.sqf";

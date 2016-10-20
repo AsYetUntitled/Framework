@@ -205,6 +205,7 @@ class Life_Client_Core {
         class searchPosEmpty {};
         class simDisable {};
         class stripDownPlayer {};
+        class terrainSort {};
         class tazeSound {};
         class teleport {};
         class whereAmI {};
