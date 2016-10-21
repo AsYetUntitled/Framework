@@ -39,7 +39,8 @@ switch (_selection) do {
         life_shop_cam camSetTarget (player modelToWorld [0,0,1.6]);
         life_shop_cam camSetPos (player modelToWorld [-.5,1,1.6]);
         life_shop_cam camCommit 1;
-    };};
+    };
+};
 
 if (isNull (findDisplay 3100)) exitWith {};
 
@@ -59,8 +60,8 @@ private "_details";
 
 {
     _x params [
-        ["_className", 0, [0]],
-        ["_displayName", "NONE", [""]],
+        ["_className", "NONE", [""]],
+        ["_displayName", "", [""]],
         ["_price", 1000, [0]]
     ];
 
