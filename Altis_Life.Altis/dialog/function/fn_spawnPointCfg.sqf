@@ -51,5 +51,3 @@ if (playerSide isEqualTo civilian) then {
 };
 
 _return;
-
- 
