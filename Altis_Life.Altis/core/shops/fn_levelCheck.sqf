@@ -34,5 +34,3 @@ if (_evaluation isEqualType true) then {
 };
 
 _return;
-
- 
