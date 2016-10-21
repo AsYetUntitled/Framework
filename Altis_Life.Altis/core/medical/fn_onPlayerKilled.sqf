@@ -13,7 +13,7 @@ params [
 ];
 disableSerialization;
 
-if ((vehicle _unit) != _unit) then {
+if  !((vehicle _unit) isEqualTo _unit) then {
     UnAssignVehicle _unit;
     _unit action ["getOut", vehicle _unit];
     _unit setPosATL [(getPosATL _unit select 0) + 3, (getPosATL _unit select 1) + 1, 0];
@@ -109,8 +109,12 @@ if (!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _k
 
 life_save_gear = [player] call life_fnc_fetchDeadGear;
 
-_containers = nearestObjects[getPosATL player,["WeaponHolderSimulated"],5];
-{deleteVehicle _x;} forEach _containers;
+if (LIFE_SETTINGS(getNumber,"drop_weapons_onDeath") isEqualTo 0) then {
+    _unit removeWeapon (primaryWeapon _unit); 
+    _unit removeWeapon (handgunWeapon _unit); 
+    _unit removeWeapon (secondaryWeapon _unit); 
+};
+
 
 //Killed by cop stuff...
 if (side _killer isEqualTo west && playerSide != west) then {
@@ -126,8 +130,7 @@ if (!isNull _killer && {_killer != _unit}) then {
     life_removeWanted = true;
 };
 
-_handle = [_unit] spawn life_fnc_dropItems;
-waitUntil {scriptDone _handle};
+[_unit] call life_fnc_dropItems;
 
 life_hunger = 100;
 life_thirst = 100;
