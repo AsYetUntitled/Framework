@@ -21,7 +21,7 @@ disableSerialization;
 //Long boring series of checks
 if (dialog) exitWith {};
 if (_shop isEqualTo "") exitWith {};
-if (!(_sideCheck isEqualTo sideUnknown) && {!(playerSide isEqualTo _sideCheck})) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
+if (!(_sideCheck isEqualTo sideUnknown) && {!(playerSide isEqualTo _sideCheck)}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
 if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
   createDialog "Life_Vehicle_Shop_v2_3D";
 } else {
