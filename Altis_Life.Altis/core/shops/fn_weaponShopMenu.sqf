@@ -6,17 +6,17 @@
     Description:
     Something
 */
-private ["_shopSide","_shopSide","_license","_itemInfo","_itemList","_license","_flag","_exit","_level","_levelAssert","_levelName","_levelType","_levelValue","_levelMsg"];
-_exit = false;
-_shopTitle = M_CONFIG(getText,"WeaponShops",(_this select 3),"name");
-_shopSide = M_CONFIG(getText,"WeaponShops",(_this select 3),"side");
+
+private _shopTitle = M_CONFIG(getText,"WeaponShops",(_this select 3),"name");
+private _shopSide = M_CONFIG(getText,"WeaponShops",(_this select 3),"side");
 private _conditions = M_CONFIG(getText,"WeaponShops",(_this select 3),"conditions");
 
-
-if (!(_shopSide isEqualTo "")) then {
-    _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-    if (!(_flag isEqualTo _shopSide)) then {_exit = true;};
+private _exit = false;
+if !(_shopSide isEqualTo "") then {
+    private _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+    if !(_flag isEqualTo _shopSide) then {_exit = true;};
 };
+
 if (_exit) exitWith {};
 
 _exit = [_conditions] call life_fnc_levelCheck;
@@ -28,14 +28,14 @@ uiNamespace setVariable ["Weapon_Accessories",0];
 uiNamespace setVariable ["Magazine_Array",[]];
 uiNamespace setVariable ["Accessories_Array",[]];
 
-if (!(createDialog "life_weapon_shop")) exitWith {};
+if !(createDialog "life_weapon_shop") exitWith {};
 if (!isClass(missionConfigFile >> "WeaponShops" >> (_this select 3))) exitWith {}; //Bad config entry.
 
 disableSerialization;
 
 ctrlSetText[38401,_shopTitle];
 
-_filters = ((findDisplay 38400) displayCtrl 38402);
+private _filters = ((findDisplay 38400) displayCtrl 38402);
 lbClear _filters;
 
 ctrlShow [38406,true];
