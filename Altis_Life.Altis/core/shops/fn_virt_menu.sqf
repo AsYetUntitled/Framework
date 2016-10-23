@@ -31,7 +31,7 @@ if (_exit) exitWith {};
 
 private _conditions = M_CONFIG(getText,"VirtualShops",_shopType,"conditions");
 
-if !([_conditions] call life_fnc_levelCheck) exitWith {hint "Can't open yada yada yada non creative string";};
+if !([_conditions] call life_fnc_levelCheck) exitWith {hint localize "STR_Shop_Veh_NotAllowed";};
 
 createDialog "shops_menu";
 
