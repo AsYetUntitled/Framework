@@ -15,12 +15,14 @@ private _return = false;
 if (_itemConfig isEqualTo []) exitWith {diag_log "An empty array was passed to fn_levelCheck.sqf"; _return};
 
 if (_itemConfig isEqualType []) then {
-    if (_itemConfig select (count _itemConfig - 1) isEqualType "") then {
-        _itemConfig = _itemConfig select (count _itemConfig - 1);
+    private _lastElement = _itemConfig select (count _itemConfig - 1);
+    if (_lastElement isEqualType "") then {
+        _itemConfig = _lastElement;
     } else {
-        _return breakOut "main";
+        true breakOut "main";
     };
 };
+
 if (_itemConfig isEqualTo "") exitWith {true};
 
 private _evaluation = call compile _itemConfig;
