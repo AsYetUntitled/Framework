@@ -51,6 +51,11 @@ if (_mode) then {
     _purchasePrice = round(_initalPrice * _rentMultiplier);
 };
 
+private _conditions = M_CONFIG(getText,"LifeCfgVehicles",_className,"conditions");
+if !([_conditions] call life_fnc_levelCheck) {
+	hint "Can't buy yada yada yada non creative string";
+};
+
 private _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
 if (_exit) exitWith {hint parseText format [(localize "STR_Shop_Veh_NoLicense")+ "<br/><br/>%1",_licensesName];closeDialog 0;};
