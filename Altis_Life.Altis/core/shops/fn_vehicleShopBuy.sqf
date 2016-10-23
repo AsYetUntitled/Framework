@@ -52,9 +52,8 @@ if (_mode) then {
 };
 
 private _conditions = M_CONFIG(getText,"LifeCfgVehicles",_className,"conditions");
-if !([_conditions] call life_fnc_levelCheck) {
-    hint "Can't buy yada yada yada non creative string";
-};
+
+if !([_conditions] call life_fnc_levelCheck) exitWith {hint "Can't buy yada yada yada non creative string";};
 
 private _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
