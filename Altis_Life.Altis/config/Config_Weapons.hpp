@@ -5,7 +5,7 @@
 *            You can call any variable and check if its above a certain level
 *           e.g
 *			 FETCH_CONST(life_donatorlvl) >= 1
-*			 FETCH_CONST(life_coplevel) >= 3
+*			 call life_coplevel >= 3
 *			 FETCH_CONST(life_mediclevel) >= 1
 *            
 *
@@ -142,25 +142,25 @@ class WeaponShops {
             { "hgun_P07_snds_F", "Stun Pistol", 2000, 650, "" },
             { "arifle_sdar_F", "Taser Rifle", 20000, 7500, "" },
             { "hgun_P07_F", "", 7500, 1500, "" },
-            { "SMG_02_ACO_F", "", 30000, -1, "FETCH_CONST(life_coplevel) >= 2" },
-            { "arifle_MX_F", "", 35000, 7500, "FETCH_CONST(life_coplevel) >= 2" },
-            { "hgun_ACPC2_F", "", 17500, -1, "FETCH_CONST(life_coplevel) >= 3" },
-            { "arifle_MXC_F", "", 30000, 5000, "FETCH_CONST(life_coplevel) >= 3" }
+            { "SMG_02_ACO_F", "", 30000, -1, "call life_coplevel >= 2" },
+            { "arifle_MX_F", "", 35000, 7500, "call life_coplevel >= 2" },
+            { "hgun_ACPC2_F", "", 17500, -1, "call life_coplevel >= 3" },
+            { "arifle_MXC_F", "", 30000, 5000, "call life_coplevel >= 3" }
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 25, 100, "" },
             { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 45, 100, "" },
             { "30Rnd_65x39_caseless_mag", "", 130, 100, "" },
-            { "30Rnd_9x21_Mag", "", 250, 100, "FETCH_CONST(life_coplevel) >= 2" },
-            { "9Rnd_45ACP_Mag", "", 200, 100, "FETCH_CONST(life_coplevel) >= 3" }
+            { "30Rnd_9x21_Mag", "", 250, 100, "call life_coplevel >= 2" },
+            { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" }
         };
         accs[] = {
             { "muzzle_snds_L", "", 650, 100, "" },
-            { "acc_flashlight", "", 750, 100, "FETCH_CONST(life_coplevel) >= 2" },
-            { "optic_Holosight", "", 1200, 100, "FETCH_CONST(life_coplevel) >= 2" },
-            { "optic_Arco", "", 2500, 100, "FETCH_CONST(life_coplevel) >= 2" },
-            { "muzzle_snds_H", "", 2750, 100, "FETCH_CONST(life_coplevel) >= 2" },
-            { "optic_MRD", "", 2750, 100, "FETCH_CONST(life_coplevel) >= 2" }
+            { "acc_flashlight", "", 750, 100, "call life_coplevel >= 2" },
+            { "optic_Holosight", "", 1200, 100, "call life_coplevel >= 2" },
+            { "optic_Arco", "", 2500, 100, "call life_coplevel >= 2" },
+            { "muzzle_snds_H", "", 2750, 100, "call life_coplevel >= 2" },
+            { "optic_MRD", "", 2750, 100, "call life_coplevel >= 2" }
         };
     };
 

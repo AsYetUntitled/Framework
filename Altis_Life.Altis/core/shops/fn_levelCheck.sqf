@@ -1,36 +1,34 @@
-#include "..\..\script_macros.hpp"
 /*
     File: fn_levelCheck.sqf
     Author: BoGuu
 
     Description:
-    Level check function for the weapon config.
-    WIP - Other shop configs
+    xx
 */
 
-private "_return";
-_itemConfig = param [0, [], []];
+if !(params [["_itemConfig", [], [[],""]]]) exitWith {};
 
-_return = false;
+scopeName "main";
+
+private _return = false;
 
 if (_itemConfig isEqualTo []) exitWith {diag_log "An empty array was passed to fn_levelCheck.sqf"; _return};
 
-if (count _itemConfig isEqualTo 5) then {
-            
-    _levelArray = _itemConfig param [4,[],[]];
-    _levelName = _levelArray select 0;
-    _levelType = _levelArray select 1;
-    _levelValue = _levelArray select 2;
-    if !(_levelValue isEqualTo -1) then {
-        _level = missionNamespace getVariable _levelName;
-        if (typeName _level isEqualTo "CODE") then {_level = FETCH_CONST(_level);};
-        _return = switch(_levelType) do {
-            case "SCALAR": {_level >= _levelValue};
-            case "BOOL": {_level};
-            case "EQUAL": {_level isEqualTo _levelValue};
-            default {false};
-        };
+if (_itemConfig isEqualType []) then {
+    private _lastElement = _itemConfig select (count _itemConfig - 1);
+    if (_lastElement isEqualType "") then {
+        _itemConfig = _lastElement;
     } else {
+        true breakOut "main";
+    };
+};
+
+if (_itemConfig isEqualTo "") exitWith {true};
+
+private _evaluation = call compile _itemConfig;
+
+if (_evaluation isEqualType true) then {
+    if (_evaluation) then {
         _return = true;
     };
 } else {

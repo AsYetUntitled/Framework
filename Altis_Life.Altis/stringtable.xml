@@ -8792,7 +8792,7 @@
             <Polish>Nie masz tyle pieniędzy by kupić ten pojazd.\n\nBrakuje: $%1</Polish>
         </Key>
         <Key ID="STR_Shop_Veh_NoLicense">
-            <Original>You do not have the required license!</Original>
+            <Original>You do not have the required license and/or level!</Original>
             <Czech>Nemáte požadovanou licenci!</Czech>
             <Spanish>No tienes la licencia requerida!</Spanish>
             <Russian></Russian>
