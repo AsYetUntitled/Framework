@@ -1,12 +1,12 @@
 /*
 *    Format:
-*        level: STRING
-*            0: FETCH_CONST(var) >= 1
+*            Conditions:
+*            0: call var >= 1
 *            You can call any variable and check if its above a certain level
 *           e.g
-*			 FETCH_CONST(life_donatorlvl) >= 1
-*			 call life_coplevel >= 3
-*			 FETCH_CONST(life_mediclevel) >= 1
+*            call life_donatorlvl >= 1
+*            call life_coplevel >= 3
+*            call life_mediclevel >= 1
 *            
 *
 *    items: { Classname, Itemname, BuyPrice, SellPrice }

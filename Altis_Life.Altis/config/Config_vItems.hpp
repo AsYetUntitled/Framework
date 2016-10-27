@@ -1,10 +1,12 @@
 /*
 *    Format:
-*        level: ARRAY (This is for limiting items to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL / EQUAL)
-*            2: What to compare to (-1 = Check Disabled)
-*            3: Custom exit message (Optional)
+*            Conditions:
+*            0: call var >= 1
+*            You can call any variable and check if its above a certain level
+*           e.g
+*            call life_donatorlvl >= 1
+*            call life_coplevel >= 3
+*            call life_mediclevel >= 1
 */
 class VirtualShops {
     //Virtual Shops
