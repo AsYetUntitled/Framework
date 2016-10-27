@@ -164,7 +164,7 @@ class Clothing {
 
     class dive {
         title = "STR_Shops_C_Diving";
-        license = "dive";
+        condition = "license_civ_dive";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -188,7 +188,7 @@ class Clothing {
 
     class gun_clothing {
         title = "STR_Shops_C_Gun";
-        license = "gun";
+        condition = "license_civ_gun";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" }
@@ -257,7 +257,7 @@ class Clothing {
 
     class reb {
         title = "STR_Shops_C_Rebel";
-        license = "rebel";
+        condition = "license_civ_rebel";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
