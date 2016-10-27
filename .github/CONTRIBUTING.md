@@ -31,11 +31,15 @@ Contributing to AsYetUntitled
   * Describe what actually occurred. Provide screenshots or video footage if applicable. 
   * If you can reproduce the behaviour then also provide steps on how to do so. 
   * If errors or other messages were output to the game's [RPT](https://community.bistudio.com/wiki/Crash_Files) and/or extDB2 log files then paste those messages into your issue. If the errors or other messages are so long that they cover the whole screen then upload the log files to GitHub instead of pasting them into the issue. 
+  * Include the version of Altis Life RPG that you are using. The version information can be found in core/[init.sqf](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/core/init.sqf), briefingName in [mission.sqm](https://github.com/AsYetUntitled/Framework/tree/master/SQMs), or changelog in [briefing.sqf](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/briefing.sqf). 
   * Include the version of *Arma 3* that you are using. You can acquire this info by starting the *Arma 3* launcher, clicking OPTIONS, and then clicking the version information displayed below. This will copy the info to your clipboard which you can then paste at the bottom of your issue. 
 * **...tag your issue with all applicable labels (if you have the permissions to do so).** 
   * See [applying labels to issues and pull requests](https://help.github.com/articles/applying-labels-to-issues-and-pull-requests/). 
-* **...associate a milestone to better track its progress (if you have the permissions to do so).** 
+  * See [labels](https://github.com/AsYetUntitled/Framework/labels) for a list of the available custom labels. 
+  * See [FAQ_Labels](https://github.com/AsYetUntitled/Framework/wiki/FAQ_Labels) on the wiki for the purpose of each label. 
+* **...associate an applicable milestone to better track its progress (if you have the permissions to do so).** 
   * See [associating milestones with issues and pull requests](https://help.github.com/articles/associating-milestones-with-issues-and-pull-requests/). 
+  * See [milestones](https://github.com/AsYetUntitled/Framework/milestones) for a list of available milestones. 
 * **...assign yourself to the issue (if you intend to solve it and if you have the permissions to do so).** 
   * See [assigning issues and pull requests to other GitHub users](https://help.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/). 
 
