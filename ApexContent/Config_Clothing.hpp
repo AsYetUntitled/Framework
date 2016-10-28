@@ -334,7 +334,7 @@ class Clothing {
             { "V_BandollierB_cbr", "", 4500, { "", "", -1 } },
             { "V_HarnessO_brn", "", 7500, { "", "", -1 } },
             { "V_TacVest_khk", "", 12500, { "", "", -1 } },
-            { "V_TacVest_gen_F", "", 14500, { "", "", -1 } },
+            { "V_TacVest_gen_F", "", 14500, { "", "", -1 } }
 
         };
         backpacks[] = {
