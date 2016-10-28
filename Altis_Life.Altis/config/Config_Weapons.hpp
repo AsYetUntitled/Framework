@@ -1,13 +1,20 @@
 /*
-*    Format:
-*            Conditions:
-*            0: call var >= 1
-*            You can call any variable and check if its above a certain level
-*           e.g
-*            call life_donatorlvl >= 1
-*            call life_coplevel >= 3
-*            call life_mediclevel >= 1
+*    FORMAT:
+*        STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
 *            
+*
+*    ARRAY FORMAT:
+*        0: STRING (Classname): Item Classname
+*        1: STRING (Nickname): Nickname that will appear purely in the shop dialog
+*        2: SCALAR (Buy price)
+*        3: SCALAR (Sell price): To disable selling, this should be -1
+*        4: STRING (Conditions): Same as above conditions string
+*
 *
 *    items: { Classname, Itemname, BuyPrice, SellPrice }
 *
