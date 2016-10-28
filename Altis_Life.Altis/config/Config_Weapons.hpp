@@ -15,11 +15,6 @@
 *        3: SCALAR (Sell price): To disable selling, this should be -1
 *        4: STRING (Conditions): Same as above conditions string
 *
-*
-*    items: { Classname, Itemname, BuyPrice, SellPrice }
-*
-*    Itemname only needs to be filled if you want to rename the original object name.
-*
 *    Weapon classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Weapons
 *    Item classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Items
 *
