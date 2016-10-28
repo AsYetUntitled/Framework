@@ -1,12 +1,11 @@
 /*
 *    Format:
-*            Conditions:
-*            0: call var >= 1
-*            You can call any variable and check if its above a certain level
-*            e.g
-*              call life_donatorlvl >= 1
-*              call life_coplevel >= 3
-*              call life_mediclevel >= 1
+*        3: STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
 *
 */
 class CfgSpawnPoints {
