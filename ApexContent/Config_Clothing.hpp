@@ -281,7 +281,7 @@ class Clothing {
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
-            { "U_IG_Guerilla1_1", "", 5000, {"", "", -1} },
+            { "U_IG_Guerilla1_1", "", 5000, "" },
             { "U_I_G_Story_Protagonist_F", "", 7500, "" },
             { "U_I_G_resistanceLeader_F", "", 11500, "" },
             { "U_IG_leader", "Guerilla Leader", 15340, "" },
