@@ -79,8 +79,16 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
     _flag = (_x select 1);
     _textureName = (_x select 0);
     if ((life_veh_shop select 2) isEqualTo _flag) then {
-        _ctrl lbAdd _textureName;
-        _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
+        if (_x select 3 != "") then {
+            if (LICENSE_VALUE(_x select 3, _flag)) then {
+                _ctrl lbAdd _textureName;
+                _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
+                // if vehicle only has 1 texture, if check = false for license then it gives default skin (fix this)
+            };
+        } else {
+            _ctrl lbAdd _textureName;
+            _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
+        };
     };
 } forEach _colorArray;
 
