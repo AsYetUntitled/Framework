@@ -3,10 +3,12 @@
 *        0: STRING (Classname)
 *        1: STRING (Display Name, leave as "" for default)
 *        2: SCALAR (Price)
-*        4: ARRAY (This is for limiting items to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL / EQUAL)
-*            2: What to compare to (-1 = Check Disabled)
+*        3: STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
 *
 *   Clothing classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Equipment
 *   Backpacks/remaining classnames can be found here (TIP: Search page for "pack"): https://community.bistudio.com/wiki/Arma_3_CfgVehicles_EMPTY
@@ -113,7 +115,7 @@ class Clothing {
 
     class cop {
         title = "STR_Shops_C_Police";
-        condition = "";
+        conditions = "";
         side = "cop";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -164,7 +166,7 @@ class Clothing {
 
     class dive {
         title = "STR_Shops_C_Diving";
-        license = "dive";
+        conditions = "license_civ_dive";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -188,7 +190,7 @@ class Clothing {
 
     class gun_clothing {
         title = "STR_Shops_C_Gun";
-        license = "gun";
+        conditions = "license_civ_gun";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" }
@@ -210,7 +212,7 @@ class Clothing {
 
     class gang_clothing {
         title = "STR_Shops_C_Gang";
-        condition = "";
+        conditions = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" }
@@ -232,7 +234,7 @@ class Clothing {
 
     class med_clothing {
         title = "STR_MAR_EMS_Clothing_Shop";
-        condition = "";
+        conditions = "";
         side = "med";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -257,7 +259,7 @@ class Clothing {
 
     class reb {
         title = "STR_Shops_C_Rebel";
-        license = "rebel";
+        conditions = "license_civ_rebel";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -340,7 +342,7 @@ class Clothing {
 
     class kart {
         title = "STR_Shops_C_Kart";
-        condition = "";
+        conditions = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
