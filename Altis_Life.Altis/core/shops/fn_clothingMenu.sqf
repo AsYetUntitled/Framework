@@ -18,7 +18,7 @@ if !(isClass(missionConfigFile >> "Clothing" >> _shop)) exitWith {}; //Bad confi
 
 private _shopTitle = M_CONFIG(getText,"Clothing",_shop,"title");
 private _shopSide = M_CONFIG(getText,"Clothing",_shop,"side");
-private _conditions = M_CONFIG(getText,"Clothing",_shop,"condition");
+private _conditions = M_CONFIG(getText,"Clothing",_shop,"conditions");
 
 private _exit = false;
 
@@ -33,11 +33,11 @@ if (_exit) exitWith {};
 
 _exit = [_conditions] call life_fnc_levelCheck;
 if !(_exit) exitWith {hint localize "STR_Shop_Veh_NoLicense";};
-
-ctrlSetText [3103,localize _shopTitle];
 /* Open up the menu */
 createDialog "Life_Clothing";
 disableSerialization;
+
+ctrlSetText [3103,localize _shopTitle];
 
 (findDisplay 3100) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
 
