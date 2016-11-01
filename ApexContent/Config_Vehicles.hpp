@@ -2,6 +2,7 @@ class CarShops {
     /*
     *    ARRAY FORMAT:
     *        0: STRING (Classname)
+    *        1: STRING (Conditions)
     *    FORMAT:
     *        STRING (Conditions) - Must return boolean :
     *            String can contain any amount of conditions, aslong as the entire
@@ -164,10 +165,15 @@ class LifeCfgVehicles {
     *       Pull Vehicle from Garage: Cost = price * [1, 0.5, 0.75, -1] * [0.5, 0.5, 0.5, -1]
     *           -- Pull Vehicle & GarageSell Array Explanation = [civ,cop,medic,east]
     *
-    *       1: ARRAY (license required)
-    *         Ex: { "driver", "" , "" , "" } //civilian, west, independent, east
-    *         licenses[] = { {"CIV"}, {"COP"}, {"MEDIC"}, {"EAST"} };
-    *    Textures config follows { Texture Name, side, {texture(s)path}}
+    *       1: STRING (Conditions)
+    *         FORMAT:
+    *        STRING (Conditions) - Must return boolean :
+    *            String can contain any amount of conditions, aslong as the entire
+    *            string returns a boolean. This allows you to check any levels, licenses etc,
+    *            in any combination. For example:
+    *                "call life_coplevel && license_civ_someLicense"
+    *            This will also let you call any other function.
+    *    Textures config follows { Texture Name, side, {texture(s)path}, Conditions}
     *    Texture(s)path follows this format:
     *    INDEX 0: Texture Layer 0
     *    INDEX 1: Texture Layer 1
