@@ -28,4 +28,4 @@ Read [A Guide to BattlEye Filters](http://opendayz.net/threads/a-guide-to-battle
 
 ### Notes
 1. For Linux servers the filter file names **must** be in all lower case. For Windows servers the case is irrelevant. 
-2. The `publicVariableVar.txt` file was removed as it has no purpose. 
+2. The `publicVariableVar.txt` file was removed as it had no purpose. 
