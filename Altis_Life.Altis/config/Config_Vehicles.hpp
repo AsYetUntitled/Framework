@@ -2,10 +2,7 @@ class CarShops {
     /*
     *    ARRAY FORMAT:
     *        0: STRING (Classname)
-    *        1: ARRAY (This is for limiting items to certain things)
-    *            0: Variable to read from
-    *            1: Variable Value Type (SCALAR / BOOL /EQUAL)
-    *            2: What to compare to (-1 = Check Disabled)
+    *        1: STRING (Condition)
     *
     *   BLUFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_WEST
     *   OPFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_EAST
@@ -144,10 +141,8 @@ class LifeCfgVehicles {
     *       Pull Vehicle from Garage: Cost = price * [1, 0.5, 0.75, -1] * [0.5, 0.5, 0.5, -1]
     *           -- Pull Vehicle & GarageSell Array Explanation = [civ,cop,medic,east]
     *
-    *       1: ARRAY (license required)
-    *         Ex: { "driver", "" , "" , "" } //civilian, west, independent, east
-    *         licenses[] = { {"CIV"}, {"COP"}, {"MEDIC"}, {"EAST"} };
-    *    Textures config follows { Texture Name, side, {texture(s)path}}
+    *       1: STRING (Condition)
+    *    Textures config follows { Texture Name, side, {texture(s)path}, Condition}
     *    Texture(s)path follows this format:
     *    INDEX 0: Texture Layer 0
     *    INDEX 1: Texture Layer 1
