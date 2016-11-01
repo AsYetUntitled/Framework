@@ -79,9 +79,8 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
     _flag = (_x select 1);
     _textureName = (_x select 0);
     if ((life_veh_shop select 2) isEqualTo _flag) then {
-        _x params["_texture"];
+        _x params ["_texture"];
         private _toShow = [_x] call life_fnc_levelCheck;
-
         if (_toShow) then {
             _ctrl lbAdd _textureName;
             _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
