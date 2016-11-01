@@ -1,11 +1,12 @@
 class CarShops {
     /*
-    *    ARRAY FORMAT:
-    *        0: STRING (Classname)
-    *        1: ARRAY (This is for limiting items to certain things)
-    *            0: Variable to read from
-    *            1: Variable Value Type (SCALAR / BOOL /EQUAL)
-    *            2: What to compare to (-1 = Check Disabled)
+    *    FORMAT:
+    *        STRING (Conditions) - Must return boolean :
+    *            String can contain any amount of conditions, aslong as the entire
+    *            string returns a boolean. This allows you to check any levels, licenses etc,
+    *            in any combination. For example:
+    *                "call life_coplevel && license_civ_someLicense"
+    *            This will also let you call any other function.
     *
     *   BLUFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_WEST
     *   OPFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_EAST
@@ -14,6 +15,7 @@ class CarShops {
     */
     class civ_car {
         side = "civ";
+        conditions = "";
         vehicles[] = {
             { "B_Quadbike_01_F", "" },
             { "C_Hatchback_01_F", "" },
@@ -26,6 +28,7 @@ class CarShops {
 
     class kart_shop {
         side = "civ";
+        conditions = "";
         vehicles[] = {
             { "C_Kart_01_Blu_F", "" },
             { "C_Kart_01_Fuel_F", "" },
@@ -36,6 +39,7 @@ class CarShops {
 
     class civ_truck {
         side = "civ";
+        conditions = "";
         vehicles[] = {
             { "C_Van_01_box_F", "" },
             { "I_Truck_02_transport_F", "" },
@@ -53,6 +57,7 @@ class CarShops {
 
     class civ_air {
         side = "civ";
+        conditions = "";
         vehicles[] = {
             { "C_Heli_Light_01_civil_F", "" },
             { "B_Heli_Light_01_F", "" },
@@ -62,6 +67,7 @@ class CarShops {
 
      class civ_ship {
         side = "civ";
+        conditions = "";
         vehicles[] = {
             { "C_Rubberboat", "" },
             { "C_Boat_Civil_01_F", "" },
@@ -71,6 +77,7 @@ class CarShops {
 
     class reb_car {
         side = "civ";
+        conditions = "";
         vehicles[] = {
             { "B_Quadbike_01_F", "" },
             { "B_G_Offroad_01_F", "" },
@@ -82,6 +89,7 @@ class CarShops {
 
     class med_shop {
         side = "med";
+        conditions = "";
         vehicles[] = {
             { "C_Offroad_01_F", "" },
             { "I_Truck_02_medical_F", "" },
@@ -92,6 +100,7 @@ class CarShops {
 
     class med_air_hs {
         side = "med";
+        conditions = "";
         vehicles[] = {
             { "B_Heli_Light_01_F", "" },
             { "O_Heli_Light_02_unarmed_F", "" }
@@ -100,6 +109,7 @@ class CarShops {
 
     class cop_car {
         side = "cop";
+        conditions = "";
         vehicles[] = {
             { "C_Offroad_01_F", "" },
             { "C_SUV_01_F", "" },
@@ -111,14 +121,16 @@ class CarShops {
 
     class cop_air {
         side = "cop";
+        conditions = "call life_coplevel >= 3";
         vehicles[] = {
             { "B_Heli_Light_01_F", "" },
-            { "B_Heli_Transport_01_F", "call life_coplevel >= 3" }
+            { "B_Heli_Transport_01_F", "call life_coplevel >= 4" }
         };
     };
 
     class cop_ship {
         side = "cop";
+        conditions = "";
         vehicles[] = {
             { "B_Boat_Transport_01_F", "" },
             { "C_Boat_Civil_01_police_F", "" },
