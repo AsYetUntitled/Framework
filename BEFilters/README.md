@@ -29,4 +29,4 @@ BattlEye = 1;
 Read [A Guide to BattlEye Filters](http://opendayz.net/threads/a-guide-to-battleye-filters.21066/) and [How To: BattlEye filters - DO IT YOURSELF!](https://www.exilemod.com/topic/74-how-to-battleye-filters-do-it-yourself/) to learn how to update your own BattlEye filters. See also [BattlEye Filters](https://github.com/AsYetUntitled/Framework/wiki/BattlEye-Filters) on the AsYetUntitled/Framework GitHub wiki, [BattlEye](https://community.bistudio.com/wiki/BattlEye) on the Bohemia Interactive Community Wiki, and the [BattlEye](https://www.battleye.com/) website. 
 
 ### Notes
-1. For Linux servers the filter file names **must** be in all lower case. For Windows servers the case is irrelevant. 
+1. For Linux servers, the filter file names **must** all be in lower case. For Windows servers the casing is irrelevant. 
