@@ -22,7 +22,7 @@ The following is required in the [server.cfg](https://community.bistudio.com/wik
 BattlEye = 1;
 ```
 
-<b>These BattlEye filters are a work in progress, and are only guaranteed to work with the latest vanilla release of [Altis Life RPG] (https://github.com/AsYetUntitled/Framework), on its respective targeted ARMA 3 version.</b>. If you encounter an issue with the filters for the latest **vanilla** mission version, then please create an [issue](https://github.com/AsYetUntitled/Framework/issues) on the GitHub repository. 
+<b>These BattlEye filters are a work in progress, and are only guaranteed to work with the latest vanilla release of [Altis Life RPG] (https://github.com/AsYetUntitled/Framework), on its respective targeted ARMA 3 version.</b> If you encounter an issue with the filters for the latest **vanilla** mission version, then please create an [issue](https://github.com/AsYetUntitled/Framework/issues) on the GitHub repository. 
 
 <b>Modifications to the Altis Life RPG mission files will most likely require the BattlEye filters to be updated.</b>
 
