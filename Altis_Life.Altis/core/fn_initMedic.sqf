@@ -6,7 +6,6 @@
     Description:
     Initializes the medic..
 */
-private ["_end"];
 player addRating 99999999;
 waitUntil {!(isNull (findDisplay 46))};
 

@@ -1,21 +1,11 @@
 /*
 *    Format:
-*        licenses: ARRAY (This is for limiting spawn to certain things)
-*           0: License Name
-*           1: License Check Type
-*                false: If license isn't set
-*                true: If license is set
-*           Example:
-*                licenses[] = { { "pilot", true }, { "rebel", false } }; //Shows up for players with pilot and without rebel license.
-*
-*        level: ARRAY (This is for limiting spawn to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL / EQUAL / INVERSE)
-*                SCALAR: VALUE => VALUE
-*                BOOL: VALUE EXISTS
-*                EQUAL: VALUE == VALUE
-*                INVERSE: VALUE <= VALUE
-*            2: What to compare to (-1 = Check Disabled)
+*        3: STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
 *
 */
 class CfgSpawnPoints {
