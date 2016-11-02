@@ -1,10 +1,8 @@
 class CarShops {
     /*
-<<<<<<< HEAD
     *    ARRAY FORMAT:
     *        0: STRING (Classname)
     *        1: STRING (Condition)
-=======
     *    FORMAT:
     *        STRING (Conditions) - Must return boolean :
     *            String can contain any amount of conditions, aslong as the entire
@@ -12,7 +10,6 @@ class CarShops {
     *            in any combination. For example:
     *                "call life_coplevel && license_civ_someLicense"
     *            This will also let you call any other function.
->>>>>>> refs/remotes/origin/master
     *
     *   BLUFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_WEST
     *   OPFOR Vehicle classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgVehicles_EAST
