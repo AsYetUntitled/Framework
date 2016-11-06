@@ -14,11 +14,11 @@
 ]
 
 [
-	"STR_vInAct_Registration",
-	"",
-	[1,1,1,1],
+    "STR_vInAct_Registration",
+    "",
+    [1,1,1,1],
     west,
-	{
+    {
         !isNull cursorTarget &&
         {((cursorTarget isKindOf "Car") || (cursorTarget isKindOf "Ship") || (cursorTarget isKindOf "Air"))} &&
         {isNull objectParent player}
