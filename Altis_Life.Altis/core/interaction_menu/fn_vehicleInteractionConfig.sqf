@@ -25,5 +25,5 @@
 	},
     "[life_vInact_curTarget] spawn life_fnc_searchVehAction;"
 ]
-
+    
 ];  
