@@ -1,35 +1,29 @@
+[life_vInact_curTarget] spawn life_fnc_searchVehAction;
 [
 [
-	"Hint Car",
+	"STR_vInAct_Registration",
 	"",
 	[1,1,1,1],
     west,
 	{
-        (alive player)
+        !isNull cursorTarget &&
+        {((cursorTarget isKindOf "Car") || (cursorTarget isKindOf "Ship") || (cursorTarget isKindOf "Air"))} &&
+        {isNull objectParent player}
 	},
-    "hint 'Hello!!!'"
-],
-
-[
-	"Hint Car2",
-	"",
-	[1,1,1,1],
-    west,
-	{
-        (alive player) &&
-        {(1+1) < 2}
-	},
-    "hint 'Hello2!!!'"
-],
-
-[
-	"Hint Car3",
-	"",
-	[1,1,1,1],
-    civilian,
-	{
-        (alive player)
-	},
-    "hint 'Hello3!!!'"
+    "[life_vInact_curTarget] spawn life_fnc_searchVehAction;"
 ]
+
+[
+	"STR_vInAct_Registration",
+	"",
+	[1,1,1,1],
+    west,
+	{
+        !isNull cursorTarget &&
+        {((cursorTarget isKindOf "Car") || (cursorTarget isKindOf "Ship") || (cursorTarget isKindOf "Air"))} &&
+        {isNull objectParent player}
+	},
+    "[life_vInact_curTarget] spawn life_fnc_searchVehAction;"
+]
+
 ];
