@@ -81,7 +81,7 @@
     [west,civilian,independent],
     {
         crew cursorTarget isEqualTo [] && {canMove cursorTarget} && {locked cursorTarget isEqualTo 0} &&
-        {(!isNil "getObjectDLC cursorTarget")} && {!(_id in getDLCs 1)}
+        {(!isNil "getObjectDLC cursorTarget")} && {!(getObjectDLC cursorTarget in getDLCs 1)}
 
     },
     "player moveInDriver cursorTarget;"
