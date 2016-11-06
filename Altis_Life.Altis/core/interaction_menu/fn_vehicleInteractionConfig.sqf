@@ -10,7 +10,7 @@
         {alive cursorTarget} &&
         {([cursorTarget] call life_fnc_isDamaged)} &&
         {(cursorTarget isKindOf "Car") || (cursorTarget isKindOf "Ship") || (cursorTarget isKindOf "Air")} &&
-        {!(isNull _veh)}
+        {!(isNull cursorTarget)}
     },
     "[cursorTarget] spawn life_fnc_repairTruck;"
 ],
