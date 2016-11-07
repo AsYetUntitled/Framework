@@ -179,7 +179,7 @@ class LifeCfgVehicles {
         price = -1;
         textures[] = {};
     };
-    
+
     // Apex DLC
     class C_Boat_Transport_02_F {
         vItemSpace = 100;
@@ -627,7 +627,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
         };
     };
 
-    class x {
+    class B_Heli_Light_01_F {
         vItemSpace = 90;
         conditions = "license_civ_pilot || {license_cop_cAir} || {license_med_mAir}";
         price = 245000;
