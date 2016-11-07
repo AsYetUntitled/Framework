@@ -631,9 +631,9 @@ will modify the virtual space and the price of the vehicle, but other informatio
         };
     };
 
-    class B_Heli_Light_01_F {
+    class x {
         vItemSpace = 90;
-        conditions = "license_civ_pilot || {license_cop_cg} || {license_civ_mAir}";
+        conditions = "license_civ_pilot || {license_cop_cAir} || {license_med_mAir}";
         price = 245000;
         textures[] = {
             { "Police", "cop", {
@@ -691,7 +691,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 210;
-        conditions = "license_civ_pilot || {license_civ_mAir} || !(playerSide isEqualTo civilian)";
+        conditions = "license_civ_pilot || {license_med_mAir} || (playerSide isEqualTo west)";
         price = 750000;
         textures[] = {
             { "Black", "cop", {
