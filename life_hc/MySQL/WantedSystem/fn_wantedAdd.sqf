@@ -91,7 +91,7 @@ if (count _queryResult != 0) then
     [_query,1] call HC_fnc_asyncCall;
 } else {
     _crimes = [_type select 0];
-    _crimes = [_crimes] call HC_fnc_mresArray;
-    _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crimes,_val];
+    _crimes = [_crime] call HC_fnc_mresArray;
+    _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crime,_val];
     [_query,1] call HC_fnc_asyncCall;
 };

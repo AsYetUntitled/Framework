@@ -52,6 +52,6 @@ if !(count _queryResult isEqualTo 0) then {
 } else {
     _crime = [_type select 0];
     _crime = [_crime] call DB_fnc_mresArray;
-    _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crimes,_val];
+    _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crime,_val];
     [_query,1] call DB_fnc_asyncCall;
 };
