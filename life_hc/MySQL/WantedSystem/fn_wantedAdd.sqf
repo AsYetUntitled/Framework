@@ -10,7 +10,7 @@
     Description:
     Adds or appends a unit to the wanted list.
 */
-private ["_uid","_type","_index","_data","_crimes","_val","_customBounty","_name","_pastCrimes","_query","_queryResult"];
+private ["_uid","_type","_index","_data","_crime","_val","_customBounty","_name","_pastCrimes","_query","_queryResult"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;
