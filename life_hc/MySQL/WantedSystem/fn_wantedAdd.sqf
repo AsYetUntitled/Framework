@@ -90,8 +90,8 @@ if (count _queryResult != 0) then
     _query = format ["UPDATE wanted SET wantedCrimes = '%1', wantedBounty = wantedBounty + '%2', active = '1' WHERE wantedID='%3'",_pastCrimes,_val,_uid];
     [_query,1] call HC_fnc_asyncCall;
 } else {
-    _crimes = [_type select 0];
-    _crimes = [_crime] call HC_fnc_mresArray;
+    _crime = [_type select 0];
+    _crime = [_crime] call HC_fnc_mresArray;
     _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crime,_val];
     [_query,1] call HC_fnc_asyncCall;
 };
