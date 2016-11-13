@@ -21,7 +21,7 @@ if (FETCH_CONST(life_adminlevel) < 1) then {
     ctrlShow[3021,false];
 };
 {
-    if (alive _x && _x != player) then {
+    if (alive _x && !(_x isEqualTo player)) then {
         switch (side _x) do {
             case west: {_type = "Cop"};
             case civilian: {_type = "Civ"};
