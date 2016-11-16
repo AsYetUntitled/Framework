@@ -2800,10 +2800,10 @@
         </Key>
         <Key ID="STR_Wanted_Count">
             <Original>%1 count(s) of %2</Original>
-            <Czech>Počet%1 (y) z%2</Czech>
-            <French>%1 chef (s) de 2%</French>
+            <Czech>Počet%1 (y) z %2</Czech>
+            <French>%1 chef (s) de %2</French>
             <Spanish>%1 cuenta(s) de %2</Spanish>
-            <Italian>%1 count (s) del 2%</Italian>
+            <Italian>%1 count (s) del %2</Italian>
             <Polish>%1 count (ów) z %2</Polish>
             <Russian></Russian>
             <Portuguese>%1 contagem(s) de %2</Portuguese>
