@@ -51,7 +51,7 @@ if (_mode) then {
 
 private _conditions = M_CONFIG(getText,"LifeCfgVehicles",_className,"conditions");
 
-if !([_conditions] call life_fnc_levelCheck) exitWith {hint localize "STR_Shop_Veh_NoLicence";};
+if !([_conditions] call life_fnc_levelCheck) exitWith {hint localize "STR_Shop_Veh_NoLicense";};
 
 private _colorIndex = lbValue[2304,(lbCurSel 2304)];
 
