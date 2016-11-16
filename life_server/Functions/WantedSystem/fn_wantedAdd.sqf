@@ -36,10 +36,6 @@ private _val = [_type select 1] call DB_fnc_numberSafe;
 private _number = _type select 0;
 
 if !(count _queryResult isEqualTo 0) then {
-    _crime = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
-    _crimeresult = [_crime,2] call DB_fnc_asyncCall;
-    _pastcrimess = [_crimeresult select 0] call DB_fnc_mresToArray;
-
     _query = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
     _queryResult = [_query,2] call DB_fnc_asyncCall;
     _pastCrimes = [_queryResult select 0] call DB_fnc_mresToArray;
