@@ -50,6 +50,7 @@ _fnc_water = {
 _foodTime = time;
 _waterTime = time;
 _walkDis = 0;
+_lastDamage = 0;
 _bp = "";
 _lastPos = visiblePosition player;
 _lastPos = (_lastPos select 0) + (_lastPos select 1);
