@@ -1041,7 +1041,7 @@
             <Italian>Il conto della gang non ha abbastanza denaro!</Italian>
             <Polish>Nie ma tego dużo na koncie bankowym gang!</Polish>
             <Russian></Russian>
-            <French>Vous n'avez pas autant dans votre gang!</French>
+            <French>Vous n'avez pas autant sur le compte de votre Gang !</French>
             <Portuguese>Você não tem todo esse dinhero na sua gangue!</Portuguese>
             <German>Ihr habt nicht genügend Geld auf dem Gang-Bankkonto!</German>
         </Key>
@@ -1262,7 +1262,7 @@
             <Spanish>Pedir Médico</Spanish>
             <Russian></Russian>
             <German>An die Sanitäter</German>
-            <French>Requête Medecin</French>
+            <French>Appel SOS Medecin</French>
             <Italian>Msg medici</Italian>
             <Portuguese>Chamar SAMU</Portuguese>
             <Polish>MEDYK</Polish>
@@ -1275,7 +1275,7 @@
             <Spanish>Desguazadero</Spanish>
             <Russian></Russian>
             <German>Illegaler Fahrzeughändler</German>
-            <French>Concessionnaire de véhicule volé</French>
+            <French>Concessionnaire de véhicules volés</French>
             <Italian>Ricettatore</Italian>
             <Portuguese>Desmanche</Portuguese>
             <Polish>Dziupla</Polish>
@@ -1354,7 +1354,7 @@
             <Spanish>Hacer Líder</Spanish>
             <Russian></Russian>
             <German>Neuer Anführer</German>
-            <French>Passer Chef</French>
+            <French>Promouvoir Chef</French>
             <Italian>Imposta Capo</Italian>
             <Portuguese>Passar Liderança</Portuguese>
             <Polish>Ustaw lidera</Polish>
@@ -1455,7 +1455,7 @@
             <Spanish>Debes crear una pandilla antes de capturar este escondite!</Spanish>
             <Russian></Russian>
             <German>Du musst erst in einer Gang sein, um diesen Bereich einnehmen zu können!</German>
-            <French>Vous devez créer un gang avant de le capturer!</French>
+            <French>Vous devez créer un gang avant de le capturer !</French>
             <Italian>Devi creare una gang prima di catturarla!</Italian>
             <Portuguese>Você precisa criar uma gangue antes de tentar capturar!</Portuguese>
             <Polish>Przed przechwyceniem musisz stworzyć gang</Polish>
@@ -1466,7 +1466,7 @@
             <Spanish>Tu Pandilla ya tiene control de este escondite!</Spanish>
             <Russian></Russian>
             <German>Deine Gang hat bereits die Kontrolle über dieses Versteck!</German>
-            <French>Votre gang a déjà le contrôle de cette cachette!</French>
+            <French>Votre gang a déjà le contrôle de cette planque !</French>
             <Italian>La tua Gang ha già il controllo di questo Covo</Italian>
             <Portuguese>Sua gangue já tem controle sobre esse esconderijo!</Portuguese>
             <Polish>Twój gang aktualnie kontroluje tę kryjówkę !</Polish>
@@ -1477,7 +1477,7 @@
             <Spanish>Solo una persona puede capturar a la vez!</Spanish>
             <Russian></Russian>
             <German>Nur eine Person kann das Versteck einnehmen!</German>
-            <French>Une seule personne doit capturer à la fois!</French>
+            <French>Une seule personne doit capturer à la fois !</French>
             <Italian>Può conquistare solo una persona alla volta!</Italian>
             <Portuguese>Somente uma pessoa pode capturar!</Portuguese>
             <Polish>Przejmowanie powinna przeprowadzić na raz tylko jedna osoba</Polish>
@@ -1488,7 +1488,7 @@
             <Spanish>Este escondite esta controlado por %1.&lt;br/&gt;&lt;br/&gt;Estas seguro que quieres tomarlo?</Spanish>
             <Russian></Russian>
             <German>Das Versteck wird durch %1 kontrolliert.&lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du ihr Gang Gebiet übernehmen möchtest?</German>
-            <French>Cette cachette est contrôlée par %1.&lt;br/&gt;&lt;br/&gt;Etes-vous sûr que vous voulez prendre leur zone de gang?</French>
+            <French>Cette planque est contrôlée par %1.&lt;br/&gt;&lt;br/&gt;Etes-vous sûr que vous voulez prendre leur zone de gang?</French>
             <Italian>Questo Covo è controllato da %1.&lt;br/&gt;&lt;br/&gt;Sicuro di voler prendere il controllo della loro area?</Italian>
             <Portuguese>Esse esconderijo é controlado por %1.&lt;br/&gt;&lt;br/&gt;Você tem certeza que deseja tomar essa área?</Portuguese>
             <Polish>Ta kryjówka jest kontrolowana przez %1.&lt;br/&gt;&lt;br/&gt;Jesteś pewny że chcesz przjąć ten rejon.</Polish>
@@ -1499,7 +1499,7 @@
             <Spanish>Escondite bajo control...</Spanish>
             <Russian></Russian>
             <German>Versteck ist derzeit unter Kontrolle...</German>
-            <French>La cachette est actuellement sous contrôle ...</French>
+            <French>La Planque est actuellement sous contrôle ...</French>
             <Italian>Il Covo è già sotto controllo...</Italian>
             <Portuguese>Esconderijo sobre controle....</Portuguese>
             <Polish>Kryjówka pod kontrolą ...</Polish>
@@ -1521,7 +1521,7 @@
             <Spanish>Capturando el Escondite</Spanish>
             <Russian></Russian>
             <German>Versteck einnehmen</German>
-            <French>Capture cachette</French>
+            <French>Capture planque</French>
             <Italian>Catturando il Covo</Italian>
             <Portuguese>Capturando Esconderijo</Portuguese>
             <Polish>Przejmowanie kryjówki</Polish>
@@ -1529,7 +1529,7 @@
         <Key ID="STR_GNOTF_Captured">
             <Original>Hideout has been captured.</Original>
             <Czech>Úkryt byl zajat.</Czech>
-            <French>La Cachette a été capturé.</French>
+            <French>La planque a été capturée.</French>
             <Spanish>Escondite ha sido capturado.</Spanish>
             <Italian>Hideout è stato catturato.</Italian>
             <Polish>Hideout został schwytany.</Polish>
@@ -1543,7 +1543,7 @@
             <Spanish>%1 y su pandilla: %2 - han tomado control de un Escondite!</Spanish>
             <Russian></Russian>
             <German>%1 und seine Gang: %2 - haben die Kontrolle über ein lokales Versteck übernommen!</German>
-            <French>%1 et son gang: %2 ont pris le controle de la cachette !</French>
+            <French>%1 et son gang: %2 ont pris le controle de la planque !</French>
             <Italian>%1 e la sua Gang: %2 - hanno preso il controllo di un Covo!</Italian>
             <Portuguese>%1 e sua gangue: %2 - agora têm o controle de um esconderijo!</Portuguese>
             <Polish>%1 i jego gang: %2 - przejął kontrolę nad kryjówką!</Polish>
@@ -1642,7 +1642,7 @@
             <Spanish>%1 te ha invitado a una Pandilla llamada %2&lt;br/&gt;Si aceptas seras parte de su pandilla, compartiras el banco de la pandilla y controlaras sus escondites.</Spanish>
             <Russian></Russian>
             <German>%1 hat dich zu einer Gang namens %2 eingeladen &lt;br/&gt; Wenn Du die Einladung annimmst, wirst du ein Teil der Gang und bekommst Zugang zu den Gang-Konten und kontrollierten Gang Verstecken.</German>
-            <French>%1 vous a invité à un gang appelé %2&lt;br/&gt;Si vous acceptez l'invitation vous serez dans leur gang et aurez accès à des fonds de gangs et des cachettes de gangs contrôlés.</French>
+            <French>%1 vous a invité à un gang appelé %2&lt;br/&gt;Si vous acceptez l'invitation vous serez dans leur gang et aurez accès à des fonds de gangs et des planques de gangs contrôlés.</French>
             <Italian>%1 ti ha invitato nella Gang: %2&lt;br/&gt;Se vuoi accettarai l'invito entrerai a far parte della loro Gang ed avrai accesso ai loro fondi e ai loro Covi.</Italian>
             <Portuguese>%1 convidou você para a gangue %2&lt;br/&gt;Se você aceitar terá acesso aos recursos da gangue e os esconderijos controlados pela mesma.</Portuguese>
             <Polish>%1 zaprosił cię do gangu o nazwie %2&lt;br/&gt;Jeżeli zaakceptujesz zaproszenie będziesz członkiem gangu i uzyskasz dostęp do funduszy gangu oraz jego kryjówek</Polish>
@@ -4367,7 +4367,7 @@
         <Key ID="STR_NOTF_ATM">
             <Original>&lt;t color='#ADFF2F'&gt;ATM&lt;/t&gt;</Original>
             <Czech>&lt;t color='#ADFF2F'&gt;Bankomat&lt;/t&gt;</Czech>
-            <French>&lt;t color='#ADFF2F'&gt;AU M&lt;/t&gt;</French>
+            <French>&lt;t color='#ADFF2F'&gt;DAB&lt;/t&gt;</French>
             <Spanish>&lt;t color='#ADFF2F'&gt;ATM&lt;/t&gt;</Spanish>
             <Italian>&lt;t color='#ADFF2F'&gt;ATM&lt;/t&gt;</Italian>
             <Polish>&lt;t color='#ADFF2F'&gt;Bankomat&lt;/t&gt;</Polish>
@@ -4378,7 +4378,7 @@
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
             <Czech>Zachyťte Gang skrýš</Czech>
-            <French>Capturez Gang Cachette</French>
+            <French>Capturez Planque de Gang</French>
             <Spanish>Capturar Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
@@ -8533,7 +8533,7 @@
             <Spanish>Porque robastes el banco no puedes usar el ATM por %1 minutos.</Spanish>
             <Russian></Russian>
             <German>Da du die Bank ausgeraubt hast, kannst du für %1 Minuten keine Bankomaten benutzen.</German>
-            <French>Vous avez pillé la banque, vous ne pouvez pas utiliser le guichet automatique pendant %1 minutes.</French>
+            <French>Vous avez pillé la banque, vous ne pouvez pas utiliser le DAB pendant %1 minutes.</French>
             <Italian>Avendo appena rapinato la banca non puoi utilizzare il Bancomat per %1 minuti.</Italian>
             <Portuguese>Você não pode usar o ATM por %1 minuto(s), pois você assaltou o banco.</Portuguese>
             <Polish>Z uwagi na to że okradłeś bank nie możesz korzystać z bankomatu przez najbliższe %1 minut.</Polish>
@@ -9451,7 +9451,7 @@
         <Key ID="STR_MAR_Oil_Processing">
             <Original>Oil Processing</Original>
             <Czech>Zpracování olej</Czech>
-            <French>Traitement du petrole</French>
+            <French>Traitement du Pétrole</French>
             <Spanish>Procesador de Petróleo</Spanish>
             <Russian></Russian>
             <German>Öl Verarbeiter</German>
@@ -9462,7 +9462,7 @@
         <Key ID="STR_MAR_Iron_processing">
             <Original>Iron Processing</Original>
             <Czech>Zpracování Iron</Czech>
-            <French>Traitement de fer</French>
+            <French>Traitement de Fer</French>
             <Spanish>Procesador de Hierro</Spanish>
             <Italian>Processo del ferro</Italian>
             <Russian></Russian>
@@ -9473,7 +9473,7 @@
         <Key ID="STR_MAR_Sand_Mine">
             <Original>Sand Mine</Original>
             <Czech>písek Mine</Czech>
-            <French>Mine de sable</French>
+            <French>Mine de Sable</French>
             <Spanish>Mina de Arena</Spanish>
             <Italian>Miniera di sabbia</Italian>
             <Russian></Russian>
@@ -9484,7 +9484,7 @@
         <Key ID="STR_MAR_Chop_Shop">
             <Original>Chop Shop</Original>
             <Czech>Chop Shop</Czech>
-            <French>Vendeur de voitures</French>
+            <French>Vendeur de Voitures</French>
             <Spanish>Desguace Clandestino</Spanish>
             <Italian>Ricettatore</Italian>
             <Russian></Russian>
@@ -9495,7 +9495,7 @@
         <Key ID="STR_MAR_Cocaine_Processing">
             <Original>Cocaine Processing</Original>
             <Czech>Zpracování kokain</Czech>
-            <French>Traitement de cocaïne</French>
+            <French>Traitement de Cocaïne</French>
             <Spanish>Procesador de Cocaína</Spanish>
             <Italian>Trattamento cocaina</Italian>
             <Russian></Russian>
@@ -9506,7 +9506,7 @@
         <Key ID="STR_MAR_Copper_Mine">
             <Original>Copper Mine</Original>
             <Czech>měděný důl</Czech>
-            <French>Mine de cuivre</French>
+            <French>Mine de Cuivre</French>
             <Spanish>Mina de Cobre</Spanish>
             <Italian>Miniera di rame</Italian>
             <Russian></Russian>
@@ -9517,7 +9517,7 @@
         <Key ID="STR_MAR_ATM">
             <Original>ATM</Original>
             <Czech>bankomat</Czech>
-            <French>ATM</French>
+            <French>DAB</French>
             <Spanish>ATM</Spanish>
             <Italian>ATM</Italian>
             <Russian></Russian>
@@ -10023,7 +10023,7 @@
         <Key ID="STR_MAR_Gang_Hideout1">
             <Original>Gang Hideout 1</Original>
             <Czech>Gang Hideout 1</Czech>
-            <French>Cachette 1</French>
+            <French>Planque 1</French>
             <Spanish>Escondite de Pandillas 1</Spanish>
             <Russian></Russian>
             <German>Gang Versteck 1</German>
@@ -10034,7 +10034,7 @@
         <Key ID="STR_MAR_Gang_Hideout2">
             <Original>Gang Hideout 2</Original>
             <Czech>Gang Hideout 2</Czech>
-            <French>Cachette 2</French>
+            <French>Planque 2</French>
             <Spanish>Escondite de Pandillas 2</Spanish>
             <Russian></Russian>
             <German>Gang Versteck 2</German>
@@ -10045,7 +10045,7 @@
         <Key ID="STR_MAR_Gang_Hideout3">
             <Original>Gang Hideout 3</Original>
             <Czech>Gang Hideout 3</Czech>
-            <French>Cachette 3</French>
+            <French>Planque 3</French>
             <Spanish>Escondite de Pandillas 3</Spanish>
             <Russian></Russian>
             <German>Gang Versteck 3</German>
