@@ -134,7 +134,7 @@ switch (_code) do {
     //T Key (Trunk)
     case 20: {
         if (!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
-            if (!(vehicle player isEqualTo player) && alive vehicle player) then {
+            if (!(isNull objectParent player) && alive vehicle player) then {
                 if ((vehicle player) in life_vehicles) then {
                     [vehicle player] spawn life_fnc_openInventory;
                 };
@@ -164,7 +164,7 @@ switch (_code) do {
     case 38: {
         //If cop run checks for turning lights on.
         if (_shift && playerSide in [west,independent]) then {
-            if (!(vehicle player isEqualTo player) && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
+            if (!(isNull objectParent player) && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
                 if (!isNil {vehicle player getVariable "lights"}) then {
                     if (playerSide isEqualTo west) then {
                         [vehicle player] call life_fnc_sirenLights;
