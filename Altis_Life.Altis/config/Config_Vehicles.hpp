@@ -117,7 +117,7 @@ class CarShops {
             { "C_Offroad_01_F", "" },
             { "C_SUV_01_F", "" },
             { "C_Hatchback_01_sport_F", "call life_coplevel >= 1" },
-            { "B_MRAP_01_F", "call life_coplevel  >= 2" },
+            { "B_MRAP_01_F", "call life_coplevel >= 2" },
             { "B_MRAP_01_hmg_F", "call life_coplevel >= 3" }
         };
     };
@@ -376,7 +376,7 @@ class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{
 will modify the virtual space and the price of the vehicle, but other information such as license and textures will pick up the vehicle declare at : Vehicle {};
 */
     class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{}; // Get all information of C_Kart_01_Blu_F
-    class C_Kart_01_Red_F  : C_Kart_01_Blu_F{};
+    class C_Kart_01_Red_F : C_Kart_01_Blu_F{};
     class C_Kart_01_Vrana_F : C_Kart_01_Blu_F{};
 
     class C_Hatchback_01_sport_F {
