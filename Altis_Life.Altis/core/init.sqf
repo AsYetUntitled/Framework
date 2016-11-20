@@ -157,12 +157,12 @@ if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
     Remove if Bohemia actually fixes the issue.
 */
 {
-	_x params [["_chan",-1,[0]], ["_noText","false",[""]], ["_noVoice","false",[""]]];
+    _x params [["_chan",-1,[0]], ["_noText","false",[""]], ["_noVoice","false",[""]]];
 
-	_noText = [false,true] select ((["false","true"] find toLower _noText) max 0);
-	_noVoice = [false,true] select ((["false","true"] find toLower _noVoice) max 0);
+    _noText = [false,true] select ((["false","true"] find toLower _noText) max 0);
+    _noVoice = [false,true] select ((["false","true"] find toLower _noVoice) max 0);
 
-	_chan enableChannel [!_noText, !_noVoice];
+    _chan enableChannel [!_noText, !_noVoice];
 
 } forEach getArray (missionConfigFile >> "disableChannels");
 
