@@ -89,11 +89,11 @@ for "_i" from 0 to 1 step 0 do {
         };
     };
 	
-	/* Check damage of the player unit (used for handleDamage) */
-	if !(damage player isEqualTo _lastDamage) then {
-		life_unitDamage = damage player;
-		_lastDamage = life_unitDamage;
-	};
+    /* Check damage of the player unit (used for handleDamage) */
+    if !(damage player isEqualTo _lastDamage) then {
+        life_unitDamage = damage player;
+        _lastDamage = life_unitDamage;
+    };
 
     /* Travelling distance to decrease thirst/hunger which is captured every second so the distance is actually greater then 650 */
     if (!alive player) then {_walkDis = 0;} else {
