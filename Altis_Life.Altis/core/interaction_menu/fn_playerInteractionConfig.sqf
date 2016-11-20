@@ -1,3 +1,10 @@
+/*
+    File: fn_playerInteractionConfig.sqf
+    Author: BoGuu
+    
+    Description: Fill this in if you love me!
+*/
+
 [
 
 [
