@@ -17,7 +17,7 @@
 class Clothing {
     class bruce {
         title = "STR_Shops_C_Bruce";
-        condition = "";
+        conditions = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
