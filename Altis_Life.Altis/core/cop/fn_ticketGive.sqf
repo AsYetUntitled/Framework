@@ -6,7 +6,7 @@
     Description:
     Gives a ticket to the targeted player.
 */
-private ["_val"];
+private "_val";
 if (isNil "life_ticket_unit") exitWith {hint localize "STR_Cop_TicketNil"};
 if (isNull life_ticket_unit) exitWith {hint localize "STR_Cop_TicketExist"};
 
