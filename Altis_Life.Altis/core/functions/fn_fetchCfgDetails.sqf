@@ -98,7 +98,7 @@ switch (_section) do
         if (!isNil "_muzzles") then {
             private ["_tmp"];
             {
-                if !(_x isEqualTo "this") then {
+                if (_x != "this") then {
                     _tmp = getArray(_base >> _x >> "magazines"); {
                         _magazines pushBack _x;
                     } forEach (_tmp);
