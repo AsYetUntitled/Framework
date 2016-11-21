@@ -88,7 +88,7 @@ for "_i" from 0 to 1 step 0 do {
             player forceWalk false;
         };
     };
-	
+
     /* Check damage of the player unit (used for handleDamage) */
     if !(damage player isEqualTo _lastDamage) then {
         life_unitDamage = damage player;
