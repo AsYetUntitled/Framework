@@ -157,7 +157,7 @@ class Life_Settings {
     vehicle_storage_fee_multiplier = .2; //Pull from garage cost --> Cost takes the playersides Buy Price * multiplier
     vehicle_cop_impound_multiplier = .1; //TO AVOID EXPLOITS NEVER SET HIGHER THAN A PURCHASE/RENTAL multipler!   Payout = Config_vehicle Price * multiplier
 
-    command_view = true; // -- Set to false in order to enable command view
+    command_view = true; // -- Set to false in order to enable command view (Command View lets ones camera look higher than your head. It allows you to command your AI's and should be disabled in order for people not being able to have a advantage)
     
     /* Wanted System Settings *
     /* crimes[] = {String, Bounty, Code} */
