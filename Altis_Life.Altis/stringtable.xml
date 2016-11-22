@@ -1962,7 +1962,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German>Diese Garage steht dir &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt; zur Verfügung!</German>
+            <German>Diese Garage steht dir für &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt; zur Verfügung!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -1984,7 +1984,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German>Bist du sicher, das du diese Garage verkaufen willst? Sie wird verkauft für: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</German>
+            <German>Bist du sicher, dass du diese Garage verkaufen willst? Sie wird verkauft für: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
