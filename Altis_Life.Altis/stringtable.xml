@@ -812,16 +812,16 @@
             <Portuguese>Ação Cancelada</Portuguese>
             <Polish>Anulowano akcję</Polish>
         </Key>
-        <Key ID="STR_NOTF_COMMANDVIEW">
+        <Key ID="STR_NOTF_CommandView">
             <Original>Commanding View Disabled</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
-            <German></German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <Czech>Commanding View Disabled</Czech>
+            <Spanish>Commanding View Disabled</Spanish>
+            <Russian>Commanding View Disabled</Russian>
+            <German>Commanding View Disabled</German>
+            <French>Commanding View Disabled</French>
+            <Italian>Commanding View Disabled</Italian>
+            <Portuguese>Commanding View Disabled</Portuguese>
+            <Polish>Commanding View Disabled</Polish>
         </Key>
         <Key ID="STR_NOTF_PlaceContainer">
             <Original>Hit spacebar to place the container.</Original>
