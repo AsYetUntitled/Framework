@@ -179,12 +179,12 @@ life_hideoutBuildings = [];
     false
 } count ["gang_area_1","gang_area_2","gang_area_3"];
 
-// -- Disable commanding view
+// -- Disable commander view
 if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
     addMissionEventHandler ["EachFrame",{
         if (cameraView == "GROUP") then {
             player switchCamera "EXTERNAL";
-            hint [localize "STR_NOTF_CommandView"];
+            hint [localize "STR_NOTF_CommanderView"];
         };
     }];
 };
