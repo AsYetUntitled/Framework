@@ -6,7 +6,7 @@
             <Czech></Czech>
             <Spanish>Configurando cliente. Por favor espere...</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Einrichten des Clients, bitte warten...</German>
             <Italian>Caricamento dati, attendi...</Italian>
             <French></French>
             <Portuguese>Configurando o cliente. Por favor, aguarde...</Portuguese>
@@ -17,7 +17,7 @@
             <Czech></Czech>
             <Spanish>Esperando a que el servidor esté listo...</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Warten, bis der Server bereit ist...</German>
             <Italian>Caricamento Server, attendi...</Italian>
             <French></French>
             <Portuguese>Esperando o servidor estar pronto...</Portuguese>
@@ -28,7 +28,7 @@
             <Czech></Czech>
             <Spanish>extDB no se pudo cargar, por favor contacte a un administrador.</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>ExtDB konnte nicht geladen werden, wenden Sie sich an einen Administrator.</German>
             <Italian>C'è stato un'errore con extDB, perfavore contatta un amministratore.</Italian>
             <French></French>
             <Portuguese>O extDB falhou ao carregar, por favor, contacte um administrador.</Portuguese>
@@ -39,7 +39,7 @@
             <Czech></Czech>
             <Spanish>Finalizando configuración del cliente...</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Fertigstellen der Client-Setup-Prozedur...</German>
             <Italian>Completando procedura d'inizializzazione </Italian>
             <French></French>
             <Portuguese>Terminando o processo de configuração do cliente...</Portuguese>
@@ -1072,7 +1072,7 @@
             <Czech></Czech>
             <Spanish>%1 ha transferido $%2 a tu cuenta.</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>%1 hat Dir $%2 übergeben.</German>
             <French></French>
             <Italian>%1 ha effettuato un bonifico sul tuo conto di €%2</Italian>
             <Portuguese></Portuguese>
@@ -1940,7 +1940,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Diese Garage wurde bereits gekauft!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -1951,7 +1951,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Sie sind nicht der Eigentümer dieses Hauses!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -1962,7 +1962,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Diese Garage steht nur &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt; zur Verfügung!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -1973,7 +1973,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Dieses Gebäude ist ein Gang Versteck!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -1984,7 +1984,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Bist du sicher das du diese Garage verkaufen willst? Sie wird verkauft für: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -1995,7 +1995,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Garage verkaufen</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -2006,7 +2006,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Garage kaufen</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -2017,7 +2017,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Sie besitzen hier keine Garage!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -2522,7 +2522,7 @@
             <Polish></Polish>
             <Russian></Russian>
             <Portuguese>Habilitar Transmissões</Portuguese>
-            <German></German>
+            <German>Broadcast aktivieren</German>
         </Key>
         <Key ID="STR_SM_SCOFF">
             <Original>Sidechat OFF</Original>
@@ -4393,7 +4393,7 @@
             <Czech></Czech>
             <Spanish>Anuncio de la Estación de Noticias</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Nachrichtensender</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Estação de Transmissão de Notícias</Portuguese>
@@ -4404,7 +4404,7 @@
             <Czech></Czech>
             <Spanish>Estación del Canal de Noticias 7</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Channel 7 Nachrichtensender</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Estação de Notícias do Canal 7</Portuguese>
@@ -4415,7 +4415,7 @@
             <Czech></Czech>
             <Spanish>Título del Mensaje</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Nachrichtenüberschrift:</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Titulo da Mensagem:</Portuguese>
@@ -4426,7 +4426,7 @@
             <Czech></Czech>
             <Spanish>Contenido del Anuncio</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Nachrichteninhalt:</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Conteúdo da Mensagem:</Portuguese>
@@ -4437,7 +4437,7 @@
             <Czech></Czech>
             <Spanish>Transmitir Anuncio</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Broadcast-Nachricht</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Transmitir Anúncio</Portuguese>
@@ -4448,7 +4448,7 @@
             <Czech></Czech>
             <Spanish>Costo de Transmisión: %1&lt;br /&gt;Siguiente Transmisión Disponible en: %2</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Broadcast-Kosten: %1&lt;br /&gt; Nächster Broadcas verfügbar in: %2</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Custo de Trasnmissão: %1&lt;br /&gt;Próxima transmissão disponível em: %2</Portuguese>
@@ -4459,7 +4459,7 @@
             <Czech></Czech>
             <Spanish>El título no puede tener mas de %1 caracteres</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Der Header darf nicht über %1 Zeichen lang sein.</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>O cabeçalho não pode ter mais que %1 caracteres</Portuguese>
@@ -4470,7 +4470,7 @@
             <Czech></Czech>
             <Spanish>Has introducido un carácter inválido</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Sie haben ein nicht unterstütztes Zeichen eingegeben!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Você inseriu um caractere inválido</Portuguese>
@@ -4481,7 +4481,7 @@
             <Czech></Czech>
             <Spanish>Ahora</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Jetzt</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Agora</Portuguese>
@@ -4492,7 +4492,7 @@
             <Czech></Czech>
             <Spanish>Necesitas %1 para transmitir un anuncio!</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Sie benötigen $%1, um ein Broadcast zu senden!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Você precisa de $%1 para enviar uma transmissão!</Portuguese>
@@ -4503,7 +4503,7 @@
             <Czech></Czech>
             <Spanish>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Gesendet von: %2</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Portuguese>
@@ -7956,7 +7956,7 @@
             <Polish></Polish>
             <Russian></Russian>
             <Portuguese>Habilita/Desabilita as transmissões dos jogadores, desabilite caso você não queira ver as transmissões dos outros jogadores.</Portuguese>
-            <German></German>
+            <German>Broadcast aktivieren. Ausschalten, wenn du keine Broadcast´s von anderen Spielern erhalten möchtest.</German>
         </Key>
         <Key ID="STR_GUI_PlayTags">
             <Original>Controls whether or not players will have name tags above their head.</Original>
@@ -8130,7 +8130,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Garage</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -8141,7 +8141,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Sie können eine Garage in diesem Haus für $%1 kaufen. Sie müssen zuerst das Haus kaufen!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -8185,7 +8185,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Garage kaufen</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -8319,7 +8319,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <German></German>
+            <German>Gehe ins Fahrzeug</German>
             <French></French>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -11257,7 +11257,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Zivilflugzeug</German>
         </Key>
         <Key ID="STR_Police_Tan">
             <Original>Police HQ</Original>
@@ -11268,7 +11268,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Polizei HauptQuartier</German>
         </Key>
         <Key ID="STR_Police_Store">
             <Original>Police Store</Original>
@@ -11279,7 +11279,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Polizei Laden</German>
         </Key>
         <Key ID="STR_Police_Car">
             <Original>Police Car</Original>
@@ -11290,7 +11290,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Polizei Auto</German>
         </Key>
         <Key ID="STR_Police_Heli">
             <Original>Police Heli</Original>
@@ -11301,7 +11301,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Polizei Helicopter</German>
         </Key>
         <Key ID="STR_Police_Boat">
             <Original>Police Boat</Original>
@@ -11312,7 +11312,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Polizei Boot</German>
         </Key>
         <Key ID="STR_Rebel_Car">
             <Original>Rebel Car</Original>
@@ -11323,7 +11323,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Rebellen Auto</German>
         </Key>
         <Key ID="STR_Rebel_Heli">
             <Original>Rebel Heli</Original>
@@ -11334,7 +11334,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Rebellen Helicopter</German>
         </Key>
         <Key ID="STR_Police_Tanoa">
             <Original>Police HQ</Original>
@@ -11345,7 +11345,7 @@
             <Polish></Polish>
             <Portuguese></Portuguese>
             <Russian></Russian>
-            <German></German>
+            <German>Polizei HauptQuartier</German>
         </Key>
     </Package>
     <Package name="Data_Logging">
