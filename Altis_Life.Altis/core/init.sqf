@@ -184,7 +184,7 @@ if (LIFE_SETTINGS(getNumber,"Command_View") isEqualTo 1) then {
     addMissionEventHandler ["EachFrame",{
         if (cameraView == "GROUP") then {
             player switchCamera "EXTERNAL";
-            hint [localize "STR_NOTF_COMMANDVIEW"];
+            hint [localize "STR_NOTF_CommandView"];
         };
     }];
 };
