@@ -182,7 +182,7 @@ life_hideoutBuildings = [];
 // -- Disable commanding view
 if (LIFE_SETTINGS(getNumber,"command_view") isEqualTo 1) then {
     addMissionEventHandler ["EachFrame",{
-        if(cameraView isEqualTo "GROUP") then {
+        if (cameraView isEqualTo "GROUP") then {
             player switchCamera "EXTERNAL";
             hint [localize "STR_NOTF_COMMANDVIEW"];
         };
