@@ -23,7 +23,7 @@ if (visibleMap) then {
     } forEach allDeadMen;
 
     {
-        if (_x != player) then {
+        if !(_x isEqualTo player) then {
             _markerss = createMarkerLocal [format ["%1_marker",_x],visiblePosition _x];
             _markerss setMarkerColorLocal "ColorIndependent";
             _markerss setMarkerTypeLocal "Mil_dot";
