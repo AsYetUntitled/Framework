@@ -13,7 +13,7 @@ params [
 ];
 
 if (isNull _unit) exitWith {}; //Dafuq?
-if (_unit != player) exitWith {}; //Dafuq?
+if !(_unit isEqualTo player) exitWith {}; //Dafuq?
 if (life_is_arrested) exitWith {}; //Dafuq i'm already arrested
 _illegalItems = LIFE_SETTINGS(getArray,"jail_seize_vItems");
 

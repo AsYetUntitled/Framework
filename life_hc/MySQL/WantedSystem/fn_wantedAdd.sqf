@@ -70,7 +70,7 @@ switch (_type) do
 
 if (_type isEqualTo []) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
-if (_customBounty != -1) then {_type set[1,_customBounty];};
+if !(_customBounty isEqualTo -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
 _query = format ["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
@@ -78,7 +78,7 @@ _queryResult = [_query,2,true] call HC_fnc_asyncCall;
 _val = [_type select 1] call HC_fnc_numberSafe;
 _number = _type select 0;
 
-if (count _queryResult != 0) then
+if !(count _queryResult isEqualTo 0) then
 {
     _crime = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
     _crimeresult = [_crime,2] call HC_fnc_asyncCall;

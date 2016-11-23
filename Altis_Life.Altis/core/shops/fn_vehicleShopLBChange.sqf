@@ -103,7 +103,7 @@ if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
     };
 };
 
-if ((lbSize _ctrl)-1 != -1) then {
+if !((lbSize _ctrl)-1 isEqualTo -1) then {
     ctrlShow[2304,true];
 } else {
     ctrlShow[2304,false];
