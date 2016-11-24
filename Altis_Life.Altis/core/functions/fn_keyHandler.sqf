@@ -55,6 +55,16 @@ if (life_container_active) then {
 };
 
 switch (_code) do {
+    // -- Disable commander view
+    if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
+        private _CommandMode = actionKeys "forceCommandingMode";
+
+        if (_code in _CommandMode) then {
+            hint "You cannot use Command Mode.";
+            _handled = true;
+        };
+    };
+
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
