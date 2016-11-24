@@ -7190,7 +7190,7 @@
             <Russian>Владелец не на сайте , так что вы не можете совершить набег этот дом</Russian>
             <Portuguese>O proprietário não está on-line para que você não pode invadir esta casa!</Portuguese>
             <German>Da der Besitzer nicht mehr online ist, kann in dieses Haus nicht eingebrochen werden!</German>
-        </Key>  
+        </Key>
         <Key ID="STR_ISTR_Bolt_Notify">
             <Original>%1's house is being broken into!</Original>
             <Czech>%1's Dům je rozdělen na!</Czech>
@@ -7201,7 +7201,7 @@
             <Russian>%1's дом быть разбит на</Russian>
             <Portuguese>%1s casa está sendo arrombado!</Portuguese>
             <German>In %1's Haus wurde eingebrochen!</German>
-        </Key>  
+        </Key>
         <Key ID="STR_ISTR_defuseKit_NotNear">
             <Original>You are not looking at a vault.</Original>
             <Czech>Nejste při pohledu na klenbu.</Czech>
