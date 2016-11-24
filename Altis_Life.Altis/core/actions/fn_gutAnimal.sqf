@@ -49,7 +49,7 @@ for "_i" from 0 to 1 step 0 do {
     if (_cP >= 1) exitWith {};
     if (!alive player) exitWith {};
     if (isNull _animalCorpse) exitWith {};
-    if (player != vehicle player) exitWith {};
+    if !(isNull objectParent player) exitWith {};
     if (life_interrupted) exitWith {};
 };
 
@@ -58,7 +58,7 @@ life_action_inUse = false;
 player playActionNow "stop";
 if (isNull _animalCorpse) exitWith {life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
-if (player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
+if !(isNull objectParent player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 
 if ([true,_item,1] call life_fnc_handleInv) then {
     deleteVehicle _animalCorpse;

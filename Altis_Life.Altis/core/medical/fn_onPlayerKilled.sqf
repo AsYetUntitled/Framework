@@ -80,7 +80,7 @@ _unit spawn {
 };
 
 //Make the killer wanted
-if (!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _killer}) then {
+if (!isNull _killer && {!(_killer isEqualTo _unit)} && {!(side _killer isEqualTo west)} && {alive _killer}) then {
     if (vehicle _killer isKindOf "LandVehicle") then {
 
         if (life_HC_isActive) then {
@@ -117,7 +117,7 @@ if (LIFE_SETTINGS(getNumber,"drop_weapons_onDeath") isEqualTo 0) then {
 
 
 //Killed by cop stuff...
-if (side _killer isEqualTo west && playerSide != west) then {
+if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
     life_copRecieve = _killer;
     //Did I rob the federal reserve?
     if (!life_use_atm && {CASH > 0}) then {
@@ -126,7 +126,7 @@ if (side _killer isEqualTo west && playerSide != west) then {
     };
 };
 
-if (!isNull _killer && {_killer != _unit}) then {
+if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
     life_removeWanted = true;
 };
 
