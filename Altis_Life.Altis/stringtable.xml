@@ -664,7 +664,7 @@
             <Spanish>El jugador ya no existe?</Spanish>
             <Russian></Russian>
             <German>Spieler existiert nicht mehr?</German>
-            <French>Le joueur ne semble pas exister</French>
+            <French>Le joueur ne semble pas exister.</French>
             <Italian>Il giocatore non esiste più</Italian>
             <Portuguese>Jogador não existe mais?</Portuguese>
             <Polish>Gracz już nie istnieje?</Polish>
@@ -676,7 +676,7 @@
             <Italian>Stai per donarti €%1 per rimborsare un altro giocatore &lt;br/&gt;&lt;br/&gt; Dovrai donare il denaro manualmente.</Italian>
             <Russian></Russian>
             <German>Du bist dabei dir selbst $%1 zu geben um einen anderen Spieler zu entschädigen.&lt;br/&gt;&lt;br/&gt;Gib das Geld dann an den Spieler weiter.</German>
-            <French>Vous êtes sur le point de vous donner $%1 pour compenser un autre joueur &lt;br/&gt;&lt;br/&gt; S'il vous plaît donner à cette personne l'argent, vous compensez manuellement</French>
+            <French>Vous êtes sur le point de vous donner $%1 pour compenser un autre joueur &lt;br/&gt;&lt;br/&gt; S'il vous plaît donner à cette personne l'argent, vous compensez manuellement.</French>
             <Portuguese>Você está prestes a dar para você mesmo R$%1 para compensar outro jogador &lt;br/&gt;&lt;br/&gt;Você deve dar este dinheiro para a pessoa que você está compensando manualmente.</Portuguese>
             <Polish>Właśnie przydzieliłeś sobie $%1 w celu rekompensaty graczowi &lt;br/&gt;&lt;br/&gt;Musisz przekazać te środki osobiście osobie poszkodowanej.</Polish>
         </Key>
@@ -698,7 +698,7 @@
             <Italian>Non puoi superare i €999.999</Italian>
             <Russian></Russian>
             <German>Maximaler Wert $999,999!</German>
-            <French>Vous ne pouvez pas aller au-dessus $999,999!</French>
+            <French>Vous ne pouvez pas aller au-dessus $999,999 !</French>
             <Portuguese>Você não pode ir além de $999,999!</Portuguese>
             <Polish>Nie można obracać kwotami wyższymi niż $999,999!</Polish>
         </Key>
@@ -709,7 +709,7 @@
             <Italian>Si prega di inserire l'importo da rimborsare.</Italian>
             <Russian></Russian>
             <German>Bitte Entschädigungs Betrag eingeben.</German>
-            <French>S'il vous plaît entrez la quantité pour compenser</French>
+            <French>S'il vous plaît entrez la quantité pour compenser.</French>
             <Portuguese>Por favor, insira a quantidade para compensar.</Portuguese>
             <Polish>Wprowadź kwotę rekompensaty</Polish>
         </Key>
@@ -720,7 +720,7 @@
             <Italian>Hai disattivato l'input di %1.</Italian>
             <Russian></Russian>
             <German>Du hast %1 Schock-Gefrostet. Er kann sich nichtmehr bewegen.</German>
-            <French>Vous avez désactivé les controles de %1</French>
+            <French>Vous avez désactivé les controles de %1.</French>
             <Portuguese>Você desabilitou as entradas de %1.</Portuguese>
             <Polish>Zablokowałeś grę gracza $%1 </Polish>
         </Key>
@@ -731,7 +731,7 @@
             <Italian>Hai riabilitato l'input di %1.</Italian>
             <Russian></Russian>
             <German>du hast %1 wieder aufgetaut.</German>
-            <French>Vous avez activé les controles de %1</French>
+            <French>Vous avez activé les controles de %1.</French>
             <Portuguese>Você habilitou as entradas de %1.</Portuguese>
             <Polish>Odblokowałeś grę gracza $%1 </Polish>
         </Key>
@@ -742,7 +742,7 @@
             <Italian>Impossibile.</Italian>
             <Russian></Russian>
             <German>Das geht gerade nicht.</German>
-            <French>Vous ne pouvez pas le faire sur vous-même</French>
+            <French>Vous ne pouvez pas le faire sur vous-même.</French>
             <Portuguese>Você não pode fazer isso, idiota.</Portuguese>
             <Polish>Tak nie można!</Polish>
         </Key>
@@ -753,14 +753,14 @@
             <Italian>Il tuo livello amministratore non soddisfa i requisiti.</Italian>
             <Russian></Russian>
             <German>Dein Admin Level ist nicht hoch genug.</German>
-            <French>Votre Niveau admin n'est pas suffisamment élevée</French>
+            <French>Votre Niveau admin n'est pas suffisamment élevée.</French>
             <Portuguese>Seu nível de Admin não é alto o bastante.</Portuguese>
             <Polish>Nie masz wystarczających uprawnień, za niski poziom administracyjny</Polish>
         </Key>
         <Key ID="STR_ANOTF_MDisabled">
             <Original>Player Markers Disabled.</Original>
             <Czech>Hráč Markers pro invalidy.</Czech>
-            <French>Marqueurs désactivés.</French>
+            <French>Marqueurs désactivés</French>
             <Spanish>Marcadores de Jugadores Deshabilitados</Spanish>
             <Italian>Indicatori Giocatori Disabilitati.</Italian>
             <Russian></Russian>
@@ -771,7 +771,7 @@
         <Key ID="STR_ANOTF_MEnabled">
             <Original>Player Markers Enabled.</Original>
             <Czech>Hráč Markers Povoleno.</Czech>
-            <French>Marqueurs activés.</French>
+            <French>Marqueurs activés</French>
             <Spanish>Marcadores de Jugadores habilitados.</Spanish>
             <Italian>Indicatori Giocatori Abilitati.</Italian>
             <Russian></Russian>
@@ -826,7 +826,7 @@
         <Key ID="STR_NOTF_notAllowed">
             <Original>Your faction is not allowed to chop vehicles!</Original>
             <Czech>Váš frakce není povoleno sekat vozidla!</Czech>
-            <French>Votre faction ne peut pas vendre les véhicules!</French>
+            <French>Votre faction ne peut pas vendre les véhicules !</French>
             <Spanish>Tu facción no tiene permitido usar esta tienda! </Spanish>
             <Italian>La tua fazione non può rubare veicoli!</Italian>
             <Polish>Twoja frakcja nie może posiekać pojazdy!</Polish>
@@ -840,7 +840,7 @@
             <Spanish>Requieres un pico</Spanish>
             <Russian></Russian>
             <German>Eine Spitzhacke wird benötigt.</German>
-            <French>Une pioche est nécessaire</French>
+            <French>Une pioche est nécessaire.</French>
             <Italian>Devi possedere un piccone!</Italian>
             <Portuguese>A picareta é necessária</Portuguese>
             <Polish>Wymagana jest kilof</Polish>
@@ -851,7 +851,7 @@
             <Spanish>Estas retenido</Spanish>
             <Russian></Russian>
             <German>Wie willst du mit gefesselten Händen sammeln?</German>
-            <French>Vous êtes menotté</French>
+            <French>Vous êtes menotté.</French>
             <Italian>Sei stato ammanettato</Italian>
             <Portuguese>Você está contido</Portuguese>
             <Polish>Ty skrępowaniem</Polish>
@@ -862,7 +862,7 @@
             <Spanish>No puedes hacer esto mientras te estas rindiendo</Spanish>
             <Russian></Russian>
             <German>Mit gehobenen Händen kannst du nichts sammeln!.</German>
-            <French>Vous ne pouvez pas faire cela pendant que vous abandonnez</French>
+            <French>Vous ne pouvez pas faire cela pendant que vous abandonnez.</French>
             <Italian>Non puoi effettuare questa azione mentre tieni le mani in alto</Italian>
             <Portuguese>Você não pode fazer isso enquanto você se entrega</Portuguese>
             <Polish>Nie można tego zrobić, gdy się poddasz</Polish>
@@ -873,7 +873,7 @@
             <Spanish>No puedes recolectar este recurso con este vehiculo!</Spanish>
             <Russian></Russian>
             <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
-            <French>VOus ne pouvez pas récolté cette ressource avec ce vehicule</French>
+            <French>Vous ne pouvez pas récolter cette ressource avec ce vehicule.</French>
             <Italian>Non puoi raccogliere questa risorsa con questo veicolo !</Italian>
             <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
             <Polish>You can't gather this resource with this vehicle!</Polish>
@@ -974,7 +974,7 @@
             <Spanish>No puedes depositar mas de $999,999 a la vez</Spanish>
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 gleichzeitig einzahlen</German>
-            <French>Vous ne pouvez pas déposer plus de $999,999</French>
+            <French>Vous ne pouvez pas déposer plus de $999,999.</French>
             <Italian>Non puoi depositare più di €999,999 alla volta</Italian>
             <Portuguese>Você não pode transferir mais de R$999.999 em uma transação</Portuguese>
             <Polish>Możesz jednorazowo zdeponować nie więcej niż $999,999 </Polish>
@@ -996,7 +996,7 @@
             <Spanish>Debes seleccionar a quien transferirle el dinero</Spanish>
             <Russian></Russian>
             <German>Du hast niemanden für den Transfer ausgewählt</German>
-            <French>Sélectionnez une personne pour le transfert</French>
+            <French>Sélectionnez une personne pour le transfert.</French>
             <Italian>Devi selezionare qualcuno a cui trasferire l'importo</Italian>
             <Portuguese>Você tem que selecionar para quem deseja transferir</Portuguese>
             <Polish>Musisz wybrać odbiorcę przelewu</Polish>
@@ -1004,7 +1004,7 @@
         <Key ID="STR_ATM_DoesntExist">
             <Original>The player selected doesn't seem to exist?</Original>
             <Czech>Hráč vybraný Nezdá se, že neexistuje?</Czech>
-            <French>Le joueur sélectionné ne semble pas exister?</French>
+            <French>Le joueur sélectionné ne semble pas exister ?</French>
             <Spanish>El jugador que seleccionastes no existe?</Spanish>
             <Russian></Russian>
             <German>Der Spieler scheint nicht zu existieren?</German>
@@ -1018,7 +1018,7 @@
             <Spanish>No puedes transferir más de $999,999</Spanish>
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 überweisen</German>
-            <French>Vous ne pouvez pas transférer plus de $999,999</French>
+            <French>Vous ne pouvez pas transférer plus de $999,999.</French>
             <Italian>Non puoi trasferire più di €999.000 alla volta</Italian>
             <Portuguese>Você pode trasferir no máximo R$999.999.</Portuguese>
             <Polish>Możesz jednorazowo przelać nie więcej niż $999,999 </Polish>
@@ -1029,7 +1029,7 @@
             <Spanish>No tienes tanto dinero en tu cuenta de banco!</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viel Geld auf deinem Bankkonto!</German>
-            <French>Vous n'avez pas autant dans votre compte bancaire</French>
+            <French>Vous n'avez pas autant dans votre compte bancaire !</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca!</Italian>
             <Portuguese>Você não tem todo esse dinhero na sua conta bancária</Portuguese>
             <Polish>Nie masz tyle środków na koncie!</Polish>
@@ -1051,7 +1051,7 @@
             <Spanish>No tienes el dinero suficiente, para transferir $%1 necesitaras $%2 para pagar como cuota.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Konto, es kostet $%2, um $%1 zu überweisen.</German>
-            <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes</French>
+            <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes.</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire €%1 necessiti di €%2 per pagare la tassa di trasferimento.</Italian>
             <Portuguese>Você não tem dinheiro suficiente na sua conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
             <Polish>Nie masz wystarczająco dużo środków na końcie, do przelewu $%1 będziesz potrzebował jeszcze $%2 na opłatę</Polish>
@@ -1073,7 +1073,7 @@
             <Spanish>%1 ha transferido $%2 a tu cuenta.</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>%1 vous a fait un virement de $%2</French>
+            <French>%1 vous a fait un virement de $%2.</French>
             <Italian>%1 ha effettuato un bonifico sul tuo conto di €%2</Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1084,7 +1084,7 @@
             <Spanish>No puedes retirar más de $999,999</Spanish>
             <Russian></Russian>
             <German>Du kannst nicht mehr als $999,999 abheben</German>
-            <French>Vous ne pouvez pas retirer plus de $999,999</French>
+            <French>Vous ne pouvez pas retirer plus de $999,999.</French>
             <Italian>Non puoi prelevare più di €999.000 in una volta</Italian>
             <Portuguese>Você pode sacar no máximo R$999.999</Portuguese>
             <Polish>Możesz jednorazowo pobrać maks $999,999 </Polish>
@@ -1095,7 +1095,7 @@
             <Spanish>No puedes retirar menos de $100</Spanish>
             <Russian></Russian>
             <German>Du kannst nicht weniger als $100 abheben</German>
-            <French>Vous ne pouvez pas retirer moins de $100</French>
+            <French>Vous ne pouvez pas retirer moins de $100.</French>
             <Italian>Non puoi prelevare meno di €100</Italian>
             <Portuguese>Você não pode sacar menos de $100.</Portuguese>
             <Polish>Nie możesz pobrać mniej niż $100 </Polish>
@@ -1106,7 +1106,7 @@
             <Spanish>Has retirado $%1 de tu cuenta bancaria</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 von deinem Bankkonto abgehoben</German>
-            <French>Vous avez retiré $%1 de votre compte en banque</French>
+            <French>Vous avez retiré $%1 de votre compte en banque.</French>
             <Italian>Hai prelevato €%1 dal tuo conto in banca</Italian>
             <Portuguese>Você sacou R$%1 de sua conta bancária.</Portuguese>
             <Polish>Pobrałeś z konta kwotę $%1 </Polish>
@@ -1118,7 +1118,7 @@
             <Italian>Hai ritirato €%1 dal nostro gruppo.</Italian>
             <Polish>Masz %1 $ wycofane z naszego gangu.</Polish>
             <Russian></Russian>
-            <French>Vous avez retiré $%1 de votre gang</French>
+            <French>Vous avez retiré $%1 de votre gang.</French>
             <Portuguese>Você sacou R$%1 da sua gangue</Portuguese>
             <German>Du hast $%1 vom Gang-Konto abgehoben.</German>
         </Key>
@@ -1150,7 +1150,7 @@
             <Spanish>Has depositado $%1 en tu cuenta de banco.</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 auf dein Bankkonto überwiesen</German>
-            <French>Vous avez déposé $%1 dans votre compte bancaire</French>
+            <French>Vous avez déposé $%1 dans votre compte bancaire.</French>
             <Italian>Hai despositato €%1 nel tuo conto bancario</Italian>
             <Portuguese>Você depositou R$%1 na sua conta bancária</Portuguese>
             <Polish>Zdeponowałeś na koncie bankowym $%1</Polish>
@@ -1207,7 +1207,7 @@
             <Spanish>Mensaje:</Spanish>
             <Russian></Russian>
             <German>Nachricht:</German>
-            <French>Message Texte:</French>
+            <French>Message Texte :</French>
             <Italian>Msg Giocatore:</Italian>
             <Portuguese>Mensagem:</Portuguese>
             <Polish>Do: Gracz</Polish>
@@ -1488,7 +1488,7 @@
             <Spanish>Este escondite esta controlado por %1.&lt;br/&gt;&lt;br/&gt;Estas seguro que quieres tomarlo?</Spanish>
             <Russian></Russian>
             <German>Das Versteck wird durch %1 kontrolliert.&lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du ihr Gang Gebiet übernehmen möchtest?</German>
-            <French>Cette planque est contrôlée par %1.&lt;br/&gt;&lt;br/&gt;Etes-vous sûr que vous voulez prendre leur zone de gang?</French>
+            <French>Cette planque est contrôlée par %1.&lt;br/&gt;&lt;br/&gt;Etes-vous sûr que vous voulez prendre leur zone de gang ?</French>
             <Italian>Questo Covo è controllato da %1.&lt;br/&gt;&lt;br/&gt;Sicuro di voler prendere il controllo della loro area?</Italian>
             <Portuguese>Esse esconderijo é controlado por %1.&lt;br/&gt;&lt;br/&gt;Você tem certeza que deseja tomar essa área?</Portuguese>
             <Polish>Ta kryjówka jest kontrolowana przez %1.&lt;br/&gt;&lt;br/&gt;Jesteś pewny że chcesz przjąć ten rejon.</Polish>
@@ -1499,7 +1499,7 @@
             <Spanish>Escondite bajo control...</Spanish>
             <Russian></Russian>
             <German>Versteck ist derzeit unter Kontrolle...</German>
-            <French>La Planque est actuellement sous contrôle ...</French>
+            <French>La Planque est actuellement sous contrôle...</French>
             <Italian>Il Covo è già sotto controllo...</Italian>
             <Portuguese>Esconderijo sobre controle....</Portuguese>
             <Polish>Kryjówka pod kontrolą ...</Polish>
@@ -1565,7 +1565,7 @@
             <Spanish>El nombre de tu pandilla solo puede consistir de: "Numeros, Letras y guion bajo"</Spanish>
             <Russian></Russian>
             <German>Du hast ein ungültiges Zeichen in deinem Gang Namen. Der Name darf nur aus Zahlen und Buchstaben sowie einem Unterstrich bestehen</German>
-            <French>Vous avez des caractères non valides dans le nom de votre gang. Il ne peut être constitué de chiffres et de lettres</French>
+            <French>Vous avez des caractères non valides dans le nom de votre gang. Il ne peut être constitué de chiffres et de lettres.</French>
             <Italian>Hai inserito caratteri non validi nel nome della Gang. Puoi inserire solo numeri e lettere con un underscore</Italian>
             <Portuguese>O nome da sua gangue tem caracteres inválidos. O nome so pode conter caracteres e números separados por underline</Portuguese>
             <Polish>Masz nieprawidłowe znaki w nazwie gangu - tylko litery i cyfry oraz podkreślnik</Polish>
@@ -1587,7 +1587,7 @@
             <Spanish>Has creado la Pandilla %1 por $%2</Spanish>
             <Russian></Russian>
             <German>Du hast die Gang %1 für $%2 erstellt</German>
-            <French>Vous avez créé le gang %1 pour $%2</French>
+            <French>Vous avez créé le gang %1 pour $%2.</French>
             <Italian>Hai creato la Gang %1 al costo di $%2</Italian>
             <Portuguese>Você criou a gangue %1 por R$%2</Portuguese>
             <Polish>Stworzyłeś gang %1 za $%2</Polish>
@@ -1598,7 +1598,7 @@
             <Spanish>Estas a punto de desmantelar la Pandilla, si prosiges la Pandilla se borrara de la base de datos. &lt;br/&gt;&lt;br/&gt;Estas seguro de querer desmantelarla? Cualquier dinero invertido no sera devuelto.</Spanish>
             <Russian></Russian>
             <German>Du bist dabei, die Gang aufzulösen. Durch Auflösung der Gang wird sie aus der Datenbank entfernt. &lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du die Gang auflösen willst? Du erhältst den Preis für die Erstellung nicht zurück.</German>
-            <French>Vous vous apprêtez à dissoudre le gang, en démantelant le gang, il sera supprimé de la base de données et le groupe sera supprimé. &lt;br/&gt;&lt;br/&gt;Etes-vous sûr de vouloir dissoudre le groupe? Vous ne serez pas remboursé le prix de sa création</French>
+            <French>Vous vous apprêtez à dissoudre le gang, en démantelant le gang, il sera supprimé de la base de données et le groupe sera supprimé. &lt;br/&gt;&lt;br/&gt;Etes-vous sûr de vouloir dissoudre le groupe? Vous ne serez pas remboursé le prix de sa création.</French>
             <Italian>Stai per sciogliere la Gang, facendolo sarà rimossa dal Database e il gruppo verrà cancellato. &lt;br/&gt;&lt;br/&gt;Sei sicuro di voler sciogliere il gruppo? Non verrai rimborsato dei fondi spesi per crearlo.</Italian>
             <Portuguese>Você vai desfazer a sua gangue, ela será apagada do banco de dados. &lt;br/&gt;&lt;br/&gt;Você tem certeza que quer desfazer a gangue? Você não será reembolsado.</Portuguese>
             <Polish>Chcesz rozwiązać gang, po jego rozwiązaniu zostanie on usunięty z bazy danych i cała grupa zostanie rozwiązana. &lt;br/&gt;&lt;br/&gt;Naprawdę chcesz rozwiązać grupę? Nie dostaniesz zwrotu środków za przeznaczonych na stworzenie gangu.</Polish>
@@ -1609,7 +1609,7 @@
             <Spanish>Desmantelando la Pandilla...</Spanish>
             <Russian></Russian>
             <German>Gang wird aufgelöst...</German>
-            <French>Démantèlement du gang ...</French>
+            <French>Démantèlement du gang...</French>
             <Italian>Sciogliendo la Gang...</Italian>
             <Portuguese>Desfazendo a gangue...</Portuguese>
             <Polish>Rozwiąż gang</Polish>
@@ -1664,7 +1664,7 @@
             <Spanish>Tiense que selecionar a quien invitar!</Spanish>
             <Russian></Russian>
             <German>Du musst einen Spieler zum Einladen auswählen!</German>
-            <French>Vous devez sélectionner une personne à inviter!</French>
+            <French>Vous devez sélectionner une personne à inviter !</French>
             <Italian>Devi selezionare una persona da invitare!</Italian>
             <Portuguese>Você tem que selecionar um jogador para convidar!</Portuguese>
             <Polish>Musisz zaznaczyć osobę aby ją zaprosić</Polish>
@@ -1697,7 +1697,7 @@
             <Spanish>No te puedes expulsar a ti mismo!</Spanish>
             <Russian></Russian>
             <German>Du kannst dich nicht selbst kicken!</German>
-            <French>Vous ne pouvez pas kicker vous-même!</French>
+            <French>Vous ne pouvez pas kicker vous-même !</French>
             <Italian>Non puoi espellerti da solo!</Italian>
             <Portuguese>Você não pode kickar você mesmo!</Portuguese>
             <Polish>Nie możesz sam się wykopać!</Polish>
@@ -1719,7 +1719,7 @@
             <Spanish>Tienes que seleccionar a quien expulsar!</Spanish>
             <Russian></Russian>
             <German>Du musst einen Spieler auswählen, um ihn kicken zu können!</German>
-            <French>Vous devez choisir une personne pour la virée!</French>
+            <French>Vous devez choisir une personne pour la virer !</French>
             <Italian>Devi selezionare una persona da espellere!</Italian>
             <Portuguese>Você tem que selecionar um jogador para kickar!</Portuguese>
             <Polish>Musisz zaznaczyć osobę do wykopania</Polish>
@@ -1730,7 +1730,7 @@
             <Spanish>No puedes salir de la Pandilla sin apuntar a un nuevo líder!</Spanish>
             <Russian></Russian>
             <German>Du kannst die Gang nicht verlassen, ohne einen neuen Anführer zu ernennen!</German>
-            <French>Vous ne pouvez pas quitter le gang sans la nomination d'un nouveau chef d'abord!</French>
+            <French>Vous ne pouvez pas quitter le gang sans la nomination d'un nouveau chef d'abord !</French>
             <Italian>Non puoi abbandonare la Gang prima di aver selezionato un nuovo Capo!</Italian>
             <Portuguese>Você não pode sair da gangue sem transferir a liderança antes!</Portuguese>
             <Polish>Nie możesz opuścić gangu bez przekazania komuś szefostwa nad gangiem</Polish>
@@ -1763,7 +1763,7 @@
             <Spanish>Tu ya eres el líder!</Spanish>
             <Russian></Russian>
             <German>Du bist bereits der Anführer!</German>
-            <French>Vous êtes déjà chef!</French>
+            <French>Vous êtes déjà chef !</French>
             <Italian>Sei già il Capo!</Italian>
             <Portuguese>Você já está na liderança!</Portuguese>
             <Polish>Jesteś już liderem!</Polish>
@@ -1774,7 +1774,7 @@
             <Spanish>Tienes que seleccionar a alguien primero!</Spanish>
             <Russian></Russian>
             <German>Du musst erst eine Person auswählen!</German>
-            <French>Vous devez choisir une personne d'abord!</French>
+            <French>Vous devez choisir une personne d'abord !</French>
             <Italian>Devi selezionare una persona!</Italian>
             <Portuguese>Você tem que selecionar um jogador antes!</Portuguese>
             <Polish>Musisz najpierw zaznaczyć osobę!</Polish>
@@ -1818,7 +1818,7 @@
             <Spanish>Precio:</Spanish>
             <Russian></Russian>
             <German>Preis:</German>
-            <French>Prix:</French>
+            <French>Prix :</French>
             <Italian>Costo:</Italian>
             <Portuguese>Preço:</Portuguese>
             <Polish>Koszt:</Polish>
@@ -1840,7 +1840,7 @@
             <Spanish>Corriente:</Spanish>
             <Russian></Russian>
             <German>Aktuell:</German>
-            <French>Actuel:</French>
+            <French>Actuel :</French>
             <Italian>Attuale:</Italian>
             <Portuguese>Atual:</Portuguese>
             <Polish>Aktualny:</Polish>
@@ -1851,7 +1851,7 @@
             <Spanish>Falta:</Spanish>
             <Russian></Russian>
             <German>Fehlend:</German>
-            <French>Manquant:</French>
+            <French>Manquant :</French>
             <Italian>Mancanza:</Italian>
             <Portuguese>Faltando:</Portuguese>
             <Polish>Brakuje:</Polish>
@@ -1884,7 +1884,7 @@
             <Spanish>Fondos:</Spanish>
             <Russian></Russian>
             <German>Geld:</German>
-            <French>Fonds:</French>
+            <French>Fonds :</French>
             <Italian>Fondi</Italian>
             <Portuguese>Recursos:</Portuguese>
             <Polish>Środki:</Polish>
@@ -1974,7 +1974,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Ce bâtiment est une Planque de Gang !</French>
+            <French>Ce bâtiment est une planque de gang !</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2084,7 +2084,7 @@
             <Spanish>No se encontraron vehículos en el Garaje.</Spanish>
             <Russian></Russian>
             <German>Keine Fahrzeuge in der Garage gefunden.</German>
-            <French>Aucuns Vehicules.</French>
+            <French>Aucun véhicule trouvé dans le garage.</French>
             <Italian>Non hai veicoli nel Garage.</Italian>
             <Portuguese>Nenhum veiculo encontrado na garagem.</Portuguese>
             <Polish>Nie znaleziono pojazdów w garażu</Polish>
@@ -2150,7 +2150,7 @@
             <Spanish>Vendiste el vehículo por $%1</Spanish>
             <Russian></Russian>
             <German>Du verkaufst dein Fahrzeug für $%1</German>
-            <French>Vous avez vendu votre véhicule pour $%1</French>
+            <French>Vous avez vendu votre véhicule pour $%1.</French>
             <Italian>Hai venduto il veicolo per $%1</Italian>
             <Portuguese>Você vendeu um veículo por R$%1</Portuguese>
             <Polish>Sprzedałeś pojazd za %1</Polish>
@@ -2194,7 +2194,7 @@
             <Spanish>Tu vehículo esta listo! </Spanish>
             <Russian></Russian>
             <German>Dein Fahrzeug ist bereit!</German>
-            <French>Votre véhicule est prêt</French>
+            <French>Votre véhicule est prêt.</French>
             <Italian>Il tuo veicolo è pronto</Italian>
             <Portuguese>O seu veículo está pronto</Portuguese>
             <Polish>Pojazd jest gotowy</Polish>
@@ -2205,7 +2205,7 @@
             <Spanish>El servidor esta tratando de guardar el vehículo...</Spanish>
             <Russian></Russian>
             <German>Der Server versucht, das Fahrzeug zu speichern...</German>
-            <French>Le serveur tente de stocker le véhicule ...</French>
+            <French>Le serveur tente de stocker le véhicule...</French>
             <Italian>Il server sta cercando di depositare il veicolo...</Italian>
             <Portuguese>O servidor está guardando o veiculo...</Portuguese>
             <Polish>Serwer próbuje schować pojazd w garażu ...</Polish>
@@ -2227,7 +2227,7 @@
             <Spanish>No hay un vehículo cerca del NPC.</Spanish>
             <Russian></Russian>
             <German>Es befindet sich kein Fahrzeug in der Nähe des NPC.</German>
-            <French>Il n'y a pas de véhicule près du PNJ</French>
+            <French>Il n'y a pas de véhicule près du PNJ.</French>
             <Italian>Non c'è alcun veicolo vicino all'NPC.</Italian>
             <Portuguese>Não existe um veículo proximo ao NPC</Portuguese>
             <Polish>Nie ma pojazdu w pobliżu NPC</Polish>
@@ -2398,7 +2398,7 @@
             <Spanish>A Pie:</Spanish>
             <Russian></Russian>
             <German>Zu Fuß:</German>
-            <French>Pied:</French>
+            <French>A pied :</French>
             <Italian>A piedi:</Italian>
             <Portuguese>A Pé:</Portuguese>
             <Polish>Na nogach:</Polish>
@@ -2409,7 +2409,7 @@
             <Spanish>En Carro:</Spanish>
             <Russian></Russian>
             <German>Im Auto:</German>
-            <French>Terre:</French>
+            <French>Terre :</French>
             <Italian>Auto:</Italian>
             <Portuguese>No Carro:</Portuguese>
             <Polish>W aucie:</Polish>
@@ -2420,7 +2420,7 @@
             <Spanish>En Aire:</Spanish>
             <Russian></Russian>
             <German>In der Luft:</German>
-            <French>Air:</French>
+            <French>Air :</French>
             <Italian>Aria:</Italian>
             <Portuguese>No Ar:</Portuguese>
             <Polish>W powietrzu:</Polish>
@@ -3017,7 +3017,7 @@
             <Spanish>Has recolectado carne cruda de %1</Spanish>
             <Russian></Russian>
             <German>You have collected some raw %1 meat</German>
-            <French>Vous avez recolté quelques bout de viande de %1</French>
+            <French>Vous avez recolté quelques morceaux de viande crue %1</French>
             <Italian>You have collected some raw %1 meat</Italian>
             <Portuguese>You have collected some raw %1 meat</Portuguese>
             <Polish>You have collected some raw %1 meat</Polish>
@@ -3050,7 +3050,7 @@
             <Spanish>Tirando red de pesca...</Spanish>
             <Russian></Russian>
             <German>Fischernetz auswerfen...</German>
-            <French>Déploiement du filet de pêche....</French>
+            <French>Déploiement du filet de pêche...</French>
             <Italian>Posizionando la rete da pesca...</Italian>
             <Portuguese>Jogando rede de pesca...</Portuguese>
             <Polish>Rzucam sieć...</Polish>
@@ -3149,7 +3149,7 @@
             <Spanish>LLeva el paquete a: %1</Spanish>
             <Russian></Russian>
             <German>Liefere dieses Paket bei %1 ab</German>
-            <French>Livrer ce paquet à %1</French>
+            <French>Livrer ce paquet à %1.</French>
             <Italian>Consegna questo pacco al %1</Italian>
             <Portuguese>Entregue esse pacote para %1</Portuguese>
             <Polish>Dostarcz przesyłkę do %1</Polish>
@@ -3179,7 +3179,7 @@
         <Key ID="STR_NOTF_HS_FullHealth">
             <Original>You do not need to be healed!</Original>
             <Czech>Nemusíte být uzdraven!</Czech>
-            <French>Vous ne devez pas être guéri!</French>
+            <French>Vous ne devez pas être guéri !</French>
             <Spanish>Usted no necesita ser curado!</Spanish>
             <Italian>Non è necessario essere guarito!</Italian>
             <Polish>Nie trzeba się wyleczyć!</Polish>
@@ -3190,7 +3190,7 @@
         <Key ID="STR_NOTF_HS_PopUp">
             <Original>Spend $%1 to be fully healed?</Original>
             <Czech>Útrata $%1 musí být zcela vyléčit?</Czech>
-            <French>Donnez $%1 pour être complètement guéri?</French>
+            <French>Donnez $%1 pour être complètement guéri ?</French>
             <Spanish>Gastar $%1 para ser curado por completo?</Spanish>
             <Italian>Spendere $%1 di essere completamente guarito?</Italian>
             <Polish>Wydać $%1 w pełni uzdrowiony?</Polish>
@@ -3226,7 +3226,7 @@
             <Spanish>Debes estar a 5m mientras que te curan.</Spanish>
             <Russian></Russian>
             <German>Du musst in der Nähe des Doktors bleiben, während du geheilt wirst</German>
-            <French>Vous devez être à moins de 5m pendant que le médecin vous soigne</French>
+            <French>Vous devez être à moins de 5m pendant que le médecin vous soigne.</French>
             <Italian>Devi restare entro 5m dal dottore per essere curato</Italian>
             <Portuguese>Você tem que estar a 5m para o médico curá-lo</Portuguese>
             <Polish>Musisz być w pobliżu doktora gdy ten cię leczy - ok 5m</Polish>
@@ -3281,7 +3281,7 @@
             <Spanish>Has embargado un %1\n\nHas recibido $%2 por  limpiar las calles!</Spanish>
             <Russian></Russian>
             <German>Du hast einen %1 beschlagnahmt\n\nDu hast $%2 für das Aufräumen der Straßen bekommen!</German>
-            <French>Vous avez mis en fourrière un(e) %1\n\nVous avez reçus $%2 pour avoir nettoyé les rues!</French>
+            <French>Vous avez mis en fourrière un(e) %1\n\nVous avez reçus $%2 pour avoir nettoyé les rues !</French>
             <Italian>Hai sequestrato un %1\n\nHai ricevuto $%2 per aver mantenuto l'ordine nelle strade!</Italian>
             <Portuguese>Você apreendeu %1\n\nVocê recebeu R$%2 por deixar as ruas mais seguras!</Portuguese>
             <Polish>Usunąłeś %1\n\n Otrzymujesz    $%2 za oczyszczanie mapy</Polish>
@@ -3347,7 +3347,7 @@
             <Spanish>No estas cerca de un campo de recursos.</Spanish>
             <Russian></Russian>
             <German>Du bist nicht in der Nähe einer Mine</German>
-            <French>Vous n'êtes pas à proximité d'un champ de ressources</French>
+            <French>Vous n'êtes pas à proximité d'un champ de ressources.</French>
             <Italian>Non sei vicino ad un campo risorse</Italian>
             <Portuguese>Você não está próximo ao recurso</Portuguese>
             <Polish>Nie jesteś w pobliżu pola surowców</Polish>
@@ -3457,7 +3457,7 @@
             <Spanish>%1 a pagado la fianza!</Spanish>
             <Russian></Russian>
             <German>%1 hat die Kaution bezahlt!</German>
-            <French>%1 a payé sa caution!</French>
+            <French>%1 a payé sa caution !</French>
             <Italian>%1 ha pagato la cauzione!</Italian>
             <Portuguese>%1 pagou a fiança!</Portuguese>
             <Polish>%1 wpłacił kaucję!</Polish>
@@ -3476,7 +3476,7 @@
         <Key ID="STR_NOTF_PlayerNear">
             <Original>You can't chop a vehicle while a player is near!</Original>
             <Czech>Nemůžeš sekat vozidla, zatímco hráč je blízko!</Czech>
-            <French>Vous ne pouvez pas vendre un véhicule alors qu'un le joueur est proche!</French>
+            <French>Vous ne pouvez pas vendre un véhicule alors qu'un le joueur est proche !</French>
             <Spanish>No puedes vender este vehículo mientras hay un jugador cerca!</Spanish>
             <Italian>Non si può rubare un veicolo mentre un giocatore è vicino!</Italian>
             <Polish>Nie można posiekać pojazd podczas gdy gracz jest w pobliżu!</Polish>
@@ -3512,7 +3512,7 @@
             <Spanish>No se pudo buscar el vehículo.</Spanish>
             <Russian></Russian>
             <German>Das Fahrzeug konnte nicht durchsucht werden</German>
-            <French>Impossible de fouiller le véhicule</French>
+            <French>Impossible de fouiller le véhicule.</French>
             <Italian>Impossibile ispezionare il veicolo</Italian>
             <Portuguese>Você não pode revistar o veículo</Portuguese>
             <Polish>Nie można przeszukać pojazdu</Polish>
@@ -3556,7 +3556,7 @@
             <Spanish>%1 fue soltado por %2</Spanish>
             <Russian></Russian>
             <German>%1 wurde von %2 freigelassen</German>
-            <French>%1 a été démenotté par %2</French>
+            <French>%1 a été démenotté par %2.</French>
             <Italian>%2 ha tolto le manette a %1</Italian>
             <Portuguese>%1 foi liberado por %2</Portuguese>
             <Polish>%1 został rozkuty przez %2</Polish>
@@ -3567,7 +3567,7 @@
             <Spanish>%1 le ha robado $%3 a %2</Spanish>
             <Russian></Russian>
             <German>%1 hat $%3 von %2 geraubt</German>
-            <French>%1 a volés %2 pour $%3</French>
+            <French>%1 a volé %2 pour $%3.</French>
             <Italian>%1 ha rapinato %2 di $%3</Italian>
             <Portuguese>%1 roubou R$%3 de %2</Portuguese>
             <Polish>%1 obrabował $%2 na $%3</Polish>
@@ -3589,7 +3589,7 @@
             <Spanish>%1 fue paralizado por %2</Spanish>
             <Russian></Russian>
             <German>%1 wurde von %2 getazert</German>
-            <French>%1 a été tazé par %2</French>
+            <French>%1 a été tazé par %2.</French>
             <Italian>%1 è stato taserato da %2</Italian>
             <Portuguese>%1 foi eletrocutado por %2</Portuguese>
             <Polish>%1 został potraktowany paralizatorem przez %2</Polish>
@@ -3622,7 +3622,7 @@
             <Spanish>Te han sacado del vehículo</Spanish>
             <Russian></Russian>
             <German>Du wurdest aus dem Fahrzeug gezogen</German>
-            <French>Vous avez sortie les personnes du véhicule</French>
+            <French>Vous avez sorti les personnes du véhicule.</French>
             <Italian>Sei stato estratto dal veicolo</Italian>
             <Portuguese>Você foi retirado do veículo</Portuguese>
             <Polish>Zostałeś wyciągnięty z pojazdu</Polish>
@@ -3633,7 +3633,7 @@
             <Spanish>%1 te ha dado %2 %3</Spanish>
             <Russian></Russian>
             <German>%1 hat dir %2 %3 gegeben</German>
-            <French>%1 vous a donné %2 %3</French>
+            <French>%1 vous a donné %2 %3.</French>
             <Italian>%1 ti ha dato %2 %3</Italian>
             <Portuguese>%1 lhe deu %2 %3</Portuguese>
             <Polish>%1 dał ci %2 %3</Polish>
@@ -3644,7 +3644,7 @@
             <Spanish>%1 te ha dado $%2</Spanish>
             <Russian></Russian>
             <German>%1 hat dir $%2 gegeben</German>
-            <French>%1 vous a donné $%2</French>
+            <French>%1 vous a donné $%2.</French>
             <Italian>%1 ti ha dato $%2</Italian>
             <Portuguese>%1 lhe deu R$%2</Portuguese>
             <Polish>%1 dał ci $%2</Polish>
@@ -3655,7 +3655,7 @@
             <Spanish>Mandando información, por favor espere...</Spanish>
             <Russian></Russian>
             <German>Sende Informationen an den Server, bitte warten.....</German>
-            <French>Envoi d'informations au serveur, patientez s'il vous plait....</French>
+            <French>Envoi d'informations au serveur, patientez s'il vous plait...</French>
             <Italian>Invio delle informazioni al server, attendere prego......</Italian>
             <Portuguese>Enviando informações para o servidor, seja paciente.....</Portuguese>
             <Polish>Przesyłam informacje na server poczekaj ....</Polish>
@@ -3666,7 +3666,7 @@
             <Spanish>Una acción ya esta siendo procesada...</Spanish>
             <Russian></Russian>
             <German>Es wird bereits eine Aktion ausgeführt...</German>
-            <French>Une action est déjà en cours de traitement ...</French>
+            <French>Une action est déjà en cours de traitement...</French>
             <Italian>Un'azione è già in corso...</Italian>
             <Portuguese>Você já está realizando um ação...</Portuguese>
             <Polish>Akcja jest w trakcie wykonywania...</Polish>
@@ -3674,7 +3674,7 @@
         <Key ID="STR_NOTF_ActionDelay">
             <Original>You're doing it too fast!</Original>
             <Czech>Děláte to příliš rychle!</Czech>
-            <French>Vous le faites trop vite!</French>
+            <French>Vous le faites trop vite !</French>
             <Spanish>Lo estas haciendo muy rapido!</Spanish>
             <Italian>Lo stai facendo troppo veloce!</Italian>
             <Russian></Russian>
@@ -3688,7 +3688,7 @@
             <Spanish>No tienes suficiente espacio para eso!</Spanish>
             <Russian></Russian>
             <German>Du hast für diese Menge nicht genug Platz!</German>
-            <French>Vous n'avez pas assez d'espace!</French>
+            <French>Vous n'avez pas assez d'espace !</French>
             <Italian>Non hai abbastanza spazio per quel quantitativo!</Italian>
             <Portuguese>Você não tem espaço suficiente para guardar o item</Portuguese>
             <Polish>Nie masz tyle miejsca!</Polish>
@@ -3699,7 +3699,7 @@
             <Spanish>No tienes tanto dinero!</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viel Geld!</German>
-            <French>Vous n'avez pas assez d'argent!</French>
+            <French>Vous n'avez pas assez d'argent !</French>
             <Italian>Non hai tutti quei soldi!</Italian>
             <Portuguese>Você não tem todo esse dinheiro!</Portuguese>
             <Polish>Nie masz tyle pieniędzy!</Polish>
@@ -3710,7 +3710,7 @@
             <Spanish>No eres policía.</Spanish>
             <Russian></Russian>
             <German>Du bist kein Polizist.</German>
-            <French>Vous n'êtes pas flic.</French>
+            <French>Vous n'êtes pas policier.</French>
             <Italian>Non sei un poliziotto.</Italian>
             <Portuguese>Você não é um Policial.</Portuguese>
             <Polish>Nie jesteś policjantem</Polish>
@@ -3733,7 +3733,7 @@
             <Italian>È necessario $%1 a processo senza patente!</Italian>
             <Russian></Russian>
             <German>Du musst $%1 haben, um ohne eine Lizenz verarbeiten zu können!</German>
-            <French>Vous devez payer $%1 pour traiter sans licence!</French>
+            <French>Vous devez payer $%1 pour traiter sans licence !</French>
             <Portuguese>Você precisa de R$%1 para processar sem uma licença!</Portuguese>
             <Polish>Potrzebujesz $%1 w celu przetworzenia bez licencji</Polish>
         </Key>
@@ -3744,7 +3744,7 @@
             <Italian>Non disponi di abbastanza materiale grezzo!</Italian>
             <Polish>Nie masz wystarczająco dużo rzeczy!</Polish>
             <Russian></Russian>
-            <French>Vous n'avez pas assez d'item!</French>
+            <French>Vous n'avez pas assez d'items !</French>
             <Portuguese>Você não tem itens suficientes!</Portuguese>
             <German>Du hast nicht genug Materialien!</German>
         </Key>
@@ -3765,7 +3765,7 @@
             <Spanish>No puedes usar Keys de Acciones tan rápido!</Spanish>
             <Russian></Russian>
             <German>Die Aktionstaste kann nicht so schnell hintereinander genutzt werden!</German>
-            <French>Vous ne pouvez pas utiliser rapidement les touches d'action!</French>
+            <French>Vous ne pouvez pas utiliser rapidement les touches d'action !</French>
             <Italian>Non puoi riusare così rapidamente il tasto azione!</Italian>
             <Portuguese>Você não pode usar a tecla de ação repetidamente!</Portuguese>
             <Polish>Za szybko używasz przycisku akcji!</Polish>
@@ -3787,7 +3787,7 @@
             <Spanish>No se pudo agregar a tu inventario.</Spanish>
             <Russian></Russian>
             <German>Es konnte nichts zu deinem Inventar hinzugefügt werden</German>
-            <French>Impossible d'ajouter cela à votre inventaire</French>
+            <French>Impossible d'ajouter cela à votre inventaire.</French>
             <Italian>Non puoi aggiungerlo al tuo inventario.</Italian>
             <Portuguese>Não foi possível adicionar o item ao seu inventário</Portuguese>
             <Polish>Nie można dodać tego do twojego wyposażenia</Polish>
@@ -3798,7 +3798,7 @@
             <Spanish>No has comido nada en un largo rato. Deberías buscar algo de comer!</Spanish>
             <Russian></Russian>
             <German>Du hast schon eine Weile nichts mehr gegessen, du solltest schnell etwas zum Essen suchen!</German>
-            <French>Vous n'avez rien mangé depuis un certain temps, vous devriez trouver quelque chose à manger!</French>
+            <French>Vous n'avez rien mangé depuis un certain temps, vous devriez trouver quelque chose à manger !</French>
             <Italian>E' da tempo che non mangi qualcosa, dovresti trovare qualcosa da mettere sotto i denti in fretta!</Italian>
             <Portuguese>Você não come a bastante tempo. Ache algo para comer logo!.</Portuguese>
             <Polish>Zaczynasz być głodny, poszukaj czegoś do jedzenia!</Polish>
@@ -3809,7 +3809,7 @@
             <Spanish>Te esta dando mucha, mucha hambre. Come algo o moriras!</Spanish>
             <Russian></Russian>
             <German>Du hast Hunger, du solltest schnell etwas essen oder du wirst verhungern.</German>
-            <French>Vous commencez à mourir de faim, vous avez besoin de trouver quelque chose à manger, sinon, vous allez mourrir</French>
+            <French>Vous commencez à mourir de faim, vous devez trouver quelque chose à manger, ou vous mourrez.</French>
             <Italian>Ti stai indebolendo, devi trovare qualcosa da mangiare o morirai.</Italian>
             <Portuguese>Você está começando a ficar famindo. Se você não comer irá morrer de fome.</Portuguese>
             <Polish>Długo nie jadłeś, zjedz coś lub zginiesz z głodu.</Polish>
@@ -3820,7 +3820,7 @@
             <Spanish>Estas a punto de morir de hambre, busca comida rápido!</Spanish>
             <Russian></Russian>
             <German>Du bist am Verhungern, du wirst sterben, wenn du nichts zum Essen findest</German>
-            <French>Vous êtes en train de mourir de faim, vous allez mourir très bientôt si vous ne mangez pas quelque chose</French>
+            <French>Vous êtes en train de mourir de faim, vous allez mourir très bientôt si vous ne mangez pas quelque chose.</French>
             <Italian>Stai perdendo le forze, se non mangi qualcosa in fretta morirai.</Italian>
             <Portuguese>Você está morrendo de fome, coma algo ou irá morrer.</Portuguese>
             <Polish>Zaczynasz słabnąć z głodu zjedz coś lub zginiesz !!!</Polish>
@@ -3842,7 +3842,7 @@
             <Spanish>No has tomado nada en un largo rato. Deberías buscar algo de tomar!</Spanish>
             <Russian></Russian>
             <German>Du hast schon eine Weile nichts mehr getrunken! Du solltest schnell etwas zum Trinken suchen.</German>
-            <French>Vous n'avez rien bu depuis un certain temps, vous devriez trouver quelque chose à boire!</French>
+            <French>Vous n'avez rien bu depuis un certain temps, vous devriez trouver quelque chose à boire !</French>
             <Italian>E' da parecchio tempo che non bevi qualcosa, dovresti trovare qualcosa da bere.</Italian>
             <Portuguese>Você não bebe nada a bastante tempo. Ache algo para beber logo.</Portuguese>
             <Polish>Zaczynasz być spragniony, powinienieś poszukać czegoś do picia.</Polish>
@@ -3853,7 +3853,7 @@
             <Spanish>Te esta dando mucha, mucha sed. Toma algo o moriras!</Spanish>
             <Russian></Russian>
             <German>Du hast Durst! Du solltest schnell etwas trinken oder du wirst verdursten.</German>
-            <French>Vous commencez à mourir de soif, vous avez besoin de trouver quelque chose à boire, sinon, vous allez mourrir</French>
+            <French>Vous commencez à mourir de soif, vous avez besoin de trouver quelque chose à boire, sinon, vous allez mourrir.</French>
             <Italian>E' troppo tempo che non bevi qualcosa, dovresti trovare qualcosa da bere o comincerai a disitratarti.</Italian>
             <Portuguese>Você está ficando desidratado. Se não beber algo poderá morrer.</Portuguese>
             <Polish>Długo nic nie piłeś, napij się czegoś bo możesz zginąć z pragnienia.</Polish>
@@ -3864,7 +3864,7 @@
             <Spanish>Estas a punto de morir de desidratación, busca algo de tomar rapido!</Spanish>
             <Russian></Russian>
             <German>Du bist am Verdursten. Du wirst sterben, wenn du nichts zum Trinken findest</German>
-            <French>Vous êtes en train de mourir de soif, vous allez mourir très bientôt si vous ne buvez pas quelque chose</French>
+            <French>Vous êtes en train de mourir de soif, vous allez mourir très bientôt si vous ne buvez pas quelque chose.</French>
             <Italian>Stai soffrendo per una grave deidratazione, trova velocemente qualcosa da bere o morirai!</Italian>
             <Portuguese>Você está sofrendo de desidratação. Beba algo ou irá morrer!</Portuguese>
             <Polish>Zaczynasz słabnąć z pragnienia, wypij coś inaczej zginiesz!!!</Polish>
@@ -3886,7 +3886,7 @@
             <Spanish>Estas cargando tu peso máximo! No puedes correr o moverte rapido hasta que botes algunos objetos!</Spanish>
             <Russian></Russian>
             <German>Du trägst zu viel bei dir! Du bist nicht in der Lage, zu rennen oder dich schnell zu bewegen, bis du Gegenstände abgelegt hast!</German>
-            <French>Vous êtes surchargé, vous ne pouvez plus courrir ou bouger rapidement à moins de lacher quelques objets!</French>
+            <French>Vous êtes surchargé, vous ne pouvez plus courrir ou bouger rapidement à moins de lacher quelques objets !</French>
             <Italian>Stai trasportando oltre il tuo carico massimo! Non riuscirai a correre fino a quando non ti libererai di qualche oggetto!</Italian>
             <Portuguese>Você está carregando muito peso. Você não irá conseguir correr ou se mover rapidamente.</Portuguese>
             <Polish>Niesiesz maksymalny ciężar, nie będziesz mógł biegać ani szybko chodzić dopuki nie wyrzucisz jakiejś rzeczy</Polish>
@@ -3916,7 +3916,7 @@
         <Key ID="STR_NOTF_CannotSeizePerson">
             <Original>You couldn't effectively seize any items. Try again.</Original>
             <Czech>Dalo by se efektivně využily všech položek. Zkus to znovu.</Czech>
-            <French>Vous ne pouviez pas saisir les articles. Réessayer.</French>
+            <French>Vous ne pouviez pas saisir les articles. Réessayez.</French>
             <Spanish>No pudistes efectivamente, confiscar algun objeto. Prueba de nuevo.</Spanish>
             <Italian>Impossibile perquisire la persona in maniera esaustiva. Riprova.</Italian>
             <Polish>Nie można skutecznie wykorzystać żadnych przedmiotów. Spróbuj ponownie.</Polish>
@@ -3938,7 +3938,7 @@
         <Key ID="STR_NOTF_ActionInVehicle">
             <Original>You can't do that from inside the vehicle!</Original>
             <Czech>Můžete to udělat zevnitř vozu!</Czech>
-            <French>Vous ne pouvez pas le faire à l'intérieur du véhicule!</French>
+            <French>Vous ne pouvez pas le faire à l'intérieur du véhicule !</French>
             <Spanish>No puedes hacer eso desde adentro del vehículo!</Spanish>
             <Italian>Non si può fare dall'interno del veicolo!</Italian>
             <Russian></Russian>
@@ -3982,7 +3982,7 @@
         <Key ID="STR_NOTF_GatherVeh">
             <Original>You can't gather from inside a car!</Original>
             <Czech>Nemůžete sbírat zevnitř vozu!</Czech>
-            <French>Vous ne pouvez pas ramasser à l'intérieur d'une voiture!</French>
+            <French>Vous ne pouvez pas ramasser à l'intérieur d'une voiture !</French>
             <Spanish>No puedes recolectar desde adentro de un vehículo!</Spanish>
             <Italian>Non si può raccogliere da dentro una macchina!</Italian>
             <Russian></Russian>
@@ -4037,7 +4037,7 @@
         <Key ID="STR_NOTF_noOneSelected">
             <Original>No one was selected!</Original>
             <Czech>Nikdo byl vybrán!</Czech>
-            <French>Personne n'a été sélectionné!</French>
+            <French>Personne n'a été sélectionné !</French>
             <Spanish>Nadie fue seleccionado!</Spanish>
             <Italian>Nessuno è stato selezionato!</Italian>
             <Polish>Nikt nie został wybrany!</Polish>
@@ -4103,7 +4103,7 @@
         <Key ID="STR_NOTF_couldNotGive">
             <Original>Couldn't give that much of that item, maybe you don't have that amount?</Original>
             <Czech>Nemohl dát, že velká část této položky, možná nemáte tuto částku?</Czech>
-            <French>Impossible de donner cet article, peut-être vous ne disposez pas d'autant?</French>
+            <French>Impossible de donner cet article, peut-être vous ne disposez pas d'autant ?</French>
             <Spanish>No se pudo dar a que gran parte de ese elemento, tal vez usted no tiene esa cantidad?</Spanish>
             <Italian>Impossibile dare quella quantità di oggetti.</Italian>
             <Polish>nie mógł dać, że wiele z tego elementu, może nie masz tej kwoty?</Polish>
@@ -4125,7 +4125,7 @@
         <Key ID="STR_NOTF_notEnoughtToGive">
             <Original>You don't have that much to give!</Original>
             <Czech>Nemusíte to hodně dát!</Czech>
-            <French>Vous n'avez pas autant sur vous!</French>
+            <French>Vous n'avez pas autant sur vous !</French>
             <Spanish>Usted no tiene mucho para dar!</Spanish>
             <Italian>Non hai abbastanza oggetti da dare!</Italian>
             <Polish>Nie ma tego dużo dać!</Polish>
@@ -4213,7 +4213,7 @@
         <Key ID="STR_NOTF_cannotRemoveHouseKeys">
             <Original>You cannot remove the keys to your house!</Original>
             <Czech>Nemůžete odstranit klíče od domu!</Czech>
-            <French>Vous ne pouvez pas supprimer les clés de votre maison!</French>
+            <French>Vous ne pouvez pas supprimer les clés de votre maison !</French>
             <Spanish>No se puede quitar las llaves de su casa!</Spanish>
             <Italian>Non è possibile rimuovere le chiavi a casa tua!</Italian>
             <Polish>Nie można usunąć klucze do swojego domu!</Polish>
@@ -4235,7 +4235,7 @@
         <Key ID="STR_NOTF_couldNotRemoveThatMuch">
             <Original>Could not remove that much of that item. Maybe you do not have that amount?</Original>
             <Czech>Nepodařilo se odstranit, že velká část této položky. Možná, že nemáte tuto částku?</Czech>
-            <French>Impossible de supprimer autant. Peut-être que vous ne disposez pas de ce montant?</French>
+            <French>Impossible de supprimer autant. Peut-être que vous ne disposez pas de ce montant ?</French>
             <Spanish>No se pudo eliminar que gran parte de ese elemento. Tal vez usted no tiene esa cantidad?</Spanish>
             <Italian>Impossibile rimuovere quel quantitativo di oggetti.</Italian>
             <Polish>Nie można usunąć, że wiele z tego elementu. Może nie masz tej kwoty?</Polish>
@@ -4257,7 +4257,7 @@
         <Key ID="STR_NOTF_menuWillNotOpen">
             <Original>Something went wrong; the menu will not open?</Original>
             <Czech>Něco se pokazilo; nabídka neotevře?</Czech>
-            <French>Quelque chose a mal tourné; le menu ne sera pas ouvert?</French>
+            <French>Quelque chose a mal tourné; le menu ne sera pas ouvert ?</French>
             <Spanish>Algo salió mal; el menú no se abre?</Spanish>
             <Italian>Qualcosa è andato storto; il menu non si apre?</Italian>
             <Polish>Coś poszło nie tak; menu nie otworzy?</Polish>
@@ -4268,7 +4268,7 @@
         <Key ID="STR_NOTF_ConfigDoesNotExist">
             <Original>Config does not exist?</Original>
             <Czech>Config neexistuje?</Czech>
-            <French>Config n'existe pas?</French>
+            <French>Config n'existe pas ?</French>
             <Spanish>Config no existe?</Spanish>
             <Italian>Config non esiste?</Italian>
             <Polish>Konfiguracja nie istnieje?</Polish>
@@ -4279,7 +4279,7 @@
         <Key ID="STR_NOTF_canOnlyStoreInLandVeh">
             <Original>You cannot store that in anything but a land vehicle!</Original>
             <Czech>Nelze uložit, že v ničem jiném než pozemní vozidla!</Czech>
-            <French>Vous pouvez stocker cette item seulement dans les vehicules terrestres!</French>
+            <French>Vous pouvez stocker cette item seulement dans les vehicules terrestres !</French>
             <Spanish>No se puede almacenar en cualquier cosa menos que un vehículo terrestre!</Spanish>
             <Italian>Non è possibile depositare questa risorsa in un veicolo che non sia terrestre!</Italian>
             <Polish>Nie można zapisać, że w nic poza pojazdem lądowym!</Polish>
@@ -4290,7 +4290,7 @@
         <Key ID="STR_NOTF_notEnoughCashToStoreInVeh">
             <Original>You don't have that much cash on you to store in the vehicle!</Original>
             <Czech>Nemáte tolik peněz na vás uložit do vozidla!</Czech>
-            <French>Vous ne disposez pas d'autant d'argent sur vous pour stocker dans le véhicule!</French>
+            <French>Vous ne disposez pas d'autant d'argent sur vous pour stocker dans le véhicule !</French>
             <Spanish>Usted no tiene esa cantidad de dinero en efectivo para almacenar en el vehículo!</Spanish>
             <Italian>Non hai abbastanza denaro con te da mettere nel veicolo!</Italian>
             <Polish>Nie ma tego dużo gotówki na ciebie do przechowywania w pojeździe!</Polish>
@@ -4378,7 +4378,7 @@
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
             <Czech>Zachyťte Gang skrýš</Czech>
-            <French>Capturez Planque de Gang</French>
+            <French>Capturez planque de gang</French>
             <Spanish>Capturar Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
@@ -4394,7 +4394,7 @@
             <Spanish>Anuncio de la Estación de Noticias</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Annonce d'Informations</French>
+            <French>Annonce d'informations</French>
             <Italian></Italian>
             <Portuguese>Estação de Transmissão de Notícias</Portuguese>
             <Polish></Polish>
@@ -4405,7 +4405,7 @@
             <Spanish>Estación del Canal de Noticias 7</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Canal d'Informations Channel 7</French>
+            <French>Canal d'informations Channel 7</French>
             <Italian></Italian>
             <Portuguese>Estação de Notícias do Canal 7</Portuguese>
             <Polish></Polish>
@@ -4416,7 +4416,7 @@
             <Spanish>Título del Mensaje</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Intitulé du Message</French>
+            <French>Intitulé du Message :</French>
             <Italian></Italian>
             <Portuguese>Titulo da Mensagem:</Portuguese>
             <Polish></Polish>
@@ -4427,7 +4427,7 @@
             <Spanish>Contenido del Anuncio</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Contenu du Message</French>
+            <French>Contenu du Message :</French>
             <Italian></Italian>
             <Portuguese>Conteúdo da Mensagem:</Portuguese>
             <Polish></Polish>
@@ -4449,7 +4449,7 @@
             <Spanish>Costo de Transmisión: %1&lt;br /&gt;Siguiente Transmisión Disponible en: %2</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Coût de Transmission : %1&lt;br /&gt;Prochaine Transmission Disponible dans : %2</French>
+            <French>Coût de Transmission : %1&lt;br /&gt;Prochaine Transmission Disponible dans : %2.</French>
             <Italian></Italian>
             <Portuguese>Custo de Trasnmissão: %1&lt;br /&gt;Próxima transmissão disponível em: %2</Portuguese>
             <Polish></Polish>
@@ -4460,7 +4460,7 @@
             <Spanish>El título no puede tener mas de %1 caracteres</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>L'intitulé du message ne peut dépasser les %1 caractères</French>
+            <French>L'intitulé du message ne peut dépasser les %1 caractères.</French>
             <Italian></Italian>
             <Portuguese>O cabeçalho não pode ter mais que %1 caracteres</Portuguese>
             <Polish></Polish>
@@ -4504,7 +4504,7 @@
             <Spanish>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmis par : %2</French>
+            <French>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmis par : %2.</French>
             <Italian></Italian>
             <Portuguese>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Portuguese>
             <Polish></Polish>
@@ -4517,7 +4517,7 @@
             <Spanish>Te han arrestado. Si tratas de matarte o te desconectas se incrementara tu estadía en la cárcel!</Spanish>
             <Russian></Russian>
             <German>Du wurdest festgenommen, sitze deine Zeit ab. Wenn du versuchst, zu respawnen oder die Verbindung zu trennen, erhöht sich deine Zeit!</German>
-            <French>Vous avez été arrêté, attendez que votre peine soit terminée. Si vous tentez de respawn ou reconnectez votre temps sera augmenté!</French>
+            <French>Vous avez été arrêté, attendez que votre peine soit terminée. Si vous tentez de respawn ou reconnectez votre temps sera augmenté !</French>
             <Italian>Sei stato arrestato, sconta la tua pena. Se cercherai di rinascere o di riconnetterti il tuo tempo aumenterà!</Italian>
             <Portuguese>Você foi preso, cumpra sua pena. Se você tentar renascer ou reconectar seu tempo na cadeia irá aumentar!</Portuguese>
             <Polish>Zostałeś aresztowany, poczekaj na koniec kary. Jeśli się rozłączysz albo odrodzisz twoja kara zostanie powiększona</Polish>
@@ -4528,7 +4528,7 @@
             <Spanish>Por ser arrestado se te han quitado estas licencias (si las tienes)\n\nL. de Armas \nL. Rebelde</Spanish>
             <Russian></Russian>
             <German>Bei der Verhaftung hast du folgende Lizenzen verloren, sofern du sie besessen hast\n\nWaffenlizenz\nRebellenlizenz</German>
-            <French>Après votre mise en prison, vous avez perdu les licences suivante si vous les aviez\n\nPermis de port d'arme\n LicenceRebel</French>
+            <French>Après votre mise en prison, vous avez perdu les licences suivante si vous les aviez\n\nPermis de port d'arme\n LicenceRebelle</French>
             <Italian>A causa del tuo arresto hai perso le seguenti licenze, se le possedevi\n\nPorto d'armi\nLicenza Ribelle</Italian>
             <Portuguese>Você perdeu as seguintes licenças por ter sido preso\n\nPorte de Armas\n\nTreinamento Rebelde</Portuguese>
             <Polish>Z uwagi na aresztowanie straciłeś następujące licencje jeśli je posiadałeś \n\nPozwolenie na broń \nTrening Rebelianta</Polish>
@@ -4539,7 +4539,7 @@
             <Spanish>%1 se ha escapado de la cárcel!</Spanish>
             <Russian></Russian>
             <German>%1 ist aus dem Gefängnis ausgebrochen!</German>
-            <French>%1 s'est échappé de prison!</French>
+            <French>%1 s'est échappé de prison !</French>
             <Italian>%1 è scappato dalla prigione!</Italian>
             <Portuguese>%1 escapou da prisão</Portuguese>
             <Polish>%1 uciekł z więzienia!</Polish>
@@ -4572,7 +4572,7 @@
             <Spanish>Tiempo Restante:</Spanish>
             <Russian></Russian>
             <German>Verbleibende Zeit:</German>
-            <French>Temps restant:</French>
+            <French>Temps restant :</French>
             <Italian>Tempo rimanente:</Italian>
             <Portuguese>Tempo Restante:</Portuguese>
             <Polish>Pozostały czas kary:</Polish>
@@ -4583,7 +4583,7 @@
             <Spanish>Puedes pagar la fianza en:</Spanish>
             <Russian></Russian>
             <German>Kann Kaution zahlen:</German>
-            <French>Peut payer la caution:</French>
+            <French>Peut payer la caution :</French>
             <Italian>Puoi pagare la cauzione:</Italian>
             <Portuguese>Pode pagar fiança:</Portuguese>
             <Polish>Możesz wpłacić kaucję</Polish>
@@ -4594,7 +4594,7 @@
             <Spanish>Precio de Fianza:</Spanish>
             <Russian></Russian>
             <German>Kaution:</German>
-            <French>Prix de la caution:</French>
+            <French>Prix de la caution :</French>
             <Italian>Costo cauzione:</Italian>
             <Portuguese>Preço da fiança:</Portuguese>
             <Polish>Wartość kaucji:</Polish>
@@ -4673,7 +4673,7 @@
             <Spanish>La caja esta vacía!</Spanish>
             <Russian></Russian>
             <German>Der Tresor ist leer!</German>
-            <French>Le coffre est vide</French>
+            <French>Le coffre est vide !</French>
             <Italian>La cassaforte è vuota!</Italian>
             <Portuguese>O Cofre está vazio!</Portuguese>
             <Polish>Sejf jest pusty!</Polish>
@@ -4684,7 +4684,7 @@
             <Spanish>Alguien ya esta entrando en la caja..</Spanish>
             <Russian></Russian>
             <German>Jemand greift bereits auf den Tresor zu..</German>
-            <French>Quelqu'un accède déjà au coffre..</French>
+            <French>Quelqu'un accède déjà au coffre...</French>
             <Italian>Qualcuno sta già interagendo con la cassaforte..</Italian>
             <Portuguese>Alguem já está acessando o cofre.</Portuguese>
             <Polish>Ktoś właśnie włamuje się do sejfu!</Polish>
@@ -4695,7 +4695,7 @@
             <Spanish>Necesita haber %1 o mas policías para continuar.</Spanish>
             <Russian></Russian>
             <German>Es müssen %1 oder mehr Polizisten online sein, um fortfahren zu können.</German>
-            <French>Il faut au minimum %1 flic pour continuer</French>
+            <French>Il faut au minimum %1 flic pour continuer.</French>
             <Italian>Servono almeno %1 poliziotti online per continuare.</Italian>
             <Portuguese>É necessário ter %1 ou mais policiais online para continuar.</Portuguese>
             <Polish>Potrzeba conajmniej %1 policjantów aby kontynuować</Polish>
@@ -4717,7 +4717,7 @@
             <Spanish>Debes selecionar un objeto!</Spanish>
             <Russian></Russian>
             <German>Du musst einen Gegenstand auswählen!</German>
-            <French>Vous devez sélectionner un objet</French>
+            <French>Vous devez sélectionner un objet !</French>
             <Italian>Devi selezionare un oggetto!</Italian>
             <Portuguese>Você precisa selecionar um item!</Portuguese>
             <Polish>Musisz coś wybrać</Polish>
@@ -4728,7 +4728,7 @@
             <Spanish>No hay %1 barra(s) de oro en la caja!</Spanish>
             <Russian></Russian>
             <German>Es sind keine %1 Goldbarren im Tresor!</German>
-            <French>Il n'y a pas %1 lingot(s) d'or dans le coffre</French>
+            <French>Il n'y a pas %1 lingot(s) d'or dans le coffre !</French>
             <Italian>Nella cassaforte non ci sono %1 lingotti d'oro</Italian>
             <Portuguese>Não existe %1 barra(s) de ouro no cofre!</Portuguese>
             <Polish>W sejfie nie ma % sztab złota!</Polish>
@@ -4741,7 +4741,7 @@
             <Spanish>No se pudo abrir el menu de tiquetes!</Spanish>
             <Russian></Russian>
             <German>Der Bußgeldkatalog konnte nicht geöffnet werden</German>
-            <French>Impossible d'ouvrir l'interface d'amende</French>
+            <French>Impossible d'ouvrir l'interface des amendes</French>
             <Italian>Impossibile aprire l'interfaccia per le multe</Italian>
             <Portuguese>Não foi possível abrir o bloco de multa</Portuguese>
             <Polish>Nie potrafię otworzyć interfejsu mandatów</Polish>
@@ -4774,7 +4774,7 @@
             <Spanish>La persona a quien tiquetear es nulo</Spanish>
             <Russian></Russian>
             <German>Person für das Ticket ist nil</German>
-            <French>La personne à verbaliser n'existe pas</French>
+            <French>La personne à verbaliser n'existe pas.</French>
             <Italian>La persona da multare è nil</Italian>
             <Portuguese>Jogador a ser multado é nulo</Portuguese>
             <Polish>Osoba do ukarania mandatem to "nil"</Polish>
@@ -4785,7 +4785,7 @@
             <Spanish>La perosna a quien tiquetear no existe.</Spanish>
             <Russian></Russian>
             <German>Die Person für das Ticket gibt es nicht.</German>
-            <French>La personne à verbaliser est inexistante</French>
+            <French>La personne à verbaliser est inexistante.</French>
             <Italian>La persona da multare non esiste.</Italian>
             <Portuguese>Jogador a ser multado não existe.</Portuguese>
             <Polish>Nie ma osoby ukaranej mandatem - nie istnieje</Polish>
@@ -4807,7 +4807,7 @@
             <Spanish>Los tiquetes no pueden ser mas de $200,000!</Spanish>
             <Russian></Russian>
             <German>Strafzettel können nicht mehr als $200.000 betragen!</German>
-            <French>Les billets ne peuvent être plus de $200,000!</French>
+            <French>Les billets ne peuvent être plus de $200,000 !</French>
             <Italian>La multa non può essere più di $200.000!</Italian>
             <Portuguese>A multa não pode ser maior que R$200.000!</Portuguese>
             <Polish>Mandat nie może być wyższy niż $200.000!</Polish>
@@ -4818,7 +4818,7 @@
             <Spanish>%1 le dio un tiquete de $%2 a %3</Spanish>
             <Russian></Russian>
             <German>%1 hat %3 einen Strafzettel über $%2 ausgestellt</German>
-            <French>%1 a mis une contravention de $%2 à %3</French>
+            <French>%1 a mis une contravention de $%2 à %3.</French>
             <Italian>%1 ha dato una multa di $%2 a %3</Italian>
             <Portuguese>%1 deu uma multa de R$%2 para %3</Portuguese>
             <Polish>%1 Wystawił mandat w wysokości %2 dla %3</Polish>
@@ -4847,7 +4847,7 @@
         </Key>
         <Key ID="STR_Cop_Ticket_Paid">
             <Original>You have paid the ticket of $%1</Original>
-            <Czech>Jste zaplatili letenku ve výši $ %1</Czech>
+            <Czech>Jste zaplatili letenku ve výši $%1</Czech>
             <Spanish>Has pagado el tiquete de $%1</Spanish>
             <Russian></Russian>
             <German>Du hast den Strafzettel von $%1 bezahlt</German>
@@ -4950,7 +4950,7 @@
             <Spanish>%1 fue identificado como el ladrón del banco!</Spanish>
             <Russian></Russian>
             <German>%1 wurde als Bankräuber identifiziert!</German>
-            <French>%1 à été identifié comme un braqueur de banque!</French>
+            <French>%1 à été identifié comme un braqueur de banque !</French>
             <Italian>%1 è stato identificato come il rapinatore della banca!</Italian>
             <Portuguese>%1 foi identificado como ladrão de banco!</Portuguese>
             <Polish>%1 zidentyfikowany jako kasairz rabujący banki!</Polish>
@@ -4972,7 +4972,7 @@
             <Spanish>No estas cerca de una puerta!</Spanish>
             <Russian></Russian>
             <German>Du bist nicht in der Nähe einer Tür!</German>
-            <French>Vous n'êtes pas près d'une porte!</French>
+            <French>Vous n'êtes pas près d'une porte !</French>
             <Italian>Non sei vicno ad una porta!</Italian>
             <Portuguese>Você não está perto de uma porta!</Portuguese>
             <Polish>Nie jesteś przy drzwiach</Polish>
@@ -4983,7 +4983,7 @@
             <Spanish>Debes habilitar la opcion de "Picture in Picture"(PiP) En tus opciones de video para usar esto!</Spanish>
             <Russian></Russian>
             <German>Du musst Picture in Picture (PiP) in deinen Video-Einstellungen aktivieren, um dies nutzen zu können!</German>
-            <French>Vous devez activer le "Picture in Picture" (PiP) dans vos paramètre vidéo pour utilser ceci!</French>
+            <French>Vous devez activer le "Picture in Picture" (PiP) dans vos paramètre vidéo pour utilser ceci !</French>
             <Italian>Devi attivare Picture in Picture (PiP) nelle tue impostazioni video per usare questa funzione!</Italian>
             <Portuguese>Você precisa habilitar o Picture in Picture (PiP), através das suas configurações de vídeo para usar esta opção!</Portuguese>
             <Polish>Musisz włączyć Obraz w obrazie (PiP) w ustawieniach graficznych aby tego używać!</Polish>
@@ -4994,7 +4994,7 @@
             <Spanish>Licencias:</Spanish>
             <Russian></Russian>
             <German>Lizenzen:</German>
-            <French>Licences:</French>
+            <French>Licences :</French>
             <Italian>Licenze:</Italian>
             <Portuguese>Licenças:</Portuguese>
             <Polish>Licencje:</Polish>
