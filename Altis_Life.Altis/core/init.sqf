@@ -179,16 +179,6 @@ life_hideoutBuildings = [];
     false
 } count ["gang_area_1","gang_area_2","gang_area_3"];
 
-// -- Disable commander view
-if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
-    addMissionEventHandler ["EachFrame",{
-        if (cameraView == "GROUP") then {
-            player switchCamera "EXTERNAL";
-            hint [localize "STR_NOTF_CommanderView"];
-        };
-    }];
-};
-
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";
