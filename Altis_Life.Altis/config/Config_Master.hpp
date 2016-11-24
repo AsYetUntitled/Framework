@@ -43,7 +43,7 @@ class Life_Settings {
 
     /* House Robberies */
     copsHouseRaid = 2; //Cops needed to be online for robbing houses
-    
+
     /*Death settings*/
     drop_weapons_onDeath = false; //Set true to enable weapon dropping on death. False (default) will delete player weapons on death, allowing them to be revived with them instead
 
