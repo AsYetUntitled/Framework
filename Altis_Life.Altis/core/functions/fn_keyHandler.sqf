@@ -60,7 +60,7 @@ switch (_code) do {
         private _CommandMode = actionKeys "forceCommandingMode";
 
         if (_code in _CommandMode) then {
-            hint "You cannot use Command Mode.";
+            hint [localize "STR_NOTF_CommanderView"];
             _handled = true;
         };
     };
