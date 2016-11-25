@@ -813,15 +813,15 @@
             <Polish>Anulowano akcję</Polish>
         </Key>
         <Key ID="STR_NOTF_CommanderView">
-            <Original>Commander View Disabled</Original>
-            <Czech>Commander View Disabled</Czech>
-            <Spanish>Commander View Disabled</Spanish>
-            <Russian>Commander View Disabled</Russian>
+            <Original>Commander/Tactical View Disabled</Original>
+            <Czech>Commander/Tactical View Disabled</Czech>
+            <Spanish>Commander/Tactical View Disabled</Spanish>
+            <Russian>Commander/Tactical View Disabled</Russian>
             <German>Befehlshaber-Übersicht deaktivieren</German>
-            <French>Commander View Disabled</French>
-            <Italian>Commander View Disabled</Italian>
-            <Portuguese>Commander View Disabled</Portuguese>
-            <Polish>Commander View Disabled</Polish>
+            <French>Commander/Tactical View Disabled</French>
+            <Italian>Commander/Tactical View Disabled</Italian>
+            <Portuguese>Commander/Tactical View Disabled</Portuguese>
+            <Polish>Commander/Tactical View Disabled</Polish>
         </Key>
         <Key ID="STR_NOTF_PlaceContainer">
             <Original>Hit spacebar to place the container.</Original>
