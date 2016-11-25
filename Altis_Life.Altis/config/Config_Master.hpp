@@ -158,7 +158,7 @@ class Life_Settings {
     vehicle_cop_impound_multiplier = .1; //TO AVOID EXPLOITS NEVER SET HIGHER THAN A PURCHASE/RENTAL multipler!   Payout = Config_vehicle Price * multiplier
 
     disableCommanderView = true; //false - Group leaders can access the commander view. true [default] - Group leaders cannot access the commander view.
-                                 //Commander view is accessed via pressing the . / del key on the NUMPAD. It raises the camera significantly higher and steeper above the player in order to give a boarder tactical view of the surrounding area.
+                                 //Commander/tactical view is accessed via pressing . [NUM] by default. It raises the camera significantly higher and steeper above the player in order to give a boarder tactical view of the surrounding area.
 
     /* Wanted System Settings *
     /* crimes[] = {String, Bounty, Code} */
