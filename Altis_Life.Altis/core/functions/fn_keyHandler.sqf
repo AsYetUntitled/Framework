@@ -55,12 +55,12 @@ if (life_container_active) then {
 };
 
 switch (_code) do {
-    // -- Disable commander view
+    // -- Disable commander/tactical view
     if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
-        private _CommandMode = actionKeys "forceCommandingMode";
+        private _CommandMode = actionKeys "tacticalView";
 
         if (_code in _CommandMode) then {
-            hint [localize "STR_NOTF_CommanderView"];
+            hint localize "STR_NOTF_CommanderView";
             _handled = true;
         };
     };
