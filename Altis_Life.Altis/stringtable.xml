@@ -1484,7 +1484,7 @@
         </Key>
         <Key ID="STR_GNOTF_AlreadyControlled">
             <Original>This hideout is controlled by %1.&lt;br/&gt;&lt;br/&gt;Are you sure you want to take over their gang area?</Original>
-            <Czech>Tento úkryt je řízen %1 &lt; br / &gt; &lt; br / &gt; Opravdu chcete převzít svůj gang prostor?</Czech>
+            <Czech>Tento úkryt je řízen %1.&lt;br/&gt;&lt;br/&gt;Opravdu chcete převzít svůj gang prostor?</Czech>
             <Spanish>Este escondite esta controlado por %1.&lt;br/&gt;&lt;br/&gt;Estas seguro que quieres tomarlo?</Spanish>
             <Russian></Russian>
             <German>Das Versteck wird durch %1 kontrolliert.&lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du ihr Gang Gebiet übernehmen möchtest?</German>
@@ -1583,7 +1583,7 @@
         </Key>
         <Key ID="STR_GNOTF_CreateSuccess">
             <Original>You have created the gang %1 for $%2</Original>
-            <Czech>Vytvořili jste gangu %1 pro $ %2</Czech>
+            <Czech>Vytvořili jste gangu %1 pro $%2</Czech>
             <Spanish>Has creado la Pandilla %1 por $%2</Spanish>
             <Russian></Russian>
             <German>Du hast die Gang %1 für $%2 erstellt</German>
@@ -1638,7 +1638,7 @@
         </Key>
         <Key ID="STR_GNOTF_InviteMSG">
             <Original>%1 has invited you to a gang called %2&lt;br/&gt;If you accept the invitation you will be a part of their gang and will have access to the gang funds and controlled gang hideouts.</Original>
-            <Czech>%1 vás pozval na party s názvem %2 &lt; br / &gt; Pokud přijmete pozvání budete součástí jejich gangu a budou mít přístup ke gangu fondů a řízených gangů úkrytů.</Czech>
+            <Czech>%1 vás pozval na party s názvem %2&lt;br/&gt;Pokud přijmete pozvání budete součástí jejich gangu a budou mít přístup ke gangu fondů a řízených gangů úkrytů.</Czech>
             <Spanish>%1 te ha invitado a una Pandilla llamada %2&lt;br/&gt;Si aceptas seras parte de su pandilla, compartiras el banco de la pandilla y controlaras sus escondites.</Spanish>
             <Russian></Russian>
             <German>%1 hat dich zu einer Gang namens %2 eingeladen &lt;br/&gt; Wenn Du die Einladung annimmst, wirst du ein Teil der Gang und bekommst Zugang zu den Gang-Konten und kontrollierten Gang Verstecken.</German>
@@ -8782,7 +8782,7 @@
         </Key>
         <Key ID="STR_Shop_Veh_NotEnough">
             <Original>You do not have enough cash to purchase this vehicle.\n\nAmount Lacking: $%1</Original>
-            <Czech>Nemáte dostatek peněz na koupi tohoto vozidla \n\nAmount Postrádat:. $%1</Czech>
+            <Czech>Nemáte dostatek peněz na koupi tohoto vozidla \n\nAmount Postrádat: $%1</Czech>
             <Spanish>No tienes suficiente dinero para comprar este vehículo.\n\nFalta: $%1</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld, um das Fahrzeug zu kaufen.\n\nFehlender Betrag: $%1</German>
