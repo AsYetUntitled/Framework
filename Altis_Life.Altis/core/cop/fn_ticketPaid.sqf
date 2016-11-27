@@ -11,8 +11,8 @@ params [
     ["_unit",objNull,[objNull]],
     ["_cop",objNull,[objNull]]
 ];
-if (isNull _unit || {_unit != life_ticket_unit}) exitWith {}; //NO
-if (isNull _cop || {_cop != player}) exitWith {}; //Double NO
+if (isNull _unit || {!(_unit isEqualTo life_ticket_unit)}) exitWith {}; //NO
+if (isNull _cop || {!(_cop isEqualTo player)}) exitWith {}; //Double NO
 
 BANK = BANK + _value;
 [1] call SOCK_fnc_updatePartial;
