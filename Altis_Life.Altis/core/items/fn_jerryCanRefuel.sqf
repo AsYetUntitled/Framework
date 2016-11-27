@@ -12,7 +12,7 @@ life_interrupted = false;
 if (life_inv_fuelEmpty isEqualTo 0) exitWith {};
 if (count(nearestObjects [player,["Land_FuelStation_Feed_F","Land_fs_feed_F"],3.5]) isEqualTo 0) exitWith { hint localize "STR_ISTR_Jerry_Distance";};
 if (life_action_inUse) exitWith {};
-if ((vehicle player) != player) exitWith {};
+if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrained";};
 if (player getVariable "playerSurrender") exitWith {hint localize "STR_NOTF_surrender";};
 _fuelCost = LIFE_SETTINGS(getNumber,"fuelCan_refuel");
