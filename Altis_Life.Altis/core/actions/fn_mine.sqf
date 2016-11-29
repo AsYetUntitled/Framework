@@ -9,7 +9,7 @@
     */
 private ["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
 if (life_action_inUse) exitWith {};
-if ((vehicle player) != player) exitWith {};
+if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {
     hint localize "STR_NOTF_isrestrained";
 };

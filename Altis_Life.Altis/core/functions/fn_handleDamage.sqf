@@ -26,7 +26,7 @@ if (!isNull _source) then {
                     _distance = 35;
                     if (_projectile == "B_556x45_dual") then {_distance = 100;};
                     if (_unit distance _source < _distance) then {
-                        if (vehicle player != player) then {
+                        if !(isNull objectParent player) then {
                             if (typeOf (vehicle player) == "B_Quadbike_01_F") then {
                                 player action ["Eject",vehicle player];
                                 [_unit,_source] spawn life_fnc_tazed;

@@ -16,7 +16,7 @@ _name = _this select 3;
 _side = side _unit;
 
 //Save player info
-if (isNil "HC_UID" || {_uid != HC_UID}) then {
+if (isNil "HC_UID" || {!(_uid isEqualTo HC_UID)}) then {
     _position = getPosATL _unit;
     if ((getMarkerPos "respawn_civilian" distance _position) > 300) then {
 

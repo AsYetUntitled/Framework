@@ -8,7 +8,7 @@
 */
 private ["_display","_list"];
 disableSerialization;
-if (playerSide != west) exitWith {};
+if !(playerSide isEqualTo west) exitWith {};
 
 _display = findDisplay 2400;
 _list = _display displayCtrl 2402;

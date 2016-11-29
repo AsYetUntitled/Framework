@@ -140,7 +140,7 @@ switch (_side) do {
         _new = [(_queryResult select 10)] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];

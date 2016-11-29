@@ -8,7 +8,7 @@
 */
 private ["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
 if (life_action_inUse) exitWith {};
-if ((vehicle player) != player) exitWith {};
+if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrained";};
 if (player getVariable "playerSurrender") exitWith {hint localize "STR_NOTF_surrender";};
 

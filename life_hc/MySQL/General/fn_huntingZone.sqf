@@ -23,7 +23,7 @@ _radius = (getMarkerSize _zoneName) select 0;
 _dist = _radius + 100;
 _zone = getMarkerPos _zoneName;
 
-if (!isNil "animals" && {count animals != 0}) then {
+if (!isNil "animals" && {!(count animals isEqualTo 0)}) then {
     _maxAnimals = _maxAnimals - count(animals);
 } else {
     animals = [];

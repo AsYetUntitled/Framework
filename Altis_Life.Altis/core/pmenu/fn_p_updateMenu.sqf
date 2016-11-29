@@ -29,7 +29,7 @@ lbClear _near_i;
 _near_units = [];
 { if (player distance _x < 10) then {_near_units pushBack _x};} forEach playableUnits;
 {
-    if (!isNull _x && alive _x && player distance _x < 10 && _x != player) then {
+    if (!isNull _x && alive _x && player distance _x < 10 && !(_x isEqualTo player)) then {
         _near lbAdd format ["%1 - %2",_x getVariable ["realname",name _x], side _x];
         _near lbSetData [(lbSize _near)-1,str(_x)];
         _near_i lbAdd format ["%1 - %2",_x getVariable ["realname",name _x], side _x];
