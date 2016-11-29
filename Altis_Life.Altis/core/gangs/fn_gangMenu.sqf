@@ -19,7 +19,7 @@ _gangName = group player getVariable "gang_name";
 _gangBank = GANG_FUNDS;
 _gangMax = group player getVariable "gang_maxMembers";
 
-if (_ownerID != getPlayerUID player) then {
+if !(_ownerID isEqualTo getPlayerUID player) then {
     (CONTROL(2620,2622)) ctrlEnable false; //Upgrade
     (CONTROL(2620,2624)) ctrlEnable false; // Kick
     (CONTROL(2620,2625)) ctrlEnable false; //Set New Leader
@@ -48,7 +48,7 @@ _allUnits = playableUnits;
 
 //Clear out the list..
 {
-    if (_x in _grpMembers || side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {
+    if (_x in _grpMembers || !(side _x isEqualTo civilian) && isNil {(group _x) getVariable "gang_id"}) then {
         _allUnits deleteAt _forEachIndex;
     };
 } forEach _allUnits;

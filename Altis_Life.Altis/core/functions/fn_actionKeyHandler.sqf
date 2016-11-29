@@ -71,7 +71,7 @@ if (_curObject isKindOf "House_F" && {player distance _curObject < 12} || ((near
 };
 
 if (dialog) exitWith {}; //Don't bother when a dialog is open.
-if (vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
+if !(isNull objectParent player) exitWith {}; //He's in a vehicle, cancel!
 life_action_inUse = true;
 
 //Temp fail safe.
