@@ -1,7 +1,7 @@
 #include "..\script_macros.hpp"
 /*
     File: init.sqf
-    Author:
+    Author: Bryan "Tonic" Boardwine
 
     Description:
     Master client initialization file
@@ -150,6 +150,21 @@ if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFa
 if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
     [] execVM "core\fn_setupStationService.sqf";
 };
+
+/*
+    https://feedback.bistudio.com/T117205 - disableChannels settings cease to work when leaving/rejoining mission
+    Universal workaround for usage in a preInit function. - AgentRev
+    Remove if Bohemia actually fixes the issue.
+*/
+{
+    _x params [["_chan",-1,[0]], ["_noText","false",[""]], ["_noVoice","false",[""]]];
+
+    _noText = [false,true] select ((["false","true"] find toLower _noText) max 0);
+    _noVoice = [false,true] select ((["false","true"] find toLower _noVoice) max 0);
+
+    _chan enableChannel [!_noText, !_noVoice];
+
+} forEach getArray (missionConfigFile >> "disableChannels");
 
 if (life_HC_isActive) then {
     [getPlayerUID player,player getVariable ["realname",name player]] remoteExec ["HC_fnc_wantedProfUpdate",HC_Life];
