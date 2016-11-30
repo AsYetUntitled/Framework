@@ -107,24 +107,35 @@ _vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
-// Avoid problems if u keep changing which stuff to save!
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
+
     _vehicle setVariable ["Trunk",_trunk,true];
+    
     if (_wasIllegal) then {
+        private _refPoint = if (_sp isEqualType "") then {getMarkerPos _sp;} else {getPos _sp;};
+        
+        private _distance = 100000;
         private "_location";
-        if (_sp isEqualType "") then {
-            _location= (nearestLocations [getPos _sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
-        } else {
-            _location= (nearestLocations [_sp,["NameCityCapital","NameCity","NameVillage"],1000]) select 0;
-           };
-           _location = text _location;
-           [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
-                _query = format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
-                _thread = [_query,1] call HC_fnc_asyncCall;
+        {
+            private _tempLocation = nearestLocation [_refPoint, _x];
+            private _tempDistance = _refPoint distance _tempLocation;
+    
+            if (_tempDistance < _distance) then {
+                _location = _tempLocation;
+                _distance = _tempDistance;
+            };
+            false
+    
+        } count ["NameCityCapital", "NameCity", "NameCity"];
+ 
+        _location = text _location;
+        [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
-        };
-    }else{
+        _query = format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
+        _thread = [_query,1] call HC_fnc_asyncCall; 
+    };   
+} else {
     _vehicle setVariable ["Trunk",[[],0],true];
 };
 
