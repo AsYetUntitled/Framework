@@ -127,7 +127,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             };
             false
     
-        } count ["NameCityCapital", "NameCity", "NameCity"];
+        } count ["NameCityCapital", "NameCity", "NameVillage"];
  
         _location = text _location;
         [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
