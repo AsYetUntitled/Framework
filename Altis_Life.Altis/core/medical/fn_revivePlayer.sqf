@@ -66,8 +66,6 @@ if (player getVariable ["restrained",false]) exitWith {life_action_inUse = false
 if (!isNil "_badDistance") exitWith {titleText[localize "STR_Medic_TooFar","PLAIN"]; life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 
-[1] call SOCK_fnc_updatePartial;
-
 life_action_inUse = false;
 _target setVariable ["Revive",true,true];
 [profileName] remoteExecCall ["life_fnc_revived",_target];
@@ -75,6 +73,7 @@ _target setVariable ["Revive",true,true];
 if (playerSide isEqualTo independent) then {
     titleText[format [localize "STR_Medic_RevivePayReceive",_targetName,[_reviveCost] call life_fnc_numberText],"PLAIN"];
     BANK = BANK + _reviveCost;
+    [1] call SOCK_fnc_updatePartial;
 };
 
 sleep .6;
