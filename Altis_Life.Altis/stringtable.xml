@@ -8,7 +8,7 @@
             <Russian></Russian>
             <German></German>
             <Italian>Caricamento dati, attendi...</Italian>
-            <French></French>
+            <French>Configuration du client, s'il vous plaît patienter ...</French>
             <Portuguese>Configurando o cliente. Por favor, aguarde...</Portuguese>
             <Polish></Polish>
         </Key>
@@ -19,7 +19,7 @@
             <Russian></Russian>
             <German></German>
             <Italian>Caricamento Server, attendi...</Italian>
-            <French></French>
+            <French>En attente que le serveur soit prêt</French>
             <Portuguese>Esperando o servidor estar pronto...</Portuguese>
             <Polish></Polish>
         </Key>
@@ -30,7 +30,7 @@
             <Russian></Russian>
             <German></German>
             <Italian>C'è stato un'errore con extDB, perfavore contatta un amministratore.</Italian>
-            <French></French>
+            <French>extDB n'a pas réussi à charger, s'il vous plaît contacter un administrateur</French>
             <Portuguese>O extDB falhou ao carregar, por favor, contacte um administrador.</Portuguese>
             <Polish></Polish>
         </Key>
@@ -41,7 +41,7 @@
             <Russian></Russian>
             <German></German>
             <Italian>Completando procedura d'inizializzazione </Italian>
-            <French></French>
+            <French>Finition de la procédure de configuration du client</French>
             <Portuguese>Terminando o processo de configuração do cliente...</Portuguese>
             <Polish></Polish>
         </Key>
@@ -1015,7 +1015,7 @@
         <Key ID="STR_ATM_DoesntExist">
             <Original>The player selected doesn't seem to exist?</Original>
             <Czech>Hráč vybraný Nezdá se, že neexistuje?</Czech>
-            <French>Le joueur sélectionné ne semble pas exister?</French>
+            <French>Le joueur sélectionné ne semble pas exister</French>
             <Spanish>El jugador que seleccionastes no existe?</Spanish>
             <Russian></Russian>
             <German>Der Spieler scheint nicht zu existieren?</German>
@@ -1084,7 +1084,7 @@
             <Spanish>%1 ha transferido $%2 a tu cuenta.</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>%1 a fait un transfert de $%2 dans votre compte</French>
             <Italian>%1 ha effettuato un bonifico sul tuo conto di €%2</Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1963,7 +1963,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Ce garage a déjà été acheté!</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1974,7 +1974,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Ce garage est disponible pour &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1985,7 +1985,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Ce bâtiment est un repaire de gang!</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1996,7 +1996,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Etes-vous sûr de vouloir vendre votre garage? Il sera vendu pour: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2007,7 +2007,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Vendre le garage</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2018,13 +2018,13 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Acheter le garage</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
         </Key>
         <Key ID="STR_Garage_NotOwned">
-            <Original>You do not own a garage here!</Original>
+            <Original>Vous ne possédez pas de garage ici!</Original>
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
@@ -2527,7 +2527,7 @@
         <Key ID="STR_SM_BCSW">
             <Original>Broadcast Switch</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Centre de diffusion</French>
             <Spanish>Habilitar Transmisiones</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -2811,10 +2811,10 @@
         </Key>
         <Key ID="STR_Wanted_Count">
             <Original>%1 count(s) of %2</Original>
-            <Czech>Počet%1 (y) z%2</Czech>
-            <French>%1 chef (s) de 2%</French>
+            <Czech>Počet%1 (y) z %2</Czech>
+            <French>%1 chef (s) de %2</French>
             <Spanish>%1 cuenta(s) de %2</Spanish>
-            <Italian>%1 count (s) del 2%</Italian>
+            <Italian>%1 count (s) del %2 </Italian>
             <Polish>%1 count (ów) z %2</Polish>
             <Russian></Russian>
             <Portuguese>%1 contagem(s) de %2</Portuguese>
