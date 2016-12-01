@@ -107,7 +107,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     _vehicle setVariable ["Trunk",_trunk,true];
     
     if (_wasIllegal) then {
-        private _refPoint = if (_sp isEqualType "") then {getMarkerPos _sp;} else {getPos _sp;};
+        private _refPoint = if (_sp isEqualType "") then {getMarkerPos _sp;} else {_sp;};
         
         private _distance = 100000;
         private "_location";
