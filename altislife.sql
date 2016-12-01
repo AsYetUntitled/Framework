@@ -62,7 +62,7 @@ END$$
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldWanted`()
 BEGIN
   DELETE FROM `wanted` WHERE `active` = 0;
-END
+END$$
 
 DELIMITER ;
 
