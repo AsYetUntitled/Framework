@@ -72,7 +72,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     /* Check if the player's state changed? */
-    if (vehicle player != _lastState || {!alive player}) then {
+    if (!(vehicle player isEqualTo _lastState) || {!alive player}) then {
         [] call life_fnc_updateViewDistance;
         _lastState = vehicle player;
     };

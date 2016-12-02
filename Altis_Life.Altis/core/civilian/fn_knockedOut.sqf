@@ -13,7 +13,7 @@ params [
 ];
 
 if (isNull _target) exitWith {};
-if (_target != player) exitWith {};
+if !(_target isEqualTo player) exitWith {};
 if (_who isEqualTo "") exitWith {};
 
 titleText[format [localize "STR_Civ_KnockedOut",_who],"PLAIN"];

@@ -79,8 +79,12 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
     _flag = (_x select 1);
     _textureName = (_x select 0);
     if ((life_veh_shop select 2) isEqualTo _flag) then {
-        _ctrl lbAdd _textureName;
-        _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
+        _x params ["_texture"];
+        private _toShow = [_x] call life_fnc_levelCheck;
+        if (_toShow) then {
+            _ctrl lbAdd _textureName;
+            _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
+        };
     };
 } forEach _colorArray;
 
@@ -99,7 +103,7 @@ if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
     };
 };
 
-if ((lbSize _ctrl)-1 != -1) then {
+if !((lbSize _ctrl)-1 isEqualTo -1) then {
     ctrlShow[2304,true];
 } else {
     ctrlShow[2304,false];
