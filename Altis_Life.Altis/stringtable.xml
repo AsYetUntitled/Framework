@@ -812,6 +812,17 @@
             <Portuguese>Ação Cancelada</Portuguese>
             <Polish>Anulowano akcję</Polish>
         </Key>
+        <Key ID="STR_NOTF_CommanderView">
+            <Original>Commander/Tactical View Disabled</Original>
+            <Czech>Commander/Tactical View Disabled</Czech>
+            <Spanish>Commander/Tactical View Disabled</Spanish>
+            <Russian>Commander/Tactical View Disabled</Russian>
+            <German>Befehlshaber-Übersicht deaktivieren</German>
+            <French>Commander/Tactical View Disabled</French>
+            <Italian>Commander/Tactical View Disabled</Italian>
+            <Portuguese>Commander/Tactical View Disabled</Portuguese>
+            <Polish>Commander/Tactical View Disabled</Polish>
+        </Key>
         <Key ID="STR_NOTF_PlaceContainer">
             <Original>Hit spacebar to place the container.</Original>
             <Czech>Hit mezerníku na místo Kontejner.</Czech>
