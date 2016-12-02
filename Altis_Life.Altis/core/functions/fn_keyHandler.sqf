@@ -55,6 +55,16 @@ if (life_container_active) then {
 };
 
 switch (_code) do {
+    // -- Disable commander/tactical view
+    if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
+        private _CommandMode = actionKeys "tacticalView";
+
+        if (_code in _CommandMode) then {
+            hint localize "STR_NOTF_CommanderView";
+            _handled = true;
+        };
+    };
+
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
