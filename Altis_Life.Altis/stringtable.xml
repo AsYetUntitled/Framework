@@ -715,7 +715,7 @@
         </Key>
         <Key ID="STR_ANOTF_Frozen">
             <Original>You have disabled %1's input.</Original>
-            <Czech>Jste zakázali vstup%1 je.</Czech>
+            <Czech>Jste zakázali vstup %1 je.</Czech>
             <Spanish>Has deshabilitado los controles de %1</Spanish>
             <Italian>Hai disattivato l'input di %1.</Italian>
             <Russian></Russian>
@@ -811,6 +811,17 @@
             <Italian>Azione Annullata</Italian>
             <Portuguese>Ação Cancelada</Portuguese>
             <Polish>Anulowano akcję</Polish>
+        </Key>
+        <Key ID="STR_NOTF_CommanderView">
+            <Original>Commander/Tactical View Disabled</Original>
+            <Czech>Commander/Tactical View Disabled</Czech>
+            <Spanish>Commander/Tactical View Disabled</Spanish>
+            <Russian>Commander/Tactical View Disabled</Russian>
+            <German>Befehlshaber-Übersicht deaktivieren</German>
+            <French>Commander/Tactical View Disabled</French>
+            <Italian>Commander/Tactical View Disabled</Italian>
+            <Portuguese>Commander/Tactical View Disabled</Portuguese>
+            <Polish>Commander/Tactical View Disabled</Polish>
         </Key>
         <Key ID="STR_NOTF_PlaceContainer">
             <Original>Hit spacebar to place the container.</Original>
@@ -1058,7 +1069,7 @@
         </Key>
         <Key ID="STR_ATM_SentMoneySuccess">
             <Original>You have transfered $%1 to %2.\n\nA tax fee of $%3 was taken for the wire transfer.</Original>
-            <Czech>Jste přenesli $%1 do%2. \ N \ nA daňový poplatek ve výši $%3 byla pořízena na bankovním převodem.</Czech>
+            <Czech>Jste přenesli $%1 do %2. \n\nA daňový poplatek ve výši $%3 byla pořízena na bankovním převodem.</Czech>
             <Spanish>Has transferido $%1 a $%2 \n\nUna cuota de $%3 fue tomada de tu cuenta.</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 an %2 überwiesen.\n\nEine Gebühr von $%3 wurde verrechnet.</German>
@@ -1484,7 +1495,7 @@
         </Key>
         <Key ID="STR_GNOTF_AlreadyControlled">
             <Original>This hideout is controlled by %1.&lt;br/&gt;&lt;br/&gt;Are you sure you want to take over their gang area?</Original>
-            <Czech>Tento úkryt je řízen%1 &lt; br / &gt; &lt; br / &gt; Opravdu chcete převzít svůj gang prostor?</Czech>
+            <Czech>Tento úkryt je řízen %1.&lt;br/&gt;&lt;br/&gt;Opravdu chcete převzít svůj gang prostor?</Czech>
             <Spanish>Este escondite esta controlado por %1.&lt;br/&gt;&lt;br/&gt;Estas seguro que quieres tomarlo?</Spanish>
             <Russian></Russian>
             <German>Das Versteck wird durch %1 kontrolliert.&lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du ihr Gang Gebiet übernehmen möchtest?</German>
@@ -1539,7 +1550,7 @@
         </Key>
         <Key ID="STR_GNOTF_CaptureSuccess">
             <Original>%1 and his gang: %2 - have taken control of a local hideout!</Original>
-            <Czech>%1 a jeho gang:%2 - vzali kontrolu místního úkrytu!</Czech>
+            <Czech>%1 a jeho gang: %2 - vzali kontrolu místního úkrytu!</Czech>
             <Spanish>%1 y su pandilla: %2 - han tomado control de un Escondite!</Spanish>
             <Russian></Russian>
             <German>%1 und seine Gang: %2 - haben die Kontrolle über ein lokales Versteck übernommen!</German>
@@ -1583,7 +1594,7 @@
         </Key>
         <Key ID="STR_GNOTF_CreateSuccess">
             <Original>You have created the gang %1 for $%2</Original>
-            <Czech>Vytvořili jste gangu%1 pro $ %2</Czech>
+            <Czech>Vytvořili jste gangu %1 pro $%2</Czech>
             <Spanish>Has creado la Pandilla %1 por $%2</Spanish>
             <Russian></Russian>
             <German>Du hast die Gang %1 für $%2 erstellt</German>
@@ -1638,7 +1649,7 @@
         </Key>
         <Key ID="STR_GNOTF_InviteMSG">
             <Original>%1 has invited you to a gang called %2&lt;br/&gt;If you accept the invitation you will be a part of their gang and will have access to the gang funds and controlled gang hideouts.</Original>
-            <Czech>%1 vás pozval na party s názvem%2 &lt; br / &gt; Pokud přijmete pozvání budete součástí jejich gangu a budou mít přístup ke gangu fondů a řízených gangů úkrytů.</Czech>
+            <Czech>%1 vás pozval na party s názvem %2&lt;br/&gt;Pokud přijmete pozvání budete součástí jejich gangu a budou mít přístup ke gangu fondů a řízených gangů úkrytů.</Czech>
             <Spanish>%1 te ha invitado a una Pandilla llamada %2&lt;br/&gt;Si aceptas seras parte de su pandilla, compartiras el banco de la pandilla y controlaras sus escondites.</Spanish>
             <Russian></Russian>
             <German>%1 hat dich zu einer Gang namens %2 eingeladen &lt;br/&gt; Wenn Du die Einladung annimmst, wirst du ein Teil der Gang und bekommst Zugang zu den Gang-Konten und kontrollierten Gang Verstecken.</German>
@@ -1671,7 +1682,7 @@
         </Key>
         <Key ID="STR_GNOTF_InviteSent">
             <Original>You have sent a invite to your gang to %1</Original>
-            <Czech>Jste adresoval zvou na svůj gang do%1</Czech>
+            <Czech>Jste adresoval zvou na svůj gang do %1</Czech>
             <Spanish>Has invitado a %1 a tu Pandilla</Spanish>
             <Russian></Russian>
             <German>Du hast eine Einladung in deine Gang an %1 gesendet</German>
@@ -1736,15 +1747,15 @@
             <Polish>Nie możesz opuścić gangu bez przekazania komuś szefostwa nad gangiem</Polish>
         </Key>
         <Key ID="STR_GNOTF_TransferMSG">
-            <Original>You are about to transfer leadership over to %1&lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
-            <Czech>Chystáte se přenést vedoucí přes%1 &lt; br / &gt; Převedením vedení už nebude mít kontrolu nad gangu, pokud je vlastnictví převedeno zpět.</Czech>
-            <Spanish>Estas a punto de transferir liderazgo a %1&lt;br/&gt;Al transferir liderazgo no tendrás control de la Pandilla.</Spanish>
+            <Original>You are about to transfer leadership over to %1 &lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
+            <Czech>Chystáte se přenést vedoucí přes %1 &lt;br/&gt;Převedením vedení už nebude mít kontrolu nad gangu, pokud je vlastnictví převedeno zpět.</Czech>
+            <Spanish>Estas a punto de transferir liderazgo a %1 &lt;br/&gt;Al transferir liderazgo no tendrás control de la Pandilla.</Spanish>
             <Russian></Russian>
-            <German>Du bist dabei, die Führung an %1 zu übertragen&lt;br/&gt;Durch die Übertragung der Leitung der Gang hast du keine Kontrolle mehr.</German>
-            <French>Vous allez transférer le commandement à %1&lt;br/&gt;En transférant le commandement, vous ne serez plus le chef du gang.</French>
-            <Italian>Stai per traferire il comando a %1&lt;br/&gt;Facendolo non avrai più il controllo della Gang fino a quando non ti verrà restituito il comando.</Italian>
-            <Portuguese>Você vai transferir a liderança da gangue para %1&lt;br/&gt;Você não será mais o lider, a não ser que a liderança seja transferida novamente.</Portuguese>
-            <Polish>Przekazałeś kierowanie gangiem %1&lt;br/&gt; W związku z tym nie będzesz od tej chwili kontroli nad gangiem chyba, że kierowownictwo zostanie ci powierzone ponownie. </Polish>
+            <German>Du bist dabei, die Führung an %1 zu übertragen &lt;br/&gt;Durch die Übertragung der Leitung der Gang hast du keine Kontrolle mehr.</German>
+            <French>Vous allez transférer le commandement à %1 &lt;br/&gt;En transférant le commandement, vous ne serez plus le chef du gang.</French>
+            <Italian>Stai per traferire il comando a %1 &lt;br/&gt;Facendolo non avrai più il controllo della Gang fino a quando non ti verrà restituito il comando.</Italian>
+            <Portuguese>Você vai transferir a liderança da gangue para %1 &lt;br/&gt;Você não será mais o lider, a não ser que a liderança seja transferida novamente.</Portuguese>
+            <Polish>Przekazałeś kierowanie gangiem %1 &lt;br/&gt;W związku z tym nie będzesz od tej chwili kontroli nad gangiem chyba, że kierowownictwo zostanie ci powierzone ponownie. </Polish>
         </Key>
         <Key ID="STR_GNOTF_TransferCancel">
             <Original>Transfer of leadership cancelled.</Original>
@@ -2800,10 +2811,10 @@
         </Key>
         <Key ID="STR_Wanted_Count">
             <Original>%1 count(s) of %2</Original>
-            <Czech>Počet%1 (y) z%2</Czech>
-            <French>%1 chef (s) de 2%</French>
+            <Czech>Počet%1 (y) z %2</Czech>
+            <French>%1 chef (s) de %2</French>
             <Spanish>%1 cuenta(s) de %2</Spanish>
-            <Italian>%1 count (s) del 2%</Italian>
+            <Italian>%1 count (s) del %2</Italian>
             <Polish>%1 count (ów) z %2</Polish>
             <Russian></Russian>
             <Portuguese>%1 contagem(s) de %2</Portuguese>
@@ -3134,7 +3145,7 @@
         </Key>
         <Key ID="STR_NOTF_DPStart">
             <Original>You are to deliver this package to %1.</Original>
-            <Czech>Jste doručit tento balíček%1</Czech>
+            <Czech>Jste doručit tento balíček %1</Czech>
             <Spanish>Debes llevar este paquete a %1</Spanish>
             <Russian></Russian>
             <German>Du musst dieses Paket bei %1 abliefern</German>
@@ -3145,7 +3156,7 @@
         </Key>
         <Key ID="STR_NOTF_DPTask">
             <Original>Deliver this package to %1.</Original>
-            <Czech>Doručit tento balíček%1</Czech>
+            <Czech>Doručit tento balíček %1</Czech>
             <Spanish>LLeva el paquete a: %1</Spanish>
             <Russian></Russian>
             <German>Liefere dieses Paket bei %1 ab</German>
@@ -3277,7 +3288,7 @@
         </Key>
         <Key ID="STR_NOTF_Impounded">
             <Original>You have impounded a %1\n\nYou have received $%2 for cleaning up the streets!</Original>
-            <Czech>Jste zabaveno a%1 \ n \ n jste obdržel $%2 pro čištění ulic!</Czech>
+            <Czech>Jste zabaveno a %1 \n\n jste obdržel $%2 pro čištění ulic!</Czech>
             <Spanish>Has embargado un %1\n\nHas recibido $%2 por  limpiar las calles!</Spanish>
             <Russian></Russian>
             <German>Du hast einen %1 beschlagnahmt\n\nDu hast $%2 für das Aufräumen der Straßen bekommen!</German>
@@ -4724,7 +4735,7 @@
         </Key>
         <Key ID="STR_Civ_IsntEnoughGold">
             <Original>There isn't %1 gold bar(s) in the safe!</Original>
-            <Czech>Není%1 zlatá bar (y) v bezpečí!</Czech>
+            <Czech>Není %1 zlatá bar (y) v bezpečí!</Czech>
             <Spanish>No hay %1 barra(s) de oro en la caja!</Spanish>
             <Russian></Russian>
             <German>Es sind keine %1 Goldbarren im Tresor!</German>
@@ -7314,7 +7325,7 @@
         </Key>
         <Key ID="STR_ISTR_Jerry_Process">
             <Original>Refuelling %1</Original>
-            <Czech>Doplňování paliva%1</Czech>
+            <Czech>Doplňování paliva %1</Czech>
             <Spanish>Llenado el Bidón %1</Spanish>
             <Russian></Russian>
             <German>Wird betankt %1</German>
@@ -7325,7 +7336,7 @@
         </Key>
         <Key ID="STR_ISTR_Jerry_Success">
             <Original>You have refuelled that %1</Original>
-            <Czech>Jsi natankoval, že produkt%1</Czech>
+            <Czech>Jsi natankoval, že produkt %1</Czech>
             <Spanish>Has llenado el %1</Spanish>
             <Russian></Russian>
             <German>Du hast deinen %1 aufgetankt</German>
@@ -7347,7 +7358,7 @@
         </Key>
         <Key ID="STR_ISTR_Lock_Process">
             <Original>Lock-picking %1</Original>
-            <Czech>Lockpicking%1</Czech>
+            <Czech>Lockpicking %1</Czech>
             <Spanish>Abriendo Cerradura %1</Spanish>
             <Russian></Russian>
             <German>Wird aufgebrochen %1</German>
@@ -7701,7 +7712,7 @@
         </Key>
         <Key ID="STR_Process_Processed">
             <Original>You have processed %1 into %2</Original>
-            <Czech>Máte zpracovaný%1 do%2</Czech>
+            <Czech>Máte zpracovaný %1 do %2</Czech>
             <Spanish>Has procesado %1 a %2</Spanish>
             <Russian></Russian>
             <German>Du hast %1 in %2 verarbeitet</German>
@@ -7712,7 +7723,7 @@
         </Key>
         <Key ID="STR_Process_Processed2">
             <Original>You have processed %1 into %2 for $%3</Original>
-            <Czech>Máte zpracovaný%1 do%2 na $ %3</Czech>
+            <Czech>Máte zpracovaný %1 do %2 na $%3</Czech>
             <Spanish>Has procesado %1 a %2 por $%3</Spanish>
             <Russian></Russian>
             <German>Du hast %1 für $%3 in %2 verarbeitet</German>
@@ -7802,7 +7813,7 @@
         </Key>
         <Key ID="STR_Medic_Progress">
             <Original>Reviving %1</Original>
-            <Czech>Oživení%1</Czech>
+            <Czech>Oživení %1</Czech>
             <Spanish>Reviviendo %1</Spanish>
             <Russian></Russian>
             <German>Wird wiederbelebt %1</German>
@@ -7824,7 +7835,7 @@
         </Key>
         <Key ID="STR_Medic_RevivePayReceive">
             <Original>You have revived %1 and received $%2 for your services.</Original>
-            <Czech>Obdrželi jste%1 a získal $ %2 za vaše služby.</Czech>
+            <Czech>Obdrželi jste %1 a získal $%2 za vaše služby.</Czech>
             <Spanish>Has revivido a %1 y recivido $%2 por tus servicios.</Spanish>
             <Russian></Russian>
             <German>Du hast %1 wiederbelebt und $%2 für deine Dienste erhalten.</German>
@@ -8672,7 +8683,7 @@
         </Key>
         <Key ID="STR_Shop_YouNeed">
             <Original>You need a %1 to buy from this shop!</Original>
-            <Czech>Potřebujete%1 koupit od tomto obchodě!</Czech>
+            <Czech>Potřebujete %1 koupit od tomto obchodě!</Czech>
             <Spanish>Necesitas un %1 para comprar algo de esta tienda!</Spanish>
             <Russian></Russian>
             <German>Du benötigst eine %1, um diesen Shop nutzen zu können!</German>
@@ -8760,7 +8771,7 @@
         </Key>
         <Key ID="STR_Shop_Unimpound_Success">
             <Original>You have unimpounded your %1 for $%3</Original>
-            <Czech>Jste unimpounded svůj%1 na $%3</Czech>
+            <Czech>Jste unimpounded svůj %1 na $%3</Czech>
             <Spanish>Has desembargado tu %1 por $%3</Spanish>
             <Russian></Russian>
             <German>Du hast deinen %1 für $%3 ausgelöst</German>
@@ -8782,7 +8793,7 @@
         </Key>
         <Key ID="STR_Shop_Veh_NotEnough">
             <Original>You do not have enough cash to purchase this vehicle.\n\nAmount Lacking: $%1</Original>
-            <Czech>Nemáte dostatek peněz na koupi tohoto vozidla \ n \ nAmount Postrádat:. $%1</Czech>
+            <Czech>Nemáte dostatek peněz na koupi tohoto vozidla \n\nAmount Postrádat: $%1</Czech>
             <Spanish>No tienes suficiente dinero para comprar este vehículo.\n\nFalta: $%1</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld, um das Fahrzeug zu kaufen.\n\nFehlender Betrag: $%1</German>
@@ -8815,7 +8826,7 @@
         </Key>
         <Key ID="STR_Shop_Veh_Bought">
             <Original>You bought a %1 for $%2</Original>
-            <Czech>Koupil sis%1 pro $ %2</Czech>
+            <Czech>Koupil sis %1 pro $%2</Czech>
             <Spanish>Comprastes %1 por $%2</Spanish>
             <Russian></Russian>
             <German>Du kaufst eine(n) %1 für $%2</German>
@@ -9158,7 +9169,7 @@
     <Package name="FSM_Strings">
         <Key ID="STR_FSM_Paycheck">
             <Original>You will receive your next paycheck in %1 minutes.</Original>
-            <Czech>Obdržíte svůj další výplatní pásku v%1 minut.</Czech>
+            <Czech>Obdržíte svůj další výplatní pásku v %1 minut.</Czech>
             <Spanish>Recibiras tu siguiente pago en %1 minutos</Spanish>
             <Russian></Russian>
             <German>Du erhältst deinen nächsten Gehaltsscheck in %1 Minuten.</German>

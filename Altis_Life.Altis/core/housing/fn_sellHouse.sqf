@@ -51,12 +51,12 @@ if (_action) then {
         publicVariableServer "advanced_log";
     };
 
-    if (_index != -1) then {
+    if !(_index isEqualTo -1) then {
         life_vehicles deleteAt _index;
     };
 
     _index = [str(getPosATL _house),life_houses] call TON_fnc_index;
-    if (_index != -1) then {
+    if !(_index isEqualTo -1) then {
         life_houses deleteAt _index;
     };
     _numOfDoors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _house), "numberOfDoors");
