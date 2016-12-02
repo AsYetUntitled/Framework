@@ -7087,7 +7087,7 @@
             <Spanish>Una carga explosiva ha sido puesta en la bóveda de la reserva federal, tienes hasta que se acabe el tiempo para desarmar el explosivo!</Spanish>
             <Russian></Russian>
             <German>Eine Sprengladung wurde am Safe angebracht. Du hast Zeit, bis die Uhr abläuft, um die Ladung zu entschärfen!</German>
-            <French>Une charge de dynamite a été placé sur le coffre de la réserve fédérale, Vous avez jusqu'au temps imparti pour désarmorcer la charge!</French>
+            <French>Une charge de dynamite a été placé sur le coffre de la réserve fédérale, Vous avez jusqu'au temps imparti pour désarmorcer la charge !</French>
             <Italian>Una carica esplosiva è stata piazzata sulla cassaforte della Riserva Federale, puoi cercare di disinnescarla prima che scada il tempo!</Italian>
             <Portuguese>O explosivo foi colocado no cofre , você tem até o tempo acabar para desarmar o explosivo.</Portuguese>
             <Polish>Ładunek wybuchowy został założony na skarbcu rezerw federalnych, musisz rozbroić ładunek nim wybuchnie!</Polish>
@@ -7098,7 +7098,7 @@
             <Spanish>El tiempo esta corriendo, manten alejados a los policías!</Spanish>
             <Russian></Russian>
             <German>Der Timer läuft! Halte die Polizei von Safe fern!</German>
-            <French>La minuterie est lancée! Gardez les flics loin de la bombe!</French>
+            <French>La minuterie est lancée! Gardez la police loin de la bombe !</French>
             <Italian>Il tempo sta scorrendo! Tieni la polizia lontana dalla cassaforte!</Italian>
             <Portuguese>O tempo está passando! Mantenha os policiais longe do cofre</Portuguese>
             <Polish>Zegar tyka! Trzymaj policję z dala od skarbca!</Polish>
@@ -7109,7 +7109,7 @@
             <Spanish>El explosivo ha sido desarmado!</Spanish>
             <Russian></Russian>
             <German>Die Sprengladung wurde entschärft!</German>
-            <French>La charge a été désamorcée!</French>
+            <French>La charge a été désamorcée !</French>
             <Italian>La carica esplosiva è stata disinnescata!</Italian>
             <Portuguese>O explosivo foi desarmado!</Portuguese>
             <Polish>Ładunek wybuchowy rozbrojony!</Polish>
@@ -7128,7 +7128,7 @@
         <Key ID="STR_ISTR_Blast_Exploit">
             <Original>You must open the container before placing the charge!</Original>
             <Czech>Je nutné otevřít nádobu před umístěním nabíječku!</Czech>
-            <French>Vous devez ouvrir le conteneur avant de placer le chargeur!</French>
+            <French>Vous devez ouvrir le conteneur avant de placer le chargeur !</French>
             <Spanish>Debes abrir el contenedor antes de poner el explosivo!</Spanish>
             <Italian>È necessario aprire il contenitore prima di mettere il caricabatterie!</Italian>
             <Polish>Musisz otworzyć pojemnik przed wprowadzeniem opłat!</Polish>
@@ -7183,7 +7183,7 @@
         <Key ID="STR_ISTR_Bolt_Exploit">
             <Original>You must open the outside doors before opening it!</Original>
             <Czech>Je nutné otevřít venkovní dveře před otevřením!</Czech>
-            <French>Vous devez ouvrir les portes extérieures avant de l'ouvrir!</French>
+            <French>Vous devez ouvrir les portes extérieures avant de l'ouvrir !</French>
             <Spanish>Debes abrir las puertas de afuera antes de abrir esta!</Spanish>
             <Italian>È necessario aprire le porte esterne prima di aprirlo!</Italian>
             <Polish>Musisz otworzyć zewnętrzne drzwi przed otwarciem!</Polish>
@@ -7208,7 +7208,7 @@
             <Spanish>No hay un explosivo en la bobeda?</Spanish>
             <Russian></Russian>
             <German>Es gibt keine Sprengladung am Tresor?</German>
-            <French>Il n'y a pas de dynamite sur le coffre?</French>
+            <French>Il n'y a pas de dynamite sur le coffre ?</French>
             <Italian>Non c'è alcuna carica esplosiva sulla cassaforte</Italian>
             <Portuguese>Não há nenhum explosivo no cofre.</Portuguese>
             <Polish>Nie ma ładunku na skarbcu?</Polish>
@@ -7241,7 +7241,7 @@
             <Spanish>Debes mirar a el vehiculo que quieres llenar de combustible!</Spanish>
             <Russian></Russian>
             <German>Du musst das Fahrzeug ansehen, das du auftanken möchtest!</German>
-            <French>Vous avez besoin de regarder le véhicule dont vous voulez faire le plein!</French>
+            <French>Vous avez besoin de regarder le véhicule dont vous voulez faire le plein !</French>
             <Italian>Devi essere girato verso il veicolo che vuoi rifornire!</Italian>
             <Portuguese>Você precisa estar olhando para o veículo que deseja abastecer!</Portuguese>
             <Polish>Musisz spojrzeć w kierunku pojazdu który chcesz zatankować!</Polish>
@@ -7252,7 +7252,7 @@
             <Spanish>Debes estar más cerca del vehiculo!</Spanish>
             <Russian></Russian>
             <German>Du musst näher am Fahrzeug sein!</German>
-            <French>Vous devez être plus proche du véhicule!</French>
+            <French>Vous devez être plus proche du véhicule !</French>
             <Italian>Devi stare più vicino al veicolo!</Italian>
             <Portuguese>Você precisa estar mais perto do veículo!</Portuguese>
             <Polish>Musisz być bliżej pojazdu!</Polish>
@@ -7260,7 +7260,7 @@
         <Key ID="STR_ISTR_Jerry_Refuel">
             <Original>Refuelling Fuel Canister</Original>
             <Czech>Tankování paliva kanystr</Czech>
-            <French>Ravitaillement carburant Bidon</French>
+            <French>Ravitaillement de carburant</French>
             <Spanish>Llenando Bidón de Combustible</Spanish>
             <Italian>Rifornimento carburante scatola metallica</Italian>
             <Polish>Tankowanie paliwa Kanister</Polish>
@@ -7271,7 +7271,7 @@
         <Key ID="STR_ISTR_Jerry_StationPump">
             <Original>Fuel Station Pump</Original>
             <Czech>Čerpací stanice čerpadla</Czech>
-            <French>Pompe à essence station</French>
+            <French>Pompe à essence</French>
             <Spanish>Estación de bombeo de combustible</Spanish>
             <Italian>Pompa Stazione di rifornimento</Italian>
             <Polish>Paliwo przepompowni</Polish>
@@ -7282,7 +7282,7 @@
         <Key ID="STR_ISTR_Jerry_PopUp">
             <Original>Spend $%1 to refuel your Empty Fuel Canister?</Original>
             <Czech>Utratit $%1 natankovat vaše prázdné palivové kanystr?</Czech>
-            <French>Passez $%1 pour faire le plein de votre réservoir de combustible vide?</French>
+            <French>Passez $%1 pour faire le plein de votre réservoir de combustible vide ?</French>
             <Spanish>Gastar $%1 para llenar el Bidón de Combustible?</Spanish>
             <Italian>Spendere $%1 per rifornire di carburante la vostra scatola metallica del combustibile vuoto?</Italian>
             <Polish>Wydać $%1 zatankować swój pustego zasobnika paliwa?</Polish>
@@ -7293,7 +7293,7 @@
         <Key ID="STR_ISTR_Jerry_Distance">
             <Original>You must be closer to the fuel pump!</Original>
             <Czech>Musíte být blíže k palivovému čerpadlu!</Czech>
-            <French>Vous devez être plus proche de la pompe à carburant!</French>
+            <French>Vous devez être plus proche de la pompe à carburant !</French>
             <Spanish>Debe estar más cerca de la bomba de combustible!</Spanish>
             <Italian>È necessario essere più vicino alla pompa del carburante!</Italian>
             <Polish>Você deve estar mais perto da bomba de combustível!</Polish>
@@ -7304,7 +7304,7 @@
         <Key ID="STR_ISTR_Jerry_Refueled">
             <Original>You have successfully refuelled the Fuel Canister!</Original>
             <Czech>Úspěšně jste tankovat palivový kanystr!</Czech>
-            <French>Vous avez ravitaillé avec succès le Bidon carburant!</French>
+            <French>Vous avez ravitaillé avec succès le jerrycan d'essence !</French>
             <Spanish>Usted ha llenado con exito el Bidón de Combustible!</Spanish>
             <Italian>Hai rifornimento con successo il canestro del combustibile!</Italian>
             <Polish>Pomyślnie zatankowany kanistra paliwa!</Polish>
@@ -7494,7 +7494,7 @@
             <Spanish>Debes seleccionar un objeto primero!</Spanish>
             <Russian></Russian>
             <German>Du musst zuerst einen Gegenstand auswählen!</German>
-            <French>Vous devez selectionné un item!</French>
+            <French>Vous devez selectionner un item !</French>
             <Italian>Devi prima selezionare un oggetto!</Italian>
             <Portuguese>Você precisa selecionar um item primeiro!</Portuguese>
             <Polish>Zaznacz najpier rzecz.</Polish>
@@ -7516,7 +7516,7 @@
             <Spanish>Ya tienes una Barrera de Clavos activada</Spanish>
             <Russian></Russian>
             <German>Du platzierst bereits ein Nagelband</German>
-            <French>Vous avez deja une herse entrain d'être deployée</French>
+            <French>Vous avez déjà une herse en train d'être deployée</French>
             <Italian>Hai già una striscia chiodata piazzata</Italian>
             <Portuguese>Você já tem um Tapete de Espinhos ativo</Portuguese>
             <Polish>Aktualnie masz rozłożoną kolczatkę</Polish>
@@ -7527,7 +7527,7 @@
             <Spanish>No puedes llenar tu vehiculo mientras estas adentro de él!</Spanish>
             <Russian></Russian>
             <German>Du kannst ein Fahrzeug nicht betanken während du dich darin befindest!</German>
-            <French>Vous ne pouvez pas faire le plein du véhicule tout en étant de le véhicule!</French>
+            <French>Vous ne pouvez pas faire le plein du véhicule tout en étant à l'intérieur !</French>
             <Italian>Non puoi rifornire il veicolo di benzina mentre ci sei dentro!</Italian>
             <Portuguese>Você não pode abastecer o veículo enquanto dentro dele!</Portuguese>
             <Polish>Nie możesz zatankować pojazdu gdy w nim jesteś!</Polish>
@@ -7538,7 +7538,7 @@
             <Spanish>Este objeto no es utilizable.</Spanish>
             <Russian></Russian>
             <German>Dieser Gegenstand ist nicht benutzbar.</German>
-            <French>Cet item n'est pas utilisable.</French>
+            <French>Cet objet n'est pas utilisable.</French>
             <Italian>Questo oggetto è inutilizzabile.</Italian>
             <Portuguese>Esse item não é usável.</Portuguese>
             <Polish>Nie można użyć tej rzeczy.</Polish>
@@ -7661,7 +7661,7 @@
             <Spanish>Debes estar a menos de 10m para procesar.</Spanish>
             <Russian></Russian>
             <German>Du musst innerhalb von 10m bleiben, um verarbeiten zu können.</German>
-            <French>Vous devez rester à 10m pour traiter</French>
+            <French>Vous devez rester à 10m pour traiter.</French>
             <Italian>Devi stare entro 10m per processare.</Italian>
             <Portuguese>Você precisa ficar a menos de 10m para processar.</Portuguese>
             <Polish>Musisz być w odległości 10 m aby przetwarzanie się odbyło.</Polish>
@@ -7680,7 +7680,7 @@
         <Key ID="STR_Process_Partial">
             <Original>Only part of your materials could be processed due to reaching your maximum weight.</Original>
             <Czech>Pouze část svých materiálů by mohla být zpracována z důvodu dosažení maximální váhu.</Czech>
-            <French>Seule une partie de votre matériel pourrait être traitée en raison d'atteindre votre poids maximum.</French>
+            <French>Seule une partie de votre matériel pourrait être traité en raison de l'atteinte de votre poids maximum.</French>
             <Spanish>Sólo una parte de los materiales se han podido procesar debido a alcanzar tu peso máximo.</Spanish>
             <Italian>Solo una parte del tuo materiali possono essere trattati a causa di raggiungere il vostro peso massimo.</Italian>
             <Polish>Tylko część swoich materiałów może być przetwarzane ze względu na osiągnięcie maksymalnej wadze.</Polish>
@@ -7694,7 +7694,7 @@
             <Spanish>Necesitas $%1 para procesar sin licencia!</Spanish>
             <Russian></Russian>
             <German>Du brauchst $%1, um ohne eine Lizenz verarbeiten zu können!</German>
-            <French>Vous devez $%1 pour traiter sans permis!</French>
+            <French>Vous devez $%1 pour traiter sans permis !</French>
             <Italian>Hai bisogno di $%1 per processare senza la dovuta licenza!</Italian>
             <Portuguese>Você precisa de R$%1 para processar sem licença!</Portuguese>
             <Polish>Musisz mieć $%1 aby przetworzyć bez odpowiedniej licencji</Polish>
@@ -8219,7 +8219,7 @@
             <Spanish>Garaje</Spanish>
             <Russian></Russian>
             <German>Garage</German>
-            <French>Accés au garage</French>
+            <French>Accès au garage</French>
             <Italian>Garage</Italian>
             <Portuguese>Garagem</Portuguese>
             <Polish>Garaż</Polish>
@@ -8386,7 +8386,7 @@
             <Spanish>Sacar Jugadores</Spanish>
             <Russian></Russian>
             <German>Aus Fahrzeug ziehen</German>
-            <French>Sortir Personnes</French>
+            <French>Sortir les passagers</French>
             <Italian>Estrai Giocatore</Italian>
             <Portuguese>Retirar Jogadores</Portuguese>
             <Polish>Wyciągnij graczy</Polish>
@@ -8566,7 +8566,7 @@
             <Spanish>Total:</Spanish>
             <Russian></Russian>
             <German>Gesamt:</German>
-            <French>Total:</French>
+            <French>Total :</French>
             <Italian>Totale:</Italian>
             <Portuguese>Total:</Portuguese>
             <Polish>Razem:</Polish>
@@ -8632,7 +8632,7 @@
             <Spanish>Necesitas ser un civil para usar esta tienda!</Spanish>
             <Russian></Russian>
             <German>Du musst ein Zivilist sein, um diesen Shop nutzen zu können!</German>
-            <French>Vous devez être un civil pour utiliser ce magasin!</French>
+            <French>Vous devez être un civil pour utiliser ce magasin !</French>
             <Italian>Devi essere un civile per utilizzare questo negozio!</Italian>
             <Portuguese>Você tem que ser um cívil para user essa loja!</Portuguese>
             <Polish>Musisz być cywilem aby móc kupować w tym sklepie!</Polish>
@@ -8643,7 +8643,7 @@
             <Spanish>Necesitas ser policía para usar esta tienda!</Spanish>
             <Russian></Russian>
             <German>Du musst ein Polizist sein, um diesen Shop nutzen zu können!</German>
-            <French>Vous devez être un flic pour utiliser ce magasin!</French>
+            <French>Vous devez être policier pour utiliser ce magasin !</French>
             <Italian>Devi essere un poliziotto per utilizzare questo negozio!</Italian>
             <Portuguese>Você tem que ser um policial para usar essa loja!</Portuguese>
             <Polish>Musisz być policjantem aby kupować w tym sklepie!</Polish>
@@ -8654,7 +8654,7 @@
             <Spanish>No tienes Entrenamiento Rebelde!</Spanish>
             <Russian></Russian>
             <German>Du besitzt keine Rebellen Lizenz!</German>
-            <French>Vous n'avez pas encore d'entrainement rebelle!</French>
+            <French>Vous n'avez pas encore d'entrainement rebelle !</French>
             <Italian>Devi essere ribelle per poter utilizzare questo negozio!</Italian>
             <Portuguese>Você não tem Treinamento Rebelde!</Portuguese>
             <Polish>Nie posiadasz treningu rebelianta!</Polish>
@@ -8665,7 +8665,7 @@
             <Spanish>Necesitas una licencia de buceo para usar esta tienda!</Spanish>
             <Russian></Russian>
             <German>Du benötigst eine Taucherlizenz, um diesen Tauchershop nutzen zu können!</German>
-            <French>Vous devez avoir votre diplome de plongée pour utiliser ce magasin!</French>
+            <French>Vous devez avoir votre diplôme de plongée pour utiliser ce magasin !</French>
             <Italian>Ti serve la licenza di pesca per usare questo negozio!</Italian>
             <Portuguese>Você precisa de uma Licença de Mergulho para usar essa loja!</Portuguese>
             <Polish>Nie posiadasz licencji nurka aby kupować w tym sklepie!</Polish>
@@ -8676,7 +8676,7 @@
             <Spanish>Necesitas un %1 para comprar algo de esta tienda!</Spanish>
             <Russian></Russian>
             <German>Du benötigst eine %1, um diesen Shop nutzen zu können!</German>
-            <French>Vous avez besoin de %1 pour acheter dans ce magasin</French>
+            <French>Vous avez besoin de %1 pour acheter dans ce magasin !</French>
             <Italian>Hai bisogno di %1 per comprare da questo negozio!</Italian>
             <Portuguese>Você precisa de %1 para comprar nessa loja!</Portuguese>
             <Polish>Potrzebujesz %1 by kupować w tym sklepie!</Polish>
@@ -8753,7 +8753,7 @@
             <Spanish>No tienes suficiente dinero para recuperar tu carro.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld bei dir oder auf dem Bankkonto, um dein Auto auszulösen.</German>
-            <French>Vous n'avez pas assez d'argent sur vous ou dans votre banque pour obtenir votre voiture</French>
+            <French>Vous n'avez pas assez d'argent sur vous ou dans votre banque pour obtenir votre voiture.</French>
             <Italian>Non hai abbastanza fondi con te o nel tuo conto in banca per poter ritirare il tuo veicolo.</Italian>
             <Portuguese>Você não tem dinheiro suficiente em sua conta bancária para obter seu veiculo.</Portuguese>
             <Polish>Nie masz tyle pieniędzy na koncie aby wyciągnąć samochód.</Polish>
@@ -8775,7 +8775,7 @@
             <Spanish>No has selecionado un vehículo!</Spanish>
             <Russian></Russian>
             <German>Du hast kein Fahrzeug ausgewählt!</German>
-            <French>Vous n'avez pas choisi de véhicule!</French>
+            <French>Vous n'avez pas choisi de véhicule !</French>
             <Italian>Non hai selezionato un veicolo!</Italian>
             <Portuguese>Você não conseguiu roubar o veiculo!</Portuguese>
             <Polish>Nie wybrałeś pojazdu!</Polish>
@@ -8797,7 +8797,7 @@
             <Spanish>No tienes la licencia requerida!</Spanish>
             <Russian></Russian>
             <German>Du besitzt die benötigte Lizenz nicht!</German>
-            <French>Vous n'avez pas la licence requise!</French>
+            <French>Vous n'avez pas la licence requise !</French>
             <Italian>Non hai la licenza richiesta per l'acquisto!</Italian>
             <Portuguese>Você não tem a licença necessária!</Portuguese>
             <Polish>Nie posiadasz odpowiedniej licencji!</Polish>
@@ -8830,7 +8830,7 @@
             <Spanish>Precio de Renta:</Spanish>
             <Russian></Russian>
             <German>Mietpreis:</German>
-            <French>Prix de location:</French>
+            <French>Prix de location :</French>
             <Italian>Costo Noleggio:</Italian>
             <Portuguese>Alugar:</Portuguese>
             <Polish>Wypożyczenie:</Polish>
@@ -8841,7 +8841,7 @@
             <Spanish>Precio de Compra:</Spanish>
             <Russian></Russian>
             <German>Kaufpreis:</German>
-            <French>Prix d'achat:</French>
+            <French>Prix d'achat :</French>
             <Italian>Costo Acquisto:</Italian>
             <Portuguese>Comprar:</Portuguese>
             <Polish>Kupno:</Polish>
@@ -8852,7 +8852,7 @@
             <Spanish>Máxima Velocidad:</Spanish>
             <Russian></Russian>
             <German>Max. Geschwindigkeit:</German>
-            <French>Vitesse Max:</French>
+            <French>Vitesse Max :</French>
             <Italian>Velocità Max:</Italian>
             <Portuguese>Velocidade Máxima:</Portuguese>
             <Polish>Prędkość:</Polish>
@@ -8863,7 +8863,7 @@
             <Spanish>Caballos de Fuerza:</Spanish>
             <Russian></Russian>
             <German>Pferdestärken:</German>
-            <French>Puissance en chevaux:</French>
+            <French>Puissance en chevaux :</French>
             <Italian>Cavalli:</Italian>
             <Portuguese>Cavalos de Força:</Portuguese>
             <Polish>Moc:</Polish>
@@ -8874,7 +8874,7 @@
             <Spanish>Asientos de Pasajeros:</Spanish>
             <Russian></Russian>
             <German>Passagierplätze:</German>
-            <French>Sieges passager:</French>
+            <French>Sieges passager :</French>
             <Italian>Sedili passeggeri:</Italian>
             <Portuguese>Assentos:</Portuguese>
             <Polish>Ilość miejsc:</Polish>
@@ -8885,7 +8885,7 @@
             <Spanish>Capacidad de Maletero:</Spanish>
             <Russian></Russian>
             <German>Kofferraumgröße:</German>
-            <French>Capacité du coffre:</French>
+            <French>Capacité du coffre :</French>
             <Italian>Capacità Inventario:</Italian>
             <Portuguese>Capacidade do Inventário:</Portuguese>
             <Polish>Pojemność bagażnika:</Polish>
@@ -8896,7 +8896,7 @@
             <Spanish>>Capacidad de Combustible:</Spanish>
             <Russian></Russian>
             <German>Tankgröße:</German>
-            <French>Capacité du réservoir:</French>
+            <French>Capacité du réservoir :</French>
             <Italian>Capacità Serbatoio:</Italian>
             <Portuguese>Capacidade do Reservatório:</Portuguese>
             <Polish>Pojemność baku:</Polish>
@@ -8907,7 +8907,7 @@
             <Spanish>Clasificación de Armadura:</Spanish>
             <Russian></Russian>
             <German>Panzerungsbewertung:</German>
-            <French>Blindage:</French>
+            <French>Blindage :</French>
             <Italian>Resistenza:</Italian>
             <Portuguese>Resistência:</Portuguese>
             <Polish>Pancerz</Polish>
@@ -8918,7 +8918,7 @@
             <Spanish>Precio de Recuperación:</Spanish>
             <Russian></Russian>
             <German>Einstellpreis:</German>
-            <French>Prix de sortie:</French>
+            <French>Prix de sortie :</French>
             <Italian>Costo di ritiro:</Italian>
             <Portuguese>Preço para Recuperar:</Portuguese>
             <Polish>Koszt wyciągnięcia:</Polish>
@@ -8929,7 +8929,7 @@
             <Spanish>Precio de Venta:</Spanish>
             <Russian></Russian>
             <German>Verkaufspreis:</German>
-            <French>Prix de vente</French>
+            <French>Prix de vente :</French>
             <Italian>Costo di vendita:</Italian>
             <Portuguese>Preço de Venda</Portuguese>
             <Polish>Cena sprzedaży:</Polish>
@@ -8940,7 +8940,7 @@
             <Spanish>Color:</Spanish>
             <Russian></Russian>
             <German>Farbe:</German>
-            <French>Couleur</French>
+            <French>Couleur :</French>
             <Italian>Colore:</Italian>
             <Portuguese>Cor:</Portuguese>
             <Polish>Kolor</Polish>
@@ -8951,7 +8951,7 @@
             <Spanish>No tienes permiso de usar esta tienda!</Spanish>
             <Russian></Russian>
             <German>Du bist nicht befugt, diesen Shop zu benutzen!</German>
-            <French>Vous n'êtes pas autorisé à utiliser cette boutique!</French>
+            <French>Vous n'êtes pas autorisé à utiliser cette boutique !</French>
             <Italian>Non sei autorizzato ad usare questo negozio!</Italian>
             <Portuguese>Você não está autorizado a utilizar essa loja!</Portuguese>
             <Polish>Nie jesteś uprawniony do używania tego sklepu!</Polish>
@@ -8984,7 +8984,7 @@
             <Spanish>No tienes tantos objetos!</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viele Gegenstände zum Verkaufen!</German>
-            <French>Vous n'avez pas autant d'articles à vendre!</French>
+            <French>Vous n'avez pas autant d'articles à vendre !</French>
             <Italian>Non hai tutti quegli oggetti da vendere!</Italian>
             <Portuguese>Você não tem todos esse items para vender</Portuguese>
             <Polish>Nie masz tak dużo rzeczy do sprzedania!</Polish>
@@ -8995,7 +8995,7 @@
             <Spanish>Tu pandilla tiene suficiente dinero para pagar esto, quieres pagar con ese dinero o el tuyo?</Spanish>
             <Russian></Russian>
             <German>Die Gang hat genügend Geld, um dafür zu zahlen. Willst du mit dem Geld der Gang oder deinem eigenen bezahlen?</German>
-            <French>Le gang a suffisamment de fonds pour payer pour cela, voulez-vous payer avec les fonds de gangs ou les vôtres?</French>
+            <French>Le gang a suffisamment de fonds pour payer pour cela, voulez-vous payer avec les fonds de gangs ou les vôtres ?</French>
             <Italian>La Gang ha fondi a sufficienza per pagare questo oggetto, vuoi usare i fondi della Gang o i tuoi personali?</Italian>
             <Portuguese>A Gangue tem dinheiro suficiente para pagar por isso, você gostaria de usar o dinheiro da Gangue?</Portuguese>
             <Polish>Gang posiada wystarczającą ilość środków aby za to zapłacić, chcesz zapłacić za to środkami gangu, czy własnymi?</Polish>
@@ -9006,7 +9006,7 @@
             <Spanish>Fondos de Pandilla:</Spanish>
             <Russian></Russian>
             <German>Geld der Gang:</German>
-            <French>Fonds du gang:</French>
+            <French>Fonds du gang :</French>
             <Italian>Fondi Gang:</Italian>
             <Portuguese>Fundos da Gangue:</Portuguese>
             <Polish>Środki gangu:</Polish>
@@ -9017,7 +9017,7 @@
             <Spanish>Tu dinero:</Spanish>
             <Russian></Russian>
             <German>Bargeld:</German>
-            <French>Votre argent:</French>
+            <French>Votre argent :</French>
             <Italian>Tuoi Fondi:</Italian>
             <Portuguese>Seu Dinheiro:</Portuguese>
             <Polish>Twoje środki:</Polish>
@@ -9028,7 +9028,7 @@
             <Spanish>Pagar con tu dinero o el de tu pandilla?</Spanish>
             <Russian></Russian>
             <German>Mit Bargeld oder Geld der Gang bezahlen</German>
-            <French>Payez avec votre argent ou avec les fonds du gangs</French>
+            <French>Payez avec votre argent ou avec les fonds du gang</French>
             <Italian>Paga con i tuoi contanti o con i fondi della Gang</Italian>
             <Portuguese>Pagar com a sua conta ou a da Gangue</Portuguese>
             <Polish>Zapłać gotówką albo środkami gangu</Polish>
@@ -9039,7 +9039,7 @@
             <Spanish>Fondos de la Pandilla</Spanish>
             <Russian></Russian>
             <German>Geld der Gang</German>
-            <French>Fonds du gang:</French>
+            <French>Fonds du gang :</French>
             <Italian>Fondi Gang</Italian>
             <Portuguese>Gangue</Portuguese>
             <Polish>Środki gangu</Polish>
@@ -9094,7 +9094,7 @@
             <Spanish>Necesitas seleccionar un objetar para vender/comprar.</Spanish>
             <Russian></Russian>
             <German>Du musst einen Gegenstand auswählen, um ihn zu kaufen / zu verkaufen.</German>
-            <French>Vous devez sélectionner un élément pour acheter/vendre</French>
+            <French>Vous devez sélectionner un élément pour acheter/vendre.</French>
             <Italian>Devi selezionare un oggetto per comprare/vendere.</Italian>
             <Portuguese>Selecione um item para comprar ou vender.</Portuguese>
             <Polish>Musisz wybrać rzecz którą chcesz kupić/sprzedać</Polish>
@@ -9194,7 +9194,7 @@
         <Key ID="STR_Action_PumpJerry">
             <Original>Refuel Fuel Canister</Original>
             <Czech>Tankovat paliva kanystr</Czech>
-            <French>Refuel carburant Bidon</French>
+            <French>Remplir jerrycan d'essence</French>
             <Spanish>Llenar Bidón de Combustible</Spanish>
             <Italian>Fare rifornimento di carburante scatola metallica</Italian>
             <Polish>Tankowanie paliwa Canister</Polish>
@@ -9210,7 +9210,7 @@
             <Polish>Tankowanie samochodów</Polish>
             <Russian></Russian>
             <Portuguese>Reabastecer Veículo</Portuguese>
-            <French>Ravitaillez en essence le Véhicule</French>
+            <French>Ravitaillez en essence le véhicule</French>
             <German>Fahrzeug auftanken</German>
         </Key>
         <Key ID="STR_Price_Fuel_Pump">
@@ -9227,7 +9227,7 @@
         <Key ID="STR_Fuel_Tank_Vehicle">
             <Original>Current Fuel Amount:</Original>
             <Czech>Aktuální výše Palivo:</Czech>
-            <French>Montant Courant de carburant:</French>
+            <French>Quantité de carburant actuelle :</French>
             <Spanish>Actual cantidad de combustible:</Spanish>
             <Italian>Quantità corrente di benzina:</Italian>
             <Polish>Aktualny Ilość paliwa:</Polish>
@@ -9243,7 +9243,7 @@
             <Polish>Wybierz pojazd</Polish>
             <Russian></Russian>
             <Portuguese>Selecione um veículo</Portuguese>
-            <French>Selectionne un vehicule!</French>
+            <French>Sélectionne un vehicule</French>
             <German>Wähle ein Fahrzeug</German>
         </Key>
         <Key ID="STR_Distance_Vehicle_Pump">
@@ -9254,7 +9254,7 @@
             <Polish>Pojazd jest zbyt daleko lub jesteś w!</Polish>
             <Russian></Russian>
             <Portuguese>O veículo está muito longe ou você está nele!</Portuguese>
-            <French>Le vehicule est trop loin ou tu es dedans!</French>
+            <French>Le vehicule est trop loin, ou tu es dedans !</French>
             <German>Das Fahrzeug ist zu weit entfernt oder du sitzt noch drin!</German>
         </Key>
         <Key ID="STR_Vehicle_Ready_Pump">
@@ -9265,7 +9265,7 @@
             <Polish>Pojazd jest pełna!</Polish>
             <Russian></Russian>
             <Portuguese>O veículo está cheio!</Portuguese>
-            <French>Le véhicule est plein!</French>
+            <French>Le véhicule est plein !</French>
             <German>Das Fahrzeug ist voll!</German>
         </Key>
     </Package>
@@ -9418,7 +9418,7 @@
         <Key ID="STR_MAR_Rebel_Outpost">
             <Original>Rebel Outpost</Original>
             <Czech>Rebel Outpost</Czech>
-            <French>Avant-Poste Rebel</French>
+            <French>Avant-Poste Rebelle</French>
             <Spanish>Base Rebelde</Spanish>
             <Italian>Avamposto Ribelle</Italian>
             <Russian></Russian>
@@ -9660,7 +9660,7 @@
         <Key ID="STR_MAR_Channel_News">
             <Original>Channel 7 News</Original>
             <Czech>Channel 7 News</Czech>
-            <French>Channel 7</French>
+            <French>Channel 7 News</French>
             <Spanish>Canal de Noticias 7</Spanish>
             <Italian>Notiziario di Altis</Italian>
             <Russian></Russian>
@@ -9693,7 +9693,7 @@
         <Key ID="STR_MAR_Deliver_Package">
             <Original>Deliver Package</Original>
             <Czech>doručit balíček</Czech>
-            <French>Livrer package</French>
+            <French>Livrer le paquet</French>
             <Spanish>Entregar Paquete</Spanish>
             <Russian></Russian>
             <German>Paket ausliefern</German>
@@ -9715,7 +9715,7 @@
         <Key ID="STR_MAR_Diving_Shop">
             <Original>Diving Shop</Original>
             <Czech>Potápění Shop</Czech>
-            <French>Boutique de plongé</French>
+            <French>Boutique de plongée</French>
             <Spanish>Tienda de Buceo</Spanish>
             <Russian></Russian>
             <German>Taucherladen</German>
@@ -9748,7 +9748,7 @@
         <Key ID="STR_MAR_Oil_Field">
             <Original>Oil Field</Original>
             <Czech>Ropné poles</Czech>
-            <French>Champs de Pétrole</French>
+            <French>Champ de Pétrole</French>
             <Spanish>Campo de Petróleo</Spanish>
             <Russian></Russian>
             <German>Öl Felder</German>
@@ -9759,7 +9759,7 @@
         <Key ID="STR_MAR_Weed_Field">
             <Original>Marijuana Field</Original>
             <Czech>Marihuana Field</Czech>
-            <French>Champs de pavots</French>
+            <French>Champ de pavots</French>
             <Spanish>Campo de Marihuana</Spanish>
             <Russian></Russian>
             <German>Gras Plantage</German>
@@ -9891,7 +9891,7 @@
         <Key ID="STR_MAR_Heroin_Field">
             <Original>Opium Poppy Field</Original>
             <Czech>Opium Poppy Field</Czech>
-            <French>Champs d'héroïne</French>
+            <French>Champ d'héroïne</French>
             <Spanish>Campo de Opio</Spanish>
             <Italian>Opium Poppy Field</Italian>
             <Russian></Russian>
@@ -10067,7 +10067,7 @@
         <Key ID="STR_MAR_Rebel_Clothing_Shop">
             <Original>Rebel Clothing Shop</Original>
             <Czech>Rebel Oblečení Shop</Czech>
-            <French>Friperie Rebel</French>
+            <French>Friperie Rebelle</French>
             <Spanish>Tienda de Ropa Rebelde</Spanish>
             <Italian>Rebel negozio di abbigliamento</Italian>
             <Russian></Russian>
@@ -10078,7 +10078,7 @@
         <Key ID="STR_MAR_Rebel_Weapon_Shop">
             <Original>Rebel Weapon Shop</Original>
             <Czech>Rebel obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes rebel</French>
+            <French>Vendeur d'armes rebelle</French>
             <Spanish>Tienda de Armas Rebeldes</Spanish>
             <Russian></Russian>
             <German>Rebellen Waffenladen</German>
@@ -10089,7 +10089,7 @@
         <Key ID="STR_MAR_Helicopter_Shop">
             <Original>Helicopter Shop</Original>
             <Czech>vrtulník Shop</Czech>
-            <French>Magasin Aerien</French>
+            <French>Magasin Aérien</French>
             <Spanish>Tienda de Helicópteros</Spanish>
             <Italian>Elicottero negozio</Italian>
             <Russian></Russian>
@@ -10111,7 +10111,7 @@
         <Key ID="STR_MAR_Rebel_Market">
             <Original>Rebel Market</Original>
             <Czech>Rebel Market</Czech>
-            <French>Marché Rebel</French>
+            <French>Marché Rebelle</French>
             <Spanish>Mercado Rebelde</Spanish>
             <Italian>mercato Rebel</Italian>
             <Russian></Russian>
