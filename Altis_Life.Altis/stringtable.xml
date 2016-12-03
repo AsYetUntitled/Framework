@@ -19,7 +19,7 @@
             <Russian></Russian>
             <German></German>
             <Italian>Caricamento Server, attendi...</Italian>
-            <French>Patienter le temps que le serveur soit prêt.</French>
+            <French>Patienter le temps que le serveur soit prêt...</French>
             <Portuguese>Esperando o servidor estar pronto...</Portuguese>
             <Polish></Polish>
         </Key>
@@ -109,14 +109,14 @@
             <Russian></Russian>
             <German>Billy Joe Schusswaffen</German>
             <Italian>Armeria di Billy Joe</Italian>
-            <French>armurerie de Billy Joe</French>
+            <French>Armurerie de Billy Joe</French>
             <Portuguese>Armas de fogo Billy Joe</Portuguese>
             <Polish>Broń palna Billy Joe</Polish>
         </Key>
         <Key ID="STR_Shops_C_Kart">
             <Original>Bobby's Kart-Racing Outfits</Original>
             <Czech>Billy Joe Střelné zbraně</Czech>
-            <French>Le Magasin de kart de Bobby</French>
+            <French>Magasin de kart de Bobby</French>
             <Spanish>Tienda de Trajes de Carreras</Spanish>
             <Italian>Vestiario da Pilota </Italian>
             <Russian></Russian>
@@ -818,7 +818,7 @@
             <Spanish>Commander/Tactical View Disabled</Spanish>
             <Russian>Commander/Tactical View Disabled</Russian>
             <German>Befehlshaber-Übersicht deaktivieren</German>
-            <French>Commander/Vue tactic désactivée</French>
+            <French>Commander/Vue tactique désactivée</French>
             <Italian>Commander/Tactical View Disabled</Italian>
             <Portuguese>Commander/Tactical View Disabled</Portuguese>
             <Polish>Commander/Tactical View Disabled</Polish>
@@ -4389,7 +4389,7 @@
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
             <Czech>Zachyťte Gang skrýš</Czech>
-            <French>Capturez Gang Cachette</French>
+            <French>Capturez la planque de Gang</French>
             <Spanish>Capturar Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
@@ -4405,7 +4405,7 @@
             <Spanish>Anuncio de la Estación de Noticias</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Nouvelles stations de diffusion</French>
             <Italian></Italian>
             <Portuguese>Estação de Transmissão de Notícias</Portuguese>
             <Polish></Polish>
@@ -4416,7 +4416,7 @@
             <Spanish>Estación del Canal de Noticias 7</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Chaine d'infos numero 7</French>
             <Italian></Italian>
             <Portuguese>Estação de Notícias do Canal 7</Portuguese>
             <Polish></Polish>
@@ -4427,7 +4427,7 @@
             <Spanish>Título del Mensaje</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Titre de l'annonce:</French>
             <Italian></Italian>
             <Portuguese>Titulo da Mensagem:</Portuguese>
             <Polish></Polish>
@@ -4438,7 +4438,7 @@
             <Spanish>Contenido del Anuncio</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Contenu de l'annonce:</French>
             <Italian></Italian>
             <Portuguese>Conteúdo da Mensagem:</Portuguese>
             <Polish></Polish>
@@ -4449,7 +4449,7 @@
             <Spanish>Transmitir Anuncio</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Diffusion de l'annonce</French>
             <Italian></Italian>
             <Portuguese>Transmitir Anúncio</Portuguese>
             <Polish></Polish>
@@ -4460,7 +4460,7 @@
             <Spanish>Costo de Transmisión: %1&lt;br /&gt;Siguiente Transmisión Disponible en: %2</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>La diffusion coute: %1&lt;br /&gt;Diffusion quivante disponible: %2</French>
             <Italian></Italian>
             <Portuguese>Custo de Trasnmissão: %1&lt;br /&gt;Próxima transmissão disponível em: %2</Portuguese>
             <Polish></Polish>
@@ -4471,7 +4471,7 @@
             <Spanish>El título no puede tener mas de %1 caracteres</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>L'en-tête ne peut pas dépasser %1 caractères</French>
             <Italian></Italian>
             <Portuguese>O cabeçalho não pode ter mais que %1 caracteres</Portuguese>
             <Polish></Polish>
@@ -4482,7 +4482,7 @@
             <Spanish>Has introducido un carácter inválido</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Vous avez entré un caractère non pris en charge!</French>
             <Italian></Italian>
             <Portuguese>Você inseriu um caractere inválido</Portuguese>
             <Polish></Polish>
@@ -4493,7 +4493,7 @@
             <Spanish>Ahora</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Maintenant</French>
             <Italian></Italian>
             <Portuguese>Agora</Portuguese>
             <Polish></Polish>
@@ -4504,7 +4504,7 @@
             <Spanish>Necesitas %1 para transmitir un anuncio!</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Vous avez besoins de  $%1 pour envoyer une diffusion!</French>
             <Italian></Italian>
             <Portuguese>Você precisa de $%1 para enviar uma transmissão!</Portuguese>
             <Polish></Polish>
@@ -4515,7 +4515,7 @@
             <Spanish>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Diffusé par: %2</French>
             <Italian></Italian>
             <Portuguese>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Portuguese>
             <Polish></Polish>
@@ -4561,7 +4561,7 @@
             <Spanish>Te has escapado de la cárcel, retienes tus crimenes anteriores más un crimen de escapado de la cárcel.</Spanish>
             <Russian></Russian>
             <German>Du bist aus dem Gefängnis ausgebrochen, die Polizei sucht bereits wegen deiner früheren Verbrechen und Gefängnisausbruch nach dir.</German>
-            <French>Vous vous êtes échappé de prison, vous conserver toujours vos crimes précédents et ils savent maintenant que vous vous êtes échappé de prison.</French>
+            <French>Vous vous êtes échappé de prison, vous conserver toujours vos crimes précédents et les autorités sont au courant de votre évasion.</French>
             <Italian>Sei scappato di prigione, rimarrai ricercato per i crimini da te commessi in precedenza e in aggiunta per essere scappato di prigione.</Italian>
             <Portuguese>Você escapou da prisão, agora você é procurado por esse crime e todos os outros que havia cometido anteriormente</Portuguese>
             <Polish>Uciekłeś z więzienia, dalej jesteś ścigany za poprzednie przestępstwa i dodatkowo za ucieczkę.</Polish>
@@ -5945,7 +5945,7 @@
             <Italian>Sei sicuro di voler rimuovere esso?</Italian>
             <Polish>Czy na pewno chcesz go usunąć?</Polish>
             <Russian></Russian>
-            <French>Etes-vous sûr de vouloir supprimer le container?</French>
+            <French>Etes-vous sûr de vouloir supprimer le conteneur?</French>
             <Portuguese>Você tem certeza que quer remover isso?</Portuguese>
             <German>Bist du sicher, dass du den Container entfernen möchtest?</German>
         </Key>
@@ -7828,7 +7828,7 @@
             <Spanish>Esta persona ya reapareció o fue revivida.</Spanish>
             <Russian></Russian>
             <German>Diese Person ist entweder respawnt oder wurde bereits wiederbelebt.</German>
-            <French>Cette personne a peut etre réapparut ou a déjà été réanimée.</French>
+            <French>Cette personne a peut etre fait réapparition ou a déjà été réanimée.</French>
             <Italian>Questa persona è stata già rianimata o ha fatto respawn.</Italian>
             <Portuguese>Esse jogador já deu respawn ou já foi reanimado.</Portuguese>
             <Polish>Ta osoba wcześniej się odrodziła lub została reanimowana.</Polish>
