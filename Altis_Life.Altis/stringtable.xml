@@ -40,8 +40,8 @@
             <Spanish>Finalizando configuración del cliente...</Spanish>
             <Russian></Russian>
             <German></German>
-            <Italian>Completando procedura d'inizializzazione </Italian>
-            <French>Finalisation de la procédure de configuration du client ...</French>
+            <Italian>Completando procedura d'inizializzazione</Italian>
+            <French>Finalisation de la procédure de configuration du client...</French>
             <Portuguese>Terminando o processo de configuração do cliente...</Portuguese>
             <Polish></Polish>
         </Key>
@@ -8153,7 +8153,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Vous pouvez acheter un garage à cette maison pour $% 1. Vous devez d'abord acheter la maison!</French>
+            <French>Vous pouvez acheter un garage à cette maison pour $%1. Vous devez d'abord acheter la maison!</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
