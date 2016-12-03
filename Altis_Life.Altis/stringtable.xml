@@ -818,7 +818,7 @@
             <Spanish>Commander/Tactical View Disabled</Spanish>
             <Russian>Commander/Tactical View Disabled</Russian>
             <German>Befehlshaber-Übersicht deaktivieren</German>
-            <French>Commander/Vue tactique désactivée</French>
+            <French>Commande/Vue tactique désactivée</French>
             <Italian>Commander/Tactical View Disabled</Italian>
             <Portuguese>Commander/Tactical View Disabled</Portuguese>
             <Polish>Commander/Tactical View Disabled</Polish>
@@ -4482,7 +4482,7 @@
             <Spanish>Has introducido un carácter inválido</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Vous avez entré un caractère non pris en charge!</French>
+            <French>Vous avez entré un caractère non pris en charge !</French>
             <Italian></Italian>
             <Portuguese>Você inseriu um caractere inválido</Portuguese>
             <Polish></Polish>
@@ -4504,7 +4504,7 @@
             <Spanish>Necesitas %1 para transmitir un anuncio!</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Vous avez besoins de  $%1 pour envoyer une diffusion!</French>
+            <French>Vous avez besoins de  $%1 pour envoyer une diffusion !</French>
             <Italian></Italian>
             <Portuguese>Você precisa de $%1 para enviar uma transmissão!</Portuguese>
             <Polish></Polish>
@@ -5945,7 +5945,7 @@
             <Italian>Sei sicuro di voler rimuovere esso?</Italian>
             <Polish>Czy na pewno chcesz go usunąć?</Polish>
             <Russian></Russian>
-            <French>Etes-vous sûr de vouloir supprimer le conteneur?</French>
+            <French>Etes-vous sûr de vouloir supprimer le conteneur ?</French>
             <Portuguese>Você tem certeza que quer remover isso?</Portuguese>
             <German>Bist du sicher, dass du den Container entfernen möchtest?</German>
         </Key>
@@ -7109,7 +7109,7 @@
             <Spanish>El tiempo esta corriendo, manten alejados a los policías!</Spanish>
             <Russian></Russian>
             <German>Der Timer läuft! Halte die Polizei von Safe fern!</German>
-            <French>La minuterie est lancée! Gardez les policiers loin de l'explosif!</French>
+            <French>La minuterie est lancée! Gardez les policiers loin de l'explosif !</French>
             <Italian>Il tempo sta scorrendo! Tieni la polizia lontana dalla cassaforte!</Italian>
             <Portuguese>O tempo está passando! Mantenha os policiais longe do cofre</Portuguese>
             <Polish>Zegar tyka! Trzymaj policję z dala od skarbca!</Polish>
@@ -7120,7 +7120,7 @@
             <Spanish>El explosivo ha sido desarmado!</Spanish>
             <Russian></Russian>
             <German>Die Sprengladung wurde entschärft!</German>
-            <French>La charge a été désamorcée!</French>
+            <French>La charge a été désamorcée !</French>
             <Italian>La carica esplosiva è stata disinnescata!</Italian>
             <Portuguese>O explosivo foi desarmado!</Portuguese>
             <Polish>Ładunek wybuchowy rozbrojony!</Polish>
@@ -7139,7 +7139,7 @@
         <Key ID="STR_ISTR_Blast_Exploit">
             <Original>You must open the container before placing the charge!</Original>
             <Czech>Je nutné otevřít nádobu před umístěním nabíječku!</Czech>
-            <French>Vous devez ouvrir le conteneur avant de placer le chargeur!</French>
+            <French>Vous devez ouvrir le conteneur avant de placer le chargeur !</French>
             <Spanish>Debes abrir el contenedor antes de poner el explosivo!</Spanish>
             <Italian>È necessario aprire il contenitore prima di mettere il caricabatterie!</Italian>
             <Polish>Musisz otworzyć pojemnik przed wprowadzeniem opłat!</Polish>
