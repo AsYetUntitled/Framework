@@ -531,7 +531,7 @@
             <Italian>Osserva</Italian>
             <Russian></Russian>
             <German>Zuschauen</German>
-            <French>Regardez</French>
+            <French>Regarder</French>
             <Portuguese>Observar</Portuguese>
             <Polish>Obserwuj</Polish>
         </Key>
@@ -1926,7 +1926,7 @@
             <Original>Bad UID?</Original>
             <Czech>Bad UID?</Czech>
             <French>Bad UID?</French>
-            <Spanish>Bad UID?</Spanish>
+            <Spanish>Mauvais UID ?</Spanish>
             <Italian>Bad UID?</Italian>
             <Polish>Bad UID?</Polish>
             <Portuguese>Bad UID?</Portuguese>
@@ -1952,7 +1952,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Ce garage a déjà été acheté !</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1963,7 +1963,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Vous n'êtes pas le propriétaire de cette maison !</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1974,7 +1974,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Ce garage est disponible pour &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1985,7 +1985,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Ce bâtiment est un repaire de gang !</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -1996,7 +1996,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Etes-vous sûr de vouloir vendre votre garage? Il sera vendu pour: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2007,7 +2007,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Vendre le garage.</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2018,7 +2018,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Acheter le garage.</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
