@@ -1925,8 +1925,8 @@
         <Key ID="STR_GNOTF_badUID">
             <Original>Bad UID?</Original>
             <Czech>Bad UID?</Czech>
-            <French>Bad UID?</French>
-            <Spanish>Mauvais UID ?</Spanish>
+            <French>Mauvais UID ?</French>
+            <Spanish>Bad UID?</Spanish>
             <Italian>Bad UID?</Italian>
             <Polish>Bad UID?</Polish>
             <Portuguese>Bad UID?</Portuguese>
@@ -2029,7 +2029,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French></French>
+            <French>Vous ne possédez pas de garage ici !</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2095,7 +2095,7 @@
             <Spanish>No se encontraron vehículos en el Garaje.</Spanish>
             <Russian></Russian>
             <German>Keine Fahrzeuge in der Garage gefunden.</German>
-            <French>Aucuns Vehicules.</French>
+            <French>Aucun Vehicules.</French>
             <Italian>Non hai veicoli nel Garage.</Italian>
             <Portuguese>Nenhum veiculo encontrado na garagem.</Portuguese>
             <Polish>Nie znaleziono pojazdów w garażu</Polish>
