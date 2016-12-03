@@ -4763,7 +4763,7 @@
             <Spanish>Dando Tiquete a %1</Spanish>
             <Russian></Russian>
             <German>Verrechne %1</German>
-            <French>Mise de l'amende à %1</French>
+            <French>Contravention à %1</French>
             <Italian>Multando %1</Italian>
             <Portuguese>Multando %1</Portuguese>
             <Polish>Mandat dla %1</Polish>
@@ -5513,7 +5513,7 @@
             <Spanish>Maletero de Vehículo</Spanish>
             <Russian></Russian>
             <German>Kofferraum</German>
-            <French>Coffre de véhicule</French>
+            <French>Coffre du véhicule</French>
             <Italian>Inventario veicolo</Italian>
             <Portuguese>Capacidade da mala:</Portuguese>
             <Polish>Bagażnik pojazdu</Polish>
@@ -5524,7 +5524,7 @@
             <Spanish>El vehículo no existe o fue destruido.</Spanish>
             <Russian></Russian>
             <German>Das Fahrzeug existiert entweder nicht oder wurde zerstört.</German>
-            <French>Le véhicule n'existe pas ou à est détruit</French>
+            <French>Le véhicule n'existe pas ou à été détruit</French>
             <Italian>Il veicolo non esiste o è stato distrutto.</Italian>
             <Portuguese>Veículo não existe ou está destruido.</Portuguese>
             <Polish>Pojazd nie istnieje lub jest zniszczony</Polish>
@@ -6379,7 +6379,7 @@
             <Spanish>Carne de Pollo</Spanish>
             <Russian></Russian>
             <German>Rohes Hühnchen</German>
-            <French>poulet cru</French>
+            <French>Poulet cru</French>
             <Italian>pollo crudo</Italian>
             <Portuguese>Galinha Crua</Portuguese>
             <Polish>Surowy Kurczak</Polish>
@@ -6401,7 +6401,7 @@
             <Spanish>Carne de Gallo</Spanish>
             <Russian></Russian>
             <German>Rohes Hähnchen</German>
-            <French>Coq Raw</French>
+            <French>Coq cru</French>
             <Italian>Rooster Raw</Italian>
             <Portuguese>Galo Cru</Portuguese>
             <Polish>Surowy Kogut</Polish>
@@ -6423,7 +6423,7 @@
             <Spanish>Carne de Cabra</Spanish>
             <Russian></Russian>
             <German>Rohes Ziegenfleisch</German>
-            <French>chèvre cru</French>
+            <French>Chèvre cru</French>
             <Italian>Carne di capra Raw</Italian>
             <Portuguese>Carne de Cabra Crua</Portuguese>
             <Polish>Surowa Koza</Polish>
@@ -6434,7 +6434,7 @@
             <Spanish>Cabra Asada</Spanish>
             <Russian></Russian>
             <German>Gegrilltes Ziegenfleisch</German>
-            <French>chèvre grillé</French>
+            <French>Chèvre grillé</French>
             <Italian>Carne di capra alla griglia</Italian>
             <Portuguese>Carne de Cabra Grelhada</Portuguese>
             <Polish>Grilowana Koza</Polish>
