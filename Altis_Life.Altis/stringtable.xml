@@ -4180,7 +4180,7 @@
         <Key ID="STR_NOTF_didNotSelectVehicle">
             <Original>You did not select a vehicle.</Original>
             <Czech>Nevybrali jste vozidlo.</Czech>
-            <French>Vous n'avez pas sélectionné un véhicule.</French>
+            <French>Vous n'avez pas sélectionné de véhicule.</French>
             <Spanish>No ha seleccionado un vehículo.</Spanish>
             <Italian>Non hai selezionato un veicolo.</Italian>
             <Polish>Nie wybrano pojazdu.</Polish>
@@ -4202,7 +4202,7 @@
         <Key ID="STR_NOTF_didNotSelectPlayer">
             <Original>You did not select a player.</Original>
             <Czech>Nevybrali jste si přehrávač.</Czech>
-            <French>Vous n'avez pas sélectionné un joueur.</French>
+            <French>Vous n'avez pas sélectionné de joueur.</French>
             <Spanish>No ha seleccionado un jugador.</Spanish>
             <Italian>Non hai selezionato un giocatore.</Italian>
             <Polish>Nie wybrano odtwarzacza.</Polish>
@@ -4268,7 +4268,7 @@
         <Key ID="STR_NOTF_menuWillNotOpen">
             <Original>Something went wrong; the menu will not open?</Original>
             <Czech>Něco se pokazilo; nabídka neotevře?</Czech>
-            <French>Quelque chose a mal tourné; le menu ne sera pas ouvert?</French>
+            <French>Quelque-chose s'est mal passé; le menu ne s'ouvre pas?</French>
             <Spanish>Algo salió mal; el menú no se abre?</Spanish>
             <Italian>Qualcosa è andato storto; il menu non si apre?</Italian>
             <Polish>Coś poszło nie tak; menu nie otworzy?</Polish>
@@ -4290,7 +4290,7 @@
         <Key ID="STR_NOTF_canOnlyStoreInLandVeh">
             <Original>You cannot store that in anything but a land vehicle!</Original>
             <Czech>Nelze uložit, že v ničem jiném než pozemní vozidla!</Czech>
-            <French>Vous pouvez stocker cette item seulement dans les vehicules terrestres!</French>
+            <French>Vous pouvez stocker cette item seulement dans les vehicules terrestres !</French>
             <Spanish>No se puede almacenar en cualquier cosa menos que un vehículo terrestre!</Spanish>
             <Italian>Non è possibile depositare questa risorsa in un veicolo che non sia terrestre!</Italian>
             <Polish>Nie można zapisać, że w nic poza pojazdem lądowym!</Polish>
@@ -4301,7 +4301,7 @@
         <Key ID="STR_NOTF_notEnoughCashToStoreInVeh">
             <Original>You don't have that much cash on you to store in the vehicle!</Original>
             <Czech>Nemáte tolik peněz na vás uložit do vozidla!</Czech>
-            <French>Vous ne disposez pas d'autant d'argent sur vous pour stocker dans le véhicule!</French>
+            <French>Vous ne disposez pas d'autant d'argent sur vous pour stocker dans le véhicule !</French>
             <Spanish>Usted no tiene esa cantidad de dinero en efectivo para almacenar en el vehículo!</Spanish>
             <Italian>Non hai abbastanza denaro con te da mettere nel veicolo!</Italian>
             <Polish>Nie ma tego dużo gotówki na ciebie do przechowywania w pojeździe!</Polish>
@@ -4356,7 +4356,7 @@
         <Key ID="STR_NOTF_nowSpectating">
             <Original>You are now spectating %1.\n\nPress F10 to stop spectating.</Original>
             <Czech>Nyní diváck é%1.\n\nStisknutím klávesy F10 k zastavení divácké.</Czech>
-            <French>Vous êtes maintenant spectating %1.\n\nAppuyez sur F10 pour arrêter spectating.</French>
+            <French>Vous êtes maintenant spectateur %1.\n\nAppuyez sur F10 pour arrêter le mode spectateur.</French>
             <Spanish>Ahora está como espectador de %1.\n\nPulse F10 para salir de modo espectador.</Spanish>
             <Italian>Si è ora spectating %1.\n\nPremere F10 per smettere di spettatori.</Italian>
             <Polish>Grasz teraz spectating %1.\n\nNaciśnij klawisz F10, aby zatrzymać spectating.</Polish>
@@ -4389,7 +4389,7 @@
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
             <Czech>Zachyťte Gang skrýš</Czech>
-            <French>Capturez la planque de Gang</French>
+            <French>Capturer la planque de Gang</French>
             <Spanish>Capturar Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
