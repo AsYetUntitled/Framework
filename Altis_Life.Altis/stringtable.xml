@@ -1376,7 +1376,7 @@
             <Spanish>Cuesta $%1 para crear una pandilla</Spanish>
             <Russian></Russian>
             <German>Eine Gang zu erstellen kostet $%1</German>
-            <French>Pour créer un gang ça coute %1$</French>
+            <French>Le prix de création d'un gang est de %1$</French>
             <Italian>Creare una gang costa $%1</Italian>
             <Portuguese>Criar uma Gangue custa R$%1</Portuguese>
             <Polish>Koszt ustanowienia gangu to $%1</Polish>
@@ -1488,7 +1488,7 @@
             <Spanish>Solo una persona puede capturar a la vez!</Spanish>
             <Russian></Russian>
             <German>Nur eine Person kann das Versteck einnehmen!</German>
-            <French>Une seule personne doit capturer à la fois!</French>
+            <French>Une seule personne peut capturer à la fois!</French>
             <Italian>Può conquistare solo una persona alla volta!</Italian>
             <Portuguese>Somente uma pessoa pode capturar!</Portuguese>
             <Polish>Przejmowanie powinna przeprowadzić na raz tylko jedna osoba</Polish>
@@ -1532,7 +1532,7 @@
             <Spanish>Capturando el Escondite</Spanish>
             <Russian></Russian>
             <German>Versteck einnehmen</German>
-            <French>Capture cachette</French>
+            <French>Capture de la cachette</French>
             <Italian>Catturando il Covo</Italian>
             <Portuguese>Capturando Esconderijo</Portuguese>
             <Polish>Przejmowanie kryjówki</Polish>
@@ -11374,7 +11374,7 @@
         <Key ID="STR_DL_AL_Arrested">
             <Original>%1 - %2 arrested %3</Original>
             <Czech>%1 - %2 %3 zatčen</Czech>
-            <French>>%1 - %2 arrêté %3</French>
+            <French>%1 - %2 arrêté %3</French>
             <Spanish>%1 - %2 arrestó a %3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
