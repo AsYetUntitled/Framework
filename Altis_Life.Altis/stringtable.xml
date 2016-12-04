@@ -2007,7 +2007,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Vendre le garage.</French>
+            <French>Vendre le garage</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -6423,7 +6423,7 @@
             <Spanish>Carne de Cabra</Spanish>
             <Russian></Russian>
             <German>Rohes Ziegenfleisch</German>
-            <French>Chèvre cru</French>
+            <French>Chèvre crue</French>
             <Italian>Carne di capra Raw</Italian>
             <Portuguese>Carne de Cabra Crua</Portuguese>
             <Polish>Surowa Koza</Polish>
@@ -6434,7 +6434,7 @@
             <Spanish>Cabra Asada</Spanish>
             <Russian></Russian>
             <German>Gegrilltes Ziegenfleisch</German>
-            <French>Chèvre grillé</French>
+            <French>Chèvre grillée</French>
             <Italian>Carne di capra alla griglia</Italian>
             <Portuguese>Carne de Cabra Grelhada</Portuguese>
             <Polish>Grilowana Koza</Polish>
@@ -7795,7 +7795,7 @@
             <Spanish>%1 te a revivido y una cuota de $%2 a sido tomada de tu cuenta por sus servicios.</Spanish>
             <Russian></Russian>
             <German>%1 hat dich wiederbelebt und dafür eine Gebühr von $%2 von deinem Bankkonto eingezogen.</German>
-            <French>%1 vous a réanimé, les fraits de $%2 sont transféré depuit votre compte bancaire pour son service.</French>
+            <French>%1 vous à réanimé, les fraits de $%2 sont transféré depuit votre compte bancaire pour son service.</French>
             <Italian>%1 ti ha rianimato e sono stati prelevati $%2 dal tuo conto in banca per pagare la prestazione.</Italian>
             <Portuguese>%1 reviveu você e uma taxa de R$%2 foi cobrada da sua conta bancária para os serviços prestados.</Portuguese>
             <Polish>%1 pobrał opłatę w wysokości $%2 za reanimację i przywrócenie funkcji życiowych.</Polish>
@@ -7828,7 +7828,7 @@
             <Spanish>Esta persona ya reapareció o fue revivida.</Spanish>
             <Russian></Russian>
             <German>Diese Person ist entweder respawnt oder wurde bereits wiederbelebt.</German>
-            <French>Cette personne a peut etre fait réapparition ou a déjà été réanimée.</French>
+            <French>Cette personne a peut etre fait une réapparition ou a déjà été réanimée.</French>
             <Italian>Questa persona è stata già rianimata o ha fatto respawn.</Italian>
             <Portuguese>Esse jogador já deu respawn ou já foi reanimado.</Portuguese>
             <Polish>Ta osoba wcześniej się odrodziła lub została reanimowana.</Polish>
@@ -9254,7 +9254,7 @@
             <Polish>Wybierz pojazd</Polish>
             <Russian></Russian>
             <Portuguese>Selecione um veículo</Portuguese>
-            <French>Selectionne un vehicule!</French>
+            <French>Selectionner un vehicule</French>
             <German>Wähle ein Fahrzeug</German>
         </Key>
         <Key ID="STR_Distance_Vehicle_Pump">
@@ -9265,7 +9265,7 @@
             <Polish>Pojazd jest zbyt daleko lub jesteś w!</Polish>
             <Russian></Russian>
             <Portuguese>O veículo está muito longe ou você está nele!</Portuguese>
-            <French>Le vehicule est trop loin ou tu es dedans!</French>
+            <French>Le vehicule est peut etre trop loin ou alors tu es déjà dedans!</French>
             <German>Das Fahrzeug ist zu weit entfernt oder du sitzt noch drin!</German>
         </Key>
         <Key ID="STR_Vehicle_Ready_Pump">
@@ -9396,7 +9396,7 @@
         <Key ID="STR_MAR_Tanoa_Corrections">
             <Original>Tanoa Corrections</Original>
             <Czech>Tanoa Opravy</Czech>
-            <French>Prison d'Tanoa</French>
+            <French>Prison de Tanoa</French>
             <Spanish>Prisión de Tanoa</Spanish>
             <Russian></Russian>
             <German>Tanoa Bundesgefängnis</German>
@@ -9616,7 +9616,7 @@
         <Key ID="STR_MAR_Bruce_Outfits">
             <Original>Bruce's Outback Outfits</Original>
             <Czech>Bruceovy Outback Oblečení</Czech>
-            <French>Friperie</French>
+            <French>Magasin de vêtements de Bruce</French>
             <Spanish>Tienda de Ropa</Spanish>
             <Italian>Outfit di Bruce</Italian>
             <Russian></Russian>
@@ -9671,7 +9671,7 @@
         <Key ID="STR_MAR_Channel_News">
             <Original>Channel 7 News</Original>
             <Czech>Channel 7 News</Czech>
-            <French>Channel 7</French>
+            <French>Chaine d'infos numero 7</French>
             <Spanish>Canal de Noticias 7</Spanish>
             <Italian>Notiziario di Altis</Italian>
             <Russian></Russian>
@@ -9704,7 +9704,7 @@
         <Key ID="STR_MAR_Deliver_Package">
             <Original>Deliver Package</Original>
             <Czech>doručit balíček</Czech>
-            <French>Livrer package</French>
+            <French>Livrer le paquet</French>
             <Spanish>Entregar Paquete</Spanish>
             <Russian></Russian>
             <German>Paket ausliefern</German>
@@ -9726,7 +9726,7 @@
         <Key ID="STR_MAR_Diving_Shop">
             <Original>Diving Shop</Original>
             <Czech>Potápění Shop</Czech>
-            <French>Boutique de plongé</French>
+            <French>Boutique de plongée</French>
             <Spanish>Tienda de Buceo</Spanish>
             <Russian></Russian>
             <German>Taucherladen</German>
@@ -10023,7 +10023,7 @@
         <Key ID="STR_MAR_Gold_Bars_Buyer">
             <Original>Gold Bars Buyer</Original>
             <Czech>Gold Bary kupujícího</Czech>
-            <French>Acheteur d'or</French>
+            <French>Acheteur d'Or</French>
             <Spanish>Comprador de Oro</Spanish>
             <Russian></Russian>
             <German>Händler für Goldbarren</German>
@@ -10078,7 +10078,7 @@
         <Key ID="STR_MAR_Rebel_Clothing_Shop">
             <Original>Rebel Clothing Shop</Original>
             <Czech>Rebel Oblečení Shop</Czech>
-            <French>Friperie Rebel</French>
+            <French>Magasin de vêtements Rebel</French>
             <Spanish>Tienda de Ropa Rebelde</Spanish>
             <Italian>Rebel negozio di abbigliamento</Italian>
             <Russian></Russian>
@@ -10155,7 +10155,7 @@
         <Key ID="STR_MAR_Clothing_Store">
             <Original>Clothing Store</Original>
             <Czech>Obchod s oblečením</Czech>
-            <French>Friperie</French>
+            <French>Magasin de vêtements</French>
             <Spanish>Tienda de Ropa</Spanish>
             <Russian></Russian>
             <German>Klamottenladen</German>
@@ -10188,7 +10188,7 @@
         <Key ID="STR_MAR_Cop_Item_Shop">
             <Original>Cop Item Shop</Original>
             <Czech>Cop Item Shop</Czech>
-            <French>Marché flic</French>
+            <French>Marché police</French>
             <Spanish>Tienda de Objetos de Policía</Spanish>
             <Italian>Strumenti</Italian>
             <Russian></Russian>
@@ -10199,7 +10199,7 @@
         <Key ID="STR_MAR_Cop_Clothing_Shop">
             <Original>Cop Clothing Shop</Original>
             <Czech>Cop Oblečení Shop</Czech>
-            <French>Friperie Flic</French>
+            <French>Magasin de vêtements de Policier</French>
             <Spanish>Tienda de Ropa de Policía</Spanish>
             <Italian>Uniformi</Italian>
             <Russian></Russian>
@@ -10210,7 +10210,7 @@
         <Key ID="STR_MAR_Cop_Weapon_Shop">
             <Original>Cop Weapon Shop</Original>
             <Czech>Cop obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes flic</French>
+            <French>Vendeur d'armes police</French>
             <Spanish>Tienda de Armas de Policía</Spanish>
             <Italian>Armeria da Agenti</Italian>
             <Russian></Russian>
@@ -10221,7 +10221,7 @@
         <Key ID="STR_MAR_Patrol_Officer_Weapon_Shop">
             <Original>Patrol Officer Weapon Shop</Original>
             <Czech>Policistou obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes flic (Officier)</French>
+            <French>Vendeur d'armes police (Officier)</French>
             <Spanish>Tienda de Armas de Oficial de Patrulla</Spanish>
             <Italian>Armeria da Pattuglia</Italian>
             <Russian></Russian>
@@ -10232,7 +10232,7 @@
         <Key ID="STR_MAR_Sergeant_Weapon_Shop">
             <Original>Sergeant Weapon Shop</Original>
             <Czech>Seržant obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes flic (Sergent)</French>
+            <French>Vendeur d'armes police (Sergent)</French>
             <Spanish>Tienda de Armas de Oficial de Sargento</Spanish>
             <Italian>Armeria dei Sergenti</Italian>
             <Russian></Russian>
@@ -10386,7 +10386,7 @@
         <Key ID="STR_MAR_EMS_Clothing_Shop">
             <Original>EMS Clothing Shop</Original>
             <Czech>EMS Oblečení Shop</Czech>
-            <French>Friperie Medecin</French>
+            <French>Boutique de vêtements de Medecin</French>
             <Spanish>Tienda de Ropa de Médico</Spanish>
             <Italian>Uniformi EMS</Italian>
             <Russian></Russian>
@@ -10908,7 +10908,7 @@
             <Czech>Federální rezervní systém lámání</Czech>
             <Spanish>Entrar a la Reserva Federal</Spanish>
             <Russian></Russian>
-            <French>Intrusion dans le coffre du gouverneur</French>
+            <French>Intrusion dans la réserve fédéral</French>
             <Portuguese>Invasão a Reserva Federal</Portuguese>
             <German>Bankeinbruch</German>
             <Italian>Rapina alla Riserva Federale</Italian>
@@ -10952,7 +10952,7 @@
         <Key ID="STR_FuelTank_Supply">
             <Original>Supply</Original>
             <Czech>Zásobování</Czech>
-            <French>La fourniture</French>
+            <French>Ravitailler</French>
             <Spanish>Suministro</Spanish>
             <Italian>Fornitura</Italian>
             <Polish>Dostawa</Polish>
@@ -10963,7 +10963,7 @@
         <Key ID="STR_FuelTank_Store">
             <Original>Store</Original>
             <Czech>Obchod</Czech>
-            <French>Deposer</French>
+            <French>Déposer</French>
             <Spanish>Guardar</Spanish>
             <Italian>Negozio</Italian>
             <Polish>Sklep</Polish>
@@ -10974,7 +10974,7 @@
         <Key ID="STR_FuelTank_Stop">
             <Original>Stop</Original>
             <Czech>Stop</Czech>
-            <French>Arrêtez</French>
+            <French>Arrêter</French>
             <Spanish>Parar</Spanish>
             <Italian>Stop</Italian>
             <Polish>Zatrzymać</Polish>
@@ -10985,7 +10985,7 @@
         <Key ID="STR_FuelTank_InUse">
             <Original>Tanker is already in use.</Original>
             <Czech>Tankery je již používán.</Czech>
-            <French>Tanker est déjà en cours d'utilisation.</French>
+            <French>Le camion citerne est déjà en cours d'utilisation.</French>
             <Spanish>El Camión Cisterna ya esta siendo usado.</Spanish>
             <Italian>La cisterna è già in uso.</Italian>
             <Polish>Cysterna jest już w użyciu.</Polish>
@@ -10996,7 +10996,7 @@
         <Key ID="STR_FuelTank_AnotherInUse">
             <Original>Gas station is in use.</Original>
             <Czech>Čerpací stanice je v provozu.</Czech>
-            <French>Gas station est en cours d'utilisation.</French>
+            <French>La station-service est en fonctionnement.</French>
             <Spanish>La estación ya se esta usando.</Spanish>
             <Italian>La stazione di benzina è già in uso.</Italian>
             <Polish>Stacja benzynowa jest w użyciu.</Polish>
@@ -11007,7 +11007,7 @@
         <Key ID="STR_FuelTank_Empty">
             <Original>Tanker is empty.</Original>
             <Czech>Tankery je prázdný.</Czech>
-            <French>Tanker est vide.</French>
+            <French>Le camion citerne est vide.</French>
             <Spanish>El Camión cisterna esta vacío.</Spanish>
             <Italian>La cisterna è vuota.</Italian>
             <Polish>Cysterna jest pusta.</Polish>
@@ -11018,7 +11018,7 @@
         <Key ID="STR_FuelTank_Full">
             <Original>Tankers is full.</Original>
             <Czech>Tankery je plná.</Czech>
-            <French>Tankers est plein.</French>
+            <French>Le camion citerne est plein.</French>
             <Spanish>El Camión cisterna esta lleno.</Spanish>
             <Italian>La cisterna è piena.</Italian>
             <Polish>Zbiornikowce jest pełna.</Polish>
