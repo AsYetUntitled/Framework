@@ -9050,7 +9050,7 @@
             <Spanish>Fondos de la Pandilla</Spanish>
             <Russian></Russian>
             <German>Geld der Gang</German>
-            <French>Fonds du gang:</French>
+            <French>Fonds du gang</French>
             <Italian>Fondi Gang</Italian>
             <Portuguese>Gangue</Portuguese>
             <Polish>Środki gangu</Polish>
@@ -9205,7 +9205,7 @@
         <Key ID="STR_Action_PumpJerry">
             <Original>Refuel Fuel Canister</Original>
             <Czech>Tankovat paliva kanystr</Czech>
-            <French>Refuel carburant Bidon</French>
+            <French>Ravitailler le bidon en carburant</French>
             <Spanish>Llenar Bidón de Combustible</Spanish>
             <Italian>Fare rifornimento di carburante scatola metallica</Italian>
             <Polish>Tankowanie paliwa Canister</Polish>
