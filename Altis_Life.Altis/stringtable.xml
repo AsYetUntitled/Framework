@@ -11262,7 +11262,7 @@
         <Key ID="STR_Civ_Plane">
             <Original>Civ Plane</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Avion civil</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11273,7 +11273,7 @@
         <Key ID="STR_Police_Tan">
             <Original>Police HQ</Original>
             <Czech></Czech>
-            <French></French>
+            <French>HQ Police</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11284,7 +11284,7 @@
         <Key ID="STR_Police_Store">
             <Original>Police Store</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Magasin de police</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11295,7 +11295,7 @@
         <Key ID="STR_Police_Car">
             <Original>Police Car</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Voiture de police</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11306,7 +11306,7 @@
         <Key ID="STR_Police_Heli">
             <Original>Police Heli</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Helicoptere de police</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11317,7 +11317,7 @@
         <Key ID="STR_Police_Boat">
             <Original>Police Boat</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Bateau de police</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11328,7 +11328,7 @@
         <Key ID="STR_Rebel_Car">
             <Original>Rebel Car</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Voiture de rebelle</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11339,7 +11339,7 @@
         <Key ID="STR_Rebel_Heli">
             <Original>Rebel Heli</Original>
             <Czech></Czech>
-            <French></French>
+            <French>Helicoptere de rebelle</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11350,7 +11350,7 @@
         <Key ID="STR_Police_Tanoa">
             <Original>Police HQ</Original>
             <Czech></Czech>
-            <French></French>
+            <French>HQ Police</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11363,7 +11363,7 @@
         <Key ID="STR_DL_AL_Arrested_BEF">
             <Original>arrested %1</Original>
             <Czech>zadržen %1</Czech>
-            <French></French>
+            <French>arrêté %1</French>
             <Spanish>arrestó a %1</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11374,7 +11374,7 @@
         <Key ID="STR_DL_AL_Arrested">
             <Original>%1 - %2 arrested %3</Original>
             <Czech>%1 - %2 %3 zatčen</Czech>
-            <French></French>
+            <French>>%1 - %2 arrêté %3</French>
             <Spanish>%1 - %2 arrestó a %3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11385,7 +11385,7 @@
         <Key ID="STR_DL_AL_pickedUp_BEF">
             <Original>picked up %1 %2</Original>
             <Czech>vyzvednout %1 %2</Czech>
-            <French></French>
+            <French>Ramassé %1 %2</French>
             <Spanish>recogió %1 %2</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11396,7 +11396,7 @@
         <Key ID="STR_DL_AL_pickedUp">
             <Original>%1 - %2 picked up %3 %4</Original>
             <Czech>%1 - %2 vyzvednout%3 %4</Czech>
-            <French></French>
+            <French>%1 - %2 ramassé %3 %4</French>
             <Spanish>%1 - %2 recogió %3 %4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11407,7 +11407,7 @@
         <Key ID="STR_DL_ML_pickedUpMoney_BEF">
             <Original>picked up $%1 from the ground. Bank Balance: $%2  On Hand Balance: $%3</Original>
             <Czech>zvedl $%1 ze země. Banka Zůstatek: $%2 po zralé úvaze rukou: $%3</Czech>
-            <French></French>
+            <French>Ramassé $%1 trouvé par terre. Solde Bancaire: $%2  Solde sur vous: $%3</French>
             <Spanish>recogió $%1 del suelo. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11451,7 +11451,7 @@
         <Key ID="STR_DL_AL_createdGang_BEF">
             <Original>created a gang named: %1 for $%2</Original>
             <Czech>Vytvořili gang s názvem: %1 za $%2</Czech>
-            <French></French>
+            <French>Créé un gang nommé: %1 pour $%2</French>
             <Spanish>creó una pandilla llamada: %1 por $%2</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11462,7 +11462,7 @@
         <Key ID="STR_DL_AL_createdGang">
             <Original>%1 - %2 created a gang named: %3 for $%4</Original>
             <Czech>%1 - %2 vytvořili gang s názvem: %3 za $%4</Czech>
-            <French></French>
+            <French>%1 - %2 a crée un compte appelé: %3 for $%4</French>
             <Spanish>%1 - %2 creó una pandilla llamada: %3 por $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
