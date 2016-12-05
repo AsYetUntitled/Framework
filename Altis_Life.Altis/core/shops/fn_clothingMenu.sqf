@@ -33,6 +33,17 @@ if (_exit) exitWith {};
 
 _exit = [_conditions] call life_fnc_levelCheck;
 if !(_exit) exitWith {hint localize "STR_Shop_Veh_NoLicense";};
+
+//Save old inventory
+life_oldClothes = uniform player;
+life_olduniformItems = uniformItems player;
+life_oldBackpack = backpack player;
+life_oldVest = vest player;
+life_oldVestItems = vestItems player;
+life_oldBackpackItems = backpackItems player;
+life_oldGlasses = goggles player;
+life_oldHat = headgear player;
+
 /* Open up the menu */
 createDialog "Life_Clothing";
 disableSerialization;
@@ -164,15 +175,6 @@ _filter lbAdd localize "STR_Shop_UI_Vests";
 _filter lbAdd localize "STR_Shop_UI_Backpack";
 
 _filter lbSetCurSel 0;
-
-life_oldClothes = uniform player;
-life_olduniformItems = uniformItems player;
-life_oldBackpack = backpack player;
-life_oldVest = vest player;
-life_oldVestItems = vestItems player;
-life_oldBackpackItems = backpackItems player;
-life_oldGlasses = goggles player;
-life_oldHat = headgear player;
 
 [] call life_fnc_playerSkins;
 

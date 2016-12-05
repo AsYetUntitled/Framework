@@ -26,6 +26,7 @@ DROP PROCEDURE IF EXISTS `deleteDeadVehicles`;
 DROP PROCEDURE IF EXISTS `deleteOldHouses`;
 DROP PROCEDURE IF EXISTS `deleteOldGangs`;
 DROP PROCEDURE IF EXISTS `deleteOldContainers`;
+DROP PROCEDURE IF EXISTS `deleteOldWanted`;
 
 DELIMITER $$
 --
