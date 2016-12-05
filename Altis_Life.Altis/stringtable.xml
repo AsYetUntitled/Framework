@@ -11462,7 +11462,7 @@
         <Key ID="STR_DL_AL_createdGang">
             <Original>%1 - %2 created a gang named: %3 for $%4</Original>
             <Czech>%1 - %2 vytvořili gang s názvem: %3 za $%4</Czech>
-            <French>%1 - %2 a crée un compte appelé: %3 for $%4</French>
+            <French>%1 - %2 a crée un gang appelé: %3 pour $%4</French>
             <Spanish>%1 - %2 creó una pandilla llamada: %3 por $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11495,7 +11495,7 @@
         <Key ID="STR_DL_AL_soldHouse_BEF">
             <Original>sold a house for $%1. Bank Balance: $%2</Original>
             <Czech>prodal dům za $%1. Banka Zůstatek: $%2</Czech>
-            <French></French>
+            <French>a vendu une maison $%1. Solde bancaire: $%2</French>
             <Spanish>vendió una casa por $%1. Saldo Bancario: $%2</Spanish>
             <Italian></Italian>
             <Polish></Polish>
