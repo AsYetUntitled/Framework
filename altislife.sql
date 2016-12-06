@@ -26,6 +26,7 @@ DROP PROCEDURE IF EXISTS `deleteDeadVehicles`;
 DROP PROCEDURE IF EXISTS `deleteOldHouses`;
 DROP PROCEDURE IF EXISTS `deleteOldGangs`;
 DROP PROCEDURE IF EXISTS `deleteOldContainers`;
+DROP PROCEDURE IF EXISTS `deleteOldWanted`;
 
 DELIMITER $$
 --
@@ -57,6 +58,11 @@ END$$
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldContainers`()
 BEGIN
   DELETE FROM `containers` WHERE `owned` = 0;
+END$$
+
+CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldWanted`()
+BEGIN
+  DELETE FROM `wanted` WHERE `active` = 0;
 END$$
 
 DELIMITER ;
