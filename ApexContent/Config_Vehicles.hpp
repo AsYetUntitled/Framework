@@ -230,43 +230,43 @@ class LifeCfgVehicles {
         conditions = "";
         price = 150000;
         textures[] = {
-            { "Racing (Tan Interior)", "civ", {
+            { "Course (Intérieur brun)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
             } },
-            { "Racing", "civ", {
+            { "Course", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
             } },
-            { "Red Line (Tan Interior)", "civ", {
+            { "Ligne rouge (Intérieur brun)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
             } },
-            { "Red Line", "civ", {
+            { "Ligne rouge", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
             } },
-            { "Tribal (Tan Interior)", "civ", {
+            { "Vert (Intérieur brun)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
             } },
-            { "Tribal", "civ", {
+            { "Vert", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
             } },
-            { "Blue wave (Tan Interior)", "civ", {
+            { "Blue wave (Intérieur brun)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
@@ -287,35 +287,35 @@ class LifeCfgVehicles {
         conditions = "";
         price = 2500;
         textures[] = {
-			{ "Black", "civ", {
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Black_CO.paa",
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Black_CO.paa"
-			} },
-			{ "Blue", "civ", {
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Blue_co.paa",
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Blue_co.paa"
-			} },
-			{ "Grey", "civ", {
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Grey_co.paa",
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Grey_co.paa"
-			} },
-			{ "Green", "civ", {
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Lime_co.paa",
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Lime_co.paa"
-			} },
-			{ "Red", "civ", {
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Red_CO.paa",
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_CO.paa"
-			} },
-			{ "White", "civ", {
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_CO.paa",
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_CO.paa"
-			} },
-			{ "Yellow", "civ", {
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Yellow_CO.paa",
-				"\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Yellow_CO.paa"
-			} }
-		};
+            { "Black", "civ", {
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Black_CO.paa",
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Black_CO.paa"
+            } },
+            { "Blue", "civ", {
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Blue_co.paa",
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Blue_co.paa"
+            } },
+            { "Grey", "civ", {
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Grey_co.paa",
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Grey_co.paa"
+            } },
+            { "Green", "civ", {
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Lime_co.paa",
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Lime_co.paa"
+            } },
+            { "Red", "civ", {
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Red_CO.paa",
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_CO.paa"
+            } },
+            { "White", "civ", {
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_CO.paa",
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_CO.paa"
+            } },
+            { "Yellow", "civ", {
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Yellow_CO.paa",
+                "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Yellow_CO.paa"
+            } }
+        };
     };
 
     // Apex DLC
@@ -523,7 +523,6 @@ class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{
     vItemSpace = 40;
     price = ;
 };
-
 will modify the virtual space and the price of the vehicle, but other information such as license and textures will pick up the vehicle declare at : Vehicle {};
 */
     class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{}; // Get all information of C_Kart_01_Blu_F
