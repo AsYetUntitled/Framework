@@ -230,43 +230,43 @@ class LifeCfgVehicles {
         conditions = "";
         price = 150000;
         textures[] = {
-            { "Course (Intérieur brun)", "civ", {
+            { "Racing (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
             } },
-            { "Course", "civ", {
+            { "Racing", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
             } },
-            { "Ligne rouge (Intérieur brun)", "civ", {
+            { "Red Line (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
             } },
-            { "Ligne rouge", "civ", {
+            { "Red Line", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
             } },
-            { "Vert (Intérieur brun)", "civ", {
+            { "Tribal (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
             } },
-            { "Vert", "civ", {
+            { "Tribal", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
             } },
-            { "Blue wave (Intérieur brun)", "civ", {
+            { "Blue wave (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
