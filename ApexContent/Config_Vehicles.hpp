@@ -203,25 +203,25 @@ class LifeCfgVehicles {
         conditions = "";
         price = 12500;
         textures[] = {
-			{ "Black", "civ", {
-				"\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_black_co.paa"
-			} },
-			{ "Blue", "civ", {
-				"\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_blue_co.paa"
-			} },
-			{ "Green", "civ", {
-				"\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_green_co.paa"
-			} },
-			{ "Orange", "civ", {
-				"\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_orange_co.paa"
-			} },
-			{ "Red", "civ", {
-				"\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_red_co.paa"
-			} },
-			{ "White", "civ", {
-				"\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_white_co.paa"
-			} }
-		};
+            { "Black", "civ", {
+                "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_black_co.paa"
+            } },
+            { "Blue", "civ", {
+                "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_blue_co.paa"
+            } },
+            { "Green", "civ", {
+                "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_green_co.paa"
+            } },
+            { "Orange", "civ", {
+                "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_orange_co.paa"
+            } },
+            { "Red", "civ", {
+                "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_red_co.paa"
+            } },
+            { "White", "civ", {
+                "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_white_co.paa"
+            } }
+        };
     };
 
     // Apex DLC
@@ -230,55 +230,55 @@ class LifeCfgVehicles {
         conditions = "";
         price = 150000;
         textures[] = {
-			{ "Course (Intérieur brun)", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-			} },
-			{ "Course", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
-			} },
-			{ "Ligne rouge (Intérieur brun)", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-			} },
-			{ "Ligne rouge", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
-			} },
-			{ "Vert (Intérieur brun)", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-			} },
-			{ "Vert", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
-			} },
-			{ "Blue wave (Intérieur brun)", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-			} },
-			{ "Blue wave", "civ", {
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
-				"A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"}
-			}
-		};
+            { "Course (Intérieur brun)", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
+            } },
+            { "Course", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
+            } },
+            { "Ligne rouge (Intérieur brun)", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
+            } },
+            { "Ligne rouge", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
+            } },
+            { "Vert (Intérieur brun)", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
+            } },
+            { "Vert", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
+            } },
+            { "Blue wave (Intérieur brun)", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
+            } },
+            { "Blue wave", "civ", {
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"}
+            }
+        };
     };
 
     // Apex DLC
