@@ -78,7 +78,7 @@
             <Russian></Russian>
             <Portuguese>Loja de Roupas Rebeldes</Portuguese>
             <Polish>Sklep samobójców AKBAR</Polish>
-            <German>Mohammed's Rebellenausrüstung</German>
+            <German>Mohammed's Ausrüstungen</German>
         </Key>
         <Key ID="STR_Shops_C_Diving">
             <Original>Steve's Diving Shop</Original>
@@ -439,7 +439,7 @@
             <Czech>získat</Czech>
             <Spanish>Recuperar</Spanish>
             <Russian></Russian>
-            <German>Abrufen</German>
+            <German>Ausparken</German>
             <French>Récupérer</French>
             <Italian>Ritira</Italian>
             <Portuguese>Recuperar</Portuguese>
@@ -596,7 +596,7 @@
             <Spanish>Modo Dios</Spanish>
             <Italian>GodMode</Italian>
             <Russian></Russian>
-            <German>Gott-Modus</German>
+            <German>Gott-Mod</German>
             <French>Dieu</French>
             <Portuguese>Modo Deus</Portuguese>
             <Polish>GodMode</Polish>
@@ -1608,7 +1608,7 @@
             <Czech>Chystáte se rozpustit gang, tím, že rozpustí gang bude odstraněna z databáze a skupina bude vynechána. &lt; br / &gt; &lt; br / &gt; Opravdu chcete rozpustit skupinu? Budete nevrací cenu za jeho vytvoření.</Czech>
             <Spanish>Estas a punto de desmantelar la Pandilla, si prosiges la Pandilla se borrara de la base de datos. &lt;br/&gt;&lt;br/&gt;Estas seguro de querer desmantelarla? Cualquier dinero invertido no sera devuelto.</Spanish>
             <Russian></Russian>
-            <German>Du bist dabei die Gang aufzulösen. Durch Auflösung der Gang wird sie aus der Datenbank entfernt. &lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du die Gang auflösen willst? Du erhältst die Kosten für die Erstellung nicht zurück.</German>
+            <German>Du bist dabei die Gang aufzulösen. Durch Auflösung der Gang wird diese aus der Datenbank entfernt. &lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du die Gang auflösen willst? Du erhältst die Kosten für die Erstellung nicht zurück.</German>
             <French>Vous vous apprêtez à dissoudre le gang, en démantelant le gang, il sera supprimé de la base de données et le groupe sera supprimé. &lt;br/&gt;&lt;br/&gt;Etes-vous sûr de vouloir dissoudre le groupe? Vous ne serez pas remboursé le prix de sa création</French>
             <Italian>Stai per sciogliere la Gang, facendolo sarà rimossa dal Database e il gruppo verrà cancellato. &lt;br/&gt;&lt;br/&gt;Sei sicuro di voler sciogliere il gruppo? Non verrai rimborsato dei fondi spesi per crearlo.</Italian>
             <Portuguese>Você vai desfazer a sua gangue, ela será apagada do banco de dados. &lt;br/&gt;&lt;br/&gt;Você tem certeza que quer desfazer a gangue? Você não será reembolsado.</Portuguese>
@@ -2261,7 +2261,7 @@
             <Czech>Drop Key</Czech>
             <Spanish>Tirar llave</Spanish>
             <Russian></Russian>
-            <German>Schlüssel wegwerfen</German>
+            <German>Wegwerfen</German>
             <French>Jeter Clef</French>
             <Italian>Abbandona Chiave</Italian>
             <Portuguese>Remover Chave</Portuguese>
@@ -2272,7 +2272,7 @@
             <Czech>dát klíč</Czech>
             <Spanish>Dar Llave</Spanish>
             <Russian></Russian>
-            <German>Schlüssel geben</German>
+            <German>Geben</German>
             <French>Donner Clef</French>
             <Italian>Dai Chiave</Italian>
             <Portuguese>Dar Chave</Portuguese>
@@ -2362,7 +2362,7 @@
             <Czech>Klíčenka</Czech>
             <Spanish>Llavero</Spanish>
             <Russian></Russian>
-            <German>Schlüsselbund</German>
+            <German>Schlüssel</German>
             <French>Porte-clés</French>
             <Italian>Portachiavi</Italian>
             <Portuguese>Chaves</Portuguese>
@@ -2384,7 +2384,7 @@
             <Czech>synchronizace dat</Czech>
             <Spanish>Sincronizar</Spanish>
             <Russian></Russian>
-            <German>Daten speichern</German>
+            <German>Speichern</German>
             <French>Sync Data</French>
             <Italian>Salva Dati</Italian>
             <Portuguese>Sincronizar Dados</Portuguese>
@@ -2430,7 +2430,7 @@
             <Czech>Ve vzduchu:</Czech>
             <Spanish>En Aire:</Spanish>
             <Russian></Russian>
-            <German>In der Luft:</German>
+            <German>Im Himmel:</German>
             <French>Air:</French>
             <Italian>Aria:</Italian>
             <Portuguese>No Ar:</Portuguese>
@@ -8530,7 +8530,7 @@
             <Czech>Synchronizace informace o hráčích na serveru. \ O \ Prosím, vyčkejte až 20 sekund před odjezdem.</Czech>
             <Spanish>Se esta sinconizando tu información con el server.\n\nPor favor espera 20 segundos antes de salir del server.</Spanish>
             <Russian></Russian>
-            <German>Speichere der Spieler-Informationen auf dem Server. \n\nBitte warte bis zu 20 Sekunden vor dem Verlassen.</German>
+            <German>Speichere deine Spieler-Informationen auf dem Server. \n\nBitte warte bis zu 20 Sekunden vor dem Verlassen.</German>
             <French>Synchronisation des informations de joueur sur le serveur.\n\nS'il vous plaît veuiller attendre 20 secondes avant de quitter.</French>
             <Italian>Salvando le informazioni giocatore sul server.\n\nAttendere fino a 20 secondi prima di abbandonare.</Italian>
             <Portuguese>Sincronizando informação do jogador com o servidor.\n\n Por favor aguarde 20 segundos antes de sair.</Portuguese>
