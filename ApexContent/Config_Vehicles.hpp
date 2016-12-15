@@ -266,13 +266,13 @@ class LifeCfgVehicles {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
             } },
-            { "Blue wave (Tan Interior)", "civ", {
+            { "Blue Wave (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
             } },
-            { "Blue wave", "civ", {
+            { "Blue Wave", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
