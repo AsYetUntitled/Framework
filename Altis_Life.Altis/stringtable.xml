@@ -505,7 +505,7 @@
         <Key ID="STR_Admin_Amount">
             <Original>Put the amount you want to compensate:</Original>
             <Czech>Vložte částku, kterou chcete kompenzovat:</Czech>
-            <French>Mettez le montant que vous souhaitez compenser :</French>
+            <French>Mettez le montant que vous souhaitez dédommager :</French>
             <Spanish>Pon la cantidad que quieres compensar:</Spanish>
             <Italian>Inserire l'importo da rimborsare:</Italian>
             <Russian></Russian>
@@ -1052,7 +1052,7 @@
             <Italian>Il conto della gang non ha abbastanza denaro!</Italian>
             <Polish>Nie ma tego dużo na koncie bankowym gang!</Polish>
             <Russian></Russian>
-            <French>Vous n'avez pas autant sur le compte de votre Gang !</French>
+            <French>Vous n'avez pas autant sur le compte de votre gang !</French>
             <Portuguese>Você não tem todo esse dinhero na sua gangue!</Portuguese>
             <German>Ihr habt nicht genügend Geld auf dem Gang-Bankkonto!</German>
         </Key>
