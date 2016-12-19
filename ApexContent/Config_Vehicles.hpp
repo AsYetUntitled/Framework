@@ -2,9 +2,9 @@ class CarShops {
     /*
     *    ARRAY FORMAT:
     *        0: STRING (Classname)
-    *        1: STRING (Conditions)
+    *        1: STRING (Condition)
     *    FORMAT:
-    *        STRING (Conditions) - Must return boolean :
+    *        STRING (Condition) - Must return boolean :
     *            String can contain any amount of conditions, aslong as the entire
     *            string returns a boolean. This allows you to check any levels, licenses etc,
     *            in any combination. For example:
