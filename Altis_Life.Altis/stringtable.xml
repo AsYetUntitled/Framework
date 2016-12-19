@@ -10111,7 +10111,7 @@
         <Key ID="STR_MAR_Station_Shop">
             <Original>Fuel Station Store</Original>
             <Czech>Palivo Store Station</Czech>
-            <French>Magasin de station à essence</French>
+            <French>Magasin de la station essence</French>
             <Spanish>Tienda de Gasolinera</Spanish>
             <Italian>Stazione di rifornimento Conservare</Italian>
             <Russian></Russian>
@@ -10188,7 +10188,7 @@
         <Key ID="STR_MAR_Cop_Item_Shop">
             <Original>Cop Item Shop</Original>
             <Czech>Cop Item Shop</Czech>
-            <French>Marché flic</French>
+            <French>Magasin de la Police</French>
             <Spanish>Tienda de Objetos de Policía</Spanish>
             <Italian>Strumenti</Italian>
             <Russian></Russian>
@@ -10199,7 +10199,7 @@
         <Key ID="STR_MAR_Cop_Clothing_Shop">
             <Original>Cop Clothing Shop</Original>
             <Czech>Cop Oblečení Shop</Czech>
-            <French>Friperie Flic</French>
+            <French>Friperie de la Police</French>
             <Spanish>Tienda de Ropa de Policía</Spanish>
             <Italian>Uniformi</Italian>
             <Russian></Russian>
@@ -10210,7 +10210,7 @@
         <Key ID="STR_MAR_Cop_Weapon_Shop">
             <Original>Cop Weapon Shop</Original>
             <Czech>Cop obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes flic</French>
+            <French>Vendeur d'armes de la Police</French>
             <Spanish>Tienda de Armas de Policía</Spanish>
             <Italian>Armeria da Agenti</Italian>
             <Russian></Russian>
@@ -10221,7 +10221,7 @@
         <Key ID="STR_MAR_Patrol_Officer_Weapon_Shop">
             <Original>Patrol Officer Weapon Shop</Original>
             <Czech>Policistou obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes flic (Officier)</French>
+            <French>Vendeur d'armes d'Officier de Police</French>
             <Spanish>Tienda de Armas de Oficial de Patrulla</Spanish>
             <Italian>Armeria da Pattuglia</Italian>
             <Russian></Russian>
@@ -10232,7 +10232,7 @@
         <Key ID="STR_MAR_Sergeant_Weapon_Shop">
             <Original>Sergeant Weapon Shop</Original>
             <Czech>Seržant obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes flic (Sergent)</French>
+            <French>Vendeur d'armes de Sergent de la Police</French>
             <Spanish>Tienda de Armas de Oficial de Sargento</Spanish>
             <Italian>Armeria dei Sergenti</Italian>
             <Russian></Russian>
@@ -10298,7 +10298,7 @@
         <Key ID="STR_MAR_Fix_Vault">
             <Original>Fix Vault</Original>
             <Czech>Fix Vault</Czech>
-            <French>Reparer Coffre</French>
+            <French>Réparer Coffre</French>
             <Spanish>Reparar Bóveda</Spanish>
             <Russian></Russian>
             <German>Tresor reparieren</German>
@@ -10331,7 +10331,7 @@
         <Key ID="STR_MAR_FED_Back">
             <Original>Federal Reserve - Back Entrance</Original>
             <Czech>Federální rezervní systém - zadní vchod</Czech>
-            <French>Réserve fédérale - Entrée Derriere</French>
+            <French>Réserve fédérale - Entrée Arrière</French>
             <Spanish>Reserva Federal - Entrada Trasera</Spanish>
             <Italian>Riserva Federale - Ingresso sul Retro</Italian>
             <Russian></Russian>
@@ -10375,7 +10375,7 @@
         <Key ID="STR_MAR_EMS_Item_Shop">
             <Original>EMS Item Shop</Original>
             <Czech>EMS Item Shop</Czech>
-            <French>Marché medecin</French>
+            <French>Magasin de médecin</French>
             <Spanish>Tienda de Objetos de Médico</Spanish>
             <Italian>Strumenti EMS</Italian>
             <Russian></Russian>
@@ -10386,7 +10386,7 @@
         <Key ID="STR_MAR_EMS_Clothing_Shop">
             <Original>EMS Clothing Shop</Original>
             <Czech>EMS Oblečení Shop</Czech>
-            <French>Friperie Medecin</French>
+            <French>Friperie de Medecin</French>
             <Spanish>Tienda de Ropa de Médico</Spanish>
             <Italian>Uniformi EMS</Italian>
             <Russian></Russian>
@@ -10564,7 +10564,7 @@
         <Key ID="STR_Crime_481">
             <Original>Drug Possession</Original>
             <Czech>držení drog</Czech>
-            <French>Possession de drogues</French>
+            <French>Possession de drogue</French>
             <Spanish>Posesión de Drogas</Spanish>
             <Italian>possesso di droga</Italian>
             <Polish>Posiadanie narkotyków</Polish>
@@ -10952,7 +10952,7 @@
         <Key ID="STR_FuelTank_Supply">
             <Original>Supply</Original>
             <Czech>Zásobování</Czech>
-            <French>La fourniture</French>
+            <French>Fourniture</French>
             <Spanish>Suministro</Spanish>
             <Italian>Fornitura</Italian>
             <Polish>Dostawa</Polish>
@@ -10974,7 +10974,7 @@
         <Key ID="STR_FuelTank_Stop">
             <Original>Stop</Original>
             <Czech>Stop</Czech>
-            <French>Arrêtez</French>
+            <French>Arrêter</French>
             <Spanish>Parar</Spanish>
             <Italian>Stop</Italian>
             <Polish>Zatrzymać</Polish>
@@ -10985,7 +10985,7 @@
         <Key ID="STR_FuelTank_InUse">
             <Original>Tanker is already in use.</Original>
             <Czech>Tankery je již používán.</Czech>
-            <French>Tanker est déjà en cours d'utilisation.</French>
+            <French>Réservoir déjà en cours d'utilisation.</French>
             <Spanish>El Camión Cisterna ya esta siendo usado.</Spanish>
             <Italian>La cisterna è già in uso.</Italian>
             <Polish>Cysterna jest już w użyciu.</Polish>
@@ -10996,7 +10996,7 @@
         <Key ID="STR_FuelTank_AnotherInUse">
             <Original>Gas station is in use.</Original>
             <Czech>Čerpací stanice je v provozu.</Czech>
-            <French>Gas station est en cours d'utilisation.</French>
+            <French>Station service en cours d'utilisation.</French>
             <Spanish>La estación ya se esta usando.</Spanish>
             <Italian>La stazione di benzina è già in uso.</Italian>
             <Polish>Stacja benzynowa jest w użyciu.</Polish>
@@ -11007,7 +11007,7 @@
         <Key ID="STR_FuelTank_Empty">
             <Original>Tanker is empty.</Original>
             <Czech>Tankery je prázdný.</Czech>
-            <French>Tanker est vide.</French>
+            <French>Réservoir est vide.</French>
             <Spanish>El Camión cisterna esta vacío.</Spanish>
             <Italian>La cisterna è vuota.</Italian>
             <Polish>Cysterna jest pusta.</Polish>
@@ -11018,7 +11018,7 @@
         <Key ID="STR_FuelTank_Full">
             <Original>Tankers is full.</Original>
             <Czech>Tankery je plná.</Czech>
-            <French>Tankers est plein.</French>
+            <French>Réservoir plein.</French>
             <Spanish>El Camión cisterna esta lleno.</Spanish>
             <Italian>La cisterna è piena.</Italian>
             <Polish>Zbiornikowce jest pełna.</Polish>
@@ -11029,7 +11029,7 @@
         <Key ID="STR_FuelTank_FeedFull">
             <Original>Gas station has enough fuel.</Original>
             <Czech>Čerpací stanice má dostatek paliva.</Czech>
-            <French>Gas station a suffisamment de carburant.</French>
+            <French>Station service a suffisamment de carburant.</French>
             <Spanish>La estación tiene suficiente gasolina.</Spanish>
             <Italian>Il distributore ha abbastanza benzina.</Italian>
             <Polish>Stacja benzynowa ma wystarczającą ilość paliwa.</Polish>
@@ -11040,7 +11040,7 @@
         <Key ID="STR_FuelTank_PipeLine">
             <Original>This gas station is supplied through a pipeline.</Original>
             <Czech>Tento Čerpací stanice se dodává potrubím.</Czech>
-            <French>Cette station de gaz est fourni par un pipeline</French>
+            <French>Cette station service est fournie par un pipeline</French>
             <Spanish>Esta estación es suministrada por una tubería.</Spanish>
             <Italian>Questa stazione di gas è alimentata attraverso una tubatura.</Italian>
             <Polish>Ta stacja gaz jest dostarczany rurociągiem.</Polish>
@@ -11121,7 +11121,7 @@
         <Key ID="STR_Blacklisted_SubTitle">
             <Original>You are blacklisted from cops.</Original>
             <Czech>Ty jsou na černé listině z policajtů.</Czech>
-            <French>Vous êtes sur la liste noire de flics.</French>
+            <French>Vous êtes sur la liste noire de la police.</French>
             <Spanish>Usted está en la lista negra de policías.</Spanish>
             <Italian>Stai lista nera da poliziotti.</Italian>
             <Polish>Jesteś na czarnej liście od policjantów.</Polish>
@@ -11132,7 +11132,7 @@
         <Key ID="STR_Blacklisted_Descript">
             <Original>You are not allowed to be a cop due to previous actions and the admins have removed you from being a cop.</Original>
             <Czech>Ty jsou nesmí být policajt vzhledem k předcházejícími akcemi a administrátoři vám odstraní z bytí policista.</Czech>
-            <French>Vous n'êtes pas autorisé à être un flic en raison des actions précédentes et les admins vous avez supprimé d'être un flic.</French>
+            <French>Vous n'êtes pas autorisé à être un policier en raison des actions précédentes et les admins vous ont supprimé le droit de l'être de nouveau.</French>
             <Spanish>No tiene permiso a ser policía por acciones anteriores. Los administradores han bloqueado su acceso.</Spanish>
             <Italian>Non è consentito fare il poliziotto a causa di azioni precedenti e gli amministratori di aver rimosso da essere un poliziotto.</Italian>
             <Polish>Nie mogą być policjantem z powodu wcześniejszych działań oraz administratorzy usunęli cię od bycia policjantem.</Polish>
@@ -11145,7 +11145,7 @@
         <Key ID="STR_SpyDetect_Title">
             <Original>The SpyGlass sees you!</Original>
             <Czech>Dalekohled tě vidí!</Czech>
-            <French>SpyGlass vous voit!</French>
+            <French>SpyGlass vous voit !</French>
             <Spanish>El SpyGlass te ve!</Spanish>
             <Italian>Il cannocchiale si vede!</Italian>
             <Polish>Lunetę widzi!</Polish>
@@ -11167,7 +11167,7 @@
         <Key ID="STR_SpyDetect_Descript">
             <Original>You were detected for cheating and have been reported to the server. Enjoy your day.</Original>
             <Czech>Vy byly detekovány za podvádění a byly zaznamenány na server. Užijte si svůj den.</Czech>
-            <French>Vous avez été détecté pour tricher et ont été signalés au serveur. Profitez de votre journée.</French>
+            <French>Vous avez été détecté pour triche et avez été signalé au serveur. Profitez de votre journée.</French>
             <Spanish>Fue detectada por hacer trampas y se le ha informado al servidor. Disfruta tu día.</Spanish>
             <Italian>Lei è stato rilevato per truffa e sono stati segnalati per il server. Buona giornata.</Italian>
             <Polish>Ty wykryto oszustwo i zostały zgłoszone do serwera. Miłego dnia.</Polish>
@@ -11202,7 +11202,7 @@
         <Key ID="STR_DeliveryFailed_Title">
             <Original>Delivery Job Failed</Original>
             <Czech>Nepodařilo dodávka Job</Czech>
-            <French>Livraison Job échoué</French>
+            <French>Livraison échouée</French>
             <Spanish>Misión de Entrega Fallada</Spanish>
             <Italian>Incarico Postale Fallito</Italian>
             <Polish>Dostawa Praca Failed</Polish>
@@ -11213,7 +11213,7 @@
         <Key ID="STR_DeliverySucceeded_Title">
             <Original>Delivery Job Completed</Original>
             <Czech>Dokončena dodávka Job</Czech>
-            <French>Livraison terminée</French>
+            <French>Livraison réussie</French>
             <Spanish>Misión de Entrega Completada</Spanish>
             <Italian>Incarico Postale Completato</Italian>
             <Polish>Dostawa Praca Zakończony</Polish>
