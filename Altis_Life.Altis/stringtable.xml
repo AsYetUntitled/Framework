@@ -1510,7 +1510,7 @@
             <Spanish>Escondite bajo control...</Spanish>
             <Russian></Russian>
             <German>Versteck ist derzeit unter Kontrolle...</German>
-            <French>La Planque est actuellement sous contrôle...</French>
+            <French>La planque est actuellement sous contrôle...</French>
             <Italian>Il Covo è già sotto controllo...</Italian>
             <Portuguese>Esconderijo sobre controle....</Portuguese>
             <Polish>Kryjówka pod kontrolą ...</Polish>
@@ -4334,7 +4334,7 @@
         <Key ID="STR_NOTF_illegalItemCannotDispose">
             <Original>This is an illegal item and cops are near by. You cannot dispose of the evidence.</Original>
             <Czech>To je ilegální položky a policajti jsou v blízkosti. Nemůžete zbavit důkazů.</Czech>
-            <French>Ceci est un élément illégal et les flics sont à proximité. Vous ne pouvez pas jeter la preuve.</French>
+            <French>Ceci est un élément illégal et les policiers sont à proximité. Vous ne pouvez pas jeter la preuve.</French>
             <Spanish>Este es un artículo ilegal y policías están cerca. No se puede disponer de las pruebas.</Spanish>
             <Italian>Non puoi liberarti di questo oggetto dato che è una prova evidente.</Italian>
             <Polish>Jest to nielegalne element i policjanci są w pobliżu. Nie można pozbyć się dowodów.</Polish>
@@ -4706,7 +4706,7 @@
             <Spanish>Necesita haber %1 o mas policías para continuar.</Spanish>
             <Russian></Russian>
             <German>Es müssen %1 oder mehr Polizisten online sein, um fortfahren zu können.</German>
-            <French>Il faut au minimum %1 flic pour continuer.</French>
+            <French>Il faut au minimum %1 policier pour continuer.</French>
             <Italian>Servono almeno %1 poliziotti online per continuare.</Italian>
             <Portuguese>É necessário ter %1 ou mais policiais online para continuar.</Portuguese>
             <Polish>Potrzeba conajmniej %1 policjantów aby kontynuować</Polish>
@@ -5812,7 +5812,7 @@
             <Spanish>%1 tu casa esta siendo asaltada por los policías!</Spanish>
             <Russian></Russian>
             <German>%1 dein Haus wird von der Polizei durchsucht!</German>
-            <French>%1 votre maison est perquisitionnée par les flics!</French>
+            <French>%1 votre maison est perquisitionnée par les policiers !</French>
             <Italian>%1 la Polizia si sta introducendo in casa tua!</Italian>
             <Portuguese>%1 Sua casa está sendo vasculhada pela Policia!</Portuguese>
             <Polish>%1 twój dom jest kontrolowany przez policję!</Polish>
@@ -7271,7 +7271,7 @@
         <Key ID="STR_ISTR_Jerry_Refuel">
             <Original>Refuelling Fuel Canister</Original>
             <Czech>Tankování paliva kanystr</Czech>
-            <French>Ravitaillement de carburant</French>
+            <French>Ravitaillement en carburant de la citerne</French>
             <Spanish>Llenando Bidón de Combustible</Spanish>
             <Italian>Rifornimento carburante scatola metallica</Italian>
             <Polish>Tankowanie paliwa Kanister</Polish>
@@ -7293,7 +7293,7 @@
         <Key ID="STR_ISTR_Jerry_PopUp">
             <Original>Spend $%1 to refuel your Empty Fuel Canister?</Original>
             <Czech>Utratit $%1 natankovat vaše prázdné palivové kanystr?</Czech>
-            <French>Passez $%1 pour faire le plein de votre réservoir de combustible vide ?</French>
+            <French>Dépensez $%1 pour faire le plein de votre citerne vide ?</French>
             <Spanish>Gastar $%1 para llenar el Bidón de Combustible?</Spanish>
             <Italian>Spendere $%1 per rifornire di carburante la vostra scatola metallica del combustibile vuoto?</Italian>
             <Polish>Wydać $%1 zatankować swój pustego zasobnika paliwa?</Polish>
@@ -7315,7 +7315,7 @@
         <Key ID="STR_ISTR_Jerry_Refueled">
             <Original>You have successfully refuelled the Fuel Canister!</Original>
             <Czech>Úspěšně jste tankovat palivový kanystr!</Czech>
-            <French>Vous avez ravitaillé avec succès le jerrycan d'essence !</French>
+            <French>Vous avez ravitaillé avec succès la citerne d'essence !</French>
             <Spanish>Usted ha llenado con exito el Bidón de Combustible!</Spanish>
             <Italian>Hai rifornimento con successo il canestro del combustibile!</Italian>
             <Polish>Pomyślnie zatankowany kanistra paliwa!</Polish>
@@ -7329,7 +7329,7 @@
             <Spanish>Llenado el Bidón %1</Spanish>
             <Russian></Russian>
             <German>Wird betankt %1</German>
-            <French>Ravitaillement %1</French>
+            <French>Ravitaillement en cours de %1</French>
             <Italian>Rifornendo %1</Italian>
             <Portuguese>Abastecendo %1</Portuguese>
             <Polish>Tankuję %1</Polish>
@@ -8885,7 +8885,7 @@
             <Spanish>Asientos de Pasajeros:</Spanish>
             <Russian></Russian>
             <German>Passagierplätze:</German>
-            <French>Sieges passager :</French>
+            <French>Sièges passager :</French>
             <Italian>Sedili passeggeri:</Italian>
             <Portuguese>Assentos:</Portuguese>
             <Polish>Ilość miejsc:</Polish>
