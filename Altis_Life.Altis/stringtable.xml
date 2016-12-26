@@ -3544,7 +3544,7 @@
             <Czech>Toto vozidlo nemá žádné informace, to bylo pravděpodobně třel dovnitř podvodníky. \ In \ Odstranění vozidla.</Czech>
             <Spanish>Este vehículo no tiene informacion, posiblemente fue creado atravez de Cheats \n\nBorrando vehículo.</Spanish>
             <Russian></Russian>
-            <German>Über das Fahrzeug gibt es keine Informationen, es wurde vermutlich durch Cheats gespawnt. \n\nLösche das Fahrzeuge.</German>
+            <German>Über das Fahrzeug gibt es keine Informationen, es wurde vermutlich durch Cheats gespawnt. \n\nLösche das Fahrzeug.</German>
             <French>Ce véhicule dispose d'aucune information, il a probablement été engendré à travers un tricheurs. \n\ Supression véhicule.</French>
             <Italian>Il veicolo è privo di identificativi, probabilmente è stato creato mediante cheat. \n\nCancellazione veicolo.</Italian>
             <Portuguese>Esse veículo não tem informações, é provável que ele tenha sido criado por um cheater.\n\nDeletando veículo.</Portuguese>
@@ -4263,7 +4263,7 @@
             <Polish>Pomyślnie usunięto %1 %2 z inwentarza.</Polish>
             <Portuguese>Você removeu com êxito %1 %2 do seu inventário.</Portuguese>
             <Russian>Вы успешно удалены %1 %2 из инвентаря.</Russian>
-            <German>Du hast erfolgreich %1 %2 aus deinem Inventar entsorgen.</German>
+            <German>Du hast erfolgreich %1 %2 aus deinem Inventar entsorgt.</German>
         </Key>
         <Key ID="STR_NOTF_menuWillNotOpen">
             <Original>Something went wrong; the menu will not open?</Original>
@@ -4274,7 +4274,7 @@
             <Polish>Coś poszło nie tak; menu nie otworzy?</Polish>
             <Portuguese>Algo deu errado; o menu não vai abrir?</Portuguese>
             <Russian>Что-то пошло не так; меню не откроется?</Russian>
-            <German>Etwas ist schief gelaufen. Wird das Menü nicht öffnen?</German>
+            <German>Etwas ist schief gelaufen. Das Menü konnte nicht geöffnet werden.</German>
         </Key>
         <Key ID="STR_NOTF_ConfigDoesNotExist">
             <Original>Config does not exist?</Original>
@@ -4340,7 +4340,7 @@
             <Polish>Jest to nielegalne element i policjanci są w pobliżu. Nie można pozbyć się dowodów.</Polish>
             <Portuguese>Este é um item ilegal e policiais estão nas proximidades. Você não pode dispor das provas.</Portuguese>
             <Russian>Это незаконный пункт и полицейские находятся поблизости. Вы не можете избавиться от доказательств.</Russian>
-            <German>Dies ist eine illegaler Gegenstand und Polizisten sind in der Nähe. Du kannst die Beweise nicht einfach so entsorgen.</German>
+            <German>Dies ist ein illegaler Gegenstand und Polizisten sind in der Nähe. Du kannst die Beweise nicht einfach so entsorgen.</German>
         </Key>
         <Key ID="STR_NOTF_cannotRemoveInVeh">
             <Original>You cannot remove an item when you are in a vehicle.</Original>
@@ -4351,7 +4351,7 @@
             <Polish>Nie można usunąć element, kiedy jesteś w pojeździe.</Polish>
             <Portuguese>Você não pode remover um item quando você está em um veículo.</Portuguese>
             <Russian>Вы не можете удалить элемент, когда вы находитесь в автомобиле.</Russian>
-            <German>Du kannst kein Gegenstand entsorgen, wenn du in einem Fahrzeug sitzt.</German>
+            <German>Du kannst keinen Gegenstand entsorgen, wenn du in einem Fahrzeug sitzt.</German>
         </Key>
         <Key ID="STR_NOTF_nowSpectating">
             <Original>You are now spectating %1.\n\nPress F10 to stop spectating.</Original>
@@ -4448,7 +4448,7 @@
             <Czech></Czech>
             <Spanish>Transmitir Anuncio</Spanish>
             <Russian></Russian>
-            <German>Broadcastnachricht</German>
+            <German>Nachricht übertragen</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Transmitir Anúncio</Portuguese>
@@ -4459,7 +4459,7 @@
             <Czech></Czech>
             <Spanish>Costo de Transmisión: %1&lt;br /&gt;Siguiente Transmisión Disponible en: %2</Spanish>
             <Russian></Russian>
-            <German>Broadcastkosten: %1&lt;br /&gt;Nächster Broadcast verfügbar in: %2</German>
+            <German>Übertragungskosten: %1&lt;br /&gt;Nächste Übertragung möglich in: %2</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Custo de Trasnmissão: %1&lt;br /&gt;Próxima transmissão disponível em: %2</Portuguese>
@@ -4503,7 +4503,7 @@
             <Czech></Czech>
             <Spanish>Necesitas %1 para transmitir un anuncio!</Spanish>
             <Russian></Russian>
-            <German>Du benötigst $%1, um ein Broadcast zu senden!</German>
+            <German>Du benötigst $%1, eine Nachricht senden zu können!</German>
             <French></French>
             <Italian></Italian>
             <Portuguese>Você precisa de $%1 para enviar uma transmissão!</Portuguese>
@@ -4560,7 +4560,7 @@
             <Czech>Jste utekl z vězení, si stále zachovávají své předchozí zločiny a nyní mají počet uniknout vězení.</Czech>
             <Spanish>Te has escapado de la cárcel, retienes tus crimenes anteriores más un crimen de escapado de la cárcel.</Spanish>
             <Russian></Russian>
-            <German>Du bist aus dem Gefängnis ausgebrochen! Die Polizei sucht dich jetzt wegen deiner früheren Verbrechen und dem Gefängnisausbruch nach dir.</German>
+            <German>Du bist aus dem Gefängnis ausgebrochen! Die Polizei sucht jetzt nach dir, wegen deiner früheren Verbrechen und dem Gefängnisausbruch.</German>
             <French>Vous vous êtes échappé de prison, vous conserver toujours vos crimes précédents et ils savent maintenant que vous vous êtes échappé de prison.</French>
             <Italian>Sei scappato di prigione, rimarrai ricercato per i crimini da te commessi in precedenza e in aggiunta per essere scappato di prigione.</Italian>
             <Portuguese>Você escapou da prisão, agora você é procurado por esse crime e todos os outros que havia cometido anteriormente</Portuguese>
@@ -5958,7 +5958,7 @@
             <Polish>Ten dom jest już własnością, nawet jeśli nie należy widzieć tę wskazówkę ...</Polish>
             <Portuguese>Esta casa já é de propriedade mesmo que você não deveria estar vendo essa dica ...</Portuguese>
             <Russian>Этот дом уже находится в собственности, даже если вы не должны видеть эту подсказку ...</Russian>
-            <German>Dieses Haus befindet sich bereits in deinem Besitz, auch wenn du es nicht sehen solltest...</German>
+            <German>Dieses Haus befindet sich bereits in deinem Besitz. Diesen Hinweis solltest du eigentlich gar nicht sehen...</German>
         </Key>
         <Key ID="STR_House_noOwner">
             <Original>There is no owner for this house.</Original>
@@ -7697,7 +7697,7 @@
             <Polish>Tylko część swoich materiałów może być przetwarzane ze względu na osiągnięcie maksymalnej wadze.</Polish>
             <Portuguese>Apenas uma parte de seus materiais puderam ser processados, devido o peso máximo ter sido atingido.</Portuguese>
             <Russian>Только часть ваших материалов может быть обработан из-за достижения вашего максимального веса.</Russian>
-            <German>Nur ein Teil der Materialien konnte verarbeitet werden, sonst würde das maximale Gewicht erreicht.</German>
+            <German>Nur ein Teil der Materialien konnte verarbeitet werden, sonst würde das maximale Gewicht erreicht werden.</German>
         </Key>
         <Key ID="STR_Process_License">
             <Original>You need $%1 to process without a license!</Original>
