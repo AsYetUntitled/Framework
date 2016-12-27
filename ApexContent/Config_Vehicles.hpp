@@ -4,7 +4,7 @@ class CarShops {
     *        0: STRING (Classname)
     *        1: STRING (Condition)
     *    FORMAT:
-    *        STRING (Condition) - Must return boolean :
+    *        STRING (Conditions) - Must return boolean :
     *            String can contain any amount of conditions, aslong as the entire
     *            string returns a boolean. This allows you to check any levels, licenses etc,
     *            in any combination. For example:
@@ -63,6 +63,7 @@ class CarShops {
         side = "civ";
         conditions = "";
         vehicles[] = {
+
             { "B_Heli_Light_01_F", "" },
             { "O_Heli_Light_02_unarmed_F", "" },
             { "C_Plane_Civil_01_F", "" } //Apex DLC
@@ -166,7 +167,7 @@ class LifeCfgVehicles {
     *           -- Pull Vehicle & GarageSell Array Explanation = [civ,cop,medic,east]
     *
     *       1: STRING (Condition)
-    *    Textures config follows { Texture Name, side, {texture(s)path}, Conditions}
+    *    Textures config follows { Texture Name, side, {texture(s)path}, Condition}
     *    Texture(s)path follows this format:
     *    INDEX 0: Texture Layer 0
     *    INDEX 1: Texture Layer 1
@@ -516,6 +517,7 @@ class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{
     vItemSpace = 40;
     price = ;
 };
+
 will modify the virtual space and the price of the vehicle, but other information such as license and textures will pick up the vehicle declare at : Vehicle {};
 */
     class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{}; // Get all information of C_Kart_01_Blu_F
@@ -728,7 +730,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class B_Heli_Light_01_F {
         vItemSpace = 90;
-        conditions = "license_civ_pilot || {license_cop_cg} || {license_civ_mAir}";
+        conditions = "license_civ_pilot || {license_cop_cAir} || {license_med_mAir}";
         price = 245000;
         textures[] = {
             { "Police", "cop", {
@@ -786,7 +788,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 210;
-        conditions = "license_civ_pilot || {license_civ_mAir}";
+        conditions = "license_civ_pilot || {license_med_mAir}";
         price = 750000;
         textures[] = {
             { "Black", "cop", {
