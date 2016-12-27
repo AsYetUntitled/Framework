@@ -63,7 +63,7 @@ class CarShops {
         side = "civ";
         conditions = "";
         vehicles[] = {
-
+            { "C_Heli_Light_01_civil_F", "" },
             { "B_Heli_Light_01_F", "" },
             { "O_Heli_Light_02_unarmed_F", "" },
             { "C_Plane_Civil_01_F", "" } //Apex DLC
@@ -79,7 +79,6 @@ class CarShops {
             { "B_SDV_01_F", "" },
             { "C_Boat_Transport_02_F", "" }, //Apex DLC
             { "C_Scooter_Transport_01_F", "" } //Apex DLC
-
         };
     };
 
@@ -93,7 +92,6 @@ class CarShops {
             { "B_Heli_Light_01_stripped_F", "" },
             { "B_G_Offroad_01_armed_F", "" },
             { "O_T_LSV_02_unarmed_F", "" } //Apex DLC
-
         };
     };
 
@@ -319,7 +317,6 @@ class LifeCfgVehicles {
         price = 100000;
         textures[] = {};
     };
-
 
     class I_Truck_02_medical_F {
         vItemSpace = 150;
