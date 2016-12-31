@@ -83,7 +83,7 @@
         <Key ID="STR_Shops_C_Diving">
             <Original>Steve's Diving Shop</Original>
             <Czech>Steve je potápění obchod</Czech>
-            <French>Magasin de plongé de Steve</French>
+            <French>Magasin de plongée de Steve</French>
             <Spanish>Tienda de Buceo</Spanish>
             <Italian>Negozio Sub di Steve</Italian>
             <Russian></Russian>
@@ -131,7 +131,7 @@
             <Russian></Russian>
             <German>Altis Markt</German>
             <Italian>Mercato</Italian>
-            <French>Marché d'altis</French>
+            <French>Marché d'Altis</French>
             <Portuguese>Mercado</Portuguese>
             <Polish>Market Altis</Polish>
         </Key>
@@ -285,7 +285,7 @@
             <Russian></Russian>
             <German>Juwelier</German>
             <Italian>Gioielleria</Italian>
-            <French>Acheteur de Diamand</French>
+            <French>Acheteur de Diamant</French>
             <Portuguese>Comprador de Diamante</Portuguese>
             <Polish>Skup Diamentów</Polish>
         </Key>
@@ -303,7 +303,7 @@
         <Key ID="STR_Shop_Station_Coffee">
             <Original>Fuel Station Coffee</Original>
             <Czech>Palivo Coffee Station</Czech>
-            <French>Station service</French>
+            <French>Café de la Station service</French>
             <Spanish>Cafeteria de Gasolinera</Spanish>
             <Italian>Stazione di Servizio</Italian>
             <Russian></Russian>
@@ -542,7 +542,7 @@
             <Italian>Teleport</Italian>
             <Russian></Russian>
             <German>Teleport</German>
-            <French>Teleporter</French>
+            <French>Téleporter</French>
             <Portuguese>Teleportar</Portuguese>
             <Polish>Teleport</Polish>
         </Key>
@@ -560,7 +560,7 @@
         <Key ID="STR_Admin_CannotTpHere">
             <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
-            <French>Vous ne pouvez pas TP le joueur ici, il est actuellement dans un vehicule.</French>
+            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule.</French>
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
@@ -818,7 +818,7 @@
             <Spanish>Commander/Tactical View Disabled</Spanish>
             <Russian>Commander/Tactical View Disabled</Russian>
             <German>Befehlshaber-Übersicht deaktivieren</German>
-            <French>Commande/Vue tactique désactivée</French>
+            <French>Commander/Vue tactique désactivée</French>
             <Italian>Commander/Tactical View Disabled</Italian>
             <Portuguese>Commander/Tactical View Disabled</Portuguese>
             <Polish>Commander/Tactical View Disabled</Polish>
@@ -1532,7 +1532,7 @@
             <Spanish>Capturando el Escondite</Spanish>
             <Russian></Russian>
             <German>Versteck einnehmen</German>
-            <French>Capture de la cachette</French>
+            <French>Capture de la planque</French>
             <Italian>Catturando il Covo</Italian>
             <Portuguese>Capturando Esconderijo</Portuguese>
             <Polish>Przejmowanie kryjówki</Polish>
@@ -1985,7 +1985,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Ce bâtiment est un repaire de gang !</French>
+            <French>Ce bâtiment est une planque de gang !</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2095,7 +2095,7 @@
             <Spanish>No se encontraron vehículos en el Garaje.</Spanish>
             <Russian></Russian>
             <German>Keine Fahrzeuge in der Garage gefunden.</German>
-            <French>Aucun Vehicules.</French>
+            <French>Aucun véhicule trouvé dans le garage.</French>
             <Italian>Non hai veicoli nel Garage.</Italian>
             <Portuguese>Nenhum veiculo encontrado na garagem.</Portuguese>
             <Polish>Nie znaleziono pojazdów w garażu</Polish>
@@ -4268,7 +4268,7 @@
         <Key ID="STR_NOTF_menuWillNotOpen">
             <Original>Something went wrong; the menu will not open?</Original>
             <Czech>Něco se pokazilo; nabídka neotevře?</Czech>
-            <French>Quelque-chose s'est mal déroulé; le menu ne s'ouvre pas ?</French>
+            <French>Quelque chose s'est mal déroulé; le menu ne s'ouvre pas ?</French>
             <Spanish>Algo salió mal; el menú no se abre?</Spanish>
             <Italian>Qualcosa è andato storto; il menu non si apre?</Italian>
             <Polish>Coś poszło nie tak; menu nie otworzy?</Polish>
@@ -4389,7 +4389,7 @@
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
             <Czech>Zachyťte Gang skrýš</Czech>
-            <French>Capturer la planque de Gang</French>
+            <French>Capturer la planque de gang</French>
             <Spanish>Capturar Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
@@ -4504,7 +4504,7 @@
             <Spanish>Necesitas %1 para transmitir un anuncio!</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Vous avez besoins de $%1 pour envoyer une diffusion !</French>
+            <French>Vous avez besoin de $%1 pour envoyer une diffusion !</French>
             <Italian></Italian>
             <Portuguese>Você precisa de $%1 para enviar uma transmissão!</Portuguese>
             <Polish></Polish>
@@ -4515,7 +4515,7 @@
             <Spanish>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Spanish>
             <Russian></Russian>
             <German></German>
-            <French>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Diffusé par: %2</French>
+            <French>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Diffusé par : %2</French>
             <Italian></Italian>
             <Portuguese>&lt;t size='2'&gt;%1&lt;/t&gt;&lt;br /&gt;Transmitido por: %2</Portuguese>
             <Polish></Polish>
@@ -5919,7 +5919,7 @@
         <Key ID="STR_House_LockedUp">
             <Original>House has been locked up.</Original>
             <Czech>Dům byl zamčený.</Czech>
-            <French>La maison a été vérouillée.</French>
+            <French>La maison a été verouillée.</French>
             <Spanish>La casa se a cerrado con llave.</Spanish>
             <Russian></Russian>
             <German>Haus wurde abgeschlossen.</German>
@@ -6036,7 +6036,7 @@
             <Spanish>Reparando Helicóptero [%1]...</Spanish>
             <Russian></Russian>
             <German>Helikopter wird gewartet [%1]...</German>
-            <French>Entretient [%1]...</French>
+            <French>Entretien [%1]...</French>
             <Italian>Manutenendo Elicottero [%1]...</Italian>
             <Portuguese>Reparando aeronave [%1]...</Portuguese>
             <Polish>Serwisuję helikopter [%1]...</Polish>
@@ -6456,7 +6456,7 @@
             <Spanish>Obeja Asada</Spanish>
             <Russian></Russian>
             <German>Gegrilltes Schafsfleisch</German>
-            <French>Mouton grillés</French>
+            <French>Mouton grillé</French>
             <Italian>Mutton alla griglia</Italian>
             <Portuguese>Mutton Grelhado</Portuguese>
             <Polish>Grilowana Owca</Polish>
@@ -6854,7 +6854,7 @@
             <Spanish>Entrenamiento de Heroina</Spanish>
             <Russian></Russian>
             <German>Heroinausbildung</German>
-            <French>Transformation d'Heroine</French>
+            <French>Transformation d'Héroïne</French>
             <Italian>Processo Eroina</Italian>
             <Portuguese>Treinamento de Heroina</Portuguese>
             <Polish>Wytwarzanie Heroiny</Polish>
@@ -7041,7 +7041,7 @@
             <Spanish>Licencia de Marihuana Medicinal</Spanish>
             <Russian></Russian>
             <German>Medizinisches Marijuana-Lizenz</German>
-            <French>Licence de Marijuana Médicale</French>
+            <French>Licence de Cannabis Médical</French>
             <Italian>Medical Marijuana Licenza</Italian>
             <Portuguese>Licença Medical Marijuana</Portuguese>
             <Polish>Medical Marijuana Licencji</Polish>
@@ -7606,7 +7606,7 @@
             <Spanish>Fundiendo Lingotes de Hierro</Spanish>
             <Russian></Russian>
             <German>Eisen wird verarbeitet</German>
-            <French>Fonte du fer</French>
+            <French>Fonte du Fer</French>
             <Italian>Processando Ferro</Italian>
             <Portuguese>Processando Ferro</Portuguese>
             <Polish>Wytop żelaza</Polish>
@@ -7740,7 +7740,7 @@
             <Spanish>Médicos en línea: %1</Spanish>
             <Russian></Russian>
             <German>Sanitäter online: %1</German>
-            <French>Medecin en ligne: %1</French>
+            <French>Médecin en ligne : %1</French>
             <Italian>Medici Online: %1</Italian>
             <Portuguese>Médicos Online: %1</Portuguese>
             <Polish>Medycy Online: %1</Polish>
@@ -7751,7 +7751,7 @@
             <Spanish>Médicos Cerca: %1</Spanish>
             <Russian></Russian>
             <German>Sanitäter in der Nähe: %1</German>
-            <French>Medecin à proximité: %1</French>
+            <French>Médecin à proximité : %1</French>
             <Italian>Medici Vicini: %1</Italian>
             <Portuguese>Médicos por perto: %1</Portuguese>
             <Polish>Medycy w pobliżu: %1</Polish>
@@ -7773,7 +7773,7 @@
             <Spanish>Puedes reaparecer en: %1</Spanish>
             <Russian></Russian>
             <German>Respawn verfügbar in: %1</German>
-            <French>Réapparition Disponible dans: %1</French>
+            <French>Réapparition disponible dans: %1</French>
             <Italian>Respawn disponibile in: %1</Italian>
             <Portuguese>Respawn Disponível em: %1</Portuguese>
             <Polish>Odrodzenie możliwe za: %1</Polish>
@@ -7828,7 +7828,7 @@
             <Spanish>Esta persona ya reapareció o fue revivida.</Spanish>
             <Russian></Russian>
             <German>Diese Person ist entweder respawnt oder wurde bereits wiederbelebt.</German>
-            <French>Cette personne a peut etre fait une réapparition ou a déjà été réanimée.</French>
+            <French>Cette personne a peut-etre fait une réapparition ou a déjà été réanimée.</French>
             <Italian>Questa persona è stata già rianimata o ha fatto respawn.</Italian>
             <Portuguese>Esse jogador já deu respawn ou já foi reanimado.</Portuguese>
             <Polish>Ta osoba wcześniej się odrodziła lub została reanimowana.</Polish>
@@ -7975,7 +7975,7 @@
             <Spanish>Controla si los jugadores tienen nombres (tags) sobre sus cabezas.</Spanish>
             <Russian></Russian>
             <German>Regelt, ob Spieler Namensschilder über dem Kopf haben.</German>
-            <French>Contrôler si les joueurs auront ou non leur noms au dessus de leur tête</French>
+            <French>Contrôler si les joueurs auront ou non leurs noms au dessus de leur tête</French>
             <Italian>Controlla la visualizzazione delle tags sopra la testa dei giocatori</Italian>
             <Portuguese>Controla se os jogadores terão os nomes em suas cabeças.</Portuguese>
             <Polish>Kontroluje czy gracze będą mieli nad głowami swoje Tagi z nazwą</Polish>
@@ -8331,7 +8331,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German></German>
-            <French>Obtenir dans le véhicule</French>
+            <French>Monter dans le véhicule</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -8387,7 +8387,7 @@
             <Italian>Ricerca Container</Italian>
             <Polish>Szukaj Kontener</Polish>
             <Russian></Russian>
-            <French>Fouiller conteneur</French>
+            <French>Fouiller le conteneur</French>
             <Portuguese>Vasculhar Container</Portuguese>
             <German>Container suchen</German>
         </Key>
@@ -9265,7 +9265,7 @@
             <Polish>Pojazd jest zbyt daleko lub jesteś w!</Polish>
             <Russian></Russian>
             <Portuguese>O veículo está muito longe ou você está nele!</Portuguese>
-            <French>Le vehicule est peut etre trop loin, ou tu es dedans !</French>
+            <French>Le vehicule est peut-etre trop loin, ou tu es dedans !</French>
             <German>Das Fahrzeug ist zu weit entfernt oder du sitzt noch drin!</German>
         </Key>
         <Key ID="STR_Vehicle_Ready_Pump">
@@ -10188,7 +10188,7 @@
         <Key ID="STR_MAR_Cop_Item_Shop">
             <Original>Cop Item Shop</Original>
             <Czech>Cop Item Shop</Czech>
-            <French>Marché police</French>
+            <French>Magasin de la Police</French>
             <Spanish>Tienda de Objetos de Policía</Spanish>
             <Italian>Strumenti</Italian>
             <Russian></Russian>
@@ -10210,7 +10210,7 @@
         <Key ID="STR_MAR_Cop_Weapon_Shop">
             <Original>Cop Weapon Shop</Original>
             <Czech>Cop obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes police</French>
+            <French>Vendeur d'armes policière</French>
             <Spanish>Tienda de Armas de Policía</Spanish>
             <Italian>Armeria da Agenti</Italian>
             <Russian></Russian>
@@ -10232,7 +10232,7 @@
         <Key ID="STR_MAR_Sergeant_Weapon_Shop">
             <Original>Sergeant Weapon Shop</Original>
             <Czech>Seržant obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes police (Sergent)</French>
+            <French>Vendeur d'armes de Sergent</French>
             <Spanish>Tienda de Armas de Oficial de Sargento</Spanish>
             <Italian>Armeria dei Sergenti</Italian>
             <Russian></Russian>
@@ -10386,7 +10386,7 @@
         <Key ID="STR_MAR_EMS_Clothing_Shop">
             <Original>EMS Clothing Shop</Original>
             <Czech>EMS Oblečení Shop</Czech>
-            <French>Boutique de vêtements de Medecin</French>
+            <French>Boutique de vêtements de Médecin</French>
             <Spanish>Tienda de Ropa de Médico</Spanish>
             <Italian>Uniformi EMS</Italian>
             <Russian></Russian>
@@ -10908,7 +10908,7 @@
             <Czech>Federální rezervní systém lámání</Czech>
             <Spanish>Entrar a la Reserva Federal</Spanish>
             <Russian></Russian>
-            <French>Intrusion dans la réserve fédéral</French>
+            <French>Intrusion dans la réserve fédérale</French>
             <Portuguese>Invasão a Reserva Federal</Portuguese>
             <German>Bankeinbruch</German>
             <Italian>Rapina alla Riserva Federale</Italian>
@@ -11284,7 +11284,7 @@
         <Key ID="STR_Police_Store">
             <Original>Police Store</Original>
             <Czech></Czech>
-            <French>Magasin de police</French>
+            <French>Magasin de la police</French>
             <Spanish></Spanish>
             <Italian></Italian>
             <Polish></Polish>
