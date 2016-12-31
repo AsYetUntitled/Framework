@@ -7,7 +7,7 @@
     Master client initialization file
 */
 
-private ["_handle","_timeStamp","_server_isReady","_extDB_notLoaded"];
+private ["_handle","_timeStamp","_extDB_notLoaded"];
 life_firstSpawn = true;
 life_session_completed = false;
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED"];
@@ -45,15 +45,14 @@ diag_log "::Life Client:: Waiting for the server to be ready..";
 waitUntil{!isNil "life_HC_isActive"};
 if (life_HC_isActive) then {
     waitUntil{!isNil "life_HC_server_isReady" && !isNil "life_HC_server_extDB_notLoaded"};
-    _server_isReady = life_HC_server_isReady;
+    waitUntil{life_HC_server_isReady};
     _extDB_notLoaded = life_HC_server_extDB_notLoaded;
 } else {
     waitUntil{!isNil "life_server_isReady" && !isNil "life_server_extDB_notLoaded"};
-    _server_isReady = life_server_isReady;
+    waitUntil{life_server_isReady};
     _extDB_notLoaded = life_server_extDB_notLoaded;
 };
 
-waitUntil{_server_isReady};
 if (_extDB_notLoaded isEqualType []) exitWith {
     diag_log (_extDB_notLoaded select 1);
     999999 cutText [localize "STR_Init_ExtdbFail","BLACK FADED"];
