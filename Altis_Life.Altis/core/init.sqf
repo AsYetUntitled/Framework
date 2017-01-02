@@ -13,6 +13,7 @@ life_session_completed = false;
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED"];
 0 cutFadeOut 9999999;
 _timeStamp = diag_tickTime;
+_extDB_notLoaded = "";
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "--------------------------------- Starting Altis Life Client Init ----------------------------------";
 diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";
@@ -42,14 +43,10 @@ diag_log "::Life Client:: Received server functions.";
 0 cutFadeOut 99999999;
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
-waitUntil{!isNil "life_HC_isActive"};
-if (life_HC_isActive) then {
-    waitUntil{!isNil "life_HC_server_isReady" && !isNil "life_HC_server_extDB_notLoaded"};
-    waitUntil{life_HC_server_isReady};
-    _extDB_notLoaded = life_HC_server_extDB_notLoaded;
-} else {
-    waitUntil{!isNil "life_server_isReady" && !isNil "life_server_extDB_notLoaded"};
-    waitUntil{life_server_isReady};
+waitUntil {!isNil "life_HC_isActive"};
+if (!life_HC_isActive) then {
+    waitUntil {!isNil "life_server_isReady" && !isNil "life_server_extDB_notLoaded"};
+    waitUntil {life_server_isReady};
     _extDB_notLoaded = life_server_extDB_notLoaded;
 };
 
@@ -137,7 +134,7 @@ publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for Headless
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
-        waitUntil{(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
+        waitUntil {(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
         (findDisplay 49) closeDisplay 2; // Close ESC dialog
         (findDisplay 602) closeDisplay 2; // Close Inventory dialog
     };
