@@ -175,7 +175,7 @@
             <Russian></Russian>
             <German>Wong's Spezialitäten</German>
             <Italian>Alimentari</Italian>
-            <French>Restaurant</French>
+            <French>Camion-restaurant de Wong</French>
             <Portuguese>Praça de Alimentação</Portuguese>
             <Polish>Przysmaki Wonga</Polish>
         </Key>
@@ -3325,7 +3325,7 @@
             <Spanish>Aborto disponible en %1</Spanish>
             <Russian></Russian>
             <German>Abbruch möglich in %1</German>
-            <French>Abandonner disponible dans %1</French>
+            <French>Abandon disponible dans %1</French>
             <Italian>Abbandona disponibile in %1</Italian>
             <Portuguese>Abortar disponível em %1</Portuguese>
             <Polish>Możesz przerwać za %1</Polish>
@@ -5524,7 +5524,7 @@
             <Spanish>El vehículo no existe o fue destruido.</Spanish>
             <Russian></Russian>
             <German>Das Fahrzeug existiert entweder nicht oder wurde zerstört.</German>
-            <French>Le véhicule n'existe pas ou à été détruit</French>
+            <French>Le véhicule n'existe pas ou a été détruit</French>
             <Italian>Il veicolo non esiste o è stato distrutto.</Italian>
             <Portuguese>Veículo não existe ou está destruido.</Portuguese>
             <Polish>Pojazd nie istnieje lub jest zniszczony</Polish>
