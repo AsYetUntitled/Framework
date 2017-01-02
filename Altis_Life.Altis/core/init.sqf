@@ -43,19 +43,14 @@ diag_log "::Life Client:: Received server functions.";
 0 cutFadeOut 99999999;
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
-waitUntil {!isNil "life_HC_isActive"};
-if (!life_HC_isActive) then {
-    waitUntil {!isNil "life_server_isReady" && !isNil "life_server_extDB_notLoaded"};
-    waitUntil {life_server_isReady};
-    _extDB_notLoaded = life_server_extDB_notLoaded;
-};
+waitUntil {!isNil "life_server_isReady" && !isNil "life_HC_isActive" && !isNil "life_server_extDB_notLoaded"};
 
-if (_extDB_notLoaded isEqualType []) exitWith {
-    diag_log (_extDB_notLoaded select 1);
+if (life_server_extDB_notLoaded) exitWith {
     999999 cutText [localize "STR_Init_ExtdbFail","BLACK FADED"];
     999999 cutFadeOut 99999999;
 };
 
+waitUntil {life_server_isReady};
 [] call SOCK_fnc_dataQuery;
 waitUntil {life_session_completed};
 0 cutText[localize "STR_Init_ClientFinish","BLACK FADED"];
