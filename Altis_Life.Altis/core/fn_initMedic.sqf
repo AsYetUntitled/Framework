@@ -14,20 +14,6 @@ if ((FETCH_CONST(life_medicLevel)) < 1 && (FETCH_CONST(life_adminlevel) isEqualT
     sleep 35;
 };
 
-// -- Restrict Weapons
-if (LIFE_SETTINGS(getNumber,"restrict_medic_weapons") isEqualTo 1) then {
-    private _firedEVH = player addEventHandler ["Fired, {
-        // -- Get Params
-        params ["_unit", "", "", "_weapon"];
-        
-        // -- Check if weapon is equipped
-        if (!(_weapon _unit isEqualTo "")) then {
-            // -- Remove Weapon from Player
-            removeWeapon _weapon player;
-        };
-    }];
-};
-
 [] call life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
