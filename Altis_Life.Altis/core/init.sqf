@@ -43,7 +43,8 @@ diag_log "::Life Client:: Received server functions.";
 0 cutFadeOut 99999999;
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
-waitUntil {!isNil "life_server_isReady" && !isNil "life_HC_isActive" && !isNil "life_server_extDB_notLoaded"};
+waitUntil {!isNil "life_server_isReady"};
+waitUntil {!isNil "life_HC_isActive" && !isNil "life_server_extDB_notLoaded"};
 
 if (life_server_extDB_notLoaded) exitWith {
     999999 cutText [localize "STR_Init_ExtdbFail","BLACK FADED"];
