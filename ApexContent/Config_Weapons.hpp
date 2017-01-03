@@ -39,8 +39,8 @@ class WeaponShops {
             { "6Rnd_45ACP_Cylinder", "", 150, 100, "" },
             { "9Rnd_45ACP_Mag", "", 200, 100, "" },
             { "30Rnd_9x21_Mag", "", 250, 100, "" },
-            { "30Rnd_9x21_Mag_SMG_02", "", 75, 100, "" }, //Apex DLC
-            { "10Rnd_9x21_Mag", "", 75, 100, "" } //Apex DLC - Had to guess this. Not referenced anywhere
+            { "30Rnd_9x21_Mag_SMG_02", "", 250, 100, "" }, //Apex DLC
+            { "10Rnd_9x21_Mag", "", 250, 100, "" } //Apex DLC - Had to guess this. Not referenced anywhere
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 2500, 100, "" }
