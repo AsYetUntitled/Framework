@@ -35,7 +35,7 @@ class Clothing {
             { "U_IG_Guerilla2_3", "The Outback Rangler", 1200, "" },
             { "U_C_HunterBody_grn", "The Hunters Look", 1500, "" },
             { "U_C_WorkerCoveralls", "Mechanic Coveralls", 2500, "" },
-			{ "U_NikosAgedBody", "Casual Wears", 5000, "" },
+            { "U_NikosAgedBody", "Casual Wears", 5000, "" },
             { "U_C_Man_casual_1_F", "Casual Wears", 5000, "" }, //Apex DLC
             { "U_C_Man_casual_2_F", "Casual Wears", 5000, "" }, //Apex DLC
             { "U_C_Man_casual_3_F", "Casual Wears", 5000, "" }, //Apex DLC
