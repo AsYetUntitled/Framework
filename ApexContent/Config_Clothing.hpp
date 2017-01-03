@@ -18,7 +18,7 @@
 class Clothing {
     class bruce {
         title = "STR_Shops_C_Bruce";
-        license = "";
+        conditions = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -44,8 +44,6 @@ class Clothing {
             { "U_C_man_sport_1_F", "Casual Wears", 5000, "" }, //Apex DLC
             { "U_C_man_sport_2_F", "Casual Wears", 5000, "" }, //Apex DLC
             { "U_C_man_sport_3_F", "Casual Wears", 5000, "" } //Apex DLC
-
-
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, "" },
@@ -69,6 +67,7 @@ class Clothing {
             { "H_BandMask_blk", "Hat & Bandanna", 300, "" },
             { "H_Hat_blue", "", 310, "" },
             { "H_Hat_checker", "", 340, "" },
+            { "H_Booniehat_tan", "", 425, "" },
             { "H_Booniehat_grn", "", 425, "" }
         };
         goggles[] = {
@@ -131,7 +130,7 @@ class Clothing {
 
     class cop {
         title = "STR_Shops_C_Police";
-        license = "";
+        conditions = "";
         side = "cop";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -229,7 +228,7 @@ class Clothing {
 
     class gang_clothing {
         title = "STR_Shops_C_Gang";
-        license = "";
+        conditions = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" }
@@ -251,7 +250,7 @@ class Clothing {
 
     class med_clothing {
         title = "STR_MAR_EMS_Clothing_Shop";
-        license = "";
+        conditions = "";
         side = "med";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -276,7 +275,7 @@ class Clothing {
 
     class reb {
         title = "STR_Shops_C_Rebel";
-        license = "rebel";
+        conditions = "license_civ_rebel";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
@@ -286,6 +285,7 @@ class Clothing {
             { "U_IG_leader", "Guerilla Leader", 15340, "" },
             { "U_O_PilotCoveralls", "", 15610, "" },
             { "U_O_SpecopsUniform_ocamo", "", 17500, "" },
+            { "U_O_GhillieSuit", "", 50000, "" },
             { "U_B_T_Soldier_F", "", 50000, "" }, //Apex DLC
             { "U_I_C_Soldier_Bandit_1_F", "", 50000, "" },
             { "U_I_C_Soldier_Bandit_2_F", "", 51000, "" }, //Apex DLC
@@ -336,7 +336,6 @@ class Clothing {
             { "V_HarnessO_brn", "", 7500, "" },
             { "V_TacVest_khk", "", 12500, "" },
             { "V_TacVest_gen_F", "", 14500, "" }
-
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, "" },
@@ -370,7 +369,7 @@ class Clothing {
 
     class kart {
         title = "STR_Shops_C_Kart";
-        license = "";
+        conditions = "";
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, "" },
