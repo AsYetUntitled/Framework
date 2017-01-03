@@ -51,7 +51,6 @@ class Clothing {
             { "NONE", "Remove Hat", 0, "" },
             { "H_Bandanna_camo", "Camo Bandanna", 120, "" },
             { "H_Bandanna_surfer", "Surfer Bandanna", 130, "" },
-            { "H_Bandanna_surfer", "", 135, "" },
             { "H_Bandanna_khk", "Khaki Bandanna", 145, "" },
             { "H_Cap_blu", "", 150, "" },
             { "H_Cap_grn", "", 150, "" },
