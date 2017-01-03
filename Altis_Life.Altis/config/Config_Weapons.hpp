@@ -32,10 +32,10 @@ class WeaponShops {
             { "hgun_PDW2000_F", "", 20000, -1, "" }
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25, 100, "" },
-            { "6Rnd_45ACP_Cylinder", "", 50, 100, "" },
-            { "9Rnd_45ACP_Mag", "", 45, 100, "" },
-            { "30Rnd_9x21_Mag", "", 75, 100, "" }
+            { "16Rnd_9x21_Mag", "", 125, 100, "" },
+            { "6Rnd_45ACP_Cylinder", "", 150, 100, "" },
+            { "9Rnd_45ACP_Mag", "", 200, 100, "" },
+            { "30Rnd_9x21_Mag", "", 250, 100, "" }
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 2500, 100, "" }
@@ -77,10 +77,10 @@ class WeaponShops {
             { "hgun_PDW2000_F", "", 9500, -1, "" }
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25, 100, "" },
-            { "6Rnd_45ACP_Cylinder", "", 50, 100, "" },
-            { "9Rnd_45ACP_Mag", "", 45, 100, "" },
-            { "30Rnd_9x21_Mag", "", 75, 100, "" }
+            { "16Rnd_9x21_Mag", "", 125, 100, "" },
+            { "6Rnd_45ACP_Cylinder", "", 150, 100, "" },
+            { "9Rnd_45ACP_Mag", "", 200, 100, "" },
+            { "30Rnd_9x21_Mag", "", 250, 100, "" }
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 950, 100, "" }
@@ -150,8 +150,8 @@ class WeaponShops {
             { "arifle_MXC_F", "", 30000, 5000, "call life_coplevel >= 3" }
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25, 100, "" },
-            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 45, 100, "" },
+            { "16Rnd_9x21_Mag", "", 125, 100, "" },
+            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 125, 100, "" },
             { "30Rnd_65x39_caseless_mag", "", 130, 100, "" },
             { "30Rnd_9x21_Mag", "", 250, 100, "call life_coplevel >= 2" },
             { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" }
