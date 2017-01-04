@@ -44,7 +44,7 @@ diag_log "::Life Client:: Received server functions.";
 
 diag_log "::Life Client:: Waiting for the server to be ready..";
 waitUntil {!isNil "life_server_isReady"};
-waitUntil {!isNil "life_HC_isActive" && !isNil "life_server_extDB_notLoaded"};
+waitUntil {!isNil "life_HC_isActive" && {!isNil "life_server_extDB_notLoaded"}};
 
 if (life_server_extDB_notLoaded) exitWith {
     999999 cutText [localize "STR_Init_ExtdbFail","BLACK FADED"];
@@ -130,7 +130,7 @@ publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for Headless
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
-        waitUntil {(!isNull (findDisplay 49)) && (!isNull (findDisplay 602))}; // Check if Inventory and ESC dialogs are open
+        waitUntil {(!isNull (findDisplay 49)) && {(!isNull (findDisplay 602))}}; // Check if Inventory and ESC dialogs are open
         (findDisplay 49) closeDisplay 2; // Close ESC dialog
         (findDisplay 602) closeDisplay 2; // Close Inventory dialog
     };
