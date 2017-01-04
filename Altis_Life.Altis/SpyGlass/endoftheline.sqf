@@ -1,8 +1,8 @@
 /*
     File: endoftheline.sqf
-    Author: 
+    Author: Latouth (Originally, Unknown)
 
     Description:
-	
+    End of the line.
 */
-#include "Hi, it appears that your client crashed. Do not worry we will get back with you in six years."
+#include "Hi, it appears that your client crashed. Please contact the server administrators."
