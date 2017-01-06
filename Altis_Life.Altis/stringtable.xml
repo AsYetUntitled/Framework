@@ -1278,84 +1278,84 @@
             <Portuguese>Chamar SAMU</Portuguese>
             <Polish>MEDYK</Polish>
         </Key>
-	</Package>
-	<Package name="CellPhone_Messages">
+    </Package>
+    <Package name="CellPhone_Messages">
         <Key ID="STR_CELLMSG_EnterMSG">
             <Original>You must enter a message to send!</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>You must enter a message to send!</Czech>
+            <Spanish>You must enter a message to send!</Spanish>
+            <Russian>You must enter a message to send!</Russian>
             <German>Du musst eine Nachricht eingeben!</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>You must enter a message to send!</French>
+            <Italian>You must enter a message to send!</Italian>
+            <Portuguese>You must enter a message to send!</Portuguese>
+            <Polish>You must enter a message to send!</Polish>
         </Key>
         <Key ID="STR_CELLMSG_SelectPerson">
             <Original>You must select a player you are sending the text to!</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>You must select a player you are sending the text to!</Czech>
+            <Spanish>You must select a player you are sending the text to!</Spanish>
+            <Russian>You must select a player you are sending the text to!</Russian>
             <German>Du musst einen Spieler auswählen!</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>You must select a player you are sending the text to!</French>
+            <Italian>You must select a player you are sending the text to!</Italian>
+            <Portuguese>You must select a player you are sending the text to!</Portuguese>
+            <Polish>You must select a player you are sending the text to!</Polish>
         </Key>
         <Key ID="STR_CELLMSG_ToEMS">
             <Original>You have sent a message to all EMS Units.</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>You have sent a message to all EMS Units.</Czech>
+            <Spanish>You have sent a message to all EMS Units.</Spanish>
+            <Russian>You have sent a message to all EMS Units.</Russian>
             <German>Du hast eine Nachricht an alle Sanitäter gesendet.</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>You have sent a message to all EMS Units.</French>
+            <Italian>You have sent a message to all EMS Units.</Italian>
+            <Portuguese>You have sent a message to all EMS Units.</Portuguese>
+            <Polish>You have sent a message to all EMS Units.</Polish>
         </Key>
         <Key ID="STR_CELLMSG_ToPerson">
             <Original>You sent %1 a message: %2</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>You sent %1 a message: %2</Czech>
+            <Spanish>You sent %1 a message: %2</Spanish>
+            <Russian>You sent %1 a message: %2</Russian>
             <German>Du sendest %1 eine Nachricht: %2</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>You sent %1 a message: %2</French>
+            <Italian>You sent %1 a message: %2</Italian>
+            <Portuguese>You sent %1 a message: %2</Portuguese>
+            <Polish>You sent %1 a message: %2</Polish>
         </Key>
         <Key ID="STR_CELLMSG_NoAdmin">
             <Original>You are not an admin!</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>You are not an admin!</Czech>
+            <Spanish>You are not an admin!</Spanish>
+            <Russian>You are not an admin!</Russian>
             <German>Du bist kein Admin!</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>You are not an admin!</French>
+            <Italian>You are not an admin!</Italian>
+            <Portuguese>You are not an admin!</Portuguese>
+            <Polish>You are not an admin!</Polish>
         </Key>
         <Key ID="STR_CELLMSG_AdminToPerson">
             <Original>Admin Message Sent To: %1 - Message: %2</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>Admin Message Sent To: %1 - Message: %2</Czech>
+            <Spanish>Admin Message Sent To: %1 - Message: %2</Spanish>
+            <Russian>Admin Message Sent To: %1 - Message: %2</Russian>
             <German>Admin Nachricht Gesendet an: %1 - Nachricht: %2</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>Admin Message Sent To: %1 - Message: %2</French>
+            <Italian>Admin Message Sent To: %1 - Message: %2</Italian>
+            <Portuguese>Admin Message Sent To: %1 - Message: %2</Portuguese>
+            <Polish>Admin Message Sent To: %1 - Message: %2</Polish>
         </Key>
         <Key ID="STR_CELLMSG_AdminToAll">
             <Original>Admin Message Sent To All: %1</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>Admin Message Sent To All: %1</Czech>
+            <Spanish>Admin Message Sent To All: %1</Spanish>
+            <Russian>Admin Message Sent To All: %1</Russian>
             <German>Admin Nachricht Gesendet an Alle: %1</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>Admin Message Sent To All: %1</French>
+            <Italian>Admin Message Sent To All: %1</Italian>
+            <Portuguese>Admin Message Sent To All: %1</Portuguese>
+            <Polish>Admin Message Sent To All: %1</Polish>
         </Key>
     </Package>
     <Package name="Chop_Shop">
