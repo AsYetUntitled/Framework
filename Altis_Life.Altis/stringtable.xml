@@ -11198,15 +11198,15 @@
             <German>>Du wurdest wegen Betrug erkannt und an den Server gemeldet. Genieße deinen Tag.</German>
         </Key>
         <Key ID="STR_SpyDetect_cookieJar">
-            <Original>SPYGLASS-FLAG:%1:%2:%3</Original>
-            <Czech>SPYGLASS-FLAG:%1:%2:%3</Czech>
-            <French>SPYGLASS-FLAG:%1:%2:%3</French>
-            <Spanish>SPYGLASS-FLAG:%1:%2:%3</Spanish>
-            <Italian>SPYGLASS-FLAG:%1:%2:%3</Italian>
-            <Polish>SPYGLASS-FLAG:%1:%2:%3</Polish>
-            <Portuguese>SPYGLASS-FLAG:%1:%2:%3</Portuguese>
-            <Russian>SPYGLASS-FLAG:%1:%2:%3</Russian>
-            <German>SPYGLASS-ERKENNUNG:%1:%2:%3</German>
+            <Original>SPYGLASS-FLAG: %1 : %2 : %3</Original>
+            <Czech>SPYGLASS-FLAG: %1 : %2 : %3</Czech>
+            <French>SPYGLASS-FLAG: %1 : %2 : %3</French>
+            <Spanish>SPYGLASS-FLAG: %1 : %2 : %3</Spanish>
+            <Italian>SPYGLASS-FLAG: %1 : %2 : %3</Italian>
+            <Polish>SPYGLASS-FLAG: %1 : %2 : %3</Polish>
+            <Portuguese>SPYGLASS-FLAG: %1 : %2 : %3</Portuguese>
+            <Russian>SPYGLASS-FLAG: %1 : %2 : %3</Russian>
+            <German>SPYGLASS-ERKENNUNG: %1 : %2 : %3</German>
         </Key>
         <Key ID="STR_SpyDetect_CheaterFlagged">
             <Original><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Original>
