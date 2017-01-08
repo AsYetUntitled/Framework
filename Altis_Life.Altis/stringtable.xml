@@ -4373,7 +4373,7 @@
             <Polish>Zatrzymaniu widzem.</Polish>
             <Portuguese>Você parou espectador.</Portuguese>
             <Russian>Вы остановили spectating.</Russian>
-            <German>Sie haben das Zuschauen gestoppt.</German>
+            <German>Du hast das Beobachten beendet.</German>
         </Key>
         <Key ID="STR_NOTF_haveTPedToYou">
             <Original>You have teleported %1 to your location.</Original>
@@ -4417,7 +4417,7 @@
             <Polish>An empty array was passed to fn_levelCheck.sqf</Polish>
             <Portuguese>An empty array was passed to fn_levelCheck.sqf</Portuguese>
             <Russian>An empty array was passed to fn_levelCheck.sqf</Russian>
-            <German>An empty array was passed to fn_levelCheck.sqf</German>
+            <German>Ein leeres Feld wurde an fn_levelCheck.sqf übergeben.</German>
         </Key>
     </Package>
     <Package name="News_Strings">
@@ -11206,7 +11206,7 @@
             <Polish>SPYGLASS-FLAG:%1:%2:%3</Polish>
             <Portuguese>SPYGLASS-FLAG:%1:%2:%3</Portuguese>
             <Russian>SPYGLASS-FLAG:%1:%2:%3</Russian>
-            <German>SPYGLASS-FLAG:%1:%2:%3</German>
+            <German>SPYGLASS-ERKENNUNG:%1:%2:%3</German>
         </Key>
         <Key ID="STR_SpyDetect_CheaterFlagged">
             <Original><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Original>
@@ -11217,7 +11217,7 @@
             <Polish><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Polish>
             <Portuguese><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Portuguese>
             <Russian><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Russian>
-            <German><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</German>
+            <German><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Betrüger Erkannt</t><br/><br/>Name: %1<br/>Erkennung: %2</German>
         </Key>
         <Key ID="STR_SpyDetect_cmdMenuCheck">
             <Original>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Original>
@@ -11228,7 +11228,7 @@
             <Polish>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Polish>
             <Portuguese>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Portuguese>
             <Russian>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Russian>
-            <German>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</German>
+            <German>%1 wurde beobachtet durch SPY-GLASS. Er/Sie hatte versucht auf das Befehlsmenü:\n\n %2\n\n zuzugreifen, diese ist dem System aber nicht bekannt. BITTE BEACHTE! Er/Sie betrügt deshalb nicht, aber SPY-GLASS fand es trotzdem relevant es zu melden.</German>
         </Key>
         <Key ID="STR_SpyDetect_Variable_MN">
             <Original>Variable: %1 is not allowed TYPE: %2 NS: MN</Original>
@@ -11239,7 +11239,7 @@
             <Polish>Variable: %1 is not allowed TYPE: %2 NS: MN</Polish>
             <Portuguese>Variable: %1 is not allowed TYPE: %2 NS: MN</Portuguese>
             <Russian>Variable: %1 is not allowed TYPE: %2 NS: MN</Russian>
-            <German>Variable: %1 is not allowed TYPE: %2 NS: MN</German>
+            <German>Variable: %1 ist nicht erlaubt. TYPE: %2 NS: MN</German>
         </Key>
         <Key ID="STR_SpyDetect_Variable_UI">
             <Original>Variable: %1 is not allowed TYPE: %2 NS: UI</Original>
@@ -11250,7 +11250,7 @@
             <Polish>Variable: %1 is not allowed TYPE: %2 NS: UI</Polish>
             <Portuguese>Variable: %1 is not allowed TYPE: %2 NS: UI</Portuguese>
             <Russian>Variable: %1 is not allowed TYPE: %2 NS: UI</Russian>
-            <German>Variable: %1 is not allowed TYPE: %2 NS: UI</German>
+            <German>Variable: %1 ist nicht erlaubt. TYPE: %2 NS: UI</German>
         </Key>
         <Key ID="STR_SpyDetect_Observes">
             <Original>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Original>
@@ -11261,7 +11261,7 @@
             <Polish>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Polish>
             <Portuguese>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Portuguese>
             <Russian>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Russian>
-            <German>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</German>
+            <German>||SPY-GLASS Beobachtung|| Name: %1 | UID: %2 | Grund: %3</German>
         </Key>
         <Key ID="STR_SpyDetect_VariableSetBeforeClientInitialized">
             <Original>Variable set before client initialized: %1</Original>
@@ -11272,7 +11272,7 @@
             <Polish>Variable set before client initialized: %1</Polish>
             <Portuguese>Variable set before client initialized: %1</Portuguese>
             <Russian>Variable set before client initialized: %1</Russian>
-            <German>Variable set before client initialized: %1</German>
+            <German>Variable gesetzt bevor Client initialisiert: %1</German>
         </Key>
     </Package>
     <Package name="TextNotifications">
