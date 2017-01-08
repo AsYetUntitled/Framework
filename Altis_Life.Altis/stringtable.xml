@@ -4334,14 +4334,14 @@
             <German>Du hast %1 die Schlüssel zu deinem %2 gegeben.</German>
         </Key>
         <Key ID="STR_NOTF_gaveKeysFrom">
-            <Original>%1 has gave you keys for a %2</Original>
-            <Czech>%1 has gave you keys for a %2</Czech>
-            <French>%1 has gave you keys for a %2</French>
-            <Spanish>%1 has gave you keys for a %2</Spanish>
-            <Italian>%1 has gave you keys for a %2</Italian>
-            <Polish>%1 has gave you keys for a %2</Polish>
-            <Portuguese>%1 has gave you keys for a %2</Portuguese>
-            <Russian>%1 has gave you keys for a %2</Russian>
+            <Original>%1 has gave you keys for a %2.</Original>
+            <Czech>%1 has gave you keys for a %2.</Czech>
+            <French>%1 has gave you keys for a %2.</French>
+            <Spanish>%1 has gave you keys for a %2.</Spanish>
+            <Italian>%1 has gave you keys for a %2.</Italian>
+            <Polish>%1 has gave you keys for a %2.</Polish>
+            <Portuguese>%1 has gave you keys for a %2.</Portuguese>
+            <Russian>%1 has gave you keys for a %2.</Russian>
             <German>%1 hat dir die Schlüssel zum %2 gegeben.</German>
         </Key>
         <Key ID="STR_NOTF_cannotRemoveHouseKeys">
