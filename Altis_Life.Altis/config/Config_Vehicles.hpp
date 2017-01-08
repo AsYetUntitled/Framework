@@ -666,7 +666,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class B_SDV_01_F {
         vItemSpace = 50;
-        conditions = "license_civ_boat || {license_cop_cg} || {(playerSide isEqualTo Independent)}";
+        conditions = "license_civ_boat || {license_cop_cg} || {(playerSide isEqualTo independent)}";
         price = 150000;
         textures[] = {};
     };
