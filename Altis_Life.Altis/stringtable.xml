@@ -1827,14 +1827,14 @@
         </Key>
         <Key ID="STR_GNOTF_LeaveGang">
             <Original>You have quit the gang.</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>You have quit the gang.</Czech>
+            <Spanish>You have quit the gang.</Spanish>
+            <Russian>You have quit the gang.</Russian>
             <German>Du hast die Gang verlassen.</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>You have quit the gang.</French>
+            <Italian>You have quit the gang.</Italian>
+            <Portuguese>You have quit the gang.</Portuguese>
+            <Polish>You have quit the gang.</Polish>
         </Key>
         <Key ID="STR_GNOTF_TransferMSG">
             <Original>You are about to transfer leadership over to %1 &lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
@@ -1882,14 +1882,14 @@
         </Key>
         <Key ID="STR_GNOTF_GaveTransfer">
             <Original>You have been made the new leader.</Original>
-            <Czech></Czech>
-            <Spanish></Spanish>
-            <Russian></Russian>
+            <Czech>You have been made the new leader.</Czech>
+            <Spanish>You have been made the new leader.</Spanish>
+            <Russian>You have been made the new leader.</Russian>
             <German>Du wurdest zum neuen Anführer ernannt.</German>
-            <French></French>
-            <Italian></Italian>
-            <Portuguese></Portuguese>
-            <Polish></Polish>
+            <French>You have been made the new leader.</French>
+            <Italian>You have been made the new leader.</Italian>
+            <Portuguese>You have been made the new leader.</Portuguese>
+            <Polish>You have been made the new leader.</Polish>
         </Key>
         <Key ID="STR_GNOTF_MaxMemberMSG">
             <Original>You are about to upgrade the maximum members allowed for your gang.</Original>
@@ -2047,13 +2047,13 @@
         </Key>
         <Key ID="STR_GNOTF_KickOutGang">
             <Original>You have been kicked out of the gang.</Original>
-            <Czech></Czech>
-            <French></French>
-            <Spanish></Spanish>
-            <Italian></Italian>
-            <Polish></Polish>
-            <Portuguese></Portuguese>
-            <Russian></Russian>
+            <Czech>You have been kicked out of the gang.</Czech>
+            <French>You have been kicked out of the gang.</French>
+            <Spanish>You have been kicked out of the gang.</Spanish>
+            <Italian>You have been kicked out of the gang.</Italian>
+            <Polish>You have been kicked out of the gang.</Polish>
+            <Portuguese>You have been kicked out of the gang.</Portuguese>
+            <Russian>You have been kicked out of the gang.</Russian>
             <German>Du wurdest aus der Gang gekickt.</German>
         </Key>
     </Package>
@@ -4335,13 +4335,13 @@
         </Key>
         <Key ID="STR_NOTF_gaveKeysFrom">
             <Original>%1 has gave you keys for a %2</Original>
-            <Czech></Czech>
-            <French></French>
-            <Spanish></Spanish>
-            <Italian></Italian>
-            <Polish></Polish>
-            <Portuguese></Portuguese>
-            <Russian></Russian>
+            <Czech>%1 has gave you keys for a %2</Czech>
+            <French>%1 has gave you keys for a %2</French>
+            <Spanish>%1 has gave you keys for a %2</Spanish>
+            <Italian>%1 has gave you keys for a %2</Italian>
+            <Polish>%1 has gave you keys for a %2</Polish>
+            <Portuguese>%1 has gave you keys for a %2</Portuguese>
+            <Russian>%1 has gave you keys for a %2</Russian>
             <German>%1 hat dir die Schlüssel zum %2 gegeben.</German>
         </Key>
         <Key ID="STR_NOTF_cannotRemoveHouseKeys">
