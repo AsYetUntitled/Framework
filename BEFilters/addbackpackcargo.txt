@@ -1,6 +1,6 @@
 //regex
 1 ""
-5 "" !B_(OutdoorPack|AssaultPack|TacticalPack|Kitbag|FieldPack|Bergen|Carryall)_(blk|khk|dgtl|rgr|sgg|cbr|oli|mcamo|ocamo|oucamo) !B_Parachute
+5 "" !B_(OutdoorPack|AssaultPack|TacticalPack|Kitbag|FieldPack|Bergen|Carryall)_(blk|khk|dgtl|rgr|sgg|cbr|oli|mcamo|ocamo|oucamo|tna|ghex) !B_Parachute
 5 B_AssaultPack_blk_DiverExp
 5 B_AssaultPack_mcamo_AT
 5 B_AssaultPack_mcamo_AA

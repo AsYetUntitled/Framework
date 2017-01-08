@@ -1,14 +1,19 @@
 /*
-*    Format:
-*        level: ARRAY (This is for limiting items to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL / EQUAL)
-*            2: What to compare to (-1 = Check Disabled)
-*            3: Custom exit message (Optional)
+*    FORMAT:
+*        STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
+*            
 *
-*    items: { Classname, Itemname, BuyPrice, SellPrice }
-*
-*    Itemname only needs to be filled if you want to rename the original object name.
+*    ARRAY FORMAT:
+*        0: STRING (Classname): Item Classname
+*        1: STRING (Nickname): Nickname that will appear purely in the shop dialog
+*        2: SCALAR (Buy price)
+*        3: SCALAR (Sell price): To disable selling, this should be -1
+*        4: STRING (Conditions): Same as above conditions string
 *
 *    Weapon classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Weapons
 *    Item classnames can be found here: https://community.bistudio.com/wiki/Arma_3_CfgWeapons_Items
@@ -30,12 +35,12 @@ class WeaponShops {
             { "SMG_05_F", "", 180000, -1, "" } //Apex DLC
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25, 100, "" },
-            { "6Rnd_45ACP_Cylinder", "", 50, 100, "" },
-            { "9Rnd_45ACP_Mag", "", 45, 100, "" },
-            { "30Rnd_9x21_Mag", "", 75, 100, "" },
-            { "30Rnd_9x21_Mag_SMG_02", "", 75, 100, "" }, //Apex DLC
-            { "10Rnd_9x21_Mag", "", 75, 100, "" } //Apex DLC - Had to guess this. Not referenced anywhere
+            { "16Rnd_9x21_Mag", "", 125, 100, "" },
+            { "6Rnd_45ACP_Cylinder", "", 150, 100, "" },
+            { "9Rnd_45ACP_Mag", "", 200, 100, "" },
+            { "30Rnd_9x21_Mag", "", 250, 100, "" },
+            { "30Rnd_9x21_Mag_SMG_02", "", 250, 100, "" }, //Apex DLC
+            { "10Rnd_9x21_Mag", "", 250, 100, "" } //Apex DLC - Had to guess this. Not referenced anywhere
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 2500, 100, "" }
@@ -86,10 +91,10 @@ class WeaponShops {
             { "hgun_PDW2000_F", "", 9500, -1, "" }
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25, 100, "" },
-            { "6Rnd_45ACP_Cylinder", "", 50, 100, "" },
-            { "9Rnd_45ACP_Mag", "", 45, 100, "" },
-            { "30Rnd_9x21_Mag", "", 75, 100, "" }
+            { "16Rnd_9x21_Mag", "", 125, 100, "" },
+            { "6Rnd_45ACP_Cylinder", "", 150, 100, "" },
+            { "9Rnd_45ACP_Mag", "", 200, 100, "" },
+            { "30Rnd_9x21_Mag", "", 250, 100, "" }
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 950, 100, "" }
@@ -159,11 +164,10 @@ class WeaponShops {
             { "arifle_MXC_F", "", 30000, 5000, "call life_coplevel >= 3" },
             // Snipers
             { "srifle_DMR_07_blk_F", "", 32000, 5000, "call life_coplevel >= 3" } //Apex DLC
-
         };
         mags[] = {
-            { "16Rnd_9x21_Mag", "", 25, 100, "" },
-            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 45, 100, "" },
+            { "16Rnd_9x21_Mag", "", 125, 100, "" },
+            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 125, 100, "" },
             { "30Rnd_65x39_caseless_mag", "", 130, 100, "" },
             { "30Rnd_9x21_Mag", "", 250, 100, "call life_coplevel >= 2" },
             { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" },
