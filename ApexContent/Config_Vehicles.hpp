@@ -2,7 +2,7 @@ class CarShops {
     /*
     *    ARRAY FORMAT:
     *        0: STRING (Classname)
-    *        1: STRING (Conditions)
+    *        1: STRING (Condition)
     *    FORMAT:
     *        STRING (Conditions) - Must return boolean :
     *            String can contain any amount of conditions, aslong as the entire
@@ -63,6 +63,7 @@ class CarShops {
         side = "civ";
         conditions = "";
         vehicles[] = {
+            { "C_Heli_Light_01_civil_F", "" },
             { "B_Heli_Light_01_F", "" },
             { "O_Heli_Light_02_unarmed_F", "" },
             { "C_Plane_Civil_01_F", "" } //Apex DLC
@@ -78,7 +79,6 @@ class CarShops {
             { "B_SDV_01_F", "" },
             { "C_Boat_Transport_02_F", "" }, //Apex DLC
             { "C_Scooter_Transport_01_F", "" } //Apex DLC
-
         };
     };
 
@@ -92,7 +92,6 @@ class CarShops {
             { "B_Heli_Light_01_stripped_F", "" },
             { "B_G_Offroad_01_armed_F", "" },
             { "O_T_LSV_02_unarmed_F", "" } //Apex DLC
-
         };
     };
 
@@ -165,15 +164,8 @@ class LifeCfgVehicles {
     *       Pull Vehicle from Garage: Cost = price * [1, 0.5, 0.75, -1] * [0.5, 0.5, 0.5, -1]
     *           -- Pull Vehicle & GarageSell Array Explanation = [civ,cop,medic,east]
     *
-    *       1: STRING (Conditions)
-    *         FORMAT:
-    *        STRING (Conditions) - Must return boolean :
-    *            String can contain any amount of conditions, aslong as the entire
-    *            string returns a boolean. This allows you to check any levels, licenses etc,
-    *            in any combination. For example:
-    *                "call life_coplevel && license_civ_someLicense"
-    *            This will also let you call any other function.
-    *    Textures config follows { Texture Name, side, {texture(s)path}, Conditions}
+    *       1: STRING (Condition)
+    *    Textures config follows { Texture Name, side, {texture(s)path}, Condition}
     *    Texture(s)path follows this format:
     *    INDEX 0: Texture Layer 0
     *    INDEX 1: Texture Layer 1
@@ -192,7 +184,7 @@ class LifeCfgVehicles {
     // Apex DLC
     class C_Boat_Transport_02_F {
         vItemSpace = 100;
-        conditions = "";
+        conditions = "license_civ_boat";
         price = 10000;
         textures[] = {};
     };
@@ -200,34 +192,34 @@ class LifeCfgVehicles {
     // Apex DLC
     class C_Offroad_02_unarmed_F {
         vItemSpace = 65;
-        conditions = "";
+        conditions = "license_civ_driver";
         price = 12500;
         textures[] = {
             { "Black", "civ", {
                 "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_black_co.paa"
-            } },
+            }, "" },
             { "Blue", "civ", {
                 "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_blue_co.paa"
-            } },
+            }, "" },
             { "Green", "civ", {
                 "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_green_co.paa"
-            } },
+            }, "" },
             { "Orange", "civ", {
                 "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_orange_co.paa"
-            } },
+            }, "" },
             { "Red", "civ", {
                 "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_red_co.paa"
             } },
             { "White", "civ", {
                 "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_white_co.paa"
-            } }
+            }, "" }
         };
     };
 
     // Apex DLC
     class C_Plane_Civil_01_F {
         vItemSpace = 75;
-        conditions = "";
+        conditions = "license_civ_pilot";
         price = 150000;
         textures[] = {
             { "Racing (Tan Interior)", "civ", {
@@ -235,86 +227,86 @@ class LifeCfgVehicles {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-            } },
+            }, "" },
             { "Racing", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Racer_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
-            } },
+            }, "" },
             { "Red Line (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-            } },
+            }, "" },
             { "Red Line", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_RedLine_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
-            } },
+            }, "" },
             { "Tribal (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-            } },
+            }, "" },
             { "Tribal", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Tribal_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
-            } },
+            }, "" },
             { "Blue Wave (Tan Interior)", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_tan_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_tan_co.paa"
-            } },
+            }, "" },
             { "Blue Wave", "civ", {
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_01_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_ext_02_Wave_co.paa",
                 "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_01_co.paa",
-                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"}
-            }
+                "A3\Air_F_Exp\Plane_Civil_01\Data\btt_int_02_co.paa"
+            }, "" }
         };
     };
 
     // Apex DLC
     class C_Scooter_Transport_01_F {
         vItemSpace = 30;
-        conditions = "";
+        conditions = "license_civ_boat";
         price = 2500;
         textures[] = {
             { "Black", "civ", {
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Black_CO.paa",
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Black_CO.paa"
-            } },
+            }, "" },
             { "Blue", "civ", {
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Blue_co.paa",
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Blue_co.paa"
-            } },
+            }, "" },
             { "Grey", "civ", {
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Grey_co.paa",
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Grey_co.paa"
-            } },
+            }, "" },
             { "Green", "civ", {
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Lime_co.paa",
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Lime_co.paa"
-            } },
+            }, "" },
             { "Red", "civ", {
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Red_CO.paa",
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_CO.paa"
-            } },
+            }, "" },
             { "White", "civ", {
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_CO.paa",
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_CO.paa"
-            } },
+            }, "" },
             { "Yellow", "civ", {
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_Yellow_CO.paa",
                 "\A3\Boat_F_Exp\Scooter_Transport_01\Data\Scooter_Transport_01_VP_Yellow_CO.paa"
-            } }
+            }, "" }
         };
     };
 
@@ -325,7 +317,6 @@ class LifeCfgVehicles {
         price = 100000;
         textures[] = {};
     };
-
 
     class I_Truck_02_medical_F {
         vItemSpace = 150;
@@ -523,10 +514,11 @@ class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{
     vItemSpace = 40;
     price = ;
 };
+
 will modify the virtual space and the price of the vehicle, but other information such as license and textures will pick up the vehicle declare at : Vehicle {};
 */
     class C_Kart_01_Fuel_F : C_Kart_01_Blu_F{}; // Get all information of C_Kart_01_Blu_F
-    class C_Kart_01_Red_F  : C_Kart_01_Blu_F{};
+    class C_Kart_01_Red_F : C_Kart_01_Blu_F{};
     class C_Kart_01_Vrana_F : C_Kart_01_Blu_F{};
 
     class C_Hatchback_01_sport_F {
@@ -735,7 +727,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class B_Heli_Light_01_F {
         vItemSpace = 90;
-        conditions = "license_civ_pilot || {license_cop_cg} || {license_civ_mAir}";
+        conditions = "license_civ_pilot || {license_cop_cAir} || {license_med_mAir}";
         price = 245000;
         textures[] = {
             { "Police", "cop", {
@@ -793,7 +785,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 210;
-        conditions = "license_civ_pilot || {license_civ_mAir}";
+        conditions = "license_civ_pilot || {license_med_mAir}";
         price = 750000;
         textures[] = {
             { "Black", "cop", {
