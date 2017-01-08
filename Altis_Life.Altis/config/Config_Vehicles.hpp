@@ -671,7 +671,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
         textures[] = {};
     };
 
-        class C_Van_01_fuel_F {
+    class C_Van_01_fuel_F {
         vItemSpace = 20;
         vFuelSpace = 19500;
         conditions = "license_civ_trucking || {!(playerSide isEqualTo civilian)}";
