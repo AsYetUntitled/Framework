@@ -133,9 +133,9 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
     };
 
     player setBehaviour "SAFE";
-    if (_shop == "dive") then {
-    	player setPosATL [-1000, -1000, 10];
-    	sleep 0.0005;
+    if (_shop isEqualTo "dive") then {
+        player setPosATL [-1000, -1000, 10];
+        sleep 0.0005;
     };
     player attachTo [_testLogic,[0,0,0]];
     player switchMove "";
