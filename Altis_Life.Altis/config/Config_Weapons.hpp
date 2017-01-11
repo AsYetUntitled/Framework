@@ -140,9 +140,9 @@ class WeaponShops {
             { "ItemGPS", "", 100, 45, "" },
             { "FirstAidKit", "", 150, 65, "" },
             { "NVGoggles", "", 2000, 980, "" },
-            { "HandGrenade_Stone", "Flashbang", 1700, -1, "" },
-            { "hgun_P07_snds_F", "Stun Pistol", 2000, 650, "" },
-            { "arifle_sdar_F", "Taser Rifle", 20000, 7500, "" },
+            { "HandGrenade_Stone", "$STR_W_items_Flashbang", 1700, -1, "" },
+            { "hgun_P07_snds_F", "$STR_W_items_StunPistol", 2000, 650, "" },
+            { "arifle_sdar_F", "$STR_W_items_TaserRifle", 20000, 7500, "" },
             { "hgun_P07_F", "", 7500, 1500, "" },
             { "SMG_02_ACO_F", "", 30000, -1, "call life_coplevel >= 2" },
             { "arifle_MX_F", "", 35000, 7500, "call life_coplevel >= 2" },
@@ -151,7 +151,7 @@ class WeaponShops {
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 125, 100, "" },
-            { "20Rnd_556x45_UW_mag", "Taser Rifle Magazine", 125, 100, "" },
+            { "20Rnd_556x45_UW_mag", "$STR_W_mags_TaserRifle", 125, 100, "" },
             { "30Rnd_65x39_caseless_mag", "", 130, 100, "" },
             { "30Rnd_9x21_Mag", "", 250, 100, "call life_coplevel >= 2" },
             { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" }
