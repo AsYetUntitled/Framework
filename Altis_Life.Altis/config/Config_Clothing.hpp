@@ -34,7 +34,16 @@ class Clothing {
             { "U_IG_Guerilla2_3", "", 1200, "" },
             { "U_C_HunterBody_grn", "", 1500, "" },
             { "U_C_WorkerCoveralls", "", 2500, "" },
-            { "U_NikosAgedBody", "$STR_C_Civ_Niko", 5000, "" }
+            { "U_NikosAgedBody", "$STR_C_Civ_Niko", 5000, "" },
+            { "U_C_Man_casual_1_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_2_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_3_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_4_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_5_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_6_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_1_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_2_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_3_F", "$STR_C_Civ_Niko", 5000, "" } //Apex DLC
         };
         headgear[] = {
             { "NONE", "$STR_C_Remove_headgear", 0, "" },
@@ -47,6 +56,7 @@ class Clothing {
             { "H_Cap_oli", "", 150, "" },
             { "H_Cap_red", "", 150, "" },
             { "H_Cap_tan", "", 150, "" },
+            { "H_Helmet_Skate", "", 150, "" }, //Apex DLC
             { "H_Bandanna_gry", "", 150, "" },
             { "H_Bandanna_sgg", "", 160, "" },
             { "H_Bandanna_cbr", "", 165, "" },
@@ -92,6 +102,7 @@ class Clothing {
             { "B_AssaultPack_blk", "", 2000, "" },
             { "B_AssaultPack_cbr", "", 2000, "" },
             { "B_AssaultPack_mcamo", "", 2000, "" },
+            { "B_AssaultPack_tna_f", "", 2000, "" }, //Apex DLC
             { "B_TacticalPack_oli", "", 2500, "" },
             { "B_Kitbag_mcamo", "", 3500, "" },
             { "B_Kitbag_sgg", "", 3500, "" },
@@ -99,16 +110,20 @@ class Clothing {
             { "B_FieldPack_blk", "", 5000, "" },
             { "B_FieldPack_ocamo", "", 5000, "" },
             { "B_FieldPack_oucamo", "", 5000, "" },
+            { "B_FieldPack_ghex_f", "", 5000, "" }, //Apex DLC
             { "B_Bergen_sgg", "", 6500, "" },
             { "B_Bergen_mcamo", "", 6500, "" },
             { "B_Bergen_rgr", "", 6500, "" },
             { "B_Bergen_blk", "", 6500, "" },
+            { "B_Bergen_dgtl_f", "", 6500, "" }, //Apex DLC
+            { "B_Bergen_tna_f", "", 6500, "" }, //Apex DLC
             { "B_Carryall_ocamo", "", 7500, "" },
             { "B_Carryall_oucamo", "", 7500, "" },
             { "B_Carryall_mcamo", "", 7500, "" },
             { "B_Carryall_oli", "", 7500, "" },
             { "B_Carryall_khk", "", 7500, "" },
-            { "B_Carryall_cbr", "", 7500, "" }
+            { "B_Carryall_cbr", "", 7500, "" },
+            { "B_Carryall_ghex_f", "", 7500, "" } //Apex DLC
         };
     };
 
@@ -268,7 +283,14 @@ class Clothing {
             { "U_IG_leader", "", 15340, "" },
             { "U_O_PilotCoveralls", "", 15610, "" },
             { "U_O_SpecopsUniform_ocamo", "", 17500, "" },
-            { "U_O_GhillieSuit", "", 50000, "" }
+            { "U_O_GhillieSuit", "", 50000, "" },
+            { "U_B_T_Soldier_F", "", 50000, "" }, //Apex DLC
+            { "U_I_C_Soldier_Bandit_1_F", "", 50000, "" }, //Apex DLC
+            { "U_I_C_Soldier_Bandit_2_F", "", 51000, "" }, //Apex DLC
+            { "U_I_C_Soldier_Bandit_3_F", "", 50032, "" }, //Apex DLC
+            { "U_I_C_Soldier_Bandit_4_F", "", 50020, "" }, //Apex DLC
+            { "U_I_C_Soldier_Bandit_5_F", "", 50020, "" }, //Apex DLC
+            { "U_I_C_Soldier_Camo_F", "", 52000, "" } //Apex DLC
         };
         headgear[] = {
             { "NONE", "$STR_C_Remove_headgear", 0, "" },
@@ -277,7 +299,10 @@ class Clothing {
             { "H_ShemagOpen_tan", "", 850, "" },
             { "H_Shemag_olive", "", 850, "" },
             { "H_MilCap_oucamo", "", 1200, "" },
-            { "H_HelmetO_ocamo", "", 2500, "" }
+            { "H_MilCap_gen_F", "", 1200, "" }, //Apex DLC
+            { "H_MilCap_tna_F", "", 1200, "" }, //Apex DLC
+            { "H_HelmetO_ocamo", "", 2500, "" },
+            { "H_HelmetB_Enh_tna_F", "", 8000, "" } //Apex DLC
         };
         goggles[] = {
             { "NONE", "$STR_C_Remove_goggles", 0, "" },
