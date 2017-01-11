@@ -67,7 +67,8 @@ class Clothing {
             { "H_BandMask_blk", "$STR_C_Civ_BandMask", 300, "" },
             { "H_Hat_blue", "", 310, "" },
             { "H_Hat_checker", "", 340, "" },
-            { "H_Booniehat_tan", "", 425, "" }
+            { "H_Booniehat_tan", "", 425, "" },
+            { "H_Booniehat_grn", "", 425, "" }
         };
         goggles[] = {
             { "NONE", "$STR_C_Remove_goggles", 0, "" },
@@ -166,7 +167,8 @@ class Clothing {
             { "NONE", "$STR_C_Remove_vests", 0, "" },
             { "V_Rangemaster_belt", "", 800, "" },
             { "V_TacVest_blk_POLICE", "", 1000, "call life_coplevel >= 1" },
-            { "V_PlateCarrier2_rgr", "", 1500, "call life_coplevel >= 2" }
+            { "V_PlateCarrier2_rgr", "", 1500, "call life_coplevel >= 2" },
+            { "V_TacChestrig_grn_F", "", 1500, "call life_coplevel >= 2" } //Apex DLC
         };
         backpacks[] = {
             { "NONE", "$STR_C_Remove_backpacks", 0, "" },
@@ -332,7 +334,8 @@ class Clothing {
             { "NONE", "$STR_C_Remove_vests", 0, "" },
             { "V_BandollierB_cbr", "", 4500, "" },
             { "V_HarnessO_brn", "", 7500, "" },
-            { "V_TacVest_khk", "", 12500, "" }
+            { "V_TacVest_khk", "", 12500, "" },
+            { "V_TacVest_gen_F", "", 14500, "" } //Apex DLC
         };
         backpacks[] = {
             { "NONE", "$STR_C_Remove_backpacks", 0, "" },
