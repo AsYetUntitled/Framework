@@ -10551,6 +10551,305 @@
             <Italian>Paga cauzione</Italian>
         </Key>
     </Package>
+    <Package name="displayNames">
+        <Key ID="STR_C_None_uniforms">
+            <Original>Remove Uniform</Original>
+            <Czech>Remove Uniform</Czech>
+            <Spanish>Remove Uniform</Spanish>
+            <Russian>Remove Uniform</Russian>
+            <German>Entferne Kleidung</German>
+            <French>Remove Uniform</French>
+            <Italian>Remove Uniform</Italian>
+            <Portuguese>Remove Uniform</Portuguese>
+            <Polish>Remove Uniform</Polish>
+        </Key>
+        <Key ID="STR_C_None_headgear">
+            <Original>Remove Hat</Original>
+            <Czech>Remove Hat</Czech>
+            <Spanish>Remove Hat</Spanish>
+            <Russian>Remove Hat</Russian>
+            <German>Entferne Kopfbedeckung</German>
+            <French>Remove Hat</French>
+            <Italian>Remove Hat</Italian>
+            <Portuguese>Remove Hat</Portuguese>
+            <Polish>Remove Hat</Polish>
+        </Key>
+        <Key ID="STR_C_None_goggles">
+            <Original>Remove Glasses</Original>
+            <Czech>Remove Glasses</Czech>
+            <Spanish>Remove Glasses</Spanish>
+            <Russian>Remove Glasses</Russian>
+            <German>Entferne Brille</German>
+            <French>Remove Glasses</French>
+            <Italian>Remove Glasses</Italian>
+            <Portuguese>Remove Glasses</Portuguese>
+            <Polish>Remove Glasses</Polish>
+        </Key>
+        <Key ID="STR_C_None_vests">
+            <Original>Remove Vest</Original>
+            <Czech>Remove Vest</Czech>
+            <Spanish>Remove Vest</Spanish>
+            <Russian>Remove Vest</Russian>
+            <German>Entferne Weste</German>
+            <French>Remove Vest</French>
+            <Italian>Remove Vest</Italian>
+            <Portuguese>Remove Vest</Portuguese>
+            <Polish>Remove Vest</Polish>
+        </Key>
+        <Key ID="STR_C_None_backpacks">
+            <Original>Remove Backpack</Original>
+            <Czech>Remove Backpack</Czech>
+            <Spanish>Remove Backpack</Spanish>
+            <Russian>Remove Backpack</Russian>
+            <German>Entferne Rucksack</German>
+            <French>Remove Backpack</French>
+            <Italian>Remove Backpack</Italian>
+            <Portuguese>Remove Backpack</Portuguese>
+            <Polish>Remove Backpack</Polish>
+        </Key>
+        <Key ID="STR_C_Civ_Niko">
+            <Original>Casual Wears</Original>
+            <Czech>Casual Wears</Czech>
+            <Spanish>Casual Wears</Spanish>
+            <Russian>Casual Wears</Russian>
+            <German>Büro Kleidung</German>
+            <French>Casual Wears</French>
+            <Italian>Casual Wears</Italian>
+            <Portuguese>Casual Wears</Portuguese>
+            <Polish>Casual Wears</Polish>
+        </Key>
+        <Key ID="STR_C_Civ_BandMask">
+            <Original>Hat and Bandanna</Original>
+            <Czech>Hat and Bandanna</Czech>
+            <Spanish>Hat and Bandanna</Spanish>
+            <Russian>Hat and Bandanna</Russian>
+            <German>Mütze und Kopftuch</German>
+            <French>Hat and Bandanna</French>
+            <Italian>Hat and Bandanna</Italian>
+            <Portuguese>Hat and Bandanna</Portuguese>
+            <Polish>Hat and Bandanna</Polish>
+        </Key>
+        <Key ID="STR_C_Cop_uniforms">
+            <Original>Cop Uniform</Original>
+            <Czech>Cop Uniform</Czech>
+            <Spanish>Cop Uniform</Spanish>
+            <Russian>Cop Uniform</Russian>
+            <German>Polizei Uniform</German>
+            <French>Cop Uniform</French>
+            <Italian>Cop Uniform</Italian>
+            <Portuguese>Cop Uniform</Portuguese>
+            <Polish>Cop Uniform</Polish>
+        </Key>
+        <Key ID="STR_C_EMS_uniforms">
+            <Original>EMS Uniform</Original>
+            <Czech>EMS Uniform</Czech>
+            <Spanish>EMS Uniform</Spanish>
+            <Russian>EMS Uniform</Russian>
+            <German>Sanitäter Uniform</German>
+            <French>EMS Uniform</French>
+            <Italian>EMS Uniform</Italian>
+            <Portuguese>EMS Uniform</Portuguese>
+            <Polish>EMS Uniform</Polish>
+        </Key>
+        <Key ID="STR_C_EMS_backpacks">
+            <Original>EMS Backpack</Original>
+            <Czech>EMS Backpack</Czech>
+            <Spanish>EMS Backpack</Spanish>
+            <Russian>EMS Backpack</Russian>
+            <German>Sanitäter Rucksack</German>
+            <French>EMS Backpack</French>
+            <Italian>EMS Backpack</Italian>
+            <Portuguese>EMS Backpack</Portuguese>
+            <Polish>EMS Backpack</Polish>
+        </Key>
+        <Key ID="STR_W_items_Flashbang">
+            <Original>Flashbang</Original>
+            <Czech>Flashbang</Czech>
+            <Spanish>Flashbang</Spanish>
+            <Russian>Flashbang</Russian>
+            <German>Blendgranate</German>
+            <French>Flashbang</French>
+            <Italian>Flashbang</Italian>
+            <Portuguese>Flashbang</Portuguese>
+            <Polish>Flashbang</Polish>
+        </Key>
+        <Key ID="STR_W_items_StunPistol">
+            <Original>Stun Pistol</Original>
+            <Czech>Stun Pistol</Czech>
+            <Spanish>Stun Pistol</Spanish>
+            <Russian>Stun Pistol</Russian>
+            <German>Betäubungs-Pistole</German>
+            <French>Stun Pistol</French>
+            <Italian>Stun Pistol</Italian>
+            <Portuguese>Stun Pistol</Portuguese>
+            <Polish>Stun Pistol</Polish>
+        </Key>
+        <Key ID="STR_W_items_TaserRifle">
+            <Original>Taser Rifle</Original>
+            <Czech>Taser Rifle</Czech>
+            <Spanish>Taser Rifle</Spanish>
+            <Russian>Taser Rifle</Russian>
+            <German>Betäubungs-Gewehr</German>
+            <French>Taser Rifle</French>
+            <Italian>Taser Rifle</Italian>
+            <Portuguese>Taser Rifle</Portuguese>
+            <Polish>Taser Rifle</Polish>
+        </Key>
+        <Key ID="STR_W_mags_TaserRifle">
+            <Original>Taser Rifle Magazine</Original>
+            <Czech>Taser Rifle Magazine</Czech>
+            <Spanish>Taser Rifle Magazine</Spanish>
+            <Russian>Taser Rifle Magazine</Russian>
+            <German>Betäubungs-Gewehr-Magazine</German>
+            <French>Taser Rifle Magazine</French>
+            <Italian>Taser Rifle Magazine</Italian>
+            <Portuguese>Taser Rifle Magazine</Portuguese>
+            <Polish>Taser Rifle Magazine</Polish>
+        </Key>
+        <Key ID="STR_SP_Reb_N">
+            <Original>Northern Rebel Base</Original>
+            <Czech>Northern Rebel Base</Czech>
+            <Spanish>Northern Rebel Base</Spanish>
+            <Russian>Northern Rebel Base</Russian>
+            <German>Nord Rebellen Basis</German>
+            <French>Northern Rebel Base</French>
+            <Italian>Northern Rebel Base</Italian>
+            <Portuguese>Northern Rebel Base</Portuguese>
+            <Polish>Northern Rebel Base</Polish>
+        </Key>
+        <Key ID="STR_SP_Reb_S">
+            <Original>Southern Rebel Base</Original>
+            <Czech>Southern Rebel Base</Czech>
+            <Spanish>Southern Rebel Base</Spanish>
+            <Russian>Southern Rebel Base</Russian>
+            <German>Süd Rebellen Basis</German>
+            <French>Southern Rebel Base</French>
+            <Italian>Southern Rebel Base</Italian>
+            <Portuguese>Southern Rebel Base</Portuguese>
+            <Polish>Southern Rebel Base</Polish>
+        </Key>
+        <Key ID="STR_SP_Reb_E">
+            <Original>Eastern Rebel Base</Original>
+            <Czech>Eastern Rebel Base</Czech>
+            <Spanish>Eastern Rebel Base</Spanish>
+            <Russian>Eastern Rebel Base</Russian>
+            <German>Ost Rebellen Basis</German>
+            <French>Eastern Rebel Base</French>
+            <Italian>Eastern Rebel Base</Italian>
+            <Portuguese>Eastern Rebel Base</Portuguese>
+            <Polish>Eastern Rebel Base</Polish>
+        </Key>
+        <Key ID="STR_SP_Reb_NW">
+            <Original>North Western Rebel Base</Original>
+            <Czech>North Western Rebel Base</Czech>
+            <Spanish>North Western Rebel Base</Spanish>
+            <Russian>North Western Rebel Base</Russian>
+            <German>Nord-West Rebellen Basis</German>
+            <French>North Western Rebel Base</French>
+            <Italian>North Western Rebel Base</Italian>
+            <Portuguese>North Western Rebel Base</Portuguese>
+            <Polish>North Western Rebel Base</Polish>
+        </Key>
+        <Key ID="STR_SP_Reb_NE">
+            <Original>North Eastern Rebel Base</Original>
+            <Czech>North Eastern Rebel Base</Czech>
+            <Spanish>North Eastern Rebel Base</Spanish>
+            <Russian>North Eastern Rebel Base</Russian>
+            <German>Nord-Ost Rebellen Basis</German>
+            <French>North Eastern Rebel Base</French>
+            <Italian>North Eastern Rebel Base</Italian>
+            <Portuguese>North Eastern Rebel Base</Portuguese>
+            <Polish>North Eastern Rebel Base</Polish>
+        </Key>
+        <Key ID="STR_SP_EMS_Kav">
+            <Original>Kavala Hospital</Original>
+            <Czech>Kavala Hospital</Czech>
+            <Spanish>Kavala Hospital</Spanish>
+            <Russian>Kavala Hospital</Russian>
+            <German>Kavala Krankenhaus</German>
+            <French>Kavala Hospital</French>
+            <Italian>Kavala Hospital</Italian>
+            <Portuguese>Kavala Hospital</Portuguese>
+            <Polish>Kavala Hospital</Polish>
+        </Key>
+        <Key ID="STR_SP_EMS_Ath">
+            <Original>Athira Regional</Original>
+            <Czech>Athira Regional</Czech>
+            <Spanish>Athira Regional</Spanish>
+            <Russian>Athira Regional</Russian>
+            <German>Athira Krankenhaus</German>
+            <French>Athira Regional</French>
+            <Italian>Athira Regional</Italian>
+            <Portuguese>Athira Regional</Portuguese>
+            <Polish>Athira Regional</Polish>
+        </Key>
+        <Key ID="STR_SP_EMS_Pyr">
+            <Original>Pyrgos Hospital</Original>
+            <Czech>Pyrgos Hospital</Czech>
+            <Spanish>Pyrgos Hospital</Spanish>
+            <Russian>Pyrgos Hospital</Russian>
+            <German>Pyrgos Krankenhaus</German>
+            <French>Pyrgos Hospital</French>
+            <Italian>Pyrgos Hospital</Italian>
+            <Portuguese>Pyrgos Hospital</Portuguese>
+            <Polish>Pyrgos Hospital</Polish>
+        </Key>
+        <Key ID="STR_SP_EMS_SE">
+            <Original>South East Hospital</Original>
+            <Czech>South East Hospital</Czech>
+            <Spanish>South East Hospital</Spanish>
+            <Russian>South East Hospital</Russian>
+            <German>Süd-Ost Krankenhaus</German>
+            <French>South East Hospital</French>
+            <Italian>South East Hospital</Italian>
+            <Portuguese>South East Hospital</Portuguese>
+            <Polish>South East Hospital</Polish>
+        </Key>
+        <Key ID="STR_SP_EMS_Tan">
+            <Original>Tanouka Regional</Original>
+            <Czech>Tanouka Regional</Czech>
+            <Spanish>Tanouka Regional</Spanish>
+            <Russian>Tanouka Regional</Russian>
+            <German>Tanouka Krankenhaus</German>
+            <French>Tanouka Regional</French>
+            <Italian>Tanouka Regional</Italian>
+            <Portuguese>Tanouka Regional</Portuguese>
+            <Polish>Tanouka Regional</Polish>
+        </Key>
+        <Key ID="STR_SP_EMS_NEair">
+            <Original>North East Airport Hospital</Original>
+            <Czech>North East Airport Hospital</Czech>
+            <Spanish>North East Airport Hospital</Spanish>
+            <Russian>North East Airport Hospital</Russian>
+            <German>Nord-Ost Flughafen Krankenhaus</German>
+            <French>North East Airport Hospital</French>
+            <Italian>North East Airport Hospital</Italian>
+            <Portuguese>North East Airport Hospital</Portuguese>
+            <Polish>North East Airport Hospital</Polish>
+        </Key>
+        <Key ID="STR_SP_Cop_Air_N">
+            <Original>North Airport HQ</Original>
+            <Czech>North Airport HQ</Czech>
+            <Spanish>North Airport HQ</Spanish>
+            <Russian>North Airport HQ</Russian>
+            <German>Nord Flughafen HQ</German>
+            <French>North Airport HQ</French>
+            <Italian>North Airport HQ</Italian>
+            <Portuguese>North Airport HQ</Portuguese>
+            <Polish>North Airport HQ</Polish>
+        </Key>
+        <Key ID="STR_SP_Cop_Air_SW">
+            <Original>South Western Airport HQ</Original>
+            <Czech>South Western Airport HQ</Czech>
+            <Spanish>South Western Airport HQ</Spanish>
+            <Russian>South Western Airport HQ</Russian>
+            <German>Süd-Westliche HQ Flughafen</German>
+            <French>South Western Airport HQ</French>
+            <Italian>South Western Airport HQ</Italian>
+            <Portuguese>South Western Airport HQ</Portuguese>
+            <Polish>South Western Airport HQ</Polish>
+        </Key>
+    </Package>
     <Package name="Crimes">
         <Key ID="STR_Crime_187V">
             <Original>Vehicular Manslaughter</Original>
