@@ -10552,7 +10552,7 @@
         </Key>
     </Package>
     <Package name="displayNames">
-        <Key ID="STR_C_None_uniforms">
+        <Key ID="STR_C_Remove_uniforms">
             <Original>Remove Uniform</Original>
             <Czech>Remove Uniform</Czech>
             <Spanish>Remove Uniform</Spanish>
@@ -10563,7 +10563,7 @@
             <Portuguese>Remove Uniform</Portuguese>
             <Polish>Remove Uniform</Polish>
         </Key>
-        <Key ID="STR_C_None_headgear">
+        <Key ID="STR_C_Remove_headgear">
             <Original>Remove Hat</Original>
             <Czech>Remove Hat</Czech>
             <Spanish>Remove Hat</Spanish>
@@ -10574,7 +10574,7 @@
             <Portuguese>Remove Hat</Portuguese>
             <Polish>Remove Hat</Polish>
         </Key>
-        <Key ID="STR_C_None_goggles">
+        <Key ID="STR_C_Remove_goggles">
             <Original>Remove Glasses</Original>
             <Czech>Remove Glasses</Czech>
             <Spanish>Remove Glasses</Spanish>
@@ -10585,7 +10585,7 @@
             <Portuguese>Remove Glasses</Portuguese>
             <Polish>Remove Glasses</Polish>
         </Key>
-        <Key ID="STR_C_None_vests">
+        <Key ID="STR_C_Remove_vests">
             <Original>Remove Vest</Original>
             <Czech>Remove Vest</Czech>
             <Spanish>Remove Vest</Spanish>
@@ -10596,7 +10596,7 @@
             <Portuguese>Remove Vest</Portuguese>
             <Polish>Remove Vest</Polish>
         </Key>
-        <Key ID="STR_C_None_backpacks">
+        <Key ID="STR_C_Remove_backpacks">
             <Original>Remove Backpack</Original>
             <Czech>Remove Backpack</Czech>
             <Spanish>Remove Backpack</Spanish>
