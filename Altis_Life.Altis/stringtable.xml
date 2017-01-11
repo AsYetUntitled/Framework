@@ -7026,17 +7026,6 @@
             <Portuguese>Licença de Porte de Armas</Portuguese>
             <Polish>Pozwolenie na broń</Polish>
         </Key>
-        <Key ID="STR_License_Swat">
-            <Original>SWAT License</Original>
-            <Czech>SWAT licence</Czech>
-            <Spanish>Licencia SWAT</Spanish>
-            <Russian></Russian>
-            <German>SWAT-Ausbildung</German>
-            <French>License du SWAT</French>
-            <Italian>Licenza SWAT</Italian>
-            <Portuguese>Licença do Bope</Portuguese>
-            <Polish>Trening SWAT</Polish>
-        </Key>
         <Key ID="STR_License_CG">
             <Original>Coast Guard License</Original>
             <Czech>Pobřežní stráž licence</Czech>
