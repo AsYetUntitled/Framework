@@ -29,13 +29,18 @@ class WeaponShops {
             { "hgun_Rook40_F", "", 6500, 500, "" },
             { "hgun_Pistol_heavy_02_F", "", 9850, -1, "" },
             { "hgun_ACPC2_F", "", 11500, -1, "" },
-            { "hgun_PDW2000_F", "", 20000, -1, "" }
+            { "hgun_PDW2000_F", "", 20000, -1, "" },
+            { "hgun_P07_khk_F", "", 21000, -1, "" }, //Apex DLC
+            { "hgun_Pistol_01_F", "", 20000, -1, "" }, //Apex DLC
+            { "SMG_05_F", "", 180000, -1, "" } //Apex DLC
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 125, 100, "" },
             { "6Rnd_45ACP_Cylinder", "", 150, 100, "" },
             { "9Rnd_45ACP_Mag", "", 200, 100, "" },
-            { "30Rnd_9x21_Mag", "", 250, 100, "" }
+            { "30Rnd_9x21_Mag", "", 250, 100, "" },
+            { "30Rnd_9x21_Mag_SMG_02", "", 250, 100, "" }, //Apex DLC
+            { "10Rnd_9x21_Mag", "", 250, 100, "" } //Apex DLC - Had to guess this. Not referenced anywhere
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 2500, 100, "" }
@@ -50,13 +55,22 @@ class WeaponShops {
             { "arifle_TRG20_F", "", 25000, 2500, "" },
             { "arifle_Katiba_F", "", 30000, 5000, "" },
             { "srifle_DMR_01_F", "", 50000, -1, "" },
-            { "arifle_SDAR_F", "", 20000, 7500, "" }
+            { "arifle_SDAR_F", "", 20000, 7500, "" },
+            { "arifle_AK12_F", "", 22000, 7500, "" }, //Apex DLC
+            { "arifle_AKS_F", "", 22000, 7500, "" }, //Apex DLC
+            { "arifle_AKM_F", "", 22000, 7500, "" }, //Apex DLC
+            { "arifle_ARX_blk_F", "", 22000, 7500, "" }, //Apex DLC
+            { "arifle_SPAR_01_blk_F", "", 33000, 7500, "" }, //Apex DLC
+            { "arifle_CTAR_blk_F", "", 30000, 5000, "" } //Apex DLC
         };
         mags[] = {
             { "30Rnd_556x45_Stanag", "", 300, 100, "" },
+            { "30Rnd_762x39_Mag_F", "", 300, 100, "" }, //Apex DLC
+            { "30Rnd_545x39_Mag_F", "", 300, 100, "" }, //Apex DLC
             { "30Rnd_65x39_caseless_green", "", 275, 100, "" },
             { "10Rnd_762x54_Mag", "", 500, 100, "" },
-            { "20Rnd_556x45_UW_mag", "", 125, 100, "" }
+            { "20Rnd_556x45_UW_mag", "", 125, 100, "" },
+            { "30Rnd_580x42_Mag_F", "", 125, 100, "" } //Apex DLC
         };
         accs[] = {
             { "optic_ACO_grn", "", 3500, 100, "" },
@@ -147,14 +161,16 @@ class WeaponShops {
             { "SMG_02_ACO_F", "", 30000, -1, "call life_coplevel >= 2" },
             { "arifle_MX_F", "", 35000, 7500, "call life_coplevel >= 2" },
             { "hgun_ACPC2_F", "", 17500, -1, "call life_coplevel >= 3" },
-            { "arifle_MXC_F", "", 30000, 5000, "call life_coplevel >= 3" }
+            { "arifle_MXC_F", "", 30000, 5000, "call life_coplevel >= 3" },
+            { "srifle_DMR_07_blk_F", "", 32000, 5000, "call life_coplevel >= 3" } //Apex DLC Sniper
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 125, 100, "" },
             { "20Rnd_556x45_UW_mag", "$STR_W_mags_TaserRifle", 125, 100, "" },
             { "30Rnd_65x39_caseless_mag", "", 130, 100, "" },
             { "30Rnd_9x21_Mag", "", 250, 100, "call life_coplevel >= 2" },
-            { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" }
+            { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" },
+            { "20Rnd_650x39_Cased_Mag_F", "", 200, 100, "call life_coplevel >= 3" } //Apex DLC
         };
         accs[] = {
             { "muzzle_snds_L", "", 650, 100, "" },
