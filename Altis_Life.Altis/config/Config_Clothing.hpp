@@ -54,7 +54,7 @@ class Clothing {
             { "H_Hat_tan", "", 265, "" },
             { "H_Hat_brown", "", 276, "" },
             { "H_Hat_grey", "", 280, "" },
-            { "H_BandMask_blk", "$STR_C_None_headgear", 300, "" },
+            { "H_BandMask_blk", "$STR_C_Civ_BandMask", 300, "" },
             { "H_Hat_blue", "", 310, "" },
             { "H_Hat_checker", "", 340, "" },
             { "H_Booniehat_tan", "", 425, "" }
