@@ -7,6 +7,7 @@
     Set Weapon Shop in magazine mode
 */
 disableSerialization;
+
 private ["_muzzles","_eglArray","_magArray","_weapon"];
 if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 0) then {
     _weapon = lbData[38403,lbCurSel (38403)];
