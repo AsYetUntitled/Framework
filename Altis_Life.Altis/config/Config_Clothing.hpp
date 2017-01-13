@@ -41,9 +41,9 @@ class Clothing {
             { "U_C_Man_casual_4_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
             { "U_C_Man_casual_5_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
             { "U_C_Man_casual_6_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_man_sport_1_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_man_sport_2_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_man_sport_3_F", "$STR_C_Civ_Niko", 5000, "" } //Apex DLC
+            { "U_C_man_sport_1_F", "$STR_C_Civ_Sport", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_2_F", "$STR_C_Civ_Sport", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_3_F", "$STR_C_Civ_Sport", 5000, "" } //Apex DLC
         };
         headgear[] = {
             { "NONE", "$STR_C_Remove_headgear", 0, "" },
