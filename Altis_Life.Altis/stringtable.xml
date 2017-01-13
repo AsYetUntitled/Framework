@@ -10607,6 +10607,17 @@
             <Portuguese>Casual Wears</Portuguese>
             <Polish>Casual Wears</Polish>
         </Key>
+        <Key ID="STR_C_Civ_Sport">
+            <Original>Sports Wears</Original>
+            <Czech>Sports Wears</Czech>
+            <Spanish>Sports Wears</Spanish>
+            <Russian>Sports Wears</Russian>
+            <German>Sport Kleidung</German>
+            <French>Sports Wears</French>
+            <Italian>Sports Wears</Italian>
+            <Portuguese>Sports Wears</Portuguese>
+            <Polish>Sports Wears</Polish>
+        </Key>
         <Key ID="STR_C_Civ_BandMask">
             <Original>Hat and Bandanna</Original>
             <Czech>Hat and Bandanna</Czech>
