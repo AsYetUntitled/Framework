@@ -63,7 +63,7 @@ class playerHUD {
     class Life_RscText_HUDCommon: Life_RscText {
         SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
         style = ST_CENTER;
-        y = 0.970023 * safezoneH + safezoneY;
+        y = 0.972223 * safezoneH + safezoneY;
         w = 0.0462964 * safezoneW;
         h = 0.0222222 * safezoneH;
     };
