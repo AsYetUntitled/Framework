@@ -8,7 +8,6 @@
     sort through the information, validate it and if all valid
     set the client up.
 */
-private "_array";
 private _count = count _this;
 life_session_tries = life_session_tries + 1;
 if (life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
