@@ -154,6 +154,6 @@ life_keyreceivedvar = [];
 [_uid,_side] remoteExecCall ["TON_fnc_recupKeyForHC",RSERV];
 waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
-_queryResult set[15,_keyArr];
+_queryResult pushBack _keyArr;
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];
