@@ -6,12 +6,12 @@
     Description:
     Initialize the headless client.
 */
-private "_timeStamp";
+private ["_timeStamp","_extDBNotLoaded"];
 if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
 
 [] execVM "\life_hc\KRON_Strings.sqf";
 
-life_HC_server_extDB_notLoaded = "";
+_extDBNotLoaded = "";
 
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 
@@ -27,11 +27,10 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
         if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
-        life_HC_server_extDB_notLoaded = [true, _exception];
+        _extDBNotLoaded = [true, _exception];
     };
 
-    publicVariable "life_HC_server_extDB_notLoaded";
-    if (life_HC_server_extDB_notLoaded isEqualType []) exitWith {};
+    if (_extDBNotLoaded isEqualType []) exitWith {};
     EXTDB "9:LOCK";
     diag_log "extDB2: Connected to Database";
 } else {
@@ -40,7 +39,7 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     diag_log "extDB2: Still Connected to Database";
 };
 
-if (life_HC_server_extDB_notLoaded isEqualType []) then {
+if (_extDBNotLoaded isEqualType []) then {
     [] spawn {
         for "_i" from 0 to 1 step 0 do {
             [0,"There is a problem with the Headless Client, please contact an administrator."] remoteExecCall ["life_fnc_broadcast",RCLIENT];
@@ -49,7 +48,7 @@ if (life_HC_server_extDB_notLoaded isEqualType []) then {
     };
 };
 
-if (life_HC_server_extDB_notLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
+if (_extDBNotLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
@@ -124,8 +123,6 @@ CONSTVAR(HC_MPAllowedFuncs);
 
 life_HC_isActive = true;
 publicVariable "life_HC_isActive";
-life_HC_server_isReady = true;
-publicVariable "life_HC_server_isReady";
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["                 End of Altis Life HC Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";
