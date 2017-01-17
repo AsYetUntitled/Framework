@@ -20,7 +20,7 @@ class Clothing {
         conditions = "";
         side = "civ";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" },
+            { "NONE", $STR_C_Remove_uniforms, 0, "" },
             { "U_C_Poloshirt_stripped", "", 125, "" },
             { "U_C_Poloshirt_redwhite", "", 150, "" },
             { "U_C_Poloshirt_salmon", "", 175, "" },
@@ -34,19 +34,19 @@ class Clothing {
             { "U_IG_Guerilla2_3", "", 1200, "" },
             { "U_C_HunterBody_grn", "", 1500, "" },
             { "U_C_WorkerCoveralls", "", 2500, "" },
-            { "U_NikosAgedBody", "$STR_C_Civ_Niko", 5000, "" },
-            { "U_C_Man_casual_1_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_2_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_3_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_4_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_5_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_6_F", "$STR_C_Civ_Niko", 5000, "" }, //Apex DLC
-            { "U_C_man_sport_1_F", "$STR_C_Civ_Sport", 5000, "" }, //Apex DLC
-            { "U_C_man_sport_2_F", "$STR_C_Civ_Sport", 5000, "" }, //Apex DLC
-            { "U_C_man_sport_3_F", "$STR_C_Civ_Sport", 5000, "" } //Apex DLC
+            { "U_NikosAgedBody", $STR_C_Civ_Niko, 5000, "" },
+            { "U_C_Man_casual_1_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_2_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_3_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_4_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_5_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_6_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
+            { "U_C_man_sport_1_F", $STR_C_Civ_Sport, 5000, "" }, //Apex DLC
+            { "U_C_man_sport_2_F", $STR_C_Civ_Sport, 5000, "" }, //Apex DLC
+            { "U_C_man_sport_3_F", $STR_C_Civ_Sport, 5000, "" } //Apex DLC
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" },
+            { "NONE", $STR_C_Remove_headgear, 0, "" },
             { "H_Bandanna_camo", "", 120, "" },
             { "H_Bandanna_surfer", "", 130, "" },
             { "H_Bandanna_khk", "", 145, "" },
@@ -64,14 +64,14 @@ class Clothing {
             { "H_Hat_tan", "", 265, "" },
             { "H_Hat_brown", "", 276, "" },
             { "H_Hat_grey", "", 280, "" },
-            { "H_BandMask_blk", "$STR_C_Civ_BandMask", 300, "" },
+            { "H_BandMask_blk", $STR_C_Civ_BandMask, 300, "" },
             { "H_Hat_blue", "", 310, "" },
             { "H_Hat_checker", "", 340, "" },
             { "H_Booniehat_tan", "", 425, "" },
             { "H_Booniehat_grn", "", 425, "" }
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" },
+            { "NONE", $STR_C_Remove_goggles, 0, "" },
             { "G_Shades_Black", "", 20, "" },
             { "G_Shades_Blue", "", 20, "" },
             { "G_Shades_Green", "", 20, "" },
@@ -91,10 +91,10 @@ class Clothing {
             { "G_Lady_Blue", "", 150, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" }
+            { "NONE", $STR_C_Remove_vests, 0, "" }
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" },
+            { "NONE", $STR_C_Remove_backpacks, 0, "" },
             { "B_OutdoorPack_blk", "", 500, "" },
             { "B_AssaultPack_khk", "", 2000, "" },
             { "B_AssaultPack_dgtl", "", 2000, "" },
@@ -133,14 +133,14 @@ class Clothing {
         conditions = "";
         side = "cop";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" },
-            { "U_Rangemaster", "$STR_C_Cop_uniforms", 25, "" },
+            { "NONE", $STR_C_Remove_uniforms, 0, "" },
+            { "U_Rangemaster", $STR_C_Cop_uniforms, 25, "" },
             { "U_B_CombatUniform_mcam_tshirt", "", 350, "call life_coplevel >= 1" },
             { "U_B_CombatUniform_mcam_worn", "", 550, "call life_coplevel >= 2" },
             { "U_B_survival_uniform", "", 1250, "call life_coplevel >= 1" }
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" },
+            { "NONE", $STR_C_Remove_headgear, 0, "" },
             { "H_Cap_police", "", 25, "" },
             { "H_Beret_blk_POLICE", "", 50, "call life_coplevel >= 2" },
             { "H_HelmetB_plain_mcamo", "", 75, "call life_coplevel >= 1" },
@@ -148,7 +148,7 @@ class Clothing {
             { "H_Booniehat_mcamo", "", 120, "call life_coplevel >= 1" }
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" },
+            { "NONE", $STR_C_Remove_goggles, 0, "" },
             { "G_Squares", "", 10, "" },
             { "G_Shades_Blue", "", 20, "" },
             { "G_Sport_Blackred", "", 20, "" },
@@ -164,14 +164,14 @@ class Clothing {
             { "G_Lady_Blue", "", 150, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" },
+            { "NONE", $STR_C_Remove_vests, 0, "" },
             { "V_Rangemaster_belt", "", 800, "" },
             { "V_TacVest_blk_POLICE", "", 1000, "call life_coplevel >= 1" },
             { "V_PlateCarrier2_rgr", "", 1500, "call life_coplevel >= 2" },
             { "V_TacChestrig_grn_F", "", 1500, "call life_coplevel >= 2" } //Apex DLC
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" },
+            { "NONE", $STR_C_Remove_backpacks, 0, "" },
             { "B_FieldPack_cbr", "", 500, "" },
             { "B_AssaultPack_cbr", "", 700, "" },
             { "B_Kitbag_cbr", "", 800, "" },
@@ -185,22 +185,22 @@ class Clothing {
         conditions = "license_civ_dive";
         side = "civ";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" },
+            { "NONE", $STR_C_Remove_uniforms, 0, "" },
             { "U_B_Wetsuit", "", 2000, "" }
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" }
+            { "NONE", $STR_C_Remove_headgear, 0, "" }
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" },
+            { "NONE", $STR_C_Remove_goggles, 0, "" },
             { "G_Diving", "", 500, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" },
+            { "NONE", $STR_C_Remove_vests, 0, "" },
             { "V_RebreatherB", "", 5000, "" }
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" }
+            { "NONE", $STR_C_Remove_backpacks, 0, "" }
         };
     };
 
@@ -209,20 +209,20 @@ class Clothing {
         conditions = "license_civ_gun";
         side = "civ";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" }
+            { "NONE", $STR_C_Remove_uniforms, 0, "" }
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" }
+            { "NONE", $STR_C_Remove_headgear, 0, "" }
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" }
+            { "NONE", $STR_C_Remove_goggles, 0, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" },
+            { "NONE", $STR_C_Remove_vests, 0, "" },
             { "V_Rangemaster_belt", "", 4900, "" }
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" }
+            { "NONE", $STR_C_Remove_backpacks, 0, "" }
         };
     };
 
@@ -231,20 +231,20 @@ class Clothing {
         conditions = "";
         side = "civ";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" }
+            { "NONE", $STR_C_Remove_uniforms, 0, "" }
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" }
+            { "NONE", $STR_C_Remove_headgear, 0, "" }
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" }
+            { "NONE", $STR_C_Remove_goggles, 0, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" },
+            { "NONE", $STR_C_Remove_vests, 0, "" },
             { "V_Rangemaster_belt", "", 1900, "" }
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" }
+            { "NONE", $STR_C_Remove_backpacks, 0, "" }
         };
     };
 
@@ -253,23 +253,23 @@ class Clothing {
         conditions = "";
         side = "med";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" },
-            { "U_Rangemaster", "$STR_C_EMS_uniforms", 50, "" }
+            { "NONE", $STR_C_Remove_uniforms, 0, "" },
+            { "U_Rangemaster", $STR_C_EMS_uniforms, 50, "" }
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" },
+            { "NONE", $STR_C_Remove_headgear, 0, "" },
             { "H_Cap_blu", "", 10, "" }
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" },
+            { "NONE", $STR_C_Remove_goggles, 0, "" },
             { "G_Shades_Blue", "", 10, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" }
+            { "NONE", $STR_C_Remove_vests, 0, "" }
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" },
-            { "B_FieldPack_oli", "$STR_C_EMS_backpacks", 3000, "" }
+            { "NONE", $STR_C_Remove_backpacks, 0, "" },
+            { "B_FieldPack_oli", $STR_C_EMS_backpacks, 3000, "" }
         };
     };
 
@@ -278,7 +278,7 @@ class Clothing {
         conditions = "license_civ_rebel";
         side = "civ";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" },
+            { "NONE", $STR_C_Remove_uniforms, 0, "" },
             { "U_IG_Guerilla1_1", "", 5000, "" },
             { "U_I_G_Story_Protagonist_F", "", 7500, "" },
             { "U_I_G_resistanceLeader_F", "", 11500, "" },
@@ -295,7 +295,7 @@ class Clothing {
             { "U_I_C_Soldier_Camo_F", "", 52000, "" } //Apex DLC
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" },
+            { "NONE", $STR_C_Remove_headgear, 0, "" },
             { "H_Bandanna_camo", "", 650, "" },
             { "H_ShemagOpen_khk", "", 800, "" },
             { "H_ShemagOpen_tan", "", 850, "" },
@@ -307,7 +307,7 @@ class Clothing {
             { "H_HelmetB_Enh_tna_F", "", 8000, "" } //Apex DLC
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" },
+            { "NONE", $STR_C_Remove_goggles, 0, "" },
             { "G_Shades_Black", "", 20, "" },
             { "G_Shades_Blue", "", 20, "" },
             { "G_Sport_Blackred", "", 25, "" },
@@ -331,14 +331,14 @@ class Clothing {
             { "G_Bandanna_tan", "", 150, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" },
+            { "NONE", $STR_C_Remove_vests, 0, "" },
             { "V_BandollierB_cbr", "", 4500, "" },
             { "V_HarnessO_brn", "", 7500, "" },
             { "V_TacVest_khk", "", 12500, "" },
             { "V_TacVest_gen_F", "", 14500, "" } //Apex DLC
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" },
+            { "NONE", $STR_C_Remove_backpacks, 0, "" },
             { "B_OutdoorPack_blk", "", 500, "" },
             { "B_AssaultPack_khk", "", 2000, "" },
             { "B_AssaultPack_dgtl", "", 2000, "" },
@@ -372,7 +372,7 @@ class Clothing {
         conditions = "";
         side = "civ";
         uniforms[] = {
-            { "NONE", "$STR_C_Remove_uniforms", 0, "" },
+            { "NONE", $STR_C_Remove_uniforms, 0, "" },
             { "U_C_Driver_1_black", "", 1500, "" },
             { "U_C_Driver_1_blue", "", 1500, "" },
             { "U_C_Driver_1_red", "", 1500, "" },
@@ -386,7 +386,7 @@ class Clothing {
             { "U_C_Driver_4", "", 3700, "" }
         };
         headgear[] = {
-            { "NONE", "$STR_C_Remove_headgear", 0, "" },
+            { "NONE", $STR_C_Remove_headgear, 0, "" },
             { "H_RacingHelmet_1_black_F", "", 1000, "" },
             { "H_RacingHelmet_1_red_F", "", 1000, "" },
             { "H_RacingHelmet_1_white_F", "", 1000, "" },
@@ -399,13 +399,13 @@ class Clothing {
             { "H_RacingHelmet_4_F", "", 2500, "" }
         };
         goggles[] = {
-            { "NONE", "$STR_C_Remove_goggles", 0, "" }
+            { "NONE", $STR_C_Remove_goggles, 0, "" }
         };
         vests[] = {
-            { "NONE", "$STR_C_Remove_vests", 0, "" }
+            { "NONE", $STR_C_Remove_vests, 0, "" }
         };
         backpacks[] = {
-            { "NONE", "$STR_C_Remove_backpacks", 0, "" }
+            { "NONE", $STR_C_Remove_backpacks, 0, "" }
         };
     };
 };
