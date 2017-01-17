@@ -9,7 +9,7 @@
 disableSerialization;
 
 if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 0) then {
-    private ["_magArray","_weapon"];
+    private ["_weapon","_magArray"];
     _weapon = lbData[38403,lbCurSel (38403)];
     _magArray = FETCH_CONFIG2(getArray,"CfgWeapons",_weapon,"magazines");
     {
