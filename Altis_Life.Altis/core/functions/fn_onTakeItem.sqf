@@ -46,7 +46,7 @@ switch (playerSide) do
             // -- Check if the type is a weapon
             if (isClass (configFile >> "CfgWeapons" >> _item)) then { 
                 // -- Remove all weapons from player (_unit)
-               removeAllWeapons _unit;
+                removeAllWeapons _unit;
             };
         };
     };
