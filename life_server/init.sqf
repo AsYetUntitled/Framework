@@ -9,11 +9,11 @@
     Description:
     Initialize the server and required systems.
 */
-private ["_dome","_rsb","_timeStamp"];
+private ["_dome","_rsb","_timeStamp","_extDBNotLoaded"];
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
-life_server_extDB_notLoaded = "";
+_extDBNotLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
@@ -47,10 +47,9 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
         if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
-        life_server_extDB_notLoaded = [true, _exception];
+        _extDBNotLoaded = [true, _exception];
     };
-    publicVariable "life_server_extDB_notLoaded";
-    if (life_server_extDB_notLoaded isEqualType []) exitWith {};
+    if (_extDBNotLoaded isEqualType []) exitWith {};
     EXTDB "9:LOCK";
     diag_log "extDB2: Connected to Database";
 } else {
@@ -59,7 +58,13 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     diag_log "extDB2: Still Connected to Database";
 };
 
-if (life_server_extDB_notLoaded isEqualType []) exitWith {};
+
+if (_extDBNotLoaded isEqualType []) exitWith {
+    life_server_extDB_notLoaded = true;
+    publicVariable "life_server_extDB_notLoaded";
+};
+life_server_extDB_notLoaded = false;
+publicVariable "life_server_extDB_notLoaded";
 
 /* Run stored procedures for SQL side cleanup */
 ["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;

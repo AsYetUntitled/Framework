@@ -1279,6 +1279,96 @@
             <Polish>MEDYK</Polish>
         </Key>
     </Package>
+    <Package name="CellPhone_Messages">
+        <Key ID="STR_CELLMSG_EnterMSG">
+            <Original>You must enter a message to send!</Original>
+            <Czech>You must enter a message to send!</Czech>
+            <Spanish>You must enter a message to send!</Spanish>
+            <Russian>You must enter a message to send!</Russian>
+            <German>Du musst eine Nachricht eingeben!</German>
+            <French>You must enter a message to send!</French>
+            <Italian>You must enter a message to send!</Italian>
+            <Portuguese>You must enter a message to send!</Portuguese>
+            <Polish>You must enter a message to send!</Polish>
+        </Key>
+        <Key ID="STR_CELLMSG_LIMITEXCEEDED">
+            <Original>Your message cannot exceed 400 characters!</Original>
+            <Czech>Your message cannot exceed 400 characters!</Czech>
+            <Spanish>Your message cannot exceed 400 characters!</Spanish>
+            <Russian>Your message cannot exceed 400 characters!</Russian>
+            <German>Deine Nachricht darf maximal 400 Zeichen enthalten!!</German>
+            <French>Your message cannot exceed 400 characters!</French>
+            <Italian>Your message cannot exceed 400 characters!</Italian>
+            <Portuguese>Your message cannot exceed 400 characters!</Portuguese>
+            <Polish>Your message cannot exceed 400 characters!</Polish>
+        </Key>
+        <Key ID="STR_CELLMSG_SelectPerson">
+            <Original>You must select a player you are sending the text to!</Original>
+            <Czech>You must select a player you are sending the text to!</Czech>
+            <Spanish>You must select a player you are sending the text to!</Spanish>
+            <Russian>You must select a player you are sending the text to!</Russian>
+            <German>Du musst einen Spieler auswählen!</German>
+            <French>You must select a player you are sending the text to!</French>
+            <Italian>You must select a player you are sending the text to!</Italian>
+            <Portuguese>You must select a player you are sending the text to!</Portuguese>
+            <Polish>You must select a player you are sending the text to!</Polish>
+        </Key>
+        <Key ID="STR_CELLMSG_ToEMS">
+            <Original>You have sent a message to all EMS Units.</Original>
+            <Czech>You have sent a message to all EMS Units.</Czech>
+            <Spanish>You have sent a message to all EMS Units.</Spanish>
+            <Russian>You have sent a message to all EMS Units.</Russian>
+            <German>Du hast eine Nachricht an alle Sanitäter gesendet.</German>
+            <French>You have sent a message to all EMS Units.</French>
+            <Italian>You have sent a message to all EMS Units.</Italian>
+            <Portuguese>You have sent a message to all EMS Units.</Portuguese>
+            <Polish>You have sent a message to all EMS Units.</Polish>
+        </Key>
+        <Key ID="STR_CELLMSG_ToPerson">
+            <Original>You sent %1 a message: %2</Original>
+            <Czech>You sent %1 a message: %2</Czech>
+            <Spanish>You sent %1 a message: %2</Spanish>
+            <Russian>You sent %1 a message: %2</Russian>
+            <German>Du sendest %1 eine Nachricht: %2</German>
+            <French>You sent %1 a message: %2</French>
+            <Italian>You sent %1 a message: %2</Italian>
+            <Portuguese>You sent %1 a message: %2</Portuguese>
+            <Polish>You sent %1 a message: %2</Polish>
+        </Key>
+        <Key ID="STR_CELLMSG_NoAdmin">
+            <Original>You are not an admin!</Original>
+            <Czech>You are not an admin!</Czech>
+            <Spanish>You are not an admin!</Spanish>
+            <Russian>You are not an admin!</Russian>
+            <German>Du bist kein Admin!</German>
+            <French>You are not an admin!</French>
+            <Italian>You are not an admin!</Italian>
+            <Portuguese>You are not an admin!</Portuguese>
+            <Polish>You are not an admin!</Polish>
+        </Key>
+        <Key ID="STR_CELLMSG_AdminToPerson">
+            <Original>Admin Message Sent To: %1 - Message: %2</Original>
+            <Czech>Admin Message Sent To: %1 - Message: %2</Czech>
+            <Spanish>Admin Message Sent To: %1 - Message: %2</Spanish>
+            <Russian>Admin Message Sent To: %1 - Message: %2</Russian>
+            <German>Admin Nachricht Gesendet an: %1 - Nachricht: %2</German>
+            <French>Admin Message Sent To: %1 - Message: %2</French>
+            <Italian>Admin Message Sent To: %1 - Message: %2</Italian>
+            <Portuguese>Admin Message Sent To: %1 - Message: %2</Portuguese>
+            <Polish>Admin Message Sent To: %1 - Message: %2</Polish>
+        </Key>
+        <Key ID="STR_CELLMSG_AdminToAll">
+            <Original>Admin Message Sent To All: %1</Original>
+            <Czech>Admin Message Sent To All: %1</Czech>
+            <Spanish>Admin Message Sent To All: %1</Spanish>
+            <Russian>Admin Message Sent To All: %1</Russian>
+            <German>Admin Nachricht Gesendet an Alle: %1</German>
+            <French>Admin Message Sent To All: %1</French>
+            <Italian>Admin Message Sent To All: %1</Italian>
+            <Portuguese>Admin Message Sent To All: %1</Portuguese>
+            <Polish>Admin Message Sent To All: %1</Polish>
+        </Key>
+    </Package>
     <Package name="Chop_Shop">
         <Key ID="STR_ChopShop_Title">
             <Original>Local Chop Shop</Original>
@@ -1746,6 +1836,17 @@
             <Portuguese>Você não pode sair da gangue sem transferir a liderança antes!</Portuguese>
             <Polish>Nie możesz opuścić gangu bez przekazania komuś szefostwa nad gangiem</Polish>
         </Key>
+        <Key ID="STR_GNOTF_LeaveGang">
+            <Original>You have quit the gang.</Original>
+            <Czech>You have quit the gang.</Czech>
+            <Spanish>You have quit the gang.</Spanish>
+            <Russian>You have quit the gang.</Russian>
+            <German>Du hast die Gang verlassen.</German>
+            <French>You have quit the gang.</French>
+            <Italian>You have quit the gang.</Italian>
+            <Portuguese>You have quit the gang.</Portuguese>
+            <Polish>You have quit the gang.</Polish>
+        </Key>
         <Key ID="STR_GNOTF_TransferMSG">
             <Original>You are about to transfer leadership over to %1 &lt;br/&gt;By transferring leadership you will no longer be in control of the gang unless ownership is transferred back.</Original>
             <Czech>Chystáte se přenést vedoucí přes %1 &lt;br/&gt;Převedením vedení už nebude mít kontrolu nad gangu, pokud je vlastnictví převedeno zpět.</Czech>
@@ -1789,6 +1890,17 @@
             <Italian>Devi selezionare una persona!</Italian>
             <Portuguese>Você tem que selecionar um jogador antes!</Portuguese>
             <Polish>Musisz najpierw zaznaczyć osobę!</Polish>
+        </Key>
+        <Key ID="STR_GNOTF_GaveTransfer">
+            <Original>You have been made the new leader.</Original>
+            <Czech>You have been made the new leader.</Czech>
+            <Spanish>You have been made the new leader.</Spanish>
+            <Russian>You have been made the new leader.</Russian>
+            <German>Du wurdest zum neuen Anführer ernannt.</German>
+            <French>You have been made the new leader.</French>
+            <Italian>You have been made the new leader.</Italian>
+            <Portuguese>You have been made the new leader.</Portuguese>
+            <Polish>You have been made the new leader.</Polish>
         </Key>
         <Key ID="STR_GNOTF_MaxMemberMSG">
             <Original>You are about to upgrade the maximum members allowed for your gang.</Original>
@@ -1943,6 +2055,17 @@
             <Portuguese>Este jogador já está em uma gangue.</Portuguese>
             <Russian>Этот игрок уже в банде.</Russian>
             <German>Dieser Spieler ist bereits in einer Gang.</German>
+        </Key>
+        <Key ID="STR_GNOTF_KickOutGang">
+            <Original>You have been kicked out of the gang.</Original>
+            <Czech>You have been kicked out of the gang.</Czech>
+            <French>You have been kicked out of the gang.</French>
+            <Spanish>You have been kicked out of the gang.</Spanish>
+            <Italian>You have been kicked out of the gang.</Italian>
+            <Polish>You have been kicked out of the gang.</Polish>
+            <Portuguese>You have been kicked out of the gang.</Portuguese>
+            <Russian>You have been kicked out of the gang.</Russian>
+            <German>Du wurdest aus der Gang gekickt.</German>
         </Key>
     </Package>
     <Package name="Garage_Strings">
@@ -4220,6 +4343,17 @@
             <Portuguese>Você tem dado %1 chaves de sua %2.</Portuguese>
             <Russian>Вы дали %1 ключи от %2.</Russian>
             <German>Du hast %1 die Schlüssel zu deinem %2 gegeben.</German>
+        </Key>
+        <Key ID="STR_NOTF_gaveKeysFrom">
+            <Original>%1 has gave you keys for a %2.</Original>
+            <Czech>%1 has gave you keys for a %2.</Czech>
+            <French>%1 has gave you keys for a %2.</French>
+            <Spanish>%1 has gave you keys for a %2.</Spanish>
+            <Italian>%1 has gave you keys for a %2.</Italian>
+            <Polish>%1 has gave you keys for a %2.</Polish>
+            <Portuguese>%1 has gave you keys for a %2.</Portuguese>
+            <Russian>%1 has gave you keys for a %2.</Russian>
+            <German>%1 hat dir die Schlüssel zum %2 gegeben.</German>
         </Key>
         <Key ID="STR_NOTF_cannotRemoveHouseKeys">
             <Original>You cannot remove the keys to your house!</Original>

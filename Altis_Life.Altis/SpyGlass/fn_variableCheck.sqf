@@ -15,6 +15,7 @@ _LIFE_Functions = SPY_SETTINGS(getArray,"LIFE_Functions");
 _SERVER_Functions = SPY_SETTINGS(getArray,"SERVER_Functions");
 _SOCK_Functions = SPY_SETTINGS(getArray,"SOCK_Functions");
 _DB_Functions = SPY_SETTINGS(getArray,"DB_Functions");
+_SPY_Functions = SPY_SETTINGS(getArray,"SPY_Functions");
 _allowedVariables = SPY_SETTINGS(getArray,"allowedVariables");
 _allowedVariables_UI = SPY_SETTINGS(getArray,"allowedVariables_UI");
 _profileCount = count allVariables profileNameSpace;
@@ -35,10 +36,12 @@ for "_i" from 1 to 125 do {
                     if (!(_x in _SOCK_Functions)) then {
                         if (!(_x in _DB_Functions)) then {
                             if (!(_x in _BIS_UI_Functions)) then {
-                                _varType = typeName (uiNamespace getVariable _x);
-                                _find = _allowedVariables find [_x,_varType];
-                                if (_find isEqualTo -1) then {
-                                    uiNamespace setVariable [_x,nil];
+                                if (!(_x in _SPY_Functions)) then {
+                                    _varType = typeName (uiNamespace getVariable _x);
+                                    _find = _allowedVariables find [_x,_varType];
+                                    if (_find isEqualTo -1) then {
+                                        uiNamespace setVariable [_x,nil];
+                                    };
                                 };
                             };
                         };
@@ -58,11 +61,13 @@ _checkFunction = {
                     if (!(_x in _SERVER_Functions)) then {
                         if (!(_x in _SOCK_Functions)) then {
                             if (!(_x in _DB_Functions)) then {
-                                _varType = typeName (missionNamespace getVariable _x);
-                                _find = _allowedVariables find [_x,_varType];
-                                if (_find isEqualTo -1) then {
-                                    diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
-                                    failMission "SpyGlass";
+                                if (!(_x in _SPY_Functions)) then {
+                                    _varType = typeName (missionNamespace getVariable _x);
+                                    _find = _allowedVariables find [_x,_varType];
+                                    if (_find isEqualTo -1) then {
+                                        diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
+                                        failMission "SpyGlass";
+                                    };
                                 };
                             };
                         };
@@ -76,22 +81,12 @@ _checkFunction = {
 _uiCheckFunction = {
     {
         if (!isNil _x) then {
-            if (!(_x in _BIS_Functions)) then {
-                if (!(_x in _LIFE_Functions)) then {
-                    if (!(_x in _SERVER_Functions)) then {
-                        if (!(_x in _SOCK_Functions)) then {
-                            if (!(_x in _DB_Functions)) then {
-                                if (!(_x in _BIS_UI_Functions)) then {
-                                    _varType = typeName (uiNamespace getVariable _x);
-                                    _find = _allowedVariables_UI find [_x,_varType];
-                                    if (_find isEqualTo -1) then {
-                                        diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
-                                        failMission "SpyGlass";
-                                    };
-                                };
-                            };
-                        };
-                    };
+            if (!(_x in _BIS_UI_Functions)) then {
+                _varType = typeName (uiNamespace getVariable _x);
+                _find = _allowedVariables_UI find [_x,_varType];
+                if (_find isEqualTo -1) then {
+                    diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
+                    failMission "SpyGlass";
                 };
             };
         };
