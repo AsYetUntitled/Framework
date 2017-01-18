@@ -18,7 +18,7 @@ titleText [localize "STR_House_LockingUp","PLAIN"];
 sleep 3;
 
 for "_i" from 1 to _numberOfDoors do {
-    _house animate[format ["door_%1_rot",_i],0];
+    _house animateSource [format ["Door_%1_source", _i], 0];
     _house setVariable [format ["bis_disabled_Door_%1",_i],1,true];
 };
 
