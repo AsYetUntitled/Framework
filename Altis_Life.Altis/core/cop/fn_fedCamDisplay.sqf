@@ -16,7 +16,7 @@ params [
 private _altisArray = [16019.5,16952.9,0];
 private _tanoaArray = [11074.2,11501.5,0.00137329];
 
-private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
+private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call life_fnc_terrainSort;
 
 private _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 
@@ -37,7 +37,7 @@ private _mTwPositions = [
     ["back",[28.9248,-42.0977,-3.8896],[-1.33789,-24.6035,-10.2108]]
 ];
 
-private _index = [_mode,_mTwPositions] call TON_fnc_index;
+private _index = [_mode,_mTwPositions] call life_fnc_getIndex;
 
 if (_index isEqualTo -1) then {
     //Turn off

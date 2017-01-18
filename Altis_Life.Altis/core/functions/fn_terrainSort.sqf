@@ -1,16 +1,19 @@
 /*
-    File: fn_terrainSort.sqf (TO BE CHANGED)
+    File: fn_terrainSort.sqf
     Author: BoGuu
 
     Description:
-    Gah.
+    Retuns a value for each world.
+
+    Parameter(s):
+        0: ARRAY - Array with world name and value to return.
+
+    Returns:
+    ANYTHING
 */
-
-
 if !(params[["_dictionary",[],[[],0,""]]]) exitWith {};
 
 scopeName "main";
-
 {
     if (worldName == _x select 0) then {
         (_x select 1) breakOut "main";

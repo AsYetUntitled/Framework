@@ -40,7 +40,7 @@ for "_i" from 0 to 1 step 0 do {
         player forceWalk true;
     };
 
-    private _escDist = [[["Altis", 60], ["Tanoa", 145]]] call TON_fnc_terrainSort;
+    private _escDist = [[["Altis", 60], ["Tanoa", 145]]] call life_fnc_terrainSort;
     
     if (player distance (getMarkerPos "jail_marker") > _escDist) exitWith {
         _esc = true;

@@ -133,7 +133,7 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace
                 _y = _x;
                 {
                     if (!(_x in _listedItems) && _x != "") then {
-                        _iS = [_x,_y] call TON_fnc_index;
+                        _iS = [_x,_y] call life_fnc_getIndex;
                         if !(_iS isEqualTo -1) then {
                         _z = _y select _iS;
                             if (!((_z select 3) isEqualTo -1)) then {

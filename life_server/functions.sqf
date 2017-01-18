@@ -5,54 +5,6 @@
 
     Description: They are functions.
 */
-
-publicVariable "TON_fnc_terrainSort";
-
-TON_fnc_index =
-compileFinal "
-    private [""_item"",""_stack""];
-    _item = _this select 0;
-    _stack = _this select 1;
-    _return = -1;
-
-    {
-        if (_item in _x) exitWith {
-            _return = _forEachIndex;
-        };
-    } forEach _stack;
-
-    _return;
-";
-
-TON_fnc_player_query =
-compileFinal "
-    private [""_ret""];
-    _ret = _this select 0;
-    if (isNull _ret) exitWith {};
-    if (isNil ""_ret"") exitWith {};
-
-    [life_atmbank,life_cash,owner player,player,profileNameSteam,getPlayerUID player,playerSide] remoteExecCall [""life_fnc_adminInfo"",_ret];
-";
-publicVariable "TON_fnc_player_query";
-publicVariable "TON_fnc_index";
-
-TON_fnc_isnumber =
-compileFinal "
-    private [""_valid"",""_array""];
-    _valid = [""0"",""1"",""2"",""3"",""4"",""5"",""6"",""7"",""8"",""9""];
-    _array = [_this select 0] call KRON_StrToArray;
-    _return = true;
-
-    {
-        if (!(_x in _valid)) exitWith {
-            _return = false;
-        };
-    } forEach _array;
-    _return;
-";
-
-publicVariable "TON_fnc_isnumber";
-
 TON_fnc_clientGangKick =
 compileFinal "
     private [""_unit"",""_group""];

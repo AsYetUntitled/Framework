@@ -18,7 +18,7 @@ _names = "";
     if ((_x select 2) > 150000) then {
         _val = round((_x select 2) / 16);
     } else {
-        _val = ["483",_crimes] call TON_fnc_index;
+        _val = ["483",_crimes] call life_fnc_getIndex;
         _val = ((_crimes select _val) select 1);
         if (_val isEqualType "") then {
             _val = parseNumber _val;
