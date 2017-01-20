@@ -192,7 +192,7 @@ class LifeCfgVehicles {
             },"" },
             { "Black", "cop", {
                 "\A3\Boat_F_Exp\Boat_Transport_02\Data\Boat_Transport_02_exterior_CO.paa"
-        }, "" }
+            }, "" }
         };
     };
 
