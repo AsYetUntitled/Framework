@@ -185,8 +185,15 @@ class LifeCfgVehicles {
     class C_Boat_Transport_02_F {
         vItemSpace = 100;
         conditions = "license_civ_boat || {!(playerSide isEqualTo civilian)}";
-        price = 10000;
-        textures[] = {};
+        price = 22000;
+        textures[] = {
+            { "Civilian", "civ", {
+                "\A3\Boat_F_Exp\Boat_Transport_02\Data\Boat_Transport_02_exterior_civilian_CO.paa"
+            },"" },
+            { "Black", "cop", {
+                "\A3\Boat_F_Exp\Boat_Transport_02\Data\Boat_Transport_02_exterior_CO.paa"
+        }, "" }
+        };
     };
 
     // Apex DLC
@@ -315,7 +322,23 @@ class LifeCfgVehicles {
         vItemSpace = 100;
         conditions = "";
         price = 100000;
-        textures[] = {};
+        textures[] = {
+            { "Arid", "civ", {
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_01_arid_CO.paa",
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_02_arid_CO.paa",
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_03_arid_CO.paa"
+            }, "" },
+            { "Black", "civ", {
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_01_black_CO.paa",
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_02_black_CO.paa",
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_03_black_CO.paa"
+            }, "" },
+            { "Green Hex", "civ", {
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_01_ghex_CO.paa",
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_02_ghex_CO.paa",
+                "\A3\Soft_F_Exp\LSV_02\Data\CSAT_LSV_03_ghex_CO.paa"
+            }, "" }
+        };
     };
 
     class I_Truck_02_medical_F {
@@ -432,7 +455,7 @@ class LifeCfgVehicles {
     class C_Boat_Civil_01_F {
         vItemSpace = 85;
         conditions = "license_civ_boat || {!(playerSide isEqualTo civilian)}";
-        price = 22000;
+        price = 10000;
         textures[] = { };
     };
 
