@@ -6,22 +6,22 @@
     Description:
     Withdraws money from the gang bank.
 */
-private ["_value"];
-_value = parseNumber(ctrlText 2702);
-_gFund = GANG_FUNDS;
+private ["_value","_gFund"];
+_value = ctrlText 2702;
+if (!([_value] call life_fnc_isNumber)) exitWith {hint localize "STR_ATM_notnumeric"};
+_value = parseNumber(_value);
 group player setVariable ["gbank_in_use_by",player,true];
 
 //Series of stupid checks
-if (_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
-if (_value < 0) exitWith {};
-if (!([str(_value)] call life_fnc_isNumber)) exitWith {hint localize "STR_ATM_notnumeric"};
-if (_value > _gFund) exitWith {hint localize "STR_ATM_NotEnoughFundsG"};
+if (_value > (LIFE_SETTINGS(getNumber,"maxvalue_ATM"))) exitWith {hint format [localize "STR_ATM_WithdrawMax",[LIFE_SETTINGS(getNumber,"maxvalue_ATM")] call life_fnc_numberText];};
+if (_value < 1) exitWith {};
+if (_value > (GANG_FUNDS)) exitWith {hint localize "STR_ATM_NotEnoughFundsG"};
 if (_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
 if ((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawInUseG"}; //Check if it's in use.
 
-_gFund = _gFund - _value;
-CASH = CASH + _value;
+_gFund = (GANG_FUNDS) - _value;
 group player setVariable ["gang_bank",_gFund,true];
+CASH = CASH + _value;
 
 if (life_HC_isActive) then {
     [1,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.

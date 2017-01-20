@@ -2,26 +2,26 @@
 /*
     File: fn_getIndex.sqf
     Author: Bryan "Tonic" Boardwine
-    Edited by: Daniel Stuart (Moved to client-side and added support for simple arrays)
+    Edited by: Daniel Stuart (Moved to client-side & optimized)
 
     Description:
-    Return the index for the respective item in an array.
+    Return the index for the array with respective item in an array.
 
     Parameter(s):
         0: ANYTHING - Value to search for
-        1: ARRAY - array to be searched
+        1: ARRAY - array with an array inside.
 
     Returns:
     NUMBER
 */
 params [
     "_value",
-    ["_array",[],[[]]]
+    ["_array",[[]],[[]]]
 ];
 
 _return = -1;
 {
-    if ((_x isEqualType [] && {_value in _x}) || {_value isEqualTo _x}) then {
+    if (_value in _x) then {
         _return = _forEachIndex;
         breakOut "";
     };

@@ -2,13 +2,17 @@
 /*
     File: fn_getDPMission.sqf
     Author: Bryan "Tonic" Boardwine
+    Edited by: Danie Stuart (Got rid of KRON)
 
     Description:
     Selects a random DP point for a delivery mission.
     Needs to be revised.
 */
-private ["_dp","_target"];
-_target = param [0,objNull,[objNull]];
+private "_dp";
+params [
+    ["_target",objNull,[objNull]]
+];
+
 if (str(_target) in LIFE_SETTINGS(getArray,"delivery_points")) then {
     private "_point";
     _point = LIFE_SETTINGS(getArray,"delivery_points");
@@ -23,7 +27,7 @@ life_dp_start = _target;
 life_delivery_in_progress = true;
 life_dp_point = call compile format ["%1",_dp];
 
-_dp = [_dp,"_"," "] call KRON_Replace;
+_dp = (_dp splitString "_") joinString " ";
 life_cur_task = player createSimpleTask [format ["Delivery_%1",life_dp_point]];
 life_cur_task setSimpleTaskDescription [format [localize "STR_NOTF_DPStart",toUpper _dp],"Delivery Job",""];
 life_cur_task setTaskState "Assigned";

@@ -691,17 +691,6 @@
             <Portuguese>Você adicionou R$%1 em sua conta.</Portuguese>
             <Polish>Przekazałeś na konto $%1 </Polish>
         </Key>
-        <Key ID="STR_ANOTF_Fail">
-            <Original>You can not go above $999,999</Original>
-            <Czech>Nemůžete jít nad $ 999999</Czech>
-            <Spanish>No te puedes dar más de $999,999</Spanish>
-            <Italian>Non puoi superare i €999.999</Italian>
-            <Russian></Russian>
-            <German>Maximaler Wert $999,999!</German>
-            <French>Vous ne pouvez pas aller au-dessus $999,999 !</French>
-            <Portuguese>Você não pode ir além de $999,999!</Portuguese>
-            <Polish>Nie można obracać kwotami wyższymi niż $999,999!</Polish>
-        </Key>
         <Key ID="STR_ANOTF_Amount">
             <Original>Please type in the amount to compensate.</Original>
             <Czech>Prosím, zadejte částku, která má kompenzovat.</Czech>
@@ -980,15 +969,15 @@
             <Polish>Przelew</Polish>
         </Key>
         <Key ID="STR_ATM_GreaterThan">
-            <Original>You can't deposit more then $999,999 at a time</Original>
-            <Czech>Nemůžete vložit více než 999.999 $ najednou</Czech>
-            <Spanish>No puedes depositar mas de $999,999 a la vez</Spanish>
+            <Original>You can't deposit more then $%1 at a time</Original>
+            <Czech>Nemůžete vložit více než %1 $ najednou</Czech>
+            <Spanish>No puedes depositar mas de $%1 a la vez</Spanish>
             <Russian></Russian>
-            <German>Du kannst nicht mehr als $999,999 gleichzeitig einzahlen.</German>
-            <French>Vous ne pouvez pas déposer plus de $999,999.</French>
-            <Italian>Non puoi depositare più di €999,999 alla volta</Italian>
-            <Portuguese>Você não pode transferir mais de R$999.999 em uma transação</Portuguese>
-            <Polish>Możesz jednorazowo zdeponować nie więcej niż $999,999 </Polish>
+            <German>Du kannst nicht mehr als $%1 gleichzeitig einzahlen.</German>
+            <French>Vous ne pouvez pas déposer plus de $%1.</French>
+            <Italian>Non puoi depositare più di €%1 alla volta</Italian>
+            <Portuguese>Você pode depositar no máximo R$%1</Portuguese>
+            <Polish>Możesz jednorazowo zdeponować nie więcej niż $%1 </Polish>
         </Key>
         <Key ID="STR_ATM_notnumeric">
             <Original>The amount entered isn't a numeric value.</Original>
@@ -1024,15 +1013,15 @@
             <Polish>Wybrany gracz wydaje się nie występować w grze</Polish>
         </Key>
         <Key ID="STR_ATM_TransferMax">
-            <Original>You can't transfer more then $999,999</Original>
-            <Czech>Nemůžete přenést více než 999.999 $</Czech>
-            <Spanish>No puedes transferir más de $999,999</Spanish>
+            <Original>You can't transfer more then $%1</Original>
+            <Czech>Nemůžete přenést více než %1 $</Czech>
+            <Spanish>No puedes transferir más de $%1</Spanish>
             <Russian></Russian>
-            <German>Du kannst nicht mehr als $999,999 überweisen!</German>
-            <French>Vous ne pouvez pas transférer plus de $999,999.</French>
-            <Italian>Non puoi trasferire più di €999.000 alla volta</Italian>
-            <Portuguese>Você pode trasferir no máximo R$999.999.</Portuguese>
-            <Polish>Możesz jednorazowo przelać nie więcej niż $999,999</Polish>
+            <German>Du kannst nicht mehr als $%1 überweisen!</German>
+            <French>Vous ne pouvez pas transférer plus de $%1.</French>
+            <Italian>Non puoi trasferire più di €%1 alla volta</Italian>
+            <Portuguese>Você pode trasferir no máximo R$%1.</Portuguese>
+            <Polish>Możesz jednorazowo przelać nie więcej niż $%1</Polish>
         </Key>
         <Key ID="STR_ATM_NotEnoughFunds">
             <Original>You don't have that much in your bank account!</Original>
@@ -1090,15 +1079,15 @@
             <Polish></Polish>
         </Key>
         <Key ID="STR_ATM_WithdrawMax">
-            <Original>You can't withdraw more then $999,999</Original>
-            <Czech>Nemůžete zrušit více než 999.999 $</Czech>
-            <Spanish>No puedes retirar más de $999,999</Spanish>
+            <Original>You can't withdraw more then $%1</Original>
+            <Czech>Nemůžete zrušit více než %1 $</Czech>
+            <Spanish>No puedes retirar más de $%1</Spanish>
             <Russian></Russian>
-            <German>Du kannst nicht mehr als $999,999 abheben.</German>
-            <French>Vous ne pouvez pas retirer plus de $999,999.</French>
-            <Italian>Non puoi prelevare più di €999.000 in una volta</Italian>
-            <Portuguese>Você pode sacar no máximo R$999.999</Portuguese>
-            <Polish>Możesz jednorazowo pobrać maks $999,999 </Polish>
+            <German>Du kannst nicht mehr als $%1 abheben.</German>
+            <French>Vous ne pouvez pas retirer plus de $%1.</French>
+            <Italian>Non puoi prelevare più di €%1 in una volta</Italian>
+            <Portuguese>Você pode sacar no máximo R$%1</Portuguese>
+            <Polish>Możesz jednorazowo pobrać maks $%1 </Polish>
         </Key>
         <Key ID="STR_ATM_WithdrawMin">
             <Original>You can't withdraw less then $100</Original>

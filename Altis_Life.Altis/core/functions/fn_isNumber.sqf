@@ -1,7 +1,7 @@
 /*
     File: fn_isNumber.sqf
     Author: Bryan "Tonic" Boardwine
-    Edited by: Daniel Stuart (Moved to client-side, got rid of KRON)
+    Edited by: Daniel Stuart (Moved to client-side & got rid of KRON)
 
     Description:
     Return if the given string only contains numbers.
@@ -15,13 +15,14 @@
 params [
     ["_array","",[""]]
 ];
-_array = _array splitString "";
+_array = toArray _array;
 
 _return = true;
 {
-    if (!(_x in ["0","1","2","3","4","5","6","7","8","9"])) exitWith {
+    if (_x < 48 || _x > 57) then {
         _return = false;
+        breakOut "";
     };
-} forEach _array;
+} count _array;
 
 _return;

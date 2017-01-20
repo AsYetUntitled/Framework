@@ -3,7 +3,7 @@
 #define ITEM_TAG format ["%1%2",SYSTEM_TAG,"item_"]
 #define CASH life_cash
 #define BANK life_atmbank
-#define GANG_FUNDS group player getVariable ["gang_bank",0];
+#define GANG_FUNDS group player getVariable ["gang_bank",0]
 
 //RemoteExec Macros
 #define RSERV 2 //Only server
