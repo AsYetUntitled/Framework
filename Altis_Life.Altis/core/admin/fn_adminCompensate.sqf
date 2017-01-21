@@ -8,7 +8,9 @@
 */
 private ["_value","_action"];
 if (FETCH_CONST(life_adminlevel) < 2) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
-_value = parseNumber(ctrlText 9922);
+_value = ctrlText 9922;
+if (!([_value] call life_fnc_isNumber)) exitWith {hint localize "STR_ATM_notnumeric"};
+_value = parseNumber(_value);
 if (_value < 1) exitWith {};
 
 _action = [
