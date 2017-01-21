@@ -19,7 +19,7 @@ if (_value > (LIFE_SETTINGS(getNumber,"maxvalue_ATM"))) exitWith {hint format [l
 if (_value < 1) exitWith {};
 if (_value > BANK) exitWith {hint localize "STR_ATM_NotEnoughFunds"};
 _tax = _value * LIFE_SETTINGS(getNumber,"bank_transferTax");
-if ((_value + _tax) > BANK) exitWith {hint format [localize "STR_ATM_SentMoneyFail",_value,_tax]};
+if ((_value + _tax) > BANK) exitWith {hint format [localize "STR_ATM_SentMoneyFail",[_value] call life_fnc_numberText,[_tax] call life_fnc_numberText]};
 
 BANK = BANK - (_value + _tax);
 [_value,profileName] remoteExecCall ["life_fnc_wireTransfer",_unit];
@@ -30,9 +30,9 @@ hint format [localize "STR_ATM_SentMoneySuccess",[_value] call life_fnc_numberTe
 
 if (LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        money_log = format [localize "STR_DL_ML_transferredBank_BEF",_value,_unit getVariable ["realname",name _unit],[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        money_log = format [localize "STR_DL_ML_transferredBank_BEF",[_value] call life_fnc_numberText,_unit getVariable ["realname",name _unit],[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     } else {
-        money_log = format [localize "STR_DL_ML_transferredBank",profileName,(getPlayerUID player),_value,_unit getVariable ["realname",name _unit],[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        money_log = format [localize "STR_DL_ML_transferredBank",profileName,(getPlayerUID player),[_value] call life_fnc_numberText,_unit getVariable ["realname",name _unit],[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     };
     publicVariableServer "money_log";
 };
