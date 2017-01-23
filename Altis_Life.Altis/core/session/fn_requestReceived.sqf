@@ -8,7 +8,7 @@
     sort through the information, validate it and if all valid
     set the client up.
 */
-private ["_array"];
+private _count = count _this;
 life_session_tries = life_session_tries + 1;
 if (life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
 if (life_session_tries > 3) exitWith {cutText[localize "STR_Session_Error","BLACK FADED"]; 0 cutFadeOut 999999999;};
@@ -66,7 +66,7 @@ switch (playerSide) do {
         life_is_arrested = _this select 7;
         CONST(life_coplevel, 0);
         CONST(life_medicLevel, 0);
-        life_houses = _this select 13;
+        life_houses = _this select (_count - 3);
         if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
             life_hunger = ((_this select 9) select 0);
             life_thirst = ((_this select 9) select 1);
@@ -88,7 +88,7 @@ switch (playerSide) do {
             life_vehicles pushBack _house;
         } forEach life_houses;
 
-        life_gangData = _this select 14;
+        life_gangData = _this select (_count - 2);
         if (!(count life_gangData isEqualTo 0)) then {
             [] spawn life_fnc_initGang;
         };
@@ -106,8 +106,8 @@ switch (playerSide) do {
     };
 };
 
-if (count (_this select 15) > 0) then {
-    {life_vehicles pushBack _x;} forEach (_this select 15);
+if (count (_this select (_count - 1)) > 0) then {
+    {life_vehicles pushBack _x;} forEach (_this select (_count - 1));
 };
 
 life_session_completed = true;
