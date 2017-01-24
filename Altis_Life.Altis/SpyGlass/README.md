@@ -35,7 +35,7 @@ If this is the case then launch *Arma 3* and go to the editor (you do not need t
 Open the debug console and paste in the following code, then locally execute: 
 
 ```sqf
-_cfgPatches = [];	_binConfigPatches = configFile >> "CfgPatches";	for "_i" from 0 to count (_binConfigPatches)-1 do {		_patchEntry = _binConfigPatches select _i;		if (isClass _patchEntry) then {			_cfgPatches set [count _cfgPatches,(configName _patchEntry)];		};	};	copyToClipboard str(_cfgPatches);
+_cfgPatches = []; _binConfigPatches = configFile >> "CfgPatches"; for "_i" from 0 to count (_binConfigPatches)-1 do { _patchEntry = _binConfigPatches select _i; if (isClass _patchEntry) then { _cfgPatches set [count _cfgPatches,(configName _patchEntry)]; }; }; copyToClipboard str(_cfgPatches);
 ```
 
 1. Paste the results into a source code editor such as [Notepad++](https://notepad-plus-plus.org/) or [Atom](https://atom.io/). 

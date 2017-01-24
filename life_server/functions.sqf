@@ -130,6 +130,8 @@ compileFinal "
 private [""_msg"",""_to""];
     ctrlShow[3022,false];
     _msg = ctrlText 3003;
+    _length = count (toArray(_msg));
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3022,true];};
     _to = ""EMS Units"";
     if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3022,true];};
 
@@ -144,7 +146,11 @@ compileFinal "
     private [""_msg"",""_to""];
     ctrlShow[3015,false];
     _msg = ctrlText 3003;
+
+    _length = count (toArray(_msg));
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3015,true];};
     if (lbCurSel 3004 isEqualTo -1) exitWith {hint localize ""STR_CELLMSG_SelectPerson""; ctrlShow[3015,true];};
+
     _to = call compile format [""%1"",(lbData[3004,(lbCurSel 3004)])];
     if (isNull _to) exitWith {ctrlShow[3015,true];};
     if (isNil ""_to"") exitWith {ctrlShow[3015,true];};
@@ -162,7 +168,10 @@ compileFinal "
     ctrlShow[3016,false];
     _msg = ctrlText 3003;
     _to = ""The Police"";
+
     if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3016,true];};
+    _length = count (toArray(_msg));
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3016,true];};
 
     [_msg,name player,1,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
@@ -176,7 +185,10 @@ compileFinal "
     ctrlShow[3017,false];
     _msg = ctrlText 3003;
     _to = ""The Admins"";
+
     if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3017,true];};
+    _length = count (toArray(_msg));
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3017,true];};
 
     [_msg,name player,2,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;

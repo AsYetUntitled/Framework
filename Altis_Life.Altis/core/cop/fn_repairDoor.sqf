@@ -70,7 +70,7 @@ if (!alive player) exitWith {life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 life_action_inUse = false;
 
-_building animate [format ["door_%1_rot",_door],0];
+_building animateSource [format ["Door_%1_source", _door], 0];
 _building setVariable [format ["bis_disabled_Door_%1",_door],1,true]; //Lock the door.
 
 _locked = true;

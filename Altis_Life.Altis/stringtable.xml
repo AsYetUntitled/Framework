@@ -1291,6 +1291,17 @@
             <Portuguese>You must enter a message to send!</Portuguese>
             <Polish>You must enter a message to send!</Polish>
         </Key>
+        <Key ID="STR_CELLMSG_LIMITEXCEEDED">
+            <Original>Your message cannot exceed 400 characters!</Original>
+            <Czech>Your message cannot exceed 400 characters!</Czech>
+            <Spanish>Your message cannot exceed 400 characters!</Spanish>
+            <Russian>Your message cannot exceed 400 characters!</Russian>
+            <German>Deine Nachricht darf maximal 400 Zeichen enthalten!!</German>
+            <French>Your message cannot exceed 400 characters!</French>
+            <Italian>Your message cannot exceed 400 characters!</Italian>
+            <Portuguese>Your message cannot exceed 400 characters!</Portuguese>
+            <Polish>Your message cannot exceed 400 characters!</Polish>
+        </Key>
         <Key ID="STR_CELLMSG_SelectPerson">
             <Original>You must select a player you are sending the text to!</Original>
             <Czech>You must select a player you are sending the text to!</Czech>
