@@ -35,6 +35,7 @@ class CfgRemoteExec {
         F(life_fnc_licenseCheck,CLIENT)
         F(life_fnc_licensesRead,CLIENT)
         F(life_fnc_lightHouse,CLIENT)
+        F(life_fnc_markers,CLIENT)
         F(life_fnc_mediclights,CLIENT)
         F(life_fnc_medicRequest,CLIENT)
         F(life_fnc_medicSiren,CLIENT)
@@ -68,7 +69,6 @@ class CfgRemoteExec {
         F(TON_fnc_clientGetKey,CLIENT)
         F(TON_fnc_clientMessage,CLIENT)
         F(TON_fnc_player_query,CLIENT)
-        F(life_fnc_markers,CLIENT)
 
         /* Server only functions */
         F(BIS_fnc_execVM,SERVER)
@@ -92,6 +92,8 @@ class CfgRemoteExec {
         F(TON_fnc_deleteDBContainer,SERVER)
         F(TON_fnc_getID,SERVER)
         F(TON_fnc_getVehicles,SERVER)
+        F(TON_fnc_handleBlastingCharge,SERVER)
+        F(TON_fnc_houseGarage,SERVER)
         F(TON_fnc_insertGang,SERVER)
         F(TON_fnc_keyManagement,SERVER)
         F(TON_fnc_manageSC,SERVER)
@@ -109,8 +111,6 @@ class CfgRemoteExec {
         F(TON_fnc_vehicleDelete,SERVER)
         F(TON_fnc_vehicleStore,SERVER)
         F(TON_fnc_vehicleUpdate,SERVER)
-        F(TON_fnc_handleBlastingCharge,SERVER)
-        F(TON_fnc_houseGarage,SERVER)
 
         /* HeadlessClient only functions */
         F(HC_fnc_addContainer,HC)
