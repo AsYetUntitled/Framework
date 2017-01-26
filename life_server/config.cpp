@@ -129,3 +129,5 @@ class CfgVehicles {
         };
     };
 };
+
+#include "CfgRemoteExec.hpp"
