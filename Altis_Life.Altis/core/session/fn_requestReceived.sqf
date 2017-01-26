@@ -34,9 +34,9 @@ if (!isServer && (!isNil "life_adminlevel" || !isNil "life_coplevel" || !isNil "
 //Parse basic player information.
 CASH = parseNumber (_this select 2);
 BANK = parseNumber (_this select 3);
-CONST(life_adminlevel,parseNumber (_this select 4));
+CONST(life_adminlevel,(_this select 4));
 if (LIFE_SETTINGS(getNumber,"donor_level") isEqualTo 1) then {
-    CONST(life_donorlevel,parseNumber (_this select 5));
+    CONST(life_donorlevel,(_this select 5));
 } else {
     CONST(life_donorlevel,0);
 };
@@ -52,7 +52,7 @@ life_gear = _this select 8;
 //Parse side specific information.
 switch (playerSide) do {
     case west: {
-        CONST(life_coplevel, parseNumber(_this select 7));
+        CONST(life_coplevel,(_this select 7));
         CONST(life_medicLevel,0);
         life_blacklisted = _this select 9;
         if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
@@ -96,7 +96,7 @@ switch (playerSide) do {
     };
 
     case independent: {
-        CONST(life_medicLevel, parseNumber(_this select 7));
+        CONST(life_medicLevel,(_this select 7));
         CONST(life_coplevel,0);
         if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
             life_hunger = ((_this select 9) select 0);
