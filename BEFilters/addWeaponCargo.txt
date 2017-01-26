@@ -1,3 +1,0 @@
-//regex
-1 ""
-5 "" !=hgun_(ACPC2|Rook40|PDW2000|Pistol_heavy_02)_F !=hgun_P07_(snds_)?F !=arifle_(TRG20|Katiba|SDAR|MX[C]?)_F !=srifle_DMR_01_F !=SMG_02_ACO_F !=hgun_P07_khk_F !=hgun_Pistol_01_F !=SMG_05_F !arifle_AK12(_GL)?_F !=arifle_AKM_F !arifle_SPAR_01_(blk|khk|GL_blk)_F !arifle_MX(M|C)?_(GL_)?(khk)_F !srifle_DMR_07_(blk|ghex)_F !=srifle_LRR_tna_F !=srifle_GM6_ghex_F

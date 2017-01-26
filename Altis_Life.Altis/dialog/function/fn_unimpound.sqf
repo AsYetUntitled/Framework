@@ -47,7 +47,7 @@ if (life_garage_sp isEqualType []) then {
         if (life_HC_isActive) then {
             [_vid,_pid,life_garage_sp,_unit,_price,0,_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
         } else {
-            [_vid,_pid,life_garage_sp,_unit,_price,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
+            [_vid,_pid,life_garage_sp,_unit,_price,0,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
         };
     } else {
         if (life_HC_isActive) then {

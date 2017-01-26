@@ -41,5 +41,13 @@ switch (playerSide) do
         if (_item in ["U_Rangemaster"]) then {
             [] call life_fnc_playerSkins;
         };
+        // -- Restrict Weapons
+        if (LIFE_SETTINGS(getNumber,"restrict_medic_weapons") isEqualTo 1) then {
+            // -- Check if the type is a weapon
+            if (isClass (configFile >> "CfgWeapons" >> _item)) then { 
+                // -- Remove all weapons from player (_unit)
+                removeAllWeapons _unit;
+            };
+        };
     };
 };

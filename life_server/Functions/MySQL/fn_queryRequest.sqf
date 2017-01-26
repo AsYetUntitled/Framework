@@ -21,11 +21,11 @@ _ownerID = owner _ownerID;
 
 _query = switch (_side) do {
     // West - 11 entries returned
-    case west: {format ["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE playerid='%1'",_uid];};
+    case west: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
     // Civilian - 12 entries returned
-    case civilian: {format ["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE playerid='%1'",_uid];};
+    case civilian: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
     // Independent - 10 entries returned
-    case independent: {format ["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE playerid='%1'",_uid];};
+    case independent: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
 };
 
 _tickTime = diag_tickTime;
@@ -121,12 +121,13 @@ switch (_side) do {
         };
         [_uid,_new select 2] call TON_fnc_setPlayTime;
 
+        /* Make sure nothing else is added under here */
         _houseData = _uid spawn TON_fnc_fetchPlayerHouses;
         waitUntil {scriptDone _houseData};
-        _queryResult set [13,(missionNamespace getVariable [format ["houses_%1",_uid],[]])];
+        _queryResult pushBack (missionNamespace getVariable [format ["houses_%1",_uid],[]]);
         _gangData = _uid spawn TON_fnc_queryPlayerGang;
         waitUntil{scriptDone _gangData};
-        _queryResult set [14,(missionNamespace getVariable [format ["gang_%1",_uid],[]])];
+        _queryResult pushBack (missionNamespace getVariable [format ["gang_%1",_uid],[]]);
 
     };
 
@@ -140,7 +141,7 @@ switch (_side) do {
         _new = [(_queryResult select 10)] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -154,6 +155,6 @@ switch (_side) do {
 publicVariable "TON_fnc_playtime_values_request";
 
 _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
-_queryResult set[15,_keyArr];
+_queryResult pushBack _keyArr;
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

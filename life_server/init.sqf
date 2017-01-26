@@ -9,11 +9,11 @@
     Description:
     Initialize the server and required systems.
 */
-private ["_dome","_rsb","_timeStamp"];
+private ["_dome","_rsb","_timeStamp","_extDBNotLoaded"];
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
-life_server_extDB_notLoaded = "";
+_extDBNotLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
@@ -47,10 +47,9 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
         if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
     } catch {
         diag_log _exception;
-        life_server_extDB_notLoaded = [true, _exception];
+        _extDBNotLoaded = [true, _exception];
     };
-    publicVariable "life_server_extDB_notLoaded";
-    if (life_server_extDB_notLoaded isEqualType []) exitWith {};
+    if (_extDBNotLoaded isEqualType []) exitWith {};
     EXTDB "9:LOCK";
     diag_log "extDB2: Connected to Database";
 } else {
@@ -59,7 +58,13 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     diag_log "extDB2: Still Connected to Database";
 };
 
-if (life_server_extDB_notLoaded isEqualType []) exitWith {};
+
+if (_extDBNotLoaded isEqualType []) exitWith {
+    life_server_extDB_notLoaded = true;
+    publicVariable "life_server_extDB_notLoaded";
+};
+life_server_extDB_notLoaded = false;
+publicVariable "life_server_extDB_notLoaded";
 
 /* Run stored procedures for SQL side cleanup */
 ["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
@@ -70,7 +75,7 @@ if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
-diag_log "------------------------------------------ Version 4.5 -------------------------------------------";
+diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";
 diag_log "----------------------------------------------------------------------------------------------------";
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
@@ -178,15 +183,15 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
-_altisArray = [16019.5,16952.9,0];
-_tanoaArray = [11074.2,11501.5,0.00137329];
-private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
+private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
+private _altisArray = [16019.5,16952.9,0];
+private _tanoaArray = [11074.2,11501.5,0.00137329];
+private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
 
 _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 _rsb = nearestObject [_pos,_vaultHouse];
 
-for "_i" from 1 to 3 do {_dome setVariable [format ["bis_disabled_Door_%1",_i],1,true]; _dome animate [format ["Door_%1_rot",_i],0];};
+for "_i" from 1 to 3 do {_dome setVariable [format ["bis_disabled_Door_%1",_i],1,true]; _dome animateSource [format ["Door_%1_source", _i], 0];};
 _dome setVariable ["locked",true,true];
 _rsb setVariable ["locked",true,true];
 _rsb setVariable ["bis_disabled_Door_1",1,true];

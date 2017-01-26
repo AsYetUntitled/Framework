@@ -20,7 +20,6 @@ private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6"
 disableSerialization;
 _curTarget = param [0,objNull,[objNull]];
 if (isNull _curTarget) exitWith {}; //Bad target
-if (playerSide isEqualTo independent) exitWith {};
 _houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0 && playerSide isEqualTo civilian) exitWith {};
 
@@ -39,12 +38,18 @@ _Btn8 = CONTROL(37400,Btn8);
 {_x ctrlShow false;} forEach [_Btn1,_Btn2,_Btn3,_Btn4,_Btn5,_Btn6,_Btn7,_Btn8];
 
 life_pInact_curTarget = _curTarget;
+
+if (_curTarget in life_hideoutBuildings) exitWith {
+    closeDialog 0;
+    hint localize "STR_House_Hideout";
+};
+
 if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
 
-    private _vaultHouse = ALTIS_TANOA("Land_Research_house_V1_F","Land_Medevac_house_V1_F");
-    _altisArray = [16019.5,16952.9,0];
-    _tanoaArray = [11074.2,11501.5,0.00137329];
-    private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
+    private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
+    private _altisArray = [16019.5,16952.9,0];
+    private _tanoaArray = [11074.2,11501.5,0.00137329];
+    private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
 
     if ((nearestObject [_pos,"Land_Dome_Big_F"]) isEqualTo _curTarget || (nearestObject [_pos,_vaultHouse]) isEqualTo _curTarget) then {
 

@@ -1,146 +1,130 @@
 /*
-*    Format:
-*        level: ARRAY (This is for limiting items to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL / EQUAL)
-*            2: What to compare to (-1 = Check Disabled)
-*            3: Custom exit message (Optional)
+*    FORMAT:
+*        STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
 */
 class VirtualShops {
     //Virtual Shops
     class market {
         name = "STR_Shops_Market";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "pickaxe", "toolkit", "fuelFull", "peach", "storagesmall", "storagebig", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
     };
 
     class med_market {
         name = "STR_Shops_Market";
         side = "med";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "toolkit", "fuelFull", "peach", "defibrillator" };
     };
 
     class rebel {
         name = "STR_Shops_Rebel";
         side = "civ";
-        license = "rebel";
-        level[] = { "", "", -1, "" };
+        conditions = "license_civ_rebel";
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "toolkit", "fuelFull", "peach", "boltcutter", "blastingcharge" };
     };
 
     class gang {
         name = "STR_Shops_Gang";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "toolkit", "fuelFull", "peach", "boltcutter", "blastingcharge" };
     };
 
     class wongs {
         name = "STR_Shops_Wongs";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "turtle_soup", "turtle_raw" };
     };
 
     class coffee {
         name = "STR_Shops_Coffee";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "coffee", "donuts" };
     };
 
     class f_station_coffee {
         name = "STR_Shop_Station_Coffee";
         side = "";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "coffee", "donuts", "redgull", "toolkit", "fuelFull"};
     };
 
     class drugdealer {
         name = "STR_Shops_DrugDealer";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "cocaine_processed", "heroin_processed", "marijuana" };
     };
 
     class oil {
         name = "STR_Shops_Oil";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "oil_processed", "pickaxe", "fuelFull" };
     };
 
     class fishmarket {
         name = "STR_Shops_FishMarket";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "salema_raw", "salema", "ornate_raw", "ornate", "mackerel_raw", "mackerel", "tuna_raw", "tuna", "mullet_raw", "mullet", "catshark_raw", "catshark" };
     };
 
     class glass {
         name = "STR_Shops_Glass";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "glass" };
     };
 
     class iron  {
         name = "STR_Shops_Minerals";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "iron_refined", "copper_refined" };
     };
 
     class diamond {
         name = "STR_Shops_Diamond";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "diamond_uncut", "diamond_cut" };
     };
 
     class salt {
         name = "STR_Shops_Salt";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "salt_refined" };
     };
 
     class cement {
         name = "STR_Shops_Cement";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "cement" };
     };
 
     class gold {
         name = "STR_Shops_Gold";
         side = "civ";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "goldbar" };
     };
 
     class cop {
         name = "STR_Shops_Cop";
         side = "cop";
-        license = "";
-        level[] = { "", "", -1, "" };
+        conditions = "";
         items[] = { "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "toolkit", "fuelFull", "defusekit", "defibrillator" };
     };
 };

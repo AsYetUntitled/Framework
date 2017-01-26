@@ -7,26 +7,32 @@
     Description:
     Applies the filter selected and changes the list.
 */
-private ["_itemList","_index","_config","_priceTag","_itemArray"];
-_index = (lbCurSel 38402);
-_shop = uiNamespace getVariable ["Weapon_Shop",""];
-if (_index isEqualTo -1 || _shop isEqualTo "") exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
+
+private _index = (lbCurSel 38402);
+private _shop = uiNamespace getVariable ["Weapon_Shop",""];
+
+if (_index isEqualTo -1 || {_shop isEqualTo ""}) exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
 
 uiNamespace setVariable ["Weapon_Shop_Filter",_index];
 //Setup List Control & Purge it.
 
-_priceTag = ((findDisplay 38400) displayCtrl 38404);
+private _priceTag = ((findDisplay 38400) displayCtrl 38404);
 _priceTag ctrlSetStructuredText parseText "";
-_itemList = ((findDisplay 38400) displayCtrl 38403);
+
+private _itemList = ((findDisplay 38400) displayCtrl 38403);
 lbClear _itemList;
 
-if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace getVariable ["Weapon_Accessories",0]) isEqualTo 1) then {
+private "_config";
+
+if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace getVariable ["Weapon_Accessories",0]) isEqualTo 1}) then {
+
     if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1) then {
+    
         _config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
         {
             _bool = [_x] call life_fnc_levelCheck;
             if (_bool) then {
-                _var = _x select 0;
+                _x params ["_var"];
                 _count = {_x == _var} count (uiNamespace getVariable ["Magazine_Array",[]]);
                 if (_count > 0) then {
                     _itemInfo = [(_x select 0)] call life_fnc_fetchCfgDetails;
@@ -36,16 +42,21 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
                     _itemList lbSetValue[(lbSize _itemList)-1,(_x select 2)];
                 };
             };
-        } forEach (_config);
+            true
+        } count _config;
+        
         ((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
+        
         ctrlShow [38406,true];
         ctrlShow [38407,false];
+        
     } else {
+    
         _config = M_CONFIG(getArray,"WeaponShops",_shop,"accs");
         {
             _bool = [_x] call life_fnc_levelCheck;
             if (_bool) then {
-                _var = _x select 0;
+                _x params ["_var"];
                 _count = {_x == _var} count (uiNamespace getVariable ["Accessories_Array",[]]);
                 if (_count > 0) then {
                     _itemInfo = [(_x select 0)] call life_fnc_fetchCfgDetails;
@@ -55,8 +66,11 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
                     _itemList lbSetValue[(lbSize _itemList)-1,(_x select 2)];
                 };
             };
-        } forEach (_config);
+            true
+        } count _config;
+        
         ((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Weapons";
+        
         ctrlShow [38406,false];
         ctrlShow [38407,true];
     };
@@ -79,21 +93,21 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
                     _itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
                     _itemList lbSetValue[(lbSize _itemList)-1,_x select 2];
                 };
-
-            } forEach (_config);
+                true
+            } count _config;
 
             ((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
             ((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Mags";
             ((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Accs";
+            
             ctrlShow [38402,true];
             ctrlShow [38406,true];
             ctrlShow [38407,true];
         };
 
         case 1: {
-            private ["_listedItems"];
             _config = [];
-            _listedItems = [];
+            private _listedItems = [];
             //Go through weapons
             if (primaryWeapon player != "") then {_config pushBack primaryWeapon player;};
             if (secondaryWeapon player != "") then {_config pushBack secondaryWeapon player;};
@@ -104,14 +118,14 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
             _config = _config + (assignedItems player);
             _config = _config + (uniformItems player);
             _config = _config + (vestItems player);
-            _config = _config + (backPackItems player);
+            _config = _config + (backpackItems player);
 
             ((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Sell";
             ctrlShow [38402,true];
             ctrlShow [38406,false];
             ctrlShow [38407,false];
 
-            _itemArray = [];
+            private _itemArray = [];
             _itemArray pushBack M_CONFIG(getArray,"WeaponShops",_shop,"items");
             _itemArray pushBack M_CONFIG(getArray,"WeaponShops",_shop,"mags");
             _itemArray pushBack M_CONFIG(getArray,"WeaponShops",_shop,"accs");
@@ -120,7 +134,7 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
                 {
                     if (!(_x in _listedItems) && _x != "") then {
                         _iS = [_x,_y] call TON_fnc_index;
-                        if (_iS != -1) then {
+                        if !(_iS isEqualTo -1) then {
                         _z = _y select _iS;
                             if (!((_z select 3) isEqualTo -1)) then {
 
@@ -144,9 +158,10 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || (uiNamespace 
                             };
                         };
                     };
-                } forEach _config;
-
-            } forEach _itemArray;
+                    true
+                } count _config;
+                true
+            } count _itemArray;
         };
     };
 };

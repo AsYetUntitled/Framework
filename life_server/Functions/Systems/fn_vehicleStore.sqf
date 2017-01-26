@@ -64,7 +64,7 @@ if (count _vInfo isEqualTo 0) exitWith {
     (owner _unit) publicVariableClient "life_garage_store";
 };
 
-if (_uid != getPlayerUID _unit) exitWith {
+if !(_uid isEqualTo getPlayerUID _unit) exitWith {
     [1,"STR_Garage_Store_NoOwnership",true] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
     life_garage_store = false;
     (owner _unit) publicVariableClient "life_garage_store";
@@ -79,7 +79,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
         private ["_isIllegal", "_blacklist"];
         _blacklist = false;
-        _profileQuery = format ["SELECT name FROM players WHERE playerid='%1'", _uid];
+        _profileQuery = format ["SELECT name FROM players WHERE pid='%1'", _uid];
         _profileName = [_profileQuery, 2] call DB_fnc_asyncCall;
         _profileName = _profileName select 0;
 

@@ -1,21 +1,11 @@
 /*
 *    Format:
-*        licenses: ARRAY (This is for limiting spawn to certain things)
-*           0: License Name
-*           1: License Check Type
-*                false: If license isn't set
-*                true: If license is set
-*           Example:
-*                licenses[] = { { "pilot", true }, { "rebel", false } }; //Shows up for players with pilot and without rebel license.
-*
-*        level: ARRAY (This is for limiting spawn to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL / EQUAL / INVERSE)
-*                SCALAR: VALUE => VALUE
-*                BOOL: VALUE EXISTS
-*                EQUAL: VALUE == VALUE
-*                INVERSE: VALUE <= VALUE
-*            2: What to compare to (-1 = Check Disabled)
+*        3: STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
 *
 */
 class CfgSpawnPoints {
@@ -26,56 +16,49 @@ class CfgSpawnPoints {
                 displayName = "Kavala";
                 spawnMarker = "civ_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "rebel", false } };
-                level[] = { "", "", -1 };
+                conditions = "!license_civ_rebel";
             };
 
             class Athira {
                 displayName = "Athira";
                 spawnMarker = "civ_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Pyrgos {
                 displayName = "Pyrgos";
                 spawnMarker = "civ_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Sofia {
                 displayName = "Sofia";
                 spawnMarker = "civ_spawn_4";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class RebelN {
                 displayName = "Northern Rebel Base";
                 spawnMarker = "Rebelop";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-                licenses[] = { { "rebel", true } };
-                level[] = { "", "", -1 };
+                conditions = "license_civ_rebel";
             };
 
             class RebelS {
                 displayName = "Southern Rebel Base";
                 spawnMarker = "Rebelop_1";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-                licenses[] = { { "rebel", true } };
-                level[] = { "", "", -1 };
+                conditions = "license_civ_rebel";
             };
 
             class RebelE {
                 displayName = "Eastern Rebel Base";
                 spawnMarker = "Rebelop_2";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-                licenses[] = { { "rebel", true } };
-                level[] = { "", "", -1 };
+                conditions = "license_civ_rebel";
             };
         };
 
@@ -84,40 +67,35 @@ class CfgSpawnPoints {
                 displayName = "Kavala HQ";
                 spawnMarker = "cop_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Athira {
                 displayName = "Athira HQ";
                 spawnMarker = "cop_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\fuelstation_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Pyrgos {
                 displayName = "Pyrgos HQ";
                 spawnMarker = "cop_spawn_2";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Air {
                 displayName = "Air HQ";
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
-                licenses[] = { { "cAir", true } };
-                level[] = { "life_coplevel", "SCALAR", 2 };
+                conditions = "call life_coplevel >= 2 && {license_cop_cAir}";
             };
 
             class HW {
                 displayName = "HW Patrol";
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
-                licenses[] = { { "", true } };
-                level[] = { "life_coplevel", "SCALAR", 3 };
+                conditions = "call life_coplevel >= 3";
             };
         };
 
@@ -126,24 +104,21 @@ class CfgSpawnPoints {
                 displayName = "Kavala Hospital";
                 spawnMarker = "medic_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Athira {
                 displayName = "Athira Regional";
                 spawnMarker = "medic_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Pyrgos {
                 displayName = "Pyrgos Hospital";
                 spawnMarker = "medic_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
         };
     };
@@ -155,56 +130,49 @@ class CfgSpawnPoints {
                 displayName = "Georgetown";
                 spawnMarker = "civ_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "rebel", false } };
-                level[] = { "", "", -1 };
+                conditions = "!license_civ_rebel";
             };
 
             class Balavu {
                 displayName = "Balavu";
                 spawnMarker = "civ_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Tuvanaka {
                 displayName = "Tuvanaka";
                 spawnMarker = "civ_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Lijnhaven {
                 displayName = "Lijnhaven";
                 spawnMarker = "civ_spawn_4";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class RebelNW {
                 displayName = "North Western Rebel Base";
                 spawnMarker = "Rebelop";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-                licenses[] = { { "rebel", true } };
-                level[] = { "", "", -1 };
+                conditions = "license_civ_rebel";
             };
 
             class RebelS {
                 displayName = "Southern Rebel Base";
                 spawnMarker = "Rebelop_1";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-                licenses[] = { { "rebel", true } };
-                level[] = { "", "", -1 };
+                conditions = "license_civ_rebel";
             };
 
             class RebelNE {
                 displayName = "North Eastern Rebel Base";
                 spawnMarker = "Rebelop_2";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-                licenses[] = { { "rebel", true } };
-                level[] = { "", "", -1 };
+                conditions = "license_civ_rebel";
             };
         };
 
@@ -213,40 +181,35 @@ class CfgSpawnPoints {
                 displayName = "North Airport HQ";
                 spawnMarker = "cop_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class SWAirport {
                 displayName = "South Western Airport HQ";
                 spawnMarker = "cop_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\fuelstation_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class GeorgetownHQ {
                 displayName = "Georgetown HQ";
                 spawnMarker = "cop_spawn_2";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class Air {
                 displayName = "Air HQ";
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
-                licenses[] = { { "cAir", true } };
-                level[] = { "life_coplevel", "SCALAR", 2 };
+                conditions = "call life_coplevel >= 2 && {license_cop_cAir}";
             };
 
             class HW {
                 displayName = "HW Patrol";
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
-                licenses[] = { { "", true } };
-                level[] = { "life_coplevel", "SCALAR", 3 };
+                conditions = "call life_coplevel >= 3";
             };
         };
 
@@ -256,24 +219,21 @@ class CfgSpawnPoints {
                 displayName = "South East Hospital";
                 spawnMarker = "medic_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class TanoukaHospital {
                 displayName = "Tanouka Regional";
                 spawnMarker = "medic_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
             class NEAirportHospital {
                 displayName = "North East Airport Hospital";
                 spawnMarker = "medic_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
-                licenses[] = { { "", true } };
-                level[] = { "", "", -1 };
+                conditions = "";
             };
 
         };

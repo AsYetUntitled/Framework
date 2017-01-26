@@ -8,7 +8,7 @@
 */
 private ["_unit","_item","_val","_from","_bool"];
 _unit = _this select 0;
-if (_unit != player) exitWith {};
+if !(_unit isEqualTo player) exitWith {};
 _item = _this select 1;
 _val = _this select 2;
 _from = _this select 3;

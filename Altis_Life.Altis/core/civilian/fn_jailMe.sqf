@@ -36,7 +36,13 @@ for "_i" from 0 to 1 step 0 do {
         hintSilent parseText format [(localize "STR_Jail_Time")+ "<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>" +(localize "STR_Jail_Pay")+ " %3<br/>" +(localize "STR_Jail_Price")+ " $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if (life_canpay_bail) then {"Yes"} else {"No"}];
     };
 
-    if (player distance (getMarkerPos "jail_marker") > 60) exitWith {
+    if (LIFE_SETTINGS(getNumber,"jail_forceWalk") isEqualTo 1) then {
+        player forceWalk true;
+    };
+
+    private _escDist = [[["Altis", 60], ["Tanoa", 145]]] call TON_fnc_terrainSort;
+    
+    if (player distance (getMarkerPos "jail_marker") > _escDist) exitWith {
         _esc = true;
     };
 
@@ -54,8 +60,8 @@ switch (true) do {
     case (_bail): {
         life_is_arrested = false;
         life_bail_paid = false;
+
         hint localize "STR_Jail_Paid";
-        serv_wanted_remove = [player];
         player setPos (getMarkerPos "jail_release");
 
         if (life_HC_isActive) then {
@@ -95,3 +101,5 @@ switch (true) do {
         [5] call SOCK_fnc_updatePartial;
     };
 };
+
+player forceWalk false; // Enable running & jumping

@@ -11,6 +11,16 @@ class Socket_Reciever {
     };
 };
 
+class SpyGlass {
+    tag = "SPY";
+    class Functions {
+        file = "SpyGlass";
+        class cookieJar{};
+        class notifyAdmins{};
+        class observe{};
+    };
+};
+
 class Life_Client_Core {
     tag = "life";
 

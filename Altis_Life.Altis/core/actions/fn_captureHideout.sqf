@@ -6,16 +6,20 @@
     Description:
     Blah blah.
 */
-private ["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
-_altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
-_tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
-private _hideoutObjs = ALTIS_TANOA(_altisArray,_tanoaArray);
-_hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
-_group = _hideout getVariable ["gangOwner",grpNull];
+private _altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
+private _tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
+
+private _hideoutObjs = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
+
+private _hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
+private _group = _hideout getVariable ["gangOwner",grpNull];
 
 if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
 if (_group == group player) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
 if ((_hideout getVariable ["inCapture",false])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
+
+private "_action";
+private "_cpRate";
 if (!isNull _group) then {
     _gangName = _group getVariable ["gang_name",""];
     _action = [
@@ -35,14 +39,14 @@ life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
-_title = localize "STR_GNOTF_Capturing";
+private _title = localize "STR_GNOTF_Capturing";
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
-_cP = 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
@@ -76,7 +80,7 @@ if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "ST
 life_action_inUse = false;
 
 titleText[localize "STR_GNOTF_Captured","PLAIN"];
-_flagTexture = [
+private _flagTexture = [
         "\A3\Data_F\Flags\Flag_red_CO.paa",
         "\A3\Data_F\Flags\Flag_green_CO.paa",
         "\A3\Data_F\Flags\Flag_blue_CO.paa",

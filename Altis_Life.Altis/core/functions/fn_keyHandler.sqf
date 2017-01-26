@@ -55,6 +55,16 @@ if (life_container_active) then {
 };
 
 switch (_code) do {
+    // -- Disable commander/tactical view
+    if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
+        private _CommandMode = actionKeys "tacticalView";
+
+        if (_code in _CommandMode) then {
+            hint localize "STR_NOTF_CommanderView";
+            _handled = true;
+        };
+    };
+
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
@@ -134,7 +144,7 @@ switch (_code) do {
     //T Key (Trunk)
     case 20: {
         if (!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
-            if (vehicle player != player && alive vehicle player) then {
+            if (!(isNull objectParent player) && alive vehicle player) then {
                 if ((vehicle player) in life_vehicles) then {
                     [vehicle player] spawn life_fnc_openInventory;
                 };
@@ -151,7 +161,7 @@ switch (_code) do {
                 } else {
                     _list = ["landVehicle","Air","Ship"];
                     if (KINDOF_ARRAY(cursorObject,_list) && {player distance cursorObject < 7} && {isNull objectParent player} && {alive cursorObject} && {!life_action_inUse}) then {
-                        if (cursorObject in life_vehicles) then {
+                        if (cursorObject in life_vehicles || {locked cursorObject isEqualTo 0}) then {
                             [cursorObject] spawn life_fnc_openInventory;
                         };
                     };
@@ -164,7 +174,7 @@ switch (_code) do {
     case 38: {
         //If cop run checks for turning lights on.
         if (_shift && playerSide in [west,independent]) then {
-            if (vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
+            if (!(isNull objectParent player) && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
                 if (!isNil {vehicle player getVariable "lights"}) then {
                     if (playerSide isEqualTo west) then {
                         [vehicle player] call life_fnc_sirenLights;
@@ -215,7 +225,7 @@ switch (_code) do {
     //O Key
     case 24: {
         if (_shift) then {
-            if (soundVolume != 1) then {
+            if !(soundVolume isEqualTo 1) then {
                 1 fadeSound 1;
                 systemChat localize "STR_MISC_soundnormal";
             } else {
@@ -242,11 +252,11 @@ switch (_code) do {
 
                     if (_locked isEqualTo 0) then {
                         _veh setVariable [format ["bis_disabled_Door_%1",_door],1,true];
-                        _veh animate [format ["door_%1_rot",_door],0];
+                        _veh animateSource [format ["Door_%1_source", _door], 0];
                         systemChat localize "STR_House_Door_Lock";
                     } else {
                         _veh setVariable [format ["bis_disabled_Door_%1",_door],0,true];
-                        _veh animate [format ["door_%1_rot",_door],1];
+                        _veh animateSource [format ["Door_%1_source", _door], 1];
                         systemChat localize "STR_House_Door_Unlock";
                     };
                 };

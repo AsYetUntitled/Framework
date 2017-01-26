@@ -13,9 +13,11 @@ params [
     "_mode"
 ];
 
-_altisArray = [16019.5,16952.9,0];
-_tanoaArray = [11074.2,11501.5,0.00137329];
-private _pos = ALTIS_TANOA(_altisArray,_tanoaArray);
+private _altisArray = [16019.5,16952.9,0];
+private _tanoaArray = [11074.2,11501.5,0.00137329];
+
+private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
+
 private _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 
 if (!isPiPEnabled) exitWith {hint localize "STR_Cop_EnablePiP";};

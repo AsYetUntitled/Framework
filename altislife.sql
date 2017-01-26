@@ -26,6 +26,7 @@ DROP PROCEDURE IF EXISTS `deleteDeadVehicles`;
 DROP PROCEDURE IF EXISTS `deleteOldHouses`;
 DROP PROCEDURE IF EXISTS `deleteOldGangs`;
 DROP PROCEDURE IF EXISTS `deleteOldContainers`;
+DROP PROCEDURE IF EXISTS `deleteOldWanted`;
 
 DELIMITER $$
 --
@@ -59,6 +60,11 @@ BEGIN
   DELETE FROM `containers` WHERE `owned` = 0;
 END$$
 
+CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldWanted`()
+BEGIN
+  DELETE FROM `wanted` WHERE `active` = 0;
+END$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -68,10 +74,10 @@ DELIMITER ;
 --
 
 CREATE TABLE IF NOT EXISTS `players` (
-  `uid` int(12) NOT NULL AUTO_INCREMENT,
+  `uid` int(6) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `aliases` text NOT NULL,
-  `playerid` varchar(64) NOT NULL,
+  `pid` varchar(17) NOT NULL,
   `cash` int(100) NOT NULL DEFAULT '0',
   `bankacc` int(100) NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
@@ -95,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`uid`),
-  UNIQUE KEY `playerid` (`playerid`),
+  UNIQUE KEY `pid` (`pid`),
   KEY `name` (`name`),
   KEY `blacklist` (`blacklist`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
@@ -107,11 +113,11 @@ CREATE TABLE IF NOT EXISTS `players` (
 --
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
-  `id` int(12) NOT NULL AUTO_INCREMENT,
+  `id` int(6) NOT NULL AUTO_INCREMENT,
   `side` varchar(16) NOT NULL,
   `classname` varchar(64) NOT NULL,
   `type` varchar(16) NOT NULL,
-  `pid` varchar(32) NOT NULL,
+  `pid` varchar(17) NOT NULL,
   `alive` tinyint(1) NOT NULL DEFAULT '1',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   `active` tinyint(1) NOT NULL DEFAULT '0',
@@ -136,8 +142,8 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 --
 
 CREATE TABLE IF NOT EXISTS `houses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` varchar(32) NOT NULL,
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `pid` varchar(17) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `owned` tinyint(1) DEFAULT '0',
   `garage` tinyint(1) NOT NULL DEFAULT '0',
@@ -153,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
 --
 
 CREATE TABLE IF NOT EXISTS `gangs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(6) NOT NULL AUTO_INCREMENT,
   `owner` varchar(32) DEFAULT NULL,
   `name` varchar(32) DEFAULT NULL,
   `members` text,
@@ -173,8 +179,8 @@ CREATE TABLE IF NOT EXISTS `gangs` (
 --
 
 CREATE TABLE IF NOT EXISTS `containers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` varchar(32) NOT NULL,
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `pid` varchar(17) NOT NULL,
   `classname` varchar(32) NOT NULL,
   `pos` varchar(64) DEFAULT NULL,
   `inventory` text NOT NULL,

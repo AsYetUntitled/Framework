@@ -6,10 +6,14 @@
     Description:
     Functionality for filtering clothing types in the menu.
 */
+
 disableSerialization;
-private ["_control","_selection","_list","_filter","_pic","_details"];
-_control = _this select 0;
-_selection = _this select 1;
+
+params [
+    "", //Control
+    ["_selection", 0, [0]]
+];
+
 life_clothing_filter = _selection;
 
 switch (_selection) do {
@@ -40,11 +44,10 @@ switch (_selection) do {
 
 if (isNull (findDisplay 3100)) exitWith {};
 
-_list = CONTROL(3100,3101);
-lbClear _filter;
+private _list = CONTROL(3100,3101);
 lbClear _list;
 
-_array = switch (_selection) do {
+private _configArray = switch (_selection) do {
     case 0: {M_CONFIG(getArray,"Clothing",life_clothing_store,"uniforms");};
     case 1: {M_CONFIG(getArray,"Clothing",life_clothing_store,"headgear");};
     case 2: {M_CONFIG(getArray,"Clothing",life_clothing_store,"goggles");};
@@ -52,44 +55,23 @@ _array = switch (_selection) do {
     case 4: {M_CONFIG(getArray,"Clothing",life_clothing_store,"backpacks");};
 };
 
-{
-    _className = (_x select 0);
-    _displayName = (_x select 1);
-    _price = (_x select 2);
-    _levelAssert = (_x select 3);
-    _levelName = (_levelAssert select 0);
-    _levelType = (_levelAssert select 1);
-    _levelValue = (_levelAssert select 2);
+private "_pic";
+private "_details";
 
-    if (!(_className isEqualTo "NONE")) then {
+{
+    _x params [
+        ["_className", "NONE", [""]],
+        ["_displayName", "", [""]],
+        ["_price", 1000, [0]]
+    ];
+
+    if !(_className isEqualTo "NONE") then {
         _details = [_className] call life_fnc_fetchCfgDetails;
         _pic = (_details select 2);
     };
 
-    if (!(_levelValue isEqualTo -1)) then {
-        _level = missionNamespace getVariable _levelName;
-        if (_level isEqualType {}) then {_level = FETCH_CONST(_level);};
+    if ([_x] call life_fnc_levelCheck) then {
 
-
-        _bool = switch (_levelType) do {
-            case "SCALAR": {_level >= _levelValue};
-            case "BOOL": {_level};
-            case "EQUAL": {_level isEqualTo _levelValue};
-            default {false};
-        };
-
-        if (_bool && {!isNil "_details"}) then {
-            if (_displayName isEqualTo "") then {
-                _list lbAdd (_details select 1);
-            } else {
-                _list lbAdd _displayName;
-            };
-
-            _list lbSetData [(lbSize _list)-1,_className];
-            _list lbSetValue [(lbSize _list)-1,_price];
-            _list lbSetPicture [(lbSize _list)-1,_pic];
-        };
-    } else {
         if (isNil "_details") then {
             _list lbAdd _displayName;
             _list lbSetData [(lbSize _list)-1,_className];
@@ -105,4 +87,7 @@ _array = switch (_selection) do {
             _list lbSetPicture [(lbSize _list)-1,_pic];
         };
     };
-} forEach _array;
+    
+    true
+
+} count _configArray;

@@ -22,11 +22,11 @@ if (isNull _ownerID) exitWith {};
 
 _query = switch (_side) do {
     // West - 11 entries returned
-    case west: {format ["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE playerid='%1'",_uid];};
+    case west: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
     // Civilian - 12 entries returned
-    case civilian: {format ["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE playerid='%1'",_uid];};
+    case civilian: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
     // Independent - 10 entries returned
-    case independent: {format ["SELECT playerid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE playerid='%1'",_uid];};
+    case independent: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
 };
 
 
@@ -78,7 +78,7 @@ switch (_side) do {
         _new = [(_queryResult select 11)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -107,7 +107,7 @@ switch (_side) do {
         _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -135,7 +135,7 @@ switch (_side) do {
         _new = [(_queryResult select 10)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -154,6 +154,6 @@ life_keyreceivedvar = [];
 [_uid,_side] remoteExecCall ["TON_fnc_recupKeyForHC",RSERV];
 waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
-_queryResult set[15,_keyArr];
+_queryResult pushBack _keyArr;
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];
