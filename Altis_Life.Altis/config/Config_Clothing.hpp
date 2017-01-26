@@ -25,9 +25,9 @@ class Clothing {
             { "U_C_Poloshirt_redwhite", "", 150, "" },
             { "U_C_Poloshirt_salmon", "", 175, "" },
             { "U_C_Poloshirt_blue", "", 250, "" },
-            { "U_C_Poor_2", "", 250, "" },
             { "U_C_Poloshirt_burgundy", "", 275, "" },
             { "U_C_Poloshirt_tricolour", "", 350, "" },
+            { "U_C_Poor_2", "", 250, "" },
             { "U_IG_Guerilla2_2", "", 650, "" },
             { "U_IG_Guerilla3_1", "", 735, "" },
             { "U_OrestesBody", "", 1100, "" },
@@ -35,15 +35,15 @@ class Clothing {
             { "U_C_HunterBody_grn", "", 1500, "" },
             { "U_C_WorkerCoveralls", "", 2500, "" },
             { "U_NikosAgedBody", $STR_C_Civ_Niko, 5000, "" },
-            { "U_C_Man_casual_1_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_2_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_3_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_4_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_5_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
-            { "U_C_Man_casual_6_F", $STR_C_Civ_Niko, 5000, "" }, //Apex DLC
-            { "U_C_man_sport_1_F", $STR_C_Civ_Sport, 5000, "" }, //Apex DLC
-            { "U_C_man_sport_2_F", $STR_C_Civ_Sport, 5000, "" }, //Apex DLC
-            { "U_C_man_sport_3_F", $STR_C_Civ_Sport, 5000, "" } //Apex DLC
+            { "U_C_Man_casual_1_F",  "", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_2_F",  "", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_3_F",  "", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_4_F",  "", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_5_F",  "", 5000, "" }, //Apex DLC
+            { "U_C_Man_casual_6_F",  "", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_1_F", "", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_2_F", "", 5000, "" }, //Apex DLC
+            { "U_C_man_sport_3_F", "", 5000, "" } //Apex DLC
         };
         headgear[] = {
             { "NONE", $STR_C_Remove_headgear, 0, "" },
