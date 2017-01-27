@@ -40,7 +40,7 @@ class WeaponShops {
             { "9Rnd_45ACP_Mag", "", 200, 100, "" },
             { "30Rnd_9x21_Mag", "", 250, 100, "" },
             { "30Rnd_9x21_Mag_SMG_02", "", 250, 100, "" }, //Apex DLC
-            { "10Rnd_9x21_Mag", "", 250, 100, "" } //Apex DLC - Had to guess this. Not referenced anywhere
+            { "10Rnd_9x21_Mag", "", 250, 100, "" } //Apex DLC
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 2500, 100, "" }
