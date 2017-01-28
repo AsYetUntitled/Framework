@@ -117,15 +117,15 @@ class Clothing {
             { "B_Bergen_mcamo", "", 6500, "" },
             { "B_Bergen_rgr", "", 6500, "" },
             { "B_Bergen_blk", "", 6500, "" },
-            { "B_Bergen_dgtl_f", "", 6500, "" }, //Apex DLC
-            { "B_Bergen_tna_f", "", 6500, "" }, //Apex DLC
             { "B_Carryall_ocamo", "", 7500, "" },
             { "B_Carryall_oucamo", "", 7500, "" },
             { "B_Carryall_mcamo", "", 7500, "" },
             { "B_Carryall_oli", "", 7500, "" },
             { "B_Carryall_khk", "", 7500, "" },
             { "B_Carryall_cbr", "", 7500, "" },
-            { "B_Carryall_ghex_f", "", 7500, "" } //Apex DLC
+            { "B_Carryall_ghex_f", "", 7500, "" }, //Apex DLC
+            { "B_Bergen_dgtl_f", "", 9500, "" }, //Apex DLC
+            { "B_Bergen_tna_f", "", 9500, "" } //Apex DLC
         };
     };
 
@@ -145,7 +145,10 @@ class Clothing {
             { "H_Cap_police", "", 25, "" },
             { "H_Beret_blk_POLICE", "", 50, "call life_coplevel >= 2" },
             { "H_HelmetB_plain_mcamo", "", 75, "call life_coplevel >= 1" },
+            { "H_HelmetB_Enh_tna_F", "", 80, "call life_coplevel >= 1" }, //Apex DLC
             { "H_MilCap_mcamo", "", 100, "call life_coplevel >= 2" },
+            { "H_MilCap_gen_F", "", 1200, "call life_coplevel >= 2" }, //Apex DLC
+            { "H_MilCap_tna_F", "", 1200, "call life_coplevel >= 2" }, //Apex DLC
             { "H_Booniehat_mcamo", "", 120, "call life_coplevel >= 1" }
         };
         goggles[] = {
@@ -168,8 +171,8 @@ class Clothing {
             { "NONE", $STR_C_Remove_vests, 0, "" },
             { "V_Rangemaster_belt", "", 800, "" },
             { "V_TacVest_blk_POLICE", "", 1000, "call life_coplevel >= 1" },
-            { "V_PlateCarrier2_rgr", "", 1500, "call life_coplevel >= 2" },
-            { "V_TacChestrig_grn_F", "", 1500, "call life_coplevel >= 2" } //Apex DLC
+            { "V_TacVest_gen_F", "", 1000, "call life_coplevel >= 1" }, //Apex DLC
+            { "V_PlateCarrier2_rgr", "", 1500, "call life_coplevel >= 2" }
         };
         backpacks[] = {
             { "NONE", $STR_C_Remove_backpacks, 0, "" },
@@ -302,10 +305,7 @@ class Clothing {
             { "H_ShemagOpen_tan", "", 850, "" },
             { "H_Shemag_olive", "", 850, "" },
             { "H_MilCap_oucamo", "", 1200, "" },
-            { "H_MilCap_gen_F", "", 1200, "" }, //Apex DLC
-            { "H_MilCap_tna_F", "", 1200, "" }, //Apex DLC
-            { "H_HelmetO_ocamo", "", 2500, "" },
-            { "H_HelmetB_Enh_tna_F", "", 8000, "" } //Apex DLC
+            { "H_HelmetO_ocamo", "", 2500, "" }
         };
         goggles[] = {
             { "NONE", $STR_C_Remove_goggles, 0, "" },
@@ -336,7 +336,7 @@ class Clothing {
             { "V_BandollierB_cbr", "", 4500, "" },
             { "V_HarnessO_brn", "", 7500, "" },
             { "V_TacVest_khk", "", 12500, "" },
-            { "V_TacVest_gen_F", "", 14500, "" } //Apex DLC
+            { "V_TacChestrig_grn_F", "", 17500, "" } //Apex DLC
         };
         backpacks[] = {
             { "NONE", $STR_C_Remove_backpacks, 0, "" },

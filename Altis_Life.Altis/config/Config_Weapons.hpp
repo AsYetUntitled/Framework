@@ -27,12 +27,11 @@ class WeaponShops {
         conditions = "license_civ_gun";
         items[] = {
             { "hgun_Rook40_F", "", 6500, 500, "" },
+            { "hgun_Pistol_01_F", "", 7000, 550, "" }, //Apex DLC
             { "hgun_Pistol_heavy_02_F", "", 9850, -1, "" },
             { "hgun_ACPC2_F", "", 11500, -1, "" },
-            { "hgun_PDW2000_F", "", 20000, -1, "" },
-            { "hgun_P07_khk_F", "", 21000, -1, "" }, //Apex DLC
-            { "hgun_Pistol_01_F", "", 20000, -1, "" }, //Apex DLC
-            { "SMG_05_F", "", 180000, -1, "" } //Apex DLC
+            { "SMG_05_F", "", 18000, -1, "" }, //Apex DLC
+            { "hgun_PDW2000_F", "", 20000, -1, "" }
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 125, 100, "" },
@@ -158,6 +157,7 @@ class WeaponShops {
             { "hgun_P07_snds_F", $STR_W_items_StunPistol, 2000, 650, "" },
             { "arifle_sdar_F", $STR_W_items_TaserRifle, 20000, 7500, "" },
             { "hgun_P07_F", "", 7500, 1500, "" },
+            { "hgun_P07_khk_F", "", 7500, 1500, "" }, //Apex DLC
             { "SMG_02_ACO_F", "", 30000, -1, "call life_coplevel >= 2" },
             { "arifle_MX_F", "", 35000, 7500, "call life_coplevel >= 2" },
             { "hgun_ACPC2_F", "", 17500, -1, "call life_coplevel >= 3" },
