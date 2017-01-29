@@ -28,7 +28,7 @@ _arr params [
     ["_obj", objNull, [objNull]],
     ["_time", 60, [60]],
     ["_type", "Mil_dot", ["Mil_dot"]],
-    ["_txt", "ROBBERY IN PROGRESS", ["ROBBERY IN PROGRESS"]],
+    ["_txt", localize "STR_NOTF_RobInProgress", [localize "STR_NOTF_RobInProgress"]],
     ["_color", "ColorRed", ["ColorRed"]]
 ];
 
