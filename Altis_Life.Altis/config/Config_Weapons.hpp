@@ -158,6 +158,7 @@ class WeaponShops {
             { "arifle_sdar_F", $STR_W_items_TaserRifle, 20000, 7500, "" },
             { "hgun_P07_F", "", 7500, 1500, "" },
             { "hgun_P07_khk_F", "", 7500, 1500, "" }, //Apex DLC
+            { "hgun_Pistol_heavy_01_F", "", 9500, 2500, "call life_coplevel >= 1" },
             { "SMG_02_ACO_F", "", 30000, -1, "call life_coplevel >= 2" },
             { "arifle_MX_F", "", 35000, 7500, "call life_coplevel >= 2" },
             { "hgun_ACPC2_F", "", 17500, -1, "call life_coplevel >= 3" },
