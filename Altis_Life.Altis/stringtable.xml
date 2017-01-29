@@ -4542,6 +4542,17 @@
             <Russian>грабеж продолжается</Russian>
             <German>Raub im Gange</German>
         </Key>
+        <Key ID="STR_NOTF_HouseRobInProgress">
+            <Original>HOUSE ROBBERY IN PROGRESS</Original>
+            <Czech>Dům loupež Probíhá</Czech>
+            <French>Vol à main en cours</French>
+            <Spanish>Robo de casa en curso</Spanish>
+            <Italian>casa rapina in corso</Italian>
+            <Polish>dom napad w toku</Polish>
+            <Portuguese>Roubo de casa em andamento</Portuguese>
+            <Russian>дом грабеж продолжается</Russian>
+            <German>Haus Raub in Arbeit</German>
+        </Key>        
     </Package>
     <Package name="News_Strings">
         <Key ID="STR_News_AddAction">
