@@ -4531,6 +4531,17 @@
             <Russian>Захват шайка укрытие</Russian>
             <German>Gangversteck einnehmen</German>
         </Key>
+        <Key ID="STR_NOTF_RobInProgress">
+            <Original>ROBBERY IN PROGRESS</Original>
+            <Czech>krádež Probíhá</Czech>
+            <French>Vol qualifié en cours</French>
+            <Spanish>Robo en progreso</Spanish>
+            <Italian>rapina in corso</Italian>
+            <Polish>napad w toku</Polish>
+            <Portuguese>Roubo em andamento</Portuguese>
+            <Russian>грабеж продолжается</Russian>
+            <German>Raub im Gange</German>
+        </Key>
     </Package>
     <Package name="News_Strings">
         <Key ID="STR_News_AddAction">
