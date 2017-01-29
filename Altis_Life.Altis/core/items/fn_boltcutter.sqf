@@ -18,10 +18,10 @@ private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_t
 
 if (isNull _building) exitWith {};
 if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
-if (((nearestObject [_pos, "Land_Dome_Big_F"]) == _building || (nearestObject [_pos, _vaultHouse]) == _building) && (west countSide playableUnits < (LIFE_SETTINGS(getNumber, "minimum_cops")))) exitWith {
+if (((nearestObject [_pos, "Land_Dome_Big_F"]) isEqualTo _building || (nearestObject [_pos, _vaultHouse]) isEqualTo _building) && (west countSide playableUnits < (LIFE_SETTINGS(getNumber, "minimum_cops")))) exitWith {
     hint format [localize "STR_Civ_NotEnoughCops", (LIFE_SETTINGS(getNumber, "minimum_cops"))];
 };
-if ((typeOf _building) == _vaultHouse && (nearestObject [_pos, "Land_Dome_Big_F"]) getVariable ["locked", true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
+if ((typeOf _building) isEqualTo _vaultHouse && (nearestObject [_pos, "Land_Dome_Big_F"]) getVariable ["locked", true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
 if (isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 
 _doors = FETCH_CONFIG2(getNumber, "CfgVehicles", (typeOf _building), "numberOfDoors");
@@ -35,15 +35,15 @@ for "_i" from 1 to _doors do {
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 if ((_building getVariable [format ["bis_disabled_Door_%1", _door], 0]) isEqualTo 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
-if ((nearestObject [_pos, "Land_Dome_Big_F"]) == _building || (nearestObject [_pos, _vaultHouse]) == _building) then {
+if ((nearestObject [_pos, "Land_Dome_Big_F"]) isEqualTo _building || (nearestObject [_pos, _vaultHouse]) == _building) then {
     [[1, 2], "STR_ISTR_Bolt_AlertFed", true, []] remoteExecCall ["life_fnc_broadcast", RCLIENT];
 } else {
     [0, "STR_ISTR_Bolt_AlertHouse", true, [profileName]] remoteExecCall ["life_fnc_broadcast", RCLIENT];
 };
 
 private _ownerUid = (_building getVariable ["house_owner", ["", ""]]) select 0;
-if (_ownerUid != "") then {_home = true};
-if (_home && (!([_ownerUid] call life_fnc_isUIDActive))) exitWith {hint localize "STR_ISTR_Bolt_Offline"};
+if !(_ownerUid isEqualTo "") then {_home = true};
+if (_home && !([_ownerUid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_ISTR_Bolt_Offline"};
 private _copsNeeded = LIFE_SETTINGS(getNumber, "copsHouseRaid");
 if (({side _x isEqualTo west} count playableUnits < _copsNeeded) && _home) exitWith {hint format [localize "STR_Civ_NotEnoughCops", _copsNeeded]};
 
@@ -56,7 +56,7 @@ if (_home) then {
         if (_uid isEqualTo (getPlayerUID _x)) then {_ownerName = name _x};
     } forEach playableUnits;
     if (count _unitsToNotify isEqualTo 0) exitWith {};
-    [1, [_building, 60, "Mil_dot", "HOUSE ROBBERY IN PROGRESS"]] remoteExec ["life_fnc_markers", _unitsToNotify];
+    [1, [_building, 60, "Mil_dot", localize "STR_NOTF_HouseRobInProgress"]] remoteExec ["life_fnc_markers", _unitsToNotify];
     [1, format [localize "STR_ISTR_Bolt_Notify", _ownerName]] remoteExec ["life_fnc_broadcast", _unitsToNotify];
 };
 
@@ -79,7 +79,7 @@ switch (typeOf _building) do {
 };
 
 for "_i" from 0 to 1 step 0 do {
-    if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+    if !(animationState player isEqualTo "AinvPknlMstpSnonWnonDnon_medic_1") then {
         [player, "AinvPknlMstpSnonWnonDnon_medic_1", true] remoteExecCall ["life_fnc_animSync", RCLIENT];
         player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
         player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
