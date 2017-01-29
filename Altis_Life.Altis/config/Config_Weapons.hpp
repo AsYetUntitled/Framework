@@ -175,11 +175,11 @@ class WeaponShops {
         };
         accs[] = {
             { "muzzle_snds_L", "", 650, 325, "" },
+            { "optic_MRD", "", 2750, 1375, "call life_coplevel >= 1" },
             { "acc_flashlight", "", 750, 375, "call life_coplevel >= 2" },
             { "optic_Holosight", "", 1200, 600, "call life_coplevel >= 2" },
             { "optic_Arco", "", 2500, 1250, "call life_coplevel >= 2" },
-            { "muzzle_snds_H", "", 2750, 1375, "call life_coplevel >= 2" },
-            { "optic_MRD", "", 2750, 1375, "call life_coplevel >= 2" }
+            { "muzzle_snds_H", "", 2750, 1375, "call life_coplevel >= 2" }
         };
     };
 
