@@ -168,7 +168,8 @@ class WeaponShops {
         mags[] = {
             { "16Rnd_9x21_Mag", "", 125, 60, "" },
             { "20Rnd_556x45_UW_mag", $STR_W_mags_TaserRifle, 125, 60, "" },
-            { "30Rnd_65x39_caseless_mag", "", 130, 65, "" },
+            { "11Rnd_45ACP_Mag", "", 130, 65, "call life_coplevel >= 1" },
+            { "30Rnd_65x39_caseless_mag", "", 130, 65, "call life_coplevel >= 2" },
             { "30Rnd_9x21_Mag", "", 250, 125, "call life_coplevel >= 2" },
             { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" },
             { "20Rnd_650x39_Cased_Mag_F", "", 200, 100, "call life_coplevel >= 3" } //Apex DLC
