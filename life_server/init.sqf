@@ -42,20 +42,20 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
     uiNamespace setVariable ["life_sql_id",life_sql_id];
         try {
         _result = EXTDB format ["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
-        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
+        if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
+        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL:%1:TEXT2",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+        if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
     } catch {
         diag_log _exception;
         _extDBNotLoaded = [true, _exception];
     };
     if (_extDBNotLoaded isEqualType []) exitWith {};
     EXTDB "9:LOCK";
-    diag_log "extDB2: Connected to Database";
+    diag_log "extDB3: Connected to Database";
 } else {
     life_sql_id = uiNamespace getVariable "life_sql_id";
     CONSTVAR(life_sql_id);
-    diag_log "extDB2: Still Connected to Database";
+    diag_log "extDB3: Still Connected to Database";
 };
 
 

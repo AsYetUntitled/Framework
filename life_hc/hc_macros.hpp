@@ -34,8 +34,8 @@
 //Condition Macros
 #define CONFIG_BOOL(NUMBER) [##NUMBER] call { _ret = false; if ((_this select 0) in [0,1] && (_this select 0) isEqualTo 1) then { _ret = true; }; _ret;}
 
-// extDB2 Macros
-#define EXTDB "extDB2" callExtension
+// extDB3 Macros
+#define EXTDB "extDB3" callExtension
 #define EXTDB_SETTING(TYPE,SETTING) TYPE(missionConfigFile >> "CfgServer" >> SETTING)
 #define EXTDB_FAILED(MESSAGE) \
     life_HC_server_extDB_notLoaded = [true,##MESSAGE]; \
