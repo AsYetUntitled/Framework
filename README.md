@@ -8,7 +8,4 @@ Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attributio
        <a href="https://discord.gg/Cd3Zs">
         <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/yfAMTFp">
     </a>
-         <a href="https://trello.com/b/LO0Tivht">
-        <img src="https://img.shields.io/badge/Trello-%E2%86%92-blue.svg" alt="https://trello.com/b/LO0Tivht">
-    </a>
 </p>
