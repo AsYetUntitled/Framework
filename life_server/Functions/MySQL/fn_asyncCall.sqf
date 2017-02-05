@@ -16,19 +16,19 @@ _queryStmt = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,1,[0]] call BIS_fnc_param;
 _multiarr = [_this,2,false,[false]] call BIS_fnc_param;
 
-_key = EXTDB formatText ["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStmt];
+_key = EXTDB str formatText ["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStmt];
 
 if (_mode isEqualTo 1) exitWith {true};
 
 _key = call compile formatText ["%1",_key];
 _key = (_key select 1);
-_queryResult = EXTDB formatText ["4:%1", _key];
+_queryResult = EXTDB str formatText ["4:%1", _key];
 
 //Make sure the data is received
 if (_queryResult isEqualTo "[3]") then {
     for "_i" from 0 to 1 step 0 do {
         if (!(_queryResult isEqualTo "[3]")) exitWith {};
-        _queryResult = EXTDB formatText ["4:%1", _key];
+        _queryResult = EXTDB str formatText ["4:%1", _key];
     };
 };
 
@@ -37,7 +37,7 @@ if (_queryResult isEqualTo "[5]") then {
     for "_i" from 0 to 1 step 0 do { // extDB3 returned that result is Multi-Part Message
         _queryResult = "";
         for "_i" from 0 to 1 step 0 do {
-            _pipe = EXTDB formatText ["5:%1", _key];
+            _pipe = EXTDB str formatText ["5:%1", _key];
             if (_pipe isEqualTo "") exitWith {_loop = false};
             _queryResult = _queryResult + _pipe;
         };
