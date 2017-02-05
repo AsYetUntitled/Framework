@@ -20,7 +20,7 @@ _key = EXTDB str formatText ["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStm
 
 if (_mode isEqualTo 1) exitWith {true};
 
-_key = call compile formatText ["%1",_key];
+_key = call compile str formatText ["%1",_key];
 _key = (_key select 1);
 _queryResult = EXTDB str formatText ["4:%1", _key];
 
