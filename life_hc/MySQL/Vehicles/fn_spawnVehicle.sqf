@@ -28,7 +28,7 @@ private _side = side _unit;
 
 //_unit = owner _unit;
 
-if (_vid isEqualTo -1 || _pid isEqualTo "") exitWith {};
+if (_vid isEqualTo -1 || {_pid isEqualTo ""}) exitWith {};
 if (_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 private _servIndex = serv_sv_use find _vid;
@@ -141,7 +141,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
         _query = format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
-        _thread = [_query,1] call HC_fnc_asyncCall; 
+        [_query,1] call HC_fnc_asyncCall; 
     };   
 } else {
     _vehicle setVariable ["Trunk",[[],0],true];
@@ -149,7 +149,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel (_vInfo select 11);
-    }else{
+    } else {
     _vehicle setFuel 1;
 };
 
