@@ -560,7 +560,7 @@
         <Key ID="STR_Admin_CannotTpHere">
             <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
-            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule.</French>
+            <French>Vous ne pouvez pas TP le joueur ici, car il est actuellement dans un vehicule.</French>
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
@@ -586,7 +586,7 @@
             <Italian>Comp</Italian>
             <Russian></Russian>
             <German>Entschädigen</German>
-            <French>Comp</French>
+            <French>Compenser</French>
             <Portuguese>Compensar</Portuguese>
             <Polish>Comp</Polish>
         </Key>
@@ -709,7 +709,7 @@
             <Italian>Si prega di inserire l'importo da rimborsare.</Italian>
             <Russian></Russian>
             <German>Bitte Entschädigungsbetrag eingeben.</German>
-            <French>S'il vous plaît entrez la quantité pour compenser.</French>
+            <French>S'il vous plaît entrez le montant pour compenser.</French>
             <Portuguese>Por favor, insira a quantidade para compensar.</Portuguese>
             <Polish>Wprowadź kwotę rekompensaty</Polish>
         </Key>
@@ -782,7 +782,7 @@
         <Key ID="STR_ANOTF_godModeOn">
             <Original>God mode enabled</Original>
             <Czech>nesmrtelnost povolen</Czech>
-            <French>Dieu activé</French>
+            <French>Mode Dieu activé</French>
             <Spanish>Modo Dios habilitado</Spanish>
             <Italian>Godmode abilitata</Italian>
             <Polish>God mode włączony</Polish>
@@ -793,7 +793,7 @@
         <Key ID="STR_ANOTF_godModeOff">
             <Original>God mode disabled</Original>
             <Czech>nesmrtelnost zakázán</Czech>
-            <French>Dieu désactivé</French>
+            <French>Mode Dieu désactivé</French>
             <Spanish>Modo Dios deshabilitado</Spanish>
             <Italian>Godmode disabilitata</Italian>
             <Polish>God mode wyłączony</Polish>
@@ -996,7 +996,7 @@
             <Spanish>No escribistes un valor numérico.</Spanish>
             <Russian></Russian>
             <German>Die eingegebene Zahl ist keine richtige Zahl.</German>
-            <French>Vous devez entrer un nombre.</French>
+            <French>La valeur entrée n'est pas un nombre.</French>
             <Italian>Il valore inserito non è numerico.</Italian>
             <Portuguese>O valor digitado não é um número.</Portuguese>
             <Polish>Wprwadzona wartość nie jest liczbą</Polish>
@@ -1062,7 +1062,7 @@
             <Spanish>No tienes el dinero suficiente, para transferir $%1 necesitaras $%2 para pagar como cuota.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto, es kostet $%2 um $%1 zu überweisen.</German>
-            <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes.</French>
+            <French>Vous n'avez pas assez d'argent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes.</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire €%1 necessiti di €%2 per pagare la tassa di trasferimento.</Italian>
             <Portuguese>Você não tem dinheiro suficiente na sua conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
             <Polish>Nie masz wystarczająco dużo środków na końcie, do przelewu $%1 będziesz potrzebował jeszcze $%2 na opłatę</Polish>
@@ -1150,7 +1150,7 @@
             <Spanish>No tienes tanto dinero contigo.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viel Geld bei dir.</German>
-            <French>Vous n'avez pas autant d'agent sur vous.</French>
+            <French>Vous n'avez pas autant d'argent sur vous.</French>
             <Italian>Non hai abbastanza denaro con te.</Italian>
             <Portuguese>Você não tem todo esse dinheiro.</Portuguese>
             <Polish>Nie masz przy sobie tyle pieniędzy</Polish>
@@ -1286,7 +1286,7 @@
             <Spanish>You must enter a message to send!</Spanish>
             <Russian>You must enter a message to send!</Russian>
             <German>Du musst eine Nachricht eingeben!</German>
-            <French>You must enter a message to send!</French>
+            <French>Vous devez entrer un message à envoyer!</French>
             <Italian>You must enter a message to send!</Italian>
             <Portuguese>You must enter a message to send!</Portuguese>
             <Polish>You must enter a message to send!</Polish>
@@ -1297,7 +1297,7 @@
             <Spanish>Your message cannot exceed 400 characters!</Spanish>
             <Russian>Your message cannot exceed 400 characters!</Russian>
             <German>Deine Nachricht darf maximal 400 Zeichen enthalten!!</German>
-            <French>Your message cannot exceed 400 characters!</French>
+            <French>Votre message ne peut pas excéder 400 caractères!</French>
             <Italian>Your message cannot exceed 400 characters!</Italian>
             <Portuguese>Your message cannot exceed 400 characters!</Portuguese>
             <Polish>Your message cannot exceed 400 characters!</Polish>
@@ -1308,7 +1308,7 @@
             <Spanish>You must select a player you are sending the text to!</Spanish>
             <Russian>You must select a player you are sending the text to!</Russian>
             <German>Du musst einen Spieler auswählen!</German>
-            <French>You must select a player you are sending the text to!</French>
+            <French>Vous devez sélectionner un joueur auquel vous envoyez le message!</French>
             <Italian>You must select a player you are sending the text to!</Italian>
             <Portuguese>You must select a player you are sending the text to!</Portuguese>
             <Polish>You must select a player you are sending the text to!</Polish>
@@ -1319,7 +1319,7 @@
             <Spanish>You have sent a message to all EMS Units.</Spanish>
             <Russian>You have sent a message to all EMS Units.</Russian>
             <German>Du hast eine Nachricht an alle Sanitäter gesendet.</German>
-            <French>You have sent a message to all EMS Units.</French>
+            <French>Vous avez envoyé un message à tous les EMS.</French>
             <Italian>You have sent a message to all EMS Units.</Italian>
             <Portuguese>You have sent a message to all EMS Units.</Portuguese>
             <Polish>You have sent a message to all EMS Units.</Polish>
@@ -1341,7 +1341,7 @@
             <Spanish>You are not an admin!</Spanish>
             <Russian>You are not an admin!</Russian>
             <German>Du bist kein Admin!</German>
-            <French>You are not an admin!</French>
+            <French>Vous n'êtes pas Admin!</French>
             <Italian>You are not an admin!</Italian>
             <Portuguese>You are not an admin!</Portuguese>
             <Polish>You are not an admin!</Polish>
@@ -1376,7 +1376,7 @@
             <Spanish>Desguazadero</Spanish>
             <Russian></Russian>
             <German>Schrotthändler</German>
-            <French>Concessionnaire de véhicules volés</French>
+            <French>Receleur de véhicules volés</French>
             <Italian>Ricettatore</Italian>
             <Portuguese>Desmanche</Portuguese>
             <Polish>Dziupla</Polish>
@@ -1842,7 +1842,7 @@
             <Spanish>You have quit the gang.</Spanish>
             <Russian>You have quit the gang.</Russian>
             <German>Du hast die Gang verlassen.</German>
-            <French>You have quit the gang.</French>
+            <French>Vous avez quitté le gang.</French>
             <Italian>You have quit the gang.</Italian>
             <Portuguese>You have quit the gang.</Portuguese>
             <Polish>You have quit the gang.</Polish>
@@ -1919,7 +1919,7 @@
             <Spanish>Límite Corriente: %1</Spanish>
             <Russian></Russian>
             <German>Aktuelles Maximum: %1</German>
-            <French>Max actuelle: %1</French>
+            <French>Max actuel: %1</French>
             <Italian>Attuali Max: %1</Italian>
             <Portuguese>Número máximo atual: %1</Portuguese>
             <Polish>Aktualnie Max: %1</Polish>
@@ -2059,7 +2059,7 @@
         <Key ID="STR_GNOTF_KickOutGang">
             <Original>You have been kicked out of the gang.</Original>
             <Czech>You have been kicked out of the gang.</Czech>
-            <French>You have been kicked out of the gang.</French>
+            <French>Vous avez été éjecté du gang.</French>
             <Spanish>You have been kicked out of the gang.</Spanish>
             <Italian>You have been kicked out of the gang.</Italian>
             <Polish>You have been kicked out of the gang.</Polish>
@@ -2872,7 +2872,7 @@
             <Spanish>Perdonar</Spanish>
             <Russian></Russian>
             <German>Erlassen</German>
-            <French>Excuser</French>
+            <French>Pardonner</French>
             <Italian>Perdona</Italian>
             <Polish>Pardon</Polish>
             <Portuguese>Perdão</Portuguese>
@@ -9893,7 +9893,7 @@
         <Key ID="STR_MAR_Weed_Field">
             <Original>Marijuana Field</Original>
             <Czech>Marihuana Field</Czech>
-            <French>Champ de pavots</French>
+            <French>Champ de Marijuana</French>
             <Spanish>Campo de Marihuana</Spanish>
             <Russian></Russian>
             <German>Marihuana Plantage</German>
@@ -9904,7 +9904,7 @@
         <Key ID="STR_MAR_Weed_Processing">
             <Original>Marijuana Processing</Original>
             <Czech>Zpracování marihuana</Czech>
-            <French>Traitement du pavot</French>
+            <French>Traitement de la Marijuana</French>
             <Spanish>Procesador de Marihuana</Spanish>
             <Russian></Russian>
             <German>Marihuana Verarbeitung</German>
@@ -12035,7 +12035,7 @@
         <Key ID="STR_DL_ML_depositeGang_BEF">
             <Original>deposited $%1 into their gang bank. Gang Bank Balance: $%2  Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>uložen $%1 do svého gangu banky. Gang bankovní konto: $%2 bankovní konto: $%3 po zralé úvaze rukou: $%4</Czech>
-            <French>a déposé $%1 sur compte bancaire du Gang. Solde bancaire du Gang : $%2  Solde bancaire perso : $%3 Argent en poche : $%4</French>
+            <French>a déposé $%1 sur le compte bancaire du Gang. Solde bancaire du Gang : $%2  Solde bancaire perso : $%3 Argent en poche : $%4</French>
             <Spanish>depositó $%1 a la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%2 Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12046,7 +12046,7 @@
         <Key ID="STR_DL_ML_depositeGang">
             <Original>%1 - %2 deposited $%3 into their gang bank. Gang Bank Balance: $%4  Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 uloženy $%3 do jejich gangu banky. Gang bankovní konto: $%4 bankovní konto: $%5 po zralé úvaze rukou: $%6</Czech>
-            <French>%1 - %2 a déposé $%3 sur compte bancaire du Gang. Solde bancaire du Gang : $%4 Solde bancaire perso : $%5 Argent en poche : $%6</French>
+            <French>%1 - %2 a déposé $%3 sur le compte bancaire du Gang. Solde bancaire du Gang : $%4 Solde bancaire perso : $%5 Argent en poche : $%6</French>
             <Spanish>%1 - %2 depositó $%3 a la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%4 Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
