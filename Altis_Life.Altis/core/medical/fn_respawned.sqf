@@ -9,6 +9,7 @@
 private ["_handle"];
 //Reset our weight and other stuff
 
+life_action_inUse = false;
 life_use_atm = true;
 life_hunger = 100;
 life_thirst = 100;
