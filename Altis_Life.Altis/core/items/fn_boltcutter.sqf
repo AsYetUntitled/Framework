@@ -94,17 +94,13 @@ for "_i" from 0 to 1 step 0 do {
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format ["%3 (%1%2)...", round(_cP * 100), "%", _title];
-    if (_cP >= 1 || !alive player) exitWith {};
-    if (life_istazed) exitWith {}; //Tazed
-    if (life_isknocked) exitWith {}; //Knocked
-    if (life_interrupted) exitWith {};
+    if (_cP >= 1 || !alive player || life_istazed || life_isknocked || life_interrupted || (player getVariable ["restrained", false])) exitWith {}; 
 };
 
 //Kill the UI display and check for various states
 "progressBar" cutText ["", "PLAIN"];
 player playActionNow "stop";
-if (!alive player || life_istazed || life_isknocked) exitWith {life_action_inUse = false;};
-if (player getVariable ["restrained", false]) exitWith {life_action_inUse = false;};
+if (!alive player || life_istazed || life_isknocked || (player getVariable ["restrained", false])) exitWith {life_action_inUse = false;};
 if (life_interrupted) exitWith {life_interrupted = false; titleText [localize "STR_NOTF_ActionCancel", "PLAIN"]; life_action_inUse = false;};
 life_boltcutter_uses = life_boltcutter_uses + 1;
 life_action_inUse = false;
