@@ -110,11 +110,10 @@ if (!isNull _killer && {!(_killer isEqualTo _unit)} && {!(side _killer isEqualTo
 life_save_gear = [player] call life_fnc_fetchDeadGear;
 
 if (LIFE_SETTINGS(getNumber,"drop_weapons_onDeath") isEqualTo 0) then {
-    _unit removeWeapon (primaryWeapon _unit); 
-    _unit removeWeapon (handgunWeapon _unit); 
-    _unit removeWeapon (secondaryWeapon _unit); 
+    _unit removeWeapon (primaryWeapon _unit);
+    _unit removeWeapon (handgunWeapon _unit);
+    _unit removeWeapon (secondaryWeapon _unit);
 };
-
 
 //Killed by cop stuff...
 if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
@@ -132,6 +131,7 @@ if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
 
 [_unit] call life_fnc_dropItems;
 
+life_action_inUse = false;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
