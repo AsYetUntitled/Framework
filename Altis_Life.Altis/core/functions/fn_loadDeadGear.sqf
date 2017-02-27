@@ -56,9 +56,21 @@ if (!(_handgun isEqualTo "")) then {[_handgun,true,false,false,false] spawn life
 {[_x,true,false,false,true] call life_fnc_handleItem;} forEach (_uitems);
 {[_x,true,false,false,true] call life_fnc_handleItem;} forEach (_vitems);
 {[_x,true,true,false,false] call life_fnc_handleItem;} forEach (_bitems);
-{[_x,true,false,true,false] call life_fnc_handleItem;} forEach (_primitems);
-{[_x,true,false,true,false] call life_fnc_handleItem;} forEach (_secitems);
-{[_x,true,false,true,false] call life_fnc_handleItem;} forEach (_handgunitems);
+{
+    if (!(_x isEqualTo "")) then {
+        player addPrimaryWeaponItem _x;
+    };
+} forEach (_primItems);
+{
+    if (!(_x isEqualTo "")) then {
+        player addsecondaryWeaponItem _x;
+    };
+} forEach (_secItems);
+{
+    if (!(_x isEqualTo "")) then {
+        player addHandgunItem _x;
+    };
+} forEach (_handgunItems);
 
 if (!(_headgear isEqualTo "")) then {player addHeadGear _headgear};
 if (!(_goggles isEqualTo "")) then {player addGoggles _goggles};
