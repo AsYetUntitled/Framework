@@ -978,6 +978,9 @@
             <Italian>Trasferisci</Italian>
             <Portuguese>Transferir</Portuguese>
             <Polish>Przelew</Polish>
+        <Key ID="STR_ATM_NotInGang">
+        	<Original>You are not in a Gang!</Original>
+        </Key>
         </Key>
         <Key ID="STR_ATM_GreaterThan">
             <Original>You can't deposit more then $999,999 at a time</Original>
