@@ -1189,7 +1189,7 @@
             <German>Jemand versucht bereits Geld auf das Gangkonto einzuzahlen.</German>
         </Key>
         <Key ID="STR_ATM_NotInGang">
-        	<Original>You are not in a Gang!</Original>
+            <Original>You are not in a Gang!</Original>
             <Czech>Nejste v gangu!</Czech>
             <French>Vous n'êtes pas dans une bande!</French>
             <Spanish>¡No estás en una pandilla!</Spanish>
