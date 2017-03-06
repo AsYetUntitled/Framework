@@ -1190,6 +1190,13 @@
         </Key>
         <Key ID="STR_ATM_NotInGang">
         	<Original>You are not in a Gang!</Original>
+            <Czech>Nejste v gangu!</Czech>
+            <French>Vous n'êtes pas dans une bande!</French>
+            <Spanish>¡No estás en una pandilla!</Spanish>
+            <Italian>Non sei in un Gang!</Italian>
+            <Polish>Nie jesteś w gangu!</Polish>
+            <Portuguese>Você não está em uma gangue!</Portuguese>
+            <German>Du bist nicht in einer Gang!</German>
         </Key>
     </Package>
     <Package name="Cell_Phone">
