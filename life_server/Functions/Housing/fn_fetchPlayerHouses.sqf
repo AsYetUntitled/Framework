@@ -79,7 +79,7 @@ _return = [];
     _pos = call compile format ["%1",_x select 1];
     _house = nearestObject [_pos, "House"];
     _house allowDamage false;
-    _return pushBack [_x select 1,_containerss];
+    _return pushBack [_x select 1];
 } forEach _houses;
 
 missionNamespace setVariable [format ["houses_%1",_uid],_return];
