@@ -161,6 +161,8 @@ class CfgRemoteExec {
         F(life_fnc_setFuel,ANYONE)
         F(life_fnc_simDisable,ANYONE)
         F(SPY_fnc_notifyAdmins,ANYONE)
+        F(BIS_fnc_setfog,ANYONE)
+        F(BIS_fnc_setovercast,ANYONE)
     };
 
     class Commands {
