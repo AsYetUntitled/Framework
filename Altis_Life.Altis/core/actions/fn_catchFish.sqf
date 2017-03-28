@@ -40,5 +40,5 @@ if ([true,_type,1] call life_fnc_handleInv) then {
     //--- Delete fish in water
     deleteVehicle _fish;
 
-    titleText[format [(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
+    titleText [format [(localize "STR_NOTF_Fishing"), _fishName], "PLAIN"];
 };
