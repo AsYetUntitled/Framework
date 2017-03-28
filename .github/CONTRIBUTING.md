@@ -30,7 +30,7 @@ Contributing to AsYetUntitled
   * Describe what should have occurred. Provide screenshots or video footage if applicable. 
   * Describe what actually occurred. Provide screenshots or video footage if applicable. 
   * If you can reproduce the behaviour then also provide steps on how to do so. 
-  * If errors or other messages were output to the game's [RPT](https://community.bistudio.com/wiki/Crash_Files) and/or extDB2 log files then paste those messages into your issue. If the errors or other messages are so long that they cover the whole screen then upload the log files to GitHub instead of pasting them into the issue. 
+  * If errors or other messages were output to the game's [RPT](https://community.bistudio.com/wiki/Crash_Files) and/or extDB3 log files then paste those messages into your issue. If the errors or other messages are so long that they cover the whole screen then upload the log files to GitHub instead of pasting them into the issue. 
   * Include the version of Altis Life RPG that you are using. The version information can be found in core/[init.sqf](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/core/init.sqf), briefingName in [mission.sqm](https://github.com/AsYetUntitled/Framework/tree/master/SQMs), or changelog in [briefing.sqf](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/briefing.sqf). 
   * Include the version of *Arma 3* that you are using. You can acquire this info by starting the *Arma 3* launcher, clicking OPTIONS, and then clicking the version information displayed below. This will copy the info to your clipboard which you can then paste at the bottom of your issue. 
 * **...tag your issue with all applicable labels (if you have the permissions to do so).** 

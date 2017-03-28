@@ -1,0 +1,3 @@
+//regex
+1 ""
+5 "" !Box_IND_Grenades_F !B_supplyCrate_F !Land_(ClutterCutter_small|Razorwire)_F !B_RangeMaster_F !C_man_1 !B_Quadbike_01_F ![BOI]_Truck_0[123]_(box|covered|device|fuel|medical|transport)_F !C_Hatchback_01_(sport_)?F ![BC]_(G_)?Offroad_01_(armed_)?F !C_SUV_01_F !C_Van_01_(transport|box|fuel)_F !C_Kart_01_(Blu|Fuel|Red|Vrana)_F ![BCO]_Heli_Light_0[12]_(civil_|stripped_|unarmed_)?F !C_Rubberboat !C_Boat_Civil_01_(police_)?F !B_SDV_01_F ![BO]_MRAP_0[12]_(hmg_)?F !B_(Boat|Heli)_Transport_01_F !B_Boat_Armed_01_minigun_F !C_Offroad_02_unarmed_F !C_Plane_Civil_01_F !C_Boat_Transport_02_F !C_Scooter_Transport_01_F !O_T_LSV_02_unarmed_F !NetworkMessageCreateHelicopterRTD

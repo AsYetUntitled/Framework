@@ -14,7 +14,7 @@ params [
 ];
 
 if (isNull _unit || isNull _from || _val isEqualTo "") exitWith {};
-if (player != _unit) exitWith {};
+if !(player isEqualTo _unit) exitWith {};
 if (!([_val] call TON_fnc_isnumber)) exitWith {};
 if (_unit == _from) exitWith {}; //Bad boy, trying to exploit his way to riches.
 

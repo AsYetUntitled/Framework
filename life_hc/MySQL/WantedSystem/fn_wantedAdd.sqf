@@ -10,7 +10,7 @@
     Description:
     Adds or appends a unit to the wanted list.
 */
-private ["_uid","_type","_index","_data","_crimes","_val","_customBounty","_name","_pastCrimes","_query","_queryResult"];
+private ["_uid","_type","_index","_data","_crime","_val","_customBounty","_name","_pastCrimes","_query","_queryResult"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;
@@ -70,7 +70,7 @@ switch (_type) do
 
 if (_type isEqualTo []) exitWith {}; //Not our information being passed...
 //Is there a custom bounty being sent? Set that as the pricing.
-if (_customBounty != -1) then {_type set[1,_customBounty];};
+if !(_customBounty isEqualTo -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
 _query = format ["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
@@ -78,7 +78,7 @@ _queryResult = [_query,2,true] call HC_fnc_asyncCall;
 _val = [_type select 1] call HC_fnc_numberSafe;
 _number = _type select 0;
 
-if (count _queryResult != 0) then
+if !(count _queryResult isEqualTo 0) then
 {
     _crime = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
     _crimeresult = [_crime,2] call HC_fnc_asyncCall;
@@ -90,8 +90,8 @@ if (count _queryResult != 0) then
     _query = format ["UPDATE wanted SET wantedCrimes = '%1', wantedBounty = wantedBounty + '%2', active = '1' WHERE wantedID='%3'",_pastCrimes,_val,_uid];
     [_query,1] call HC_fnc_asyncCall;
 } else {
-    _crimes = [_type select 0];
-    _crimes = [_crimes] call HC_fnc_mresArray;
-    _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crimes,_val];
+    _crime = [_type select 0];
+    _crime = [_crime] call HC_fnc_mresArray;
+    _query = format ["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1', '%2', '%3', '%4', '1')",_uid,_name,_crime,_val];
     [_query,1] call HC_fnc_asyncCall;
 };

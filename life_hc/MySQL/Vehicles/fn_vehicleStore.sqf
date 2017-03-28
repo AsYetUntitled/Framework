@@ -68,7 +68,7 @@ if (_vInfo isEqualTo []) exitWith {
     _ownerID publicVariableClient "life_garage_store";
 };
 
-if (_uid != getPlayerUID _unit) exitWith {
+if !(_uid isEqualTo getPlayerUID _unit) exitWith {
     [1,"STR_Garage_Store_NoOwnership",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_garage_store = false;
     _ownerID publicVariableClient "life_garage_store";

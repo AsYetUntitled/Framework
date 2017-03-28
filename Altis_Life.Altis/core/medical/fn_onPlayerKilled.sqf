@@ -80,7 +80,7 @@ _unit spawn {
 };
 
 //Make the killer wanted
-if (!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _killer}) then {
+if (!isNull _killer && {!(_killer isEqualTo _unit)} && {!(side _killer isEqualTo west)} && {alive _killer}) then {
     if (vehicle _killer isKindOf "LandVehicle") then {
 
         if (life_HC_isActive) then {
@@ -110,14 +110,13 @@ if (!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _k
 life_save_gear = [player] call life_fnc_fetchDeadGear;
 
 if (LIFE_SETTINGS(getNumber,"drop_weapons_onDeath") isEqualTo 0) then {
-    _unit removeWeapon (primaryWeapon _unit); 
-    _unit removeWeapon (handgunWeapon _unit); 
-    _unit removeWeapon (secondaryWeapon _unit); 
+    _unit removeWeapon (primaryWeapon _unit);
+    _unit removeWeapon (handgunWeapon _unit);
+    _unit removeWeapon (secondaryWeapon _unit);
 };
 
-
 //Killed by cop stuff...
-if (side _killer isEqualTo west && playerSide != west) then {
+if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
     life_copRecieve = _killer;
     //Did I rob the federal reserve?
     if (!life_use_atm && {CASH > 0}) then {
@@ -126,12 +125,13 @@ if (side _killer isEqualTo west && playerSide != west) then {
     };
 };
 
-if (!isNull _killer && {_killer != _unit}) then {
+if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
     life_removeWanted = true;
 };
 
 [_unit] call life_fnc_dropItems;
 
+life_action_inUse = false;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;

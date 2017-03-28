@@ -11,7 +11,7 @@
 params ["","","",["_shop","",[""]]];
 
 if (_shop isEqualTo "") exitWith {};
-if !(player isEqualTo vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
+if !(isNull objectParent player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 
 /* License check & config validation */
 if !(isClass(missionConfigFile >> "Clothing" >> _shop)) exitWith {}; //Bad config entry.
@@ -33,6 +33,17 @@ if (_exit) exitWith {};
 
 _exit = [_conditions] call life_fnc_levelCheck;
 if !(_exit) exitWith {hint localize "STR_Shop_Veh_NoLicense";};
+
+//Save old inventory
+life_oldClothes = uniform player;
+life_olduniformItems = uniformItems player;
+life_oldBackpack = backpack player;
+life_oldVest = vest player;
+life_oldVestItems = vestItems player;
+life_oldBackpackItems = backpackItems player;
+life_oldGlasses = goggles player;
+life_oldHat = headgear player;
+
 /* Open up the menu */
 createDialog "Life_Clothing";
 disableSerialization;
@@ -122,6 +133,10 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
     };
 
     player setBehaviour "SAFE";
+    if (_shop == "dive") then {
+        player setPosATL [-1000, -1000, 10];
+        sleep 0.0005;
+    };
     player attachTo [_testLogic,[0,0,0]];
     player switchMove "";
     player setDir 360;
@@ -164,15 +179,6 @@ _filter lbAdd localize "STR_Shop_UI_Vests";
 _filter lbAdd localize "STR_Shop_UI_Backpack";
 
 _filter lbSetCurSel 0;
-
-life_oldClothes = uniform player;
-life_olduniformItems = uniformItems player;
-life_oldBackpack = backpack player;
-life_oldVest = vest player;
-life_oldVestItems = vestItems player;
-life_oldBackpackItems = backpackItems player;
-life_oldGlasses = goggles player;
-life_oldHat = headgear player;
 
 [] call life_fnc_playerSkins;
 

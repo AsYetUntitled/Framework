@@ -15,7 +15,7 @@ for "_i" from 0 to 1 step 0 do {
     {
         _members = units (group player);
         {
-            if (_x != player) then {
+            if !(_x isEqualTo player) then {
                 _marker = createMarkerLocal [format ["%1_marker",_x],visiblePosition _x];
                 _marker setMarkerColorLocal "ColorCivilian";
                 _marker setMarkerTypeLocal "Mil_dot";
