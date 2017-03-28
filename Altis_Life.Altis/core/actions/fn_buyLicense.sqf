@@ -6,7 +6,7 @@
     Description:
     Called when purchasing a license. May need to be revised.
 */
-params ["", "", "_type"];
+params ["", "", "", "_type"];
 
 if (!isClass (missionConfigFile >> "Licenses" >> _type)) exitWith {}; //Bad entry?
 private _displayName = M_CONFIG(getText,"Licenses",_type,"displayName");
