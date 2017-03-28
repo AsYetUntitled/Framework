@@ -4,11 +4,12 @@
     Author: Patrick "Lucian" Schmidt
     
     Description:
-    Converts Bool to Number and Number to bool
+     Handles bool conversion for MySQL since MySQL doesn't support 'true' or 'false'
+     instead MySQL uses Tinyint for BOOLEAN (0 = false, 1 = true)
 */
 
 params[
-    ["_in", "", [0,true]]
+    ["_in", 0, [0,true]]
 ];
 
 if (_in isEqualType true) exitWith {
