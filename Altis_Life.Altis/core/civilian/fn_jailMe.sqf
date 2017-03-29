@@ -6,19 +6,28 @@
     Description:
     Once word is received by the server the rest of the jail execution is completed.
 */
-private ["_time","_bail","_esc","_countDown"];
 
 params [
-    ["_ret",[],[[]]],
-    ["_bad",false,[false]]
+    ["_ret", [], [[]]],
+    ["_bad", false, [false]]
 ];
 
+private "_time";
+if (_bad) then {
+    _time = time + 1100; 
+} else {
+    _time = time + (15 * 60); 
+};
 
-if (_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
+if (count _ret > 0) then {
+    life_bail_amount = (_ret select 2);
+} else {
+    life_bail_amount = 1500;
+    _time = time + (10 * 60); 
+};
 
-if (count _ret > 0) then { life_bail_amount = (_ret select 2); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
-_esc = false;
-_bail = false;
+private _esc = false;
+private _bail = false;
 
 [_bad] spawn {
     life_canpay_bail = false;
@@ -30,6 +39,7 @@ _bail = false;
     life_canpay_bail = true;
 };
 
+private "_countDown";
 for "_i" from 0 to 1 step 0 do {
     if ((round(_time - time)) > 0) then {
         _countDown = [(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString;
@@ -50,8 +60,8 @@ for "_i" from 0 to 1 step 0 do {
         _bail = true;
     };
 
-    if ((round(_time - time)) < 1) exitWith {hint ""};
-    if (!alive player && ((round(_time - time)) > 0)) exitWith {};
+    if (round(_time - time) < 1) exitWith {hint ""};
+    if (!alive player && round(_time - time) > 0) exitWith {};
     sleep 0.1;
 };
 
