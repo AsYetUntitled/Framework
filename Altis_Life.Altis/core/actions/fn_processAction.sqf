@@ -8,7 +8,6 @@
     Master handling for processing an item.
     NiiRoZz : Added multiprocess
 */
-private ["_itemInfo","_oldItems","_newItemsWeight","_newItems","_oldItemsWeight","_cost","_upp","_hasLicense","_itemName","_oldVal","_ui","_progress","_pgText","_cP","_materialsRequired","_materialsGiven","_noLicenseCost","_text","_filter","_totalConversions","_minimumConversions"];
 
 scopeName "main";
 
@@ -21,8 +20,8 @@ params [
 ];
 
 //Error check
-if (isNull _vendor || _type isEqualTo "" || (player distance _vendor > 10)) exitWith {};
-life_action_inUse = true;//Lock out other actions during processing.
+if (isNull _vendor || {_type isEqualTo ""} || {player distance _vendor > 10}) exitWith {};
+life_action_inUse = true;
 
 if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
     _materialsRequired = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsReq");
@@ -39,7 +38,9 @@ if (isLocalized _text) then {
 };
 
 private _itemInfo = [_materialsRequired, _materialsGiven, _noLicenseCost, _text];
-if (count _itemInfo isEqualTo 0) exitWith {life_action_inUse = false;};
+if (count _itemInfo isEqualTo 0) exitWith {
+    life_action_inUse = false;
+};
 
 //Setup vars.
 
@@ -50,7 +51,9 @@ _itemInfo params [
     "_upp"
 ];
 
-if (count _oldItems isEqualTo 0) exitWith {life_action_inUse = false;};
+if (count _oldItems isEqualTo 0) exitWith {
+    life_action_inUse = false;
+};
 
 private _totalConversions = [];
 {
@@ -85,14 +88,14 @@ private _minimumConversions = selectMin _totalConversions;
 private _oldItemsWeight = 0;
 private "_weight";
 {
-    _weight = ([_x select 0] call life_fnc_itemWeight) * (_x select 1));
+    _weight = (([_x select 0] call life_fnc_itemWeight) * (_x select 1));
     _oldItemsWeight = _oldItemsWeight + _weight;
     true
 } count _oldItems;
 
 _noRequired _newItemsWeight = 0;
 {
-    _weight = ([_x select 0] call life_fnc_itemWeight) * (_x select 1));
+    _weight = ([_x select 0] call life_fnc_itemWeight) * (_x select 1);
     _newItemsWeight = _newItemsWeight + _weight;
     true
 } count _newItems;
@@ -143,12 +146,12 @@ if (_hasLicense) then {
     };
 
     {
-        [false,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
+        [false,_x select 0,(_x select 1)*(_minimumConversions)] call life_fnc_handleInv;
         true
     } count _oldItems;
 
     {
-        [true,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
+        [true,_x select 0,(_x select 1)*(_minimumConversions)] call life_fnc_handleInv;
         true
     } count _newItems;
 
@@ -158,8 +161,10 @@ if (_hasLicense) then {
     } else {
         hint localize "STR_Process_Partial";
     };
+
     life_is_processing = false;
     life_action_inUse = false;
+
 } else {
     if (CASH < _cost) exitWith {
         hint format [localize "STR_Process_License",[_cost] call life_fnc_numberText];
@@ -192,11 +197,11 @@ if (_hasLicense) then {
     };
 
     {
-        [false,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
+        [false,_x select 0,((_x select 1)*_minimumConversions)] call life_fnc_handleInv;
     } count _oldItems;
 
     {
-        [true,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
+        [true,_x select 0,((_x select 1)*_minimumConversions)] call life_fnc_handleInv;
     } count _newItems;
 
     "progressBar" cutText ["","PLAIN"];
