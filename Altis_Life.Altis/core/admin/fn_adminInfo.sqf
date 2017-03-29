@@ -6,7 +6,6 @@
     Description:
     Output information received to admin menu.
 */
-private ["_ret","_unit","_prim","_sec","_vest","_uni","_bp","_attach","_steamName","_secondary"];
 
 params [
     "_bank",
