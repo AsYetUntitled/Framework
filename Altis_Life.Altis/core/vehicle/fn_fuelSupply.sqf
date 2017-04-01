@@ -6,13 +6,17 @@
     Description:
     Fuel Tank Job, Fill Gas Station with Fuel.
 */
-private ["_vehicle","_fuelSpace","_fuelState","_fuelFeedState","_fuelLevel","_distance","_shortest","_random","_another","_ui","_progress","_pgText","_win","_price","_pricem"];
-_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_vehicle",objNull,[objNull]]
+];
+
 if (isNull _vehicle) exitWith {};
 if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse","PLAIN"];};
 closeDialog 0;
 
 life_action_inUse = true;
+
+private ["_fuelSpace","_fuelState"];
 
 if (isNil {_vehicle getVariable "fuelTank"}) then{
     _fuelSpace = getNumber(missionConfigFile >> "LifeCfgVehicles" >> (typeOf _vehicle) >> "vFuelSpace");
@@ -23,7 +27,7 @@ if (isNil {_vehicle getVariable "fuelTank"}) then{
     _fuelState = (_vehicle getVariable "fuelTank") select 1;
 };
 
-_another = false;
+private _another = false;
 {
     if (!isNil {_x getVariable "fuelTankWork"}) exitWith {_another};
 } forEach (nearestObjects [_vehicle, ["C_Van_01_fuel_F","I_Truck_02_fuel_F","B_Truck_01_fuel_F"], 100]);
@@ -36,8 +40,8 @@ if (_fuelState <= 0) exitWith {
 };
 
 
-_fuelFeedState = 0;
-_random = floor((random 11000) + 1500);
+private _fuelFeedState = 0;
+private _random = floor((random 11000) + 1500);
 
 {
     if (isNil {_x getVariable "fuelTank"}) then{
@@ -56,7 +60,9 @@ _random = floor((random 11000) + 1500);
 
 if (_fuelFeedState <= 0) exitWith {titleText [localize "STR_FuelTank_FeedFull","PLAIN"]; life_action_inUse = false;};
 
-_shortest = 100000;
+private "_disatace";
+
+private _shortest = 100000;
 {
     _distance = _vehicle distance (getMarkerPos _x);
     if (_distance < _shortest) then { _shortest = _distance};
@@ -64,9 +70,9 @@ _shortest = 100000;
 
 if (_distance < 1000) exitWith {titleText [localize "STR_FuelTank_PipeLine","PLAIN"]; life_action_inUse = false;};
 
-_pricem = getNumber(missionConfigFile >> "Life_Settings" >> "fuelTank_winMultiplier");
-_price = floor((((floor(_shortest / 100) * 100) / 1337) * _pricem) * 100) / 100;
-_win = 0;
+private _pricem = getNumber(missionConfigFile >> "Life_Settings" >> "fuelTank_winMultiplier");
+private _price = floor((((floor(_shortest / 100) * 100) / 1337) * _pricem) * 100) / 100;
+private _win = 0;
 
 _vehicle setVariable ["fuelTankWork",true,true];
 _vehicle remoteExec ["life_fnc_soundDevice",-2];
@@ -74,11 +80,11 @@ life_action_inUse = false;
 
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progress = _ui displayCtrl 38201;
+private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format ["Tank  %1 Ltr / %2 Ltr",_fuelState,_fuelSpace];
-_fuelLevel = (1 / _fuelSpace) * _fuelState;
+private _fuelLevel = (1 / _fuelSpace) * _fuelState;
 _progress progressSetPosition _fuelLevel;
 
 waitUntil {

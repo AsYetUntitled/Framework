@@ -9,10 +9,12 @@
     Syntax: _vehicle removeMagazinesTurret [magazineName, turretPath]
     Documentation: https://community.bistudio.com/wiki/removeMagazinesTurret
 */
-private ["_vehicle","_veh"];
-_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_vehicle",objNull,[objNull]]
+];
+
 if (isNull _vehicle) exitWith {};
-_veh = typeOf _vehicle;
+private _veh = typeOf _vehicle;
 
 if (_veh isEqualTo "B_Boat_Armed_01_minigun_F") then {
     _vehicle removeMagazinesTurret ["200Rnd_40mm_G_belt",[0]];
