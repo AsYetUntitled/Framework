@@ -7,10 +7,10 @@
     Description:
     Update inventory "y" in container
 */
-private ["_house"];
 params [
     ["_container",objNull,[objNull]]
 ];
+
 if (isNull _container) exitWith {};
 
 private _trunkData = _container getVariable ["Trunk",[[],0]];

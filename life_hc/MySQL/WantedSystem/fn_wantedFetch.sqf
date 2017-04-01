@@ -11,7 +11,6 @@
     Description:
     Displays wanted list information sent from the server.
 */
-private ["","_list","_result","_queryResult","_units","_inStatement"];
 params [
     ["_ret",objNull,[objNull]]
 ];
