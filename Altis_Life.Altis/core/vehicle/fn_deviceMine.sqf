@@ -6,9 +6,11 @@
     Description:
     Starts automated mining of resource from the tempest device. Not integrated with percents.
 */
-private ["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_isMineral"];
-_vehicle = param [0,objNull,[objNull]];
-_isMineral = true;
+params [
+	["_vehicle",objNull,[objNull]]
+];
+
+private _isMineral = true;
 if (isNull _vehicle) exitWith {};
 
 if (!isNil {_vehicle getVariable "mining"}) exitWith {
@@ -22,17 +24,19 @@ if (fuel _vehicle isEqualTo 0) exitWith {
 closeDialog 0; //Close the interaction menu.
 life_action_inUse = true; //Lock out the interaction menu for a bit..
 
-_weight = [_vehicle] call life_fnc_vehicleWeight;
+private _weight = [_vehicle] call life_fnc_vehicleWeight;
 if ((_weight select 1) >= (_weight select 0)) exitWith {
     hint localize "STR_NOTF_DeviceFull";
     life_action_inUse = false;
 };
 
 //check if we are in the resource zone for any of the resources
-_zone = "";
+private _zone = "";
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
+	private ["_curConfig","_resourceZones","_resource","_zoneSize"];
+
     _curConfig = (_resourceCfg select _i);
     _resource = configName(_curConfig);
     _resourceZones = getArray(_curConfig >> "zones");
@@ -49,7 +53,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    private ["_curConfig","_resourceZones","_resources","_mined"];
+    private ["_curConfig","_resourceZones","_resources","_mined","_zoneSize"];
 
     if (!_isMineral) exitWith {};
     _curConfig = (_resourceCfg select _i);
@@ -126,10 +130,10 @@ for "_i" from 0 to 1 step 0 do {
     _vehicle_data = _vehicle getVariable ["Trunk",[[],0]];
     _inv = +(_vehicle_data select 0);
     _space = (_vehicle_data select 1);
-    _itemIndex = [_resource,_inv] call TON_fnc_index;
+    private _itemIndex = [_resource,_inv] call TON_fnc_index;
     _weight = [_vehicle] call life_fnc_vehicleWeight;
     _random = 10 + round((random(10)));
-    _sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; // Get a sum base of the remaining weight..
+    private _sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; // Get a sum base of the remaining weight..
 
     if (_sum < 1) exitWith {
         titleText[localize "STR_NOTF_DeviceFull","PLAIN"];
@@ -162,7 +166,7 @@ for "_i" from 0 to 1 step 0 do {
 
     _itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
     titleText[format [localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
-    _itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
+    private _itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
     _vehicle setVariable ["Trunk",[_inv,_space + _itemWeight],true];
     _weight = [_vehicle] call life_fnc_vehicleWeight;
     _sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight..

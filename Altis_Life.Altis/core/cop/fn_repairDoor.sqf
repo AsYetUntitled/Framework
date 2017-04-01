@@ -6,14 +6,16 @@
     Description:
     Re-locks the door mainly for the federal reserve structures.
 */
-private ["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText","_locked"];
-_building = param [0,objNull,[objNull]];
+params [
+	["_building",objNull,[objNull]]
+];
+
 if (isNull _building) exitWith {};
 if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
 
-_doors = 1;
+private _doors = 1;
 _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"NumberOfDoors");
-_door = 0;
+private _door = 0;
 //Find the nearest door
 for "_i" from 1 to _doors do {
     _selPos = _building selectionPosition format ["Door_%1_trigger",_i];
@@ -29,14 +31,16 @@ life_action_inUse = true;
 closeDialog 0;
 //Setup the progress bar
 disableSerialization;
-_title = localize "STR_Cop_RepairingDoor";
+private _title = localize "STR_Cop_RepairingDoor";
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
-_cP = 0.01;
+private _cP = 0.01;
+
+private "_cpRate";
 
 switch (typeOf _building) do {
     case "Land_Dome_Big_F": {_cpRate = 0.008;};
@@ -73,7 +77,7 @@ life_action_inUse = false;
 _building animateSource [format ["Door_%1_source", _door], 0];
 _building setVariable [format ["bis_disabled_Door_%1",_door],1,true]; //Lock the door.
 
-_locked = true;
+private _locked = true;
 for "_i" from 1 to _doors do {
     if ((_building getVariable [format ["bis_disabled_Door_%1",_i],0]) isEqualTo 0) exitWith {_locked = false};
 };

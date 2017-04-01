@@ -7,12 +7,14 @@
     Lets play a game! Can you guess what it does? I have faith in you, if you can't
     then you have failed me and therefor I lose all faith in humanity.. No pressure.
 */
-private ["_vehicle","_trueorfalse"];
-_vehicle = param [0,objNull,[objNull]];
+params [
+	["_vehicle",objNull,[objNull]]
+];
+
 if (isNull _vehicle) exitWith {}; //Bad entry!
 if (!(typeOf _vehicle in ["C_Offroad_01_F"])) exitWith {}; //Last chance check to prevent something from defying humanity and creating a monster.
 
-_trueorfalse = _vehicle getVariable ["lights",false];
+private _trueorfalse = _vehicle getVariable ["lights",false];
 
 if (_trueorfalse) then {
     _vehicle setVariable ["lights",false,true];

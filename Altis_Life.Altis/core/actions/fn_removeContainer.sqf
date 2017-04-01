@@ -6,16 +6,18 @@
     Description:
     Delete Container from house storage
 */
-private ["_house","_action","_container","_containerType","_containers"];
-_container = param [0,objNull,[objNull]];
-_containerType = typeOf _container;
-_house = nearestObject [player, "House"];
+params [
+	["_container",objNull,[objNull]]
+];
+
+private _containerType = typeOf _container;
+private _house = nearestObject [player, "House"];
 if (!(_house in life_vehicles)) exitWith {hint localize "STR_ISTR_Box_NotinHouse"};
 if (isNull _container) exitWith {};
-_containers = _house getVariable ["containers",[]];
+private _containers = _house getVariable ["containers",[]];
 closeDialog 0;
 
-_action = [
+private _action = [
     format [localize "STR_House_DeleteContainerMSG"],localize "STR_pInAct_RemoveContainer",localize "STR_Global_Remove",localize "STR_Global_Cancel"
 ] call BIS_fnc_guiMessage;
 

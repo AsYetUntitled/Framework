@@ -16,11 +16,13 @@
 #define Btn8 37457
 #define Title 37401
 
-private ["_display","_curTarget","_seizeRank","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
-
 disableSerialization;
-_curTarget = param [0,objNull,[objNull]];
-_seizeRank = LIFE_SETTINGS(getNumber,"seize_minimum_rank");
+
+params [
+	["_curTarget",objNull,[objNull]]
+];
+
+private _seizeRank = LIFE_SETTINGS(getNumber,"seize_minimum_rank");
 
 if (player getVariable ["Escorting", false]) then {
     if (isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
@@ -32,15 +34,15 @@ if (!dialog) then {
     createDialog "pInteraction_Menu";
 };
 
-_display = findDisplay 37400;
-_Btn1 = _display displayCtrl Btn1;
-_Btn2 = _display displayCtrl Btn2;
-_Btn3 = _display displayCtrl Btn3;
-_Btn4 = _display displayCtrl Btn4;
-_Btn5 = _display displayCtrl Btn5;
-_Btn6 = _display displayCtrl Btn6;
-_Btn7 = _display displayCtrl Btn7;
-_Btn8 = _display displayCtrl Btn8;
+private _display = findDisplay 37400;
+private _Btn1 = _display displayCtrl Btn1;
+private _Btn2 = _display displayCtrl Btn2;
+private _Btn3 = _display displayCtrl Btn3;
+private _Btn4 = _display displayCtrl Btn4;
+private _Btn5 = _display displayCtrl Btn5;
+private _Btn6 = _display displayCtrl Btn6;
+private _Btn7 = _display displayCtrl Btn7;
+private _Btn8 = _display displayCtrl Btn8;
 life_pInact_curTarget = _curTarget;
 
 if (player getVariable ["isEscorting",false]) then {
