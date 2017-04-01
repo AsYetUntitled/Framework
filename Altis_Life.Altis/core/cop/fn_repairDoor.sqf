@@ -7,7 +7,7 @@
     Re-locks the door mainly for the federal reserve structures.
 */
 params [
-	["_building",objNull,[objNull]]
+    ["_building",objNull,[objNull]]
 ];
 
 if (isNull _building) exitWith {};

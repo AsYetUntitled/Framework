@@ -7,7 +7,7 @@
     Defuses blasting charges for the cops?
 */
 params [
-	["_vault",objNull,[objNull]]
+    ["_vault",objNull,[objNull]]
 ];
 
 if (isNull _vault) exitWith {};

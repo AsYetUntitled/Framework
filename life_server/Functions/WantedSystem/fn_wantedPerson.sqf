@@ -9,7 +9,7 @@
     Fetches a specific person from the wanted array.
 */
 params [
-	["_unit",objNull,[objNull]]
+    ["_unit",objNull,[objNull]]
 ];
 
 if (isNull _unit) exitWith {[]};

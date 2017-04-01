@@ -7,7 +7,7 @@
     Returns the licenses to the cop.
 */
 params [
-	["_cop",objNull,[objNull]]
+    ["_cop",objNull,[objNull]]
 ];
 
 if (isNull _cop) exitWith {}; //Bad entry

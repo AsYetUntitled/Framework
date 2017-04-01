@@ -7,7 +7,7 @@
     Starts the revive process on the player.
 */
 params [
-	["_target",objNull,[objNull]]
+    ["_target",objNull,[objNull]]
 ];
 
 if (isNull _target) exitWith {};

@@ -7,7 +7,7 @@
     Impounds the vehicle
 */
 params [
-	["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]]
 ];
 
 private _filters = ["Car","Air","Ship"];

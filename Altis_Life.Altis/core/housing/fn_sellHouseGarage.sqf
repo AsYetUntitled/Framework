@@ -6,7 +6,7 @@
     Sell functionality for house garages.
 */
 params [
-	["_house",objNull,[objNull]]
+    ["_house",objNull,[objNull]]
 ];
 
 private _uid = getPlayerUID player;

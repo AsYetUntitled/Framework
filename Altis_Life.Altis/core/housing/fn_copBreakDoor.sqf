@@ -7,7 +7,7 @@
     Allows cops to 'kick' in the door?
 */
 params [
-	["_house",objNull,[objNull]]
+    ["_house",objNull,[objNull]]
 ];
 
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};

@@ -7,7 +7,7 @@
     Locks up the entire house and closes all doors.
 */
 params [
-	["_house",objNull,[objNull]]
+    ["_house",objNull,[objNull]]
 ];
 
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};

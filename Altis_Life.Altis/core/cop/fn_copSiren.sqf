@@ -7,7 +7,7 @@
     Starts the cop siren sound for other players.
 */
 params [
-	["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]]
 ];
 
 if (isNull _vehicle) exitWith {};

@@ -7,7 +7,7 @@
     Lights up the house.
 */
 params [
-	["_house",objNull,[objNull]]
+    ["_house",objNull,[objNull]]
 ];
 
 if (isNull _house) exitWith {};

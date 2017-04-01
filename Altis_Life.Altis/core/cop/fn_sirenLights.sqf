@@ -8,7 +8,7 @@
     then you have failed me and therefor I lose all faith in humanity.. No pressure.
 */
 params [
-	["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]]
 ];
 
 if (isNull _vehicle) exitWith {}; //Bad entry!

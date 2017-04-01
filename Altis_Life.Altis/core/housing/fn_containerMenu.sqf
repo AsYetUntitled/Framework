@@ -20,7 +20,7 @@ private ["_container","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_
 disableSerialization;
 
 params [
-	["_container",objNull,[objNull]]
+    ["_container",objNull,[objNull]]
 ];
 
 if (isNull _container) exitWith {}; //Bad target

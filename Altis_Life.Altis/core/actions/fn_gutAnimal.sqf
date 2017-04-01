@@ -7,7 +7,7 @@
     Guts the animal?
 */
 params [
-	["_animalCorpse",objNull,[objNull]]
+    ["_animalCorpse",objNull,[objNull]]
 ];
 
 private ["_displayName","_item"];

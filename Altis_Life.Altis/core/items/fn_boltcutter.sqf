@@ -7,7 +7,7 @@
     Breaks the lock on a single door (Closet door to the player).
 */
 params [
-	["_building",objNull,[objNull]]
+    ["_building",objNull,[objNull]]
 ];
 
 private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;

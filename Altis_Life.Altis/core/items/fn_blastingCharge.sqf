@@ -7,7 +7,7 @@
     Blasting charge is used for the federal reserve vault and nothing  more.. Yet.
 */
 params [
-	["_vault",objNull,[objNull]]
+    ["_vault",objNull,[objNull]]
 ];
 
 if (isNull _vault) exitWith {}; //Bad object

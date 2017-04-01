@@ -7,7 +7,7 @@
     Starts automated mining of resource from the tempest device. Not integrated with percents.
 */
 params [
-	["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]]
 ];
 
 private _isMineral = true;
@@ -35,7 +35,7 @@ private _zone = "";
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-	private ["_curConfig","_resourceZones","_resource","_zoneSize"];
+    private ["_curConfig","_resourceZones","_resource","_zoneSize"];
 
     _curConfig = (_resourceCfg select _i);
     _resource = configName(_curConfig);

@@ -7,7 +7,7 @@
     Delete Container from house storage
 */
 params [
-	["_container",objNull,[objNull]]
+    ["_container",objNull,[objNull]]
 ];
 
 private _containerType = typeOf _container;

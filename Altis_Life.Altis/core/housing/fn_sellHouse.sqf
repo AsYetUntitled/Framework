@@ -8,7 +8,7 @@
     Sells the house and delete all container near house.
 */
 params [
-	["_house",objNull,[objNull]]
+    ["_house",objNull,[objNull]]
 ];
 
 private _uid = getPlayerUID player;

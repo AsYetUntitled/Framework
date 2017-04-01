@@ -20,7 +20,7 @@ if (!dialog) then {
 disableSerialization;
 
 params [
-	["_curTarget",objNull,[objNull]]
+    ["_curTarget",objNull,[objNull]]
 ];
 
 if (isNull _curTarget) exitWith {closeDialog 0;}; //Bad target

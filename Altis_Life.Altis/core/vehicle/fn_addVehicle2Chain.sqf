@@ -6,7 +6,7 @@
     A short function for telling the player to add a vehicle to his keychain.
 */
 params [
-	["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]]
 ];
 
 if (!(_vehicle in life_vehicles)) then {

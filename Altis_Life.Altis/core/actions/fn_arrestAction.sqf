@@ -7,7 +7,7 @@
     Arrests the targeted person.
 */
 params [
-	["_unit",objNull,[objNull]]
+    ["_unit",objNull,[objNull]]
 ];
 
 if (isNull _unit) exitWith {}; //Not valid

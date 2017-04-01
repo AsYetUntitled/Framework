@@ -19,7 +19,7 @@
 disableSerialization;
 
 params [
-	["_curTarget",objNull,[objNull]]
+    ["_curTarget",objNull,[objNull]]
 ];
 
 private _seizeRank = LIFE_SETTINGS(getNumber,"seize_minimum_rank");

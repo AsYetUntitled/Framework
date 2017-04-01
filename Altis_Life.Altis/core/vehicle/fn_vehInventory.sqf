@@ -7,7 +7,7 @@
     Used a refresher for the vehicle inventory / trunk menu items.
 */
 params [
-	["_veh",objNull,[objNull]]
+    ["_veh",objNull,[objNull]]
 ];
 
 if (isNull _veh || !alive _veh) exitWith {closeDialog 0;}; //If null / dead exit menu

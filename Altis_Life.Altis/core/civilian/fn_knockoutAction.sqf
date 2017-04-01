@@ -7,7 +7,7 @@
     Knocks out the target.
 */
 params [
-	["_target",objNull,[objNull]]
+    ["_target",objNull,[objNull]]
 ];
 
 //Error checks

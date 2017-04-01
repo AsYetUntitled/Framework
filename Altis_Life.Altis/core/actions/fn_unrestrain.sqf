@@ -7,7 +7,7 @@
 
 */
 params [
-	["_unit",objNull,[objNull]]
+    ["_unit",objNull,[objNull]]
 ];
 
 if (isNull _unit || !(_unit getVariable ["restrained",false])) exitWith {}; //Error check?
