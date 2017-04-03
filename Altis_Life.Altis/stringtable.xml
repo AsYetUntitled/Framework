@@ -7518,7 +7518,7 @@
             <Spanish>La ganzua se rompió.</Spanish>
             <Russian></Russian>
             <German>Der Dietrich ist abgebrochen.</German>
-            <French>L'outil de crochetage a cassé</French> 
+            <French>L'outil de crochetage a cassé</French>�
             <Italian>Il grimaldello si è rotto.</Italian>
             <Portuguese>A Chave Mestra quebrou.</Portuguese>
             <Polish>Wytrych się złamał.</Polish>
@@ -8654,7 +8654,7 @@
             <Spanish>Se esta sinconizando tu información con el server.\n\nPor favor espera 20 segundos antes de salir del server.</Spanish>
             <Russian></Russian>
             <German>Speichere deine Spieler-Informationen auf dem Server. \n\nBitte warte bis zu 20 Sekunden vor dem Verlassen.</German>
-            <French>Synchronisation des informations de joueur sur le serveur.\n\nS'il vous plaît veuiller attendre 20 secondes avant de quitter.</French>
+            <French>Synchronisation des informations de joueur sur le serveur.\n\nS'il vous plaît, veuillez attendre 20 secondes avant de vous déconnecter.</French>
             <Italian>Salvando le informazioni giocatore sul server.\n\nAttendere fino a 20 secondi prima di abbandonare.</Italian>
             <Portuguese>Sincronizando informação do jogador com o servidor.\n\n Por favor aguarde 20 segundos antes de sair.</Portuguese>
             <Polish>Synchronizuję informację z serwere, .\n\nProszę poczekać ok 20 sekund przed opuszczeniem serwera</Polish>
@@ -8667,7 +8667,7 @@
             <Spanish>Porque robastes el banco no puedes usar el ATM por %1 minutos.</Spanish>
             <Russian></Russian>
             <German>Da du die Zentralbank ausgeraubt hast, kannst du für %1 Minuten keinen Bankomaten benutzen.</German>
-            <French>Vous avez pillé la banque, vous ne pouvez pas utiliser le DAB pendant %1 minutes.</French>
+            <French>Vous avez pillé la banque, vous ne pouvez pas utiliser de DAB pendant %1 minutes.</French>
             <Italian>Avendo appena rapinato la banca non puoi utilizzare il Bancomat per %1 minuti.</Italian>
             <Portuguese>Você não pode usar o ATM por %1 minuto(s), pois você assaltou o banco.</Portuguese>
             <Polish>Z uwagi na to że okradłeś bank nie możesz korzystać z bankomatu przez najbliższe %1 minut.</Polish>
@@ -8744,7 +8744,7 @@
             <Spanish>Hubo un problema abriendo el menu de la tienda.</Spanish>
             <Russian></Russian>
             <German>Es gab ein Problem beim Öffnen des Schrotthändler Menüs.</German>
-            <French>Il y a un probleme en ouvrant le menu du concessionnaire de véhicule illégal.</French>
+            <French>Il y a eu un problème en ouvrant le menu de revente de véhicule.</French>
             <Italian>C'è stato un problema aprendo il menu del ricettatore</Italian>
             <Portuguese>Ocorreu um problema abrindo o menu, tente novamente.</Portuguese>
             <Polish>Powstał problem przy otwieraniu menu dziupli</Polish>
@@ -8788,7 +8788,7 @@
             <Spanish>No tienes Entrenamiento Rebelde!</Spanish>
             <Russian></Russian>
             <German>Du hast keine Rebellenausbildung absolviert!</German>
-            <French>Vous n'avez pas encore d'entrainement rebelle !</French>
+            <French>Vous n'avez pas encore d'entraînement rebelle !</French>
             <Italian>Devi essere ribelle per poter utilizzare questo negozio!</Italian>
             <Portuguese>Você não tem Treinamento Rebelde!</Portuguese>
             <Polish>Nie posiadasz treningu rebelianta!</Polish>
@@ -8854,7 +8854,7 @@
             <Spanish>Chalecos</Spanish>
             <Russian></Russian>
             <German>Westen</German>
-            <French>Gilet</French>
+            <French>Gilets</French>
             <Italian>Vesti</Italian>
             <Portuguese>Coletes</Portuguese>
             <Polish>Kamizelki</Polish>
@@ -8865,7 +8865,7 @@
             <Spanish>Mochillas</Spanish>
             <Russian></Russian>
             <German>Rucksack</German>
-            <French>Sac-à-dos</French>
+            <French>Sacs à dos</French>
             <Italian>Zaini</Italian>
             <Portuguese>Mochilas</Portuguese>
             <Polish>Plecaki</Polish>
@@ -8887,7 +8887,7 @@
             <Spanish>No tienes suficiente dinero para recuperar tu carro.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld bei dir oder auf dem Bankkonto, um dein Auto auslösen zukönnen.</German>
-            <French>Vous n'avez pas assez d'argent sur vous ou dans votre banque pour obtenir votre voiture.</French>
+            <French>Vous n'avez pas assez d'argent sur vous ou dans votre compte en banque pour récupérer votre voiture.</French>
             <Italian>Non hai abbastanza fondi con te o nel tuo conto in banca per poter ritirare il tuo veicolo.</Italian>
             <Portuguese>Você não tem dinheiro suficiente em sua conta bancária para obter seu veiculo.</Portuguese>
             <Polish>Nie masz tyle pieniędzy na koncie aby wyciągnąć samochód.</Polish>
@@ -9096,7 +9096,7 @@
             <Spanish>Debes selecionar un objeto para comprar.</Spanish>
             <Russian></Russian>
             <German>Du musst einen Gegenstand auswählen, um ihn zu kaufen.</German>
-            <French>Vous devez selectionner un objet pour l'acheter.</French>
+            <French>Vous devez sélectionner un objet pour l'acheter.</French>
             <Italian>Seleziona un oggetto per poterlo comprare.</Italian>
             <Portuguese>Você precisa selecionar um item para comprar.</Portuguese>
             <Polish>Musisz zaznaczyć co chcesz kupić.</Polish>
@@ -9118,7 +9118,7 @@
             <Spanish>No tienes tantos objetos!</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viele Gegenstände zum Verkaufen!</German>
-            <French>Vous n'avez pas autant d'articles à vendre !</French>
+            <French>Vous n'avez pas autant d'objets à vendre !</French>
             <Italian>Non hai tutti quegli oggetti da vendere!</Italian>
             <Portuguese>Você não tem todos esse items para vender</Portuguese>
             <Polish>Nie masz tak dużo rzeczy do sprzedania!</Polish>
@@ -9129,7 +9129,7 @@
             <Spanish>Tu pandilla tiene suficiente dinero para pagar esto, quieres pagar con ese dinero o el tuyo?</Spanish>
             <Russian></Russian>
             <German>Die Gang hat genügend Geld, um dafür zu zahlen. Willst du mit dem Geld der Gang oder deinem Eigenem bezahlen?</German>
-            <French>Le gang a suffisamment de fonds pour payer pour cela, voulez-vous payer avec les fonds de gangs ou les vôtres ?</French>
+            <French>Le gang a suffisamment de fonds pour payer pour cela, voulez-vous payer avec les fonds de gangs ou avec votre propre argent ?</French>
             <Italian>La Gang ha fondi a sufficienza per pagare questo oggetto, vuoi usare i fondi della Gang o i tuoi personali?</Italian>
             <Portuguese>A Gangue tem dinheiro suficiente para pagar por isso, você gostaria de usar o dinheiro da Gangue?</Portuguese>
             <Polish>Gang posiada wystarczającą ilość środków aby za to zapłacić, chcesz zapłacić za to środkami gangu, czy własnymi?</Polish>
@@ -9228,7 +9228,7 @@
             <Spanish>Necesitas seleccionar un objetar para vender/comprar.</Spanish>
             <Russian></Russian>
             <German>Du musst einen Gegenstand auswählen, um ihn zu kaufen / zu verkaufen.</German>
-            <French>Vous devez sélectionner un élément pour acheter/vendre.</French>
+            <French>Vous devez sélectionner un objet à acheter/vendre.</French>
             <Italian>Devi selezionare un oggetto per comprare/vendere.</Italian>
             <Portuguese>Selecione um item para comprar ou vender.</Portuguese>
             <Polish>Musisz wybrać rzecz którą chcesz kupić/sprzedać</Polish>
@@ -9296,7 +9296,7 @@
             <Spanish>Recibiras tu siguiente pago en %1 minutos</Spanish>
             <Russian></Russian>
             <German>Du erhältst deinen nächsten Gehaltsscheck in %1 Minuten.</German>
-            <French>Vous recevrez votre prochain chèque de paie dans %1 minutes.</French>
+            <French>Vous recevrez votre prochaine paye dans %1 minutes.</French>
             <Italian>Riceverai il tuo prossimo stipendio in %1 minuti.</Italian>
             <Portuguese>Você irá receber seu próximo pagamento em %1 minuto(s).</Portuguese>
             <Polish>Otrzymasz kolejną wypłatę w ciągu %1 minut.</Polish>
@@ -9307,7 +9307,7 @@
             <Spanish>Te has perdido un pago por estar muerto.</Spanish>
             <Russian></Russian>
             <German>Du erhältst kein Gehaltsscheck, da du gestorben bist.</German>
-            <French>Vous avez manqué un chèque de paie parce que vous étiez mort.</French>
+            <French>Vous n'avez pas reçu votre paye en raison de votre mort.</French>
             <Italian>Hai perso uno stipendio .</Italian>
             <Portuguese>Você não recebeu seu pagamento pois estava morto.</Portuguese>
             <Polish>Ominęła cię wypłata ponieważ byłeś martwy.</Polish>
@@ -9318,7 +9318,7 @@
             <Spanish>Has recibido un pago de $%1</Spanish>
             <Russian></Russian>
             <German>Du hast deinen Gehaltscheck in Höhe von $%1 erhalten.</German>
-            <French>Vous avez reçu un salaire de $%1.</French>
+            <French>Vous avez reçu votre paye de $%1.</French>
             <Italian>Hai ricevuto uno stipendio di $%1.</Italian>
             <Portuguese>Você recebeu seu pagamento de R$%1.</Portuguese>
             <Polish>Otrzymałeś wypłatę w kwocie $%1.</Polish>
@@ -9344,7 +9344,7 @@
             <Polish>Tankowanie samochodów</Polish>
             <Russian></Russian>
             <Portuguese>Reabastecer Veículo</Portuguese>
-            <French>Ravitaillez en essence le véhicule</French>
+            <French>Ravitailler en essence le véhicule</French>
             <German>Fahrzeug auftanken</German>
         </Key>
         <Key ID="STR_Price_Fuel_Pump">
@@ -9377,7 +9377,7 @@
             <Polish>Wybierz pojazd</Polish>
             <Russian></Russian>
             <Portuguese>Selecione um veículo</Portuguese>
-            <French>Sélectionne un vehicule</French>
+            <French>Sélectionner un vehicule</French>
             <German>Wähle ein Fahrzeug:</German>
         </Key>
         <Key ID="STR_Distance_Vehicle_Pump">
@@ -9388,7 +9388,7 @@
             <Polish>Pojazd jest zbyt daleko lub jesteś w!</Polish>
             <Russian></Russian>
             <Portuguese>O veículo está muito longe ou você está nele!</Portuguese>
-            <French>Le vehicule est peut-etre trop loin, ou tu es dedans !</French>
+            <French>Le véhicule est peut-etre trop loin, ou tu es dedans !</French>
             <German>Das Fahrzeug ist zu weit entfernt oder du sitzt noch drin!</German>
         </Key>
         <Key ID="STR_Vehicle_Ready_Pump">
@@ -9464,7 +9464,7 @@
         <Key ID="STR_MAR_Police_Air_HQ">
             <Original>Police Air HQ</Original>
             <Czech>Police Air HQ</Czech>
-            <French>HQ Air Police</French>
+            <French>Base aérienne de la Police</French>
             <Spanish>Cuartel Aéreo Policial</Spanish>
             <Italian>QG Aereo Polizia</Italian>
             <Russian></Russian>
@@ -9563,7 +9563,7 @@
         <Key ID="STR_MAR_Air_Shop">
             <Original>Air Shop</Original>
             <Czech>Air Shop</Czech>
-            <French>Magasin Aerien</French>
+            <French>Concessionnaire aérien</French>
             <Spanish>Tienda Aérea</Spanish>
             <Italian>Negozio Aereo</Italian>
             <Russian></Russian>
@@ -9596,7 +9596,7 @@
         <Key ID="STR_MAR_Iron_processing">
             <Original>Iron Processing</Original>
             <Czech>Zpracování Iron</Czech>
-            <French>Traitement de Fer</French>
+            <French>Traitement du Fer</French>
             <Spanish>Procesador de Hierro</Spanish>
             <Italian>Processo del ferro</Italian>
             <Russian></Russian>
@@ -9618,7 +9618,7 @@
         <Key ID="STR_MAR_Chop_Shop">
             <Original>Chop Shop</Original>
             <Czech>Chop Shop</Czech>
-            <French>Vendeur de Voitures</French>
+            <French>Revendeur de véhicules volés</French>
             <Spanish>Desguace Clandestino</Spanish>
             <Italian>Ricettatore</Italian>
             <Russian></Russian>
@@ -9673,7 +9673,7 @@
         <Key ID="STR_MAR_Car_Shop">
             <Original>Car Shop</Original>
             <Czech>Auto Shop</Czech>
-            <French>Magasin de voitures</French>
+            <French>Concessionnaire</French>
             <Spanish>Tienda de Coches</Spanish>
             <Italian>Concessionario d `auto</Italian>
             <Russian></Russian>
@@ -9684,7 +9684,7 @@
         <Key ID="STR_MAR_Hospital_Clinic">
             <Original>Hospital/Clinic</Original>
             <Czech>Nemocnice / Klinika</Czech>
-            <French>Hôpital / Clinique</French>
+            <French>Clinique</French>
             <Spanish>Hospital/Clínica</Spanish>
             <Italian>Ospedale / Clinica</Italian>
             <Russian></Russian>
@@ -9728,7 +9728,7 @@
         <Key ID="STR_MAR_Boat_Shop">
             <Original>Boat Shop</Original>
             <Czech>Lodní Shop</Czech>
-            <French>Magasin de bateaux</French>
+            <French>Concessionnaire de bateaux</French>
             <Spanish>Tienda de Barcos</Spanish>
             <Italian>Concessionaria Nautica</Italian>
             <Russian></Russian>
@@ -9739,7 +9739,7 @@
         <Key ID="STR_MAR_Bruce_Outfits">
             <Original>Bruce's Outback Outfits</Original>
             <Czech>Bruceovy Outback Oblečení</Czech>
-            <French>Magasin de vêtements de Bruce</French>
+            <French>Vêtements de Bruce</French>
             <Spanish>Tienda de Ropa</Spanish>
             <Italian>Outfit di Bruce</Italian>
             <Russian></Russian>
@@ -9794,7 +9794,7 @@
         <Key ID="STR_MAR_Channel_News">
             <Original>Channel 7 News</Original>
             <Czech>Channel 7 News</Czech>
-            <French>Chaine d'infos numero 7</French>
+            <French>Chaine d'infos Numéro 7</French>
             <Spanish>Canal de Noticias 7</Spanish>
             <Italian>Notiziario di Altis</Italian>
             <Russian></Russian>
@@ -9838,7 +9838,7 @@
         <Key ID="STR_MAR_Get_Delivery_Mission">
             <Original>Get Delivery Mission</Original>
             <Czech>Získat Delivery mise</Czech>
-            <French>Obtenez Mission de livraison</French>
+            <French>Obtenir Mission de livraison</French>
             <Spanish>Empezar Misión de Entrega</Spanish>
             <Russian></Russian>
             <German>Starte Kurier Mission</German>
@@ -9860,7 +9860,7 @@
         <Key ID="STR_MAR_Drug_Dealer">
             <Original>Drug Dealer</Original>
             <Czech>Drug prodejce</Czech>
-            <French>Dealer de drogue</French>
+            <French>Dealeur de drogue</French>
             <Spanish>Narcotraficante</Spanish>
             <Russian></Russian>
             <German>Drogendealer</German>
@@ -9871,7 +9871,7 @@
         <Key ID="STR_MAR_Diamond_Processing">
             <Original>Diamond Processing</Original>
             <Czech>Diamond Processing</Czech>
-            <French>Traitement de diamant</French>
+            <French>Traitement du diamant</French>
             <Spanish>Procesador de Diamante</Spanish>
             <Russian></Russian>
             <German>Diamantenschleifer</German>
@@ -9915,7 +9915,7 @@
         <Key ID="STR_MAR_Boat_Spawn">
             <Original>Boat Spawn</Original>
             <Czech>Lodní potěr</Czech>
-            <French>Spawn Bateau</French>
+            <French>Port</French>
             <Spanish>Spawn de Barcos</Spanish>
             <Russian></Russian>
             <German>Boot Spawn</German>
@@ -9926,7 +9926,7 @@
         <Key ID="STR_MAR_Copper_Processing">
             <Original>Copper Processing</Original>
             <Czech>Zpracování měď</Czech>
-            <French>Traitement de cuivre</French>
+            <French>Traitement du cuivre</French>
             <Spanish>Procesador de Cobre</Spanish>
             <Russian></Russian>
             <German>Kupferschmelze</German>
@@ -9937,7 +9937,7 @@
         <Key ID="STR_MAR_Cocaine_Field">
             <Original>Coca Field</Original>
             <Czech>Coca Field</Czech>
-            <French>Champ de Cocaine</French>
+            <French>Champ de Cocaïne</French>
             <Spanish>Campo de Cocaína</Spanish>
             <Russian></Russian>
             <German>Kokain Plantage</German>
@@ -9992,7 +9992,7 @@
         <Key ID="STR_MAR_Iron_Copper_Trader">
             <Original>Iron / Copper Trader</Original>
             <Czech>Žehlička / Měď Trader</Czech>
-            <French>Vendeur de Fer/Cuivre</French>
+            <French>Vendeur de minerais</French>
             <Spanish>Comerciante de Hierro / Cobre</Spanish>
             <Russian></Russian>
             <German>Industriehandel</German>
@@ -10003,7 +10003,7 @@
         <Key ID="STR_MAR_Sand_Processing">
             <Original>Sand Processing</Original>
             <Czech>Zpracování písek</Czech>
-            <French>Traitement de sable</French>
+            <French>Traitement du sable</French>
             <Spanish>Procesador de Arena</Spanish>
             <Russian></Russian>
             <German>Sand Verarbeiter</German>
@@ -10058,7 +10058,7 @@
         <Key ID="STR_MAR_Federal_Reserve">
             <Original>Federal Reserve</Original>
             <Czech>federální rezervní systém</Czech>
-            <French>Réserve fédérale</French>
+            <French>Banque fédérale</French>
             <Spanish>Reserva Federal</Spanish>
             <Russian></Russian>
             <German>Zentralbank</German>
@@ -10069,7 +10069,7 @@
         <Key ID="STR_MAR_Highway_Patrol">
             <Original>Highway Patrol Outpost</Original>
             <Czech>Dálniční hlídka Outpost</Czech>
-            <French>Poste de Police</French>
+            <French>Avant-poste de Police</French>
             <Spanish>Puesto de Patrulla de Carretera</Spanish>
             <Russian></Russian>
             <German>Mautstation</German>
@@ -10113,7 +10113,7 @@
         <Key ID="STR_MAR_Turtle_Poaching">
             <Original>Turtle Poaching</Original>
             <Czech>Turtle pytláctví</Czech>
-            <French>Zones de tortues</French>
+            <French>Réserve protégée de tortues</French>
             <Spanish>Caza de Tortugas</Spanish>
             <Italian>Bracconaggio di Tartarughe</Italian>
             <Russian></Russian>
@@ -10124,7 +10124,7 @@
         <Key ID="STR_MAR_Turtle_Dealer">
             <Original>Turtle Dealer</Original>
             <Czech>Turtle prodejce</Czech>
-            <French>Dealer de Tortues</French>
+            <French>Dealeur de Tortues</French>
             <Spanish>Traficante de Tortugas</Spanish>
             <Russian></Russian>
             <German>Schildkröten Händler</German>
@@ -10135,7 +10135,7 @@
         <Key ID="STR_MAR_GoKart_Shop">
             <Original>Go-Kart Shop</Original>
             <Czech>Go-Kart Shop</Czech>
-            <French>Magasin de karts</French>
+            <French>Concessionnaire de karts</French>
             <Spanish>Tienda de Go-Kart</Spanish>
             <Russian></Russian>
             <German>Bobby's Gokarthandel</German>
@@ -10157,7 +10157,7 @@
         <Key ID="STR_MAR_Gang_Hideout1">
             <Original>Gang Hideout 1</Original>
             <Czech>Gang Hideout 1</Czech>
-            <French>Planque 1</French>
+            <French>Cachette 1</French>
             <Spanish>Escondite de Pandillas 1</Spanish>
             <Russian></Russian>
             <German>Gang Versteck 1</German>
@@ -10168,7 +10168,7 @@
         <Key ID="STR_MAR_Gang_Hideout2">
             <Original>Gang Hideout 2</Original>
             <Czech>Gang Hideout 2</Czech>
-            <French>Planque 2</French>
+            <French>Cachette 2</French>
             <Spanish>Escondite de Pandillas 2</Spanish>
             <Russian></Russian>
             <German>Gang Versteck 2</German>
@@ -10179,7 +10179,7 @@
         <Key ID="STR_MAR_Gang_Hideout3">
             <Original>Gang Hideout 3</Original>
             <Czech>Gang Hideout 3</Czech>
-            <French>Planque 3</French>
+            <French>Cachette 3</French>
             <Spanish>Escondite de Pandillas 3</Spanish>
             <Russian></Russian>
             <German>Gang Versteck 3</German>
@@ -10201,7 +10201,7 @@
         <Key ID="STR_MAR_Rebel_Clothing_Shop">
             <Original>Rebel Clothing Shop</Original>
             <Czech>Rebel Oblečení Shop</Czech>
-            <French>Magasin de vêtements Rebel</French>
+            <French>Vêtements rebelle</French>
             <Spanish>Tienda de Ropa Rebelde</Spanish>
             <Italian>Rebel negozio di abbigliamento</Italian>
             <Russian></Russian>
@@ -10212,7 +10212,7 @@
         <Key ID="STR_MAR_Rebel_Weapon_Shop">
             <Original>Rebel Weapon Shop</Original>
             <Czech>Rebel obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes rebelle</French>
+            <French>Armurerie rebelle</French>
             <Spanish>Tienda de Armas Rebeldes</Spanish>
             <Russian></Russian>
             <German>Rebellen Waffenhändler</German>
@@ -10223,7 +10223,7 @@
         <Key ID="STR_MAR_Helicopter_Shop">
             <Original>Helicopter Shop</Original>
             <Czech>vrtulník Shop</Czech>
-            <French>Magasin Aérien</French>
+            <French>Concessionnaire aérien</French>
             <Spanish>Tienda de Helicópteros</Spanish>
             <Italian>Elicottero negozio</Italian>
             <Russian></Russian>
@@ -10234,7 +10234,7 @@
         <Key ID="STR_MAR_Station_Shop">
             <Original>Fuel Station Store</Original>
             <Czech>Palivo Store Station</Czech>
-            <French>Magasin de la station essence</French>
+            <French>Cafet' de Station</French>
             <Spanish>Tienda de Gasolinera</Spanish>
             <Italian>Stazione di rifornimento Conservare</Italian>
             <Russian></Russian>
@@ -10278,7 +10278,7 @@
         <Key ID="STR_MAR_Clothing_Store">
             <Original>Clothing Store</Original>
             <Czech>Obchod s oblečením</Czech>
-            <French>Magasin de vêtements</French>
+            <French>Vêtements</French>
             <Spanish>Tienda de Ropa</Spanish>
             <Russian></Russian>
             <German>Kleidungsgeschäft</German>
@@ -10300,7 +10300,7 @@
         <Key ID="STR_MAR_Store_vehicle_in_Garage">
             <Original>Store vehicle in Garage</Original>
             <Czech>Skladovat vozidlo v garáži</Czech>
-            <French>Ranger le vehicule dans le garage</French>
+            <French>Ranger le véhicule dans le garage</French>
             <Spanish>Guardar vehículo en el Garaje</Spanish>
             <Russian></Russian>
             <German>Fahrzeug in Garage einparken</German>
@@ -10322,7 +10322,7 @@
         <Key ID="STR_MAR_Cop_Clothing_Shop">
             <Original>Cop Clothing Shop</Original>
             <Czech>Cop Oblečení Shop</Czech>
-            <French>Magasin de vêtements de Policier</French>
+            <French>Vêtements de policier</French>
             <Spanish>Tienda de Ropa de Policía</Spanish>
             <Italian>Uniformi</Italian>
             <Russian></Russian>
@@ -10333,7 +10333,7 @@
         <Key ID="STR_MAR_Cop_Weapon_Shop">
             <Original>Cop Weapon Shop</Original>
             <Czech>Cop obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes policière</French>
+            <French>Armurerie de Police</French>
             <Spanish>Tienda de Armas de Policía</Spanish>
             <Italian>Armeria da Agenti</Italian>
             <Russian></Russian>
@@ -10344,7 +10344,7 @@
         <Key ID="STR_MAR_Patrol_Officer_Weapon_Shop">
             <Original>Patrol Officer Weapon Shop</Original>
             <Czech>Policistou obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes d'Officier de Police</French>
+            <French>Armurerie d'officier</French>
             <Spanish>Tienda de Armas de Oficial de Patrulla</Spanish>
             <Italian>Armeria da Pattuglia</Italian>
             <Russian></Russian>
@@ -10355,7 +10355,7 @@
         <Key ID="STR_MAR_Sergeant_Weapon_Shop">
             <Original>Sergeant Weapon Shop</Original>
             <Czech>Seržant obchodu se zbraněmi</Czech>
-            <French>Vendeur d'armes de Sergent</French>
+            <French>Armurerie de sergent</French>
             <Spanish>Tienda de Armas de Oficial de Sargento</Spanish>
             <Italian>Armeria dei Sergenti</Italian>
             <Russian></Russian>
@@ -10366,7 +10366,7 @@
         <Key ID="STR_MAR_W_E_Vehicle Shop">
             <Original>Vehicle Shop</Original>
             <Czech>Shop Vehicle</Czech>
-            <French>Magasin de vehicules</French>
+            <French>Concessionnaire de véhicule</French>
             <Spanish>Tienda de Vehículos</Spanish>
             <Italian>di veicoli</Italian>
             <Russian></Russian>
@@ -10410,7 +10410,7 @@
         <Key ID="STR_MAR_Open_Vault">
             <Original>Open Vault</Original>
             <Czech>otevřená Vault</Czech>
-            <French>Ouvrir Coffre</French>
+            <French>Ouvrir coffre</French>
             <Spanish>Abrir Bóveda</Spanish>
             <Italian>Apri Cassaforte</Italian>
             <Russian></Russian>
@@ -10421,7 +10421,7 @@
         <Key ID="STR_MAR_Fix_Vault">
             <Original>Fix Vault</Original>
             <Czech>Fix Vault</Czech>
-            <French>Réparer Coffre</French>
+            <French>Réparer coffre</French>
             <Spanish>Reparar Bóveda</Spanish>
             <Russian></Russian>
             <German>Tresor reparieren</German>
@@ -10432,7 +10432,7 @@
         <Key ID="STR_MAR_FED_Front">
             <Original>Federal Reserve - Front Entrance</Original>
             <Czech>Federální rezervní systém - přední vchod</Czech>
-            <French>Réserve fédérale - Entrée avant</French>
+            <French>Banque fédérale - Entrée avant</French>
             <Spanish>Reserva Federal - Entrada Principal</Spanish>
             <Italian>Riserva Federale - Entrata Frontale</Italian>
             <Russian></Russian>
@@ -10443,7 +10443,7 @@
         <Key ID="STR_MAR_FED_Side">
             <Original>Federal Reserve - Side Entrance</Original>
             <Czech>Federální rezervní systém - Boční vchod</Czech>
-            <French>Réserve fédérale - Entrée latérale</French>
+            <French>Banque fédérale - Entrée latérale</French>
             <Spanish>Reserva Federal - Entrada Lateral</Spanish>
             <Italian>Riserva Federale - Ingresso laterale</Italian>
             <Russian></Russian>
@@ -10454,7 +10454,7 @@
         <Key ID="STR_MAR_FED_Back">
             <Original>Federal Reserve - Back Entrance</Original>
             <Czech>Federální rezervní systém - zadní vchod</Czech>
-            <French>Réserve fédérale - Entrée Arrière</French>
+            <French>Banque fédérale - Entrée Arrière</French>
             <Spanish>Reserva Federal - Entrada Trasera</Spanish>
             <Italian>Riserva Federale - Ingresso sul Retro</Italian>
             <Russian></Russian>
@@ -10465,7 +10465,7 @@
         <Key ID="STR_MAR_FED_Vault">
             <Original>Federal Reserve - Vault View</Original>
             <Czech>Federální rezervní systém - Vault View</Czech>
-            <French>Réserve fédérale - Voir Coffre</French>
+            <French>Banque fédérale - Voir Coffre</French>
             <Spanish>Reserva Federal - Vista a la Bóveda</Spanish>
             <Italian>Riserva Federale - Vista della Cassaforte</Italian>
             <Russian></Russian>
@@ -10509,7 +10509,7 @@
         <Key ID="STR_MAR_EMS_Clothing_Shop">
             <Original>EMS Clothing Shop</Original>
             <Czech>EMS Oblečení Shop</Czech>
-            <French>Boutique de vêtements de Médecin</French>
+            <French>Uniformes du SAMU</French>
             <Spanish>Tienda de Ropa de Médico</Spanish>
             <Italian>Uniformi EMS</Italian>
             <Russian></Russian>
@@ -10531,7 +10531,7 @@
         <Key ID="STR_MAR_W_Car_Garage">
             <Original>Car Garage</Original>
             <Czech>Car Garage</Czech>
-            <French>Garage de voiture</French>
+            <French>Garage de voitures</French>
             <Spanish>Garaje de Coches</Spanish>
             <Russian></Russian>
             <German>Fahrzeug Garage</German>
@@ -10558,7 +10558,7 @@
             <Spanish>Remove Uniform</Spanish>
             <Russian>Remove Uniform</Russian>
             <German>Entferne Kleidung</German>
-            <French>Remove Uniform</French>
+            <French>Retirer uniforme</French>
             <Italian>Remove Uniform</Italian>
             <Portuguese>Remove Uniform</Portuguese>
             <Polish>Remove Uniform</Polish>
@@ -10569,7 +10569,7 @@
             <Spanish>Remove Hat</Spanish>
             <Russian>Remove Hat</Russian>
             <German>Entferne Kopfbedeckung</German>
-            <French>Remove Hat</French>
+            <French>Retirer chapeau</French>
             <Italian>Remove Hat</Italian>
             <Portuguese>Remove Hat</Portuguese>
             <Polish>Remove Hat</Polish>
@@ -10580,7 +10580,7 @@
             <Spanish>Remove Glasses</Spanish>
             <Russian>Remove Glasses</Russian>
             <German>Entferne Brille</German>
-            <French>Remove Glasses</French>
+            <French>Retirer lunettes</French>
             <Italian>Remove Glasses</Italian>
             <Portuguese>Remove Glasses</Portuguese>
             <Polish>Remove Glasses</Polish>
@@ -10591,7 +10591,7 @@
             <Spanish>Remove Vest</Spanish>
             <Russian>Remove Vest</Russian>
             <German>Entferne Weste</German>
-            <French>Remove Vest</French>
+            <French>Retirer gilet</French>
             <Italian>Remove Vest</Italian>
             <Portuguese>Remove Vest</Portuguese>
             <Polish>Remove Vest</Polish>
@@ -10602,7 +10602,7 @@
             <Spanish>Remove Backpack</Spanish>
             <Russian>Remove Backpack</Russian>
             <German>Entferne Rucksack</German>
-            <French>Remove Backpack</French>
+            <French>Retirer sac</French>
             <Italian>Remove Backpack</Italian>
             <Portuguese>Remove Backpack</Portuguese>
             <Polish>Remove Backpack</Polish>
@@ -10624,7 +10624,7 @@
             <Spanish>Hat and Bandana</Spanish>
             <Russian>Hat and Bandana</Russian>
             <German>Mütze und Kopftuch</German>
-            <French>Hat and Bandana</French>
+            <French>Chapeau et bandana</French>
             <Italian>Hat and Bandana</Italian>
             <Portuguese>Hat and Bandana</Portuguese>
             <Polish>Hat and Bandana</Polish>
@@ -10635,7 +10635,7 @@
             <Spanish>Cop Uniform</Spanish>
             <Russian>Cop Uniform</Russian>
             <German>Polizei Uniform</German>
-            <French>Cop Uniform</French>
+            <French>Uniforme de service</French>
             <Italian>Cop Uniform</Italian>
             <Portuguese>Cop Uniform</Portuguese>
             <Polish>Cop Uniform</Polish>
@@ -10646,7 +10646,7 @@
             <Spanish>EMS Uniform</Spanish>
             <Russian>EMS Uniform</Russian>
             <German>Sanitäter Uniform</German>
-            <French>EMS Uniform</French>
+            <French>Uniforme du SAMU</French>
             <Italian>EMS Uniform</Italian>
             <Portuguese>EMS Uniform</Portuguese>
             <Polish>EMS Uniform</Polish>
@@ -10657,7 +10657,7 @@
             <Spanish>EMS Backpack</Spanish>
             <Russian>EMS Backpack</Russian>
             <German>Sanitäter Rucksack</German>
-            <French>EMS Backpack</French>
+            <French>Sac à dos SAMU</French>
             <Italian>EMS Backpack</Italian>
             <Portuguese>EMS Backpack</Portuguese>
             <Polish>EMS Backpack</Polish>
@@ -10679,7 +10679,7 @@
             <Spanish>Stun Pistol</Spanish>
             <Russian>Stun Pistol</Russian>
             <German>Betäubungs-Pistole</German>
-            <French>Stun Pistol</French>
+            <French>Taser</French>
             <Italian>Stun Pistol</Italian>
             <Portuguese>Stun Pistol</Portuguese>
             <Polish>Stun Pistol</Polish>
@@ -10690,7 +10690,7 @@
             <Spanish>Taser Rifle</Spanish>
             <Russian>Taser Rifle</Russian>
             <German>Betäubungs-Gewehr</German>
-            <French>Taser Rifle</French>
+            <French>Fusil taser</French>
             <Italian>Taser Rifle</Italian>
             <Portuguese>Taser Rifle</Portuguese>
             <Polish>Taser Rifle</Polish>
@@ -10701,7 +10701,7 @@
             <Spanish>Taser Rifle Magazine</Spanish>
             <Russian>Taser Rifle Magazine</Russian>
             <German>Betäubungs-Gewehr-Magazine</German>
-            <French>Taser Rifle Magazine</French>
+            <French>Chargeurs de fléchettes électriques</French>
             <Italian>Taser Rifle Magazine</Italian>
             <Portuguese>Taser Rifle Magazine</Portuguese>
             <Polish>Taser Rifle Magazine</Polish>
@@ -10712,7 +10712,7 @@
             <Spanish>Northern Rebel Base</Spanish>
             <Russian>Northern Rebel Base</Russian>
             <German>Nord Rebellen Basis</German>
-            <French>Northern Rebel Base</French>
+            <French>Base rebelle nord</French>
             <Italian>Northern Rebel Base</Italian>
             <Portuguese>Northern Rebel Base</Portuguese>
             <Polish>Northern Rebel Base</Polish>
@@ -10723,7 +10723,7 @@
             <Spanish>Southern Rebel Base</Spanish>
             <Russian>Southern Rebel Base</Russian>
             <German>Süd Rebellen Basis</German>
-            <French>Southern Rebel Base</French>
+            <French>Base rebelle sud</French>
             <Italian>Southern Rebel Base</Italian>
             <Portuguese>Southern Rebel Base</Portuguese>
             <Polish>Southern Rebel Base</Polish>
@@ -10734,7 +10734,7 @@
             <Spanish>Eastern Rebel Base</Spanish>
             <Russian>Eastern Rebel Base</Russian>
             <German>Ost Rebellen Basis</German>
-            <French>Eastern Rebel Base</French>
+            <French>Base rebelle est</French>
             <Italian>Eastern Rebel Base</Italian>
             <Portuguese>Eastern Rebel Base</Portuguese>
             <Polish>Eastern Rebel Base</Polish>
@@ -10745,7 +10745,7 @@
             <Spanish>North Western Rebel Base</Spanish>
             <Russian>North Western Rebel Base</Russian>
             <German>Nord-West Rebellen Basis</German>
-            <French>North Western Rebel Base</French>
+            <French>Base rebelle nord-ouest</French>
             <Italian>North Western Rebel Base</Italian>
             <Portuguese>North Western Rebel Base</Portuguese>
             <Polish>North Western Rebel Base</Polish>
@@ -10756,7 +10756,7 @@
             <Spanish>North Eastern Rebel Base</Spanish>
             <Russian>North Eastern Rebel Base</Russian>
             <German>Nord-Ost Rebellen Basis</German>
-            <French>North Eastern Rebel Base</French>
+            <French>Base rebelle nord-est</French>
             <Italian>North Eastern Rebel Base</Italian>
             <Portuguese>North Eastern Rebel Base</Portuguese>
             <Polish>North Eastern Rebel Base</Polish>
@@ -10767,7 +10767,7 @@
             <Spanish>Kavala Hospital</Spanish>
             <Russian>Kavala Hospital</Russian>
             <German>Kavala Krankenhaus</German>
-            <French>Kavala Hospital</French>
+            <French>Hôpital de Kavala</French>
             <Italian>Kavala Hospital</Italian>
             <Portuguese>Kavala Hospital</Portuguese>
             <Polish>Kavala Hospital</Polish>
@@ -10778,7 +10778,7 @@
             <Spanish>Athira Regional</Spanish>
             <Russian>Athira Regional</Russian>
             <German>Athira Krankenhaus</German>
-            <French>Athira Regional</French>
+            <French>Hôpital d'Athira</French>
             <Italian>Athira Regional</Italian>
             <Portuguese>Athira Regional</Portuguese>
             <Polish>Athira Regional</Polish>
@@ -10789,7 +10789,7 @@
             <Spanish>Pyrgos Hospital</Spanish>
             <Russian>Pyrgos Hospital</Russian>
             <German>Pyrgos Krankenhaus</German>
-            <French>Pyrgos Hospital</French>
+            <French>Hôpital de Pyrgos</French>
             <Italian>Pyrgos Hospital</Italian>
             <Portuguese>Pyrgos Hospital</Portuguese>
             <Polish>Pyrgos Hospital</Polish>
@@ -10800,7 +10800,7 @@
             <Spanish>South East Hospital</Spanish>
             <Russian>South East Hospital</Russian>
             <German>Süd-Ost Krankenhaus</German>
-            <French>South East Hospital</French>
+            <French>Hôpital du Sud-Est</French>
             <Italian>South East Hospital</Italian>
             <Portuguese>South East Hospital</Portuguese>
             <Polish>South East Hospital</Polish>
@@ -10811,7 +10811,7 @@
             <Spanish>Tanouka Regional</Spanish>
             <Russian>Tanouka Regional</Russian>
             <German>Tanouka Krankenhaus</German>
-            <French>Tanouka Regional</French>
+            <French>Hôpital de Tanouka</French>
             <Italian>Tanouka Regional</Italian>
             <Portuguese>Tanouka Regional</Portuguese>
             <Polish>Tanouka Regional</Polish>
@@ -10822,7 +10822,7 @@
             <Spanish>North East Airport Hospital</Spanish>
             <Russian>North East Airport Hospital</Russian>
             <German>Nord-Ost Flughafen Krankenhaus</German>
-            <French>North East Airport Hospital</French>
+            <French>Hôpital de l'aéroport</French>
             <Italian>North East Airport Hospital</Italian>
             <Portuguese>North East Airport Hospital</Portuguese>
             <Polish>North East Airport Hospital</Polish>
@@ -10833,7 +10833,7 @@
             <Spanish>North Airport HQ</Spanish>
             <Russian>North Airport HQ</Russian>
             <German>Nord Flughafen HQ</German>
-            <French>North Airport HQ</French>
+            <French>Base aérienne nord</French>
             <Italian>North Airport HQ</Italian>
             <Portuguese>North Airport HQ</Portuguese>
             <Polish>North Airport HQ</Polish>
@@ -10844,7 +10844,7 @@
             <Spanish>South Western Airport HQ</Spanish>
             <Russian>South Western Airport HQ</Russian>
             <German>Süd-Westliche HQ Flughafen</German>
-            <French>South Western Airport HQ</French>
+            <French>Base aérienne sud-ouest</French>
             <Italian>South Western Airport HQ</Italian>
             <Portuguese>South Western Airport HQ</Portuguese>
             <Polish>South Western Airport HQ</Polish>
@@ -10854,7 +10854,7 @@
         <Key ID="STR_Crime_187V">
             <Original>Vehicular Manslaughter</Original>
             <Czech>dopravní zabití</Czech>
-            <French>Voleur de vehicules</French>
+            <French>Vol de véhicule</French>
             <Spanish>Homicidio Vehicular</Spanish>
             <Italian>Omicidio colposo veicolare</Italian>
             <Polish>Kołowego Manslaughter</Polish>
@@ -10876,7 +10876,7 @@
         <Key ID="STR_Crime_901">
             <Original>Escaping Jail</Original>
             <Czech>Jak uniknout vězení</Czech>
-            <French>Échappé de prison</French>
+            <French>Evasion de prison</French>
             <Spanish>Escaparse de la Cárcel</Spanish>
             <Italian>Fuga dalla prigione</Italian>
             <Polish>Uciekając Jail</Polish>
@@ -10887,7 +10887,7 @@
         <Key ID="STR_Crime_215">
             <Original>Attempted Auto Theft</Original>
             <Czech>Pokusili Theft Auto</Czech>
-            <French>Tentative de vol d'automobiles</French>
+            <French>Tentative de vol de véhicule</French>
             <Spanish>Atentado: Robo de Vehículo</Spanish>
             <Italian>Tentativo di furto d'auto</Italian>
             <Polish>Próba Theft Auto</Polish>
@@ -10898,7 +10898,7 @@
         <Key ID="STR_Crime_213">
             <Original>Use of illegal explosives</Original>
             <Czech>Používání nelegálních výbušnin</Czech>
-            <French>L'utilisation d'explosifs illégaux</French>
+            <French>Utilisation d'explosifs illégaux</French>
             <Spanish>Uso de Explosivos Ilegales</Spanish>
             <Italian>Uso di esplosivi illegali</Italian>
             <Polish>Używanie nielegalnych materiałów wybuchowych</Polish>
