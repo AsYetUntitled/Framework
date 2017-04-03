@@ -4020,7 +4020,7 @@
             <Spanish>Estas cargando tu peso máximo! No puedes correr o moverte rapido hasta que botes algunos objetos!</Spanish>
             <Russian></Russian>
             <German>Du trägst zu viel bei dir! Du bist nicht in der Lage, zu rennen oder dich schnell zu bewegen, bis du einige Gegenstände abgelegt hast!</German>
-            <French>Vous êtes surchargé, vous ne pouvez plus courrir ou bouger rapidement à moins de lacher quelques objets !</French>
+            <French>Vous êtes surchargé, vous ne pouvez plus courir ou bouger rapidement à moins de lacher quelques objets !</French>
             <Italian>Stai trasportando oltre il tuo carico massimo! Non riuscirai a correre fino a quando non ti libererai di qualche oggetto!</Italian>
             <Portuguese>Você está carregando muito peso. Você não irá conseguir correr ou se mover rapidamente.</Portuguese>
             <Polish>Niesiesz maksymalny ciężar, nie będziesz mógł biegać ani szybko chodzić dopuki nie wyrzucisz jakiejś rzeczy</Polish>
@@ -5205,7 +5205,7 @@
             <Spanish>$%1 de la Reserva Federal fue devuelto, ya que mataron al ladrón.</Spanish>
             <Russian></Russian>
             <German>$%1 wurden in die Zentralbank zurückgebracht, weil der Bankräuber gestorben ist.</German>
-            <French>$%1 du vol de la Réserve fédérale est récupéré du voleur qui vient d'être tué.</French>
+            <French>$%1 du vol de la Banque Fédérale ont été récupérés sur le braqueur, qui vient d'être tué.</French>
             <Italian>$%1 della rapina alla Riserva Federale sono stati recuperati dal rapinatore ucciso.</Italian>
             <Portuguese>R$%1 que foi roubado da Reserva Federal retornou a ela após a morte do ladrão.</Portuguese>
             <Polish>$%1 z kradzieży w Banku zostało zwrócone po zabiciu włamywacza.</Polish>
@@ -5249,7 +5249,7 @@
             <Spanish>No puede poner nada menor que 1!</Spanish>
             <Russian></Russian>
             <German>Du kannst nichts unter 1 eingeben!</German>
-            <French>Vous ne pouvez pas moins de 1!</French>
+            <French>Vous ne pouvez pas prendre moins de 1 objet !</French>
             <Italian>Non puoi selezionare nulla sotto l'1!</Italian>
             <Portuguese>Não é permitido usar valores abaixo de 1!</Portuguese>
             <Polish>Nie możesz wprowadzić niczego poniżej 1!</Polish>
@@ -5260,7 +5260,7 @@
             <Spanish>Solo puedes guardar barras de oro en la bóveda.</Spanish>
             <Russian></Russian>
             <German>Du kannst nur Goldbarren in den Tresor legen.</German>
-            <French>Vous ne pouvez pas mettre autre chose que des lingot d'or.</French>
+            <French>Vous ne pouvez rien stocker à part des lingots d'or dans le coffre.</French>
             <Italian>Nella cassaforte puoi depositare solo lingotti d'oro.</Italian>
             <Portuguese>Você só pode guardar Barras de Ouro no cofre.</Portuguese>
             <Polish>Nie możesz składować niczego poza sztabami złota w sejfie.</Polish>
@@ -5326,7 +5326,7 @@
             <Spanish>Nadie le ha vendido a este comerciante recientemente.</Spanish>
             <Russian></Russian>
             <German>Niemand hat kürzlich an diesem Dealer etwas verkauft.</German>
-            <French>Personne n'est venu vendre à ce dealer récement</French>
+            <French>Personne n'est venu vendre quelque chose ici récemment.</French>
             <Italian>Non è stato visto nessuno vendere a questo spacciatore di recente.</Italian>
             <Portuguese>Ninguém vendeu para esse negociante recentemente</Portuguese>
             <Polish>Nikt nie sprzedawał ostatnio u dilera.</Polish>
@@ -5337,7 +5337,7 @@
             <Spanish>Las siguientes personas le han estado vendiendo a este comerciante recientemente.</Spanish>
             <Russian></Russian>
             <German>Folgende Personen haben kürzlich an diesem Dealer etwas verkauft:</German>
-            <French>Les personnes suivantes sont venues vendre à ce dealer récement.</French>
+            <French>Les personnes suivantes sont venues vendre quelque chose récemment.</French>
             <Italian>Le seguenti persone sono state viste vendere a questo spacciatore.</Italian>
             <Portuguese>Os seguintes jogadores venderam para esse negociante recentemente.</Portuguese>
             <Polish>Ostatnio u dilera sprzedawali następujący ludzie.</Polish>
@@ -5370,7 +5370,7 @@
             <Spanish>Has sido liberado automáticamente por tiempo excesivo de estar retenido.</Spanish>
             <Russian></Russian>
             <German>Du wurdest automatisch freigelassen, da die maximale Verhaftungszeit überschritten wurde.</German>
-            <French>Vous êtes démenotté automatiquement pour un menottage excessivement long</French>
+            <French>Vous avez été démenotté automatiquement pour un menottage excessivement long</French>
             <Italian>Sei stato automaticamente liberato per essere rimasto ammanettato troppo tempo</Italian>
             <Portuguese>Você foi solto automaticamente, devido ao tempo limite ter expirado.</Portuguese>
             <Polish>Zostałeś automatycznie rozkuty z uwagi na długi upływ czasu od skucia.</Polish>
@@ -5389,7 +5389,7 @@
         <Key ID="STR_Cop_wantedList_notCop">
             <Original>Who do you think you are?</Original>
             <Czech>Kdo si myslíš že jsi?</Czech>
-            <French>Qui pensez vous être?</French>
+            <French>Qui pensez-vous être?</French>
             <Spanish>¿Quién te crees que eres?</Spanish>
             <Italian>Chi ti credi di essere?</Italian>
             <Polish>Za kogo Ty się masz?</Polish>
@@ -5438,7 +5438,7 @@
             <Spanish>Le tratastes de dar %1 %2 %3 pero no tenian espacio asi que se te devolvió.</Spanish>
             <Russian></Russian>
             <German>Du wolltest %1 %2 %3 geben, aber er hat keinen Platz in seinem Inventar und hat es darum zurückgegeben.</German>
-            <French>Vous avez essayé de donner %1 %2 %3 mais il n'a pas assez de place et vous à tout redonné.</French>
+            <French>Vous avez essayé de donner %1 %2 %3 mais il n'a pas assez de place et vous a tout redonné.</French>
             <Italian>Hai provato a dare a %1 %2 unità di %3 ma non poteva trasportarlo quindi ti sono state restituite restituite.</Italian>
             <Portuguese>Você tentou dar %1 %2 %3, mas não conseguiu segurar e por isso que foi devolvido.</Portuguese>
             <Polish>Próbowałeś dać %1 %2 %3 lecz gracz nie mógł tego unieść, przedmioty zostały zwrócone.</Polish>
@@ -5449,7 +5449,7 @@
             <Spanish>%1 devolvió %2 %3 porque no tenian espacio.</Spanish>
             <Russian></Russian>
             <German>%1 hat %2 %3 zurückgegeben, weil er nicht so viel tragen kann.</German>
-            <French>%1 vous à redonné %2 %3 parce qu'ils ne pouvaient pas en tenir autant.</French>
+            <French>%1 vous a redonné %2 %3 parce qu'il ne pouvait pas en prendre autant.</French>
             <Italian>%1 ha restituito %2 %3 perchè non poteva trasportare quella quantità</Italian>
             <Portuguese>%1 retornou %2 %3 porque não conseguiu segurar essa quantidade.</Portuguese>
             <Polish>%1 zwrócił %2 %3 ponieważ nie mógł tego unieść</Polish>
@@ -5460,7 +5460,7 @@
             <Spanish>%1 te a dado %2, pero solo puedes cargar %3 asi que %4 fue devuelto.</Spanish>
             <Russian></Russian>
             <German>%1 hat dir %2 gegeben, du kannst aber nur %3 tragen, also hast du %4 zurückgegeben.</German>
-            <French>%1 vous à donné %2 mais vous ne pouvez en tenir que %3 donc %4 à été redonné.</French>
+            <French>%1 vous a donné %2 mais vous ne pouvez en prendre que %3 donc %4 a été redonné.</French>
             <Italian>%1 ti ha dato %2 ma puoi portare solo %3 quindi %4 unità sono state restituite.</Italian>
             <Portuguese>%1 retornou %2 %3 porque não conseguiu segurar essa quantidade.</Portuguese>
             <Polish>%1 dał ci %2 lecz możesz unieść tylko %3, w związku z tym zwróciłeś %4.</Polish>
@@ -5471,7 +5471,7 @@
             <Spanish>Quieres agregar este Objeto/Arma a tu inventario? Si lo agregas a tu arma tu accesorio actual se perdera!</Spanish>
             <Russian></Russian>
             <German>Möchtest du den Aufsatz zu deiner Waffe oder deinem Inventar hinzufügen? Wenn du es zur Waffe hinzufügst, geht der vorhandene Aufsatz verloren!</German>
-            <French>Voulez-vous ajouter cet article à votre arme ou à votre inventaire? Si vous l'ajoutez à votre arme, votre accessoire existant actuel sera perdu!</French>
+            <French>Voulez-vous ajouter cet objet à votre arme ou le mettre dans votre inventaire? Si vous l'ajoutez à votre arme, votre accessoire actuel sera perdu!</French>
             <Italian>Vuoi aggiungere questo oggetto alla tua arma o all'inventario? Se lo aggiungerai all'arma verrà rimosso l'eventuale accessorio già presente su di essa!</Italian>
             <Portuguese>Você quer adicionar este item à sua arma ou inventário? Se você adicioná-lo à sua arma seu item atual existente será perdida!</Portuguese>
             <Polish>Chcesz dodać tę rzecz do broni lub wyposażenia? Jeśli to zrobisz twoje aktualne wyposażenie broni zostanie zmienione na nowo zakupione i przepadnie!</Polish>
@@ -5482,7 +5482,7 @@
             <Spanish>Slot de accesorio tomado!</Spanish>
             <Russian></Russian>
             <German>Aufsatz Platz belegt!</German>
-            <French>Accessoire pris!</French>
+            <French>Accessoire déjà présent!</French>
             <Italian>Slot Accessorio preso!</Italian>
             <Portuguese>Slot de acessório utilizado!</Portuguese>
             <Polish>Podjąłeś slot</Polish>
@@ -5526,7 +5526,7 @@
             <Spanish>No tienes permiso de accesar este vehículo mientras esta cerrado.</Spanish>
             <Russian></Russian>
             <German>Du bist nicht berechtigt, auf dieses Fahrzeug zuzugreifen, während es abgeschlossen ist.</German>
-            <French>Vous n'êtes pas autorisé à accéder à ce véhicule tant qu'il est vérouillé.</French>
+            <French>Vous n'êtes pas autorisé à accéder à ce véhicule tant qu'il est verrouillé.</French>
             <Italian>Non ti è permesso l'accesso a questo veicolo mentre è bloccato.</Italian>
             <Portuguese>Você não pode acessar o veiculo enquanto ele estiver trancado.</Portuguese>
             <Polish>Nie masz dostępu do pojazdu gdy ten jest zamknięty</Polish>
@@ -5559,7 +5559,7 @@
             <Spanish>Has abierto tu vehículo </Spanish>
             <Russian></Russian>
             <German>Du hast dein Fahrzeug aufgeschlossen.</German>
-            <French>Vous avez débloqué votre véhicule.</French>
+            <French>Vous avez déverrouillé votre véhicule.</French>
             <Italian>Hai sbloccato il tuo veicolo.</Italian>
             <Portuguese>Você destrancou o veículo.</Portuguese>
             <Polish>Odblokowałeś pojazd</Polish>
@@ -5581,7 +5581,7 @@
             <Spanish>Sirenas Prendidas</Spanish>
             <Russian></Russian>
             <German>Sirene AN</German>
-            <French>Sirenes On</French>
+            <French>Sirènes On</French>
             <Italian>Sirene accese</Italian>
             <Portuguese>Sirene Ligada</Portuguese>
             <Polish>Syrena włączona</Polish>
@@ -5592,7 +5592,7 @@
             <Spanish>Sirenas Apagadas</Spanish>
             <Russian></Russian>
             <German>Sirene AUS</German>
-            <French>Sirenes Off</French>
+            <French>Sirènes Off</French>
             <Italian>Sirene spente</Italian>
             <Portuguese>Sirene Desligada</Portuguese>
             <Polish>Syrena wyłączona</Polish>
@@ -5657,7 +5657,7 @@
             <Czech>Vozidlo buď neexistuje, nebo je zničena.</Czech>
             <Spanish>El vehículo no existe o fue destruido.</Spanish>
             <Russian></Russian>
-            <French>Le véhicule n'existe pas ou a été détruit</French>
+            <French>Le véhicule n'existe pas ou a été détruit.</French>
             <German>Entweder existiert das Fahrzeug nicht oder es wurde zerstört.</German>
             <Italian>Il veicolo non esiste o è stato distrutto.</Italian>
             <Portuguese>Veículo não existe ou está destruido.</Portuguese>
@@ -5680,7 +5680,7 @@
             <Spanish>No puedes poner nada menos que 1!</Spanish>
             <Russian></Russian>
             <German>Du kannst nichts unter 1 eingeben!</German>
-            <French>Vous ne pouvez pas entrer quoi que ce soit en dessous de 1!</French>
+            <French>Vous ne pouvez pas prendre moins d'1 objet !</French>
             <Italian>Non puoi inserire nulla al di sotto di 1!</Italian>
             <Portuguese>Você não pode digitar nada abaixo de 1!</Portuguese>
             <Polish>Nie możesz wprowadzić niczego poniżej 1!</Polish>
@@ -5737,7 +5737,7 @@
             <Spanish>Error al salvar contenedor, no se pudo encontrar la casa?</Spanish>
             <Russian></Russian>
             <German>Fehler beim Speichern der Container: Es konnte kein Haus gefunden werden.</German>
-            <French>Erreur lors de la sauvegarde des conteneur, impossible de localiser la maison.</French>
+            <French>Erreur lors de la sauvegarde des conteneurs, impossible de localiser la maison.</French>
             <Italian>Errore nel salvataggio del contenitore, impossibile trovare la cas a?</Italian>
             <Portuguese>Erro ao salvar a caixa, não foi possível encontrar a casa.</Portuguese>
             <Polish>Błąd w zapisywaniu pojemnika, nie można zlokalizować domu.</Polish>
@@ -5767,7 +5767,7 @@
         <Key ID="STR_House_Container_Floating">
             <Original>The storage box is over the stairs!</Original>
             <Czech>Úložný box je u konce schodů!</Czech>
-            <French>La boîte de rangement est dans les escaliers!</French>
+            <French>Le conteneur est dans les escaliers!</French>
             <Spanish>La caja de almacenamiento está sobre las escaleras!</Spanish>
             <Italian>Il contenitore è sopra le scale!</Italian>
             <Polish>Schowek jest na schodach!</Polish>
@@ -5803,7 +5803,7 @@
             <Spanish>Has cerrado con llave la puerta.</Spanish>
             <Russian></Russian>
             <German>Du hast die Tür abgeschlossen.</German>
-            <French>Vous avez verrouillé la porte.</French>
+            <French>Vous avez fermé à clé la porte.</French>
             <Italian>Hai bloccato la porta.</Italian>
             <Portuguese>Você trancou a porta.</Portuguese>
             <Polish>Zablokowałeś drzwi.</Polish>
@@ -5825,7 +5825,7 @@
             <Spanish>Esta casa fue vendida recientemente y esta procesando datos.</Spanish>
             <Russian></Russian>
             <German>Dieses Haus wurde vor Kurzem verkauft.</German>
-            <French>Cette maison a été récemment vendu et est en cours de traitement dans la base de données.</French>
+            <French>Cette maison a été récemment vendue et est en cours de traitement dans la base de données.</French>
             <Italian>Questa casa è stata venduta di recente ed il database la sta ancora processando.</Italian>
             <Portuguese>Essa casa já foi vendida, estamos processando a ordem de compra</Portuguese>
             <Polish>Ten dom został ostatnio sprzedany i trwa jego przetwarzanie w bazie danych.</Polish>
@@ -5902,7 +5902,7 @@
             <Spanish>No puedes asaltar esta casa, porque el dueño no esta en linea!</Spanish>
             <Russian></Russian>
             <German>Der Hausbesitzer ist nicht online, daher kannst du sein Haus nicht durchsuchen!</German>
-            <French>Cette personne n'est pas en ligne, vous ne pouvez pas perquisitionner cette maison!</French>
+            <French>Cette personne n'est pas sur l'île, vous ne pouvez pas perquisitionner cette maison!</French>
             <Italian>Questa persona non è online quindi non puoi perquisire la sua casa!</Italian>
             <Portuguese>O dono da casa não está online, você não pode vasculhar a casa!</Portuguese>
             <Polish>Osoba nie jest na serwerze, nie możesz przeszukać domu.</Polish>
@@ -5935,7 +5935,7 @@
             <Spanish>Rompiendo la cerradura de la puerta.</Spanish>
             <Russian></Russian>
             <German>Türschloss wird aufgebrochen...</German>
-            <French>En train de casser la sérrure</French>
+            <French>En train de casser la serrure</French>
             <Italian>Sbloccando la porta</Italian>
             <Portuguese>Quebrando a fechadura da porta</Portuguese>
             <Polish>Wyłamuje zablokowane drzwi...</Polish>
@@ -5946,7 +5946,7 @@
             <Spanish>%1 tu casa esta siendo asaltada por los policías!</Spanish>
             <Russian></Russian>
             <German>%1 dein Haus wird von der Polizei durchsucht!</German>
-            <French>%1 votre maison est perquisitionnée par les policiers !</French>
+            <French>%1, votre maison est perquisitionnée par les policiers !</French>
             <Italian>%1 la Polizia si sta introducendo in casa tua!</Italian>
             <Portuguese>%1 Sua casa está sendo vasculhada pela Policia!</Portuguese>
             <Polish>%1 twój dom jest kontrolowany przez policję!</Polish>
@@ -5979,7 +5979,7 @@
             <Spanish>Buscando Casa...</Spanish>
             <Russian></Russian>
             <German>Haus wird durchsucht...</German>
-            <French>Recherche Maison...</French>
+            <French>Perquisition de la Maison...</French>
             <Italian>Perquisendo la Casa...</Italian>
             <Portuguese>Vasculhando a casa...</Portuguese>
             <Polish>Przeszukuję dom...</Polish>
@@ -5990,7 +5990,7 @@
             <Spanish>Te alejastes mucho de la casa!</Spanish>
             <Russian></Russian>
             <German>Du hast dich zu weit vom Haus entfernt!</German>
-            <French>Vous êtes parti trop loin de la maison!</French>
+            <French>Vous vous êtes trop éloigné de la maison!</French>
             <Italian>Sei andato troppo distante dalla casa!</Italian>
             <Portuguese>Você está muito distante da casa!</Portuguese>
             <Polish>Jesteś za daleko od domu!</Polish>
@@ -6045,7 +6045,7 @@
             <Spanish>La casa se esta cerrando con llave, por favor espere...</Spanish>
             <Russian></Russian>
             <German>Haus wird abgeschlosen, bitte warten...</German>
-            <French>Fermeture de la maison veuillez patienter...</French>
+            <French>Fermeture de la maison, veuillez patienter...</French>
             <Italian>Bloccando la casa, attendere prego...</Italian>
             <Portuguese>Trancando a casa, aguarde...</Portuguese>
             <Polish>Blokuję zamykam dom proszę czekać...</Polish>
@@ -6053,7 +6053,7 @@
         <Key ID="STR_House_LockedUp">
             <Original>House has been locked up.</Original>
             <Czech>Dům byl zamčený.</Czech>
-            <French>La maison a été verouillée.</French>
+            <French>La maison a été verrouillée.</French>
             <Spanish>La casa se a cerrado con llave.</Spanish>
             <Russian></Russian>
             <German>Haus wurde abgeschlossen.</German>
@@ -6159,7 +6159,7 @@
             <Spanish>Necesitas $1,000 para reparar el helicóptero.</Spanish>
             <Russian></Russian>
             <German>Du benötigst $1,000, um deinen Helikopter zu warten.</German>
-            <French>Vous devez $1000 pour l'entretien de votre hélicoptère</French>
+            <French>Vous avez besoin de $1000 pour entretien de votre hélicoptère</French>
             <Italian>Necessiti di $1.000 per fare manutenzione al tuo elicottero</Italian>
             <Portuguese>Você precisa de R$1.000 para reparar a sua aeronave</Portuguese>
             <Polish>Potrzebujesz $1000 aby serwisować helikopter</Polish>
@@ -6315,7 +6315,7 @@
             <Spanish>Heroina</Spanish>
             <Russian></Russian>
             <German>Verarbeitetes Heroin</German>
-            <French>Héroine</French>
+            <French>Héroïne</French>
             <Italian>Eroina processata</Italian>
             <Portuguese>Heroína Processada</Portuguese>
             <Polish>Heroina oczyszczona</Polish>
@@ -6480,7 +6480,7 @@
             <Spanish>Pez Gato Cocinado</Spanish>
             <Russian></Russian>
             <German>Frittierter Katzenhai</German>
-            <French>roussette frit</French>
+            <French>Roussette frit</French>
             <Italian>profondo palombo fritti</Italian>
             <Portuguese>Tubarão Gato Frito</Portuguese>
             <Polish>Grilowany Rekin</Polish>
@@ -6524,7 +6524,7 @@
             <Spanish>Pollo Frito</Spanish>
             <Russian></Russian>
             <German>Schwarz Frittiertes Hühnchen</German>
-            <French>Noir Fried Chicken</French>
+            <French>Poulet frit</French>
             <Italian>Nero Fried Chicken</Italian>
             <Portuguese>Frango Frito</Portuguese>
             <Polish>Smażony Kurczak</Polish>
@@ -6887,7 +6887,7 @@
             <Spanish>Cizalla</Spanish>
             <Russian></Russian>
             <German>Bolzenschneider</German>
-            <French>Outils de sérrurier</French>
+            <French>Outils de serrurier</French>
             <Italian>Tronchese</Italian>
             <Portuguese>Alicate</Portuguese>
             <Polish>Nożyce do kłódek</Polish>
@@ -6942,7 +6942,7 @@
             <Spanish>Cocaína</Spanish>
             <Russian></Russian>
             <German>Verarbeitetes Kokain</German>
-            <French>Cocaine</French>
+            <French>Cocaïne</French>
             <Italian>Cocaina processata</Italian>
             <Portuguese>Cocaína Refinada</Portuguese>
             <Polish>Oczyszczona kokaina</Polish>
@@ -7043,7 +7043,7 @@
             <Spanish>Licencia de Guardia Costera</Spanish>
             <Russian></Russian>
             <German>Küstenwachenausbildung</German>
-            <French>Garde-Cotes</French>
+            <French>Garde-Côtes</French>
             <Italian>Licenza Guardia Costiera</Italian>
             <Portuguese>Licença da Guarda Costeira</Portuguese>
             <Polish>Trening straż przybrzeżna</Polish>
@@ -7054,7 +7054,7 @@
             <Spanish>Entrenamiento Rebelde</Spanish>
             <Russian></Russian>
             <German>Rebellenausbildung</German>
-            <French>Entrainement rebelle</French>
+            <French>Entraînement rebelle</French>
             <Italian>Licenza da Ribelle</Italian>
             <Portuguese>Treinamento Rebelde</Portuguese>
             <Polish>Trening rebelianta</Polish>
@@ -7076,7 +7076,7 @@
             <Spanish>Procesamiento de Diamantes</Spanish>
             <Russian></Russian>
             <German>Diamantenverarbeitung</German>
-            <French>Taillage des Diamands</French>
+            <French>Taillage des Diamants</French>
             <Italian>Processo Diamanti</Italian>
             <Portuguese>Lapidação de Diamante</Portuguese>
             <Polish>Szlifierz diamentów</Polish>
@@ -7131,7 +7131,7 @@
             <Spanish>Entrenamiento de Cocaína</Spanish>
             <Russian></Russian>
             <German>Kokainausbildung</German>
-            <French>Transformation de la Cocaine</French>
+            <French>Transformation de la Cocaïne</French>
             <Italian>Processo Cocaina</Italian>
             <Portuguese>Treinamento de Cocaína</Portuguese>
             <Polish>Oczyszczanie kokainy</Polish>
@@ -7221,7 +7221,7 @@
             <Spanish>Una carga explosiva ha sido puesta en la bóveda de la reserva federal, tienes hasta que se acabe el tiempo para desarmar el explosivo!</Spanish>
             <Russian></Russian>
             <German>Eine Sprengladung wurde am Safe angebracht. Du hast Zeit, bis die Uhr abläuft, um die Ladung zu entschärfen!</German>
-            <French>Une charge de dynamite a été placé sur le coffre de la réserve fédérale, Vous avez jusqu'au temps imparti pour désarmorcer la charge !</French>
+            <French>Une charge de dynamite a été placée sur le coffre de la réserve fédérale. Vous avez jusqu'au temps imparti pour désarmorcer la charge !</French>
             <Italian>Una carica esplosiva è stata piazzata sulla cassaforte della Riserva Federale, puoi cercare di disinnescarla prima che scada il tempo!</Italian>
             <Portuguese>O explosivo foi colocado no cofre , você tem até o tempo acabar para desarmar o explosivo.</Portuguese>
             <Polish>Ładunek wybuchowy został założony na skarbcu rezerw federalnych, musisz rozbroić ładunek nim wybuchnie!</Polish>
@@ -7287,7 +7287,7 @@
             <Spanish>!!!!! LA RESERVA FEDERAL ESTA SIENDO ASALTADA !!!!!!</Spanish>
             <Russian></Russian>
             <German>!!!!! JEMAND BRICHT IN DIE ZENTRALBANK EIN !!!!!!</German>
-            <French>!!!!! QUELQU'UN TENTE DE S'INTRODUIRE DANS LA RÈSERVE FÈDÈRALE !!!!!!</French>
+            <French>!!!!! QUELQU'UN TENTE DE S'INTRODUIRE DANS LA RÉSERVE FÉDÉRALE !!!!!!</French>
             <Italian>!!!!!! QUALCUNO STA CERCANDO DI INTRODURSI NELLA RISERVA FEDERALE !!!!!!</Italian>
             <Portuguese>!!!!! A RESERVA FEDERAL ESTÁ SENDO ROUBADA !!!!!!</Portuguese>
             <Polish>!!!!!! KTOŚ SIĘ WŁAMUJE DO BANKU REZERW FEDERALNYCH !!!!!</Polish>
@@ -7328,7 +7328,7 @@
         <Key ID="STR_ISTR_defuseKit_NotNear">
             <Original>You are not looking at a vault.</Original>
             <Czech>Nejste při pohledu na klenbu.</Czech>
-            <French>Vous ne cherchez pas à un coffre-fort.</French>
+            <French>Vous ne regardez pas le coffre.</French>
             <Spanish>No estas apuntando a la bóveda.</Spanish>
             <Italian>Non cercate in un caveau.</Italian>
             <Polish>Nie jesteś patrząc na sklepieniu.</Polish>
@@ -7416,7 +7416,7 @@
         <Key ID="STR_ISTR_Jerry_PopUp">
             <Original>Spend $%1 to refuel your Empty Fuel Canister?</Original>
             <Czech>Utratit $%1 natankovat vaše prázdné palivové kanystr?</Czech>
-            <French>Dépensez $%1 pour faire le plein de votre citerne vide ?</French>
+            <French>Dépenser $%1 pour faire le plein de votre réservoir ?</French>
             <Spanish>Gastar $%1 para llenar el Bidón de Combustible?</Spanish>
             <Italian>Spendere $%1 per rifornire di carburante la vostra scatola metallica del combustibile vuoto?</Italian>
             <Polish>Wydać $%1 zatankować swój pustego zasobnika paliwa?</Polish>
@@ -7438,7 +7438,7 @@
         <Key ID="STR_ISTR_Jerry_Refueled">
             <Original>You have successfully refuelled the Fuel Canister!</Original>
             <Czech>Úspěšně jste tankovat palivový kanystr!</Czech>
-            <French>Vous avez ravitaillé avec succès la citerne d'essence !</French>
+            <French>Vous avez ravitaillé avec succès le réservoir d'essence !</French>
             <Spanish>Usted ha llenado con exito el Bidón de Combustible!</Spanish>
             <Italian>Hai rifornimento con successo il canestro del combustibile!</Italian>
             <Polish>Pomyślnie zatankowany kanistra paliwa!</Polish>
@@ -7485,7 +7485,7 @@
             <Spanish>Abriendo Cerradura %1</Spanish>
             <Russian></Russian>
             <German>Wird aufgebrochen %1...</German>
-            <French>Crochetage %1</French>
+            <French>Crochetage de %1</French>
             <Italian>Scassinando %1</Italian>
             <Portuguese>Arrombando %1</Portuguese>
             <Polish>Włamujesz się do %1</Polish>
@@ -7518,7 +7518,7 @@
             <Spanish>La ganzua se rompió.</Spanish>
             <Russian></Russian>
             <German>Der Dietrich ist abgebrochen.</German>
-            <French>L'outil de crochetage à cassé</French>
+            <French>L'outil de crochetage a cassé</French> 
             <Italian>Il grimaldello si è rotto.</Italian>
             <Portuguese>A Chave Mestra quebrou.</Portuguese>
             <Polish>Wytrych się złamał.</Polish>
@@ -7606,7 +7606,7 @@
             <Spanish>No puedes poner mas contenedores en tu casa.</Spanish>
             <Russian></Russian>
             <German>Es können keine weiteren Container in dein Haus gestellt werden.</German>
-            <French>Vous ne pouvez pas placer d'autres conteneur dans votre maison.</French>
+            <French>Vous ne pouvez pas placer d'autres conteneurs dans votre maison.</French>
             <Italian>Non puoi installare altri contenitori in casa tua.</Italian>
             <Portuguese>Você não pode colocar mais caixas dentro da sua casa.</Portuguese>
             <Polish>Nie masz więcej miejsca na pojemniki w tym domu.</Polish>
@@ -7628,7 +7628,7 @@
             <Spanish>Debes seleccionar un objeto primero!</Spanish>
             <Russian></Russian>
             <German>Du musst zuerst einen Gegenstand auswählen!</German>
-            <French>Vous devez selectionner un item !</French>
+            <French>Vous devez sélectionner un item !</French>
             <Italian>Devi prima selezionare un oggetto!</Italian>
             <Portuguese>Você precisa selecionar um item primeiro!</Portuguese>
             <Polish>Zaznacz najpier rzecz.</Polish>
@@ -7707,7 +7707,7 @@
             <Spanish>Procesando Opio</Spanish>
             <Russian></Russian>
             <German>Heroin wird verarbeitet...</German>
-            <French>Traitement d'Heroine</French>
+            <French>Traitement d'Héroïne</French>
             <Italian>Processando Eroina</Italian>
             <Portuguese>Processando Heroína</Portuguese>
             <Polish>Oczyszczanie heroiny</Polish>
@@ -7762,7 +7762,7 @@
             <Spanish>Procesando Hojas de Coca</Spanish>
             <Russian></Russian>
             <German>Kokain wird verarbeitet...</German>
-            <French>Traitement de Cocaine</French>
+            <French>Traitement de Cocaïne</French>
             <Italian>Processando Cocaina</Italian>
             <Portuguese>Processando Cocaína</Portuguese>
             <Polish>Oczyszczanie kokainy</Polish>
@@ -7803,7 +7803,7 @@
         <Key ID="STR_Process_Weight">
             <Original>You have no inventory space to process your materials.</Original>
             <Czech>Nemáš zásob prostor ke zpracování vašich materiálů.</Czech>
-            <French>Vous avez pas d'espace d'inventaire pour traiter vos matériaux.</French>
+            <French>Vous avez pas de place pour traiter vos matériaux.</French>
             <Spanish>Usted no tiene espacio en el inventario para procesar sus materiales.</Spanish>
             <Italian>Non hai spazio nell'inventario per elaborare i materiali.</Italian>
             <Polish>Nie masz miejsca na przetwarzanie swoich zapasów materiałów.</Polish>
@@ -7828,7 +7828,7 @@
             <Spanish>Necesitas $%1 para procesar sin licencia!</Spanish>
             <Russian></Russian>
             <German>Du brauchst $%1, um ohne eine Lizenz verarbeiten zu können!</German>
-            <French>Vous devez $%1 pour traiter sans permis !</French>
+            <French>Vous avez besoin de $%1 pour traiter sans licence !</French>
             <Italian>Hai bisogno di $%1 per processare senza la dovuta licenza!</Italian>
             <Portuguese>Você precisa de R$%1 para processar sem licença!</Portuguese>
             <Polish>Musisz mieć $%1 aby przetworzyć bez odpowiedniej licencji</Polish>
@@ -7885,7 +7885,7 @@
             <Spanish>%1 esta pidiendo servicio médico.</Spanish>
             <Russian></Russian>
             <German>%1 benötigt medizinische Hilfe.</German>
-            <French>%1 demande de l'aide d'un Medecin.</French>
+            <French>%1 demande de l'aide du SAMU.</French>
             <Italian>%1 sta richiedendo l'intervento medico.</Italian>
             <Portuguese>%1 requisitou o resgate do SAMU</Portuguese>
             <Polish>%1 prosi o pomoc medyczną.</Polish>
@@ -7918,7 +7918,7 @@
             <Spanish>%1 te a revivido y una cuota de $%2 a sido tomada de tu cuenta por sus servicios.</Spanish>
             <Russian></Russian>
             <German>%1 hat dich wiederbelebt und dafür eine Gebühr von $%2 von deinem Bankkonto eingezogen.</German>
-            <French>%1 vous à réanimé, les fraits de $%2 sont transféré depuit votre compte bancaire pour son service.</French>
+            <French>%1 vous a réanimé, des frais de $%2 ont été transférés depuis votre compte en banque sur celui du médecin.</French>
             <Italian>%1 ti ha rianimato e sono stati prelevati $%2 dal tuo conto in banca per pagare la prestazione.</Italian>
             <Portuguese>%1 reviveu você e uma taxa de R$%2 foi cobrada da sua conta bancária para os serviços prestados.</Portuguese>
             <Polish>%1 pobrał opłatę w wysokości $%2 za reanimację i przywrócenie funkcji życiowych.</Polish>
@@ -7940,7 +7940,7 @@
             <Spanish>Reviviendo %1</Spanish>
             <Russian></Russian>
             <German>Wird wiederbelebt %1...</German>
-            <French>Réanimations %1</French>
+            <French>Réanimation de %1</French>
             <Italian>Rianimando %1</Italian>
             <Portuguese>Revivendo %1</Portuguese>
             <Polish>Reanimacja %1</Polish>
@@ -7950,7 +7950,7 @@
             <Czech>Tato osoba buď respawned nebo již byl přijat.</Czech>
             <Spanish>Esta persona ya reapareció o fue revivida.</Spanish>
             <Russian></Russian>
-            <French>Cette personne a peut-etre fait une réapparition ou a déjà été réanimée.</French>
+            <French>Cette personne a peut-être déjà réapparu ou a déjà été réanimée.</French>
             <German>Diese Person ist entweder aufgewacht oder wurde bereits wiederbelebt.</German>
             <Italian>Questa persona è stata già rianimata o ha fatto respawn.</Italian>
             <Portuguese>Esse jogador já deu respawn ou já foi reanimado.</Portuguese>
@@ -7962,7 +7962,7 @@
             <Spanish>Has revivido a %1 y recivido $%2 por tus servicios.</Spanish>
             <Russian></Russian>
             <German>Du hast %1 wiederbelebt und $%2 für deine Dienste erhalten.</German>
-            <French>Vous avez réanimé %1 vous avez reçu $%2 pour votre aide</French>
+            <French>Vous avez réanimé %1, vous avez reçu $%2 pour votre aide</French>
             <Italian>Hai rianimato %1 e hai ricevuto $%2 per la tua prestazione.</Italian>
             <Portuguese>Você reviveu %1 e recebeu R$%2 pelo seus serviços prestados.</Portuguese>
             <Polish>Reanimowałeś %1 i za uratowanie życia otrzymałeś $%2.</Polish>
@@ -8007,7 +8007,7 @@
             <Czech>Tato klenba je již okraden někým jiným</Czech>
             <Spanish>La bóveda ya esta siendo robada por alguien mas</Spanish>
             <Russian></Russian>
-            <French>Ce coffre est déjà pillé par quelqu'un d'autre.</French>
+            <French>Ce coffre est déjà en train d'être pillé par quelqu'un d'autre.</French>
             <German>Der Tresor wird bereits von jemand anderem ausgeraubt.</German>
             <Italian>Questo Caveau sta venendo rapinando da qualcun'altro</Italian>
             <Portuguese>Esse cofre já está sendo roubado por outro jogador.</Portuguese>
@@ -8043,7 +8043,7 @@
             <Spanish>Tus vehículos</Spanish>
             <Russian></Russian>
             <German>Deine Fahrzeuge</German>
-            <French>Vos vehicules</French>
+            <French>Vos véhicules</French>
             <Italian>I tuoi Veicoli</Italian>
             <Portuguese>Seus Veículos</Portuguese>
             <Polish>Twój pojazd</Polish>
@@ -8073,7 +8073,7 @@
         <Key ID="STR_GUI_SideSwitch">
             <Original>Switch side-channel mode, turn this off if you don't want to talk with players from your side.</Original>
             <Czech>Přepnout do režimu side-channel, tuto funkci vypnout, pokud nechcete mluvit s hráči z vaší strany.</Czech>
-            <French>Passez en mode à canal latéral, désactiver cette fonction si vous ne voulez pas parler avec des joueurs de votre côté.</French>
+            <French>Activer le canal camp, désactiver cette fonction si vous ne voulez pas parler avec des joueurs de la même faction que vous.</French>
             <Spanish>Habilita/Deshabilita el SideChannel, apaga esto si no quieres hablar con jugador de tu lado.</Spanish>
             <Italian>Interruttore modalità side-channel, disattivare questa funzione se non si vuole parlare con i giocatori da parte vostra.</Italian>
             <Polish>Przełącznik trybu side-channel, to wyłączyć, jeśli nie chce rozmawiać z graczami z boku.</Polish>
@@ -8364,7 +8364,7 @@
             <Spanish>Guardar Vehiculo</Spanish>
             <Russian></Russian>
             <German>Fahrzeug parken</German>
-            <French>Ranger le vehicule</French>
+            <French>Ranger le véhicule</French>
             <Italian>Parcheggia Veicolo</Italian>
             <Portuguese>Guardar Veículo</Portuguese>
             <Polish>Zaparkuj pojazd</Polish>
@@ -8554,7 +8554,7 @@
             <Italian>Conservare il veicolo</Italian>
             <Polish>Przechowuj swój pojazd</Polish>
             <Russian></Russian>
-            <French>Rangez votre véhicule</French>
+            <French>Ranger votre véhicule</French>
             <Portuguese>Guardar seu veículo</Portuguese>
             <German>Fahrzeug einparken</German>
         </Key>
@@ -8583,7 +8583,7 @@
         <Key ID="STR_NPC_Protected">
             <Original>This vehicle is NPC protected.</Original>
             <Czech>Toto vozidlo je chráněno NPC.</Czech>
-            <French>Ce véhicule est protégé NPC.</French>
+            <French>Ce véhicule est protégé par un PNJ.</French>
             <Spanish>Este vehículo esta protegido.</Spanish>
             <Italian>Questo veicolo è protetto NPC.</Italian>
             <Polish>Pojazd ten jest chroniony NPC.</Polish>
