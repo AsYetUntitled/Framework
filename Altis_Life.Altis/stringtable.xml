@@ -1743,7 +1743,7 @@
             <Spanish>%1 te ha invitado a una Pandilla llamada %2&lt;br/&gt;Si aceptas seras parte de su pandilla, compartiras el banco de la pandilla y controlaras sus escondites.</Spanish>
             <Russian></Russian>
             <German>%1 hat dich zu der Gang: %2 eingeladen. &lt;br/&gt; Wenn Du die Einladung annimmst, wirst du ein Teil der Gang und bekommst Zugang zu dem Gangkonto und kontrollierten Verstecken.</German>
-            <French>%1 vous a invité à un gang appelé %2&lt;br/&gt;Si vous acceptez l'invitation vous serez dans leur gang et aurez accès à des fonds de gangs et des planques de gangs contrôlés.</French>
+            <French>%1 vous a invité dans un gang appelé %2&lt;br/&gt;Si vous acceptez l'invitation, vous serez dans leur gang et aurez accès à des fonds de gangs et des planques de gangs contrôlées.</French>
             <Italian>%1 ti ha invitato nella Gang: %2&lt;br/&gt;Se vuoi accettarai l'invito entrerai a far parte della loro Gang ed avrai accesso ai loro fondi e ai loro Covi.</Italian>
             <Portuguese>%1 convidou você para a gangue %2&lt;br/&gt;Se você aceitar terá acesso aos recursos da gangue e os esconderijos controlados pela mesma.</Portuguese>
             <Polish>%1 zaprosił cię do gangu o nazwie %2&lt;br/&gt;Jeżeli zaakceptujesz zaproszenie będziesz członkiem gangu i uzyskasz dostęp do funduszy gangu oraz jego kryjówek</Polish>
@@ -1754,7 +1754,7 @@
             <Spanish>Estas a putno de invitar a %1 a tu pandilla, si aceptan tendran aceso al banco de tu Pandilla.</Spanish>
             <Russian></Russian>
             <German>Du bist dabei %1 in deine Gang einzuladen. Wenn die Einladung angenommen wird, hat der Spieler Zugang zu den Gangbesitztümern.</German>
-            <French>Vous êtes sur le point d'inviter %1 à votre gang, s'ils acceptent l'invitation, ils auront accès à des fonds du gang.</French>
+            <French>Vous êtes sur le point d'inviter %1 dans votre gang, s'il accepte l'invitation, il aura accès aux fonds du gang.</French>
             <Italian>Stai per invitare %1 nella tua Gang, se accetterà l'invito avrà accesso ai fondi della Gang.</Italian>
             <Portuguese>Você está prestes a convidar %1 para a gangue, ele terá acesso aos recursos da gangue.</Portuguese>
             <Polish>Właśnie zaprosiłeś %1 do gangu, jeśli zaakceptuje zaproszenie będzie miał dostęp do funduszy gangu.</Polish>
@@ -1776,7 +1776,7 @@
             <Spanish>Has invitado a %1 a tu Pandilla</Spanish>
             <Russian></Russian>
             <German>Du hast eine Einladung in diese Gang an %1 gesendet.</German>
-            <French>Vous avez envoyé une invitation à votre gang à %1</French>
+            <French>Vous avez envoyé une invitation à rejoindre votre gang à %1</French>
             <Italian>Hai mandato l'invito alla tua Gang a %1</Italian>
             <Portuguese>Você enviou um convite para %1 se juntar a sua gangue</Portuguese>
             <Polish>Wysłałeś zaproszenie do twojego gangu do %1</Polish>
@@ -1787,7 +1787,7 @@
             <Spanish>Invitación Cancelada</Spanish>
             <Russian></Russian>
             <German>Einladung abgebrochen.</German>
-            <French>Invitation Annulée</French>
+            <French>Invitation annulée</French>
             <Italian>Invito Annullato</Italian>
             <Portuguese>Convite Cancelado</Portuguese>
             <Polish>Zaproszenie anulowane</Polish>
@@ -1798,7 +1798,7 @@
             <Spanish>No te puedes expulsar a ti mismo!</Spanish>
             <Russian></Russian>
             <German>Du kannst dich nicht selbst kicken!</German>
-            <French>Vous ne pouvez pas kicker vous-même !</French>
+            <French>Vous ne pouvez pas vous éjecter vous-même !</French>
             <Italian>Non puoi espellerti da solo!</Italian>
             <Portuguese>Você não pode kickar você mesmo!</Portuguese>
             <Polish>Nie możesz sam się wykopać!</Polish>
@@ -1809,7 +1809,7 @@
             <Spanish>Tu Pandilla ha llegado a su máxima capacidad, aumenta los slots para seguir invitando.</Spanish>
             <Russian></Russian>
             <German>Deine Gang hat die maximale Anzahl an Mitgliedern erreicht, bitte erhöhe das Limit deiner Gang.</German>
-            <French>Votre gang à atteint le nombre de membre maximum, veuillez augmenter cette limite.</French>
+            <French>Votre gang a atteint le nombre de membre maximum, veuillez augmenter cette limite.</French>
             <Italian>la tua Gang ha raggiungo il numero massimo di posti consentiti, aumentane il limite.</Italian>
             <Portuguese>Sua gangue está lotada, você deve aumentar o número máximo de jogadores.</Portuguese>
             <Polish>Twój gang osiągnął maksymalną pojemność, powiększ swój gang!</Polish>
@@ -1820,7 +1820,7 @@
             <Spanish>Tienes que seleccionar a quien expulsar!</Spanish>
             <Russian></Russian>
             <German>Du musst einen Spieler auswählen, um ihn kicken zu können!</German>
-            <French>Vous devez choisir une personne pour la virer !</French>
+            <French>Vous devez choisir une personne à virer !</French>
             <Italian>Devi selezionare una persona da espellere!</Italian>
             <Portuguese>Você tem que selecionar um jogador para kickar!</Portuguese>
             <Polish>Musisz zaznaczyć osobę do wykopania</Polish>
@@ -1831,7 +1831,7 @@
             <Spanish>No puedes salir de la Pandilla sin apuntar a un nuevo líder!</Spanish>
             <Russian></Russian>
             <German>Du kannst die Gang nicht verlassen, ohne vorher einen neuen Anführer zu ernennen!</German>
-            <French>Vous ne pouvez pas quitter le gang sans la nomination d'un nouveau chef d'abord !</French>
+            <French>Vous ne pouvez pas quitter le gang sans passer le lead à quelqu'un !</French>
             <Italian>Non puoi abbandonare la Gang prima di aver selezionato un nuovo Capo!</Italian>
             <Portuguese>Você não pode sair da gangue sem transferir a liderança antes!</Portuguese>
             <Polish>Nie możesz opuścić gangu bez przekazania komuś szefostwa nad gangiem</Polish>
@@ -1842,7 +1842,7 @@
             <Spanish>You have quit the gang.</Spanish>
             <Russian>You have quit the gang.</Russian>
             <German>Du hast die Gang verlassen.</German>
-            <French>You have quit the gang.</French>
+            <French>Vous avez quitté le gang</French>
             <Italian>You have quit the gang.</Italian>
             <Portuguese>You have quit the gang.</Portuguese>
             <Polish>You have quit the gang.</Polish>
@@ -1886,7 +1886,7 @@
             <Spanish>Tienes que seleccionar a alguien primero!</Spanish>
             <Russian></Russian>
             <German>Du musst erst einen Spieler auswählen!</German>
-            <French>Vous devez choisir une personne d'abord !</French>
+            <French>Vous devez choisir une personne !</French>
             <Italian>Devi selezionare una persona!</Italian>
             <Portuguese>Você tem que selecionar um jogador antes!</Portuguese>
             <Polish>Musisz najpierw zaznaczyć osobę!</Polish>
@@ -1897,7 +1897,7 @@
             <Spanish>You have been made the new leader.</Spanish>
             <Russian>You have been made the new leader.</Russian>
             <German>Du wurdest zum neuen Anführer ernannt.</German>
-            <French>You have been made the new leader.</French>
+            <French>Vous êtes le nouveau leader.</French>
             <Italian>You have been made the new leader.</Italian>
             <Portuguese>You have been made the new leader.</Portuguese>
             <Polish>You have been made the new leader.</Polish>
@@ -1908,7 +1908,7 @@
             <Spanish>Estas a punto de aumentar la capacidad de tu Pandilla.</Spanish>
             <Russian></Russian>
             <German>Du bist dabei, die maximale Anzahl an Mitgliedern zu erhöhen.</German>
-            <French>Vous êtes sur le point de mettre à niveau la limite de membre autorisées pour votre gang.</French>
+            <French>Vous êtes sur le point de mettre à niveau la limite de membre maximum pour votre gang.</French>
             <Italian>Stai aumentando il numero massimo di membri consentiti all'interno della tua Gang</Italian>
             <Portuguese>Você vai atualizar o limite de membros da gangue.</Portuguese>
             <Polish>Chcesz zwiększyć maksymalną ilość członków w gangu.</Polish>
@@ -1919,7 +1919,7 @@
             <Spanish>Límite Corriente: %1</Spanish>
             <Russian></Russian>
             <German>Aktuelles Maximum: %1</German>
-            <French>Max actuelle: %1</French>
+            <French>Max actuel: %1</French>
             <Italian>Attuali Max: %1</Italian>
             <Portuguese>Número máximo atual: %1</Portuguese>
             <Polish>Aktualnie Max: %1</Polish>
@@ -1930,7 +1930,7 @@
             <Spanish>Nuevo Límite: %2</Spanish>
             <Russian></Russian>
             <German>Maximum erhöhen: %2</German>
-            <French>Mise à niveau Max: %2</French>
+            <French>Après mise à niveau : %2</French>
             <Italian>Aumento Max: %2</Italian>
             <Portuguese>Novo número máximo: %2</Portuguese>
             <Polish>Po ulepszeniu Max: %2</Polish>
@@ -1952,7 +1952,7 @@
             <Spanish>No tienes suficiente dinero como para mejorar la capacidad de tu pandilla.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto, um das Mitgliederlimit deiner Gang zu erhöhen.</German>
-            <French>Vous n'avez pas assez d'argent dans votre compte de banque pour mettre à niveau la limite de membre maximale.</French>
+            <French>Vous n'avez pas assez d'argent dans votre compte en banque pour mettre à niveau la limite de membre maximale.</French>
             <Italian>Non hai abbastanza fondi nel tuo conto in banca per aumentare il limite massimo di membri.</Italian>
             <Portuguese>Você não dinheiro suficiente para aumentar o limite da gangue.</Portuguese>
             <Polish>Nie posiadasz wystarczającej ilości środków na koncie aby powiększyć gang</Polish>
@@ -1985,7 +1985,7 @@
             <Spanish>Has aumentado de %1 a %2 slots &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Spanish>
             <Russian></Russian>
             <German>Du hast für &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt; die Anzahl von %1 auf %2 Mitgliedern erhöht.</German>
-            <French>Vous avez mis à niveau à partir de %1 à %2 membres maximum pour &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</French>
+            <French>Vous avez mis à niveau le nombre maximal de membres de %1 à %2 pour &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</French>
             <Italian>Hai aumentato i posti massimi da %1 a %2 per &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Italian>
             <Portuguese>Limite de membros atualizado de %1 para %2 por &lt;t color='#8cff9b'&gt;R$%3&lt;/t&gt;</Portuguese>
             <Polish>Zwiększyłeś ilość możliwych członków gangu z %1 do %2 for &lt;t color='#8cff9b'&gt;$%3&lt;/t&gt;</Polish>
@@ -2059,7 +2059,7 @@
         <Key ID="STR_GNOTF_KickOutGang">
             <Original>You have been kicked out of the gang.</Original>
             <Czech>You have been kicked out of the gang.</Czech>
-            <French>You have been kicked out of the gang.</French>
+            <French>Vous avez été éjecté de votre gang.</French>
             <Spanish>You have been kicked out of the gang.</Spanish>
             <Italian>You have been kicked out of the gang.</Italian>
             <Polish>You have been kicked out of the gang.</Polish>
@@ -2108,7 +2108,7 @@
             <Spanish></Spanish>
             <Russian></Russian>
             <German>Dieses Gebäude ist ein Gangversteck!</German>
-            <French>Ce bâtiment est une planque de gang !</French>
+            <French>Ce bâtiment est une cachette de gang !</French>
             <Italian></Italian>
             <Portuguese></Portuguese>
             <Polish></Polish>
@@ -2140,7 +2140,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <French>Acheter le garage.</French>
+            <French>Acheter le garage</French>
             <German>Garage kaufen</German>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -2163,7 +2163,7 @@
             <Spanish>Garaje de Vehículos</Spanish>
             <Russian></Russian>
             <German>Fahrzeug Garage</German>
-            <French>Garage de Vehicules</French>
+            <French>Garage de Véhicules</French>
             <Italian>Garage Veicoli</Italian>
             <Portuguese>Garagem de Veículos</Portuguese>
             <Polish>Garaż</Polish>
@@ -2229,7 +2229,7 @@
             <Spanish>No tienes $%1 en tu cuenta de Banco</Spanish>
             <Russian></Russian>
             <German>Du hast keine $%1 auf deinem Bankkonto.</German>
-            <French>Tu n'as pas %1$ sur ton compte en banque.</French>
+            <French>Vous n'avez pas %1$ sur ton compte en banque.</French>
             <Italian>Non hai $%1 nel tuo conto in banca</Italian>
             <Portuguese>Você não tem R$%1 na sua conta bancária</Portuguese>
             <Polish>Nie masz %1 na koncie bankowym:</Polish>
@@ -2251,7 +2251,7 @@
             <Spanish>Lo siento, pero %1 fue clasificado como destruido y fue mandado al basurero.</Spanish>
             <Russian></Russian>
             <German>Entschuldigung, aber dein %1 wurde zerstört und auf den Schrottplatz geschickt.</German>
-            <French>Désolé mais votre %1 à été détruit et vendu à la casse.</French>
+            <French>Désolé, mais votre %1 a été détruit et vendu à la casse.</French>
             <Italian>Purtroppo %1 è stato classificato come veicolo distrutto ed è stato mandato allo sfascio.</Italian>
             <Portuguese>O veículo %1 foi mandado para o ferro velho pois foi classificado como destroido.</Portuguese>
             <Polish>Przepraszamy ale %1 został sklasyfikowany jako zniszczony i został odesłany na złom.</Polish>
@@ -2262,7 +2262,7 @@
             <Spanish>Lo siento, pero %1 esta activo en alguna parte del mundo y no puede aparecer.</Spanish>
             <Russian></Russian>
             <German>Entschuldigung, aber dein %1 ist bereits ausgeparkt worden und kann darum nicht bereitgestellt werden.</German>
-            <French>Désolé mais votre %1 à déjà été sortit du garage.</French>
+            <French>Désolé, mais votre %1 a déjà été sorti du garage.</French>
             <Italian>Purtroppo %1 è già presente nella mappa e non può essere ricreato</Italian>
             <Portuguese>O veículo %1 já está presente no mapa e não pode ser retirado novamente</Portuguese>
             <Polish>Przepraszamy ale %1 jest aktywny gdzieś na mapie i nie może zostać wyciągnięty.</Polish>
@@ -2273,7 +2273,7 @@
             <Spanish>Ya hay un vehículo en el punto de Spawn, se te reembolsara el costo de sacar el vehículo.</Spanish>
             <Russian></Russian>
             <German>Es steht ein Fahrzeug auf dem Spawnpunkt. Die Kosten für das Bereitstellen werden dir erstattet.</German>
-            <French>Il y a déjà un véhicule sur le point de spawn. Le coût de sortie du véhicule vous sera remboursé.</French>
+            <French>Il y a déjà un véhicule sur le point de spawn. Le coût de sortie du véhicule vous a été remboursé.</French>
             <Italian>C'è già un veicolo nel punto di creazione. Verrai rimborsato della spesa appena effettuata.</Italian>
             <Portuguese>Existe um outro veiculo na area de spawn. Você será reembolsado.</Portuguese>
             <Polish>W strefie parkowania znajduje się już pojazd. Środki za parkowanie zostaną zwrócone.</Polish>
@@ -2284,7 +2284,7 @@
             <Spanish>Vendiste el vehículo por $%1</Spanish>
             <Russian></Russian>
             <German>Du verkaufst dein Fahrzeug für $%1.</German>
-            <French>Vous avez vendu votre véhicule pour $%1.</French>
+            <French>Vous avez vendu ce véhicule pour $%1.</French>
             <Italian>Hai venduto il veicolo per $%1</Italian>
             <Portuguese>Você vendeu um veículo por R$%1</Portuguese>
             <Polish>Sprzedałeś pojazd za %1</Polish>
@@ -2295,7 +2295,7 @@
             <Spanish>Este vehículo es rentado y no puede ser guardado.</Spanish>
             <Russian></Russian>
             <German>Mietwagen können nicht in der Garage geparkt werden.</German>
-            <French>Ce véhicule est une location et ne peut pas être stockée dans votre garage.</French>
+            <French>Ce véhicule est une location et ne peut pas être stocké dans votre garage.</French>
             <Italian>Il veicolo è in affitto e non può essere depositato in garage.</Italian>
             <Portuguese>Esse veículo é alugado e não pode ser armazenado na garagem.</Portuguese>
             <Polish>Pojazd wynajęty, nie możesz go schować w garażu.</Polish>
@@ -2350,7 +2350,7 @@
             <Spanish>Huvo un error en la selección...</Spanish>
             <Russian></Russian>
             <German>Die Auswahl hat einen Fehler...</German>
-            <French>La selection à une erreur...</French>
+            <French>La sélection a une erreur...</French>
             <Italian>La selezione ha avuto un errore...</Italian>
             <Portuguese>Erro ao selecionar....</Portuguese>
             <Polish>Ten wybór powoduje błąd</Polish>
@@ -2543,7 +2543,7 @@
             <Spanish>En Carro:</Spanish>
             <Russian></Russian>
             <German>Im Auto:</German>
-            <French>Terre :</French>
+            <French>En voiture :</French>
             <Italian>Auto:</Italian>
             <Portuguese>No Carro:</Portuguese>
             <Polish>W aucie:</Polish>
@@ -2554,7 +2554,7 @@
             <Spanish>En Aire:</Spanish>
             <Russian></Russian>
             <German>Im Himmel:</German>
-            <French>Air :</French>
+            <French>Air</French>
             <Italian>Aria:</Italian>
             <Portuguese>No Ar:</Portuguese>
             <Polish>W powietrzu:</Polish>
@@ -2576,7 +2576,7 @@
             <Spanish>Distancia de vista en vehiculo terrestre</Spanish>
             <Russian></Russian>
             <German>Sichtweite in Landfahrzeugen</German>
-            <French>Distance de vue en voiture</French>
+            <French>Distance de vue en véhicule terrestre</French>
             <Italian>Distanza visiva su veicolo di terra</Italian>
             <Portuguese>Visualizar distância enquanto em veículos terrestres</Portuguese>
             <Polish>Widoczność gdy w aucie</Polish>
@@ -2587,7 +2587,7 @@
             <Spanish>Distancia de vista en vehiculo aéreo</Spanish>
             <Russian></Russian>
             <German>Sichtweite in Luftfahrzeugen</German>
-            <French>Distance de vue dans les airs</French>
+            <French>Distance de vue en véhicule aérien</French>
             <Italian>Distanza visiva su velivolo</Italian>
             <Portuguese>Visualisar distância enquanto em veículos aéreos</Portuguese>
             <Polish>Widoczność gdy w powietrzu</Polish>
@@ -2628,7 +2628,7 @@
         <Key ID="STR_SM_SC">
             <Original>Sidechat Switch</Original>
             <Czech>Sidechat Spínač</Czech>
-            <French>Canal camp</French>
+            <French>Canal Side</French>
             <Spanish>Habilitar Sidechat</Spanish>
             <Italian>Interruttore Sidechat</Italian>
             <Polish>Sidechat Przełącznik</Polish>
@@ -2699,7 +2699,7 @@
             <Spanish>Tu Inventario</Spanish>
             <Russian></Russian>
             <German>Eigenes Inventar</German>
-            <French>Ton Inventaire</French>
+            <French>Votre Inventaire</French>
             <Italian>Inventario Personale</Italian>
             <Portuguese>Seu Inventário</Portuguese>
             <Polish>Twoje wyposażenie</Polish>
@@ -2734,7 +2734,7 @@
             <Spanish>Selección de Spawn</Spanish>
             <Russian></Russian>
             <German>Aufwachpunkt Auswahl</German>
-            <French>Selection du Spawn</French>
+            <French>Sélection du Spawn</French>
             <Italian>Selezione Spawn</Italian>
             <Portuguese>Locais para Começar</Portuguese>
             <Polish>Wybierz punkt odrodzenia</Polish>
@@ -2802,7 +2802,7 @@
             <Spanish>Denegar Tiquete</Spanish>
             <Russian></Russian>
             <German>Ticket ablehnen</German>
-            <French>Contester l'amende</French>
+            <French>Refuser l'amende</French>
             <Italian>Rifiuta Multa</Italian>
             <Portuguese>Recusar Multa</Portuguese>
             <Polish>Odmów przyjęcia mandatu</Polish>
@@ -2872,7 +2872,7 @@
             <Spanish>Perdonar</Spanish>
             <Russian></Russian>
             <German>Erlassen</German>
-            <French>Excuser</French>
+            <French>Supprimer</French>
             <Italian>Perdona</Italian>
             <Polish>Pardon</Polish>
             <Portuguese>Perdão</Portuguese>
@@ -2891,7 +2891,7 @@
         <Key ID="STR_Wanted_People">
             <Original>Wanted People</Original>
             <Czech>chtěl, aby lidé</Czech>
-            <French>Les personnes recherchées</French>
+            <French>Personnes recherchées</French>
             <Spanish>Gente Buscada</Spanish>
             <Italian>La gente voleva</Italian>
             <Polish>Ludzie chcieli</Polish>
@@ -3096,7 +3096,7 @@
             <Spanish>No tienes $%1 para una %2</Spanish>
             <Russian></Russian>
             <German>Du hast keine $%1 für einen %2.</German>
-            <French>Tu n'as pas %1$ pour cet élément : %2</French>
+            <French>Vous n'avez pas %1$ pour cet élément : %2</French>
             <Italian>Non hai $%1 per $2</Italian>
             <Portuguese>Você não tem R$%1 para %2</Portuguese>
             <Polish>Nie masz $%1 na %2</Polish>
@@ -3107,7 +3107,7 @@
             <Spanish>Comprastes una %1 por $%2</Spanish>
             <Russian></Russian>
             <German>Du hast einen %1 für $%2 gekauft.</German>
-            <French>Tu as acheté cet élément : %1 pour %2$</French>
+            <French>Vous avez acheté : %1 pour %2$</French>
             <Italian>Hai comprato un %1 per $%2</Italian>
             <Portuguese>Você comprou %1 por R$%2</Portuguese>
             <Polish>Kupiłeś %1 za $%2</Polish>
@@ -3129,7 +3129,7 @@
             <Spanish>Atrapastes un %1</Spanish>
             <Russian></Russian>
             <German>Du hast einen %1 gefangen.</German>
-            <French>Tu as attrapé un(e) %1</French>
+            <French>Vous avez attrapé un %1</French>
             <Italian>Hai pescato %1</Italian>
             <Portuguese>Você pegou %1</Portuguese>
             <Polish>Złapałeś %1</Polish>
@@ -3140,7 +3140,7 @@
             <Spanish>Eviscerando %1</Spanish>
             <Russian></Russian>
             <German>%1 ausnehmen</German>
-            <French>éviscération %1</French>
+            <French>Eviscération de %1</French>
             <Italian>eviscerazione %1</Italian>
             <Portuguese>evisceração %1</Portuguese>
             <Polish>Patroszenie %1</Polish>
@@ -3151,7 +3151,7 @@
             <Spanish>Has recolectado carne cruda de %1</Spanish>
             <Russian></Russian>
             <German>Du hast rohes %1 Fleisch erhalten.</German>
-            <French>Vous avez recolté quelques morceaux de viande crue %1</French>
+            <French>Vous avez récolté quelques morceaux de %1 cru</French>
             <Italian>You have collected some raw %1 meat</Italian>
             <Portuguese>You have collected some raw %1 meat</Portuguese>
             <Polish>You have collected some raw %1 meat</Polish>
@@ -3162,7 +3162,7 @@
             <Spanish>Has tomado carne de tortuga.</Spanish>
             <Russian></Russian>
             <German>Du hast etwas Schildkrötenfleisch bekommen.</German>
-            <French>Tu as récupéré un peu de viande de tortue</French>
+            <French>Vous avez récupéré un peu de viande de tortue</French>
             <Italian>Hai raccolto della carne di tartaruga</Italian>
             <Portuguese>Você pegou carne de tartaruga</Portuguese>
             <Polish>Wziąłeś trochę mięsa żółwia</Polish>
@@ -3173,7 +3173,7 @@
             <Spanish>Has ganado $%1</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 verdient.</German>
-            <French>Tu as gagné %1$</French>
+            <French>Vous avez gagné %1$</French>
             <Italian>Hai guadagnato $%1</Italian>
             <Portuguese>Você ganhou R$%1</Portuguese>
             <Polish>Otrzymałeś $%1</Polish>
@@ -3195,7 +3195,7 @@
             <Spanish>No atrapastes peces...</Spanish>
             <Russian></Russian>
             <German>Keinen Fisch gefangen...</German>
-            <French>Tu n'as pas réussi à attraper aucun poisson...</French>
+            <French>Vous n'avez pas réussi à attraper de poisson...</French>
             <Italian>Non hai pescato nulla...</Italian>
             <Portuguese>A rede voltou vazia...</Portuguese>
             <Polish>Nic nie złapałeś...</Polish>
@@ -3217,7 +3217,7 @@
             <Spanish>No tienes espacio en tu inventorio.</Spanish>
             <Russian></Russian>
             <German>Dein Inventar ist voll.</German>
-            <French>Tu n'as plus de place dans ton inventaire.</French>
+            <French>Vous n'avez plus de place dans votre inventaire.</French>
             <Italian>Il tuo inventario è pieno.</Italian>
             <Portuguese>Seu inventário está cheio</Portuguese>
             <Polish>Nie masz więcej miejsca.</Polish>
@@ -3228,7 +3228,7 @@
             <Spanish>Recolectando %1...</Spanish>
             <Russian></Russian>
             <German>Sammle %1...</German>
-            <French>Ramassage %1...</French>
+            <French>Ramassage de %1...</French>
             <Italian>Raccogliendo %1</Italian>
             <Portuguese>Coletando %1...</Portuguese>
             <Polish>Zbierasz %1</Polish>
@@ -3239,7 +3239,7 @@
             <Spanish>Has vendido un %1 por $%2</Spanish>
             <Russian></Russian>
             <German>Du hast einen %1 für $%2 verschrottet.</German>
-            <French>Tu as vendu cet élément : %1 pour $%2</French>
+            <French>Vous avez vendu un(e) %1 pour $%2</French>
             <Italian>Hai venduto un %1 per %2$</Italian>
             <Portuguese>Você vendeu %1 por R$%2</Portuguese>
             <Polish>Sprzedałeś %1 za $%2</Polish>
@@ -3250,7 +3250,7 @@
             <Spanish>Has recogido %1 %2</Spanish>
             <Russian></Russian>
             <German>Du hast %1 %2 aufgenommen.</German>
-            <French>Tu as ramassé : %1 %2</French>
+            <French>Vous avez ramassé : %1 %2</French>
             <Italian>Hai trovato %1 %2</Italian>
             <Portuguese>Você pegou %1 %2</Portuguese>
             <Polish>Podniosłeś %1 %2</Polish>
@@ -3261,7 +3261,7 @@
             <Spanish>Has recolectado %1</Spanish>
             <Russian></Russian>
             <German>Du hast etwas %1 gesammelt.</German>
-            <French>Tu as ramassé %1</French>
+            <French>Vous avez récolté %1</French>
             <Italian>Hai raccolto %1</Italian>
             <Portuguese>Você coletou %1</Portuguese>
             <Polish>Wziąłeś %1</Polish>
@@ -3272,7 +3272,7 @@
             <Spanish>Debes llevar este paquete a %1</Spanish>
             <Russian></Russian>
             <German>Du musst dieses Paket bei %1 abliefern.</German>
-            <French>Vous avez livré ce packet à %1</French>
+            <French>Vous avez livré ce paquet à %1</French>
             <Italian>Devi consegnare questo pacco al %1</Italian>
             <Portuguese>Você deverá entregar esse pacote para %1</Portuguese>
             <Polish>Dostarcz tę przesyłkę do %1</Polish>
@@ -3294,7 +3294,7 @@
             <Spanish>Fallastes la misión, porque moristes.</Spanish>
             <Russian></Russian>
             <German>Da du gestorben bist, hast du es nicht geschafft das Paket abzuliefern.</German>
-            <French>Vous avez omis de livrer le colis car vous êtes morts.</French>
+            <French>Vous êtes décédé, livraison annulée.</French>
             <Italian>Compra Oggetto</Italian>
             <Portuguese>Você falhou na tarefa de entrega pois você morreu.</Portuguese>
             <Polish>Nie dostarczyłeś przesyłki z uwagi na to że zmarłeś.</Polish>
@@ -3305,7 +3305,7 @@
             <Spanish>No tienes $%1 para ser curado</Spanish>
             <Russian></Russian>
             <German>Du hast keine $%1, um behandelt zu werden.</German>
-            <French>Vous n'avez pas $%1 pour vous soignez.</French>
+            <French>Vous n'avez pas $%1 pour être soigné.</French>
             <Italian>Non hai $%1 per essere curato</Italian>
             <Portuguese>Você não tem R$%1 para ser curado</Portuguese>
             <Polish>Nie masz $%1 na leczenie</Polish>
@@ -3313,7 +3313,7 @@
         <Key ID="STR_NOTF_HS_FullHealth">
             <Original>You do not need to be healed!</Original>
             <Czech>Nemusíte být uzdraven!</Czech>
-            <French>Vous ne devez pas être guéri !</French>
+            <French>Vous êtes déjà en pleine forme !</French>
             <Spanish>Usted no necesita ser curado!</Spanish>
             <Italian>Non è necessario essere guarito!</Italian>
             <Polish>Nie trzeba się wyleczyć!</Polish>
@@ -3324,7 +3324,7 @@
         <Key ID="STR_NOTF_HS_PopUp">
             <Original>Spend $%1 to be fully healed?</Original>
             <Czech>Útrata $%1 musí být zcela vyléčit?</Czech>
-            <French>Donnez $%1 pour être complètement guéri ?</French>
+            <French>Donner $%1 pour être complètement guéri ?</French>
             <Spanish>Gastar $%1 para ser curado por completo?</Spanish>
             <Italian>Spendere $%1 di essere completamente guarito?</Italian>
             <Polish>Wydać $%1 w pełni uzdrowiony?</Polish>
@@ -3360,7 +3360,7 @@
             <Spanish>Debes estar a 5m mientras que te curan.</Spanish>
             <Russian></Russian>
             <German>Du musst in der Nähe vom Arzt bleiben, damit er dich behandeln kann.</German>
-            <French>Vous devez être à moins de 5m pendant que le médecin vous soigne.</French>
+            <French>Vous devez être à moins de 5m du médecin pendant qu'il vous soigne.</French>
             <Italian>Devi restare entro 5m dal dottore per essere curato</Italian>
             <Portuguese>Você tem que estar a 5m para o médico curá-lo</Portuguese>
             <Polish>Musisz być w pobliżu doktora gdy ten cię leczy - ok 5m</Polish>
