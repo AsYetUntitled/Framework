@@ -50,7 +50,7 @@
         <Key ID="STR_Shops_C_Bruce">
             <Original>Bruce's Outback Outfits</Original>
             <Czech>Bruceovy Outback Oblečení</Czech>
-            <French>Friperie de Bruce</French>
+            <French>Vêtements de Bruce</French>
             <Spanish>Tienda de Ropa</Spanish>
             <Russian></Russian>
             <Portuguese>Loja de Roupas</Portuguese>
@@ -61,7 +61,7 @@
         <Key ID="STR_Shops_C_Police">
             <Original>Altis Police Department Shop</Original>
             <Czech>Altis policejní oddělení Shop</Czech>
-            <French>Boutique de la police</French>
+            <French>Vêtements de la police</French>
             <Spanish>Tienda del Departamento de Policía</Spanish>
             <Russian></Russian>
             <Portuguese>Loja de Roupas Policiais</Portuguese>
@@ -72,7 +72,7 @@
         <Key ID="STR_Shops_C_Rebel">
             <Original>Mohammed's Jihadi Shop</Original>
             <Czech>Mohamedův džihád Shop</Czech>
-            <French>Magasin Rebelle de Mohammed</French>
+            <French>Vêtements rebelle de Mohammed</French>
             <Spanish>Tienda Jihadi de Mohamed</Spanish>
             <Italian>Negozio della Jihad di Mohammed</Italian>
             <Russian></Russian>
@@ -83,7 +83,7 @@
         <Key ID="STR_Shops_C_Diving">
             <Original>Steve's Diving Shop</Original>
             <Czech>Steve je potápění obchod</Czech>
-            <French>Magasin de plongée de Steve</French>
+            <French>Vêtements de plongée de Steve</French>
             <Spanish>Tienda de Buceo</Spanish>
             <Italian>Negozio Sub di Steve</Italian>
             <Russian></Russian>
@@ -98,7 +98,7 @@
             <Russian></Russian>
             <German>Billy Joe's Bekleidung</German>
             <Italian>Emporio di Billy</Italian>
-            <French>Friperie de Billy Joe</French>
+            <French>Vêtements de tir</French>
             <Portuguese>Roupa Billy Joe</Portuguese>
             <Polish>Billy Joe Odzież</Polish>
         </Key>
@@ -116,7 +116,7 @@
         <Key ID="STR_Shops_C_Kart">
             <Original>Bobby's Kart-Racing Outfits</Original>
             <Czech>Billy Joe Střelné zbraně</Czech>
-            <French>Magasin de kart de Bobby</French>
+            <French>Vêtements de kart</French>
             <Spanish>Tienda de Trajes de Carreras</Spanish>
             <Italian>Vestiario da Pilota </Italian>
             <Russian></Russian>
@@ -164,7 +164,7 @@
             <Russian></Russian>
             <German>Gang Kleidung</German>
             <Italian>Gang Abbigliamento</Italian>
-            <French>Magasin de vêtements de Gang</French>
+            <French>Vêtements de Gang</French>
             <Portuguese>Roupa Gangue</Portuguese>
             <Polish>Gang Odzież</Polish>
         </Key>
@@ -175,7 +175,7 @@
             <Russian></Russian>
             <German>Wong's Spezialitäten</German>
             <Italian>Alimentari</Italian>
-            <French>Camion-restaurant de Wong</French>
+            <French>Restaurant de Wong</French>
             <Portuguese>Praça de Alimentação</Portuguese>
             <Polish>Przysmaki Wonga</Polish>
         </Key>
@@ -197,7 +197,7 @@
             <Russian></Russian>
             <German>Drogendealer</German>
             <Italian>Spacciatore</Italian>
-            <French>Dealer de Drogue</French>
+            <French>Dealeur de Drogue</French>
             <Portuguese>Traficante</Portuguese>
             <Polish>Sprzedawca 'Trawy'</Polish>
         </Key>
@@ -241,7 +241,7 @@
             <Russian></Russian>
             <German>Altis Industriehandel</German>
             <Italian>Vendita materiali industriali</Italian>
-            <French>Acheteur Industriel</French>
+            <French>Acheteur de minerais</French>
             <Portuguese>Comprador de Material Indústrial</Portuguese>
             <Polish>Skup materiałów przemysłowych</Polish>
         </Key>
@@ -252,7 +252,7 @@
             <Russian></Russian>
             <German>APD Ausrüstung</German>
             <Italian>Negozio Polizia</Italian>
-            <French>Equipements de Police</French>
+            <French>Equipement policier</French>
             <Portuguese>Equipamentos da Polícia</Portuguese>
             <Polish>Zbrojownia Policji</Polish>
         </Key>
@@ -263,7 +263,7 @@
             <Russian></Russian>
             <German>Juan's Zementleger</German>
             <Italian>Vendita Cemento</Italian>
-            <French>Vendeur de Ciment</French>
+            <French>Acheteur de Ciment</French>
             <Portuguese>Comprador de Cimento</Portuguese>
             <Polish>Wytwórnia cementu</Polish>
         </Key>
@@ -505,7 +505,7 @@
         <Key ID="STR_Admin_Amount">
             <Original>Put the amount you want to compensate:</Original>
             <Czech>Vložte částku, kterou chcete kompenzovat:</Czech>
-            <French>Mettez le montant que vous souhaitez dédommager :</French>
+            <French>Entrez le montant à rembourser </French>
             <Spanish>Pon la cantidad que quieres compensar:</Spanish>
             <Italian>Inserire l'importo da rimborsare:</Italian>
             <Russian></Russian>
@@ -542,7 +542,7 @@
             <Italian>Teleport</Italian>
             <Russian></Russian>
             <German>Teleport</German>
-            <French>Téleporter</French>
+            <French>Téléporter</French>
             <Portuguese>Teleportar</Portuguese>
             <Polish>Teleport</Polish>
         </Key>
@@ -560,7 +560,7 @@
         <Key ID="STR_Admin_CannotTpHere">
             <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
-            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un vehicule.</French>
+            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un véhicule.</French>
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
@@ -597,7 +597,7 @@
             <Italian>GodMode</Italian>
             <Russian></Russian>
             <German>Gott-Mod</German>
-            <French>Dieu</French>
+            <French>God</French>
             <Portuguese>Modo Deus</Portuguese>
             <Polish>GodMode</Polish>
         </Key>
@@ -608,7 +608,7 @@
             <Italian>Congelare</Italian>
             <Russian></Russian>
             <German>Einfrieren</German>
-            <French>Geler</French>
+            <French>Freeze</French>
             <Portuguese>Congelar</Portuguese>
             <Polish>Zamroź</Polish>
         </Key>
@@ -653,7 +653,7 @@
             <Spanish>Ya estan buscando a un jugador.</Spanish>
             <Russian></Russian>
             <German>Du fragst bereits einen Spieler ab.</German>
-            <French>Vous avez déjà interrogé ce joueur.</French>
+            <French>Vous êtes déjà en train d'interroger ce joueur.</French>
             <Italian>Stai già ispezionando un giocatore.</Italian>
             <Portuguese>Você já está buscando por um jogador.</Portuguese>
             <Polish>Przeszukujesz gracza</Polish>
@@ -676,7 +676,7 @@
             <Italian>Stai per donarti €%1 per rimborsare un altro giocatore &lt;br/&gt;&lt;br/&gt; Dovrai donare il denaro manualmente.</Italian>
             <Russian></Russian>
             <German>Du bist dabei dir selbst $%1 zu geben, um einen anderen Spieler zu entschädigen.&lt;br/&gt;&lt;br/&gt;Gib das Geld dann an den Spieler weiter.</German>
-            <French>Vous êtes sur le point de vous donner $%1 pour compenser un autre joueur &lt;br/&gt;&lt;br/&gt; S'il vous plaît donner à cette personne l'argent, vous compensez manuellement.</French>
+            <French>Vous êtes sur le point de vous donner $%1 pour rembourser un autre joueur &lt;br/&gt;&lt;br/&gt; Merci de le lui donner manuellement.</French>
             <Portuguese>Você está prestes a dar para você mesmo R$%1 para compensar outro jogador &lt;br/&gt;&lt;br/&gt;Você deve dar este dinheiro para a pessoa que você está compensando manualmente.</Portuguese>
             <Polish>Właśnie przydzieliłeś sobie $%1 w celu rekompensaty graczowi &lt;br/&gt;&lt;br/&gt;Musisz przekazać te środki osobiście osobie poszkodowanej.</Polish>
         </Key>
@@ -709,7 +709,7 @@
             <Italian>Si prega di inserire l'importo da rimborsare.</Italian>
             <Russian></Russian>
             <German>Bitte Entschädigungsbetrag eingeben.</German>
-            <French>S'il vous plaît entrez la quantité pour compenser.</French>
+            <French>Entrez le montant à rembourser</French>
             <Portuguese>Por favor, insira a quantidade para compensar.</Portuguese>
             <Polish>Wprowadź kwotę rekompensaty</Polish>
         </Key>
@@ -720,7 +720,7 @@
             <Italian>Hai disattivato l'input di %1.</Italian>
             <Russian></Russian>
             <German>Du hast %1 eingefroren. Er kann sich nicht mehr bewegen.</German>
-            <French>Vous avez désactivé les controles de %1.</French>
+            <French>Vous avez désactivé les contrôles de %1.</French>
             <Portuguese>Você desabilitou as entradas de %1.</Portuguese>
             <Polish>Zablokowałeś grę gracza $%1 </Polish>
         </Key>
@@ -731,7 +731,7 @@
             <Italian>Hai riabilitato l'input di %1.</Italian>
             <Russian></Russian>
             <German>Du hast %1 wieder aufgetaut.</German>
-            <French>Vous avez activé les controles de %1.</French>
+            <French>Vous avez activé les contrôles de %1.</French>
             <Portuguese>Você habilitou as entradas de %1.</Portuguese>
             <Polish>Odblokowałeś grę gracza $%1 </Polish>
         </Key>
@@ -753,7 +753,7 @@
             <Italian>Il tuo livello amministratore non soddisfa i requisiti.</Italian>
             <Russian></Russian>
             <German>Dein Admin Level ist nicht hoch genug.</German>
-            <French>Votre Niveau admin n'est pas suffisamment élevée.</French>
+            <French>Votre niveau admin n'est pas suffisamment élevé.</French>
             <Portuguese>Seu nível de Admin não é alto o bastante.</Portuguese>
             <Polish>Nie masz wystarczających uprawnień, za niski poziom administracyjny</Polish>
         </Key>
@@ -782,7 +782,7 @@
         <Key ID="STR_ANOTF_godModeOn">
             <Original>God mode enabled</Original>
             <Czech>nesmrtelnost povolen</Czech>
-            <French>Dieu activé</French>
+            <French>GodMode activé</French>
             <Spanish>Modo Dios habilitado</Spanish>
             <Italian>Godmode abilitata</Italian>
             <Polish>God mode włączony</Polish>
@@ -793,7 +793,7 @@
         <Key ID="STR_ANOTF_godModeOff">
             <Original>God mode disabled</Original>
             <Czech>nesmrtelnost zakázán</Czech>
-            <French>Dieu désactivé</French>
+            <French>GodMode désactivé</French>
             <Spanish>Modo Dios deshabilitado</Spanish>
             <Italian>Godmode disabilitata</Italian>
             <Polish>God mode wyłączony</Polish>
@@ -807,7 +807,7 @@
             <Spanish>Acción Cancelada</Spanish>
             <Russian></Russian>
             <German>Aktion abgebrochen.</German>
-            <French>Action Annulée</French>
+            <French>Action annulée</French>
             <Italian>Azione Annullata</Italian>
             <Portuguese>Ação Cancelada</Portuguese>
             <Polish>Anulowano akcję</Polish>
@@ -851,7 +851,7 @@
             <Spanish>Requieres un pico</Spanish>
             <Russian></Russian>
             <German>Hier benötigst du eine Spitzhacke!</German>
-            <French>Une pioche est nécessaire.</French>
+            <French>Vous avez besoin d'une pioche.</French>
             <Italian>Devi possedere un piccone!</Italian>
             <Portuguese>A picareta é necessária</Portuguese>
             <Polish>Wymagana jest kilof</Polish>
@@ -873,7 +873,7 @@
             <Spanish>No puedes hacer esto mientras te estas rindiendo</Spanish>
             <Russian></Russian>
             <German>Mit erhobenen Händen kannst du nichts sammeln!</German>
-            <French>Vous ne pouvez pas faire cela pendant que vous abandonnez.</French>
+            <French>Vous ne pouvez pas faire cela tant que vous avez les mains sur la tête.</French>
             <Italian>Non puoi effettuare questa azione mentre tieni le mani in alto</Italian>
             <Portuguese>Você não pode fazer isso enquanto você se entrega</Portuguese>
             <Polish>Nie można tego zrobić, gdy się poddasz</Polish>
@@ -884,7 +884,7 @@
             <Spanish>No puedes recolectar este recurso con este vehiculo!</Spanish>
             <Russian></Russian>
             <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
-            <French>Vous ne pouvez pas récolter cette ressource avec ce vehicule.</French>
+            <French>Vous ne pouvez pas récolter cette ressource avec ce véhicule.</French>
             <Italian>Non puoi raccogliere questa risorsa con questo veicolo !</Italian>
             <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
             <Polish>You can't gather this resource with this vehicle!</Polish>
@@ -892,7 +892,7 @@
         <Key ID="STR_NOTF_adminDebugCon">
             <Original>You have no business using this.</Original>
             <Czech>Nemáš podnikání pomocí tohoto.</Czech>
-            <French>Vous n'avez pas le niveau pour faire cette action.</French>
+            <French>Vous n'avez pas le niveau pour utiliser la console.</French>
             <Spanish>No tienes permiso de usar esto.</Spanish>
             <Italian>Non hai il permesso di farlo.</Italian>
             <Polish>Nie masz działalność z wykorzystaniem tego produktu.</Polish>
@@ -1015,7 +1015,7 @@
         <Key ID="STR_ATM_DoesntExist">
             <Original>The player selected doesn't seem to exist?</Original>
             <Czech>Hráč vybraný Nezdá se, že neexistuje?</Czech>
-            <French>Le joueur sélectionné ne semble pas exister ?</French>
+            <French>Le joueur sélectionné ne semble pas exister</French>
             <Spanish>El jugador que seleccionastes no existe?</Spanish>
             <Russian></Russian>
             <German>Der Spieler scheint nicht zu existieren?</German>
@@ -1040,7 +1040,7 @@
             <Spanish>No tienes tanto dinero en tu cuenta de banco!</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viel Geld auf deinem Bankkonto!</German>
-            <French>Vous n'avez pas autant dans votre compte bancaire !</French>
+            <French>Vous n'avez pas autant dans votre compte en banque !</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca!</Italian>
             <Portuguese>Você não tem todo esse dinhero na sua conta bancária</Portuguese>
             <Polish>Nie masz tyle środków na koncie!</Polish>
@@ -1073,7 +1073,7 @@
             <Spanish>Has transferido $%1 a $%2 \n\nUna cuota de $%3 fue tomada de tu cuenta.</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 an %2 überwiesen.\n\nEine Gebühr von $%3 wurde verrechnet.</German>
-            <French>Vous avez transféré $%1 à %2.\n\nA La taxe de $%3 vous à été prélevée pendant le transfert.</French>
+            <French>Vous avez transféré $%1 à %2.\n\nA Une taxe de $%3 vous a été prélevée pendant le transfert.</French>
             <Italian>Hai trasferito €%1 a %2.\n\nSono stati trattenuti €%3 di tassa per il trasferimento.</Italian>
             <Portuguese>Você trasferiu R$%1 para %2.\n\nA taxa de trasferência foi de: R$%3.</Portuguese>
             <Polish>Przelałeś $%1 do %2.\n\nA opłata $%3 pobrana przez WIRE TRANSFER </Polish>
@@ -1136,7 +1136,7 @@
         <Key ID="STR_ATM_WithdrawInUseG">
             <Original>Someone is already trying to withdraw from your gang.</Original>
             <Czech>Někdo se již snaží ustoupit od svého gangu.</Czech>
-            <French>Quelqu'un essaie déjà de retirer de l'argent de votre gang.</French>
+            <French>Quelqu'un est déjà en train de retirer de l'argent de votre gang.</French>
             <Spanish>Alguien ya esta tratando de retirar dinero de tu pandilla.</Spanish>
             <Italian>Qualcuno sta già cercando di ritirare del denaro dal fondo gang.</Italian>
             <Polish>Ktoś już próbował wycofać się ze swojego gangu.</Polish>
@@ -1161,7 +1161,7 @@
             <Spanish>Has depositado $%1 en tu cuenta de banco.</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 auf dein Bankkonto überwiesen.</German>
-            <French>Vous avez déposé $%1 dans votre compte bancaire.</French>
+            <French>Vous avez déposé $%1 dans votre compte en banque.</French>
             <Italian>Hai despositato €%1 nel tuo conto bancario</Italian>
             <Portuguese>Você depositou R$%1 na sua conta bancária</Portuguese>
             <Polish>Zdeponowałeś na koncie bankowym $%1</Polish>
@@ -1172,7 +1172,7 @@
             <Spanish>Has depositado $%1 en la cuenta de tu pandilla</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 auf das Gangkonto überwiesen.</German>
-            <French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
+            <French>Vous avez déposé $%1 sur le compte en banque de votre gang.</French>
             <Italian>Hai despositato €%1 nei fondi della tua gang</Italian>
             <Portuguese>Você depositou R$%1 na conta da sua gangue.</Portuguese>
             <Polish>Zdeponowałeś na koncie gangu kwotę $%1 </Polish>
@@ -1180,7 +1180,7 @@
         <Key ID="STR_ATM_DepositInUseG">
             <Original>Someone is already trying to deposit into your gang's bank account.</Original>
             <Czech>Někdo se již snaží vložit na bankovní účet svého gangu.</Czech>
-            <French>Quelqu'un essaie déjà de déposer dans le compte bancaire de votre gang.</French>
+            <French>Quelqu'un est déjà en train de déposer dans le compte bancaire de votre gang.</French>
             <Spanish>Alguien ya esta tratando de depositar en la cuenta de banco de tu pandilla.</Spanish>
             <Italian>Qualcuno sta già cercando di depositare del denaro nel conto della Gang.</Italian>
             <Polish>Ktoś jest już stara się o wpłatę na rachunek bankowy swojego gangu.</Polish>
@@ -1229,7 +1229,7 @@
             <Spanish>Msg Policía</Spanish>
             <Russian></Russian>
             <German>An die Polizei</German>
-            <French>Texte Police</French>
+            <French>Police</French>
             <Italian>Msg Polizia</Italian>
             <Portuguese>Polícia</Portuguese>
             <Polish>Do: Policja</Polish>
@@ -1240,7 +1240,7 @@
             <Spanish>Msg Admin</Spanish>
             <Russian></Russian>
             <German>An die Admins</German>
-            <French>Texte Admins</French>
+            <French>Requête Admin</French>
             <Italian>Msg Admin</Italian>
             <Portuguese>Msg Admins</Portuguese>
             <Polish>Do: Admin</Polish>
@@ -1262,7 +1262,7 @@
             <Spanish>Admin Msg All</Spanish>
             <Russian></Russian>
             <German>Admin-Nachricht an alle</German>
-            <French>Admin Msg ALL</French>
+            <French>Admin MSG ALL</French>
             <Italian>Admin Msg</Italian>
             <Portuguese>Admin Msg All</Portuguese>
             <Polish>SMS do Wszyscy</Polish>
@@ -1273,7 +1273,7 @@
             <Spanish>Pedir Médico</Spanish>
             <Russian></Russian>
             <German>An die Sanitäter</German>
-            <French>Appel SOS Medecin</French>
+            <French>SAMU</French>
             <Italian>Msg medici</Italian>
             <Portuguese>Chamar SAMU</Portuguese>
             <Polish>MEDYK</Polish>
@@ -1286,7 +1286,7 @@
             <Spanish>You must enter a message to send!</Spanish>
             <Russian>You must enter a message to send!</Russian>
             <German>Du musst eine Nachricht eingeben!</German>
-            <French>You must enter a message to send!</French>
+            <French>Vous devez écrire un message à envoyer !</French>
             <Italian>You must enter a message to send!</Italian>
             <Portuguese>You must enter a message to send!</Portuguese>
             <Polish>You must enter a message to send!</Polish>
@@ -1297,7 +1297,7 @@
             <Spanish>Your message cannot exceed 400 characters!</Spanish>
             <Russian>Your message cannot exceed 400 characters!</Russian>
             <German>Deine Nachricht darf maximal 400 Zeichen enthalten!!</German>
-            <French>Your message cannot exceed 400 characters!</French>
+            <French>Votre message ne peut pas dépasser 400 caractères !</French>
             <Italian>Your message cannot exceed 400 characters!</Italian>
             <Portuguese>Your message cannot exceed 400 characters!</Portuguese>
             <Polish>Your message cannot exceed 400 characters!</Polish>
@@ -1308,7 +1308,7 @@
             <Spanish>You must select a player you are sending the text to!</Spanish>
             <Russian>You must select a player you are sending the text to!</Russian>
             <German>Du musst einen Spieler auswählen!</German>
-            <French>You must select a player you are sending the text to!</French>
+            <French>Vous devez sélectionner un joueur à qui envoyer le message !</French>
             <Italian>You must select a player you are sending the text to!</Italian>
             <Portuguese>You must select a player you are sending the text to!</Portuguese>
             <Polish>You must select a player you are sending the text to!</Polish>
@@ -1319,7 +1319,7 @@
             <Spanish>You have sent a message to all EMS Units.</Spanish>
             <Russian>You have sent a message to all EMS Units.</Russian>
             <German>Du hast eine Nachricht an alle Sanitäter gesendet.</German>
-            <French>You have sent a message to all EMS Units.</French>
+            <French>Vous avez envoyé un message au SAMU.</French>
             <Italian>You have sent a message to all EMS Units.</Italian>
             <Portuguese>You have sent a message to all EMS Units.</Portuguese>
             <Polish>You have sent a message to all EMS Units.</Polish>
@@ -1330,7 +1330,7 @@
             <Spanish>You sent %1 a message: %2</Spanish>
             <Russian>You sent %1 a message: %2</Russian>
             <German>Du sendest %1 eine Nachricht: %2</German>
-            <French>You sent %1 a message: %2</French>
+            <French>Vous avez envoyé à %1 le message : %2</French>
             <Italian>You sent %1 a message: %2</Italian>
             <Portuguese>You sent %1 a message: %2</Portuguese>
             <Polish>You sent %1 a message: %2</Polish>
@@ -1341,7 +1341,7 @@
             <Spanish>You are not an admin!</Spanish>
             <Russian>You are not an admin!</Russian>
             <German>Du bist kein Admin!</German>
-            <French>You are not an admin!</French>
+            <French>Vous n'êtes pas un admin !</French>
             <Italian>You are not an admin!</Italian>
             <Portuguese>You are not an admin!</Portuguese>
             <Polish>You are not an admin!</Polish>
@@ -1352,7 +1352,7 @@
             <Spanish>Admin Message Sent To: %1 - Message: %2</Spanish>
             <Russian>Admin Message Sent To: %1 - Message: %2</Russian>
             <German>Admin Nachricht Gesendet an: %1 - Nachricht: %2</German>
-            <French>Admin Message Sent To: %1 - Message: %2</French>
+            <French>Message admin envoyé à %1 - Message : %2</French>
             <Italian>Admin Message Sent To: %1 - Message: %2</Italian>
             <Portuguese>Admin Message Sent To: %1 - Message: %2</Portuguese>
             <Polish>Admin Message Sent To: %1 - Message: %2</Polish>
@@ -1363,7 +1363,7 @@
             <Spanish>Admin Message Sent To All: %1</Spanish>
             <Russian>Admin Message Sent To All: %1</Russian>
             <German>Admin Nachricht Gesendet an Alle: %1</German>
-            <French>Admin Message Sent To All: %1</French>
+            <French>Message admin envoyé à tous les joueurs : %1</French>
             <Italian>Admin Message Sent To All: %1</Italian>
             <Portuguese>Admin Message Sent To All: %1</Portuguese>
             <Polish>Admin Message Sent To All: %1</Polish>
@@ -1376,7 +1376,7 @@
             <Spanish>Desguazadero</Spanish>
             <Russian></Russian>
             <German>Schrotthändler</German>
-            <French>Concessionnaire de véhicules volés</French>
+            <French>Revendeur de véhicules volés</French>
             <Italian>Ricettatore</Italian>
             <Portuguese>Desmanche</Portuguese>
             <Polish>Dziupla</Polish>
@@ -1455,7 +1455,7 @@
             <Spanish>Hacer Líder</Spanish>
             <Russian></Russian>
             <German>Neuer Anführer</German>
-            <French>Promouvoir Chef</French>
+            <French>Passer Chef</French>
             <Italian>Imposta Capo</Italian>
             <Portuguese>Passar Liderança</Portuguese>
             <Polish>Ustaw lidera</Polish>
@@ -1488,7 +1488,7 @@
             <Spanish>Nombre de tu Pandilla</Spanish>
             <Russian></Russian>
             <German>Dein Gangname</German>
-            <French>Nom de ton Gang</French>
+            <French>Nom du Gang</French>
             <Italian>Nome della tua Gang</Italian>
             <Portuguese>Nome da Gangue</Portuguese>
             <Polish>Nazwa gangu</Polish>
@@ -1543,7 +1543,7 @@
             <Spanish>Aumentar Cantidad Máxima de Miembros de la Pandilla</Spanish>
             <Russian></Russian>
             <German>Maximale Anzahl an Mitgliedern erhöhen</German>
-            <French>Augmentation du nombre de membre acceptés</French>
+            <French>Augmentation du nombre de membre total</French>
             <Italian>Aumenta numero massimo membri della Gang</Italian>
             <Portuguese>Atualizar limite máximo de membros</Portuguese>
             <Polish>Zwiększ maksymalną liczbę członków gangu</Polish>
@@ -1578,7 +1578,7 @@
             <Spanish>Solo una persona puede capturar a la vez!</Spanish>
             <Russian></Russian>
             <German>Nur eine Person kann das Versteck einnehmen!</German>
-            <French>Une seule personne doit capturer à la fois !</French>
+            <French>Une seule personne à la fois peut capturer la cachette !</French>
             <Italian>Può conquistare solo una persona alla volta!</Italian>
             <Portuguese>Somente uma pessoa pode capturar!</Portuguese>
             <Polish>Przejmowanie powinna przeprowadzić na raz tylko jedna osoba</Polish>
@@ -1589,7 +1589,7 @@
             <Spanish>Este escondite esta controlado por %1.&lt;br/&gt;&lt;br/&gt;Estas seguro que quieres tomarlo?</Spanish>
             <Russian></Russian>
             <German>Das Versteck wird durch %1 kontrolliert.&lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du ihr Ganggebiet übernehmen möchtest?</German>
-            <French>Cette planque est contrôlée par %1.&lt;br/&gt;&lt;br/&gt;Etes-vous sûr que vous voulez prendre leur zone de gang ?</French>
+            <French>Cette planque est contrôlée par %1.&lt;br/&gt;&lt;br/&gt;Etes-vous sûr que vous voulez prendre leur cachette ?</French>
             <Italian>Questo Covo è controllato da %1.&lt;br/&gt;&lt;br/&gt;Sicuro di voler prendere il controllo della loro area?</Italian>
             <Portuguese>Esse esconderijo é controlado por %1.&lt;br/&gt;&lt;br/&gt;Você tem certeza que deseja tomar essa área?</Portuguese>
             <Polish>Ta kryjówka jest kontrolowana przez %1.&lt;br/&gt;&lt;br/&gt;Jesteś pewny że chcesz przjąć ten rejon.</Polish>
@@ -1630,7 +1630,7 @@
         <Key ID="STR_GNOTF_Captured">
             <Original>Hideout has been captured.</Original>
             <Czech>Úkryt byl zajat.</Czech>
-            <French>La planque a été capturée.</French>
+            <French>La cachette a été capturée.</French>
             <Spanish>Escondite ha sido capturado.</Spanish>
             <Italian>Hideout è stato catturato.</Italian>
             <Polish>Hideout został schwytany.</Polish>
@@ -1644,7 +1644,7 @@
             <Spanish>%1 y su pandilla: %2 - han tomado control de un Escondite!</Spanish>
             <Russian></Russian>
             <German>%1 und seine Gang: %2 - haben die Kontrolle über ein lokales Versteck übernommen!</German>
-            <French>%1 et son gang: %2 ont pris le controle de la planque !</French>
+            <French>%1 et son gang: %2 ont pris le contrôle d'une cachette !</French>
             <Italian>%1 e la sua Gang: %2 - hanno preso il controllo di un Covo!</Italian>
             <Portuguese>%1 e sua gangue: %2 - agora têm o controle de um esconderijo!</Portuguese>
             <Polish>%1 i jego gang: %2 - przejął kontrolę nad kryjówką!</Polish>
@@ -1666,7 +1666,7 @@
             <Spanish>El nombre de tu pandilla solo puede consistir de: "Numeros, Letras y guion bajo"</Spanish>
             <Russian></Russian>
             <German>Du hast ein ungültiges Zeichen in deinem Gangnamen. Der Name darf nur aus Zahlen und Buchstaben sowie einem Unterstrich bestehen!</German>
-            <French>Vous avez des caractères non valides dans le nom de votre gang. Il ne peut être constitué de chiffres et de lettres.</French>
+            <French>Vous avez des caractères non valides dans le nom de votre gang. Il ne peut être constitué que de chiffres et de lettres.</French>
             <Italian>Hai inserito caratteri non validi nel nome della Gang. Puoi inserire solo numeri e lettere con un underscore</Italian>
             <Portuguese>O nome da sua gangue tem caracteres inválidos. O nome so pode conter caracteres e números separados por underline</Portuguese>
             <Polish>Masz nieprawidłowe znaki w nazwie gangu - tylko litery i cyfry oraz podkreślnik</Polish>
@@ -1677,7 +1677,7 @@
             <Spanish>No tienes suficiente dinero en tu cuenta.\n\nTe falta: $%1</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto.\n\nDir fehlen: $%1</German>
-            <French>Vous n'avez pas assez d'argent dans votre compte bancaire.\n\nIl vous manque: $%1</French>
+            <French>Vous n'avez pas assez d'argent dans votre compte en banque.\n\nIl vous manque: $%1</French>
             <Italian>Non hai abbastanza fondi nel tuo conto in banca.\n\nTi mancano: $%1</Italian>
             <Portuguese>Você não tem dinheiro suficiente na sua conta bancária.\n\nFaltam: R$%1</Portuguese>
             <Polish>Nie masz tyle pieniędzy na koncie.\n\nYou brakuje: $%1</Polish>
@@ -1699,7 +1699,7 @@
             <Spanish>Estas a punto de desmantelar la Pandilla, si prosiges la Pandilla se borrara de la base de datos. &lt;br/&gt;&lt;br/&gt;Estas seguro de querer desmantelarla? Cualquier dinero invertido no sera devuelto.</Spanish>
             <Russian></Russian>
             <German>Du bist dabei die Gang aufzulösen. Durch Auflösung der Gang wird diese aus der Datenbank entfernt. &lt;br/&gt;&lt;br/&gt;Bist du sicher, dass du die Gang auflösen willst? Du erhältst die Kosten für die Erstellung nicht zurück.</German>
-            <French>Vous vous apprêtez à dissoudre le gang, en démantelant le gang, il sera supprimé de la base de données et le groupe sera supprimé. &lt;br/&gt;&lt;br/&gt;Etes-vous sûr de vouloir dissoudre le groupe? Vous ne serez pas remboursé le prix de sa création.</French>
+            <French>Vous vous apprêtez à dissoudre le gang. En démantelant le gang, il sera supprimé de la base de données et le groupe sera supprimé. &lt;br/&gt;&lt;br/&gt;Etes-vous sûr de vouloir dissoudre le groupe? Vous ne serez pas remboursé du prix de sa création.</French>
             <Italian>Stai per sciogliere la Gang, facendolo sarà rimossa dal Database e il gruppo verrà cancellato. &lt;br/&gt;&lt;br/&gt;Sei sicuro di voler sciogliere il gruppo? Non verrai rimborsato dei fondi spesi per crearlo.</Italian>
             <Portuguese>Você vai desfazer a sua gangue, ela será apagada do banco de dados. &lt;br/&gt;&lt;br/&gt;Você tem certeza que quer desfazer a gangue? Você não será reembolsado.</Portuguese>
             <Polish>Chcesz rozwiązać gang, po jego rozwiązaniu zostanie on usunięty z bazy danych i cała grupa zostanie rozwiązana. &lt;br/&gt;&lt;br/&gt;Naprawdę chcesz rozwiązać grupę? Nie dostaniesz zwrotu środków za przeznaczonych na stworzenie gangu.</Polish>
