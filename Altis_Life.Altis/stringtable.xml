@@ -11451,7 +11451,7 @@
         <Key ID="STR_FuelTank_FeedFull">
             <Original>Gas station has enough fuel.</Original>
             <Czech>Čerpací stanice má dostatek paliva.</Czech>
-            <French>Station service a suffisamment de carburant.</French>
+            <French>La station service a suffisamment de carburant.</French>
             <Spanish>La estación tiene suficiente gasolina.</Spanish>
             <Italian>Il distributore ha abbastanza benzina.</Italian>
             <Polish>Stacja benzynowa ma wystarczającą ilość paliwa.</Polish>
@@ -11508,7 +11508,7 @@
         <Key ID="STR_NotWhitelisted_SubTitle">
             <Original>You are not white-listed to use this slot.</Original>
             <Czech>Mise selhala</Czech>
-            <French>Mission échouée</French>
+            <French>Vous n'êtes pas white-listé.</French>
             <Spanish>No tienes permiso de usar este slot.</Spanish>
             <Italian>Missione fallita</Italian>
             <Polish>Misja nie powiodła się</Polish>
@@ -11543,7 +11543,7 @@
         <Key ID="STR_Blacklisted_SubTitle">
             <Original>You are blacklisted from cops.</Original>
             <Czech>Ty jsou na černé listině z policajtů.</Czech>
-            <French>Vous êtes sur la liste noire de la police.</French>
+            <French>Vous êtes sur blacklisté de la police.</French>
             <Spanish>Usted está en la lista negra de policías.</Spanish>
             <Italian>Stai lista nera da poliziotti.</Italian>
             <Polish>Jesteś na czarnej liście od policjantów.</Polish>
@@ -11554,7 +11554,7 @@
         <Key ID="STR_Blacklisted_Descript">
             <Original>You are not allowed to be a cop due to previous actions and the admins have removed you from being a cop.</Original>
             <Czech>Ty jsou nesmí být policajt vzhledem k předcházejícími akcemi a administrátoři vám odstraní z bytí policista.</Czech>
-            <French>Vous n'êtes pas autorisé à être un policier en raison des actions précédentes et les admins vous ont supprimé le droit de l'être de nouveau.</French>
+            <French>Vous avez été blacklisté de la police en raisons d'actions précédentes allant à l'encontre des règles. Vous ne pouvez plus devenir policier.</French>
             <Spanish>No tiene permiso a ser policía por acciones anteriores. Los administradores han bloqueado su acceso.</Spanish>
             <Italian>Non è consentito fare il poliziotto a causa di azioni precedenti e gli amministratori di aver rimosso da essere un poliziotto.</Italian>
             <Polish>Nie mogą być policjantem z powodu wcześniejszych działań oraz administratorzy usunęli cię od bycia policjantem.</Polish>
@@ -11613,7 +11613,7 @@
         <Key ID="STR_DeliveryAssigned_Title">
             <Original>Delivery Job Accepted</Original>
             <Czech>Dodávka Job Accepted</Czech>
-            <French>Livraison emploi Accepté</French>
+            <French>Mission de livraison acceptée</French>
             <Spanish>Misión de Entrega Aceptada</Spanish>
             <Italian>Incarico Postale accettato</Italian>
             <Polish>Dostawa Praca Zaakceptowany</Polish>
@@ -11624,7 +11624,7 @@
         <Key ID="STR_DeliveryFailed_Title">
             <Original>Delivery Job Failed</Original>
             <Czech>Nepodařilo dodávka Job</Czech>
-            <French>Livraison échouée</French>
+            <French>Mission de livraison échouée</French>
             <Spanish>Misión de Entrega Fallada</Spanish>
             <Italian>Incarico Postale Fallito</Italian>
             <Polish>Dostawa Praca Failed</Polish>
@@ -11635,7 +11635,7 @@
         <Key ID="STR_DeliverySucceeded_Title">
             <Original>Delivery Job Completed</Original>
             <Czech>Dokončena dodávka Job</Czech>
-            <French>Livraison réussie</French>
+            <French>Mission de livraison réussie</French>
             <Spanish>Misión de Entrega Completada</Spanish>
             <Italian>Incarico Postale Completato</Italian>
             <Polish>Dostawa Praca Zakończony</Polish>
@@ -11646,7 +11646,7 @@
         <Key ID="STR_TextMessage_Title">
             <Original>Received A Text Message</Original>
             <Czech>Přijetí textové zprávy</Czech>
-            <French>A reçu un message texte</French>
+            <French>SMS reçu</French>
             <Spanish>Recibió un mensaje de texto</Spanish>
             <Italian>Hai ricevuto un messaggio di testo</Italian>
             <Polish>Otrzymał wiadomość tekstową</Polish>
@@ -11668,7 +11668,7 @@
         <Key ID="STR_AdminDispatch_Title">
             <Original>Admin Dispatch Center</Original>
             <Czech>Admin Dispatch Center</Czech>
-            <French>Administrateur Dispatch Centre</French>
+            <French>Message Administrateur</French>
             <Spanish>Centro de Despacho de Administradores</Spanish>
             <Italian>Admin centro di spedizione</Italian>
             <Polish>Administrator Dispatch Center</Polish>
@@ -11683,7 +11683,7 @@
             <Russian></Russian>
             <German>Admin Nachricht</German>
             <Italian></Italian>
-            <French></French>
+            <French>Message Admin</French>
             <Portuguese></Portuguese>
             <Polish></Polish>
         </Key>
@@ -11837,7 +11837,7 @@
         <Key ID="STR_DL_ML_pickedUpMoney_BEF">
             <Original>picked up $%1 from the ground. Bank Balance: $%2  On Hand Balance: $%3</Original>
             <Czech>zvedl $%1 ze země. Banka Zůstatek: $%2 po zralé úvaze rukou: $%3</Czech>
-            <French>a pris $%1 par terre. Solde Bancaire : $%2. Argent en poche : $%3</French>
+            <French>a récupéré $%1 par terre. En banque : $%2 - Cash : $%3</French>
             <Spanish>recogió $%1 del suelo. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11848,7 +11848,7 @@
         <Key ID="STR_DL_ML_pickedUpMoney">
             <Original>%1 - %2 picked up $%3 from the ground. Bank Balance: $%4  On Hand Balance $%5</Original>
             <Czech>%1 - %2 vyzvednout $%3 ze země. Banka Zůstatek: $%4 po ruce Balance $%5</Czech>
-            <French>%1 - %2 a pris $%3 par terre. Solde Bancaire : $%4. Argent en poche : $%5</French>
+            <French>%1 - %2 a récupéré $%3 par terre. En banque : $%4 Cash : $%5</French>
             <Spanish>%1 - %2 recogió $%3 del suelo. Saldo Bancario: $%4 Saldo en Efectivo: $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11859,7 +11859,7 @@
         <Key ID="STR_DL_ML_Robbed_BEF">
             <Original>robbed $%1 from %2. Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>oloupen $%1 z %2. Banka Zůstatek: $%3 po zralé úvaze rukou: $%4</Czech>
-            <French>a volé $%1 de %2. Solde Bancaire : $%4. Argent en poche : $%4</French>
+            <French>a volé $%1 de %2. En banque : $%4 Cash : $%4</French>
             <Spanish>robó $%1 de $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11870,7 +11870,7 @@
         <Key ID="STR_DL_ML_Robbed">
             <Original>%1 - %2 robbed $%3 from %4. Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 okraden $%3 z %4. Banka Zůstatek: $%5 po zralé úvaze rukou: $%6</Czech>
-            <French>%1 - %2 a volé $%3 de %4. Solde Bancaire : $%5. Argent en poche : $%6</French>
+            <French>%1 - %2 a volé $%3 de %4. En banque : $%5. Cash : $%6</French>
             <Spanish>%1 - %2 robó $%3 de $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11903,7 +11903,7 @@
         <Key ID="STR_DL_AL_boughtHouse_BEF">
             <Original>bought a house for $%1. Bank Balance: $%2  On Hand Cash: $%3</Original>
             <Czech>koupil dům za $%1. Banka Zůstatek: $%2 On Hand Cash: $%3</Czech>
-            <French>a acheté une maison pour $%1. Solde Bancaire : $%2 Argent en poche : $%3</French>
+            <French>a acheté une maison pour $%1. En banque : $%2 Cash : $%3</French>
             <Spanish>compró una casa por $%1. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11914,7 +11914,7 @@
         <Key ID="STR_DL_AL_boughtHouse">
             <Original>%1 - %2 bought a house for $%3. Bank Balance: $%4  On Hand Cash: $%5</Original>
             <Czech>%1 - %2 koupil dům za $%3. Banka Zůstatek: $%4 On Hand Cash: $%5</Czech>
-            <French>%1 - %2 a acheté une maison pour $%3. Solde Bancaire : $%4 Argent en poche : $%5</French>
+            <French>%1 - %2 a acheté une maison pour $%3. En banque : $%4 Cash : $%5</French>
             <Spanish>%1 - %2 compró una casa por $%3. Saldo Bancario: $%4 Saldo en Efectivo: $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11925,7 +11925,7 @@
         <Key ID="STR_DL_AL_soldHouse_BEF">
             <Original>sold a house for $%1. Bank Balance: $%2</Original>
             <Czech>prodal dům za $%1. Banka Zůstatek: $%2</Czech>
-            <French>a vendu une maison pour $%1. Solde bancaire : $%2</French>
+            <French>a vendu une maison pour $%1. En banque : $%2</French>
             <Spanish>vendió una casa por $%1. Saldo Bancario: $%2</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11936,7 +11936,7 @@
         <Key ID="STR_DL_AL_soldHouse">
             <Original>%1 - %2 sold a house for $%3. Bank Balance: $%4</Original>
             <Czech>%1 - %2 prodal dům za $%3. Banka Zůstatek: $%4</Czech>
-            <French>%1 - %2 a vendu une maison pour $%3. Solde bancaire : $%4</French>
+            <French>%1 - %2 a vendu une maison pour $%3. En banque : $%4</French>
             <Spanish>%1 - %2 vendió una casa por $%3. Saldo Bancario: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11947,7 +11947,7 @@
         <Key ID="STR_DL_AL_choppedVehicle_BEF">
             <Original>chopped vehicle %1 for $%2  On Hand Cash(pre-chop): $%3</Original>
             <Czech>nasekané vozidlo %1 nebo $%2 na ruce hotovosti (pre-CHOP): $%3</Czech>
-            <French>a mis en pièces le véhicule %1 pour $%2. Argent en poche (avant la vente) : $%3</French>
+            <French>a mis en pièces le véhicule %1 pour $%2. Cash (avant la vente) : $%3</French>
             <Spanish>vendió el vehiculo %1 en el desguace por $%2. Saldo en Efectivo(antes de la venta): $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11958,7 +11958,7 @@
         <Key ID="STR_DL_AL_choppedVehicle">
             <Original>%1 - %2 chopped vehicle %3 for $%4  On Hand Cash(pre-chop): $%5</Original>
             <Czech>%1 - %2 nasekané vozidla %3 za $%4 po ruce hotovosti (před-kotleta): $%5</Czech>
-            <French>%1 - %2 a mis en pièces le véhicule %3 pour $%4. Argent en poche (avant la vente) : $%5</French>
+            <French>%1 - %2 a revendu le véhicule %3 pour $%4. Cash (avant la vente) : $%5</French>
             <Spanish>%1 - %2 vendió el vehiculo %3 en el desguace por $%4. Saldo en Efectivo(antes de la venta): $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11969,7 +11969,7 @@
         <Key ID="STR_DL_AL_boughtVehicle_BEF">
             <Original>bought vehicle %1 for $%2. On Hand Cash: $%3  Bank Balance: $%4</Original>
             <Czech>koupil vozidla %1 nebo $%2. On Hand Cash: $%3 bankovní konto: $%4</Czech>
-            <French>a acheté le véhicule %1 pour $%2. Argent en poche $%3 Solde bancaire : $%4</French>
+            <French>a acheté le véhicule %1 pour $%2. Cash : $%3 En banque : $%4</French>
             <Spanish>compró el vehiculo %1 por $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11980,7 +11980,7 @@
         <Key ID="STR_DL_AL_boughtVehicle">
             <Original>%1 - %2 bought vehicle %3 for $%4. On Hand Cash: $%5  Bank Balance $%6</Original>
             <Czech>%1 - %2 koupilo vozidla %3 za $%4. On Hand Cash: $%5 bankovní konto $%6</Czech>
-            <French>%1 - %2 a acheté le véhicule %3 pour $%4. Argent en poche $%5 Solde bancaire : $%6</French>
+            <French>%1 - %2 a acheté le véhicule %3 pour $%4. Cash $%5 En banque : $%6</French>
             <Spanish>%1 - %2 compró el vehiculo %3 por $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -11991,7 +11991,7 @@
         <Key ID="STR_DL_AL_soldVehicle_BEF">
             <Original>sold vehicle %1 for $%2. Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>prodával vozidla %1 pro $%2. Banka Zůstatek: $%3 po zralé úvaze rukou: $%4</Czech>
-            <French>a vendu le véhicule %1 pour $%2. Solde bancaire : $%3 Argent en poche : $%4</French>
+            <French>a vendu le véhicule %1 pour $%2. En banque : $%3 Cash : $%4</French>
             <Spanish>vendió el vehiculo %1 por $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12002,7 +12002,7 @@
         <Key ID="STR_DL_AL_soldVehicle">
             <Original>%1 - %2 sold vehicle %3 for $%4. Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 prodával vozidla %3 za $%4. Banka Zůstatek: $%5 po zralé úvaze rukou: $%6</Czech>
-            <French>%1 - %2 a vendu le véhicule %3 pour $%4. Solde bancaire : $%5 Argent en poche : $%6</French>
+            <French>%1 - %2 a vendu le véhicule %3 pour $%4. En banque : $%5 Cash : $%6</French>
             <Spanish>%1 - %2 vendió el vehiculo %3 por $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12013,7 +12013,7 @@
         <Key ID="STR_DL_ML_withdrewGang_BEF">
             <Original>withdrew $%1 from their gang bank. Gang Bank Balance: $%2  Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>stáhl $%1 z jejich gangu banky. Gang bankovní konto: $%2 bankovní konto: $%3 po zralé úvaze rukou: $%4</Czech>
-            <French>a retiré $%1 du compte bancaire du Gang. Solde bancaire du Gang : $%2 Solde bancaire perso : $%3 Argent en poche : $%4</French>
+            <French>a retiré $%1 du compte bancaire du Gang. Solde bancaire du Gang : $%2 En banque(perso) : $%3 Cash : $%4</French>
             <Spanish>sacó $%1 de la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%2 Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12024,7 +12024,7 @@
         <Key ID="STR_DL_ML_withdrewGang">
             <Original>%1 - %2 withdrew $%3 from their gang bank. Gang Bank Balance: $%4  Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 stáhl $%3 z jejich gangu banky. Gang bankovní konto: $%4 bankovní konto: $%5 po zralé úvaze rukou: $%6</Czech>
-            <French>%1 - %2 a retiré $%3 du compte bancaire du Gang. Solde bancaire du Gang : $%4 Solde bancaire perso : $%5 Argent en poche : $%6</French>
+            <French>%1 - %2 a retiré $%3 du compte bancaire du Gang. Solde bancaire du Gang : $%4 En banque(perso) : $%5 Cash : $%6</French>
             <Spanish>%1 - %2 sacó $%3 de la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%4 Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12035,7 +12035,7 @@
         <Key ID="STR_DL_ML_depositeGang_BEF">
             <Original>deposited $%1 into their gang bank. Gang Bank Balance: $%2  Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>uložen $%1 do svého gangu banky. Gang bankovní konto: $%2 bankovní konto: $%3 po zralé úvaze rukou: $%4</Czech>
-            <French>a déposé $%1 sur compte bancaire du Gang. Solde bancaire du Gang : $%2  Solde bancaire perso : $%3 Argent en poche : $%4</French>
+            <French>a déposé $%1 sur compte bancaire du Gang. Solde bancaire du Gang : $%2  En banque(perso) : $%3 Cash : $%4</French>
             <Spanish>depositó $%1 a la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%2 Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12046,7 +12046,7 @@
         <Key ID="STR_DL_ML_depositeGang">
             <Original>%1 - %2 deposited $%3 into their gang bank. Gang Bank Balance: $%4  Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 uloženy $%3 do jejich gangu banky. Gang bankovní konto: $%4 bankovní konto: $%5 po zralé úvaze rukou: $%6</Czech>
-            <French>%1 - %2 a déposé $%3 sur compte bancaire du Gang. Solde bancaire du Gang : $%4 Solde bancaire perso : $%5 Argent en poche : $%6</French>
+            <French>%1 - %2 a déposé $%3 sur compte bancaire du Gang. Solde bancaire du Gang : $%4 En banque(perso) : $%5 Cash : $%6</French>
             <Spanish>%1 - %2 depositó $%3 a la cuenta de su pandilla. Saldo Bancario de la Pandilla: $%4 Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12057,7 +12057,7 @@
         <Key ID="STR_DL_ML_withdrewBank_BEF">
             <Original>withdrew $%1 from their bank. Bank Balance: $%2  On Hand Balance: $%3</Original>
             <Czech>stáhl $%1 z jejich banky. Banka Zůstatek: $%2 po zralé úvaze rukou: $%3</Czech>
-            <French>a retiré $%1 de sa banque. Solde bancaire : $%2 Argent en poche : $%3</French>
+            <French>a retiré $%1 de sa banque. En banque : $%2 Cash : $%3</French>
             <Spanish>sacó $%1 de su cuenta de banco. Saldo Bancario: $%2 Saldo en Efectivo: $%3</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12068,7 +12068,7 @@
         <Key ID="STR_DL_ML_withdrewBank">
             <Original>%1 - %2 withdrew $%3 from their bank. Bank Balance: $%4  On Hand Balance: $%5</Original>
             <Czech>%1 - %2 stáhl $%3 od své banky. Banka Zůstatek: $%4 po zralé úvaze rukou: $%5</Czech>
-            <French>%1 - %2 a retiré $%3 de sa banque. Solde bancaire : $%4 Argent en poche : $%5</French>
+            <French>%1 - %2 a retiré $%3 de sa banque. En banque : $%4 Cash : $%5</French>
             <Spanish>%1 - %2 sacó $%3 de su cuenta de banco. Saldo Bancario: $%4 Saldo en Efectivo: $%5</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12079,7 +12079,7 @@
         <Key ID="STR_DL_ML_transferredBank_BEF">
             <Original>transferred $%1 to %2. Bank Balance: $%3  On Hand Balance: $%4</Original>
             <Czech>přestoupil $%1 do %2. Banka Zůstatek: $%3 po zralé úvaze rukou: $%4</Czech>
-            <French>a transféré $%1 à %2. Solde bancaire : $%3 Argent en poche : $%4</French>
+            <French>a transféré $%1 à %2. En banque : $%3 Cash : $%4</French>
             <Spanish>transferió $%1 a $%2. Saldo Bancario: $%3 Saldo en Efectivo: $%4</Spanish>
             <Italian></Italian>
             <Polish></Polish>
@@ -12090,7 +12090,7 @@
         <Key ID="STR_DL_ML_transferredBank">
             <Original>%1 - %2 transferred $%3 to %4. Bank Balance: $%5  On Hand Balance: $%6</Original>
             <Czech>%1 - %2 převedena $%3 až %4. Banka Zůstatek: $%5 po zralé úvaze rukou: $%6</Czech>
-            <French>%1 - %2 a transféré $%3 à %4. Solde bancaire : $%5 Argent en poche : $%6</French>
+            <French>%1 - %2 a transféré $%3 à %4. En banque : $%5 Cash : $%6</French>
             <Spanish>%1 - %2 transferió $%3 a $%4. Saldo Bancario: $%5 Saldo en Efectivo: $%6</Spanish>
             <Italian></Italian>
             <Polish></Polish>
