@@ -60,7 +60,7 @@ private _random = floor((random 11000) + 1500);
 
 if (_fuelFeedState <= 0) exitWith {titleText [localize "STR_FuelTank_FeedFull","PLAIN"]; life_action_inUse = false;};
 
-private "_disatace";
+private "_distance";
 
 private _shortest = 100000;
 {

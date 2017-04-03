@@ -25,7 +25,7 @@ life_action_inUse = true;
 disableSerialization;
 private _title = localize "STR_House_Raid_Searching";
 "progressBar" cutRsc ["life_progress","PLAIN"];
-porivate _ui = uiNamespace getVariable "life_progress";
+private _ui = uiNamespace getVariable "life_progress";
 private _progressBar = _ui displayCtrl 38201;
 private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
