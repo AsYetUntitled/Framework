@@ -3371,7 +3371,7 @@
             <Spanish>Estas curado!</Spanish>
             <Russian></Russian>
             <German>Du wurdest behandelt.</German>
-            <French>Vous êtes completement soigner.</French>
+            <French>Vous êtes completement soigné.</French>
             <Italian>Sei stato curato completamente.</Italian>
             <Portuguese>Sua saúde está perfeita</Portuguese>
             <Polish>Zostałeś wyleczony</Polish>
@@ -3382,7 +3382,7 @@
             <Spanish>%1 tu %2 esta siendo embargado por la policía.</Spanish>
             <Russian></Russian>
             <German>%1 dein %2 wird von der Polizei beschlagnahmt!</German>
-            <French>%1 votre %2 est envoyé a la fourrière par la police.</French>
+            <French>%1, votre %2 est en train d'être envoyé a la fourrière par la police.</French>
             <Italian>%1 il tuo %2 sta per essere sequestrato dalla Polizia.</Italian>
             <Portuguese>%1 seu %2 está sendo apreendido pela Polícia</Portuguese>
             <Polish>%1 twój %2 jest usuwany przez Policję</Polish>
@@ -3415,7 +3415,7 @@
             <Spanish>Has embargado un %1\n\nHas recibido $%2 por  limpiar las calles!</Spanish>
             <Russian></Russian>
             <German>Du hast einen %1 beschlagnahmt\n\nDu hast $%2 für das Aufräumen der Straßen bekommen!</German>
-            <French>Vous avez mis en fourrière un(e) %1\n\nVous avez reçus $%2 pour avoir nettoyé les rues !</French>
+            <French>Vous avez mis en fourrière un(e) %1\n\nVous avez reçu $%2.</French>
             <Italian>Hai sequestrato un %1\n\nHai ricevuto $%2 per aver mantenuto l'ordine nelle strade!</Italian>
             <Portuguese>Você apreendeu %1\n\nVocê recebeu R$%2 por deixar as ruas mais seguras!</Portuguese>
             <Polish>Usunąłeś %1\n\n Otrzymujesz    $%2 za oczyszczanie mapy</Polish>
@@ -3447,7 +3447,7 @@
             <Czech>Přerušit k dispozici v %1</Czech>
             <Spanish>Aborto disponible en %1</Spanish>
             <Russian></Russian>
-            <French>Abandon disponible dans %1</French>
+            <French>Déconnexion disponible dans %1</French>
             <German>Abbruch möglich in %1.</German>
             <Italian>Abbandona disponibile in %1</Italian>
             <Portuguese>Abortar disponível em %1</Portuguese>
@@ -3492,7 +3492,7 @@
             <Spanish>No puedes girar el vehículo mientras esta minando</Spanish>
             <Russian></Russian>
             <German>Du kannst das Fahrzeug nicht starten, solange es am Abbauen ist.</German>
-            <French>Le moteur doit être arreté pour que le véhicule mine</French>
+            <French>Le moteur doit être arrêté pour que le véhicule puisse miner</French>
             <Italian>Non puoi accendere il veicolo mentre estrae risorse</Italian>
             <Portuguese>Você não pode ligar o veículo enquanto minera</Portuguese>
             <Polish>Nie możesz poruszać pojazdem w trakcie wydobycia.</Polish>
@@ -3536,7 +3536,7 @@
             <Spanish>Has agarrado la Barrera de Clavos.</Spanish>
             <Russian></Russian>
             <German>Du hast das Nagelband eingepackt.</German>
-            <French>Vous avez remballé la herse.</French>
+            <French>Vous avez récupéré la herse.</French>
             <Italian>Hai raccolto una striscia chiodata.</Italian>
             <Portuguese>Você recolheu o tapete de espinhos.</Portuguese>
             <Polish>Kolczatka zwinięta</Polish>
@@ -3547,7 +3547,7 @@
             <Spanish>%1 ha sido colocado en evidencias, has recibido $%2 como recompensa.</Spanish>
             <Russian></Russian>
             <German>%1 hat Beweise hinterlassen, als Belohnung erhälst du $%2.</German>
-            <French>Vous avez ramassé la drogue de %1, vous avez reçu $%2 comme une récompense.</French>
+            <French>Vous avez mis sous scellé la drogue de %1, vous avez reçu $%2 comme récompense.</French>
             <Italian>E' stata trovata della merce illegale: %1, hai ricevuto $%2 come ricompensa.</Italian>
             <Portuguese>%1 foi pego como evidência, você recebeu R$%2 como recompensa.</Portuguese>
             <Polish>%1 umieszczony w dowodach, otrzymujesz w nagrodę $%2</Polish>
@@ -3569,7 +3569,7 @@
             <Spanish>Debes esperar un minimo de 3 minutos en la cárcel antes de poder pagar la fianza.</Spanish>
             <Russian></Russian>
             <German>Du musst mindestens 3 Minuten lang im Gefängnis bleiben, bevor du die Kaution beantragen kannst.</German>
-            <French>Vous devez attendre au moins 3 minutes en prison avant de payer une caution.</French>
+            <French>Vous devez attendre au moins 3 minutes en prison avant de pouvoir payer votre caution.</French>
             <Italian>Devi aspettare almeno 3 minuti in prigione prima di poter pagare la cauzione.</Italian>
             <Portuguese>Você precisa esperar pelo menos 3 minutos antes de poder pagar fiança.</Portuguese>
             <Polish>Musisz poczekać conajmniej 3 minuty w więzieniu zanim zapłacisz kaucję.</Polish>
@@ -3610,7 +3610,7 @@
         <Key ID="STR_NOTF_PlayerNear">
             <Original>You can't chop a vehicle while a player is near!</Original>
             <Czech>Nemůžeš sekat vozidla, zatímco hráč je blízko!</Czech>
-            <French>Vous ne pouvez pas vendre un véhicule alors qu'un le joueur est proche !</French>
+            <French>Vous ne pouvez pas vendre un véhicule alors que son propriétaire est à côté !</French>
             <Spanish>No puedes vender este vehículo mientras hay un jugador cerca!</Spanish>
             <Italian>Non si può rubare un veicolo mentre un giocatore è vicino!</Italian>
             <Polish>Nie można posiekać pojazd podczas gdy gracz jest w pobliżu!</Polish>
@@ -3657,7 +3657,7 @@
             <Spanish>Tus objetos ilegales fueron confiscados.</Spanish>
             <Russian></Russian>
             <German>Deine illegalen Gegenstände wurden als Beweismittel eingezogen.</German>
-            <French>Vos articles illégaux ont été mis en preuve.</French>
+            <French>Vos objets illégaux ont été mis sous scellé.</French>
             <Italian>I tuoi articoli illegali sono stati messi sotto sequestro.</Italian>
             <Portuguese>Seus itens ilegais foram postos em evidência.</Portuguese>
             <Polish>Twoje nielegalne pozycje zostały wprowadzone do dowodów.</Polish>
@@ -3668,7 +3668,7 @@
             <Spanish>Este vehículo no tiene informacion, posiblemente fue creado atravez de Cheats \n\nBorrando vehículo.</Spanish>
             <Russian></Russian>
             <German>Über das Fahrzeug gibt es keine Informationen, es wurde vermutlich durch Cheats gespawnt. \n\nLösche das Fahrzeug.</German>
-            <French>Ce véhicule dispose d'aucune information, il a probablement été engendré à travers un tricheurs. \n\ Supression véhicule.</French>
+            <French>Ce véhicule ne dispose d'aucune information, il a probablement été spawné par un hackeur. \n\ Suppression du véhicule.</French>
             <Italian>Il veicolo è privo di identificativi, probabilmente è stato creato mediante cheat. \n\nCancellazione veicolo.</Italian>
             <Portuguese>Esse veículo não tem informações, é provável que ele tenha sido criado por um cheater.\n\nDeletando veículo.</Portuguese>
             <Polish>Pojazd bez informacji servera, prawdopodobnie umieszczony przez hakera \n\n usuwam pojazd.</Polish>
@@ -3679,7 +3679,7 @@
             <Spanish>Ya estas haciendo una acción, espera a que termine.</Spanish>
             <Russian></Russian>
             <German>Du führst bereits eine Aktion aus. Bitte warte, bis diese beendet ist.</German>
-            <French>Vous faites déjà une action. S'il vous plaît attendez qu'elle se termine.</French>
+            <French>Vous faites déjà une action. Merci d'attendre la fin de celle-ci.</French>
             <Italian>Stai già compiendo un'azione, attendi che finisca.</Italian>
             <Portuguese>Você já está executando uma ação. Por favor espere até que ela acabe.</Portuguese>
             <Polish>Aktualnie wykonujesz jakąś akcję poczekaj aż skończysz.</Polish>
@@ -3808,7 +3808,7 @@
         <Key ID="STR_NOTF_ActionDelay">
             <Original>You're doing it too fast!</Original>
             <Czech>Děláte to příliš rychle!</Czech>
-            <French>Vous le faites trop vite !</French>
+            <French>Moins vite !</French>
             <Spanish>Lo estas haciendo muy rapido!</Spanish>
             <Italian>Lo stai facendo troppo veloce!</Italian>
             <Russian></Russian>
@@ -3822,7 +3822,7 @@
             <Spanish>No tienes suficiente espacio para eso!</Spanish>
             <Russian></Russian>
             <German>Du hast für diese Menge nicht genug Platz!</German>
-            <French>Vous n'avez pas assez d'espace !</French>
+            <French>Vous n'avez pas assez de place pour cette quantité !</French>
             <Italian>Non hai abbastanza spazio per quel quantitativo!</Italian>
             <Portuguese>Você não tem espaço suficiente para guardar o item</Portuguese>
             <Polish>Nie masz tyle miejsca!</Polish>
@@ -3910,7 +3910,7 @@
             <Spanish>No tienes tanto dinero en tu cuenta de banco.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto.</German>
-            <French>Vous n'avez pas assez de fond dans votre compte bancaire.</French>
+            <French>Vous n'avez pas assez de fonds dans votre compte en banque.</French>
             <Italian>Non hai abbastanza fondi nel tuo conto in banca.</Italian>
             <Portuguese>Você não tem todo esse dinheiro em sua conta bancária.</Portuguese>
             <Polish>Nie masz wystarczających środków w banku.</Polish>
@@ -4031,7 +4031,7 @@
             <Spanish>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Info de Vehículo&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Dueños&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Spanish>
             <Russian>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Russian>
             <German>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Fahrzeuginfo&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Besitzer&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</German>
-            <French>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Info de Vehícule&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Propriétaires&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</French>
+            <French>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Info du véhicule&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Propriétaires&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</French>
             <Italian>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Vehicle Info&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Owners&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Italian>
             <Portuguese>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Info do Veículo&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Donos&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Portuguese>
             <Polish>&lt;t color='#FF0000'&gt;&lt;t size='2'&gt;Informacja o pojeździe&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;&lt;t color='#FFD700'&gt;&lt;t size='1.5'&gt;Właściciel&lt;/t&gt;&lt;/t&gt;&lt;br/&gt; %1</Polish>
@@ -4064,7 +4064,7 @@
             <Spanish>Reparando %1</Spanish>
             <Russian></Russian>
             <German>Wird repariert %1...</German>
-            <French>Réparation %1</French>
+            <French>Réparation de %1</French>
             <Italian>Riparando %1</Italian>
             <Portuguese>Reparando %1</Portuguese>
             <Polish>Naprawiam %1</Polish>
@@ -4072,7 +4072,7 @@
         <Key ID="STR_NOTF_ActionInVehicle">
             <Original>You can't do that from inside the vehicle!</Original>
             <Czech>Můžete to udělat zevnitř vozu!</Czech>
-            <French>Vous ne pouvez pas le faire à l'intérieur du véhicule !</French>
+            <French>Vous ne pouvez pas faire ceci à l'intérieur du véhicule !</French>
             <Spanish>No puedes hacer eso desde adentro del vehículo!</Spanish>
             <Italian>Non si può fare dall'interno del veicolo!</Italian>
             <Russian></Russian>
@@ -4160,7 +4160,7 @@
         <Key ID="STR_NOTF_Unfrozen">
             <Original>You have been unfrozen by an administrator.</Original>
             <Czech>Byli jste zmrzlá správcem.</Czech>
-            <French>Vous avez été dégelés par un administrateur.</French>
+            <French>Vous avez été dégelé par un administrateur.</French>
             <Spanish>Un admin te ha descongelado!</Spanish>
             <Italian>Sei stato scongelato da un amministratore.</Italian>
             <Russian></Russian>
@@ -4237,7 +4237,7 @@
         <Key ID="STR_NOTF_couldNotGive">
             <Original>Couldn't give that much of that item, maybe you don't have that amount?</Original>
             <Czech>Nemohl dát, že velká část této položky, možná nemáte tuto částku?</Czech>
-            <French>Impossible de donner cet article, peut-être vous ne disposez pas d'autant ?</French>
+            <French>Impossible de donner cet article, peut-être que vous n'en n'avez pas autant ?</French>
             <Spanish>No se pudo dar a que gran parte de ese elemento, tal vez usted no tiene esa cantidad?</Spanish>
             <Italian>Impossibile dare quella quantità di oggetti.</Italian>
             <Polish>nie mógł dać, że wiele z tego elementu, może nie masz tej kwoty?</Polish>
@@ -4347,7 +4347,7 @@
         <Key ID="STR_NOTF_gaveKeysFrom">
             <Original>%1 has gave you keys for a %2.</Original>
             <Czech>%1 has gave you keys for a %2.</Czech>
-            <French>%1 has gave you keys for a %2.</French>
+            <French>%1 a vous a donné les clés de %2.</French>
             <Spanish>%1 has gave you keys for a %2.</Spanish>
             <Italian>%1 has gave you keys for a %2.</Italian>
             <Polish>%1 has gave you keys for a %2.</Polish>
@@ -4424,7 +4424,7 @@
         <Key ID="STR_NOTF_canOnlyStoreInLandVeh">
             <Original>You cannot store that in anything but a land vehicle!</Original>
             <Czech>Nelze uložit, že v ničem jiném než pozemní vozidla!</Czech>
-            <French>Vous pouvez stocker cette item seulement dans les vehicules terrestres !</French>
+            <French>Vous pouvez stocker cette item seulement dans les véhicules terrestres !</French>
             <Spanish>No se puede almacenar en cualquier cosa menos que un vehículo terrestre!</Spanish>
             <Italian>Non è possibile depositare questa risorsa in un veicolo che non sia terrestre!</Italian>
             <Polish>Nie można zapisać, że w nic poza pojazdem lądowym!</Polish>
@@ -4468,7 +4468,7 @@
         <Key ID="STR_NOTF_illegalItemCannotDispose">
             <Original>This is an illegal item and cops are near by. You cannot dispose of the evidence.</Original>
             <Czech>To je ilegální položky a policajti jsou v blízkosti. Nemůžete zbavit důkazů.</Czech>
-            <French>Ceci est un élément illégal et les policiers sont à proximité. Vous ne pouvez pas jeter la preuve.</French>
+            <French>Ceci est un objet illégal et les policiers sont à proximité. Vous ne pouvez pas le jeter.</French>
             <Spanish>Este es un artículo ilegal y policías están cerca. No se puede disponer de las pruebas.</Spanish>
             <Italian>Non puoi liberarti di questo oggetto dato che è una prova evidente.</Italian>
             <Polish>Jest to nielegalne element i policjanci są w pobliżu. Nie można pozbyć się dowodów.</Polish>
@@ -4479,7 +4479,7 @@
         <Key ID="STR_NOTF_cannotRemoveInVeh">
             <Original>You cannot remove an item when you are in a vehicle.</Original>
             <Czech>Nemůžete-li odebrat položku, když jste ve vozidle.</Czech>
-            <French>Vous ne pouvez pas supprimer un élément lorsque vous êtes dans un véhicule.</French>
+            <French>Vous ne pouvez pas supprimer un objet lorsque vous êtes dans un véhicule.</French>
             <Spanish>No se puede eliminar un elemento cuando se está en un vehículo.</Spanish>
             <Italian>Non è possibile rimuovere un elemento quando si è in un veicolo.</Italian>
             <Polish>Nie można usunąć element, kiedy jesteś w pojeździe.</Polish>
@@ -4523,7 +4523,7 @@
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
             <Czech>Zachyťte Gang skrýš</Czech>
-            <French>Capturer la planque de gang</French>
+            <French>Capturer la cachette de gang</French>
             <Spanish>Capturar Escondite</Spanish>
             <Italian>Cattura Banda Nascondiglio</Italian>
             <Polish>Przechwytywanie Banda Kryjówka</Polish>
@@ -4549,7 +4549,7 @@
             <Czech></Czech>
             <Spanish>Estación del Canal de Noticias 7</Spanish>
             <Russian></Russian>
-            <French>Chaine d'infos numero 7</French>
+            <French>Chaine d'infos Numéro 7</French>
             <German>Kanal 7 Nachrichtensender</German>
             <Italian></Italian>
             <Portuguese>Estação de Notícias do Canal 7</Portuguese>
@@ -4662,7 +4662,7 @@
             <Spanish>Te han arrestado. Si tratas de matarte o te desconectas se incrementara tu estadía en la cárcel!</Spanish>
             <Russian></Russian>
             <German>Du wurdest verhaftet. Sitze deine Zeit ab. Wenn du versuchst neu aufzuwachen oder die Verbindung zu trennen, verlängert sich deine Zeit!</German>
-            <French>Vous avez été arrêté, attendez que votre peine soit terminée. Si vous tentez de respawn ou reconnectez votre temps sera augmenté !</French>
+            <French>Vous avez été arrêté, attendez que votre peine soit terminée. Si vous tentez de respawn ou reconnectez, le temps sera augmenté !</French>
             <Italian>Sei stato arrestato, sconta la tua pena. Se cercherai di rinascere o di riconnetterti il tuo tempo aumenterà!</Italian>
             <Portuguese>Você foi preso, cumpra sua pena. Se você tentar renascer ou reconectar seu tempo na cadeia irá aumentar!</Portuguese>
             <Polish>Zostałeś aresztowany, poczekaj na koniec kary. Jeśli się rozłączysz albo odrodzisz twoja kara zostanie powiększona</Polish>
@@ -4750,7 +4750,7 @@
             <Spanish>Has pagado tu fianza y has sido liberado.</Spanish>
             <Russian></Russian>
             <German>Du hast deine Kaution bezahlt und bist nun frei.</German>
-            <French>Vous avez payé votre caution, vous êtes désormais libres.</French>
+            <French>Vous avez payé votre caution, vous êtes désormais libre.</French>
             <Italian>Hai pagato la cauzione e sei libero.</Italian>
             <Portuguese>Você pagou a fiança e agora está livre.</Portuguese>
             <Polish>Zapłaciłeś kaucję jesteś wolny.</Polish>
@@ -4774,7 +4774,7 @@
             <Spanish>Has perdido todas tus licencias de vehículos de motor por homicidio vehicular.</Spanish>
             <Russian></Russian>
             <German>Du hast alle deine Führerscheine durch fahrlässige Tötung mit einem Fahrzeug verloren.</German>
-            <French>Vous avez perdu tout vos permis véhicule pour avoir écrasé quelqu'un.</French>
+            <French>Vous avez perdu tous vos permis véhicule pour avoir écrasé quelqu'un.</French>
             <Italian>Hai perso tutte le tue licenze di guida a causa di un omicidio stradale.</Italian>
             <Portuguese>Você não perdeu suas licenças de motorista por atropelamento.</Portuguese>
             <Polish>Straciłeś wszystkie uprawnienia na pojazdy z uwagi na ciągłe zabijanie ludzi pojazdami.</Polish>
@@ -4840,7 +4840,7 @@
             <Spanish>Necesita haber %1 o mas policías para continuar.</Spanish>
             <Russian></Russian>
             <German>Es müssen %1 oder mehr Polizisten online sein, um fortfahren zu können.</German>
-            <French>Il faut au minimum %1 policier pour continuer.</French>
+            <French>Il faut au minimum %1 policiers pour continuer.</French>
             <Italian>Servono almeno %1 poliziotti online per continuare.</Italian>
             <Portuguese>É necessário ter %1 ou mais policiais online para continuar.</Portuguese>
             <Polish>Potrzeba conajmniej %1 policjantów aby kontynuować</Polish>
@@ -4897,7 +4897,7 @@
             <Spanish>Dando Tiquete a %1</Spanish>
             <Russian></Russian>
             <German>Verrechne %1</German>
-            <French>Contravention à %1</French>
+            <French>Verbalisation de %1</French>
             <Italian>Multando %1</Italian>
             <Portuguese>Multando %1</Portuguese>
             <Polish>Mandat dla %1</Polish>
@@ -4905,7 +4905,7 @@
         <Key ID="STR_NOTF_BlackListedVehicle">
             <Original>%2 got back a blacklisted vehicle near %1.</Original>
             <Czech>%2 dostat zpět na černou listinu vozidlo nedaleko %1.</Czech>
-            <French>%2 revenir un véhicule près de la liste noire %1.</French>
+            <French>%2 a récupéré un véhicule blacklisté près de %1.</French>
             <Spanish>%2 volver un vehículo en la lista negra cerca de %1.</Spanish>
             <Italian>%2 ha ritirato un veicolo blacklistato vicino %1.</Italian>
             <Polish>%2 wrócić do czarnej listy pojazd pobliżu %1.</Polish>
@@ -4952,7 +4952,7 @@
             <Spanish>Los tiquetes no pueden ser mas de $200,000!</Spanish>
             <Russian></Russian>
             <German>Strafzettel können nicht mehr als $200.000 betragen!</German>
-            <French>Les billets ne peuvent être plus de $200,000 !</French>
+            <French>Les amendes ne peuvent pas dépasser plus de $200,000 !</French>
             <Italian>La multa non può essere più di $200.000!</Italian>
             <Portuguese>A multa não pode ser maior que R$200.000!</Portuguese>
             <Polish>Mandat nie może być wyższy niż $200.000!</Polish>
@@ -4974,7 +4974,7 @@
             <Spanish>No tienes suficiente dinero para pagar el tiquete.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto, um den Strafzettel bezahlen zu können.</German>
-            <French>Vous n'avez pas assez d'argent dans votre compte bancaire ou sur vous pour payer l'amende.</French>
+            <French>Vous n'avez pas assez d'argent dans votre compte en banque ou sur vous pour payer l'amende.</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca per pagare la multa.</Italian>
             <Portuguese>Você não possui dinheiro suficiente na sua conta bancária ou na sua mão para pagar o bilhete.</Portuguese>
             <Polish>Nie masz środków na koncie aby zapłacić mandat.</Polish>
@@ -5040,7 +5040,7 @@
             <Spanish>>%1 no aceptó pagar el tiquete.</Spanish>
             <Russian></Russian>
             <German>%1 weigert sich, den Strafzettel zu bezahlen.</German>
-            <French>%1 refusé de payer l'amende.</French>
+            <French>%1 a refusé de payer l'amende.</French>
             <Italian>%1 si è rifiutato di pagare la multa.</Italian>
             <Portuguese>%1 se recusou a pagar a multa.</Portuguese>
             <Polish>%1 odmówił zapłaty mandatu.</Polish>
@@ -5084,10 +5084,10 @@
             <Spanish>Objetos Ilegales</Spanish>
             <Russian></Russian>
             <German>Illegale Gegenstände</German>
-            <French>Articles illégaux</French>
+            <French>Objets illégaux</French>
             <Italian>Oggetti Illegali</Italian>
             <Portuguese>Items Ilegais</Portuguese>
-            <Polish>Nielegalne przedmioty /    kontrabanda</Polish>
+            <Polish>Nielegalne przedmioty / kontrabanda</Polish>
         </Key>
         <Key ID="STR_Cop_Robber">
             <Original>%1 was identified as the bank robber!</Original>
@@ -5095,7 +5095,7 @@
             <Spanish>%1 fue identificado como el ladrón del banco!</Spanish>
             <Russian></Russian>
             <German>%1 wurde als Bankräuber identifiziert!</German>
-            <French>%1 à été identifié comme un braqueur de banque !</French>
+            <French>%1 a été identifié comme un braqueur de banque !</French>
             <Italian>%1 è stato identificato come il rapinatore della banca!</Italian>
             <Portuguese>%1 foi identificado como ladrão de banco!</Portuguese>
             <Polish>%1 zidentyfikowany jako kasairz rabujący banki!</Polish>
@@ -5106,7 +5106,7 @@
             <Spanish>No objetos ilegales</Spanish>
             <Russian></Russian>
             <German>Keine illegalen Gegenstände.</German>
-            <French>Aucun élément illégal</French>
+            <French>Aucun objet illégal</French>
             <Italian>Nessun oggetto illegale</Italian>
             <Portuguese>Sem items ilegais</Portuguese>
             <Polish>Brak kontrabandy i nielegalnych przedmiotów</Polish>
@@ -5128,7 +5128,7 @@
             <Spanish>Debes habilitar la opcion de "Picture in Picture"(PiP) En tus opciones de video para usar esto!</Spanish>
             <Russian></Russian>
             <German>Du musst "Bild in Bild" (PiP) in deinen Video-Einstellungen aktivieren, um dies nutzen zu können!</German>
-            <French>Vous devez activer le "Picture in Picture" (PiP) dans vos paramètre vidéo pour utilser ceci !</French>
+            <French>Vous devez activer le "Picture in Picture" (PiP) dans vos paramètres vidéo pour utilser ceci !</French>
             <Italian>Devi attivare Picture in Picture (PiP) nelle tue impostazioni video per usare questa funzione!</Italian>
             <Portuguese>Você precisa habilitar o Picture in Picture (PiP), através das suas configurações de vídeo para usar esta opção!</Portuguese>
             <Polish>Musisz włączyć Obraz w obrazie (PiP) w ustawieniach graficznych aby tego używać!</Polish>
