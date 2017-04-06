@@ -17,7 +17,8 @@ private _vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"ve
 private _shopSide = M_CONFIG(getText,"CarShops",(life_veh_shop select 0),"side");
 private _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
-private ["_buyMultiplier", "_rentMultiplier"];
+private "_buyMultiplier";
+private "_rentMultiplier";
 switch playerSide do {
     case civilian: {
         _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
