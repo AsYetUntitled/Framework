@@ -7,7 +7,6 @@
     Description:
     Reskins the vehicle.
 */
-//Get Parameters
 params [
     ["_vehicle", objNull, [objNull]],
     ["_index", -1, [0]]
@@ -33,8 +32,8 @@ _vehicle setVariable (if (local _vehicle) then {
 
 //Check to see if vehicle exist in missionConfigFile, otherwise use normal ArmA Class
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
-    _className = "Default";
     diag_log format ["%1: LifeCfgVehicles class doesn't exist", _className];
+    _className = "Default";
 };
 
 //Get Textures Array
