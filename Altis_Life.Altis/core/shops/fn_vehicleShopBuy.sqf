@@ -38,10 +38,11 @@ switch playerSide do {
     };
 };
 
+private "_purchasePrice";
 if (_mode) then {
-    private _purchasePrice = round (_initalPrice * _buyMultiplier);
+    _purchasePrice = round (_initalPrice * _buyMultiplier);
 } else {
-    private _purchasePrice = round (_initalPrice * _rentMultiplier);
+    _purchasePrice = round (_initalPrice * _rentMultiplier);
 };
 
 private _conditions = M_CONFIG(getText,"LifeCfgVehicles",_className,"conditions");
@@ -78,15 +79,17 @@ CASH = CASH - _purchasePrice;
 [0] call SOCK_fnc_updatePartial;
 hint format [localize "STR_Shop_Veh_Bought", getText (configFile >> "CfgVehicles" >> _className >> "displayName"), [_purchasePrice] call life_fnc_numberText];
 
+private "_vehicle";
+private "_hs";
 if ((life_veh_shop select 0) == "med_air_hs") then {
-    private _vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
+    _vehicle = createVehicle [_className, [0, 0, 999], [], 0, "NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}}; //Wait?
     _vehicle allowDamage false;
-    private _hs = nearestObjects[getMarkerPos _spawnPoint,["Land_Hospital_side2_F"],50] select 0;
+    _hs = nearestObjects [getMarkerPos _spawnPoint, ["Land_Hospital_side2_F"], 50] select 0;
     _vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
     sleep 0.6;
 } else {
-    private _vehicle = createVehicle [_className, (getMarkerPos _spawnPoint), [], 0, "NONE"];
+    _vehicle = createVehicle [_className, (getMarkerPos _spawnPoint), [], 0, "NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}}; //Wait?
     _vehicle allowDamage false; //Temp disable damage handling..
     _vehicle setPos (getMarkerPos _spawnPoint);
