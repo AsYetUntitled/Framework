@@ -109,7 +109,6 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
-
     _vehicle setVariable ["Trunk",_trunk,true];
     
     if (_wasIllegal) then {
@@ -142,7 +141,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel (_vInfo select 11);
-    }else{
+} else {
     _vehicle setFuel 1;
 };
 

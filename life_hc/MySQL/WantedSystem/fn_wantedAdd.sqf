@@ -78,8 +78,7 @@ _queryResult = [_query,2,true] call HC_fnc_asyncCall;
 _val = [_type select 1] call HC_fnc_numberSafe;
 _number = _type select 0;
 
-if !(count _queryResult isEqualTo 0) then
-{
+if !(count _queryResult isEqualTo 0) then {
     _crime = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE wantedID='%1'",_uid];
     _crimeresult = [_crime,2] call HC_fnc_asyncCall;
     _pastcrimess = [_crimeresult select 0] call HC_fnc_mresToArray;

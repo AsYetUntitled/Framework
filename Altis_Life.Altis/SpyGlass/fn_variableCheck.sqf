@@ -30,13 +30,13 @@ for "_i" from 1 to 125 do {
 /* First lets clear out the memory of potentially bad variables */
 {
     if (!isNil _x) then {
-        if (!(_x in _BIS_Functions)) then {
-            if (!(_x in _LIFE_Functions)) then {
-                if (!(_x in _SERVER_Functions)) then {
-                    if (!(_x in _SOCK_Functions)) then {
-                        if (!(_x in _DB_Functions)) then {
-                            if (!(_x in _BIS_UI_Functions)) then {
-                                if (!(_x in _SPY_Functions)) then {
+        if !(_x in _BIS_Functions) then {
+            if !(_x in _LIFE_Functions) then {
+                if !(_x in _SERVER_Functions) then {
+                    if !(_x in _SOCK_Functions) then {
+                        if !(_x in _DB_Functions) then {
+                            if !(_x in _BIS_UI_Functions) then {
+                                if !(_x in _SPY_Functions) then {
                                     _varType = typeName (uiNamespace getVariable _x);
                                     _find = _allowedVariables find [_x,_varType];
                                     if (_find isEqualTo -1) then {
@@ -56,12 +56,12 @@ for "_i" from 1 to 125 do {
 _checkFunction = {
     {
         if (!isNil _x) then {
-            if (!(_x in _BIS_Functions)) then {
-                if (!(_x in _LIFE_Functions)) then {
-                    if (!(_x in _SERVER_Functions)) then {
-                        if (!(_x in _SOCK_Functions)) then {
-                            if (!(_x in _DB_Functions)) then {
-                                if (!(_x in _SPY_Functions)) then {
+            if !(_x in _BIS_Functions) then {
+                if !(_x in _LIFE_Functions) then {
+                    if !(_x in _SERVER_Functions) then {
+                        if !(_x in _SOCK_Functions) then {
+                            if !(_x in _DB_Functions) then {
+                                if !(_x in _SPY_Functions) then {
                                     _varType = typeName (missionNamespace getVariable _x);
                                     _find = _allowedVariables find [_x,_varType];
                                     if (_find isEqualTo -1) then {
@@ -81,7 +81,7 @@ _checkFunction = {
 _uiCheckFunction = {
     {
         if (!isNil _x) then {
-            if (!(_x in _BIS_UI_Functions)) then {
+            if !(_x in _BIS_UI_Functions) then {
                 _varType = typeName (uiNamespace getVariable _x);
                 _find = _allowedVariables_UI find [_x,_varType];
                 if (_find isEqualTo -1) then {

@@ -23,8 +23,7 @@ _crimesArr = [];
 _type = [_queryResult select 0] call HC_fnc_mresToArray;
 if (_type isEqualType "") then {_type = call compile format ["%1", _type];};
 {
-    switch (_x) do
-    {
+    switch (_x) do {
         case "187V": {_x = "STR_Crime_187V"};
         case "187": {_x = "STR_Crime_187"};
         case "901": {_x = "STR_Crime_901"};
@@ -74,7 +73,7 @@ if (_type isEqualType "") then {_type = call compile format ["%1", _type];};
         case "25": {_x = "STR_Crime_25"};
     };
     _crimesArr pushBack _x;
-}forEach _type;
+} forEach _type;
 _queryResult set[0,_crimesArr];
 
 [_queryResult] remoteExec ["life_fnc_wantedInfo",_ret];

@@ -19,7 +19,7 @@ if (_shooter isKindOf "Man" && alive player) then {
         life_istazed = true;
         _curWep = currentWeapon player;
         _curMags = magazines player;
-        _attach = if (!(primaryWeapon player isEqualTo "")) then {primaryWeaponItems player} else {[]};
+        _attach = if !(primaryWeapon player isEqualTo "") then {primaryWeaponItems player} else {[]};
 
         {player removeMagazine _x} forEach _curMags;
         player removeWeapon _curWep;
@@ -45,7 +45,7 @@ if (_shooter isKindOf "Man" && alive player) then {
 
         [player,"AmovPpneMstpSrasWrflDnon"] remoteExecCall ["life_fnc_animSync",RCLIENT];
 
-        if (!(player getVariable ["Escorting",false])) then {
+        if !(player getVariable ["Escorting",false]) then {
             detach player;
         };
         life_istazed = false;

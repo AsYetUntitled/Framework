@@ -13,11 +13,11 @@ if (isNull _vehicle) exitWith {};
 if (!isNil {_vehicle getVariable "fuelTankWork"}) exitWith {titleText[localize "STR_FuelTank_InUse","PLAIN"];};
 closeDialog 0;
 life_action_inUse = true;
-if (isNil {_vehicle getVariable "fuelTank"}) then{
+if (isNil {_vehicle getVariable "fuelTank"}) then {
     _fuelSpace = getNumber(missionConfigFile >> "LifeCfgVehicles" >> (typeOf _vehicle) >> "vFuelSpace");
     _fuelState = 0;
     _vehicle setVariable ["fuelTank",[_fuelSpace,_fuelState],true];
-}else{
+} else {
     _fuelSpace = (_vehicle getVariable "fuelTank") select 0;
     _fuelState = (_vehicle getVariable "fuelTank") select 1;
 };

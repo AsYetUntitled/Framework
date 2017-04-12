@@ -10,10 +10,10 @@ private ["_unit","_id"];
 _unit = param [0,objNull,[objNull]];
 if (isNull _unit) exitWith {}; //Not valid
 if (isNil "_unit") exitWith {}; //Not Valid
-if (!(_unit isKindOf "Man")) exitWith {}; //Not a unit
+if !(_unit isKindOf "Man") exitWith {}; //Not a unit
 if (!isPlayer _unit) exitWith {}; //Not a human
-if (!(_unit getVariable "restrained")) exitWith {}; //He's not restrained.
-if (!((side _unit) in [civilian,independent])) exitWith {}; //Not a civ
+if !(_unit getVariable "restrained") exitWith {}; //He's not restrained.
+if !((side _unit) in [civilian,independent]) exitWith {}; //Not a civ
 if (isNull _unit) exitWith {}; //Not valid
 
 if (life_HC_isActive) then {

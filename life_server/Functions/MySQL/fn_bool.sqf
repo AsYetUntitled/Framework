@@ -17,7 +17,7 @@ switch (_mode) do {
     };
 
     case 1: {
-        if (!(_bool isEqualType 0)) exitWith {false};
+        if !(_bool isEqualType 0) exitWith {false};
         switch (_bool) do {
             case 0: {false};
             case 1: {true};

@@ -17,5 +17,4 @@ if (life_houses isEqualTo []) exitWith {}; //Nothing to do.
     _marker setMarkerTextLocal _houseName;
     _marker setMarkerColorLocal "ColorBlue";
     _marker setMarkerTypeLocal "loc_Lighthouse";
-
 } forEach life_houses;

@@ -19,7 +19,6 @@ _exit = false;
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-
     _curConfig = _resourceCfg select _i;
     _resource = configName _curConfig;
     _maxGather = getNumber(_curConfig >> "amount");
@@ -40,7 +39,7 @@ if (_requiredItem != "") then {
 
     if (_valItem < 1) exitWith {
         switch (_requiredItem) do {
-         //Messages here
+            //Messages here
         };
         life_action_inUse = false;
         _exit = true;

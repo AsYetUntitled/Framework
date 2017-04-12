@@ -17,7 +17,7 @@ if (life_respawned) then {
 };
 cutText["","BLACK FADED"];
 0 cutFadeOut 9999999;
-if (!(createDialog "life_spawn_selection")) exitWith {[] call life_fnc_spawnMenu;};
+if !(createDialog "life_spawn_selection") exitWith {[] call life_fnc_spawnMenu;};
 (findDisplay 38500) displaySetEventHandler ["keyDown","_this call life_fnc_displayHandler"];
 
 _spCfg = [playerSide] call life_fnc_spawnPointCfg;

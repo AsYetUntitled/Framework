@@ -12,7 +12,7 @@ _house = param [0,objNull,[objNull]];
 _uid = getPlayerUID player;
 
 if (isNull _house) exitWith {};
-if (!(_house isKindOf "House_F")) exitWith {};
+if !(_house isKindOf "House_F") exitWith {};
 if (isNil {_house getVariable "house_owner"}) exitWith {hint localize "STR_House_noOwner";};
 closeDialog 0;
 
@@ -47,7 +47,7 @@ if (_action) then {
             advanced_log = format [localize "STR_DL_AL_soldHouse_BEF",(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
         } else {
             advanced_log = format [localize "STR_DL_AL_soldHouse",profileName,(getPlayerUID player),(round((_houseCfg select 0)/2)),[BANK] call life_fnc_numberText];
-            };
+        };
         publicVariableServer "advanced_log";
     };
 

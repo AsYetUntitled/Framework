@@ -19,7 +19,6 @@ _side = side _unit;
 if (isNil "HC_UID" || {!(_uid isEqualTo HC_UID)}) then {
     _position = getPosATL _unit;
     if ((getMarkerPos "respawn_civilian" distance _position) > 300) then {
-
         //Civilian position
         if (life_save_civilian_position && _side isEqualTo civilian) then {
             _alive = alive _unit;

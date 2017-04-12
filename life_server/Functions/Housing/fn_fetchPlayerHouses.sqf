@@ -57,13 +57,13 @@ _containerss = [];
         for "_i" from 0 to ((count (_items select 0)) - 1) do {
             _container addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
         };
-        for "_i" from 0 to ((count (_mags select 0)) - 1) do{
+        for "_i" from 0 to ((count (_mags select 0)) - 1) do {
             _container addMagazineCargoGlobal [((_mags select 0) select _i), ((_mags select 1) select _i)];
         };
-        for "_i" from 0 to ((count (_weapons select 0)) - 1) do{
+        for "_i" from 0 to ((count (_weapons select 0)) - 1) do {
             _container addWeaponCargoGlobal [((_weapons select 0) select _i), ((_weapons select 1) select _i)];
         };
-        for "_i" from 0 to ((count (_backpacks select 0)) - 1) do{
+        for "_i" from 0 to ((count (_backpacks select 0)) - 1) do {
             _container addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
         };
     };

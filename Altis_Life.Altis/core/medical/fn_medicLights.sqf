@@ -19,10 +19,8 @@ _lightleft setLightColor _lightRed;
 _lightleft setLightBrightness 0.2;
 _lightleft setLightAmbient [0.1,0.1,1];
 
-switch (typeOf _vehicle) do
-{
-    case "C_Offroad_01_F":
-    {
+switch (typeOf _vehicle) do {
+    case "C_Offroad_01_F": {
         _lightleft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
     };
 };
@@ -39,10 +37,8 @@ _lightright setLightColor _lightBlue;
 _lightright setLightBrightness 0.2;
 _lightright setLightAmbient [0.1,0.1,1];
 
-switch (typeOf _vehicle) do
-{
-    case "C_Offroad_01_F":
-    {
+switch (typeOf _vehicle) do {
+    case "C_Offroad_01_F": {
         _lightright lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
     };
 };
@@ -58,18 +54,14 @@ _lightleft setLightDayLight true;
 _lightright setLightDayLight true;
 
 _leftRed = true;
-while{ (alive _vehicle)} do
-{
-    if (!(_vehicle getVariable "lights")) exitWith {};
-    if (_leftRed) then
-    {
+while {alive _vehicle} do {
+    if !(_vehicle getVariable "lights") exitWith {};
+    if (_leftRed) then {
         _leftRed = false;
         _lightright setLightBrightness 0.0;
         sleep 0.05;
         _lightleft setLightBrightness 6;
-    }
-        else
-    {
+    } else {
         _leftRed = true;
         _lightleft setLightBrightness 0.0;
         sleep 0.05;

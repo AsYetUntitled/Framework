@@ -24,7 +24,6 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if (_action) then {
-
     if (life_HC_isActive) then {
         [_uid,_house,1] remoteExec ["HC_fnc_houseGarage",HC_Life];
     } else {
@@ -35,5 +34,4 @@ if (_action) then {
     [1] call SOCK_fnc_updatePartial;
 
     _house setVariable ["garageBought",false,true];
-
 };

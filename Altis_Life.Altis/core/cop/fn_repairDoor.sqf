@@ -9,7 +9,7 @@
 private ["_building","_doors","_door","_cP","_cpRate","_ui","_title","_titleText","_locked"];
 _building = param [0,objNull,[objNull]];
 if (isNull _building) exitWith {};
-if (!(_building isKindOf "House_F")) exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
+if !(_building isKindOf "House_F") exitWith {hint localize "STR_ISTR_Bolt_NotNear";};
 
 _doors = 1;
 _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"NumberOfDoors");
@@ -18,7 +18,7 @@ _door = 0;
 for "_i" from 1 to _doors do {
     _selPos = _building selectionPosition format ["Door_%1_trigger",_i];
     _worldSpace = _building modelToWorld _selPos;
-        if (player distance _worldSpace < 5) exitWith {_door = _i;};
+    if (player distance _worldSpace < 5) exitWith {_door = _i;};
 };
 
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.

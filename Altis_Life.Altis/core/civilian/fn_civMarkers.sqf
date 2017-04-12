@@ -11,8 +11,7 @@ _members = [];
 
 for "_i" from 0 to 1 step 0 do {
     sleep 0.5;
-    if (visibleMap) then
-    {
+    if (visibleMap) then {
         _members = units (group player);
         {
             if !(_x isEqualTo player) then {
@@ -24,8 +23,7 @@ for "_i" from 0 to 1 step 0 do {
             };
         } forEach _members;
 
-        while {visibleMap} do
-        {
+        while {visibleMap} do {
             {
                 private ["_unit"];
                 _unit = _x select 1;

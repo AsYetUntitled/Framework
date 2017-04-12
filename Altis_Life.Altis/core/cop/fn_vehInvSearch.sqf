@@ -20,7 +20,7 @@ _illegalValue = 0;
     _var = _x select 0;
     _val = _x select 1;
     _isIllegalItem = M_CONFIG(getNumber,"VirtualItems",_var,"illegal");
-    if (_isIllegalItem isEqualTo 1 ) then{
+    if (_isIllegalItem isEqualTo 1 ) then {
         _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_var,"sellPrice");
         if (!isNull (missionConfigFile >> "VirtualItems" >> _var >> "processedItem")) then {
             _illegalItemProcessed = M_CONFIG(getText,"VirtualItems",_var,"processedItem");

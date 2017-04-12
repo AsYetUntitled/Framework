@@ -24,7 +24,7 @@ if (count _vInfo > 0) then {
 if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
     _damage = getAllHitPointsDamage _vehicle;
     _damage = _damage select 2;
-    } else {
+} else {
     _damage = [];
 };
 _damage = [_damage] call DB_fnc_mresArray;
@@ -32,12 +32,12 @@ _damage = [_damage] call DB_fnc_mresArray;
 // because fuel price!
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _fuel = (fuel _vehicle);
-    } else {
+} else {
     _fuel = 1;
 };
 
 if (_impound) exitWith {
-    if (count _vInfo isEqualTo 0) then  {
+    if (count _vInfo isEqualTo 0) then {
         life_impound_inuse = false;
         (owner _unit) publicVariableClient "life_impound_inuse";
 
@@ -97,30 +97,25 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
                 _blacklist = true;
             };
 
-        }
-        foreach _itemList;
+        } foreach _itemList;
 
         if (_blacklist) then {
             [_uid, _profileName, "481"] remoteExecCall["life_fnc_wantedAdd", RSERV];
             _query = format ["UPDATE vehicles SET blacklist='1' WHERE pid='%1' AND plate='%2'", _uid, _plate];
             _thread = [_query, 1] call DB_fnc_asyncCall;
         };
-
-    }
-    else {
+    } else {
         {
             if ((_x select 0) in _resourceItems) then {
                 _items pushBack[(_x select 0),(_x select 1)];
                 _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;
             };
-        }
-        forEach _itemList;
+        } forEach _itemList;
     };
 
     _trunk = [_items, _totalweight];
-}
-else {
+} else {
     _trunk = [[], 0];
 };
 
@@ -132,7 +127,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
     // no items? clean the array so the database looks pretty
     if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {_cargo = [];};
-    } else {
+} else {
     _cargo = [];
 };
 // prepare

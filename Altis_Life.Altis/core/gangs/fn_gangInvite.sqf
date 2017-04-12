@@ -31,7 +31,6 @@ if (_action) then {
     } else {
         [4,_group] remoteExecCall ["TON_fnc_updateGang",RSERV];
     };
-
 } else {
     _grpMembers = group player getVariable "gang_members";
     _grpMembers = _grpMembers - [getPlayerUID player];
@@ -42,5 +41,4 @@ if (_action) then {
     } else {
         [4,_grpMembers] remoteExecCall ["TON_fnc_updateGang",RSERV];
     };
-
 };

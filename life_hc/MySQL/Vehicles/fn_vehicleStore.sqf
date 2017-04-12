@@ -41,7 +41,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
 };
 
 if (_impound) exitWith {
-    if (_vInfo isEqualTo []) then  {
+    if (_vInfo isEqualTo []) then {
         life_impound_inuse = false;
         _ownerID publicVariableClient "life_impound_inuse";
 
@@ -98,9 +98,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             if (_isIllegal) then {
                 _blacklist = true;
             };
-
-        }
-        foreach _itemList;
+        } foreach _itemList;
         if (_blacklist) then {
             [_uid, _profileName, "481"] remoteExecCall["HC_fnc_wantedAdd", HC_Life];
 
@@ -108,23 +106,21 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             _thread = [_query, 1] call HC_fnc_asyncCall;
         };
 
-    }
-    else {
-            {
-                if ((_x select 0) in _resourceItems) then {
-                    _items pushBack[_x select 0,_x select 1];
-                    _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
-                    _totalweight = _weight + _totalweight;
-                };
-            }
-            forEach _itemList;
+    } else {
+        {
+            if ((_x select 0) in _resourceItems) then {
+                _items pushBack[_x select 0,_x select 1];
+                _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
+                _totalweight = _weight + _totalweight;
+            };
+        } forEach _itemList;
     };
-            _trunk = [_items, _totalweight];
+    _trunk = [_items, _totalweight];
 
-    }
-    else {
-        _trunk = [[], 0];
-    };
+} else {
+    _trunk = [[], 0];
+};
+
 if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     _vehItems = getItemCargo _vehicle;
     _vehMags = getMagazineCargo _vehicle;

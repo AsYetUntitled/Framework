@@ -19,7 +19,7 @@ _badCharacter = false;
 if (_length > _allowedLength) exitWith {hint format [localize "STR_News_HeaderLength",_allowedLength];};
 
 {
-    if (!(_x in _allowed)) exitWith {_badCharacter = true;};
+    if !(_x in _allowed) exitWith {_badCharacter = true;};
 } forEach _characterByte;
 
 if (_badCharacter) exitWith {hint localize "STR_News_UnsupportedCharacter"};

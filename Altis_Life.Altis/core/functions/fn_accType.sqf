@@ -26,9 +26,8 @@ _ret = 0;
 
 _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon player];
 {
-    if (!(_ret isEqualTo 0)) exitWith {}; //Make sure we exit the loop since there was already a match.
-    if (!(_x isEqualTo "")) then
-    {
+    if !(_ret isEqualTo 0) exitWith {}; //Make sure we exit the loop since there was already a match.
+    if !(_x isEqualTo "") then {
         _weapon = _x;
         _cfgInfo = [_weapon,"CfgWeapons"] call life_fnc_fetchCfgDetails;
 
@@ -41,14 +40,14 @@ _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon play
                 _legacyItems set[_i,toLower(_legacyItems select _i)];
             };
 
-            if ((toLower _item) in _legacyItems) exitWith {_ret = switch (_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};};
+            if ((toLower _item) in _legacyItems) exitWith {_ret = switch (_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player): {2};case (handgunWeapon player): {3};default {0};};};
         };
 
         //Check new compatibleItems class structure
         if (count _newItems > 0) then {
             //This gets weird with forEach in forEach :\
             {
-                if (!(_ret isEqualTo 0)) exitWith {};
+                if !(_ret isEqualTo 0) exitWith {};
 
                 if (isClass (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> _x >> "compatibleItems")) then {
                     _cfg = FETCH_CONFIG4(getNumber,"CfgWeapons",_weapon,"WeaponSlotsInfo",_x,"compatibleItems",_item);
@@ -59,7 +58,7 @@ _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon play
                     _ret = switch (_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};
                 };
             } forEach _newItems;
-            if (!(_ret isEqualTo 0)) exitWith {}; //Make sure we exit the loop
+            if !(_ret isEqualTo 0) exitWith {}; //Make sure we exit the loop
         };
     };
 } forEach _weaponArray;

@@ -71,7 +71,6 @@ private "_details";
     };
 
     if ([_x] call life_fnc_levelCheck) then {
-
         if (isNil "_details") then {
             _list lbAdd _displayName;
             _list lbSetData [(lbSize _list)-1,_className];

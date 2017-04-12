@@ -23,7 +23,6 @@ if (_action) then {
     } else {
         [group player] remoteExec ["TON_fnc_removeGang",RSERV];
     };
-
 } else {
     hint localize "STR_GNOTF_DisbandGangCanc";
 };
