@@ -6,6 +6,7 @@
     Description:
     Teleport to chosen position.
 */
+
 if (FETCH_CONST(life_adminlevel) < 3) exitWith {closeDialog 0;};
 
 closeDialog 0;

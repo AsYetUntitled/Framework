@@ -5,9 +5,12 @@
     Description:
     Hides dead bodies.
 */
-private ["_corpse"];
-_corpse = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+
+params [
+    ["_corpse", 0, [[],0]]
+];
+
 if (isNull _corpse) exitWith {};
-if (alive _corpse) exitWith {}; //Stop script kiddies.
+if (alive _corpse) exitWith {};
 
 deleteVehicle _corpse;

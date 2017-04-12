@@ -9,7 +9,8 @@
 params [
     ["_robber",objNull,[objNull]]
 ];
-if (isNull _robber) exitWith {}; //No one to return it to?
+
+if (isNull _robber) exitWith {};
 
 if (CASH > 0) then {
     [CASH,player,_robber] remoteExecCall ["life_fnc_robReceive",_robber];
