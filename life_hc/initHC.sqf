@@ -48,13 +48,6 @@ if (_extDBNotLoaded isEqualType []) then {
 
 if (_extDBNotLoaded isEqualType []) exitWith {}; //extDB3-HC did not fully initialize so terminate the rest of the initialization process.
 
-[] spawn {
-    for "_i" from 0 to 1 step 0 do {
-        publicVariableServer "serv_sv_use";
-        uiSleep 60;
-    };
-};
-
 ["CALL resetLifeVehicles",1] call HC_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] call HC_fnc_asyncCall;
 ["CALL deleteOldHouses",1] call HC_fnc_asyncCall;
@@ -118,6 +111,13 @@ HC_MPAllowedFuncs = [
 ];
 
 CONSTVAR(HC_MPAllowedFuncs);
+
+[] spawn {
+    for "_i" from 0 to 1 step 0 do {
+        uiSleep 60;
+        publicVariableServer "serv_sv_use";
+    };
+};
 
 life_HC_isActive = true;
 publicVariable "life_HC_isActive";
