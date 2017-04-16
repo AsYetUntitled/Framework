@@ -19,15 +19,13 @@ private _className = typeOf _vehicle;
 if (isNull _vehicle || {!alive _vehicle} || {_index isEqualTo -1}) exitWith {};
 
 //Set Colour on Vehicle
-_vehicle setVariable (if (local _vehicle) then {
-    switch _className do {
-        case "C_Offroad_01_F":          {["color", 3, true]};
-        case "C_Hatchback_01_F":        {["color", 1, true]};
-        case "C_Hatchback_01_sport_F":  {["color", 1, true]};
-        case "C_SUV_01_F":              {["color", 1, true]};
-        case "C_Van_01_box_F":          {["color", 1, true]};
-        case "C_Van_01_transport_F":    {["color", 1, true]};
-    };
+_vehicle setVariable (switch _className do {
+    case "C_Offroad_01_F":          {["color", 3, true]};
+    case "C_Hatchback_01_F":        {["color", 1, true]};
+    case "C_Hatchback_01_sport_F":  {["color", 1, true]};
+    case "C_SUV_01_F":              {["color", 1, true]};
+    case "C_Van_01_box_F":          {["color", 1, true]};
+    case "C_Van_01_transport_F":    {["color", 1, true]};
 });
 
 //Check to see if vehicle exist in missionConfigFile, otherwise use normal ArmA Class
