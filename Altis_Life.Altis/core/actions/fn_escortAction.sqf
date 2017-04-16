@@ -5,7 +5,6 @@
 
     Description: Attaches the desired person(_unit) to the player(player) and "escorts them".
 */
-
 params [
     ["_unit", objNull, [objNull]]
 ];
@@ -18,15 +17,13 @@ if (player distance _unit > 3) exitWith {};
 _unit attachTo [player, [0.1,1.1,0]];
 player setVariable ["escortingPlayer", _unit];
 player setVariable ["isEscorting", true];
-_unit setVariable ["transporting", false, true];
-_unit setVariable ["Escorting", true, true];
-player reveal _unit;
 
 [_unit] spawn {
     params [
         ["_unit", objNull, [objNull]]
     ];
     waitUntil {!(_unit getVariable ["Escorting",false])};
+
     player setVariable ["escortingPlayer",nil];
     player setVariable ["isEscorting",false];
 };
