@@ -57,7 +57,7 @@ if (_purchasePrice < 0) exitWith {closeDialog 0;};
 if (CASH < _purchasePrice) exitWith {hint format [localize "STR_Shop_Veh_NotEnough", [_purchasePrice - CASH] call life_fnc_numberText]; closeDialog 0;};
 
 private _spawnPoints = life_veh_shop select 1;
-_spawnPoint = "";
+private _spawnPoint = "";
 
 if ((life_veh_shop select 0) == "med_air_hs") then {
     if (nearestObjects [(getMarkerPos _spawnPoints), ["Air"], 35] isEqualTo []) exitWith {_spawnPoint = _spawnPoints};
@@ -80,12 +80,11 @@ CASH = CASH - _purchasePrice;
 hint format [localize "STR_Shop_Veh_Bought", getText (configFile >> "CfgVehicles" >> _className >> "displayName"), [_purchasePrice] call life_fnc_numberText];
 
 private "_vehicle";
-private "_hs";
 if ((life_veh_shop select 0) == "med_air_hs") then {
     _vehicle = createVehicle [_className, [0, 0, 999], [], 0, "NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}}; //Wait?
     _vehicle allowDamage false;
-    _hs = nearestObjects [getMarkerPos _spawnPoint, ["Land_Hospital_side2_F"], 50] select 0;
+    private _hs = nearestObjects [getMarkerPos _spawnPoint, ["Land_Hospital_side2_F"], 50] select 0;
     _vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
     sleep 0.6;
 } else {
