@@ -74,6 +74,7 @@ private "_details";
 
         if (isNil "_details") then {
             _list lbAdd _displayName;
+            _list lbSetData [(lbSize _list)-1,_className];
         } else {
             if (_displayName isEqualTo "") then {
                 _list lbAdd (_details select 1);

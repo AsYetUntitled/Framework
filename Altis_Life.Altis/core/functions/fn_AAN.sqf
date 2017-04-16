@@ -1,16 +1,16 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_AAN.sqf
-	Author: Karel Moricky
-	Modified: Jesse "tkcjesse" Schultz
+    File: fn_AAN.sqf
+    Author: Karel Moricky
+    Modified: Jesse "tkcjesse" Schultz
 
-	Description:
-	It's showtime!
+    Description:
+    It's showtime!
 
-	Parameter(s):
-	_this select 0: STRUCTURED TEXT: Header text
-	_this select 1: STRUCTURED TEXT: Bottom text (moving)
-	_this select 2: PROFILENAME: Below Header text
+    Parameter(s):
+    _this select 0: STRUCTURED TEXT: Header text
+    _this select 1: STRUCTURED TEXT: Bottom text (moving)
+    _this select 2: PROFILENAME: Below Header text
 */
 private ["_header","_line","_sender","_display","_textHeader","_textLine","_textLinePos","_textClock"];
 _header = _this select 0;

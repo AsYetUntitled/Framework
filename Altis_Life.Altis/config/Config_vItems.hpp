@@ -1,10 +1,11 @@
 /*
-*    Format:
-*        level: ARRAY (This is for limiting items to certain things)
-*            0: Variable to read from
-*            1: Variable Value Type (SCALAR / BOOL / EQUAL)
-*            2: What to compare to (-1 = Check Disabled)
-*            3: Custom exit message (Optional)
+*    FORMAT:
+*        STRING (Conditions) - Must return boolean :
+*            String can contain any amount of conditions, aslong as the entire
+*            string returns a boolean. This allows you to check any levels, licenses etc,
+*            in any combination. For example:
+*                "call life_coplevel && license_civ_someLicense"
+*            This will also let you call any other function.
 */
 class VirtualShops {
     //Virtual Shops

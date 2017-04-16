@@ -36,7 +36,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 
 //Double check to make sure the client isn't in the database...
 if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];}; //There was an entry!
-if (count _queryResult != 0) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];};
+if !(count _queryResult isEqualTo 0) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];};
 
 //Clense and prepare some information.
 _name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.

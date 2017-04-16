@@ -58,24 +58,24 @@ class FSM
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"(time - _lastcheck) > ((getNumber(missionConfigFile >> ""Life_Settings"" >> ""paycheck_period"")) * 60)"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"if (!alive player) then {" \n
-           "	systemChat localize ""STR_FSM_MissedPay"";" \n
+           "    systemChat localize ""STR_FSM_MissedPay"";" \n
            "} else {" \n
-           "	if (player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide isEqualTo west) then {" \n
-           "		systemChat format [localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
-           "		life_atmbank = life_atmbank + (call life_paycheck) + 1500;" \n
-           "	} else {" \n
-           "		life_atmbank = life_atmbank + (call life_paycheck);" \n
-           "		systemChat format [localize ""STR_FSM_ReceivedPay"",[(call life_paycheck)] call life_fnc_numberText];" \n
-           "	};" \n
+           "    if (player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide isEqualTo west) then {" \n
+           "        systemChat format [localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
+           "        life_atmbank = life_atmbank + (call life_paycheck) + 1500;" \n
+           "    } else {" \n
+           "        life_atmbank = life_atmbank + (call life_paycheck);" \n
+           "        systemChat format [localize ""STR_FSM_ReceivedPay"",[(call life_paycheck)] call life_fnc_numberText];" \n
+           "    };" \n
            "};" \n
            "" \n
            "_lastcheck = time;" \n
            "" \n
            "//Group clean (Local)" \n
            "{" \n
-           "	if (local _x && {(units _x isEqualTo [])}) then {" \n
-           "		deleteGroup _x;" \n
-           "	};" \n
+           "    if (local _x && {(units _x isEqualTo [])}) then {" \n
+           "        deleteGroup _x;" \n
+           "    };" \n
            "} forEach allGroups;" \n
            "" \n
            "" \n

@@ -78,7 +78,7 @@ switch (_side) do {
         _new = [(_queryResult select 11)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -107,7 +107,7 @@ switch (_side) do {
         _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -135,7 +135,7 @@ switch (_side) do {
         _new = [(_queryResult select 10)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
-        if (_index != -1) then {
+        if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
             TON_fnc_playtime_values_request pushBack [_uid, _new];
@@ -154,6 +154,6 @@ life_keyreceivedvar = [];
 [_uid,_side] remoteExecCall ["TON_fnc_recupKeyForHC",RSERV];
 waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
-_queryResult set[15,_keyArr];
+_queryResult pushBack _keyArr;
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

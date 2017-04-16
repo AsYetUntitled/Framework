@@ -1,0 +1,32 @@
+//regex
+1 "" !=GroundWeaponHolder !=WeaponHolderSimulated !Supply[\d]{1,3} !=#lightpoint !=Land_ClutterCutter_small_F
+5 "" !=GroundWeaponHolder !=WeaponHolderSimulated !Supply[\d]{1,3} !=#lightpoint !=Land_ClutterCutter_small_F !B_(OutdoorPack|AssaultPack|TacticalPack|Kitbag|FieldPack|Bergen|Carryall)_(blk|khk|dgtl|rgr|sgg|cbr|oli|mcamo|ocamo|oucamo|tna|ghex) !B_Parachute !B_Quadbike_01_F ![BOI]_Truck_0[123]_(box|covered|device|fuel|medical|transport)_F !C_Hatchback_01_(sport_)?F ![BC]_(G_)?Offroad_01_(armed_)?F !C_SUV_01_F !C_Van_01_(transport|box|fuel)_F !C_Kart_01_(Blu|Fuel|Red|Vrana)_F ![BCO]_Heli_Light_0[12]_(civil_|stripped_|unarmed_)?F !C_Rubberboat !C_Boat_Civil_01_(police_)?F !B_SDV_01_F ![BO]_MRAP_0[12]_(hmg_)?F !B_(Boat|Heli)_Transport_01_F !B_Boat_Armed_01_minigun_F !=C_Offroad_02_unarmed_F !=C_Plane_Civil_01_F !=C_Boat_Transport_02_F !=C_Scooter_Transport_01_F !=O_T_LSV_02_unarmed_F !=Chemlight_(red|yellow|green|blue) !=GrenadeHand_stone !=Land_(Razorwire|Money|Suitcase|CanisterFuel|Can|BottlePlastic|TacticalBacon)_F !=Land_Can_V3_F !=Land_BottlePlastic_V1_F !=B_RangeMaster_F !=C_man_1 !=Bo_GBU12_LGB_MI10 !=(CMflare_Chaff_|SmokeLauncher)Ammo !=Box_IND_Grenades_F !=B_supplyCrate_F
+5 B_AssaultPack_blk_DiverExp
+5 B_AssaultPack_mcamo_AT
+5 B_AssaultPack_mcamo_AA
+5 B_AssaultPack_mcamo_AAR
+5 B_AssaultPack_mcamo_Ammo
+5 B_AssaultPack_rgr_LAT
+5 B_AssaultPack_rgr_Medic
+5 B_AssaultPack_rgr_Repair
+5 B_AssaultPack_rgr_ReconMedic
+5 B_AssaultPack_rgr_ReconExp
+5 B_AssaultPack_rgr_ReconLAT
+5 B_Kitbag_rgr_Exp
+5 B_Kitbag_mcamo_Eng
+5 B_FieldPack_ocamo_Medic
+5 B_FieldPack_ocamo_AA
+5 B_FieldPack_ocamo_AAR
+5 B_FieldPack_ocamo_ReconMedic
+5 B_FieldPack_ocamo_ReconExp
+5 B_Carryall_ocamo_Exp
+5 B_Carryall_mcamo_AAA
+5 B_Carryall_mcamo_AAT
+5 B_Carryall_ocamo_AAA
+5 B_Carryall_ocamo_Eng
+5 B_Carryall_cbr_AAT
+5 B_Carryall_oucamo_AAT
+5 B_Carryall_oucamo_AAA
+5 B_Carryall_oucamo_Exp
+5 B_Carryall_oucamo_Eng
+5 B_B_Parachute_02_F

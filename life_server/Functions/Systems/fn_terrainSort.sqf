@@ -17,7 +17,7 @@ scopeName "main";
     };
 } count _dictionary;
 
-switch (typeOf (_dictionary select 0 select 1)) do {
+switch (typeName (_dictionary select 0 select 1)) do {
     case "ARRAY": {[]};
     case "STRING": {""};
     case "SCALAR": {-1};
