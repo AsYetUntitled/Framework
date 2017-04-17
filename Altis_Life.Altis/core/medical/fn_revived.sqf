@@ -36,6 +36,7 @@ life_corpse setVariable ["name",nil,true];
 [life_corpse] remoteExecCall ["life_fnc_corpse",RANY];
 deleteVehicle life_corpse;
 
+life_action_inUse = false;
 life_is_alive = true;
 
 player setVariable ["Revive",nil,true];
