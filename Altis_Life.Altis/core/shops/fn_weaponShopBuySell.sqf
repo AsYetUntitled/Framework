@@ -71,6 +71,6 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
         _handle = [_item,true] spawn life_fnc_handleItem;
     };
 };
-waitUntil { scriptDone _handle };
+waitUntil {scriptDone _handle};
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;
