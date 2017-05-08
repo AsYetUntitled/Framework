@@ -6115,6 +6115,9 @@
             <Russian>Там нет владельца для этого дома.</Russian>
             <German>Es gibt keinen Eigentümer für dieses Haus.</German>
         </Key>
+        <Key ID="STR_House_noBuy">
+            <Original>This house is not for sale.</Original>
+        </Key>
     </Package>
     <Package name="HUD">
         <Key ID="STR_HUD_Food">

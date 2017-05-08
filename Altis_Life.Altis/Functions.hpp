@@ -244,6 +244,7 @@ class Life_Client_Core {
         class copBreakDoor {};
         class copHouseOwner {};
         class garageRefund {};
+        class getBuildID {};
         class getBuildingPositions {};
         class houseMenu {};
         class initHouses {};

@@ -6,9 +6,11 @@
     Description:
     Buys the house?
 */
-private ["_house","_uid","_action","_houseCfg"];
+private ["_house","_uid","_action","_houseCfg","_buildingID"];
 _house = param [0,objNull,[objNull]];
 _uid = getPlayerUID player;
+_buildingID = [_house] call life_fnc_getBuildID;
+_noBuy = LIFE_SETTINGS(getArray,"houseNoBuy");
 
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
@@ -16,6 +18,7 @@ if (_house getVariable ["house_owned",false]) exitWith {hint localize "STR_House
 if (!isNil {(_house getVariable "house_sold")}) exitWith {hint localize "STR_House_Sell_Process"};
 if (!license_civ_home) exitWith {hint localize "STR_House_License"};
 if (count life_houses >= (LIFE_SETTINGS(getNumber,"house_limit"))) exitWith {hint format [localize "STR_House_Max_House",LIFE_SETTINGS(getNumber,"house_limit")]};
+if ( _buildingID in _nobuy ) exitWith {hint localize "STR_House_noBuy"};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;

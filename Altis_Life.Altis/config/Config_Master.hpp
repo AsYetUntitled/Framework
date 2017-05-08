@@ -82,6 +82,7 @@ class Life_Settings {
     house_limit = 5; //Maximum number of houses a player can own.
     houseGarage_buyPrice = 1000000;
     houseGarage_sellPrice = 350000;
+    houseNoBuy[] = { "" , "" }; // Object ID for buildings to be black listed from purchase to be added between the quotations, e.g. houseNoBuy[] = { "664923" , "621623" }; (hint: run do3DENAction "ToggleMapIDs"; in the map editor debug to show id's).
 
     /* Hunting & Fishing System Configurations */
     animaltypes_fish[] = { "Salema_F", "Ornate_random_F", "Mackerel_F", "Tuna_F", "Mullet_F", "CatShark_F", "Turtle_F" }; //Classnames of fish you can catch
