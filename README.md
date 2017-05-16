@@ -1,6 +1,6 @@
 [![|Solid](http://i.imgur.com/pL3heId.png)](https://github.com/AsYetUntitled/Framework/)
 
-AsYetUntitled, formerly Altis Life RPG and ARMARPGLIFE is a roleplay framework for ArmA III origianally made by TAW_Tonic.
+AsYetUntitled, formerly <b>Altis Life RPG</b> and <b>ARMARPGLIFE</b> is a roleplay framework for ArmA III origianally made by <b>TAW_Tonic</b>.
 
 # Features:
 
