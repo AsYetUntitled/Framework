@@ -3,7 +3,7 @@ class life_debug_connsole {
     name= "life_debug_connsole";
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = "ctrlSetFocus txtConsole; hint 'Please beware no safety features are included, be careful what you exec!';";
+    onLoad = "ctrlSetFocus txtConsole; hint 'Be careful what you Exec!\nServer Exec - Only run on server\nGlobal Exec - Run on server and all clients\nLocal Exec- Run on yourself only';";
 
     class controlsBackground {
         class MainBackground: Life_RscText {
@@ -57,7 +57,7 @@ class life_debug_connsole {
             h = 0.022 * safezoneH;
         };
 
-        class txtConsole: Life_RscEditMulti {
+        class txtConsole: Life_RscEditScripting {
             idc = 1337;
             text = "";
             x = 0.318375 * safezoneW + safezoneX;

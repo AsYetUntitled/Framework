@@ -5,7 +5,7 @@
 
     Description:
     Remotely executes code for the temporary debug console
-    p.s not entirely sure on how secure this all this ¯\_(ツ)_/¯
+    Worth mentioning this is probably not secure at all
 */
 params [
     ["_code", "", [""]]

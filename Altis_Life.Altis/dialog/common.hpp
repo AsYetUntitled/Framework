@@ -606,7 +606,7 @@ class Life_RscEdit {
     canModify = 1;
 };
 
-class Life_RscEditMulti: Life_RscEdit {
+class Life_RscEditScripting: Life_RscEdit {
     style = 16;
     autocomplete = "scripting";
     lineSpacing = 1;
