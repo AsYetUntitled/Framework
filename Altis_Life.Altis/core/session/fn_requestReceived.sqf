@@ -46,9 +46,6 @@ if (count (_this select 6) > 0) then {
     {missionNamespace setVariable [(_x select 0),(_x select 1)];} forEach (_this select 6);
 };
 
-life_gear = _this select 8;
-[true] call life_fnc_loadGear;
-
 //Parse side specific information.
 switch (playerSide) do {
     case west: {
@@ -89,7 +86,7 @@ switch (playerSide) do {
         } forEach life_houses;
 
         life_gangData = _this select (_count - 2);
-        if (!(count life_gangData isEqualTo 0)) then {
+        if !(count life_gangData isEqualTo 0) then {
             [] spawn life_fnc_initGang;
         };
         [] spawn life_fnc_initHouses;
@@ -105,6 +102,9 @@ switch (playerSide) do {
         };
     };
 };
+
+life_gear = _this select 8;
+[true] call life_fnc_loadGear;
 
 if (count (_this select (_count - 1)) > 0) then {
     {life_vehicles pushBack _x;} forEach (_this select (_count - 1));
