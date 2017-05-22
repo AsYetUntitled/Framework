@@ -77,5 +77,3 @@ Contributing to AsYetUntitled
 ## Contact
 * If you need to chat with us in real-time then you can do so on the [ArmA RPG Life Discord server](https://discordapp.com/invite/sEcQdPn). 
   * Please be sure to read the rules which can be found in the #announcements channel. 
-* Our forums are [ArmA RPG Life](https://armarpglife.com/forums/). 
-  * You will need an account to take full advantage of the features and to view user content. 
