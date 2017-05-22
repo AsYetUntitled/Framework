@@ -606,6 +606,12 @@ class Life_RscEdit {
     canModify = 1;
 };
 
+class Life_RscEditScripting: Life_RscEdit {
+    style = 16;
+    autocomplete = "scripting";
+    lineSpacing = 1;
+};
+
 class Life_RscSlider {
     h = 0.025;
     color[] = {1, 1, 1, 0.8};
