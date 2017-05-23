@@ -7,8 +7,7 @@
     Master action key handler, handles requests for picking up various items and
     interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private ["_curObject","_isWater","_CrateModelNames","_crate","_fish","_animal","_whatIsIt","_handle"];
-_curObject = cursorObject;
+private _curObject = cursorObject;
 if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if (life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (visiblePositionASL player);
@@ -26,23 +25,22 @@ if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
 
 if (isNull _curObject) exitWith {
     if (_isWater) then {
-        _fish = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
+        private _fish = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
         if (!isNil "_fish") then {
             if (!alive _fish) then {
                 [_fish] call life_fnc_catchFish;
             };
         };
     } else {
-        _animal = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_hunting")),3]) select 0;
+        private _animal = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_hunting")),3]) select 0;
         if (!isNil "_animal") then {
             if (!alive _animal) then {
                 [_animal] call life_fnc_gutAnimal;
             };
         } else {
-            private "_handle";
             if (playerSide isEqualTo civilian && !life_action_gathering) then {
-          _whatIsIt = [] call life_fnc_whereAmI;
-                if (life_action_gathering) exitWith {};                 //Action is in use, exit to prevent spamming.
+                private _whatIsIt = [] call life_fnc_whereAmI;
+                if (life_action_gathering) exitWith {}; //Action is in use, exit to prevent spamming.
                 switch (_whatIsIt) do {
                     case "mine" : { _handle = [] spawn life_fnc_mine };
                     default { _handle = [] spawn life_fnc_gather };
@@ -95,13 +93,11 @@ if (isPlayer _curObject && _curObject isKindOf "Man") then {
     if ((_curObject getVariable ["restrained",false]) && !dialog && playerSide isEqualTo west) then {
         [_curObject] call life_fnc_copInteractionMenu;
     };
+//OK, it wasn't a player so what is it?    
 } else {
-    //OK, it wasn't a player so what is it?
-    private ["_isVehicle","_miscItems","_money","_list"];
-
-    _list = ["landVehicle","Ship","Air"];
-    _isVehicle = if (KINDOF_ARRAY(_curObject,_list)) then {true} else {false};
-    _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
+    private _list = ["landVehicle","Ship","Air"];
+    private _isVehicle = if (KINDOF_ARRAY(_curObject,_list)) then {true} else {false};
+    private _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
 
     //It's a vehicle! open the vehicle interaction key!
     if (_isVehicle) then {
