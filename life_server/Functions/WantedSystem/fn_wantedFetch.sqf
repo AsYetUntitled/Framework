@@ -9,7 +9,10 @@
     Description:
     Displays wanted list information sent from the server.
 */
-private _ret = param [0,objNull,[objNull]];
+params [
+    ["_ret",objNull,[objNull]]
+];
+
 if (isNull _ret) exitWith {};
 _ret = owner _ret;
 private _inStatement = "";

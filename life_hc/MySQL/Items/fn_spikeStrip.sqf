@@ -10,9 +10,13 @@
     First originally tried triggers but I was never any good at those nor do I like them as they
     have a global effect.
 */
-private ["_nearVehicles","_spikeStrip"];
-_spikeStrip = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_spikeStrip",objNull,[objNull]]
+];
+
 if (isNull _spikeStrip) exitWith {}; //Bad vehicle type passed.
+
+private "_nearVehicles";
 
 waitUntil {_nearVehicles = nearestObjects[getPos _spikeStrip,["Car"],5]; count _nearVehicles > 0 || isNull _spikeStrip};
 

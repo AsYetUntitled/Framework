@@ -6,31 +6,32 @@
     Description:
     Raids the players house?
 */
-private ["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
-_house = param [0,objNull,[objNull]];
+params [
+    ["_house",objNull,[objNull]]
+];
 
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
 if (isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
-_uid = ((_house getVariable "house_owner") select 0);
+private _uid = ((_house getVariable "house_owner") select 0);
 
 if (!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
 
-_houseInv = _house getVariable ["Trunk",[[],0]];
+private _houseInv = _house getVariable ["Trunk",[[],0]];
 if (_houseInv isEqualTo [[],0]) exitWith {hint localize "STR_House_Raid_Nothing"};
 life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
-_title = localize "STR_House_Raid_Searching";
+private _title = localize "STR_House_Raid_Searching";
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
-_cP = 0.01;
-_cpRate = 0.0075;
+private _cP = 0.01;
+private _cpRate = 0.0075;
 
 for "_i" from 0 to 1 step 0 do {
     sleep 0.26;
@@ -51,9 +52,9 @@ if (player distance _house > 13) exitWith {life_action_inUse = false; titleText[
 if (!alive player) exitWith {life_action_inUse = false;};
 life_action_inUse = false;
 
-_houseInvData = (_houseInv select 0);
-_houseInvVal = (_houseInv select 1);
-_value = 0;
+private _houseInvData = (_houseInv select 0);
+private _houseInvVal = (_houseInv select 1);
+private _value = 0;
 {
     _var = _x select 0;
     _val = _x select 1;

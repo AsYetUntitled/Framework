@@ -16,28 +16,32 @@
 #define Btn8 37457
 #define Title 37401
 
-private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 disableSerialization;
-_curTarget = param [0,objNull,[objNull]];
+
+params [
+    ["_curTarget",objNull,[objNull]]
+];
+
 if (isNull _curTarget) exitWith {}; //Bad target
-_houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
+private _houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0 && playerSide isEqualTo civilian) exitWith {};
 
 if (!dialog) then {
     createDialog "pInteraction_Menu";
 };
 
-_Btn1 = CONTROL(37400,Btn1);
-_Btn2 = CONTROL(37400,Btn2);
-_Btn3 = CONTROL(37400,Btn3);
-_Btn4 = CONTROL(37400,Btn4);
-_Btn5 = CONTROL(37400,Btn5);
-_Btn6 = CONTROL(37400,Btn6);
-_Btn7 = CONTROL(37400,Btn7);
-_Btn8 = CONTROL(37400,Btn8);
-{_x ctrlShow false;} forEach [_Btn1,_Btn2,_Btn3,_Btn4,_Btn5,_Btn6,_Btn7,_Btn8];
-
+private _display = findDisplay 37400;
+private _Btn1 = _display displayCtrl Btn1;
+private _Btn2 = _display displayCtrl Btn2;
+private _Btn3 = _display displayCtrl Btn3;
+private _Btn4 = _display displayCtrl Btn4;
+private _Btn5 = _display displayCtrl Btn5;
+private _Btn6 = _display displayCtrl Btn6;
+private _Btn7 = _display displayCtrl Btn7;
+private _Btn8 = _display displayCtrl Btn8;
 life_pInact_curTarget = _curTarget;
+
+{_x ctrlShow false;} forEach [_Btn1,_Btn2,_Btn3,_Btn4,_Btn5,_Btn6,_Btn7,_Btn8];
 
 if (_curTarget in life_hideoutBuildings) exitWith {
     closeDialog 0;

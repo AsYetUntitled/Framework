@@ -7,23 +7,25 @@
     Description:
     Searches the container for illegal items.
 */
-private ["_container","_containerInfo","_value"];
-_container = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_container",objNull,[objNull]]
+];
+
 if (isNull _container) exitWith {};
 
-_containerInfo = _container getVariable ["Trunk",[]];
+private _containerInfo = _container getVariable ["Trunk",[]];
 if (count _containerInfo isEqualTo 0) exitWith {hint localize "STR_Cop_ContainerEmpty"};
 
-_value = 0;
-_illegalValue = 0;
+private _value = 0;
+private _illegalValue = 0;
 {
-    _var = _x select 0;
-    _val = _x select 1;
-    _isIllegalItem = M_CONFIG(getNumber,"VirtualItems",_var,"illegal");
+    private _var = _x select 0;
+    private _val = _x select 1;
+    private _isIllegalItem = M_CONFIG(getNumber,"VirtualItems",_var,"illegal");
     if (_isIllegalItem isEqualTo 1 ) then {
-        _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_var,"sellPrice");
+        private _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_var,"sellPrice");
         if (!isNull (missionConfigFile >> "VirtualItems" >> _var >> "processedItem")) then {
-            _illegalItemProcessed = M_CONFIG(getText,"VirtualItems",_var,"processedItem");
+            private _illegalItemProcessed = M_CONFIG(getText,"VirtualItems",_var,"processedItem");
             _illegalPrice = M_CONFIG(getNumber,"VirtualItems",_illegalItemProcessed,"sellPrice");
         };
 

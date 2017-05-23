@@ -6,14 +6,16 @@
     Description:
     Returns the licenses to the cop.
 */
-private ["_cop","_licenses","_licensesConfigs"];
-_cop = param [0,objNull,[objNull]];
+params [
+    ["_cop",objNull,[objNull]]
+];
+
 if (isNull _cop) exitWith {}; //Bad entry
 
-_licenses = "";
+private _licenses = "";
 
 //Config entries for licenses that are civilian
-_licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses (missionConfigFile >> "Licenses");
+private _licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses (missionConfigFile >> "Licenses");
 
 {
     if (LICENSE_VALUE(configName _x,"civ")) then {

@@ -19,7 +19,10 @@ if (!dialog) then {
 };
 disableSerialization;
 
-_curTarget = param [0,objNull,[objNull]];
+params [
+    ["_curTarget",objNull,[objNull]]
+];
+
 if (isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 _isVehicle = if ((_curTarget isKindOf "landVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
 if (!_isVehicle) exitWith {closeDialog 0;};
