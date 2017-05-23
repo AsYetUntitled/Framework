@@ -151,7 +151,7 @@ switch (_code) do {
             } else {
                 private "_list";
                 _list = ((ASLtoATL (getPosASL player)) nearEntities [["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5]) select 0;
-                if (!(isNil "_list")) then {
+                if !(isNil "_list") then {
                     _house = nearestObject [(ASLtoATL (getPosASL _list)), "House"];
                     if (_house getVariable ["locked", false]) then {
                         hint localize "STR_House_ContainerDeny";
@@ -207,7 +207,7 @@ switch (_code) do {
 
             _veh = vehicle player;
             if (isNil {_veh getVariable "siren"}) then {_veh setVariable ["siren",false,true];};
-            if ((_veh getVariable "siren")) then {
+            if (_veh getVariable "siren") then {
                 titleText [localize "STR_MISC_SirensOFF","PLAIN"];
                 _veh setVariable ["siren",false,true];
             } else {

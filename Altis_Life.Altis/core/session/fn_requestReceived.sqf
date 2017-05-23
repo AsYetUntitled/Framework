@@ -21,7 +21,7 @@ if (isNil "_this") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if (_this isEqualType "") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if (count _this isEqualTo 0) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if ((_this select 0) isEqualTo "Error") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
-if (!(getPlayerUID player isEqualTo (_this select 0))) exitWith {[] call SOCK_fnc_dataQuery;};
+if !(getPlayerUID player isEqualTo (_this select 0)) exitWith {[] call SOCK_fnc_dataQuery;};
 
 //Lets make sure some vars are not set before hand.. If they are get rid of them, hopefully the engine purges past variables but meh who cares.
 if (!isServer && (!isNil "life_adminlevel" || !isNil "life_coplevel" || !isNil "life_donorlevel")) exitWith {

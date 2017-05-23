@@ -25,8 +25,7 @@ life_preview_3D_vehicle_cam camCommit 0;
 life_preview_3D_vehicle_object = objNull;
 
 // Thread execution performing a continuous rotation of the camera around the view object.
-0 spawn
-{
+0 spawn {
     // Until we left the visualization.
     for "_i" from 0 to 1 step 0 do {
         if (isNull life_preview_3D_vehicle_cam) exitWith {};

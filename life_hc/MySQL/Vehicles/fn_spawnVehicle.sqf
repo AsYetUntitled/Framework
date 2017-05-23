@@ -19,8 +19,6 @@ params [
     "_spawntext"
 ];
 
-
-
 private _ownerID = _unit getVariable ["life_clientID",-1];
 private _unit_return = _unit;
 private _name = name _unit;
@@ -61,7 +59,6 @@ if ((_vInfo select 6) isEqualTo 1) exitWith {
     serv_sv_use deleteAt _servIndex;
     [1,"STR_Garage_SQLError_Active",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
-
 
 private "_nearVehicles";
 if !(_sp isEqualType "") then {
@@ -116,7 +113,6 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
-
     _vehicle setVariable ["Trunk",_trunk,true];
     
     if (_wasIllegal) then {

@@ -15,7 +15,7 @@ _chrByte = toArray (_gangName);
 _allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ");
 if (_length > 32) exitWith {hint localize "STR_GNOTF_Over32"};
 _badChar = false;
-{if (!(_x in _allowed)) exitWith {_badChar = true;};} forEach _chrByte;
+{if !(_x in _allowed) exitWith {_badChar = true;};} forEach _chrByte;
 if (_badChar) exitWith {hint localize "STR_GNOTF_IncorrectChar";};
 if (BANK < (LIFE_SETTINGS(getNumber,"gang_price"))) exitWith {hint format [localize "STR_GNOTF_NotEnoughMoney",[((LIFE_SETTINGS(getNumber,"gang_price")) - BANK)] call life_fnc_numberText];};
 

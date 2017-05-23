@@ -16,7 +16,7 @@ _door = 0;
 for "_i" from 1 to _doors do {
     _selPos = _b selectionPosition format ["Door_%1_trigger",_i];
     _worldSpace = _b modelToWorld _selPos;
-        if (player distance _worldSpace < 5) exitWith {_door = _i;};
+    if (player distance _worldSpace < 5) exitWith {_door = _i;};
 };
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 

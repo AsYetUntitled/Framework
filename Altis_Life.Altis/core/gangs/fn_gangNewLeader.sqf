@@ -34,7 +34,6 @@ if (_action) then {
     } else {
         [3,group player] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
     };
-
 } else {
     hint localize "STR_GNOTF_TransferCancel";
 };

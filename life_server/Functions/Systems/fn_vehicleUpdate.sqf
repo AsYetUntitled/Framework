@@ -46,7 +46,7 @@ switch (_mode) do {
                 _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;
             };
-        }forEach _itemList;
+        } forEach _itemList;
         _trunk = [_items,_totalweight];
         _trunk = [_trunk] call DB_fnc_mresArray;
 

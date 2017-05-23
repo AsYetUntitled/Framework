@@ -36,7 +36,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     if (_resources isEqualTo []) exitWith {}; //Smart guy :O
     for "_i" from 0 to count (_resources) do {
         if (count _resources isEqualTo 1) exitWith {
-            if (!((_resources select 0) isEqualType [])) then {
+            if !((_resources select 0) isEqualType []) then {
                 _mined = _resources select 0;
             } else {
                 _mined = (_resources select 0) select 0;
@@ -97,7 +97,7 @@ for "_i" from 0 to 4 do {
     sleep 0.5;
 };
 
-if (([true, _mined, _diff] call life_fnc_handleInv)) then {
+if ([true, _mined, _diff] call life_fnc_handleInv) then {
     _itemName = M_CONFIG(getText, "VirtualItems", _mined, "displayName");
     titleText[format [localize "STR_NOTF_Mine_Success", (localize _itemName), _diff], "PLAIN"];
 };

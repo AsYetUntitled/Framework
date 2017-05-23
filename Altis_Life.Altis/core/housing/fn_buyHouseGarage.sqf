@@ -25,7 +25,6 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if (_action) then {
-
     if (BANK < _price) exitWith {hint format [localize "STR_House_NotEnough"]};
     BANK = BANK - _price;
     [1] call SOCK_fnc_updatePartial;
@@ -37,5 +36,4 @@ if (_action) then {
     };
 
     _house setVariable ["garageBought",true,true];
-
 };

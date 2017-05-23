@@ -41,8 +41,7 @@ diag_log format ["Query: %1",_query];
 
 {
     _list pushBack (_x);
-}
-forEach _queryResult;
+} forEach _queryResult;
 
 if (_list isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 

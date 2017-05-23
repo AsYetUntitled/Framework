@@ -25,8 +25,7 @@ _headCount = count _headgear;
 
 _clothes = ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_redwhite","U_C_Poloshirt_salmon","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_HunterBody_grn"];
 
-if (isServer) then
-{
+if (isServer) then {
     BIS_randomSeed1 = [];
     BIS_randomSeed2 = [];
     _rnd1 = floor random 3;
@@ -37,8 +36,7 @@ if (isServer) then
     _this setVariable ["BIS_randomSeed2", _rnd2, true];
 
     //Random clothing for our NPC's to add a bit of spice.
-    if (local _this && !isPlayer _this) then
-    {
+    if (local _this && !isPlayer _this) then {
         _this addUniform (selectRandom _clothes);
     };
 };

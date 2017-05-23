@@ -27,7 +27,7 @@ _queryResult = EXTDB format ["4:%1", _key];
 //Make sure the data is received
 if (_queryResult isEqualTo "[3]") then {
     for "_i" from 0 to 1 step 0 do {
-        if (!(_queryResult isEqualTo "[3]")) exitWith {};
+        if !(_queryResult isEqualTo "[3]") exitWith {};
         _queryResult = EXTDB format ["4:%1", _key];
     };
 };

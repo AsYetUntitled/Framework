@@ -13,7 +13,7 @@ if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
 if (isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
 
 _uid = (_house getVariable "house_owner") select 0;
-if (!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
+if !([_uid] call life_fnc_isUIDActive) exitWith {hint localize "STR_House_Raid_OwnerOff"};
 
 _door = [_house] call life_fnc_nearestDoor;
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"};

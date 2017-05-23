@@ -20,19 +20,16 @@
 
 private ["_classView","_object","_id"];
 
-if (isNil "life_preview_3D_vehicle_cam") then
-{
+if (isNil "life_preview_3D_vehicle_cam") then {
     [] call life_fnc_vehicleShopInit3DPreview;
 };
 
 _classView = _this select 0;
 
 // Ignore non instantiable objects.
-if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && {getNumber (configFile >> "CfgVehicles" >> _classView >> "scope") > 0}}) then
-{
+if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && {getNumber (configFile >> "CfgVehicles" >> _classView >> "scope") > 0}}) then {
     // Skip if object view is the same as previous.
-    if (isNull life_preview_3D_vehicle_object || {_classView != typeOf life_preview_3D_vehicle_object}) then
-    {
+    if (isNull life_preview_3D_vehicle_object || {_classView != typeOf life_preview_3D_vehicle_object}) then {
         if (!isNull life_preview_3D_vehicle_object) then {detach life_preview_3D_vehicle_object; deleteVehicle life_preview_3D_vehicle_object;};
         // Create and place the object in the sky
         if (!life_pos_exist) then {

@@ -26,10 +26,10 @@ default {[]};
 _i = 0;
 _exitLoop = false; //Loops are not fun.
 for "_i" from 0 to 1 step 0 do {
-    if (!(_i in _restricted)) then {
-    _pos = _building buildingPos _i;
-    if (_pos isEqualTo [0,0,0]) exitWith {_exitLoop = true;};
-    _arr pushBack _pos;
+    if !(_i in _restricted) then {
+        _pos = _building buildingPos _i;
+        if (_pos isEqualTo [0,0,0]) exitWith {_exitLoop = true;};
+        _arr pushBack _pos;
     };
     if (_exitLoop) exitWith {};
     _i = _i + 1;

@@ -8,7 +8,7 @@
 */
 private "_vault";
 _vault = _this select 0;
-if (!(_vault getVariable ["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
+if !(_vault getVariable ["safe_open",false]) exitWith {hint localize "STR_Cop_VaultLocked"};
 
 life_action_inUse = true;
 

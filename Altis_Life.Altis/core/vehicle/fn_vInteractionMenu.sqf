@@ -71,7 +71,6 @@ if (playerSide isEqualTo west) then {
             if (alive _curTarget && {crew _curTarget isEqualTo []} && {canMove _curTarget}) then { _Btn6 ctrlEnable false;} else {_Btn6 ctrlEnable true;};
         };
     };
-
 } else {
 
     if (_curTarget isKindOf "Ship") then {
@@ -111,7 +110,7 @@ if (playerSide isEqualTo west) then {
                     _Btn3 ctrlSetText localize "STR_FuelTank_Supply";
                     _Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_fuelSupply";
                     _Btn3 ctrlShow true;
-                }else{
+                } else {
                     {
                         if (player distance (getMarkerPos _x) < 20) exitWith {
                             _Btn3 ctrlSetText localize "STR_FuelTank_Store";

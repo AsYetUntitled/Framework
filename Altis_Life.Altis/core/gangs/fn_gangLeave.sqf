@@ -12,7 +12,7 @@ if (getPlayerUID player isEqualTo (group player getVariable "gang_owner")) exitW
 _unitID = getPlayerUID player;
 _members = group player getVariable "gang_members";
 if (isNil "_members") exitWith {};
-if (!(_members isEqualType [])) exitWith {};
+if !(_members isEqualType []) exitWith {};
 
 _members = _members - [_unitID];
 group player setVariable ["gang_members",_members,true];

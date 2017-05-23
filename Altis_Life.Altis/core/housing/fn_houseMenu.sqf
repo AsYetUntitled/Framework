@@ -45,14 +45,12 @@ if (_curTarget in life_hideoutBuildings) exitWith {
 };
 
 if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
-
     private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
     private _altisArray = [16019.5,16952.9,0];
     private _tanoaArray = [11074.2,11501.5,0.00137329];
     private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
 
     if ((nearestObject [_pos,"Land_Dome_Big_F"]) isEqualTo _curTarget || (nearestObject [_pos,_vaultHouse]) isEqualTo _curTarget) then {
-
         _Btn1 ctrlSetText localize "STR_pInAct_Repair";
         _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_repairDoor; closeDialog 0;";
         _Btn1 ctrlShow true;
@@ -89,7 +87,6 @@ if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
 };
 
 if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner"}) then {
-
     private _isHouse = false;
 
     if (isClass (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget))) then {
@@ -179,8 +176,6 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
             };
 
             _Btn5 ctrlShow true;
-
         };
-
     };
 };

@@ -14,7 +14,7 @@ if (isNull _vehicle) exitWith {hint localize "STR_ISTR_Jerry_NotLooking"};
 if (!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship")) exitWith {};
 if (player distance _vehicle > 7.5) exitWith {hint localize "STR_ISTR_Jerry_NotNear"};
 
-if (!([false,"fuelFull",1] call life_fnc_handleInv)) exitWith {};
+if !([false,"fuelFull",1] call life_fnc_handleInv) exitWith {};
 life_action_inUse = true;
 
 _displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");

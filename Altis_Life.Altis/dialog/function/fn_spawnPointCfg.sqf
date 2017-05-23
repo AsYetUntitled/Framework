@@ -23,7 +23,6 @@ private _return = [];
 private _spawnCfg = missionConfigFile >> "CfgSpawnPoints" >> worldName >> _side;
 
 for "_i" from 0 to count(_spawnCfg)-1 do {
-
     private _tempConfig = [];
     private _curConfig = (_spawnCfg select _i);
     private _conditions = getText(_curConfig >> "conditions");

@@ -41,8 +41,7 @@ _licenses = [_licenses] call DB_fnc_mresArray;
 _playtime = [_uid] call TON_fnc_getPlayTime;
 _playtime_update = [];
 {
-    if ((_x select 0) isEqualTo _uid) exitWith
-    {
+    if ((_x select 0) isEqualTo _uid) exitWith {
         _playtime_update pushBack [_x select 1];
     };
 } forEach TON_fnc_playtime_values_request;

@@ -58,8 +58,7 @@ _picture = getText(_config >> "picture");
 _desc = getText(_config >> "descriptionshort");
 _base = inheritsFrom _config;
 
-switch (_section) do
-{
+switch (_section) do {
     case "CfgVehicles": {
         _type = getText(_config >> "vehicleClass");
         _scope = getNumber(_config >> "scope");
@@ -71,13 +70,13 @@ switch (_section) do
         _desc = getText(_config >> "descriptionshort");
 
         //Compatible attachments
-        if (isClass (_config >> "WeaponSlotsInfo")) then
-        {
+        if (isClass (_config >> "WeaponSlotsInfo")) then {
             _accPointer = getArray(_config >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems");
             _accOptic = getArray(_config >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems");
             _accMuzzle = getArray(_config >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");
 
-            {    private "_thiscfgitem";
+            {
+                private "_thiscfgitem";
                 for "_i" from 0 to (count(_x) - 1) do {
                     _thiscfgitem = _x select _i;
                     if (isClass _thiscfgitem) then {
@@ -99,7 +98,8 @@ switch (_section) do
             private ["_tmp"];
             {
                 if (_x != "this") then {
-                    _tmp = getArray(_base >> _x >> "magazines"); {
+                    _tmp = getArray(_base >> _x >> "magazines");
+                    {
                         _magazines pushBack _x;
                     } forEach (_tmp);
                 };
