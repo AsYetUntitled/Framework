@@ -42,7 +42,7 @@ switch (typeOf _building) do {
     case "Land_Dome_Big_F": {_cpRate = 0.008;};
     case "Land_Medevac_house_V1_F";
     case "Land_Research_house_V1_F": {_cpRate = 0.005;};
-    default {_cpRate = 0.08;}
+    default {_cpRate = 0.08;};
 };
 
 for "_i" from 0 to 1 step 0 do {
