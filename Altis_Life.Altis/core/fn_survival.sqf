@@ -50,6 +50,7 @@ _fnc_water = {
 _foodTime = time;
 _waterTime = time;
 _walkDis = 0;
+_lastDamage = 0;
 _bp = "";
 _lastPos = visiblePosition player;
 _lastPos = (_lastPos select 0) + (_lastPos select 1);
@@ -86,6 +87,12 @@ for "_i" from 0 to 1 step 0 do {
         if (isForcedWalk player) then {
             player forceWalk false;
         };
+    };
+
+    /* Check damage of the player unit (used for handleDamage) */
+    if !(damage player isEqualTo _lastDamage) then {
+        life_unitDamage = damage player;
+        _lastDamage = life_unitDamage;
     };
 
     /* Travelling distance to decrease thirst/hunger which is captured every second so the distance is actually greater then 650 */
