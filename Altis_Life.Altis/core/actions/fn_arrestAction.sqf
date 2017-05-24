@@ -6,8 +6,12 @@
     Description:
     Arrests the targeted person.
 */
-private ["_unit","_id"];
-_unit = param [0,objNull,[objNull]];
+private ["_id"];
+params [
+    ["_unit",objNull,[objNull]],
+    ["_time", 0, [0]]
+];
+
 if (isNull _unit) exitWith {}; //Not valid
 if (isNil "_unit") exitWith {}; //Not Valid
 if (!(_unit isKindOf "Man")) exitWith {}; //Not a unit
@@ -24,7 +28,7 @@ if (life_HC_isActive) then {
 
 if (isNull _unit) exitWith {}; //Not valid
 detach _unit;
-[_unit,false] remoteExecCall ["life_fnc_jail",_unit];
+[_unit,false,_time] remoteExecCall ["life_fnc_jail",_unit];
 [0,"STR_NOTF_Arrested_1",true, [_unit getVariable ["realname",name _unit], profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {

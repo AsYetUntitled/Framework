@@ -6,17 +6,17 @@
     Description:
     Once word is received by the server the rest of the jail execution is completed.
 */
-private ["_time","_bail","_esc","_countDown"];
+private ["_bail","_esc","_countDown"];
 
 params [
     ["_ret",[],[[]]],
-    ["_bad",false,[false]]
+    ["_bad",false,[false]],
+    ["_time", 0, [0]]
 ];
 
+if (_bad) then { _time = time + 3600; } else { _time = time + (_time * 60); };
 
-if (_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
-
-if (count _ret > 0) then { life_bail_amount = (_ret select 2); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
+if (count _ret > 0) then { life_bail_amount = (_ret select 2); } else { life_bail_amount = 1500; _time = time + (_time * 60); };
 _esc = false;
 _bail = false;
 

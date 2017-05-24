@@ -12130,5 +12130,60 @@
             <Russian>%1 - %2 депозит в размере $%3 в свой банк. Банковский баланс: $%4 на руку Баланс: $%5</Russian>
             <German>%1 - %2 hat $%3 auf sein Bankkonto eingezahlt. Bankkonto: $%4  Bargeld: $%5</German>
         </Key>
+        <Key ID="STR_Jail_Text">
+            <Original>Jail time</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>Tiempo de carcel</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
+        <Key ID="STR_Jail_seTime">
+            <Original>Minutes: </Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>Minutos: </Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
+        <Key ID="STR_Cop_Jail_Time_Number">
+            <Original>This is not a number</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>Eso no es un número</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
+        <Key ID="STR_Cop_Jail_Time_Limits">
+            <Original>Minimun 5 and maximun 60</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>Mínimo 5 and maximo 60</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
+        <Key ID="STR_Jail_Time_Failed">
+            <Original>Failed on dialog creation</Original>
+            <Czech></Czech>
+            <French></French>
+            <Spanish>El diálogo no se pudo crear</Spanish>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <German></German>
+        </Key>
     </Package>
 </Project>

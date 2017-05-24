@@ -49,6 +49,7 @@ class Life_Client_Core {
         class gutAnimal {};
         class healHospital {};
         class impoundAction {};
+        class jailTimeAction {};
         class mine {};
         class newsBroadcast {};
         class packupSpikes {};
@@ -126,6 +127,7 @@ class Life_Client_Core {
         class copSiren {};
         class doorAnimate {};
         class fedCamDisplay {};
+        class jailTime {};
         class licenseCheck {};
         class licensesRead {};
         class questionDealer {};

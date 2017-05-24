@@ -73,7 +73,7 @@ _Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
 _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
 _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
-_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction; closeDialog 0;";
+_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_jailTimeAction;";
 _Btn6 ctrlEnable false;
 
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
