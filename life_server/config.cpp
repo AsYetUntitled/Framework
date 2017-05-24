@@ -129,3 +129,5 @@ class CfgVehicles {
         };
     };
 };
+
+#include "..\..\..\mpmissions\Altis_Life.Altis\CfgRemoteExec.hpp"
