@@ -9,3 +9,4 @@ Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attributio
         <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/yfAMTFp">
     </a>
 </p>
+testing is awesome
