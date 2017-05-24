@@ -12,8 +12,9 @@ params [
     ["_group",grpNull,[grpNull]]
 ];
 
-if (_name isEqualTo "" || isNull _group) exitWith {}; //Fail horn anyone?
-if (!isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
+if (_name isEqualTo "" || isNull _group) exitWith {}; // Fail horn anyone?
+if (!isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";}; // Already in a gang
+if (playerSide player != civilian) exitWith {hint localize "STR_GNOTF_NotACiv";}; // Not a civilian
 
 _gangName = _group getVariable "gang_name";
 _action = [
