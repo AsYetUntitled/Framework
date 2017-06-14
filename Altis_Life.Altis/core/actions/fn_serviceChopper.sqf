@@ -27,7 +27,7 @@ _progress progressSetPosition 0.01;
 _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
-    sleep  0.2;
+    uiSleep  0.2;
     _cP = _cP + 0.01;
     _progress progressSetPosition _cP;
     _pgText ctrlSetText format [localize "STR_Service_Chopper_Servicing",round(_cP * 100)];

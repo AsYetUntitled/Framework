@@ -45,7 +45,7 @@ if (_action) then {
             player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
             player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
         };
-        sleep 0.2;
+        uiSleep 0.2;
         if (isNull _ui) then {
             "progressBar" cutRsc ["life_progress","PLAIN"];
             _ui = uiNamespace getVariable "life_progress";
