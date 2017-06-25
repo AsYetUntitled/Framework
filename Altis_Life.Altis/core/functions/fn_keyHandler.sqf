@@ -14,7 +14,6 @@ params [
     ["_alt", false, [false]]
 ];
 
-private _speed = speed cursorObject;
 private _handled = false;
 
 private "_veh";
