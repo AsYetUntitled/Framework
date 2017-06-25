@@ -6,28 +6,31 @@
 *    Description:
 *    Main key handler for event 'keyDown'.
 */
-private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys"];
-_ctrl = _this select 0;
-_code = _this select 1;
-_shift = _this select 2;
-_ctrlKey = _this select 3;
-_alt = _this select 4;
-_speed = speed cursorObject;
-_handled = false;
+params [
+    ["_ctrl", displayNull, [displayNull]],
+    ["_code", 0, [0]],
+    ["_shift", false, [false]],
+    ["_ctrlKey", false, [false]],
+    ["_alt", false, [false]]
+];
 
-_interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
-_mapKey = (actionKeys "ShowMap" select 0);
-//hint str _code;
-_interruptionKeys = [17,30,31,32]; //A,S,W,D
+private _speed = speed cursorObject;
+private _handled = false;
+private _veh = objNull;
+private _locked = false;
+
+private _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
+private _mapKey = (actionKeys "ShowMap" select 0);
+private _interruptionKeys = [17, 30, 31, 32]; //A,S,W,D
 
 //Vault handling...
 if ((_code in (actionKeys "GetOver") || _code in (actionKeys "salute") || _code in (actionKeys "SitDown") || _code in (actionKeys "Throw") || _code in (actionKeys "GetIn") || _code in (actionKeys "GetOut") || _code in (actionKeys "Fire") || _code in (actionKeys "ReloadMagazine") || _code in [16,18]) && ((player getVariable ["restrained",false]) || (player getVariable ["playerSurrender",false]) || life_isknocked || life_istazed)) exitWith {
-    true;
+    true
 };
 
 if (life_action_inUse) exitWith {
     if (!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true;};
-    _handled;
+    _handled
 };
 
 //Hotfix for Interaction key not being able to be bound on some operation systems.
