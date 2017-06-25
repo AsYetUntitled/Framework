@@ -16,8 +16,9 @@ params [
 
 private _speed = speed cursorObject;
 private _handled = false;
-private _veh = objNull;
-private _locked = false;
+
+private "_veh";
+private "_locked";
 
 private _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
 private _mapKey = (actionKeys "ShowMap" select 0);
