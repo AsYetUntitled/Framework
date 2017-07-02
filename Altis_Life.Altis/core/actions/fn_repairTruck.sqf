@@ -33,7 +33,7 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
                 player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
             };
 
-            sleep 0.27;
+            uiSleep 0.27;
             _cP = _cP + 0.01;
             _progress progressSetPosition _cP;
             _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
