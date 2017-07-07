@@ -89,15 +89,12 @@ if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
 };
 
 if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner"}) then {
-
-    private _isHouse = false;
-
+    private _isHouse = (isClass (missionConfigFile >> "Housing" >> worldName >> typeOf _curTarget));
     private _buildingPurchaseString = [
         "STR_pInAct_BuyGarage",
         "STR_pInAct_BuyHouse"
-    ] select (isClass (missionConfigFile >> "Housing" >> worldName >> typeOf _curTarget));
+    ] select _isClass;
     
-    _isHouse = (isClass (missionConfigFile >> "Housing" >> worldName >> typeOf _curTarget));
     _Btn1 ctrlSetText localize _buildingPurchaseString;
     _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse; closeDialog 0";
     _Btn1 ctrlShow true;
