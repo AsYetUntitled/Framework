@@ -16,6 +16,7 @@ private _loadout = getUnitLoadout player;
 if (_dropWeapons isEqualTo 1) then {
     {
         _loadout set [_x,[]];
+        true
     } count [0,1,2];
 };
 _loadout
