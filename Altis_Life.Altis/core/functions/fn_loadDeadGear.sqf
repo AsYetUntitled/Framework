@@ -6,5 +6,5 @@
     Description:
     BLAH
 */
-private _loadout = [_this,0,[[],[],[],[],[],[],"","",[],[]],[[]]] call BIS_fnc_param;
+params [["_loadout",[[],[],[],[],[],[],"","",[],[]],[[]]]];
 player setUnitLoadout _loadout;
