@@ -32,7 +32,7 @@ for "_i" from 0 to 1 step 0 do {
         player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
         player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
     };
-    sleep 0.26;
+    uiSleep 0.26;
     if (isNull _ui) then {
         "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
