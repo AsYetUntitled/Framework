@@ -198,7 +198,24 @@ _patchList =
 "A3_Static_F_Jets_AAA_System_01", "A3_Data_F_Jets", "A3_Dubbing_F_Jets", "A3_EditorPreviews_F_Jets", "A3_Functions_F_Jets", "A3_Language_F_Jets", "A3_LanguageMissions_F_Jets",
 "A3_Modules_F_Jets", "A3_Music_F_Jets", "A3_Sounds_F_Jets", "A3_Static_F_Jets", "A3_Static_F_Jets_SAM_System_01", "A3_Static_F_Jets_SAM_System_02", "A3_Ui_F_Jets",
 "A3_Weapons_F_Jets", "A3_Air_F_Jets", "A3_Air_F_Jets_Plane_Fighter_01", "A3_Air_F_Jets_Plane_Fighter_02", "A3_Air_F_Jets_Plane_Fighter_04", "A3_Air_F_Jets_UAV_05",
-"A3_Anims_F_Jets", "A3_Boat_F_Jets", "A3_Boat_F_Jets_Carrier_01", "A3_Cargoposes_F_Jets", "A3_Characters_F_Jets", "A3_Characters_F_Jets_Vests", "A3_Missions_F_Jets","A3_Data_F_Jets_Loadorder"];
+"A3_Anims_F_Jets", "A3_Boat_F_Jets", "A3_Boat_F_Jets_Carrier_01", "A3_Cargoposes_F_Jets", "A3_Characters_F_Jets", "A3_Characters_F_Jets_Vests", "A3_Missions_F_Jets","A3_Data_F_Jets_Loadorder",
+"A3_Data_F_Argo","A3_EditorPreviews_F_Argo","A3_Language_F_Argo","A3_Map_Malden","A3_Map_Malden_Data","A3_Map_Malden_Data_Layers","A3_Map_Malden_Scenes_F","A3_Props_F_Argo",
+"A3_Props_F_Argo_Civilian","A3_Props_F_Argo_Civilian_InfoBoards","A3_Props_F_Argo_Items","A3_Props_F_Argo_Items_Documents","A3_Props_F_Argo_Items_Electronics","A3_Rocks_F_Argo",
+"A3_Rocks_F_Argo_Limestone","A3_Structures_F_Argo","A3_Structures_F_Argo_Civilian","A3_Structures_F_Argo_Civilian_Accessories","A3_Structures_F_Argo_Civilian_Addons",
+"A3_Structures_F_Argo_Civilian_Garbage","A3_Structures_F_Argo_Civilian_House_Big01","A3_Structures_F_Argo_Civilian_House_Big02","A3_Structures_F_Argo_Civilian_House_Small01",
+"A3_Structures_F_Argo_Civilian_House_Small02","A3_Structures_F_Argo_Civilian_Stone_House_Big_01","A3_Structures_F_Argo_Civilian_Stone_Shed_01",
+"A3_Structures_F_Argo_Civilian_Unfinished_Building_01","A3_Structures_F_Argo_Commercial","A3_Structures_F_Argo_Commercial_Accessories",
+"A3_Structures_F_Argo_Commercial_Billboards","A3_Structures_F_Argo_Commercial_FuelStation_01","A3_Structures_F_Argo_Commercial_Shop_02",
+"A3_Structures_F_Argo_Commercial_Supermarket_01","A3_Structures_F_Argo_Cultural","A3_Structures_F_Argo_Cultural_Church","A3_Structures_F_Argo_Cultural_Statues",
+"A3_Structures_F_Argo_Decals","A3_Structures_F_Argo_Decals_Horizontal","A3_Structures_F_Argo_Industrial","A3_Structures_F_Argo_Industrial_Agriculture",
+"A3_Structures_F_Argo_Industrial_Materials","A3_Structures_F_Argo_Infrastructure","A3_Structures_F_Argo_Infrastructure_Runways","A3_Structures_F_Argo_Infrastructure_Seaports",
+"A3_Structures_F_Argo_Infrastructure_WaterSupply","A3_Structures_F_Argo_Military","A3_Structures_F_Argo_Military_Bunkers","A3_Structures_F_Argo_Military_ContainerBases",
+"A3_Structures_F_Argo_Military_Domes","A3_Structures_F_Argo_Military_Fortifications","A3_Structures_F_Argo_Military_Turrets","A3_Structures_F_Argo_Signs",
+"A3_Structures_F_Argo_Signs_City","A3_Structures_F_Argo_Signs_Directions","A3_Structures_F_Argo_Signs_Warnings","A3_Structures_F_Argo_Walls","A3_Structures_F_Argo_Walls_City",
+"A3_Structures_F_Argo_Walls_Concrete","A3_Structures_F_Argo_Walls_Military","A3_Structures_F_Argo_Walls_Net","A3_Structures_F_Argo_Walls_Pipe","A3_Structures_F_Argo_Walls_Tin",
+"A3_Structures_F_Argo_Walls_Wooden","A3_Structures_F_Argo_Wrecks","A3_Vegetation_F_Argo","A3_Armor_F_Argo","A3_Armor_F_Argo_APC_Tracked_01","A3_Armor_F_Argo_APC_Wheeled_02",
+"A3_Data_F_Argo_Loadorder","A3_Data_F_Patrol","A3_Functions_F_Patrol","A3_Language_F_Patrol","A3_LanguageMissions_F_Patrol","A3_Modules_F_Patrol","A3_Sounds_F_Patrol",
+"A3_Ui_F_Patrol","A3_Weapons_F_Patrol","A3_Characters_F_Patrol","A3_Missions_F_Patrol","A3_Data_F_Patrol_Loadorder"];
 
 uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
