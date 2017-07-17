@@ -560,7 +560,7 @@
         <Key ID="STR_Admin_CannotTpHere">
             <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
-            <French>Vous ne pouvez pas TP le joueur ici, car il est actuellement dans un vehicule.</French>
+            <French>Vous ne pouvez pas TP le joueur ici, car il est actuellement dans un véhicule.</French>
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
@@ -1307,7 +1307,7 @@
             <Spanish>Your message cannot exceed 400 characters!</Spanish>
             <Russian>Your message cannot exceed 400 characters!</Russian>
             <German>Deine Nachricht darf maximal 400 Zeichen enthalten!!</German>
-            <French>Votre message ne peut pas excéder 400 caractères!</French>
+            <French>Votre message ne peut pas excéder 400 caractères !</French>
             <Italian>Your message cannot exceed 400 characters!</Italian>
             <Portuguese>Your message cannot exceed 400 characters!</Portuguese>
             <Polish>Your message cannot exceed 400 characters!</Polish>
@@ -1318,7 +1318,7 @@
             <Spanish>You must select a player you are sending the text to!</Spanish>
             <Russian>You must select a player you are sending the text to!</Russian>
             <German>Du musst einen Spieler auswählen!</German>
-            <French>Vous devez sélectionner un joueur auquel vous envoyez le message!</French>
+            <French>Vous devez sélectionner un joueur auquel vous envoyez le message !</French>
             <Italian>You must select a player you are sending the text to!</Italian>
             <Portuguese>You must select a player you are sending the text to!</Portuguese>
             <Polish>You must select a player you are sending the text to!</Polish>
