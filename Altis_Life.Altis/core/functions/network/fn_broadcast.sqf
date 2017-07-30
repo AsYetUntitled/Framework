@@ -52,6 +52,6 @@ if (_type isEqualType []) then {
         case 0: {systemChat _message};
         case 1: {hint format ["%1", _message]};
         case 2: {titleText[format ["%1",_message],"PLAIN"];};
-        case 4: {hint format ["%1", _message]};
+        case 3: {hint format ["%1", _message]};
     };
 };
