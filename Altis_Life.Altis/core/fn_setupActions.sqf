@@ -18,8 +18,8 @@ switch (playerSide) do {
     };
     
     //Actions for cops
-    case West: { };
+    case west: { };
     
     //Actions for EMS
-    case Independent: { };
+    case independent: { };
 };
