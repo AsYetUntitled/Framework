@@ -2,6 +2,7 @@
 /*
     File: fn_adminGodMode.sqf
     Author: Tobias 'Xetoxyc' Sittenauer
+    Edited: S.M.Z
 
     Description: Enables God mode for Admin
 */
@@ -13,9 +14,9 @@ closeDialog 0;
 if (life_god) then {
     life_god = false;
     titleText [localize "STR_ANOTF_godModeOff","PLAIN"]; titleFadeOut 2;
-    player allowDamage true;
+    player allowDamage true; player enableFatigue true;
 } else {
     life_god = true;
     titleText [localize "STR_ANOTF_godModeOn","PLAIN"]; titleFadeOut 2;
-    player allowDamage false;
+    player allowDamage false; player enableFatigue false;
 };
