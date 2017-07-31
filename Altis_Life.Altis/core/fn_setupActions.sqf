@@ -6,6 +6,8 @@
     Master addAction file handler for all client-based actions.
 */
 switch (playerSide) do {
+
+    //Actions for civilians
     case civilian: {
         //Drop fishing net
         life_actions = [player addAction[localize "STR_pAct_DropFishingNet",life_fnc_dropFishingNet,"",0,false,false,"",'
@@ -14,4 +16,10 @@ switch (playerSide) do {
         life_actions = life_actions + [player addAction[localize "STR_pAct_RobPerson",life_fnc_robAction,"",0,false,false,"",'
         !isNull cursorObject && player distance cursorObject < 3.5 && isPlayer cursorObject && animationState cursorObject == "Incapacitated" && !(cursorObject getVariable ["robbed",false]) ']];
     };
+    
+    //Actions for cops
+    case West: { };
+    
+    //Actions for EMS
+    case Independent: { };
 };
