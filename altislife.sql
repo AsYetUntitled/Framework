@@ -14,10 +14,12 @@ SET time_zone = "+00:00";
 --
 -- Database: `altislife`
 -- Default Schema
+-- Creates default user arma3.
 --
 CREATE DATABASE IF NOT EXISTS `altislife` DEFAULT CHARACTER SET utf8mb4;
 USE `altislife`;
 
+CREATE USER IF NOT EXISTS `arma3`@`localhost` IDENTIFIED BY 'changeme';
 --
 -- Drop procedures to ensure no conflicts
 --
@@ -210,6 +212,16 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
+--
+-- Granting perms to user arma3, created above
+--
+
+GRANT SELECT,INSERT,UPDATE ON altislife.containers TO arma3;
+GRANT SELECT,INSERT,UPDATE ON altislife.gangs TO arma3;
+GRANT SELECT,INSERT,UPDATE ON altislife.houses TO arma3;
+GRANT SELECT,INSERT,UPDATE ON altislife.players TO arma3;
+GRANT SELECT,INSERT,UPDATE ON altislife.vehicles TO arma3;
+GRANT SELECT,INSERT,UPDATE ON altislife.wanted TO arma3;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
