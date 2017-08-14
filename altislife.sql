@@ -216,12 +216,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 -- Granting perms to user arma3, created above
 --
 
-GRANT SELECT,INSERT,UPDATE ON altislife.containers TO arma3;
-GRANT SELECT,INSERT,UPDATE ON altislife.gangs TO arma3;
-GRANT SELECT,INSERT,UPDATE ON altislife.houses TO arma3;
-GRANT SELECT,INSERT,UPDATE ON altislife.players TO arma3;
-GRANT SELECT,INSERT,UPDATE ON altislife.vehicles TO arma3;
-GRANT SELECT,INSERT,UPDATE ON altislife.wanted TO arma3;
+GRANT SELECT,UPDATE,INSERT ON `altislife`.* TO 'arma3'@'localhost';
 GRANT EXECUTE ON PROCEDURE altislife.deleteDeadVehicles TO 'arma3'@'localhost';
 GRANT EXECUTE ON PROCEDURE altislife.deleteOldContainers TO 'arma3'@'localhost';
 GRANT EXECUTE ON PROCEDURE altislife.deleteOldGangs TO 'arma3'@'localhost';
