@@ -217,12 +217,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 --
 
 GRANT SELECT,UPDATE,INSERT,DELETE ON `altislife`.* TO 'arma3'@'localhost';
-GRANT EXECUTE ON PROCEDURE altislife.deleteDeadVehicles TO 'arma3'@'localhost';
-GRANT EXECUTE ON PROCEDURE altislife.deleteOldContainers TO 'arma3'@'localhost';
-GRANT EXECUTE ON PROCEDURE altislife.deleteOldGangs TO 'arma3'@'localhost';
-GRANT EXECUTE ON PROCEDURE altislife.deleteOldHouses TO 'arma3'@'localhost';
-GRANT EXECUTE ON PROCEDURE altislife.deleteOldWanted TO 'arma3'@'localhost';
-GRANT EXECUTE ON PROCEDURE altislife.resetLifeVehicles TO 'arma3'@'localhost';
+GRANT EXECUTE ON altislife.* TO 'arma3'@'localhost'
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
