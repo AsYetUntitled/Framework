@@ -6,7 +6,7 @@ This Github is not currently associated with any forums.
 
 # Features:
 
-  - Police, Cop and Medic roles 
+  - Police and Medic roles 
   - Banking System
   - Virtual Item system 
   - Vitem shops, vehicle shops, weapon shops, clothing stores etc. 
