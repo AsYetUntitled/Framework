@@ -29,7 +29,7 @@ if (_vehicle isKindOf "House_F") exitWith {
 
 // Solve stupidness
 private _op = objectParent player;
-if (!isNull _op && {_op in life_vehicles} && {locked _op isEqualTo 2}) exitWith {
+if (_op isEqualTo _vehicle && {locked _vehicle isEqualTo 2}) exitWith {
     hint "You cannot drop keys to a vehicle which is locked and you are inside of."
 };
 
