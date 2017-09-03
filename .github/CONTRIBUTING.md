@@ -75,5 +75,5 @@ Contributing to AsYetUntitled
 * See [issues](https://github.com/AsYetUntitled/Framework/issues) for a full list of all open tasks and bugs. If you would like to work on a solution to an issue then please leave a comment on that issue so that others know a solution is in progress. 
 
 ## Contact
-* If you need to chat with us in real-time then you can do so on the [ArmA RPG Life Discord server](https://discordapp.com/invite/sEcQdPn). 
+* If you need to chat with us in real-time then you can do so on the [ArmA RPG Life Discord server](https://discord.gg/EaB7Jgw). 
   * Please be sure to read the rules which can be found in the #announcements channel. 
