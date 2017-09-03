@@ -29,7 +29,7 @@ _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",(getPlayerUID player),true]; //Set the UID.
 
 //close the esc dialog
-if (!isNull findDisplay 49) then {
+if (dialog) then {
     closeDialog 0;
 };
 

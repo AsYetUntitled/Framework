@@ -74,5 +74,8 @@ for "_i" from 0 to 1 step 0 do {
     if (_usebleCtrl) then {
         _respawnButton ctrlEnable true; //Enable the button.
     };
-    waitUntil {isNull (findDisplay 49)};
+    waitUntil {isNull (findDisplay 49) || {!alive player}};
+    if (!isNull (findDisplay 49)) then {
+        (findDisplay 49) closeDisplay 2;
+    };
 };
