@@ -911,6 +911,17 @@
             <Russian>Администратор %1 открыл консоль отладки.</Russian>
             <German>Admin %1 hat die Debug-Konsole geöffnet.</German>
         </Key>
+        <Key ID="STR_NOTF_cannotDropKeys">
+            <Original>You cannot drop keys to a vehicle which is locked and you are inside of.</Original>
+            <Czech>You cannot drop keys to a vehicle which is locked and you are inside of.</Czech>
+            <French>You cannot drop keys to a vehicle which is locked and you are inside of.</French>
+            <Spanish>You cannot drop keys to a vehicle which is locked and you are inside of.</Spanish>
+            <Italian>You cannot drop keys to a vehicle which is locked and you are inside of.</Italian>
+            <Polish>You cannot drop keys to a vehicle which is locked and you are inside of.</Polish>
+            <Portuguese>You cannot drop keys to a vehicle which is locked and you are inside of.</Portuguese>
+            <Russian>You cannot drop keys to a vehicle which is locked and you are inside of.</Russian>
+            <German>You cannot drop keys to a vehicle which is locked and you are inside of.</German>
+        </Key>
     </Package>
     <Package name="ATM_Strings">
         <Key ID="STR_ATM_Title">
