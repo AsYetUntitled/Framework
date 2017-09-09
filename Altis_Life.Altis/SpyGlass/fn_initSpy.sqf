@@ -198,7 +198,27 @@ _patchList =
 "A3_Static_F_Jets_AAA_System_01", "A3_Data_F_Jets", "A3_Dubbing_F_Jets", "A3_EditorPreviews_F_Jets", "A3_Functions_F_Jets", "A3_Language_F_Jets", "A3_LanguageMissions_F_Jets",
 "A3_Modules_F_Jets", "A3_Music_F_Jets", "A3_Sounds_F_Jets", "A3_Static_F_Jets", "A3_Static_F_Jets_SAM_System_01", "A3_Static_F_Jets_SAM_System_02", "A3_Ui_F_Jets",
 "A3_Weapons_F_Jets", "A3_Air_F_Jets", "A3_Air_F_Jets_Plane_Fighter_01", "A3_Air_F_Jets_Plane_Fighter_02", "A3_Air_F_Jets_Plane_Fighter_04", "A3_Air_F_Jets_UAV_05",
-"A3_Anims_F_Jets", "A3_Boat_F_Jets", "A3_Boat_F_Jets_Carrier_01", "A3_Cargoposes_F_Jets", "A3_Characters_F_Jets", "A3_Characters_F_Jets_Vests", "A3_Missions_F_Jets","A3_Data_F_Jets_Loadorder"];
+"A3_Anims_F_Jets", "A3_Boat_F_Jets", "A3_Boat_F_Jets_Carrier_01", "A3_Cargoposes_F_Jets", "A3_Characters_F_Jets", "A3_Characters_F_Jets_Vests", "A3_Missions_F_Jets","A3_Data_F_Jets_Loadorder",
+/*SPOTREP #00073*/
+"A3_Props_F_Jets","A3_Props_F_Jets_Military_Tractor","A3_Props_F_Jets_Military_Trolley",
+"A3_Data_F_Orange","A3_Dubbing_F_Orange","A3_EditorPreviews_F_Orange","A3_Functions_F_Orange",
+"A3_Language_F_Orange","A3_LanguageMissions_F_Orange","A3_Missions_F_Orange","A3_Modules_F_Orange",
+"A3_Music_F_Orange","A3_Props_F_Orange","A3_Props_F_Orange_Civilian","A3_Props_F_Orange_Civilian_Constructions",
+"A3_Props_F_Orange_Civilian_InfoBoards","A3_Props_F_Orange_Furniture","A3_Props_F_Orange_Humanitarian",
+"A3_Props_F_Orange_Humanitarian_Camps","A3_Props_F_Orange_Humanitarian_Garbage","A3_Props_F_Orange_Humanitarian_Supplies",
+"A3_Props_F_Orange_Items","A3_Props_F_Orange_Items_Decorative","A3_Props_F_Orange_Items_Documents",
+"A3_Props_F_Orange_Items_Electronics","A3_Props_F_Orange_Items_Tools","A3_Soft_F_Orange","A3_Soft_F_Orange_Offroad_01",
+"A3_Soft_F_Orange_Offroad_02","A3_Soft_F_Orange_Truck_02","A3_Soft_F_Orange_UGV_01","A3_Soft_F_Orange_Van_02",
+"A3_Structures_F_Orange","A3_Structures_F_Orange_Humanitarian","A3_Structures_F_Orange_Humanitarian_Camps",
+"A3_Structures_F_Orange_Humanitarian_Flags","A3_Structures_F_Orange_Industrial","A3_Structures_F_Orange_Industrial_Cargo",
+"A3_Structures_F_Orange_Signs","A3_Structures_F_Orange_Signs_Mines","A3_Structures_F_Orange_Signs_Special",
+"A3_Structures_F_Orange_VR_Helpers","A3_Structures_F_Orange_Walls","A3_Structures_F_Orange_Walls_Plastic",
+"A3_Supplies_F_Orange","A3_Supplies_F_Orange_Ammoboxes","A3_Supplies_F_Orange_Bags","A3_Supplies_F_Orange_CargoNets",
+"A3_Ui_F_Orange","A3_Weapons_F_Orange","A3_Weapons_F_Orange_Explosives","A3_Weapons_F_Orange_Items","A3_Air_F_Orange",
+"A3_Air_F_Orange_Heli_Transport_02","A3_Air_F_Orange_UAV_01","A3_Air_F_Orange_UAV_06","A3_Cargoposes_F_Orange",
+"A3_Characters_F_Orange","A3_Characters_F_Orange_Facewear","A3_Characters_F_Orange_Headgear","A3_Characters_F_Orange_Uniforms",
+"A3_Characters_F_Orange_Vests","A3_Sounds_F_Orange","A3_Data_F_Orange_Loadorder"
+];
 
 uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
