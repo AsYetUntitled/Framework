@@ -30,7 +30,7 @@ if (_vehicle isKindOf "House_F") exitWith {
 // Solve stupidness
 private _op = objectParent player;
 if (_op isEqualTo _vehicle && {locked _vehicle isEqualTo 2}) exitWith {
-    hint localize "STR_NOTF_cannotDropKeys";
+    hint localize "STR_NOTF_cannotDropKeys"
 };
 
 life_vehicles = life_vehicles - [_vehicle];
