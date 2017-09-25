@@ -2,8 +2,8 @@
     Author: SimZor
     
     Parameter(s):
-        0: STRING            - Function to call
-        1: ARRAY             - Array with arguments to pass to function via RE
+        0: ARRAY             - Array with arguments to pass to function via RE
+        1: STRING            - Function to call
         2: (OPTIONAL) NUMBER - Selection of command
             0 (DEFAULT): Execute in unscheduled environment
             1:           Execute in scheduled environment
