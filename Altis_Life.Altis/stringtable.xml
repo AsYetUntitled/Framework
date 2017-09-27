@@ -920,7 +920,7 @@
             <Polish>You cannot drop keys to a vehicle which is locked and you are inside of.</Polish>
             <Portuguese>You cannot drop keys to a vehicle which is locked and you are inside of.</Portuguese>
             <Russian>You cannot drop keys to a vehicle which is locked and you are inside of.</Russian>
-            <German>You cannot drop keys to a vehicle which is locked and you are inside of.</German>
+            <German>Du kannst den Schlüssel nicht wegschmeißen, weil das Auto verschlossen ist und du drin sitzt.</German>
         </Key>
     </Package>
     <Package name="ATM_Strings">
