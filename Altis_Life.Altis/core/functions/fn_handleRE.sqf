@@ -1,19 +1,20 @@
-/**
+/*
+    File: fn_handleRE.sqf
     Author: SimZor
-    
+
     Parameter(s):
         0: ARRAY             - Array with arguments to pass to function via RE
         1: STRING            - Function to call
         2: (OPTIONAL) NUMBER - Selection of command
             0 (DEFAULT): Execute in unscheduled environment
             1:           Execute in scheduled environment
-        3: (OPTIONAL) STRING - In case of two different functions, that does the same thing 
+        3: (OPTIONAL) STRING - In case of two different functions, that does the same thing
                                (reverse compatibility), i.e. HC_fnc_updateGang and TON_fnc_updateGang,
                                this should be passed with the value to the function on the Headless Client.
-        
+
     Returns:
         BOOLEAN - true if successful, else false
-        
+
     Description:
         Handles whether a function is executed on server or headless client
 */
