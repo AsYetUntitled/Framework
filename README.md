@@ -11,7 +11,7 @@ This Github is not currently associated with any forums.
   - Virtual Item system 
   - Vitem shops, vehicle shops, weapon shops, clothing stores etc. 
   - Housing System 
-  - Persistant wanted system
+  - Persistent wanted system
   - Many more. 
 
 # License: 
