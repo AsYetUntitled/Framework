@@ -1,4 +1,8 @@
 #include "..\script_macros.hpp"
+
+#define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})
+#define RCLIENT -2
+
 /*
     File: fn_initSpy.sqf
     Author:
@@ -9,10 +13,8 @@
 
     Will also become a standalone system which is why it's setup like this.
 */
-private ["_binConfigPatches","_cfgPatches","_endM"];
+
 if (isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-#define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})
-#define RCLIENT -2
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
 CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
@@ -56,7 +58,8 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
     "JSRS2_FighterPlane3","JSRS2_FV720_Mora","JSRS2_Hunter","JSRS2_Ifrit","JSRS2_IFV6a_Cheetah","JSRS2_IFV6c_Panther","JSRS2_M2A1_Slammer","JSRS2_M4_Scorcher","JSRS2_M5_Sandstorm","JSRS2_MBT52_Kuma","JSRS2_Mi48_Kajman","JSRS2_MSE3_Marid","JSRS2_Offroad",
     "JSRS2_Po30_Orca","JSRS2_Strider","JSRS2_SUV","JSRS2_T100_Varsuk","JSRS2_Truck1","JSRS2_Truck2","JSRS2_UAV_1","JSRS2_UH80_GhostHawk","JSRS2_Van","JSRS2_WY55_Hellcat","JSRS2_ZSU39_Tigris","cba_xeh_a3"]
 */
-_patchList =
+
+private _patchList =
 ["life_server","Core","A3Data","A3_Functions_F","A3_Functions_F_EPA","A3_Functions_F_EPC","A3_Data_F","A3_Data_F_Hook","A3_Data_F_ParticleEffects","A3_Dubbing_F","A3_Dubbing_F_Beta","A3_Dubbing_F_Gamma","A3_Dubbing_Radio_F",
 "A3_Dubbing_Radio_F_Data_ENG","A3_Dubbing_Radio_F_Data_ENGB","A3_Dubbing_Radio_F_Data_GRE","A3_Dubbing_Radio_F_Data_PER","A3_Dubbing_Radio_F_Data_VR","A3_Editor_F","A3_EditorPreviews_F","A3_Functions_F_Curator","A3_Language_F",
 "A3_Language_F_Beta","A3_Language_F_Gamma","A3_LanguageMissions_F","A3_LanguageMissions_F_Beta","A3_LanguageMissions_F_Gamma","A3_Misc_F","A3_Misc_F_Helpers","A3_Modules_F","A3_Modules_F_Data","A3_Modules_F_DynO",
@@ -199,7 +202,6 @@ _patchList =
 "A3_Modules_F_Jets", "A3_Music_F_Jets", "A3_Sounds_F_Jets", "A3_Static_F_Jets", "A3_Static_F_Jets_SAM_System_01", "A3_Static_F_Jets_SAM_System_02", "A3_Ui_F_Jets",
 "A3_Weapons_F_Jets", "A3_Air_F_Jets", "A3_Air_F_Jets_Plane_Fighter_01", "A3_Air_F_Jets_Plane_Fighter_02", "A3_Air_F_Jets_Plane_Fighter_04", "A3_Air_F_Jets_UAV_05",
 "A3_Anims_F_Jets", "A3_Boat_F_Jets", "A3_Boat_F_Jets_Carrier_01", "A3_Cargoposes_F_Jets", "A3_Characters_F_Jets", "A3_Characters_F_Jets_Vests", "A3_Missions_F_Jets","A3_Data_F_Jets_Loadorder",
-/*SPOTREP #00073*/
 "A3_Props_F_Jets","A3_Props_F_Jets_Military_Tractor","A3_Props_F_Jets_Military_Trolley",
 "A3_Data_F_Orange","A3_Dubbing_F_Orange","A3_EditorPreviews_F_Orange","A3_Functions_F_Orange",
 "A3_Language_F_Orange","A3_LanguageMissions_F_Orange","A3_Missions_F_Orange","A3_Modules_F_Orange",
@@ -223,7 +225,7 @@ _patchList =
 uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
 
-_binConfigPatches = configFile >> "CfgPatches";
+private _binConfigPatches = configFile >> "CfgPatches";
 for "_i" from 0 to count (_binConfigPatches)-1 do {
     _patchEntry = _binConfigPatches select _i;
     if (isClass _patchEntry) then {
