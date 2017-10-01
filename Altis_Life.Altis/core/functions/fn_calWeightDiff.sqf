@@ -17,7 +17,7 @@ if (_item isEqualTo "" || _value isEqualTo -1 || _cWeight isEqualTo -1 || _mWeig
 _weight = ([_item] call life_fnc_itemWeight) * _value;
 _sum = _value;
 
-if ((_cweight + _weight) > _mWeight) then {
+if ((_cWeight + _weight) > _mWeight) then {
     for "_i" from 0 to 1 step 0 do {
         _sum = _sum - 1;
         if (_sum < 1) exitWith {};
