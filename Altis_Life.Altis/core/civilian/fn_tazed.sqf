@@ -33,8 +33,7 @@ if (_shooter isKindOf "Man" && alive player) then {
         if (!(count _curMags isEqualTo 0)) then {
             {player addMagazine _x;} forEach _curMags;
         };
-
-        [_unit] remoteExecCall ["life_fnc_tazeSound",RCLIENT];
+        [_unit,"tazerSound",100,1] remoteExecCall ["life_fnc_say3D",RCLIENT]
         _obj = "Land_ClutterCutter_small_F" createVehicle ASLTOATL(visiblePositionASL player);
         _obj setPosATL ASLTOATL(visiblePositionASL player);
         [player,"AinjPfalMstpSnonWnonDf_carried_fallwc"] remoteExecCall ["life_fnc_animSync",RCLIENT];
