@@ -4,7 +4,7 @@
 *       MaterialsGive (Returned items) = Array - Format -> {{"ITEM CLASS",HOWMANY}}
 *       Text (Progess Bar Text) = Localised String
 *       NoLicenseCost (Cost to process w/o license) = Scalar
-*
+*       ProcessTimeMultiplier  (Multiplier for process) = Scalar (1 = 1.6seconds. 0.5 = 0.8 Seconds.)
 *   Example for multiprocess:
 *
 *   class Example {
@@ -13,6 +13,7 @@
 *       Text = "STR_Process_Example";
 *       //ScrollText = "Process Example";
 *       NoLicenseCost = 4000;
+*       ProcessTimeMultiplier = 1;
 *   };
 */
 
@@ -23,6 +24,7 @@ class ProcessAction {
         Text = "STR_Process_Oil";
         //ScrollText = "Process Oil";
         NoLicenseCost = 1200;
+        ProcessTimeMultiplier = 2;
     };
 
     class diamond {
@@ -31,6 +33,7 @@ class ProcessAction {
         Text = "STR_Process_Diamond";
         //ScrollText = "Cut Diamonds";
         NoLicenseCost = 1350;
+        ProcessTimeMultiplier = 2;
     };
 
     class heroin {
@@ -39,6 +42,7 @@ class ProcessAction {
         Text = "STR_Process_Heroin";
         //ScrollText = "Process Heroin";
         NoLicenseCost = 1750;
+        ProcessTimeMultiplier = 3;
     };
 
     class copper {
@@ -47,6 +51,7 @@ class ProcessAction {
         Text = "STR_Process_Copper";
         //ScrollText = "Refine Copper";
         NoLicenseCost = 750;
+        ProcessTimeMultiplier = 1;
     };
 
     class iron {
@@ -55,6 +60,7 @@ class ProcessAction {
         Text = "STR_Process_Iron";
         //ScrollText = "Refine Iron";
         NoLicenseCost = 1120;
+        ProcessTimeMultiplier = 1;
     };
 
     class sand {
@@ -63,6 +69,7 @@ class ProcessAction {
         Text = "STR_Process_Sand";
         //ScrollText = "Melt Sand into Glass";
         NoLicenseCost = 650;
+        ProcessTimeMultiplier = 0.7;
     };
 
     class salt {
@@ -71,6 +78,7 @@ class ProcessAction {
         Text = "STR_Process_Salt";
         //ScrollText = "Refine Salt";
         NoLicenseCost = 450;
+        ProcessTimeMultiplier = 0.7;
     };
 
     class cocaine {
@@ -79,6 +87,7 @@ class ProcessAction {
         Text = "STR_Process_Cocaine";
         //ScrollText = "Process Cocaine";
         NoLicenseCost = 1500;
+        ProcessTimeMultiplier = 3;
     };
 
     class marijuana {
@@ -87,6 +96,7 @@ class ProcessAction {
         Text = "STR_Process_Marijuana";
         //ScrollText = "Harvest Marijuana";
         NoLicenseCost = 500;
+        ProcessTimeMultiplier = 2.5;
     };
 
     class cement {
@@ -95,5 +105,6 @@ class ProcessAction {
         Text = "STR_Process_Cement";
         //ScrollText = "Mix Cement";
         NoLicenseCost = 350;
+        ProcessTimeMultiplier = 0.6;
     };
 };
