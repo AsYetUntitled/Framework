@@ -21,6 +21,7 @@ if (_list lbData _sel isEqualTo "") exitWith {
 
 private _index = parseNumber (_list lbData _sel);
 private _vehicle = life_vehicles param [_index, objNull, [objNull]];
+if isNull _vehicle exitWith {};
 
 // Do not let them drop the key to a house
 if (_vehicle isKindOf "House_F") exitWith {
