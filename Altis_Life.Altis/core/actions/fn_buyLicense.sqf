@@ -6,7 +6,6 @@
     Description:
     Called when purchasing a license. May need to be revised.
 */
-private _type = _this select 3;
 params [
     "",
     "",
