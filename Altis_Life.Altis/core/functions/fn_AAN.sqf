@@ -8,14 +8,15 @@
     It's showtime!
 
     Parameter(s):
-    _this select 0: STRUCTURED TEXT: Header text
-    _this select 1: STRUCTURED TEXT: Bottom text (moving)
-    _this select 2: PROFILENAME: Below Header text
+    _header: STRUCTURED TEXT: Header text
+    _line: STRUCTURED TEXT: Bottom text (moving)
+    _sender: PROFILENAME: Below Header text
 */
-private ["_header","_line","_sender","_display","_textHeader","_textLine","_textLinePos","_textClock"];
-private _header = _this select 0;
-private _line = _this select 1;
-private _sender = _this select 2;
+params [
+	["_header","",[""]],
+	["_line","",[""]],
+	["_sender","",[""]]
+];
 disableSerialization;
 
 if (!life_settings_enableNewsBroadcast || isStreamFriendlyUIEnabled) exitWith {};
@@ -29,7 +30,7 @@ _textHeader ctrlCommit 0;
 private _textLine = _display displayCtrl 3002;
 _textLine ctrlSetStructuredText parseText format ["                         %1                         %1                         %1                         %1",_line];
 _textLine ctrlCommit 0;
-_textLinePos = ctrlPosition _textLine;
+private _textLinePos = ctrlPosition _textLine;
 _textLinePos set [0,-100];
 _textLine ctrlSetPosition _textLinePos;
 _textLine ctrlCommit 1500;

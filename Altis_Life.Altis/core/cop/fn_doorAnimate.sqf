@@ -6,7 +6,9 @@
     Description:
     Animates a door?
 */
-private _b = _this select 0;
+params [
+	["_b",objNull,[objNull]]
+];
 private _doors = 1;
 _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _b,"NumberOfDoors");
 

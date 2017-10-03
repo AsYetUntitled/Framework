@@ -6,11 +6,11 @@
     Pass what you want to be animated.
 */
 params [
-    ["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]],
+    ["_animate","",[""]],
+    ["_preset",false,[false]]
 ];
 if (isNull _vehicle) exitWith {}; //FUCK
-private _animate = [_this,1,"",["",[]]] call BIS_fnc_param;
-private _preset = [_this,2,false,[false]] call BIS_fnc_param;
 
 if (!_preset) then
 {

@@ -17,7 +17,7 @@ private _display = findDisplay 100100;
 private _confirmBtn = _display displayCtrl Confirm;
 _confirmBtn ctrlEnable false;
 
-private _msgCooldown = (60 * LIFE_SETTINGS(getNumber,"news_broadcast_cooldown"));
+private _msgCooldown = 60 * LIFE_SETTINGS(getNumber,"news_broadcast_cooldown");
 private _msgCost = LIFE_SETTINGS(getNumber,"news_broadcast_cost");
 
 if (CASH < _msgCost) then {

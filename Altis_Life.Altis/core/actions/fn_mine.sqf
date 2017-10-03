@@ -41,9 +41,11 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
                 _mined = (_resources select 0) select 0;
             };
         };
-        private _resource = (_resources select _i) select 0;
-        private _prob = (_resources select _i) select 1;
-        private _probdiff = (_resources select _i) select 2;
+        _resources params [
+            "_resource",
+            "_prob",
+            "_probDiff"
+        ];
         if ((_percent >= _prob) && (_percent <= _probdiff)) exitWith {
             private _mined = _resource;
         };
@@ -80,7 +82,7 @@ if (_exit) exitWith {
     life_action_inUse = false;
 };
 
-private _amount = round(random(_maxGather)) + 1;
+private _amount = round(random _maxGather) + 1;
 private _diff = [_mined, _amount, life_carryWeight, life_maxWeight] call life_fnc_calWeightDiff;
 if (_diff isEqualTo 0) exitWith {
     hint localize "STR_NOTF_InvFull";

@@ -10,7 +10,8 @@
 if ((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDelay"; INUSE(_this);};
 if (isNull _this || {player distance _this > 3}) exitWith {INUSE(_this);};
 
-private _itemInfo = _this getVariable ["item",[]]; if (count _itemInfo isEqualTo 0) exitWith {deleteVehicle _this;};
+private _itemInfo = _this getVariable ["item",[]]; 
+if (count _itemInfo isEqualTo 0) exitWith {deleteVehicle _this;};
 private _illegal = ITEM_ILLEGAL(_itemInfo select 0);
 private _itemName = ITEM_NAME(_itemInfo select 0);
 if (isLocalized _itemName) then {
