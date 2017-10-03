@@ -6,8 +6,8 @@
     Description:
     Handles various different ammo types being fired.
 */
-private _ammoType = _this select 4;
-private _projectile = _this select 6;
+private _ammoType = param[4,"",[""]];
+private _projectile = param[6,objNull,[objNull]];
 
 if (_ammoType isEqualTo "GrenadeHand_stone") then {
     _projectile spawn {

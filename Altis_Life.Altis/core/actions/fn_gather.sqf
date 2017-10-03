@@ -6,16 +6,16 @@
     Description:
     Main functionality for gathering.
 */
-private ["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
+
 if (life_action_inUse) exitWith {};
 if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrained";};
 if (player getVariable "playerSurrender") exitWith {hint localize "STR_NOTF_surrender";};
 
 life_action_inUse = true;
-_zone = "";
-_requiredItem = "";
-_exit = false;
+private _zone = "";
+private _requiredItem = "";
+private _exit = false;
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
@@ -49,8 +49,8 @@ if (_requiredItem != "") then {
 
 if (_exit) exitWith {life_action_inUse = false;};
 
-_amount = round(random(_maxGather)) + 1;
-_diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+private _amount = round(random(_maxGather)) + 1;
+private _diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if (_diff isEqualTo 0) exitWith {
     hint localize "STR_NOTF_InvFull";
     life_action_inUse = false;

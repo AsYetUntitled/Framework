@@ -11,15 +11,13 @@
 disableSerialization;
 
 private _escSync = {
-    private ["_abortButton","_thread","_syncManager"];
     disableSerialization;
 
     _syncManager = {
         disableSerialization;
-        private ["_abortButton","_timeStamp","_abortTime"];
-        _abortButton = CONTROL(49,104);
-        _abortTime = LIFE_SETTINGS(getNumber,"escapeMenu_timer");
-        _timeStamp = time + _abortTime;
+        private _abortButton = CONTROL(49,104);
+        private _abortTime = LIFE_SETTINGS(getNumber,"escapeMenu_timer");
+        private _timeStamp = time + _abortTime;
 
         waitUntil {
             _abortButton ctrlSetText format [localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
@@ -31,10 +29,10 @@ private _escSync = {
         _abortButton ctrlCommit 0;
     };
 
-    _abortButton = CONTROL(49,104);
+    private _abortButton = CONTROL(49,104);
 
     if (_this) then {
-        _thread = [] spawn _syncManager;
+        private _thread = [] spawn _syncManager;
         waitUntil {scriptDone _thread || isNull (findDisplay 49)};
         _abortButton ctrlEnable true;
     };
