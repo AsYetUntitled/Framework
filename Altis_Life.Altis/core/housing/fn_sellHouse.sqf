@@ -7,19 +7,20 @@
     Description:
     Sells the house and delete all container near house.
 */
-private ["_house","_uid","_action","_houseCfg"];
-_house = param [0,objNull,[objNull]];
-_uid = getPlayerUID player;
+params [
+    ["_house",objNull,[objNull]]
+];
+private _uid = getPlayerUID player;
 
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
 if (isNil {_house getVariable "house_owner"}) exitWith {hint localize "STR_House_noOwner";};
 closeDialog 0;
 
-_houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
+private _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
 if (count _houseCfg isEqualTo 0) exitWith {};
 
-_action = [
+private _action = [
     format [localize "STR_House_SellHouseMSG",
     (round((_houseCfg select 0)/2)) call life_fnc_numberText,
     (_houseCfg select 1)],localize "STR_pInAct_SellHouse",localize "STR_Global_Sell",localize "STR_Global_Cancel"

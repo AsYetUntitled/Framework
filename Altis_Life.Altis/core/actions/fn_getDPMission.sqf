@@ -7,8 +7,10 @@
     Selects a random DP point for a delivery mission.
     Needs to be revised.
 */
-private ["_dp","_target"];
-_target = param [0,objNull,[objNull]];
+params [
+    ["_target",objNull,[objNull]]
+];
+private _dp = "";
 if (str(_target) in LIFE_SETTINGS(getArray,"delivery_points")) then {
     private "_point";
     _point = LIFE_SETTINGS(getArray,"delivery_points");

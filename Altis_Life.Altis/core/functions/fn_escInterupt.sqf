@@ -8,11 +8,9 @@
     Monitors when the ESC menu is pulled up and blocks off
     certain controls when conditions meet.
 */
-
-private ["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
 disableSerialization;
 
-_escSync = {
+private _escSync = {
     private ["_abortButton","_thread","_syncManager"];
     disableSerialization;
 
@@ -42,17 +40,17 @@ _escSync = {
     };
 };
 
-_canUseControls = {
+private _canUseControls = {
     if (playerSide isEqualTo west) exitWith {true};
     if ((player getVariable ["restrained",false]) || (player getVariable ["Escorting",false]) || (player getVariable ["transporting",false]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
 };
 
 for "_i" from 0 to 1 step 0 do {
     waitUntil {!isNull (findDisplay 49)};
-    _abortButton = CONTROL(49,104);
+    private _abortButton = CONTROL(49,104);
     _abortButton buttonSetAction "[] call SOCK_fnc_updateRequest; [player] remoteExec [""TON_fnc_cleanupRequest"",2];";
-    _respawnButton = CONTROL(49,1010);
-    _fieldManual = CONTROL(49,122);
+    private _respawnButton = CONTROL(49,1010);
+    private _fieldManual = CONTROL(49,122);
     private _saveButton = CONTROL(49,103);
     _saveButton ctrlSetText "";
 

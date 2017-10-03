@@ -7,7 +7,6 @@
         Description:
         Same as fn_gather,but it allows use of probabilities for mining.
     */
-private ["_maxGather", "_resource", "_amount", "_requiredItem", "_mined"];
 if (life_action_inUse) exitWith {};
 if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {
@@ -21,17 +20,17 @@ life_action_inUse = true;
 _zone = "";
 _requiredItem = "";
 
-_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
-_percent = (floor random 100) + 1; //Make sure it's not 0
+private _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
+private _percent = (floor random 100) + 1; //Make sure it's not 0
 
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    _curConfig = _resourceCfg select _i;
-    _resources = getArray(_curConfig >> "mined");
-    _maxGather = getNumber(_curConfig >> "amount");
-    _zoneSize = getNumber(_curConfig >> "zoneSize");
-    _resourceZones = getArray(_curConfig >> "zones");
-    _requiredItem = getText(_curConfig >> "item");
-    _mined = "";
+    private _curConfig = _resourceCfg select _i;
+    private _resources = getArray(_curConfig >> "mined");
+    private _maxGather = getNumber(_curConfig >> "amount");
+    private _zoneSize = getNumber(_curConfig >> "zoneSize");
+    private _resourceZones = getArray(_curConfig >> "zones");
+    private _requiredItem = getText(_curConfig >> "item");
+    private _mined = "";
 
     if (_resources isEqualTo []) exitWith {}; //Smart guy :O
     for "_i" from 0 to count (_resources) do {
@@ -42,11 +41,11 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
                 _mined = (_resources select 0) select 0;
             };
         };
-        _resource = (_resources select _i) select 0;
-        _prob = (_resources select _i) select 1;
-        _probdiff = (_resources select _i) select 2;
+        private _resource = (_resources select _i) select 0;
+        private _prob = (_resources select _i) select 1;
+        private _probdiff = (_resources select _i) select 2;
         if ((_percent >= _prob) && (_percent <= _probdiff)) exitWith {
-            _mined = _resource;
+            private _mined = _resource;
         };
     };
 
@@ -81,8 +80,8 @@ if (_exit) exitWith {
     life_action_inUse = false;
 };
 
-_amount = round(random(_maxGather)) + 1;
-_diff = [_mined, _amount, life_carryWeight, life_maxWeight] call life_fnc_calWeightDiff;
+private _amount = round(random(_maxGather)) + 1;
+private _diff = [_mined, _amount, life_carryWeight, life_maxWeight] call life_fnc_calWeightDiff;
 if (_diff isEqualTo 0) exitWith {
     hint localize "STR_NOTF_InvFull";
     life_action_inUse = false;

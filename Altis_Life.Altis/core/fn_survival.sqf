@@ -6,8 +6,7 @@
     Description:
     All survival? things merged into one thread.
 */
-private ["_fnc_food","_fnc_water","_foodTime","_waterTime","_bp","_walkDis","_lastPos","_curPos"];
-_fnc_food =  {
+private _fnc_food =  {
     if (life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";}
     else
     {
@@ -25,7 +24,7 @@ _fnc_food =  {
     };
 };
 
-_fnc_water = {
+private _fnc_water = {
     if (life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";}
     else
     {
@@ -47,13 +46,13 @@ _fnc_water = {
 };
 
 //Setup the time-based variables.
-_foodTime = time;
-_waterTime = time;
-_walkDis = 0;
-_bp = "";
-_lastPos = visiblePosition player;
+private _foodTime = time;
+private _waterTime = time;
+private _walkDis = 0;
+private _bp = "";
+private _lastPos = visiblePosition player;
 _lastPos = (_lastPos select 0) + (_lastPos select 1);
-_lastState = vehicle player;
+private _lastState = vehicle player;
 
 for "_i" from 0 to 1 step 0 do {
     /* Thirst / Hunger adjustment that is time based */
@@ -90,7 +89,7 @@ for "_i" from 0 to 1 step 0 do {
 
     /* Travelling distance to decrease thirst/hunger which is captured every second so the distance is actually greater then 650 */
     if (!alive player || {life_god}) then {_walkDis = 0;} else {
-        _curPos = visiblePosition player;
+        private _curPos = visiblePosition player;
         _curPos = (_curPos select 0) + (_curPos select 1);
         if (!(_curPos isEqualTo _lastPos) && {(isNull objectParent player)}) then {
             _walkDis = _walkDis + 1;

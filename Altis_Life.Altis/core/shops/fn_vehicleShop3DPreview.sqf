@@ -17,15 +17,12 @@
     displays the new vehicle selected.
 */
 
-
-private ["_classView","_object","_id"];
-
 if (isNil "life_preview_3D_vehicle_cam") then
 {
     [] call life_fnc_vehicleShopInit3DPreview;
 };
 
-_classView = _this select 0;
+private _classView = _this select 0;
 
 // Ignore non instantiable objects.
 if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && {getNumber (configFile >> "CfgVehicles" >> _classView >> "scope") > 0}}) then
@@ -43,8 +40,8 @@ if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && 
             life_preview_light setLightColor [1,1,1];
             life_preview_light setLightAmbient [1,1,1];
         };
-        _object = _classView createVehicleLocal life_pos_attach;
-        _id = player getVariable ["life_clientID",-1];
+        private _object = _classView createVehicleLocal life_pos_attach;
+        private _id = player getVariable ["life_clientID",-1];
         [_object] call life_fnc_clearVehicleAmmo;
         _object attachTo [life_attachment_point, life_pos_attach];
 

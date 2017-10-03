@@ -6,25 +6,24 @@
     Description:
     Main functionality for the chopper service paid, to be replaced in later version.
 */
-private ["_serviceCost"];
 disableSerialization;
 private ["_search","_ui","_progress","_cP","_pgText"];
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 
-_serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");
-_search = nearestObjects[getPos air_sp, ["Air"],10];
+private _serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");
+private _search = nearestObjects[getPos air_sp, ["Air"],10];
 
 if (count _search isEqualTo 0) exitWith {hint localize "STR_Service_Chopper_NoAir"};
 if (CASH < _serviceCost) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
 
 life_action_inUse = true;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progress = _ui displayCtrl 38201;
+private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format [localize "STR_Service_Chopper_Servicing","waiting..."];
 _progress progressSetPosition 0.01;
-_cP = 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     uiSleep  0.2;

@@ -5,11 +5,10 @@
     Description:
     Marks downed players on the map when it's open.
 */
-private ["_markers","_units","_medics"];
-_markers = [];
-_markersMedecin = [];
-_units = [];
-_medics = [];
+private _markers = [];
+private _markersMedecin = [];
+private _units = [];
+private _medics = [];
 
 sleep 0.25;
 if (visibleMap) then {

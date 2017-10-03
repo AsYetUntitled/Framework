@@ -6,9 +6,8 @@
     Description:
     Sets the player up if he/she used the respawn option.
 */
-private ["_handle"];
-//Reset our weight and other stuff
 
+//Reset our weight and other stuff
 life_action_inUse = false;
 life_use_atm = true;
 life_hunger = 100;
@@ -42,9 +41,8 @@ switch (playerSide) do
 
 //Cleanup of weapon containers near the body & hide it.
 if (!isNull life_corpse) then {
-    private "_containers";
     life_corpse setVariable ["Revive",true,true];
-    _containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
+    private _containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
     {deleteVehicle _x;} forEach _containers; //Delete the containers.
     deleteVehicle life_corpse;
 };

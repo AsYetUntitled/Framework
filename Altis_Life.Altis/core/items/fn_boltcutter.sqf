@@ -6,8 +6,9 @@
     Description:
     Breaks the lock on a single door (Closet door to the player).
 */
-private ["_building","_door","_doors","_cpRate","_title","_progressBar","_titleText","_cp","_ui"];
-_building = param [0,objNull,[objNull]];
+params [
+    ["_building",objNull,[objNull]]
+];
 
 private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
 private _altisArray = [16019.5,16952.9,0];
@@ -22,8 +23,8 @@ if (((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_p
 if ((typeOf _building) == _vaultHouse && (nearestObject [_pos,"Land_Dome_Big_F"]) getVariable ["locked",true]) exitWith {hint localize "STR_ISTR_Bolt_Exploit"};
 if (isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 
-_doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors");
-_door = 0;
+private _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _building),"numberOfDoors");
+private _door = 0;
 //Find the nearest door
 for "_i" from 1 to _doors do {
     _selPos = _building selectionPosition format ["Door_%1_trigger",_i];
@@ -42,14 +43,14 @@ if ((nearestObject [_pos,"Land_Dome_Big_F"]) == _building || (nearestObject [_po
 life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
-_title = localize "STR_ISTR_Bolt_Process";
+private _title = localize "STR_ISTR_Bolt_Process";
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
-_progressBar progressSetPosition 0.01;
-_cP = 0.01;
+private _progressBar progressSetPosition 0.01;
+private _cP = 0.01;
 
 switch (typeOf _building) do {
     case "Land_Dome_Big_F": {_cpRate = 0.003;};

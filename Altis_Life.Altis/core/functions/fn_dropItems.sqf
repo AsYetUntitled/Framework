@@ -6,13 +6,14 @@
     Description:
     Called on death, player drops any 'virtual' items they may be carrying.
 */
-private ["_obj","_unit","_item","_value"];
-_unit = _this select 0;
+params [
+    ["_unit",objNull,[objNull]]
+];
 
 {
     if (_x isEqualType "") then {_item = _x;} else {_item = configName _x};
-    _value = ITEM_VALUE(_item);
-    _itemName = ITEM_VARNAME(_item);
+    private _value = ITEM_VALUE(_item);
+    private _itemName = ITEM_VARNAME(_item);
 
     switch (_item) do {
         case "waterBottle": {

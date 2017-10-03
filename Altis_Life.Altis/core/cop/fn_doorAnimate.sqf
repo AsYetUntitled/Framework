@@ -6,12 +6,11 @@
     Description:
     Animates a door?
 */
-private ["_b","_doors","_door"];
-_b = _this select 0;
-_doors = 1;
+private _b = _this select 0;
+private _doors = 1;
 _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _b,"NumberOfDoors");
 
-_door = 0;
+private _door = 0;
 //Find the nearest door
 for "_i" from 1 to _doors do {
     _selPos = _b selectionPosition format ["Door_%1_trigger",_i];

@@ -7,9 +7,10 @@
     Not actually a impound menu, may act as confusion to some but that is what I wanted.
     The purpose of this menu is it is now called a 'Garage' where vehicles are stored (persistent ones).
 */
-private ["_vehicles","_control"];
 disableSerialization;
-_vehicles = param [0,[],[[]]];
+params [
+    ["_vehicles",[],[[]]]
+];
 
 ctrlShow[2803,false];
 ctrlShow[2830,false];
@@ -19,7 +20,7 @@ if (count _vehicles isEqualTo 0) exitWith {
     ctrlSetText[2811,localize "STR_Garage_NoVehicles"];
 };
 
-_control = CONTROL(2800,2802);
+private _control = CONTROL(2800,2802);
 lbClear _control;
 
 {

@@ -9,14 +9,13 @@
     displays various bits of information about the vehicle.
 */
 disableSerialization;
-private ["_className","_classNameLife","_initalPrice","_buyMultiplier","_rentMultiplier","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
 
 //Fetch some information.
-_className = (_this select 0) lbData (_this select 1);
-_classNameLife = _className;
-_vIndex = (_this select 0) lbValue (_this select 1);
+private _className = (_this select 0) lbData (_this select 1);
+private _classNameLife = _className;
+private _vIndex = (_this select 0) lbValue (_this select 1);
 
-_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
+private _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
 
 switch (playerSide) do {
     case civilian: {
@@ -37,13 +36,13 @@ switch (playerSide) do {
     };
 };
 
-_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-_trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
-_maxspeed = (_vehicleInfo select 8);
-_horsepower = (_vehicleInfo select 11);
-_passengerseats = (_vehicleInfo select 10);
-_fuel = (_vehicleInfo select 12);
-_armor = (_vehicleInfo select 9);
+private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+private _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
+private _maxspeed = (_vehicleInfo select 8);
+private _horsepower = (_vehicleInfo select 11);
+private _passengerseats = (_vehicleInfo select 10);
+private _fuel = (_vehicleInfo select 12);
+private _armor = (_vehicleInfo select 9);
 [_className] call life_fnc_vehicleShop3DPreview;
 
 ctrlShow [2330,true];
@@ -66,14 +65,14 @@ ctrlShow [2330,true];
     _armor
 ];
 
-_ctrl = CONTROL(2300,2304);
+private _ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     _classNameLife = "Default"; //Use Default class if it doesn't exist
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
 };
-_colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
+private _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 
 {
     _flag = (_x select 1);
@@ -88,11 +87,11 @@ _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
     };
 } forEach _colorArray;
 
-_numberindexcolorarray = [];
+private _numberindexcolorarray = [];
 for "_i" from 0 to (count(_colorArray) - 1) do {
     _numberindexcolorarray pushBack _i;
 };
-_indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
+private _indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
 _ctrl lbSetCurSel _indexrandom;
 
 if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {

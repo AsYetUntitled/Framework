@@ -8,9 +8,9 @@
 */
 private ["_nearVehicles","_vehicle"];
 if !(isNull objectParent player) then {
-    _vehicle = vehicle player;
+    private _vehicle = vehicle player;
 } else {
-    _nearVehicles = nearestObjects[getPos (_this select 0),["Car","Air","Ship"],30]; //Fetch vehicles within 30m.
+   private  _nearVehicles = nearestObjects[getPos (_this select 0),["Car","Air","Ship"],30]; //Fetch vehicles within 30m.
     if (count _nearVehicles > 0) then {
         {
             if (!isNil "_vehicle") exitWith {}; //Kill the loop.
@@ -29,7 +29,7 @@ if (isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
 if (isNull _vehicle) exitWith {};
 if (!alive _vehicle) exitWith {hint localize "STR_Garage_SQLError_Destroyed"};
 
-_storetext = localize "STR_Garage_Store_Success";
+private _storetext = localize "STR_Garage_Store_Success";
 
 if (life_HC_isActive) then {
     [_vehicle,false,(_this select 1),_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];

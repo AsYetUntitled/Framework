@@ -41,12 +41,10 @@ switch (playerSide) do {
     };
 };
 
-private "_purchasePrice";
-
-if (_mode) then {
-    _purchasePrice = round(_initalPrice * _buyMultiplier);
+private _purchasePrice = if (_mode) then {
+    round(_initalPrice * _buyMultiplier);
 } else {
-    _purchasePrice = round(_initalPrice * _rentMultiplier);
+    round(_initalPrice * _rentMultiplier);
 };
 
 private _conditions = M_CONFIG(getText,"LifeCfgVehicles",_className,"conditions");

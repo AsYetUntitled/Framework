@@ -6,14 +6,15 @@
     Description:
     ??A?SD?ADS?A
 */
-private ["_unit","_item","_val","_from","_bool"];
-_unit = _this select 0;
+params [
+    ["_unit",objNull,[objNull]],
+    ["_item","",[""]],
+    ["_val",-1,[0]],
+    ["_from",objNull,[objNull]]
+];
 if !(_unit isEqualTo player) exitWith {};
-_item = _this select 1;
-_val = _this select 2;
-_from = _this select 3;
-_bool = if (count _this > 4) then {true} else {false};
-_type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
+private _bool = if (count _this > 4) then {true} else {false};
+private _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
 
 if (_bool) then {
     if ([true,_item,(parseNumber _val)] call life_fnc_handleInv) then {

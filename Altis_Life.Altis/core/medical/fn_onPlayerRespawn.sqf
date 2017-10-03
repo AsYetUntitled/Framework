@@ -6,9 +6,10 @@
     Description:
     Does something but I won't know till I write it...
 */
-private ["_unit","_corpse","_containers"];
-_unit = _this select 0;
-_corpse = _this select 1;
+params [
+	["_unit",objNull,[objNull]],
+	["_corpse",objNull,[objNull]]
+];
 life_corpse = _corpse;
 
 //Set some vars on our new body.

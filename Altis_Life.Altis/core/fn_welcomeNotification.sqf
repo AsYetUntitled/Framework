@@ -18,13 +18,13 @@ disableSerialization;
 
 createDialog "RscDisplayWelcome";
 
-_display = findDisplay 999999;
-_text1 = _display displayCtrl 1100;
-_buttonSpoiler = _display displayCtrl 2400;
-_textSpoiler = _display displayCtrl 1101;
-_text2 = _display displayCtrl 1102;
+private _display = findDisplay 999999;
+private _text1 = _display displayCtrl 1100;
+private _buttonSpoiler = _display displayCtrl 2400;
+private _textSpoiler = _display displayCtrl 1101;
+private _text2 = _display displayCtrl 1102;
 
-_message = "";
+private _message = "";
 _message = _message + "<t align='center' size='8' shadow='0'><img image='textures\armalife.jpg' /></t><br /><br />";
 _message = _message + "Useful links (click on the links to open your browser)<br /><br />";
 _message = _message + " <a href='https://github.com/AsYetUntitled/Framework' color='#56BDD6'>AsYetUntitled</a> -- The official repository for the project.<br /><br />";

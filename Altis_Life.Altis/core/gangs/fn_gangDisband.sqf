@@ -7,8 +7,7 @@
     Prompts the user about disbanding the gang and if the user accepts the gang will be
     disbanded and removed from the database.
 */
-private "_action";
-_action = [
+private _action = [
     localize "STR_GNOTF_DisbandWarn",
     localize "STR_Gang_Disband_Gang",
     localize "STR_Global_Yes",

@@ -9,8 +9,7 @@
     is closed a sync request is sent off to the server.
     2 : Used for syncing vehicle inventory when save vehicle gear are activated
 */
-private "_container";
-_container = param [1,objNull,[objNull]];
+private _container = param [1,objNull,[objNull]];
 if (isNull _container) exitWith {}; //MEH
 
 if ((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {

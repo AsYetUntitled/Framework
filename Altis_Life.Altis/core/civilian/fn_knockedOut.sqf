@@ -6,7 +6,6 @@
     Description:
     Starts and monitors the knocked out state.
 */
-private "_obj";
 params [
     ["_target",objNull,[objNull]],
     ["_who","",[""]]
@@ -20,7 +19,7 @@ titleText[format [localize "STR_Civ_KnockedOut",_who],"PLAIN"];
 player playMoveNow "Incapacitated";
 disableUserInput true;
 
-_obj = "Land_ClutterCutter_small_F" createVehicle ASLTOATL(visiblePositionASL player);
+private _obj = "Land_ClutterCutter_small_F" createVehicle ASLTOATL(visiblePositionASL player);
 _obj setPosATL ASLTOATL(visiblePositionASL player);
 
 life_isknocked = true;

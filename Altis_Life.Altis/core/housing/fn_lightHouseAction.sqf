@@ -6,8 +6,9 @@
     Description:
     Lights up the house.
 */
-private "_house";
-_house = param [0,objNull,[objNull]];
+params [
+    ["_house",objNull,[objNull]]
+];
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
 

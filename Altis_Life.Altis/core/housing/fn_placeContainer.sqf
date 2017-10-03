@@ -7,14 +7,13 @@
     Description:
     Check container if are in house and if house are owner of player and if all this conditions are true add container in database
 */
-private ["_container","_isFloating","_type","_house","_containers","_houseCfg","_message","_isPlaced"];
 params [
         ["_container",objNull,[objNull]],
         ["_isFloating",true,[true]]
 ];
 
-_uid = getPlayerUID player;
-_house = nearestObject [player, "House"];
+private _uid = getPlayerUID player;
+private _house = nearestObject [player, "House"];
 
 switch (true) do {
     case (typeOf _container isEqualTo "B_supplyCrate_F"): {_type = "storagebig"};
@@ -22,8 +21,8 @@ switch (true) do {
     default {_type = ""};
 };
 
-_message = 0;
-_isPlaced = false;
+private _message = 0;
+private _isPlaced = false;
 if (!isNull _house) then {
     _message = 1;
     if (([player] call life_fnc_playerInBuilding) && {([_container] call life_fnc_playerInBuilding)}) then {

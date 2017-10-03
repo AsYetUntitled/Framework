@@ -6,8 +6,7 @@
     Description:
     Refuels the vehicle if the player has a fuel can.
 */
-private ["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
-_vehicle = cursorObject;
+private _vehicle = cursorObject;
 life_interrupted = false;
 
 if (isNull _vehicle) exitWith {hint localize "STR_ISTR_Jerry_NotLooking"};
@@ -17,19 +16,19 @@ if (player distance _vehicle > 7.5) exitWith {hint localize "STR_ISTR_Jerry_NotN
 if (!([false,"fuelFull",1] call life_fnc_handleInv)) exitWith {};
 life_action_inUse = true;
 
-_displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
+private _displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 
-_upp = format [localize "STR_ISTR_Jerry_Process",_displayName];
+private _upp = format [localize "STR_ISTR_Jerry_Process",_displayName];
 
 //Setup our progress bar.
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progress = _ui displayCtrl 38201;
+private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
-_progress progressSetPosition 0.01;
-_cP = 0.01;
+private _progress progressSetPosition 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {

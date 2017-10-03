@@ -6,14 +6,13 @@
     Description:
     Sells a vehicle from the garage.
 */
-private ["_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_price","_purchasePrice"];
 disableSerialization;
 if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
+private _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format ["%1",_vehicle]) select 0;
-_vehicleLife = _vehicle;
-_vid = lbValue[2802,(lbCurSel 2802)];
-_pid = getPlayerUID player;
+private _vehicleLife = _vehicle;
+private _vid = lbValue[2802,(lbCurSel 2802)];
+private _pid = getPlayerUID player;
 
 if (isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
 if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
@@ -22,7 +21,7 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _vehicleLife)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_vehicle];
 };
 
-_price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
+private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
 switch (playerSide) do {
     case civilian: {
         _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");
@@ -42,7 +41,7 @@ switch (playerSide) do {
     };
 };
 
-_sellPrice = _purchasePrice * _multiplier;
+private _sellPrice = _purchasePrice * _multiplier;
 
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 

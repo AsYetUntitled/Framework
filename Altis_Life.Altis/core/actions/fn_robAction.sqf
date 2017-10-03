@@ -6,8 +6,7 @@
     Description:
     Starts the robbing process?
 */
-private ["_target"];
-_target = cursorObject;
+private _target = cursorObject;
 
 //Error checks
 if (isNull _target) exitWith {};

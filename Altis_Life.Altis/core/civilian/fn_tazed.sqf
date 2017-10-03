@@ -6,7 +6,6 @@
     Description:
     Starts the tazed animation and broadcasts out what it needs to.
 */
-private ["_curWep","_curMags","_attach"];
 params [
     ["_unit",objNull,[objNull]],
     ["_shooter",objNull,[objNull]]
@@ -17,9 +16,9 @@ if (isNull _unit || isNull _shooter) exitWith {player allowDamage true; life_ist
 if (_shooter isKindOf "Man" && alive player) then {
     if (!life_istazed) then {
         life_istazed = true;
-        _curWep = currentWeapon player;
-        _curMags = magazines player;
-        _attach = if (!(primaryWeapon player isEqualTo "")) then {primaryWeaponItems player} else {[]};
+        private _curWep = currentWeapon player;
+        private _curMags = magazines player;
+        private _attach = if (!(primaryWeapon player isEqualTo "")) then {primaryWeaponItems player} else {[]};
 
         {player removeMagazine _x} forEach _curMags;
         player removeWeapon _curWep;

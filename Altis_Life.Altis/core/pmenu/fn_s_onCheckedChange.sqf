@@ -6,9 +6,10 @@
     Description:
     Switching it up and making it prettier..
 */
-private ["_option","_state"];
-_option = _this select 0;
-_state = _this select 1;
+params [
+    ["_option","",[""]],
+    ["_state",-1,[0]]
+];
 
 switch (_option) do {
     case "tags": {

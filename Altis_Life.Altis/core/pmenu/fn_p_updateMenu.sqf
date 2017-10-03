@@ -6,27 +6,26 @@
     Description:
     Updates the player menu (Virtual Interaction Menu)
 */
-private ["_inv","_lic","_licenses","_near","_near_units","_mstatus","_shrt","_side","_struct"];
 disableSerialization;
 
 if (FETCH_CONST(life_adminlevel) < 1) then {
     ctrlShow[2021,false];
 };
 
-_side = switch (playerSide) do {case west:{"cop"}; case civilian:{"civ"}; case independent:{"med"};};
+private _side = switch (playerSide) do {case west:{"cop"}; case civilian:{"civ"}; case independent:{"med"};};
 
-_inv = CONTROL(2001,2005);
-_lic = CONTROL(2001,2014);
-_near = CONTROL(2001,2022);
-_near_i = CONTROL(2001,2023);
-_mstatus = CONTROL(2001,2015);
-_struct = "";
+private _inv = CONTROL(2001,2005);
+private _lic = CONTROL(2001,2014);
+private _near = CONTROL(2001,2022);
+private _near_i = CONTROL(2001,2023);
+private _mstatus = CONTROL(2001,2015);
+private _struct = "";
 lbClear _inv;
 lbClear _near;
 lbClear _near_i;
 
 //Near players
-_near_units = [];
+private _near_units = [];
 { if (player distance _x < 10) then {_near_units pushBack _x};} forEach playableUnits;
 {
     if (!isNull _x && alive _x && player distance _x < 10 && !(_x isEqualTo player)) then {

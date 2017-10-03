@@ -6,18 +6,17 @@
     Description:
     31 hours of no sleep screw your description.
 */
-private ["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
 disableSerialization;
 if (isNull (findDisplay 2620)) then {
     if (!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
 };
 
-_ownerID = group player getVariable ["gang_owner",""];
+private _ownerID = group player getVariable ["gang_owner",""];
 if (_ownerID isEqualTo "") exitWith {closeDialog 0;}; //Bad juju
 
-_gangName = group player getVariable "gang_name";
-_gangBank = GANG_FUNDS;
-_gangMax = group player getVariable "gang_maxMembers";
+private _gangName = group player getVariable "gang_name";
+private _gangBank = GANG_FUNDS;
+private _gangMax = group player getVariable "gang_maxMembers";
 
 if !(_ownerID isEqualTo getPlayerUID player) then {
     (CONTROL(2620,2622)) ctrlEnable false; //Upgrade
@@ -31,7 +30,7 @@ if !(_ownerID isEqualTo getPlayerUID player) then {
 (CONTROL(2620,601)) ctrlSetText format [(localize "STR_GNOTF_Funds")+ " $%1",[_gangBank] call life_fnc_numberText];
 
 //Loop through the players.
-_members = CONTROL(2620,2621);
+private _members = CONTROL(2620,2621);
 lbClear _members;
 {
     if ((getPlayerUID _x) == _ownerID) then {
@@ -43,8 +42,8 @@ lbClear _members;
     };
 } forEach (units group player);
 
-_grpMembers = units group player;
-_allUnits = playableUnits;
+private _grpMembers = units group player;
+private _allUnits = playableUnits;
 
 //Clear out the list..
 {

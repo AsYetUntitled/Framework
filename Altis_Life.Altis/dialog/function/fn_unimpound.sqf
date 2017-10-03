@@ -6,24 +6,23 @@
     Description:
     Yeah... Gets the vehicle from the garage.
 */
-private ["_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_price","_storageFee","_purchasePrice"];
 disableSerialization;
 if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
+private _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format ["%1",_vehicle]) select 0;
-_vehicleLife = _vehicle;
-_vid = lbValue[2802,(lbCurSel 2802)];
-_pid = getPlayerUID player;
-_unit = player;
-_spawntext = localize "STR_Garage_spawn_Success";
+private _vehicleLife = _vehicle;
+private _vid = lbValue[2802,(lbCurSel 2802)];
+private _pid = getPlayerUID player;
+private _unit = player;
+private _spawntext = localize "STR_Garage_spawn_Success";
 if (isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _vehicleLife)) then {
     _vehicleLife = "Default"; //Use Default class if it doesn't exist
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_vehicle];
 };
 
-_price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
-_storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
+private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
+private _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
 switch (playerSide) do {
     case civilian: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");};

@@ -9,8 +9,8 @@
     Saves the players gear for syncing to the database for persistence..
 */
 private ["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled","_savedVirtualItems"];
-_return = [];
-_savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
+private _return = [];
+private _savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
 
 _return pushBack uniform player;
 _return pushBack vest player;
@@ -26,18 +26,18 @@ if (playerSide isEqualTo west || playerSide isEqualTo civilian && {LIFE_SETTINGS
     _return pushBack [];
 };
 
-_uItems = [];
-_uMags  = [];
-_bItems = [];
-_bMags  = [];
-_vItems = [];
-_vMags  = [];
-_pItems = [];
-_hItems = [];
-_yItems = [];
-_uni = [];
-_ves = [];
-_bag = [];
+private _uItems = [];
+private _uMags  = [];
+private _bItems = [];
+private _bMags  = [];
+private _vItems = [];
+private _vMags  = [];
+private _pItems = [];
+private _hItems = [];
+private _yItems = [];
+private _uni = [];
+private _ves = [];
+private _bag = [];
 
 if (!(uniform player isEqualTo "")) then {
     {

@@ -13,11 +13,12 @@
         1: SCALAR (INT)
         2: STRING (Case option)
 */
-private ["_control","_code","_slider","_value","_varName","_onKeyUp"];
-_control = _this select 0;
-_code = _this select 1;
-_slider = _this select 2;
-_onKeyUp = _this select 3;
+params [
+    ["_control","",[""]],
+    ["_code",-1,[0]],
+    ["_slider","",[""]],
+    ["_onKeyUp",false,[false]]
+];
 
 disableSerialization;
 if (isNull _control) exitWith {};

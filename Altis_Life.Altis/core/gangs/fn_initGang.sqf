@@ -6,18 +6,17 @@
     Description:
     Main initialization for gangs.
 */
-private ["_exitLoop","_group","_wait"];
 if !(playerSide isEqualTo civilian) exitWith {}; //What in the hell?
 [player] join (createGroup civilian);
 if (count life_gangData isEqualTo 0) exitWith {}; //Dafuq?
 
-_wait = round(random(8));
+private _wait = round(random(8));
 sleep _wait;
 
 //Loop through to make sure there is not a group already created with the gang.
-_exitLoop = false;
+private _exitLoop = false;
 {
-    _groupName = _x getVariable "gang_name";
+    private _groupName = _x getVariable "gang_name";
     if (!isNil "_groupName") then {
         _groupOwner = _x getVariable ["gang_owner",""];
         _groupID = _x getVariable "gang_id";

@@ -5,9 +5,8 @@
     Description:
     Add markers for civilians in groups.
 */
-private ["_markers","_members"];
-_markers = [];
-_members = [];
+private _markers = [];
+private _members = [];
 
 for "_i" from 0 to 1 step 0 do {
     sleep 0.5;

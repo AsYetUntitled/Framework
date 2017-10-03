@@ -6,18 +6,17 @@
     Description:
     Searches the player and he returns information back to the player.
 */
-private ["_inv","_val","_var","_robber"];
 params [
     ["_cop",objNull,[objNull]]
 ];
 if (isNull _cop) exitWith {};
 
-_inv = [];
-_robber = false;
+private _inv = [];
+private _robber = false;
 
 //Illegal items
 {
-    _var = configName(_x);
+    private _var = configName(_x);
     _val = ITEM_VALUE(_var);
     if (_val > 0) then {
         _inv pushBack [_var,_val];

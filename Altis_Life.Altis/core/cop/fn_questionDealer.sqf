@@ -6,13 +6,12 @@
     Description:
     Questions the drug dealer and sets the sellers wanted.
 */
-private ["_sellers","_crimes","_names"];
-_sellers = (_this select 0) getVariable ["sellers",[]];
+private _sellers = (_this select 0) getVariable ["sellers",[]];
 if (count _sellers isEqualTo 0) exitWith {hint localize "STR_Cop_DealerQuestion"}; //No data.
 life_action_inUse = true;
-_crimes = LIFE_SETTINGS(getArray,"crimes");
+private _crimes = LIFE_SETTINGS(getArray,"crimes");
 
-_names = "";
+private _names = "";
 {
     _val = 0;
     if ((_x select 2) > 150000) then {

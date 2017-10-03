@@ -6,22 +6,23 @@
     Description:
     Piece of functionality for the cops to close the safe (lock it)
 */
-private "_vault";
-_vault = _this select 0;
+params [
+    ["_vault",objNull,[objNull]]
+];
 if (!(_vault getVariable ["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
 
 life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
-_title = localize "STR_Cop_RepairVault";
+private _title = localize "STR_Cop_RepairVault";
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
-_progressBar progressSetPosition 0.01;
-_cP = 0.01;
+private _progressBar progressSetPosition 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {

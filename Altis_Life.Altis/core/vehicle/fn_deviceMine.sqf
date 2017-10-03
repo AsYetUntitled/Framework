@@ -6,9 +6,10 @@
     Description:
     Starts automated mining of resource from the tempest device. Not integrated with percents.
 */
-private ["_vehicle","_resourceZones","_zone","_weight","_resource","_vInv","_itemIndex","_items","_sum","_itemWeight","_isMineral"];
-_vehicle = param [0,objNull,[objNull]];
-_isMineral = true;
+params [
+    ["_vehicle",objNull,[objNull]]
+];
+private _isMineral = true;
 if (isNull _vehicle) exitWith {};
 
 if (!isNil {_vehicle getVariable "mining"}) exitWith {
@@ -22,21 +23,21 @@ if (fuel _vehicle isEqualTo 0) exitWith {
 closeDialog 0; //Close the interaction menu.
 life_action_inUse = true; //Lock out the interaction menu for a bit..
 
-_weight = [_vehicle] call life_fnc_vehicleWeight;
+private _weight = [_vehicle] call life_fnc_vehicleWeight;
 if ((_weight select 1) >= (_weight select 0)) exitWith {
     hint localize "STR_NOTF_DeviceFull";
     life_action_inUse = false;
 };
 
 //check if we are in the resource zone for any of the resources
-_zone = "";
+private _zone = "";
 
-_resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
+private _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    _curConfig = (_resourceCfg select _i);
-    _resource = configName(_curConfig);
-    _resourceZones = getArray(_curConfig >> "zones");
-    _zoneSize = getNumber(_curConfig >> "zoneSize");
+    private _curConfig = (_resourceCfg select _i);
+    private _resource = configName(_curConfig);
+    private _resourceZones = getArray(_curConfig >> "zones");
+    private _zoneSize = getNumber(_curConfig >> "zoneSize");
 
     {
         if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {
@@ -52,15 +53,15 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     private ["_curConfig","_resourceZones","_resources","_mined"];
 
     if (!_isMineral) exitWith {};
-    _curConfig = (_resourceCfg select _i);
-    _resources = getArray(_curConfig >> "mined");
-    _resourceZones = getArray(_curConfig >> "zones");
-    _zoneSize = getNumber(_curConfig >> "zoneSize");
+    private _curConfig = (_resourceCfg select _i);
+    private _resources = getArray(_curConfig >> "mined");
+    private _resourceZones = getArray(_curConfig >> "zones");
+    private _zoneSize = getNumber(_curConfig >> "zoneSize");
 
-    if (!(_resources select 0 isEqualType [])) then {
-        _mined = _resources select 0;
+    private _mined = if (!(_resources select 0 isEqualType [])) then {
+        _resources select 0;
     } else {
-        _mined = (_resources select 0) select 0;
+        (_resources select 0) select 0;
     };
 
     {

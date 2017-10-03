@@ -5,8 +5,9 @@
     Description:
     Fetch data from Config_Housing/Garages
 */
-
-private _house = param [0,"",[""]]; 
+params [
+	["_house","",[""]]
+];
 
 if (_house isEqualTo "") exitWith {[]}; 
 

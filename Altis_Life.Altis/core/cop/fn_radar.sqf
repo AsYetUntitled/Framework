@@ -6,9 +6,8 @@
     Looks like weird but radar?
 */
 if !(playerSide isEqualTo west) exitWith {};
-private ["_speed","_vehicle"];
-_vehicle = cursorObject;
-_speed = round speed _vehicle;
+private _vehicle = cursorObject;
+private _speed = round speed _vehicle;
 
 if ((_vehicle isKindOf "Car") && (currentWeapon player) isEqualTo "hgun_P07_snds_F") then {
     switch (true) do {

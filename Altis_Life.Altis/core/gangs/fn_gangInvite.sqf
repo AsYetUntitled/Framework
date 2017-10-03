@@ -6,7 +6,6 @@
     Description:
     Prompts the player about an invite.
 */
-private ["_action","_grpMembers"];
 params [
     ["_name","",[""]],
     ["_group",grpNull,[grpNull]]
@@ -15,8 +14,8 @@ params [
 if (_name isEqualTo "" || isNull _group) exitWith {}; //Fail horn anyone?
 if (!isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR_GNOTF_AlreadyInGang";};
 
-_gangName = _group getVariable "gang_name";
-_action = [
+private _gangName = _group getVariable "gang_name";
+private _action = [
     format [localize "STR_GNOTF_InviteMSG",_name,_gangName],
     localize "STR_Gang_Invitation",
     localize "STR_Global_Yes",
@@ -33,7 +32,7 @@ if (_action) then {
     };
 
 } else {
-    _grpMembers = _group getVariable "gang_members";
+    private _grpMembers = _group getVariable "gang_members";
     _grpMembers = _grpMembers - [getPlayerUID player];
     _group setVariable ["gang_members",_grpMembers,true];
 

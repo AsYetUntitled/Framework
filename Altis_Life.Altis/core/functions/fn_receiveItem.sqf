@@ -6,14 +6,15 @@
     Description:
     Receive an item from a player.
 */
-private ["_unit","_val","_item","_from","_diff"];
-_unit = _this select 0;
+params [
+    ["_unit",objNull,[objNull]],
+    ["_val","",[""]],
+    ["_item",-1,[0]],
+    ["_from",objNull,[objNull]]
+];
 if !(_unit isEqualTo player) exitWith {};
-_val = _this select 1;
-_item = _this select 2;
-_from = _this select 3;
 
-_diff = [_item,(parseNumber _val),life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+private _diff = [_item,(parseNumber _val),life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 
 if (!(_diff isEqualTo (parseNumber _val))) then {
     if ([true,_item,_diff] call life_fnc_handleInv) then {
@@ -24,8 +25,7 @@ if (!(_diff isEqualTo (parseNumber _val))) then {
     };
 } else {
     if ([true,_item,(parseNumber _val)] call life_fnc_handleInv) then {
-        private "_type";
-        _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
+        private _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
         hint format [localize "STR_NOTF_GivenItem",_from getVariable ["realname",name _from],_val,(localize _type)];
     } else {
         [_from,_item,_val,_unit,false] remoteExecCall ["life_fnc_giveDiff",_from];

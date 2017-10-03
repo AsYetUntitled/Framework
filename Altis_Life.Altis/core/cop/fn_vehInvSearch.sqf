@@ -6,16 +6,15 @@
     Description:
     Searches the vehicle for illegal items.
 */
-private ["_vehicle","_vehicleInfo","_value","_list"];
-_vehicle = cursorObject;
-_list = ["Air","Ship","LandVehicle"];
+private _vehicle = cursorObject;
+private _list = ["Air","Ship","LandVehicle"];
 if (isNull _vehicle || {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
 
 _vehicleInfo = _vehicle getVariable ["Trunk",[]];
 if (count _vehicleInfo isEqualTo 0) exitWith {hint localize "STR_Cop_VehEmpty"};
 
-_value = 0;
-_illegalValue = 0;
+private _value = 0;
+private _illegalValue = 0;
 {
     _var = _x select 0;
     _val = _x select 1;

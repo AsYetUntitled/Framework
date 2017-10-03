@@ -6,25 +6,26 @@
     Description:
     Checks the weapon & adds the price tag.
 */
-private ["_control","_index","_shop","_priceTag","_price","_item","_itemArray","_bool"];
-_control = [_this,0,controlNull,[controlNull]] call BIS_fnc_param;
-_index = [_this,1,-1,[0]] call BIS_fnc_param;
-_shop = uiNamespace getVariable ["Weapon_Shop",""];
+params [
+    ["_control",controlNull,[controlNull]],
+    ["_value",-1,[0]]
+];
+private _shop = uiNamespace getVariable ["Weapon_Shop",""];
 if (isNull _control) exitWith {closeDialog 0;}; //Bad data
 if (_index isEqualTo -1) exitWith {}; //Nothing selected
 
-_priceTag = CONTROL(38400,38404);
+private _priceTag = CONTROL(38400,38404);
 
 if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
-    _item = CONTROL_DATAI(_control,_index);
-    _itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
+    private _item = CONTROL_DATAI(_control,_index);
+    private _itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
     _item = [_item,_itemArray] call TON_fnc_index;
     _price = ((_itemArray select _item) select 3);
     _priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#8cff9b'>$%1</t></t>",[(_price)] call life_fnc_numberText];
     _control lbSetValue[_index,_price];
 } else {
     _price = _control lbValue _index;
-    _item = CONTROL_DATAI(_control,_index);
+    private _item = CONTROL_DATAI(_control,_index);
     if (_price > CASH) then {
         _priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#ff0000'>$%1</t><br/>You lack: <t color='#8cff9b'>$%2</t></t>",[(_price)] call life_fnc_numberText,[(_price - CASH)] call life_fnc_numberText];
     } else {
@@ -79,7 +80,7 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
                         } forEach _slotArray;
                     };
 
-                    _bool = false;
+                    private _bool = false;
                     {
                         _var = _x select 0;
                         _count = {_x == _var} count _itemArray;

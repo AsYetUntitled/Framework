@@ -6,8 +6,9 @@
     Description:
     Defuses blasting charges for the cops?
 */
-private ["_vault","_ui","_title","_progressBar","_cP","_titleText"];
-_vault = param [0,objNull,[objNull]];
+params [
+    ["_vault",objNull,[objNull]]
+];
 
 if (isNull _vault) exitWith {};
 if (typeOf _vault != "Land_CargoBox_V1_F") exitWith {hint localize "STR_ISTR_defuseKit_NotNear"};
@@ -17,14 +18,14 @@ life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
 
-_title = localize "STR_ISTR_Defuse_Process";
+private _title = localize "STR_ISTR_Defuse_Process";
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
-_progressBar progressSetPosition 0.01;
-_cP = 0.01;
+private _progressBar progressSetPosition 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {

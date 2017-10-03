@@ -6,12 +6,11 @@
     Description:
     Determinds the upgrade price and blah
 */
-private ["_maxMembers","_slotUpgrade","_upgradePrice"];
-_maxMembers = group player getVariable ["gang_maxMembers",8];
-_slotUpgrade = _maxMembers + 4;
-_upgradePrice = round(_slotUpgrade * ((LIFE_SETTINGS(getNumber,"gang_upgradeBase"))) / ((LIFE_SETTINGS(getNumber,"gang_upgradeMultiplier"))));
+private _maxMembers = group player getVariable ["gang_maxMembers",8];
+private _slotUpgrade = _maxMembers + 4;
+private _upgradePrice = round(_slotUpgrade * ((LIFE_SETTINGS(getNumber,"gang_upgradeBase"))) / ((LIFE_SETTINGS(getNumber,"gang_upgradeMultiplier"))));
 
-_action = [
+private _action = [
     format [(localize "STR_GNOTF_MaxMemberMSG")+ "<br/><br/>" +(localize "STR_GNOTF_CurrentMax")+ "<br/>" +(localize "STR_GNOTF_UpgradeMax")+ "<br/>" +(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>$%3</t>",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText],
     localize "STR_Gang_UpgradeMax",
     localize "STR_Global_Buy",

@@ -6,8 +6,7 @@
     Description:
     Restrains the target.
 */
-private ["_unit"];
-_unit = cursorObject;
+private _unit = cursorObject;
 if (isNull _unit) exitWith {}; //Not valid
 if (player distance _unit > 3) exitWith {};
 if (_unit getVariable "restrained") exitWith {};

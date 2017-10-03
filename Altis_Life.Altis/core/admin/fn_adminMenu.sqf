@@ -6,13 +6,12 @@
     Description:
     Opens the admin menu and hides buttons based on life_adminlevel.
 */
-private ["_display","_list","_side","_godmode","_markers"];
 if (FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
 disableSerialization;
 
 waitUntil {!isNull (findDisplay 2900)};
-_list = CONTROL(2900,2902);
+private _list = CONTROL(2900,2902);
 if (FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
 switch (FETCH_CONST(life_adminlevel)) do
@@ -27,17 +26,17 @@ switch (FETCH_CONST(life_adminlevel)) do
 lbClear _list;
 
 {
-    _side = switch (side _x) do {case west: {"Cop"}; case civilian: {"Civ"}; case independent: {"Medic"}; default {"Unknown"};};
+    private _side = switch (side _x) do {case west: {"Cop"}; case civilian: {"Civ"}; case independent: {"Medic"}; default {"Unknown"};};
     _list lbAdd format ["%1 - %2", _x getVariable ["realname",name _x],_side];
     _list lbSetdata [(lbSize _list)-1,str(_x)];
 } forEach playableUnits;
 if (FETCH_CONST(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
 if (life_god) then {
-    _godmode = CONTROL(2900,2908);
+    private _godmode = CONTROL(2900,2908);
     _godmode ctrlSetTextColor [0, 255, 0, 1];    // green
 };
 if (life_markers) then {
-    _markers = CONTROL(2900,2910);
+    private _markers = CONTROL(2900,2910);
     _markers ctrlSetTextColor [0, 255, 0, 1];    // green
 };

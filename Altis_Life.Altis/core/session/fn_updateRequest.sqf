@@ -6,12 +6,11 @@
     Description:
     Passes ALL player information to the server to save player data to the database.
 */
-private ["_packet","_array","_flag","_alive","_position"];
-_packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
-_array = [];
-_alive = alive player;
-_position = getPosATL player;
-_flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
+private _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
+private _array = [];
+private _alive = alive player;
+private _position = getPosATL player;
+private _flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 
 {
     _varName = LICENSE_VARNAME(configName _x,_flag);

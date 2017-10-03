@@ -66,8 +66,8 @@ private "_details";
     ];
 
     if !(_className isEqualTo "NONE") then {
-        _details = [_className] call life_fnc_fetchCfgDetails;
-        _pic = (_details select 2);
+        private _details = [_className] call life_fnc_fetchCfgDetails;
+        private _pic = (_details select 2);
     };
 
     if ([_x] call life_fnc_levelCheck) then {

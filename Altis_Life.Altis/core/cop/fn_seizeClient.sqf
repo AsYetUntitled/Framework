@@ -6,11 +6,10 @@
     Description:
     Removes the players weapons client side
 */
-private ["_exempt","_uniform","_vest","_headgear"];
-_exempt = LIFE_SETTINGS(getArray,"seize_exempt");
-_headgear = LIFE_SETTINGS(getArray,"seize_headgear");
-_vest = LIFE_SETTINGS(getArray,"seize_vest");
-_uniform = LIFE_SETTINGS(getArray,"seize_uniform");
+private _exempt = LIFE_SETTINGS(getArray,"seize_exempt");
+private _headgear = LIFE_SETTINGS(getArray,"seize_headgear");
+private _vest = LIFE_SETTINGS(getArray,"seize_vest");
+private _uniform = LIFE_SETTINGS(getArray,"seize_uniform");
 
 {
     if (!(_x in _exempt)) then {

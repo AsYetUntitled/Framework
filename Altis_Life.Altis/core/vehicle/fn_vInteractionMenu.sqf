@@ -13,26 +13,27 @@
 #define Btn5 37454
 #define Btn6 37455
 #define Title 37401
-private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_id"];
+
 if (!dialog) then {
     createDialog "vInteraction_Menu";
 };
 disableSerialization;
 
-_curTarget = param [0,objNull,[objNull]];
+params [
+    ["_curTarget",objNull,[objNull]]
+];
 if (isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-_isVehicle = if ((_curTarget isKindOf "landVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
+private _isVehicle = if ((_curTarget isKindOf "landVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
 if (!_isVehicle) exitWith {closeDialog 0;};
 
-_display = findDisplay 37400;
-_Btn1 = _display displayCtrl Btn1;
-_Btn2 = _display displayCtrl Btn2;
-_Btn3 = _display displayCtrl Btn3;
-_Btn4 = _display displayCtrl Btn4;
-_Btn5 = _display displayCtrl Btn5;
-_Btn6 = _display displayCtrl Btn6;
+private _Btn1 = CONTROL(37400,Btn1);
+private _Btn2 = CONTROL(37400,Btn2);
+private _Btn3 = CONTROL(37400,Btn3);
+private _Btn4 = CONTROL(37400,Btn4);
+private _Btn5 = CONTROL(37400,Btn5);
+private _Btn6 = CONTROL(37400,Btn6);
 life_vInact_curTarget = _curTarget;
-_id = getObjectDLC _curTarget;
+private _id = getObjectDLC _curTarget;
 
 //Set Repair Action
 _Btn1 ctrlSetText localize "STR_vInAct_Repair";

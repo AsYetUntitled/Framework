@@ -12,13 +12,15 @@
     Returns:
     BooLean (true when string is found)
 */
-private ["_needle","_haystack","_needleLen","_hay","_found"];
-_needle = [_this, 0, "", [""]] call BIS_fnc_param;
-_haystack = toArray ([_this, 1, "", [""]] call BIS_fnc_param);
-_needleLen = count toArray _needle;
-_hay = +_haystack; 
+params [
+    ["_needle","",[""]],
+    ["_oldHaystack","",[""]],
+];
+private _haystack = toArray _oldHaystack;
+private _needleLen = count toArray _needle;
+private _hay = +_haystack; 
 _hay resize _needleLen;
-_found = false; 
+private _found = false; 
 
 for "_i" from _needleLen to count _haystack do {
     if (toString _hay == _needle) exitWith {_found = true};

@@ -6,11 +6,10 @@
     Description:
     Invites the player into the gang.
 */
-private "_unit";
 disableSerialization;
 
 if ((lbCurSel 2632) isEqualTo -1) exitWith {hint localize "STR_GNOTF_SelectPerson"};
-_unit = call compile format ["%1",CONTROL_DATA(2632)];
+private _unit = call compile format ["%1",CONTROL_DATA(2632)];
 
 if (isNull _unit) exitWith {}; //Bad unit?
 if (_unit == player) exitWith {hint localize "STR_GNOTF_InviteSelf"};
@@ -18,7 +17,7 @@ if (!isNil {(group _unit) getVariable "gang_name"}) exitWith {hint localize "STR
 
 if (count(group player getVariable ["gang_members",8]) == (group player getVariable ["gang_maxMembers",8])) exitWith {hint localize "STR_GNOTF_MaxSlot"};
 
-_action = [
+private _action = [
     format [localize "STR_GNOTF_InvitePlayerMSG",_unit getVariable ["realname",name _unit]],
     localize "STR_Gang_Invitation",
     localize "STR_Global_Yes",

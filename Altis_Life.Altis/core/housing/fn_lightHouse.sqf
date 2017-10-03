@@ -6,7 +6,6 @@
     Tells clients to either turn the lights on for that house
     or off.
 */
-private ["_lightSource","_exit"];
 params [
     ["_house",objNull,[objNull]],
     ["_mode",false,[false]]
@@ -16,11 +15,11 @@ params [
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
 
-_exit = false;
+private _exit = false;
 if (_mode) then {
-    _lightPos = (getArray (missionConfigFile >> "Housing" >> worldName >> (typeOf _house) >> "lightPos" ));
+    private _lightPos = (getArray (missionConfigFile >> "Housing" >> worldName >> (typeOf _house) >> "lightPos" ));
     if (_lightPos isEqualTo []) exitWith {};
-    _lightSource = "#lightpoint" createVehicleLocal [0,0,0];
+    private _lightSource = "#lightpoint" createVehicleLocal [0,0,0];
     _lightSource lightAttachObject [_house,_lightPos];
     _lightSource setLightColor [250,150,50];
     _lightSource setLightAmbient [1,1,0.2];

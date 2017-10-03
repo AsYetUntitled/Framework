@@ -6,22 +6,23 @@
     Description:
     Used a refresher for the vehicle inventory / trunk menu items.
 */
-private ["_veh","_tInv","_pInv","_veh_data"];
-_veh = param [0,objNull,[objNull]];
+params [
+    ["_veh",objNull,[objNull]]
+];
 if (isNull _veh || !alive _veh) exitWith {closeDialog 0;}; //If null / dead exit menu
 disableSerialization;
 
-_tInv = CONTROL(3500,3502);
-_pInv = CONTROL(3500,3503);
+private _tInv = CONTROL(3500,3502);
+private _pInv = CONTROL(3500,3503);
 lbClear _tInv;
 lbClear _pInv;
 
-_veh_data = [_veh] call life_fnc_vehicleWeight;
+private _veh_data = [_veh] call life_fnc_vehicleWeight;
 
 if ((_veh_data select 0) isEqualTo -1) exitWith {closeDialog 0};
 
 ctrlSetText[3504,format ["Weight: %1/%2",(_veh_data select 1),(_veh_data select 0)]];
-_data = _veh getVariable ["Trunk",[]];
+private _data = _veh getVariable ["Trunk",[]];
 if (count _data isEqualTo 0) then {_veh setVariable ["Trunk",[[],0],true]; _data = [];} else {_data = (_data select 0);};
 //Player Inventory Items
 {

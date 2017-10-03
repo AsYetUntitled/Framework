@@ -6,8 +6,7 @@
     Description:
     Figure it out.
 */
-private ["_value"];
-_value = parseNumber(ctrlText 2702);
+private _value = parseNumber(ctrlText 2702);
 
 //Series of stupid checks
 if (_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};

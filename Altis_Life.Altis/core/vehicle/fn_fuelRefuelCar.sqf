@@ -7,9 +7,8 @@
     Adds fuel in car.
 */
 disableSerialization;
-private ["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
-_classname = lbData[20302,(lbCurSel 20302)];
-_index =  lbValue[20302,(lbCurSel 20302)];
+private _classname = lbData[20302,(lbCurSel 20302)];
+private _index =  lbValue[20302,(lbCurSel 20302)];
 
 if (isNil "_classname" || _classname isEqualTo "") exitWith {
     hint localize "STR_Select_Vehicle_Pump";
@@ -18,16 +17,16 @@ if (isNil "_classname" || _classname isEqualTo "") exitWith {
     closeDialog 0;
 };
 
-_car = (vehiclefuelList select _index) select 0;
-_vehicleInfo = [_className]call life_fnc_fetchVehInfo;
-_fuelNow = fuel _car;
-_fueltank = (_vehicleInfo select 12);
+private _car = (vehiclefuelList select _index) select 0;
+private _vehicleInfo = [_className]call life_fnc_fetchVehInfo;
+private _fuelNow = fuel _car;
+private _fueltank = (_vehicleInfo select 12);
 if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fueltank = 350;};//hemtt
 if (_car isKindOf "C_Van_01_box_F") then {_fueltank = 100;};
 if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fueltank = 175;};
-_fueltoput= ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
-_setfuell = _fuelnow + (_fueltoput/_fueltank);
-_timer = ((_fueltoput * .25)/100);
+private _fueltoput= ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
+private _setfuell = _fuelnow + (_fueltoput/_fueltank);
+private _timer = ((_fueltoput * .25)/100);
 if (_car distance player > 10 && !(isNull objectParent player)) exitWith {
     hint localize "STR_Distance_Vehicle_Pump";
     vehiclefuelList = [];

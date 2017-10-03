@@ -12,7 +12,7 @@ params [
     ["_type","",[""]]
 ];
 
-_className = typeOf _garageObj;
+private _className = typeOf _garageObj;
 private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _className;
 private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _className;
 

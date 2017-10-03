@@ -6,11 +6,10 @@
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
-private ["_itemArray","_handle"];
-_itemArray = life_gear;
+private _itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
-_handle = [] spawn life_fnc_stripDownPlayer;
+private _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 if (count _itemArray isEqualTo 0) exitWith {

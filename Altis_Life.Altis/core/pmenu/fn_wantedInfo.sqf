@@ -7,7 +7,9 @@
 */
 disableSerialization;
 
-private _data = param [0,[],[[]]];
+params [
+    ["_data",[],[[]]]
+];
 private _display = findDisplay 2400;
 private _list = _display displayCtrl 2402;
 private _mylist = [];

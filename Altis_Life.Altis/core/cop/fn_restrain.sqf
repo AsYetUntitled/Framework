@@ -6,10 +6,11 @@
     Description:
     Restrains the client.
 */
-private ["_cop","_player","_vehicle"];
-_cop = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-_player = player;
-_vehicle = vehicle player;
+params [
+    ["_cop",objNull,[objNull]]
+];
+private _player = player;
+private _vehicle = vehicle player;
 if (isNull _cop) exitWith {};
 
 //Monitor excessive restrainment

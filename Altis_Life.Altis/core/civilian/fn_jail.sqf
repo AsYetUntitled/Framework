@@ -6,7 +6,6 @@
     Description:
     Starts the initial process of jailing.
 */
-private ["_illegalItems"];
 params [
     ["_unit",objNull,[objNull]],
     ["_bad",false,[false]]
@@ -15,7 +14,7 @@ params [
 if (isNull _unit) exitWith {}; //Dafuq?
 if !(_unit isEqualTo player) exitWith {}; //Dafuq?
 if (life_is_arrested) exitWith {}; //Dafuq i'm already arrested
-_illegalItems = LIFE_SETTINGS(getArray,"jail_seize_vItems");
+private _illegalItems = LIFE_SETTINGS(getArray,"jail_seize_vItems");
 
 player setVariable ["restrained",false,true];
 player setVariable ["Escorting",false,true];

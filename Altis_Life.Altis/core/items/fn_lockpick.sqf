@@ -7,15 +7,15 @@
     Main functionality for lock-picking.
 */
 private ["_curTarget","_distance","_isVehicle","_title","_progressBar","_cP","_titleText","_dice","_badDistance"];
-_curTarget = cursorObject;
+private _curTarget = cursorObject;
 life_interrupted = false;
 
 if (life_action_inUse) exitWith {};
 if (isNull _curTarget) exitWith {}; //Bad type
-_distance = ((boundingBox _curTarget select 1) select 0) + 2;
+private _distance = ((boundingBox _curTarget select 1) select 0) + 2;
 if (player distance _curTarget > _distance) exitWith {}; //Too far
 
-_isVehicle = if ((_curTarget isKindOf "LandVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
+private _isVehicle = if ((_curTarget isKindOf "LandVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
 if (_isVehicle && _curTarget in life_vehicles) exitWith {hint localize "STR_ISTR_Lock_AlreadyHave"};
 
 //More error checks
@@ -23,18 +23,18 @@ if (!_isVehicle && !isPlayer _curTarget) exitWith {};
 if (!_isVehicle && !(_curTarget getVariable ["restrained",false])) exitWith {};
 if (_curTarget getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 
-_title = format [localize "STR_ISTR_Lock_Process",if (!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
+private _title = format [localize "STR_ISTR_Lock_Process",if (!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
 life_action_inUse = true; //Lock out other actions
 
 //Setup the progress bar
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
-_progressBar progressSetPosition 0.01;
-_cP = 0.01;
+private _progressBar progressSetPosition 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {

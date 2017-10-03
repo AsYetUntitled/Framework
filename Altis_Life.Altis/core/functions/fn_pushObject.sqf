@@ -9,42 +9,40 @@
 
   Cleaned by NiiRoZz for Altis Life
 */
-
-private ["_caller","_thingToPush","_dir","_speed","_vel","_thingToPushType","_nameOfThingToPush","_textString","_targetDistance","_dist","_relativePosModel","_minSetBoxLimits","_maxSetBoxLimits","_minX","_minY","_minZ","_maxX","_maxY","_maxZ","_xRPM","_yRPM","_zRPM","_thingToPushLimits","_posCaller","_headPos","_headDir"];
-_caller = player;
-_thingToPush = cursorObject;
-_posCaller = visiblePosition _caller;
-_dir = getDir _caller;
+private _caller = player;
+private _thingToPush = cursorObject;
+private _posCaller = visiblePosition _caller;
+private _dir = getDir _caller;
 if (!local _thingToPush) exitWith {};
 
 // _distanceFromTarget = _caller distance _thingToPush;
-_thingToPushType = typeOf _thingToPush;
-_nameOfThingToPush = (getText (configFile >> "cfgVehicles" >> (_thingToPushType) >> "displayname"));
+private _thingToPushType = typeOf _thingToPush;
+private _nameOfThingToPush = (getText (configFile >> "cfgVehicles" >> (_thingToPushType) >> "displayname"));
 // _weightOfThing = (getText (configFile >> "cfgVehicles" >> (_thingToPushType)  >> "weight"));
 
 if (!(isNull _thingToPush) && ((_thingToPush isKindOf "AllVehicles") || (_thingToPush isKindOf "Thing") || (_thingToPush isKindOf "Object") )) then {
-  _targetDistance = _caller distance _thingToPush;
+  private _targetDistance = _caller distance _thingToPush;
   // ***************************** RELATIVE MODEL POSITION CODE****************************************
-  _thingToPushLimits = boundingBox _thingToPush;
-  _dist = 2;
-  _posCaller = [(_posCaller select 0) + _dist*sin _dir, (_posCaller select 1) + _dist*cos _dir, _posCaller select 2];
-  _relativePosModel = _thingToPush worldToModel _posCaller;
+  private _thingToPushLimits = boundingBox _thingToPush;
+  private _dist = 2;
+  private _posCaller = [(_posCaller select 0) + _dist*sin _dir, (_posCaller select 1) + _dist*cos _dir, _posCaller select 2];
+  private _relativePosModel = _thingToPush worldToModel _posCaller;
 
   // boundingBox returns the following [[minX, minY, minZ], [maxX, maxY, maxZ]]
   // boundingBoxReal returns the following [[minX, minZ, minY], [maxX, maxZ, maxY]]
-  _minSetBoxLimits = _thingToPushLimits select 0;
-  _maxSetBoxLimits = _thingToPushLimits select 1;
-  _minX = _minSetBoxLimits select 0;
-  _minY = _minSetBoxLimits select 1;
-  _minZ = _minSetBoxLimits select 2;
-  _maxX = _maxSetBoxLimits select 0;
-  _maxY = _maxSetBoxLimits select 1;
-  _maxZ = _maxSetBoxLimits select 2;
+  private _minSetBoxLimits = _thingToPushLimits select 0;
+  private _maxSetBoxLimits = _thingToPushLimits select 1;
+  private _minX = _minSetBoxLimits select 0;
+  private _minY = _minSetBoxLimits select 1;
+  private _minZ = _minSetBoxLimits select 2;
+  private _maxX = _maxSetBoxLimits select 0;
+  private _maxY = _maxSetBoxLimits select 1;
+  private _maxZ = _maxSetBoxLimits select 2;
 
   // RELATIVE OFFSET POSITION OF _mineHead FROM NEAREST VEHICLE IN MODEL SPACE
-   _xRPM = _relativePosModel select 0;
-  _yRPM = _relativePosModel select 1;
-  _zRPM = _relativePosModel select 2;
+  private _xRPM = _relativePosModel select 0;
+  private _yRPM = _relativePosModel select 1;
+  private _zRPM = _relativePosModel select 2;
 
   if (((_xRPM > _minX) && (_xRPM < _maxX) && (_yRPM > _minY) && (_yRPM < _maxY) && (_zRPM > _minZ) && (_zRPM < _maxZ)) || (_targetDistance <= 3.5)) then {
 

@@ -5,9 +5,8 @@
     Description:
     Marks cops on the map for other cops. Only initializes when the actual map is open.
 */
-private ["_markers","_cops"];
-_markers = [];
-_cops = [];
+private _markers = [];
+private _cops = [];
 
 sleep 0.5;
 if (visibleMap) then {

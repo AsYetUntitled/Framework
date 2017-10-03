@@ -6,8 +6,9 @@
     Description:
     Knocks out the target.
 */
-private "_target";
-_target = param [0,objNull,[objNull]];
+params [
+	["_target",objNull,[objNull]]
+];
 
 //Error checks
 if (isNull _target) exitWith {};

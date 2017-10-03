@@ -6,7 +6,9 @@
     Sell functionality for house garages.
 */
 
-private _house = param [0,objNull,[objNull]];
+params [
+    ["_house",objNull,[objNull]]
+];
 private _uid = getPlayerUID player;
 
 if (isNull _house) exitWith {};
@@ -16,7 +18,7 @@ closeDialog 0;
 
 private _sellPrice = LIFE_SETTINGS(getNumber,"houseGarage_sellPrice");
 
-_action = [
+private _action = [
     format [localize "STR_Garage_HouseSellMSG",_price],
     localize "STR_House_GarageSell",
     localize "STR_Global_Sell",

@@ -6,11 +6,10 @@
     Handles stuff being displayed on the death screen while
     it is currently active.
 */
-private ["_medicsOnline","_medicsNear"];
 disableSerialization;
 
-_medicsOnline = ((findDisplay 7300) displayCtrl 7304);
-_medicsNear = ((findDisplay 7300) displayCtrl 7305);
+private _medicsOnline = ((findDisplay 7300) displayCtrl 7304);
+private _medicsNear = ((findDisplay 7300) displayCtrl 7305);
 
 waitUntil {
     _nearby = if (([independent,getPosATL player,120] call life_fnc_nearUnits)) then {"Yes"} else {"No"};

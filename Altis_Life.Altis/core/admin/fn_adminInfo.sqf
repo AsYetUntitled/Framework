@@ -7,18 +7,18 @@
     Output information received to admin menu.
 */
 private ["_ret","_unit","_prim","_sec","_vest","_uni","_bp","_attach","_steamName","_secondary"];
-_ret = _this;
+private _ret = _this;
 disableSerialization;
 
-_unit = _ret select 3;
-_prim = if (!(primaryWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",primaryWeapon _unit,"displayName")} else {"None"};
-_sec = if (!(handgunWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",handgunWeapon _unit,"displayName")} else {"None"};
-_vest = if (!(vest _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",vest _unit,"displayName")} else {"None"};
-_uni = if (!(uniform _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",uniform _unit,"displayName")} else {"None"};
-_bp = if (!(backpack _unit isEqualTo "")) then {FETCH_CONFIG2(getText,"CfgVehicles",backpack _unit,"displayName")} else {"None"};
+private _unit = _ret select 3;
+private _prim = if (!(primaryWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",primaryWeapon _unit,"displayName")} else {"None"};
+private _sec = if (!(handgunWeapon _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",handgunWeapon _unit,"displayName")} else {"None"};
+private _vest = if (!(vest _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",vest _unit,"displayName")} else {"None"};
+private _uni = if (!(uniform _unit isEqualTo "")) then { FETCH_CONFIG2(getText,"CfgWeapons",uniform _unit,"displayName")} else {"None"};
+private _bp = if (!(backpack _unit isEqualTo "")) then {FETCH_CONFIG2(getText,"CfgVehicles",backpack _unit,"displayName")} else {"None"};
 
-_attach = [];
-_secondary = [];
+private _attach = [];
+private _secondary = [];
 if (!(primaryWeapon _unit isEqualTo "")) then {
     {
         if (!(_x isEqualTo "")) then {
@@ -35,7 +35,7 @@ if (!(handgunItems _unit isEqualTo "")) then {
     } forEach (handgunItems _unit);
 };
 
-_steamName = _ret select 4;
+private _steamName = _ret select 4;
 if (!((_ret select 4) isEqualType "")) then {
     _steamName = "Not a Steam User!";
 };

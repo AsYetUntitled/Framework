@@ -7,13 +7,12 @@
     Master client initialization file
 */
 
-private ["_handle","_timeStamp","_extDB_notLoaded"];
 life_firstSpawn = true;
 life_session_completed = false;
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED"];
 0 cutFadeOut 9999999;
-_timeStamp = diag_tickTime;
-_extDB_notLoaded = "";
+private _timeStamp = diag_tickTime;
+private _extDB_notLoaded = "";
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "--------------------------------- Starting Altis Life Client Init ----------------------------------";
 diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";

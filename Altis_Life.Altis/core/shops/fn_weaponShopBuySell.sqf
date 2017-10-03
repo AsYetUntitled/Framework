@@ -7,13 +7,12 @@
     Master handling of the weapon shop for buying / selling an item.
 */
 disableSerialization;
-private ["_price","_item","_itemInfo","_bad"];
 if ((lbCurSel 38403) isEqualTo -1) exitWith {hint localize "STR_Shop_Weapon_NoSelect"};
-_price = lbValue[38403,(lbCurSel 38403)]; if (isNil "_price") then {_price = 0;};
-_item = lbData[38403,(lbCurSel 38403)];
-_itemInfo = [_item] call life_fnc_fetchCfgDetails;
+private _price = lbValue[38403,(lbCurSel 38403)]; if (isNil "_price") then {_price = 0;};
+private _item = lbData[38403,(lbCurSel 38403)];
+private _itemInfo = [_item] call life_fnc_fetchCfgDetails;
 
-_bad = "";
+private _bad = "";
 
 if ((_itemInfo select 6) != "CfgVehicles") then {
     if ((_itemInfo select 4) in [4096,131072]) then {

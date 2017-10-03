@@ -6,20 +6,18 @@
     Description:
     Open dialog Pump.
 */
-private ["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy","_fuelCost"];
-
 disableSerialization;
 //Long boring series of checks
 if (life_action_inUse) exitWith {};
 if (dialog) exitWith {};
 if (life_is_processing) exitWith {};
 life_action_inUse = true;
-_fuelstations = nearestObjects [player, ["Land_fs_feed_F"],10];
+private _fuelstations = nearestObjects [player, ["Land_fs_feed_F"],10];
 if (_fuelstations isEqualTo []) exitWith {life_action_inUse = false;};
-_vehicleList = nearestObjects [player, ["Car","air"], 10];
+private _vehicleList = nearestObjects [player, ["Car","air"], 10];
 if (count _vehicleList < 1) exitWith {hint localize "STR_NOTF_VehicleNear";life_action_inUse = false;};
 if (!createDialog "Life_FuelStat") exitWith {};
-_fuelCost = LIFE_SETTINGS(getNumber,"fuel_cost");
+private _fuelCost = LIFE_SETTINGS(getNumber,"fuel_cost");
 [] spawn {waitUntil {!dialog}; life_action_inUse = false;};
 ctrlSetText [20301,"Fuel Station"];
 if (isNil "life_fuelPrices") then {
@@ -33,7 +31,7 @@ vehicleFuelList =[];
     vehicleFuelList pushBack [_x,_fuel];
 } forEach _vehicleList;
 
-_control = ((findDisplay 20300) displayCtrl 20302);
+private _control = ((findDisplay 20300) displayCtrl 20302);
 lbClear _control; //Flush the list.
 
 ctrlSetText [20322,format [localize "STR_Price_Fuel_Pump",life_fuelPrices]];

@@ -6,14 +6,13 @@
     Description:
     Reskins the vehicle.
 */
-private ["_textures","_className","_classNameLife"];
 params [
     ["_vehicle",objNull,[objNull]],
     ["_index",-1,[0]]
 ];
 
-_className = typeOf _vehicle;
-_classNameLife = _className;
+private _className = typeOf _vehicle;
+private _classNameLife = _className;
 
 if (isNull _vehicle || !alive _vehicle || _index isEqualTo -1) exitWith {};
 //Does the vehicle already have random styles? Halt till it's set.
@@ -34,7 +33,7 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
-_textures = ((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures") select _index) select 2);
+private _textures = ((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures") select _index) select 2);
 if (isNil "_textures" || {count _textures isEqualTo 0}) exitWith {};
 
 _vehicle setVariable ["Life_VEH_color",_index,true];

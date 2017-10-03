@@ -5,11 +5,12 @@
     Description:
     Pass what you want to be animated.
 */
-private ["_vehicle","_animate","_state"];
-_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_vehicle",objNull,[objNull]]
+];
 if (isNull _vehicle) exitWith {}; //FUCK
-_animate = [_this,1,"",["",[]]] call BIS_fnc_param;
-_preset = [_this,2,false,[false]] call BIS_fnc_param;
+private _animate = [_this,1,"",["",[]]] call BIS_fnc_param;
+private _preset = [_this,2,false,[false]] call BIS_fnc_param;
 
 if (!_preset) then
 {
