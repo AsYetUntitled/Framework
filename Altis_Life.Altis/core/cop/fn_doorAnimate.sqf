@@ -7,7 +7,7 @@
     Animates a door?
 */
 params [
-	["_b",objNull,[objNull]]
+    ["_b",objNull,[objNull]]
 ];
 private _doors = 1;
 _doors = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _b,"NumberOfDoors");

@@ -8,10 +8,10 @@
 */
 private _type = _this select 3;
 params [
-	"",
-	"",
-	"",
-	["_type","",[""]]
+    "",
+    "",
+    "",
+    ["_type","",[""]]
 ];
 
 if (!isClass (missionConfigFile >> "Licenses" >> _type)) exitWith {}; //Bad entry?
