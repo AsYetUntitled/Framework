@@ -6,7 +6,7 @@
 
 */
 params [
-	["_source",objNull,[objNull]]
+    ["_source",objNull,[objNull]]
 ];
 if (isNull _source) exitWith {};
 _source say3D "tazerSound";

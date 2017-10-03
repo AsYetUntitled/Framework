@@ -7,7 +7,7 @@
     THANK YOU JESUS I WAS SAVED!
 */
 params [
-	["_medic","Unknown Medic",[""]]
+    ["_medic","Unknown Medic",[""]]
 ];
 private _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 

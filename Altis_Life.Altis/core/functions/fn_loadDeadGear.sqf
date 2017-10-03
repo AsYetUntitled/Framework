@@ -7,7 +7,7 @@
     BLAH
 */
 params [
-	["_loadout",[],[[]]]
+    ["_loadout",[],[[]]]
 ];
 
 private _primary = _loadout select 0;

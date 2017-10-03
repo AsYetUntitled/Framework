@@ -7,7 +7,7 @@
     Gets the items weight and returns it.
 */
 params [
-	["_item","",[""]]
+    ["_item","",[""]]
 ];
 
 if (_item isEqualTo "") exitWith {};

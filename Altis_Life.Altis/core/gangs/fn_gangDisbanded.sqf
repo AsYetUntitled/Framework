@@ -6,7 +6,7 @@
     Notifies members that the gang has been disbanded.
 */
 params [
-	["_unit",grpNull,[grpNull]]
+    ["_unit",grpNull,[grpNull]]
 ];
 if (isNull _group) exitWith {}; //Fail horn please.
 if (!isNull (findDisplay 2620)) then {closeDialog 2620};

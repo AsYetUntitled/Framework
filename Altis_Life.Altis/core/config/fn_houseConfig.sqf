@@ -6,7 +6,7 @@
     Fetch data from Config_Housing/Garages
 */
 params [
-	["_house","",[""]]
+    ["_house","",[""]]
 ];
 
 if (_house isEqualTo "") exitWith {[]}; 

@@ -7,8 +7,8 @@
     I don't know?
 */
 params [
-	["_house","",[""]],
-	["_unit",objNull,[objNull]]
+    ["_house","",[""]],
+    ["_unit",objNull,[objNull]]
 ];
 if !(_unit isEqualTo player) exitWith {};
 BANK = BANK + _price;

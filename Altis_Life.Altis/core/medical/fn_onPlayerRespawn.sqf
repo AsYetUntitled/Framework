@@ -7,8 +7,8 @@
     Does something but I won't know till I write it...
 */
 params [
-	["_unit",objNull,[objNull]],
-	["_corpse",objNull,[objNull]]
+    ["_unit",objNull,[objNull]],
+    ["_corpse",objNull,[objNull]]
 ];
 life_corpse = _corpse;
 

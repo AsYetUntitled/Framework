@@ -10,7 +10,7 @@
     True if there was a match, false if not in server.
 */
 params [
-	["_uid","",[""]]
+    ["_uid","",[""]]
 ];
 if (_uid isEqualTo "") exitWith {false}; //Bad UID
 private _ret = false;

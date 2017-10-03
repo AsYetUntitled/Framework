@@ -6,8 +6,8 @@
 
 */
 params [
-	["_obj",objNull,[objNull]],
-	["_bool",false,[false]]
+    ["_obj",objNull,[objNull]],
+    ["_bool",false,[false]]
 ];
 if (isNull _obj) exitWith {};
 

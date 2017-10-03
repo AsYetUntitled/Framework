@@ -7,8 +7,8 @@
     Example:   [_veh,"unlock"] remoteExec ["life_fnc_say3D",RANY];
 */
 params [
-	["_object",objNull,[objNull]],
-	["_sound","",[""]]
+    ["_object",objNull,[objNull]],
+    ["_sound","",[""]]
 ];
 
 if (isNull _object || _sound isEqualTo "") exitWith {};

@@ -7,7 +7,7 @@
     Finds the nearest vehicle and loads the target into the vehicle.
 */
 params [
-	["_unit",objNull,[objNull]]
+    ["_unit",objNull,[objNull]]
 ];
 if (isNull _unit || !isPlayer _unit) exitWith {};
 

@@ -6,7 +6,7 @@
     Hides dead bodies.
 */
 params [
-	["_corpse",objNull,[objNull]]
+    ["_corpse",objNull,[objNull]]
 ];
 if (isNull _corpse) exitWith {};
 if (alive _corpse) exitWith {}; //Stop script kiddies.
