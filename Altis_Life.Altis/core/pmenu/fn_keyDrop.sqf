@@ -29,8 +29,7 @@ if (_vehicle isKindOf "House_F") exitWith {
 };
 
 // Solve stupidness
-private _op = objectParent player;
-if (_op isEqualTo _vehicle && {locked _vehicle isEqualTo 2}) exitWith {
+if (objectParent player isEqualTo _vehicle && {locked _vehicle isEqualTo 2}) exitWith {
     hint localize "STR_NOTF_cannotDropKeys"
 };
 
@@ -42,4 +41,4 @@ _owners deleteAt _index;
 _vehicle setVariable ["vehicle_info_owners", _owners, true];
 
 // Reload
-[] spawn life_fnc_keyMenu
+call life_fnc_keyMenu
