@@ -12,7 +12,7 @@ params [
     ["_robber",objNull,[objNull]]
 ];
 
-if (_robber == _victim) exitWith {};
+if (_robber isEqualTo _victim) exitWith {};
 if (_cash isEqualTo 0) exitWith {titleText[localize "STR_Civ_RobFail","PLAIN"]};
 
 CASH = CASH + _cash;

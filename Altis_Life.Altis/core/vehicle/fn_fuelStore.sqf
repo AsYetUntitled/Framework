@@ -34,7 +34,7 @@ private _progress = _ui displayCtrl 38201;
 private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format ["Tank  %1 Ltr / %2 Ltr",_fuelState,_fuelSpace];
 private _fuelLevel = (1 / _fuelSpace) * _fuelState;
-private _progress progressSetPosition _fuelLevel;
+_progress progressSetPosition _fuelLevel;
 
 waitUntil {
     if (!alive _vehicle || isNull _vehicle) exitWith {true};

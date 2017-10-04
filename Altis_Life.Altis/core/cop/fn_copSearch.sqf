@@ -7,7 +7,6 @@
     Returns information on the search.
 */
 life_action_inUse = false;
-private ["_license","_guns","_gun"];
 params [
     ["_civ",objNull,[objNull]],
     ["_invs",[],[[]]],

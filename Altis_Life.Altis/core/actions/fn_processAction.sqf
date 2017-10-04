@@ -8,9 +8,12 @@
     Master handling for processing an item.
     NiiRoZz : Added multiprocess
 */
-private ["_vendor","_type","_itemInfo","_oldItem","_newItemWeight","_newItem","_oldItemWeight","_cost","_upp","_hasLicense","_itemName","_oldVal","_ui","_progress","_pgText","_cP","_materialsRequired","_materialsGiven","_noLicenseCost","_text","_filter","_totalConversions","_minimumConversions"];
-_vendor = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-_type = [_this,3,"",[""]] call BIS_fnc_param;
+params [
+    ["_vendor",objNull,[objNull]],
+    "",
+    "",
+    ["_type","",[""]]
+];
 //Error check
 if (isNull _vendor || _type isEqualTo "" || (player distance _vendor > 10)) exitWith {};
 life_action_inUse = true;//Lock out other actions during processing.
@@ -29,14 +32,16 @@ _itemInfo = [_materialsRequired,_materialsGiven,_noLicenseCost,(localize format 
 if (count _itemInfo isEqualTo 0) exitWith {life_action_inUse = false;};
 
 //Setup vars.
-_oldItem = _itemInfo select 0;
-_newItem = _itemInfo select 1;
-_cost = _itemInfo select 2;
-_upp = _itemInfo select 3;
-_exit = false;
+_itemInfo params [
+    ["_oldItem","",[""]],
+    ["_newItem","",[""]],
+    ["_cost",-1,[0]],
+    ["_upp","",[""]]
+];
+private _exit = false;
 if (count _oldItem isEqualTo 0) exitWith {life_action_inUse = false;};
 
-_totalConversions = [];
+private _totalConversions = [];
 {
     _var = ITEM_VALUE(_x select 0);
     if (_var isEqualTo 0) exitWith {_exit = true;};
@@ -46,22 +51,22 @@ _totalConversions = [];
 
 if (_exit) exitWith {life_is_processing = false; hint localize "STR_NOTF_NotEnoughItemProcess"; life_action_inUse = false;};
 
-if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
-    _hasLicense = true;
+private _hasLicense = if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
+    true;
 } else {
-    _hasLicense = LICENSE_VALUE(_type,"civ");
+    LICENSE_VALUE(_type,"civ");
 };
 
-_cost = _cost * (count _oldItem);
+private _cost = _cost * (count _oldItem);
 
-_minimumConversions = _totalConversions call BIS_fnc_lowestNum;
-_oldItemWeight = 0;
+private _minimumConversions = _totalConversions call BIS_fnc_lowestNum;
+private _oldItemWeight = 0;
 {
     _weight = ([_x select 0] call life_fnc_itemWeight) * (_x select 1);
     _oldItemWeight = _oldItemWeight + _weight;
 } count _oldItem;
 
-_newItemWeight = 0;
+private _newItemWeight = 0;
 {
     _weight = ([_x select 0] call life_fnc_itemWeight) * (_x select 1);
     _newItemWeight = _newItemWeight + _weight;
@@ -84,12 +89,12 @@ if (_exit) exitWith {hint localize "STR_Process_Weight"; life_is_processing = fa
 //Setup our progress bar.
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progress = _ui displayCtrl 38201;
+private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
-_progress progressSetPosition 0.01;
-_cP = 0.01;
+private _progress progressSetPosition 0.01;
+private _cP = 0.01;
 
 life_is_processing = true;
 

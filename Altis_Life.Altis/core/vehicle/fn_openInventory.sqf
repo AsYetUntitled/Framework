@@ -7,7 +7,9 @@
     Starts the initialization of vehicle virtual inventory menu.
 */
 if (dialog) exitWith {};
-private _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_vehicle",objNull,[objNull]]
+];
 if (isNull _vehicle || !(_vehicle isKindOf "Car" || _vehicle isKindOf "Air" || _vehicle isKindOf "Ship" || _vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F")) exitWith {}; //Either a null or invalid vehicle type.
 if ((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint localize "STR_MISC_VehInvUse"};
 _vehicle setVariable ["trunk_in_use",true,true];

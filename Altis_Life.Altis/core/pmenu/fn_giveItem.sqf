@@ -19,14 +19,14 @@ if ((lbCurSel 2005) isEqualTo -1) exitWith {hint localize "STR_NOTF_didNotSelect
 
 _item = lbData [2005,(lbCurSel 2005)];
 if (isNil "_unit") exitWith {ctrlShow[2002,true];};
-if (_unit == player) exitWith {ctrlShow[2002,true];};
+if (_unit isEqualTo player) exitWith {ctrlShow[2002,true];};
 if (isNull _unit) exitWith {ctrlShow[2002,true];};
 
 //A series of checks *ugh*
 if (!([_val] call TON_fnc_isnumber)) exitWith {hint localize "STR_NOTF_notNumberFormat";ctrlShow[2002,true];};
 if (parseNumber(_val) <= 0) exitWith {hint localize "STR_NOTF_enterAmountGive";ctrlShow[2002,true];};
 if (isNil "_unit") exitWith {ctrlShow[2001,true]; hint localize "STR_NOTF_notWithinRange";};
-if (!([false,_item,(parseNumber _val)] call life_fnc_handleInv)) exitWith {hint localize "STR_NOTF_couldNotGive";ctrlShow[2002,true];};
+if !([false,_item,(parseNumber _val)] call life_fnc_handleInv) exitWith {hint localize "STR_NOTF_couldNotGive";ctrlShow[2002,true];};
 
 [_unit,_val,_item,player] remoteExecCall ["life_fnc_receiveItem",_unit];
 _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");

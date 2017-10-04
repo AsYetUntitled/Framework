@@ -9,45 +9,39 @@
     resource
     nothing
 */
-
-private ["_zonem", "_zone", "_mine", "_zoneSize", "_resource", "_nothing"];
-_resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
+private _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    private ["_curConfig", "_resourceZones", "_requiredItem"];
-    _zonem = "";
-    _curConfig = _resourceCfg select _i;
-    _resourceZones = getArray(_curConfig >> "zones");
-    _zoneSize = getNumber(_curConfig >> "zoneSize");
+    private _zonem = "";
+    private _curConfig = _resourceCfg select _i;
+    private _resourceZones = getArray(_curConfig >> "zones");
+    private _zoneSize = getNumber(_curConfig >> "zoneSize");
     {
         if ((player distance(getMarkerPos _x)) < _zoneSize) exitWith {
             _zonem = _x;
         };
     } forEach _resourceZones;
-    if (_zonem != "") exitWith {};
+    if !(_zonem isEqualTo "") exitWith {};
 };
 
-if (_zonem != "") exitWith {
+if !(_zonem isEqualTo "") exitWith {
     _mine = "mine";
     _mine;
 };
 
-
-
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    private ["_curConfig", "_resourceZones", "_requiredItem"];
-    _zone = "";
-    _curConfig = _resourceCfg select _i;
-    _resourceZones = getArray(_curConfig >> "zones");
+    private _zone = "";
+    private _curConfig = _resourceCfg select _i;
+    private _resourceZones = getArray(_curConfig >> "zones");
     {
         if ((player distance(getMarkerPos _x)) < _zoneSize) exitWith {
             _zone = _x;
         };
     } forEach _resourceZones;
-    if (_zone != "") exitWith {};
+    if !(_zone isEqualTo "") exitWith {};
 };
-if (_zone != "") exitWith {
+if !(_zone isEqualTo "") exitWith {
     _resource = "resource";
     _resource;
 };

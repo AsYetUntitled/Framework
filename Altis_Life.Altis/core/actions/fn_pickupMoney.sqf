@@ -9,7 +9,7 @@
 if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay"; _this setVariable ["inUse",false,true];};
 if (isNull _this || {player distance _this > 3}) exitWith {_this setVariable ["inUse",false,true];};
 
-((_this getVariable "item") params ["","_value"]);
+(_this getVariable "item") params ["","_value"];
 if (!isNil "_value") exitWith {
     deleteVehicle _this;
 

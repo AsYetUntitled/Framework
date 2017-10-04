@@ -6,11 +6,14 @@
     Description:
     Stores the vehicle in the garage.
 */
-private ["_nearVehicles","_vehicle"];
+params [
+    "_target"
+];
+
 if !(isNull objectParent player) then {
     private _vehicle = vehicle player;
 } else {
-   private  _nearVehicles = nearestObjects[getPos (_this select 0),["Car","Air","Ship"],30]; //Fetch vehicles within 30m.
+    private  _nearVehicles = nearestObjects[getPos _target,["Car","Air","Ship"],30]; //Fetch vehicles within 30m.
     if (count _nearVehicles > 0) then {
         {
             if (!isNil "_vehicle") exitWith {}; //Kill the loop.

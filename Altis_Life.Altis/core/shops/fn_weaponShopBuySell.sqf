@@ -20,7 +20,7 @@ if ((_itemInfo select 6) != "CfgVehicles") then {
     };
 };
 
-if (_bad != "") exitWith {hint _bad};
+if !(_bad isEqualTo "") exitWith {hint _bad};
 
 if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
     CASH = CASH + _price;

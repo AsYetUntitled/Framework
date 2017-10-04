@@ -13,7 +13,7 @@ if ((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitW
 
 private _ctrl = ctrlSelData(3503);
 private _num = ctrlText 3506;
-if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
+if !([_num] call TON_fnc_isnumber) exitWith {hint localize "STR_MISC_WrongNumFormat";};
 private _num = parseNumber(_num);
 if (_num < 1) exitWith {hint localize "STR_MISC_Under1";};
 

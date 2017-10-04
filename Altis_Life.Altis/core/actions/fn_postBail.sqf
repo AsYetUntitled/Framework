@@ -8,7 +8,7 @@
     Needs to be revised.
 */
 params [
-    ""
+    "",
     ["_unit",objNull,[objNull]]
 ];
 if (life_bail_paid) exitWith {};

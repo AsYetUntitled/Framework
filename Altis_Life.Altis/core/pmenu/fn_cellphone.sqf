@@ -9,8 +9,7 @@
 disableSerialization;
 waitUntil {!isNull findDisplay 3000};
 private _display = findDisplay 3000;
-_units = _display displayCtrl 3004;
-private 
+private _units = _display displayCtrl 3004;
 ctrlSetText [3003, ""];
 lbClear _units;
 

@@ -26,8 +26,7 @@ if (visibleMap) then {
 
     while {visibleMap} do {
         {
-            private ["_unit"];
-            _unit = _x select 1;
+            private _unit = _x select 1;
             if (!isNil "_unit" && !isNull _unit) then {
                 (_x select 0) setMarkerPosLocal (visiblePosition _unit);
             };

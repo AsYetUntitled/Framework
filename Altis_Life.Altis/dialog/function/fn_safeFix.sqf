@@ -9,7 +9,7 @@
 params [
     ["_vault",objNull,[objNull]]
 ];
-if (!(_vault getVariable ["safe_open",false])) exitWith {hint localize "STR_Cop_VaultLocked"};
+if !(_vault getVariable ["safe_open",false]) exitWith {hint localize "STR_Cop_VaultLocked"};
 
 life_action_inUse = true;
 
@@ -21,7 +21,7 @@ private _ui = uiNamespace getVariable "life_progress";
 private _progressBar = _ui displayCtrl 38201;
 private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
-private _progressBar progressSetPosition 0.01;
+_progressBar progressSetPosition 0.01;
 private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {

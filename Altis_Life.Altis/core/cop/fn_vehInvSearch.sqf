@@ -10,7 +10,7 @@ private _vehicle = cursorObject;
 private _list = ["Air","Ship","LandVehicle"];
 if (isNull _vehicle || {!(KINDOF_ARRAY(_vehicle,_list))}) exitWith {};
 
-_vehicleInfo = _vehicle getVariable ["Trunk",[]];
+private _vehicleInfo = _vehicle getVariable ["Trunk",[]];
 if (count _vehicleInfo isEqualTo 0) exitWith {hint localize "STR_Cop_VehEmpty"};
 
 private _value = 0;

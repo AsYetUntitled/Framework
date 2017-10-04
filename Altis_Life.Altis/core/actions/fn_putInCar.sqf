@@ -11,7 +11,7 @@ params [
 ];
 if (isNull _unit || !isPlayer _unit) exitWith {};
 
-_nearestVehicle = nearestObjects[getPosATL player,["Car","Ship","Submarine","Air"],10] select 0;
+nearestObjects[getPosATL player,["Car","Ship","Submarine","Air"],10] params ["_nearestVehicle"];
 if (isNil "_nearestVehicle") exitWith {hint localize "STR_NOTF_VehicleNear"};
 
 detach _unit;

@@ -8,7 +8,6 @@
     Used in the vehicle trunk menu, takes the selected item and puts it in the players virtual inventory
     if the player has room.
 */
-private ["_ctrl","_num","_index","_data","_old","_value","_weight","_diff"];
 disableSerialization;
 if (isNull life_trunk_vehicle || !alive life_trunk_vehicle) exitWith {hint localize "STR_MISC_VehDoesntExist"};
 if (!alive player) exitWith {closeDialog 0;};

@@ -12,7 +12,7 @@ if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {
     hint localize "STR_NOTF_isrestrained";
 };
-_exit = false;
+private _exit = false;
 if (player getVariable "playerSurrender") exitWith {
     hint localize "STR_NOTF_surrender";
 };
@@ -35,16 +35,16 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     if (_resources isEqualTo []) exitWith {}; //Smart guy :O
     for "_i" from 0 to count (_resources) do {
         if (count _resources isEqualTo 1) exitWith {
-            if (!((_resources select 0) isEqualType [])) then {
+            if !((_resources select 0) isEqualType []) then {
                 _mined = _resources select 0;
             } else {
                 _mined = (_resources select 0) select 0;
             };
         };
         _resources params [
-            "_resource",
-            "_prob",
-            "_probDiff"
+            ["_resource","",[""]],
+            ["_prob",0,[0]],
+            ["_probDiff",0,[0]]
         ];
         if ((_percent >= _prob) && (_percent <= _probdiff)) exitWith {
             private _mined = _resource;

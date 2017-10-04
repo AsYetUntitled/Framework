@@ -7,7 +7,6 @@
     Master action key handler, handles requests for picking up various items and
     interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private ["_curObject","_isWater","_CrateModelNames","_crate","_fish","_animal","_whatIsIt","_handle"];
 private _curObject = cursorObject;
 if (life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 if (life_interrupted) exitWith {life_interrupted = false;};
@@ -39,13 +38,12 @@ if (isNull _curObject) exitWith {
                 [_animal] call life_fnc_gutAnimal;
             };
         } else {
-            private "_handle";
             if (playerSide isEqualTo civilian && !life_action_gathering) then {
-          private _whatIsIt = [] call life_fnc_whereAmI;
+                private _whatIsIt = [] call life_fnc_whereAmI;
                 if (life_action_gathering) exitWith {};                 //Action is in use, exit to prevent spamming.
-                switch (_whatIsIt) do {
-                    case "mine" : { _handle = [] spawn life_fnc_mine };
-                    default { _handle = [] spawn life_fnc_gather };
+                private _handle = switch (_whatIsIt) do {
+                    case "mine" : { [] spawn life_fnc_mine };
+                    default { [] spawn life_fnc_gather };
                 };
                 life_action_gathering = true;
                 waitUntil {scriptDone _handle};

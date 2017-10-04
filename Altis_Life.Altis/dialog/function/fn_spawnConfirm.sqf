@@ -8,7 +8,6 @@
 closeDialog 0;
 cutText ["","BLACK IN"];
 if (life_spawn_point isEqualTo []) then {
-    private ["_sp","_spCfg"];
     private _spCfg = [playerSide] call life_fnc_spawnPointCfg;
     private _sp = _spCfg select 0;
 
@@ -28,7 +27,6 @@ if (life_spawn_point isEqualTo []) then {
     if (playerSide isEqualTo civilian) then {
         if (isNil {(call compile format ["%1",life_spawn_point select 0])}) then {
             if (["house",life_spawn_point select 0] call BIS_fnc_inString) then {
-                private ["_bPos","_house","_pos"];
                 private _house = nearestObjects [getMarkerPos (life_spawn_point select 0),["House_F"],10] select 0;
                 private _bPos = [_house] call life_fnc_getBuildingPositions;
 

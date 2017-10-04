@@ -6,7 +6,6 @@
     Description:
     Adds the light effect to cop vehicles, specifically the offroad.
 */
-Private ["_vehicle","_lightRed","_lightBlue","_lightleft","_lightright","_leftRed"];
 params [
     ["_vehicle",objNull,[objNull]]
 ];

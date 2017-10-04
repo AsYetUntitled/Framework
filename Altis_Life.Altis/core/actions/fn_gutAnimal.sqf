@@ -6,7 +6,6 @@
     Description:
     Guts the animal?
 */
-private ["_animalCorpse","_upp","_ui","_progress","_pgText","_cP","_displayName","_item"];
 params [
     ["_animalCorpse",objNull,[objNull]]
 ];

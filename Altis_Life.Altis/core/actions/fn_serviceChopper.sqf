@@ -7,7 +7,6 @@
     Main functionality for the chopper service paid, to be replaced in later version.
 */
 disableSerialization;
-private ["_search","_ui","_progress","_cP","_pgText"];
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 
 private _serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");

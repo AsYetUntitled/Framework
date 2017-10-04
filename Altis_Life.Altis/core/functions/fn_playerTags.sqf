@@ -27,7 +27,6 @@ private _masks = LIFE_SETTINGS(getArray,"clothing_masks");
 
 private _index = -1;
 {
-    private "_text";
     _idc = _ui displayCtrl (iconID + _forEachIndex);
     if (!(lineIntersects [eyePos player, eyePos _x, player, _x]) && alive _x && {!isNil {_x getVariable "realname"}}) then {
         _pos = switch (typeOf _x) do {
@@ -39,7 +38,7 @@ private _index = -1;
         _distance = _pos distance player;
         if (!((headgear _x) in _masks || (goggles _x) in _masks || (uniform _x) in _masks)) then {
             if (count _sPos > 1 && {_distance < 15}) then {
-                _text = switch (true) do {
+                private _text = switch (true) do {
                     case (_x in (units group player) && playerSide isEqualTo civilian): {format ["<t color='#00FF00'>%1</t>",(_x getVariable ["realname",name _x])];};
                     case (side _x isEqualTo west && {!isNil {_x getVariable "rank"}}): {format ["<img image='%1' size='1'></img> %2",switch ((_x getVariable "rank")) do {
                         case 2: {"\a3\ui_f\data\gui\cfg\Ranks\corporal_gs.paa"};
