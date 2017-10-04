@@ -20,7 +20,7 @@ if (_safeInfo < 1) exitWith {closeDialog 0; hint localize "STR_Civ_VaultEmpty";}
 
 private _str = M_CONFIG(getText,"VirtualItems","goldbar","displayName");
 private _shrt = M_CONFIG(getText,"VirtualItems","goldbar","variable");
-private _tInv lbAdd format ["[%1] - %2",_safeInfo,(localize _str)];
+private _tInv lbAdd format ["[%1] - %2",_safeInfo,localize _str];
 _tInv lbSetData [(lbSize _tInv)-1,_shrt];
 private _icon = M_CONFIG(getText,"VirtualItems","goldbar","icon");
 if (!(_icon isEqualTo "")) then {

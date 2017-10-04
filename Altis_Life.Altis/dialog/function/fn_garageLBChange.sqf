@@ -7,13 +7,15 @@
     Can't be bothered to answer it.. Already deleted it by accident..
 */
 disableSerialization;
-private _control = _this select 0;
-private _index = _this select 1;
+params [
+    ["_control",-1,[0]],
+    ["_index",-1[0]]
+];
 
 //Fetch some information.
 private _dataArr = CONTROL_DATAI(_control,_index);
 _dataArr = call compile format ["%1",_dataArr];
-private _className = (_dataArr select 0);
+_dataArr params ["_className","_textureIndex"];
 private _classNameLife = _className;
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
@@ -21,7 +23,7 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
 };
 
-private _vehicleColor = ((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures") select (_dataArr select 1)) select 0);
+((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures") select _textureIndex) params ["_vehicleColor"]);
 if (isNil "_vehicleColor") then {_vehicleColor = "Default";};
 
 private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;

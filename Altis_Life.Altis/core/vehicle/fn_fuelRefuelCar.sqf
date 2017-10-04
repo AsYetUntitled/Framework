@@ -7,8 +7,8 @@
     Adds fuel in car.
 */
 disableSerialization;
-private _classname = lbData[20302,(lbCurSel 20302)];
-private _index =  lbValue[20302,(lbCurSel 20302)];
+private _classname = lbData[20302,lbCurSel 20302];
+private _index =  lbValue[20302,lbCurSel 20302];
 
 if (isNil "_classname" || _classname isEqualTo "") exitWith {
     hint localize "STR_Select_Vehicle_Pump";
@@ -20,13 +20,13 @@ if (isNil "_classname" || _classname isEqualTo "") exitWith {
 private _car = (vehiclefuelList select _index) select 0;
 private _vehicleInfo = [_className]call life_fnc_fetchVehInfo;
 private _fuelNow = fuel _car;
-private _fueltank = (_vehicleInfo select 12);
-if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fueltank = 350;};//hemtt
-if (_car isKindOf "C_Van_01_box_F") then {_fueltank = 100;};
-if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fueltank = 175;};
-private _fueltoput= ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
-private _setfuell = _fuelnow + (_fueltoput/_fueltank);
-private _timer = ((_fueltoput * .25)/100);
+private _fuelTank = (_vehicleInfo select 12);
+if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fuelTank = 350;};//hemtt
+if (_car isKindOf "C_Van_01_box_F") then {_fuelTank = 100;};
+if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fuelTank = 175;};
+private _fuelToPut= ((SliderPosition 20901) - (floor(_fuelNow * _fuelTank)));
+private _setfuell = _fuelNow + (_fueltoput / _fuelTank);
+private _timer = ((_fueltoput * .25) / 100);
 if (_car distance player > 10 && !(isNull objectParent player)) exitWith {
     hint localize "STR_Distance_Vehicle_Pump";
     vehiclefuelList = [];
@@ -45,7 +45,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
     _pgText ctrlSetText format ["%2 (1%1)...","%","Refuel:"];
     _progress progressSetPosition 0.01;
     _cP = 0.01;
-    _tp =0;
+    _tp = 0;
     _totalcost = _fueltoput * life_fuelPrices;
     for "_i" from 0 to 1 step 0 do {
         uiSleep  _timer;
@@ -58,7 +58,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
         if !((BANK - round(0.01 * _totalcost))> 0) exitWith {};
         BANK = BANK - round((0.01 * _totalcost));
         _tp = _tp +1;
-        if (_tp == 9) then {
+        if (_tp isEqualTo 9) then {
             _tp = 0;
             [_car,_cp * _setfuell] remoteExecCall ["life_fnc_setFuel",_car];
         };

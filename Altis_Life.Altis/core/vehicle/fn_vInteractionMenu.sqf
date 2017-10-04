@@ -23,7 +23,7 @@ params [
     ["_curTarget",objNull,[objNull]]
 ];
 if (isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-private _isVehicle = if ((_curTarget isKindOf "landVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
+private _isVehicle = if ((_curTarget isKindOf "landVehicle") || {_curTarget isKindOf "Ship"} || {_curTarget isKindOf "Air"}) then {true} else {false};
 if (!_isVehicle) exitWith {closeDialog 0;};
 
 private _Btn1 = CONTROL(37400,Btn1);

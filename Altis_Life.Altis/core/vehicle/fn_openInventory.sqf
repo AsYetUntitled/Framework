@@ -11,7 +11,7 @@ params [
     ["_vehicle",objNull,[objNull]]
 ];
 if (isNull _vehicle || !(_vehicle isKindOf "Car" || _vehicle isKindOf "Air" || _vehicle isKindOf "Ship" || _vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F")) exitWith {}; //Either a null or invalid vehicle type.
-if ((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint localize "STR_MISC_VehInvUse"};
+if (_vehicle getVariable ["trunk_in_use",false]) exitWith {hint localize "STR_MISC_VehInvUse"};
 _vehicle setVariable ["trunk_in_use",true,true];
 _vehicle setVariable ["trunk_in_use_by",player,true];
 if (!createDialog "TrunkMenu") exitWith {hint localize "STR_MISC_DialogError";}; //Couldn't create the menu?
@@ -23,11 +23,11 @@ if (_vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F
     ctrlSetText[3501,format [(localize "STR_MISC_VehStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 };
 
-private _veh_data = [_vehicle] call life_fnc_vehicleWeight;
+private _vehData = [_vehicle] call life_fnc_vehicleWeight;
 
-if (_veh_data select 0 isEqualTo -1) exitWith {closeDialog 0; _vehicle setVariable ["trunk_in_use",false,true]; hint localize "STR_MISC_NoStorageVeh";};
+if (_vehData select 0 isEqualTo -1) exitWith {closeDialog 0; _vehicle setVariable ["trunk_in_use",false,true]; hint localize "STR_MISC_NoStorageVeh";};
 
-ctrlSetText[3504,format [(localize "STR_MISC_Weight")+ " %1/%2",_veh_data select 1,_veh_data select 0]];
+ctrlSetText[3504,format [(localize "STR_MISC_Weight")+ " %1/%2",_vehData select 1,_vehData select 0]];
 [_vehicle] call life_fnc_vehInventory;
 life_trunk_vehicle = _vehicle;
 

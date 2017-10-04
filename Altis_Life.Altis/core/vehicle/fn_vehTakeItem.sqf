@@ -9,12 +9,12 @@
     if the player has room.
 */
 disableSerialization;
-if (isNull life_trunk_vehicle || !alive life_trunk_vehicle) exitWith {hint localize "STR_MISC_VehDoesntExist"};
+if (isNull life_trunk_vehicle || {!alive life_trunk_vehicle}) exitWith {hint localize "STR_MISC_VehDoesntExist"};
 if (!alive player) exitWith {closeDialog 0;};
 if ((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith {  closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
 if ((lbCurSel 3502) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection";};
-private _ctrl = ctrlSelData(3502);
+private _ctrl = ctrlSelData 3502;
 private _num = ctrlText 3505;
 if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
 private _num = parseNumber(_num);

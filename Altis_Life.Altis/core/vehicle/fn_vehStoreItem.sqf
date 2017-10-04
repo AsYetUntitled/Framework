@@ -11,17 +11,17 @@
 disableSerialization;
 if ((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith { closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
-private _ctrl = ctrlSelData(3503);
+private _ctrl = ctrlSelData 3503;
 private _num = ctrlText 3506;
 if !([_num] call TON_fnc_isnumber) exitWith {hint localize "STR_MISC_WrongNumFormat";};
-private _num = parseNumber(_num);
+private _num = parseNumber _num;
 if (_num < 1) exitWith {hint localize "STR_MISC_Under1";};
 
 private _totalWeight = [life_trunk_vehicle] call life_fnc_vehicleWeight;
 
 private _itemWeight = ([_ctrl] call life_fnc_itemWeight) * _num;
-private _veh_data = life_trunk_vehicle getVariable ["Trunk",[[],0]];
-private _inv = _veh_data select 0;
+private _vehData = life_trunk_vehicle getVariable ["Trunk",[[],0]];
+private _inv = _vehData params ["_inv","_weight"];
 if (_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle")}) exitWith {hint localize "STR_NOTF_canOnlyStoreInLandVeh";};
 
 if (_ctrl == "money") then {
@@ -36,7 +36,7 @@ if (_ctrl == "money") then {
 
     CASH = CASH - _num;
     [0] call SOCK_fnc_updatePartial;
-    life_trunk_vehicle setVariable ["Trunk",[_inv,(_veh_data select 1) + _itemWeight],true];
+    life_trunk_vehicle setVariable ["Trunk",[_inv,_weight + _itemWeight],true];
     [life_trunk_vehicle] call life_fnc_vehInventory;
 } else {
     if (((_totalWeight select 1) + _itemWeight) > (_totalWeight select 0)) exitWith {hint localize "STR_NOTF_VehicleFullOrInsufCap";};
@@ -50,6 +50,6 @@ if (_ctrl == "money") then {
         _inv set[_index,[_ctrl,_val + _num]];
     };
 
-    life_trunk_vehicle setVariable ["Trunk",[_inv,(_veh_data select 1) + _itemWeight],true];
+    life_trunk_vehicle setVariable ["Trunk",[_inv,_weight + _itemWeight],true];
     [life_trunk_vehicle] call life_fnc_vehInventory;
 };

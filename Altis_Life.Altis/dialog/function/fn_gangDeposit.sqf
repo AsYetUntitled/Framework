@@ -13,13 +13,12 @@ group player setVariable ["gbank_in_use_by",player,true];
 if (isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR_ATM_NotInGang"}; // Checks if player isn't in a gang
 if (_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};
 if (_value < 0) exitWith {};
-if !([str(_value)] call TON_fnc_isnumber) exitWith {hint localize "STR_ATM_notnumeric"};
+if !([str _value] call TON_fnc_isnumber) exitWith {hint localize "STR_ATM_notnumeric"};
 if (_value > CASH) exitWith {hint localize "STR_ATM_NotEnoughCash"};
 if ((group player getVariable ["gbank_in_use_by",player]) != player) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Check if it's in use.
 
 CASH = CASH - _value;
-private _gFund = GANG_FUNDS;
-_gFund = _gFund + _value;
+private _gFund = GANG_FUNDS + _value;
 group player setVariable ["gang_bank",_gFund,true];
 
 if (life_HC_isActive) then {
