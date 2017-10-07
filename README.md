@@ -1,11 +1,33 @@
-<b>Altis Life</b> or <b>[Altis Life RPG] </b> is developed by <b>AsYetUntitled</b> (prior ArmaLife developers), originally created by <b>Tonic</b> AKA <b>[TAW_Tonic] (https://github.com/TAWTonic)</b>.<br/>
-Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)<br/>
+[![|Solid](http://i.imgur.com/pL3heId.png)](https://github.com/AsYetUntitled/Framework/)
+
+AsYetUntitled, formerly <b>Altis Life RPG</b> and <b>ARMARPGLIFE</b> is a roleplay framework for ArmA III originally made by <b>TAW_Tonic</b>.
+
+This Github is not currently associated with any forums.
+
+# Features:
+
+  - Police, Civ and Medic roles 
+  - Banking System
+  - Virtual Item system 
+  - Vitem shops, vehicle shops, weapon shops, clothing stores etc. 
+  - Housing System 
+  - Persistent wanted system
+  - Many more. 
+
+# License: 
+Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
+
+# Links:
+  - Discord: https://discord.gg/EaB7Jgw
+  - Forums: TBD
+  - Wiki: https://github.com/AsYetUntitled/Framework/wiki 
+  - Releases (Stable Builds): https://github.com/AsYetUntitled/Framework/releases
 
 <p align="center">
     <a href="https://travis-ci.org/AsYetUntitled/Framework">
         <img src="https://api.travis-ci.org/AsYetUntitled/Framework.svg" alt="Build Status">
     </a>
-       <a href="https://discord.gg/5Sz7XTc">
-        <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/yfAMTFp">
+       <a href="https://discord.gg/EaB7Jgw">
+        <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/EaB7Jgw">
     </a>
 </p>

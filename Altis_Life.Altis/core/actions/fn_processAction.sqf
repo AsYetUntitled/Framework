@@ -131,7 +131,7 @@ life_is_processing = true;
 
 if (_hasLicense) then {
     for "_i" from 0 to 1 step 0 do {
-        sleep  0.28;
+        uiSleep  0.28;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
@@ -174,7 +174,7 @@ if (_hasLicense) then {
     };
 
     for "_i" from 0 to 1 step 0 do {
-        sleep  0.9;
+        uiSleep  0.9;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
