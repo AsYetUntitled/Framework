@@ -1,7 +1,7 @@
 /*
     File: fn_say3D.sqf
     Author: Bryan "Tonic" Boardwine
-	Modified by: blackfisch
+    Modified by: blackfisch
 
     Description:
     Pass your sounds that you want everyone nearby to hear through here.
