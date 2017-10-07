@@ -12,6 +12,7 @@ private _cops = [];
     if (side _x isEqualTo west) then {
         _cops pushBack _x
     };
+    true
 } count playableUnits; //Fetch list of cops / blufor
 
 //Create markers
@@ -22,8 +23,9 @@ private _cops = [];
         _marker setMarkerTypeLocal "Mil_dot";
         _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
 
-        _markers pushBack [_marker,_x];
+        _markers pushBack [_marker,_x]
     };
+    true
 } count _cops;
 
 while {visibleMap} do {
@@ -32,11 +34,12 @@ while {visibleMap} do {
             ["_mark","",[""]],
             ["_unit",objNull,[objNull]]
         ];
-        if (!isNil "_unit" && !isNull _unit) then {
+        if (!isNil "_unit" && {!isNull _unit}) then {
             _mark setMarkerPosLocal (visiblePosition _unit)
         };
+        true
     } count _markers;
-    sleep 0.02;
+    uiSleep 0.02
 };
 
 {
@@ -44,7 +47,5 @@ while {visibleMap} do {
         ["_marker","",[""]]
     ];
     deleteMarkerLocal _marker;
+    true
 } count _markers;
-
-_markers = [];
-_cops = [];

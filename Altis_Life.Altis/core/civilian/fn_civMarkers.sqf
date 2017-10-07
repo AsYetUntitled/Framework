@@ -10,7 +10,7 @@ private _members = [];
 
 for "_i" from 0 to 1 step 0 do {
     sleep 0.5;
-    if (visibleMap) then {
+    if visibleMap then {
         _members = units (group player);
         {
             if !(_x isEqualTo player) then {
@@ -20,6 +20,7 @@ for "_i" from 0 to 1 step 0 do {
                 _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
                 _markers pushBack [_marker,_x];
             };
+            true
         } count _members;
 
         while {visibleMap} do
@@ -29,11 +30,12 @@ for "_i" from 0 to 1 step 0 do {
                     ["_mark","",[""]],
                     ["_unit",objNull,objNull]
                 ];
-                if (!isNil "_unit" && !isNull _unit) then {
+                if (!isNil "_unit" && {!isNull _unit}) then {
                       _mark setMarkerPosLocal (visiblePosition _unit)
                 };
+                true
             } count _markers;
-            sleep 0.02;
+            uiSleep 0.02
         };
 
         {
@@ -41,8 +43,7 @@ for "_i" from 0 to 1 step 0 do {
                 ["_marker","",[""]]
             ];
             deleteMarkerLocal _marker;
+            true
         } count _markers;
-        _markers = [];
-        _members = [];
     };
 };

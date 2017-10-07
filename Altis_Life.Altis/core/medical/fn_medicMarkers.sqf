@@ -14,14 +14,16 @@ private _medics = [];
     if (side _x isEqualTo independent) then {
         _medics pushBack _x
     };
+    true
 } count playableUnits;
 
 {
     _name = _x getVariable "name";
     _down = _x getVariable ["Revive",false];
     if (!isNil "_name" && !_down) then {
-        _units pushBack _x;
+        _units pushBack _x
     };
+    true
 } count allDeadMen;
 
 {
@@ -31,8 +33,9 @@ private _medics = [];
         _markerss setMarkerTypeLocal "Mil_dot";
         _markerss setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
 
-        _markersMedecin pushBack [_markerss,_x];
+        _markersMedecin pushBack [_markerss,_x]
     };
+    true
 } count _medics;
 
 //Loop through and create markers.
@@ -50,10 +53,11 @@ while {visibleMap} do {
             ["_mark","",[""]],
             ["_unit",objNull,objNull]
         ];
-        if (!isNil "_unit" && !isNull _unit) then {
+        if (!isNil "_unit" && {!isNull _unit}) then {
             _mark setMarkerPosLocal (visiblePosition _unit)
         };
-    } forEach _markersMedecin;
+        true
+    } count _markersMedecin;
     sleep 0.02;
 };
 
@@ -62,11 +66,10 @@ while {visibleMap} do {
         ["_marker","",[""]]
     ];
     deleteMarkerLocal _marker;
+    true
 } count _markersMedecin;
 
-_markersMedecin = [];
-_medics = [];
-
 {
-    deleteMarkerLocal _x
-} forEach _markers;
+    deleteMarkerLocal _x;
+    true
+} count _markers;
