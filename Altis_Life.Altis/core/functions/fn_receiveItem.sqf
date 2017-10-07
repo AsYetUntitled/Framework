@@ -16,7 +16,7 @@ if !(_unit isEqualTo player) exitWith {};
 
 private _diff = [_item,(parseNumber _val),life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 
-if (!(_diff isEqualTo (parseNumber _val))) then {
+if !(_diff isEqualTo (parseNumber _val)) then {
     if ([true,_item,_diff] call life_fnc_handleInv) then {
         hint format [localize "STR_MISC_TooMuch_3",_from getVariable ["realname",name _from],_val,_diff,((parseNumber _val) - _diff)];
         [_from,_item,str((parseNumber _val) - _diff),_unit] remoteExecCall ["life_fnc_giveDiff",_from];

@@ -11,7 +11,6 @@ params [
     ["_mode",false,[false]]
 ];
 
-
 if (isNull _house) exitWith {};
 if (!(_house isKindOf "House_F")) exitWith {};
 

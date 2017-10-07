@@ -14,7 +14,7 @@ private _list = _display displayCtrl 2402;
 private _data = lbData[2401,(lbCurSel 2401)];
 _data = call compile format ["%1", _data];
 if (isNil "_data") exitWith {};
-if (!(_data isEqualType [])) exitWith {};
+if !(_data isEqualType []) exitWith {};
 if (_data isEqualTo []) exitWith {};
 
 if (life_HC_isActive) then {

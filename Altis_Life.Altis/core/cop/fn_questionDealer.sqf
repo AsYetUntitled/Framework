@@ -6,7 +6,11 @@
     Description:
     Questions the drug dealer and sets the sellers wanted.
 */
-private _sellers = (_this select 0) getVariable ["sellers",[]];
+params [
+    ["_npc",objNull,[objNull]]
+];
+
+private _sellers = _npc getVariable ["sellers",[]];
 if (count _sellers isEqualTo 0) exitWith {hint localize "STR_Cop_DealerQuestion"}; //No data.
 life_action_inUse = true;
 private _crimes = LIFE_SETTINGS(getArray,"crimes");
@@ -28,5 +32,5 @@ private _names = "";
 } forEach _sellers;
 
 hint parseText format [(localize "STR_Cop_DealerMSG")+ "<br/><br/>%1",_names];
-(_this select 0) setVariable ["sellers",[],true];
+_npc setVariable ["sellers",[],true];
 life_action_inUse = false;

@@ -8,8 +8,8 @@
 */
 if (!dialog) then
 {
-    if (!(createDialog "Life_impound_menu")) exitWith {};
-    life_impound_yard = _this select 3;
+    if !(createDialog "Life_impound_menu") exitWith {};
+    life_impound_yard = param[3,objNull,[objNull]];
 };
 disableSerialization;
 

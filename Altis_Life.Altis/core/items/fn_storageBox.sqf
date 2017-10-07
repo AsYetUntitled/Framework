@@ -9,7 +9,7 @@
 params [
     ["_size",false,[false]]
 ];
-if (!(nearestObject [player, "House"] in life_vehicles)) exitWith {hint localize "STR_ISTR_Box_NotinHouse";};
+if !(nearestObject [player, "House"] in life_vehicles) exitWith {hint localize "STR_ISTR_Box_NotinHouse";};
 
 life_container_active = true;
 closeDialog 0;

@@ -44,33 +44,37 @@ life_deathCamera camSetFOV .5;
 life_deathCamera camSetFocus [50,0];
 life_deathCamera camCommit 0;
 
-(findDisplay 7300) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {true}"]; //Block the ESC menu
+(findDisplay 7300) displaySetEventHandler ["KeyDown","_this call life_fnc_displayHandler"]; //Block the ESC menu
 
 //Create a thread for something?
-_unit spawn {
-    private ["_maxTime","_RespawnBtn","_Timer"];
+[_unit] spawn {
+    params [
+        ["_unit",objNull,[objNull]]
+    ];
     disableSerialization;
-    _RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
-    _Timer = ((findDisplay 7300) displayCtrl 7301);
-    if (LIFE_SETTINGS(getNumber,"respawn_timer") < 5) then {
-        _maxTime = time + 5;
+    private_RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
+    private_Timer = ((findDisplay 7300) displayCtrl 7301);
+    private _maxTime = if (LIFE_SETTINGS(getNumber,"respawn_timer") < 5) then {
+        time + 5;
     } else {
-        _maxTime = time + LIFE_SETTINGS(getNumber,"respawn_timer");
+        time + LIFE_SETTINGS(getNumber,"respawn_timer");
     };
     _RespawnBtn ctrlEnable false;
     waitUntil {_Timer ctrlSetText format [localize "STR_Medic_Respawn",[(_maxTime - time),"MM:SS"] call BIS_fnc_secondsToString];
-    round(_maxTime - time) <= 0 || isNull _this};
+    round(_maxTime - time) <= 0 || isNull _unit};
     _RespawnBtn ctrlEnable true;
     _Timer ctrlSetText localize "STR_Medic_Respawn_2";
 };
 
-_unit spawn {
-    private ["_requestBtn","_requestTime"];
+[_unit] spawn {
+    params [
+        ["_unit",objNull,[objNull]]
+    ];
     disableSerialization;
-    _requestBtn = ((findDisplay 7300) displayCtrl 7303);
+    private _requestBtn = ((findDisplay 7300) displayCtrl 7303);
     _requestBtn ctrlEnable false;
-    _requestTime = time + 5;
-    waitUntil {round(_requestTime - time) <= 0 || isNull _this};
+    private _requestTime = time + 5;
+    waitUntil {round(_requestTime - time) <= 0 || isNull _unit};
     _requestBtn ctrlEnable true;
 };
 
@@ -78,8 +82,9 @@ _unit spawn {
 
 //Create a thread to follow with some what precision view of the corpse.
 [_unit] spawn {
-    private ["_unit"];
-    _unit = _this select 0;
+    params [
+        ["_unit",objNull,[objNull]]
+    ];
     waitUntil {if (speed _unit isEqualTo 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
 };
 

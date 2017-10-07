@@ -31,30 +31,36 @@ ctrlSetText[3504,format [(localize "STR_MISC_Weight")+ " %1/%2",_vehData select 
 [_vehicle] call life_fnc_vehInventory;
 life_trunk_vehicle = _vehicle;
 
-_vehicle spawn {
+[_vehicle] spawn {
+    params [
+        ["_vehicle",objNull,[objNull]]
+    ];
     waitUntil {isNull (findDisplay 3500)};
-    _this setVariable ["trunk_in_use",false,true];
-    if (_this isKindOf "Box_IND_Grenades_F" || _this isKindOf "B_supplyCrate_F") then {
+    _vehicle setVariable ["trunk_in_use",false,true];
+    if (_vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F") then {
 
         if (life_HC_isActive) then {
-            [_this] remoteExecCall ["HC_fnc_updateHouseTrunk",HC_Life];
+            [_vehicle] remoteExecCall ["HC_fnc_updateHouseTrunk",HC_Life];
         } else {
-            [_this] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
+            [_vehicle] remoteExecCall ["TON_fnc_updateHouseTrunk",2];
         };
     };
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
-    _vehicle spawn {
+    [_vehicle] spawn {
+        params [
+            ["_vehicle",objNull,[objNull]]
+        ];
         waitUntil {isNull (findDisplay 3500)};
-        _this setVariable ["trunk_in_use",false,true];
-        if ((_this isKindOf "Car") || (_this isKindOf "Air") || (_this isKindOf "Ship")) then {
+        _vehicle setVariable ["trunk_in_use",false,true];
+        if ((_vehicle isKindOf "Car") || (_this isKindOf "Air") || (_vehicle isKindOf "Ship")) then {
             [] call SOCK_fnc_updateRequest;
 
             if (life_HC_isActive) then {
-                [_this,2] remoteExecCall ["HC_fnc_vehicleUpdate",HC_Life];
+                [_vehicle,2] remoteExecCall ["HC_fnc_vehicleUpdate",HC_Life];
             } else {
-                [_this,2] remoteExecCall ["TON_fnc_vehicleUpdate",2];
+                [_vehicle,2] remoteExecCall ["TON_fnc_vehicleUpdate",2];
             };
         };
     };

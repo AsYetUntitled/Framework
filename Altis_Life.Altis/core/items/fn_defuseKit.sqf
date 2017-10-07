@@ -12,7 +12,7 @@ params [
 
 if (isNull _vault) exitWith {};
 if (typeOf _vault != "Land_CargoBox_V1_F") exitWith {hint localize "STR_ISTR_defuseKit_NotNear"};
-if (!(_vault getVariable ["chargeplaced",false])) exitWith {hint localize "STR_ISTR_Defuse_Nothing"};
+if !(_vault getVariable ["chargeplaced",false]) exitWith {hint localize "STR_ISTR_Defuse_Nothing"};
 
 life_action_inUse = true;
 //Setup the progress bar

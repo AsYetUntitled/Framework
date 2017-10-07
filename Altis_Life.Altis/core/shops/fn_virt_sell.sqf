@@ -12,7 +12,7 @@ private _price = M_CONFIG(getNumber,"VirtualItems",_type,"sellPrice");
 if (_price isEqualTo -1) exitWith {};
 
 private _amount = ctrlText 2405;
-if (!([_amount] call TON_fnc_isnumber)) exitWith {hint localize "STR_Shop_Virt_NoNum";};
+if !([_amount] call TON_fnc_isnumber) exitWith {hint localize "STR_Shop_Virt_NoNum";};
 _amount = parseNumber (_amount);
 if (_amount > (ITEM_VALUE(_type))) exitWith {hint localize "STR_Shop_Virt_NotEnough"};
 if ((time - life_action_delay) < 0.2) exitWith {hint localize "STR_NOTF_ActionDelay";};

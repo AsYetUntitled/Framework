@@ -10,7 +10,7 @@
 
 if (!life_container_active) exitWith {};
 if (life_container_activeObj isEqualTo objNull) exitWith {};
-if (!((typeOf life_container_activeObj) in ["B_supplyCrate_F","Box_IND_Grenades_F"])) exitWith {};
+if !((typeOf life_container_activeObj) in ["B_supplyCrate_F","Box_IND_Grenades_F"]) exitWith {};
 
 private _container = life_container_activeObj;
 private _isFloating = if (((getPos _container) select 2) < 0.1) then {false} else {true};

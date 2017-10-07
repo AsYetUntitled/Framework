@@ -10,7 +10,7 @@ params [
     ["_vehicle",objNull,[objNull]]
 ];
 private  _filters = ["Car","Air","Ship"];
-if (!((KINDOF_ARRAY(_vehicle,_filters)))) exitWith {};
+if !((KINDOF_ARRAY(_vehicle,_filters))) exitWith {};
 if (player distance cursorObject > 10) exitWith {};
 if (_vehicle getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 

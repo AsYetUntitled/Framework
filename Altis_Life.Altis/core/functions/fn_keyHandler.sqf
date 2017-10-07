@@ -17,7 +17,6 @@ private _speed = speed cursorObject;
 private _handled = false;
 
 private _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
-private _mapKey = (actionKeys "ShowMap" select 0);
 //hint str _code;
 private _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
@@ -36,8 +35,7 @@ if (!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) 
     //Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
     if (!life_action_inUse) then {
         [] spawn {
-            private "_handle";
-            _handle = [] spawn life_fnc_actionKeyHandler;
+            private _handle = [] spawn life_fnc_actionKeyHandler;
             waitUntil {scriptDone _handle};
             life_action_inUse = false;
         };
@@ -88,15 +86,6 @@ switch (_code) do {
         };
     };
 
-    //Map Key
-    case _mapKey: {
-        switch (playerSide) do {
-            case west: {if (!visibleMap) then {[] spawn life_fnc_copMarkers;}};
-            case independent: {if (!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
-            case civilian: {if (!visibleMap) then {[] spawn life_fnc_civMarkers;}};
-        };
-    };
-
     //Holster / recall weapon. (Shift + H)
     case 35: {
         if (_shift && !_ctrlKey && !(currentWeapon player isEqualTo "")) then {
@@ -116,8 +105,7 @@ switch (_code) do {
     case _interactionKey: {
         if (!life_action_inUse) then {
             [] spawn  {
-                private "_handle";
-                _handle = [] spawn life_fnc_actionKeyHandler;
+                private _handle = [] spawn life_fnc_actionKeyHandler;
                 waitUntil {scriptDone _handle};
                 life_action_inUse = false;
             };
@@ -150,8 +138,7 @@ switch (_code) do {
                     [vehicle player] spawn life_fnc_openInventory;
                 };
             } else {
-                private "_list";
-                _list = ((ASLtoATL (getPosASL player)) nearEntities [["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5]) select 0;
+                private _list = ((ASLtoATL (getPosASL player)) nearEntities [["Box_IND_Grenades_F","B_supplyCrate_F"], 2.5]) select 0;
                 if (!(isNil "_list")) then {
                     _house = nearestObject [(ASLtoATL (getPosASL _list)), "House"];
                     if (_house getVariable ["locked", false]) then {

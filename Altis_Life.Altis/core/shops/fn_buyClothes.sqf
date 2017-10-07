@@ -10,7 +10,7 @@ if ((lbCurSel 3101) isEqualTo -1) exitWith {titleText[localize "STR_Shop_NoCloth
 
 private _price = 0;
 {
-    if (!(_x isEqualTo -1)) then {
+    if !(_x isEqualTo -1) then {
         _price = _price + _x;
     };
 } forEach life_clothing_purchase;

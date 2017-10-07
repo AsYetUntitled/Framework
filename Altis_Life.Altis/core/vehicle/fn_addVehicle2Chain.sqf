@@ -8,6 +8,6 @@
 params [
     ["_vehicle",objNull,[objNull]]
 ];
-if (!(_vehicle in life_vehicles)) then {
+if !(_vehicle in life_vehicles) then {
     life_vehicles pushBack _vehicle;
 };

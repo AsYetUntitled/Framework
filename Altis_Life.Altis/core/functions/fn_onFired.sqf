@@ -6,8 +6,15 @@
     Description:
     Handles various different ammo types being fired.
 */
-private _ammoType = param[4,"",[""]];
-private _projectile = param[6,objNull,[objNull]];
+params [
+    "",
+    "",
+    "",
+    "",
+    ["_ammoType","",[""]],
+    "",
+    ["_projectile",objNull,[objNull]]
+];
 
 if (_ammoType isEqualTo "GrenadeHand_stone") then {
     _projectile spawn {

@@ -17,12 +17,14 @@
     displays the new vehicle selected.
 */
 
+params [
+    "_classView"
+];
+
 if (isNil "life_preview_3D_vehicle_cam") then
 {
     [] call life_fnc_vehicleShopInit3DPreview;
 };
-
-private _classView = _this select 0;
 
 // Ignore non instantiable objects.
 if (_classView != "" && {isClass (configFile >> "CfgVehicles" >> _classView) && {getNumber (configFile >> "CfgVehicles" >> _classView >> "scope") > 0}}) then

@@ -9,6 +9,10 @@
     Used at the hospitals to restore health to full.
     Note: Dialog helps stop a few issues regarding money loss.
 */
+params [
+    ["_npc",objNull,[objNull]]
+];
+
 if (life_action_inUse) exitWith {};
 if ((damage player) < 0.01) exitWith {hint localize "STR_NOTF_HS_FullHealth"};
 private _healCost = LIFE_SETTINGS(getNumber,"hospital_heal_fee");
@@ -26,7 +30,7 @@ if (_action) then {
     titleText[localize "STR_NOTF_HS_Healing","PLAIN"];
     closeDialog 0;
     uiSleep 8;
-    if (player distance (_this select 0) > 5) exitWith {life_action_inUse = false; titleText[localize "STR_NOTF_HS_ToFar","PLAIN"]};
+    if (player distance _npc > 5) exitWith {life_action_inUse = false; titleText[localize "STR_NOTF_HS_ToFar","PLAIN"]};
     titleText[localize "STR_NOTF_HS_Healed","PLAIN"];
     player setDamage 0;
     CASH = CASH - _healCost;

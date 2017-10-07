@@ -17,7 +17,7 @@ if (_unit isEqualTo player) exitWith {hint localize "STR_GNOTF_KickSelf"};
 private _unitID = getPlayerUID _unit;
 private _members = group player getVariable "gang_members";
 if (isNil "_members") exitWith {};
-if (!(_members isEqualType [])) exitWith {};
+if !(_members isEqualType []) exitWith {};
 
 _members = _members - [_unitID];
 group player setVariable ["gang_members",_members,true];

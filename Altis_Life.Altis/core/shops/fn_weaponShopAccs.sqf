@@ -9,10 +9,9 @@
 disableSerialization;
 
 if ((uiNamespace getVariable ["Weapon_Accessories",0]) isEqualTo 0) then {
-    private ["_weapon","_slotArray","_weaponArray"];
-    _weapon = lbData[38403,lbCurSel (38403)];
-    _slotArray = [];
-    _weaponArray = [];
+    private _weapon = lbData[38403,lbCurSel (38403)];
+    private _slotArray = [];
+    private _weaponArray = [];
 
     if (isArray (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
         _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_weapon,"WeaponSlotsInfo","CowsSlot","compatibleItems");

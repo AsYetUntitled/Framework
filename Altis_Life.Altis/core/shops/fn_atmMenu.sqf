@@ -11,7 +11,7 @@ if (!life_use_atm) exitWith {
 };
 
 if (!dialog) then {
-    if (!(createDialog "Life_atm_management")) exitWith {};
+    if !(createDialog "Life_atm_management") exitWith {};
 };
 
 disableSerialization;
