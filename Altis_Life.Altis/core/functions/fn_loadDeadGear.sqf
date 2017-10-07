@@ -11,22 +11,22 @@ params [
 ];
 
 _loadout params [
-	"_primary",
-	"_launcher",
-	"_handgun",
-	"_magazines",
-	"_uniform",
-	"_vest",
-	"_backpack",
-	"_items",
-	"_primitems",
-	"_secitems",
-	"_handgunitems",
-	"_uitems",
-	"_vitems",
-	"_bitems",
-	"_headgear",
-	"_goggles"
+    "_primary",
+    "_launcher",
+    "_handgun",
+    "_magazines",
+    "_uniform",
+    "_vest",
+    "_backpack",
+    "_items",
+    "_primitems",
+    "_secitems",
+    "_handgunitems",
+    "_uitems",
+    "_vitems",
+    "_bitems",
+    "_headgear",
+    "_goggles"
 ];
 
 //Strip the unit down

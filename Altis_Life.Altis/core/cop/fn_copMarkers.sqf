@@ -8,34 +8,43 @@
 private _markers = [];
 private _cops = [];
 
-{if (side _x isEqualTo west) then {_cops pushBack _x;}} forEach playableUnits; //Fetch list of cops / blufor
+{
+    if (side _x isEqualTo west) then {
+        _cops pushBack _x
+    };
+} count playableUnits; //Fetch list of cops / blufor
 
 //Create markers
 {
     if !(_x isEqualTo player) then {
-        _marker = createMarkerLocal [format ["%1_marker",_x],visiblePosition _x];
+        private _marker = createMarkerLocal [format ["%1_marker",_x],visiblePosition _x];
         _marker setMarkerColorLocal "ColorBLUFOR";
         _marker setMarkerTypeLocal "Mil_dot";
         _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
 
         _markers pushBack [_marker,_x];
     };
-} forEach _cops;
+} count _cops;
 
 while {visibleMap} do {
     {
         _x params [
-            "_mark",
-            ["_unit",objNull,objNull]
+            ["_mark","",[""]],
+            ["_unit",objNull,[objNull]]
         ];
         if (!isNil "_unit" && !isNull _unit) then {
-            _mark setMarkerPosLocal (visiblePosition _unit);
+            _mark setMarkerPosLocal (visiblePosition _unit)
         };
-    } forEach _markers;
-    if (!visibleMap) exitWith {};
+    } count _markers;
     sleep 0.02;
 };
 
-{deleteMarkerLocal (_x select 0);} forEach _markers;
+{
+    _x params [
+        ["_marker","",[""]]
+    ];
+    deleteMarkerLocal _marker;
+} count _markers;
+
 _markers = [];
 _cops = [];

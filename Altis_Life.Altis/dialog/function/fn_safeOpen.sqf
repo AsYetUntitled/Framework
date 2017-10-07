@@ -23,9 +23,9 @@ ctrlSetText[3501,(localize "STR_Civ_SafeInv")];
 life_safeObj setVariable ["inUse",true,true];
 
 [life_safeObj] spawn {
-	params [
-		["_object",objNull,[objNull]]
-	]
+    params [
+        ["_object",objNull,[objNull]]
+    ];
     waitUntil {isNull (findDisplay 3500)};
     _object setVariable ["inUse",false,true];
 };

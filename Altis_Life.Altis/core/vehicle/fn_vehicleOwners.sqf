@@ -6,7 +6,7 @@
     Pulled from old system, will be revised for new system.
 */
 params [
-	"_owners"
+    "_owners"
 ];
 private _return = "";
 

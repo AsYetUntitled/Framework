@@ -6,11 +6,11 @@
 */
 
 params [
-	["_mapOpen",false,[false]]
+    ["_mapOpen",false,[false]]
 ];
 
 if (_mapOpen) then {
-	switch (playerSide) do {
+    switch (playerSide) do {
         case west: {[] spawn life_fnc_copMarkers};
         case independent: {[] spawn life_fnc_medicMarkers};
         case civilian: {[] spawn life_fnc_civMarkers};
