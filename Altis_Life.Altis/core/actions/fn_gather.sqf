@@ -57,7 +57,7 @@ if (_diff isEqualTo 0) exitWith {
 };
 
 switch (_requiredItem) do {
-    case "pickaxe": {[[player,"mining",35,1] remoteExecCall ["life_fnc_say3D",RCLIENT]]};
+    case "pickaxe": {[player,"mining",35,1] remoteExecCall ["life_fnc_say3D",RCLIENT]};
     default {[player,"harvest",20,1] remoteExecCall ["life_fnc_say3D",RCLIENT]};
 };
 
