@@ -12,9 +12,9 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `altislife`
+-- Creates database `altislife` unless it already exists and uses `altislife`
 -- Default Schema
--- Creates default user arma3.
+-- Creates default user `arma3` with password `changeme` unless it already exists
 --
 CREATE DATABASE IF NOT EXISTS `altislife` DEFAULT CHARACTER SET utf8mb4;
 USE `altislife`;
@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 
 -- --------------------------------------------------------
 --
--- Granting perms to user arma3, created above
+-- Granting permissions to user `arma3`, created above
 --
 
 GRANT SELECT,UPDATE,INSERT,DELETE ON `altislife`.* TO 'arma3'@'localhost';
