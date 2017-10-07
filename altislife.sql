@@ -216,8 +216,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 -- Granting permissions to user `arma3`, created above
 --
 
-GRANT SELECT,UPDATE,INSERT,DELETE ON `altislife`.* TO 'arma3'@'localhost';
-GRANT EXECUTE ON altislife.* TO 'arma3'@'localhost';
+GRANT SELECT,UPDATE,INSERT,DELETE,EXECUTE ON `altislife`.* TO 'arma3'@'localhost';
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
