@@ -560,7 +560,7 @@
         <Key ID="STR_Admin_CannotTpHere">
             <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
-            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un véhicule.</French>
+            <French>Vous ne pouvez pas TP le joueur ici, car il est actuellement dans un véhicule.</French>
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
@@ -586,7 +586,7 @@
             <Italian>Comp</Italian>
             <Russian></Russian>
             <German>Entschädigen</German>
-            <French>Comp</French>
+            <French>Compenser</French>
             <Portuguese>Compensar</Portuguese>
             <Polish>Comp</Polish>
         </Key>
@@ -1007,7 +1007,7 @@
             <Spanish>No escribistes un valor numérico.</Spanish>
             <Russian></Russian>
             <German>Die eingegebene Zahl ist keine richtige Zahl.</German>
-            <French>Vous devez entrer un nombre.</French>
+            <French>La valeur entrée n'est pas numérique.</French>
             <Italian>Il valore inserito non è numerico.</Italian>
             <Portuguese>O valor digitado não é um número.</Portuguese>
             <Polish>Wprwadzona wartość nie jest liczbą</Polish>
@@ -1161,7 +1161,7 @@
             <Spanish>No tienes tanto dinero contigo.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viel Geld bei dir.</German>
-            <French>Vous n'avez pas autant d'agent sur vous.</French>
+            <French>Vous n'avez pas autant d'argent sur vous.</French>
             <Italian>Non hai abbastanza denaro con te.</Italian>
             <Portuguese>Você não tem todo esse dinheiro.</Portuguese>
             <Polish>Nie masz przy sobie tyle pieniędzy</Polish>
@@ -1307,7 +1307,7 @@
             <Spanish>You must enter a message to send!</Spanish>
             <Russian>You must enter a message to send!</Russian>
             <German>Du musst eine Nachricht eingeben!</German>
-            <French>Vous devez écrire un message à envoyer !</French>
+            <French>Vous devez écrire un message à envoyer!</French>
             <Italian>You must enter a message to send!</Italian>
             <Portuguese>You must enter a message to send!</Portuguese>
             <Polish>You must enter a message to send!</Polish>
@@ -1329,7 +1329,7 @@
             <Spanish>You must select a player you are sending the text to!</Spanish>
             <Russian>You must select a player you are sending the text to!</Russian>
             <German>Du musst einen Spieler auswählen!</German>
-            <French>Vous devez sélectionner un joueur à qui envoyer le message !</French>
+            <French>Vous devez sélectionner un joueur auquel vous envoyez le message !</French>
             <Italian>You must select a player you are sending the text to!</Italian>
             <Portuguese>You must select a player you are sending the text to!</Portuguese>
             <Polish>You must select a player you are sending the text to!</Polish>
@@ -1863,7 +1863,7 @@
             <Spanish>You have quit the gang.</Spanish>
             <Russian>You have quit the gang.</Russian>
             <German>Du hast die Gang verlassen.</German>
-            <French>Vous avez quitté le gang</French>
+            <French>Vous avez quitté le gang.</French>
             <Italian>You have quit the gang.</Italian>
             <Portuguese>You have quit the gang.</Portuguese>
             <Polish>You have quit the gang.</Polish>
@@ -1885,7 +1885,7 @@
             <Spanish>Transferencia de liderazgo cancelada.</Spanish>
             <Russian></Russian>
             <German>Übertragung der Gangführung abgebrochen.</German>
-            <French>Transfert du commandement annulée.</French>
+            <French>Transfert du commandement annulé.</French>
             <Italian>Trasferimento del comando annullato.</Italian>
             <Portuguese>Transferencia de liderança cancelada.</Portuguese>
             <Polish>Przkazanie kierownictwa anulowane.</Polish>
@@ -2893,7 +2893,7 @@
             <Spanish>Perdonar</Spanish>
             <Russian></Russian>
             <German>Erlassen</German>
-            <French>Supprimer</French>
+            <French>Pardonner</French>
             <Italian>Perdona</Italian>
             <Polish>Pardon</Polish>
             <Portuguese>Perdão</Portuguese>
@@ -2994,7 +2994,7 @@
             <Spanish>Ornate</Spanish>
             <Russian></Russian>
             <German>Kaiserfisch</German>
-            <French>Ornate</French>
+            <French>Doré</French>
             <Italian>Orata</Italian>
             <Portuguese>Ornamentado</Portuguese>
             <Polish>Dorada</Polish>
@@ -3315,7 +3315,7 @@
             <Spanish>Fallastes la misión, porque moristes.</Spanish>
             <Russian></Russian>
             <German>Da du gestorben bist, hast du es nicht geschafft das Paket abzuliefern.</German>
-            <French>Vous êtes décédé, livraison annulée.</French>
+            <French>Vous êtes mort, livraison annulée.</French>
             <Italian>Compra Oggetto</Italian>
             <Portuguese>Você falhou na tarefa de entrega pois você morreu.</Portuguese>
             <Polish>Nie dostarczyłeś przesyłki z uwagi na to że zmarłeś.</Polish>
@@ -3413,7 +3413,7 @@
             <Czech>vzdouvání Vehicle</Czech>
             <Spanish>Embargando Vehículo</Spanish>
             <Russian></Russian>
-            <German>Fahrzeug wird beschlagnahmt...</German>
+            <German>Fahrzeug wird beschlagnahmt</German>
             <French>Mise en fourrière</French>
             <Italian>Sequestro Veicolo in corso</Italian>
             <Portuguese>Apreendendo veículo</Portuguese>
