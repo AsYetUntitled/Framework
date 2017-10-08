@@ -3535,7 +3535,7 @@
             <Spanish>Ciclo completado el dispositivo ha minado %1 %2</Spanish>
             <Russian></Russian>
             <German>Sammeln beendet, das Fahrzeug hat %1 %2 abgebaut.</German>
-            <French>Cycle terminé, le véhicule à miné %1 %2</French>
+            <French>Cycle terminé, le véhicule a miné %1 %2</French>
             <Italian>Ciclo completato, il veicolo ha raccolto %1 %2</Italian>
             <Portuguese>Ciclo completo, a máquina minerou %1 %2</Portuguese>
             <Polish>Urządzenie wydobyło %1 %2</Polish>
@@ -3689,7 +3689,7 @@
             <Spanish>Este vehículo no tiene informacion, posiblemente fue creado atravez de Cheats \n\nBorrando vehículo.</Spanish>
             <Russian></Russian>
             <German>Über das Fahrzeug gibt es keine Informationen, es wurde vermutlich durch Cheats gespawnt. \n\nLösche das Fahrzeug.</German>
-            <French>Ce véhicule ne dispose d'aucune information, il a probablement été spawné par un hackeur. \n\ Suppression du véhicule.</French>
+            <French>Ce véhicule ne dispose d'aucune information, il a probablement été créé par un hackeur. \n\ Suppression du véhicule.</French>
             <Italian>Il veicolo è privo di identificativi, probabilmente è stato creato mediante cheat. \n\nCancellazione veicolo.</Italian>
             <Portuguese>Esse veículo não tem informações, é provável que ele tenha sido criado por um cheater.\n\nDeletando veículo.</Portuguese>
             <Polish>Pojazd bez informacji servera, prawdopodobnie umieszczony przez hakera \n\n usuwam pojazd.</Polish>
