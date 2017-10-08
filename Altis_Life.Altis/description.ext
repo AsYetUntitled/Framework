@@ -42,7 +42,7 @@ class CfgSounds {
 
     class tazerSound {
         name = "tazerSound";
-        sound[] = {"\sounds\tazer.ogg", 0.25, 1};
+        sound[] = {"\sounds\tazer.ogg", 0.5, 1};
         titles[] = {};
     };
 
@@ -54,25 +54,25 @@ class CfgSounds {
 
     class mining {
         name = "mining";
-        sound[] = {"\sounds\mining.ogg", 1.0, 1};
+        sound[] = {"\sounds\mining.ogg", 2.0, 1};
         titles[] = {};
     };
 
     class harvest {
         name = "harvest";
-        sound[] = {"\sounds\harvest.ogg", 1.0, 1};
+        sound[] = {"\sounds\harvest.ogg", 2.0, 1};
         titles[] = {};
     };
 
     class lockCarSound {
         name = "lockCarSound";
-        sound[] = {"\sounds\carLock.ogg", 0.25, 1};
+        sound[] = {"\sounds\carLock.ogg", 0.75, 1};
         titles[] = {};
     };
 
     class unlockCarSound {
         name = "unlockCarSound";
-        sound[] = {"\sounds\carUnlock.ogg", 0.25, 1};
+        sound[] = {"\sounds\carUnlock.ogg", 0.75, 1};
         titles[] = {};
     };
 };
