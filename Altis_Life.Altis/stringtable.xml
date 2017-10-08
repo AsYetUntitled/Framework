@@ -3546,7 +3546,7 @@
             <Spanish>El vehículo no tiene gasolina.</Spanish>
             <Russian></Russian>
             <German>Das Fahrzeug hat keinen Treibstoff mehr.</German>
-            <French>Le véhicule n'a plus d'essence.</French>
+            <French>Le véhicule n'a plus de carburant.</French>
             <Italian>Il veicolo è senza carburante</Italian>
             <Portuguese>O veículo está sem combustível</Portuguese>
             <Polish>Brak paliwa w pojezdzie</Polish>
@@ -3631,7 +3631,7 @@
         <Key ID="STR_NOTF_PlayerNear">
             <Original>You can't chop a vehicle while a player is near!</Original>
             <Czech>Nemůžeš sekat vozidla, zatímco hráč je blízko!</Czech>
-            <French>Vous ne pouvez pas vendre un véhicule alors que son propriétaire est à côté !</French>
+            <French>Vous ne pouvez pas vendre un véhicule alors que son propriétaire est à proximité !</French>
             <Spanish>No puedes vender este vehículo mientras hay un jugador cerca!</Spanish>
             <Italian>Non si può rubare un veicolo mentre un giocatore è vicino!</Italian>
             <Polish>Nie można posiekać pojazd podczas gdy gracz jest w pobliżu!</Polish>
@@ -3829,7 +3829,7 @@
         <Key ID="STR_NOTF_ActionDelay">
             <Original>You're doing it too fast!</Original>
             <Czech>Děláte to příliš rychle!</Czech>
-            <French>Moins vite !</French>
+            <French>Moins vite entre chaques actions!</French>
             <Spanish>Lo estas haciendo muy rapido!</Spanish>
             <Italian>Lo stai facendo troppo veloce!</Italian>
             <Russian></Russian>
@@ -4008,7 +4008,7 @@
             <Spanish>Te esta dando mucha, mucha sed. Toma algo o moriras!</Spanish>
             <Russian></Russian>
             <German>Du hast Durst! Du solltest schnell etwas trinken oder du wirst verdursten!</German>
-            <French>Vous commencez à mourir de soif, vous avez besoin de trouver quelque chose à boire, sinon, vous allez mourrir.</French>
+            <French>Vous commencez à mourir de soif, vous allez mourir de soif si vous ne buvez pas.</French>
             <Italian>E' troppo tempo che non bevi qualcosa, dovresti trovare qualcosa da bere o comincerai a disitratarti.</Italian>
             <Portuguese>Você está ficando desidratado. Se não beber algo poderá morrer.</Portuguese>
             <Polish>Długo nic nie piłeś, napij się czegoś bo możesz zginąć z pragnienia.</Polish>
