@@ -101,7 +101,7 @@ for "_i" from 0 to 1 step 0 do {
     if (!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0)) then {
         //failMission "SpyGlass";
         sleep 30;
-        if((!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0)))then{
+        if ((!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0))) then {
           failMission "SpyGlass";
         };
     };
