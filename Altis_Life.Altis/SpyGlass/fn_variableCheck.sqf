@@ -93,12 +93,17 @@ _uiCheckFunction = {
     } forEach allVariables uiNamespace;
 };
 
+waitUntil {isPlayer player};
 for "_i" from 0 to 1 step 0 do {
     objNull call _checkFunction;
     uiSleep 10;
     objNull call _uiCheckFunction;
     if (!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0)) then {
-        failMission "SpyGlass";
+        //failMission "SpyGlass";
+        sleep 30;
+        if((!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0)))then{
+          failMission "SpyGlass";
+        };
     };
     uiSleep (5 * 60); //Wait 5 minutes
 };
