@@ -4203,7 +4203,7 @@
         <Key ID="STR_NOTF_didNotSelectItemToGive">
             <Original>You didn't select an item you wanted to give.</Original>
             <Czech>Nevybrali jste položku, kterou chtěl dát.</Czech>
-            <French>Vous n'avez pas sélectionné un objet que vous vouliez donner.</French>
+            <French>Vous n'avez pas sélectionné l'objet que vous vouliez donner.</French>
             <Spanish>No ha seleccionado el objeto que quiere dar.</Spanish>
             <Italian>non è stato selezionato un elemento che si voleva dare.</Italian>
             <Polish>Nie wybrano element, który chciał dać.</Polish>
