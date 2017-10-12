@@ -4071,7 +4071,7 @@
         <Key ID="STR_NOTF_CannotSeizePerson">
             <Original>You couldn't effectively seize any items. Try again.</Original>
             <Czech>Dalo by se efektivně využily všech položek. Zkus to znovu.</Czech>
-            <French>Vous ne pouviez pas saisir les objets. Réessayez.</French>
+            <French>Vous n'avez pas pu saisir les objets. Réessayez.</French>
             <Spanish>No pudistes efectivamente, confiscar algun objeto. Prueba de nuevo.</Spanish>
             <Italian>Impossibile perquisire la persona in maniera esaustiva. Riprova.</Italian>
             <Polish>Nie można skutecznie wykorzystać żadnych przedmiotów. Spróbuj ponownie.</Polish>
