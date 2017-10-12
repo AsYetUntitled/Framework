@@ -3908,7 +3908,7 @@
             <Czech>Jste zpracujeme vaši položku (y)!</Czech>
             <Spanish>Has procesado tus objeto(s)</Spanish>
             <Russian></Russian>
-            <French>Vous avez traité vos item(s)!</French>
+            <French>Vous avez traité vos objet(s) !</French>
             <Italian>Hai processato i tuoi oggetti!</Italian>
             <Polish>Przetworzeniu swój przedmiot (y)!</Polish>
             <Portuguese>Você processou seu(s) item(s)</Portuguese>
@@ -4019,7 +4019,7 @@
             <Spanish>Estas a punto de morir de desidratación, busca algo de tomar rapido!</Spanish>
             <Russian></Russian>
             <German>Du bist am Verdursten! Du wirst sterben, wenn du nichts zum Trinken findest!</German>
-            <French>Vous êtes en train de mourir de soif, vous allez mourir très bientôt si vous ne buvez pas quelque chose.</French>
+            <French>Vous êtes en train de mourir de soif, vous allez mourir très bientôt si vous ne buvez pas.</French>
             <Italian>Stai soffrendo per una grave deidratazione, trova velocemente qualcosa da bere o morirai!</Italian>
             <Portuguese>Você está sofrendo de desidratação. Beba algo ou irá morrer!</Portuguese>
             <Polish>Zaczynasz słabnąć z pragnienia, wypij coś inaczej zginiesz!!!</Polish>
@@ -4071,7 +4071,7 @@
         <Key ID="STR_NOTF_CannotSeizePerson">
             <Original>You couldn't effectively seize any items. Try again.</Original>
             <Czech>Dalo by se efektivně využily všech položek. Zkus to znovu.</Czech>
-            <French>Vous ne pouviez pas saisir les articles. Réessayez.</French>
+            <French>Vous ne pouvez pas saisir les objets. Réessayez.</French>
             <Spanish>No pudistes efectivamente, confiscar algun objeto. Prueba de nuevo.</Spanish>
             <Italian>Impossibile perquisire la persona in maniera esaustiva. Riprova.</Italian>
             <Polish>Nie można skutecznie wykorzystać żadnych przedmiotów. Spróbuj ponownie.</Polish>
@@ -4170,7 +4170,7 @@
         <Key ID="STR_NOTF_Teleport">
             <Original>You have teleported to your selected position.</Original>
             <Czech>Jste teleported do vašeho zvolené poloze.</Czech>
-            <French>Vous avez téléporté à votre position sélectionnée.</French>
+            <French>Vous avez été téléporté à votre position sélectionnée.</French>
             <Spanish>Te has teletransportado a la posisción seleccionada.</Spanish>
             <Italian>Ti sei teletrasportaato alla posizione selezionata.</Italian>
             <Polish>Masz teleportowany do wybranej pozycji.</Polish>
@@ -4203,7 +4203,7 @@
         <Key ID="STR_NOTF_didNotSelectItemToGive">
             <Original>You didn't select an item you wanted to give.</Original>
             <Czech>Nevybrali jste položku, kterou chtěl dát.</Czech>
-            <French>Vous ne l'avez pas sélectionné un item que vous vouliez donner.</French>
+            <French>Vous n'avez pas sélectionné un objet que vous vouliez donner.</French>
             <Spanish>No ha seleccionado el objeto que quiere dar.</Spanish>
             <Italian>non è stato selezionato un elemento che si voleva dare.</Italian>
             <Polish>Nie wybrano element, który chciał dać.</Polish>
@@ -4258,7 +4258,7 @@
         <Key ID="STR_NOTF_couldNotGive">
             <Original>Couldn't give that much of that item, maybe you don't have that amount?</Original>
             <Czech>Nemohl dát, že velká část této položky, možná nemáte tuto částku?</Czech>
-            <French>Impossible de donner cet article, peut-être que vous n'en n'avez pas autant ?</French>
+            <French>Impossible de donner cet objet, peut-être que vous n'en n'avez pas autant ?</French>
             <Spanish>No se pudo dar a que gran parte de ese elemento, tal vez usted no tiene esa cantidad?</Spanish>
             <Italian>Impossibile dare quella quantità di oggetti.</Italian>
             <Polish>nie mógł dać, że wiele z tego elementu, może nie masz tej kwoty?</Polish>
@@ -4280,7 +4280,7 @@
         <Key ID="STR_NOTF_notEnoughtToGive">
             <Original>You don't have that much to give!</Original>
             <Czech>Nemusíte to hodně dát!</Czech>
-            <French>Vous n'avez pas autant sur vous !</French>
+            <French>Vous n'en avez pas assez à donner !</French>
             <Spanish>Usted no tiene mucho para dar!</Spanish>
             <Italian>Non hai abbastanza oggetti da dare!</Italian>
             <Polish>Nie ma tego dużo dać!</Polish>
@@ -4401,7 +4401,7 @@
         <Key ID="STR_NOTF_couldNotRemoveThatMuch">
             <Original>Could not remove that much of that item. Maybe you do not have that amount?</Original>
             <Czech>Nepodařilo se odstranit, že velká část této položky. Možná, že nemáte tuto částku?</Czech>
-            <French>Impossible de supprimer autant. Peut-être que vous ne disposez pas de ce montant ?</French>
+            <French>Impossible d'en supprimer autant. Peut-être que vous ne disposez pas de ce montant ?</French>
             <Spanish>No se pudo eliminar que gran parte de ese elemento. Tal vez usted no tiene esa cantidad?</Spanish>
             <Italian>Impossibile rimuovere quel quantitativo di oggetti.</Italian>
             <Polish>Nie można usunąć, że wiele z tego elementu. Może nie masz tej kwoty?</Polish>
@@ -4445,7 +4445,7 @@
         <Key ID="STR_NOTF_canOnlyStoreInLandVeh">
             <Original>You cannot store that in anything but a land vehicle!</Original>
             <Czech>Nelze uložit, že v ničem jiném než pozemní vozidla!</Czech>
-            <French>Vous pouvez stocker cette item seulement dans les véhicules terrestres !</French>
+            <French>Vous pouvez stocker cette objet seulement dans les véhicules terrestres !</French>
             <Spanish>No se puede almacenar en cualquier cosa menos que un vehículo terrestre!</Spanish>
             <Italian>Non è possibile depositare questa risorsa in un veicolo che non sia terrestre!</Italian>
             <Polish>Nie można zapisać, że w nic poza pojazdem lądowym!</Polish>
@@ -4467,7 +4467,7 @@
         <Key ID="STR_NOTF_VehicleFullOrInsufCap">
             <Original>The vehicle is either full or cannot hold that much.</Original>
             <Czech>Vozidlo je buď plný nebo nemůže myslet si, že mnoho.</Czech>
-            <French>Le véhicule est plein ou ne peut pas supporter autant d'items.</French>
+            <French>Le véhicule est plein ou ne peut pas en contenir autant.</French>
             <Spanish>El vehículo está llena o no puede contener tanta.</Spanish>
             <Italian>Il veicolo è pieno o non può tenere quel quantitativo.</Italian>
             <Polish>Pojazd jest albo w pełnym lub nie można uznać, że dużo.</Polish>
@@ -4478,7 +4478,7 @@
         <Key ID="STR_CouldNotRemoveItemsToPutInVeh">
             <Original>Couldn't remove the items from your inventory to put in the vehicle.</Original>
             <Czech>Vozidlo je buď plný nebo nemůže myslet si, že mnoho.</Czech>
-            <French>Le véhicule est plein ou ne peut pas supporter autant d'item.</French>
+            <French>Impossible de retirer les objets de votre inventaire pour les mettre dans le véhicule.</French>
             <Spanish>El vehículo está llena o no puede contener tanta.</Spanish>
             <Italian>Impossibile rimuovere quel quantitativo di oggetti dal tuo inventario per metterlo nel veicolo.</Italian>
             <Polish>Pojazd jest albo w pełnym lub nie można uznać, że dużo.</Polish>
@@ -4581,7 +4581,7 @@
             <Czech></Czech>
             <Spanish>Título del Mensaje</Spanish>
             <Russian></Russian>
-            <French>Titre de l'annonce:</French>
+            <French>Titre de l'annonce :</French>
             <German>Nachrichtenüberschrift:</German>
             <Italian></Italian>
             <Portuguese>Titulo da Mensagem:</Portuguese>
@@ -4658,7 +4658,7 @@
             <Czech></Czech>
             <Spanish>Necesitas %1 para transmitir un anuncio!</Spanish>
             <Russian></Russian>
-            <French>Vous avez besoin de $%1 pour envoyer une diffusion !</French>
+            <French>Vous avez besoin de $%1 pour commencer à diffuser !</French>
             <German>Du benötigst $%1, eine Nachricht senden zu können!</German>
             <Italian></Italian>
             <Portuguese>Você precisa de $%1 para enviar uma transmissão!</Portuguese>
@@ -4694,7 +4694,7 @@
             <Spanish>Por ser arrestado se te han quitado estas licencias (si las tienes)\n\nL. de Armas \nL. Rebelde</Spanish>
             <Russian></Russian>
             <German>Bei der Verhaftung hast du folgende Lizenzen verloren, sofern du sie besessen hast:\n\nWaffenschein\nRebellenausbildung.</German>
-            <French>Après votre mise en prison, vous avez perdu les licences suivante si vous les aviez\n\nPermis de port d'arme\n LicenceRebelle</French>
+            <French>Après emprisonnement, vous avez perdu les licences suivante si vous les aviez\n\nPermis de port d'arme\n LicenceRebelle</French>
             <Italian>A causa del tuo arresto hai perso le seguenti licenze, se le possedevi\n\nPorto d'armi\nLicenza Ribelle</Italian>
             <Portuguese>Você perdeu as seguintes licenças por ter sido preso\n\nPorte de Armas\n\nTreinamento Rebelde</Portuguese>
             <Polish>Z uwagi na aresztowanie straciłeś następujące licencje jeśli je posiadałeś \n\nPozwolenie na broń \nTrening Rebelianta</Polish>
@@ -4727,7 +4727,7 @@
             <Spanish>Has pasado el tiempo en la cárcel y has sido liberado.</Spanish>
             <Russian></Russian>
             <German>Du hast deine Zeit im Gefängnis abgesessen.</German>
-            <French>Vous avez terminé votre peine, vous êtes libre.</French>
+            <French>Vous avez purgé votre peine, vous êtes désormais libre.</French>
             <Italian>Hai scontato la tua pena in prigione e sei stato rilasciato.</Italian>
             <Portuguese>Você pagou pelo seus crimes e foi libertado.</Portuguese>
             <Polish>Odbyłeś swoją karę zostałeś zwolniony z więzienia.</Polish>
