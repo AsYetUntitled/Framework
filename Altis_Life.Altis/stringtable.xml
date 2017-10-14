@@ -7539,7 +7539,7 @@
             <Spanish>La ganzua se rompió.</Spanish>
             <Russian></Russian>
             <German>Der Dietrich ist abgebrochen.</German>
-            <French>L'outil de crochetage a cassé</French>�
+            <French>L'outil de crochetage a cassé</French>
             <Italian>Il grimaldello si è rotto.</Italian>
             <Portuguese>A Chave Mestra quebrou.</Portuguese>
             <Polish>Wytrych się złamał.</Polish>
@@ -7638,7 +7638,7 @@
             <Spanish>No hay más espacio de almacenamiento en tu casa.</Spanish>
             <Russian></Russian>
             <German>Es gibt in deinem Haus keinen freien Lagerplatz mehr.</German>
-            <French>Plus d'espace libre dans votre maison.</French>
+            <French>Il n'y a plus d'espace libre dans votre maison.</French>
             <Italian>I contenitori in casa tua hanno finito lo spazio disponibile.</Italian>
             <Portuguese>Não ha mais espaços para guardar itens em sua casa.</Portuguese>
             <Polish>Brak wolnych miejsc na pojemniki w domu.</Polish>
@@ -7649,7 +7649,7 @@
             <Spanish>Debes seleccionar un objeto primero!</Spanish>
             <Russian></Russian>
             <German>Du musst zuerst einen Gegenstand auswählen!</German>
-            <French>Vous devez sélectionner un item !</French>
+            <French>Vous devez sélectionner un objet !</French>
             <Italian>Devi prima selezionare un oggetto!</Italian>
             <Portuguese>Você precisa selecionar um item primeiro!</Portuguese>
             <Polish>Zaznacz najpier rzecz.</Polish>
@@ -7816,7 +7816,7 @@
             <Spanish>Debes estar a menos de 10m para procesar.</Spanish>
             <Russian></Russian>
             <German>Du musst innerhalb von 10m bleiben, um verarbeiten zu können.</German>
-            <French>Vous devez rester à 10m pour traiter.</French>
+            <French>Vous devez rester à 10m pour procéder.</French>
             <Italian>Devi stare entro 10m per processare.</Italian>
             <Portuguese>Você precisa ficar a menos de 10m para processar.</Portuguese>
             <Polish>Musisz być w odległości 10 m aby przetwarzanie się odbyło.</Polish>
@@ -7824,7 +7824,7 @@
         <Key ID="STR_Process_Weight">
             <Original>You have no inventory space to process your materials.</Original>
             <Czech>Nemáš zásob prostor ke zpracování vašich materiálů.</Czech>
-            <French>Vous avez pas de place pour traiter vos matériaux.</French>
+            <French>Vous n'avez pas de place pour traiter vos matériaux.</French>
             <Spanish>Usted no tiene espacio en el inventario para procesar sus materiales.</Spanish>
             <Italian>Non hai spazio nell'inventario per elaborare i materiali.</Italian>
             <Polish>Nie masz miejsca na przetwarzanie swoich zapasów materiałów.</Polish>
@@ -7971,7 +7971,7 @@
             <Czech>Tato osoba buď respawned nebo již byl přijat.</Czech>
             <Spanish>Esta persona ya reapareció o fue revivida.</Spanish>
             <Russian></Russian>
-            <French>Cette personne a peut-être déjà réapparu ou a déjà été réanimée.</French>
+            <French>Cette personne a peut-être fait réapparition ou a déjà été réanimée.</French>
             <German>Diese Person ist entweder aufgewacht oder wurde bereits wiederbelebt.</German>
             <Italian>Questa persona è stata già rianimata o ha fatto respawn.</Italian>
             <Portuguese>Esse jogador já deu respawn ou já foi reanimado.</Portuguese>
