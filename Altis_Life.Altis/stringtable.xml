@@ -61,7 +61,7 @@
         <Key ID="STR_Shops_C_Police">
             <Original>Altis Police Department Shop</Original>
             <Czech>Altis policejní oddělení Shop</Czech>
-            <French>Vêtements de la police</French>
+            <French>Vêtements policier</French>
             <Spanish>Tienda del Departamento de Policía</Spanish>
             <Russian></Russian>
             <Portuguese>Loja de Roupas Policiais</Portuguese>
@@ -6391,7 +6391,7 @@
             <Spanish>Salema Cocinado</Spanish>
             <Russian></Russian>
             <German>Gegrillte Sardine</German>
-            <French>Sardine grillé</French>
+            <French>Sardine grillée</French>
             <Italian>Sardine alla griglia</Italian>
             <Portuguese>Sardinha Grelhada</Portuguese>
             <Polish>Grilowana Salema</Polish>
@@ -6413,7 +6413,7 @@
             <Spanish>Ornate Cocinado</Spanish>
             <Russian></Russian>
             <German>Gegrillter Kaiserfisch</German>
-            <French>Angelfish grillé</French>
+            <French>Doré grillé</French>
             <Italian>Angelfish alla griglia</Italian>
             <Portuguese>Angelfish Grelhado</Portuguese>
             <Polish>Grilowany Ornat</Polish>
@@ -6501,7 +6501,7 @@
             <Spanish>Pez Gato Cocinado</Spanish>
             <Russian></Russian>
             <German>Frittierter Katzenhai</German>
-            <French>Roussette frit</French>
+            <French>Poisson Chat frit</French>
             <Italian>profondo palombo fritti</Italian>
             <Portuguese>Tubarão Gato Frito</Portuguese>
             <Polish>Grilowany Rekin</Polish>
