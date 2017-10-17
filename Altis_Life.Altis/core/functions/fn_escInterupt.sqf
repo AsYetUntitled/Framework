@@ -1,4 +1,5 @@
 #include "..\..\script_macros.hpp"
+
 /*
     File: fn_escInterupt.sqf
     Author: Bryan "Tonic" Boardwine
@@ -7,6 +8,7 @@
     Monitors when the ESC menu is pulled up and blocks off
     certain controls when conditions meet.
 */
+
 private ["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
 disableSerialization;
 
@@ -71,8 +73,13 @@ for "_i" from 0 to 1 step 0 do {
 
     _usebleCtrl = call _canUseControls;
     _usebleCtrl spawn _escSync;
+    
     if (_usebleCtrl) then {
         _respawnButton ctrlEnable true; //Enable the button.
     };
-    waitUntil {isNull (findDisplay 49)};
+    
+    waitUntil {isNull (findDisplay 49) || {!alive player}};
+    if (!isNull (findDisplay 49) && {!alive player}) then {
+        (findDisplay 49) closeDisplay 2;
+    };
 };
