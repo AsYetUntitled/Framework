@@ -33,6 +33,7 @@ life_preview_3D_vehicle_object = objNull;
         private ["_object","_distanceCam","_azimuthCam"];
 
         // Waiting for a view object.
+        waitUntil {!isNil "life_preview_3D_vehicle_object"};
         waitUntil {!isNull life_preview_3D_vehicle_object};
 
         _object = life_preview_3D_vehicle_object;
