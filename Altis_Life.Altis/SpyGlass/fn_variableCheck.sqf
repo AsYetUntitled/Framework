@@ -102,10 +102,10 @@ for "_i" from 0 to 1 step 0 do {
     uiSleep 10;
     objNull call _uiCheckFunction;
     if (!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0)) then {
-        //if we get into this scope, wait 30 seconds and if it still returns true , then failMission
-        uiSleep 30;//uiSleep > sleep .. Jawsh 2k17
+        //If it enters this scope then wait 30 seconds and if it still returns true then fail the mission.
+        uiSleep 30;
         if (!((count allVariables profileNameSpace) isEqualTo _profileCount) || ((count allVariables parsingNamespace) > 0)) then {
-          failMission "SpyGlass";//Duuh
+          failMission "SpyGlass";
         };
     };
     uiSleep (5 * 60); //Wait 5 minutes
