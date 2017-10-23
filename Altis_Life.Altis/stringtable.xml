@@ -61,7 +61,7 @@
         <Key ID="STR_Shops_C_Police">
             <Original>Altis Police Department Shop</Original>
             <Czech>Altis policejní oddělení Shop</Czech>
-            <French>Vêtements policier</French>
+            <French>Vêtements policiers</French>
             <Spanish>Tienda del Departamento de Policía</Spanish>
             <Russian></Russian>
             <Portuguese>Loja de Roupas Policiais</Portuguese>
@@ -3829,7 +3829,7 @@
         <Key ID="STR_NOTF_ActionDelay">
             <Original>You're doing it too fast!</Original>
             <Czech>Děláte to příliš rychle!</Czech>
-            <French>Moins vite entre chaques actions!</French>
+            <French>Moins vite entre chaque action !</French>
             <Spanish>Lo estas haciendo muy rapido!</Spanish>
             <Italian>Lo stai facendo troppo veloce!</Italian>
             <Russian></Russian>
@@ -4478,7 +4478,7 @@
         <Key ID="STR_CouldNotRemoveItemsToPutInVeh">
             <Original>Couldn't remove the items from your inventory to put in the vehicle.</Original>
             <Czech>Vozidlo je buď plný nebo nemůže myslet si, že mnoho.</Czech>
-            <French>Impossible de retirer les objets de votre inventaire pour les mettre dans le véhicule.</French>
+            <French>Le véhicule est déjà plein ou ne peut pas stocker d'avantage d'objets.</French>
             <Spanish>El vehículo está llena o no puede contener tanta.</Spanish>
             <Italian>Impossibile rimuovere quel quantitativo di oggetti dal tuo inventario per metterlo nel veicolo.</Italian>
             <Polish>Pojazd jest albo w pełnym lub nie można uznać, że dużo.</Polish>
@@ -4694,7 +4694,7 @@
             <Spanish>Por ser arrestado se te han quitado estas licencias (si las tienes)\n\nL. de Armas \nL. Rebelde</Spanish>
             <Russian></Russian>
             <German>Bei der Verhaftung hast du folgende Lizenzen verloren, sofern du sie besessen hast:\n\nWaffenschein\nRebellenausbildung.</German>
-            <French>Après emprisonnement, vous avez perdu les licences suivante si vous les aviez\n\nPermis de port d'arme\n LicenceRebelle</French>
+            <French>Après emprisonnement, vous avez perdu les licences suivantes si vous les aviez\n\nPermis de port d'arme\n LicenceRebelle</French>
             <Italian>A causa del tuo arresto hai perso le seguenti licenze, se le possedevi\n\nPorto d'armi\nLicenza Ribelle</Italian>
             <Portuguese>Você perdeu as seguintes licenças por ter sido preso\n\nPorte de Armas\n\nTreinamento Rebelde</Portuguese>
             <Polish>Z uwagi na aresztowanie straciłeś następujące licencje jeśli je posiadałeś \n\nPozwolenie na broń \nTrening Rebelianta</Polish>
@@ -6501,7 +6501,7 @@
             <Spanish>Pez Gato Cocinado</Spanish>
             <Russian></Russian>
             <German>Frittierter Katzenhai</German>
-            <French>Poisson Chat frit</French>
+            <French>Poisson-chat frit</French>
             <Italian>profondo palombo fritti</Italian>
             <Portuguese>Tubarão Gato Frito</Portuguese>
             <Polish>Grilowany Rekin</Polish>
