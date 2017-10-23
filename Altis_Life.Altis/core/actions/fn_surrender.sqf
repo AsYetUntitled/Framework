@@ -19,7 +19,7 @@ if (player getVariable ["playerSurrender",false]) then {
 while {player getVariable ["playerSurrender",false]} do {
     player playMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
     if (!alive player || !(isNull objectParent player)) then { 
-    	player setVariable ["playerSurrender",false,true]; 
+        player setVariable ["playerSurrender",false,true]; 
     };
 };
 
