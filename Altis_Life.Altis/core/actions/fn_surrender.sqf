@@ -5,10 +5,10 @@
 
     Description: Causes player to put their hands on their head.
 */
-if ( player getVariable ["restrained",false] ) exitWith {};
-if ( player getVariable ["Escorting",false] ) exitWith {};
-if ( vehicle player != player ) exitWith {};
-if ( speed player > 1 ) exitWith {};
+if (player getVariable ["restrained",false]) exitWith {};
+if (player getVariable ["Escorting",false]) exitWith {};
+if (!isNull objectParent player) exitWith {};
+if (speed player > 1) exitWith {};
 
 if (player getVariable ["playerSurrender",false]) then {
     player setVariable ["playerSurrender",false,true];
@@ -18,7 +18,9 @@ if (player getVariable ["playerSurrender",false]) then {
 
 while {player getVariable ["playerSurrender",false]} do {
     player playMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
-    if (!alive player || !(isNull objectParent player)) then { player setVariable ["playerSurrender",false,true]; };
+    if (!alive player || !(isNull objectParent player)) then { 
+    	player setVariable ["playerSurrender",false,true]; 
+    };
 };
 
 player playMoveNow "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";

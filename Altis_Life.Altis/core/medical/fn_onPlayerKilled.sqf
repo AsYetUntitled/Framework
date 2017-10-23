@@ -52,8 +52,8 @@ life_deathCamera camCommit 0;
         ["_unit",objNull,[objNull]]
     ];
     disableSerialization;
-    private_RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
-    private_Timer = ((findDisplay 7300) displayCtrl 7301);
+    private _RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
+    private _Timer = ((findDisplay 7300) displayCtrl 7301);
     private _maxTime = if (LIFE_SETTINGS(getNumber,"respawn_timer") < 5) then {
         time + 5;
     } else {
@@ -128,7 +128,6 @@ if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
     //Did I rob the federal reserve?
     if (!life_use_atm && {CASH > 0}) then {
         [format [localize "STR_Cop_RobberDead",[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-        CASH = 0;
     };
 };
 

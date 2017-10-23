@@ -13,9 +13,9 @@ if (isNull _this || {player distance _this > 3}) exitWith {_this setVariable ["i
 if (!isNil "_value") exitWith {
     deleteVehicle _this;
 
-    switch (true) do {
-        case (_value > 20000000) : {_value = 100000;}; //VAL>20mil->100k
-        case (_value > 5000000) : {_value = 250000;}; //VAL>5mil->250k
+    _value = switch (true) do {
+        case (_value > 20000000) : {100000}; //VAL>20mil->100k
+        case (_value > 5000000) : {250000}; //VAL>5mil->250k
         default {};
     };
 
