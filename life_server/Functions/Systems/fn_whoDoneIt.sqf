@@ -10,8 +10,7 @@ params [
     ["_killer",objNull,[objNull]]
 ];
 
-if !(isServer) exitWith {};
-if (isNull _victim || isNull _killer) exitWith {};
+if (isNull _victim || {isNull _killer} || {!isServer}) exitWith {};
 
 private _killerWep = currentWeapon _killer;
 private _killerVeh = vehicle _killer;

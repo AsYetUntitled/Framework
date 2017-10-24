@@ -16,7 +16,8 @@ private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 private _vInfo = _vehicle getVariable ["dbInfo",[]];
 
-private ["_uid", "_plate"];
+private "_uid";
+private "_plate";
 if !(_vInfo isEqualTo []) then {
     _vInfo params ["_uid", "_plate"];
 };
