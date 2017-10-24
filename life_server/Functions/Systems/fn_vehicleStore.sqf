@@ -31,11 +31,11 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
 _damage = [_damage] call DB_fnc_mresArray;
 
 // because fuel price!
-private _fuel = [1, fuel _vehicle] select (LIFE_SETTINGS(getNumber,"save_vehicle_fuel");
+private _fuel = [1, fuel _vehicle] select (LIFE_SETTINGS(getNumber,"save_vehicle_fuel"));
 
 private "_query";
 if (_impound) exitWith {
-    if (count _vInfo isEqualTo 0) then  {
+    if (count _vInfo isEqualTo 0) then {
         life_impound_inuse = false;
         (owner _unit) publicVariableClient "life_impound_inuse";
 
