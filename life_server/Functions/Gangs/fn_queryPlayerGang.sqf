@@ -9,7 +9,7 @@ private _query = format ["SELECT id, owner, name, maxmembers, bank, members FROM
 
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-if (_queryResult isEqualTo []) then {
+if !(_queryResult isEqualTo []) then {
     _tmp = [_queryResult select 5] call DB_fnc_mresToArray;
     if (_tmp isEqualType "") then {_tmp = call compile format ["%1", _tmp];};
     _queryResult set[5, _tmp];

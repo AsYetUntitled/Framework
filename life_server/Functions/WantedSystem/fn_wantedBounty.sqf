@@ -20,9 +20,8 @@ if (isNull _civ || isNull _cop) exitWith {};
 private _query = format ["SELECT wantedID, wantedName, wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_uid];
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-private "_amount";
-if (_queryResult isEqualTo []) then {
-    _amount = _queryResult param [3];
+if !(_queryResult isEqualTo []) then {
+    private _amount = _queryResult param [3];
     if !(_amount isEqualTo 0) then {
         if (_half) then {
             [((_amount) / 2),_amount] remoteExecCall ["life_fnc_bountyReceive",(owner _cop)];

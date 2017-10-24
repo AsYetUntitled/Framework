@@ -44,7 +44,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 if (_queryResult isEqualType "") exitWith {};
 
 if (isNil "_queryResult") exitWith {serv_sv_use deleteAt _servIndex;};
-if (count _queryResult isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
+if (_queryResult isEqualTo []) exitWith {serv_sv_use deleteAt _servIndex;};
 _queryResult params ["_id", "_carSide", "_className", "_type", "_pid", "_alive", "_active","_plate", "_color", "_inventory", "_gear", "_fuel", "_damage", "_blacklist"];
 
 if (_alive isEqualTo 0) exitWith {

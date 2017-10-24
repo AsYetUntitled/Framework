@@ -9,7 +9,7 @@ private _count = (["SELECT COUNT(*) FROM houses WHERE owned='1'",2] call DB_fnc_
 for [{_x=0},{_x<=_count},{_x=_x+10}] do {
     private _query = format ["SELECT houses.id, houses.pid, houses.pos, players.name, houses.garage FROM houses INNER JOIN players WHERE houses.owned='1' AND houses.pid = players.pid LIMIT %1,10",_x];
     private _queryResult = [_query,2,true] call DB_fnc_asyncCall;
-    if (count _queryResult isEqualTo 0) exitWith {};
+    if (_queryResult isEqualTo []) exitWith {};
     {
         _x params [
             "_id",
