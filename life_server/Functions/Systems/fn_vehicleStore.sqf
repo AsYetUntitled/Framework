@@ -16,11 +16,13 @@ private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 private _vInfo = _vehicle getVariable ["dbInfo",[]];
 
+private ["_uid", "_plate"];
 if (count _vInfo > 0) then {
-    _vInfo params ["_uid", "_plate"]
+    _vInfo params ["_uid", "_plate"];
 };
 
 // save damage.
+private "_damage";
 if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
     getAllHitPointsDamage _vehicle params ["", "", "_damage"];
 } else {

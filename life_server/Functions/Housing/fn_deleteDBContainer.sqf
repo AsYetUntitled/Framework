@@ -8,17 +8,18 @@
 params [
     ["_container",objNull,[objNull]]
 ];
-if (isNull _container) exitWith  {diag_log "container null";};
+if (isNull _container) exitWith  {};
 
 private _containerID = _container getVariable ["container_id",-1];
+private "_query";
 if (_containerID isEqualTo -1) then {
     private _containerPos = getPosATL _container;
     (_container getVariable "container_owner") params ["_ownerID"];
-    private _query = format ["UPDATE containers SET owned='0', pos='[]' WHERE pid='%1' AND pos='%2' AND owned='1'",_ownerID,_containerPos];
+    _query = format ["UPDATE containers SET owned='0', pos='[]' WHERE pid='%1' AND pos='%2' AND owned='1'",_ownerID,_containerPos];
     //systemChat format [":SERVER:sellHouse: container_id does not exist"];
 } else {
     //systemChat format [":SERVER:sellHouse: house_id is %1",_houseID];
-    private _query = format ["UPDATE containers SET owned='0', pos='[]' WHERE id='%1'",_containerID];
+    _query = format ["UPDATE containers SET owned='0', pos='[]' WHERE id='%1'",_containerID];
 };
 _container setVariable ["container_id",nil,true];
 _container setVariable ["container_owner",nil,true];

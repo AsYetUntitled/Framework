@@ -30,7 +30,8 @@ for [{_x=0},{_x<=_count},{_x=_x+10}] do {
         for "_i" from 1 to _numOfDoors do {
             _house setVariable [format ["bis_disabled_Door_%1",_i],1,true];
         };
-    } forEach _queryResult;
+        true
+    } count _queryResult;
 };
 
 private _blacklistedHouses = "count (getArray (_x >> 'garageBlacklists')) > 0" configClasses (missionconfigFile >> "Housing" >> worldName);
@@ -46,7 +47,8 @@ for "_i" from 0 to count(_blacklistedHouses)-1 do {
         if (isNull _obj) then {
             _obj setVariable ["blacklistedGarage",true,true];
         };
-    } forEach _positions;
+        true
+    } count _positions;
 };
 
 for "_i" from 0 to count(_blacklistedGarages)-1 do {
@@ -57,5 +59,6 @@ for "_i" from 0 to count(_blacklistedGarages)-1 do {
         if (isNull _obj) then {
             _obj setVariable ["blacklistedGarage",true,true];
         };
-    } forEach _positions;
+        true
+    } count _positions;
 };

@@ -21,7 +21,7 @@ params [
 ];
 
 //Get to those error checks.
-if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
+if ({_uid isEqualTo ""} || {_name isEqualTo ""}) exitWith {};
 
 //Parse and setup some data.
 _name = [_name] call DB_fnc_mresString;

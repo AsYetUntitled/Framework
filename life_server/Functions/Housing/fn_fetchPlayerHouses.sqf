@@ -43,7 +43,7 @@ private _containerss = [];
     _container setVectorDirAndUp _direction;
     //Fix position for more accurate positioning
     _position params ["_posX", "_posY", "_posZ"];
-    getPosATL _container params ["_curPosX", "_curPosY", "_curPosZ"];
+    (getPosATL _container) params ["_curPosX", "_curPosY", "_curPosZ"];
     _fixX = _curPosX - _posX;
     _fixY = _curPosY - _posY;
     _fixZ = _curPosZ - _posZ;
