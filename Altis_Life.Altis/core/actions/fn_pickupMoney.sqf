@@ -6,12 +6,16 @@
     Description:
     Picks up money
 */
-if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay"; _this setVariable ["inUse",false,true];};
-if (isNull _this || {player distance _this > 3}) exitWith {_this setVariable ["inUse",false,true];};
+params [
+    ["_money",objNull,[objNull]]
+];
 
-(_this getVariable "item") params ["","_value"];
+if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay"; _money setVariable ["inUse",false,true];};
+if (isNull _money || {player distance _money > 3}) exitWith {_money setVariable ["inUse",false,true];};
+
+(_money getVariable "item") params ["","_value"];
 if (!isNil "_value") exitWith {
-    deleteVehicle _this;
+    deleteVehicle _money;
 
     _value = switch (true) do {
         case (_value > 20000000) : {100000}; //VAL>20mil->100k
