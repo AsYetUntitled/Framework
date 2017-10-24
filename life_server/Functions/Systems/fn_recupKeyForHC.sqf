@@ -11,6 +11,6 @@ params [
     ["_side",civilian,[civilian]]
 ];
 if (_uid isEqualTo "") exitWith {}; //NULL
-	
+
 _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
 [_keyArr] remoteExecCall ["HC_fnc_receivekeyofServer",HC_Life];

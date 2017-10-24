@@ -11,10 +11,10 @@ private _containers = [_query,2,true] call DB_fnc_asyncCall;
 
 if (count _containers isEqualTo 0) exitWith {};
 {
-	_x params [
-	    "",
-	    "_pos"
-	];
+    _x params [
+        "",
+        "_pos"
+    ];
     _position = call compile format ["%1",_pos];
     _container = nearestObjects[_position,["Box_IND_Grenades_F","B_supplyCrate_F"],12];
     {
