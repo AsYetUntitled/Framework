@@ -7,16 +7,14 @@
     Server-side cleanup script on vehicles.
     Sort of a lame way but whatever. Yep someone should look at it!
 */
-private "_deleted";
-_deleted = false;
+private _deleted = false;
 for "_i" from 0 to 1 step 0 do {
-    private ["_veh","_units","_fuel"];
     uiSleep (60 * 60);
     {
-        _protect = false;
-        _veh = _x;
-        _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
-        _fuel = 1;
+        private _protect = false;
+        private _veh = _x;
+        private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
+        private _fuel = 1;
 
         if (!isNil {_veh getVariable "NPC"} && {_veh getVariable "NPC"}) then {_protect = true;};
 

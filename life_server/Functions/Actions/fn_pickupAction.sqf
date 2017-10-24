@@ -13,7 +13,7 @@ params [
 ];
 
 if (isNull _obj || {isNull _client}) exitWith {systemChat "Obj or client is null?";}; //No.
-if (!(_obj getVariable ["inUse",false])) exitWith {
+if !(_obj getVariable ["inUse",false]) exitWith {
     _client = owner _client;
     _obj setVariable ["inUse",true,true];
     if (_cash) then {

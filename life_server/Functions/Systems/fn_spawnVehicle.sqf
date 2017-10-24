@@ -14,7 +14,7 @@ params [
     ["_unit", objNull, [objNull]],
     ["_price", 0, [0]],
     ["_dir", 0, [0]],
-    "_spawntext"
+    ["_spawntext","",[""]]
 ];
 
 private _unit_return = _unit;
@@ -57,11 +57,10 @@ if ((_vInfo select 6) isEqualTo 1) exitWith {
     [1,"STR_Garage_SQLError_Active",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-private "_nearVehicles";
-if !(_sp isEqualType "") then {
-    _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
+private _nearVehicles = if !(_sp isEqualType "") then {
+    nearestObjects[_sp,["Car","Air","Ship"],10];
 } else {
-    _nearVehicles = [];
+    [];
 };
 
 if (count _nearVehicles > 0) exitWith {
@@ -142,7 +141,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel (_vInfo select 11);
-    }else{
+} else {
     _vehicle setFuel 1;
 };
 

@@ -11,19 +11,18 @@ params [
 ];
 
 if (isServer) then {
-    private ["_killerWep","_killerVeh","_distance","_message"];
     if (isNull _victim || isNull _killer) exitWith {};
 
-    _killerWep = currentWeapon _killer;
-    _killerVeh = vehicle _killer;
-    _distance = _killer distance _victim;
+    private _killerWep = currentWeapon _killer;
+    private _killerVeh = vehicle _killer;
+    private _distance = _killer distance _victim;
     _distance = floor(_distance);
 
-    _message = "";
-    if (_victim == _killer) then {
+    private _message = "";
+    if (_victim isEqualTo _killer) then {
         _message = format ["Suicide Message: %1 committed suicide (or disconnected)", (name _victim)];
     };
-    if (_killerWep != "") then {
+    if !(_killerWep isEqualTo "") then {
         _message = format ["Weapon Death Message: %1 has killed %2 with Weapon %3 from %4 Meters", (name _killer), (name _victim), (getText(configFile >> "cfgWeapons" >> _killerWep >> "displayName")), _distance];
     };
     if (_killerVeh isKindOf "Car" && _killerWep isEqualTo "") then {

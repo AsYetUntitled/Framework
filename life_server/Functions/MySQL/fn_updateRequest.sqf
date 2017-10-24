@@ -6,17 +6,19 @@
     Updates ALL player information in the database.
     Information gets passed here from the client side file: core\session\fn_updateRequest.sqf
 */
-private ["_uid","_side","_cash","_bank","_licenses","_gear","_stats","_name","_alive","_position","_query","_thread"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_name = [_this,1,"",[""]] call BIS_fnc_param;
-_side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;
-_cash = [_this,3,0,[0]] call BIS_fnc_param;
-_bank = [_this,4,5000,[0]] call BIS_fnc_param;
-_licenses = [_this,5,[],[[]]] call BIS_fnc_param;
-_gear = [_this,6,[],[[]]] call BIS_fnc_param;
-_stats = [_this,7,[100,100],[[]]] call BIS_fnc_param;
-_alive = [_this,9,false,[true]] call BIS_fnc_param;
-_position = [_this,10,[],[[]]] call BIS_fnc_param;
+params [
+    ["_uid","",[""]],
+    ["_name","",[""]],
+    ["_side",sideUnknown,[civilian]],
+    ["_cash",0,[0]],
+    ["_bank",5000,[0]],
+    ["_licenses",[],[[]]],
+    ["_gear",[],[[]]],
+    ["_stats",[100,100,0],[[]]],
+    ["_arrested",false,[false]],
+    ["_alive",false,[true]],
+    ["_position",[],[[]]]
+];
 
 //Get to those error checks.
 if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
@@ -38,27 +40,29 @@ for "_i" from 0 to count(_licenses)-1 do {
 _licenses = [_licenses] call DB_fnc_mresArray;
 
 //PLAYTIME
-_playtime = [_uid] call TON_fnc_getPlayTime;
-_playtime_update = [];
+private _playtime = [_uid] call TON_fnc_getPlayTime;
+private _playtimeUpdate = [];
 {
-    if ((_x select 0) isEqualTo _uid) exitWith
-    {
-        _playtime_update pushBack [_x select 1];
+    _x params [
+        ["_timeUID","",[""]],
+        ["_time",0,[0]]
+    ];
+    if (_timeUID isEqualTo _uid) exitWith {
+        _playtimeUpdate pushBack [_time];
     };
 } forEach TON_fnc_playtime_values_request;
-_playtime_update = (_playtime_update select 0) select 0;
+_playtimeUpdate = (_playtimeUpdate select 0) select 0;
 switch (_side) do {
-    case west: {_playtime_update set[0,_playtime];};
-    case civilian: {_playtime_update set[2,_playtime];};
-    case independent: {_playtime_update set[1,_playtime];};
+    case west: {_playtimeUpdate set[0,_playtime];};
+    case civilian: {_playtimeUpdate set[2,_playtime];};
+    case independent: {_playtimeUpdate set[1,_playtime];};
 };
-_playtime_update = [_playtime_update] call DB_fnc_mresArray;
+_playtimeUpdate = [_playtimeUpdate] call DB_fnc_mresArray;
 
-switch (_side) do {
-    case west: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5', cop_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_gear,_licenses,_stats,_playtime_update,_uid];};
-    case civilian: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', civ_alive='%8', civ_position='%9', playtime='%10' WHERE pid='%11'",_name,_cash,_bank,_licenses,_gear,[_this select 8] call DB_fnc_bool,_stats,[_alive] call DB_fnc_bool,_position,_playtime_update,_uid];};
-    case independent: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4', med_gear='%5', med_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_licenses,_gear,_stats,_playtime_update,_uid];};
+private _query = switch (_side) do {
+    case west: {format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5', cop_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_gear,_licenses,_stats,_playtime_update,_uid];};
+    case civilian: {format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', civ_alive='%8', civ_position='%9', playtime='%10' WHERE pid='%11'",_name,_cash,_bank,_licenses,_gear,[_arrested] call DB_fnc_bool,_stats,[_alive] call DB_fnc_bool,_position,_playtime_update,_uid];};
+    case independent: {format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4', med_gear='%5', med_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_licenses,_gear,_stats,_playtime_update,_uid];};
 };
-
 
 _queryResult = [_query,1] call DB_fnc_asyncCall;

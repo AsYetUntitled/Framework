@@ -11,23 +11,24 @@
         1: INTEGER (1 = ASYNC + not return for update/insert, 2 = ASYNC + return for query's).
         3: BOOL (True to return a single array, false to return multiple entries mainly for garage).
 */
-private ["_queryStmt","_mode","_multiarr","_queryResult","_key","_return","_loop"];
-_queryStmt = [_this,0,"",[""]] call BIS_fnc_param;
-_mode = [_this,1,1,[0]] call BIS_fnc_param;
-_multiarr = [_this,2,false,[false]] call BIS_fnc_param;
+params [
+    ["_queryStmt","",[""]],
+    ["_mode",1,[0]],
+    ["_multiArr",false,[false]]
+];
 
-_key = EXTDB format ["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStmt];
+private _key = EXTDB format ["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStmt];
 
 if (_mode isEqualTo 1) exitWith {true};
 
 _key = call compile format ["%1",_key];
 _key = (_key select 1);
-_queryResult = EXTDB format ["4:%1", _key];
+private _queryResult = EXTDB format ["4:%1", _key];
 
 //Make sure the data is received
 if (_queryResult isEqualTo "[3]") then {
     for "_i" from 0 to 1 step 0 do {
-        if (!(_queryResult isEqualTo "[3]")) exitWith {};
+        if !(_queryResult isEqualTo "[3]") exitWith {};
         _queryResult = EXTDB format ["4:%1", _key];
     };
 };
@@ -41,7 +42,7 @@ if (_queryResult isEqualTo "[5]") then {
             if (_pipe isEqualTo "") exitWith {_loop = false};
             _queryResult = _queryResult + _pipe;
         };
-    if (!_loop) exitWith {};
+        if (!_loop) exitWith {};
     };
 };
 _queryResult = call compile _queryResult;
