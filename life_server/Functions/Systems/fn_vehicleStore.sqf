@@ -17,7 +17,7 @@ if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owne
 private _vInfo = _vehicle getVariable ["dbInfo",[]];
 
 private ["_uid", "_plate"];
-if (count _vInfo > 0) then {
+if !(_vInfo isEqualTo []) then {
     _vInfo params ["_uid", "_plate"];
 };
 
@@ -31,12 +31,9 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
 _damage = [_damage] call DB_fnc_mresArray;
 
 // because fuel price!
-private _fuel = if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
-    (fuel _vehicle);
-} else {
-    1;
-};
+private _fuel = [1, fuel _vehicle] select (LIFE_SETTINGS(getNumber,"save_vehicle_fuel");
 
+private "_query";
 if (_impound) exitWith {
     if (count _vInfo isEqualTo 0) then  {
         life_impound_inuse = false;
@@ -46,7 +43,7 @@ if (_impound) exitWith {
             deleteVehicle _vehicle;
         };
     } else {    // no free repairs!
-        private _query = format ["UPDATE vehicles SET active='0', fuel='%3', damage='%4' WHERE pid='%1' AND plate='%2'",_uid , _plate, _fuel, _damage];
+        _query = format ["UPDATE vehicles SET active='0', fuel='%3', damage='%4' WHERE pid='%1' AND plate='%2'",_uid , _plate, _fuel, _damage];
         [_query,1] call DB_fnc_asyncCall;
 
         if (!isNil "_vehicle" && {!isNull _vehicle}) then {
@@ -90,7 +87,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             ];
             _isIllegal = M_CONFIG(getNumber,"VirtualItems",(_item),"illegal");
 
-            _isIllegal = if (_isIllegal isEqualTo 1) then { true } else { false };
+            _isIllegal = _isIllegal isEqualTo 1;
 
             if ((_item in _resourceItems) || (_isIllegal)) then {
                 _items pushBack[_item,_oldWeight];
@@ -105,7 +102,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
         if (_blacklist) then {
             [_uid, _profileName, "481"] remoteExecCall["life_fnc_wantedAdd", RSERV];
-            private _query = format ["UPDATE vehicles SET blacklist='1' WHERE pid='%1' AND plate='%2'", _uid, _plate];
+            _query = format ["UPDATE vehicles SET blacklist='1' WHERE pid='%1' AND plate='%2'", _uid, _plate];
             [_query, 1] call DB_fnc_asyncCall;
         };
 

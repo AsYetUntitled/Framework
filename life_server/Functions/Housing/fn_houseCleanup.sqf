@@ -19,5 +19,7 @@ if (count _containers isEqualTo 0) exitWith {};
     _container = nearestObjects[_position,["Box_IND_Grenades_F","B_supplyCrate_F"],12];
     {
         deleteVehicle _x;
-    } forEach _container;
-} forEach _containers;
+        true
+    } count _container;
+    true
+} count _containers;
