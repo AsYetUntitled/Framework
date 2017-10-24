@@ -15,7 +15,7 @@ params [
 ];
 
 //Error checks
-if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
+if ((_uid isEqualTo "") || {_name isEqualTo ""}) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
 
 private _query = format ["SELECT pid, name FROM players WHERE pid='%1'",_uid];
 

@@ -9,7 +9,7 @@
 params [
     ["_vid",-1,[0]],
     ["_pid","",[""]],
-    ["_sp",2500,[0]],
+    ["_sp",0,[0]],
     ["_unit",objNull,[objNull]],
     ["_type","",[""]]
 ];
@@ -18,4 +18,4 @@ if (_vid isEqualTo -1 || _pid isEqualTo "" || _sp isEqualTo 0 || isNull _unit ||
 
 private _query = format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
-private _thread = [_query,1] call DB_fnc_asyncCall;
+[_query,1] call DB_fnc_asyncCall;

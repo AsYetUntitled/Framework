@@ -13,7 +13,7 @@
 */
 params [
     ["_uid","",[""]],
-    ["_side","",[""]]
+    ["_side",sideUnknown,[civilian]]
 ];
 
 _query = switch (_side) do {

@@ -10,7 +10,7 @@ params [
     ["_uid","",[""]],
     ["_house",objNull,[objNull]]
 ];
-if (isNull _house || _uid isEqualTo "") exitWith {};
+if (isNull _house || {_uid isEqualTo ""}) exitWith {};
 
 private _housePos = getPosATL _house;
 

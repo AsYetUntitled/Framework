@@ -5,7 +5,12 @@
     Description:
     Cleans up containers inside in house of player.
 */
-private _query = format ["SELECT pid, pos FROM containers WHERE pid='%1' AND owned='1'",_this];
+params [
+    ["_uid","",[""]]
+];
+if (_uid isEqualTo "") exitWith {};
+
+private _query = format ["SELECT pid, pos FROM containers WHERE pid='%1' AND owned='1'",_uid];
 
 private _containers = [_query,2,true] call DB_fnc_asyncCall;
 

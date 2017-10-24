@@ -9,6 +9,9 @@
     Removes a person from the wanted list.
 */
 private _uid = param [0,"",[""]];
+params [
+    ["_uid","",[""]]
+];
 
 if (_uid isEqualTo "") exitWith {}; //Bad data
 

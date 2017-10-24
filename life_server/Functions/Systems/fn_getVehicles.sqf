@@ -14,7 +14,7 @@ params [
 ];
 
 //Error checks
-if (_pid isEqualTo "" || _side isEqualTo sideUnknown || _type isEqualTo "" || isNull _unit) exitWith {
+if (_pid isEqualTo "" || {_side isEqualTo sideUnknown} || {_type isEqualTo ""} || {isNull _unit}) exitWith {
     if (!isNull _unit) then {
         [[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
     };

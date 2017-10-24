@@ -13,8 +13,8 @@ params [
 ];
 
 //Error checks
-if (_uid isEqualTo "" || _side isEqualTo sideUnknown || isNull _vehicle) exitWith {};
-if (!alive _vehicle) exitWith {};
+if (_uid isEqualTo "" || {_side isEqualTo sideUnknown} || {isNull _vehicle} || {!alive _vehicle}) exitWith {};
+
 private _className = typeOf _vehicle;
 private _type = switch (true) do {
     case (_vehicle isKindOf "Car"): {"Car"};

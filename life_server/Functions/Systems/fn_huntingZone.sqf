@@ -17,10 +17,11 @@ params [
 
 if (_zoneName isEqualTo "") exitWith {};
 private _animalList = ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F"];
-private _radius = (getMarkerSize _zoneName) select 0;
+(getMarkerSize _zoneName) params ["_radius"];
 private _dist = _radius + 100;
 private _zone = getMarkerPos _zoneName;
 
+private "_maxAnimals";
 if (!isNil "animals" && {!(count animals isEqualTo 0)}) then {
     _maxAnimals = _maxAnimals - count(animals);
 } else {

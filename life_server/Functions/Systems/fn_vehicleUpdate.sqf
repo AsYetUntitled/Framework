@@ -13,7 +13,7 @@ params [
 if (isNull _vehicle) exitWith {};
 
 _dbInfo = _vehicle getVariable ["dbInfo",[]];
-if (count _dbInfo isEqualTo 0) exitWith {};
+if (_dbInfo isEqualTo []) exitWith {};
 _dbInfo params ["_uid", "_plate"];
 
 switch (_mode) do {

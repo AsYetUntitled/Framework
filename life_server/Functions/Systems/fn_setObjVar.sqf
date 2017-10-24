@@ -13,5 +13,5 @@ params [
     ["_global",false,[false]]
 ];
 
-if (isNull _obj || _varName isEqualTo "") exitWith {}; //Bad.
+if (isNull _obj || {_varName isEqualTo ""}) exitWith {}; //Bad.
 _obj setVariable [_varName,_varValue,_global];

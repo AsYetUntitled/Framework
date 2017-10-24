@@ -6,7 +6,6 @@
     Takes partial data of a player and updates it, this is meant to be
     less network intensive towards data flowing through it for updates.
 */
-private ["_uid","_side","_value","_value1","_value2","_mode","_query"];
 params [
     ["_uid","",[""]],
     ["_side",sideUnknown,[civilian]],
@@ -15,9 +14,9 @@ params [
     "_value2"
 ];
 
-if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
-private _query = "";
+if (_uid isEqualTo "" || {_side isEqualTo sideUnknown}) exitWith {};
 
+private "_query";
 switch (_mode) do {
     case 0: {
         _value = [_value] call DB_fnc_numberSafe;

@@ -9,7 +9,7 @@
 params [
     ["_house",objNull,[objNull]]
 ];
-if (isNull _house || !(_house isKindOf "House_F")) exitWith {0};
+if (isNull _house || {!(_house isKindOf "House_F")}) exitWith {0};
 
 private _door = 0;
 private _doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");

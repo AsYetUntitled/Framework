@@ -11,7 +11,7 @@ params [
     ["_container",objNull,[objNull]]
 ];
 
-if (isNull _container || _uid isEqualTo "") exitWith {};
+if (isNull _container || {_uid isEqualTo ""}) exitWith {};
 
 private _containerPos = getPosATL _container;
 private _className = typeOf _container;

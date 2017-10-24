@@ -14,7 +14,7 @@ params [
 ];
 
 //Error checks
-if (isNull _vehicle || isNull _unit) exitWith  {
+if (isNull _vehicle || {isNull _unit}) exitWith {
     life_action_inUse = false;
     owner _unit publicVariableClient "life_action_inUse";
 };

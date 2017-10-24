@@ -12,7 +12,7 @@ params [
     ["_mode",0,[0]]
 ];
 
-if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //BAAAAAAAAADDDDDDDD
+if (_uid isEqualTo "" || {_side isEqualTo sideUnknown}) exitWith {}; //BAAAAAAAAADDDDDDDD
 
 switch (_mode) do {
     case 0: {
