@@ -12,14 +12,15 @@ params [
 if (isNull _house) exitWith {systemChat ":SERVER:sellHouse: House is null";};
 
 private _houseID = _house getVariable ["house_id",-1];
+private "_query";
 if (_houseID isEqualTo -1) then {
     private _housePos = getPosATL _house;
     (_house getVariable "house_owner") params ["_ownerID"];
-    private _query = format ["UPDATE houses SET owned='0', pos='[]' WHERE pid='%1' AND pos='%2' AND owned='1'",_ownerID,_housePos];
+    _query = format ["UPDATE houses SET owned='0', pos='[]' WHERE pid='%1' AND pos='%2' AND owned='1'",_ownerID,_housePos];
     //systemChat format [":SERVER:sellHouse: house_id does not exist, query: %1",_query];
 } else {
     //systemChat format [":SERVER:sellHouse: house_id is %1",_houseID];
-    private _query = format ["UPDATE houses SET owned='0', pos='[]' WHERE id='%1'",_houseID];
+    _query = format ["UPDATE houses SET owned='0', pos='[]' WHERE id='%1'",_houseID];
 };
 
 _house setVariable ["house_id",nil,true];
