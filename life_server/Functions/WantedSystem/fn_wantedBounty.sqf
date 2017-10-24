@@ -21,7 +21,7 @@ private _query = format ["SELECT wantedID, wantedName, wantedCrimes, wantedBount
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 private "_amount";
-if !(count _queryResult isEqualTo 0) then {
+if (_queryResult isEqualTo []) then {
     _amount = _queryResult param [3];
     if !(_amount isEqualTo 0) then {
         if (_half) then {

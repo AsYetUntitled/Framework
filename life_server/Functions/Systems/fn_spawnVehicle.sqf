@@ -74,7 +74,7 @@ _query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1'
 private _trunk = [_inventory] call DB_fnc_mresToArray;
 private _gear = [_gear] call DB_fnc_mresToArray;
 private _damage = [call compile _damage] call DB_fnc_mresToArray;
-_blacklist = if (_blacklist isEqualTo 1) then { true } else { false };
+_blacklist = _blacklist isEqualTo 1;
 
 [_query,1] call DB_fnc_asyncCall;
 

@@ -23,7 +23,7 @@ private _displayName = FETCH_CONFIG2(getText,"CfgVehicles",typeOf _vehicle, "dis
 _unit = owner _unit;
 
 private _dbInfo = _vehicle getVariable ["dbInfo",[]];
-if (count _dbInfo > 0) then {
+if !(_dbInfo isEqualTo []) then {
     _dbInfo params ["_uid", "_plate"]
 
     private _query = format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
