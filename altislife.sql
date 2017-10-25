@@ -212,12 +212,12 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 -- --------------------------------------------------------
 --
 -- Creates default user `arma3` with password `changeme` unless it already exists
--- Granting permissions to user `arma3`, created above
+-- Granting permissions to user `arma3`, created below
 -- Reloads the privileges from the grant tables in the mysql system database.
 --
 
 CREATE USER IF NOT EXISTS `arma3`@`localhost` IDENTIFIED BY 'changeme';
-GRANT SELECT,UPDATE,INSERT,DELETE,EXECUTE ON `altislife`.* TO 'arma3'@'localhost';
+GRANT SELECT, UPDATE, INSERT, EXECUTE ON `altislife`.* TO 'arma3'@'localhost';
 FLUSH PRIVILEGES;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
