@@ -211,8 +211,9 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 
 -- --------------------------------------------------------
 --
--- Granting permissions to user `arma3`, created above
 -- Creates default user `arma3` with password `changeme` unless it already exists
+-- Granting permissions to user `arma3`, created above
+-- Reloads the privileges from the grant tables in the mysql system database.
 --
 
 CREATE USER IF NOT EXISTS `arma3`@`localhost` IDENTIFIED BY 'changeme';
