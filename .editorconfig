@@ -1,0 +1,26 @@
+# editorconfig.org
+# Some editors do not have native support for EditorConfig and require a plugin.
+# For a list of those editors and a plugin for them, see http://editorconfig.org/#download
+
+# Top-most EditorConfig file
+root = true
+
+# Every file
+[*]
+# Soft tabs
+indent_style = space
+# 1 indent is 4 spaces
+indent_size = 4
+# Windows-style newlines
+end_of_line = crlf
+# Set default character encoding
+charset = utf-8
+# Remove any whitespace characters preceding newline characters
+trim_trailing_whitespace = true
+# A newline ending every file
+insert_final_newline = true
+
+# Markdown files
+[*.md]
+# Do not remove any whitespace characters preceding newline characters
+trim_trailing_whitespace = false
