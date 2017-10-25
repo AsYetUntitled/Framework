@@ -108,7 +108,7 @@ class SpyGlass {
         "bis_fnc_weaponaddon","bis_fnc_weaponcomponents","bis_fnc_weapondirectionrelative","bis_fnc_worldarea","bis_fnc_wpartillery","bis_fnc_wpland","bis_fnc_wppatrol","bis_fnc_wprelax","bis_fnc_wpsuppress","bis_fnc_zzrotate","bis_taskmanagement_markers2d","gui_fnc_exportdefine","life_fnc_levelcheck_meta","bis_fnc_carrier01catapultactionremove",
         "bis_fnc_planeaieject","bis_fnc_carrier01edeninit","bis_fnc_ejectionseatrelease","bis_fnc_debugconsoleexec","bis_fnc_aircraftcatapultlaunch","bis_fnc_reviveehdammaged","bis_fnc_planeejectionfx","bis_fnc_admin","bis_fnc_carrier01catapultactionadd","bis_fnc_reviveehhandleheal","bis_fnc_aircraftwingstatecheck","bis_fnc_carrier01crewinanim","bis_fnc_reviveehhandledamage","bis_fnc_carrier01init",
         "bis_fnc_reenablerevive","bis_fnc_carrier01edendelete","bis_fnc_carrier01catapultlockto","bis_fnc_aircrafttailhook","bis_fnc_aircraftsystemsinit","bis_fnc_carrier01catapultid","bis_fnc_weaponsentitytype","bis_fnc_isdebugconsoleallowed","bis_fnc_reviveehrespawn","bis_fnc_carrier01animatedeflectors","bis_fnc_magazinesentitytype","bis_fnc_carrier01crewplayanim","bis_fnc_reviveehkilled",
-        "bis_fnc_planeejection","bis_fnc_carrier01posupdate","bis_fnc_arsenal_boxes"
+        "bis_fnc_planeejection","bis_fnc_carrier01posupdate","bis_fnc_arsenal_boxes","bis_fnc_cpfindemptyposition","bis_fnc_cpsendreinforcements","bis_fnc_cpwaituntil","bis_fnc_laptopinit","bis_fnc_cplog","bis_fnc_aircraftfoldingwings","bis_fnc_laptopplayvideo","bis_fnc_cpsafeazimuths","bis_fnc_cpdummy","bis_fnc_cpspawngarrisongrp","bis_fnc_cpinit","bis_fnc_initmodules_combatpatrol","bis_fnc_aircrafttailhookai","bis_fnc_cppicksafedir"
     };
 
     BIS_UI_Functions[] = {
