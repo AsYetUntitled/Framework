@@ -20,8 +20,6 @@ if (_pid isEqualTo "" || {_side isEqualTo sideUnknown} || {_type isEqualTo ""} |
     };
 };
 
-if (_side isEqualTo sideUnknown) exitWith {[[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner]};
-
 _side = switch (_side) do {
     case west:{"cop"};
     case civilian: {"civ"};
