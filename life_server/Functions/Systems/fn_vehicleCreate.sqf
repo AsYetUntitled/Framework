@@ -16,10 +16,10 @@ params [
 if (_uid isEqualTo "" || {_side isEqualTo sideUnknown} || {isNull _vehicle} || {!alive _vehicle}) exitWith {};
 
 private _className = typeOf _vehicle;
-private _type = switch (true) do {
-    case (_vehicle isKindOf "Car"): {"Car"};
-    case (_vehicle isKindOf "Air"): {"Air"};
-    case (_vehicle isKindOf "Ship"): {"Ship"};
+private _type = call {
+    if (_vehicle isKindOf "Car") exitWith {"Car"};
+    if (_vehicle isKindOf "Air") exitWith {"Air"};
+    if (_vehicle isKindOf "Ship") exitWith {"Ship"};
 };
 
 _side = switch (_side) do {
