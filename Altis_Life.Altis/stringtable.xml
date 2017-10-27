@@ -61,7 +61,7 @@
         <Key ID="STR_Shops_C_Police">
             <Original>Altis Police Department Shop</Original>
             <Czech>Altis policejní oddělení Shop</Czech>
-            <French>Vêtements de la police</French>
+            <French>Vêtements policiers</French>
             <Spanish>Tienda del Departamento de Policía</Spanish>
             <Russian></Russian>
             <Portuguese>Loja de Roupas Policiais</Portuguese>
@@ -560,7 +560,7 @@
         <Key ID="STR_Admin_CannotTpHere">
             <Original>You cannot teleport the player here because they are inside of a vehicle.</Original>
             <Czech>Nelze teleportovat přehrávač zde proto, že jsou uvnitř vozidla.</Czech>
-            <French>Vous ne pouvez pas TP le joueur ici car il est actuellement dans un véhicule.</French>
+            <French>Vous ne pouvez pas TP le joueur ici, car il est actuellement dans un véhicule.</French>
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
@@ -586,7 +586,7 @@
             <Italian>Comp</Italian>
             <Russian></Russian>
             <German>Entschädigen</German>
-            <French>Comp</French>
+            <French>Compenser</French>
             <Portuguese>Compensar</Portuguese>
             <Polish>Comp</Polish>
         </Key>
@@ -709,7 +709,7 @@
             <Italian>Si prega di inserire l'importo da rimborsare.</Italian>
             <Russian></Russian>
             <German>Bitte Entschädigungsbetrag eingeben.</German>
-            <French>Entrez le montant à rembourser</French>
+            <French>S'il vous plaît entrez le montant pour compenser.</French>
             <Portuguese>Por favor, insira a quantidade para compensar.</Portuguese>
             <Polish>Wprowadź kwotę rekompensaty</Polish>
         </Key>
@@ -782,7 +782,7 @@
         <Key ID="STR_ANOTF_godModeOn">
             <Original>God mode enabled</Original>
             <Czech>nesmrtelnost povolen</Czech>
-            <French>GodMode activé</French>
+            <French>Mode Dieu activé</French>
             <Spanish>Modo Dios habilitado</Spanish>
             <Italian>Godmode abilitata</Italian>
             <Polish>God mode włączony</Polish>
@@ -793,7 +793,7 @@
         <Key ID="STR_ANOTF_godModeOff">
             <Original>God mode disabled</Original>
             <Czech>nesmrtelnost zakázán</Czech>
-            <French>GodMode désactivé</French>
+            <French>Mode Dieu désactivé</French>
             <Spanish>Modo Dios deshabilitado</Spanish>
             <Italian>Godmode disabilitata</Italian>
             <Polish>God mode wyłączony</Polish>
@@ -1007,7 +1007,7 @@
             <Spanish>No escribistes un valor numérico.</Spanish>
             <Russian></Russian>
             <German>Die eingegebene Zahl ist keine richtige Zahl.</German>
-            <French>Vous devez entrer un nombre.</French>
+            <French>La valeur entrée n'est pas un nombre.</French>
             <Italian>Il valore inserito non è numerico.</Italian>
             <Portuguese>O valor digitado não é um número.</Portuguese>
             <Polish>Wprwadzona wartość nie jest liczbą</Polish>
@@ -1073,7 +1073,7 @@
             <Spanish>No tienes el dinero suficiente, para transferir $%1 necesitaras $%2 para pagar como cuota.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto, es kostet $%2 um $%1 zu überweisen.</German>
-            <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes.</French>
+            <French>Vous n'avez pas assez d'argent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes.</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire €%1 necessiti di €%2 per pagare la tassa di trasferimento.</Italian>
             <Portuguese>Você não tem dinheiro suficiente na sua conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
             <Polish>Nie masz wystarczająco dużo środków na końcie, do przelewu $%1 będziesz potrzebował jeszcze $%2 na opłatę</Polish>
@@ -1161,7 +1161,7 @@
             <Spanish>No tienes tanto dinero contigo.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht so viel Geld bei dir.</German>
-            <French>Vous n'avez pas autant d'agent sur vous.</French>
+            <French>Vous n'avez pas autant d'argent sur vous.</French>
             <Italian>Non hai abbastanza denaro con te.</Italian>
             <Portuguese>Você não tem todo esse dinheiro.</Portuguese>
             <Polish>Nie masz przy sobie tyle pieniędzy</Polish>
@@ -1307,7 +1307,7 @@
             <Spanish>You must enter a message to send!</Spanish>
             <Russian>You must enter a message to send!</Russian>
             <German>Du musst eine Nachricht eingeben!</German>
-            <French>Vous devez écrire un message à envoyer !</French>
+            <French>Vous devez entrer un message à envoyer!</French>
             <Italian>You must enter a message to send!</Italian>
             <Portuguese>You must enter a message to send!</Portuguese>
             <Polish>You must enter a message to send!</Polish>
@@ -1318,7 +1318,7 @@
             <Spanish>Your message cannot exceed 400 characters!</Spanish>
             <Russian>Your message cannot exceed 400 characters!</Russian>
             <German>Deine Nachricht darf maximal 400 Zeichen enthalten!!</German>
-            <French>Votre message ne peut pas dépasser 400 caractères !</French>
+            <French>Votre message ne peut pas excéder 400 caractères !</French>
             <Italian>Your message cannot exceed 400 characters!</Italian>
             <Portuguese>Your message cannot exceed 400 characters!</Portuguese>
             <Polish>Your message cannot exceed 400 characters!</Polish>
@@ -1340,7 +1340,7 @@
             <Spanish>You have sent a message to all EMS Units.</Spanish>
             <Russian>You have sent a message to all EMS Units.</Russian>
             <German>Du hast eine Nachricht an alle Sanitäter gesendet.</German>
-            <French>Vous avez envoyé un message au SAMU.</French>
+            <French>Vous avez envoyé un message à tous les EMS.</French>
             <Italian>You have sent a message to all EMS Units.</Italian>
             <Portuguese>You have sent a message to all EMS Units.</Portuguese>
             <Polish>You have sent a message to all EMS Units.</Polish>
@@ -1863,7 +1863,7 @@
             <Spanish>You have quit the gang.</Spanish>
             <Russian>You have quit the gang.</Russian>
             <German>Du hast die Gang verlassen.</German>
-            <French>Vous avez quitté le gang</French>
+            <French>Vous avez quitté le gang.</French>
             <Italian>You have quit the gang.</Italian>
             <Portuguese>You have quit the gang.</Portuguese>
             <Polish>You have quit the gang.</Polish>
@@ -1885,7 +1885,7 @@
             <Spanish>Transferencia de liderazgo cancelada.</Spanish>
             <Russian></Russian>
             <German>Übertragung der Gangführung abgebrochen.</German>
-            <French>Transfert du commandement annulée.</French>
+            <French>Transfert du commandement annulé.</French>
             <Italian>Trasferimento del comando annullato.</Italian>
             <Portuguese>Transferencia de liderança cancelada.</Portuguese>
             <Polish>Przkazanie kierownictwa anulowane.</Polish>
@@ -2161,7 +2161,7 @@
             <Czech></Czech>
             <Spanish></Spanish>
             <Russian></Russian>
-            <French>Acheter le garage</French>
+            <French>Acheter ce garage</French>
             <German>Garage kaufen</German>
             <Italian></Italian>
             <Portuguese></Portuguese>
@@ -2893,7 +2893,7 @@
             <Spanish>Perdonar</Spanish>
             <Russian></Russian>
             <German>Erlassen</German>
-            <French>Supprimer</French>
+            <French>Pardonner</French>
             <Italian>Perdona</Italian>
             <Polish>Pardon</Polish>
             <Portuguese>Perdão</Portuguese>
@@ -2994,7 +2994,7 @@
             <Spanish>Ornate</Spanish>
             <Russian></Russian>
             <German>Kaiserfisch</German>
-            <French>Ornate</French>
+            <French>Doré</French>
             <Italian>Orata</Italian>
             <Portuguese>Ornamentado</Portuguese>
             <Polish>Dorada</Polish>
@@ -3315,7 +3315,7 @@
             <Spanish>Fallastes la misión, porque moristes.</Spanish>
             <Russian></Russian>
             <German>Da du gestorben bist, hast du es nicht geschafft das Paket abzuliefern.</German>
-            <French>Vous êtes décédé, livraison annulée.</French>
+            <French>Vous êtes mort, livraison annulée.</French>
             <Italian>Compra Oggetto</Italian>
             <Portuguese>Você falhou na tarefa de entrega pois você morreu.</Portuguese>
             <Polish>Nie dostarczyłeś przesyłki z uwagi na to że zmarłeś.</Polish>
@@ -3403,7 +3403,7 @@
             <Spanish>%1 tu %2 esta siendo embargado por la policía.</Spanish>
             <Russian></Russian>
             <German>%1 dein %2 wird von der Polizei beschlagnahmt!</German>
-            <French>%1, votre %2 est en train d'être envoyé a la fourrière par la police.</French>
+            <French>%1, votre %2 est en train d'être envoyé à la fourrière par la police.</French>
             <Italian>%1 il tuo %2 sta per essere sequestrato dalla Polizia.</Italian>
             <Portuguese>%1 seu %2 está sendo apreendido pela Polícia</Portuguese>
             <Polish>%1 twój %2 jest usuwany przez Policję</Polish>
@@ -3413,7 +3413,7 @@
             <Czech>vzdouvání Vehicle</Czech>
             <Spanish>Embargando Vehículo</Spanish>
             <Russian></Russian>
-            <German>Fahrzeug wird beschlagnahmt...</German>
+            <German>Fahrzeug wird beschlagnahmt</German>
             <French>Mise en fourrière</French>
             <Italian>Sequestro Veicolo in corso</Italian>
             <Portuguese>Apreendendo veículo</Portuguese>
@@ -3535,7 +3535,7 @@
             <Spanish>Ciclo completado el dispositivo ha minado %1 %2</Spanish>
             <Russian></Russian>
             <German>Sammeln beendet, das Fahrzeug hat %1 %2 abgebaut.</German>
-            <French>Cycle terminé, le véhicule à miné %1 %2</French>
+            <French>Cycle terminé, le véhicule a miné %1 %2</French>
             <Italian>Ciclo completato, il veicolo ha raccolto %1 %2</Italian>
             <Portuguese>Ciclo completo, a máquina minerou %1 %2</Portuguese>
             <Polish>Urządzenie wydobyło %1 %2</Polish>
@@ -3546,7 +3546,7 @@
             <Spanish>El vehículo no tiene gasolina.</Spanish>
             <Russian></Russian>
             <German>Das Fahrzeug hat keinen Treibstoff mehr.</German>
-            <French>Le véhicule n'a plus d'essence.</French>
+            <French>Le véhicule n'a plus de carburant.</French>
             <Italian>Il veicolo è senza carburante</Italian>
             <Portuguese>O veículo está sem combustível</Portuguese>
             <Polish>Brak paliwa w pojezdzie</Polish>
@@ -3631,7 +3631,7 @@
         <Key ID="STR_NOTF_PlayerNear">
             <Original>You can't chop a vehicle while a player is near!</Original>
             <Czech>Nemůžeš sekat vozidla, zatímco hráč je blízko!</Czech>
-            <French>Vous ne pouvez pas vendre un véhicule alors que son propriétaire est à côté !</French>
+            <French>Vous ne pouvez pas vendre un véhicule alors que son propriétaire est à proximité !</French>
             <Spanish>No puedes vender este vehículo mientras hay un jugador cerca!</Spanish>
             <Italian>Non si può rubare un veicolo mentre un giocatore è vicino!</Italian>
             <Polish>Nie można posiekać pojazd podczas gdy gracz jest w pobliżu!</Polish>
@@ -3689,7 +3689,7 @@
             <Spanish>Este vehículo no tiene informacion, posiblemente fue creado atravez de Cheats \n\nBorrando vehículo.</Spanish>
             <Russian></Russian>
             <German>Über das Fahrzeug gibt es keine Informationen, es wurde vermutlich durch Cheats gespawnt. \n\nLösche das Fahrzeug.</German>
-            <French>Ce véhicule ne dispose d'aucune information, il a probablement été spawné par un hackeur. \n\ Suppression du véhicule.</French>
+            <French>Ce véhicule ne dispose d'aucune information, il a probablement été créé par un hackeur. \n\ Suppression du véhicule.</French>
             <Italian>Il veicolo è privo di identificativi, probabilmente è stato creato mediante cheat. \n\nCancellazione veicolo.</Italian>
             <Portuguese>Esse veículo não tem informações, é provável que ele tenha sido criado por um cheater.\n\nDeletando veículo.</Portuguese>
             <Polish>Pojazd bez informacji servera, prawdopodobnie umieszczony przez hakera \n\n usuwam pojazd.</Polish>
@@ -3829,7 +3829,7 @@
         <Key ID="STR_NOTF_ActionDelay">
             <Original>You're doing it too fast!</Original>
             <Czech>Děláte to příliš rychle!</Czech>
-            <French>Moins vite !</French>
+            <French>Moins vite entre chaque action !</French>
             <Spanish>Lo estas haciendo muy rapido!</Spanish>
             <Italian>Lo stai facendo troppo veloce!</Italian>
             <Russian></Russian>
@@ -3908,7 +3908,7 @@
             <Czech>Jste zpracujeme vaši položku (y)!</Czech>
             <Spanish>Has procesado tus objeto(s)</Spanish>
             <Russian></Russian>
-            <French>Vous avez traité vos item(s)!</French>
+            <French>Vous avez traité vos objet(s) !</French>
             <Italian>Hai processato i tuoi oggetti!</Italian>
             <Polish>Przetworzeniu swój przedmiot (y)!</Polish>
             <Portuguese>Você processou seu(s) item(s)</Portuguese>
@@ -4008,7 +4008,7 @@
             <Spanish>Te esta dando mucha, mucha sed. Toma algo o moriras!</Spanish>
             <Russian></Russian>
             <German>Du hast Durst! Du solltest schnell etwas trinken oder du wirst verdursten!</German>
-            <French>Vous commencez à mourir de soif, vous avez besoin de trouver quelque chose à boire, sinon, vous allez mourrir.</French>
+            <French>Vous commencez à mourir de soif, vous allez mourir de soif si vous ne buvez pas.</French>
             <Italian>E' troppo tempo che non bevi qualcosa, dovresti trovare qualcosa da bere o comincerai a disitratarti.</Italian>
             <Portuguese>Você está ficando desidratado. Se não beber algo poderá morrer.</Portuguese>
             <Polish>Długo nic nie piłeś, napij się czegoś bo możesz zginąć z pragnienia.</Polish>
@@ -4019,7 +4019,7 @@
             <Spanish>Estas a punto de morir de desidratación, busca algo de tomar rapido!</Spanish>
             <Russian></Russian>
             <German>Du bist am Verdursten! Du wirst sterben, wenn du nichts zum Trinken findest!</German>
-            <French>Vous êtes en train de mourir de soif, vous allez mourir très bientôt si vous ne buvez pas quelque chose.</French>
+            <French>Vous êtes en train de mourir de soif, vous allez mourir très bientôt si vous ne buvez pas.</French>
             <Italian>Stai soffrendo per una grave deidratazione, trova velocemente qualcosa da bere o morirai!</Italian>
             <Portuguese>Você está sofrendo de desidratação. Beba algo ou irá morrer!</Portuguese>
             <Polish>Zaczynasz słabnąć z pragnienia, wypij coś inaczej zginiesz!!!</Polish>
@@ -4071,7 +4071,7 @@
         <Key ID="STR_NOTF_CannotSeizePerson">
             <Original>You couldn't effectively seize any items. Try again.</Original>
             <Czech>Dalo by se efektivně využily všech položek. Zkus to znovu.</Czech>
-            <French>Vous ne pouviez pas saisir les articles. Réessayez.</French>
+            <French>Vous n'avez pas pu saisir les objets. Réessayez.</French>
             <Spanish>No pudistes efectivamente, confiscar algun objeto. Prueba de nuevo.</Spanish>
             <Italian>Impossibile perquisire la persona in maniera esaustiva. Riprova.</Italian>
             <Polish>Nie można skutecznie wykorzystać żadnych przedmiotów. Spróbuj ponownie.</Polish>
@@ -4170,7 +4170,7 @@
         <Key ID="STR_NOTF_Teleport">
             <Original>You have teleported to your selected position.</Original>
             <Czech>Jste teleported do vašeho zvolené poloze.</Czech>
-            <French>Vous avez téléporté à votre position sélectionnée.</French>
+            <French>Vous avez été téléporté à la position sélectionnée.</French>
             <Spanish>Te has teletransportado a la posisción seleccionada.</Spanish>
             <Italian>Ti sei teletrasportaato alla posizione selezionata.</Italian>
             <Polish>Masz teleportowany do wybranej pozycji.</Polish>
@@ -4203,7 +4203,7 @@
         <Key ID="STR_NOTF_didNotSelectItemToGive">
             <Original>You didn't select an item you wanted to give.</Original>
             <Czech>Nevybrali jste položku, kterou chtěl dát.</Czech>
-            <French>Vous ne l'avez pas sélectionné un item que vous vouliez donner.</French>
+            <French>Vous n'avez pas sélectionné l'objet que vous vouliez donner.</French>
             <Spanish>No ha seleccionado el objeto que quiere dar.</Spanish>
             <Italian>non è stato selezionato un elemento che si voleva dare.</Italian>
             <Polish>Nie wybrano element, który chciał dać.</Polish>
@@ -4258,7 +4258,7 @@
         <Key ID="STR_NOTF_couldNotGive">
             <Original>Couldn't give that much of that item, maybe you don't have that amount?</Original>
             <Czech>Nemohl dát, že velká část této položky, možná nemáte tuto částku?</Czech>
-            <French>Impossible de donner cet article, peut-être que vous n'en n'avez pas autant ?</French>
+            <French>Impossible de donner cet objet, peut-être que vous n'en n'avez pas autant ?</French>
             <Spanish>No se pudo dar a que gran parte de ese elemento, tal vez usted no tiene esa cantidad?</Spanish>
             <Italian>Impossibile dare quella quantità di oggetti.</Italian>
             <Polish>nie mógł dać, że wiele z tego elementu, może nie masz tej kwoty?</Polish>
@@ -4280,7 +4280,7 @@
         <Key ID="STR_NOTF_notEnoughtToGive">
             <Original>You don't have that much to give!</Original>
             <Czech>Nemusíte to hodně dát!</Czech>
-            <French>Vous n'avez pas autant sur vous !</French>
+            <French>Vous n'avez pas autant à donner !</French>
             <Spanish>Usted no tiene mucho para dar!</Spanish>
             <Italian>Non hai abbastanza oggetti da dare!</Italian>
             <Polish>Nie ma tego dużo dać!</Polish>
@@ -4401,7 +4401,7 @@
         <Key ID="STR_NOTF_couldNotRemoveThatMuch">
             <Original>Could not remove that much of that item. Maybe you do not have that amount?</Original>
             <Czech>Nepodařilo se odstranit, že velká část této položky. Možná, že nemáte tuto částku?</Czech>
-            <French>Impossible de supprimer autant. Peut-être que vous ne disposez pas de ce montant ?</French>
+            <French>Impossible d'en supprimer autant. Peut-être que vous ne disposez pas de ce montant ?</French>
             <Spanish>No se pudo eliminar que gran parte de ese elemento. Tal vez usted no tiene esa cantidad?</Spanish>
             <Italian>Impossibile rimuovere quel quantitativo di oggetti.</Italian>
             <Polish>Nie można usunąć, że wiele z tego elementu. Może nie masz tej kwoty?</Polish>
@@ -4445,7 +4445,7 @@
         <Key ID="STR_NOTF_canOnlyStoreInLandVeh">
             <Original>You cannot store that in anything but a land vehicle!</Original>
             <Czech>Nelze uložit, že v ničem jiném než pozemní vozidla!</Czech>
-            <French>Vous pouvez stocker cette item seulement dans les véhicules terrestres !</French>
+            <French>Vous pouvez stocker cet objet seulement dans les véhicules terrestres !</French>
             <Spanish>No se puede almacenar en cualquier cosa menos que un vehículo terrestre!</Spanish>
             <Italian>Non è possibile depositare questa risorsa in un veicolo che non sia terrestre!</Italian>
             <Polish>Nie można zapisać, że w nic poza pojazdem lądowym!</Polish>
@@ -4467,7 +4467,7 @@
         <Key ID="STR_NOTF_VehicleFullOrInsufCap">
             <Original>The vehicle is either full or cannot hold that much.</Original>
             <Czech>Vozidlo je buď plný nebo nemůže myslet si, že mnoho.</Czech>
-            <French>Le véhicule est plein ou ne peut pas supporter autant d'items.</French>
+            <French>Le véhicule est plein ou ne peut pas en contenir autant.</French>
             <Spanish>El vehículo está llena o no puede contener tanta.</Spanish>
             <Italian>Il veicolo è pieno o non può tenere quel quantitativo.</Italian>
             <Polish>Pojazd jest albo w pełnym lub nie można uznać, że dużo.</Polish>
@@ -4478,7 +4478,7 @@
         <Key ID="STR_CouldNotRemoveItemsToPutInVeh">
             <Original>Couldn't remove the items from your inventory to put in the vehicle.</Original>
             <Czech>Vozidlo je buď plný nebo nemůže myslet si, že mnoho.</Czech>
-            <French>Le véhicule est plein ou ne peut pas supporter autant d'item.</French>
+            <French>Le véhicule est déjà plein ou ne peut pas stocker d'avantage d'objets.</French>
             <Spanish>El vehículo está llena o no puede contener tanta.</Spanish>
             <Italian>Impossibile rimuovere quel quantitativo di oggetti dal tuo inventario per metterlo nel veicolo.</Italian>
             <Polish>Pojazd jest albo w pełnym lub nie można uznać, że dużo.</Polish>
@@ -4581,7 +4581,7 @@
             <Czech></Czech>
             <Spanish>Título del Mensaje</Spanish>
             <Russian></Russian>
-            <French>Titre de l'annonce:</French>
+            <French>Titre de l'annonce :</French>
             <German>Nachrichtenüberschrift:</German>
             <Italian></Italian>
             <Portuguese>Titulo da Mensagem:</Portuguese>
@@ -4694,7 +4694,7 @@
             <Spanish>Por ser arrestado se te han quitado estas licencias (si las tienes)\n\nL. de Armas \nL. Rebelde</Spanish>
             <Russian></Russian>
             <German>Bei der Verhaftung hast du folgende Lizenzen verloren, sofern du sie besessen hast:\n\nWaffenschein\nRebellenausbildung.</German>
-            <French>Après votre mise en prison, vous avez perdu les licences suivante si vous les aviez\n\nPermis de port d'arme\n LicenceRebelle</French>
+            <French>Après emprisonnement, vous avez perdu les licences suivantes si vous les aviez\n\nPermis de port d'arme\n LicenceRebelle</French>
             <Italian>A causa del tuo arresto hai perso le seguenti licenze, se le possedevi\n\nPorto d'armi\nLicenza Ribelle</Italian>
             <Portuguese>Você perdeu as seguintes licenças por ter sido preso\n\nPorte de Armas\n\nTreinamento Rebelde</Portuguese>
             <Polish>Z uwagi na aresztowanie straciłeś następujące licencje jeśli je posiadałeś \n\nPozwolenie na broń \nTrening Rebelianta</Polish>
@@ -4727,7 +4727,7 @@
             <Spanish>Has pasado el tiempo en la cárcel y has sido liberado.</Spanish>
             <Russian></Russian>
             <German>Du hast deine Zeit im Gefängnis abgesessen.</German>
-            <French>Vous avez terminé votre peine, vous êtes libre.</French>
+            <French>Vous avez purgé votre peine, vous êtes désormais libre.</French>
             <Italian>Hai scontato la tua pena in prigione e sei stato rilasciato.</Italian>
             <Portuguese>Você pagou pelo seus crimes e foi libertado.</Portuguese>
             <Polish>Odbyłeś swoją karę zostałeś zwolniony z więzienia.</Polish>
@@ -6391,7 +6391,7 @@
             <Spanish>Salema Cocinado</Spanish>
             <Russian></Russian>
             <German>Gegrillte Sardine</German>
-            <French>Sardine grillé</French>
+            <French>Sardine grillée</French>
             <Italian>Sardine alla griglia</Italian>
             <Portuguese>Sardinha Grelhada</Portuguese>
             <Polish>Grilowana Salema</Polish>
@@ -6413,7 +6413,7 @@
             <Spanish>Ornate Cocinado</Spanish>
             <Russian></Russian>
             <German>Gegrillter Kaiserfisch</German>
-            <French>Angelfish grillé</French>
+            <French>Doré grillé</French>
             <Italian>Angelfish alla griglia</Italian>
             <Portuguese>Angelfish Grelhado</Portuguese>
             <Polish>Grilowany Ornat</Polish>
@@ -6501,7 +6501,7 @@
             <Spanish>Pez Gato Cocinado</Spanish>
             <Russian></Russian>
             <German>Frittierter Katzenhai</German>
-            <French>Roussette frit</French>
+            <French>Poisson-chat frit</French>
             <Italian>profondo palombo fritti</Italian>
             <Portuguese>Tubarão Gato Frito</Portuguese>
             <Polish>Grilowany Rekin</Polish>
@@ -7539,7 +7539,7 @@
             <Spanish>La ganzua se rompió.</Spanish>
             <Russian></Russian>
             <German>Der Dietrich ist abgebrochen.</German>
-            <French>L'outil de crochetage a cassé</French>�
+            <French>L'outil de crochetage s'est cassé</French>
             <Italian>Il grimaldello si è rotto.</Italian>
             <Portuguese>A Chave Mestra quebrou.</Portuguese>
             <Polish>Wytrych się złamał.</Polish>
@@ -7638,7 +7638,7 @@
             <Spanish>No hay más espacio de almacenamiento en tu casa.</Spanish>
             <Russian></Russian>
             <German>Es gibt in deinem Haus keinen freien Lagerplatz mehr.</German>
-            <French>Plus d'espace libre dans votre maison.</French>
+            <French>Il n'y a plus d'espace libre dans votre maison.</French>
             <Italian>I contenitori in casa tua hanno finito lo spazio disponibile.</Italian>
             <Portuguese>Não ha mais espaços para guardar itens em sua casa.</Portuguese>
             <Polish>Brak wolnych miejsc na pojemniki w domu.</Polish>
@@ -7649,7 +7649,7 @@
             <Spanish>Debes seleccionar un objeto primero!</Spanish>
             <Russian></Russian>
             <German>Du musst zuerst einen Gegenstand auswählen!</German>
-            <French>Vous devez sélectionner un item !</French>
+            <French>Vous devez sélectionner un objet !</French>
             <Italian>Devi prima selezionare un oggetto!</Italian>
             <Portuguese>Você precisa selecionar um item primeiro!</Portuguese>
             <Polish>Zaznacz najpier rzecz.</Polish>
@@ -7816,7 +7816,7 @@
             <Spanish>Debes estar a menos de 10m para procesar.</Spanish>
             <Russian></Russian>
             <German>Du musst innerhalb von 10m bleiben, um verarbeiten zu können.</German>
-            <French>Vous devez rester à 10m pour traiter.</French>
+            <French>Vous devez rester à 10m pour traiter vos objets.</French>
             <Italian>Devi stare entro 10m per processare.</Italian>
             <Portuguese>Você precisa ficar a menos de 10m para processar.</Portuguese>
             <Polish>Musisz być w odległości 10 m aby przetwarzanie się odbyło.</Polish>
@@ -7824,7 +7824,7 @@
         <Key ID="STR_Process_Weight">
             <Original>You have no inventory space to process your materials.</Original>
             <Czech>Nemáš zásob prostor ke zpracování vašich materiálů.</Czech>
-            <French>Vous avez pas de place pour traiter vos matériaux.</French>
+            <French>Vous n'avez pas de place pour traiter vos matériaux.</French>
             <Spanish>Usted no tiene espacio en el inventario para procesar sus materiales.</Spanish>
             <Italian>Non hai spazio nell'inventario per elaborare i materiali.</Italian>
             <Polish>Nie masz miejsca na przetwarzanie swoich zapasów materiałów.</Polish>
@@ -7971,7 +7971,7 @@
             <Czech>Tato osoba buď respawned nebo již byl přijat.</Czech>
             <Spanish>Esta persona ya reapareció o fue revivida.</Spanish>
             <Russian></Russian>
-            <French>Cette personne a peut-être déjà réapparu ou a déjà été réanimée.</French>
+            <French>Cette personne a peut-être fait réapparition ou a déjà été réanimée.</French>
             <German>Diese Person ist entweder aufgewacht oder wurde bereits wiederbelebt.</German>
             <Italian>Questa persona è stata già rianimata o ha fatto respawn.</Italian>
             <Portuguese>Esse jogador já deu respawn ou já foi reanimado.</Portuguese>
@@ -9914,7 +9914,7 @@
         <Key ID="STR_MAR_Weed_Field">
             <Original>Marijuana Field</Original>
             <Czech>Marihuana Field</Czech>
-            <French>Champ de pavots</French>
+            <French>Champ de Marijuana</French>
             <Spanish>Campo de Marihuana</Spanish>
             <Russian></Russian>
             <German>Marihuana Plantage</German>
@@ -9925,7 +9925,7 @@
         <Key ID="STR_MAR_Weed_Processing">
             <Original>Marijuana Processing</Original>
             <Czech>Zpracování marihuana</Czech>
-            <French>Traitement du pavot</French>
+            <French>Traitement de la Marijuana</French>
             <Spanish>Procesador de Marihuana</Spanish>
             <Russian></Russian>
             <German>Marihuana Verarbeitung</German>
@@ -10733,7 +10733,7 @@
             <Spanish>Northern Rebel Base</Spanish>
             <Russian>Northern Rebel Base</Russian>
             <German>Nord Rebellen Basis</German>
-            <French>Base rebelle nord</French>
+            <French>Base rebelle Nord</French>
             <Italian>Northern Rebel Base</Italian>
             <Portuguese>Northern Rebel Base</Portuguese>
             <Polish>Northern Rebel Base</Polish>
@@ -10744,7 +10744,7 @@
             <Spanish>Southern Rebel Base</Spanish>
             <Russian>Southern Rebel Base</Russian>
             <German>Süd Rebellen Basis</German>
-            <French>Base rebelle sud</French>
+            <French>Base rebelle Sud</French>
             <Italian>Southern Rebel Base</Italian>
             <Portuguese>Southern Rebel Base</Portuguese>
             <Polish>Southern Rebel Base</Polish>
@@ -10755,7 +10755,7 @@
             <Spanish>Eastern Rebel Base</Spanish>
             <Russian>Eastern Rebel Base</Russian>
             <German>Ost Rebellen Basis</German>
-            <French>Base rebelle est</French>
+            <French>Base rebelle Est</French>
             <Italian>Eastern Rebel Base</Italian>
             <Portuguese>Eastern Rebel Base</Portuguese>
             <Polish>Eastern Rebel Base</Polish>
@@ -10766,7 +10766,7 @@
             <Spanish>North Western Rebel Base</Spanish>
             <Russian>North Western Rebel Base</Russian>
             <German>Nord-West Rebellen Basis</German>
-            <French>Base rebelle nord-ouest</French>
+            <French>Base rebelle Nord-Ouest</French>
             <Italian>North Western Rebel Base</Italian>
             <Portuguese>North Western Rebel Base</Portuguese>
             <Polish>North Western Rebel Base</Polish>
@@ -10777,7 +10777,7 @@
             <Spanish>North Eastern Rebel Base</Spanish>
             <Russian>North Eastern Rebel Base</Russian>
             <German>Nord-Ost Rebellen Basis</German>
-            <French>Base rebelle nord-est</French>
+            <French>Base rebelle Nord-Est</French>
             <Italian>North Eastern Rebel Base</Italian>
             <Portuguese>North Eastern Rebel Base</Portuguese>
             <Polish>North Eastern Rebel Base</Polish>
