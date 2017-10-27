@@ -709,7 +709,7 @@
             <Italian>Si prega di inserire l'importo da rimborsare.</Italian>
             <Russian></Russian>
             <German>Bitte Entschädigungsbetrag eingeben.</German>
-            <French>Entrez le montant à rembourser</French>
+            <French>S'il vous plaît entrez le montant pour compenser.</French>
             <Portuguese>Por favor, insira a quantidade para compensar.</Portuguese>
             <Polish>Wprowadź kwotę rekompensaty</Polish>
         </Key>
@@ -782,7 +782,7 @@
         <Key ID="STR_ANOTF_godModeOn">
             <Original>God mode enabled</Original>
             <Czech>nesmrtelnost povolen</Czech>
-            <French>GodMode activé</French>
+            <French>Mode Dieu activé</French>
             <Spanish>Modo Dios habilitado</Spanish>
             <Italian>Godmode abilitata</Italian>
             <Polish>God mode włączony</Polish>
@@ -793,7 +793,7 @@
         <Key ID="STR_ANOTF_godModeOff">
             <Original>God mode disabled</Original>
             <Czech>nesmrtelnost zakázán</Czech>
-            <French>GodMode désactivé</French>
+            <French>Mode Dieu désactivé</French>
             <Spanish>Modo Dios deshabilitado</Spanish>
             <Italian>Godmode disabilitata</Italian>
             <Polish>God mode wyłączony</Polish>
@@ -1007,7 +1007,7 @@
             <Spanish>No escribistes un valor numérico.</Spanish>
             <Russian></Russian>
             <German>Die eingegebene Zahl ist keine richtige Zahl.</German>
-            <French>La valeur entrée n'est pas numérique.</French>
+            <French>La valeur entrée n'est pas un nombre.</French>
             <Italian>Il valore inserito non è numerico.</Italian>
             <Portuguese>O valor digitado não é um número.</Portuguese>
             <Polish>Wprwadzona wartość nie jest liczbą</Polish>
@@ -1073,7 +1073,7 @@
             <Spanish>No tienes el dinero suficiente, para transferir $%1 necesitaras $%2 para pagar como cuota.</Spanish>
             <Russian></Russian>
             <German>Du hast nicht genug Geld auf deinem Bankkonto, es kostet $%2 um $%1 zu überweisen.</German>
-            <French>Vous n'avez pas assez d'agent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes.</French>
+            <French>Vous n'avez pas assez d'argent dans votre compte bancaire, pour transférer $%1 vous devez payer $%2 de taxes.</French>
             <Italian>Non hai fondi sufficienti nel tuo conto in banca, per trasferire €%1 necessiti di €%2 per pagare la tassa di trasferimento.</Italian>
             <Portuguese>Você não tem dinheiro suficiente na sua conta bancária. Para trasferir R$%1 você irá pagar R$%2 de taxa</Portuguese>
             <Polish>Nie masz wystarczająco dużo środków na końcie, do przelewu $%1 będziesz potrzebował jeszcze $%2 na opłatę</Polish>
@@ -1307,7 +1307,7 @@
             <Spanish>You must enter a message to send!</Spanish>
             <Russian>You must enter a message to send!</Russian>
             <German>Du musst eine Nachricht eingeben!</German>
-            <French>Vous devez écrire un message à envoyer !</French>
+            <French>Vous devez entrer un message à envoyer!</French>
             <Italian>You must enter a message to send!</Italian>
             <Portuguese>You must enter a message to send!</Portuguese>
             <Polish>You must enter a message to send!</Polish>
@@ -1318,7 +1318,7 @@
             <Spanish>Your message cannot exceed 400 characters!</Spanish>
             <Russian>Your message cannot exceed 400 characters!</Russian>
             <German>Deine Nachricht darf maximal 400 Zeichen enthalten!!</German>
-            <French>Votre message ne peut pas dépasser 400 caractères !</French>
+            <French>Votre message ne peut pas excéder 400 caractères !</French>
             <Italian>Your message cannot exceed 400 characters!</Italian>
             <Portuguese>Your message cannot exceed 400 characters!</Portuguese>
             <Polish>Your message cannot exceed 400 characters!</Polish>
@@ -1329,7 +1329,7 @@
             <Spanish>You must select a player you are sending the text to!</Spanish>
             <Russian>You must select a player you are sending the text to!</Russian>
             <German>Du musst einen Spieler auswählen!</German>
-            <French>Vous devez sélectionner un joueur auquel vous envoyez le message !</French>
+            <French>Vous devez sélectionner un joueur à qui envoyer le message !</French>
             <Italian>You must select a player you are sending the text to!</Italian>
             <Portuguese>You must select a player you are sending the text to!</Portuguese>
             <Polish>You must select a player you are sending the text to!</Polish>
@@ -1340,7 +1340,7 @@
             <Spanish>You have sent a message to all EMS Units.</Spanish>
             <Russian>You have sent a message to all EMS Units.</Russian>
             <German>Du hast eine Nachricht an alle Sanitäter gesendet.</German>
-            <French>Vous avez envoyé un message au SAMU.</French>
+            <French>Vous avez envoyé un message à tous les EMS.</French>
             <Italian>You have sent a message to all EMS Units.</Italian>
             <Portuguese>You have sent a message to all EMS Units.</Portuguese>
             <Polish>You have sent a message to all EMS Units.</Polish>
@@ -2893,7 +2893,7 @@
             <Spanish>Perdonar</Spanish>
             <Russian></Russian>
             <German>Erlassen</German>
-            <French>Supprimer</French>
+            <French>Pardonner</French>
             <Italian>Perdona</Italian>
             <Polish>Pardon</Polish>
             <Portuguese>Perdão</Portuguese>
@@ -9914,7 +9914,7 @@
         <Key ID="STR_MAR_Weed_Field">
             <Original>Marijuana Field</Original>
             <Czech>Marihuana Field</Czech>
-            <French>Champ de pavots</French>
+            <French>Champ de Marijuana</French>
             <Spanish>Campo de Marihuana</Spanish>
             <Russian></Russian>
             <German>Marihuana Plantage</German>
@@ -9925,7 +9925,7 @@
         <Key ID="STR_MAR_Weed_Processing">
             <Original>Marijuana Processing</Original>
             <Czech>Zpracování marihuana</Czech>
-            <French>Traitement du pavot</French>
+            <French>Traitement de la Marijuana</French>
             <Spanish>Procesador de Marihuana</Spanish>
             <Russian></Russian>
             <German>Marihuana Verarbeitung</German>
