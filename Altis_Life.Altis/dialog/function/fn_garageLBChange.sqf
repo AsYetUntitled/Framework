@@ -9,7 +9,7 @@
 disableSerialization;
 params [
     ["_control",-1,[0]],
-    ["_index",-1[0]]
+    ["_index",-1,[0]]
 ];
 
 //Fetch some information.

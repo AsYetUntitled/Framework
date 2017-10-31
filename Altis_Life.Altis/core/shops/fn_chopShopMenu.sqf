@@ -14,7 +14,7 @@ private _nearVehicles = nearestObjects [getMarkerPos (_this select 3),_chopable,
 private _nearUnits = (nearestObjects[player,["Man"],5]) arrayIntersect playableUnits;
 if (count _nearUnits > 1) exitWith {hint localize "STR_NOTF_PlayerNear"};
 
-life_chopShop = param[3,objNull[objNull]];
+life_chopShop = param[3,objNull,[objNull]];
 //Error check
 if (count _nearVehicles isEqualTo 0) exitWith {titleText[localize "STR_Shop_NoVehNear","PLAIN"];};
 if !(createDialog "Chop_Shop") exitWith {hint localize "STR_Shop_ChopShopError"};
