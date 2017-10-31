@@ -56,34 +56,21 @@ waitUntil {life_session_completed};
 0 cutText[localize "STR_Init_ClientFinish","BLACK FADED"];
 0 cutFadeOut 9999999;
 
-//diag_log "::Life Client:: Group Base Execution";
 [] spawn life_fnc_escInterupt;
 
-//Set bank amount for new players
 switch (playerSide) do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
-    };
-    case civilian: {
-        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
-    };
-    case independent: {
-        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
-    };
-};
-
-switch (playerSide) do {
-    case west: {
         _handle = [] spawn life_fnc_initCop;
         waitUntil {scriptDone _handle};
     };
     case civilian: {
-        //Initialize Civilian Settings
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
         _handle = [] spawn life_fnc_initCiv;
         waitUntil {scriptDone _handle};
     };
     case independent: {
-        //Initialize Medics and blah
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
         _handle = [] spawn life_fnc_initMedic;
         waitUntil {scriptDone _handle};
     };
