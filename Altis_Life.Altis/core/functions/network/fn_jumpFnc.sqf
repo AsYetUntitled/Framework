@@ -10,16 +10,14 @@ params [
 ];
 private _oldpos = getPosATL _unit;
 
-if (isNull _unit) exitWith {}; //Bad data
-
-if (animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
+if (isNull _unit || {animationState _unit == "AovrPercMrunSrasWrflDf"}) exitWith {};
 
 if (local _unit) then {
     _v1 = 3.82;
     _v2 = .4;
     _dir = direction player;
-    _vel = velocity _unit;
-    _unit setVelocity[(_vel select 0)+(sin _dir*_v2),(_vel select 1)+(cos _dir*_v2),(_vel select 2)+_v1];
+    (velocity _unit) params ["_xVel","_yVel","_zVel"];
+    _unit setVelocity[_xVel + (sin _dir*_v2),_yVel + (cos _dir*_v2),_zVel + _v1];
 };
 
 private _anim = animationState _unit;

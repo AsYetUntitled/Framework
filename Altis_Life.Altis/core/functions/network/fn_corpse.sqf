@@ -8,7 +8,6 @@
 params [
     ["_corpse",objNull,[objNull]]
 ];
-if (isNull _corpse) exitWith {};
-if (alive _corpse) exitWith {}; //Stop script kiddies.
+if (isNull _corpse || {alive _corpse}) exitWith {};
 
 deleteVehicle _corpse;

@@ -12,7 +12,7 @@ params [
 ];
 life_delivery_in_progress = false;
 life_dp_point = nil;
-private _dis = round((getPos life_dp_start) distance (getPos _dp));
+private _dis = round((getPos life_dp_start) distance (getPosATL _dp));
 private _price = round(1.7 * _dis);
 
 ["DeliverySucceeded",[format [(localize "STR_NOTF_Earned_1"),[_price] call life_fnc_numberText]]] call bis_fnc_showNotification;

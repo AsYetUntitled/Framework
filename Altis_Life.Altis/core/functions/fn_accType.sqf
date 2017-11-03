@@ -27,8 +27,8 @@ private _ret = 0;
 
 private _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon player];
 {
-    if (!(_ret isEqualTo 0)) exitWith {}; //Make sure we exit the loop since there was already a match.
-    if (!(_x isEqualTo "")) then
+    if !(_ret isEqualTo 0) exitWith {}; //Make sure we exit the loop since there was already a match.
+    if !(_x isEqualTo "") then
     {
         _weapon = _x;
         _cfgInfo = [_weapon,"CfgWeapons"] call life_fnc_fetchCfgDetails;
@@ -49,7 +49,7 @@ private _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWea
         if (count _newItems > 0) then {
             //This gets weird with forEach in forEach :\
             {
-                if (!(_ret isEqualTo 0)) exitWith {};
+                if !(_ret isEqualTo 0) exitWith {};
 
                 if (isClass (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> _x >> "compatibleItems")) then {
                     _cfg = FETCH_CONFIG4(getNumber,"CfgWeapons",_weapon,"WeaponSlotsInfo",_x,"compatibleItems",_item);
@@ -60,7 +60,7 @@ private _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWea
                     _ret = switch (_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};
                 };
             } forEach _newItems;
-            if (!(_ret isEqualTo 0)) exitWith {}; //Make sure we exit the loop
+            if !(_ret isEqualTo 0) exitWith {}; //Make sure we exit the loop
         };
     };
 } forEach _weaponArray;

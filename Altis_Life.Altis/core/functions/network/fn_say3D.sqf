@@ -11,5 +11,5 @@ params [
     ["_sound","",[""]]
 ];
 
-if (isNull _object || _sound isEqualTo "") exitWith {};
+if (isNull _object || {_sound isEqualTo ""}) exitWith {};
 _object say3D _sound;

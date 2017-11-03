@@ -38,7 +38,7 @@ if (_fish isEqualTo []) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLA
             titleText[format [(localize "STR_NOTF_Fishing"),_fishName],"PLAIN"];
         };
     };
-} forEach (_fish);
+} forEach _fish;
 
 sleep 1.5;
 titleText[localize "STR_NOTF_NetUp","PLAIN"];

@@ -15,12 +15,12 @@ private _tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Smal
 
 private _hideoutObjs = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
 
-private _hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
+(nearestObjects[getPosATL player,_hideoutObjs,25]) params ["_hideout"];
 private _group = _hideout getVariable ["gangOwner",grpNull];
 
-if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
+if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"]};
 if (_group isEqualTo group player) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
-if ((_hideout getVariable ["inCapture",false])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
+if (_hideout getVariable ["inCapture",false]) exitWith {hint localize "STR_GNOTF_onePersonAtATime"};
 
 private "_action";
 private "_cpRate";
@@ -38,7 +38,7 @@ if (!isNull _group) then {
     _cpRate = 0.0075;
 };
 
-if (!isNil "_action" && {!_action}) exitWith {titleText[localize "STR_GNOTF_CaptureCancel","PLAIN"];};
+if (!isNil "_action" && {!_action}) exitWith {titleText[localize "STR_GNOTF_CaptureCancel","PLAIN"]};
 life_action_inUse = true;
 
 //Setup the progress bar

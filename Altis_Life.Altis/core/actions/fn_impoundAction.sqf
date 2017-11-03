@@ -10,12 +10,11 @@ params [
     ["_vehicle",objNull,[objNull]]
 ];
 private  _filters = ["Car","Air","Ship"];
-if !((KINDOF_ARRAY(_vehicle,_filters))) exitWith {};
-if (player distance cursorObject > 10) exitWith {};
+if !((KINDOF_ARRAY(_vehicle,_filters)) || {player distance cursorObject > 10}) exitWith {};
 if (_vehicle getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 
 private _vehicleData = _vehicle getVariable ["vehicle_info_owners",[]];
-if (_vehicleData isEqualTo 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
+if (_vehicleData isEqualTo []) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 private _vehicleName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 private _price = M_CONFIG(getNumber,"LifeCfgVehicles",(typeOf _vehicle),"price");
 [0,"STR_NOTF_BeingImpounded",true,[((_vehicleData select 0) select 1),_vehicleName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
@@ -48,7 +47,7 @@ if (player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingC
 if (!alive player) exitWith {life_action_inUse = false;};
 
 if (count crew _vehicle isEqualTo 0) then {
-    if (!(KINDOF_ARRAY(_vehicle,_filters))) exitWith {life_action_inUse = false;};
+    if !(KINDOF_ARRAY(_vehicle,_filters)) exitWith {life_action_inUse = false;};
     private _type = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 
     life_impound_inuse = true;
