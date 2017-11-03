@@ -6,11 +6,11 @@
     Description:
     For the mean time it blocks the player from opening another persons backpack
 */
-if (count _this isEqualTo 1) exitWith {false};
 params [
     ["_unit",objNull,[objNull]],
     ["_container",objNull,[objNull]]
 ];
+if (isNull _container) exitWith {false};
 
 private _isPack = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _container,"isBackpack");
 if (_isPack isEqualTo 1) exitWith {

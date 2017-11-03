@@ -6,21 +6,23 @@
     Description:
     Checks for known cheat menus and closes them then reports them to the server.
 */
-private ["_displays","_detection","_display","_timeStamp"];
+private "_display";
 disableSerialization;
 
-_displays = [
+private _displays = [
     [3030,"BIS_configviewer_display"],["RscDisplayMultiplayer","RscDisplayMultiplayer"],[162,"RscDisplayFieldManual"],["RscDisplayRemoteMissions","RscDisplayRemoteMissions"],[125,"RscDisplayEditDiaryRecord"],
     [69,"UnknownDisplay"],[19,"UnknownDisplay"],[71,"UnknownDisplay"],[45,"UnknownDisplay"],[132,"UnknownDisplay"],[32,"UnknownDisplay"],[165,"RscDisplayPublishMission"],[2727,"RscDisplayLocWeaponInfo"],
     ["RscDisplayMovieInterrupt","RscDisplayMovieInterrupt"],[157,"UnknownDisplay"],[30,"UnknownDisplay"],["RscDisplayArsenal","RscDisplayArsenal"],[166,"RscDisplayPublishMissionSelectTags"],[167,"RscDisplayFileSelect"]
 ];
 
-_detection = false;
-_timeStamp = time;
+private _detection = false;
+private _timeStamp = time;
 for "_i" from 0 to 1 step 0 do {
     {
-        _targetDisplay = _x select 0;
-        _targetName = _x select 1;
+        params [
+            "_targetDisplay",
+            ["_targetName","",[""]]
+        ];
         switch (typeName _targetDisplay) do {
             case ("STRING"): {if (!isNull (uiNamespace getVariable [_targetDisplay,displayNull])) exitWith {_detection = true;};};
             default {if (!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};

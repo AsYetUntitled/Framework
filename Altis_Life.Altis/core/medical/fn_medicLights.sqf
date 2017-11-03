@@ -59,9 +59,9 @@ _lightleft setLightDayLight true;
 _lightright setLightDayLight true;
 
 _leftRed = true;
-while{ (alive _vehicle)} do
+while {alive _vehicle} do
 {
-    if (!(_vehicle getVariable "lights")) exitWith {};
+    if !(_vehicle getVariable "lights") exitWith {};
     if (_leftRed) then
     {
         _leftRed = false;

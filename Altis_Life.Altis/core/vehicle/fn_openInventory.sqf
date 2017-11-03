@@ -54,7 +54,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         ];
         waitUntil {isNull (findDisplay 3500)};
         _vehicle setVariable ["trunk_in_use",false,true];
-        if ((_vehicle isKindOf "Car") || (_this isKindOf "Air") || (_vehicle isKindOf "Ship")) then {
+        if ((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship")) then {
             [] call SOCK_fnc_updateRequest;
 
             if (life_HC_isActive) then {

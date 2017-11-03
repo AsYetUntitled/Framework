@@ -14,7 +14,7 @@
         2: STRING (Case option)
 */
 params [
-    ["_control","",[""]],
+    ["_control",displayNull,[displayNull]],
     ["_code",-1,[0]],
     ["_slider","",[""]],
     ["_onKeyUp",false,[false]]

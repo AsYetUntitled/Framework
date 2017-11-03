@@ -6,7 +6,9 @@
     Output information received to admin menu.
 */
 disableSerialization;
-private _ret = _this select 0;
+params [
+    ["_ret",objNull,[objNull]]
+];
 private _display = findDisplay 2900;
 private _text = _display displayCtrl 2903;
 

@@ -9,7 +9,6 @@
 
     Will also become a standalone system which is why it's setup like this.
 */
-private ["_binConfigPatches","_cfgPatches","_endM"];
 if (isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
 #define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})
 #define RCLIENT -2
@@ -56,7 +55,7 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
     "JSRS2_FighterPlane3","JSRS2_FV720_Mora","JSRS2_Hunter","JSRS2_Ifrit","JSRS2_IFV6a_Cheetah","JSRS2_IFV6c_Panther","JSRS2_M2A1_Slammer","JSRS2_M4_Scorcher","JSRS2_M5_Sandstorm","JSRS2_MBT52_Kuma","JSRS2_Mi48_Kajman","JSRS2_MSE3_Marid","JSRS2_Offroad",
     "JSRS2_Po30_Orca","JSRS2_Strider","JSRS2_SUV","JSRS2_T100_Varsuk","JSRS2_Truck1","JSRS2_Truck2","JSRS2_UAV_1","JSRS2_UH80_GhostHawk","JSRS2_Van","JSRS2_WY55_Hellcat","JSRS2_ZSU39_Tigris","cba_xeh_a3"]
 */
-_patchList =
+private _patchList =
 ["life_server","Core","A3Data","A3_Functions_F","A3_Functions_F_EPA","A3_Functions_F_EPC","A3_Data_F","A3_Data_F_Hook","A3_Data_F_ParticleEffects","A3_Dubbing_F","A3_Dubbing_F_Beta","A3_Dubbing_F_Gamma","A3_Dubbing_Radio_F",
 "A3_Dubbing_Radio_F_Data_ENG","A3_Dubbing_Radio_F_Data_ENGB","A3_Dubbing_Radio_F_Data_GRE","A3_Dubbing_Radio_F_Data_PER","A3_Dubbing_Radio_F_Data_VR","A3_Editor_F","A3_EditorPreviews_F","A3_Functions_F_Curator","A3_Language_F",
 "A3_Language_F_Beta","A3_Language_F_Gamma","A3_LanguageMissions_F","A3_LanguageMissions_F_Beta","A3_LanguageMissions_F_Gamma","A3_Misc_F","A3_Misc_F_Helpers","A3_Modules_F","A3_Modules_F_Data","A3_Modules_F_DynO",
@@ -203,7 +202,7 @@ _patchList =
 uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
 
-_binConfigPatches = configFile >> "CfgPatches";
+private _binConfigPatches = configFile >> "CfgPatches";
 for "_i" from 0 to count (_binConfigPatches)-1 do {
     _patchEntry = _binConfigPatches select _i;
     if (isClass _patchEntry) then {
@@ -218,16 +217,15 @@ for "_i" from 0 to count (_binConfigPatches)-1 do {
 
 //Check for copy-pasters of Dev-Con styled execution.
 //Because I am nice, add these to the following below to allow CBA; "CBA_CREDITS_CONT_C","CBA_CREDITS_M_P
-private ["_children","_allowedChildren"];
-_children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
-_allowedChildren = [
+private _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
+private _allowedChildren = [
 "Title","MissionTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
 "ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole",
 "Version","TraffLight","Feedback","MessageBox"
 ];
 
 {
-    if (!((configName _x) in _allowedChildren)) exitWith {
+    if !((configName _x) in _allowedChildren) exitWith {
         [profileName,getPlayerUID player,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",RSERV];
         [profileName,"Devcon like executor detected"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
         sleep 0.5;

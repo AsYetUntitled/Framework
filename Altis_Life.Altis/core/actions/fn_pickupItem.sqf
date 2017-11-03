@@ -7,15 +7,19 @@
     Description:
     Master handling for picking up an item.
 */
-if ((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDelay"; INUSE(_this);};
-if (isNull _this || {player distance _this > 3}) exitWith {INUSE(_this);};
+params [
+    ["_item",objNull,[objNull]]
+];
 
-private _itemInfo = _this getVariable ["item",[]]; 
+if ((time - life_action_delay) < 2) exitWith {hint localize "STR_NOTF_ActionDelay"; INUSE(_item);};
+if (isNull _item || {player distance _item > 3}) exitWith {INUSE(_item);};
+
+private _itemInfo = _item getVariable ["item",[]]; 
 _itemInfo params [
     ["_oldItem","",[""]],
     ["_value",0,[0]]
 ];
-if (count _itemInfo isEqualTo 0) exitWith {deleteVehicle _this;};
+if (count _itemInfo isEqualTo 0) exitWith {deleteVehicle _item;};
 private _illegal = ITEM_ILLEGAL(_oldItem);
 private _itemName = ITEM_NAME(_oldItem);
 if (isLocalized _itemName) then {
@@ -23,36 +27,36 @@ if (isLocalized _itemName) then {
 };
 
 if (playerSide isEqualTo west && _illegal isEqualTo 1) exitWith {
-    titleText[format [localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(_itemInfo select 0) / 2)] call life_fnc_numberText],"PLAIN"];
+    titleText[format [localize "STR_NOTF_PickedEvidence",_itemName,[round(ITEM_SELLPRICE(_oldItem) / 2)] call life_fnc_numberText],"PLAIN"];
     BANK = BANK + round(ITEM_SELLPRICE(_oldItem) / 2);
-    deleteVehicle _this;
+    deleteVehicle _item;
     [1] call SOCK_fnc_updatePartial;
     life_action_delay = time;
 };
 
 life_action_delay = time;
 private _diff = [_oldItem,_value,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if (_diff <= 0) exitWith {hint localize "STR_NOTF_InvFull"; INUSE(_this);};
+if (_diff <= 0) exitWith {hint localize "STR_NOTF_InvFull"; INUSE(_item);};
 
 if !(_diff isEqualTo _value) then {
     if ([true,_oldItem,_diff] call life_fnc_handleInv) then {
         player playMove "AinvPknlMstpSlayWrflDnon";
 
-        _this setVariable ["item",[_oldItem,_value - _diff],true];
+        _item setVariable ["item",[_oldItem,_value - _diff],true];
         titleText[format [localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
-        INUSE(_this);
+        INUSE(_item);
     } else {
-        INUSE(_this);
+        INUSE(_item);
     };
 } else {
     if ([true,_oldItem,_value] call life_fnc_handleInv) then {
-        deleteVehicle _this;
-        //waitUntil{isNull _this};
+        deleteVehicle _item;
+        //waitUntil{isNull _item};
         player playMove "AinvPknlMstpSlayWrflDnon";
 
         titleText[format [localize "STR_NOTF_Picked",_diff,_itemName],"PLAIN"];
     } else {
-        INUSE(_this);
+        INUSE(_item);
     };
 };
 

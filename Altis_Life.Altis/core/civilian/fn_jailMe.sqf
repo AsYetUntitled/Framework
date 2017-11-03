@@ -19,8 +19,11 @@ private _esc = false;
 private _bail = false;
 
 [_bad] spawn {
+    params [
+        ["_bad",false,[false]]
+    ];
     life_canpay_bail = false;
-    if (_this select 0) then {
+    if (_bad) then {
         sleep (10 * 60);
     } else {
         sleep (5 * 60);
