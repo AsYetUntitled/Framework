@@ -25,18 +25,14 @@ if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
 
 if (isNull _curObject) exitWith {
     if (_isWater) then {
-        private _fish = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) select 0;
-        if (!isNil "_fish") then {
-            if (!alive _fish) then {
-                [_fish] call life_fnc_catchFish;
-            };
+        (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_fish")),3]) params ["_fish"];
+        if (!isNil "_fish" && {!alive _fish}) then {
+            [_fish] call life_fnc_catchFish;
         };
     } else {
-        private _animal = (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_hunting")),3]) select 0;
-        if (!isNil "_animal") then {
-            if (!alive _animal) then {
-                [_animal] call life_fnc_gutAnimal;
-            };
+        (nearestObjects[player,(LIFE_SETTINGS(getArray,"animaltypes_hunting")),3]) params ["_animal"];
+        if (!isNil "_animal" && {!alive _animal}) then {
+            [_animal] call life_fnc_gutAnimal;
         } else {
             if (playerSide isEqualTo civilian && !life_action_gathering) then {
                 private _whatIsIt = [] call life_fnc_whereAmI;
@@ -53,7 +49,7 @@ if (isNull _curObject) exitWith {
     };
 };
 
-if ((_curObject isKindOf "B_supplyCrate_F" || _curObject isKindOf "Box_IND_Grenades_F") && {player distance _curObject < 3} ) exitWith {
+if ((_curObject isKindOf "B_supplyCrate_F" || _curObject isKindOf "Box_IND_Grenades_F") && {player distance _curObject < 3}) exitWith {
     if (alive _curObject) then {
         [_curObject] call life_fnc_containerMenu;
     };

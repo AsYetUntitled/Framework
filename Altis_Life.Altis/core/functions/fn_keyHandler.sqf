@@ -7,7 +7,7 @@
 *    Main key handler for event 'keyDown'.
 */
 params [
-    ["_ctrl",-1,[0]],
+    ["_ctrl",displayNull,[displayNull]],
     ["_code",-1,[0]],
     ["_shift",false,[false]],
     ["_ctrlKey",false,[false]],
