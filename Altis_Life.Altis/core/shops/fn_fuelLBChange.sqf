@@ -8,7 +8,7 @@
 */
 disableSerialization;
 params [
-    ["_control","",[""]],
+    ["_control",controlNull,[controlNull]],
     ["_index",-1,[0]]
 ];
 

@@ -20,7 +20,6 @@ if (_data isEqualTo []) exitWith {hint localize "STR_Cop_wantedList_FailedToFetc
 
 lbClear _list;
 
-private _crimes = _data select 0;
 _data params [["_crimes",[],[[]]],["_bounty",-1,[0]]];
 
 {

@@ -6,10 +6,16 @@
     Description:
     Something
 */
+params [
+    "",
+    "",
+    "",
+    ["_shopType","",[""]]
+];
 
-private _shopTitle = M_CONFIG(getText,"WeaponShops",(_this select 3),"name");
-private _shopSide = M_CONFIG(getText,"WeaponShops",(_this select 3),"side");
-private _conditions = M_CONFIG(getText,"WeaponShops",(_this select 3),"conditions");
+private _shopTitle = M_CONFIG(getText,"WeaponShops",_shopType,"name");
+private _shopSide = M_CONFIG(getText,"WeaponShops",_shopType,"side");
+private _conditions = M_CONFIG(getText,"WeaponShops",_shopType,"conditions");
 
 private _exit = false;
 if !(_shopSide isEqualTo "") then {
@@ -22,14 +28,14 @@ if (_exit) exitWith {};
 _exit = [_conditions] call life_fnc_levelCheck;
 if !(_exit) exitWith {hint localize "STR_Shop_Veh_NotAllowed";};
 
-uiNamespace setVariable ["Weapon_Shop",(_this select 3)];
+uiNamespace setVariable ["Weapon_Shop",_shopType];
 uiNamespace setVariable ["Weapon_Magazine",0];
 uiNamespace setVariable ["Weapon_Accessories",0];
 uiNamespace setVariable ["Magazine_Array",[]];
 uiNamespace setVariable ["Accessories_Array",[]];
 
 if !(createDialog "life_weapon_shop") exitWith {};
-if (!isClass(missionConfigFile >> "WeaponShops" >> (_this select 3))) exitWith {}; //Bad config entry.
+if (!isClass(missionConfigFile >> "WeaponShops" >> _shopType)) exitWith {}; //Bad config entry.
 
 disableSerialization;
 
