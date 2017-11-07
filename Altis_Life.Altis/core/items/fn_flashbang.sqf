@@ -8,8 +8,7 @@
 params [
     ["_pos",[],[[]]]
 ];
-if (_pos isEqualTo []) exitWith {}; //Badddd
-if (player distance _pos > 25) exitWith {}; //Bad again.
+if (_pos isEqualTo [] || {player distance _pos > 25}) exitWith {}; //Badddd
 
 _pos set[2,(_pos select 2)+0.2];
 if (lineIntersects [eyePos player, ATLtoASL _pos,player]) exitWith {};

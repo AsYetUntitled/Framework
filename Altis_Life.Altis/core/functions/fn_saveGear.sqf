@@ -38,7 +38,7 @@ private _uni = [];
 private _ves = [];
 private _bag = [];
 
-if (!(uniform player isEqualTo "")) then {
+if !(uniform player isEqualTo "") then {
     {
         if (_x in (magazines player)) then {
             _uMags pushBack _x;
@@ -48,7 +48,7 @@ if (!(uniform player isEqualTo "")) then {
     } forEach (uniformItems player);
 };
 
-if (!(backpack player isEqualTo "")) then {
+if !(backpack player isEqualTo "") then {
     {
         if (_x in (magazines player)) then {
             _bMags pushBack _x;
@@ -58,7 +58,7 @@ if (!(backpack player isEqualTo "")) then {
     } forEach (backpackItems player);
 };
 
-if (!(vest player isEqualTo "")) then {
+if !(vest player isEqualTo "") then {
     {
         if (_x in (magazines player)) then {
             _vMags pushBack _x;
@@ -69,9 +69,9 @@ if (!(vest player isEqualTo "")) then {
 };
 
 if (count (primaryWeaponMagazine player) > 0 && alive player) then {
-    _pMag = ((primaryWeaponMagazine player) select 0);
+    (primaryWeaponMagazine player) params ["_pMag"];
 
-    if (!(_pMag isEqualTo "")) then {
+    if !(_pMag isEqualTo "") then {
         _uni = player canAddItemToUniform _pMag;
         _ves = player canAddItemToVest _pMag;
         _bag = player canAddItemToBackpack _pMag;
@@ -95,9 +95,9 @@ if (count (primaryWeaponMagazine player) > 0 && alive player) then {
 };
 
 if (count (handgunMagazine player) > 0 && alive player) then {
-    _hMag = ((handgunMagazine player) select 0);
+    (handgunMagazine player) params ["_hMag"];
 
-    if (!(_hMag isEqualTo "")) then {
+    if !(_hMag isEqualTo "") then {
         _uni = player canAddItemToUniform _hMag;
         _ves = player canAddItemToVest _hMag;
         _bag = player canAddItemToBackpack _hMag;

@@ -11,10 +11,11 @@
     Returns:
     Array (Position)
 */
-private ["_offset", "_nb_tirages", "_position_degagee"];
-
-_offset = if (count _this > 0) then {_this select 0} else {[0,0,0]};
-
+params [
+    ["_offset",[0,0,0],[[]]]
+];
+private "_nb_tirages";
+private "_position_degagee";
 // Find an open position (sphere of radius 50 m) into the sky.
 for [
     {
