@@ -12,6 +12,6 @@ params [
 private _handled = false;
 
 //Esc Key Handler
-if (_code isEqualTo 1) then {_handled = true;};
+if (_code isEqualTo 1) then {_handled = true};
 
 _handled;

@@ -19,7 +19,7 @@ if (isNull _cop) exitWith {};
         private _time = time;
         waitUntil {(time - _time) > (5 * 60)};
 
-        if (!(player getVariable ["restrained",false])) exitWith {};
+        if !(player getVariable ["restrained",false]) exitWith {};
         if (!([west,getPos player,30] call life_fnc_nearUnits) && (player getVariable ["restrained",false]) && isNull objectParent player) exitWith {
             player setVariable ["restrained",false,true];
             player setVariable ["Escorting",false,true];
