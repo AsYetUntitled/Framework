@@ -28,6 +28,11 @@ _unit setVariable ["transporting",false,true];
 _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",(getPlayerUID player),true]; //Set the UID.
 
+//close the esc dialog
+if (dialog) then {
+    closeDialog 0;
+};
+
 //Setup our camera view
 life_deathCamera  = "CAMERA" camCreate (getPosATL _unit);
 showCinemaBorder true;
