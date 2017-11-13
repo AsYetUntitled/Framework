@@ -10,7 +10,8 @@ params [
     ["_target",objNull,[objNull]]
 ];
 
-private _damage = (getAllHitPointsDamage _target select 2) call BIS_fnc_greatestnum;
+(getAllHitPointsDamage _target) params ["","",["_damage",[],[[]]]];
+_damage = selectMax _damage;
 private _return = ([false,true] select (_damage > 0.01));
 
 _return;

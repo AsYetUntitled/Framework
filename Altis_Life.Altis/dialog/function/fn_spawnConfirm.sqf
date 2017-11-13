@@ -9,7 +9,7 @@ closeDialog 0;
 cutText ["","BLACK IN"];
 if (life_spawn_point isEqualTo []) then {
     private _spCfg = [playerSide] call life_fnc_spawnPointCfg;
-    private _sp = _spCfg select 0;
+    _spCfg params [["_sp",[],[[]]]];
 
     if (playerSide isEqualTo civilian) then {
         if (isNil {(call compile format ["%1",_sp select 0])}) then {

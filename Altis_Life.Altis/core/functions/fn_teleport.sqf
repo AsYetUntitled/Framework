@@ -5,8 +5,11 @@
     Description:
     Teleport to chosen position.
 */
-private _pos = [_this select 0, _this select 1, _this select 2];
-(vehicle player) setPos [_pos select 0, _pos select 1, 0];
+params [
+    "_xPos",
+    "_yPos"
+];
+(vehicle player) setPos [_xPos, _yPos, 0];
 onMapSingleClick "";
 openMap [false, false];
 hint localize "STR_NOTF_Teleport";
