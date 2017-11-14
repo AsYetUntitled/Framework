@@ -18,9 +18,7 @@
 
 disableSerialization;
 
-//Long boring series of checks
-if (dialog) exitWith {};
-if (_shop isEqualTo "") exitWith {};
+if (_shop isEqualTo "" || {dialog}) exitWith {};
 if (!(_sideCheck isEqualTo sideUnknown) && {!(playerSide isEqualTo _sideCheck)}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
 
 private _conditions = M_CONFIG(getText,"CarShops",_shop,"conditions");
@@ -51,14 +49,14 @@ ctrlShow [2304,false];
 
 //Loop through
 {
-    _x params["_className"];
+    _x params ["_className","","_picture","_name"];
 
     private _toShow = [_x] call life_fnc_levelCheck;
 
     if (_toShow) then {
         _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-        _control lbAdd (_vehicleInfo select 3);
-        _control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];
+        _control lbAdd _name;
+        _control lbSetPicture [(lbSize _control)-1,_picture];
         _control lbSetData [(lbSize _control)-1,_className];
         _control lbSetValue [(lbSize _control)-1,_forEachIndex];
     };

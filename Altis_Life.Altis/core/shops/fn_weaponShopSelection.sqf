@@ -53,7 +53,7 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
 
                 //Accessories Menu
                 if (isClass (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo")) then {
-                    private ["_slotArray"];
+                    private "_slotArray";
                     _itemArray = [];
                     if (isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
                         _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","CowsSlot","compatibleItems");

@@ -50,8 +50,6 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
 
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-    private ["_curConfig","_resourceZones","_resources","_mined"];
-
     if (!_isMineral) exitWith {};
     private _curConfig = (_resourceCfg select _i);
     private _resources = getArray(_curConfig >> "mined");

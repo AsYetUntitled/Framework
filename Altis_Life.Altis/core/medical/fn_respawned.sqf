@@ -25,19 +25,18 @@ player setVariable ["name",nil,true];
 player setVariable ["Reviving",nil,true];
 
 //Load gear for a 'new life'
-switch (playerSide) do
-{
+private _handle = switch playerSide do {
     case west: {
-        _handle = [] spawn life_fnc_copLoadout;
+        [] spawn life_fnc_copLoadout;
     };
     case civilian: {
-        _handle = [] spawn life_fnc_civLoadout;
+        [] spawn life_fnc_civLoadout;
     };
     case independent: {
-        _handle = [] spawn life_fnc_medicLoadout;
+        [] spawn life_fnc_medicLoadout;
     };
-    waitUntil {scriptDone _handle};
 };
+waitUntil {scriptDone _handle};
 
 //Cleanup of weapon containers near the body & hide it.
 if (!isNull life_corpse) then {
@@ -61,7 +60,6 @@ if (life_is_arrested) exitWith {
 
 //Johnny law got me but didn't let the EMS revive me, reward them half the bounty.
 if (!isNil "life_copRecieve") then {
-
     if (life_HC_isActive) then {
         [getPlayerUID player,player,life_copRecieve,true] remoteExecCall ["HC_fnc_wantedBounty",HC_Life];
     } else {
@@ -73,7 +71,6 @@ if (!isNil "life_copRecieve") then {
 
 //So I guess a fellow gang member, cop or myself killed myself so get me off that Altis Most Wanted
 if (life_removeWanted) then {
-
     if (life_HC_isActive) then {
         [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
     } else {

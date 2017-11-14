@@ -8,7 +8,7 @@
 
 life_actions = [];
 
-switch (playerSide) do {
+switch playerSide do {
 
     //Civilian
     case civilian: {

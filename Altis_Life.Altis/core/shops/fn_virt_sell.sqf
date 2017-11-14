@@ -12,7 +12,7 @@ private _price = M_CONFIG(getNumber,"VirtualItems",_type,"sellPrice");
 if (_price isEqualTo -1) exitWith {};
 
 private _amount = ctrlText 2405;
-if !([_amount] call TON_fnc_isnumber) exitWith {hint localize "STR_Shop_Virt_NoNum";};
+if !([_amount] call TON_fnc_isNumber) exitWith {hint localize "STR_Shop_Virt_NoNum";};
 _amount = parseNumber (_amount);
 if (_amount > (ITEM_VALUE(_type))) exitWith {hint localize "STR_Shop_Virt_NotEnough"};
 if ((time - life_action_delay) < 0.2) exitWith {hint localize "STR_NOTF_ActionDelay";};
@@ -28,11 +28,10 @@ if ([false,_type,_amount] call life_fnc_handleInv) then {
 };
 
 if (life_shop_type isEqualTo "drugdealer") then {
-    private ["_array","_ind","_val"];
-    _array = life_shop_npc getVariable ["sellers",[]];
-    _ind = [getPlayerUID player,_array] call TON_fnc_index;
-    if (!(_ind isEqualTo -1)) then {
-        _val = ((_array select _ind) select 2);
+    private _array = life_shop_npc getVariable ["sellers",[]];
+    private _ind = [getPlayerUID player,_array] call TON_fnc_index;
+    if !(_ind isEqualTo -1) then {
+        private _val = ((_array select _ind) select 2);
         _val = _val + _price;
         _array set[_ind,[getPlayerUID player,profileName,_val]];
         life_shop_npc setVariable ["sellers",_array,true];

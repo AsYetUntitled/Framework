@@ -205,14 +205,13 @@ if (_bool) then {
                                 if (_override) then {
                                     player addItem _item;
                                 } else {
-                                    private ["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
-                                    _slotTaken = false;
+                                    private _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+                                    private _slotTaken = false;
 
-                                    if (!((_wepItems select 2) isEqualTo "")) then {_slotTaken = true;};
+                                    if !((_wepItems select 2) isEqualTo "") then {_slotTaken = true;};
 
                                     if (_slotTaken) then {
-                                        _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
+                                        private _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
                                         if (_action) then {
                                             switch (_type) do {
                                                 case 1: {player addPrimaryWeaponItem _item;};
@@ -253,14 +252,13 @@ if (_bool) then {
                                 if (_override) then {
                                     player addItem _item;
                                 } else {
-                                    private ["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
-                                    _slotTaken = false;
+                                    private _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+                                    private _slotTaken = false;
 
-                                    if (!((_wepItems select 1) isEqualTo "")) then {_slotTaken = true;};
+                                    if !((_wepItems select 1) isEqualTo "") then {_slotTaken = true;};
 
                                     if (_slotTaken) then {
-                                        _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
+                                        private _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
                                         if (_action) then {
                                             switch (_type) do {
                                                 case 1: {player addPrimaryWeaponItem _item;};
@@ -301,14 +299,13 @@ if (_bool) then {
                                 if (_override) then {
                                     player addItem _item;
                                 } else {
-                                    private ["_wepItems","_action","_slotTaken"];
-                                    _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
-                                    _slotTaken = false;
+                                    private _wepItems = switch (_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+                                    private _slotTaken = false;
 
                                     if (!((_wepItems select 0) isEqualTo "")) then {_slotTaken = true;};
 
                                     if (_slotTaken) then {
-                                        _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
+                                        private _action = [localize "STR_MISC_AttachmentMSG",localize "STR_MISC_Attachment",localize "STR_MISC_Weapon",localize "STR_MISC_Inventory"] call BIS_fnc_guiMessage;
                                         if (_action) then {
                                             switch (_type) do {
                                                 case 1: {player addPrimaryWeaponItem _item;};
@@ -412,7 +409,8 @@ if (_bool) then {
                     //Lovely code provided by [OCB]Dash
                     private "_tmpfunction";
                     _tmpfunction = {
-                        private ["_tWeapons","_tWeaponCount"];
+                        private "_tWeapons";
+                        private "_tWeaponCount";
                         switch (true) do {
                             case (_this in (uniformItems player)): {
                                 _tWeapons = (getWeaponCargo (uniformContainer player)) select 0;

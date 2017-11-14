@@ -17,13 +17,12 @@ params [
 
 //Handle the tazer first (Top-Priority).
 if (!isNull _source) then {
-    if (_source != _unit) then {
+    if !(_source isEqualTo _unit) then {
         if (currentWeapon _source in ["hgun_P07_snds_F","arifle_SDAR_F"] && _projectile in ["B_9x21_Ball","B_556x45_dual"]) then {
             if (side _source isEqualTo west && playerSide isEqualTo civilian) then {
                 _damage = 0;
                 if (alive player && !life_istazed && !life_isknocked && !(_unit getVariable ["restrained",false])) then {
-                    private ["_distance"];
-                    _distance = 35;
+                    private _distance = 35;
                     if (_projectile == "B_556x45_dual") then {_distance = 100;};
                     if (_unit distance _source < _distance) then {
                         if !(isNull objectParent player) then {

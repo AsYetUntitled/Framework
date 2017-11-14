@@ -30,19 +30,18 @@ life_preview_3D_vehicle_object = objNull;
     // Until we left the visualization.
     for "_i" from 0 to 1 step 0 do {
         if (isNull life_preview_3D_vehicle_cam) exitWith {};
-        private ["_object","_distanceCam","_azimuthCam"];
 
         // Waiting for a view object.
         waitUntil {!isNull life_preview_3D_vehicle_object};
 
-        _object = life_preview_3D_vehicle_object;
+        private _object = life_preview_3D_vehicle_object;
 
-        _distanceCam = 2.25 * (
+        private _distanceCam = 2.25 * (
                 [boundingBoxReal _object select 0 select 0, boundingBoxReal _object select 0 select 2]
             distance
                 [boundingBoxReal _object select 1 select 0, boundingBoxReal _object select 1 select 2]
         );
-        _azimuthCam = 0;
+        private _azimuthCam = 0;
 
         life_preview_3D_vehicle_cam camSetTarget _object;
         life_preview_3D_vehicle_cam camSetPos (_object modelToWorld [_distanceCam * sin _azimuthCam, _distanceCam * cos _azimuthCam, _distanceCam * 0.33]);
@@ -50,7 +49,7 @@ life_preview_3D_vehicle_object = objNull;
 
         // Rotation around the object.
         for "_i" from 0 to 1 step 0 do {
-            if (!(life_preview_3D_vehicle_object isEqualTo _object)) exitWith {};
+            if !(life_preview_3D_vehicle_object isEqualTo _object) exitWith {};
             _azimuthCam = _azimuthCam + 1.00;
 
             life_preview_3D_vehicle_cam camSetPos (_object modelToWorld [_distanceCam * sin _azimuthCam, _distanceCam * cos _azimuthCam, _distanceCam * 0.33]);

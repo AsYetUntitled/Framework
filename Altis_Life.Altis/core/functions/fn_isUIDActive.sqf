@@ -13,9 +13,13 @@ params [
     ["_uid","",[""]]
 ];
 if (_uid isEqualTo "") exitWith {false}; //Bad UID
+
 private _ret = false;
 {
-    if (isPlayer _x && {getPlayerUID _x isEqualTo _uid}) exitWith {_ret = true;};
-} forEach playableUnits;
+    if (isPlayer _x && {getPlayerUID _x isEqualTo _uid}) exitWith {
+    	_ret = true;
+    };
+    false
+} count playableUnits;
 
 _ret;
