@@ -152,7 +152,7 @@ switch (_code) do {
 
     //T Key (Trunk)
     case 20: {
-        if (!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
+        if (!_alt && {!_ctrlKey} && {!dialog} && {!life_action_inUse} && {!(player getVariable ["playerSurrender",false])} && {!(player getVariable ["restrained",false])} && {!life_isknocked} && {!life_istazed}) then {
             if (!(isNull objectParent player) && alive vehicle player) then {
                 if ((vehicle player) in life_vehicles) then {
                     [vehicle player] spawn life_fnc_openInventory;
