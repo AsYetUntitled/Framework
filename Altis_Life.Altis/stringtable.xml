@@ -834,6 +834,10 @@
             <Russian>Хит пробел, чтобы поместить контейнер.</Russian>
             <German>Drücke die Leertaste, um den Container zu platzieren.</German>
         </Key>
+        <Key ID="STR_NOTF_PlaceContainerAbort">
+            <Original>Placement of container has been aborted.</Original>
+            <German>Die Platzierung des Containers wurde abgebrochen.</German>
+        </Key>
         <Key ID="STR_NOTF_notAllowed">
             <Original>Your faction is not allowed to chop vehicles!</Original>
             <Czech>Váš frakce není povoleno sekat vozidla!</Czech>

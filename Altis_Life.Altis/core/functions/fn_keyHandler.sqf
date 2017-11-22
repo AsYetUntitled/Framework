@@ -44,11 +44,24 @@ if (!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) 
     true;
 };
 
-if (life_container_active) then {
+if (life_container_active) exitwith {
+    //ignore movement actions
+    _allowedMoves = ["MoveForward", "MoveBack", "TurnLeft", "TurnRight", "MoveFastForward", "MoveSlowForward", "turbo", "TurboToggle", "MoveLeft", "MoveRight", "WalkRunTemp", "WalkRunToggle", "AdjustUp", "AdjustDown", "AdjustLeft", "AdjustRight", "Stand", "Crouch", "Prone", "MoveUp", "MoveDown", "LeanLeft", "LeanLeftToggle", "LeanRight", "LeanRightToggle"];
+    if (({_code in (actionKeys _x)} count _allowedMoves) > 0) exitwith {
+        false;
+    };
+    //handle other keys
     switch (_code) do {
-        //space key
+        //space key -> place
         case 57: {
-            [] spawn life_fnc_placestorage;
+            0 spawn life_fnc_placestorage;
+        };
+        //other keys -> abort
+        default {
+            if (!isNull life_container_activeObj) then {
+                deleteVehicle life_container_activeObj;
+                titleText [localize "STR_NOTF_PlaceContainerAbort", "PLAIN"];
+            };
         };
     };
     true;
