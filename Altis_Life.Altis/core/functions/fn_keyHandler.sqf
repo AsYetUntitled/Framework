@@ -51,18 +51,14 @@ if (life_container_active) exitwith {
         false;
     };
     //handle other keys
-    switch (_code) do {
-        //space key -> place
-        case 57: {
-            0 spawn life_fnc_placestorage;
+    if (_code isEqualTo 57) then {//space key -> place
+        0 spawn life_fnc_placestorage;
+    } else { //other keys -> abort
+        if (!isNull life_container_activeObj) then {
+            deleteVehicle life_container_activeObj;
+            titleText [localize "STR_NOTF_PlaceContainerAbort", "PLAIN"];
         };
-        //other keys -> abort
-        default {
-            if (!isNull life_container_activeObj) then {
-                deleteVehicle life_container_activeObj;
-                titleText [localize "STR_NOTF_PlaceContainerAbort", "PLAIN"];
-            };
-        };
+        life_container_active = false;
     };
     true;
 };
