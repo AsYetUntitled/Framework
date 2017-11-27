@@ -46,14 +46,41 @@ if (!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) 
 
 if (life_container_active) exitwith {
     //ignore movement actions
-    _allowedMoves = ["MoveForward", "MoveBack", "TurnLeft", "TurnRight", "MoveFastForward", "MoveSlowForward", "turbo", "TurboToggle", "MoveLeft", "MoveRight", "WalkRunTemp", "WalkRunToggle", "AdjustUp", "AdjustDown", "AdjustLeft", "AdjustRight", "Stand", "Crouch", "Prone", "MoveUp", "MoveDown", "LeanLeft", "LeanLeftToggle", "LeanRight", "LeanRightToggle"];
+    private _allowedMoves = [
+        "MoveForward",
+        "MoveBack",
+        "TurnLeft",
+        "TurnRight",
+        "MoveFastForward",
+        "MoveSlowForward",
+        "turbo",
+        "TurboToggle",
+        "MoveLeft",
+        "MoveRight",
+        "WalkRunTemp",
+        "WalkRunToggle",
+        "AdjustUp",
+        "AdjustDown",
+        "AdjustLeft",
+        "AdjustRight",
+        "Stand",
+        "Crouch",
+        "Prone",
+        "MoveUp",
+        "MoveDown",
+        "LeanLeft",
+        "LeanLeftToggle",
+        "LeanRight",
+        "LeanRightToggle"
+    ];
     if (({_code in (actionKeys _x)} count _allowedMoves) > 0) exitwith {
         false;
     };
     //handle other keys
     if (_code isEqualTo 57) then {//space key -> place
-        0 spawn life_fnc_placestorage;
+        life_storagePlacing = 0 spawn life_fnc_placestorage;
     } else { //other keys -> abort
+        if (!isNull life_storagePlacing) exitWith {}; //already placing down a box
         if (!isNull life_container_activeObj) then {
             deleteVehicle life_container_activeObj;
             titleText [localize "STR_NOTF_PlaceContainerAbort", "PLAIN"];
