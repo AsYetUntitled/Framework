@@ -836,6 +836,13 @@
         </Key>
         <Key ID="STR_NOTF_PlaceContainerAbort">
             <Original>Placement of container has been aborted.</Original>
+            <Czech>Placement of container has been aborted.</Czech>
+            <French>Placement of container has been aborted.</French>
+            <Spanish>Placement of container has been aborted.</Spanish>
+            <Italian>Placement of container has been aborted.</Italian>
+            <Polish>Placement of container has been aborted.</Polish>
+            <Portuguese>Placement of container has been aborted.</Portuguese>
+            <Russian>Placement of container has been aborted.</Russian>
             <German>Die Platzierung des Containers wurde abgebrochen.</German>
         </Key>
         <Key ID="STR_NOTF_notAllowed">
