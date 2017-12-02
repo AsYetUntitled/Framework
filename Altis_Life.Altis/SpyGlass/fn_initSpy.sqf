@@ -218,7 +218,7 @@ _patchList =
 "A3_Structures_F_Orange_Industrial","A3_Structures_F_Orange_Industrial_Cargo","A3_Structures_F_Orange_Signs","A3_Structures_F_Orange_Signs_Mines","A3_Structures_F_Orange_Signs_Special","A3_Structures_F_Orange_VR_Helpers",
 "A3_Structures_F_Orange_Walls","A3_Structures_F_Orange_Walls_Plastic","A3_Supplies_F_Orange","A3_Supplies_F_Orange_Ammoboxes","A3_Supplies_F_Orange_Bags","A3_Supplies_F_Orange_CargoNets","A3_Ui_F_Orange",
 "A3_Weapons_F_Orange","A3_Weapons_F_Orange_Explosives","A3_Weapons_F_Orange_Items","A3_Air_F_Orange","A3_Air_F_Orange_Heli_Transport_02","A3_Air_F_Orange_UAV_01","A3_Air_F_Orange_UAV_06","A3_Cargoposes_F_Orange",
-"A3_Characters_F_Orange","A3_Characters_F_Orange_Facewear","A3_Characters_F_Orange_Headgear","A3_Characters_F_Orange_Uniforms","A3_Characters_F_Orange_Vests","A3_Sounds_F_Orange","A3_Data_F_Orange_Loadorder"];
+"A3_Characters_F_Orange","A3_Characters_F_Orange_Facewear","A3_Characters_F_Orange_Headgear","A3_Characters_F_Orange_Uniforms","A3_Characters_F_Orange_Vests","A3_Sounds_F_Orange","A3_Data_F_Orange_Loadorder","A3_Music_F_Argo","A3_Data_F_Tacops","A3_Dubbing_F_Tacops","A3_Functions_F_Tacops","A3_Language_F_Tacops","A3_LanguageMissions_F_Tacops","A3_Missions_F_Tacops","A3_Music_F_Tacops","A3_Sounds_F_Tacops","A3_Characters_F_Tacops","A3_Ui_F_Tacops","A3_Data_F_Tacops_Loadorder"];
 
 uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
