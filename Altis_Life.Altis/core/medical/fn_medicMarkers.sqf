@@ -45,6 +45,7 @@ private _medics = [];
     _marker setMarkerTypeLocal "loc_Hospital";
     _marker setMarkerTextLocal format ["%1",(_x getVariable ["name","Unknown Player"])];
     _markers pushBack _marker;
+    true
 } count _units;
 
 while {visibleMap} do {
