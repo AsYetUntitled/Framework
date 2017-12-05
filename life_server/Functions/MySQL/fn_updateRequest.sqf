@@ -45,7 +45,7 @@ private _playtimeUpdate = [];
 {
     _x params [
         ["_timeUID","",[""]],
-        ["_time",0,[0]]
+        ["_time",[],[[]]]
     ];
     if (_timeUID isEqualTo _uid) exitWith {
         _playtimeUpdate pushBack [_time];

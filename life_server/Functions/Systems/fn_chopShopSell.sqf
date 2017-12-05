@@ -24,7 +24,7 @@ _unit = owner _unit;
 
 private _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if !(_dbInfo isEqualTo []) then {
-    _dbInfo params ["_uid", "_plate"]
+    _dbInfo params ["_uid", "_plate"];
 
     private _query = format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
 
