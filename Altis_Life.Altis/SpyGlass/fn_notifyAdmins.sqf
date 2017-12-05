@@ -12,6 +12,6 @@ params [
     ["_reason","",[""]]
 ];
 
-if (isServer && !hasInterface) exitWith {}; //NO SERVER DO NOT EXECUTE IT!
+if (isServer && {!hasInterface}) exitWith {};
 if (FETCH_CONST(life_adminlevel) < 1) exitWith {};
 hint parseText format ["<t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2",_name,_reason];
