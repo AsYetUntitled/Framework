@@ -10,7 +10,7 @@
 private ["_container","_isFloating"];
 
 if (!life_container_active) exitWith {};
-if (life_container_activeObj == objNull) exitWith {};
+if (life_container_activeObj isEqualTo objNull) exitWith {};
 if (!((typeOf life_container_activeObj) in ["B_supplyCrate_F","Box_IND_Grenades_F"])) exitWith {};
 
 _container = life_container_activeObj;
