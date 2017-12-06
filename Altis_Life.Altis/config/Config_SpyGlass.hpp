@@ -347,7 +347,7 @@ class SpyGlass {
         { "life_shop_npc", "OBJECT" }, { "life_shop_type", "STRING" }, { "life_deathcamera", "OBJECT" }, { "life_corpse", "OBJECT" }, { "life_admin_debug", "BOOL" }, { "bis_fnc_camera_target", "OBJECT" }, { "bis_fnc_camera_cam", "OBJECT" }, { "bis_fnc_camera_acctime", "SCALAR" }, { "bis_fnc_shownotification_process", "SCRIPT" }, { "bis_fnc_shownotification_counter", "SCALAR" }, { "bis_fnc_shownotification_queue", "ARRAY" },
         { "life_action_spikestrippickup", "SCALAR" }, { "life_container_active", "BOOL" }, { "life_cur_task", "TASK" }, { "life_cur_task", "OBJECT" }, { "life_enablenewsbroadcast", "BOOL" }, { "life_enablesidechannel", "BOOL" }, { "life_fed_scam", "OBJECT" }, { "life_coprecieve", "OBJECT" }, { "life_chopshop", "STRING" }, {"life_civ_position","ARRAY"}, {"life_is_alive","BOOL"}, {"finishedloop","BOOL"}, {"life_fnc_wantedcrimes","CODE"},
         {"ton_fnc_vehicleupdate","CODE"}, {"ton_fnc_recupkeyforhc","CODE"}, {"ton_fnc_getplaytime","CODE"}, {"ton_fnc_sellhousecontainer","CODE"}, {"ton_fnc_setplaytime","CODE"}, {"life_fnc_wantedprofupdate","CODE"}, {"ton_fnc_deletedbcontainer","CODE"}, {"life_save_civilian_position","BOOL"}, {"ton_fnc_addcontainer","CODE"}, {"ton_fnc_requestclientid","CODE"}, {"life_hideoutbuildings","ARRAY"},{"bis_fnc_initmodules_combatpatrol","GROUP"},
-        {"deltatime","SCALAR"},{"bis_deltatime","SCALAR"}
+        {"deltatime","SCALAR"},{"bis_deltatime","SCALAR"}, {"life_storageplacing", "SCRIPT"}
     };
 
     allowedVariables_UI[] = {
