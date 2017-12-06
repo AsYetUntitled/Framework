@@ -36,8 +36,8 @@ lbClear _control;
         "_colour"
     ];
     _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-    _vehicleInfo params ["","","_picture","_displayname"];
-    _control lbAdd _displayname;
+    _vehicleInfo params ["","","_picture","_displayName"];
+    _control lbAdd _displayName;
     _tmp = [_className,_colour];
     _tmp = str(_tmp);
     _control lbSetData [(lbSize _control)-1,_tmp];

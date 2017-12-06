@@ -49,13 +49,14 @@ ctrlShow [2304,false];
 
 //Loop through
 {
-    _x params ["_className","","_picture","_name"];
+    _x params ["_className"];
 
     private _toShow = [_x] call life_fnc_levelCheck;
 
     if (_toShow) then {
         _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-        _control lbAdd _name;
+        _vehicleInfo params ["","","_picture","_displayName"];
+        _control lbAdd _displayName;
         _control lbSetPicture [(lbSize _control)-1,_picture];
         _control lbSetData [(lbSize _control)-1,_className];
         _control lbSetValue [(lbSize _control)-1,_forEachIndex];
