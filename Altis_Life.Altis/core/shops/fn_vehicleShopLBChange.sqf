@@ -9,13 +9,15 @@
     displays various bits of information about the vehicle.
 */
 disableSerialization;
+params [
+    ["_control",controlNull,[controlNull]],
+    ["_index",-1,[0]]
+];
 
 //Fetch some information.
-private _className = (_this select 0) lbData (_this select 1);
-private _classNameLife = _className;
-private _vIndex = (_this select 0) lbValue (_this select 1);
+private _className = _control lbData _index;
 
-private _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
+private _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
 switch (playerSide) do {
     case civilian: {
@@ -68,11 +70,11 @@ ctrlShow [2330,true];
 private _ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
 
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
-    _classNameLife = "Default"; //Use Default class if it doesn't exist
+if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+    _className = "Default"; //Use Default class if it doesn't exist
 };
-private _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
+private _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures");
 
 {
     _flag = (_x select 1);
