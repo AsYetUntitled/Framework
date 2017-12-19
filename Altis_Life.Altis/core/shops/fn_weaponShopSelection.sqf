@@ -8,7 +8,7 @@
 */
 params [
     ["_control",controlNull,[controlNull]],
-    ["_value",-1,[0]]
+    ["_index",-1,[0]]
 ];
 private _shop = uiNamespace getVariable ["Weapon_Shop",""];
 if (isNull _control) exitWith {closeDialog 0;}; //Bad data
