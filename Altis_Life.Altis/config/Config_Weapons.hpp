@@ -6,7 +6,7 @@
 *            in any combination. For example:
 *                "call life_coplevel && license_civ_someLicense"
 *            This will also let you call any other function.
-*            
+*
 *
 *    ARRAY FORMAT:
 *        0: STRING (Classname): Item Classname
@@ -42,6 +42,7 @@ class WeaponShops {
             { "10Rnd_9x21_Mag", "", 250, 125, "" } //Apex DLC
         };
         accs[] = {
+            { "acc_flashlight_pistol", "", 1000, 500, "" },//Pistol Flashlight
             { "optic_ACO_grn_smg", "", 2500, 1250, "" }
         };
     };
@@ -96,6 +97,7 @@ class WeaponShops {
             { "30Rnd_9x21_Mag", "", 250, 125, "" }
         };
         accs[] = {
+            { "acc_flashlight_pistol", "", 500, 250, "" },//Pistol Flashlight
             { "optic_ACO_grn_smg", "", 950, 475, "" }
         };
     };
@@ -177,6 +179,7 @@ class WeaponShops {
         accs[] = {
             { "muzzle_snds_L", "", 650, 325, "" },
             { "optic_MRD", "", 2750, 1375, "call life_coplevel >= 1" },
+            { "acc_flashlight_pistol", "", 250, 125, "call life_coplevel >= 1" },//Pistol Flashlight
             { "acc_flashlight", "", 750, 375, "call life_coplevel >= 2" },
             { "optic_Holosight", "", 1200, 600, "call life_coplevel >= 2" },
             { "optic_Arco", "", 2500, 1250, "call life_coplevel >= 2" },
