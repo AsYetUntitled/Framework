@@ -22,9 +22,9 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
 
     try {
         _result = EXTDB format ["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
-        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
-        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL_RAW_V2:%1:ADD_QUOTES",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
-        if (!(_result isEqualTo "[1]")) then {throw "extDB2: Error with Database Connection"};
+        if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
+        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL:%1:TEXT2",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+        if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
     } catch {
         diag_log _exception;
         _extDBNotLoaded = [true, _exception];
@@ -32,11 +32,11 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
 
     if (_extDBNotLoaded isEqualType []) exitWith {};
     EXTDB "9:LOCK";
-    diag_log "extDB2: Connected to Database";
+    diag_log "extDB3: Connected to Database";
 } else {
     life_sql_id = uiNamespace getVariable "life_sql_id";
     CONSTVAR(life_sql_id);
-    diag_log "extDB2: Still Connected to Database";
+    diag_log "extDB3: Still Connected to Database";
 };
 
 if (_extDBNotLoaded isEqualType []) then {
@@ -48,14 +48,7 @@ if (_extDBNotLoaded isEqualType []) then {
     };
 };
 
-if (_extDBNotLoaded isEqualType []) exitWith {}; //extDB2-HC did not fully initialize so terminate the rest of the initialization process.
-
-[] spawn {
-    for "_i" from 0 to 1 step 0 do {
-        publicVariableServer "serv_sv_use";
-        uiSleep 60;
-    };
-};
+if (_extDBNotLoaded isEqualType []) exitWith {}; //extDB3-HC did not fully initialize so terminate the rest of the initialization process.
 
 ["CALL resetLifeVehicles",1] call HC_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] call HC_fnc_asyncCall;
@@ -120,6 +113,13 @@ HC_MPAllowedFuncs = [
 ];
 
 CONSTVAR(HC_MPAllowedFuncs);
+
+[] spawn {
+    for "_i" from 0 to 1 step 0 do {
+        uiSleep 60;
+        publicVariableServer "serv_sv_use";
+    };
+};
 
 life_HC_isActive = true;
 publicVariable "life_HC_isActive";

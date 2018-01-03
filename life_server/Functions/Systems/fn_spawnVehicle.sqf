@@ -7,28 +7,31 @@
     Sends the query request to the database, if an array is returned then it creates
     the vehicle if it's not in use or dead.
 */
-private ["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_servIndex","_damage","_wasIllegal","_location","_thread"];
-_vid = [_this,0,-1,[0]] call BIS_fnc_param;
-_pid = [_this,1,"",[""]] call BIS_fnc_param;
-_sp = [_this,2,[],[[],""]] call BIS_fnc_param;
-_unit = [_this,3,objNull,[objNull]] call BIS_fnc_param;
-_price = [_this,4,0,[0]] call BIS_fnc_param;
-_dir = [_this,5,0,[0]] call BIS_fnc_param;
-_spawntext = _this select 6;
-_unit_return = _unit;
-_name = name _unit;
-_side = side _unit;
+params [
+    ["_vid", -1, [0]],
+    ["_pid", "", [""]],
+    ["_sp", [], [[],""]],
+    ["_unit", objNull, [objNull]],
+    ["_price", 0, [0]],
+    ["_dir", 0, [0]],
+    "_spawntext"
+];
+
+private _unit_return = _unit;
+private _name = name _unit;
+private _side = side _unit;
 _unit = owner _unit;
 
-if (_vid isEqualTo -1 || _pid isEqualTo "") exitWith {};
+if (_vid isEqualTo -1 || {_pid isEqualTo ""}) exitWith {};
 if (_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
-_servIndex = serv_sv_use find _vid;
 
-_query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+private _servIndex = serv_sv_use find _vid;
 
-_tickTime = diag_tickTime;
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+private _query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+
+private _tickTime = diag_tickTime;
+private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
@@ -40,7 +43,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 
 if (_queryResult isEqualType "") exitWith {};
 
-_vInfo = _queryResult;
+private _vInfo = _queryResult;
 if (isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
 if (count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
 
@@ -54,7 +57,8 @@ if ((_vInfo select 6) isEqualTo 1) exitWith {
     [1,"STR_Garage_SQLError_Active",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-if (!(_sp isEqualType "")) then {
+private "_nearVehicles";
+if !(_sp isEqualType "") then {
     _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
 } else {
     _nearVehicles = [];
@@ -68,13 +72,15 @@ if (count _nearVehicles > 0) exitWith {
 
 _query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
 
-_trunk = [(_vInfo select 9)] call DB_fnc_mresToArray;
-_gear = [(_vInfo select 10)] call DB_fnc_mresToArray;
-_damage = [(_vInfo select 12)] call DB_fnc_mresToArray;
-_wasIllegal = (_vInfo select 13);
+private _trunk = [(_vInfo select 9)] call DB_fnc_mresToArray;
+private _gear = [(_vInfo select 10)] call DB_fnc_mresToArray;
+private _damage = [call compile (_vInfo select 12)] call DB_fnc_mresToArray;
+private _wasIllegal = _vInfo select 13;
 _wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
 
 [_query,1] call DB_fnc_asyncCall;
+
+private "_vehicle";
 if (_sp isEqualType "") then {
     _vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
@@ -128,8 +134,8 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
         _query = format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
-        _thread = [_query,1] call DB_fnc_asyncCall;
-    };   
+        [_query,1] call DB_fnc_asyncCall;
+    };
 } else {
     _vehicle setVariable ["Trunk",[[],0],true];
 };

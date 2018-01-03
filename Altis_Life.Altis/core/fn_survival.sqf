@@ -57,8 +57,8 @@ _lastState = vehicle player;
 
 for "_i" from 0 to 1 step 0 do {
     /* Thirst / Hunger adjustment that is time based */
-    if ((time - _waterTime) > 600) then {[] call _fnc_water; _waterTime = time;};
-    if ((time - _foodTime) > 850) then {[] call _fnc_food; _foodTime = time;};
+    if ((time - _waterTime) > 600 && {!life_god}) then {[] call _fnc_water; _waterTime = time;};
+    if ((time - _foodTime) > 850 && {!life_god}) then {[] call _fnc_food; _foodTime = time;};
 
     /* Adjustment of carrying capacity based on backpack changes */
     if (backpack player isEqualTo "") then {
@@ -78,7 +78,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     /* Check if the weight has changed and the player is carrying to much */
-    if (life_carryWeight > life_maxWeight && {!isForcedWalk player}) then {
+    if (life_carryWeight > life_maxWeight && {!isForcedWalk player} && {!life_god}) then {
         player forceWalk true;
         if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1) then {player setFatigue 1;};
         hint localize "STR_NOTF_MaxWeight";
@@ -89,7 +89,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     /* Travelling distance to decrease thirst/hunger which is captured every second so the distance is actually greater then 650 */
-    if (!alive player) then {_walkDis = 0;} else {
+    if (!alive player || {life_god}) then {_walkDis = 0;} else {
         _curPos = visiblePosition player;
         _curPos = (_curPos select 0) + (_curPos select 1);
         if (!(_curPos isEqualTo _lastPos) && {(isNull objectParent player)}) then {
