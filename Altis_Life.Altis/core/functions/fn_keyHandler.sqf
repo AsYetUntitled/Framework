@@ -44,12 +44,48 @@ if (!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) 
     true;
 };
 
-if (life_container_active) then {
-    switch (_code) do {
-        //space key
-        case 57: {
-            [] spawn life_fnc_placestorage;
+if (life_container_active) exitwith {
+    //ignore movement actions
+    private _allowedMoves = [
+        "MoveForward",
+        "MoveBack",
+        "TurnLeft",
+        "TurnRight",
+        "MoveFastForward",
+        "MoveSlowForward",
+        "turbo",
+        "TurboToggle",
+        "MoveLeft",
+        "MoveRight",
+        "WalkRunTemp",
+        "WalkRunToggle",
+        "AdjustUp",
+        "AdjustDown",
+        "AdjustLeft",
+        "AdjustRight",
+        "Stand",
+        "Crouch",
+        "Prone",
+        "MoveUp",
+        "MoveDown",
+        "LeanLeft",
+        "LeanLeftToggle",
+        "LeanRight",
+        "LeanRightToggle"
+    ];
+    if (({_code in (actionKeys _x)} count _allowedMoves) > 0) exitwith {
+        false;
+    };
+    //handle other keys
+    if (_code isEqualTo 57) then {//space key -> place
+        life_storagePlacing = 0 spawn life_fnc_placestorage;
+    } else { //other keys -> abort
+        if (!isNull life_storagePlacing) exitWith {}; //already placing down a box
+        if (!isNull life_container_activeObj) then {
+            deleteVehicle life_container_activeObj;
+            titleText [localize "STR_NOTF_PlaceContainerAbort", "PLAIN"];
         };
+        life_container_active = false;
     };
     true;
 };
@@ -143,7 +179,7 @@ switch (_code) do {
 
     //T Key (Trunk)
     case 20: {
-        if (!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
+        if (!_alt && {!_ctrlKey} && {!dialog} && {!life_action_inUse} && {!(player getVariable ["playerSurrender",false])} && {!(player getVariable ["restrained",false])} && {!life_isknocked} && {!life_istazed}) then {
             if (!(isNull objectParent player) && alive vehicle player) then {
                 if ((vehicle player) in life_vehicles) then {
                     [vehicle player] spawn life_fnc_openInventory;
