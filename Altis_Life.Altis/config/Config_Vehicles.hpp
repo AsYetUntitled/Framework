@@ -190,7 +190,7 @@ class LifeCfgVehicles {
         textures[] = {
             { "Civilian", "civ", {
                 "\A3\Boat_F_Exp\Boat_Transport_02\Data\Boat_Transport_02_exterior_civilian_CO.paa"
-            },"" },
+            }, "" },
             { "Black", "cop", {
                 "\A3\Boat_F_Exp\Boat_Transport_02\Data\Boat_Transport_02_exterior_CO.paa"
             }, "" }

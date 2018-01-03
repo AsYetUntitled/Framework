@@ -41,21 +41,21 @@ class CfgSpawnPoints {
             };
 
             class RebelN {
-                displayName = "Northern Rebel Base";
+                displayName = $STR_SP_Reb_N;
                 spawnMarker = "Rebelop";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
                 conditions = "license_civ_rebel";
             };
 
             class RebelS {
-                displayName = "Southern Rebel Base";
+                displayName = $STR_SP_Reb_S;
                 spawnMarker = "Rebelop_1";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
                 conditions = "license_civ_rebel";
             };
 
             class RebelE {
-                displayName = "Eastern Rebel Base";
+                displayName = $STR_SP_Reb_E;
                 spawnMarker = "Rebelop_2";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
                 conditions = "license_civ_rebel";
@@ -85,14 +85,14 @@ class CfgSpawnPoints {
             };
 
             class Air {
-                displayName = "Air HQ";
+                displayName = $STR_MAR_Police_Air_HQ;
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
                 conditions = "call life_coplevel >= 2 && {license_cop_cAir}";
             };
 
             class HW {
-                displayName = "HW Patrol";
+                displayName = $STR_MAR_Highway_Patrol;
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
                 conditions = "call life_coplevel >= 3";
@@ -101,21 +101,21 @@ class CfgSpawnPoints {
 
         class Medic {
             class Kavala {
-                displayName = "Kavala Hospital";
+                displayName = $STR_SP_EMS_Kav;
                 spawnMarker = "medic_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };
 
             class Athira {
-                displayName = "Athira Regional";
+                displayName = $STR_SP_EMS_Ath;
                 spawnMarker = "medic_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };
 
             class Pyrgos {
-                displayName = "Pyrgos Hospital";
+                displayName = $STR_SP_EMS_Pyr;
                 spawnMarker = "medic_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
@@ -155,21 +155,21 @@ class CfgSpawnPoints {
             };
 
             class RebelNW {
-                displayName = "North Western Rebel Base";
+                displayName = $STR_SP_Reb_NW;
                 spawnMarker = "Rebelop";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
                 conditions = "license_civ_rebel";
             };
 
             class RebelS {
-                displayName = "Southern Rebel Base";
+                displayName = $STR_SP_Reb_S;
                 spawnMarker = "Rebelop_1";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
                 conditions = "license_civ_rebel";
             };
 
             class RebelNE {
-                displayName = "North Eastern Rebel Base";
+                displayName = $STR_SP_Reb_NE;
                 spawnMarker = "Rebelop_2";
                 icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
                 conditions = "license_civ_rebel";
@@ -178,14 +178,14 @@ class CfgSpawnPoints {
 
         class Cop {
             class NAirport {
-                displayName = "North Airport HQ";
+                displayName = $STR_SP_Cop_Air_N;
                 spawnMarker = "cop_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
                 conditions = "";
             };
 
             class SWAirport {
-                displayName = "South Western Airport HQ";
+                displayName = $STR_SP_Cop_Air_SW;
                 spawnMarker = "cop_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\fuelstation_ca.paa";
                 conditions = "";
@@ -199,14 +199,14 @@ class CfgSpawnPoints {
             };
 
             class Air {
-                displayName = "Air HQ";
+                displayName = $STR_MAR_Police_Air_HQ;
                 spawnMarker = "cop_spawn_4";
                 icon = "\a3\ui_f\data\map\Markers\NATO\b_air.paa";
                 conditions = "call life_coplevel >= 2 && {license_cop_cAir}";
             };
 
             class HW {
-                displayName = "HW Patrol";
+                displayName = $STR_MAR_Highway_Patrol;
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
                 conditions = "call life_coplevel >= 3";
@@ -216,21 +216,21 @@ class CfgSpawnPoints {
         class Medic {
 
             class SEHospital {
-                displayName = "South East Hospital";
+                displayName = $STR_SP_EMS_SE;
                 spawnMarker = "medic_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };
 
             class TanoukaHospital {
-                displayName = "Tanouka Regional";
+                displayName = $STR_SP_EMS_Tan;
                 spawnMarker = "medic_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";
             };
 
             class NEAirportHospital {
-                displayName = "North East Airport Hospital";
+                displayName = $STR_SP_EMS_NEair;
                 spawnMarker = "medic_spawn_3";
                 icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
                 conditions = "";

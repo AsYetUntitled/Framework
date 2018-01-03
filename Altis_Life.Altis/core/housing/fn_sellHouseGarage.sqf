@@ -17,7 +17,8 @@ closeDialog 0;
 private _sellPrice = LIFE_SETTINGS(getNumber,"houseGarage_sellPrice");
 
 _action = [
-    format [localize "STR_Garage_HouseSellMSG",_price],
+    format [localize "STR_House_SellGarageMSG",
+    [_sellPrice] call life_fnc_numberText],
     localize "STR_House_GarageSell",
     localize "STR_Global_Sell",
     localize "STR_Global_Cancel"

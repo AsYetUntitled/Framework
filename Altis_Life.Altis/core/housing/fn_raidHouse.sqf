@@ -33,7 +33,7 @@ _cP = 0.01;
 _cpRate = 0.0075;
 
 for "_i" from 0 to 1 step 0 do {
-    sleep 0.26;
+    uiSleep 0.26;
     if (isNull _ui) then {
         "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
