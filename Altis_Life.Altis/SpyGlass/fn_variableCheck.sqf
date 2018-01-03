@@ -52,7 +52,7 @@ for "_i" from 1 to 125 do {
 } forEach (allVariables uiNamespace);
 
 /* Some people may be like WTF ALL DEM Checks... It was either this or lazy eval which could have a performance impact on the client. */
-_checkFunction = {
+private _checkFunction = {
     {
         if (!isNil _x) then {
             if !(_x in _BIS_Functions) then {
@@ -62,9 +62,9 @@ _checkFunction = {
                             if !(_x in _DB_Functions) then {
                                 if !(_x in _SPY_Functions) then {
                                     _varType = typeName (missionNamespace getVariable _x);
-                                    _find = _allowedVariables find [_x,_varType];
+                                    _find = _allowedVariables find [_x, _varType];
                                     if (_find isEqualTo -1) then {
-                                        diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: MN",_x,_varType];
+                                        diag_log format [localize "STR_SpyDetect_Variable_MN", _x, _varType];
                                         failMission "SpyGlass";
                                     };
                                 };
@@ -77,14 +77,14 @@ _checkFunction = {
     } forEach allVariables missionNamespace;
 };
 
-_uiCheckFunction = {
+private _uiCheckFunction = {
     {
         if (!isNil _x) then {
             if (!(_x in _BIS_UI_Functions)) then {
                 _varType = typeName (uiNamespace getVariable _x);
-                _find = _allowedVariables_UI find [_x,_varType];
+                _find = _allowedVariables_UI find [_x, _varType];
                 if (_find isEqualTo -1) then {
-                    diag_log format ["Variable: %1 is not allowed TYPE: %2 NS: UI",_x,_varType];
+                    diag_log format [localize "STR_SpyDetect_Variable_UI", _x, _varType];
                     failMission "SpyGlass";
                 };
             };

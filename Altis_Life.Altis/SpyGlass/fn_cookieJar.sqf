@@ -14,4 +14,4 @@ params [
 
 if (_pName isEqualTo "" || {_pUID isEqualTo ""} || {_pReason isEqualTo ""}) exitWith {}; //Bad params passed..
 
-diag_log format ["SPYGLASS-FLAG: %1 : %2 : %3",_pName,_pUID,_pReason]; //Outputs to RPT for external programs to parse,log,react to.
+diag_log format [localize "STR_SpyDetect_cookieJar", _pName, _pUID, _pReason]; //Outputs to RPT for external programs to parse, log, and react to.

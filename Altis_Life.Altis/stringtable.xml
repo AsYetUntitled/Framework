@@ -4530,6 +4530,17 @@
             <Russian>Теперь вы spectating %1.\n\nНажмите F10, чтобы остановить spectating.</Russian>
             <German>Du beobachtest nun %1.\n\nDrücke F10, um das Beobachten zu beenden.</German>
         </Key>
+        <Key ID="STR_NOTF_stoppedSpectating">
+            <Original>You have stopped spectating.</Original>
+            <Czech>Přestali jste divácké úlohy.</Czech>
+            <French>Vous avez arrêté spectating.</French>
+            <Spanish>Usted ha dejado de ser espectador.</Spanish>
+            <Italian>Hai smesso di spettatori.</Italian>
+            <Polish>Zatrzymaniu widzem.</Polish>
+            <Portuguese>Você parou espectador.</Portuguese>
+            <Russian>Вы остановили spectating.</Russian>
+            <German>Du hast das Beobachten beendet.</German>
+        </Key>
         <Key ID="STR_NOTF_haveTPedToYou">
             <Original>You have teleported %1 to your location.</Original>
             <Czech>Jste teleported %1 do vaší polohy.</Czech>
@@ -4562,6 +4573,17 @@
             <Portuguese>Capturar Esconderijo de Gangue</Portuguese>
             <Russian>Захват шайка укрытие</Russian>
             <German>Gangversteck einnehmen</German>
+        </Key>
+        <Key ID="STR_NOTF_emptyArray_levelCheck">
+            <Original>An empty array was passed to fn_levelCheck.sqf</Original>
+            <Czech>An empty array was passed to fn_levelCheck.sqf</Czech>
+            <French>An empty array was passed to fn_levelCheck.sqf</French>
+            <Spanish>An empty array was passed to fn_levelCheck.sqf</Spanish>
+            <Italian>An empty array was passed to fn_levelCheck.sqf</Italian>
+            <Polish>An empty array was passed to fn_levelCheck.sqf</Polish>
+            <Portuguese>An empty array was passed to fn_levelCheck.sqf</Portuguese>
+            <Russian>An empty array was passed to fn_levelCheck.sqf</Russian>
+            <German>Ein leeres Feld wurde an fn_levelCheck.sqf übergeben.</German>
         </Key>
     </Package>
     <Package name="News_Strings">
@@ -11628,6 +11650,83 @@
             <Portuguese>Está foram detectados por engano e têm sido relatados para o servidor. Aproveite seu dia.</Portuguese>
             <Russian>Вы были обнаружены для мошенничества и было сообщено на сервер. Удачного дня.</Russian>
             <German>>Du wurdest wegen Betrug erkannt und an den Server gemeldet. Genieße deinen Tag.</German>
+        </Key>
+        <Key ID="STR_SpyDetect_cookieJar">
+            <Original>SPYGLASS-FLAG: %1 : %2 : %3</Original>
+            <Czech>SPYGLASS-FLAG: %1 : %2 : %3</Czech>
+            <French>SPYGLASS-FLAG: %1 : %2 : %3</French>
+            <Spanish>SPYGLASS-FLAG: %1 : %2 : %3</Spanish>
+            <Italian>SPYGLASS-FLAG: %1 : %2 : %3</Italian>
+            <Polish>SPYGLASS-FLAG: %1 : %2 : %3</Polish>
+            <Portuguese>SPYGLASS-FLAG: %1 : %2 : %3</Portuguese>
+            <Russian>SPYGLASS-FLAG: %1 : %2 : %3</Russian>
+            <German>SPYGLASS-ERKENNUNG: %1 : %2 : %3</German>
+        </Key>
+        <Key ID="STR_SpyDetect_CheaterFlagged">
+            <Original><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Original>
+            <Czech><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Czech>
+            <French><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</French>
+            <Spanish><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Spanish>
+            <Italian><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Italian>
+            <Polish><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Polish>
+            <Portuguese><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Portuguese>
+            <Russian><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Russian>
+            <German><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Betrüger Erkannt</t><br/><br/>Name: %1<br/>Erkennung: %2</German>
+        </Key>
+        <Key ID="STR_SpyDetect_cmdMenuCheck">
+            <Original>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Original>
+            <Czech>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Czech>
+            <French>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</French>
+            <Spanish>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Spanish>
+            <Italian>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Italian>
+            <Polish>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Polish>
+            <Portuguese>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Portuguese>
+            <Russian>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Russian>
+            <German>%1 wurde beobachtet durch SPY-GLASS. Er/Sie hatte versucht auf das Befehlsmenü:\n\n %2\n\n zuzugreifen, diese ist dem System aber nicht bekannt. BITTE BEACHTE! Er/Sie betrügt deshalb nicht, aber SPY-GLASS fand es trotzdem relevant es zu melden.</German>
+        </Key>
+        <Key ID="STR_SpyDetect_Variable_MN">
+            <Original>Variable: %1 is not allowed TYPE: %2 NS: MN</Original>
+            <Czech>Variable: %1 is not allowed TYPE: %2 NS: MN</Czech>
+            <French>Variable: %1 is not allowed TYPE: %2 NS: MN</French>
+            <Spanish>Variable: %1 is not allowed TYPE: %2 NS: MN</Spanish>
+            <Italian>Variable: %1 is not allowed TYPE: %2 NS: MN</Italian>
+            <Polish>Variable: %1 is not allowed TYPE: %2 NS: MN</Polish>
+            <Portuguese>Variable: %1 is not allowed TYPE: %2 NS: MN</Portuguese>
+            <Russian>Variable: %1 is not allowed TYPE: %2 NS: MN</Russian>
+            <German>Variable: %1 ist nicht erlaubt. TYPE: %2 NS: MN</German>
+        </Key>
+        <Key ID="STR_SpyDetect_Variable_UI">
+            <Original>Variable: %1 is not allowed TYPE: %2 NS: UI</Original>
+            <Czech>Variable: %1 is not allowed TYPE: %2 NS: UI</Czech>
+            <French>Variable: %1 is not allowed TYPE: %2 NS: UI</French>
+            <Spanish>Variable: %1 is not allowed TYPE: %2 NS: UI</Spanish>
+            <Italian>Variable: %1 is not allowed TYPE: %2 NS: UI</Italian>
+            <Polish>Variable: %1 is not allowed TYPE: %2 NS: UI</Polish>
+            <Portuguese>Variable: %1 is not allowed TYPE: %2 NS: UI</Portuguese>
+            <Russian>Variable: %1 is not allowed TYPE: %2 NS: UI</Russian>
+            <German>Variable: %1 ist nicht erlaubt. TYPE: %2 NS: UI</German>
+        </Key>
+        <Key ID="STR_SpyDetect_Observes">
+            <Original>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Original>
+            <Czech>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Czech>
+            <French>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</French>
+            <Spanish>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Spanish>
+            <Italian>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Italian>
+            <Polish>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Polish>
+            <Portuguese>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Portuguese>
+            <Russian>||SPY-GLASS Observes|| Name: %1 | UID: %2 | Reason: %3</Russian>
+            <German>||SPY-GLASS Beobachtung|| Name: %1 | UID: %2 | Grund: %3</German>
+        </Key>
+        <Key ID="STR_SpyDetect_VariableSetBeforeClientInitialized">
+            <Original>Variable set before client initialized: %1</Original>
+            <Czech>Variable set before client initialized: %1</Czech>
+            <French>Variable set before client initialized: %1</French>
+            <Spanish>Variable set before client initialized: %1</Spanish>
+            <Italian>Variable set before client initialized: %1</Italian>
+            <Polish>Variable set before client initialized: %1</Polish>
+            <Portuguese>Variable set before client initialized: %1</Portuguese>
+            <Russian>Variable set before client initialized: %1</Russian>
+            <German>Variable gesetzt bevor Client initialisiert: %1</German>
         </Key>
     </Package>
     <Package name="TextNotifications">
