@@ -4574,6 +4574,28 @@
             <Russian>Захват шайка укрытие</Russian>
             <German>Gangversteck einnehmen</German>
         </Key>
+        <Key ID="STR_NOTF_RobInProgress">
+            <Original>ROBBERY IN PROGRESS</Original>
+            <Czech>krádež Probíhá</Czech>
+            <French>Vol qualifié en cours</French>
+            <Spanish>Robo en progreso</Spanish>
+            <Italian>rapina in corso</Italian>
+            <Polish>napad w toku</Polish>
+            <Portuguese>Roubo em andamento</Portuguese>
+            <Russian>грабеж продолжается</Russian>
+            <German>Raub im Gange</German>
+        </Key>
+        <Key ID="STR_NOTF_HouseRobInProgress">
+            <Original>HOUSE ROBBERY IN PROGRESS</Original>
+            <Czech>Dům loupež Probíhá</Czech>
+            <French>Vol à main en cours</French>
+            <Spanish>Robo de casa en curso</Spanish>
+            <Italian>casa rapina in corso</Italian>
+            <Polish>dom napad w toku</Polish>
+            <Portuguese>Roubo de casa em andamento</Portuguese>
+            <Russian>дом грабеж продолжается</Russian>
+            <German>Haus Raub in Arbeit</German>
+        </Key>  
         <Key ID="STR_NOTF_emptyArray_levelCheck">
             <Original>An empty array was passed to fn_levelCheck.sqf</Original>
             <Czech>An empty array was passed to fn_levelCheck.sqf</Czech>
@@ -7378,6 +7400,28 @@
             <Russian></Russian>
             <Portuguese>Você deve abrir as portas externas antes de abrir essa!</Portuguese>
             <German>Du musst die Außentüren öffnen, bevor du weitermachen kannst!</German>
+        </Key>
+        <Key ID="STR_ISTR_Bolt_Offline">
+            <Original>The owner is not online so you cannot raid this house!</Original>
+            <Czech>Majitel není on-line , takže nelze nájezd tento dům!</Czech>
+            <French>Le propriétaire est pas en ligne de sorte que vous ne pouvez pas piller cette maison!</French>
+            <Spanish>El propietario no está en línea de modo que no se puede atacar esta casa!</Spanish>
+            <Italian>Il proprietario non è in linea quindi non è possibile irruzione questa casa!</Italian>
+            <Polish>Właściciel nie jest online , więc nie można najechać ten dom!</Polish>
+            <Russian>Владелец не на сайте , так что вы не можете совершить набег этот дом</Russian>
+            <Portuguese>O proprietário não está on-line para que você não pode invadir esta casa!</Portuguese>
+            <German>Da der Besitzer nicht mehr online ist, kann in dieses Haus nicht eingebrochen werden!</German>
+        </Key>
+        <Key ID="STR_ISTR_Bolt_Notify">
+            <Original>%1's house is being broken into!</Original>
+            <Czech>%1's Dům je rozdělen na!</Czech>
+            <French>%1's maison est divisée en!</French>
+            <Spanish>%1's casa se divide en!</Spanish>
+            <Italian>Casa %1's viene suddiviso in!</Italian>
+            <Polish>%1's dom jest podzielony na!</Polish>
+            <Russian>%1's дом быть разбит на</Russian>
+            <Portuguese>%1s casa está sendo arrombado!</Portuguese>
+            <German>In %1's Haus wurde eingebrochen!</German>
         </Key>
         <Key ID="STR_ISTR_defuseKit_NotNear">
             <Original>You are not looking at a vault.</Original>
