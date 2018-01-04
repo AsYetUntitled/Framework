@@ -43,7 +43,7 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
         try {
         _result = EXTDB format ["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
-        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL:%1:TEXT2",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL_CUSTOM:%1:AL.ini",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
     } catch {
         diag_log _exception;
