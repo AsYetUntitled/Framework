@@ -49,7 +49,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
     _tp =0;
     _totalcost = _fueltoput * life_fuelPrices;
     for "_i" from 0 to 1 step 0 do {
-        sleep  _timer;
+        uiSleep  _timer;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%","Refuel:"];

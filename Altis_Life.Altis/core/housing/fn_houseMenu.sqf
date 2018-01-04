@@ -109,7 +109,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
     if (_isHouse) then {
         if (getNumber (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget) >> "canGarage") isEqualTo 1) then {
             _Btn2 ctrlSetText localize "STR_pInAct_GarageExt";
-            _Btn2 buttonSetAction "hint format [localize 'STR_pInAct_GarageExtNOTF',LIFE_SETTINGS(getNumber,'houseGarage_buyPrice')];";
+            _Btn2 buttonSetAction 'hint format [localize "STR_pInAct_GarageExtNOTF",[LIFE_SETTINGS(getNumber,"houseGarage_buyPrice")] call life_fnc_numberText];';
             _Btn2 ctrlShow true;
         };
     };
