@@ -10,7 +10,7 @@
 params [
     ["_unit", objNull, [objNull]],
     ["_vehicle", objNull, [objNull]],
-    ["_price", 500, [0]]
+    ["_price", 500, [0]],
     ["_cash", 0, [0]]
 ];
 

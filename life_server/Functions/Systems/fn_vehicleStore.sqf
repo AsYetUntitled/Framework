@@ -5,7 +5,6 @@
     Description:
     Stores the vehicle in the 'Garage'
 */
-private ["", "","","","","_thread"];
 
 params [
     ["_vehicle", objNull, [objNull]],
@@ -88,14 +87,13 @@ private "_weight";
 _items = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
-        private ["_isIllegal", "_blacklist"];
-        _blacklist = false;
+        private _blacklist = false;
         _profileQuery = format ["selectName:%1", _uid];
         _profileName = [_profileQuery, 2] call DB_fnc_asyncCall;
         _profileName = _profileName select 0;
 
         {
-            _isIllegal = M_CONFIG(getNumber,"VirtualItems",(_x select 0),"illegal");
+            private _isIllegal = M_CONFIG(getNumber,"VirtualItems",(_x select 0),"illegal");
 
             _isIllegal = if (_isIllegal isEqualTo 1) then { true } else { false };
 

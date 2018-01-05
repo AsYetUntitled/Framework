@@ -28,7 +28,7 @@ if !(_queryResult isEqualTo []) exitWith {
     _ownerID publicVariableClient "life_action_gangInUse";
 };
 
-private _uidLike = format["%2%1%2", _uid, "%"]
+private _uidLike = format["%2%1%2", _uid, "%"];
 _query = format ["selectGangIDFromMembers:%1", _uidLike];
 
 _queryResult = [_query,2 ] call DB_fnc_asyncCall;
