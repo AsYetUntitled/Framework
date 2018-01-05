@@ -18,7 +18,7 @@ params [
     ["_stats", [100,100],[[]]],
     ["_arrested", false, [true]],
     ["_alive", false, [true]],
-    ["_position", [], [[]]],
+    ["_position", [], [[]]]
 ];
 
 //Get to those error checks.
