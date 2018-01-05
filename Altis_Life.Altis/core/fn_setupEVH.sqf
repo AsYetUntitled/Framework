@@ -13,3 +13,6 @@ player addEventHandler ["Fired", {_this call life_fnc_onFired}];
 player addEventHandler ["InventoryClosed", {_this call life_fnc_inventoryClosed}];
 player addEventHandler ["InventoryOpened", {_this call life_fnc_inventoryOpened}];
 player addEventHandler ["HandleRating", {0}];
+
+player addEventHandler ["Put", {[] call SOCK_fnc_updateRequest}];
+player addEventHandler ["Take", {[] call SOCK_fnc_updateRequest}];
