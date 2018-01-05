@@ -52,7 +52,7 @@ if !(_queryResult isEqualTo []) then {
     _query = format ["insertGang:%1:%2:%3", _uid, _gangName, _gangMembers];
 };
 
-_queryResult = [_query 1] call DB_fnc_asyncCall;
+_queryResult = [_query, 1] call DB_fnc_asyncCall;
 
 _group setVariable ["gang_name", _gangName, true];
 _group setVariable ["gang_owner", _uid, true];

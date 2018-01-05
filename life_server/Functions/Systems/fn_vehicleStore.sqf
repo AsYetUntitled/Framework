@@ -54,7 +54,7 @@ if (_impound) exitWith {
             deleteVehicle _vehicle;
         };
     } else {    // no free repairs!
-        _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid ,_plate,];
+        _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid, _plate];
         _thread = [_query,1] call DB_fnc_asyncCall;
 
         if (!isNil "_vehicle" && {!isNull _vehicle}) then {
