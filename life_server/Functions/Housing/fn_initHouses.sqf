@@ -4,10 +4,10 @@
     Description:
     Initalizes house setup when player joins the server.
 */
-private _count = (["getAllHouses" ,2] call DB_fnc_asyncCall) select 0;
+private _count = (["selectAllHouses" ,2] call DB_fnc_asyncCall) select 0;
 
 for [{_x=0},{_x<=_count},{_x=_x+10}] do {
-    private _query = format ["getPlayerHouses:%1", _x];
+    private _query = format ["selectPlayerHouses:%1", _x];
     private _queryResult = [_query, 2, true] call DB_fnc_asyncCall;
     if (_queryResult isEqualTo []) exitWith {};
     {

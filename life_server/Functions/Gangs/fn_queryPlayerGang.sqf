@@ -6,8 +6,8 @@
     Queries to see if the player belongs to any gang.
 */
 
-private _query = format ["getPlayerGang:%1", _this];
-private _queryResult = [_query,2] call DB_fnc_asyncCall;
+private _query = format ["selectPlayerGang:%1", _this];
+private _queryResult = [_query, 2] call DB_fnc_asyncCall;
 
 if !(_queryResult isEqualTo []) then {
     _tmp = [_queryResult select 5] call DB_fnc_mresToArray;

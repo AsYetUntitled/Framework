@@ -6,19 +6,19 @@
     Description:
     Add container in Database.
 */
-private ["_containerPos","_query","_className","_dir"];
+
 params [
     ["_uid","",[""]],
     ["_container",objNull,[objNull]]
 ];
 
-if (isNull _container || _uid isEqualTo "") exitWith {};
+if (isNull _container || {_uid isEqualTo ""}) exitWith {};
 
-_containerPos = getPosATL _container;
-_className = typeOf _container;
-_dir = [vectorDir _container, vectorUp _container];
+private _containerPos = getPosATL _container;
+private _className = typeOf _container;
+private _dir = [vectorDir _container, vectorUp _container];
 
-_query = format ["INSERT INTO containers (pid, pos, classname, inventory, gear, owned, dir) VALUES('%1', '%2', '%3', '""[[],0]""', '""[]""', '1', '%4')",_uid,_containerPos,_className,_dir];
+private _query = format ["",_uid,_containerPos,_className,_dir];
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log format ["Query: %1",_query];
 };

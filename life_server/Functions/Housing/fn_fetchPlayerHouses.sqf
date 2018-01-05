@@ -71,7 +71,7 @@ private _containerss = [];
     _house setVariable ["containers", _containerss, true];
 } forEach _containers;
 
-_query = format ["getHousePositions:%1", _uid];
+_query = format ["selectHousePositions:%1", _uid];
 private _houses = [_query, 2, true] call DB_fnc_asyncCall;
 
 _return = [];

@@ -6,7 +6,7 @@
     Cleans up containers inside in house of player.
 */
 
-private _query = format ["getContainerPositions:%1", _this];
+private _query = format ["selectContainerPositions:%1", _this];
 private _containers = [_query, 2, true] call DB_fnc_asyncCall;
 
 if (_containers isEqualTo []) exitWith {};
