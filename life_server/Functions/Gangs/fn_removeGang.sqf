@@ -15,10 +15,10 @@ if (_groupID isEqualTo -1) exitWith {};
 
 [format ["deleteGang:%1", _groupID], 1] call DB_fnc_asyncCall;
 
-_result = [format ["", _groupID], 2] call DB_fnc_asyncCall;
+_result = [format ["deleteGang:%1", _groupID], 2] call DB_fnc_asyncCall;
 if (_result isEqualTo []) then {
     [_group] remoteExecCall ["life_fnc_gangDisbanded",(units _group)];
     uiSleep 5;
     deleteGroup _group;
 };
-["deleteOldGangs",1] call DB_fnc_asyncCall;
+["deleteOldGangs", 1] call DB_fnc_asyncCall;

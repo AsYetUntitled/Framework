@@ -33,7 +33,7 @@ switch (_mode) do {
     };
 
     case 2: {
-        _query = format ["updateGangMaxmembers:%:%2", (_group getVariable ["gang_maxMembers", 8]), _groupID];
+        _query = format ["updateGangMaxmembers:%1:%2", (_group getVariable ["gang_maxMembers", 8]), _groupID];
     };
 
     case 3: {
