@@ -54,19 +54,19 @@ class CfgSounds {
 
     class mining {
         name = "mining";
-        sound[] = {"\sounds\mining.ogg", 2.0, 1};
+        sound[] = {"\sounds\mining.ogg", 1.0, 1};
         titles[] = {};
     };
 
     class harvest {
         name = "harvest";
-        sound[] = {"\sounds\harvest.ogg", 2.0, 1};
+        sound[] = {"\sounds\harvest.ogg", 1.0, 1};
         titles[] = {};
     };
 
     class lockCarSound {
         name = "lockCarSound";
-        sound[] = {"\sounds\carLock.ogg", 1.00, 1};
+        sound[] = {"\sounds\carLock.ogg", 1.0, 1};
         titles[] = {};
     };
 
