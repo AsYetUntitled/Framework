@@ -28,7 +28,7 @@ serv_sv_use pushBack _vid;
 
 private _servIndex = serv_sv_use find _vid;
 
-private _query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+private _query = format ["selectVehiclesMore:%1:%2", _vid, _pid];
 
 private _tickTime = diag_tickTime;
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
@@ -70,7 +70,7 @@ if (count _nearVehicles > 0) exitWith {
     [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-_query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
+_query = format ["updateVehicle:%1:%2", _pid, _vid];
 
 private _trunk = [(_vInfo select 9)] call DB_fnc_mresToArray;
 private _gear = [(_vInfo select 10)] call DB_fnc_mresToArray;
@@ -111,33 +111,33 @@ _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
     _vehicle setVariable ["Trunk",_trunk,true];
-    
+
     if (_wasIllegal) then {
         private _refPoint = if (_sp isEqualType "") then {getMarkerPos _sp;} else {_sp;};
-        
+
         private _distance = 100000;
         private "_location";
 
         {
             private _tempLocation = nearestLocation [_refPoint, _x];
             private _tempDistance = _refPoint distance _tempLocation;
-    
+
             if (_tempDistance < _distance) then {
                 _location = _tempLocation;
                 _distance = _tempDistance;
             };
             false
-    
-        } count ["NameCityCapital", "NameCity", "NameVillage"];
- 
-        _location = text _location;
-        [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
-        _query = format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid];
-        [_query,1] call DB_fnc_asyncCall;
+        } count ["NameCityCapital", "NameCity", "NameVillage"];
+
+        _location = text _location;
+        [1, "STR_NOTF_BlackListedVehicle", true, [_location, _name]] remoteExecCall ["life_fnc_broadcast", west];
+
+        _query = format ["updateVehicleBlacklist:%1:%2", _vid, _pid];
+        [_query, 1] call DB_fnc_asyncCall;
     };
 } else {
-    _vehicle setVariable ["Trunk",[[],0],true];
+    _vehicle setVariable ["Trunk", [[], 0], true];
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {

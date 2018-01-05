@@ -15,7 +15,7 @@ params [
     ["_criminal",[],[]]
 ];
 
-private _query = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_criminal select 0];
+private _query = format ["selectWantedActive", _criminal select 0];
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 _ret = owner _ret;

@@ -12,7 +12,7 @@ _mode = [_this,1,1,[0]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {}; //NULL
 
 _dbInfo = _vehicle getVariable ["dbInfo",[]];
-if (count _dbInfo isEqualTo 0) exitWith {};
+if (_dbInfo isEqualTo []) exitWith {};
 _uid = _dbInfo select 0;
 _plate = _dbInfo select 1;
 switch (_mode) do {
@@ -24,13 +24,13 @@ switch (_mode) do {
         _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 
         // Keep it clean!
-        if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {
+        if (((_vehItems select 0) isEqualTo []) && ((_vehMags select 0) isEqualTo []) && ((_vehWeapons select 0) isEqualTo []) && ((_vehBackpacks select 0) isEqualTo [])) then {
             _cargo = [];
         };
 
         _cargo = [_cargo] call DB_fnc_mresArray;
 
-        _query = format ["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_cargo];
+        _query = format ["updateVehicleGear:%1:%2:%3", _cargo, _uid, _plate];
         _thread = [_query,1] call DB_fnc_asyncCall;
     };
 
@@ -50,7 +50,7 @@ switch (_mode) do {
         _trunk = [_items,_totalweight];
         _trunk = [_trunk] call DB_fnc_mresArray;
 
-        _query = format ["UPDATE vehicles SET inventory='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk];
+        _query = format ["updateVehicleTrunk:%1:%2:%3", _trunk, _uid, _plate];
         _thread = [_query,1] call DB_fnc_asyncCall;
     };
 };
