@@ -14,8 +14,8 @@ params [
 ];
 if (_uid isEqualTo "") exitWith {};
 
-private _query = format ["selectContainers:%1",_uid];
-private _containers = [_query,2,true] call DB_fnc_asyncCall;
+private _query = format ["selectContainers:%1", _uid];
+private _containers = [_query, 2, true] call DB_fnc_asyncCall;
 private _containerss = [];
 
 {
