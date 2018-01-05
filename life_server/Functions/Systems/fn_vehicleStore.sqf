@@ -133,14 +133,16 @@ else {
     _trunk = [[], 0];
 };
 
+private "_cargo";
+
 if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     private _vehItems = getItemCargo _vehicle;
     private _vehMags = getMagazineCargo _vehicle;
     private _vehWeapons = getWeaponCargo _vehicle;
     private _vehBackpacks = getBackpackCargo _vehicle;
-    private _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
+    _cargo = [_vehItems, _vehMags, _vehWeapons, _vehBackpacks];
     // no items? clean the array so the database looks pretty
-    if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {_cargo = [];};
+    if (((_vehItems select 0) isEqualTo []) && ((_vehMags select 0) isEqualTo []) && ((_vehWeapons select 0) isEqualTo []) && ((_vehBackpacks select 0) isEqualTo [])) then {_cargo = [];};
     } else {
     _cargo = [];
 };
