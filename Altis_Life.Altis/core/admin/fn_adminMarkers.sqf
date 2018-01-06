@@ -4,6 +4,7 @@
     Author: Jason_000
     Description: Display markers for all players
 */
+
 params [
     ["_reOpen", false, [false]]
 ];
@@ -18,7 +19,7 @@ if !(_reOpen) then {
 };
 
 for "_i" from 0 to 1 step 0 do {
-    if !(life_markers && life_markers_active) exitWith {};
+    if !(life_markers && {life_markers_active}) exitWith {};
     private _markers = [];
 
     {
