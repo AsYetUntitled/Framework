@@ -15,7 +15,7 @@ params [
     ["_criminal",[],[]]
 ];
 
-private _query = format ["selectWantedActive", _criminal select 0];
+private _query = format ["selectWantedActive:%1", _criminal select 0];
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 _ret = owner _ret;
@@ -32,4 +32,4 @@ private _crimesArr = [];
 
 _queryResult set[0,_crimesArr];
 
-[_queryResult] remoteExec ["life_fnc_wantedInfo",_ret];
+[_queryResult] remoteExec ["life_fnc_wantedInfo", _ret];
