@@ -11663,15 +11663,15 @@
             <German>SPYGLASS-ERKENNUNG: %1 : %2 : %3</German>
         </Key>
         <Key ID="STR_SpyDetect_CheaterFlagged">
-            <Original><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Original>
-            <Czech><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Czech>
-            <French><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</French>
-            <Spanish><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Spanish>
-            <Italian><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Italian>
-            <Polish><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Polish>
-            <Portuguese><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Portuguese>
-            <Russian><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Cheater Flagged</t><br/><br/>Name: %1<br/>Detection: %2</Russian>
-            <German><t align='center'><t color='#FF0000'><t size='3'>SPY-GLASS</t></t><br/>Betrüger Erkannt</t><br/><br/>Name: %1<br/>Erkennung: %2</German>
+            <Original>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Original>
+            <Czech>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Czech>
+            <French>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</French>
+            <Spanish>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Spanish>
+            <Italian>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Italian>
+            <Polish>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Polish>
+            <Portuguese>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Portuguese>
+            <Russian>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Russian>
+            <German>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</German>
         </Key>
         <Key ID="STR_SpyDetect_cmdMenuCheck">
             <Original>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Original>
