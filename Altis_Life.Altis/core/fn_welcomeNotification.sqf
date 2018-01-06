@@ -1,9 +1,9 @@
 /*
-	File: fn_welcomeNotification.sqf
-	Author: Bryan "Tonic" Boardwine
+   File: fn_welcomeNotification.sqf
+   Author: Bryan "Tonic" Boardwine
 
-	Description:
-	Called upon first spawn selection and welcomes our player.
+   Description:
+   Called upon first spawn selection and welcomes our player.
 */
 disableSerialization;
 [
