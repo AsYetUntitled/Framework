@@ -349,7 +349,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',1];
                         };
                         systemChat localize "STR_MISC_VehUnlock";
-                        [_veh,"unlockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"unlockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
                     } else {
                         if (local _veh) then {
                             _veh lock 2;
@@ -399,7 +399,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',0];
                         };
                         systemChat localize "STR_MISC_VehLock";
-                        [_veh,"lockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"lockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
                     };
                 };
             };
