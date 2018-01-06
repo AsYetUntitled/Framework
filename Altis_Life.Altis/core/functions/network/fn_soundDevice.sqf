@@ -13,6 +13,6 @@ if (isNull _vehicle || {player distance _vehicle > 2500}) exitWith {};
 for "_i" from 0 to 1 step 0 do {
     if (isNull _vehicle || !alive _vehicle) exitWith {};
     if (isNil {_vehicle getVariable "mining"}) exitWith {};
-    _vehicle say3D "Device_disassembled_loop";
+    _vehicle say3D ["Device_disassembled_loop",150,1];
     sleep 28.6;
 };
