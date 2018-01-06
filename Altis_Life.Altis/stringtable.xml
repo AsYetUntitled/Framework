@@ -11663,7 +11663,7 @@
             <German>SPYGLASS-ERKENNUNG: %1 : %2 : %3</German>
         </Key>
         <Key ID="STR_SpyDetect_CheaterFlagged">
-            <Original>&lt;t align='center'&gt;&lt;t color='#FF0000'&gt;&lt;t size='3'&gt;SPY-GLASS&lt;/t&gt;&lt;/t&gt;&lt;br/&gt;Cheater Flagged&lt;/t&gt;&lt;br/&gt;&lt;br/&gt;Name: %1&lt;br/&gt;Detection: %2</Original>
+            <Original>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Original>
         </Key>
         <Key ID="STR_SpyDetect_cmdMenuCheck">
             <Original>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Original>
