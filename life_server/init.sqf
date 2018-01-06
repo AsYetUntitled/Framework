@@ -80,8 +80,7 @@ diag_log "----------------------------------------------------------------------
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
-        _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";
-        [_query,1] call DB_fnc_asyncCall;
+        ["updateCivAlive", 1] call DB_fnc_asyncCall;
     };
 };
 

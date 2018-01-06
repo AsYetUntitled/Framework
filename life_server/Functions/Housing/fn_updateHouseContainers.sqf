@@ -23,6 +23,6 @@ private _cargo = [_vehItems, _vehMags, _vehWeapons, _vehBackpacks];
 
 _cargo = [_cargo] call DB_fnc_mresArray;
 
-private _query = format ["updateContainer:%1", _cargo, _containerID];
+private _query = format ["updateContainer:%1:%2", _cargo, _containerID];
 
 [_query, 1] call DB_fnc_asyncCall;
