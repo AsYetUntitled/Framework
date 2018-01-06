@@ -11664,6 +11664,14 @@
         </Key>
         <Key ID="STR_SpyDetect_CheaterFlagged">
             <Original>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Original>
+            <Czech>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Czech>
+            <French>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</French>
+            <Spanish>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Spanish>
+            <Italian>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Italian>
+            <Polish>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Polish>
+            <Portuguese>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Portuguese>
+            <Russian>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</Russian>
+            <German>SPY-GLASS Cheater Flagged Name: %1 Detection: %2</German>
         </Key>
         <Key ID="STR_SpyDetect_cmdMenuCheck">
             <Original>%1 was observed by SPY-GLASS, he/she was trying to access commanding menu:\n\n %2\n\n and that commanding-menu is not known to the system. PLEASE NOTE he/she may not be cheating but the SPY-GLASS found it relevant to report in.</Original>
