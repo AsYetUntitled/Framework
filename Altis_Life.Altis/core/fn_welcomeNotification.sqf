@@ -1,6 +1,6 @@
 /*
 	File: fn_welcomeNotification.sqf
-	Author:
+	Author: Bryan "Tonic" Boardwine
 
 	Description:
 	Called upon first spawn selection and welcomes our player.
@@ -27,7 +27,7 @@ _text2 = _display displayCtrl 1102;
 _message = "";
 _message = _message + "<t align='center' size='8' shadow='0'>AsYetUntitled</t><br /><br />";
 _message = _message + "AsYetUntitled, formerly Altis Life RPG and ARMARPGLIFE is a roleplay framework for ArmA III originally made by TAW_Tonic.<br /><br />";
-_message = _message + "Useful links for server owners.<br /><br />";
+_message = _message + "Useful links for server owners:<br /><br />";
 _message = _message + "<a color='#00DFFF'>•</a> Github: <a href='https://github.com/AsYetUntitled/Framework' color='#56BDD6'> https://github.com/AsYetUntitled/Framework</a><br />";
 _message = _message + "<a color='#00DFFF'>•</a> Wiki: <a href='https://github.com/AsYetUntitled/Framework/wiki' color='#56BDD6'> https://github.com/AsYetUntitled/Framework/wiki</a><br />";
 _message = _message + "<a color='#00DFFF'>•</a> Releases (Stable Builds): <a href='https://github.com/AsYetUntitled/Framework/releases' color='#56BDD6'> https://github.com/AsYetUntitled/Framework/releases</a><br />";
