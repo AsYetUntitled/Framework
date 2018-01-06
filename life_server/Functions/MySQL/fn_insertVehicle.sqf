@@ -5,6 +5,7 @@
     Description:
     Inserts the vehicle into the database
 */
+
 params [
     "_uid",
     "_side",

@@ -3,35 +3,37 @@
     File: fn_queryRequest.sqf
     Author: Bryan "Tonic" Boardwine
 
-    This file is for Nanou's HeadlessClient.
-
     Description:
     Handles the incoming request and sends an asynchronous query
     request to the database.
+
+    This file is for Nanou's HeadlessClient.
 
     Return:
     ARRAY - If array has 0 elements it should be handled as an error in client-side files.
     STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
-private ["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
+
+params [
+    ["_uid", "", [""]],
+    ["_side", sideUnknown, [civilian]],
+    ["_ownerID", objNull, [objNull]]
+];
 
 if (isNull _ownerID) exitWith {};
+_ownerID = owner _ownerID;
 
-_query = switch (_side) do {
+private _query = switch (_side) do {
     // West - 11 entries returned
-    case west: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
+    case west: {format ["selectWest:%1", _uid];};
     // Civilian - 12 entries returned
-    case civilian: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
+    case civilian: {format ["selectCiv:%1", _uid];};
     // Independent - 10 entries returned
-    case independent: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
+    case independent: {format ["selectIndep:%1",_uid];};
 };
 
+private _queryResult = [_query,2] call HC_fnc_asyncCall;
 
-_tickTime = diag_tickTime;
-_queryResult = [_query,2] call HC_fnc_asyncCall;
 
 if (_queryResult isEqualType "") exitWith {
     [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
@@ -42,7 +44,7 @@ if (_queryResult isEqualTo []) exitWith {
 };
 
 //Blah conversion thing from a2net->extdb
-_tmp = _queryResult select 2;
+private _tmp = _queryResult select 2;
 _queryResult set[2,[_tmp] call HC_fnc_numberSafe];
 _tmp = _queryResult select 3;
 _queryResult set[3,[_tmp] call HC_fnc_numberSafe];
@@ -85,12 +87,11 @@ switch (_side) do {
         } else {
             TON_fnc_playtime_values_request pushBack [_uid, _new];
         };
-        _new = _new select 0;
-        [_uid, _new] call HC_fnc_setPlayTime;
+        [_uid, _new select 0] call HC_fnc_setPlayTime;
     };
 
     case civilian: {
-        _queryResult set[7,([_queryResult select 7,1] call HC_fnc_bool)];
+        _queryResult set[7, ([_queryResult select 7, 1] call HC_fnc_bool)];
 
         //Parse Stats
         _new = [(_queryResult select 9)] call HC_fnc_mresToArray;
@@ -114,15 +115,16 @@ switch (_side) do {
         } else {
             TON_fnc_playtime_values_request pushBack [_uid, _new];
         };
-        _new = _new select 2;
-        [_uid, _new] call HC_fnc_setPlayTime;
+        [_uid, _new select 2] call HC_fnc_setPlayTime;
 
+        /* Make sure nothing else is added under here */
         _houseData = _uid spawn HC_fnc_fetchPlayerHouses;
         waitUntil {scriptDone _houseData};
         _queryResult pushBack (missionNamespace getVariable [format ["houses_%1",_uid],[]]);
         _gangData = _uid spawn HC_fnc_queryPlayerGang;
         waitUntil{scriptDone _gangData};
         _queryResult pushBack (missionNamespace getVariable [format ["gang_%1",_uid],[]]);
+
     };
 
     case independent: {
@@ -142,8 +144,7 @@ switch (_side) do {
         } else {
             TON_fnc_playtime_values_request pushBack [_uid, _new];
         };
-        _new = _new select 1;
-        [_uid, _new] call HC_fnc_setPlayTime;
+        [_uid, _new select 1] call HC_fnc_setPlayTime;
     };
 };
 
@@ -151,7 +152,7 @@ publicVariable "TON_fnc_playtime_values_request";
 
 life_keyreceived = false;
 life_keyreceivedvar = [];
-[_uid,_side] remoteExecCall ["TON_fnc_recupKeyForHC",RSERV];
+[_uid, _side] remoteExecCall ["TON_fnc_recupKeyForHC", RSERV];
 waitUntil {life_keyreceived};
 _keyArr = life_keyreceivedvar;
 _queryResult pushBack _keyArr;

@@ -8,6 +8,7 @@
     Description:
     Removes a person from the wanted list.
 */
+
 params [
     ["_uid", "", [""]]
 ];

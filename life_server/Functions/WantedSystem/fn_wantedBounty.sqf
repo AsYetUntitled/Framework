@@ -8,6 +8,7 @@
     Description:
     Checks if the person is on the bounty list and awards the cop for killing them.
 */
+
 params [
     ["_uid","",[""]],
     ["_civ",objNull,[objNull]],
@@ -21,7 +22,7 @@ private _query = format ["selectWanted:%1", _uid];
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 private "_amount";
-if !(count _queryResult isEqualTo 0) then {
+if !(_queryResult isEqualTo []) then {
     _amount = _queryResult param [3];
     if !(_amount isEqualTo 0) then {
         if (_half) then {

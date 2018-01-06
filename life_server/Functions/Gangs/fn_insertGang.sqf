@@ -6,14 +6,16 @@
     Description:
     Inserts the gang into the database.
 */
+
 params [
     ["_ownerID", objNull, [objNull]],
     ["_uid", "", [""]],
     ["_gangName", "", [""]]
 ];
+
 private _group = group _ownerID;
 
-if (isNull _ownerID || {_uid isEqualTo ""} || {_gangName isEqualTo ""}) exitWith {}; //Fail
+if (isNull _ownerID || {_uid isEqualTo ""} || {_gangName isEqualTo ""}) exitWith {};
 
 _ownerID = owner _ownerID;
 _gangName = [_gangName] call DB_fnc_mresString;
@@ -66,4 +68,4 @@ _query = format ["selectGangIDFromOwner:%1", _uid];
 
 _queryResult = [_query, 2] call DB_fnc_asyncCall;
 
-_group setVariable ["gang_id",(_queryResult select 0), true];
+_group setVariable ["gang_id", (_queryResult select 0), true];

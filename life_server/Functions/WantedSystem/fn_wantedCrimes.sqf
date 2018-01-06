@@ -8,6 +8,7 @@
     Description:
     Grabs a list of crimes committed by a person.
 */
+
 disableSerialization;
 
 params [
@@ -16,7 +17,7 @@ params [
 ];
 
 private _query = format ["selectWantedActive:%1", _criminal select 0];
-private _queryResult = [_query,2] call DB_fnc_asyncCall;
+private _queryResult = [_query, 2] call DB_fnc_asyncCall;
 
 _ret = owner _ret;
 
@@ -30,6 +31,6 @@ private _crimesArr = [];
     false
 } count _type;
 
-_queryResult set[0,_crimesArr];
+_queryResult set[0, _crimesArr];
 
 [_queryResult] remoteExec ["life_fnc_wantedInfo", _ret];

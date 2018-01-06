@@ -16,7 +16,6 @@ params [
 ];
 
 if (_vid isEqualTo -1 || {_pid isEqualTo ""} || {_sp isEqualTo 0} || {isNull _unit} || {_type isEqualTo ""}) exitWith {};
-_unit = owner _unit;
 
 private _query = format ["deleteVehicleID:%1:%2", _pid, _vid];
 private _thread = [_query, 1] call DB_fnc_asyncCall;

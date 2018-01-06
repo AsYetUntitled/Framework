@@ -45,7 +45,7 @@ for "_i" from 0 to 1 step 0 do {
                     _uid = _dbInfo select 0;
                     _plate = _dbInfo select 1;
 
-                    _query = format ["", _fuel, _uid, _plate];
+                    _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _plate];
                     [_query, 1] call DB_fnc_asyncCall;
                 };
             };

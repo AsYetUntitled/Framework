@@ -5,6 +5,7 @@
     Description:
     Updates the gang information?
 */
+
 params [
     ["_mode", 0, [0]],
     ["_group", grpNull, [grpNull]]

@@ -21,11 +21,11 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log format ["Query: %1",_query];
 };
 
-[_query,1] call DB_fnc_asyncCall;
+[_query, 1] call DB_fnc_asyncCall;
 
 uiSleep 0.3;
 
 _query = format ["selectHouseID:%1:%2", _housePos, _uid];
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+_queryResult = [_query, 2] call DB_fnc_asyncCall;
 //systemChat format ["House ID assigned: %1", _queryResult select 0];
 _house setVariable ["house_id", _queryResult select 0, true];

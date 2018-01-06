@@ -5,6 +5,7 @@
     Description:
     Queries to see if the player belongs to any gang.
 */
+
 private _pid = format ["%2%1%2", _this, "%"];
 private _query = format ["selectPlayerGang:%1", _pid];
 private _queryResult = [_query, 2] call DB_fnc_asyncCall;

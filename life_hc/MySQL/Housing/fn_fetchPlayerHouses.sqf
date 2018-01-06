@@ -10,16 +10,17 @@
     1. Fetches all the players houses and sets them up.
     2. Fetches all the players containers and sets them up.
 */
-private ["_query","_containers","_containerss","_houses"];
+
 params [
     ["_uid","",[""]]
 ];
+
 if (_uid isEqualTo "") exitWith {};
 
-_query = format ["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid];
-_containers = [_query,2,true] call HC_fnc_asyncCall;
+private _query = format ["selectContainers:%1", _uid];
+private _containers = [_query, 2, true] call HC_fnc_asyncCall;
+private _containerss = [];
 
-_containerss = [];
 {
     _position = call compile format ["%1",_x select 1];
     _house = nearestObject [_position, "House"];
@@ -70,11 +71,11 @@ _containerss = [];
             _container addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
         };
     };
-    _house setVariable ["containers",_containerss,true];
+    _house setVariable ["containers", _containerss, true];
 } forEach _containers;
 
-_query = format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid];
-_houses = [_query,2,true] call HC_fnc_asyncCall;
+_query = format ["selectHousePositions:%1", _uid];
+private _houses = [_query, 2, true] call HC_fnc_asyncCall;
 
 _return = [];
 {
@@ -84,4 +85,4 @@ _return = [];
     _return pushBack [_x select 1];
 } forEach _houses;
 
-missionNamespace setVariable [format ["houses_%1",_uid],_return];
+missionNamespace setVariable [format ["houses_%1", _uid], _return];

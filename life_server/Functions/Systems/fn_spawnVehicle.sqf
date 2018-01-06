@@ -7,6 +7,7 @@
     Sends the query request to the database, if an array is returned then it creates
     the vehicle if it's not in use or dead.
 */
+
 params [
     ["_vid", -1, [0]],
     ["_pid", "", [""]],
@@ -31,7 +32,7 @@ private _servIndex = serv_sv_use find _vid;
 private _query = format ["selectVehiclesMore:%1:%2", _vid, _pid];
 
 private _tickTime = diag_tickTime;
-private _queryResult = [_query,2] call DB_fnc_asyncCall;
+private _queryResult = [_query, 2] call DB_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
@@ -78,7 +79,7 @@ private _damage = [call compile (_vInfo select 12)] call DB_fnc_mresToArray;
 private _wasIllegal = _vInfo select 13;
 _wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
 
-[_query,1] call DB_fnc_asyncCall;
+[_query, 1] call DB_fnc_asyncCall;
 
 private "_vehicle";
 if (_sp isEqualType "") then {

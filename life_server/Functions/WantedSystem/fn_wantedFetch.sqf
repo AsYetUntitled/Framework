@@ -9,7 +9,11 @@
     Description:
     Displays wanted list information sent from the server.
 */
-private _ret = param [0,objNull,[objNull]];
+
+params [
+    ["_ret", objNullm [objNull]]
+];
+
 if (isNull _ret) exitWith {};
 _ret = owner _ret;
 private _inStatement = "";
@@ -20,7 +24,7 @@ private _units = [];
     false
 } count playableUnits;
 
-if (count _units isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if (_units isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 {
     if (count _units > 1) then {
@@ -45,6 +49,6 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     false
 } count _queryResult;
 
-if (count _list isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
+if (_list isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 
 [_list] remoteExec ["life_fnc_wantedList",_ret];
