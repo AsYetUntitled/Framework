@@ -7,21 +7,19 @@
     the server will then monitor when that client aborts and
     delete the weapon holders.
 */
-private ["_client","_loops"];
-_client = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_client",objNull,[objNull]]
+];
 if (isNull _client) exitWith {};
 
-_loops = 0;
-for "_i" from 0 to 1 step 0 do {
-    if (_loops >= 25) exitWith {};
+for "_i" from 0 to 1 step 24 do {
     if (!alive _client) exitWith {
-        _containers = nearestObjects[(getPosATL _client),["WeaponHolderSimulated"],5];
+        private _containers = nearestObjects[(getPosATL _client),["WeaponHolderSimulated"],5];
         if (count _containers > 0) then {
             {deleteVehicle _x;} forEach _containers; //Delete the containers.
         };
         deleteVehicle _client; //Get rid of the corpse.
     };
 
-    _loops = _loops + 1;
     uiSleep 1;
 };

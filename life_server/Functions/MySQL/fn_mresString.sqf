@@ -5,9 +5,10 @@
     Description:
     Makes the string safe to be passed to MySQL (strips various stuff).
 */
-private ["_string","_filter"];
-_string = [_this,0,"",[""]] call BIS_fnc_param;
-_filter = "'/\`:|;,{}-""<>";
+params [
+    ["_string","",[""]]
+];
+private _filter = "'/\`:|;,{}-""<>";
 
 _string = toArray _string; //Blow it up to an array
 _filter = toArray _filter; //Blow it up to an array

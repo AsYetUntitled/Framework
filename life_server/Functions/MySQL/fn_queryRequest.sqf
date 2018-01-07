@@ -11,13 +11,10 @@
     ARRAY - If array has 0 elements it should be handled as an error in client-side files.
     STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
-private ["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
-
-if (isNull _ownerID) exitWith {};
-_ownerID = owner _ownerID;
+params [
+    ["_uid","",[""]],
+    ["_side",sideUnknown,[civilian]]
+];
 
 _query = switch (_side) do {
     // West - 11 entries returned
@@ -28,8 +25,8 @@ _query = switch (_side) do {
     case independent: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
 };
 
-_tickTime = diag_tickTime;
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+private _tickTime = diag_tickTime;
+private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
@@ -40,11 +37,11 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 if (_queryResult isEqualType "") exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+    remoteExecCall ["SOCK_fnc_insertPlayerInfo",remoteExecutedOwner];
 };
 
-if (count _queryResult isEqualTo 0) exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+if (_queryResult isEqualTo []) exitWith {
+    remoteExecCall ["SOCK_fnc_insertPlayerInfo",remoteExecutedOwner];
 };
 
 //Blah conversion thing from a2net->extdb
@@ -157,4 +154,4 @@ publicVariable "TON_fnc_playtime_values_request";
 _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
 _queryResult pushBack _keyArr;
 
-_queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];
+_queryResult remoteExec ["SOCK_fnc_requestReceived",remoteExecutedOwner];

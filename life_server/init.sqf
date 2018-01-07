@@ -9,11 +9,10 @@
     Description:
     Initialize the server and required systems.
 */
-private ["_dome","_rsb","_timeStamp","_extDBNotLoaded"];
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
-_extDBNotLoaded = "";
+private _extDBNotLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
@@ -72,7 +71,7 @@ publicVariable "life_server_extDB_notLoaded";
 ["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
 ["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
 
-_timeStamp = diag_tickTime;
+private _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
 diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";
@@ -188,8 +187,8 @@ private _altisArray = [16019.5,16952.9,0];
 private _tanoaArray = [11074.2,11501.5,0.00137329];
 private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
 
-_dome = nearestObject [_pos,"Land_Dome_Big_F"];
-_rsb = nearestObject [_pos,_vaultHouse];
+private _dome = nearestObject [_pos,"Land_Dome_Big_F"];
+private _rsb = nearestObject [_pos,_vaultHouse];
 
 for "_i" from 1 to 3 do {_dome setVariable [format ["bis_disabled_Door_%1",_i],1,true]; _dome animateSource [format ["Door_%1_source", _i], 0];};
 _dome setVariable ["locked",true,true];

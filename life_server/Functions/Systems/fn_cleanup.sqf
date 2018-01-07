@@ -7,16 +7,14 @@
     Server-side cleanup script on vehicles.
     Sort of a lame way but whatever. Yep someone should look at it!
 */
-private "_deleted";
-_deleted = false;
+private _deleted = false;
 for "_i" from 0 to 1 step 0 do {
-    private ["_veh","_units","_fuel"];
     uiSleep (60 * 60);
     {
-        _protect = false;
-        _veh = _x;
-        _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
-        _fuel = 1;
+        private _protect = false;
+        private _veh = _x;
+        private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
+        private _fuel = 1;
 
         if (!isNil {_veh getVariable "NPC"} && {_veh getVariable "NPC"}) then {_protect = true;};
 
@@ -25,13 +23,13 @@ for "_i" from 0 to 1 step 0 do {
             _dbInfo = _veh getVariable ["dbInfo",[]];
             _units = {(_x distance _veh < 300)} count playableUnits;
             if (count crew _x isEqualTo 0) then {
-                switch (true) do {
-                    case ((_x getHitPointDamage "HitEngine") > 0.7 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitLFWheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitLF2Wheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitRFWheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitRF2Wheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case (_units isEqualTo 0): {deleteVehicle _x; _deleted = true;};
+                call {
+                    if ((_x getHitPointDamage "HitEngine") > 0.7 && _units isEqualTo 0) exitWith {deleteVehicle _x; _deleted = true};
+                    if ((_x getHitPointDamage "HitLFWheel") > 0.98 && _units isEqualTo 0) exitWith {deleteVehicle _x; _deleted = true};
+                    if ((_x getHitPointDamage "HitLF2Wheel") > 0.98 && _units isEqualTo 0) exitWith {deleteVehicle _x; _deleted = true};
+                    if ((_x getHitPointDamage "HitRFWheel") > 0.98 && _units isEqualTo 0) exitWith {deleteVehicle _x; _deleted = true};
+                    if ((_x getHitPointDamage "HitRF2Wheel") > 0.98 && _units isEqualTo 0) exitWith {deleteVehicle _x; _deleted = true};
+                    if (_units isEqualTo 0) exitWith {deleteVehicle _x; _deleted = true};
                 };
             };
 
@@ -41,9 +39,8 @@ for "_i" from 0 to 1 step 0 do {
             };
 
             if (isNull _veh) then {
-                if (count _dbInfo > 0) then {
-                    _uid = _dbInfo select 0;
-                    _plate = _dbInfo select 1;
+                if !(_dbInfo isEqualTo []) then {
+                    _dbInfo params ["_uid", "_plate"];
 
                     _query = format ["UPDATE vehicles SET active='0', fuel='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_fuel];
 
