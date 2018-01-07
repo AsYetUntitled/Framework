@@ -37,7 +37,7 @@ if (_queryResult isEqualType "") exitWith {};
 
 private _vInfo = _queryResult;
 if (isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
-if (count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
+if (_vInfo isEqualTo []) exitWith {serv_sv_use deleteAt _servIndex;};
 
 if ((_vInfo select 5) isEqualTo 0) exitWith {
     serv_sv_use deleteAt _servIndex;
@@ -56,7 +56,7 @@ if !(_sp isEqualType "") then {
     _nearVehicles = [];
 };
 
-if (count _nearVehicles > 0) exitWith {
+if !(_nearVehicles isEqualTo []) exitWith {
     serv_sv_use deleteAt _servIndex;
     [_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
     [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
@@ -66,9 +66,9 @@ _query = format ["updateVehicle:%1:%2", _pid, _vid];
 
 private _trunk = [(_vInfo select 9)] call HC_fnc_mresToArray;
 private _gear = [(_vInfo select 10)] call HC_fnc_mresToArray;
-private _damage = [call compile (_vInfo select 12)] call HC_fnc_mresToArray;
+private _damage = [(_vInfo select 12)] call HC_fnc_mresToArray;
 private _wasIllegal = _vInfo select 13;
-_wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
+_wasIllegal = _wasIllegal isEqualTo 1;
 
 [_query, 1] call HC_fnc_asyncCall;
 
@@ -138,7 +138,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel 1;
 };
 
-if (count _gear > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1)) then {
+if (!(_gear isEqualTo []) && (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1)) then {
     _items = _gear select 0;
     _mags = _gear select 1;
     _weapons = _gear select 2;
@@ -158,7 +158,7 @@ if (count _gear > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqua
     };
 };
 
-if (count _damage > 0 && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1)) then {
+if (!(_damage isEqualTo []) && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1)) then {
     _parts = getAllHitPointsDamage _vehicle;
 
     for "_i" from 0 to ((count _damage) - 1) do {
@@ -179,5 +179,5 @@ if ((_vInfo select 1) isEqualTo "med" && (_vInfo select 2) isEqualTo "C_Offroad_
     [_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
 };
 
-[1,_spawntext] remoteExecCall ["life_fnc_broadcast",_unit];
+[1, _spawntext] remoteExecCall ["life_fnc_broadcast",_unit];
 serv_sv_use deleteAt _servIndex;
