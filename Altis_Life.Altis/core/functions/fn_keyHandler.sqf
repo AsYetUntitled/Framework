@@ -6,7 +6,7 @@
 *    Description:
 *    Main key handler for event 'keyDown'.
 */
-private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys"];
+private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_interruptionKeys"];
 _ctrl = _this select 0;
 _code = _this select 1;
 _shift = _this select 2;
@@ -16,7 +16,6 @@ _speed = speed cursorObject;
 _handled = false;
 
 _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
-_mapKey = (actionKeys "ShowMap" select 0);
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
@@ -120,15 +119,6 @@ switch (_code) do {
                 [] spawn life_fnc_surrender;
             };
             _handled = true;
-        };
-    };
-
-    //Map Key
-    case _mapKey: {
-        switch (playerSide) do {
-            case west: {if (!visibleMap) then {[] spawn life_fnc_copMarkers;}};
-            case independent: {if (!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
-            case civilian: {if (!visibleMap) then {[] spawn life_fnc_civMarkers;}};
         };
     };
 
@@ -246,14 +236,21 @@ switch (_code) do {
             if ((_veh getVariable "siren")) then {
                 titleText [localize "STR_MISC_SirensOFF","PLAIN"];
                 _veh setVariable ["siren",false,true];
+                if !(isNil {(_veh getVariable "sirenJIP")}) then {
+                    private _jip = _veh getVariable "sirenJIP";
+                    _veh setVariable ["sirenJIP",nil,true];
+                    remoteExec ["",_jip]; //remove from JIP queue
+                };
             } else {
                 titleText [localize "STR_MISC_SirensON","PLAIN"];
                 _veh setVariable ["siren",true,true];
+                private "_jip";
                 if (playerSide isEqualTo west) then {
-                    [_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
+                    _jip = [_veh] remoteExec ["life_fnc_copSiren",RCLIENT,true];
                 } else {
-                    [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+                    _jip = [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT,true];
                 };
+                _veh setVariable ["sirenJIP",_jip,true];
             };
         };
     };

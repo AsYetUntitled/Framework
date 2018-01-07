@@ -4,13 +4,22 @@
     Author: Jason_000
     Description: Display markers for all players
 */
+
+params [
+    ["_reOpen", false, [false]]
+];
+
 if (FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
 
-life_markers = !life_markers;
-hint localize (["STR_ANOTF_MDisabled", "STR_ANOTF_MEnabled"] select life_markers);
+life_markers_active = true;
+
+if !(_reOpen) then {
+    life_markers = !life_markers;
+    hint localize (["STR_ANOTF_MDisabled", "STR_ANOTF_MEnabled"] select life_markers);
+};
 
 for "_i" from 0 to 1 step 0 do {
-    if !(life_markers) exitWith {};
+    if !(life_markers && {life_markers_active}) exitWith {};
     private _markers = [];
 
     {
