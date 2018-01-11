@@ -17,6 +17,7 @@ _escSync = {
     disableSerialization;
 
     _syncManager = {
+        scopeName "syncMngr";
         disableSerialization;
         private ["_abortButton","_timeStamp","_abortTime"];
         _abortButton = CONTROL(49,104);
@@ -26,9 +27,13 @@ _escSync = {
         waitUntil {
             _abortButton ctrlSetText format [localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
             _abortButton ctrlCommit 0;
-            round(_timeStamp - time) <= 0 || isNull (findDisplay 49)
+            round(_timeStamp - time) <= 0 || {isNull (findDisplay 49)} || {dialog}
         };
 
+        if (dialog) then {
+            closeDialog 0;
+            breakTo "main";
+        };
         _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
         _abortButton ctrlCommit 0;
     };
@@ -37,7 +42,7 @@ _escSync = {
 
     if (_this) then {
         _thread = [] spawn _syncManager;
-        waitUntil {scriptDone _thread || isNull (findDisplay 49)};
+        waitUntil {scriptDone _thread || {isNull (findDisplay 49)}};
         _abortButton ctrlEnable true;
     };
 };
@@ -73,11 +78,11 @@ for "_i" from 0 to 1 step 0 do {
 
     _usebleCtrl = call _canUseControls;
     _usebleCtrl spawn _escSync;
-    
+
     if (_usebleCtrl) then {
         _respawnButton ctrlEnable true; //Enable the button.
     };
-    
+
     waitUntil {isNull (findDisplay 49) || {!alive player}};
     if (!isNull (findDisplay 49) && {!alive player}) then {
         (findDisplay 49) closeDisplay 2;
