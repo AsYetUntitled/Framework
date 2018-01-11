@@ -8,56 +8,48 @@
     Monitors when the ESC menu is pulled up and blocks off
     certain controls when conditions meet.
 */
-
-private ["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
 disableSerialization;
 
-_escSync = {
-    private ["_abortButton","_thread","_syncManager"];
+private _escSync = {
     disableSerialization;
 
-    _syncManager = {
-        scopeName "syncMngr";
+    private _syncManager = {
         disableSerialization;
-        private ["_abortButton","_timeStamp","_abortTime"];
-        _abortButton = CONTROL(49,104);
-        _abortTime = LIFE_SETTINGS(getNumber,"escapeMenu_timer");
-        _timeStamp = time + _abortTime;
+        private _abortButton = CONTROL(49,104);
+        private _abortTime = LIFE_SETTINGS(getNumber,"escapeMenu_timer");
+        private _timeStamp = time + _abortTime;
 
         waitUntil {
             _abortButton ctrlSetText format [localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
             _abortButton ctrlCommit 0;
-            round(_timeStamp - time) <= 0 || {isNull (findDisplay 49)} || {dialog}
+            if (dialog) then { closeDialog 0; };
+
+            round(_timeStamp - time) <= 0 || {isNull (findDisplay 49)}
         };
 
-        if (dialog) then {
-            closeDialog 0;
-            breakTo "syncMngr";
-        };
         _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
         _abortButton ctrlCommit 0;
     };
 
-    _abortButton = CONTROL(49,104);
+    private _abortButton = CONTROL(49,104);
 
     if (_this) then {
-        _thread = [] spawn _syncManager;
+        private _thread = [] spawn _syncManager;
         waitUntil {scriptDone _thread || {isNull (findDisplay 49)}};
         _abortButton ctrlEnable true;
     };
 };
 
-_canUseControls = {
-    if (playerSide isEqualTo west) exitWith {true};
-    if ((player getVariable ["restrained",false]) || (player getVariable ["Escorting",false]) || (player getVariable ["transporting",false]) || (life_is_arrested) || (life_istazed) || (life_isknocked)) then {false} else {true};
+private _canUseControls = {
+    (playerSide isEqualTo west) || {!((player getVariable ["restrained",false]) || {player getVariable ["Escorting",false]} || {player getVariable ["transporting",false]} || {life_is_arrested} || {life_istazed} || {life_isknocked})}
 };
 
 for "_i" from 0 to 1 step 0 do {
     waitUntil {!isNull (findDisplay 49)};
-    _abortButton = CONTROL(49,104);
+    private _abortButton = CONTROL(49,104);
     _abortButton buttonSetAction "[] call SOCK_fnc_updateRequest; [player] remoteExec [""TON_fnc_cleanupRequest"",2];";
-    _respawnButton = CONTROL(49,1010);
-    _fieldManual = CONTROL(49,122);
+    private _respawnButton = CONTROL(49,1010);
+    private _fieldManual = CONTROL(49,122);
     private _saveButton = CONTROL(49,103);
     _saveButton ctrlSetText "";
 
