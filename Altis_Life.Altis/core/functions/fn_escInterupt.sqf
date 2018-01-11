@@ -32,7 +32,7 @@ _escSync = {
 
         if (dialog) then {
             closeDialog 0;
-            breakTo "main";
+            breakTo "syncMngr";
         };
         _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
         _abortButton ctrlCommit 0;
