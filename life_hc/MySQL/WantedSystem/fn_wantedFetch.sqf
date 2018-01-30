@@ -13,7 +13,7 @@
 */
 
 params [
-    ["_ret", objNullm [objNull]]
+    ["_ret", objNull, [objNull]]
 ];
 
 if (isNull _ret) exitWith {};
