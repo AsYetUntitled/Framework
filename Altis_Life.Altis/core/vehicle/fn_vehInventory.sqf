@@ -8,7 +8,7 @@
 */
 private ["_veh","_tInv","_pInv","_veh_data"];
 _veh = param [0,objNull,[objNull]];
-if (isNull _veh || !alive _veh) exitWith {closeDialog 0;}; //If null / dead exit menu
+if (isNull _veh || !alive _veh || {_veh getVariable ["trunk_in_use", ""] != getPlayerUID player}) exitWith {closeDialog 0;}; //If null / dead exit menu
 disableSerialization;
 
 _tInv = CONTROL(3500,3502);
