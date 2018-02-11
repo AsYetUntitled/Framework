@@ -10,9 +10,13 @@ private ["_vehicle","_veh_data"];
 if (dialog) exitWith {};
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle || !(_vehicle isKindOf "Car" || _vehicle isKindOf "Air" || _vehicle isKindOf "Ship" || _vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F")) exitWith {}; //Either a null or invalid vehicle type.
-if ((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint localize "STR_MISC_VehInvUse"};
-_vehicle setVariable ["trunk_in_use",true,true];
-_vehicle setVariable ["trunk_in_use_by",player,true];
+
+if !((_vehicle getVariable "trunk_in_use") isEqualType "") then {_vehicle setVariable ["trunk_in_use", "", true]};
+if (((_vehicle getVariable ["trunk_in_use", ""]) != "") && {!([_vehicle getVariable ["trunk_in_use", ""]] call life_fnc_isUIDActive)}) then {_vehicle setVariable ["trunk_in_use", "", true]};
+if ((_vehicle getVariable ["trunk_in_use", ""]) == getPlayerUID player) then {_vehicle setVariable ["trunk_in_use", "", true]};
+if ((_vehicle getVariable ["trunk_in_use", ""]) != "") exitWith {hint localize "STR_MISC_VehInvUse"};
+_vehicle setVariable ["trunk_in_use", getPlayerUID player, true];
+
 if (!createDialog "TrunkMenu") exitWith {hint localize "STR_MISC_DialogError";}; //Couldn't create the menu?
 disableSerialization;
 
