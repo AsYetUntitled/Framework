@@ -69,9 +69,9 @@ if (_resources isEqualTo []) exitWith {}; //Smart guy :O
 for "_i" from 0 to count (_resources) do {
 if (count _resources isEqualTo 1) exitWith {
 if (!((_resources select 0) isEqualType [])) then {
-_mined = _resources select 0;
+_resource = _resources select 0;
 } else {
-_mined = (_resources select 0) select 0;
+_resource = (_resources select 0) select 0;
 };
 };
 _resource = (_resources select _i) select 0;
