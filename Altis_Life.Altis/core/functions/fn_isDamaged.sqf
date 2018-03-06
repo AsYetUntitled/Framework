@@ -9,6 +9,6 @@ params [
     ["_target",objNull,[objNull]]
 ];
 
-private _damage = (getAllHitPointsDamage _target select 2) call BIS_fnc_greatestnum;
+private _damage = selectMax (getAllHitPointsDamage _target select 2);
 
 (_damage > 0.01);
