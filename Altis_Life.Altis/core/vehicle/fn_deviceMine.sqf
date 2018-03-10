@@ -1,11 +1,11 @@
 #include "..\..\script_macros.hpp"
 /*
-File: fn_deviceMine.sqf
-Author: Bryan "Tonic" Boardwine
-Modified: Devilfloh / moeck
-Description:
-Starts automated mining of resource from the tempest device.
-Percentage for Minerals integrated by moeck
+	File: fn_deviceMine.sqf
+	Author: Bryan "Tonic" Boardwine
+	Modified: Devilfloh / moeck
+	Description:
+	Starts automated mining of resource from the tempest device.
+	Percentage for Minerals integrated by moeck
 */
 private[
 "_vehicle","_resourceZones","_zone","_weight",
@@ -27,119 +27,119 @@ _zone = "";
 _zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-_curConfig = (_resourceCfg select _i);
-_resource = configName(_curConfig);
-_resourceZones = getArray(_curConfig >> "zones");
-_amount = getNumber(_curConfig >> "amount");
-{
-if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
-} forEach _resourceZones;
-if (_zone != "") exitWith {_isMineral = false;};
+	_curConfig = (_resourceCfg select _i);
+	_resource = configName(_curConfig);
+	_resourceZones = getArray(_curConfig >> "zones");
+	_amount = getNumber(_curConfig >> "amount");
+	{
+		if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
+	} forEach _resourceZones;
+	if (_zone != "") exitWith {_isMineral = false;};
 };
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Minerals";
 for "_i" from 0 to count(_resourceCfg)-1 do {
-if (!_isMineral) exitWith {};
-_curConfig = _resourceCfg select _i;
-_resources = getArray(_curConfig >> "mined");
-_resourceZones = getArray(_curConfig >> "zones");
-_mined = "";
-{
-if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith { _zone = _x;};
-} forEach _resourceZones;
-if (_zone != "") exitWith {};
+	if (!_isMineral) exitWith {};
+	_curConfig = _resourceCfg select _i;
+	_resources = getArray(_curConfig >> "mined");
+	_resourceZones = getArray(_curConfig >> "zones");
+	_mined = "";
+	{
+		if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith { _zone = _x;};
+	} forEach _resourceZones;
+	if (_zone != "") exitWith {};
 };
 if (_zone isEqualTo "") exitWith {
-hint localize "STR_NOTF_notNearResource";
-life_action_inUse = false;
+	hint localize "STR_NOTF_notNearResource";
+	life_action_inUse = false;
 };
 _vehicle setVariable ["mining",true,true]; //Lock the device
 _vehicle remoteExec ["life_fnc_soundDevice",RCLIENT]; //Broadcast the 'mining' sound of the device for nearby units.
 life_action_inUse = false; //Unlock it since it's going to do it's own thing...
 for "_i" from 0 to 1 step 0 do {
-if (!alive _vehicle || isNull _vehicle) exitWith {};
-if ((isEngineOn _vehicle) || ((speed _vehicle) > 5)) exitWith { titleText[localize "STR_NOTF_MiningStopped","PLAIN"];};
-if (fuel _vehicle isEqualTo 0) exitWith {titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];};
-titleText[localize "STR_NOTF_DeviceMining","PLAIN"];
-_time = time + 27;
-//Wait for 27 seconds with a 'delta-time' wait.
-//Different items to add to the Trunk ;-)
-_percent = [1,100] call BIS_fnc_randomInt; //Make sure it's not 0
-if (_isMineral) then {
-if (_resources isEqualTo []) exitWith {}; //Smart guy :O
-for "_i" from 0 to count (_resources) do {
-if (count _resources isEqualTo 1) exitWith {
-if (!((_resources select 0) isEqualType [])) then {
-_resource = _resources select 0;
-} else {
-_resource = (_resources select 0) select 0;
-};
-};
-_resource = (_resources select _i) select 0;
-_prob = (_resources select _i) select 1;
-_probdiff = (_resources select _i) select 2;
-if ((_percent >= _prob) && (_percent <= _probdiff)) exitWith {_resource;};
-};
-};
-waitUntil {
-if ((isEngineOn _vehicle) || ((speed _vehicle) > 5)) exitWith {
-_vehicle setVariable["mining",nil,true];
-titleText[localize "STR_NOTF_MiningStopped","PLAIN"];
-true
-};
-if (round(_time - time) < 1) exitWith {true};
-if (fuel _vehicle < 0.1) exitWith {
-_vehicle setVariable["mining",nil,true];
-titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
-true
-};
-sleep 0.2;
-false
-};
-if ((isEngineOn _vehicle) || ((speed _vehicle) > 5)) exitWith {
-_vehicle setVariable["mining",nil,true];
-titleText[localize "STR_NOTF_MiningStopped","PLAIN"];
-};
-_vehicle_data = _vehicle getVariable ["Trunk",[[],0]];
-_inv = (_vehicle_data select 0);
-_space = (_vehicle_data select 1);
-_itemIndex = [_resource,_inv] call TON_fnc_index;
-_weight = [_vehicle] call life_fnc_vehicleWeight;
-_random = 10 + round((random(10)));
-_sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; // Get a sum base of the remaining weight..
-if (_sum < 1) exitWith {
-titleText[localize "STR_NOTF_DeviceFull","PLAIN"];
-_vehicle setVariable["mining",nil,true];
-};
-if (_itemIndex isEqualTo -1) then {
-_inv pushBack [_resource,_sum];
-} else {
-_val = (_inv select _itemIndex) select 1;
-_inv set[_itemIndex,[_resource,_val + _sum]];
-};
-if (fuel _vehicle < 0.1) exitWith {
-_vehicle setVariable["mining",nil,true];
-titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
-};
-//Locality checks...
-if (local _vehicle) then {
-_vehicle setFuel (fuel _vehicle)-0.05;
-} else {
-[_vehicle,(fuel _vehicle)-0.05] remoteExec ["life_fnc_setFuel",_vehicle];
-};
-if (fuel _vehicle < 0.1) exitWith {
-titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
-_vehicle setVariable["mining",nil,true];
-};
-_itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
-titleText[format[localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
-_itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
-_vehicle setVariable["Trunk",[_inv,_space + _itemWeight],true];
-_weight = [_vehicle] call life_fnc_vehicleWeight;
-_sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight..
-if (_sum < 1) exitWith {
-_vehicle setVariable["mining",nil,true];
-titleText[localize "STR_NOTF_DeviceFull","PLAIN"];
-};
-sleep 2;
+	if (!alive _vehicle || isNull _vehicle) exitWith {};
+	if ((isEngineOn _vehicle) || ((speed _vehicle) > 5)) exitWith { titleText[localize "STR_NOTF_MiningStopped","PLAIN"];};
+	if (fuel _vehicle isEqualTo 0) exitWith {titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];};
+	titleText[localize "STR_NOTF_DeviceMining","PLAIN"];
+	_time = time + 27;
+	//Wait for 27 seconds with a 'delta-time' wait.
+	//Different items to add to the Trunk ;-)
+	_percent = [1,100] call BIS_fnc_randomInt; //Make sure it's not 0
+	if (_isMineral) then {
+		if (_resources isEqualTo []) exitWith {}; //Smart guy :O
+		for "_i" from 0 to count (_resources) do {
+			if (count _resources isEqualTo 1) exitWith {
+				if (!((_resources select 0) isEqualType [])) then {
+				_resource = _resources select 0;
+				} else {
+					_resource = (_resources select 0) select 0;
+				};
+			};
+			_resource = (_resources select _i) select 0;
+			_prob = (_resources select _i) select 1;
+			_probdiff = (_resources select _i) select 2;
+			if ((_percent >= _prob) && (_percent <= _probdiff)) exitWith {_resource;};
+		};
+	};
+	waitUntil {
+		if ((isEngineOn _vehicle) || ((speed _vehicle) > 5)) exitWith {
+			_vehicle setVariable["mining",nil,true];
+			titleText[localize "STR_NOTF_MiningStopped","PLAIN"];
+			true
+		};
+		if (round(_time - time) < 1) exitWith {true};
+		if (fuel _vehicle < 0.1) exitWith {
+			_vehicle setVariable["mining",nil,true];
+			titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
+			true
+		};
+		sleep 0.2;
+		false
+	};
+	if ((isEngineOn _vehicle) || ((speed _vehicle) > 5)) exitWith {
+		_vehicle setVariable["mining",nil,true];
+		titleText[localize "STR_NOTF_MiningStopped","PLAIN"];
+	};
+	_vehicle_data = _vehicle getVariable ["Trunk",[[],0]];
+	_inv = (_vehicle_data select 0);
+	_space = (_vehicle_data select 1);
+	_itemIndex = [_resource,_inv] call TON_fnc_index;
+	_weight = [_vehicle] call life_fnc_vehicleWeight;
+	_random = 10 + round((random(10)));
+	_sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; // Get a sum base of the remaining weight..
+	if (_sum < 1) exitWith {
+		titleText[localize "STR_NOTF_DeviceFull","PLAIN"];
+		_vehicle setVariable["mining",nil,true];
+	};
+	if (_itemIndex isEqualTo -1) then {
+	_inv pushBack [_resource,_sum];
+	} else {
+		_val = (_inv select _itemIndex) select 1;
+		_inv set[_itemIndex,[_resource,_val + _sum]];
+	};
+	if (fuel _vehicle < 0.1) exitWith {
+		_vehicle setVariable["mining",nil,true];
+		titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
+	};
+	//Locality checks...
+	if (local _vehicle) then {
+	_vehicle setFuel (fuel _vehicle)-0.05;
+	} else {
+		[_vehicle,(fuel _vehicle)-0.05] remoteExec ["life_fnc_setFuel",_vehicle];
+	};
+	if (fuel _vehicle < 0.1) exitWith {
+		titleText[localize "STR_NOTF_OutOfFuel","PLAIN"];
+		_vehicle setVariable["mining",nil,true];
+	};
+	_itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
+	titleText[format[localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
+	_itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
+	_vehicle setVariable["Trunk",[_inv,_space + _itemWeight],true];
+	_weight = [_vehicle] call life_fnc_vehicleWeight;
+	_sum = [_resource,_random,(_weight select 1),(_weight select 0)] call life_fnc_calWeightDiff; //Get a sum base of the remaining weight..
+	if (_sum < 1) exitWith {
+		_vehicle setVariable["mining",nil,true];
+		titleText[localize "STR_NOTF_DeviceFull","PLAIN"];
+	};
+	sleep 2;
 };
 _vehicle setVariable ["mining",nil,true];
