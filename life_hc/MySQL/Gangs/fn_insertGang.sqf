@@ -25,7 +25,7 @@ private _query = format ["selectGangID:%1", _gangName];
 private _queryResult = [_query, 2] call HC_fnc_asyncCall;
 
 //Check to see if the gang name already exists.
-if !(count _queryResult isEqualTo []) exitWith {
+if !(_queryResult isEqualTo []) exitWith {
     [1, "There is already a gang created with that name please pick another name."] remoteExecCall ["life_fnc_broadcast",_ownerID];
     life_action_gangInUse = nil;
     _ownerID publicVariableClient "life_action_gangInUse";
