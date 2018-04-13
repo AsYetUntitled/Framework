@@ -18,7 +18,7 @@ This Github is not currently associated with any forums.
 Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
 
 # Links:
-  - Discord: https://discord.gg/EaB7Jgw
+  - Discord: https://discord.gg/ajGUDSH
   - Forums: TBD
   - Wiki: https://github.com/AsYetUntitled/Framework/wiki 
   - Releases (Stable Builds): https://github.com/AsYetUntitled/Framework/releases
