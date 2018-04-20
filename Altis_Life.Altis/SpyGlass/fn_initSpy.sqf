@@ -221,22 +221,32 @@ _patchList =
 "A3_Supplies_F_Orange_Bags","A3_Supplies_F_Orange_CargoNets","A3_Ui_F_Orange","A3_Weapons_F_Orange","A3_Weapons_F_Orange_Explosives","A3_Weapons_F_Orange_Items","A3_Air_F_Orange","A3_Air_F_Orange_Heli_Transport_02",
 "A3_Air_F_Orange_UAV_01","A3_Air_F_Orange_UAV_06","A3_Cargoposes_F_Orange","A3_Characters_F_Orange","A3_Characters_F_Orange_Facewear","A3_Characters_F_Orange_Headgear","A3_Characters_F_Orange_Uniforms",
 "A3_Characters_F_Orange_Vests","A3_Sounds_F_Orange","A3_Data_F_Orange_Loadorder","A3_Data_F_Tacops","A3_Dubbing_F_Tacops","A3_Functions_F_Tacops","A3_Language_F_Tacops","A3_LanguageMissions_F_Tacops","A3_Missions_F_Tacops",
-"A3_Modules_F_Tacops","A3_Music_F_Tacops","A3_Sounds_F_Tacops","A3_Ui_F_Tacops","A3_Characters_F_Tacops","A3_Data_F_Tacops_Loadorder"];
+"A3_Modules_F_Tacops","A3_Music_F_Tacops","A3_Sounds_F_Tacops","A3_Ui_F_Tacops","A3_Characters_F_Tacops","A3_Data_F_Tacops_Loadorder","A3_Data_F_Tank","A3_Dubbing_F_Tank","A3_EditorPreviews_F_Tank","A3_Functions_F_Tank","A3_Language_F_Tank","A3_LanguageMissions_F_Tank","A3_Missions_F_Tank","A3_Modules_F_Tank","A3_Music_F_Tank","A3_Props_F_Tank","A3_Props_F_Tank_Military","A3_Props_F_Tank_Military_TankAcc","A3_Props_F_Tank_Military_Wrecks","A3_Sounds_F_Tank","A3_Structures_F_Tank","A3_Structures_F_Tank_Decals","A3_Structures_F_Tank_Decals_Horizontal","A3_Structures_F_Tank_Military","A3_Structures_F_Tank_Military_Fortifications","A3_Structures_F_Tank_Military_RepairDepot","A3_Ui_F_Tank","A3_Weapons_F_Tank","A3_Weapons_F_Tank_Bags","A3_Weapons_F_Tank_Launchers_MRAWS","A3_Weapons_F_Tank_Launchers_Vorona","A3_Armor_F_Tank","A3_Armor_F_Tank_AFV_Wheeled_01","A3_Armor_F_Tank_LT_01","A3_Armor_F_Tank_MBT_04","A3_Cargoposes_F_Tank","A3_Characters_F_Tank","A3_Characters_F_Tank_Headgear","A3_Characters_F_Tank_Uniforms","A3_Data_F_Tank_Loadorder"];
+
+
+
+
 
 uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
 uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
 
-_binConfigPatches = configFile >> "CfgPatches";
-for "_i" from 0 to count (_binConfigPatches)-1 do {
+private _missingPatches = [];//made a slight update to make it easier to add new patches in the future, by pushing all missing patches to an array. then checking if the array size > 0
+private _binConfigPatches = configFile >> "CfgPatches";
+
+for "_i" from 0 to (count _binConfigPatches)-1 do {
     _patchEntry = _binConfigPatches select _i;
     if (isClass _patchEntry) then {
-        if (!((configName _patchEntry) in _patchList)) exitWith {
-            [profileName,getPlayerUID player,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",RSERV];
-            [profileName,format ["Unknown Addon Patch: %1",(configName _patchEntry)]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
-            sleep 0.5;
-            failMission "SpyGlass";
+        if (!((configName _patchEntry) in _patchList)) then {
+          _missingPatches pushBack (configName _patchEntry);
         };
     };
+};
+
+if ((count _missingPatches) > 0) exitWith {
+    [profileName,getPlayerUID player,(str _missingPatches)] remoteExec ["SPY_fnc_cookieJar",RSERV];
+    [profileName,format ["Unknown Addon Patches: %1",_missingPatches]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
+    sleep 0.5;
+    failMission "SpyGlass";
 };
 
 //Check for copy-pasters of Dev-Con styled execution.
