@@ -8,6 +8,9 @@
     Sells the house and delete all container near house.
 */
 private ["_house","_uid","_action","_houseCfg"];
+
+if (dialog) then {closeDialog 0};
+
 _house = param [0,objNull,[objNull]];
 _uid = getPlayerUID player;
 
