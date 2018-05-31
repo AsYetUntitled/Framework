@@ -11,7 +11,7 @@ params [
 ];
 
     
-if(isNil "_vehicle" || isNull _vehicle || !(_vehicle getVariable "lights")) exitWith {};
+if (isNil "_vehicle" || isNull _vehicle || !(_vehicle getVariable "lights")) exitWith {};
 private _lightRed = [20, 0.1, 0.1];
 private _lightBlue = [0.1, 0.1, 20];
 
@@ -87,8 +87,8 @@ _lightright setLightDayLight true;
 _leftRed = true;  
 while { (alive _vehicle) } do  
 {  
-    if(!(_vehicle getVariable "lights")) exitWith {};
-    if(_leftRed) then   {  
+    if (!(_vehicle getVariable "lights")) exitWith {};
+    if (_leftRed) then   {  
         _leftRed = false;  
         _lightright setLightBrightness 0.0;  
         sleep 0.05;
