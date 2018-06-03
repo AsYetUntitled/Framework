@@ -177,6 +177,7 @@ class Life_Client_Core {
         class actionKeyHandler {};
         class animSync {};
         class calWeightDiff {};
+        class checkMap {};
         class clearVehicleAmmo {};
         class dropItems {};
         class escInterupt {};
@@ -215,7 +216,6 @@ class Life_Client_Core {
         class searchPosEmpty {};
         class simDisable {};
         class stripDownPlayer {};
-        class tazeSound {};
         class teleport {};
         class whereAmI {};
     };
