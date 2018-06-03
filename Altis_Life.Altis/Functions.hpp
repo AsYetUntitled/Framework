@@ -177,6 +177,7 @@ class Life_Client_Core {
         class actionKeyHandler {};
         class animSync {};
         class calWeightDiff {};
+        class checkMap {};
         class clearVehicleAmmo {};
         class dropItems {};
         class escInterupt {};
