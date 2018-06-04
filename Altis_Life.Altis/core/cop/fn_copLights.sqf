@@ -43,7 +43,7 @@ private _offset = switch (typeOf _vehicle) do {
     };
 };
 
-_lightLeft lightAttachObject [_vehicle, _offset];
+_lightLeft lightAttachObject [_vehicle, _offset]];
 
 _lightLeft setLightAttenuation [0.181, 0, 1000, 130];
 _lightLeft setLightIntensity 10;
