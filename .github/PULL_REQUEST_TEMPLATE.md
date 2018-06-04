@@ -1,4 +1,4 @@
-<!-- Please review the guidelines for contributing to this repository. The link is above. -->
+<!-- Please review the guidelines for contributing to this repository. The link is to the right under 'helpful resources'. -->
 
 <!-- It is recommended that changes are committed to a new branch on your fork. Avoid directly editing the `master` branch. -->
 
