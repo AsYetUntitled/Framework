@@ -89,7 +89,7 @@ _lightRight setLightUseFlare true;
 _lightLeft setLightDayLight true;
 _lightRight setLightDayLight true;
 
-_leftRed = true;
+private _leftRed = true;
 while {alive _vehicle} do {  
     if !(_vehicle getVariable "lights") exitWith {};
     if (_leftRed) then {
