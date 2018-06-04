@@ -6,12 +6,13 @@
     Description:
     Adds the light effect to cop vehicles, specifically the offroad.
 */
+
 params [
     ["_vehicle", objNull, [objNull]],
     ["_lightTime", 0.22, [0]]
 ];
 
-if (isNil "_vehicle" || {isNull _vehicle} || {!(_vehicle getVariable "lights")}) exitWith {};
+if (isNil "_vehicle" || {isNull _vehicle || {!(_vehicle getVariable "lights")}}) exitWith {};
 
 private _lightRed = [0.1, 0.1, 20];
 private _lightBlue = [0.1, 0.1, 20];
@@ -55,20 +56,19 @@ _lightRight setLightUseFlare true;
 _lightLeft setLightDayLight true;
 _lightRight setLightDayLight true;
 
-_leftRed = true;
+private _leftRed = true;
 while {alive _vehicle} do {
     if !(_vehicle getVariable "lights") exitWith {};
     if (_leftRed) then {
-        _leftRed = false;
         _lightRight setLightBrightness 0.0;
         sleep 0.05;
         _lightLeft setLightBrightness 6;
     } else {
-        _leftRed = true;
         _lightLeft setLightBrightness 0.0;
         sleep 0.05;
         _lightRight setLightBrightness 6;
     };
+    _leftRed = !_leftRed;
     sleep _lightTime;
 };
 
