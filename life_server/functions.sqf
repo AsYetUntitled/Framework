@@ -10,18 +10,12 @@ publicVariable "TON_fnc_terrainSort";
 
 TON_fnc_index =
 compileFinal "
-    private [""_item"",""_stack""];
-    _item = _this select 0;
-    _stack = _this select 1;
-    _return = -1;
-
-    {
-        if (_item in _x) exitWith {
-            _return = _forEachIndex;
-        };
-    } forEach _stack;
-
-    _return;
+    params [
+        ""_item"",
+        [""_stack"",[],[[]]]
+    ];
+    
+    _stack findIf {_item in _x};
 ";
 
 TON_fnc_player_query =
