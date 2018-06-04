@@ -6,12 +6,13 @@
     Description:
     Adds the light effect to cop vehicles, specifically the offroad.
 */
+
 params [
     ["_vehicle", objNull, [objNull]],
     ["_lightTime", 0.22, [0]]
 ];
 
-if (isNil "_vehicle" || {isNull _vehicle} || {!(_vehicle getVariable "lights")}) exitWith {};
+if (isNil "_vehicle" || {isNull _vehicle || {!(_vehicle getVariable "lights")}}) exitWith {};
 private _lightRed = [20, 0.1, 0.1];
 private _lightBlue = [0.1, 0.1, 20];
 
@@ -21,26 +22,28 @@ _lightLeft setLightColor _lightRed;
 _lightLeft setLightBrightness 0.2;
 _lightLeft setLightAmbient [0.1,0.1,1];
 
-switch (typeOf _vehicle) do {
+private _offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
-        _lightLeft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+        [-0.37, 0.0, 0.56];
     };
     case "B_MRAP_01_F": {
-        _lightLeft lightAttachObject [_vehicle, [-0.37, -1.9, 0.7]];
+        [-0.37, -1.9, 0.7];
     };
     case "C_SUV_01_F": {
-        _lightLeft lightAttachObject [_vehicle, [-0.37,-1.2,0.42]];
+        [-0.37,-1.2,0.42];
     };
     case "C_Hatchback_01_sport_F": {
-        _lightLeft lightAttachObject [_vehicle, [-0.35,-0.2,0.25]];
+        [-0.35,-0.2,0.25];
     };
     case "B_Heli_Light_01_F": {
-        _lightLeft lightAttachObject [_vehicle,[-0.37, 0.0, -0.80]];
+        [-0.37, 0.0, -0.80];
     };
     case "B_Heli_Transport_01_F": {
-        _lightLeft lightAttachObject [_vehicle, [-0.5, 0.0, 0.81]];
+        [-0.5, 0.0, 0.81];
     };
 };
+
+_lightLeft lightAttachObject [_vehicle, _offset];
 
 _lightLeft setLightAttenuation [0.181, 0, 1000, 130];
 _lightLeft setLightIntensity 10;
@@ -54,26 +57,28 @@ _lightRight setLightColor _lightBlue;
 _lightRight setLightBrightness 0.2;
 _lightRight setLightAmbient [0.1,0.1,1];
 
-switch (typeOf _vehicle) do {
+_offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
-        _lightRight lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+        [0.37, 0.0, 0.56];
     };
     case "B_MRAP_01_F": {
-        _lightRight lightAttachObject [_vehicle, [0.37, -1.9, 0.7]];
+        [_vehicle, [0.37, -1.9, 0.7];
     };
     case "C_SUV_01_F": {
-        _lightRight lightAttachObject [_vehicle, [0.37,-1.2,0.42]];
+        [0.37,-1.2,0.42];
     };
     case "C_Hatchback_01_sport_F": {
-        _lightRight lightAttachObject [_vehicle, [0.35,-0.2,0.25]];
+        [0.35,-0.2,0.25];
     };
     case "B_Heli_Light_01_F": {
-        _lightRight lightAttachObject [_vehicle,[0.37, 0.0, -0.80]];
+        [0.37, 0.0, -0.80];
     };
     case "B_Heli_Transport_01_F": {
-        _lightRight lightAttachObject [_vehicle, [0.5, 0.0, 0.81]];
+        [0.5, 0.0, 0.81];
     };
 };
+
+_lightRight lightAttachObject [_vehicle, _offset];
 
 _lightRight setLightAttenuation [0.181, 0, 1000, 130];
 _lightRight setLightIntensity 10;
@@ -87,17 +92,16 @@ _lightRight setLightDayLight true;
 _leftRed = true;
 while {alive _vehicle} do {  
     if !(_vehicle getVariable "lights") exitWith {};
-    if (_leftRed) then {  
-        _leftRed = false;
+    if (_leftRed) then {
         _lightRight setLightBrightness 0.0;
         sleep 0.05;
         _lightLeft setLightBrightness 6;
     } else {
-        _leftRed = true;
         _lightLeft setLightBrightness 0.0;
         sleep 0.05;
         _lightRight setLightBrightness 6;
     };
+    _leftRed = !_leftRed;
     sleep _lightTime;  
 };
 
