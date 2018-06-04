@@ -4,7 +4,7 @@ about: Create a report to help us squash bugs
 
 ---
 
-<!-- Please review the guidelines for contributing to this repository. The link is above. -->
+<!-- Please review the guidelines for contributing to this repository. The link is to the right under 'helpful resources'. -->
 
 ### Expected behaviour
 <!-- A clear and concise description of what *you expected to happen*. -->
