@@ -43,7 +43,7 @@ private _offset = switch (typeOf _vehicle) do {
     };
 };
 
-_lightLeft lightAttachObject [_vehicle, _offset]];
+_lightLeft lightAttachObject [_vehicle, _offset];
 
 _lightLeft setLightAttenuation [0.181, 0, 1000, 130];
 _lightLeft setLightIntensity 10;
@@ -62,7 +62,7 @@ _offset = switch (typeOf _vehicle) do {
         [0.37, 0.0, 0.56];
     };
     case "B_MRAP_01_F": {
-        [_vehicle, [0.37, -1.9, 0.7];
+        [0.37, -1.9, 0.7];
     };
     case "C_SUV_01_F": {
         [0.37,-1.2,0.42];
