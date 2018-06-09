@@ -35,32 +35,32 @@ DELIMITER $$
 -- For external databases: Edit localhost to match arma3server IP
 --
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `resetLifeVehicles`()
 BEGIN
   UPDATE `vehicles` SET `active`= 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteDeadVehicles`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteDeadVehicles`()
 BEGIN
   DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldHouses`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldHouses`()
 BEGIN
   DELETE FROM `houses` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldGangs`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldGangs`()
 BEGIN
   DELETE FROM `gangs` WHERE `active` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldContainers`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldContainers`()
 BEGIN
   DELETE FROM `containers` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldWanted`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldWanted`()
 BEGIN
   DELETE FROM `wanted` WHERE `active` = 0;
 END$$
@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 --
 
 CREATE USER IF NOT EXISTS `arma3`@`localhost` IDENTIFIED BY 'changeme';
-GRANT SELECT, UPDATE, INSERT, DELETE, EXECUTE ON `altislife`.* TO 'arma3'@'localhost';
+GRANT SELECT, UPDATE, INSERT, EXECUTE ON `altislife`.* TO 'arma3'@'localhost';
 FLUSH PRIVILEGES;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
