@@ -29,12 +29,6 @@ private _queryResult = [_query, 2] call HC_fnc_asyncCall;
 if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];}; //There was an entry!
 if !(_queryResult isEqualTo []) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];};
 
-//Clense and prepare some information.
-_name = [_name] call HC_fnc_mresString; //Clense the name of bad chars.
-_alias = [[_name]] call HC_fnc_mresArray;
-_money = [_money] call HC_fnc_numberSafe;
-_bank = [_bank] call HC_fnc_numberSafe;
-
 //Prepare the query statement..
 _query = format ["insertNewPlayer:%1:%2:%3:%4:%5",
     _uid,

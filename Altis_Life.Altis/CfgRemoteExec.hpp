@@ -150,6 +150,7 @@ class CfgRemoteExec {
         F(HC_fnc_wantedRemove,HC)
 
         /* Functions for everyone */
+		F(BIS_fnc_debugConsoleExec,ANYONE)
         F(BIS_fnc_effectKilledAirDestruction,ANYONE)
         F(BIS_fnc_effectKilledSecondaries,ANYONE)
         F(life_fnc_animSync,ANYONE)

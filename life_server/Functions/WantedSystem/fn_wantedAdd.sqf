@@ -33,22 +33,20 @@ if !(_customBounty isEqualTo -1) then {_type set[1,_customBounty];};
 
 private _query = format ["selectWantedID:%1", _uid];
 private _queryResult = [_query,2,true] call DB_fnc_asyncCall;
-private _val = [_type select 1] call DB_fnc_numberSafe;
+private _val = _type select 1;
 private _number = _type select 0;
 
 if !(_queryResult isEqualTo []) then {
     _query = format ["selectWantedCrimes:%1", _uid];
     _queryResult = [_query,2] call DB_fnc_asyncCall;
-    _pastCrimes = [_queryResult select 0] call DB_fnc_mresToArray;
+    _pastCrimes = _queryResult select 0;
 
     if (_pastCrimes isEqualType "") then {_pastCrimes = call compile format ["%1", _pastCrimes];};
     _pastCrimes pushBack _number;
-    _pastCrimes = [_pastCrimes] call DB_fnc_mresArray;
     _query = format ["updateWanted:%1:%2:%3", _pastCrimes, _val, _uid];
     [_query,1] call DB_fnc_asyncCall;
 } else {
     _crime = [_type select 0];
-    _crime = [_crime] call DB_fnc_mresArray;
     _query = format ["insertWanted:%1:%2:%3:%4", _uid, _name, _crime, _val];
     [_query,1] call DB_fnc_asyncCall;
 };

@@ -17,7 +17,6 @@ _containerID = _container getVariable ["container_id", -1];
 
 if (_containerID isEqualTo -1) exitWith {};
 
-_trunkData = [_trunkData] call DB_fnc_mresArray;
 _query = format ["updateHouseTrunk:%1:%2", _trunkData, _containerID];
 
 [_query, 1] call DB_fnc_asyncCall;

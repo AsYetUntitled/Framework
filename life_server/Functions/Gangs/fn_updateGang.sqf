@@ -20,9 +20,9 @@ private "_query";
 
 switch (_mode) do {
     case 0: {
-        private _bank = [(_group getVariable ["gang_bank", 0])] call DB_fnc_numberSafe;
+        private _bank = _group getVariable ["gang_bank", 0];
         private _maxMembers = _group getVariable ["gang_maxMembers", 8];
-        private _members = [(_group getVariable "gang_members")] call DB_fnc_mresArray;
+        private _members = _group getVariable "gang_members";
         private _owner = _group getVariable ["gang_owner", ""];
         if (_owner isEqualTo "") exitWith {};
 
@@ -30,7 +30,7 @@ switch (_mode) do {
     };
 
     case 1: {
-        _query = format ["updateGangBank:%1:%2", ([(_group getVariable ["gang_bank", 0])] call DB_fnc_numberSafe), _groupID];
+        _query = format ["updateGangBank:%1:%2", _group getVariable ["gang_bank", 0], _groupID];
     };
 
     case 2: {
@@ -54,7 +54,6 @@ switch (_mode) do {
         } else {
             _membersFinal = _group getVariable "gang_members";
         };
-        _membersFinal = [_membersFinal] call DB_fnc_mresArray;
         _query = format ["updateGangMembers:%1:%2", _membersFinal, _groupID];
     };
 };

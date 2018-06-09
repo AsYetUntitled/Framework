@@ -21,7 +21,7 @@ params [
 private _query = format ["selectWantedActive:%1", _criminal select 0];
 private _queryResult = [_query, 2] call HC_fnc_asyncCall;
 
-private _type = [_queryResult select 0] call HC_fnc_mresToArray;
+private _type = _queryResult select 0;
 if (_type isEqualType "") then {_type = call compile format ["%1", _type];};
 
 private _crimesArr = [];

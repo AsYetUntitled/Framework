@@ -23,8 +23,6 @@ private _vehWeapons = getWeaponCargo _container;
 private _vehBackpacks = getBackpackCargo _container;
 private _cargo = [_vehItems, _vehMags, _vehWeapons, _vehBackpacks];
 
-_cargo = [_cargo] call HC_fnc_mresArray;
-
 private _query = format ["updateContainer:%1:%2", _cargo, _containerID];
 
 [_query, 1] call HC_fnc_asyncCall;

@@ -33,8 +33,6 @@ switch (_mode) do {
             _cargo = [];
         };
 
-        _cargo = [_cargo] call DB_fnc_mresArray;
-
         private _query = format ["updateVehicleGear:%1:%2:%3", _cargo, _uid, _plate];
         private _thread = [_query, 1] call DB_fnc_asyncCall;
     };
@@ -53,7 +51,6 @@ switch (_mode) do {
             };
         } forEach _itemList;
         _trunk = [_items,_totalweight];
-        _trunk = [_trunk] call DB_fnc_mresArray;
 
         private _query = format ["updateVehicleTrunk:%1:%2:%3", _trunk, _uid, _plate];
         private _thread = [_query,1] call DB_fnc_asyncCall;

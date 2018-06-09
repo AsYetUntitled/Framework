@@ -18,7 +18,6 @@ private _group = group _ownerID;
 if (isNull _ownerID || {_uid isEqualTo ""} || {_gangName isEqualTo ""}) exitWith {};
 
 _ownerID = owner _ownerID;
-_gangName = [_gangName] call DB_fnc_mresString;
 private _query = format ["selectGangID:%1", _gangName];
 
 private _queryResult = [_query, 2] call DB_fnc_asyncCall;
@@ -46,7 +45,7 @@ if (!(count _queryResult isEqualTo 0)) exitWith {
 _query = format ["selectInactiveGang:%1", _gangName];
 
 _queryResult = [_query, 2] call DB_fnc_asyncCall;
-private _gangMembers = [[_uid]] call DB_fnc_mresArray;
+private _gangMembers = [_uid];
 
 if !(_queryResult isEqualTo []) then {
     _query = format ["updateGang:%1:%2:%3", (_queryResult select 0), _gangMembers, _uid];

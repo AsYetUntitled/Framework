@@ -73,9 +73,9 @@ if !(_nearVehicles isEqualTo []) exitWith {
 
 _query = format ["updateVehicle:%1:%2", _pid, _vid];
 
-private _trunk = [(_vInfo select 9)] call DB_fnc_mresToArray;
-private _gear = [(_vInfo select 10)] call DB_fnc_mresToArray;
-private _damage = [(_vInfo select 12)] call DB_fnc_mresToArray;
+private _trunk = _vInfo select 9;
+private _gear = _vInfo select 10;
+private _damage = _vInfo select 12;
 private _wasIllegal = _vInfo select 13;
 _wasIllegal = _wasIllegal isEqualTo 1;
 

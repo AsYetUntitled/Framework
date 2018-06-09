@@ -33,14 +33,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 //Double check to make sure the client isn't in the database...
-if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];}; //There was an entry!
-if !(_queryResult isEqualTo []) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];};
-
-//Clense and prepare some information.
-_name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
-_alias = [[_name]] call DB_fnc_mresArray;
-_money = [_money] call DB_fnc_numberSafe;
-_bank = [_bank] call DB_fnc_numberSafe;
+if (_queryResult isEqualType "" && !(_queryResult isEqualTo [])) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];};
 
 //Prepare the query statement..
 _query = format ["insertNewPlayer:%1:%2:%3:%4:%5",

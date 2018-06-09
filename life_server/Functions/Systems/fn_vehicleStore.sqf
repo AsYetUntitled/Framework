@@ -33,7 +33,6 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
 } else {
     _damage = [];
 };
-_damage = [_damage] call DB_fnc_mresArray;
 
 // because fuel price!
 private "_fuel";
@@ -146,9 +145,6 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     } else {
     _cargo = [];
 };
-// prepare
-_trunk = [_trunk] call DB_fnc_mresArray;
-_cargo = [_cargo] call DB_fnc_mresArray;
 
 // update
 _query = format ["updateVehicleAll:%1:%2:%3:%4:%5:%6", _trunk, _cargo, _fuel, _damage, _uid, _plate];

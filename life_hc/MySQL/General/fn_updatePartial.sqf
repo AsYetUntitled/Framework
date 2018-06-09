@@ -22,22 +22,19 @@ private _query = "";
 
 switch (_mode) do {
     case 0: {
-        _value = [_value] call HC_fnc_numberSafe;
         _query = format ["updateCash:%1:%2", _value, _uid];
     };
 
     case 1: {
-        _value = [_value] call HC_fnc_numberSafe;
         _query = format ["updateBank:%1:%2",_value,_uid];
     };
 
     case 2: {
-        //Does something license related but I can't remember I only know it's important?
-        for "_i" from 0 to count(_value)-1 do {
-            _bool = [(_value select _i) select 1] call HC_fnc_bool;
-            _value set[_i,[(_value select _i) select 0,_bool]];
-        };
-        _value = [_value] call HC_fnc_mresArray;
+    for "_i" from 0 to (count _value) -1 do {
+        (_value select _i) params ["_license", "_owned"];
+        _value set[_i, [_license, [0, 1] select _owned]];
+    };
+
         switch (_side) do {
             case west: {_query = format ["updateWestLicenses:%1:%2", _value, _uid];};
             case civilian: {_query = format ["updateCivLicenses:%1:%2", _value, _uid];};
@@ -46,7 +43,6 @@ switch (_mode) do {
     };
 
     case 3: {
-        _value = [_value] call HC_fnc_mresArray;
         switch (_side) do {
             case west: {_query = format ["updateWestGear:%1:%2", _value, _uid];};
             case civilian: {_query = format ["updateCivGear:%1:%2", _value, _uid];};
@@ -55,20 +51,17 @@ switch (_mode) do {
     };
 
     case 4: {
-        _value = [_value] call HC_fnc_bool;
+        _value = [0, 1] select _value;
         _value1 = if (count _value1 isEqualTo 3) then {_value1} else {[0,0,0]};
-        _value1 = [_value1] call HC_fnc_mresArray;
         _query = format ["updateCivPosition:%1:%2:%3", _value, _value1, _uid];
     };
 
     case 5: {
-        _value = [_value] call HC_fnc_bool;
+        _value = [0, 1] select _value;
         _query = format ["updateArrested:%1:%2",_value,_uid];
     };
 
     case 6: {
-        _value = [_value] call HC_fnc_numberSafe;
-        _value1 = [_value1] call HC_fnc_numberSafe;
         _query = format ["updateCashAndBank:%1:%2:%3", _value, _value1, _uid];
     };
 

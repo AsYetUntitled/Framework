@@ -27,10 +27,6 @@ class CfgFunctions
             class bool {};
             class insertRequest {};
             class insertVehicle {};
-            class mresArray {};
-            class mresString {};
-            class mresToArray {};
-            class numberSafe {};
             class queryRequest {};
             class updatePartial {};
             class updateRequest {};
