@@ -30,6 +30,7 @@ serv_sv_use pushBack _vid;
 
 private _servIndex = serv_sv_use find _vid;
 
+private _tickTime = diag_tickTime;
 private _query = format ["selectVehiclesMore:%1:%2", _vid, _pid];
 private _queryResult = [_query, 2] call HC_fnc_asyncCall;
 
