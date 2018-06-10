@@ -31,8 +31,7 @@ DROP PROCEDURE IF EXISTS `deleteOldWanted`;
 DELIMITER $$
 --
 -- Procedures
--- Edit arma3 to match a user in MySQL
--- For external databases: Edit localhost to match arma3server IP
+-- CURRENT_USER function returns the name of the current user in the SQL Server database.
 --
 
 CREATE DEFINER=CURRENT_USER PROCEDURE `resetLifeVehicles`()
@@ -213,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 --
 -- Creates default user `arma3` with password `changeme` unless it already exists
 -- Granting permissions to user `arma3`, created below
--- Reloads the privileges from the grant tables in the mysql system database.
+-- Reloads the privileges from the grant tables in the MySQL system database.
 --
 
 CREATE USER IF NOT EXISTS `arma3`@`localhost` IDENTIFIED BY 'changeme';
