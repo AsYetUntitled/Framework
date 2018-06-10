@@ -20,7 +20,6 @@ class CfgFunctions {
             class insertRequest{};
             class updateRequest{};
             class insertVehicle {};
-            class bool {};
             class updatePartial {};
         };
     };

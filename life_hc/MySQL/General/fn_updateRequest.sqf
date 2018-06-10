@@ -54,7 +54,7 @@ switch (_side) do {
 
 private _query = switch (_side) do {
     case west: {format ["updateWest:%1:%2:%3:%4:%5:%6:%7:%8", _name, _cash, _bank, _gear, _licenses, _stats, _playtime_update, _uid];};
-    case civilian: {format ["updateCiv:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11", _name, _cash, _bank, _licenses, _gear, [_arrested] call HC_fnc_bool, _stats, [_alive] call HC_fnc_bool, _position, _playtime_update, _uid];};
+    case civilian: {format ["updateCiv:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11", _name, _cash, _bank, _licenses, _gear, _arrested, _stats, _alive, _position, _playtime_update, _uid];};
     case independent: {format ["updateIndep:%1:%2:%3:%4:%5:%6:%7:%8", _name, _cash, _bank, _licenses, _gear, _stats, _playtime_update, _uid];};
 };
 
