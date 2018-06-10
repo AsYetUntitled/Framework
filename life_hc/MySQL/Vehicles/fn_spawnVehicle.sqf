@@ -33,6 +33,14 @@ private _servIndex = serv_sv_use find _vid;
 private _query = format ["selectVehiclesMore:%1:%2", _vid, _pid];
 private _queryResult = [_query, 2] call HC_fnc_asyncCall;
 
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
+    diag_log "------------- Client Query Request -------------";
+    diag_log format ["QUERY: %1",_query];
+    diag_log format ["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
+    diag_log format ["Result: %1",_queryResult];
+    diag_log "------------------------------------------------";
+};
+
 if (_queryResult isEqualType "") exitWith {};
 
 private _vInfo = _queryResult;
