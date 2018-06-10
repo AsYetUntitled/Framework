@@ -29,6 +29,8 @@ private _queryResult = [_query, 2] call HC_fnc_asyncCall;
 if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];}; //There was an entry!
 if !(_queryResult isEqualTo []) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];};
 
+private _alias = [_name];
+
 //Prepare the query statement..
 _query = format ["insertNewPlayer:%1:%2:%3:%4:%5",
     _uid,

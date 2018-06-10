@@ -9,8 +9,6 @@
     set the client up.
 */
 
-diag_log "ok";
-
 private _count = count _this;
 life_session_tries = life_session_tries + 1;
 if (life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
@@ -43,8 +41,6 @@ if (LIFE_SETTINGS(getNumber,"donor_level") isEqualTo 1) then {
 } else {
     CONST(life_donorlevel,0);
 };
-
-diag_log (_this select 6);
 
 //Loop through licenses
 if !((_this select 6) isEqualTo []) then {

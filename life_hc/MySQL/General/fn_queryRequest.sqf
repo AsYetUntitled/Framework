@@ -71,6 +71,7 @@ switch (_side) do {
   };
 
   case west: {
+    _queryResult set[9, [false, true] select (_queryResult select 9)];
     _playTimes = _queryResult select 11;
   };
 

@@ -35,6 +35,8 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 //Double check to make sure the client isn't in the database...
 if (_queryResult isEqualType "" && !(_queryResult isEqualTo [])) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];};
 
+private _alias = [_name];
+
 //Prepare the query statement..
 _query = format ["insertNewPlayer:%1:%2:%3:%4:%5",
     _uid,
