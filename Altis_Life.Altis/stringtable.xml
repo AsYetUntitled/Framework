@@ -2300,7 +2300,7 @@
             <Polish>Przepraszamy ale %1 jest aktywny gdzieś na mapie i nie może zostać wyciągnięty.</Polish>
         </Key>
         <Key ID="STR_Garage_SpawnPointError">
-            <Original>There is already a vehicle on the spawn point. You will be refunded the cost of getting out out.</Original>
+            <Original>There is already a vehicle on the spawn point. You will be refunded the cost of getting yours out.</Original>
             <Czech>K dispozici je již vozidlo na spawn bodu. Ty budou vráceny náklady dostat se ven.</Czech>
             <Spanish>Ya hay un vehículo en el punto de Spawn, se te reembolsara el costo de sacar el vehículo.</Spanish>
             <Russian></Russian>
