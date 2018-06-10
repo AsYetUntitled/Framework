@@ -26,8 +26,9 @@ private _query = format ["checkPlayerExists:%1", _uid];
 private _queryResult = [_query, 2] call HC_fnc_asyncCall;
 
 //Double check to make sure the client isn't in the database...
-if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];}; //There was an entry!
-if !(_queryResult isEqualTo []) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery", (owner _returnToSender)];};
+if (_queryResult isEqualType "" || {!(_queryResult isEqualTo [])}) exitWith {
+    [] remoteExecCall ["SOCK_fnc_dataQuery", _returnToSender];
+};
 
 private _alias = [_name];
 
