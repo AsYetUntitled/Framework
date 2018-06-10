@@ -2,6 +2,8 @@
 /*
     File: fn_queryRequest.sqf
     Author: Bryan "Tonic" Boardwine
+    
+    This file is for Nanou's HeadlessClient.
 
     Description:
     Handles the incoming request and sends an asynchronous query
@@ -19,7 +21,6 @@ params [
 ];
 
 if (isNull _ownerID) exitWith {};
-_ownerID = owner _ownerID;
 
 private _query = switch (_side) do {
     // West - 11 entries returned
@@ -45,7 +46,7 @@ if (_queryResult isEqualType "" || _queryResult isEqualTo []) exitWith {
     [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
-private _licenses = (_queryResult select 6);
+private _licenses = _queryResult select 6;
 
 for "_i" from 0 to (count _licenses) -1 do {
     (_licenses select _i) params ["_license", "_owned"];
