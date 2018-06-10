@@ -231,8 +231,8 @@ uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
 
 private _binConfigPatches = configFile >> "CfgPatches";
 
-private _missingPatches = _binConfigPatches select {isClass _x && !((configName _x) in _patchList)};
-_missingPatches apply {configName _x};
+private _missingPatches = "isClass _x && !((configName _x) in _patchList)" configClasses _binConfigPatches;
+_missingPatches = _missingPatches apply {configName _x};
 
 if !(_missingPatches isEqualTo []) exitWith {
     [profileName,getPlayerUID player,(str _missingPatches)] remoteExec ["SPY_fnc_cookieJar",RSERV];
