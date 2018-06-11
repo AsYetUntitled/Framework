@@ -6,24 +6,31 @@
     Description:
     Animates a door?
 */
-private ["_b","_doors","_door"];
-_b = _this select 0;
-_doors = 1;
-_doors = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _b,"NumberOfDoors");
 
-_door = 0;
+params [
+    ["_object", objNull, [objNull]]
+];
+
+private _doors = FETCH_CONFIG2(getNumber, "CfgVehicles", typeOf _object, "NumberOfDoors");
+private _door = 0;
+
 //Find the nearest door
 for "_i" from 1 to _doors do {
-    _selPos = _b selectionPosition format ["Door_%1_trigger",_i];
-    _worldSpace = _b modelToWorld _selPos;
-        if (player distance _worldSpace < 5) exitWith {_door = _i;};
+    _selPos = _object selectionPosition format ["Door_%1_trigger",_i];
+    _worldSpace = _object modelToWorld _selPos;
+    if (player distance _worldSpace < 5) exitWith {_door = _i;};
 };
+
 if (_door isEqualTo 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 
-if (_b animationPhase format ["door_%1_rot",_door] isEqualTo 0) then {
-    _b animateSource [format ["Door_%1_source", _door], 1];
+if (typeOf _object isEqualTo "Land_Dome_Big_F" && _door isEqualTo 1) then {
+    private _doorState = _object animationPhase "door_1a_move" isEqualto 0;
+    _object animate ["door_1a_move", [0, 1] select _doorState];
+    _object animate ["door_1b_move", [0, 1] select _doorState];
 } else {
-    _b animateSource [format ["Door_%1_source", _door], 0];
+    private _doorName = format ["door_%1_rot",_door];
+    private _doorState = _object animationPhase _doorName isEqualto 0;
+    _object animate [_doorName, [0, 1] select _doorState];
 };
 
 closeDialog 0;
