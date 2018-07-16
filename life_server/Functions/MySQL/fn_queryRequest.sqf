@@ -60,6 +60,7 @@ switch (_side) do {
       _queryResult set[10, [false, true] select (_queryResult select 10)];
 
       _playTimes = _queryResult select 12;
+      [_uid, _playTimes select 2] call TON_fnc_setPlayTime;
 
       /* Make sure nothing else is added under here */
       _houseData = _uid spawn TON_fnc_fetchPlayerHouses;
@@ -73,16 +74,18 @@ switch (_side) do {
   case west: {
     _queryResult set[9, [false, true] select (_queryResult select 9)];
     _playTimes = _queryResult select 11;
+    [_uid, _playTimes select 0] call TON_fnc_setPlayTime;
   };
 
   case independent: {
     _playTimes = _queryResult select 10;
+    [_uid, _playTimes select 1] call TON_fnc_setPlayTime;
   };
 };
 
 _index = TON_fnc_playtime_values_request find [_uid, _playTimes];
 
-if (_index != -1) then {
+if !(_index isEqualTo -1) then {
     TON_fnc_playtime_values_request set[_index,-1];
     TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
     TON_fnc_playtime_values_request pushBack [_uid, _playTimes];
@@ -90,7 +93,6 @@ if (_index != -1) then {
     TON_fnc_playtime_values_request pushBack [_uid, _playTimes];
 };
 
-[_uid, _playTimes select 2] call TON_fnc_setPlayTime;
 publicVariable "TON_fnc_playtime_values_request";
 
 _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side], []];
