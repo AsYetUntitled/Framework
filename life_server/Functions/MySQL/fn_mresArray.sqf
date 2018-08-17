@@ -10,4 +10,6 @@
 
 params ["_array"];
 
-str toString ((toArray str _array) apply {[_x, 96] select (_x isEqualTo 34)})
+private _input = str _array;
+
+str ((_input splitString '"') joinString "`")
