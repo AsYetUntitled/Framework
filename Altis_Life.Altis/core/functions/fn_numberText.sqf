@@ -1,9 +1,8 @@
 /*
     File: fn_numberText.sqf
-    Author: Karel Moricky
 
     Description:
-    Convert a number into string (avoiding scientific notation)
+    Convert a number into string (avoiding scientific notation) with comma formatting
 
     Parameter(s):
     _this: NUMBER
@@ -11,18 +10,14 @@
     Returns:
     STRING
 */
-private ["_number","_mod","_digots","_digitsCount","_modBase","_numberText"];
+params [["_number",0,[0]],"_return"]; 
+ 
+private _numberText = _number toFixed 0; 
+private _num = (count _numberText); 
 
-_number = [_this,0,0,[0]] call bis_fnc_param;
-_mod = [_this,1,3,[0]] call bis_fnc_param;
+for "_index" from (_num - 3) to 1 step -3 do { 
+     _numberText = (_numberText select [0, _index]) + "," + (_numberText select [_index]); 
+     _num = _num + 1; 
+}; 
 
-_digits = _number call bis_fnc_numberDigits;
-_digitsCount = count _digits - 1;
-
-_modBase = _digitsCount % _mod;
-_numberText = "";
-{
-    _numberText = _numberText + str _x;
-    if ((_foreachindex - _modBase) % (_mod) isEqualTo 0 && !(_foreachindex isEqualTo _digitsCount)) then {_numberText = _numberText + ",";};
-} forEach _digits;
-_numberText
+_numberText;
