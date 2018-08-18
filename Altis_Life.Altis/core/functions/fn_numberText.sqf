@@ -10,7 +10,7 @@
     Returns:
     STRING
 */
-params [["_number",0,[0]],"_return"]; 
+params [["_number",0,[0]]]; 
  
 private _numberText = _number toFixed 0; 
 private _num = (count _numberText); 
