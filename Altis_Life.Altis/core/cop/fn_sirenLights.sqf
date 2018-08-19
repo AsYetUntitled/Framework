@@ -17,7 +17,13 @@ private _trueorfalse = _vehicle getVariable ["lights",false];
 
 if (_trueorfalse) then {
     _vehicle setVariable ["lights",false,true];
+    if !(isNil {(_vehicle getVariable "lightsJIP")}) then {
+        private _jip = _vehicle getVariable "lightsJIP";
+        _vehicle setVariable ["lightsJIP",nil,true];
+        remoteExec ["",_jip]; //remove from JIP queue
+    };
 } else {
     _vehicle setVariable ["lights",true,true];
-    [_vehicle,0.22] remoteExec ["life_fnc_copLights",RCLIENT];
+    private _jip = [_vehicle,0.22] remoteExec ["life_fnc_copLights",RCLIENT,true];
+    _vehicle setVariable ["lightsJIP",_jip,true];
 };

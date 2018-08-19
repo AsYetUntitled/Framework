@@ -6,6 +6,7 @@
 *    Description:
 *    Main key handler for event 'keyDown'.
 */
+
 params [
     ["_ctrl",displayNull,[displayNull]],
     ["_code",-1,[0]],
@@ -14,8 +15,8 @@ params [
     ["_alt",false,[false]]
 ];
 private _handled = false;
-
 private _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
+
 //hint str _code;
 private _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
@@ -233,14 +234,21 @@ switch (_code) do {
             if (_veh getVariable "siren") then {
                 titleText [localize "STR_MISC_SirensOFF","PLAIN"];
                 _veh setVariable ["siren",false,true];
+                if !(isNil {(_veh getVariable "sirenJIP")}) then {
+                    private _jip = _veh getVariable "sirenJIP";
+                    _veh setVariable ["sirenJIP",nil,true];
+                    remoteExec ["",_jip]; //remove from JIP queue
+                };
             } else {
                 titleText [localize "STR_MISC_SirensON","PLAIN"];
                 _veh setVariable ["siren",true,true];
+                private "_jip";
                 if (playerSide isEqualTo west) then {
-                    [_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
+                    _jip = [_veh] remoteExec ["life_fnc_copSiren",RCLIENT,true];
                 } else {
-                    [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+                    _jip = [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT,true];
                 };
+                _veh setVariable ["sirenJIP",_jip,true];
             };
         };
     };

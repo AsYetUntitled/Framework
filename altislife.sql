@@ -31,36 +31,35 @@ DROP PROCEDURE IF EXISTS `deleteOldWanted`;
 DELIMITER $$
 --
 -- Procedures
--- Edit arma3 to match a user in MySQL
--- For external databases: Edit localhost to match arma3server IP
+-- CURRENT_USER function returns the name of the current user in the SQL Server database.
 --
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `resetLifeVehicles`()
 BEGIN
   UPDATE `vehicles` SET `active`= 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteDeadVehicles`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteDeadVehicles`()
 BEGIN
   DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldHouses`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldHouses`()
 BEGIN
   DELETE FROM `houses` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldGangs`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldGangs`()
 BEGIN
   DELETE FROM `gangs` WHERE `active` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldContainers`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldContainers`()
 BEGIN
   DELETE FROM `containers` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldWanted`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldWanted`()
 BEGIN
   DELETE FROM `wanted` WHERE `active` = 0;
 END$$
@@ -88,16 +87,16 @@ CREATE TABLE IF NOT EXISTS `players` (
   `civ_gear` text NOT NULL,
   `cop_gear` text NOT NULL,
   `med_gear` text NOT NULL,
-  `civ_stats` varchar(32) NOT NULL DEFAULT '"[100,100,0]"',
-  `cop_stats` varchar(32) NOT NULL DEFAULT '"[100,100,0]"',
-  `med_stats` varchar(32) NOT NULL DEFAULT '"[100,100,0]"',
+  `civ_stats` varchar(32) NOT NULL DEFAULT '[100,100,0]',
+  `cop_stats` varchar(32) NOT NULL DEFAULT '[100,100,0]',
+  `med_stats` varchar(32) NOT NULL DEFAULT '[100,100,0]',
   `arrested` tinyint(1) NOT NULL DEFAULT '0',
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `donorlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   `civ_alive` tinyint(1) NOT NULL DEFAULT '0',
-  `civ_position` varchar(64) NOT NULL DEFAULT '"[]"',
-  `playtime` varchar(32) NOT NULL DEFAULT '"[0,0,0]"',
+  `civ_position` varchar(64) NOT NULL DEFAULT '[]',
+  `playtime` varchar(32) NOT NULL DEFAULT '[0,0,0]',
   `insert_time` timestamp DEFAULT CURRENT_TIMESTAMP,
   `last_seen` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`uid`),
@@ -213,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 --
 -- Creates default user `arma3` with password `changeme` unless it already exists
 -- Granting permissions to user `arma3`, created below
--- Reloads the privileges from the grant tables in the mysql system database.
+-- Reloads the privileges from the grant tables in the MySQL system database.
 --
 
 CREATE USER IF NOT EXISTS `arma3`@`localhost` IDENTIFIED BY 'changeme';

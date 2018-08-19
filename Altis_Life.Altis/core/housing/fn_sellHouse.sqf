@@ -7,6 +7,7 @@
     Description:
     Sells the house and delete all container near house.
 */
+
 params [
     ["_house",objNull,[objNull]]
 ];

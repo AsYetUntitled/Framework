@@ -17,8 +17,10 @@ if (_index isEqualTo -1) exitWith {}; //Nothing selected
 private _priceTag = CONTROL(38400,38404);
 
 if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
-    private _item = CONTROL_DATAI(_control,_index);
-    private _itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
+    _item = CONTROL_DATAI(_control,_index);
+    _itemArray = M_CONFIG(getArray,"WeaponShops",_shop,"items");
+    _itemArray append M_CONFIG(getArray,"WeaponShops",_shop,"mags");
+    _itemArray append M_CONFIG(getArray,"WeaponShops",_shop,"accs");
     _item = [_item,_itemArray] call TON_fnc_index;
     _price = ((_itemArray select _item) select 3);
     _priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#8cff9b'>$%1</t></t>",[(_price)] call life_fnc_numberText];

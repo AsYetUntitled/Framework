@@ -6,9 +6,12 @@
     Sell functionality for house garages.
 */
 
+if (dialog) then {closeDialog 0};
+
 params [
     ["_house",objNull,[objNull]]
 ];
+
 private _uid = getPlayerUID player;
 
 if (isNull _house) exitWith {};

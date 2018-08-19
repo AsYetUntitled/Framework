@@ -12,6 +12,9 @@ params [
     ["_reason","",[""]]
 ];
 
+
+
+if (isNil "life_adminlevel") exitWith {};//Should fix undefined "Life_adminLevel"
 if (isServer && {!hasInterface}) exitWith {};
 if (FETCH_CONST(life_adminlevel) < 1) exitWith {};
 
