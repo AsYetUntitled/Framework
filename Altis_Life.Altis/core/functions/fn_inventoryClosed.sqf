@@ -10,7 +10,7 @@
     2 : Used for syncing vehicle inventory when save vehicle gear are activated
 */
 params [
-    "_player",
+    "",
     ["_container", objNull, [objNull]]
 ];
 if (isNull _container) exitWith {};
