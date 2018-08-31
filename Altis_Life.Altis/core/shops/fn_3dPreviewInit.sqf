@@ -34,9 +34,7 @@ life_3dPreview_evh_move = _display displayAddEventHandler ["MouseMoving", {
     params ["", "_dx", "_dy"];
     if (life_3dPreview_dragging) then {
         _dir = vectorDir life_3dPreview_object;
-        _newdir = [(_dir # 0) * cos (_dx * 5) - (_dir # 1) * sin (_dx * 5),
-                (_dir # 0) * sin (_dx * 5) + (_dir # 1) * cos (_dx * 5),
-                0];
+        _newdir = [(_dir # 0) * cos (_dx * 5) - (_dir # 1) * sin (_dx * 5), (_dir # 0) * sin (_dx * 5) + (_dir # 1) * cos (_dx * 5), 0];
         life_3dPreview_object setVectorDir vectorNormalized _newdir;
     };
 }];
@@ -49,8 +47,8 @@ life_3dPreview_evh_zoom = _display displayAddEventHandler ["MouseZChanged", {
     private _min = _spaceDiagonal + 1;
     private _step = (_max - _min) / 10;
     private _oldPos = getPos life_3dPreview_camera;
-    life_3dPreview_camera_zoom = _min max (life_3dPreview_camera_zoom - (_step*(abs(_scroll)/_scroll)));
-	life_3dPreview_camera_zoom = _max min life_3dPreview_camera_zoom;
+    life_3dPreview_camera_zoom = _min max (life_3dPreview_camera_zoom - (_step * (abs (_scroll) / _scroll)));
+    life_3dPreview_camera_zoom = _max min life_3dPreview_camera_zoom;
     if (life_3dPreview_camera_zoom >= _max || life_3dPreview_camera_zoom <= _min) exitWith {};
     private _newPos = life_3dPreview_camera_target vectorAdd ((vectorNormalized ((getPos life_3dPreview_camera) vectorDiff life_3dPreview_camera_target)) vectorMultiply life_3dPreview_camera_zoom);
     life_3dPreview_camera camSetPos _newPos;
