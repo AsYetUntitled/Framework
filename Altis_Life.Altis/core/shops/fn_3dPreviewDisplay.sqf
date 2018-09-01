@@ -20,8 +20,8 @@ if (_isInCfg) then {
         life_3dPreview_object enableSimulation false;
         life_3dPreview_object setPos life_3dPreview_position;
         life_3dPreview_object setVectorUp [0, 0, 1];
-        private _spaceDiagonal = [boundingBoxReal _object # 0 # 0, boundingBoxReal _object # 0 # 2] distance [boundingBoxReal _object # 1 # 0, boundingBoxReal _object # 1 # 2];
-        private _distance = _spaceDiagonal * 2;
+        private _bodyDiagonal = [boundingBoxReal _object select 0 select 0, boundingBoxReal _object select 0 select 2] distance [boundingBoxReal _object select 1 select 0, boundingBoxReal _object select 1 select 2];
+        private _distance = _bodyDiagonal * 2;
         life_3dPreview_camera_target = getPos _object;
         life_3dPreview_camera camSetTarget life_3dPreview_camera_target;
         life_3dPreview_camera camSetPos (_object modelToWorld [0, _distance, _distance * 0.3]);

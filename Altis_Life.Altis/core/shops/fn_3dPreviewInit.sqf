@@ -34,7 +34,7 @@ life_3dPreview_evh_move = _display displayAddEventHandler ["MouseMoving", {
     params ["", "_dx", "_dy"];
     if (life_3dPreview_dragging) then {
         _dir = vectorDir life_3dPreview_object;
-        _newdir = [(_dir # 0) * cos (_dx * 5) - (_dir # 1) * sin (_dx * 5), (_dir # 0) * sin (_dx * 5) + (_dir # 1) * cos (_dx * 5), 0];
+        _newdir = [(_dir select 0) * cos (_dx * 5) - (_dir select 1) * sin (_dx * 5), (_dir select 0) * sin (_dx * 5) + (_dir select 1) * cos (_dx * 5), 0];
         life_3dPreview_object setVectorDir vectorNormalized _newdir;
     };
 }];
@@ -43,8 +43,8 @@ life_3dPreview_evh_zoom = _display displayAddEventHandler ["MouseZChanged", {
     params ["", "_scroll"];
     private _max = life_3dPreview_camera_mag;
     private _object = life_3dPreview_object;
-    private _spaceDiagonal = [boundingBoxReal _object # 0 # 0, boundingBoxReal _object # 0 # 2] distance [boundingBoxReal _object # 1 # 0, boundingBoxReal _object # 1 # 2];
-    private _min = _spaceDiagonal + 1;
+    private _bodyDiagonal = [boundingBoxReal _object select 0 select 0, boundingBoxReal _object select 0 select 2] distance [boundingBoxReal _object select 1 select 0, boundingBoxReal _object select 1 select 2];
+    private _min = _bodyDiagonal + 1;
     private _step = (_max - _min) / 10;
     private _oldPos = getPos life_3dPreview_camera;
     life_3dPreview_camera_zoom = _min max (life_3dPreview_camera_zoom - (_step * (abs (_scroll) / _scroll)));
