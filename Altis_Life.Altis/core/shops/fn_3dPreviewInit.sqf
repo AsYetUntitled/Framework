@@ -49,7 +49,7 @@ life_3dPreview_evh_zoom = _display displayAddEventHandler ["MouseZChanged", {
     private _oldPos = getPos life_3dPreview_camera;
     life_3dPreview_camera_zoom = _min max (life_3dPreview_camera_zoom - (_step * (abs (_scroll) / _scroll)));
     life_3dPreview_camera_zoom = _max min life_3dPreview_camera_zoom;
-    if (life_3dPreview_camera_zoom >= _max || life_3dPreview_camera_zoom <= _min) exitWith {};
+    if (life_3dPreview_camera_zoom >= _max || {life_3dPreview_camera_zoom <= _min}) exitWith {};
     private _newPos = life_3dPreview_camera_target vectorAdd ((vectorNormalized ((getPos life_3dPreview_camera) vectorDiff life_3dPreview_camera_target)) vectorMultiply life_3dPreview_camera_zoom);
     life_3dPreview_camera camSetPos _newPos;
     life_3dPreview_camera camCommit 0.15;
