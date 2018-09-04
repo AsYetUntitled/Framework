@@ -210,6 +210,11 @@ class Life_Settings {
         {"STR_Crime_24","10000","24"},
         {"STR_Crime_25","20000","25"}
     };
+    
+    /* ! --- Do not change --- ! */
+    framework_version = "5.0.0";
+    /* ------------------------- */
+    
 };
 
 #include "Config_Clothing.hpp"
