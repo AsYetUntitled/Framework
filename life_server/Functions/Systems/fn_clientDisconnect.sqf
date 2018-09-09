@@ -32,4 +32,4 @@ private _containers = nearestObjects[_unit,["WeaponHolderSimulated"],5];
 {deleteVehicle _x} forEach _containers;
 deleteVehicle _unit;
 
-[_uid] call TON_fnc_houseCleanup;
+[_uid] spawn TON_fnc_houseCleanup;

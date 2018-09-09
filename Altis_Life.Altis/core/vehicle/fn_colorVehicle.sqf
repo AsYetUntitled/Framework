@@ -13,12 +13,12 @@ params [
 
 private _className = typeOf _vehicle;
 
-if (isNull _vehicle || !alive _vehicle || _index isEqualTo -1) exitWith {};
+if (isNull _vehicle || {!alive _vehicle} || {_index isEqualTo -1}) exitWith {};
 //Does the vehicle already have random styles? Halt till it's set.
 
 if (local _vehicle) then {
     private _colorIndex = 1;
-    if (_className in ["C_Offroad_01_F"]) then {_colorIndex = 3};
+    if (_className isEqualTo "C_Offroad_01_F") then {_colorIndex = 3};
     _vehicle setVariable ["color",_colorIndex,true];
 };
 
@@ -27,8 +27,8 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     _className = "Default"; //Use Default class if it doesn't exist
 };
 
-private _textures = ((M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures") select _index) select 2);
-if (isNil "_textures" || {count _textures isEqualTo 0}) exitWith {};
+private _textures = ((M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures") select _index) param [2,[]]);
+if (_textures isEqualTo []) exitWith {};
 
 _vehicle setVariable ["Life_VEH_color",_index,true];
 
