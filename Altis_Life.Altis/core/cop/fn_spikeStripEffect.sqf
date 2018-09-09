@@ -7,7 +7,7 @@
     so code can easily be changed. Ultimately it just pops the tires.
 */
 params [
-	["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]]
 ];
 if (isNull _vehicle) exitWith {}; //Bad vehicle type
 
