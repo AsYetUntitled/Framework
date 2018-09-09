@@ -7,8 +7,8 @@
     access so instead we set it to alive=0 so it never shows again.
 */
 params [
-	["_vid",-1,[0]],
-	["_pid","",[""]]
+    ["_vid",-1,[0]],
+    ["_pid","",[""]]
 ];
 
 if (_vid isEqualTo -1 || {_pid isEqualTo ""}) exitWith {};
