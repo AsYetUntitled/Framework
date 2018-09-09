@@ -11,7 +11,7 @@ params [
     ["_storeText","",[""]]
 ];
 private _unit = remoteExecutedOwner;
-if (isNull _vehicle || {isNull _unit}) exitWith {life_impound_inuse = false; _unit publicVariableClient "life_impound_inuse"; life_garage_store = false;_unit publicVariableClient "life_garage_store";}; //Bad data passed.
+if (isNull _vehicle || {_unit isEqualTo 0}) exitWith {life_impound_inuse = false; _unit publicVariableClient "life_impound_inuse"; life_garage_store = false;_unit publicVariableClient "life_garage_store";}; //Bad data passed.
 
 (_vehicle getVariable ["dbInfo",[]]) params [
     ["_uid","",[""]],
