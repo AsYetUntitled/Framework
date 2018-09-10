@@ -102,7 +102,6 @@ class CfgRemoteExec {
         F(TON_fnc_removeGang,SERVER)
         F(TON_fnc_sellHouse,SERVER)
         F(TON_fnc_sellHouseContainer,SERVER)
-        F(TON_fnc_setObjVar,SERVER)
         F(TON_fnc_spawnVehicle,SERVER)
         F(TON_fnc_spikeStrip,SERVER)
         F(TON_fnc_updateGang,SERVER)
