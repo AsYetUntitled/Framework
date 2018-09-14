@@ -44,6 +44,7 @@ switch (playerSide) do
 if (!isNull life_corpse) then {
     private "_containers";
     life_corpse setVariable ["Revive",true,true];
+    life_corpse setVariable ["id",nil,true];
     _containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
     {deleteVehicle _x;} forEach _containers; //Delete the containers.
     deleteVehicle life_corpse;

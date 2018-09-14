@@ -11,6 +11,10 @@ _target = param [0,objNull,[objNull]];
 if (isNull _target) exitWith {};
 _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
+private _id = _target getVariable ["id",-1];
+private _object = objectFromNetId _id;
+if (isNull _object) exitWith {deleteVehicle _target}; //person is no longer on the server
+
 _revivable = _target getVariable ["Revive",false];
 if (_revivable) exitWith {};
 if (_target getVariable ["Reviving",objNull] == player) exitWith {hint localize "STR_Medic_AlreadyReviving";};

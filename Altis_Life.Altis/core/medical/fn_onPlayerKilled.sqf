@@ -27,6 +27,7 @@ _unit setVariable ["Escorting",false,true];
 _unit setVariable ["transporting",false,true];
 _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",(getPlayerUID player),true]; //Set the UID.
+_unit setVariable ["id",netId player,true];
 
 //close the esc dialog
 if (dialog) then {
