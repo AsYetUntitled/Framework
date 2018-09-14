@@ -8021,17 +8021,6 @@
             <Portuguese>Você reviveu %1 e recebeu R$%2 pelo seus serviços prestados.</Portuguese>
             <Polish>Reanimowałeś %1 i za uratowanie życia otrzymałeś $%2.</Polish>
         </Key>
-        <Key ID="STR_Medic_ReviveDiscPayReceive">
-            <Original>You patched up their wounds but the body miraculously disappeared (tell an admin).</Original>
-            <Czech>You patched up their wounds but the body miraculously disappeared (tell an admin).</Czech>
-            <Spanish>You patched up their wounds but the body miraculously disappeared (tell an admin).</Spanish>
-            <Russian>You patched up their wounds but the body miraculously disappeared (tell an admin).</Russian>
-            <German>You patched up their wounds but the body miraculously disappeared (tell an admin).</German>
-            <French>You patched up their wounds but the body miraculously disappeared (tell an admin).</French>
-            <Italian>You patched up their wounds but the body miraculously disappeared (tell an admin).</Italian>
-            <Portuguese>You patched up their wounds but the body miraculously disappeared (tell an admin).</Portuguese>
-            <Polish>You patched up their wounds but the body miraculously disappeared (tell an admin).</Polish>
-        </Key>
         <Key ID="STR_Medic_TooFar">
             <Original>You got to far away from the body.</Original>
             <Czech>Dostal jsi příliš daleko od těla.</Czech>

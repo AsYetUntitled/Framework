@@ -11,17 +11,6 @@ _target = param [0,objNull,[objNull]];
 if (isNull _target) exitWith {};
 _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
-private _id = _target getVariable ["id",-1];
-private _object = objectFromNetId _id;
-if (isNull _object) exitWith { //person is no longer on the server
-    deleteVehicle _target;
-    hint (localize "STR_Medic_ReviveDiscPayReceive");
-    if ((LIFE_SETTINGS(getNumber,"revive_disconnect_pay") isEqualTo 1)) then {
-        BANK = BANK + _reviveCost;
-        [1] call SOCK_fnc_updatePartial;
-    };
-}; 
-
 _revivable = _target getVariable ["Revive",false];
 if (_revivable) exitWith {};
 if (_target getVariable ["Reviving",objNull] == player) exitWith {hint localize "STR_Medic_AlreadyReviving";};

@@ -29,7 +29,7 @@ if (BANK > _reviveCost) then {
 player setDir (getDir life_corpse);
 player setPosASL (visiblePositionASL life_corpse);
 life_corpse setVariable ["realname",nil,true]; //Should correct the double name sinking into the ground.
-life_corpse setVariable ["id",nil,true];
+[getPlayerUID,nil,false] remoteExecCall ["TON_fnc_corpse",2];
 life_corpse setVariable ["Revive",nil,true];
 life_corpse setVariable ["name",nil,true];
 [life_corpse] remoteExecCall ["life_fnc_corpse",RANY];

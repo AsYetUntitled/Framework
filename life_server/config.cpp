@@ -58,6 +58,7 @@ class CfgFunctions {
             file = "\life_server\Functions\Systems";
             class managesc {};
             class cleanup {};
+            class corpse {};
             class huntingZone {};
             class getID {};
             class vehicleCreate {};

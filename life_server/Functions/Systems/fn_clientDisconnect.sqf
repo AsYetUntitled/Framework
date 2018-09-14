@@ -28,6 +28,14 @@ if (isNil "HC_UID" || {!(_uid isEqualTo HC_UID)}) then {
     };
 };
 
+{
+    _x params ["_corpseuid","_corpse"];
+    if (_corpseuid isEqualTo _uid) exitWith {
+        deleteVehicle _corpse;
+        diag_log format["This UID combat logged: %1",_corpseUID];
+    };
+} forEach server_corpses;
+
 private _containers = nearestObjects[_unit,["WeaponHolderSimulated"],5];
 {deleteVehicle _x} forEach _containers;
 deleteVehicle _unit;

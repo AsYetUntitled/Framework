@@ -23,4 +23,5 @@ player playMoveNow "AmovPpneMstpSrasWrflDnon";
 
 [] call life_fnc_setupActions;
 [_unit,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
+[getPlayerUID player,life_corpse,true] remoteExecCall ["TON_fnc_corpse",2];
 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
