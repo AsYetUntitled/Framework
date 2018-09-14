@@ -33,11 +33,7 @@ if (!isNull _source && {_source != _unit}) then {
                     };
                 };
             };
-            _damage = if (_part isEqualTo "") then {
-                damage _unit;
-            } else { 
-                _unit getHit _selection;
-            };
+            _damage = false;
         };
     };
 };
