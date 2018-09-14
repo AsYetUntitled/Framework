@@ -29,10 +29,14 @@ if (isNil "HC_UID" || {!(_uid isEqualTo HC_UID)}) then {
 };
 
 {
-    _x params ["_corpseuid","_corpse"];
+    _x params [
+        ["_corpseuid","",[""]],
+        ["_corpse",objNull,[objNull]]
+    ];
     if (_corpseuid isEqualTo _uid) exitWith {
         deleteVehicle _corpse;
         diag_log format["This UID combat logged: %1",_corpseUID];
+        server_corpses deleteAt _forEachIndex;
     };
 } forEach server_corpses;
 

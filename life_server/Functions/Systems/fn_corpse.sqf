@@ -1,25 +1,20 @@
 /*
-    File: fn_cleanupRequest.sqf
-    Author: Bryan "Tonic" Boardwine
+    File: fn_corpse.sqf
+    Author: DomT602
 
     Description:
-    Client sends a cleanup request when they hit Abort,
-    the server will then monitor when that client aborts and
-    delete the weapon holders.
+    Manipulates the server_corpses variable
 */
 params [
-    "_uid",
-    "_corpse",
-    "_action"    
+    ["_uid","",[""]],
+    ["_corpse",objNull,[objNull]]
 ];
 
-if (_action) then {
+if !(isNull _corpse) then {
     server_corpses pushBack [_uid,_corpse]
 } else {
-    {
-        _x params ["_corpseuid"];
-        if (_corpseuid isEqualTo _uid) exitWith {
-            server_corpses deleteAt _forEachIndex;
-        };
-    } forEach server_corpses;   
+    private _index = server_corpses findIf {(_x select 0) isEqualTo _uid};
+    if !(_index isEqualTo -1) then {
+        server_corpses deleteAt _index
+    };
 };

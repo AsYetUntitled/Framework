@@ -210,6 +210,8 @@ life_attachment_point = "Land_HelipadEmpty_F" createVehicle [0,0,0];
 life_attachment_point setPosASL [0,0,0];
 life_attachment_point setVectorDirAndUp [[0,1,0], [0,0,1]];
 
+server_corpses = [];
+
 // Sharing the point of attachment with all players.
 publicVariable "life_attachment_point";
 

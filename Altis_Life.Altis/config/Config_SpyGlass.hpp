@@ -281,7 +281,7 @@ class SpyGlass {
         "ton_fnc_federalupdate_meta","ton_fnc_fetchplayerhouses","ton_fnc_fetchplayerhouses_meta","ton_fnc_getid","ton_fnc_getid_meta","ton_fnc_getvehicles","ton_fnc_getvehicles_meta","ton_fnc_housecleanup","ton_fnc_housecleanup_meta","ton_fnc_huntingzone","ton_fnc_huntingzone_meta","ton_fnc_index","ton_fnc_inithouses","ton_fnc_inithouses_meta","ton_fnc_insertgang","ton_fnc_insertgang_meta","ton_fnc_isnumber",
         "ton_fnc_keymanagement","ton_fnc_keymanagement_meta","ton_fnc_managesc","ton_fnc_managesc_meta","ton_fnc_pickupaction","ton_fnc_pickupaction_meta","ton_fnc_player_query","ton_fnc_queryplayergang","ton_fnc_queryplayergang_meta","ton_fnc_removegang","ton_fnc_removegang_meta","ton_fnc_sellhouse","ton_fnc_sellhouse_meta","ton_fnc_spawnvehicle",
         "ton_fnc_spawnvehicle_meta","ton_fnc_spikestrip","ton_fnc_spikestrip_meta","ton_fnc_terrainsort","ton_fnc_terrainsort_meta","ton_fnc_updategang","ton_fnc_updategang_meta","ton_fnc_updatehousecontainers","ton_fnc_updatehousecontainers_meta","ton_fnc_updatehousetrunk","ton_fnc_updatehousetrunk_meta","ton_fnc_vehiclecreate","ton_fnc_vehiclecreate_meta","ton_fnc_vehicledead","ton_fnc_vehicledead_meta",
-        "ton_fnc_vehicledelete","ton_fnc_vehicledelete_meta","ton_fnc_vehiclestore","ton_fnc_vehiclestore_meta"
+        "ton_fnc_vehicledelete","ton_fnc_vehicledelete_meta","ton_fnc_vehiclestore","ton_fnc_vehiclestore_meta","ton_fnc_corpse","ton_fnc_corpse_meta"
     };
 
     SOCK_Functions[] = {
