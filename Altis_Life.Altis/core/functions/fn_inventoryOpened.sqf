@@ -13,6 +13,7 @@ params [
 ];
 
 scopeName "main";
+private _list = ["LandVehicle", "Ship", "Air"];
 
 {
     if (isNull _x) then {false breakOut "main"};
@@ -32,7 +33,7 @@ scopeName "main";
         };
     };
 
-    if (KINDOF_ARRAY(_x, ["LandVehicle", "Ship", "Air"])) exitWith {
+    if (KINDOF_ARRAY(_x, _list)) exitWith {
         if (!(_x in life_vehicles) && {locked _x isEqualTo 2}) exitWith {
             hint localize "STR_MISC_VehInventory";
             true breakOut "main";
