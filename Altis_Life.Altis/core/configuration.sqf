@@ -40,11 +40,6 @@ life_container_activeObj = objNull;
 life_disable_getIn = false;
 life_disable_getOut = false;
 life_admin_debug = false;
-life_preview_3D_vehicle_cam = objNull;
-life_preview_3D_vehicle_object = objNull;
-life_preview_light = objNull;
-life_pos_exist = false;
-life_pos_attach = [];
 life_civ_position = [];
 life_markers = false;
 life_markers_active = false;
@@ -52,22 +47,22 @@ life_canpay_bail = true;
 life_storagePlacing = scriptNull;
 
 //Settings
-life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast",true];
-life_settings_enableSidechannel = profileNamespace getVariable ["life_enableSidechannel",true];
-life_settings_tagson = profileNamespace getVariable ["life_settings_tagson",true];
-life_settings_revealObjects = profileNamespace getVariable ["life_settings_revealObjects",true];
-life_settings_viewDistanceFoot = profileNamespace getVariable ["life_viewDistanceFoot",1250];
-life_settings_viewDistanceCar = profileNamespace getVariable ["life_viewDistanceCar",1250];
-life_settings_viewDistanceAir = profileNamespace getVariable ["life_viewDistanceAir",1250];
+life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast", true];
+life_settings_enableSidechannel = profileNamespace getVariable ["life_enableSidechannel", true];
+life_settings_tagson = profileNamespace getVariable ["life_settings_tagson", true];
+life_settings_revealObjects = profileNamespace getVariable ["life_settings_revealObjects", true];
+life_settings_viewDistanceFoot = profileNamespace getVariable ["life_viewDistanceFoot", 1250];
+life_settings_viewDistanceCar = profileNamespace getVariable ["life_viewDistanceCar", 1250];
+life_settings_viewDistanceAir = profileNamespace getVariable ["life_viewDistanceAir", 1250];
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
-life_clothing_purchase = [-1,-1,-1,-1,-1];
+life_clothing_purchase = [-1, -1, -1, -1, -1];
 /*
 *****************************
 ****** Weight Variables *****
 *****************************
 */
-life_maxWeight = LIFE_SETTINGS(getNumber,"total_maxWeight");
+life_maxWeight = LIFE_SETTINGS(getNumber, "total_maxWeight");
 life_carryWeight = 0; //Represents the players current inventory weight (MUST START AT 0).
 
 /*
@@ -93,7 +88,7 @@ life_vehicles = [];
 */
 //Setup variable inv vars.
 {
-    missionNamespace setVariable [ITEM_VARNAME(configName _x),0];
+    missionNamespace setVariable [ITEM_VARNAME(configName _x), 0];
 } forEach ("true" configClasses (missionConfigFile >> "VirtualItems"));
 
 /* Setup the BLAH! */
@@ -101,5 +96,5 @@ life_vehicles = [];
     _varName = getText(_x >> "variable");
     _sideFlag = getText(_x >> "side");
 
-    missionNamespace setVariable [LICENSE_VARNAME(_varName,_sideFlag),false];
+    missionNamespace setVariable [LICENSE_VARNAME(_varName,_sideFlag), false];
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));
