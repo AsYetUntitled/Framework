@@ -205,6 +205,8 @@ publicVariable "life_server_isReady";
 /* Initialize hunting zone(s) */
 aiSpawn = ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
+server_corpses = [];
+
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";
