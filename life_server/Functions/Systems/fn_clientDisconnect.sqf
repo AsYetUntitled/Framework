@@ -25,17 +25,22 @@ if (life_save_civilian_position && {side _unit isEqualTo civilian}) then {
     };
 };
 
-{
-    _x params [
-        ["_corpseUID","",[""]],
-        ["_corpse",objNull,[objNull]]
-    ];
-    if (_corpseUID isEqualTo _uid) exitWith {
-        deleteVehicle _corpse;
-        diag_log format["%1 disconnected while dead.",_corpseUID];
-        server_corpses deleteAt _forEachIndex;
-    };
-} forEach server_corpses;
+if !(alive _unit) then {
+    diag_log format["%1 disconnected while dead.",_uid];
+} else {
+    {
+        _x params [
+            ["_corpseUID","",[""]],
+            ["_corpse",objNull,[objNull]]
+        ];
+        if (_corpseUID isEqualTo _uid) exitWith {
+            if (isNull _corpse) exitWith {server_corpses deleteAt _forEachIndex};
+            [_corpse] remoteExecCall ["life_fnc_corpse",0];
+            diag_log format["%1 disconnected while dead.",_corpseUID];
+            server_corpses deleteAt _forEachIndex;
+        };
+    } forEach server_corpses;
+};
 
 private _containers = nearestObjects[_unit,["WeaponHolderSimulated"],5];
 {deleteVehicle _x} forEach _containers;

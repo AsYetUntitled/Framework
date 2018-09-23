@@ -58,7 +58,6 @@ class CfgFunctions {
             file = "\life_server\Functions\Systems";
             class managesc {};
             class cleanup {};
-            class corpse {};
             class huntingZone {};
             class getID {};
             class vehicleCreate {};
@@ -71,6 +70,7 @@ class CfgFunctions {
             class federalUpdate {};
             class chopShopSell {};
             class clientDisconnect {};
+            class entityRespawned {};
             class cleanupRequest {};
             class keyManagement {};
             class vehicleUpdate {};

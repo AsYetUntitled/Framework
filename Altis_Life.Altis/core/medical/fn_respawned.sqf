@@ -48,7 +48,6 @@ if (!isNull life_corpse) then {
     {deleteVehicle _x;} forEach _containers; //Delete the containers.
     deleteVehicle life_corpse;
 };
-[getPlayerUID player] remoteExecCall ["TON_fnc_corpse",2];
 
 //Destroy our camera...
 life_deathCamera cameraEffect ["TERMINATE","BACK"];
