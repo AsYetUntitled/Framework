@@ -466,6 +466,21 @@ Cops in game who are not enrolled/accepted into the SPD are the lowest tier and 
                 "
         ]
     ];
+    
+    player createDiaryRecord ["policerules",
+        [
+            "Contracting",
+                "
+1. To contract a group or an individual you have to establish a stable bridge of communication between both parties.<br/>
+2. The contracted individual or group has to have a clean criminal record.<br/>
+3. The contracted individual or group needs to show no intent of robbing the bank them self.<br/>
+4. The contracted individual or group may not carry illegal firearms or clothing as they are still considered civilians.<br/>
+5. The contracted individual or group may not perform illegal actions while contracted, this does not include: 
+        apprehending trespassers at the federal reserve<br/>
+        being in the federal reserve<br/>
+                "
+        ]
+    ];
 
 // Illegal Items Section
     player createDiaryRecord ["illegalitems",
