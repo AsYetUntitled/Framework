@@ -7,10 +7,13 @@
 */
 private["_sleeptime"];
 _sleeptime = 60;
+
 if(playerSide != west) exitWith {};
+
 if(!([false,"panicbutton",1] call life_fnc_handleInv)) exitWith {
 hint "You can not do that without a panic button in your inventory."
 };
+
 closeDialog 0;
 hint "You have pressed your panic button.";
 [true,"panicbutton",1] call life_fnc_handleInv;
