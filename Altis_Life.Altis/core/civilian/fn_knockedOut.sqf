@@ -2,6 +2,7 @@
 /*
     File: fn_knockedOut.sqf
     Author: Bryan "Tonic" Boardwine
+    Editted by: Robin Withes
 
     Description:
     Starts and monitors the knocked out state.
@@ -17,6 +18,9 @@ if !(_target isEqualTo player) exitWith {};
 if (_who isEqualTo "") exitWith {};
 
 titleText[format [localize "STR_Civ_KnockedOut",_who],"PLAIN"];
+player setUnconscious true;
+sleep 3;
+player setUnconscious false;
 player playMoveNow "Incapacitated";
 disableUserInput true;
 
