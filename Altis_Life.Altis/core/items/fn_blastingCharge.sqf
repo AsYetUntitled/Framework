@@ -2,6 +2,7 @@
 /*
     File: fn_blastingCharge.sqf
     Author: Bryan "Tonic" Boardwine
+    Editted by: Robin Withes
 
     Description:
     Blasting charge is used for the federal reserve vault and nothing  more.. Yet.
@@ -29,5 +30,10 @@ _vault setVariable ["chargeplaced",true,true];
 [0,"STR_ISTR_Blast_Placed",true,[]] remoteExecCall ["life_fnc_broadcast",west];
 hint localize "STR_ISTR_Blast_KeepOff";
 
-[] remoteExec ["life_fnc_demoChargeTimer",[west,player]];
+[] remoteExec ["life_fnc_demoChargeTimer",west];
+if (isNil {(group player) getVariable "gang_name"}) then {
+    [] remoteExec ["life_fnc_demoChargeTimer",player];
+} else {
+    [] remoteExec ["life_fnc_demoChargeTimer",group player];
+};
 [] remoteExec ["TON_fnc_handleBlastingCharge",2];
