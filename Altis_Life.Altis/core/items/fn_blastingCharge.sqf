@@ -10,6 +10,7 @@
 private ["_vault","_handle"];
 _vault = param [0,ObjNull,[ObjNull]];
 
+if (playerSide != civilian) exitWith {};
 if (isNull _vault) exitWith {}; //Bad object
 if (typeOf _vault != "Land_CargoBox_V1_F") exitWith {hint localize "STR_ISTR_Blast_VaultOnly"};
 if (_vault getVariable ["chargeplaced",false]) exitWith {hint localize "STR_ISTR_Blast_AlreadyPlaced"};
