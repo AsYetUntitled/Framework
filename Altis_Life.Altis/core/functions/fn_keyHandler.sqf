@@ -160,7 +160,7 @@ switch (_code) do {
     //Knock out, this is experimental and yeah... (Shift + G)
     case 34: {
         if (_shift) then {_handled = true;};
-        if (_shift && playerSide isEqualTo civilian && !isNull cursorObject && cursorObject isKindOf "Man" && isPlayer cursorObject && alive cursorObject && cursorObject distance player < 4 && speed cursorObject < 1) then {
+        if (_shift && playerSide != independent && !isNull cursorObject && cursorObject isKindOf "Man" && isPlayer cursorObject && alive cursorObject && cursorObject distance player < 4 && ((speed cursorObject < 1 && playerSide isEqualTo civilian) || (speed cursorObject < 7 && playerSide isEqualTo west))) then {
             if ((animationState cursorObject) != "Incapacitated" && (currentWeapon player == primaryWeapon player || currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable ["restrained",false]) && !life_istazed && !life_isknocked) then {
                 [cursorObject] spawn life_fnc_knockoutAction;
             };
