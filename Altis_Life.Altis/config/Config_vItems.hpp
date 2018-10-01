@@ -125,7 +125,7 @@ class VirtualShops {
         name = "STR_Shops_Cop";
         side = "cop";
         conditions = "";
-        items[] = { "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "toolkit", "fuelFull", "defusekit", "defibrillator" };
+        items[] = { "panicbutton", "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "toolkit", "fuelFull", "defusekit", "defibrillator" };
     };
 };
 
@@ -145,6 +145,17 @@ class VirtualItems {
     //Virtual Items
 
     //Misc
+    class panicbutton {
+        variable = "panicbutton";
+        displayName = "STR_Item_Panicbutton";
+        weight = 2;
+        buyPrice = 0;
+        sellPrice = -1;
+        illegal = false;
+        edible = -1;
+        icon = "icons\ico_panicbutton.paa";
+    };
+
     class pickaxe {
         variable = "pickaxe";
         displayName = "STR_Item_Pickaxe";

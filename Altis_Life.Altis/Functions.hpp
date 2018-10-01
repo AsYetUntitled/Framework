@@ -116,6 +116,7 @@ class Life_Client_Core {
 
     class Cop {
         file = "core\cop";
+        class callBackup {};
         class bountyReceive {};
         class containerInvSearch {};
         class copInteractionMenu {};

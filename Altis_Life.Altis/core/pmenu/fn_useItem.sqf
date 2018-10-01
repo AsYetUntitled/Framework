@@ -28,6 +28,10 @@ switch (true) do {
         };
     };
 
+    case (_item isEqualTo "panicbutton"): {
+        0 spawn life_fnc_callBackup;
+    };
+    
     case (_item isEqualTo "boltcutter"): {
         [cursorObject] spawn life_fnc_boltcutter;
         closeDialog 0;

@@ -6737,6 +6737,9 @@
             <Portuguese>conjunto de ferramentas</Portuguese>
             <Polish>zestaw narzędzi</Polish>
         </Key>
+        <Key ID="STR_Item_Panicbutton">
+            <Original>Panic Button</Original>
+        </Key>
         <Key ID="STR_Item_Pickaxe">
             <Original>Pickaxe</Original>
             <Czech>Krumpáč</Czech>
