@@ -108,7 +108,7 @@ _vehicle lock 2;
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 _vehicle setVariable ["trunk_in_use",false,true];
-_vehicle setVariable ["vehicle_info_owners",[getPlayerUID player,profileName],true];
+_vehicle setVariable ["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 
