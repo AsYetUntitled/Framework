@@ -30,15 +30,16 @@ compileFinal "
 publicVariable "TON_fnc_player_query";
 publicVariable "TON_fnc_index";
 
-TON_fnc_isnumber =
+TON_fnc_isNumber =
 compileFinal "
-    private [""_valid"",""_array""];
-    _valid = [""0"",""1"",""2"",""3"",""4"",""5"",""6"",""7"",""8"",""9""];
-    _array = [_this select 0] call KRON_StrToArray;
-    _return = true;
-
+    params [
+        ['_string','',['']]
+    ];
+    if (_string isEqualTo '') exitWith {};
+    private _array = toArray _string;
+    private _return = true;
     {
-        if (!(_x in _valid)) exitWith {
+        if !(str(_x) in ['0','1','2','3','4','5','6','7','8','9']) exitWith {
             _return = false;
         };
     } forEach _array;
