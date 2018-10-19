@@ -61,7 +61,7 @@ private _shortest = 100000;
     private _distance = _vehicle distance (getMarkerPos _x);
     if (_distance < _shortest) then {_shortest = _distance};
 } forEach ["fuel_storage_1","fuel_storage_2"];
-if (_distance < 1000) exitWith {titleText [localize "STR_FuelTank_PipeLine","PLAIN"]; life_action_inUse = false;};
+if (_shortest < 1000) exitWith {titleText [localize "STR_FuelTank_PipeLine","PLAIN"]; life_action_inUse = false;};
 
 private _pricem = getNumber(missionConfigFile >> "Life_Settings" >> "fuelTank_winMultiplier");
 private _price = floor((((floor(_shortest / 100) * 100) / 1337) * _pricem) * 100) / 100;
