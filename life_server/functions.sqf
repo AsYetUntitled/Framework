@@ -35,7 +35,7 @@ compileFinal "
     params [
         ['_string','',['']]
     ];
-    if (_string isEqualTo '') exitWith {};
+    if (_string isEqualTo '') exitWith {false};
     private _array = toArray _string;
     private _return = true;
     {
