@@ -14,6 +14,7 @@ private _containers = [_query,2,true] call DB_fnc_asyncCall;
 
 {
     _x params ["_pos"];
+    _pos = parseSimpleArray _pos;
     {
         deleteVehicle _x;
     } forEach (nearestObjects[_pos,["Box_IND_Grenades_F","B_supplyCrate_F"],12]);
