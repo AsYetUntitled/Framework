@@ -26,7 +26,7 @@ if (_vehTank isEqualTo []) exitWith {
 };
 
 _vehTank params [
-    ["_fuelSpace",0,[0]],
+    ["_fuelSpace",19500,[0]],
     ["_fuelState",0,[0]]
 ];
 if (_fuelState isEqualTo 0) exitWith {
