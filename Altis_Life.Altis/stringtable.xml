@@ -5629,6 +5629,17 @@
             <Portuguese>Você trancou o veículo.</Portuguese>
             <Polish>Zablokowałeś pojazd</Polish>
         </Key>
+        <Key ID="STR_MISC_VehLocal">
+            <Original>This can only be done by the last driver of this vehicle.</Original>
+            <Czech>This can only be done by the last driver of this vehicle.</Czech>
+            <Spanish>This can only be done by the last driver of this vehicle.</Spanish>
+            <Russian>This can only be done by the last driver of this vehicle.</Russian>
+            <German>This can only be done by the last driver of this vehicle.</German>
+            <French>This can only be done by the last driver of this vehicle.</French>
+            <Italian>This can only be done by the last driver of this vehicle.</Italian>
+            <Portuguese>This can only be done by the last driver of this vehicle.</Portuguese>
+            <Polish>This can only be done by the last driver of this vehicle.</Polish>
+        </Key>
         <Key ID="STR_MISC_SirensON">
             <Original>Sirens On</Original>
             <Czech>Na sirény</Czech>
