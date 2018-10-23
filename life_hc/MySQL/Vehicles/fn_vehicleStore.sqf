@@ -13,7 +13,8 @@ _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;
 _unit = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 _storetext = [_this,3,"",[""]] call BIS_fnc_param;
-_ownerID = _unit getVariable ["life_clientID",-1];
+private _ownerID = remoteExecutedOwner;
+if (_ownerID isEqualTo 0) exitWith {};
 _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.

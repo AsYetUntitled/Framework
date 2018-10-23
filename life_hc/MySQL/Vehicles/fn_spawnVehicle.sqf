@@ -19,9 +19,8 @@ params [
     "_spawntext"
 ];
 
-
-
-private _ownerID = _unit getVariable ["life_clientID",-1];
+private _ownerID = remoteExecutedOwner;
+if (_ownerID isEqualTo 0) exitWith {};
 private _unit_return = _unit;
 private _name = name _unit;
 private _side = side _unit;

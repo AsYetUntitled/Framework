@@ -122,9 +122,6 @@ life_fnc_moveIn = compileFinal
     life_disable_getOut = true;
 ";
 
-life_fnc_RequestClientId = player;
-publicVariableServer "life_fnc_RequestClientId"; //Variable OwnerID for HeadlessClient
-
 [] spawn life_fnc_survival;
 
 [] spawn {

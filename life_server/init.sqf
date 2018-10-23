@@ -146,13 +146,6 @@ fed_bank setVariable ["safe",count playableUnits,true];
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
 [] call compile preprocessFileLineNumbers "\life_server\functions.sqf";
 
-/* Set OwnerID players for Headless Client */
-TON_fnc_requestClientID =
-{
-    (_this select 1) setVariable ["life_clientID", owner (_this select 1), true];
-};
-"life_fnc_RequestClientId" addPublicVariableEventHandler TON_fnc_requestClientID;
-
 /* Event handler for logs */
 "money_log" addPublicVariableEventHandler {diag_log (_this select 1)};
 "advanced_log" addPublicVariableEventHandler {diag_log (_this select 1)};

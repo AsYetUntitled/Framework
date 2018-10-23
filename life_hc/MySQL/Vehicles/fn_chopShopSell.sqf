@@ -14,7 +14,8 @@ _vehicle = [_this,1,objNull,[objNull]] call BIS_fnc_param;
 _price = [_this,2,500,[0]] call BIS_fnc_param;
 _cash = [_this,3,0,[0]] call BIS_fnc_param;
 
-_ownerUnit = _unit getVariable "life_clientID";
+private _ownerUnit = remoteExecutedOwner;
+if (_ownerUnit isEqualTo 0) exitWith {};
 
 //Error checks
 if (isNull _vehicle || isNull _unit) exitWith  {
