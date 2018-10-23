@@ -36,7 +36,7 @@ compileFinal "
         ['_string','',['']]
     ];
     if (_string isEqualTo '') exitWith {false};
-    private _array = toArray _string;
+    private _array = _string splitString '';
     private _return = true;
     {
         if !(str(_x) in ['0','1','2','3','4','5','6','7','8','9']) exitWith {
@@ -46,7 +46,7 @@ compileFinal "
     _return;
 ";
 
-publicVariable "TON_fnc_isnumber";
+publicVariable "TON_fnc_isNumber";
 
 TON_fnc_clientGangKick =
 compileFinal "
