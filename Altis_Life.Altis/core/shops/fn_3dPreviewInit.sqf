@@ -30,11 +30,12 @@ life_3dPreview_dragging = false;
 life_3dPreview_evh_down = _display displayAddEventHandler ["MouseButtonDown", {life_3dPreview_dragging = true}];
 life_3dPreview_evh_up = _display displayAddEventHandler ["MouseButtonUp", {life_3dPreview_dragging = false}];
 
+
 life_3dPreview_evh_move = _display displayAddEventHandler ["MouseMoving", {
     params ["", "_dx", "_dy"];
     if (life_3dPreview_dragging) then {
-        _dir = vectorDir life_3dPreview_object;
-        _newdir = [(_dir select 0) * cos (_dx * 5) - (_dir select 1) * sin (_dx * 5), (_dir select 0) * sin (_dx * 5) + (_dir select 1) * cos (_dx * 5), 0];
+        private _dir = vectorDir life_3dPreview_object;
+        private _newdir = [(_dir select 0) * cos _dx - (_dir select 1) * sin _dx, (_dir select 0) * sin _dx + (_dir select 1) * cos _dx, 0];
         life_3dPreview_object setVectorDir vectorNormalized _newdir;
     };
 }];
