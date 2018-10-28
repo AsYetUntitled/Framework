@@ -9,8 +9,6 @@
 private ["_timeStamp","_extDBNotLoaded"];
 if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 0) exitWith {};
 
-[] execVM "\life_hc\KRON_Strings.sqf";
-
 _extDBNotLoaded = "";
 
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};

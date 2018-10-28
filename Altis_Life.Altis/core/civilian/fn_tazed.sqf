@@ -14,7 +14,7 @@ params [
 
 if (isNull _unit || isNull _shooter) exitWith {player allowDamage true; life_istazed = false;};
 
-if (_shooter isKindOf "Man" && alive player) then {
+if (_shooter isKindOf "CAManBase" && alive player) then {
     if (!life_istazed) then {
         life_istazed = true;
         _curWep = currentWeapon player;
