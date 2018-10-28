@@ -10,34 +10,23 @@
 */
 disableSerialization;
 
-private _escSync = {
+private _escSync = { 
     disableSerialization;
-
-    private _syncManager = {
-        disableSerialization;
-        private _abortButton = CONTROL(49,104);
-        private _abortTime = LIFE_SETTINGS(getNumber,"escapeMenu_timer");
-        private _timeStamp = time + _abortTime;
-
-        waitUntil {
-            _abortButton ctrlSetText format [localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
-            _abortButton ctrlCommit 0;
-            if (dialog) then { closeDialog 0; };
-
-            round(_timeStamp - time) <= 0 || {isNull (findDisplay 49)}
-        };
-
-        _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
-        _abortButton ctrlCommit 0;
-    };
-
     private _abortButton = CONTROL(49,104);
+    private _abortTime = LIFE_SETTINGS(getNumber,"escapeMenu_timer");
+    private _timeStamp = time + _abortTime;
 
-    if (_this) then {
-        private _thread = [] spawn _syncManager;
-        waitUntil {scriptDone _thread || {isNull (findDisplay 49)}};
-        _abortButton ctrlEnable true;
+    waitUntil {
+        _abortButton ctrlSetText format [localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
+        _abortButton ctrlCommit 0;
+        if (dialog && {isNull (findDisplay 7300)}) then {closeDialog 0};
+
+        round(_timeStamp - time) <= 0 || {isNull (findDisplay 49)}
     };
+
+    _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
+    _abortButton ctrlCommit 0;
+    _abortButton ctrlEnable true;
 };
 
 private _canUseControls = {
@@ -47,7 +36,7 @@ private _canUseControls = {
 for "_i" from 0 to 1 step 0 do {
     waitUntil {!isNull (findDisplay 49)};
     private _abortButton = CONTROL(49,104);
-    _abortButton buttonSetAction "[] call SOCK_fnc_updateRequest; [player] remoteExec [""TON_fnc_cleanupRequest"",2];";
+    _abortButton buttonSetAction "call SOCK_fnc_updateRequest; [player] remoteExec [""TON_fnc_cleanupRequest"",2];";
     private _respawnButton = CONTROL(49,1010);
     private _fieldManual = CONTROL(49,122);
     private _saveButton = CONTROL(49,103);
@@ -64,15 +53,13 @@ for "_i" from 0 to 1 step 0 do {
 
     //Block off our buttons first.
     _abortButton ctrlEnable false;
-    _respawnButton ctrlEnable false;
     _fieldManual ctrlEnable false; //Never re-enable, blocks an old script executor.
     _fieldManual ctrlShow false;
 
-    _usebleCtrl = call _canUseControls;
-    _usebleCtrl spawn _escSync;
-
-    if (_usebleCtrl) then {
-        _respawnButton ctrlEnable true; //Enable the button.
+    if (call _canUseControls) then {
+        [] spawn _escSync;
+    } else {
+        _respawnButton ctrlEnable false;
     };
 
     waitUntil {isNull (findDisplay 49) || {!alive player}};
