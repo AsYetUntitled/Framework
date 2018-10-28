@@ -1,10 +1,10 @@
 class Life_Vehicle_Shop_v2_3D {
     idd = 2300;
-    name="life_vehicle_shop";
+    name = "life_vehicle_shop";
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = "ctrlShow [2330,false];";
-    onUnLoad = "[] call life_fnc_vehicleShopEnd3DPreview";
+    onLoad = "call life_fnc_3dPreviewInit; ctrlShow [2330,false];";
+    onUnLoad = "call life_fnc_3dPreviewExit;";
 
     class controlsBackground {
         class MainBackground: Life_RscText {
@@ -100,14 +100,14 @@ class Life_Vehicle_Shop_v2_3D {
 
         class ColorList: Life_RscCombo {
             idc = 2304;
-            onLBSelChanged = "[] call life_fnc_vehicleColor3DRefresh;";
+            onLBSelChanged = "call life_fnc_vehicleColor3DRefresh;";
             x = 0.0204687 * safezoneW + safezoneX;
             y = 0.6034 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;
             h = 0.0219957 * safezoneH;
         };
 
-        class vehicleInfomationList: Life_RscStructuredText    {
+        class vehicleInfomationList: Life_RscStructuredText {
             idc = 2303;
             text = "";
             sizeEx = 0.035;

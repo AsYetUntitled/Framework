@@ -1,5 +1,5 @@
 <!--
-Please review the guidelines for contributing to this repository. The link is above.
+Please review the guidelines for contributing to this repository. The link is to the right under 'helpful resources'.
 If you are reporting a bug then you must use the provided issue template.
 -->
 

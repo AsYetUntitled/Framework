@@ -31,36 +31,35 @@ DROP PROCEDURE IF EXISTS `deleteOldWanted`;
 DELIMITER $$
 --
 -- Procedures
--- Edit arma3 to match a user in MySQL
--- For external databases: Edit localhost to match arma3server IP
+-- CURRENT_USER function returns the name of the current user in the SQL Server database.
 --
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `resetLifeVehicles`()
 BEGIN
   UPDATE `vehicles` SET `active`= 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteDeadVehicles`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteDeadVehicles`()
 BEGIN
   DELETE FROM `vehicles` WHERE `alive` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldHouses`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldHouses`()
 BEGIN
   DELETE FROM `houses` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldGangs`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldGangs`()
 BEGIN
   DELETE FROM `gangs` WHERE `active` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldContainers`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldContainers`()
 BEGIN
   DELETE FROM `containers` WHERE `owned` = 0;
 END$$
 
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `deleteOldWanted`()
+CREATE DEFINER=CURRENT_USER PROCEDURE `deleteOldWanted`()
 BEGIN
   DELETE FROM `wanted` WHERE `active` = 0;
 END$$
@@ -213,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `wanted` (
 --
 -- Creates default user `arma3` with password `changeme` unless it already exists
 -- Granting permissions to user `arma3`, created below
--- Reloads the privileges from the grant tables in the mysql system database.
+-- Reloads the privileges from the grant tables in the MySQL system database.
 --
 
 CREATE USER IF NOT EXISTS `arma3`@`localhost` IDENTIFIED BY 'changeme';
