@@ -14,7 +14,8 @@ params [
 ];
 
 
-if (_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
+_jailmultiplier = LIFE_SETTINGS(getNumber,"jail_time_multiplier");
+if (_bad) then { _time = time + (_jailmultiplier * 60) + 900; } else { _time = time + (_jailmultiplier * 60); };
 
 if (count _ret > 0) then { life_bail_amount = (_ret select 2); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
 _esc = false;
