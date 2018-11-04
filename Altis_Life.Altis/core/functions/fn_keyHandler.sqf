@@ -6,12 +6,8 @@
 *    Description:
 *    Main key handler for event 'keyDown'.
 */
-private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_interruptionKeys"];
-_ctrl = _this select 0;
-_code = _this select 1;
-_shift = _this select 2;
-_ctrlKey = _this select 3;
-_alt = _this select 4;
+private ["_handled","_veh","_locked","_interactionKey","_interruptionKeys"];
+params["_ctrl", "_code", "_shift", "_ctrlKey", "_alt"];
 _speed = speed cursorObject;
 _handled = false;
 
