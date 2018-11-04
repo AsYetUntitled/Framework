@@ -1134,7 +1134,7 @@ class Life_RscCombo {
     maxHistoryDelay = 1;
     colorBackground[] = {0.4,0.4,0.4,0.4};
     colorSelectBackground[] = {1, 1, 1, 0.7};
-    colow_Rscrollbar[] = {1, 0, 0, 1};
+    colorScrollbar[] = {1, 0, 0, 1};
     soundSelect[] = {
             "", 0.000000, 1
     };

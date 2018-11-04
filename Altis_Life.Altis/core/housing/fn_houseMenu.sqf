@@ -89,17 +89,14 @@ if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
 };
 
 if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner"}) then {
-
-    private _isHouse = false;
-
-    if (isClass (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget))) then {
-        _Btn1 ctrlSetText localize "STR_pInAct_BuyHouse";
-        _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse;";
-        _isHouse = true;
-    } else {
-        _Btn1 ctrlSetText localize "STR_pInAct_BuyGarage";
-        _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse;";
-    };
+    private _isHouse = (isClass (missionConfigFile >> "Housing" >> worldName >> typeOf _curTarget));
+    private _buildingPurchaseString = [
+        "STR_pInAct_BuyGarage",
+        "STR_pInAct_BuyHouse"
+    ] select _isHouse;
+    
+    _Btn1 ctrlSetText localize _buildingPurchaseString;
+    _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse; closeDialog 0";
     _Btn1 ctrlShow true;
 
     if (!isNil {_curTarget getVariable "house_owner"}) then {
@@ -109,7 +106,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
     if (_isHouse) then {
         if (getNumber (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget) >> "canGarage") isEqualTo 1) then {
             _Btn2 ctrlSetText localize "STR_pInAct_GarageExt";
-            _Btn2 buttonSetAction "hint format [localize 'STR_pInAct_GarageExtNOTF',LIFE_SETTINGS(getNumber,'houseGarage_buyPrice')];";
+            _Btn2 buttonSetAction 'hint format [localize "STR_pInAct_GarageExtNOTF",[LIFE_SETTINGS(getNumber,"houseGarage_buyPrice")] call life_fnc_numberText];';
             _Btn2 ctrlShow true;
         };
     };
@@ -120,7 +117,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
         _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouse; closeDialog 0;";
         _Btn1 ctrlShow true;
 
-        if (((_curTarget getVariable "house_owner") select 0) != getPlayerUID player) then {
+        if !(((_curTarget getVariable "house_owner") select 0) isEqualTo getPlayerUID player) then {
             _Btn1 ctrlEnable false;
         };
 

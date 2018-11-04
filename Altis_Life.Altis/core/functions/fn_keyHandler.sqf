@@ -6,7 +6,7 @@
 *    Description:
 *    Main key handler for event 'keyDown'.
 */
-private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys"];
+private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_interruptionKeys"];
 _ctrl = _this select 0;
 _code = _this select 1;
 _shift = _this select 2;
@@ -16,7 +16,6 @@ _speed = speed cursorObject;
 _handled = false;
 
 _interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
-_mapKey = (actionKeys "ShowMap" select 0);
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
@@ -44,12 +43,48 @@ if (!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) 
     true;
 };
 
-if (life_container_active) then {
-    switch (_code) do {
-        //space key
-        case 57: {
-            [] spawn life_fnc_placestorage;
+if (life_container_active) exitwith {
+    //ignore movement actions
+    private _allowedMoves = [
+        "MoveForward",
+        "MoveBack",
+        "TurnLeft",
+        "TurnRight",
+        "MoveFastForward",
+        "MoveSlowForward",
+        "turbo",
+        "TurboToggle",
+        "MoveLeft",
+        "MoveRight",
+        "WalkRunTemp",
+        "WalkRunToggle",
+        "AdjustUp",
+        "AdjustDown",
+        "AdjustLeft",
+        "AdjustRight",
+        "Stand",
+        "Crouch",
+        "Prone",
+        "MoveUp",
+        "MoveDown",
+        "LeanLeft",
+        "LeanLeftToggle",
+        "LeanRight",
+        "LeanRightToggle"
+    ];
+    if (({_code in (actionKeys _x)} count _allowedMoves) > 0) exitwith {
+        false;
+    };
+    //handle other keys
+    if (_code isEqualTo 57) then {//space key -> place
+        life_storagePlacing = 0 spawn life_fnc_placestorage;
+    } else { //other keys -> abort
+        if (!isNull life_storagePlacing) exitWith {}; //already placing down a box
+        if (!isNull life_container_activeObj) then {
+            deleteVehicle life_container_activeObj;
+            titleText [localize "STR_NOTF_PlaceContainerAbort", "PLAIN"];
         };
+        life_container_active = false;
     };
     true;
 };
@@ -87,15 +122,6 @@ switch (_code) do {
         };
     };
 
-    //Map Key
-    case _mapKey: {
-        switch (playerSide) do {
-            case west: {if (!visibleMap) then {[] spawn life_fnc_copMarkers;}};
-            case independent: {if (!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
-            case civilian: {if (!visibleMap) then {[] spawn life_fnc_civMarkers;}};
-        };
-    };
-
     //Holster / recall weapon. (Shift + H)
     case 35: {
         if (_shift && !_ctrlKey && !(currentWeapon player isEqualTo "")) then {
@@ -126,7 +152,7 @@ switch (_code) do {
     //Restraining (Shift + R)
     case 19: {
         if (_shift) then {_handled = true;};
-        if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
+        if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "CAManBase"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
             [] call life_fnc_restrainAction;
         };
     };
@@ -134,7 +160,7 @@ switch (_code) do {
     //Knock out, this is experimental and yeah... (Shift + G)
     case 34: {
         if (_shift) then {_handled = true;};
-        if (_shift && playerSide isEqualTo civilian && !isNull cursorObject && cursorObject isKindOf "Man" && isPlayer cursorObject && alive cursorObject && cursorObject distance player < 4 && speed cursorObject < 1) then {
+        if (_shift && playerSide isEqualTo civilian && !isNull cursorObject && cursorObject isKindOf "CAManBase" && isPlayer cursorObject && alive cursorObject && cursorObject distance player < 4 && speed cursorObject < 1) then {
             if ((animationState cursorObject) != "Incapacitated" && (currentWeapon player == primaryWeapon player || currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable ["restrained",false]) && !life_istazed && !life_isknocked) then {
                 [cursorObject] spawn life_fnc_knockoutAction;
             };
@@ -143,7 +169,7 @@ switch (_code) do {
 
     //T Key (Trunk)
     case 20: {
-        if (!_alt && !_ctrlKey && !dialog && {!life_action_inUse}) then {
+        if (!_alt && {!_ctrlKey} && {!dialog} && {!life_action_inUse} && {!(player getVariable ["playerSurrender",false])} && {!(player getVariable ["restrained",false])} && {!life_isknocked} && {!life_istazed}) then {
             if (!(isNull objectParent player) && alive vehicle player) then {
                 if ((vehicle player) in life_vehicles) then {
                     [vehicle player] spawn life_fnc_openInventory;
@@ -210,14 +236,21 @@ switch (_code) do {
             if ((_veh getVariable "siren")) then {
                 titleText [localize "STR_MISC_SirensOFF","PLAIN"];
                 _veh setVariable ["siren",false,true];
+                if !(isNil {(_veh getVariable "sirenJIP")}) then {
+                    private _jip = _veh getVariable "sirenJIP";
+                    _veh setVariable ["sirenJIP",nil,true];
+                    remoteExec ["",_jip]; //remove from JIP queue
+                };
             } else {
                 titleText [localize "STR_MISC_SirensON","PLAIN"];
                 _veh setVariable ["siren",true,true];
+                private "_jip";
                 if (playerSide isEqualTo west) then {
-                    [_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
+                    _jip = [_veh] remoteExec ["life_fnc_copSiren",RCLIENT,true];
                 } else {
-                    [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+                    _jip = [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT,true];
                 };
+                _veh setVariable ["sirenJIP",_jip,true];
             };
         };
     };
@@ -313,7 +346,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',1];
                         };
                         systemChat localize "STR_MISC_VehUnlock";
-                        [_veh,"unlockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"unlockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
                     } else {
                         if (local _veh) then {
                             _veh lock 2;
@@ -363,7 +396,7 @@ switch (_code) do {
                             _veh animateDoor ['DoorR_Back_Open ',0];
                         };
                         systemChat localize "STR_MISC_VehLock";
-                        [_veh,"lockCarSound"] remoteExec ["life_fnc_say3D",RANY];
+                        [_veh,"lockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
                     };
                 };
             };

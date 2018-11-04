@@ -1,4 +1,8 @@
 #include "..\script_macros.hpp"
+
+#define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})
+#define RCLIENT -2
+
 /*
     File: fn_initSpy.sqf
     Author:
@@ -9,10 +13,8 @@
 
     Will also become a standalone system which is why it's setup like this.
 */
-private ["_binConfigPatches","_cfgPatches","_endM"];
-if (isServer && !hasInterface) exitWith {}; //Server doesn't need to know.
-#define CONST(var1,var2) var1 = compileFinal (if (var2 isEqualType "") then {var2} else {str(var2)})
-#define RCLIENT -2
+
+if (isServer && !hasInterface) exitWith {};
 
 CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
 CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
@@ -56,7 +58,8 @@ CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
     "JSRS2_FighterPlane3","JSRS2_FV720_Mora","JSRS2_Hunter","JSRS2_Ifrit","JSRS2_IFV6a_Cheetah","JSRS2_IFV6c_Panther","JSRS2_M2A1_Slammer","JSRS2_M4_Scorcher","JSRS2_M5_Sandstorm","JSRS2_MBT52_Kuma","JSRS2_Mi48_Kajman","JSRS2_MSE3_Marid","JSRS2_Offroad",
     "JSRS2_Po30_Orca","JSRS2_Strider","JSRS2_SUV","JSRS2_T100_Varsuk","JSRS2_Truck1","JSRS2_Truck2","JSRS2_UAV_1","JSRS2_UH80_GhostHawk","JSRS2_Van","JSRS2_WY55_Hellcat","JSRS2_ZSU39_Tigris","cba_xeh_a3"]
 */
-_patchList =
+
+private _patchList =
 ["life_server","Core","A3Data","A3_Functions_F","A3_Functions_F_EPA","A3_Functions_F_EPC","A3_Data_F","A3_Data_F_Hook","A3_Data_F_ParticleEffects","A3_Dubbing_F","A3_Dubbing_F_Beta","A3_Dubbing_F_Gamma","A3_Dubbing_Radio_F",
 "A3_Dubbing_Radio_F_Data_ENG","A3_Dubbing_Radio_F_Data_ENGB","A3_Dubbing_Radio_F_Data_GRE","A3_Dubbing_Radio_F_Data_PER","A3_Dubbing_Radio_F_Data_VR","A3_Editor_F","A3_EditorPreviews_F","A3_Functions_F_Curator","A3_Language_F",
 "A3_Language_F_Beta","A3_Language_F_Gamma","A3_LanguageMissions_F","A3_LanguageMissions_F_Beta","A3_LanguageMissions_F_Gamma","A3_Misc_F","A3_Misc_F_Helpers","A3_Modules_F","A3_Modules_F_Data","A3_Modules_F_DynO",
@@ -138,29 +141,29 @@ _patchList =
 "A3_Weapons_F_Mark_LongRangeRifles_DMR_02","A3_Weapons_F_Mark_LongRangeRifles_DMR_03","A3_Weapons_F_Mark_LongRangeRifles_DMR_04","A3_Weapons_F_Mark_LongRangeRifles_DMR_05","A3_Weapons_F_Mark_LongRangeRifles_DMR_06",
 "A3_Weapons_F_Mark_LongRangeRifles_EBR","A3_Weapons_F_Mark_LongRangeRifles_GM6","A3_Weapons_F_Mark_LongRangeRifles_GM6_Camo","A3_Weapons_F_Mark_LongRangeRifles_M320","A3_Weapons_F_Mark_LongRangeRifles_M320_Camo",
 "A3_Weapons_F_Mark_Machineguns_M200","A3_Weapons_F_Mark_Machineguns_MMG_01","A3_Weapons_F_Mark_Machineguns_MMG_02","A3_Weapons_F_Mark_Machineguns_Zafir","A3_Weapons_F_Mark_Rifles_Khaybar","A3_Weapons_F_Mark_Rifles_MK20",
-"A3_Weapons_F_Mark_Rifles_MX","A3_Weapons_F_Mark_Rifles_SDAR","A3_Weapons_F_Mark_Rifles_TRG20","A3_Anims_F_Mark","A3_Anims_F_Mark_Deployment","A3_Characters_F_Mark","A3_Data_F_Mark_Loadorder","A3_Language_F_Exp_A",
-"A3_Data_F_Exp_A","A3_Functions_F_Exp_A","A3_LanguageMissions_F_Exp_A","A3_Missions_F_Exp_A","A3_Missions_F_Exp_A_Data","A3_Modules_F_Exp_A","A3_Props_F_Exp_A","A3_Props_F_Exp_A_Military","A3_Props_F_Exp_A_Military_Equipment",
-"A3_Sounds_F_Exp_A","A3_Structures_F_Exp_A","A3_Structures_F_Exp_A_VR_Blocks","A3_Structures_F_Exp_A_VR_Helpers","A3_Ui_F_Exp_A","A3_Anims_F_Exp_A","A3_Data_F_Exp_A_Virtual","A3_Data_F_Exp_A_Loadorder","A3_Data_F_Exp_B",
-"A3_Language_F_Exp_B","A3_3DEN","A3_3DEN_Language","A3_BaseConfig_F","3DEN","A3_Animals_F_Chicken","A3_Animals_F_Dog","A3_Animals_F_Goat","A3_Animals_F_Sheep","A3_Armor_F_Panther","A3_Armor_F_AMV","A3_Armor_F_Marid",
-"A3_Armor_F_APC_Wheeled_03","A3_Armor_F_Slammer","A3_Armor_F_T100K","A3_Boat_F_SDV_01","A3_Boat_F_EPC_Submarine_01_F","A3_Boat_F_Civilian_Boat","A3_Boat_F_Trawler","A3_Characters_F_INDEP","A3_Air_F_Gamma_UAV_01",
-"A3_Air_F_Gamma_UAV_02","A3_UAV_F_Characters_F_Gamma","A3_Soft_F_Crusher_UGV","A3_UAV_F_Weapons_F_Gamma_Ammoboxes","A3_Weapons_F_gamma_Items","A3_Map_Altis_Scenes","A3_Map_Stratis_Scenes","Map_VR","A3_Map_VR_Scenes",
-"A3_Modules_F_Heli_SpawnAi","A3_Modules_F_Mark_Objectives","A3_Signs_F_AD","A3_Soft_F_Quadbike","A3_Soft_F_MRAP_03","A3_Soft_F_Beta_Quadbike","A3_Soft_F_HEMTT","A3_Soft_F_TruckHeavy","A3_Soft_F_Bootcamp_Quadbike",
-"A3_Soft_F_Bootcamp_Truck","A3_Soft_F_Car","A3_Soft_F_Gamma_Offroad","A3_Soft_F_Gamma_Quadbike","A3_Soft_F_SUV","A3_Soft_F_Gamma_HEMTT","A3_Soft_F_Gamma_TruckHeavy","A3_Soft_F_Truck","A3_Soft_F_Heli_Car",
-"A3_Soft_F_Heli_Quadbike","A3_Soft_F_Heli_SUV","A3_Soft_F_Heli_Crusher_UGV","A3_Soft_F_Heli_Truck","A3_Static_F_Gamma_AA","A3_Static_F_Gamma_AT","A3_Structures_F_Items_Cans","A3_Weapons_F_NATO","A3_Weapons_F_CSAT",
-"A3_Weapons_F_AAF","A3_weapons_F_FIA","A3_Weapons_F_ItemHolders","A3_Weapons_F_Headgear","A3_Weapons_F_Uniforms","A3_Weapons_F_Vests","A3_Weapons_F_Launchers_LAW","A3_Weapons_F_EPA_LongRangeRifles_DMR_01","A3_Weapons_F_EBR",
-"A3_Weapons_F_EPB_Rifles_MX_Black","A3_Weapons_F_Pistols_PDW2000","A3_Weapons_F_Rifles_Vector","a3_weapons_f_rifles_SMG_02","A3_Weapons_F_beta_EBR","A3_Weapons_F_EPA_LongRangeRifles_GM6","A3_Weapons_F_EPB_LongRangeRifles_M320",
-"A3_Weapons_F_Bootcamp_LongRangeRifles_GM6","A3_Weapons_F_Bootcamp_LongRangeRifles_M320","A3_Weapons_F_EPB_LongRangeRifles_GM3","A3_Weapons_F_EPA_EBR","A3_Weapons_F_EPA_Rifles_MX","A3_Weapons_F_Mark_EBR",
-"CuratorOnly_Air_F_Beta_Heli_Attack_01","CuratorOnly_Air_F_Beta_Heli_Attack_02","CuratorOnly_Air_F_Gamma_UAV_01","CuratorOnly_Armor_F_AMV","CuratorOnly_armor_f_beta_APC_Tracked_02","CuratorOnly_Armor_F_Marid",
-"CuratorOnly_Armor_F_Panther","CuratorOnly_Armor_F_Slammer","CuratorOnly_Armor_F_T100K","CuratorOnly_Boat_F_Boat_Armed_01","CuratorOnly_Characters_F_BLUFOR","CuratorOnly_Characters_F_Common","CuratorOnly_Characters_F_OPFOR",
-"CuratorOnly_Modules_F_Curator_Animals","CuratorOnly_Modules_F_Curator_Chemlights","CuratorOnly_Modules_F_Curator_Effects","CuratorOnly_Modules_F_Curator_Environment","CuratorOnly_Modules_F_Curator_Flares",
-"CuratorOnly_Modules_F_Curator_Lightning","CuratorOnly_Modules_F_Curator_Mines","CuratorOnly_Modules_F_Curator_Objectives","CuratorOnly_Modules_F_Curator_Ordnance","CuratorOnly_Modules_F_Curator_Smokeshells",
-"CuratorOnly_Signs_F","CuratorOnly_Soft_F_Crusher_UGV","CuratorOnly_Soft_F_MRAP_01","CuratorOnly_Soft_F_MRAP_02","CuratorOnly_Soft_F_Quadbike","CuratorOnly_Static_F_Gamma","CuratorOnly_Static_F_Mortar_01",
-"CuratorOnly_Structures_F_Civ_Ancient","CuratorOnly_Structures_F_Civ_Camping","CuratorOnly_Structures_F_Civ_Garbage","CuratorOnly_Structures_F_EPA_Civ_Constructions","CuratorOnly_Structures_F_EPB_Civ_Dead",
-"CuratorOnly_Structures_F_Ind_Cargo","CuratorOnly_Structures_F_Ind_Crane","CuratorOnly_Structures_F_Ind_ReservoirTank","CuratorOnly_Structures_F_Ind_Transmitter_Tower","CuratorOnly_Structures_F_Items_Vessels",
-"CuratorOnly_Structures_F_Mil_BagBunker","CuratorOnly_Structures_F_Mil_BagFence","CuratorOnly_Structures_F_Mil_Cargo","CuratorOnly_Structures_F_Mil_Fortification","CuratorOnly_Structures_F_Mil_Radar",
-"CuratorOnly_Structures_F_Mil_Shelters","CuratorOnly_Structures_F_Research","CuratorOnly_Structures_F_Walls","CuratorOnly_Structures_F_Wrecks","A3_Data_F_Exp_B_Loadorder","A3_Data_F_Exp","A3_Data_F_Exp_ParticleEffects",
-"A3_Dubbing_F_Exp","A3_Dubbing_Radio_F_EXP","A3_Dubbing_Radio_F_EXP_Data_CHI","A3_Dubbing_Radio_F_EXP_Data_ENGFRE","A3_Dubbing_Radio_F_EXP_Data_FRE","A3_EditorPreviews_F_Exp","A3_Functions_F_Exp","A3_Language_F_Exp",
-"A3_LanguageMissions_F_Exp","A3_Missions_F_Exp","A3_Missions_F_Exp_Data","A3_Missions_F_Exp_Video","A3_Modules_F_Exp","A3_Music_F_Exp","A3_Music_F_Exp_Music","A3_Props_F_Exp","A3_Props_F_Exp_Civilian",
+"A3_Weapons_F_Mark_Rifles_MX","A3_Weapons_F_Mark_Rifles_SDAR","A3_Weapons_F_Mark_Rifles_TRG20","A3_Anims_F_Mark","A3_Anims_F_Mark_Deployment","A3_Characters_F_Mark","A3_Data_F_Mark_Loadorder","A3_Data_F_Exp_A",
+"A3_Functions_F_Exp_A","A3_Language_F_Exp_A","A3_LanguageMissions_F_Exp_A","A3_Missions_F_Exp_A","A3_Missions_F_Exp_A_Data","A3_Modules_F_Exp_A","A3_Props_F_Exp_A","A3_Props_F_Exp_A_Military",
+"A3_Props_F_Exp_A_Military_Equipment","A3_Sounds_F_Exp_A","A3_Structures_F_Exp_A","A3_Structures_F_Exp_A_VR_Blocks","A3_Structures_F_Exp_A_VR_Helpers","A3_Ui_F_Exp_A","A3_Anims_F_Exp_A","A3_Data_F_Exp_A_Virtual",
+"A3_Data_F_Exp_A_Loadorder","A3_Data_F_Exp_B","A3_Language_F_Exp_B","A3_3DEN","A3_3DEN_Language","A3_BaseConfig_F","3DEN","A3_Animals_F_Chicken","A3_Animals_F_Dog","A3_Animals_F_Goat","A3_Animals_F_Sheep","A3_Armor_F_Panther",
+"A3_Armor_F_AMV","A3_Armor_F_Marid","A3_Armor_F_APC_Wheeled_03","A3_Armor_F_Slammer","A3_Armor_F_T100K","A3_Boat_F_SDV_01","A3_Boat_F_EPC_Submarine_01_F","A3_Boat_F_Civilian_Boat","A3_Boat_F_Trawler","A3_Characters_F_INDEP",
+"A3_Air_F_Gamma_UAV_01","A3_Air_F_Gamma_UAV_02","A3_UAV_F_Characters_F_Gamma","A3_Soft_F_Crusher_UGV","A3_UAV_F_Weapons_F_Gamma_Ammoboxes","A3_Weapons_F_gamma_Items","A3_Map_Altis_Scenes","A3_Map_Stratis_Scenes","Map_VR",
+"A3_Map_VR_Scenes","A3_Modules_F_Heli_SpawnAi","A3_Modules_F_Mark_Objectives","A3_Signs_F_AD","A3_Soft_F_Quadbike","A3_Soft_F_MRAP_03","A3_Soft_F_Beta_Quadbike","A3_Soft_F_HEMTT","A3_Soft_F_TruckHeavy",
+"A3_Soft_F_Bootcamp_Quadbike","A3_Soft_F_Bootcamp_Truck","A3_Soft_F_Car","A3_Soft_F_Gamma_Offroad","A3_Soft_F_Gamma_Quadbike","A3_Soft_F_SUV","A3_Soft_F_Gamma_HEMTT","A3_Soft_F_Gamma_TruckHeavy","A3_Soft_F_Truck",
+"A3_Soft_F_Heli_Car","A3_Soft_F_Heli_Quadbike","A3_Soft_F_Heli_SUV","A3_Soft_F_Heli_Crusher_UGV","A3_Soft_F_Heli_Truck","A3_Static_F_Gamma_AA","A3_Static_F_Gamma_AT","A3_Structures_F_Items_Cans","A3_Weapons_F_NATO",
+"A3_Weapons_F_CSAT","A3_Weapons_F_AAF","A3_weapons_F_FIA","A3_Weapons_F_ItemHolders","A3_Weapons_F_Headgear","A3_Weapons_F_Uniforms","A3_Weapons_F_Vests","A3_Weapons_F_Launchers_LAW","A3_Weapons_F_EPA_LongRangeRifles_DMR_01",
+"A3_Weapons_F_EBR","A3_Weapons_F_EPB_Rifles_MX_Black","A3_Weapons_F_Pistols_PDW2000","A3_Weapons_F_Rifles_Vector","a3_weapons_f_rifles_SMG_02","A3_Weapons_F_beta_EBR","A3_Weapons_F_EPA_LongRangeRifles_GM6",
+"A3_Weapons_F_EPB_LongRangeRifles_M320","A3_Weapons_F_Bootcamp_LongRangeRifles_GM6","A3_Weapons_F_Bootcamp_LongRangeRifles_M320","A3_Weapons_F_EPB_LongRangeRifles_GM3","A3_Weapons_F_EPA_EBR","A3_Weapons_F_EPA_Rifles_MX",
+"A3_Weapons_F_Mark_EBR","CuratorOnly_Air_F_Beta_Heli_Attack_01","CuratorOnly_Air_F_Beta_Heli_Attack_02","CuratorOnly_Air_F_Gamma_UAV_01","CuratorOnly_Armor_F_AMV","CuratorOnly_armor_f_beta_APC_Tracked_02",
+"CuratorOnly_Armor_F_Marid","CuratorOnly_Armor_F_Panther","CuratorOnly_Armor_F_Slammer","CuratorOnly_Armor_F_T100K","CuratorOnly_Boat_F_Boat_Armed_01","CuratorOnly_Characters_F_BLUFOR","CuratorOnly_Characters_F_Common",
+"CuratorOnly_Characters_F_OPFOR","CuratorOnly_Modules_F_Curator_Animals","CuratorOnly_Modules_F_Curator_Chemlights","CuratorOnly_Modules_F_Curator_Effects","CuratorOnly_Modules_F_Curator_Environment",
+"CuratorOnly_Modules_F_Curator_Flares","CuratorOnly_Modules_F_Curator_Lightning","CuratorOnly_Modules_F_Curator_Mines","CuratorOnly_Modules_F_Curator_Objectives","CuratorOnly_Modules_F_Curator_Ordnance",
+"CuratorOnly_Modules_F_Curator_Smokeshells","CuratorOnly_Signs_F","CuratorOnly_Soft_F_Crusher_UGV","CuratorOnly_Soft_F_MRAP_01","CuratorOnly_Soft_F_MRAP_02","CuratorOnly_Soft_F_Quadbike","CuratorOnly_Static_F_Gamma",
+"CuratorOnly_Static_F_Mortar_01","CuratorOnly_Structures_F_Civ_Ancient","CuratorOnly_Structures_F_Civ_Camping","CuratorOnly_Structures_F_Civ_Garbage","CuratorOnly_Structures_F_EPA_Civ_Constructions",
+"CuratorOnly_Structures_F_EPB_Civ_Dead","CuratorOnly_Structures_F_Ind_Cargo","CuratorOnly_Structures_F_Ind_Crane","CuratorOnly_Structures_F_Ind_ReservoirTank","CuratorOnly_Structures_F_Ind_Transmitter_Tower",
+"CuratorOnly_Structures_F_Items_Vessels","CuratorOnly_Structures_F_Mil_BagBunker","CuratorOnly_Structures_F_Mil_BagFence","CuratorOnly_Structures_F_Mil_Cargo","CuratorOnly_Structures_F_Mil_Fortification",
+"CuratorOnly_Structures_F_Mil_Radar","CuratorOnly_Structures_F_Mil_Shelters","CuratorOnly_Structures_F_Research","CuratorOnly_Structures_F_Walls","CuratorOnly_Structures_F_Wrecks","A3_Data_F_Exp_B_Loadorder","A3_Data_F_Exp",
+"A3_Data_F_Exp_ParticleEffects","A3_Dubbing_F_Exp","A3_Dubbing_Radio_F_EXP","A3_Dubbing_Radio_F_EXP_Data_CHI","A3_Dubbing_Radio_F_EXP_Data_ENGFRE","A3_Dubbing_Radio_F_EXP_Data_FRE","A3_EditorPreviews_F_Exp","A3_Functions_F_Exp",
+"A3_Language_F_Exp","A3_LanguageMissions_F_Exp","A3_Missions_F_Exp","A3_Missions_F_Exp_Data","A3_Missions_F_Exp_Video","A3_Modules_F_Exp","A3_Music_F_Exp","A3_Music_F_Exp_Music","A3_Props_F_Exp","A3_Props_F_Exp_Civilian",
 "A3_Props_F_Exp_Civilian_Garbage","A3_Props_F_Exp_Commercial","A3_Props_F_Exp_Commercial_Market","A3_Props_F_Exp_Industrial","A3_Props_F_Exp_Industrial_HeavyEquipment","A3_Props_F_Exp_Infrastructure",
 "A3_Props_F_Exp_Infrastructure_Railways","A3_Props_F_Exp_Infrastructure_Traffic","A3_Props_F_Exp_Military","A3_Props_F_Exp_Military_Camps","A3_Props_F_Exp_Military_OldPlaneWrecks","A3_Props_F_Exp_Naval",
 "A3_Props_F_Exp_Naval_Boats","A3_Rocks_F_Exp","A3_Rocks_F_Exp_Cliff","A3_Rocks_F_Exp_LavaStones","A3_Soft_F_Exp","A3_Soft_F_Exp_LSV_01","A3_Soft_F_Exp_LSV_02","A3_Soft_F_Exp_MRAP_01","A3_Soft_F_Exp_MRAP_02",
@@ -194,46 +197,76 @@ _patchList =
 "A3_Air_F_Exp","A3_Air_F_Exp_Heli_Light_01","A3_Air_F_Exp_Heli_Transport_01","A3_Air_F_Exp_Plane_Civil_01","A3_Air_F_Exp_UAV_03","A3_Air_F_Exp_UAV_04","A3_Air_F_Exp_VTOL_01","A3_Air_F_Exp_VTOL_02","A3_Anims_F_Exp",
 "A3_Anims_F_Exp_Revive","A3_Armor_F_Exp","A3_Armor_F_Exp_APC_Tracked_01","A3_Armor_F_Exp_APC_Tracked_02","A3_Armor_F_Exp_APC_Wheeled_01","A3_Armor_F_Exp_APC_Wheeled_02","A3_Armor_F_Exp_MBT_01","A3_Armor_F_Exp_MBT_02",
 "A3_Boat_F_Exp","A3_Boat_F_Exp_Boat_Armed_01","A3_Boat_F_Exp_Boat_Transport_01","A3_Boat_F_Exp_Boat_Transport_02","A3_Boat_F_Exp_Scooter_Transport_01","A3_Cargoposes_F_Exp","A3_Characters_F_Exp","A3_Characters_F_Exp_Civil",
-"A3_Characters_F_Exp_Headgear","A3_Characters_F_Exp_Vests","A3_Map_Tanoabuka","A3_Map_Tanoabuka_Data","A3_Map_Tanoabuka_Data_Layers","A3_Sounds_F_Exp","A3_Data_F_Exp_Loadorder","A3_Map_Tanoa_Scenes_F",
-"A3_Static_F_Jets_AAA_System_01", "A3_Data_F_Jets", "A3_Dubbing_F_Jets", "A3_EditorPreviews_F_Jets", "A3_Functions_F_Jets", "A3_Language_F_Jets", "A3_LanguageMissions_F_Jets",
-"A3_Modules_F_Jets", "A3_Music_F_Jets", "A3_Sounds_F_Jets", "A3_Static_F_Jets", "A3_Static_F_Jets_SAM_System_01", "A3_Static_F_Jets_SAM_System_02", "A3_Ui_F_Jets",
-"A3_Weapons_F_Jets", "A3_Air_F_Jets", "A3_Air_F_Jets_Plane_Fighter_01", "A3_Air_F_Jets_Plane_Fighter_02", "A3_Air_F_Jets_Plane_Fighter_04", "A3_Air_F_Jets_UAV_05",
-"A3_Anims_F_Jets", "A3_Boat_F_Jets", "A3_Boat_F_Jets_Carrier_01", "A3_Cargoposes_F_Jets", "A3_Characters_F_Jets", "A3_Characters_F_Jets_Vests", "A3_Missions_F_Jets","A3_Data_F_Jets_Loadorder"];
+"A3_Characters_F_Exp_Headgear","A3_Characters_F_Exp_Vests","A3_Sounds_F_Exp","A3_Data_F_Exp_Loadorder","A3_Data_F_Jets","A3_Dubbing_F_Jets","A3_EditorPreviews_F_Jets","A3_Functions_F_Jets","A3_Language_F_Jets",
+"A3_LanguageMissions_F_Jets","A3_Modules_F_Jets","A3_Music_F_Jets","A3_Props_F_Jets","A3_Props_F_Jets_Military_Tractor","A3_Props_F_Jets_Military_Trolley","A3_Sounds_F_Jets","A3_Static_F_Jets","A3_Static_F_Jets_AAA_System_01",
+"A3_Static_F_Jets_SAM_System_01","A3_Static_F_Jets_SAM_System_02","A3_Ui_F_Jets","A3_Weapons_F_Jets","A3_Air_F_Jets","A3_Air_F_Jets_Plane_Fighter_01","A3_Air_F_Jets_Plane_Fighter_02","A3_Air_F_Jets_Plane_Fighter_04",
+"A3_Air_F_Jets_UAV_05","A3_Anims_F_Jets","A3_Boat_F_Jets","A3_Boat_F_Jets_Carrier_01","A3_Cargoposes_F_Jets","A3_Characters_F_Jets","A3_Characters_F_Jets_Vests","A3_Missions_F_Jets","A3_Data_F_Jets_Loadorder","A3_Data_F_Argo",
+"A3_EditorPreviews_F_Argo","A3_Language_F_Argo","A3_Map_Malden","A3_Map_Malden_Data","A3_Map_Malden_Data_Layers","A3_Map_Malden_Scenes_F","A3_Music_F_Argo","A3_Props_F_Argo","A3_Props_F_Argo_Civilian",
+"A3_Props_F_Argo_Civilian_InfoBoards","A3_Props_F_Argo_Items","A3_Props_F_Argo_Items_Documents","A3_Props_F_Argo_Items_Electronics","A3_Rocks_F_Argo","A3_Rocks_F_Argo_Limestone","A3_Structures_F_Argo",
+"A3_Structures_F_Argo_Civilian","A3_Structures_F_Argo_Civilian_Accessories","A3_Structures_F_Argo_Civilian_Addons","A3_Structures_F_Argo_Civilian_Garbage","A3_Structures_F_Argo_Civilian_House_Big01",
+"A3_Structures_F_Argo_Civilian_House_Big02","A3_Structures_F_Argo_Civilian_House_Small01","A3_Structures_F_Argo_Civilian_House_Small02","A3_Structures_F_Argo_Civilian_Stone_House_Big_01",
+"A3_Structures_F_Argo_Civilian_Stone_Shed_01","A3_Structures_F_Argo_Civilian_Unfinished_Building_01","A3_Structures_F_Argo_Commercial","A3_Structures_F_Argo_Commercial_Accessories","A3_Structures_F_Argo_Commercial_Billboards",
+"A3_Structures_F_Argo_Commercial_FuelStation_01","A3_Structures_F_Argo_Commercial_Shop_02","A3_Structures_F_Argo_Commercial_Supermarket_01","A3_Structures_F_Argo_Cultural","A3_Structures_F_Argo_Cultural_Church",
+"A3_Structures_F_Argo_Cultural_Statues","A3_Structures_F_Argo_Decals","A3_Structures_F_Argo_Decals_Horizontal","A3_Structures_F_Argo_Industrial","A3_Structures_F_Argo_Industrial_Agriculture",
+"A3_Structures_F_Argo_Industrial_Materials","A3_Structures_F_Argo_Infrastructure","A3_Structures_F_Argo_Infrastructure_Runways","A3_Structures_F_Argo_Infrastructure_Seaports","A3_Structures_F_Argo_Infrastructure_WaterSupply",
+"A3_Structures_F_Argo_Military","A3_Structures_F_Argo_Military_Bunkers","A3_Structures_F_Argo_Military_ContainerBases","A3_Structures_F_Argo_Military_Domes","A3_Structures_F_Argo_Military_Fortifications",
+"A3_Structures_F_Argo_Military_Turrets","A3_Structures_F_Argo_Signs","A3_Structures_F_Argo_Signs_City","A3_Structures_F_Argo_Signs_Directions","A3_Structures_F_Argo_Signs_Warnings","A3_Structures_F_Argo_Walls",
+"A3_Structures_F_Argo_Walls_City","A3_Structures_F_Argo_Walls_Concrete","A3_Structures_F_Argo_Walls_Military","A3_Structures_F_Argo_Walls_Net","A3_Structures_F_Argo_Walls_Pipe","A3_Structures_F_Argo_Walls_Tin",
+"A3_Structures_F_Argo_Walls_Wooden","A3_Structures_F_Argo_Wrecks","A3_Vegetation_F_Argo","A3_Armor_F_Argo","A3_Armor_F_Argo_APC_Tracked_01","A3_Armor_F_Argo_APC_Wheeled_02","A3_Data_F_Argo_Loadorder","A3_Data_F_Patrol",
+"A3_Functions_F_Patrol","A3_Language_F_Patrol","A3_LanguageMissions_F_Patrol","A3_Map_Tanoabuka","A3_Map_Tanoabuka_Data","A3_Map_Tanoabuka_Data_Layers","A3_Modules_F_Patrol","A3_Sounds_F_Patrol","A3_Ui_F_Patrol",
+"A3_Weapons_F_Patrol","A3_Characters_F_Patrol","A3_Map_Tanoa_Scenes_F","A3_Missions_F_Patrol","A3_Data_F_Patrol_Loadorder","A3_Data_F_Orange","A3_Dubbing_F_Orange","A3_EditorPreviews_F_Orange","A3_Functions_F_Orange",
+"A3_Language_F_Orange","A3_LanguageMissions_F_Orange","A3_Missions_F_Orange","A3_Modules_F_Orange","A3_Music_F_Orange","A3_Props_F_Orange","A3_Props_F_Orange_Civilian","A3_Props_F_Orange_Civilian_Constructions",
+"A3_Props_F_Orange_Civilian_InfoBoards","A3_Props_F_Orange_Furniture","A3_Props_F_Orange_Humanitarian","A3_Props_F_Orange_Humanitarian_Camps","A3_Props_F_Orange_Humanitarian_Garbage","A3_Props_F_Orange_Humanitarian_Supplies",
+"A3_Props_F_Orange_Items","A3_Props_F_Orange_Items_Decorative","A3_Props_F_Orange_Items_Documents","A3_Props_F_Orange_Items_Electronics","A3_Props_F_Orange_Items_Tools","A3_Soft_F_Orange","A3_Soft_F_Orange_Offroad_01",
+"A3_Soft_F_Orange_Offroad_02","A3_Soft_F_Orange_Truck_02","A3_Soft_F_Orange_UGV_01","A3_Soft_F_Orange_Van_02","A3_Structures_F_Orange","A3_Structures_F_Orange_Humanitarian","A3_Structures_F_Orange_Humanitarian_Camps",
+"A3_Structures_F_Orange_Humanitarian_Flags","A3_Structures_F_Orange_Industrial","A3_Structures_F_Orange_Industrial_Cargo","A3_Structures_F_Orange_Signs","A3_Structures_F_Orange_Signs_Mines",
+"A3_Structures_F_Orange_Signs_Special","A3_Structures_F_Orange_VR_Helpers","A3_Structures_F_Orange_Walls","A3_Structures_F_Orange_Walls_Plastic","A3_Supplies_F_Orange","A3_Supplies_F_Orange_Ammoboxes",
+"A3_Supplies_F_Orange_Bags","A3_Supplies_F_Orange_CargoNets","A3_Ui_F_Orange","A3_Weapons_F_Orange","A3_Weapons_F_Orange_Explosives","A3_Weapons_F_Orange_Items","A3_Air_F_Orange","A3_Air_F_Orange_Heli_Transport_02",
+"A3_Air_F_Orange_UAV_01","A3_Air_F_Orange_UAV_06","A3_Cargoposes_F_Orange","A3_Characters_F_Orange","A3_Characters_F_Orange_Facewear","A3_Characters_F_Orange_Headgear","A3_Characters_F_Orange_Uniforms",
+"A3_Characters_F_Orange_Vests","A3_Sounds_F_Orange","A3_Data_F_Orange_Loadorder","A3_Data_F_Tacops","A3_Dubbing_F_Tacops","A3_Functions_F_Tacops","A3_Language_F_Tacops","A3_LanguageMissions_F_Tacops","A3_Missions_F_Tacops",
+"A3_Modules_F_Tacops","A3_Music_F_Tacops","A3_Sounds_F_Tacops","A3_Ui_F_Tacops","A3_Characters_F_Tacops","A3_Data_F_Tacops_Loadorder","A3_Data_F_Tank","A3_Dubbing_F_Tank","A3_EditorPreviews_F_Tank","A3_Functions_F_Tank",
+"A3_Language_F_Tank","A3_LanguageMissions_F_Tank","A3_Missions_F_Tank","A3_Modules_F_Tank","A3_Music_F_Tank","A3_Props_F_Tank","A3_Props_F_Tank_Military","A3_Props_F_Tank_Military_TankAcc","A3_Props_F_Tank_Military_Wrecks",
+"A3_Sounds_F_Tank","A3_Structures_F_Tank","A3_Structures_F_Tank_Decals","A3_Structures_F_Tank_Decals_Horizontal","A3_Structures_F_Tank_Military","A3_Structures_F_Tank_Military_Fortifications","A3_Structures_F_Tank_Military_RepairDepot",
+"A3_Ui_F_Tank","A3_Weapons_F_Tank","A3_Weapons_F_Tank_Bags","A3_Weapons_F_Tank_Launchers_MRAWS","A3_Weapons_F_Tank_Launchers_Vorona","A3_Armor_F_Tank","A3_Armor_F_Tank_AFV_Wheeled_01","A3_Armor_F_Tank_LT_01","A3_Armor_F_Tank_MBT_04",
+"A3_Cargoposes_F_Tank","A3_Characters_F_Tank","A3_Characters_F_Tank_Headgear","A3_Characters_F_Tank_Uniforms","A3_Data_F_Tank_Loadorder","A3_Functions_F_Destroyer","A3_Boat_F_Destroyer","A3_Boat_F_Destroyer_Destroyer_01",
+"A3_Data_F_Destroyer","A3_Data_F_Sams","A3_EditorPreviews_F_Destroyer","A3_EditorPreviews_F_Sams","A3_Language_F_Destroyer","A3_Language_F_Sams","A3_Props_F_Destroyer","A3_Props_F_Destroyer_Military_BriefingRoomDesk",
+"A3_Props_F_Destroyer_Military_BriefingRoomScreen","A3_Static_F_Destroyer","A3_Static_F_Destroyer_Boat_Rack_01","A3_Static_F_Destroyer_Ship_Gun_01","A3_Static_F_Destroyer_Ship_MRLS_01","A3_Static_F_Sams","A3_Static_F_Sams_Radar_System_01",
+"A3_Static_F_Sams_Radar_System_02","A3_Static_F_Sams_SAM_System_03","A3_Static_F_Sams_SAM_System_04","A3_Weapons_F_Destroyer","A3_Weapons_F_Sams","A3_Data_F_Destroyer_Loadorder","A3_Data_F_Sams_Loadorder"];
 
-uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //For Spy-Glass..
+uiNamespace setVariable ["RscDisplayRemoteMissions",displayNull]; //for Spy-Glass
 uiNamespace setVariable ["RscDisplayMultiplayer",displayNull];
 
-_binConfigPatches = configFile >> "CfgPatches";
-for "_i" from 0 to count (_binConfigPatches)-1 do {
-    _patchEntry = _binConfigPatches select _i;
-    if (isClass _patchEntry) then {
-        if (!((configName _patchEntry) in _patchList)) exitWith {
-            [profileName,getPlayerUID player,(configName _patchEntry)] remoteExec ["SPY_fnc_cookieJar",RSERV];
-            [profileName,format ["Unknown Addon Patch: %1",(configName _patchEntry)]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
-            sleep 0.5;
-            failMission "SpyGlass";
-        };
-    };
+private _binConfigPatches = configFile >> "CfgPatches";
+
+private _missingPatches = "isClass _x && !((configName _x) in _patchList)" configClasses _binConfigPatches;
+_missingPatches = _missingPatches apply {configName _x};
+
+if !(_missingPatches isEqualTo []) exitWith {
+    [profileName,getPlayerUID player,(str _missingPatches)] remoteExec ["SPY_fnc_cookieJar",RSERV];
+    [profileName,format ["Unknown Addon Patches: %1",_missingPatches]] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
+    sleep 0.5;
+    failMission "SpyGlass";
 };
 
 //Check for copy-pasters of Dev-Con styled execution.
 //Because I am nice, add these to the following below to allow CBA; "CBA_CREDITS_CONT_C","CBA_CREDITS_M_P
-private ["_children","_allowedChildren"];
-_children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
-_allowedChildren = [
-"Title","MissionTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
-"ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole",
-"Version","TraffLight","Feedback","MessageBox"
+
+private _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
+private _allowedChildren = [
+    "Title","MissionTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
+    "ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole",
+    "Version","TraffLight","Feedback","MessageBox"
 ];
 
 {
-    if (!((configName _x) in _allowedChildren)) exitWith {
+    if !((configName _x) in _allowedChildren) exitWith {
         [profileName,getPlayerUID player,"Modified_MPInterrupt"] remoteExec ["SPY_fnc_cookieJar",RSERV];
         [profileName,"Devcon like executor detected"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
         sleep 0.5;
         failMission "SpyGlass";
     };
-} forEach _children;
+    true
+} count _children;
 
 /*
     Display Validator
@@ -242,20 +275,16 @@ _allowedChildren = [
     TODO: Run check every x minutes and validate all displays.
 */
 {
-    _onLoad = getText(configFile >> (_x select 0) >> "onLoad");
-    _onUnload = getText(configFile >> (_x select 0) >> "onUnload");
-    if (_onLoad != (_x select 1) || _onUnload != (_x select 2)) exitWith {
-        [profileName,getPlayerUID player,format ["Modified_Method_%1",_x select 0]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
-        [profileName,format ["Modified Display Method %1 (Memory Edit)",_x select 0]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
+    _x params ["_class", "_expectedOnLoad", "_expectedOnUnload"];
+    private _onLoad = getText(configFile >> _class >> "onLoad");
+    private _onUnload = getText(configFile >> _class >> "onUnload");
+    if (_onLoad != _expectedOnLoad || _onUnload != _expectedOnUnload) exitWith {
+        [profileName,getPlayerUID player,format ["Modified_Method_%1", _class]] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
+        [profileName,format ["Modified Display Method %1 (Memory Edit)", _class]] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
         sleep 0.5;
-        vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
-        sleep 3;
-        preprocessFile "SpyGlass\endoftheline.sqf";
-        sleep 2.5;
-        failMission "SpyGlass";
+        SPYGLASS_END
     };
-}
-forEach [
+} forEach [
     ["RscDisplayMainMap","[""onLoad"",_this,""RscDiary"",'GUI'] call 	(uiNamespace getVariable 'BIS_fnc_initDisplay')","[""onUnload"",_this,""RscDiary"",'GUI'] call 	(uiNamespace getVariable 'BIS_fnc_initDisplay')"],
     ["RscDisplayGetReady","[""onLoad"",_this,""RscDiary"",'GUI'] call 	(uiNamespace getVariable 'BIS_fnc_initDisplay')","[""onUnload"",_this,""RscDiary"",'GUI'] call 	(uiNamespace getVariable 'BIS_fnc_initDisplay')"],
     ["RscDisplayInventory","[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call 	(uiNamespace getVariable 'BIS_fnc_initDisplay')","[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call 	(uiNamespace getVariable 'BIS_fnc_initDisplay')"],
@@ -285,11 +314,7 @@ if (getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunct
     [profileName,getPlayerUID player,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
     [profileName,"Modified_Functions_Init"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
     sleep 0.5;
-    vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
-    sleep 3;
-    preprocessFile "SpyGlass\endoftheline.sqf";
-    sleep 2.5;
-    failMission "SpyGlass";
+    SPYGLASS_END
 };
 
 [] execVM "SpyGlass\fn_cmdMenuCheck.sqf";

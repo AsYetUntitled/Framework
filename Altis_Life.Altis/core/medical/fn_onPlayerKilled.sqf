@@ -2,7 +2,6 @@
 /*
     File: fn_onPlayerKilled.sqf
     Author: Bryan "Tonic" Boardwine
-
     Description:
     When the player dies collect various information about that player
     and pull up the death dialog / camera functionality.
@@ -27,6 +26,11 @@ _unit setVariable ["Escorting",false,true];
 _unit setVariable ["transporting",false,true];
 _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",(getPlayerUID player),true]; //Set the UID.
+
+//close the esc dialog
+if (dialog) then {
+    closeDialog 0;
+};
 
 //Setup our camera view
 life_deathCamera  = "CAMERA" camCreate (getPosATL _unit);

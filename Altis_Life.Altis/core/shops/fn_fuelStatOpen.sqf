@@ -1,4 +1,5 @@
 #include "..\..\script_macros.hpp"
+
 /*
     File: fn_fuelStatOpen.sqf
     Author : NiiRoZz
@@ -6,6 +7,7 @@
     Description:
     Open dialog Pump.
 */
+
 private ["_shop","_sideCheck","_spawnPoints","_shopFlag","_disableBuy","_fuelCost"];
 
 disableSerialization;
@@ -14,10 +16,10 @@ if (life_action_inUse) exitWith {};
 if (dialog) exitWith {};
 if (life_is_processing) exitWith {};
 life_action_inUse = true;
-_fuelstations = nearestObjects [player, ["Land_fs_feed_F"],10];
+_fuelstations = nearestObjects [player, ["Land_fs_feed_F", "Land_FuelStation_01_pump_F", "Land_FuelStation_02_pump_F"], 10];
 if (_fuelstations isEqualTo []) exitWith {life_action_inUse = false;};
 _vehicleList = nearestObjects [player, ["Car","air"], 10];
-if (count _vehicleList < 1) exitWith {hint localize "STR_NOTF_VehicleNear";life_action_inUse = false;};
+if (count _vehicleList < 1) exitWith {hint localize "STR_NOTF_VehicleNear"; life_action_inUse = false;};
 if (!createDialog "Life_FuelStat") exitWith {};
 _fuelCost = LIFE_SETTINGS(getNumber,"fuel_cost");
 [] spawn {waitUntil {!dialog}; life_action_inUse = false;};
