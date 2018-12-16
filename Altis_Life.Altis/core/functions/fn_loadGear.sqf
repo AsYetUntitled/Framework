@@ -64,12 +64,7 @@ if (!(_backpack isEqualTo "")) then {_handle = [_backpack,true,false,false,false
 {player addItemToBackpack _x;} forEach (_bItems);
 {(backpackContainer player) addItemCargoGlobal [_x,1];} forEach (_bMags);
 
-if (backpack player isEqualTo "") then {
-    life_maxWeight = LIFE_SETTINGS(getNumber,"total_maxWeight");
-} else {
-    life_maxWeight = LIFE_SETTINGS(getNumber,"total_maxWeight") + round(FETCH_CONFIG2(getNumber,"CfgVehicles",(backpack player),"maximumload") / 4);
-};
-
+life_maxWeight = if (backpack player isEqualTo "") then {LIFE_SETTINGS(getNumber,"total_maxWeight")} else {LIFE_SETTINGS(getNumber,"total_maxWeight") + round(FETCH_CONFIG2(getNumber,"CfgVehicles",(backpack player),"maximumload") / 4)};
 {
     [true,(_x select 0),(_x select 1)] call life_fnc_handleInv;
 } forEach (_yItems);
