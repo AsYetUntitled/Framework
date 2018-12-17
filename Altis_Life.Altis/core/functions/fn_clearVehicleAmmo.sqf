@@ -14,7 +14,7 @@ if (isNull _vehicle) exitWith {};
 private _veh = typeOf _vehicle;
 
 {
-	if !(_x in ["SportCarHorn","MiniCarHorn","CarHorn","CarHorn","PoliceHorn","PoliceHorn","TruckHorn3","AmbulanceHorn","TruckHorn2"]) then {_vehicle removeWeapon _x};
+    if !(_x in ["SportCarHorn","MiniCarHorn","CarHorn","CarHorn","PoliceHorn","PoliceHorn","TruckHorn3","AmbulanceHorn","TruckHorn2"]) then {_vehicle removeWeapon _x};
 } forEach weapons _vehicle;
 {_vehicle removeMagazine _x} forEach magazines _vehicle;
 clearWeaponCargoGlobal _vehicle;
