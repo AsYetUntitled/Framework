@@ -6,18 +6,19 @@
 *    Description:
 *    Main key handler for event 'keyDown'.
 */
-private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_interruptionKeys"];
-_ctrl = _this select 0;
-_code = _this select 1;
-_shift = _this select 2;
-_ctrlKey = _this select 3;
-_alt = _this select 4;
-_speed = speed cursorObject;
-_handled = false;
 
-_interactionKey = if (count (actionKeys "User10") isEqualTo 0) then {219} else {(actionKeys "User10") select 0};
-//hint str _code;
-_interruptionKeys = [17,30,31,32]; //A,S,W,D
+params [
+    "_ctrl",
+    "_code",
+    "_shift",
+    "_ctrlKey",
+    "_alt"
+];
+
+private _speed = speed cursorObject;
+private _handled = false;
+private _interactionKey = if (actionKeys "User10" isEqualTo []) then {219} else {(actionKeys "User10") select 0};
+private _interruptionKeys = [17, 30, 31, 32]; //A,S,W,D
 
 //Vault handling...
 if ((_code in (actionKeys "GetOver") || _code in (actionKeys "salute") || _code in (actionKeys "SitDown") || _code in (actionKeys "Throw") || _code in (actionKeys "GetIn") || _code in (actionKeys "GetOut") || _code in (actionKeys "Fire") || _code in (actionKeys "ReloadMagazine") || _code in [16,18]) && ((player getVariable ["restrained",false]) || (player getVariable ["playerSurrender",false]) || life_isknocked || life_istazed)) exitWith {
@@ -30,7 +31,7 @@ if (life_action_inUse) exitWith {
 };
 
 //Hotfix for Interaction key not being able to be bound on some operation systems.
-if (!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) exitWith {
+if (!(actionKeys "User10" isEqualTo []) && {(inputAction "User10" > 0)}) exitWith {
     //Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
     if (!life_action_inUse) then {
         [] spawn {
@@ -141,8 +142,7 @@ switch (_code) do {
     case _interactionKey: {
         if (!life_action_inUse) then {
             [] spawn  {
-                private "_handle";
-                _handle = [] spawn life_fnc_actionKeyHandler;
+                private _handle = [] spawn life_fnc_actionKeyHandler;
                 waitUntil {scriptDone _handle};
                 life_action_inUse = false;
             };

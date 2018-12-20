@@ -242,8 +242,7 @@ Crisis Negotiation must be handled by a Sergeant. If one is not available, the p
 5. Lethal force on bank robbers may be used if no other alternative is available. Every option to taze and arrest the person should be made first.<br/>
 6. Police may not fire blindly into the building.<br/>
 7. The police should evacuate the civilians from the building during a robbery.<br/>
-8. Any civilian who actively makes an attempt to block the police from entering the building may be treated as an accomplice.<br/>
-9. Supervisory officers may hire individuals or contract a group of people to work as security guards for the bank. See 'Contracting' section for more information.<br/><br/>
+8. Any civilian who actively makes an attempt to block the police from entering the building may be treated as an accomplice.<br/><br/>
                 "
         ]
     ];
