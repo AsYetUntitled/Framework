@@ -13,7 +13,7 @@ _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
 _revivable = _target getVariable ["Revive",false];
 if (_revivable) exitWith {};
-if (_target getVariable ["Reviving",objNull] == player) exitWith {hint localize "STR_Medic_AlreadyReviving";};
+if (_target getVariable ["Reviving",objNull] isEqualTo player) exitWith {hint localize "STR_Medic_AlreadyReviving";};
 if (player distance _target > 5) exitWith {}; //Not close enough.
 
 //Fetch their name so we can shout it.
