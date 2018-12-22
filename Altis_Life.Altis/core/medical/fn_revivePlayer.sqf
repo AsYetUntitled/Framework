@@ -6,31 +6,30 @@
     Description:
     Starts the revive process on the player.
 */
-private ["_target","_revivable","_targetName","_ui","_progressBar","_titleText","_cP","_title","_reviveCost"];
-_target = param [0,objNull,[objNull]];
+private _target = param [0,objNull,[objNull]];
 if (isNull _target) exitWith {};
-_reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
+private _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
-_revivable = _target getVariable ["Revive",false];
+private _revivable = _target getVariable ["Revive",false];
 if (_revivable) exitWith {};
 if (_target getVariable ["Reviving",objNull] isEqualTo player) exitWith {hint localize "STR_Medic_AlreadyReviving";};
 if (player distance _target > 5) exitWith {}; //Not close enough.
 
 //Fetch their name so we can shout it.
-_targetName = _target getVariable ["name","Unknown"];
-_title = format [localize "STR_Medic_Progress",_targetName];
+private _targetName = _target getVariable ["name","Unknown"];
+private _title = format [localize "STR_Medic_Progress",_targetName];
 life_action_inUse = true; //Lockout the controls.
 
 _target setVariable ["Reviving",player,true];
 //Setup our progress bar
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable ["life_progress",displayNull];
-_progressBar = _ui displayCtrl 38201;
-_titleText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable ["life_progress",displayNull];
+private _progressBar = _ui displayCtrl 38201;
+private _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
-_cP = 0.01;
+private _cP = 0.01;
 
 private _badDistance = false;
 //Lets reuse the same thing!
