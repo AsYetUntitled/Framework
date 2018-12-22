@@ -9,7 +9,6 @@
 params [
     ["_target",objNull,[objNull]
 ];
-if (isNull _target) exitWith {};
 private _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
 private _revivable = _target getVariable ["Revive",false];
