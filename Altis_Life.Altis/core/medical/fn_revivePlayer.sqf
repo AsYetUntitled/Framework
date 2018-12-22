@@ -44,9 +44,7 @@ for "_i" from 0 to 1 step 0 do {
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
     if (_cP >= 1 || !alive player) exitWith {};
-    if (life_istazed) exitWith {}; //Tazed
-    if (life_isknocked) exitWith {}; //Knocked
-    if (life_interrupted) exitWith {};
+    if (life_istazed || life_isknocked || life_interrupted) exitWith {};
     if (player getVariable ["restrained",false]) exitWith {};
     if (player distance _target > 4) exitWith {_badDistance = true;};
     if (_target getVariable ["Revive",false]) exitWith {};
