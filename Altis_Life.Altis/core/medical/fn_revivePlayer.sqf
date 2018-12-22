@@ -6,7 +6,9 @@
     Description:
     Starts the revive process on the player.
 */
-private _target = param [0,objNull,[objNull]];
+params [
+    ["_target",objNull,[objNull]
+];
 if (isNull _target) exitWith {};
 private _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
