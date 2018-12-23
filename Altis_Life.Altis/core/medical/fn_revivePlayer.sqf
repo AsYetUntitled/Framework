@@ -31,7 +31,7 @@ private _cP = 0.01;
 
 private _badDistance = false;
 for "_i" from 0 to 1 step 0 do {
-    if (animationState player isEqualTo "ainvpknlmstpsnonwnondnon_medic_1") then {
+    if !(animationState player isEqualTo "ainvpknlmstpsnonwnondnon_medic_1") then {
         [player, "AinvPknlMstpSnonWnonDnon_medic_1"] remoteExecCall ["life_fnc_animSync", RCLIENT];
         player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
     };
