@@ -62,8 +62,8 @@ _handle = switch (playerSide) do {
     };
 };
 
-CONSTVAR(life_paycheck);
 waitUntil {scriptDone _handle};
+CONSTVAR(life_paycheck);
 
 player setVariable ["restrained", false, true];
 player setVariable ["Escorting", false, true];
