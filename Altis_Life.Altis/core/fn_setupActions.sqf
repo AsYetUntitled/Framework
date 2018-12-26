@@ -22,7 +22,9 @@ switch (playerSide) do {
     };
     
     //Cops
-    case west: { };
+    case west: {
+        life_actions = life_actions + [player addAction[localize "STR_ISTR_Spike_Pack",life_fnc_packupSpikes,"",0,false,false,"",' _spikes = nearestObjects[getPos player,["Land_Razorwire_F"],5] select 0; !isNil "_spikes"']];
+    };
     
     //EMS
     case independent: { };
