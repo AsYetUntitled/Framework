@@ -54,11 +54,8 @@ switch (true) do {
     };
 
     case (_item isEqualTo "spikeStrip"): {
-        if (!isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"; closeDialog 0};
-        if ([false,_item,1] call life_fnc_handleInv) then {
-            [] spawn life_fnc_spikeStrip;
-            closeDialog 0;
-        };
+        [] spawn life_fnc_spikeStrip;
+        closeDialog 0;
     };
 
     case (_item isEqualTo "fuelFull"): {
