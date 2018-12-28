@@ -27,6 +27,9 @@ private _offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
         [-0.37, 0.0, 0.56];
     };
+    default: {
+        [0.0, 0.0, 0.0];
+    };
 };
 
 _lightLeft lightAttachObject [_vehicle, _offset];
@@ -46,6 +49,9 @@ _lightRight setLightAmbient [0.1,0.1,1];
 _offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
         [0.37, 0.0, 0.56];
+    };
+    default: {
+        [0.0, 0.0, 0.0];
     };
 };
 
