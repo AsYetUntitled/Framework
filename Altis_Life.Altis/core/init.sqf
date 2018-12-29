@@ -2,7 +2,6 @@
 /*
     File: init.sqf
     Author: Bryan "Tonic" Boardwine
-    Edited by : Jean-Baptiste
     Description:
     Master client initialization file
 */
@@ -14,7 +13,7 @@ diag_log "----------------------------------------------------------------------
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED",99999999];
 _timeStamp = diag_tickTime;
 
-waitUntil {!(isNull player) && !(isNull (findDisplay 46))};
+waitUntil {!isNull (findDisplay 46)};
 [] call compile preprocessFileLineNumbers "core\clientValidator.sqf";
 enableSentences false;
 
@@ -47,22 +46,20 @@ waitUntil {life_session_completed};
 
 [] spawn life_fnc_escInterupt;
 
-_handle = switch (playerSide) do {
+switch (playerSide) do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
-        [] spawn life_fnc_initCop;
+        [] call life_fnc_initCop;
     };
     case civilian: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
-        [] spawn life_fnc_initCiv;
+        [] call life_fnc_initCiv;
     };
     case independent: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
-        [] spawn life_fnc_initMedic;
+        [] call life_fnc_initMedic;
     };
 };
-
-waitUntil {scriptDone _handle};
 CONSTVAR(life_paycheck);
 
 player setVariable ["restrained", false, true];
@@ -75,7 +72,7 @@ diag_log "[Life Client] Past Settings Init";
 [] execFSM "core\fsm\client.fsm";
 diag_log "[Life Client] Executing client.fsm";
 
-(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];};
+(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 [player, life_settings_enableSidechannel, playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
 
 [] call life_fnc_hudSetup;
@@ -83,14 +80,30 @@ diag_log "[Life Client] Executing client.fsm";
 
 0 cutText ["","BLACK IN"];
 
-addMissionEventHandler ["EachFrame", {[] spawn life_fnc_playerTags}];
-addMissionEventHandler ["EachFrame", {[] spawn life_fnc_revealObjects}];
+[] spawn {
+    for "_i" from 0 to 1 step 0 do {
+        waitUntil {(!isNull (findDisplay 49)) && {(!isNull (findDisplay 602))}}; // Check if Inventory and ESC dialogs are open
+        (findDisplay 49) closeDisplay 2; // Close ESC dialog
+        (findDisplay 602) closeDisplay 2; // Close Inventory dialog
+    };
+};
+
+addMissionEventHandler ["EachFrame", life_fnc_playerTags];
+addMissionEventHandler ["EachFrame", life_fnc_revealObjects];
 
 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
 if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
     [] execVM "core\fn_setupStationService.sqf";
 };
 
+life_fnc_RequestClientId = player;
+publicVariableServer "life_fnc_RequestClientId"; 
+
+/*
+    https://feedback.bistudio.com/T117205 - disableChannels settings cease to work when leaving/rejoining mission
+    Universal workaround for usage in a preInit function. - AgentRev
+    Remove if Bohemia actually fixes the issue.
+*/
 {
     _x params [["_chan",-1,[0]], ["_noText","false",[""]], ["_noVoice","false",[""]]];
 
@@ -106,9 +119,6 @@ if (life_HC_isActive) then {
 } else {
     [getPlayerUID player, player getVariable ["realname", name player]] remoteExec ["life_fnc_wantedProfUpdate", RSERV];
 };
-
-life_fnc_RequestClientId = player;
-publicVariableServer "life_fnc_RequestClientId"; 
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];
