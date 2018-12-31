@@ -49,15 +49,15 @@ waitUntil {life_session_completed};
 switch (playerSide) do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
-        [] call life_fnc_initCop;
+        [] spawn life_fnc_initCop;
     };
     case civilian: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
-        [] call life_fnc_initCiv;
+        [] spawn life_fnc_initCiv;
     };
     case independent: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
-        [] call life_fnc_initMedic;
+        [] spawn life_fnc_initMedic;
     };
 };
 CONSTVAR(life_paycheck);
