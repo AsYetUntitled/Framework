@@ -54,6 +54,7 @@ switch (true) do {
     };
 
     case (_item isEqualTo "spikeStrip"): {
+        if ([false,_item,1] call life_fnc_handleInv) exitWith {};
         [] spawn life_fnc_spikeStrip;
         closeDialog 0;
     };
