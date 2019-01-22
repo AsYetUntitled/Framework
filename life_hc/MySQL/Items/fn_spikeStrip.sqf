@@ -13,7 +13,7 @@
 private "_nearVehicles";
 
 params [
-	["_spikeStrip",objNull,[objNull]]
+    ["_spikeStrip",objNull,[objNull]]
 ];
 
 if (isNull _spikeStrip) exitWith {}; //Bad vehicle type passed.
