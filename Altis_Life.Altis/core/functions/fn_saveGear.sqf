@@ -8,9 +8,9 @@
     Description:
     Saves the players gear for syncing to the database for persistence..
 */
-private ["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled","_savedVirtualItems"];
-_return = [];
-_savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
+private ["_handled","_pMag","_sMag","_hMag"];
+private _return = [];
+private _savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
 
 _return pushBack uniform player;
 _return pushBack vest player;
@@ -20,24 +20,27 @@ _return pushBack headgear player;
 _return pushBack assignedITems player;
 if (playerSide isEqualTo west || playerSide isEqualTo civilian && {LIFE_SETTINGS(getNumber,"save_civilian_weapons") isEqualTo 1}) then {
     _return pushBack primaryWeapon player;
+    _return pushBack secondaryWeapon player;
     _return pushBack handgunWeapon player;
 } else {
     _return pushBack [];
     _return pushBack [];
+    _return pushBack [];
 };
 
-_uItems = [];
-_uMags  = [];
-_bItems = [];
-_bMags  = [];
-_vItems = [];
-_vMags  = [];
-_pItems = [];
-_hItems = [];
-_yItems = [];
-_uni = [];
-_ves = [];
-_bag = [];
+private _uItems = [];
+private _uMags  = [];
+private _bItems = [];
+private _bMags  = [];
+private _vItems = [];
+private _vMags  = [];
+private _pItems = [];
+private _sItems = [];
+private _hItems = [];
+private _yItems = [];
+private _uni = [];
+private _ves = [];
+private _bag = [];
 
 if (!(uniform player isEqualTo "")) then {
     {
@@ -95,6 +98,32 @@ if (count (primaryWeaponMagazine player) > 0 && alive player) then {
     };
 };
 
+if (count (secondaryWeaponMagazine player) > 0 && alive player) then {
+    _sMag = ((secondaryWeaponMagazine player) select 0);
+
+    if (!(_sMag isEqualTo "")) then {
+        _uni = player canAddItemToUniform _sMag;
+        _ves = player canAddItemToVest _sMag;
+        _bag = player canAddItemToBackpack _sMag;
+        _handled = false;
+
+        if (_ves) then {
+            _vMags pushBack _sMag;
+            _handled = true;
+        };
+
+        if (_uni && !_handled) then {
+            _uMags pushBack _sMag;
+            _handled = true;
+        };
+
+        if (_bag && !_handled) then {
+            _bMags pushBack _sMag;
+            _handled = true;
+        };
+    };
+};
+
 if (count (handgunMagazine player) > 0 && alive player) then {
     _hMag = ((handgunMagazine player) select 0);
 
@@ -127,6 +156,12 @@ if (count (primaryWeaponItems player) > 0) then {
     } forEach (primaryWeaponItems player);
 };
 
+if (count (secondaryWeaponItems player) > 0) then {
+    {
+        _sItems pushBack _x;
+    } forEach (primaryWeaponItems player);
+};
+
 if (count (handgunItems player) > 0) then {
     {
         _hItems pushBack _x;
@@ -147,6 +182,7 @@ _return pushBack _bMags;
 _return pushBack _vItems;
 _return pushBack _vMags;
 _return pushBack _pItems;
+_return pushBack _sItems;
 _return pushBack _hItems;
 if (LIFE_SETTINGS(getNumber,"save_virtualItems") isEqualTo 1) then {
     _return pushBack _yItems;
