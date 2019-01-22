@@ -6,11 +6,10 @@
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
-private ["_itemArray","_handle"];
-_itemArray = life_gear;
+private _itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
-_handle = [] spawn life_fnc_stripDownPlayer;
+private _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 if (count _itemArray isEqualTo 0) exitWith {
@@ -37,6 +36,7 @@ _itemArray params [
     "_headgear",
     ["_items",[]],
     "_prim",
+    "_launcher",
     "_seco",
     ["_uItems",[]],
     ["_uMags",[]],
@@ -45,6 +45,7 @@ _itemArray params [
     ["_vItems",[]],
     ["_vMags",[]],
     ["_pItems",[]],
+    ["_sItems",[]],
     ["_hItems",[]],
     ["_yItems",[]]
 ];
@@ -69,8 +70,9 @@ life_maxWeight = if (backpack player isEqualTo "") then {LIFE_SETTINGS(getNumber
     [true,(_x select 0),(_x select 1)] call life_fnc_handleInv;
 } forEach (_yItems);
 
-//Primary & Secondary (Handgun) should be added last as magazines do not automatically load into the gun.
+//Weapons should be added last as magazines do not automatically load into the gun.
 if (!(_prim isEqualTo "")) then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if (!(_launcher isEqualTo "")) then {_handle = [_launcher,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if (!(_seco isEqualTo "")) then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 
 {
@@ -78,6 +80,11 @@ if (!(_seco isEqualTo "")) then {_handle = [_seco,true,false,false,false] spawn 
         player addPrimaryWeaponItem _x;
     };
 } forEach (_pItems);
+{
+    if (!(_x isEqualTo "")) then {
+        player addSecondaryWeaponItem _x;
+    };
+} forEach (_sItems);
 {
     if (!(_x isEqualTo "")) then {
         player addHandgunItem _x;
