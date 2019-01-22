@@ -23,7 +23,7 @@ switch (playerSide) do {
     
     //Cops
     case west: {
-        life_actions = life_actions + [player addAction[localize "STR_ISTR_Spike_Pack",life_fnc_packupSpikes,"",0,false,false,"",' _spikes = nearestObjects[getPos player,["Land_Razorwire_F"],5] select 0; !isNil "_spikes"']];
+        life_actions pushBack (player addAction[localize "STR_ISTR_Spike_Pack",life_fnc_packupSpikes,"",0,false,false,"",' (nearestObjects[getPos player,["Land_Razorwire_F"],5]) params ["_spikes",objNull,[objNull]]; !isNull _spikes']);
     };
     
     //EMS
