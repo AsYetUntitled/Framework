@@ -7,11 +7,9 @@
     so code can easily be changed. Ultimately it just pops the tires.
 */
 params [
-	["_vehicle",objNull,[objNull]]
+    ["_vehicle",objNull,[objNull]]
 ];
 
 if (isNull _vehicle) exitWith {};
-
-
 _vehicle setHitPointDamage ["HitLFWheel", 1];
 _vehicle setHitPointDamage ["HitRFWheel", 1];
