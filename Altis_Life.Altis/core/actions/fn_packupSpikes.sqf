@@ -9,7 +9,6 @@
 if (isNull _spikes) exitWith {};
 
 if ([true,"spikeStrip",1] call life_fnc_handleInv) then {
-    [true,"spikeStrip",1] call life_fnc_handleInv;
     titleText[localize "STR_NOTF_SpikeStrip", "PLAIN"];
     deleteVehicle _spikes;
 };
