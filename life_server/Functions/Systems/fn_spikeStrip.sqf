@@ -16,7 +16,7 @@ params [
 
 if (isNull _spikeStrip) exitWith {}; //Bad vehicle type passed.
 
-waitUntil { _nearVehicles = nearestObjects[getPos _spikeStrip,["Car"],5]; != [] _nearVehicles || isNull _spikeStrip };
+waitUntil { _nearVehicles = nearestObjects[getPos _spikeStrip,["Car"],5]; _nearVehicles != [] || isNull _spikeStrip };
 
 if (isNull _spikeStrip) exitWith {}; //It was picked up?
 (_nearVehicles) params ["_vehicle",objNull,[objNull]];
