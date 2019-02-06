@@ -41,6 +41,7 @@ private _offset = switch (typeOf _vehicle) do {
     case "B_Heli_Transport_01_F": {
         [-0.5, 0.0, 0.81];
     };
+<<<<<<< HEAD
     default {
         [-1];
     };
@@ -59,6 +60,18 @@ _lightLeft setLightFlareSize 0.38;
 _lightLeft setLightFlareMaxDistance 150;
 _lightLeft setLightUseFlare true;
 
+=======
+};
+
+_lightLeft lightAttachObject [_vehicle, _offset];
+
+_lightLeft setLightAttenuation [0.181, 0, 1000, 130];
+_lightLeft setLightIntensity 10;
+_lightLeft setLightFlareSize 0.38;
+_lightLeft setLightFlareMaxDistance 150;
+_lightLeft setLightUseFlare true;
+
+>>>>>>> renew from master
 private _lightRight = "#lightpoint" createVehicleLocal getPos _vehicle;
 sleep 0.2;
 _lightRight setLightColor _lightBlue;
