@@ -10,18 +10,12 @@ publicVariable "TON_fnc_terrainSort";
 
 TON_fnc_index =
 compileFinal "
-    private [""_item"",""_stack""];
-    _item = _this select 0;
-    _stack = _this select 1;
-    _return = -1;
-
-    {
-        if (_item in _x) exitWith {
-            _return = _forEachIndex;
-        };
-    } forEach _stack;
-
-    _return;
+    params [
+        ""_item"",
+        [""_stack"",[],[[]]]
+    ];
+    
+    _stack findIf {_item in _x};
 ";
 
 TON_fnc_player_query =
@@ -36,22 +30,23 @@ compileFinal "
 publicVariable "TON_fnc_player_query";
 publicVariable "TON_fnc_index";
 
-TON_fnc_isnumber =
+TON_fnc_isNumber =
 compileFinal "
-    private [""_valid"",""_array""];
-    _valid = [""0"",""1"",""2"",""3"",""4"",""5"",""6"",""7"",""8"",""9""];
-    _array = [_this select 0] call KRON_StrToArray;
-    _return = true;
-
+    params [
+        ['_string','',['']]
+    ];
+    if (_string isEqualTo '') exitWith {false};
+    private _array = _string splitString '';
+    private _return = true;
     {
-        if (!(_x in _valid)) exitWith {
+        if !(_x in ['0','1','2','3','4','5','6','7','8','9']) exitWith {
             _return = false;
         };
     } forEach _array;
     _return;
 ";
 
-publicVariable "TON_fnc_isnumber";
+publicVariable "TON_fnc_isNumber";
 
 TON_fnc_clientGangKick =
 compileFinal "

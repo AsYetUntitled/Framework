@@ -44,7 +44,7 @@ _horsepower = (_vehicleInfo select 11);
 _passengerseats = (_vehicleInfo select 10);
 _fuel = (_vehicleInfo select 12);
 _armor = (_vehicleInfo select 9);
-[_className] call life_fnc_vehicleShop3DPreview;
+[_className] call life_fnc_3dPreviewDisplay;
 
 ctrlShow [2330,true];
 (CONTROL(2300,2303)) ctrlSetStructuredText parseText format [

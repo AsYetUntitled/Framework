@@ -70,8 +70,8 @@ class CfgFunctions {
             class federalUpdate {};
             class chopShopSell {};
             class clientDisconnect {};
+            class entityRespawned {};
             class cleanupRequest {};
-            class setObjVar {};
             class keyManagement {};
             class vehicleUpdate {};
             class recupkeyforHC {};
