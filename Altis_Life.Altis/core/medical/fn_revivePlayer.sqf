@@ -53,7 +53,7 @@ for "_i" from 0 to 1 step 0 do {
 player playActionNow "stop";
 
 if !(_target getVariable ["Reviving", objNull] isEqualTo player) exitWith {hint localize "STR_Medic_AlreadyReviving"; life_action_inUse = false;};
-_target setVariable ["Reviving", NIL, true];
+_target setVariable ["Reviving", nil, true];
 
 if (!alive player || {life_istazed} || {life_isknocked}) exitWith {life_action_inUse = false;};
 if (_target getVariable ["Revive", false]) exitWith {hint localize "STR_Medic_RevivedRespawned"; life_action_inUse = false;};
