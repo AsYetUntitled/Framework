@@ -41,7 +41,7 @@ private _offset = switch (typeOf _vehicle) do {
     case "B_Heli_Transport_01_F": {
         [-0.5, 0.0, 0.81];
     };
-    default: {
+    default {
         [-1];
     };
 };

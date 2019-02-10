@@ -26,7 +26,7 @@ private _offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
         [-0.37, 0.0, 0.56];
     };
-    default: {
+    default {
         [-1];
     };
 };
