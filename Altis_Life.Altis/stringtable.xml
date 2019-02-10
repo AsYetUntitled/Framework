@@ -933,6 +933,17 @@
             <Russian>You cannot drop keys to a vehicle which is locked and you are inside of.</Russian>
             <German>Du kannst den Schlüssel nicht wegschmeißen, weil das Auto verschlossen ist und du drin sitzt.</German>
         </Key>
+        <Key ID="STR_NOTF_ELSNotSet">
+            <Original>Emergency lights are not set for this vehicle.</Original>
+            <Czech>Emergency lights are not set for this vehicle.</Czech>
+            <French>Emergency lights are not set for this vehicle.</French>
+            <Spanish>Emergency lights are not set for this vehicle.</Spanish>
+            <Italian>Emergency lights are not set for this vehicle.</Italian>
+            <Polish>Emergency lights are not set for this vehicle.</Polish>
+            <Portuguese>Emergency lights are not set for this vehicle.</Portuguese>
+            <Russian>Emergency lights are not set for this vehicle.</Russian>
+            <German>Emergency lights are not set for this vehicle.</German>
+        </Key>
     </Package>
     <Package name="ATM_Strings">
         <Key ID="STR_ATM_Title">
