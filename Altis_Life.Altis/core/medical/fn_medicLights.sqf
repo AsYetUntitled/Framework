@@ -27,14 +27,13 @@ private _offset = switch (typeOf _vehicle) do {
         [-0.37, 0.0, 0.56];
     };
     default: {
-        exitWith {private vehicleSet = false};
+        [-1];
     };
 };
 
-if (vehicleSet isEqualTo false) {
+if (_offset isEqualTo [-1]) exitWith {
     diag_log format ["Vehicle emergency lights not set for: %1",_vehicle];
     hint "Vehicle emergency lights not set for this vehicle";
-    exit;
 };
 
 _lightLeft lightAttachObject [_vehicle, _offset];
