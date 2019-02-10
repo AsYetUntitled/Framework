@@ -27,8 +27,14 @@ private _offset = switch (typeOf _vehicle) do {
         [-0.37, 0.0, 0.56];
     };
 	default: {
-		diag_log format ["Vehicle emergency lights not set: %1",_vehicle];
+		exitWith {private vehicleSet = false};
 	};
+};
+
+if (vehicleSet isEqualTo false) {
+	diag_log format ["Vehicle emergency lights not set for: %1",_vehicle];
+	hint "Vehicle emergency lights not set for this vehicle";
+	exit;
 };
 
 _lightLeft lightAttachObject [_vehicle, _offset];
@@ -49,9 +55,6 @@ _offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
         [0.37, 0.0, 0.56];
     };
-	default: {
-		diag_log format ["Vehicle emergency lights not set: %1",_vehicle];
-	};
 };
 
 _lightRight lightAttachObject [_vehicle, _offset];
