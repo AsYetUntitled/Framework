@@ -33,7 +33,7 @@ private _offset = switch (typeOf _vehicle) do {
 
 if (_offset isEqualTo [-1]) exitWith {
     diag_log format ["Vehicle emergency lights not set for: %1",_vehicle];
-    hint "Vehicle emergency lights not set for this vehicle";
+    hint localize "STR_NOTF_ELSNotSet";
 };
 
 _lightLeft lightAttachObject [_vehicle, _offset];
