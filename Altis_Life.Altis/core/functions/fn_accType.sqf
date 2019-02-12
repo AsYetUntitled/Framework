@@ -18,13 +18,14 @@
     2: Secondary
     3: Handgun
 */
-private ["_item","_type","_tmp","_ret","_weaponArray"];
-_item = [_this,0,"",[""]] call BIS_fnc_param;
-_type = [_this,1,0,[0]] call BIS_fnc_param;
+params [
+    ["_item","",[""]];
+    ["_type",0,[0]];
+];
 if (_item isEqualTo "" || _type isEqualTo 0) exitWith {0};
-_ret = 0;
+private _ret = 0;
 
-_weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon player];
+private _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon player];
 {
     if (!(_ret isEqualTo 0)) exitWith {}; //Make sure we exit the loop since there was already a match.
     if (!(_x isEqualTo "")) then
