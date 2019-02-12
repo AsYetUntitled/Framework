@@ -16,8 +16,7 @@ params [
     ["_toVest",false,[false]]; //Manual override to send items specifically to a vest
     ["_preview",false,[false]];
 ];
-
-private _items = [];
+private "_items";
 
 //Some checks
 if (_item isEqualTo "") exitWith {};
