@@ -6,7 +6,6 @@
     Description
     Main gear handling functionality.
 */
-private ["_item","_details","_bool","_ispack","_items","_isgun","_ongun","_override","_toUniform","_toVest","_preview"];
 params [
     ["_item","",[""]];
     ["_bool",false,[false]];
@@ -20,9 +19,9 @@ params [
 
 //Some checks
 if (_item isEqualTo "") exitWith {};
-_isgun = false;
+private _isgun = false;
 
-_details = [_item] call life_fnc_fetchCfgDetails;
+private _details = [_item] call life_fnc_fetchCfgDetails;
 if (count _details isEqualTo 0) exitWith {};
 
 if (_bool) then {
@@ -47,7 +46,7 @@ if (_bool) then {
 
         case "CfgVehicles": {
             if (!(backpack player isEqualTo "")) then {
-                _items = (backpackItems player);
+                private _items = (backpackItems player);
                 removeBackpack player;
             };
 
