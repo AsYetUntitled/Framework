@@ -32,10 +32,7 @@ private _itemInfo = [_materialsRequired,_materialsGiven,_noLicenseCost,(localize
 if (count _itemInfo isEqualTo 0) exitWith {life_action_inUse = false;};
 
 //Setup vars.
-private _oldItem = _itemInfo select 0;
-private _newItem = _itemInfo select 1;
-private _cost = _itemInfo select 2;
-private _upp = _itemInfo select 3;
+_itemInfo params ["_oldItem","_newItem","_cost","_upp"];
 private _exit = false;
 if (count _oldItem isEqualTo 0) exitWith {life_action_inUse = false;};
 
