@@ -17,6 +17,8 @@ params [
     ["_preview",false,[false]];
 ];
 
+private _items = [];
+
 //Some checks
 if (_item isEqualTo "") exitWith {};
 private _isgun = false;
@@ -46,7 +48,7 @@ if (_bool) then {
 
         case "CfgVehicles": {
             if (!(backpack player isEqualTo "")) then {
-                private _items = (backpackItems player);
+                _items = (backpackItems player);
                 removeBackpack player;
             };
 
