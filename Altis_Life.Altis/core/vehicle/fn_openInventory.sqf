@@ -8,7 +8,7 @@
 */
 if (dialog) exitWith {};
 params [
-    ["_vehicle",objNull,[objNull]];
+    ["_vehicle",objNull,[objNull]]
 ];
 if (isNull _vehicle || !(_vehicle isKindOf "Car" || _vehicle isKindOf "Air" || _vehicle isKindOf "Ship" || _vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F")) exitWith {}; //Either a null or invalid vehicle type.
 if ((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint localize "STR_MISC_VehInvUse"};

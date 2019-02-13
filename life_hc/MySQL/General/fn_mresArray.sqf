@@ -8,7 +8,7 @@
     any problems. The return method is 'hacky' but it's effective.
 */
 params [
-    ["_array",[],[[]]];
+    ["_array",[],[[]]]
 ];
 _array = str _array;
 _array = toArray(_array);

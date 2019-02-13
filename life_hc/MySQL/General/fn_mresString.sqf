@@ -6,7 +6,7 @@
     Makes the string safe to be passed to MySQL (strips various stuff).
 */
 params [
-    ["_string","",[""]];
+    ["_string","",[""]]
 ];
 private _filter = "'/\`:|;,{}-""<>";
 

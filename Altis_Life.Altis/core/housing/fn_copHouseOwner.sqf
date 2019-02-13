@@ -6,7 +6,7 @@
     Displays the house owner
 */
 params [
-    ["_house",objNull,[objNull]];
+    ["_house",objNull,[objNull]]
 ];
 if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
 if (isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};

@@ -22,7 +22,7 @@
     12: Fuel Capacity
 */
 params [
-    ["_class","",[""]];
+    ["_class","",[""]]
 ];
 if (_class isEqualTo "") exitWith {[]}; //Bad class passed.
 if (!isClass (configFile >> "CfgVehicles" >> _class)) exitWith {[]}; //Class doesn't exist in CfgVehicles

@@ -6,7 +6,7 @@
     Makes the target jump.
 */
 params [
-    ["_unit",objNull,[objNull]];
+    ["_unit",objNull,[objNull]]
 ];
 private _oldpos = getPosATL _unit;
 

@@ -6,7 +6,7 @@
     Handles flash-banging yeahhhh..
 */
 params [
-    ["_pos",[],[[]]];
+    ["_pos",[],[[]]]
 ];
 if (_pos isEqualTo []) exitWith {}; //Badddd
 if (player distance _pos > 25) exitWith {}; //Bad again.

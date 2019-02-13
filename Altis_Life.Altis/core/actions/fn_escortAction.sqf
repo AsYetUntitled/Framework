@@ -6,7 +6,7 @@
     Description: Attaches the desired person(_unit) to the player(player) and "escorts them".
 */
 params [
-    ["_unit",objNull,[objNull]];
+    ["_unit",objNull,[objNull]]
 ];
 
 if (!isNull(player getVariable ["escortingPlayer",objNull])) exitWith {};

@@ -7,7 +7,7 @@
     Fills up the safes inventory.
 */
 params [
-    ["_safe",objNull,[objNull]];
+    ["_safe",objNull,[objNull]]
 ];
 if (isNull _safe) exitWith {closeDialog 0;};
 disableSerialization;

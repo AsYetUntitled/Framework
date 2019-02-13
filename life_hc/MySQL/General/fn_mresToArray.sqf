@@ -8,7 +8,7 @@
     any problems. The return method is 'hacky' but it's effective.
 */
 params [
-    ["_array","",[""]];
+    ["_array","",[""]]
 ];
 if (_array isEqualTo "") exitWith {[]};
 _array = toArray(_array);

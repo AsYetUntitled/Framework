@@ -8,7 +8,7 @@
     on distance between A->B
 */
 params [
-    ["_dp",objNull,[objNull]];
+    ["_dp",objNull,[objNull]]
 ];
 
 life_delivery_in_progress = false;

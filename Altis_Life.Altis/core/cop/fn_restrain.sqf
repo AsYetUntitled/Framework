@@ -7,7 +7,7 @@
     Restrains the client.
 */
 params [
-    ["_cop",objNull,[objNull]];
+    ["_cop",objNull,[objNull]]
 ];
 private _player = player;
 private _vehicle = vehicle player;

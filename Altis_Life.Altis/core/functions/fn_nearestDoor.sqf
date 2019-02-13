@@ -7,7 +7,7 @@
     at.
 */
 params [
-    ["_house",objNull,[objNull]];
+    ["_house",objNull,[objNull]]
 ];
 if (isNull _house) exitWith {0};
 if (!(_house isKindOf "House_F")) exitWith {0};

@@ -7,7 +7,7 @@
     Freezes selected player.
 */
 params [
-    ["_admin",objNull,[objNull]];
+    ["_admin",objNull,[objNull]]
 ];
 
 if (life_frozen) then {

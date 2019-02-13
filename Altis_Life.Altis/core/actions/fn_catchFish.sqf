@@ -7,7 +7,7 @@
     Catches a fish that is near by.
 */
 params [
-    ["_fish",objNull,[objNull]];
+    ["_fish",objNull,[objNull]]
 ];
 if (isNull _fish) exitWith {}; //Object passed is null?
 if (player distance _fish > 3.5) exitWith {};
