@@ -26,7 +26,7 @@ if ((_code in (actionKeys "GetOver") || _code in (actionKeys "salute") || _code 
 };
 
 if (life_action_inUse) exitWith {
-    if (!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true;};
+    if (!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true};
     _handled;
 };
 
@@ -35,8 +35,7 @@ if (!(actionKeys "User10" isEqualTo []) && {(inputAction "User10" > 0)}) exitWit
     //Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
     if (!life_action_inUse) then {
         [] spawn {
-            private "_handle";
-            _handle = [] spawn life_fnc_actionKeyHandler;
+            private _handle = [] spawn life_fnc_actionKeyHandler;
             waitUntil {scriptDone _handle};
             life_action_inUse = false;
         };
@@ -151,7 +150,7 @@ switch (_code) do {
 
     //Restraining (Shift + R)
     case 19: {
-        if (_shift) then {_handled = true;};
+        if (_shift) then {_handled = true};
         if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "CAManBase"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
             [] call life_fnc_restrainAction;
         };
@@ -159,7 +158,7 @@ switch (_code) do {
 
     //Knock out, this is experimental and yeah... (Shift + G)
     case 34: {
-        if (_shift) then {_handled = true;};
+        if (_shift) then {_handled = true};
         if (_shift && playerSide isEqualTo civilian && !isNull cursorObject && cursorObject isKindOf "CAManBase" && isPlayer cursorObject && alive cursorObject && cursorObject distance player < 4 && speed cursorObject < 1) then {
             if ((animationState cursorObject) != "Incapacitated" && (currentWeapon player == primaryWeapon player || currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable ["restrained",false]) && !life_istazed && !life_isknocked) then {
                 [cursorObject] spawn life_fnc_knockoutAction;
@@ -231,7 +230,7 @@ switch (_code) do {
                 life_siren_active = false;
             };
 
-            _veh = vehicle player;
+            private _veh = vehicle player;
             if (isNil {_veh getVariable "siren"}) then {_veh setVariable ["siren",false,true];};
             if ((_veh getVariable "siren")) then {
                 titleText [localize "STR_MISC_SirensOFF","PLAIN"];
@@ -271,17 +270,17 @@ switch (_code) do {
     //U Key
     case 22: {
         if (!_alt && !_ctrlKey) then {
-            if (isNull objectParent player) then {
-                _veh = cursorObject;
+            private _veh = if (isNull objectParent player) then {
+                cursorObject;
             } else {
-                _veh = vehicle player;
+                vehicle player;
             };
 
             if (_veh isKindOf "House_F" && {playerSide isEqualTo civilian}) then {
                 if (_veh in life_vehicles && {player distance _veh < 20}) then {
-                    _door = [_veh] call life_fnc_nearestDoor;
+                    private _door = [_veh] call life_fnc_nearestDoor;
                     if (_door isEqualTo 0) exitWith {hint localize "STR_House_Door_NotNear"};
-                    _locked = _veh getVariable [format ["bis_disabled_Door_%1",_door],0];
+                    private _locked = _veh getVariable [format ["bis_disabled_Door_%1",_door],0];
 
                     if (_locked isEqualTo 0) then {
                         _veh setVariable [format ["bis_disabled_Door_%1",_door],1,true];
@@ -294,7 +293,7 @@ switch (_code) do {
                     };
                 };
             } else {
-                _locked = locked _veh;
+                private _locked = locked _veh;
                 if (_veh in life_vehicles && {player distance _veh < 20}) then {
                     if (_locked isEqualTo 2) then {
                         if (local _veh) then {
