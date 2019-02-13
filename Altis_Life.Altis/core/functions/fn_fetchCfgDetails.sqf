@@ -26,21 +26,22 @@
     13: Base (Superclass)
     14: New compatibleItems Structure
 */
-private ["_className","_section","_type","_accPointer","_accMuzzle","_accOptic","_classes","_itemInfo","_magazines","_scope","_config","_displayName"];
-_className = [_this,0,"",[""]] call BIS_fnc_param;
-_section = [_this,1,"",[""]] call BIS_fnc_param;
+params [
+    ["_className","",[""]];
+    ["_section","",[""]];
+];
 if (_className isEqualTo "") exitWith {[]};
 
-_type = -1;
-_accPointer = [];
-_accOptic = [];
-_accMuzzle = [];
-_classes = [];
-_scope = 0;
-_itemInfo = -1;
-_muzzles = [];
-_magazines = [];
-_return = [];
+private _type = -1;
+private _accPointer = [];
+private _accOptic = [];
+private _accMuzzle = [];
+private _classes = [];
+private _scope = 0;
+private _itemInfo = -1;
+private _muzzles = [];
+private _magazines = [];
+private _return = [];
 
 if (_section isEqualTo "") then {
     _section = switch (true) do {
@@ -52,8 +53,8 @@ if (_section isEqualTo "") then {
 };
 
 if (!(_section isEqualType "") || {!isClass(configFile >> _section >> _className)} || {_section isEqualTo ""}) exitWith {[]};
-_config = configFile >> _section >> _className;
-_displayName = getText(_config >> "displayName");
+private _config = configFile >> _section >> _className;
+private _displayName = getText(_config >> "displayName");
 _picture = getText(_config >> "picture");
 _desc = getText(_config >> "descriptionshort");
 _base = inheritsFrom _config;

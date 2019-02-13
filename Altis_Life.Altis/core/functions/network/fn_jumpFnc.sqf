@@ -5,23 +5,24 @@
     Description:
     Makes the target jump.
 */
-private ["_unit","_vel","_dir","_v1","_v2","_anim","_oldpos"];
-_unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-_oldpos = getPosATL _unit;
+params [
+    ["_unit",objNull,[objNull]];
+];
+private _oldpos = getPosATL _unit;
 
 if (isNull _unit) exitWith {}; //Bad data
 
 if (animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
 
 if (local _unit) then {
-    _v1 = 3.82;
-    _v2 = .4;
-    _dir = direction player;
-    _vel = velocity _unit;
+    private _v1 = 3.82;
+    private _v2 = .4;
+    private _dir = direction player;
+    private _vel = velocity _unit;
     _unit setVelocity[(_vel select 0)+(sin _dir*_v2),(_vel select 1)+(cos _dir*_v2),(_vel select 2)+_v1];
 };
 
-_anim = animationState _unit;
+private _anim = animationState _unit;
 _unit switchMove "AovrPercMrunSrasWrflDf";
 
 if (local _unit) then {

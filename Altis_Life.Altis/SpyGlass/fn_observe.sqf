@@ -6,10 +6,11 @@
     This is the observation part of SPY-GLASS, it reports to the RPT log
     of unusual activity by the player.
 */
-private ["_pName", "_pUID", "_pReason"];
-_pName = [_this, 0, "", [""]] call BIS_fnc_param;
-_pUID = [_this, 1, "", [""]] call BIS_fnc_param;
-_pReason = [_this, 2, "", [""]] call BIS_fnc_param;
+params [
+    ["_pName","",[""]];
+    ["_pUID","",[""]];
+    ["_pReason","",[""]];
+];
 
 if (_pName isEqualTo "" || _pUID isEqualTo "" || _pReason isEqualTo "") exitWith {}; //Bad params passed..
 

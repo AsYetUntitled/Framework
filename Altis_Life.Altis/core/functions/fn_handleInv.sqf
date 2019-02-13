@@ -6,21 +6,23 @@
     Description:
     Do I really need one?
 */
-private ["_math","_item","_num","_return","_var","_weight","_value","_diff"];
-_math = [_this,0,false,[false]] call BIS_fnc_param; //true = add; false = SUB;
-_item = [_this,1,"",[""]] call BIS_fnc_param; //The item we are using to add or remove.
-_num = [_this,2,0,[0]] call BIS_fnc_param; //Number of items to add or remove.
+private ["_return","_diff"];
+params [
+    ["_math",false,[false]]; //true = add; false = SUB;
+    ["_item","",[""]]; //The item we are using to add or remove.
+    ["_num",0,[0]]; //Number of items to add or remove.
+];
 if (_item isEqualTo "" || _num isEqualTo 0) exitWith {false};
 
-_var = ITEM_VARNAME(_item);
+private _var = ITEM_VARNAME(_item);
 
 if (_math) then {
     _diff = [_item,_num,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
     _num = _diff;
     if (_num <= 0) exitWith {false};
 };
-_weight = ([_item] call life_fnc_itemWeight) * _num;
-_value = ITEM_VALUE(_item);
+private _weight = ([_item] call life_fnc_itemWeight) * _num;
+private _value = ITEM_VALUE(_item);
 
 if (_math) then {
     //Lets add!

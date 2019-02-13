@@ -6,9 +6,10 @@
     Description:
     Called when the slider is changed for any field and updates the view distance for it.
 */
-private ["_mode","_value"];
-_mode = [_this,0,-1,[0]] call BIS_fnc_param;
-_value = [_this,1,-1,[0]] call BIS_fnc_param;
+params [
+    ["_mode",-1,[0]];
+    ["_value",-1,[0]];
+];
 if (_mode isEqualTo -1 || _value isEqualTo -1) exitWith {};
 disableSerialization;
 

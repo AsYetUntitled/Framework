@@ -6,11 +6,12 @@
     Sets the given control / maps focus position
 */
 disableSerialization;
-private ["_control","_time","_zoom","_position"];
-_control = [_this,0,controlNull,[controlNull]] call BIS_fnc_param;
-_time = [_this,1,1,[0]] call BIS_fnc_param;
-_zoom = [_this,2,0.1,[0]] call BIS_fnc_param;
-_position = [_this,3,[],[[]]] call BIS_fnc_param;
+params [
+    ["_control",controlNull,[controlNull]];
+    ["_time",1,[0]];
+    ["_zoom",0.1,[0]];
+    ["_position",[],[[]]];
+];
 
 if (isNull _control || _position isEqualTo []) exitWith {};
 
