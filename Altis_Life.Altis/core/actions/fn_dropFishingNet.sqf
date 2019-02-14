@@ -5,9 +5,9 @@
     Description:
     Drops a virtual fishing net from the boat.
 */
-private ["_fish","_type","_typeName"];
+private ["_type","_typeName"];
 if (!(vehicle player isKindOf "Ship")) exitWith {};
-_fish = (nearestObjects[getPos vehicle player,["Fish_Base_F"],20]);
+private _fish = (nearestObjects[getPos vehicle player,["Fish_Base_F"],20]);
 life_net_dropped = true;
 titleText[localize "STR_NOTF_NetDrop","PLAIN"];
 sleep 5;

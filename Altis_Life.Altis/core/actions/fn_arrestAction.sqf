@@ -6,8 +6,7 @@
     Description:
     Arrests the targeted person.
 */
-private ["_unit","_id"];
-_unit = param [0,objNull,[objNull]];
+private _unit = param [0,objNull,[objNull]];
 if (isNull _unit) exitWith {}; //Not valid
 if (isNil "_unit") exitWith {}; //Not Valid
 if (!(_unit isKindOf "CAManBase")) exitWith {}; //Not a unit
