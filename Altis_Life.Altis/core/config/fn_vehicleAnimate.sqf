@@ -6,9 +6,9 @@
     Pass what you want to be animated.
 */
 params [
-    ["_vehicle",objNull,[objNull]];
-    ["_animate","",["",[]]];
-    ["_preset",false,[false]];
+    ["_vehicle",objNull,[objNull]],
+    ["_animate","",["",[]]],
+    ["_preset",false,[false]]
 ];
 if (isNull _vehicle) exitWith {}; //FUCK
 

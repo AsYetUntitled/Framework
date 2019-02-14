@@ -7,8 +7,8 @@
     Notifies the player he has received a bounty and gives him the cash.
 */
 params [
-    ["_val","",["",0]];
-    ["_total","",["",0]];
+    ["_val","",["",0]],
+    ["_total","",["",0]]
 ];
 
 if (_val == _total) then {

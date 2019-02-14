@@ -7,10 +7,10 @@
 */
 disableSerialization;
 params [
-    ["_control",controlNull,[controlNull]];
-    ["_time",1,[0]];
-    ["_zoom",0.1,[0]];
-    ["_position",[],[[]]];
+    ["_control",controlNull,[controlNull]],
+    ["_time",1,[0]],
+    ["_zoom",0.1,[0]],
+    ["_position",[],[[]]]
 ];
 
 if (isNull _control || _position isEqualTo []) exitWith {};

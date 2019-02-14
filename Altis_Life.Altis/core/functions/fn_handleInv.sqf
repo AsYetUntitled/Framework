@@ -8,9 +8,9 @@
 */
 private ["_return","_diff"];
 params [
-    ["_math",false,[false]]; //true = add; false = SUB;
-    ["_item","",[""]]; //The item we are using to add or remove.
-    ["_num",0,[0]]; //Number of items to add or remove.
+    ["_math",false,[false]], //true = add; false = SUB;
+    ["_item","",[""]], //The item we are using to add or remove.
+    ["_num",0,[0]] //Number of items to add or remove.
 ];
 if (_item isEqualTo "" || _num isEqualTo 0) exitWith {false};
 

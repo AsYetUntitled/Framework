@@ -13,8 +13,8 @@
     BooLean (true when string is found)
 */
 params [
-    ["_needle",0,"",[""]];
-    ["_haystack", "", [""]];
+    ["_needle",0,"",[""]],
+    ["_haystack", "", [""]]
 ];
 
 _haystack = toArray _haystack;

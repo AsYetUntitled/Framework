@@ -31,9 +31,9 @@ class FSM
       name = "Init";
       init = /*%FSM<STATEINIT""">*/"private [""_skipDay"", ""_skipNight"", ""_method"", ""_fastNight"", ""_sunState""];" \n
        "params [" \n
-       "    ["_skipDay",8,[0]];" \n
-       "    ["_fastNight",false,[true]];" \n
-       "    ["_skipNight",12,[0]];" \n
+       "    ["_skipDay",8,[0]]," \n
+       "    ["_fastNight",false,[true]]," \n
+       "    ["_skipNight",12,[0]]" \n
        "];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links

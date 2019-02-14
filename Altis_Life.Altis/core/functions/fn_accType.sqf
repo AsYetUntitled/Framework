@@ -19,8 +19,8 @@
     3: Handgun
 */
 params [
-    ["_item","",[""]];
-    ["_type",0,[0]];
+    ["_item","",[""]],
+    ["_type",0,[0]]
 ];
 if (_item isEqualTo "" || _type isEqualTo 0) exitWith {0};
 private _ret = 0;

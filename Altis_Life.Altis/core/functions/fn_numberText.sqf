@@ -12,8 +12,8 @@
     STRING
 */
 params [
-    ["_number",0,[0]];
-    ["_mod",3,[0]];
+    ["_number",0,[0]],
+    ["_mod",3,[0]]
 ];
 
 private _digits = _number call bis_fnc_numberDigits;

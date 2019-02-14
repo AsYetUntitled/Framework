@@ -7,14 +7,14 @@
     Main gear handling functionality.
 */
 params [
-    ["_item","",[""]];
-    ["_bool",false,[false]];
-    ["_ispack",false,[false]];
-    ["_ongun",false,[false]];
-    ["_override",false,[false]];
-    ["_toUniform",false,[false]]; //Manual override to send items specifically to a uniform.
-    ["_toVest",false,[false]]; //Manual override to send items specifically to a vest
-    ["_preview",false,[false]];
+    ["_item","",[""]],
+    ["_bool",false,[false]],
+    ["_ispack",false,[false]],
+    ["_ongun",false,[false]],
+    ["_override",false,[false]],
+    ["_toUniform",false,[false]], //Manual override to send items specifically to a uniform.
+    ["_toVest",false,[false]], //Manual override to send items specifically to a vest
+    ["_preview",false,[false]]
 ];
 private "_items";
 

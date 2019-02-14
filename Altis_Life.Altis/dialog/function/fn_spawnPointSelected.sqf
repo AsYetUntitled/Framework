@@ -7,8 +7,8 @@
 */
 disableSerialization;
 params [
-    ["_control",controlNull,[controlNull]];
-    ["_selection",0,[0]];
+    ["_control",controlNull,[controlNull]],
+    ["_selection",0,[0]]
 ];
 
 private _spCfg = [playerSide] call life_fnc_spawnPointCfg;

@@ -7,9 +7,9 @@
     to parse,log or ban automatically.
 */
 params [
-    ["_pName","",[""]];
-    ["_pUID","",[""]];
-    ["_pReason","",[""]];
+    ["_pName","",[""]],
+    ["_pUID","",[""]],
+    ["_pReason","",[""]]
 ];
 
 if (_pName isEqualTo "" || _pUID isEqualTo "" || _pReason isEqualTo "") exitWith {}; //Bad params passed..

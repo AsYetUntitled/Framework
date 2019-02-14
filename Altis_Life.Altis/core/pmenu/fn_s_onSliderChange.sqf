@@ -7,8 +7,8 @@
     Called when the slider is changed for any field and updates the view distance for it.
 */
 params [
-    ["_mode",-1,[0]];
-    ["_value",-1,[0]];
+    ["_mode",-1,[0]],
+    ["_value",-1,[0]]
 ];
 if (_mode isEqualTo -1 || _value isEqualTo -1) exitWith {};
 disableSerialization;

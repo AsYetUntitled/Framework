@@ -10,9 +10,9 @@
     false - No units near
 */
 params [
-    ["_faction",sideUnknown,[sideUnknown]];
-    ["_position",(getPos player),[[]]];
-    ["_radius",30,[0]];
+    ["_faction",sideUnknown,[sideUnknown]],
+    ["_position",(getPos player),[[]]],
+    ["_radius",30,[0]]
 ];
 private _ret = false;
 

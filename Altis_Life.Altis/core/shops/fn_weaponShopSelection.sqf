@@ -8,8 +8,8 @@
 */
 private ["_price","_item","_itemArray","_bool"];
 params [
-    ["_control",controlNull,[controlNull]];
-    ["_index",-1,[0]];
+    ["_control",controlNull,[controlNull]],
+    ["_index",-1,[0]]
 ];
 private _shop = uiNamespace getVariable ["Weapon_Shop",""];
 if (isNull _control) exitWith {closeDialog 0;}; //Bad data

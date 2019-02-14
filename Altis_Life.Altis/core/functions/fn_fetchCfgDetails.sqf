@@ -27,8 +27,8 @@
     14: New compatibleItems Structure
 */
 params [
-    ["_className","",[""]];
-    ["_section","",[""]];
+    ["_className","",[""]],
+    ["_section","",[""]]
 ];
 if (_className isEqualTo "") exitWith {[]};
 

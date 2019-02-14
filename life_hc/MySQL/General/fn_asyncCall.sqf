@@ -12,9 +12,9 @@
         3: BOOL (True to return a single array, false to return multiple entries mainly for garage).
 */
 params [
-    ["_queryStmt","",[""]];
-    ["_mode",1,[0]];
-    ["_multiarr",false,[false]];
+    ["_queryStmt","",[""]],
+    ["_mode",1,[0]],
+    ["_multiarr",false,[false]]
 ];
 
 private _key = EXTDB format ["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStmt];
