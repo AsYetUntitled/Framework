@@ -5,7 +5,8 @@
     Description:
     Drops a virtual fishing net from the boat.
 */
-private ["_type","_typeName"];
+private _type = "";
+private "_typeName";
 if (!(vehicle player isKindOf "Ship")) exitWith {};
 private _fish = (nearestObjects[getPos vehicle player,["Fish_Base_F"],20]);
 life_net_dropped = true;
@@ -21,7 +22,6 @@ if (_fish isEqualTo []) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLA
             case ((typeOf _x) isEqualTo "Tuna_F") : {_typeName = localize "STR_ANIM_Tuna"; _type = "tuna_raw";};
             case ((typeOf _x) isEqualTo "Mullet_F") : {_typeName = localize "STR_ANIM_Mullet"; _type = "mullet_raw";};
             case ((typeOf _x) isEqualTo "CatShark_F") : {_typeName = localize "STR_ANIM_Catshark"; _type = "catshark_raw";};
-            default {_type = "";};
         };
 
         sleep 3;

@@ -11,6 +11,7 @@
 params [
     ["_uid","",[""]],
     ["_side",sideUnknown,[civilian]],
+    ["_value",0,[0]],
     ["_mode",-1,[0]]
 ];
 
@@ -19,23 +20,19 @@ private _query = "";
 
 switch (_mode) do {
     case 0: {
-        params [
-            ["_value",0,[0]]
-        ];
         _value = [_value] call HC_fnc_numberSafe;
         _query = format ["UPDATE players SET cash='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 1: {
-        params [
-            ["_value",0,[0]]
-        ];
         _value = [_value] call HC_fnc_numberSafe;
         _query = format ["UPDATE players SET bankacc='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 2: {
         params [
+            [""],
+            [""],
             ["_value",[],[[]]]
         ];
         //Does something license related but I can't remember I only know it's important?
@@ -53,6 +50,8 @@ switch (_mode) do {
 
     case 3: {
         params [
+            [""],
+            [""],
             ["_value",[],[[]]]
         ];
         _value = [_value] call HC_fnc_mresArray;

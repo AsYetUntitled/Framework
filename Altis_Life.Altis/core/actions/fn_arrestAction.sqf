@@ -6,9 +6,10 @@
     Description:
     Arrests the targeted person.
 */
-private _unit = param [0,objNull,[objNull]];
+params [
+    ["_unit",objNull,[objNull]]
+];
 if (isNull _unit) exitWith {}; //Not valid
-if (isNil "_unit") exitWith {}; //Not Valid
 if (!(_unit isKindOf "CAManBase")) exitWith {}; //Not a unit
 if (!isPlayer _unit) exitWith {}; //Not a human
 if (!(_unit getVariable "restrained")) exitWith {}; //He's not restrained.
