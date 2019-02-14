@@ -31,8 +31,8 @@ switch (_mode) do {
 
     case 2: {
         params [
-            [""],
-            [""],
+            ["_uid","",[""]],
+            ["_side",sideUnknown,[civilian]],
             ["_value",[],[[]]]
         ];
         //Does something license related but I can't remember I only know it's important?
@@ -50,8 +50,8 @@ switch (_mode) do {
 
     case 3: {
         params [
-            [""],
-            [""],
+            ["_uid","",[""]],
+            ["_side",sideUnknown,[civilian]],
             ["_value",[],[[]]]
         ];
         _value = [_value] call HC_fnc_mresArray;
