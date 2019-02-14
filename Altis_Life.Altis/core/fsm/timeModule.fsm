@@ -29,7 +29,7 @@ class FSM
     class Init
     {
       name = "Init";
-      init = /*%FSM<STATEINIT""">*/"private [""_skipDay"", ""_skipNight"", ""_method"", ""_fastNight"", ""_sunState""];" \n
+      init = /*%FSM<STATEINIT""">*/"private [""_method"", ""_sunState""];" \n
        "params [" \n
        "    ["_skipDay",8,[0]]," \n
        "    ["_fastNight",false,[true]]," \n

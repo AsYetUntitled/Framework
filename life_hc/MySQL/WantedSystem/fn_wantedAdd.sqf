@@ -10,11 +10,12 @@
     Description:
     Adds or appends a unit to the wanted list.
 */
-private ["_uid","_type","_index","_data","_crime","_val","_customBounty","_name","_pastCrimes","_query","_queryResult"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_name = [_this,1,"",[""]] call BIS_fnc_param;
-_type = [_this,2,"",[""]] call BIS_fnc_param;
-_customBounty = [_this,3,-1,[0]] call BIS_fnc_param;
+params [
+    ["_uid","",[""]],
+    ["_name","",[""]],
+    ["_type","",[""]],
+    ["_customBounty",-1,[0]]
+];
 if (_uid isEqualTo "" || _type isEqualTo "" || _name isEqualTo "") exitWith {}; //Bad data passed.
 
 //What is the crime?
@@ -73,10 +74,11 @@ if (_type isEqualTo []) exitWith {}; //Not our information being passed...
 if !(_customBounty isEqualTo -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
-_query = format ["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
-_queryResult = [_query,2,true] call HC_fnc_asyncCall;
-_val = [_type select 1] call HC_fnc_numberSafe;
-_number = _type select 0;
+private _query = format ["SELECT wantedID FROM wanted WHERE wantedID='%1'",_uid];
+private _queryResult = [_query,2,true] call HC_fnc_asyncCall;
+private _val = [_type select 1] call HC_fnc_numberSafe;
+private _number = _type select 0;
+private "_crime";
 
 if !(count _queryResult isEqualTo 0) then
 {
@@ -84,7 +86,7 @@ if !(count _queryResult isEqualTo 0) then
     _crimeresult = [_crime,2] call HC_fnc_asyncCall;
     _pastcrimess = [_crimeresult select 0] call HC_fnc_mresToArray;
     if (_pastcrimess isEqualType "") then {_pastcrimess = call compile format ["%1", _pastcrimess];};
-    _pastCrimes = _pastcrimess;
+    private _pastCrimes = _pastcrimess;
     _pastCrimes pushBack _number;
     _pastCrimes = [_pastCrimes] call HC_fnc_mresArray;
     _query = format ["UPDATE wanted SET wantedCrimes = '%1', wantedBounty = wantedBounty + '%2', active = '1' WHERE wantedID='%3'",_pastCrimes,_val,_uid];
