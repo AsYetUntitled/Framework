@@ -5,15 +5,17 @@
     Description:
     Stores the vehicle in the 'Garage'
 */
-private ["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_sql","_unit","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo","_saveItems","_storetext","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight","_thread"];
-_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-_impound = [_this,1,false,[true]] call BIS_fnc_param;
-_unit = [_this,2,objNull,[objNull]] call BIS_fnc_param;
-_storetext = [_this,3,"",[""]] call BIS_fnc_param;
-_resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
+private ["_plate","_uid","_query","_cargo","_fuel","_damage","_weight","_thread"];
+params [
+    ["_vehicle",objNull,[objNull]],
+    ["_impound",false,[true]],
+    ["_unit",objNull,[objNull]],
+    ["_storetext","",[""]],
+];
+private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
-_vInfo = _vehicle getVariable ["dbInfo",[]];
+private _vInfo = _vehicle getVariable ["dbInfo",[]];
 
 if (count _vInfo > 0) then {
     _plate = _vInfo select 1;
@@ -71,10 +73,10 @@ if !(_uid isEqualTo getPlayerUID _unit) exitWith {
 };
 
 // sort out whitelisted items!
-_trunk = _vehicle getVariable ["Trunk", [[], 0]];
-_itemList = _trunk select 0;
-_totalweight = 0;
-_items = [];
+private _trunk = _vehicle getVariable ["Trunk", [[], 0]];
+private _itemList = _trunk select 0;
+private _totalweight = 0;
+private _items = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
         private ["_isIllegal", "_blacklist"];
@@ -125,10 +127,10 @@ else {
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
-    _vehItems = getItemCargo _vehicle;
-    _vehMags = getMagazineCargo _vehicle;
-    _vehWeapons = getWeaponCargo _vehicle;
-    _vehBackpacks = getBackpackCargo _vehicle;
+    private _vehItems = getItemCargo _vehicle;
+    private _vehMags = getMagazineCargo _vehicle;
+    private _vehWeapons = getWeaponCargo _vehicle;
+    private _vehBackpacks = getBackpackCargo _vehicle;
     _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
     // no items? clean the array so the database looks pretty
     if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {_cargo = [];};

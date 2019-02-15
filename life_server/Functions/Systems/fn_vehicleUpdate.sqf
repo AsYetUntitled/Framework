@@ -6,22 +6,24 @@
     Description:
     Tells the database that this vehicle need update inventory.
 */
-private ["_vehicle","_plate","_uid","_query","_sql","_dbInfo","_thread","_cargo","_trunk","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight"];
-_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-_mode = [_this,1,1,[0]] call BIS_fnc_param;
+private ["_query","_trunk","_itemList","_totalweight"];
+params [
+    ["_vehicle",objNull,[objNull]],
+    ["_mode",1,[0]]
+];
 if (isNull _vehicle) exitWith {}; //NULL
 
-_dbInfo = _vehicle getVariable ["dbInfo",[]];
+private _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if (count _dbInfo isEqualTo 0) exitWith {};
-_uid = _dbInfo select 0;
-_plate = _dbInfo select 1;
+private _uid = _dbInfo select 0;
+private _plate = _dbInfo select 1;
 switch (_mode) do {
     case 1: {
-        _vehItems = getItemCargo _vehicle;
-        _vehMags = getMagazineCargo _vehicle;
-        _vehWeapons = getWeaponCargo _vehicle;
-        _vehBackpacks = getBackpackCargo _vehicle;
-        _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
+        private _vehItems = getItemCargo _vehicle;
+        private _vehMags = getMagazineCargo _vehicle;
+        private _vehWeapons = getWeaponCargo _vehicle;
+        private _vehBackpacks = getBackpackCargo _vehicle;
+        private _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 
         // Keep it clean!
         if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {
@@ -35,7 +37,7 @@ switch (_mode) do {
     };
 
     case 2: {
-        _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
+        private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
         _trunk = _vehicle getVariable ["Trunk",[[],0]];
         _itemList = _trunk select 0;
         _totalweight = 0;
@@ -43,7 +45,7 @@ switch (_mode) do {
         {
             if ((_x select 0) in _resourceItems) then {
                 _items pushBack [_x select 0,_x select 1];
-                _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
+                private _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;
             };
         }forEach _itemList;
