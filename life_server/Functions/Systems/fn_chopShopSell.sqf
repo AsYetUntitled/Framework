@@ -11,6 +11,7 @@ params [
     ["_vehicle",objNull,[objNull]],
     ["_price",500,[0]],
     ["_cash",0,[0]]
+];
 
 //Error checks
 if (isNull _vehicle || isNull _unit) exitWith  {
