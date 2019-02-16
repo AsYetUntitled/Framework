@@ -11,7 +11,7 @@ params [
 ];
 if (isNull _fish) exitWith {}; //Object passed is null?
 if (player distance _fish > 3.5) exitWith {};
-private "_type";
+private _type = "";
 private "_typeName";
 
 switch (true) do {
@@ -22,7 +22,6 @@ switch (true) do {
     case ((typeOf _fish) isEqualTo "Mullet_F") : {_typeName = localize "STR_ANIM_Mullet"; _type = "mullet_raw";};
     case ((typeOf _fish) isEqualTo "CatShark_F") : {_typeName = localize "STR_ANIM_Catshark"; _type = "catshark_raw";};
     case ((typeOf _fish) isEqualTo "Turtle_F") : {_typeName = localize "STR_ANIM_Turtle"; _type = "turtle_raw";};
-    default {_type = ""};
 };
 
 if (_type isEqualTo "") exitWith {}; //Couldn't get a type

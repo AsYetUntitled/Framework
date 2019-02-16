@@ -8,7 +8,7 @@
 params [
     ["_uid","",[""]],
     ["_side",sideUnknown,[sideUnknown]],
-    [""],
+    "",
     ["_mode",0,[0]]
 ];
 
@@ -17,8 +17,8 @@ if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //BAAAAAAAAAD
 switch (_mode) do {
     case 0: {
         params [
-            [""],
-            [""],
+            "",
+            "",
             ["_input",[],[[]]]
         ];
         private _arr = [];
@@ -34,8 +34,8 @@ switch (_mode) do {
 
     case 1: {
         params [
-            [""],
-            [""],
+            "",
+            "",
             ["_input",objNull,[objNull]]
         ];
         if (isNull _input || _input isKindOf "House") exitWith {};

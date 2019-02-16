@@ -15,8 +15,7 @@ if (isNull _vehicle) exitWith {}; //NULL
 
 private _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if (count _dbInfo isEqualTo 0) exitWith {};
-private _uid = _dbInfo select 0;
-private _plate = _dbInfo select 1;
+_dbInfo params ["_uid","_plate"];
 switch (_mode) do {
     case 1: {
         private _vehItems = getItemCargo _vehicle;
