@@ -6,8 +6,7 @@
     Description:
     Pulls civilians out of a car if it's stopped.
 */
-private ["_crew"];
-_crew = crew cursorObject;
+private _crew = crew cursorObject;
 
 {
     if !(side _x isEqualTo west) then {

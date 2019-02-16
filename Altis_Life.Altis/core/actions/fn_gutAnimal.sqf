@@ -20,7 +20,6 @@ switch (typeOf _animalCorpse) do {
     case "Goat_random_F": {_displayName = localize "STR_ANIM_Goat"; _item = "goat_raw";};
     case "Sheep_random_F": {_displayName = localize "STR_ANIM_Sheep"; _item = "sheep_raw";};
     case "Rabbit_F": {_displayName = localize "STR_ANIM_Rabbit"; _item = "rabbit_raw";};
-    default {_displayName = ""; _item = "";};
 };
 
 if (_displayName isEqualTo "") exitWith {life_action_inUse = false;};
