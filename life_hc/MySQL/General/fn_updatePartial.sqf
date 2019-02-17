@@ -16,9 +16,7 @@ params [
 ];
 
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
-private _query = "";
-
-switch (_mode) do {
+private _query = switch (_mode) do {
     case 0: {
         params [
             "",
