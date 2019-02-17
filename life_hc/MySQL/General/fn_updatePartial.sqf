@@ -16,7 +16,9 @@ params [
 ];
 
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
-private _query = switch (_mode) do {
+private _query = "";
+
+switch (_mode) do {
     case 0: {
         private _value = param [2,0,[0]];
         _value = [_value] call HC_fnc_numberSafe;
