@@ -76,7 +76,7 @@ private _query = switch (_mode) do {
     };
 
     case 7: {
-        private _array = param [2,[],[[]];
+        private _array = param [2,[],[[]]];
         [_uid,_side,_array,0] call TON_fnc_keyManagement;
     };
 };
