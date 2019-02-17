@@ -18,31 +18,19 @@ params [
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
 private _query = switch (_mode) do {
     case 0: {
-        params [
-            "",
-            "",
-            ["_value",0,[0]]
-        ];
+        private _value = param [2,0,[0]];
         _value = [_value] call HC_fnc_numberSafe;
         _query = format ["UPDATE players SET cash='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 1: {
-        params [
-            "",
-            "",
-            ["_value",0,[0]]
-        ];
+        private _value = param [2,0,[0]];
         _value = [_value] call HC_fnc_numberSafe;
         _query = format ["UPDATE players SET bankacc='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 2: {
-        params [
-            "",
-            "",
-            ["_value",[],[[]]]
-        ];
+        private _value = param [2,[],[[]]];
         //Does something license related but I can't remember I only know it's important?
         for "_i" from 0 to count(_value)-1 do {
             _bool = [(_value select _i) select 1] call HC_fnc_bool;
@@ -57,11 +45,7 @@ private _query = switch (_mode) do {
     };
 
     case 3: {
-        params [
-            "",
-            "",
-            ["_value",[],[[]]]
-        ];
+        private _value = param [2,[],[[]]];
         _value = [_value] call HC_fnc_mresArray;
         switch (_side) do {
             case west: {_query = format ["UPDATE players SET cop_gear='%1' WHERE pid='%2'",_value,_uid];};
@@ -71,13 +55,8 @@ private _query = switch (_mode) do {
     };
 
     case 4: {
-        params [
-            "",
-            "",
-            ["_value",false,[true]],
-            "",
-            ["_value2",[],[[]]]
-        ];
+        private _value = param [2,false,[true]];
+        private _value2 = param [4,[],[[]]];
         _value = [_value] call HC_fnc_bool;
         _value2 = if (count _value2 isEqualTo 3) then {_value2} else {[0,0,0]};
         _value2 = [_value2] call HC_fnc_mresArray;
@@ -85,34 +64,21 @@ private _query = switch (_mode) do {
     };
 
     case 5: {
-        params [
-            "",
-            "",
-            ["_value",false,[true]],
-        ];
+        private _value = param [2,false,[true]];
         _value = [_value] call HC_fnc_bool;
         _query = format ["UPDATE players SET arrested='%1' WHERE pid='%2'",_value,_uid];
     };
 
     case 6: {
-        params [
-            "",
-            "",
-            ["_value1",0,[0]],
-            "",
-            ["_value2",0,[0]]
-        ];
+        private _value1 = param [2,0,[0]];
+        private _value2 = param [4,0,[0]];
         _value1 = [_value1] call HC_fnc_numberSafe;
         _value2 = [_value2] call HC_fnc_numberSafe;
         _query = format ["UPDATE players SET cash='%1', bankacc='%2' WHERE pid='%3'",_value1,_value2,_uid];
     };
 
     case 7: {
-        params [
-            "",
-            "",
-            ["_array",[],[[]]]
-        ];
+        private _array = param [2,[],[[]];
         [_uid,_side,_array,0] remoteExecCall ["TON_fnc_keyManagement",RSERV];
     };
 };
