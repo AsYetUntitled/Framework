@@ -12,8 +12,7 @@ params [
 ];
 if (isNull _client) exitWith {};
 
-private _loops = 0;
-for "_loops" from 0 to 25 step 1 do {
+for "_i" from 0 to 25 step 1 do {
     if (!alive _client) exitWith {
         _containers = nearestObjects[(getPosATL _client),["WeaponHolderSimulated"],5];
         if (count _containers > 0) then {
@@ -22,6 +21,5 @@ for "_loops" from 0 to 25 step 1 do {
         deleteVehicle _client; //Get rid of the corpse.
     };
 
-    _loops = _loops + 1;
     uiSleep 1;
 };
