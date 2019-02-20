@@ -10,7 +10,7 @@ params [
     ["_vehicle",objNull,[objNull]],
     ["_impound",false,[true]],
     ["_unit",objNull,[objNull]],
-    ["_storetext","",[""]],
+    ["_storetext","",[""]]
 ];
 private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
