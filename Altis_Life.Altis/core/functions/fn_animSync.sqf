@@ -7,7 +7,7 @@
 */
 params [
     ["_unit",objNull,[objNull]],
-    ["_anim",1,"",[""]],
+    ["_anim","",[""]],
     ["_cancelOwner",false,[true]]
 ];
 if (isNull _unit || {(local _unit && _cancelOwner)}) exitWith {};
