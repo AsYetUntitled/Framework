@@ -8,7 +8,7 @@
     Master handling for processing an item.
     NiiRoZz : Added multiprocess
 */
-private ["_hasLicense","_materialsRequired","_materialsGiven","_noLicenseCost","_text","_filter"]
+private ["_hasLicense","_materialsRequired","_materialsGiven","_noLicenseCost","_text","_filter"];
 params [
     ["_vendor",objNull,[objNull]],
     "",
