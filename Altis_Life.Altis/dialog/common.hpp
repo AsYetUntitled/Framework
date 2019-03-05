@@ -770,7 +770,7 @@ class Life_RscMapControl
     colorGridMap[] = {0.1,0.1,0.1,0.6};
     stickX[] = {0.2,{"Gamma",1,1.5}};
     stickY[] = {0.2,{"Gamma",1,1.5}};
-	widthRailWay = 1;
+    widthRailWay = 1;
     class Legend
     {
         colorBackground[] = {1,1,1,0.5};
