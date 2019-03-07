@@ -4132,7 +4132,7 @@
             <Italian>Un veicolo è stato ispezionato e sono stati sequestrati $%1 in materiale illegale.</Italian>
             <Portuguese>O veículo foi revistado e tem R$%1 em drogas ou contrabandos</Portuguese>
             <Polish>Podczas przeszukania znalezono narkotyki/kontrabandę o wartości $%1</Polish>
-			<Chinesesimp>搜查房子行李箱查获价值 $%1 的毒品/违禁品.</Chinesesimp>
+			<Chinesesimp>搜查房子存储箱查获价值 $%1 的毒品/违禁品.</Chinesesimp>
         </Key>
         <Key ID="STR_NOTF_PulledOut">
             <Original>You have been pulled out of the vehicle.</Original>
@@ -4579,8 +4579,8 @@
 			<Chinesesimp>你已传送到选择的位置。</Chinesesimp>
         </Key>
         <Key ID="STR_NOTF_Unfrozen">
-            <Original></Original>
-            <Czech>Byli jste zmrzlá správcem.You have been unfrozen by an administrator.</Czech>
+            <Original>You have been unfrozen by an administrator.</Original>
+            <Czech>Byli jste zmrzlá správcem.</Czech>
             <French>Vous avez été dégelé par un administrateur.</French>
             <Spanish>Un admin te ha descongelado!</Spanish>
             <Italian>Sei stato scongelato da un amministratore.</Italian>
@@ -6109,7 +6109,7 @@
             <Italian>L'inventario di questo veicolo è in uso, può essere usato solo da una persona alla volta.</Italian>
             <Portuguese>A mala desse veículo está em uso, somente uma pessoa pode acessá-la de cada vez.</Portuguese>
             <Polish>Bagażnik pojazdu jest w użyciu, na raz może korzystać z niego tylko jedna osoba.</Polish>
-			<Chinesesimp>这载具的行李箱正在使用中，一次只能一个人使用它。</Chinesesimp>
+			<Chinesesimp>这载具的存储箱正在使用中，一次只能一个人使用它。</Chinesesimp>
         </Key>
         <Key ID="STR_MISC_DialogError">
             <Original>Failed Creating Dialog</Original>
@@ -6241,7 +6241,7 @@
             <Italian>Inventario veicolo</Italian>
             <Portuguese>Capacidade da mala:</Portuguese>
             <Polish>Bagażnik pojazdu</Polish>
-			<Chinesesimp>载具行李箱</Chinesesimp>
+			<Chinesesimp>载具存储箱</Chinesesimp>
         </Key>
         <Key ID="STR_MISC_VehDoesntExist">
             <Original>The vehicle either doesn't exist or is destroyed.</Original>
@@ -6325,7 +6325,7 @@
             <Portuguese>Um modo de jogo RPG desenvolvido pela Tonic.</Portuguese>
             <Russian>Режим RPG игра, разработанная компанией Tonic.</Russian>
             <German>Ein RPG-Modus entwickelt von Tonic.</German>
-			<Chinesesimp>这是CHL基于Tonic开发的框架修改的RPG游戏模式。</Chinesesimp>
+			<Chinesesimp>由Tonic开发的RPG游戏模式。</Chinesesimp>
         </Key>
     </Package>
     <Package name="Housing_Strings">
@@ -6375,7 +6375,7 @@
             <Portuguese>A caixa de armazenamento é sobre as escadas!</Portuguese>
             <Russian>Ящик для хранения находится над лестницей!</Russian>
             <German>Der Container ist über die Treppe!</German>
-			<Chinesesimp>行李箱在楼梯上！</Chinesesimp>
+			<Chinesesimp>存储箱在楼梯上！</Chinesesimp>
         </Key>
         <Key ID="STR_House_Container_House_Near_Owner">
             <Original>You are not the owner of the house.</Original>
@@ -6483,7 +6483,7 @@
             <Italian>Questa casa è disponibile per &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;Può supportare fino a %2 contenitori</Italian>
             <Portuguese>Essa casa está disponível por &lt;t color='#8cff9b'&gt;R$%1&lt;/t&gt;&lt;br/&gt;Ela suporta até %2 caixa(s)</Portuguese>
             <Polish>Ten dom jest dostępny za &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;Ma %2 miejsca na pojemniki do przechowywania wyposażenia</Polish>
-			<Chinesesimp>这所房子可以住 &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;它最多支持 %2 个行李箱</Chinesesimp>
+			<Chinesesimp>这所房子可以住 &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;&lt;br/&gt;它最多支持 %2 个存储箱</Chinesesimp>
         </Key>
         <Key ID="STR_House_Purchase">
             <Original>Purchase House</Original>
@@ -6651,7 +6651,7 @@
             <Italian>Contenitori della casa sbloccati</Italian>
             <Portuguese>Armário da casa destrancado</Portuguese>
             <Polish>Pojemnik odblokowany</Polish>
-			<Chinesesimp>房子行李箱解锁</Chinesesimp>
+			<Chinesesimp>房子存储箱解锁</Chinesesimp>
         </Key>
         <Key ID="STR_House_StorageLock">
             <Original>House storage locked</Original>
@@ -6663,7 +6663,7 @@
             <Italian>Contenitori della casa bloccati</Italian>
             <Portuguese>Armário da casa trancado</Portuguese>
             <Polish>Pojemnik zablokowany</Polish>
-			<Chinesesimp>房子行李箱锁定</Chinesesimp>
+			<Chinesesimp>房子存储箱锁定</Chinesesimp>
         </Key>
         <Key ID="STR_House_LockingUp">
             <Original>Locking up house please wait...</Original>
@@ -6711,7 +6711,7 @@
             <French>Etes-vous sûr de vouloir supprimer le conteneur ?</French>
             <Portuguese>Você tem certeza que quer remover isso?</Portuguese>
             <German>Bist du sicher, dass du den Container entfernen möchtest?</German>
-			<Chinesesimp>你确定要删除行李箱吗？</Chinesesimp>
+			<Chinesesimp>你确定要删除存储箱吗？</Chinesesimp>
         </Key>
         <Key ID="STR_House_alreadyOwned">
             <Original>This house is already owned even though you shouldn't be seeing this hint...</Original>
@@ -8377,7 +8377,7 @@
             <Italian>Non puoi installare altri contenitori in casa tua.</Italian>
             <Portuguese>Você não pode colocar mais caixas dentro da sua casa.</Portuguese>
             <Polish>Nie masz więcej miejsca na pojemniki w tym domu.</Polish>
-			<Chinesesimp>你不能在你的房子里放更多的储藏行李箱。</Chinesesimp>
+			<Chinesesimp>你不能在你的房子里放更多的储藏存储箱。</Chinesesimp>
         </Key>
         <Key ID="STR_ISTR_Box_HouseFull_2">
             <Original>No more free storage spaces in your house.</Original>
@@ -9179,7 +9179,7 @@
             <French>Supprimer le conteneur</French>
             <Portuguese>Remover Caixa</Portuguese>
             <German>Container entfernen</German>
-			<Chinesesimp>删除行李箱</Chinesesimp>
+			<Chinesesimp>删除存储箱</Chinesesimp>
         </Key>
         <Key ID="STR_pInAct_AccessGarage">
             <Original>Garage</Original>
