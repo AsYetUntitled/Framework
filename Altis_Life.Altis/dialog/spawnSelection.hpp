@@ -47,7 +47,7 @@ class life_spawn_selection {
             maxSatelliteAlpha = 0.75;//0.75;
             alphaFadeStartScale = 1.15;//0.15;
             alphaFadeEndScale = 1.29;//0.29;
-            widthRailWay = 1;
+            widthRailWay = 4;
         };
     };
 
