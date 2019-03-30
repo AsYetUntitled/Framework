@@ -21,9 +21,9 @@
     11: Max Horse power
     12: Fuel Capacity
 */
-if !(params [
+params [
     ["_class","",[""]]
-]) exitWith {[]}; //Bad params
+];
 if (_class isEqualTo "") exitWith {[]}; //Bad class passed.
 if (!isClass (configFile >> "CfgVehicles" >> _class)) exitWith {[]}; //Class doesn't exist in CfgVehicles
 
