@@ -74,7 +74,6 @@ class CfgRemoteExec {
         F(TON_fnc_player_query,CLIENT)
 
         /* Server only functions */
-        F(BIS_fnc_execVM,SERVER)
         F(DB_fnc_insertRequest,SERVER)
         F(DB_fnc_queryRequest,SERVER)
         F(DB_fnc_updatePartial,SERVER)
