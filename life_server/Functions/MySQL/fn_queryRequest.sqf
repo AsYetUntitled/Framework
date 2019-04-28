@@ -18,7 +18,9 @@ _ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
 if (isNull _ownerID) exitWith {};
 
-_ownerID addMPEventHandler ["MPKilled", {_this call fn_whoDoneIt}];
+if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 1) then {
+    _ownerID addMPEventHandler ["MPKilled", {_this call fn_whoDoneIt}];
+};
 
 _ownerID = owner _ownerID;
 
