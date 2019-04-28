@@ -4,6 +4,7 @@ class Life_FuelStat {
     movingEnabled = 0;
     enableSimulation = 1;
     onLoad = "ctrlShow [2330,false];";
+    onUnload = "life_action_inUse = false;";
 
     class controlsBackground {
         class Life_RscTitleBackground: Life_RscText    {
