@@ -4,7 +4,7 @@
     Link: http://forums.bistudio.com/showthread.php?157474-Offroad-Police-sirens-lights-and-underglow
 
     Description:
-    Adds the light effect to cop vehicles, specifically the offroad.
+    Adds the light effect to medic vehicles, specifically the offroad.
 */
 
 params [
@@ -13,21 +13,30 @@ params [
 ];
 
 if (isNil "_vehicle" || {isNull _vehicle || {!(_vehicle getVariable "lights")}}) exitWith {};
-
 private _lightRed = [0.1, 0.1, 20];
 private _lightBlue = [0.1, 0.1, 20];
 
-_lightLeft = "#lightpoint" createVehicleLocal getPos _vehicle;
+private _lightLeft = "#lightpoint" createVehicleLocal getPos _vehicle;
 sleep 0.2;
 _lightLeft setLightColor _lightRed;
 _lightLeft setLightBrightness 0.2;
 _lightLeft setLightAmbient [0.1,0.1,1];
 
-switch (typeOf _vehicle) do {
+private _offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
-        _lightLeft lightAttachObject [_vehicle, [-0.37, 0.0, 0.56]];
+        [-0.37, 0.0, 0.56];
+    };
+    default {
+        [-1];
     };
 };
+
+if (_offset isEqualTo [-1]) exitWith {
+    diag_log format ["Vehicle emergency lights not set for: %1",_vehicle];
+    hint localize "STR_NOTF_ELSNotSet";
+};
+
+_lightLeft lightAttachObject [_vehicle, _offset];
 
 _lightLeft setLightAttenuation [0.181, 0, 1000, 130];
 _lightLeft setLightIntensity 10;
@@ -35,17 +44,19 @@ _lightLeft setLightFlareSize 0.38;
 _lightLeft setLightFlareMaxDistance 150;
 _lightLeft setLightUseFlare true;
 
-_lightRight = "#lightpoint" createVehicleLocal getPos _vehicle;
+private _lightRight = "#lightpoint" createVehicleLocal getPos _vehicle;
 sleep 0.2;
 _lightRight setLightColor _lightBlue;
 _lightRight setLightBrightness 0.2;
 _lightRight setLightAmbient [0.1,0.1,1];
 
-switch (typeOf _vehicle) do {
+_offset = switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
-        _lightRight lightAttachObject [_vehicle, [0.37, 0.0, 0.56]];
+        [0.37, 0.0, 0.56];
     };
 };
+
+_lightRight lightAttachObject [_vehicle, _offset];
 
 _lightRight setLightAttenuation [0.181, 0, 1000, 130];
 _lightRight setLightIntensity 10;

@@ -2,7 +2,6 @@
 /*
     File: fn_onPlayerKilled.sqf
     Author: Bryan "Tonic" Boardwine
-
     Description:
     When the player dies collect various information about that player
     and pull up the death dialog / camera functionality.

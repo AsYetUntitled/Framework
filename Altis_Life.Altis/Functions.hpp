@@ -213,11 +213,11 @@ class Life_Client_Core {
         class receiveMoney {};
         class revealObjects {};
         class saveGear {};
-        class searchPosEmpty {};
         class simDisable {};
         class stripDownPlayer {};
         class teleport {};
         class whereAmI {};
+        class moveIn {};
     };
 
     class Gangs {
@@ -325,6 +325,9 @@ class Life_Client_Core {
 
     class Shops {
         file = "core\shops";
+        class 3dPreviewDisplay {};
+        class 3dPreviewExit {};
+        class 3dPreviewInit {};
         class atmMenu {};
         class buyClothes {};
         class changeClothes {};
@@ -336,10 +339,7 @@ class Life_Client_Core {
         class fuelLBchange {};
         class fuelStatOpen {};
         class levelCheck {};
-        class vehicleShop3DPreview {};
         class vehicleShopBuy {};
-        class vehicleShopEnd3DPreview {};
-        class vehicleShopInit3DPreview {};
         class vehicleShopLBChange {};
         class vehicleShopMenu {};
         class virt_buy {};
