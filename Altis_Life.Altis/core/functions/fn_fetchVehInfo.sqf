@@ -1,7 +1,6 @@
 /*
     File: fn_fetchVehInfo.sqf
     Author: Bryan "Tonic" Boardwine
-    Edited: blackfisch
 
     Description:
     Used in returning information about a vehicle from Config >> "CfgVehicles"
@@ -25,10 +24,8 @@ params [
     ["_class","",[""]]
 ];
 if (_class isEqualTo "") exitWith {[]}; //Bad class passed.
-if (!isClass (configFile >> "CfgVehicles" >> _class)) exitWith {[]}; //Class doesn't exist in CfgVehicles
-
-//prepare config
-private _config = (configFile >> "CfgVehicles" >> _class);
+private _config = configFile >> "CfgVehicles" >> _class;
+if (!isClass _config) exitWith {[]}; //Class doesn't exist in CfgVehicles
 
 //Fetch
 private _scope = getNumber(_config >> "scope");
