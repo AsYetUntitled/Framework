@@ -17,7 +17,7 @@ if !(isNull objectParent player) then {
             _vehData = _x getVariable ["vehicle_info_owners",[]];
             if (count _vehData  > 0) then {
                 _vehOwner = ((_vehData select 0) select 0);
-                if ((getPlayerUID player) == _vehOwner) exitWith {
+                if ((getPlayerUID player) isEqualTo _vehOwner) exitWith {
                     _vehicle = _x;
                 };
             };

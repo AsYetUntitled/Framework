@@ -26,7 +26,7 @@ for "_i" from 0 to (count life_vehicles)-1 do {
         _color = ((M_CONFIG(getArray,"LifeCfgVehicles",(typeOf _veh),"textures") select (_veh getVariable "Life_VEH_color")) select 0);
         if (isNil "_color") then {_color = ""};
         _text = format ["(%1)",_color];
-        if (_text == "()") then {
+        if (_text isEqualTo "()") then {
             _text = "";
         };
 

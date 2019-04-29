@@ -26,7 +26,7 @@ HC_UID = nil;
 
 HC_DC = ["HC_Disconnected","onPlayerDisconnected",
     {
-        if (!isNil "HC_UID" && {_uid == HC_UID}) then {
+        if (!isNil "HC_UID" && {_uid isEqualTo HC_UID}) then {
             life_HC_isActive = false;
             publicVariable "life_HC_isActive";
             HC_Life = false;

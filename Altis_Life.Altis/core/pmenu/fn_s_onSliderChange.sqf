@@ -42,7 +42,7 @@ switch (_mode) do {
         _classname = lbData[20302,(lbCurSel 20302)];
         _index =  lbValue[20302,(lbCurSel 20302)];
         if ((lbCurSel 20302) isEqualTo -1) exitWith {hint localize "STR_Select_Vehicle_Pump";};
-        if (!isNil "_classname" || _classname =="") then {
+        if (!isNil "_classname" || _classname isEqualTo "") then {
             _car = (vehiclefuelList select _index) select 0;
             _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
             _fuel = fuel _car;

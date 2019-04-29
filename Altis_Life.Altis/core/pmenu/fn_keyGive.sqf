@@ -24,7 +24,7 @@ _sel = lbCurSel _plist;
 _unit = _plist lbData _sel;
 _unit = call compile format ["%1", _unit];
 if (isNull _unit || isNil "_unit") exitWith {};
-if (_unit == player) exitWith {};
+if (_unit isEqualTo player) exitWith {};
 
 _uid = getPlayerUID _unit;
 _owners = _vehicle getVariable "vehicle_info_owners";

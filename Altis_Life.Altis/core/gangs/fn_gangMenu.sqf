@@ -34,7 +34,7 @@ if !(_ownerID isEqualTo getPlayerUID player) then {
 _members = CONTROL(2620,2621);
 lbClear _members;
 {
-    if ((getPlayerUID _x) == _ownerID) then {
+    if ((getPlayerUID _x) isEqualTo _ownerID) then {
         _members lbAdd format ["%1 " +(localize "STR_GNOTF_GangLeader"),(_x getVariable ["realname",name _x])];
         _members lbSetData [(lbSize _members)-1,str(_x)];
     } else {

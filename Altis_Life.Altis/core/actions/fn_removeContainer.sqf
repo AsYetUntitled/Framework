@@ -26,7 +26,7 @@ if (_action) then {
         case ("Box_IND_Grenades_F"): {"storagesmall"};
         default {"None"};
     };
-    if (_box == "None") exitWith {};
+    if (_box isEqualTo "None") exitWith {};
 
     _diff = [_box,1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
     if (_diff isEqualTo 0) exitWith {hint localize "STR_NOTF_InvFull"};
@@ -38,7 +38,7 @@ if (_action) then {
     };
 
     {
-        if (_x == _container) then {
+        if (_x isEqualTo _container) then {
             _containers deleteAt _forEachIndex;
         };
     } forEach _containers;

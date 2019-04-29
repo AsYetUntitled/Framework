@@ -91,7 +91,7 @@ if (playerSide isEqualTo west) then {
             if (alive _curTarget && {crew _curTarget isEqualTo []} && {canMove _curTarget}) then { _Btn2 ctrlEnable false;} else {_Btn2 ctrlEnable true;};
         };
     };
-    if (typeOf _curTarget == "O_Truck_03_device_F") then {
+    if (typeOf _curTarget isEqualTo "O_Truck_03_device_F") then {
         _Btn3 ctrlSetText localize "STR_vInAct_DeviceMine";
         _Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_deviceMine";
         if (!isNil {(_curTarget getVariable "mining")} || !local _curTarget && {_curTarget in life_vehicles}) then {

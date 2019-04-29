@@ -20,7 +20,7 @@ if (isServer) then {
     _distance = floor(_distance);
 
     _message = "";
-    if (_victim == _killer) then {
+    if (_victim isEqualTo _killer) then {
         _message = format ["Suicide Message: %1 committed suicide (or disconnected)", (name _victim)];
     };
     if (_killerWep != "") then {

@@ -24,7 +24,7 @@ _hay resize _needleLen;
 private _found = false; 
 
 for "_i" from _needleLen to count _haystack do {
-    if (toString _hay == _needle) exitWith {_found = true};
+    if (toString _hay isEqualTo _needle) exitWith {_found = true};
     _hay set [_needleLen, _haystack select _i];
     _hay set [0, "x"];
     _hay = _hay - ["x"]

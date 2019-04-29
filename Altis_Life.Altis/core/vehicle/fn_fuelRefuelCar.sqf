@@ -59,7 +59,7 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
         if !((BANK - round(0.01 * _totalcost))> 0) exitWith {};
         BANK = BANK - round((0.01 * _totalcost));
         _tp = _tp +1;
-        if (_tp == 9) then {
+        if (_tp isEqualTo 9) then {
             _tp = 0;
             [_car,_cp * _setfuell] remoteExecCall ["life_fnc_setFuel",_car];
         };

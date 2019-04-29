@@ -23,7 +23,7 @@ if ((_vehicle isKindOf "Car") || !(_vehicle isKindOf "Air") || !(_vehicle isKind
     //if (isNil {_inventory}) then {_inventory = "Nothing in storage."};
     _owners = [_owners] call life_fnc_vehicleOwners;
 
-    if (_owners == "any<br/>") then {
+    if (_owners isEqualTo "any<br/>") then {
         _owners = "No owners, impound it<br/>";
     };
     hint parseText format [localize "STR_NOTF_SearchVeh",_owners];

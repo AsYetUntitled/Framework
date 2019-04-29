@@ -20,7 +20,7 @@ detach _container;
 _container setPosATL [getPosATL _container select 0, getPosATL _container select 1, (getPosATL _container select 2) + 0.7];
 _container allowDamage false;
 
-if ((typeOf _container) == "B_supplyCrate_F") then {
+if ((typeOf _container) isEqualTo "B_supplyCrate_F") then {
     [false,"storagebig",1] call life_fnc_handleInv;
 } else {
     [false,"storagesmall",1] call life_fnc_handleInv;
