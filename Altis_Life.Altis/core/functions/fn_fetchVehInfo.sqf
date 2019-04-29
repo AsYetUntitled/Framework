@@ -25,20 +25,20 @@ params [
 ];
 
 if (_class isEqualTo "") exitWith {[]}; //Bad class passed.
-_config = configFile >> "CfgVehicles" >> _class;
+private _config = configFile >> "CfgVehicles" >> _class;
 if (!isClass _config) exitWith {[]}; //Class doesn't exist in CfgVehicles
 
-_scope = getNumber (_config >> "scope");
-_picture = getText (_config >> "picture");
-_displayName = getText (_config >> "displayName");
-_vehicleClass = getText (_config >> "vehicleClass");
-_side = getNumber (_config >> "side");
-_faction = getText (_config >> "faction");
-_superClass = inheritsFrom _config;
-_speed = getNumber (_config >> "maxSpeed");
-_armor = getNumber (_config >> "armor");
-_seats = getNumber (_config >> "transportSoldier") + count ("true" configClasses (_config >> "Turrets")); //number of seats = number of passengers + number of vehicle turrets
-_hp = getNumber (_config >> "enginePower");
-_fuel = getNumber (_config >> "fuelCapacity");
+private _scope = getNumber (_config >> "scope");
+private _picture = getText (_config >> "picture");
+private _displayName = getText (_config >> "displayName");
+private _vehicleClass = getText (_config >> "vehicleClass");
+private _side = getNumber (_config >> "side");
+private _faction = getText (_config >> "faction");
+private _superClass = inheritsFrom _config;
+private _speed = getNumber (_config >> "maxSpeed");
+private _armor = getNumber (_config >> "armor");
+private _seats = getNumber (_config >> "transportSoldier") + count ("true" configClasses (_config >> "Turrets")); //number of seats = number of passengers + number of vehicle turrets
+private _hp = getNumber (_config >> "enginePower");
+private _fuel = getNumber (_config >> "fuelCapacity");
 
 [_class,_scope,_picture,_displayName,_vehicleClass,_side,_faction,_superClass,_speed,_armor,_seats,_hp,_fuel];
