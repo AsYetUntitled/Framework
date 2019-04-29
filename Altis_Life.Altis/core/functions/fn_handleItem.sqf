@@ -367,6 +367,9 @@ if (_bool) then {
         };
     };
 } else {
+    if (_item isEqualTo "Binocular") exitWith {
+        player unlinkItem "Binocular";
+    };
     switch (_details select 6) do {
         case "CfgVehicles": {
             removeBackpack player;
