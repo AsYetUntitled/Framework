@@ -6,10 +6,8 @@
     Description:
     Adds fuel in car.
 */
-disableSerialization;
-private ["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
-private _classname = lbData[20302,(lbCurSel 20302)];
 private _index = lbCurSel 20302;
+private _classname = lbData[20302,_index];
 
 if (isNil "_classname" || _classname isEqualTo "") exitWith {
     hint localize "STR_Select_Vehicle_Pump";
@@ -20,11 +18,11 @@ private _vehicleFuelList = uiNamespace getVariable ["fuel_list",[]];
 (_vehicleFuelList select _index) params ["_car"];
 private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 private _fuelNow = fuel _car;
-private _fueltank = (_vehicleInfo select 12);
+private _fueltank = _vehicleInfo select 12;
 if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fueltank = 350};//hemtt
 if (_car isKindOf "C_Van_01_box_F") then {_fueltank = 100};
 if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fueltank = 175};
-private _fueltoput= ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
+private _fueltoput = ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
 private _setfuel = _fuelnow + (_fueltoput/_fueltank);
 private _timer = ((_fueltoput * .25)/100);
 if (_car distance player > 10 && !(isNull objectParent player)) exitWith {
@@ -33,7 +31,7 @@ if (_car distance player > 10 && !(isNull objectParent player)) exitWith {
 };
 
 private _fuelCost = uiNamespace getVariable ["fuel_cost",0];
-if ((BANK - (_fueltoput * _fuelCost))> 0) then {
+if ((BANK - (_fueltoput * _fuelCost)) > 0) then {
     life_is_processing = true;
     //Setup our progress bar.
     disableSerialization;
@@ -63,7 +61,6 @@ if ((BANK - (_fueltoput * _fuelCost))> 0) then {
     "progressBar" cutText ["","PLAIN"];
     if (_car distance player > 10 || !(isNull objectParent player)) then {
         hint localize "STR_Distance_Vehicle_Pump";
-        closeDialog 0;
     };
     [0] call SOCK_fnc_updatePartial;
     life_is_processing = false;

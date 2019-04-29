@@ -18,7 +18,7 @@ private _vehicleFuelList = uiNamespace getVariable ["fuel_list",[]];
 private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 
 private _fuel = fuel _vehicle;
-private _fuelTank = (_vehicleInfo select 12);
+private _fuelTank = _vehicleInfo select 12;
 if (_vehicle isKindOf "B_Truck_01_box_F" || _vehicle isKindOf "B_Truck_01_transport_F") then {_fuelTank = 350};//hemtt
 if (_vehicle isKindOf "C_Van_01_box_F") then {_fuelTank = 100};
 if (_vehicle isKindOf "I_Truck_02_covered_F" || _vehicle isKindOf "I_Truck_02_transport_F") then {_fuelTank = 175};

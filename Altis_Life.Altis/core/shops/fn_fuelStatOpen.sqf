@@ -14,9 +14,9 @@ private _fuelStations = nearestObjects [player, ["Land_fs_feed_F", "Land_FuelSta
 if (_fuelstations isEqualTo []) exitWith {};
 
 private _vehicleList = nearestObjects [player, ["Car","Air"], 10];
-if (_vehicleList isEqualTo []) exitWith {hint localize "STR_NOTF_VehicleNear";};
+if (_vehicleList isEqualTo []) exitWith {hint localize "STR_NOTF_VehicleNear"};
 
-createDialog "Life_FuelStat"
+createDialog "Life_FuelStat";
 life_action_inUse = true;
 
 private _fuelCost = LIFE_SETTINGS(getNumber,"fuel_cost");
@@ -43,7 +43,7 @@ ctrlSetText [20323,format ["Total : %1$",_fuelCost * 0.1]];
     private _className = typeOf _vehicle;
 
     private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-    _control lbAdd (_vehicleInfo select 3);
+    _control lbAdd _vehicleInfo select 3;
     private _index = _forEachIndex;
     _control lbSetPicture [_index,(_vehicleInfo select 2)];
     _control lbSetData [_index,_className];
