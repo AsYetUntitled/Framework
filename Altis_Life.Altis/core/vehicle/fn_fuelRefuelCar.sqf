@@ -42,7 +42,7 @@ if ((BANK - (_fueltoput * _fuelCost)) > 0) then {
     _pgText ctrlSetText format ["%2 (1%1)...","%","Refuel:"];
     _progress progressSetPosition 0.01;
     private _cP = 0.01;
-    private _totalcost = _fueltoput * life_fuelPrices;
+    private _totalcost = _fueltoput * _fuelCost;
     if (BANK < _totalcost) exitWith {};
     for "_i" from 0 to 1 step 0 do {
         uiSleep  _timer;
