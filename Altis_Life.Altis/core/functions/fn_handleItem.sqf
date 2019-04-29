@@ -369,7 +369,7 @@ if (_bool) then {
 } else {
     if (_item isEqualTo "Binocular") exitWith {
         if (_item in assignedItems player) then {
-            player unlinkItem "Binocular";
+            player removeWeapon "Binocular";
         } else {
             player removeItem "Binocular";
         };
