@@ -7,7 +7,7 @@
     can be properly inserted into the database without causing
     any problems. The return method is 'hacky' but it's effective.
 */
-param [
+params [
     ["_array",[],[[]]]
 ];
 _array = str _array;
