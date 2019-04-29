@@ -77,6 +77,7 @@ class Life_Settings {
     gang_price = 75000; //Gang creation price. --Remember they are persistent so keep it reasonable to avoid millions of gangs.
     gang_upgradeBase = 10000; //The base cost for purchasing additional slots in a gang
     gang_upgradeMultiplier = 2.5; //CURRENTLY NOT IN USE
+    gang_area[] = {"gang_area_1","gang_area_2","gang_area_3"}; //Variable of gang zone markers  
 
     /* Housing System Configurations */
     house_limit = 5; //Maximum number of houses a player can own.
@@ -99,6 +100,7 @@ class Life_Settings {
     jail_seize_inventory = false; //Set to true to run the cop seize script on inmates. False will remove only weapons and magazines otherwise. (Basically used in case cops forget to seize items). [See Lines 127-131 below]
     sendtoJail_locations[] = { "police_hq_1", "police_hq_2", "cop_spawn_3", "cop_spawn_5", "Correctional_Facility" }; //Enter the variableName from the mission.sqm here to allow cops to send a person to jail at these locations.
     jail_forceWalk = true;
+    jail_timeMultiplier = 15; //Put in minutes how long you want your victim in jail.
 
     /* Medical System Configurations */
     revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
