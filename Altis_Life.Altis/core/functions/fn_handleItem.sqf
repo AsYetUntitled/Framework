@@ -368,7 +368,11 @@ if (_bool) then {
     };
 } else {
     if (_item isEqualTo "Binocular") exitWith {
-        player unlinkItem "Binocular";
+        if (_item in assignedItems player) then {
+            player unlinkItem "Binocular";
+        } else {
+            player removeItem "Binocular;
+        };
     };
     switch (_details select 6) do {
         case "CfgVehicles": {
