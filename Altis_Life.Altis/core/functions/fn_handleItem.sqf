@@ -371,7 +371,7 @@ if (_bool) then {
         if (_item in assignedItems player) then {
             player unlinkItem "Binocular";
         } else {
-            player removeItem "Binocular;
+            player removeItem "Binocular";
         };
     };
     switch (_details select 6) do {
