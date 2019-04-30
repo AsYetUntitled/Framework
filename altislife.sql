@@ -131,7 +131,9 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
     
     PRIMARY KEY (`id`),
     INDEX `fkIdx_players_vehicles` (`pid`),
-    CONSTRAINT `FK_players_vehicles` FOREIGN KEY `fkIdx_players_vehicles` (`pid`) REFERENCES `players` (`pid`),
+    CONSTRAINT `FK_players_vehicles` FOREIGN KEY `fkIdx_players_vehicles` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE,
     INDEX `index_side` (`side`),
     INDEX `index_type` (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -153,7 +155,9 @@ CREATE TABLE IF NOT EXISTS `houses` (
     
     PRIMARY KEY (`id`),
     INDEX `fkIdx_players_houses` (`pid`),
-    CONSTRAINT `FK_players_houses` FOREIGN KEY `fkIdx_players_houses` (`pid`) REFERENCES `players` (`pid`)
+    CONSTRAINT `FK_players_houses` FOREIGN KEY `fkIdx_players_houses` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -176,7 +180,9 @@ CREATE TABLE IF NOT EXISTS `gangs` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `unique_name` (`name`),
     INDEX `fkIdx_players_gangs` (`owner`),
-    CONSTRAINT `FK_players_gangs` FOREIGN KEY `fkIdx_players_gangs` (`owner`) REFERENCES `players` (`pid`)
+    CONSTRAINT `FK_players_gangs` FOREIGN KEY `fkIdx_players_gangs` (`owner`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -200,7 +206,9 @@ CREATE TABLE IF NOT EXISTS `containers` (
     
     PRIMARY KEY (`id`),
     INDEX `fkIdx_players_containers` (`pid`),
-    CONSTRAINT `FK_players_containers` FOREIGN KEY `fkIdx_players_containers` (`pid`) REFERENCES `players` (`pid`)
+    CONSTRAINT `FK_players_containers` FOREIGN KEY `fkIdx_players_containers` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -220,7 +228,9 @@ CREATE TABLE IF NOT EXISTS `wanted` (
     
     PRIMARY KEY (`wantedID`),
     INDEX `fkIdx_players_wanted` (`wantedID`),
-    CONSTRAINT `FK_players_wanted` FOREIGN KEY `fkIdx_players_wanted` (`wantedID`) REFERENCES `players` (`pid`)
+    CONSTRAINT `FK_players_wanted` FOREIGN KEY `fkIdx_players_wanted` (`wantedID`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
