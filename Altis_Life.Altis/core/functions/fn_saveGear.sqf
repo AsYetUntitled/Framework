@@ -6,16 +6,18 @@
     Description:
     Saves the players gear for syncing to the database for persistence..
 */
-private _return = getUnitLoadout player;
+
+private _playerLoadout = getUnitLoadout player;
 private _yItems = [];
-private _savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
 
-{
-    _val = ITEM_VALUE(_x);
-    if (_val > 0) then {
-        _yItems pushBack [_x,_val];
-    };
-} forEach _savedVirtualItems;
+if (LIFE_SETTINGS(getNumber, "save_virtualItems") isEqualTo 1) then {
+    {
+        _val = ITEM_VALUE(_x);
+        if (_val > 0) then {
+            _yItems pushBack [_x,_val];
+        };
+    } forEach LIFE_SETTINGS(getArray, "saved_virtualItems");
+};
 
-_return pushBack _yItems;
-life_gear = _return;
+_playerLoadout pushBack _yItems;
+life_gear = _playerLoadout;
