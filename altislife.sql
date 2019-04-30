@@ -73,12 +73,12 @@ DELIMITER ;
 --
 
 CREATE TABLE IF NOT EXISTS `players` (
+    `uid`          INT NOT NULL AUTO_INCREMENT,
     `pid`          VARCHAR(17) NOT NULL,
-    `uid`          INT(6) NOT NULL AUTO_INCREMENT,
     `name`         VARCHAR(32) NOT NULL,
     `aliases`      TEXT NOT NULL,
-    `cash`         INT(100) NOT NULL DEFAULT 0,
-    `bankacc`      INT(100) NOT NULL DEFAULT 0,
+    `cash`         INT NOT NULL DEFAULT 0,
+    `bankacc`      INT NOT NULL DEFAULT 0,
     `coplevel`     ENUM('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
     `mediclevel`   ENUM('0','1','2','3','4','5') NOT NULL DEFAULT '0',
     `civ_licenses` TEXT NOT NULL,
@@ -87,14 +87,14 @@ CREATE TABLE IF NOT EXISTS `players` (
     `civ_gear`     TEXT NOT NULL,
     `cop_gear`     TEXT NOT NULL,
     `med_gear`     TEXT NOT NULL,
-    `civ_stats`    VARCHAR(32) NOT NULL DEFAULT '"[100,100,0]"',
-    `cop_stats`    VARCHAR(32) NOT NULL DEFAULT '"[100,100,0]"',
-    `med_stats`    VARCHAR(32) NOT NULL DEFAULT '"[100,100,0]"',
-    `arrested`     TINYINT(1) NOT NULL DEFAULT 0,
+    `civ_stats`    VARCHAR(25) NOT NULL DEFAULT '"[100,100,0]"',
+    `cop_stats`    VARCHAR(25) NOT NULL DEFAULT '"[100,100,0]"',
+    `med_stats`    VARCHAR(25) NOT NULL DEFAULT '"[100,100,0]"',
+    `arrested`     TINYINT NOT NULL DEFAULT 0,
     `adminlevel`   ENUM('0','1','2','3','4','5')  NOT NULL DEFAULT '0',
     `donorlevel`   ENUM('0','1','2','3','4','5')  NOT NULL DEFAULT '0',
-    `blacklist`    TINYINT(1) NOT NULL DEFAULT 0,
-    `civ_alive`    TINYINT(1) NOT NULL DEFAULT 0,
+    `blacklist`    TINYINT NOT NULL DEFAULT 0,
+    `civ_alive`    TINYINT NOT NULL DEFAULT 0,
     `civ_position` VARCHAR(32) NOT NULL DEFAULT '"[]"',
     `playtime`     VARCHAR(32) NOT NULL DEFAULT '"[0,0,0]"',
     `insert_time`  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -102,9 +102,9 @@ CREATE TABLE IF NOT EXISTS `players` (
     
     PRIMARY KEY (`pid`),
     UNIQUE KEY `unique_uid` (`uid`),
-    KEY `index_name` (`name`),
-    KEY `index_blacklist` (`blacklist`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12;
+    INDEX `index_name` (`name`),
+    INDEX `index_blacklist` (`blacklist`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -113,28 +113,28 @@ CREATE TABLE IF NOT EXISTS `players` (
 --
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
-    `id`          INT(6) NOT NULL AUTO_INCREMENT,
+    `id`          INT NOT NULL AUTO_INCREMENT,
     `pid`         VARCHAR(17) NOT NULL,
-    `side`        VARCHAR(16) NOT NULL,
+    `side`        VARCHAR(10) NOT NULL,
     `classname`   VARCHAR(64) NOT NULL,
     `type`        VARCHAR(16) NOT NULL,
-    `alive`       TINYINT(1) NOT NULL DEFAULT 1,
-    `blacklist`   TINYINT(1) NOT NULL DEFAULT 0,
-    `active`      TINYINT(1) NOT NULL DEFAULT 0,
-    `plate`       INT(20) NOT NULL,
-    `color`       INT(20) NOT NULL,
+    `alive`       TINYINT NOT NULL DEFAULT 1,
+    `blacklist`   TINYINT NOT NULL DEFAULT 0,
+    `active`      TINYINT NOT NULL DEFAULT 0,
+    `plate`       MEDIUMINT NOT NULL,
+    `color`       INT NOT NULL,
     `inventory`   TEXT NOT NULL,
     `gear`        TEXT NOT NULL,
     `fuel`        DOUBLE NOT NULL DEFAULT 1,
     `damage`      VARCHAR(256) NOT NULL,
     `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
-    PRIMARY KEY (`id`, `pid`),
-    KEY `fkIdx_players_vehicles` (`pid`),
+    PRIMARY KEY (`id`),
+    INDEX `fkIdx_players_vehicles` (`pid`),
     CONSTRAINT `FK_players_vehicles` FOREIGN KEY `fkIdx_players_vehicles` (`pid`) REFERENCES `players` (`pid`),
-    KEY `index_side` (`side`),
-    KEY `index_type` (`type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2;
+    INDEX `index_side` (`side`),
+    INDEX `index_type` (`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -144,17 +144,17 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 --
 
 CREATE TABLE IF NOT EXISTS `houses` (
-    `id`          INT(6) NOT NULL AUTO_INCREMENT,
+    `id`          INT NOT NULL AUTO_INCREMENT,
     `pid`         VARCHAR(17) NOT NULL,
-    `pos`         VARCHAR(64) DEFAULT NULL,
-    `owned`       TINYINT(1) DEFAULT 0,
-    `garage`      TINYINT(1) NOT NULL DEFAULT 0,
+    `pos`         VARCHAR(32) DEFAULT NULL,
+    `owned`       TINYINT DEFAULT 0,
+    `garage`      TINYINT NOT NULL DEFAULT 0,
     `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
-    PRIMARY KEY (`id`, `pid`),
-    KEY `fkIdx_players_houses` (`pid`),
+    PRIMARY KEY (`id`),
+    INDEX `fkIdx_players_houses` (`pid`),
     CONSTRAINT `FK_players_houses` FOREIGN KEY `fkIdx_players_houses` (`pid`) REFERENCES `players` (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -164,18 +164,18 @@ CREATE TABLE IF NOT EXISTS `houses` (
 --
 
 CREATE TABLE IF NOT EXISTS `gangs` (
-    `id`          INT(6) NOT NULL AUTO_INCREMENT,
+    `id`          INT NOT NULL AUTO_INCREMENT,
     `owner`       VARCHAR(17) NOT NULL,
     `name`        VARCHAR(32) DEFAULT NULL,
     `members`     TEXT,
-    `maxmembers`  INT(3) DEFAULT 8,
-    `bank`        INT(100) DEFAULT 0,
-    `active`      TINYINT(1),
+    `maxmembers`  INT DEFAULT 8,
+    `bank`        INT DEFAULT 0,
+    `active`      TINYINT,
     `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
-    PRIMARY KEY (`id`, `owner`),
+    PRIMARY KEY (`id`),
     UNIQUE KEY `unique_name` (`name`),
-    KEY `fkIdx_players_gangs` (`owner`),
+    INDEX `fkIdx_players_gangs` (`owner`),
     CONSTRAINT `FK_players_gangs` FOREIGN KEY `fkIdx_players_gangs` (`owner`) REFERENCES `players` (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -187,21 +187,21 @@ CREATE TABLE IF NOT EXISTS `gangs` (
 --
 
 CREATE TABLE IF NOT EXISTS `containers` (
-    `id`          INT(6) NOT NULL AUTO_INCREMENT,
+    `id`          INT NOT NULL AUTO_INCREMENT,
     `pid`         VARCHAR(17) NOT NULL,
     `classname`   VARCHAR(32) NOT NULL,
-    `pos`         VARCHAR(64) DEFAULT NULL,
+    `pos`         VARCHAR(32) DEFAULT NULL,
     `inventory`   TEXT NOT NULL,
     `gear`        TEXT NOT NULL,
     `dir`         VARCHAR(128) DEFAULT NULL,
-    `active`      TINYINT(1) NOT NULL DEFAULT 0,
-    `owned`       TINYINT(1) NOT NULL DEFAULT 0,
+    `active`      TINYINT NOT NULL DEFAULT 0,
+    `owned`       TINYINT NOT NULL DEFAULT 0,
     `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
-    PRIMARY KEY (`id`, `pid`),
-    KEY `fkIdx_players_containers` (`pid`),
+    PRIMARY KEY (`id`),
+    INDEX `fkIdx_players_containers` (`pid`),
     CONSTRAINT `FK_players_containers` FOREIGN KEY `fkIdx_players_containers` (`pid`) REFERENCES `players` (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -214,12 +214,12 @@ CREATE TABLE IF NOT EXISTS `wanted` (
     `wantedID`     VARCHAR(17) NOT NULL,
     `wantedName`   VARCHAR(32) NOT NULL,
     `wantedCrimes` TEXT NOT NULL,
-    `wantedBounty` INT(100) NOT NULL,
-    `active`       TINYINT(1) NOT NULL DEFAULT 0,
+    `wantedBounty` INT NOT NULL,
+    `active`       TINYINT NOT NULL DEFAULT 0,
     `insert_time`  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (`wantedID`),
-    KEY `fkIdx_players_wanted` (`wantedID`),
+    INDEX `fkIdx_players_wanted` (`wantedID`),
     CONSTRAINT `FK_players_wanted` FOREIGN KEY `fkIdx_players_wanted` (`wantedID`) REFERENCES `players` (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
