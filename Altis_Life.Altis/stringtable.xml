@@ -4975,7 +4975,7 @@
 			<Chinesesimp>传送 %1 到你的位置。</Chinesesimp>
         </Key>
         <Key ID="STR_NOTF_ATM">
-            <Original>&lt;t color='#ADFF2F'&gt;ATM自动取款机&lt;/t&gt;</Original>
+            <Original>&lt;t color='#ADFF2F'&gt;ATM&lt;/t&gt;</Original>
             <Czech>&lt;t color='#ADFF2F'&gt;Bankomat&lt;/t&gt;</Czech>
             <French>&lt;t color='#ADFF2F'&gt;DAB&lt;/t&gt;</French>
             <Spanish>&lt;t color='#ADFF2F'&gt;ATM&lt;/t&gt;</Spanish>
@@ -4984,6 +4984,7 @@
             <Portuguese>&lt;t color='#ADFF2F'&gt;Caixa Eletrônico&lt;/t&gt;</Portuguese>
             <Russian>&lt;t color='#ADFF2F'&gt;Банкомат&lt;/t&gt;</Russian>
             <German>&lt;t color='#ADFF2F'&gt;Geldautomat&lt;/t&gt;</German>
+            <Chinesesimp>&lt;t color='#ADFF2F'&gt;自动取款机&lt;/t&gt;</Chinesesimp>
         </Key>
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
@@ -10609,7 +10610,7 @@
             <German>Geldautomat</German>
             <Portuguese>Caixa Eletrônico</Portuguese>
             <Polish>Bankomat</Polish>
-			<Chinesesimp>ATM自动取款机</Chinesesimp>
+			<Chinesesimp>自动取款机</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Local_Bank">
             <Original>Local Bank</Original>
