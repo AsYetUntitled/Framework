@@ -227,7 +227,6 @@ CREATE TABLE IF NOT EXISTS `wanted` (
     `insert_time`  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (`wantedID`),
-    INDEX `fkIdx_players_wanted` (`wantedID`),
     CONSTRAINT `FK_players_wanted` FOREIGN KEY `fkIdx_players_wanted` (`wantedID`)
       REFERENCES `players` (`pid`)
       ON UPDATE CASCADE ON DELETE CASCADE
