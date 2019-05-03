@@ -23,6 +23,8 @@ if (_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMi
 
 if (_deposit) then {
     CASH = CASH - _value;
+    [] call life_fnc_atmMenu;
+    [6] call SOCK_fnc_updatePartial;
 };
 
 if (life_HC_isActive) then {
@@ -31,7 +33,6 @@ if (life_HC_isActive) then {
     [1,group player,_deposit,_value] remoteExecCall ["TON_fnc_updateGang",RSERV]; //Update the database.
 };
 
-hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [6] call SOCK_fnc_updatePartial;
 
