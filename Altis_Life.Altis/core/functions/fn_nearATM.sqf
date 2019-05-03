@@ -9,10 +9,10 @@
     RETURNS:
         0: BOOL (True for yes, false for no)
 */
-private ["_objs","_return"];
-_obj = cursorObject;
-_return = false;
 
-if ((["atm_",str(_obj)] call BIS_fnc_inString) && player distance _obj < 2.3) then {_return = true;};
+private _obj = cursorObject;
+private _return = false;
+
+if ((str(_obj) find "atm_") != -1 && {player distance _obj < 2.3}) then { _return = true; };
 
 _return;

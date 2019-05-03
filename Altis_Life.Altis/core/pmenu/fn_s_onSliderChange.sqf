@@ -6,13 +6,13 @@
     Description:
     Called when the slider is changed for any field and updates the view distance for it.
 */
-private ["_mode","_value"];
-_mode = [_this,0,-1,[0]] call BIS_fnc_param;
-_value = [_this,1,-1,[0]] call BIS_fnc_param;
+params [
+    ["_mode",-1,[0]],
+    ["_value",-1,[0]]
+];
 if (_mode isEqualTo -1 || _value isEqualTo -1) exitWith {};
-disableSerialization;
 
-switch (_mode) do {
+switch _mode do {
     case 0:
     {
         life_settings_viewDistanceFoot = round(_value);
@@ -38,19 +38,23 @@ switch (_mode) do {
     };
 
     case 3: {
-        _classname = lbData[20302,(lbCurSel 20302)];
-        _index =  lbValue[20302,(lbCurSel 20302)];
-        if ((lbCurSel 20302) isEqualTo -1) exitWith {hint localize "STR_Select_Vehicle_Pump";};
-        if (!isNil "_classname" || _classname =="") then {
-            _car = (vehiclefuelList select _index) select 0;
-            _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-            _fuel = fuel _car;
-            _fueltank = (_vehicleInfo select 12);
+        private _index = lbCurSel 20302;
+        private _classname = lbData[20302,_index];
+        if (_index isEqualTo -1) exitWith {hint localize "STR_Select_Vehicle_Pump"};
+
+        if (!isNil "_classname" || _classname isEqualTo "") then {
+
+            private _vehicleFuelList = uiNamespace getVariable ["fuel_list",[]];
+            (_vehicleFuelList select _index) params ["_car"];
+            private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+            private _fuel = fuel _car;
+            private _fuelTank = _vehicleInfo select 12;
             if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {
                 _fueltank = 450;
             };
-            ctrlSetText[20324,format ["Fuel : %1 liters",round(_value) - (floor(_fuel * _fueltank))]];
-            ctrlSetText [20323,format ["Total : $%1",round (life_fuelPrices * (round(_value) -(floor(_fuel * _fueltank)))) ]];
+            _value = (parseNumber(_value toFixed 2));
+            ctrlSetText [20324,format ["Fuel : %1 liters",_value - (floor(_fuel * _fueltank))]];
+            ctrlSetText [20323,format ["Total : $%1",round ((uiNamespace getVariable ["fuel_cost",0]) * (_value -(floor(_fuel * _fueltank)))) ]];
         } else {
             hint localize "STR_Select_Vehicle_Pump";
         };
