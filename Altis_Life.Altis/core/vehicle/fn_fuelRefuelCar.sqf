@@ -22,7 +22,7 @@ private _fueltank = _vehicleInfo select 12;
 if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fueltank = 350};//hemtt
 if (_car isKindOf "C_Van_01_box_F") then {_fueltank = 100};
 if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fueltank = 175};
-private _fueltoput = ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
+private _fueltoput = ((parseNumber((sliderPosition 20901) toFixed 2))-(floor(_fuelnow * _fueltank)));
 private _setfuel = _fuelnow + (_fueltoput/_fueltank);
 private _timer = ((_fueltoput * .25)/100);
 if (_car distance player > 10 && !(isNull objectParent player)) exitWith {
