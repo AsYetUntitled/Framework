@@ -30,7 +30,23 @@ switch (_mode) do {
     };
 
     case 1: {
-        _query = format ["UPDATE gangs SET bank='%1' WHERE id='%2'",([(_group getVariable ["gang_bank",0])] call HC_fnc_numberSafe),_groupID];
+        private _deposit = param [2];
+        private _value = param [3];
+        private _funds = _group getVariable ["gang_bank",0];
+        if (_deposit) then {
+            _funds = _funds + _value;
+            _group setVariable ["gang_bank",_funds,true];
+            [1,format["Successfully deposited $%1.",_value]] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
+        } else {
+            if (_value > _funds) exitWith {
+                [1,"There are not enough funds in the bank for this withdrawal."] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
+                breakTo "main";
+            };
+            _funds = _funds - _value;
+            _group setVariable ["gang_bank",_funds,true];
+            [_value] remoteExecCall ["life_fnc_gangBankResponse",remoteExecutedOwner];
+        };
+        _query = format ["UPDATE gangs SET bank='%1' WHERE id='%2'",([_funds] call DB_fnc_numberSafe),_groupID];
     };
 
     case 2: {
