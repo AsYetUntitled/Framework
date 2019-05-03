@@ -17,7 +17,7 @@ if (remoteExecutedOwner isEqualTo 0) exitWith {};
 
 //Error checks
 if (_pid isEqualTo "" || {_side isEqualTo sideUnknown} || {_type isEqualTo ""}) exitWith {
-    if !(isNull remoteExecutedOwner) then {
+    if (remoteExecutedOwner != -1) then {
         [[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
     };
 };
