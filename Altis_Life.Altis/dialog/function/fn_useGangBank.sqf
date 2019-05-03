@@ -26,9 +26,9 @@ if (_deposit) then {
 };
 
 if (life_HC_isActive) then {
-    [1,group player,_deposit,_value] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
+    [1,group player,_deposit,_value] remoteExecCall ["HC_fnc_updateGang",HC_Life]; //Update the database.
 } else {
-    [1,group player,_deposit,_value] remoteExec ["TON_fnc_updateGang",RSERV]; //Update the database.
+    [1,group player,_deposit,_value] remoteExecCall ["TON_fnc_updateGang",RSERV]; //Update the database.
 };
 
 hint format [localize "STR_ATM_WithdrawSuccessG",[_value] call life_fnc_numberText];
