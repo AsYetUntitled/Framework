@@ -150,8 +150,7 @@ class Life_Client_Core {
         class bankTransfer {};
         class bankWithdraw {};
         class displayHandler {};
-        class gangDeposit {};
-        class gangWithdraw {};
+        class gangBankResponse {};
         class garageLBChange {};
         class impoundMenu {};
         class progressBar {};
@@ -166,6 +165,7 @@ class Life_Client_Core {
         class spawnPointCfg {};
         class spawnPointSelected {};
         class unimpound {};
+        class useGangBank {};
         class vehicleGarage {};
         class wireTransfer {};
     };
