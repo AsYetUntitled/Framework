@@ -12,6 +12,6 @@ params [
 if (_value isEqualTo -1) exitWith {};
 
 hint format ["You successfully withdrew $%1.",_value];
-[6] call SOCK_fnc_updatePartial;
 CASH = CASH + _value;
 [] call life_fnc_atmMenu;
+[6] call SOCK_fnc_updatePartial;
