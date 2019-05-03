@@ -42,8 +42,6 @@ if ((BANK - (_fueltoput * _fuelCost)) > 0) then {
     _pgText ctrlSetText format ["%2 (1%1)...","%","Refuel:"];
     _progress progressSetPosition 0.01;
     private _cP = 0.01;
-    private _totalcost = _fueltoput * _fuelCost;
-    if (BANK < _totalcost) exitWith {};
     for "_i" from 0 to 1 step 0 do {
         uiSleep  _timer;
         _cP = _cP + 0.01;
@@ -56,7 +54,8 @@ if ((BANK - (_fueltoput * _fuelCost)) > 0) then {
             [_car,_cP * _setfuel] remoteExecCall ["life_fnc_setFuel",_car];
         };
     };
-    BANK = BANK - round(_cP * _totalcost); //pay the received fuel
+    private _toPay = floor((_fueltoput * _fuelCost) * _cP);
+    BANK = BANK - _toPay; //pay the received fuel
     [_car,_cP * _setfuel] remoteExecCall ["life_fnc_setFuel",_car]; //update the fuel
     "progressBar" cutText ["","PLAIN"];
     if (_car distance player > 10 || !(isNull objectParent player)) then {

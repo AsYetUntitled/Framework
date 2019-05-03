@@ -45,7 +45,7 @@ switch _mode do {
         if (!isNil "_classname" || _classname isEqualTo "") then {
 
             private _vehicleFuelList = uiNamespace getVariable ["fuel_list",[]];
-            (_vehicleFuelList select _index) params ["_vehicle"];
+            (_vehicleFuelList select _index) params ["_car"];
             private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
             private _fuel = fuel _car;
             private _fuelTank = _vehicleInfo select 12;
