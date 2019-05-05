@@ -20,9 +20,7 @@ if (_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
 if (_value < 1) exitWith {};
 if (!([str(_value)] call TON_fnc_isnumber)) exitWith {hint localize "STR_ATM_notnumeric"};
 if ((_deposit && _value > CASH) || (!_deposit && _value > _gFund)) exitWith {hint localize "STR_ATM_NotEnoughCash"};
-if (_val < 100 && _gFund > 20000000) exitWith {hint localize "STR_ATM_WithdrawMin"}; //Temp fix for something.
 
-life_action_delay = time;
 if (_deposit) then {
     CASH = CASH - _value;
     [] call life_fnc_atmMenu;
@@ -34,11 +32,4 @@ if (life_HC_isActive) then {
     [1,group player,_deposit,_value,player,CASH] remoteExecCall ["TON_fnc_updateGang",RSERV]; //Update the database.
 };
 
-if (LIFE_SETTINGS(getNumber,"player_moneyLog") isEqualTo 1) then {
-    if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        money_log = format [localize "STR_DL_ML_withdrewGang_BEF",_value,[_gFund] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
-    } else {
-        money_log = format [localize "STR_DL_ML_withdrewGang",profileName,(getPlayerUID player),_value,[_gFund] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
-    };
-    publicVariableServer "money_log";
-};
+life_action_delay = time;
