@@ -3,7 +3,7 @@
     File: fn_gankBankResponse.sqf
     Author: DomT602
     Description:
-    Recieves response from the server.
+    Receives response from the server.
 */
 params [
     ["_value",-1,[0]]

@@ -31,13 +31,21 @@ switch (_mode) do {
     };
 
     case 1: {
-        private _deposit = param [2];
-        private _value = param [3];
+        params [
+            "",
+            "",
+            ["_deposit",false,[false]],
+            ["_value",0,[0]],
+            ["_unit",objNull,[objNull]],
+            ["_cash",0,[0]]
+        ];
+
         private _funds = _group getVariable ["gang_bank",0];
         if (_deposit) then {
             _funds = _funds + _value;
             _group setVariable ["gang_bank",_funds,true];
             [1,format["Successfully deposited $%1.",_value]] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
+            _cash = _cash - _value;
         } else {
             if (_value > _funds) exitWith {
                 [1,"There are not enough funds in the bank for this withdrawal."] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
@@ -46,8 +54,10 @@ switch (_mode) do {
             _funds = _funds - _value;
             _group setVariable ["gang_bank",_funds,true];
             [_value] remoteExecCall ["life_fnc_gangBankResponse",remoteExecutedOwner];
+            _cash = _cash + _value;
         };
-        _query = format ["UPDATE gangs SET bank='%1' WHERE id='%2'",([_funds] call DB_fnc_numberSafe),_groupID];
+        _query = format ["UPDATE gangs SET bank='%1' WHERE id='%2'",([_funds] call HC_fnc_numberSafe),_groupID];
+        [getPlayerUID _unit,side _unit,_cash,0] call HC_fnc_updatePartial;
     };
 
     case 2: {

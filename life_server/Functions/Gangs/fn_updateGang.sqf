@@ -55,7 +55,7 @@ switch (_mode) do {
             _cash = _cash + _value;
         };
         _query = format ["UPDATE gangs SET bank='%1' WHERE id='%2'",([_funds] call DB_fnc_numberSafe),_groupID];
-        [getPlayerUID _unit,side _unit,_cash,0] call DB_fnc_updateRequest;
+        [getPlayerUID _unit,side _unit,_cash,0] call DB_fnc_updatePartial;
     };
 
     case 2: {
