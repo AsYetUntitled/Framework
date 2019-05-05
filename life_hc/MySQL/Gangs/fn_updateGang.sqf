@@ -7,6 +7,7 @@
     Description:
     Updates the gang information?
 */
+scopeName "main";
 private ["_groupID","_bank","_maxMembers","_members","_membersFinal","_query","_owner"];
 params [
     ["_mode",0,[0]],

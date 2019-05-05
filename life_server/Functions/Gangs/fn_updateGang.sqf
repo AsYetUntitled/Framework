@@ -9,7 +9,7 @@ scopeName "main";
 private ["_groupID","_bank","_maxMembers","_members","_membersFinal","_query","_owner"];
 params [
     ["_mode",0,[0]],
-    ["_group",grpNull,[grpNull]],
+    ["_group",grpNull,[grpNull]]
 ];
 
 if (isNull _group) exitWith {}; //FAIL
