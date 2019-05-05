@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `gangs` (
     `members`     TEXT,
     `maxmembers`  INT DEFAULT 8,
     `bank`        INT DEFAULT 0,
-    `active`      TINYINT,
+    `active`      TINYINT NOT NULL DEFAULT '1',
     `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (`id`),
