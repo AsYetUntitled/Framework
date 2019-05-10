@@ -41,11 +41,11 @@ switch (_mode) do {
         if (_deposit) then {
             _funds = _funds + _value;
             _group setVariable ["gang_bank",_funds,true];
-            [1,format[localize "STR_ATM_DepositSuccessG",[_value] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
+            [1,"STR_ATM_DepositSuccessG",true,[_value]] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
             _cash = _cash - _value;
         } else {
             if (_value > _funds) exitWith {
-                [1,localize "STR_ATM_NotEnoughFundsG"] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
+                [1,"STR_ATM_NotEnoughFundsG",true] remoteExecCall ["life_fnc_broadcast",remoteExecutedOwner];
                 breakOut "";
             };
             _funds = _funds - _value;
