@@ -4960,7 +4960,7 @@
             <Portuguese>Você parou espectador.</Portuguese>
             <Russian>Вы остановили spectating.</Russian>
             <German>Du hast das Beobachten beendet.</German>
-			<Original>你已经停止了观看。</Original>
+			<Chinesesimp>你已经停止了观看。</Chinesesimp>
         </Key>
         <Key ID="STR_NOTF_haveTPedToYou">
             <Original>You have teleported %1 to your location.</Original>
