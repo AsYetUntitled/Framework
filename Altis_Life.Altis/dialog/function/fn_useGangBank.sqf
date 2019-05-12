@@ -19,7 +19,8 @@ if (isNil {(group player) getVariable "gang_name"}) exitWith {hint localize "STR
 if (_value > 999999) exitWith {hint localize "STR_ATM_WithdrawMax";};
 if (_value < 1) exitWith {};
 if (!([str(_value)] call TON_fnc_isnumber)) exitWith {hint localize "STR_ATM_notnumeric"};
-if ((_deposit && _value > CASH) || (!_deposit && _value > _gFund)) exitWith {hint localize "STR_ATM_NotEnoughCash"};
+if (_deposit && _value > CASH) exitWith {hint localize "STR_ATM_NotEnoughCash"};
+if (!_deposit && _value > _gFund) exitWith {hint localize "STR_ATM_NotEnoughFundsG"};
 
 if (_deposit) then {
     CASH = CASH - _value;

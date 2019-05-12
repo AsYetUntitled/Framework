@@ -1,3 +1,4 @@
+#include "\life_hc\hc_macros.hpp"
 /*
     File: fn_updateGang.sqf
     Author: Bryan "Tonic" Boardwine

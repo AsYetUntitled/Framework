@@ -1308,16 +1308,16 @@
 			<Chinesesimp>你已将 $%1 存入到你的银行账户</Chinesesimp>
         </Key>
         <Key ID="STR_ATM_DepositSuccessG">
-            <Original>You have deposited $%1 into your gang's bank account</Original>
-            <Czech>Máte uloženy $%1 na bankovní účet svého gangu</Czech>
-            <Spanish>Has depositado $%1 en la cuenta de tu pandilla</Spanish>
+            <Original>You have deposited $%1 into your gang's bank account.</Original>
+            <Czech>Máte uloženy $%1 na bankovní účet svého gangu.</Czech>
+            <Spanish>Has depositado $%1 en la cuenta de tu pandilla.</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 auf das Gangkonto überwiesen.</German>
             <French>Vous avez déposé $%1 sur le compte en banque de votre gang.</French>
-            <Italian>Hai despositato €%1 nei fondi della tua gang</Italian>
+            <Italian>Hai despositato €%1 nei fondi della tua gang.</Italian>
             <Portuguese>Você depositou R$%1 na conta da sua gangue.</Portuguese>
-            <Polish>Zdeponowałeś na koncie gangu kwotę $%1 </Polish>
-			<Chinesesimp>你已将 $%1 存入到你的帮派账户</Chinesesimp>
+            <Polish>Zdeponowałeś na koncie gangu kwotę $%1.</Polish>
+			<Chinesesimp>你已将 $%1 存入到你的帮派账户.</Chinesesimp>
         </Key>
         <Key ID="STR_ATM_DepositInUseG">
             <Original>Someone is already trying to deposit into your gang's bank account.</Original>
