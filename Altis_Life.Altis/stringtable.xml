@@ -107,7 +107,7 @@
             <German>Billy Joe's Bekleidung</German>
             <Italian>Emporio di Billy</Italian>
             <French>Vêtements de tir</French>
-            <Portuguese>Roupa Billy Joe</Portuguese>
+            <Portuguese>Loja de Roupa do Billy Joe</Portuguese>
             <Polish>Billy Joe Odzież</Polish>
 			<Chinesesimp>服装商店</Chinesesimp>
         </Key>
@@ -119,7 +119,7 @@
             <German>Billy Joe's Schusswaffen</German>
             <Italian>Armeria di Billy Joe</Italian>
             <French>Armurerie de Billy Joe</French>
-            <Portuguese>Armas de fogo Billy Joe</Portuguese>
+            <Portuguese>Loja de Armas do Billy Joe</Portuguese>
             <Polish>Broń palna Billy Joe</Polish>
 			<Chinesesimp>武器商店</Chinesesimp>
         </Key>
@@ -614,7 +614,7 @@
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
-            <Portuguese>Você não pode se teletransportar o jogador aqui, porque eles estão dentro de um veículo.</Portuguese>
+            <Portuguese>Você não pode se teletransportar o jogador aqui, porque ele esta dentro de um veículo.</Portuguese>
             <Russian>Вы не можете телепортировать игрока здесь, потому что они находятся внутри автомобиля.</Russian>
             <German>Du kannst den Spieler nicht hierher teleportieren, weil dieser im Inneren eines Fahrzeugs sitzt.</German>
 			<Chinesesimp>你不能将玩家传送到这里，因为他们在车内。</Chinesesimp>
@@ -701,7 +701,7 @@
             <German>Durchsuche Garage nach Fahrzeugen...</German>
             <French>Recherche des véhicules dans le garage...</French>
             <Italian>Ricerca di veicoli nel Database...</Italian>
-            <Portuguese>Buscando por veículo no banco de dados...</Portuguese>
+            <Portuguese>Buscando por veículo na base de dados...</Portuguese>
             <Polish>Szukam pojazdu w bazie danych...</Polish>
 			<Chinesesimp>从数据库中搜索载具...</Chinesesimp>
         </Key>
@@ -904,7 +904,7 @@
             <Spanish>Aprieta la barra de espacio para colocar el Contenedor.</Spanish>
             <Italian>Premi barra spaziatrice per posizionare il contenitore.</Italian>
             <Polish>Hit spacji, aby umieścić pojemnik.</Polish>
-            <Portuguese>Pressione a barra de espaço para posicionar.</Portuguese>
+            <Portuguese>Pressione a barra de espaço para colocar.</Portuguese>
             <Russian>Хит пробел, чтобы поместить контейнер.</Russian>
             <German>Drücke die Leertaste, um den Container zu platzieren.</German>
 			<Chinesesimp>按空格键放置物品。</Chinesesimp>
@@ -953,7 +953,7 @@
             <German>Wie willst du mit gefesselten Händen sammeln?</German>
             <French>Vous êtes menotté.</French>
             <Italian>Sei stato ammanettato</Italian>
-            <Portuguese>Você está contido</Portuguese>
+            <Portuguese>Você está algemado</Portuguese>
             <Polish>Ty skrępowaniem</Polish>
 			<Chinesesimp>你被限制</Chinesesimp>
         </Key>
@@ -977,7 +977,7 @@
             <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
             <French>Vous ne pouvez pas récolter cette ressource avec ce véhicule.</French>
             <Italian>Non puoi raccogliere questa risorsa con questo veicolo !</Italian>
-            <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
+            <Portuguese>Voce não pode colher este recurso com este veiculo!</Portuguese>
             <Polish>You can't gather this resource with this vehicle!</Polish>
 			<Chinesesimp>你不能用这载具收集这个资源！</Chinesesimp>
         </Key>
@@ -988,7 +988,7 @@
             <Spanish>No tienes permiso de usar esto.</Spanish>
             <Italian>Non hai il permesso di farlo.</Italian>
             <Polish>Nie masz działalność z wykorzystaniem tego produktu.</Polish>
-            <Portuguese>Você não tem nenhum negócio usando este.</Portuguese>
+            <Portuguese>Você não tem nenhum negócio usando isto.</Portuguese>
             <Russian>У вас нет бизнеса с помощью этого.</Russian>
             <German>Du hast hier nichts verloren!</German>
 			<Chinesesimp>您无权这样做。</Chinesesimp>
@@ -1219,7 +1219,7 @@
             <German>%1 hat dir $%2 überwiesen.</German>
             <French>%1 vous a fait un virement de $%2.</French>
             <Italian>%1 ha effettuato un bonifico sul tuo conto di €%2</Italian>
-            <Portuguese></Portuguese>
+            <Portuguese>%1 transferiu $%2 para a tua conta.</Portuguese>
             <Polish></Polish>
 			<Chinesesimp>%1 通过电汇将 $%2 转账给你。</Chinesesimp>
         </Key>
