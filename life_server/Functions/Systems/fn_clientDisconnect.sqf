@@ -20,7 +20,7 @@ if (life_save_civilian_position && {side _unit isEqualTo civilian}) then {
         private _position = getPosATL _unit;
         if ((getMarkerPos "respawn_civilian" distance _position) > 300) then {
             private _alive = alive _unit;
-            if (life_HC_isActive) then {[_uid,_side,_alive,4,_position] remoteExec ["HC_fnc_updatePartial",HC_Life]} else {[_uid,_side,_alive,4,_position] spawn DB_fnc_updatePartial};
+            if (life_HC_isActive) then {[_uid,civilian,_alive,4,_position] remoteExec ["HC_fnc_updatePartial",HC_Life]} else {[_uid,civilian,_alive,4,_position] spawn DB_fnc_updatePartial};
         };
     };
 };

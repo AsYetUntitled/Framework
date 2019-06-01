@@ -11,16 +11,13 @@
 ****** Backend Variables *****
 *****************************
 */
-life_query_time = time;
 life_action_delay = time;
 life_trunk_vehicle = objNull;
 life_session_completed = false;
 life_garage_store = false;
 life_session_tries = 0;
-life_net_dropped = false;
 life_siren_active = false;
 life_clothing_filter = 0;
-life_clothing_uniform = -1;
 life_redgull_effect = time;
 life_is_processing = false;
 life_bail_paid = false;
@@ -32,7 +29,6 @@ life_interrupted = false;
 life_respawned = false;
 life_removeWanted = false;
 life_action_gathering = false;
-tawvd_addon_disable = true;
 life_god = false;
 life_frozen = false;
 life_save_gear = [];
@@ -45,6 +41,8 @@ life_markers = false;
 life_markers_active = false;
 life_canpay_bail = true;
 life_storagePlacing = scriptNull;
+life_hideoutBuildings = [];
+life_firstSpawn = true;
 
 //Settings
 life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast", true];
@@ -98,3 +96,9 @@ life_vehicles = [];
 
     missionNamespace setVariable [LICENSE_VARNAME(_varName,_sideFlag), false];
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));
+
+/* Setup life_hideoutBuildings */
+{
+    _building = nearestBuilding getMarkerPos _x; 
+    life_hideoutBuildings pushBack _building
+} forEach (LIFE_SETTINGS(getArray,"gang_area"));
