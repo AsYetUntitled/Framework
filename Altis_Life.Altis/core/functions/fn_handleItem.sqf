@@ -367,6 +367,13 @@ if (_bool) then {
         };
     };
 } else {
+    if (_item isEqualTo "Binocular") exitWith {
+        if (_item in assignedItems player) then {
+            player removeWeapon "Binocular";
+        } else {
+            player removeItem "Binocular";
+        };
+    };
     switch (_details select 6) do {
         case "CfgVehicles": {
             removeBackpack player;
