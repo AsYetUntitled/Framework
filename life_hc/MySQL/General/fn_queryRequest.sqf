@@ -20,6 +20,10 @@ _ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
 if (isNull _ownerID) exitWith {};
 
+if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 1) then {
+    _ownerID addMPEventHandler ["MPKilled", {_this call fn_whoDoneIt}];
+};
+
 _query = switch (_side) do {
     // West - 11 entries returned
     case west: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};

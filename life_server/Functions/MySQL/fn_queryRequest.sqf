@@ -17,6 +17,11 @@ _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 
 if (isNull _ownerID) exitWith {};
+
+if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 1) then {
+    _ownerID addMPEventHandler ["MPKilled", {_this call fn_whoDoneIt}];
+};
+
 _ownerID = owner _ownerID;
 
 _query = switch (_side) do {
