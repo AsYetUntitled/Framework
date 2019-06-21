@@ -2,18 +2,16 @@
 /*
     File: fn_loadGear.sqf
     Author: Bryan "Tonic" Boardwine
-    Edited: blackfisch
 
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
-private _itemArray = life_gear;
+private _items = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
-private _handle = [] spawn life_fnc_stripDownPlayer;
-waitUntil {scriptDone _handle};
+if (count _items isEqualTo 0) exitWith {
+    call life_fnc_stripDownPlayer;
 
-if (count _itemArray isEqualTo 0) exitWith {
     switch (playerSide) do {
         case west: {
             call life_fnc_copLoadout;
@@ -29,9 +27,9 @@ if (count _itemArray isEqualTo 0) exitWith {
     };
 };
 
-_itemArray params [
+_items params [
     ["_gear",[]],
-    ["_yItems",[]]
+    ["_vItems",[]]
 ];
 
 player setUnitLoadout _gear;
@@ -39,6 +37,6 @@ player setUnitLoadout _gear;
 life_maxWeight = if (backpack player isEqualTo "") then {LIFE_SETTINGS(getNumber,"total_maxWeight")} else {LIFE_SETTINGS(getNumber,"total_maxWeight") + round(FETCH_CONFIG2(getNumber,"CfgVehicles",(backpack player),"maximumload") / 4)};
 {
     [true,(_x select 0),(_x select 1)] call life_fnc_handleInv;
-} forEach (_yItems);
+} forEach (_vItems);
 
 call life_fnc_playerSkins;
