@@ -11,7 +11,7 @@
 private _return = [];
 private _savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
 
-_return pushBack (getUnitLoadout player)
+_return pushBack (getUnitLoadout player);
 
 {
     private _val = ITEM_VALUE(_x);
