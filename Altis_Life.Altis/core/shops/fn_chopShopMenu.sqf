@@ -39,7 +39,7 @@ _control = CONTROL(39400,39402);
         _price = _price * _chopMultiplier;
         if (!isNil "_price" && count crew _x isEqualTo 0) then {
             _control lbAdd _displayName;
-            _control lbSetData [(lbSize _control)-1,str(_forEachIndex)];
+            _control lbSetData [(lbSize _control)-1,str(netId _x)];
             _control lbSetPicture [(lbSize _control)-1,_picture];
             _control lbSetValue [(lbSize _control)-1,_price];
         };
