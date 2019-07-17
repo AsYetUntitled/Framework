@@ -614,7 +614,7 @@
             <Spanish>No puedes teletransportar a este jugador aquí, porque está dentro de un vehículo.</Spanish>
             <Italian>Il giocatore non può essere teletrasportato perché in un veicolo.</Italian>
             <Polish>Nie można teleportować gracza tutaj, ponieważ są one wewnątrz pojazdu.</Polish>
-            <Portuguese>Você não pode se teletransportar o jogador aqui, porque ele esta dentro de um veículo.</Portuguese>
+            <Portuguese>Você não pode se teletransportar o jogador aqui, porque eles estão dentro de um veículo.</Portuguese>
             <Russian>Вы не можете телепортировать игрока здесь, потому что они находятся внутри автомобиля.</Russian>
             <German>Du kannst den Spieler nicht hierher teleportieren, weil dieser im Inneren eines Fahrzeugs sitzt.</German>
 			<Chinesesimp>你不能将玩家传送到这里，因为他们在车内。</Chinesesimp>
@@ -701,7 +701,7 @@
             <German>Durchsuche Garage nach Fahrzeugen...</German>
             <French>Recherche des véhicules dans le garage...</French>
             <Italian>Ricerca di veicoli nel Database...</Italian>
-            <Portuguese>Buscando por veículo na base de dados...</Portuguese>
+            <Portuguese>Buscando por veículo no banco de dados...</Portuguese>
             <Polish>Szukam pojazdu w bazie danych...</Polish>
 			<Chinesesimp>从数据库中搜索载具...</Chinesesimp>
         </Key>
@@ -904,7 +904,7 @@
             <Spanish>Aprieta la barra de espacio para colocar el Contenedor.</Spanish>
             <Italian>Premi barra spaziatrice per posizionare il contenitore.</Italian>
             <Polish>Hit spacji, aby umieścić pojemnik.</Polish>
-            <Portuguese>Pressione a barra de espaço para colocar.</Portuguese>
+            <Portuguese>Pressione a barra de espaço para posicionar.</Portuguese>
             <Russian>Хит пробел, чтобы поместить контейнер.</Russian>
             <German>Drücke die Leertaste, um den Container zu platzieren.</German>
 			<Chinesesimp>按空格键放置物品。</Chinesesimp>
@@ -953,7 +953,7 @@
             <German>Wie willst du mit gefesselten Händen sammeln?</German>
             <French>Vous êtes menotté.</French>
             <Italian>Sei stato ammanettato</Italian>
-            <Portuguese>Você está algemado</Portuguese>
+            <Portuguese>Você está contido</Portuguese>
             <Polish>Ty skrępowaniem</Polish>
 			<Chinesesimp>你被限制</Chinesesimp>
         </Key>
@@ -988,7 +988,7 @@
             <Spanish>No tienes permiso de usar esto.</Spanish>
             <Italian>Non hai il permesso di farlo.</Italian>
             <Polish>Nie masz działalność z wykorzystaniem tego produktu.</Polish>
-            <Portuguese>Você não tem nenhum negócio usando isto.</Portuguese>
+            <Portuguese>Você não tem nenhum negócio usando este.</Portuguese>
             <Russian>У вас нет бизнеса с помощью этого.</Russian>
             <German>Du hast hier nichts verloren!</German>
 			<Chinesesimp>您无权这样做。</Chinesesimp>
@@ -1219,7 +1219,7 @@
             <German>%1 hat dir $%2 überwiesen.</German>
             <French>%1 vous a fait un virement de $%2.</French>
             <Italian>%1 ha effettuato un bonifico sul tuo conto di €%2</Italian>
-            <Portuguese>%1 transferiu $%2 para a tua conta.</Portuguese>
+            <Portuguese></Portuguese>
             <Polish></Polish>
 			<Chinesesimp>%1 通过电汇将 $%2 转账给你。</Chinesesimp>
         </Key>
@@ -1308,16 +1308,16 @@
 			<Chinesesimp>你已将 $%1 存入到你的银行账户</Chinesesimp>
         </Key>
         <Key ID="STR_ATM_DepositSuccessG">
-            <Original>You have deposited $%1 into your gang's bank account.</Original>
-            <Czech>Máte uloženy $%1 na bankovní účet svého gangu.</Czech>
-            <Spanish>Has depositado $%1 en la cuenta de tu pandilla.</Spanish>
+            <Original>You have deposited $%1 into your gang's bank account</Original>
+            <Czech>Máte uloženy $%1 na bankovní účet svého gangu</Czech>
+            <Spanish>Has depositado $%1 en la cuenta de tu pandilla</Spanish>
             <Russian></Russian>
             <German>Du hast $%1 auf das Gangkonto überwiesen.</German>
             <French>Vous avez déposé $%1 sur le compte en banque de votre gang.</French>
-            <Italian>Hai despositato €%1 nei fondi della tua gang.</Italian>
+            <Italian>Hai despositato €%1 nei fondi della tua gang</Italian>
             <Portuguese>Você depositou R$%1 na conta da sua gangue.</Portuguese>
-            <Polish>Zdeponowałeś na koncie gangu kwotę $%1.</Polish>
-			<Chinesesimp>你已将 $%1 存入到你的帮派账户.</Chinesesimp>
+            <Polish>Zdeponowałeś na koncie gangu kwotę $%1 </Polish>
+			<Chinesesimp>你已将 $%1 存入到你的帮派账户</Chinesesimp>
         </Key>
         <Key ID="STR_ATM_DepositInUseG">
             <Original>Someone is already trying to deposit into your gang's bank account.</Original>
@@ -4960,7 +4960,7 @@
             <Portuguese>Você parou espectador.</Portuguese>
             <Russian>Вы остановили spectating.</Russian>
             <German>Du hast das Beobachten beendet.</German>
-			<Chinesesimp>你已经停止了观看。</Chinesesimp>
+			<Original>你已经停止了观看。</Original>
         </Key>
         <Key ID="STR_NOTF_haveTPedToYou">
             <Original>You have teleported %1 to your location.</Original>
@@ -4975,7 +4975,7 @@
 			<Chinesesimp>传送 %1 到你的位置。</Chinesesimp>
         </Key>
         <Key ID="STR_NOTF_ATM">
-            <Original>&lt;t color='#ADFF2F'&gt;ATM&lt;/t&gt;</Original>
+            <Original>&lt;t color='#ADFF2F'&gt;ATM自动取款机&lt;/t&gt;</Original>
             <Czech>&lt;t color='#ADFF2F'&gt;Bankomat&lt;/t&gt;</Czech>
             <French>&lt;t color='#ADFF2F'&gt;DAB&lt;/t&gt;</French>
             <Spanish>&lt;t color='#ADFF2F'&gt;ATM&lt;/t&gt;</Spanish>
@@ -4984,7 +4984,6 @@
             <Portuguese>&lt;t color='#ADFF2F'&gt;Caixa Eletrônico&lt;/t&gt;</Portuguese>
             <Russian>&lt;t color='#ADFF2F'&gt;Банкомат&lt;/t&gt;</Russian>
             <German>&lt;t color='#ADFF2F'&gt;Geldautomat&lt;/t&gt;</German>
-            <Chinesesimp>&lt;t color='#ADFF2F'&gt;自动取款机&lt;/t&gt;</Chinesesimp>
         </Key>
         <Key ID="STR_NOTF_captureGangHideout">
             <Original>Capture Gang Hideout</Original>
@@ -9848,6 +9847,18 @@
             <Polish>Kupiłeś %1 za $%2</Polish>
 			<Chinesesimp>你买了一个 %1 花费 $%2</Chinesesimp>
         </Key>
+        <Key ID="STR_Shop_Veh_Rented">
+            <Original>You rented a %1 for $%2</Original>
+            <Czech>You rented a %1 for $%2</Czech>
+            <Spanish>You rented a %1 for $%2</Spanish>
+            <Russian>You rented a %1 for $%2</Russian>
+            <German>You rented a %1 for $%2</German>
+            <French>You rented a %1 for $%2</French>
+            <Italian>You rented a %1 for $%2</Italian>
+            <Portuguese>You rented a %1 for $%2</Portuguese>
+            <Polish>You rented a %1 for $%2</Polish>
+			<Chinesesimp>You rented a %1 for $%2</Chinesesimp>
+        </Key>
         <Key ID="STR_Shop_Veh_UI_Rental">
             <Original>Rental Price:</Original>
             <Czech>Pronájem Cena:</Czech>
@@ -10610,7 +10621,7 @@
             <German>Geldautomat</German>
             <Portuguese>Caixa Eletrônico</Portuguese>
             <Polish>Bankomat</Polish>
-			<Chinesesimp>自动取款机</Chinesesimp>
+			<Chinesesimp>ATM自动取款机</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Local_Bank">
             <Original>Local Bank</Original>
