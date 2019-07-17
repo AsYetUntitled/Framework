@@ -107,7 +107,7 @@
             <German>Billy Joe's Bekleidung</German>
             <Italian>Emporio di Billy</Italian>
             <French>Vêtements de tir</French>
-            <Portuguese>Loja de Roupa do Billy Joe</Portuguese>
+            <Portuguese>Roupa Billy Joe</Portuguese>
             <Polish>Billy Joe Odzież</Polish>
 			<Chinesesimp>服装商店</Chinesesimp>
         </Key>
@@ -119,7 +119,7 @@
             <German>Billy Joe's Schusswaffen</German>
             <Italian>Armeria di Billy Joe</Italian>
             <French>Armurerie de Billy Joe</French>
-            <Portuguese>Loja de Armas do Billy Joe</Portuguese>
+            <Portuguese>Armas de fogo Billy Joe</Portuguese>
             <Polish>Broń palna Billy Joe</Polish>
 			<Chinesesimp>武器商店</Chinesesimp>
         </Key>
@@ -977,7 +977,7 @@
             <German>Du kannst diese Ressource nicht mit diesem Fahrzeug abbauen!</German>
             <French>Vous ne pouvez pas récolter cette ressource avec ce véhicule.</French>
             <Italian>Non puoi raccogliere questa risorsa con questo veicolo !</Italian>
-            <Portuguese>Voce não pode colher este recurso com este veiculo!</Portuguese>
+            <Portuguese>You can't gather this resource with this vehicle!</Portuguese>
             <Polish>You can't gather this resource with this vehicle!</Polish>
 			<Chinesesimp>你不能用这载具收集这个资源！</Chinesesimp>
         </Key>
@@ -9847,7 +9847,7 @@
             <Polish>Kupiłeś %1 za $%2</Polish>
 			<Chinesesimp>你买了一个 %1 花费 $%2</Chinesesimp>
         </Key>
-        <Key ID="STR_Shop_Veh_Rented">
+		<Key ID="STR_Shop_Veh_Rented">
             <Original>You rented a %1 for $%2</Original>
             <Czech>You rented a %1 for $%2</Czech>
             <Spanish>You rented a %1 for $%2</Spanish>
