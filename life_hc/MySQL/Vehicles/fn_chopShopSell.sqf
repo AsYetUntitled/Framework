@@ -2,7 +2,6 @@
 /*
     File: fn_chopShopSell.sqf
     Author: Bryan "Tonic" Boardwine
-    Modified: Casperento
 
     This file is for Nanou's HeadlessClient.
 
@@ -24,7 +23,8 @@ private _displayName = FETCH_CONFIG2(getText,"CfgVehicles",typeOf _vehicle, "dis
 
 private _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if (count _dbInfo > 0) then {
-    private _query = format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",(_dbInfo select 0),(_dbInfo select 1)]; // _uid and _plate
+    _dbInfo params ["_uid","_plate"];
+    private _query = format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
     [_query,1] call HC_fnc_asyncCall;
 };
 

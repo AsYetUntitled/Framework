@@ -2,7 +2,6 @@
 /*
     File: fn_chopShopSell.sqf
     Author: Bryan "Tonic" Boardwine
-    Modified: Casperento
 
     Description:
     Sells the selected vehicle off.
@@ -11,14 +10,13 @@ disableSerialization;
 
 private _control = CONTROL(39400,39402);
 private _price = _control lbValue (lbCurSel _control);
-private _vehicle = _control lbData (lbCurSel _control);
+private _vehicle = _control getVariable[format["lbData_%1",(lbCurSel _control)],""];
 _vehicle = call compile format ["%1", _vehicle];
 _vehicle = objectFromNetId _vehicle;
 if (isNull _vehicle) exitWith {};
 
-hint localize "STR_Shop_ChopShopSelling";
+systemChat localize "STR_Shop_ChopShopSelling";
 life_action_inUse = true;
-[0] call SOCK_fnc_updatePartial;
 
 if (life_HC_isActive) then {
     [player,_vehicle,_price] remoteExecCall ["HC_fnc_chopShopSell",HC_Life];

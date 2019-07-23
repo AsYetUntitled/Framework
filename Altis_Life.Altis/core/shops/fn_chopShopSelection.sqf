@@ -1,7 +1,6 @@
 /*
     File: fn_chopShopSelection.sqf
     Author: Bryan "Tonic" Boardwine
-    Modified: Casperento
 
     Description:
     Displays the pricing for the currently selected vehicle.
