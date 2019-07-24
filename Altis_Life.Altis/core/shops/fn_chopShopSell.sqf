@@ -10,9 +10,7 @@ disableSerialization;
 
 private _control = CONTROL(39400,39402);
 private _price = _control lbValue (lbCurSel _control);
-private _vehicle = _control getVariable[format["lbData_%1",(lbCurSel _control)],""];
-_vehicle = call compile format ["%1", _vehicle];
-_vehicle = objectFromNetId _vehicle;
+private _vehicle = objectFromNetId (_control lbData (lbCurSel _control));
 if (isNull _vehicle) exitWith {};
 
 systemChat localize "STR_Shop_ChopShopSelling";
