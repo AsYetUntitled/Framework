@@ -8,7 +8,7 @@
 */
 params [
     ["_price",-1,[-1]],
-    "_displayName"
+    ["_displayName","",[""]]
 ];
 
 life_action_inUse = false;

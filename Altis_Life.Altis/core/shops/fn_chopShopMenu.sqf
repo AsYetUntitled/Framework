@@ -23,7 +23,6 @@ if (!(createDialog "Chop_Shop")) exitWith {hint localize "STR_Shop_ChopShopError
 
 private _control = CONTROL(39400,39402);
 private "_className";
-private "_classNameLife";
 private "_displayName";
 private "_picture";
 private "_price";
@@ -31,16 +30,15 @@ private "_chopMultiplier";
 {
     if (alive _x) then {
         _className = typeOf _x;
-        _classNameLife = _className;
         _displayName = getText(configFile >> "CfgVehicles" >> _className >> "displayName");
         _picture = getText(configFile >> "CfgVehicles" >> _className >> "picture");
 
-        if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
-            _classNameLife = "Default"; //Use Default class if it doesn't exist
+        if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
             diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+            _className = "Default"; //Use Default class if it doesn't exist
         };
 
-        _price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
+        _price = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
         _chopMultiplier = LIFE_SETTINGS(getNumber,"vehicle_chopShop_multiplier");
 
         _price = _price * _chopMultiplier;

@@ -5,8 +5,6 @@
     Description:
     Displays the pricing for the currently selected vehicle.
 */
-disableSerialization;
-
 params [
     ["_control",controlNull,[controlNull]],
     ["_selection",-1,[0]]
