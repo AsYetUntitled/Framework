@@ -7,25 +7,19 @@
     Sells the selected vehicle off.
 */
 disableSerialization;
-private ["_control","_price","_vehicle","_nearVehicles","_price2","_chopable"];
-_control = CONTROL(39400,39402);
-_price = _control lbValue (lbCurSel _control);
-_vehicle = _control lbData (lbCurSel _control);
-_vehicle = call compile format ["%1", _vehicle];
-_chopable = LIFE_SETTINGS(getArray,"chopShop_vehicles");
-_nearVehicles = nearestObjects [getMarkerPos life_chopShop,_chopable,25];
-_vehicle = (_nearVehicles select _vehicle);
+
+private _control = CONTROL(39400,39402);
+private _price = _control lbValue (lbCurSel _control);
+private _vehicle = objectFromNetId (_control lbData (lbCurSel _control));
 if (isNull _vehicle) exitWith {};
 
-hint localize "STR_Shop_ChopShopSelling";
+systemChat localize "STR_Shop_ChopShopSelling";
 life_action_inUse = true;
-_price2 = CASH + _price;
-[0] call SOCK_fnc_updatePartial;
 
 if (life_HC_isActive) then {
-    [player,_vehicle,_price,_price2] remoteExecCall ["HC_fnc_chopShopSell",HC_Life];
+    [player,_vehicle,_price] remoteExecCall ["HC_fnc_chopShopSell",HC_Life];
 } else {
-    [player,_vehicle,_price,_price2] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
+    [player,_vehicle,_price] remoteExecCall ["TON_fnc_chopShopSell",RSERV];
 };
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {

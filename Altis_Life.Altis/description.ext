@@ -1,5 +1,6 @@
 disableChannels[] = {{0,true,true},{1,true,true},{2,true,true}};    // Disabled text and voice for global, side, and command channels. Syntax: disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>}};
 overviewText = "$STR_MISC_overviewText";    // Text to be displayed below the overviewPicture on the mission selection screen when the mission is available to play.
+unsafeCVL = 1; // Allows createVehicleLocal to be executed in Multiplayer
 
 #include "config\Config_SpyGlass.hpp"
 #include "CfgRemoteExec.hpp"

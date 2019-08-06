@@ -334,6 +334,7 @@ class Life_Client_Core {
         class chopShopMenu {};
         class chopShopSelection {};
         class chopShopSell {};
+        class chopShopSold {};
         class clothingFilter {};
         class clothingMenu {};
         class fuelLBchange {};
