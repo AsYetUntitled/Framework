@@ -9850,15 +9850,15 @@
         </Key>
 		<Key ID="STR_Shop_Veh_Rented">
             <Original>You rented a %1 for $%2</Original>
-            <Czech>You rented a %1 for $%2</Czech>
-            <Spanish>You rented a %1 for $%2</Spanish>
-            <Russian>You rented a %1 for $%2</Russian>
-            <German>You rented a %1 for $%2</German>
-            <French>You rented a %1 for $%2</French>
-            <Italian>You rented a %1 for $%2</Italian>
-            <Portuguese>You rented a %1 for $%2</Portuguese>
-            <Polish>You rented a %1 for $%2</Polish>
-			<Chinesesimp>You rented a %1 for $%2</Chinesesimp>
+            <Czech>Pronajali jste si %1 za $%2</Czech>
+            <Spanish>Alquiló un %1 por $%2</Spanish>
+            <Russian>Вы арендовали %1 за $%2</Russian>
+            <German>Sie haben %1 für $%2 gemietet</German>
+            <French>Vous avez loué un %1 pour $%2</French>
+            <Italian>Hai noleggiato un %1 per $%2</Italian>
+            <Portuguese>Você alugou um %1 por $%2</Portuguese>
+            <Polish>Wypożyczyłeś %1 za $%2</Polish>
+			<Chinesesimp>您以 $%2 的价格租了一个 %1</Chinesesimp>
         </Key>
         <Key ID="STR_Shop_Veh_UI_Rental">
             <Original>Rental Price:</Original>
