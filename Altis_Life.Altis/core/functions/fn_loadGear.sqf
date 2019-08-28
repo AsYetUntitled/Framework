@@ -6,7 +6,7 @@
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
-private ["_itemArray","_handle"];
+private ["_handle"];
 private _itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
