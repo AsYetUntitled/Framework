@@ -5,9 +5,8 @@
     Description:
     Loads a custom loadout on player
 */
-private _side = switch {playerSide} do {case west:{"cop"};case civilian:{"civ"};case independent:{"med"};};
-private _loadOutCfg = getArray(missionConfigFile >> "Life_Settings" >> "life_initLoadout" >> _side >> "life_loadOutItens");
-private _commonItens = getArray(missionConfigFile >> "Life_Settings" >> "life_initLoadout" >> "commonItens");
+private _loadOutCfg = getArray(missionConfigFile >> "LifeStartupLoadouts" >> (side player) >> "life_loadOutItens");
+private _commonItens = getArray(missionConfigFile >> "LifeStartupLoadouts" >> "commonItens");
 private _pCloth = if ((_loadOutCfg select 0) isEqualType [] && !((_loadOutCfg select 0) isEqualTo [] || (_loadOutCfg select 0) select 0 isEqualTo "")) then {selectRandom (_loadOutCfg select 0)} else {(_loadOutCfg select 0)};
 
 if !(life_is_arrested) then {player addUniform _pCloth;};

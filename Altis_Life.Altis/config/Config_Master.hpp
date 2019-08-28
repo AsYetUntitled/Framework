@@ -62,43 +62,6 @@ class Life_Settings {
     clothing_box = true; //true = teleport to a black box. false = teleport to somewhere on map. (It only affects the game if clothing_noTP is set as false)
     clothing_masks[] = { "H_Shemag_olive", "H_Shemag_khk", "H_Shemag_tan", "H_Shemag_olive_hs", "H_ShemagOpen_khk", "H_ShemagOpen_tan", "G_Balaclava_blk", "G_Balaclava_combat", "G_Balaclava_lowprofile", "G_Balaclava_oli", "G_Bandanna_aviator", "G_Bandanna_beast", "G_Bandanna_blk", "G_Bandanna_khk", "G_Bandanna_oli", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_tan", "U_O_GhillieSuit", "U_I_GhillieSuit", "U_B_GhillieSuit", "H_RacingHelmet_1_black_F", "H_RacingHelmet_1_red_F", "H_RacingHelmet_1_white_F", "H_RacingHelmet_1_blue_F", "H_RacingHelmet_1_yellow_F", "H_RacingHelmet_1_green_F", "H_RacingHelmet_1_F", "H_RacingHelmet_2_F", "H_RacingHelmet_3_F", "H_RacingHelmet_4_F" };
 
-    /* Startup loadout for each side */
-    class life_initLoadout {
-        commonItens[] = {"ItemMap","ItemCompass","ItemWatch"}; //Common link items between sides
-        class Cop {
-            life_loadOutItens[] = {
-                "U_Rangemaster", //Uniform - empty ("" or {""} or {}) will load nothing...Otherwise, use "" for a unique uniform or {"",""} for a randomly selected uniform
-                "V_Rangemaster_belt", //Vest - empty ("") will load nothing
-                "", //Backpack - empty ("") will load nothing
-                "hgun_P07_snds_F", //Weapon - empty ("") will load nothing
-                {"16Rnd_9x21_Mag",6}, //Mags, amount - empty ("",0) will load nothing
-                {} //Specific items to be loaded on player - empty ({}) will load nothing...Otherwise, {"ItemName", Amount}
-            };
-        };
-
-        class Civ {
-            life_loadOutItens[] = {
-                {"U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_Poloshirt_salmon","U_C_Poloshirt_redwhite","U_C_Commoner1_1"}, //Uniform - empty ("" or {""}) will load nothing...Otherwise, use "" for a unique uniform or {"",""} for a randomly selected uniform
-                "", //Vest - empty ("") will load nothing
-                "", //Backpack - empty ("") will load nothing
-                "", //Weapon - empty ("") will load nothing
-                {"",0}, //Mags, amount - empty ("",0) will load nothing
-                {} //Specific items to be loaded on player - empty ({}) will load nothing...Otherwise, {"ItemName", Amount}
-            };
-        };
-
-        class Med {
-            life_loadOutItens[] = {
-                "U_I_HeliPilotCoveralls", //Uniform - empty ("" or {""}) will load nothing...Otherwise, use "" for a unique uniform or {"",""} for a randomly selected uniform
-                "V_Rangemaster_belt", //Vest - empty ("") will load nothing
-                "", //Backpack - empty ("") will load nothing
-                "hgun_P07_snds_F", //Weapon - empty ("") will load nothing
-                {"16Rnd_9x21_Mag",1}, //Mags, amount - empty ("",0) will load nothing
-                {{"FirstAidKit",2}} //Specific items to be loaded on player - empty ({}) will load nothing...Otherwise, {"ItemName", Amount}
-            };
-        };
-    };
-
     /* Escape Menu Configuration */
     escapeMenu_timer = 10; //Time required to pass before you can click the abort button in the escape menu.
     escapeMenu_displayExtras = true; //Display the players UID & serverName specified below in the escape menu.
@@ -266,3 +229,4 @@ class Life_Settings {
 #include "Config_Process.hpp"
 #include "Config_Housing.hpp"
 #include "Config_Garages.hpp"
+#include "Config_Loadouts.hpp"
