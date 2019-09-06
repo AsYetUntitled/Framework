@@ -1,5 +1,5 @@
 class LifeStartupLoadouts {
-    commonItens[] = {"ItemMap","ItemCompass","ItemWatch"}; //Common link items between sides
+    commonItens[] = {"ItemMap","ItemCompass","ItemWatch"}; //Common link items between sides - empty ({} or {""}) will load nothing
     class WEST {
         life_loadOutItens[] = {
             "U_Rangemaster", //Uniform - empty ("" or {""} or {}) will load nothing...Otherwise, use "" for a unique uniform or {"",""} for a randomly selected uniform
