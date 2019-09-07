@@ -6,13 +6,12 @@
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
-private ["_handle"];
 private _itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
 [] call life_fnc_stripDownPlayer;
 
-if (_itemArray isEqualTo []) exitWith {[] call life_fnc_startupLoadout;};
+if (_itemArray isEqualTo []) exitWith {[] call life_fnc_startLoadout;};
 
 _itemArray params [
     "_uniform",
@@ -34,6 +33,7 @@ _itemArray params [
     ["_yItems",[]]
 ];
 
+private "_handle";
 if (!(_goggles isEqualTo "")) then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if (!(_headgear isEqualTo "")) then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if (!(_uniform isEqualTo "")) then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};

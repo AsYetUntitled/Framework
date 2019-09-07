@@ -212,7 +212,7 @@ class Life_Client_Core {
         class revealObjects {};
         class saveGear {};
         class simDisable {};
-        class startupLoadout {};
+        class startLoadout {};
         class stripDownPlayer {};
         class teleport {};
         class whereAmI {};
