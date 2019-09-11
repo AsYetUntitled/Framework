@@ -83,7 +83,7 @@ _unit spawn {
         life_deathCamera camSetTarget _unit;
         life_deathCamera camSetRelPos [0,3.5,4.5];
         life_deathCamera camCommit 0;
-        (speed _unit isEqualTo 0);
+        speed _unit isEqualTo 0
     };
 };
 
