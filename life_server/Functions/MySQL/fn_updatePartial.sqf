@@ -12,6 +12,7 @@ _side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
 _mode = [_this,3,-1,[0]] call BIS_fnc_param;
 
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
+_query = "";
 
 switch (_mode) do {
     case 0: {
