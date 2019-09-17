@@ -6,17 +6,19 @@
     Updates ALL player information in the database.
     Information gets passed here from the client side file: core\session\fn_updateRequest.sqf
 */
-private ["_uid","_side","_cash","_bank","_licenses","_gear","_stats","_name","_alive","_position","_query","_thread"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_name = [_this,1,"",[""]] call BIS_fnc_param;
-_side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;
-_cash = [_this,3,0,[0]] call BIS_fnc_param;
-_bank = [_this,4,5000,[0]] call BIS_fnc_param;
-_licenses = [_this,5,[],[[]]] call BIS_fnc_param;
-_gear = [_this,6,[],[[]]] call BIS_fnc_param;
-_stats = [_this,7,[100,100],[[]]] call BIS_fnc_param;
-_alive = [_this,9,false,[true]] call BIS_fnc_param;
-_position = [_this,10,[],[[]]] call BIS_fnc_param;
+private ["_bool","_playtime","_playtime_update","_query"];
+params [
+    ["_uid","",[""]],
+    ["_name","",[""]],
+    ["_side",sideUnknown,[civilian]],
+    ["_cash",0,[0]],
+    ["_bank",5000,[0]],
+    ["_licenses",[],[[]]],
+    ["_gear",[],[[]]],
+    ["_stats",[100,100],[[]]],
+    ["_alive",false,[true]],
+    ["_position",[],[[]]]
+];
 
 //Get to those error checks.
 if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
@@ -61,4 +63,4 @@ switch (_side) do {
 };
 
 
-_queryResult = [_query,1] call DB_fnc_asyncCall;
+[_query,1] call DB_fnc_asyncCall;
