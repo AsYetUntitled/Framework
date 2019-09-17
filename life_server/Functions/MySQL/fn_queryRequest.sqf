@@ -11,17 +11,17 @@
     ARRAY - If array has 0 elements it should be handled as an error in client-side files.
     STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
-private ["_uid","_side","_query","_queryResult","_tickTime","_tmp"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_side = [_this,1,sideUnknown,[civilian]] call BIS_fnc_param;
-_ownerID = [_this,2,objNull,[objNull]] call BIS_fnc_param;
+private ["_query","_queryResult","_tickTime","_tmp","_new","_old"];
+params [
+    [_uid,"",[""]],
+    [_side,sideUnknown,[civilian]],
+    [_ownerID,objNull,[objNull]]
+];
 
 if (isNull _ownerID) exitWith {};
-
 if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 1) then {
     _ownerID addMPEventHandler ["MPKilled", {_this call fn_whoDoneIt}];
 };
-
 _ownerID = owner _ownerID;
 
 _query = switch (_side) do {
