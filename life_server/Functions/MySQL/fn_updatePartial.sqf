@@ -6,7 +6,7 @@
     Takes partial data of a player and updates it, this is meant to be
     less network intensive towards data flowing through it for updates.
 */
-private ["_value","_value1","_value2","_query"];
+private ["_value","_value1","_value2","_query","_bool","_array"];
 
 params [
     ["_uid","",[""]],
@@ -34,7 +34,7 @@ switch (_mode) do {
         _value = param [2,[],[[]]];
         //Does something license related but I can't remember I only know it's important?
         for "_i" from 0 to count(_value)-1 do {
-            private _bool = [(_value select _i) select 1] call DB_fnc_bool;
+            _bool = [(_value select _i) select 1] call DB_fnc_bool;
             _value set[_i,[(_value select _i) select 0,_bool]];
         };
         _value = [_value] call DB_fnc_mresArray;
@@ -79,7 +79,7 @@ switch (_mode) do {
     };
 
     case 7: {
-        private _array = param [_this,2,[],[[]]];
+        _array = param [_this,2,[],[[]]];
         [_uid,_side,_array,0] call TON_fnc_keyManagement;
     };
 };
