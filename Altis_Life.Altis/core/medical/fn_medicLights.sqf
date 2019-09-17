@@ -24,21 +24,21 @@ _lightLeft setLightAmbient [0.1,0.1,1];
 
 
 //Format: [[left position], [right position]]
-private _offset = switch (typeOf _vehicle) do {
+(switch (typeOf _vehicle) do {
     case "C_Offroad_01_F": {
         [[-0.37, 0.0, 0.56], [0.37, 0.0, 0.56]];
     };
     default {
-        [-1];
+        [[-1], [-1]];
     };
-};
+}) params ["_leftOffset", "_rightOffset"];
 
-if (_offset isEqualTo [-1]) exitWith {
+if (_leftOffset isEqualTo [-1]) exitWith {
     diag_log format ["Vehicle emergency lights not set for: %1",_vehicle];
     hint localize "STR_NOTF_ELSNotSet";
 };
 
-_lightLeft lightAttachObject [_vehicle, _offset select 0];
+_lightLeft lightAttachObject [_vehicle, _leftOffset];
 
 _lightLeft setLightAttenuation [0.181, 0, 1000, 130];
 _lightLeft setLightIntensity 10;
@@ -52,7 +52,7 @@ _lightRight setLightColor _lightBlue;
 _lightRight setLightBrightness 0.2;
 _lightRight setLightAmbient [0.1,0.1,1];
 
-_lightRight lightAttachObject [_vehicle, _offset select 1];
+_lightRight lightAttachObject [_vehicle, _rightOffset];
 
 _lightRight setLightAttenuation [0.181, 0, 1000, 130];
 _lightRight setLightIntensity 10;
