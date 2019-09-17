@@ -5,11 +5,13 @@
     Description:
     Stores the vehicle in the 'Garage'
 */
-private ["_vehicle","_impound","_vInfo","_plate","_uid","_query","_sql","_unit","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo","_saveItems","_storetext","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight","_thread"];
-_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-_impound = [_this,1,false,[true]] call BIS_fnc_param;
-_unit = [_this,2,objNull,[objNull]] call BIS_fnc_param;
-_storetext = [_this,3,"",[""]] call BIS_fnc_param;
+private ["_vInfo","_plate","_uid","_query","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo","_resourceItems","_fuel","_damage","_itemList","_totalweight","_weight"];
+params [
+    ["_vehicle",objNull,[objNull]],
+    ["_impound",false,[true]],
+    ["_unit",objNull,[objNull]],
+    ["_storetext","",[""]]
+];
 _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
@@ -46,7 +48,7 @@ if (_impound) exitWith {
         };
     } else {    // no free repairs!
         _query = format ["UPDATE vehicles SET active='0', fuel='%3', damage='%4' WHERE pid='%1' AND plate='%2'",_uid , _plate, _fuel, _damage];
-        _thread = [_query,1] call DB_fnc_asyncCall;
+        [_query,1] call DB_fnc_asyncCall;
 
         if (!isNil "_vehicle" && {!isNull _vehicle}) then {
             deleteVehicle _vehicle;
@@ -103,7 +105,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         if (_blacklist) then {
             [_uid, _profileName, "481"] remoteExecCall["life_fnc_wantedAdd", RSERV];
             _query = format ["UPDATE vehicles SET blacklist='1' WHERE pid='%1' AND plate='%2'", _uid, _plate];
-            _thread = [_query, 1] call DB_fnc_asyncCall;
+            [_query, 1] call DB_fnc_asyncCall;
         };
 
     }
@@ -141,7 +143,7 @@ _cargo = [_cargo] call DB_fnc_mresArray;
 
 // update
 _query = format ["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5', damage='%6' WHERE pid='%1' AND plate='%2'", _uid, _plate, _trunk, _cargo, _fuel, _damage];
-_thread = [_query,1] call DB_fnc_asyncCall;
+[_query,1] call DB_fnc_asyncCall;
 
 if (!isNil "_vehicle" && {!isNull _vehicle}) then {
     deleteVehicle _vehicle;
