@@ -6,7 +6,7 @@
     Takes partial data of a player and updates it, this is meant to be
     less network intensive towards data flowing through it for updates.
 */
-private ["_value","_value1","_value2"];
+private ["_value","_value1","_value2","_query"];
 
 params [
     ["_uid","",[""]],
@@ -15,7 +15,7 @@ params [
 ];
 
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
-private _query = "";
+_query = "";
 
 switch (_mode) do {
     case 0: {
