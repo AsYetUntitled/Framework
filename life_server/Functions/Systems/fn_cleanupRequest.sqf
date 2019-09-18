@@ -7,8 +7,8 @@
     the server will then monitor when that client aborts and
     delete the weapon holders.
 */
-private ["_client","_loops"];
-_client = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+private ["_client","_loops","_containers"];
+_client = param [0,objNull,[objNull]];
 if (isNull _client) exitWith {};
 
 _loops = 0;
