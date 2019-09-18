@@ -5,16 +5,19 @@
     Description:
     Keeps track of an array locally on the server of a players keys.
 */
-private ["_uid","_side","_input","_mode","_arr"];
-_uid = [_this,0,"",[""]] call BIS_fnc_param;
-_side = [_this,1,sideUnknown,[sideUnknown]] call BIS_fnc_param;
-_mode = [_this,3,0,[0]] call BIS_fnc_param;
+private ["_input","_arr"];
+params [
+    ["_uid","",[""]],
+    ["_side",sideUnknown,[sideUnknown]],
+    "",
+    ["_mode",0,[0]]
+];
 
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //BAAAAAAAAADDDDDDDD
 
 switch (_mode) do {
     case 0: {
-        _input = [_this,2,[],[[]]] call BIS_fnc_param;
+        _input = param [2,[],[[]]];
         _arr = [];
         {
             if (!isNull _x && {!(_x isKindOf "House")}) then {
@@ -27,7 +30,7 @@ switch (_mode) do {
     };
 
     case 1: {
-        _input = [_this,2,objNull,[objNull]] call BIS_fnc_param;
+        _input = param [2,objNull,[objNull]];
         if (isNull _input || _input isKindOf "House") exitWith {};
         _arr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
         _arr pushBack _input;
