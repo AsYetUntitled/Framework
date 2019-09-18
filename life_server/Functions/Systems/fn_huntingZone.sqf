@@ -10,10 +10,10 @@
     Change it up so animals repopulate over time.
 */
 
-private ["_animalList","_dist","_radius","_zoneName","_unitsNear","_animalsActive"];
+private ["_animalList","_dist","_radius","_unitsNear","_animalsActive","_zone"];
 params [
-        ["_zoneName","",[""]],
-        ["_maxAnimals",10,[0]]
+    ["_zoneName","",[""]],
+    ["_maxAnimals",10,[0]]
 ];
 
 if (_zoneName isEqualTo "") exitWith {};
