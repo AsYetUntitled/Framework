@@ -6,8 +6,10 @@
     Description:
     Removes gang from database
 */
-private ["_group","_groupID","_result"];
-_group = param [0,grpNull,[grpNull]];
+private ["_groupID","_result"];
+params [
+    ["_group",grpNull,[grpNull]]
+];
 if (isNull _group) exitWith {};
 
 _groupID = _group getVariable ["gang_id",-1];
