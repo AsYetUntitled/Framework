@@ -7,8 +7,9 @@
     can be properly inserted into the database without causing
     any problems. The return method is 'hacky' but it's effective.
 */
-private ["_array"];
-_array = param [0,"",[""]];
+params [
+    ["_array","",[""]]
+];
 if (_array isEqualTo "") exitWith {[]};
 _array = toArray(_array);
 
