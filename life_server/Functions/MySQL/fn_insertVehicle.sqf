@@ -7,10 +7,10 @@
 */
 
 params [
-    "_uid",
-    "_side",
-    "_type",
-    "_className",
+    ["_uid","",[""]],
+    ["_side",sideUnknown,[civilian]],
+    ["_type","",[""]],
+    ["_className","",[""]],
     ["_color",-1,[0]],
     ["_plate",-1,[0]]
 ];
