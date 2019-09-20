@@ -12,8 +12,7 @@ params [
     ["_spikeStrip",objNull,[objNull]]
 ];
 if (isNull _spikeStrip) exitWith {}; //Bad vehicle type passed.
-private "_nearVehicles";
-waitUntil {_nearVehicles = nearestObjects[getPos _spikeStrip,["Car"],5]; count _nearVehicles > 0 || isNull _spikeStrip};
+waitUntil {private _nearVehicles = nearestObjects[getPos _spikeStrip,["Car"],5]; count _nearVehicles > 0 || isNull _spikeStrip};
 
 if (isNull _spikeStrip) exitWith {}; //It was picked up?
 private _vehicle = _nearVehicles select 0;
