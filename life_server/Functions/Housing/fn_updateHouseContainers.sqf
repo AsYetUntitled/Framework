@@ -6,7 +6,7 @@
     Update inventory "i" in container
 */
 params [
-    [_container,objNull,[objNull]]
+    ["_container",objNull,[objNull]]
 ];
 if (isNull _container) exitWith {};
 private _containerID = _container getVariable ["container_id",-1];
