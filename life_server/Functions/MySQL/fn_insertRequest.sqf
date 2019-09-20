@@ -7,10 +7,9 @@
     Adds a player to the database upon first joining of the server.
     Recieves information from core\sesison\fn_insertPlayerInfo.sqf
 */
-private ["_queryResult","_query","_alias"];
 params [
-    "_uid",
-    "_name",
+    ["_uid","",[""]],
+    ["_name","",[""]],
     ["_money",-1,[0]],
     ["_bank",-1,[0]],
     ["_returnToSender",objNull,[objNull]]
@@ -20,11 +19,11 @@ params [
 if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {systemChat "Bad UID or name";}; //Let the client be 'lost' in 'transaction'
 if (isNull _returnToSender) exitWith {systemChat "ReturnToSender is Null!";}; //No one to send this to!
 
-_query = format ["SELECT pid, name FROM players WHERE pid='%1'",_uid];
+private _query = format ["SELECT pid, name FROM players WHERE pid='%1'",_uid];
 
 
-_tickTime = diag_tickTime;
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+private _tickTime = diag_tickTime;
+private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Insert Query Request -------------";
@@ -40,7 +39,7 @@ if !(count _queryResult isEqualTo 0) exitWith {[] remoteExecCall ["SOCK_fnc_data
 
 //Clense and prepare some information.
 _name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
-_alias = [[_name]] call DB_fnc_mresArray;
+private _alias = [[_name]] call DB_fnc_mresArray;
 _money = [_money] call DB_fnc_numberSafe;
 _bank = [_bank] call DB_fnc_numberSafe;
 
