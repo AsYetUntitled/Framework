@@ -28,6 +28,7 @@ if (!isNil "animals" && {!(count animals isEqualTo 0)}) then {
 
 private _unitsNear = false;
 private _animalsActive = false;
+private ["_animalClass","_position","_animal"];
 for "_i" from 0 to 1 step 0 do {
     {if ((_x distance _zone) < _dist) exitWith {_unitsNear = true;}; _unitsNear = false;} forEach playableUnits;
     if (_unitsNear && !_animalsActive) then {
@@ -47,5 +48,8 @@ for "_i" from 0 to 1 step 0 do {
         };
     };
     uiSleep (3 + random 2);
-    _maxAnimals = param [1,10,[0]];
+    params [
+        "",
+        ["_maxAnimals",10,[0]]
+    ];
 };
