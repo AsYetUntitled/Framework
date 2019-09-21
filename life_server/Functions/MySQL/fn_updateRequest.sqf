@@ -6,7 +6,6 @@
     Updates ALL player information in the database.
     Information gets passed here from the client side file: core\session\fn_updateRequest.sqf
 */
-private ["_bool","_playtime","_playtime_update","_query"];
 params [
     ["_uid","",[""]],
     ["_name","",[""]],
@@ -32,6 +31,7 @@ _bank = [_bank] call DB_fnc_numberSafe;
 _position = if (_side isEqualTo civilian) then {[_position] call DB_fnc_mresArray} else {[]};
 
 //Does something license related but I can't remember I only know it's important?
+private "_bool";
 for "_i" from 0 to count(_licenses)-1 do {
     _bool = [(_licenses select _i) select 1] call DB_fnc_bool;
     _licenses set[_i,[(_licenses select _i) select 0,_bool]];
@@ -40,8 +40,8 @@ for "_i" from 0 to count(_licenses)-1 do {
 _licenses = [_licenses] call DB_fnc_mresArray;
 
 //PLAYTIME
-_playtime = [_uid] call TON_fnc_getPlayTime;
-_playtime_update = [];
+private _playtime = [_uid] call TON_fnc_getPlayTime;
+private _playtime_update = [];
 {
     if ((_x select 0) isEqualTo _uid) exitWith
     {
@@ -56,10 +56,10 @@ switch (_side) do {
 };
 _playtime_update = [_playtime_update] call DB_fnc_mresArray;
 
-switch (_side) do {
-    case west: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5', cop_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_gear,_licenses,_stats,_playtime_update,_uid];};
-    case civilian: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', civ_alive='%8', civ_position='%9', playtime='%10' WHERE pid='%11'",_name,_cash,_bank,_licenses,_gear,[_this select 8] call DB_fnc_bool,_stats,[_alive] call DB_fnc_bool,_position,_playtime_update,_uid];};
-    case independent: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4', med_gear='%5', med_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_licenses,_gear,_stats,_playtime_update,_uid];};
+private _query = switch (_side) do {
+    case west: {format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5', cop_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_gear,_licenses,_stats,_playtime_update,_uid];};
+    case civilian: {format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', civ_alive='%8', civ_position='%9', playtime='%10' WHERE pid='%11'",_name,_cash,_bank,_licenses,_gear,[_this select 8] call DB_fnc_bool,_stats,[_alive] call DB_fnc_bool,_position,_playtime_update,_uid];};
+    case independent: {format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4', med_gear='%5', med_stats='%6', playtime='%7' WHERE pid='%8'",_name,_cash,_bank,_licenses,_gear,_stats,_playtime_update,_uid];};
 };
 
 
