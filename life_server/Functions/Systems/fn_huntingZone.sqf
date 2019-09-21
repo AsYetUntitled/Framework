@@ -9,18 +9,16 @@
     TODO:
     Change it up so animals repopulate over time.
 */
-
-private ["_animalList","_dist","_radius","_unitsNear","_animalsActive","_zone"];
 params [
     ["_zoneName","",[""]],
     ["_maxAnimals",10,[0]]
 ];
 
 if (_zoneName isEqualTo "") exitWith {};
-_animalList = ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F"];
-_radius = (getMarkerSize _zoneName) select 0;
-_dist = _radius + 100;
-_zone = getMarkerPos _zoneName;
+private _animalList = ["Sheep_random_F","Goat_random_F","Hen_random_F","Cock_random_F"];
+private _radius = (getMarkerSize _zoneName) select 0;
+private _dist = _radius + 100;
+private _zone = getMarkerPos _zoneName;
 
 if (!isNil "animals" && {!(count animals isEqualTo 0)}) then {
     _maxAnimals = _maxAnimals - count(animals);
@@ -28,8 +26,8 @@ if (!isNil "animals" && {!(count animals isEqualTo 0)}) then {
     animals = [];
 };
 
-_unitsNear = false;
-_animalsActive = false;
+private _unitsNear = false;
+private _animalsActive = false;
 for "_i" from 0 to 1 step 0 do {
     {if ((_x distance _zone) < _dist) exitWith {_unitsNear = true;}; _unitsNear = false;} forEach playableUnits;
     if (_unitsNear && !_animalsActive) then {
