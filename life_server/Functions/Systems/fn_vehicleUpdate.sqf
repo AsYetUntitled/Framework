@@ -6,24 +6,23 @@
     Description:
     Tells the database that this vehicle need update inventory.
 */
-private ["_plate","_uid","_query","_dbInfo","_cargo","_trunk","_resourceItems","_itemList","_totalweight","_weight"];
 params [
     ["_vehicle",objNull,[objNull]],
     ["_mode",1,[0]]
 ];
 if (isNull _vehicle) exitWith {}; //NULL
 
-_dbInfo = _vehicle getVariable ["dbInfo",[]];
+private _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if (count _dbInfo isEqualTo 0) exitWith {};
-_uid = _dbInfo select 0;
-_plate = _dbInfo select 1;
+private _uid = _dbInfo select 0;
+private _plate = _dbInfo select 1;
 switch (_mode) do {
     case 1: {
-        _vehItems = getItemCargo _vehicle;
-        _vehMags = getMagazineCargo _vehicle;
-        _vehWeapons = getWeaponCargo _vehicle;
-        _vehBackpacks = getBackpackCargo _vehicle;
-        _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
+        private _vehItems = getItemCargo _vehicle;
+        private _vehMags = getMagazineCargo _vehicle;
+        private _vehWeapons = getWeaponCargo _vehicle;
+        private _vehBackpacks = getBackpackCargo _vehicle;
+        private _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
 
         // Keep it clean!
         if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {
@@ -32,16 +31,17 @@ switch (_mode) do {
 
         _cargo = [_cargo] call DB_fnc_mresArray;
 
-        _query = format ["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_cargo];
+        private _query = format ["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_cargo];
         [_query,1] call DB_fnc_asyncCall;
     };
 
     case 2: {
-        _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
-        _trunk = _vehicle getVariable ["Trunk",[[],0]];
-        _itemList = _trunk select 0;
-        _totalweight = 0;
-        _items = [];
+        private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
+        private _trunk = _vehicle getVariable ["Trunk",[[],0]];
+        private _itemList = _trunk select 0;
+        private _totalweight = 0;
+        private _items = [];
+        private "_weight";
         {
             if ((_x select 0) in _resourceItems) then {
                 _items pushBack [_x select 0,_x select 1];
@@ -52,7 +52,7 @@ switch (_mode) do {
         _trunk = [_items,_totalweight];
         _trunk = [_trunk] call DB_fnc_mresArray;
 
-        _query = format ["UPDATE vehicles SET inventory='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk];
+        private _query = format ["UPDATE vehicles SET inventory='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_trunk];
         [_query,1] call DB_fnc_asyncCall;
     };
 };
