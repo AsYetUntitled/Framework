@@ -11,7 +11,6 @@
     ARRAY - If array has 0 elements it should be handled as an error in client-side files.
     STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
-private ["_query","_queryResult","_tickTime","_tmp","_new","_old"];
 params [
     [_uid,"",[""]],
     [_side,sideUnknown,[civilian]],
@@ -24,7 +23,7 @@ if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 1) then {
 };
 _ownerID = owner _ownerID;
 
-_query = switch (_side) do {
+private _query = switch (_side) do {
     // West - 11 entries returned
     case west: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
     // Civilian - 12 entries returned
@@ -33,8 +32,8 @@ _query = switch (_side) do {
     case independent: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
 };
 
-_tickTime = diag_tickTime;
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+private _tickTime = diag_tickTime;
+private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
@@ -53,20 +52,20 @@ if (count _queryResult isEqualTo 0) exitWith {
 };
 
 //Blah conversion thing from a2net->extdb
-_tmp = _queryResult select 2;
+private _tmp = _queryResult select 2;
 _queryResult set[2,[_tmp] call DB_fnc_numberSafe];
 _tmp = _queryResult select 3;
 _queryResult set[3,[_tmp] call DB_fnc_numberSafe];
 
 //Parse licenses (Always index 6)
-_new = [(_queryResult select 6)] call DB_fnc_mresToArray;
+private _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
 if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
 _queryResult set[6,_new];
 
 //Convert tinyint to boolean
-_old = _queryResult select 6;
+private _old = _queryResult select 6;
 for "_i" from 0 to (count _old)-1 do {
-    _data = _old select _i;
+    private _data = _old select _i;
     _old set[_i,[_data select 0, ([_data select 1,1] call DB_fnc_bool)]];
 };
 
@@ -159,7 +158,7 @@ switch (_side) do {
 
 publicVariable "TON_fnc_playtime_values_request";
 
-_keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
+private _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
 _queryResult pushBack _keyArr;
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];
