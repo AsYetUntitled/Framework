@@ -8,9 +8,9 @@
     Transfer agent ownership to HC upon it's connection
 
 */
-
-_which = param [0,false,[false]];
-
+params [
+    ["_which",false,[false]]
+];
 if (_which) then {
 
     if (!life_HC_isActive) exitWith {diag_log "ERROR: Server is trying to give AI ownership to HC when life_HC_isActive is false";};
