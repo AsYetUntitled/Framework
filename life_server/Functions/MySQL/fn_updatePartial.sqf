@@ -74,13 +74,14 @@ switch (_mode) do {
         params [
             "",
             "",
-            ["_value",false,[true]]
+            ["_value",false,[true]],
+            "",
+            ["_value1",[],[[]]]
         ];
         _value = [_value] call DB_fnc_bool;
-        _value2 = param [4,[],[[]]];
-        _value2 = if (count _value2 isEqualTo 3) then {_value2} else {[0,0,0]};
-        _value2 = [_value2] call DB_fnc_mresArray;
-        _query = format ["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE pid='%3'",_value,_value2,_uid];
+        _value1 = if (count _value1 isEqualTo 3) then {_value2} else {[0,0,0]};
+        _value1 = [_value1] call DB_fnc_mresArray;
+        _query = format ["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE pid='%3'",_value,_value1,_uid];
     };
 
     case 5: {
