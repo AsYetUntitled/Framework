@@ -9,12 +9,11 @@
         JOIN - Time, the player joined - the newly gathered playtime will be calculated using difference
 
 */
-
-private ["_uid", "_time_gathered", "_time_join","_time"];
-
-_uid = _this select 0;
-_time_gathered = nil;
-_time_join = nil;
+params [
+    ["_uid","",[""]]
+];
+private _time_gathered = nil;
+private _time_join = nil;
 
 {
     if ((_x select 0) isEqualTo _uid) exitWith {
@@ -31,7 +30,7 @@ if (isNil "_time_gathered" || isNil "_time_join") then {
 
 publicVariable "TON_fnc_playtime_values";
 
-_time = (time - _time_join); //return time
+private _time = (time - _time_join); //return time
 _time = _time + _time_gathered;
 _time = round (_time/60);
 
