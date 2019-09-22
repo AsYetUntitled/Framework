@@ -5,7 +5,7 @@
     Description:
     Stores the vehicle in the 'Garage'
 */
-private ["_plate","_uid","_query","_cargo","_fuel","_damage","_weight"];
+private ["_plate","_uid","_query","_cargo","_fuel","_damage"];
 params [
     ["_vehicle",objNull,[objNull]],
     ["_impound",false,[true]],
@@ -92,7 +92,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
             if (((_x select 0) in _resourceItems) || (_isIllegal)) then {
                 _items pushBack[(_x select 0),(_x select 1)];
-                _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
+                private _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;
             };
             if (_isIllegal) then {
@@ -113,7 +113,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         {
             if ((_x select 0) in _resourceItems) then {
                 _items pushBack[(_x select 0),(_x select 1)];
-                _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
+                private _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
                 _totalweight = _weight + _totalweight;
             };
         }
