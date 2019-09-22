@@ -11,7 +11,6 @@ params [
 ];
 
 if (isServer) then {
-    private ["_killerWep","_killerVeh","_distance","_message"];
     if (isNull _victim || isNull _killer) exitWith {};
 
     private _killerWep = currentWeapon _killer;
