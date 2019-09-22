@@ -12,6 +12,7 @@
 params [
     ["_uid","",[""]]
 ];
+if (_uid isEqualTo "") exitWith {}; //Bad.
 private _time_gathered = nil;
 private _time_join = nil;
 
