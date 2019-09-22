@@ -14,13 +14,13 @@ if (isServer) then {
     private ["_killerWep","_killerVeh","_distance","_message"];
     if (isNull _victim || isNull _killer) exitWith {};
 
-    _killerWep = currentWeapon _killer;
-    _killerVeh = vehicle _killer;
-    _distance = _killer distance _victim;
-    _distance = floor(_distance);
+    private _killerWep = currentWeapon _killer;
+    private _killerVeh = vehicle _killer;
+    private _distance = _killer distance _victim;
+    private _distance = floor(_distance);
 
-    _message = "";
-    if (_victim == _killer) then {
+    private _message = "";
+    if (_victim IsEqualTo _killer) then {
         _message = format ["Suicide Message: %1 committed suicide (or disconnected)", (name _victim)];
     };
     if (_killerWep != "") then {
