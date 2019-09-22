@@ -8,8 +8,9 @@
     Description:
     Fetches a specific person from the wanted array.
 */
-private _unit = param [0,objNull,[objNull]];
-
+params [
+    ["_unit",objNull,[objNull]]
+];
 if (isNull _unit) exitWith {[]};
 
 private _uid = getPlayerUID _unit;
