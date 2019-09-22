@@ -49,10 +49,10 @@ switch (_mode) do {
             _value set[_i,[(_value select _i) select 0,_bool]];
         };
         _value = [_value] call DB_fnc_mresArray;
-        switch (_side) do {
-            case west: {_query = format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'",_value,_uid];};
-            case civilian: {_query = format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid];};
-            case independent: {_query = format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'",_value,_uid];};
+        _query = switch (_side) do {
+            case west: {format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'",_value,_uid];};
+            case civilian: {format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid];};
+            case independent: {format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'",_value,_uid];};
         };
     };
 
@@ -63,10 +63,10 @@ switch (_mode) do {
             ["_value",[],[[]]]
         ];
         _value = [_value] call DB_fnc_mresArray;
-        switch (_side) do {
-            case west: {_query = format ["UPDATE players SET cop_gear='%1' WHERE pid='%2'",_value,_uid];};
-            case civilian: {_query = format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid];};
-            case independent: {_query = format ["UPDATE players SET med_gear='%1' WHERE pid='%2'",_value,_uid];};
+        _query = switch (_side) do {
+            case west: {format ["UPDATE players SET cop_gear='%1' WHERE pid='%2'",_value,_uid];};
+            case civilian: {format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid];};
+            case independent: {format ["UPDATE players SET med_gear='%1' WHERE pid='%2'",_value,_uid];};
         };
     };
 
@@ -110,7 +110,7 @@ switch (_mode) do {
         params [
             "",
             "",
-            ["_array",[],[[]]
+            ["_array",[],[[]]]
         ];
         [_uid,_side,_array,0] call TON_fnc_keyManagement;
     };
