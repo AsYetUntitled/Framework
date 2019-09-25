@@ -35,9 +35,9 @@ if (_queryResult isEqualTo "[3]") then {
 
 if (_queryResult isEqualTo "[5]") then {
     private _loop = true;
+    private _pipe = "";
     for "_i" from 0 to 1 step 0 do { // extDB3 returned that result is Multi-Part Message
         _queryResult = "";
-        private _pipe = "";
         for "_i" from 0 to 1 step 0 do {
             _pipe = EXTDB format ["5:%1", _key];
             if (_pipe isEqualTo "") exitWith {_loop = false};
