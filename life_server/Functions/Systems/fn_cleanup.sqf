@@ -7,10 +7,9 @@
     Server-side cleanup script on vehicles.
     Sort of a lame way but whatever. Yep someone should look at it!
 */
-private "_deleted";
-_deleted = false;
+private ["_protect","_veh","_vehicleClass","_fuel","_dbInfo","_units","_uid","_plate","_query"];
+private _deleted = false;
 for "_i" from 0 to 1 step 0 do {
-    private ["_veh","_units","_fuel"];
     uiSleep (60 * 60);
     {
         _protect = false;

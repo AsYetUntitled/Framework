@@ -75,9 +75,10 @@ switch (_mode) do {
     };
 
     case 4: {
+        private _maxMembers = _group getVariable ["gang_maxMembers",8];
         private _members = _group getVariable "gang_members";
         private _membersFinal = [];
-        if (count _members > (_group getVariable ["gang_maxMembers",8])) then {
+        if (count _members > _maxMembers) then {
             for "_i" from 0 to _maxMembers -1 do {
                 _membersFinal pushBack (_members select _i);
             };

@@ -14,7 +14,7 @@ params [
     ["_unit", objNull, [objNull]],
     ["_price", 0, [0]],
     ["_dir", 0, [0]],
-    "_spawntext"
+    ["_spawntext","",[""]]
 ];
 
 private _unit_return = _unit;
@@ -22,7 +22,7 @@ private _name = name _unit;
 private _side = side _unit;
 _unit = owner _unit;
 
-if (_vid isEqualTo -1 || {_pid isEqualTo ""}) exitWith {};
+if (_vid isEqualTo -1 || _pid isEqualTo "") exitWith {};
 if (_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 
@@ -57,11 +57,9 @@ if ((_vInfo select 6) isEqualTo 1) exitWith {
     [1,"STR_Garage_SQLError_Active",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-private "_nearVehicles";
+private _nearVehicles = [];
 if !(_sp isEqualType "") then {
     _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
-} else {
-    _nearVehicles = [];
 };
 
 if (count _nearVehicles > 0) exitWith {
@@ -85,7 +83,7 @@ if (_sp isEqualType "") then {
     _vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
     _vehicle allowDamage false;
-    _hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
+    private _hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
     _vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
     uiSleep 0.6;
 } else {
