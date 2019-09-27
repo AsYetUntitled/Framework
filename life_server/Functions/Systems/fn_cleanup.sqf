@@ -7,7 +7,7 @@
     Server-side cleanup script on vehicles.
     Sort of a lame way but whatever. Yep someone should look at it!
 */
-private ["_protect","_veh","_vehicleClass","_fuel","_dbInfo","_units","_uid","_plate","_query"];
+private ["_protect","_veh","_vehicleClass","_fuel","_dbInfo","_units","_uid","_plate"];
 private _deleted = false;
 for "_i" from 0 to 1 step 0 do {
     uiSleep (60 * 60);
@@ -44,9 +44,7 @@ for "_i" from 0 to 1 step 0 do {
                     _uid = _dbInfo select 0;
                     _plate = _dbInfo select 1;
 
-                    _query = format ["UPDATE vehicles SET active='0', fuel='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_fuel];
-
-                    [_query,1] call DB_fnc_asyncCall;
+                    [format ["UPDATE vehicles SET active='0', fuel='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_fuel],1] call DB_fnc_asyncCall;
                 };
             };
         };

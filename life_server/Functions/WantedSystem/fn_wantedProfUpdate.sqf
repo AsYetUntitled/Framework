@@ -12,13 +12,12 @@ params [
 ];
 
 //Bad data check
-if (_uid isEqualTo "" ||  {_name isEqualTo ""}) exitWith {};
+if (_uid isEqualTo "" ||  _name isEqualTo "") exitWith {};
 
 private _wantedCheck = format ["SELECT wantedName FROM wanted WHERE wantedID='%1'",_uid];
 private _wantedQuery = [_wantedCheck,2] call DB_fnc_asyncCall;
 if (count _wantedQuery isEqualTo 0) exitWith {};
 
 if !(_name isEqualTo (_wantedQuery select 0)) then {
-    private _query = format ["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_name,_uid];
-    [_query,2] call DB_fnc_asyncCall;
+    [format ["UPDATE wanted SET wantedName='%1' WHERE wantedID='%2'",_name,_uid],2] call DB_fnc_asyncCall;
 };

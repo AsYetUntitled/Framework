@@ -12,13 +12,10 @@ params [
     ["_mode",-1,[0]]
 ];
 
-if (_uid isEqualTo "") exitWith {};
-if (isNull _house) exitWith {};
-if (_mode isEqualTo -1) exitWith {};
+if (_uid isEqualTo "" || isNull _house || _mode isEqualTo -1) exitWith {};
 
 private _housePos = getPosATL _house;
 private "_query";
-
 if (_mode isEqualTo 0) then {
     _query = format ["UPDATE houses SET garage='1' WHERE pid='%1' AND pos='%2'",_uid,_housePos];
 } else {

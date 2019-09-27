@@ -13,8 +13,7 @@ params [
 ];
 if (_uid isEqualTo "") exitWith {};
 
-private _query = format ["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid];
-private _containers = [_query,2,true] call DB_fnc_asyncCall;
+private _containers = [format ["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
 
 private _containerss = [];
 {
@@ -70,8 +69,7 @@ private _containerss = [];
     _house setVariable ["containers",_containerss,true];
 } forEach _containers;
 
-_query = format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid];
-private _houses = [_query,2,true] call DB_fnc_asyncCall;
+private _houses = [format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
 
 private _return = [];
 {

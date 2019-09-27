@@ -4,22 +4,22 @@
     Description:
     Initalizes house setup when player joins the server.
 */
+private ["_queryResult","_pos","_house","_numOfDoors","_className","_positions","_obj"];
 private _count = (["SELECT COUNT(*) FROM houses WHERE owned='1'",2] call DB_fnc_asyncCall) select 0;
 
 for [{_x=0},{_x<=_count},{_x=_x+10}] do {
-    private _query = format ["SELECT houses.id, houses.pid, houses.pos, players.name, houses.garage FROM houses INNER JOIN players WHERE houses.owned='1' AND houses.pid = players.pid LIMIT %1,10",_x];
-    private _queryResult = [_query,2,true] call DB_fnc_asyncCall;
+    _queryResult = [format ["SELECT houses.id, houses.pid, houses.pos, players.name, houses.garage FROM houses INNER JOIN players WHERE houses.owned='1' AND houses.pid = players.pid LIMIT %1,10",_x],2,true] call DB_fnc_asyncCall;
     if (count _queryResult isEqualTo 0) exitWith {};
     {
-        private _pos = call compile format ["%1",_x select 2];
-        private _house = nearestObject [_pos, "House"];
+        _pos = call compile format ["%1",_x select 2];
+        _house = nearestObject [_pos, "House"];
         _house setVariable ["house_owner",[_x select 1,_x select 3],true];
         _house setVariable ["house_id",_x select 0,true];
         _house setVariable ["locked",true,true]; //Lock up all the stuff.
         if (_x select 4 isEqualTo 1) then {
             _house setVariable ["garageBought",true,true];
         };
-        private _numOfDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
+        _numOfDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _house) >> "numberOfDoors");
         for "_i" from 1 to _numOfDoors do {
             _house setVariable [format ["bis_disabled_Door_%1",_i],1,true];
         };
@@ -32,10 +32,10 @@ _blacklistedHouses = _blacklistedHouses apply {configName _x};
 _blacklistedGarages = _blacklistedGarages apply {configName _x};
 
 for "_i" from 0 to count(_blacklistedHouses)-1 do {
-    private _className = _blacklistedHouses select _i;
-    private _positions = getArray(missionConfigFile >> "Housing" >> worldName >> _className >> "garageBlacklists");
+    _className = _blacklistedHouses select _i;
+    _positions = getArray(missionConfigFile >> "Housing" >> worldName >> _className >> "garageBlacklists");
     {
-        private _obj = nearestObject [_x,_className];
+        _obj = nearestObject [_x,_className];
         if (isNull _obj) then {
             _obj setVariable ["blacklistedGarage",true,true];
         };
@@ -43,10 +43,10 @@ for "_i" from 0 to count(_blacklistedHouses)-1 do {
 };
 
 for "_i" from 0 to count(_blacklistedGarages)-1 do {
-    private _className = _blacklistedGarages select _i;
-    private _positions = getArray(missionConfigFile >> "Garages" >> worldName >> _className >> "garageBlacklists");
+    _className = _blacklistedGarages select _i;
+    _positions = getArray(missionConfigFile >> "Garages" >> worldName >> _className >> "garageBlacklists");
     {
-        private _obj = nearestObject [_x,_className];
+        _obj = nearestObject [_x,_className];
         if (isNull _obj) then {
             _obj setVariable ["blacklistedGarage",true,true];
         };

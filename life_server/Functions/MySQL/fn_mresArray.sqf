@@ -12,7 +12,7 @@ params [
 ];
 _array = str _array;
 _array = toArray(_array);
-
+private "_sel";
 for "_i" from 0 to (count _array)-1 do
 {
     _sel = _array select _i;

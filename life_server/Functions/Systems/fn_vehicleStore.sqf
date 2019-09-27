@@ -5,7 +5,6 @@
     Description:
     Stores the vehicle in the 'Garage'
 */
-private ["_plate","_uid","_query","_cargo","_fuel","_damage"];
 params [
     ["_vehicle",objNull,[objNull]],
     ["_impound",false,[true]],
@@ -17,26 +16,21 @@ private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 private _vInfo = _vehicle getVariable ["dbInfo",[]];
 
-if (count _vInfo > 0) then {
-    _plate = _vInfo select 1;
-    _uid = _vInfo select 0;
-};
+if (count _vInfo isEqualTo 0) exitWith {};
+private _plate = _vInfo select 1;
+private _uid = _vInfo select 0;
 
 // save damage.
+private _damage = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
     _damage = getAllHitPointsDamage _vehicle;
     _damage = _damage select 2;
-    } else {
-    _damage = [];
 };
 _damage = [_damage] call DB_fnc_mresArray;
 
 // because fuel price!
-if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
-    _fuel = (fuel _vehicle);
-    } else {
-    _fuel = 1;
-};
+private _fuel = 1;
+if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {_fuel = (fuel _vehicle);};
 
 if (_impound) exitWith {
     if (count _vInfo isEqualTo 0) then  {
@@ -47,8 +41,7 @@ if (_impound) exitWith {
             deleteVehicle _vehicle;
         };
     } else {    // no free repairs!
-        _query = format ["UPDATE vehicles SET active='0', fuel='%3', damage='%4' WHERE pid='%1' AND plate='%2'",_uid , _plate, _fuel, _damage];
-        [_query,1] call DB_fnc_asyncCall;
+        [format ["UPDATE vehicles SET active='0', fuel='%3', damage='%4' WHERE pid='%1' AND plate='%2'",_uid , _plate, _fuel, _damage],1] call DB_fnc_asyncCall;
 
         if (!isNil "_vehicle" && {!isNull _vehicle}) then {
             deleteVehicle _vehicle;
@@ -104,8 +97,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
         if (_blacklist) then {
             [_uid, _profileName, "481"] remoteExecCall["life_fnc_wantedAdd", RSERV];
-            _query = format ["UPDATE vehicles SET blacklist='1' WHERE pid='%1' AND plate='%2'", _uid, _plate];
-            [_query, 1] call DB_fnc_asyncCall;
+            [format ["UPDATE vehicles SET blacklist='1' WHERE pid='%1' AND plate='%2'", _uid, _plate],1] call DB_fnc_asyncCall;
         };
 
     }
@@ -126,6 +118,7 @@ else {
     _trunk = [[], 0];
 };
 
+private _cargo = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     private _vehItems = getItemCargo _vehicle;
     private _vehMags = getMagazineCargo _vehicle;
@@ -134,16 +127,13 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     _cargo = [_vehItems,_vehMags,_vehWeapons,_vehBackpacks];
     // no items? clean the array so the database looks pretty
     if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {_cargo = [];};
-    } else {
-    _cargo = [];
 };
 // prepare
 _trunk = [_trunk] call DB_fnc_mresArray;
 _cargo = [_cargo] call DB_fnc_mresArray;
 
 // update
-_query = format ["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5', damage='%6' WHERE pid='%1' AND plate='%2'", _uid, _plate, _trunk, _cargo, _fuel, _damage];
-[_query,1] call DB_fnc_asyncCall;
+[format ["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5', damage='%6' WHERE pid='%1' AND plate='%2'", _uid, _plate, _trunk, _cargo, _fuel, _damage],1] call DB_fnc_asyncCall;
 
 if (!isNil "_vehicle" && {!isNull _vehicle}) then {
     deleteVehicle _vehicle;
