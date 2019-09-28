@@ -12,7 +12,7 @@ if !(params[["_dictionary",[],[[],0,""]]]) exitWith {};
 scopeName "main";
 
 {
-    if (worldName isEqualTo _x select 0) then {
+    if (worldName == _x select 0) then {
         (_x select 1) breakOut "main";
     };
 } count _dictionary;
