@@ -14,11 +14,11 @@ if (isNull _house || _uid isEqualTo "") exitWith {};
 
 private _housePos = getPosATL _house;
 
-if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
-    diag_log format ["Query: Added new house, owner: %1 at position %2",_uid,_housePos];
-};
-
 [format ["INSERT INTO houses (pid, pos, owned) VALUES('%1', '%2', '1')",_uid,_housePos],1] call DB_fnc_asyncCall;
+
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
+    diag_log format ["Query: INSERT INTO houses (pid, pos, owned) VALUES('%1', '%2', '1')",_uid,_housePos];
+};
 
 uiSleep 0.3;
 

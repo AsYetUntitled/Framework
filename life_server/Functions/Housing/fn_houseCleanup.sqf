@@ -12,7 +12,7 @@ params [
 private _containers = [format ["SELECT pos FROM containers WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
 
 {
-    _x params ["_pos"];
+    _x params [["_pos",locationNull,[locationNull]]];
     _pos = parseSimpleArray _pos;
     {
         deleteVehicle _x;

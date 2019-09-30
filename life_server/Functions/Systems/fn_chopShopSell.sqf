@@ -21,9 +21,8 @@ private _displayName = FETCH_CONFIG2(getText,"CfgVehicles",typeOf _vehicle, "dis
 
 private _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if (count _dbInfo > 0) then {
-    _dbInfo params ["_uid","_plate"];
-    private _query = format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",_uid,_plate];
-    [_query,1] call DB_fnc_asyncCall;
+    _dbInfo params [["_uid","",[""]],["_plate",-1,[0]]];
+    [format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND plate='%2'",_uid,_plate],1] call DB_fnc_asyncCall;
 };
 
 deleteVehicle _vehicle;

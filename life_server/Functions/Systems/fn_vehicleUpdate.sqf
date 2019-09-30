@@ -40,7 +40,7 @@ switch (_mode) do {
         private _itemList = _trunk select 0;
         private _totalweight = 0;
         private _items = [];
-        private "_weight";
+        private _weight = 0;
         {
             if ((_x select 0) in _resourceItems) then {
                 _items pushBack [_x select 0,_x select 1];

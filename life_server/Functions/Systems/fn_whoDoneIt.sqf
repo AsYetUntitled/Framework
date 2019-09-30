@@ -18,22 +18,18 @@ if (isServer) then {
     private _distance = _killer distance _victim;
     private _distance = floor(_distance);
 
-    private _message = "";
-    if (_victim IsEqualTo _killer) then {
-        _message = format ["Suicide Message: %1 committed suicide (or disconnected)", (name _victim)];
+    if (_victim IsEqualTo _killer) exitWith {
+        diag_log format ["death_log: Suicide Message: %1 committed suicide (or disconnected)", (name _victim)];
     };
-    if (_killerWep != "") then {
-        _message = format ["Weapon Death Message: %1 has killed %2 with Weapon %3 from %4 Meters", (name _killer), (name _victim), (getText(configFile >> "cfgWeapons" >> _killerWep >> "displayName")), _distance];
+    if (_killerWep != "") exitWith {
+        diag_log format ["death_log: Weapon Death Message: %1 has killed %2 with Weapon %3 from %4 Meters", (name _killer), (name _victim), (getText(configFile >> "cfgWeapons" >> _killerWep >> "displayName")), _distance];
     };
-    if (_killerVeh isKindOf "Car" && _killerWep isEqualTo "") then {
-        _message = format ["Vehicle Death Message: %1 has knocked down %2 with a %3", (name _killer), (name _victim), (getText(configFile >> "CfgVehicles" >> (typeOf _killerVeh) >> "displayName"))];
+    if (_killerVeh isKindOf "Car" && _killerWep isEqualTo "") exitWith {
+        diag_log format ["death_log: Vehicle Death Message: %1 has knocked down %2 with a %3", (name _killer), (name _victim), (getText(configFile >> "CfgVehicles" >> (typeOf _killerVeh) >> "displayName"))];
     };
-    if (_killerVeh isKindOf "Air" && _killerWep isEqualTo "") then {
-        _message = format ["Aircraft Death Message: %1 has obliterated %2 with a %3", (name _killer), (name _victim), (getText(configFile >> "CfgVehicles" >> (typeOf _killerVeh) >> "displayName"))];
+    if (_killerVeh isKindOf "Air" && _killerWep isEqualTo "") exitWith {
+        diag_log format ["death_log: Aircraft Death Message: %1 has obliterated %2 with a %3", (name _killer), (name _victim), (getText(configFile >> "CfgVehicles" >> (typeOf _killerVeh) >> "displayName"))];
+    } else exitWith {
+        diag_log format ["death_log: Death Message: %1 has killed %2", (name _killer), (name _victim)];
     };
-    if (_message isEqualTo "") then {
-        _message = format ["Death Message: %1 has killed %2", (name _killer), (name _victim)];
-    };
-
-    diag_log format ["death_log: %1",_message];
 };

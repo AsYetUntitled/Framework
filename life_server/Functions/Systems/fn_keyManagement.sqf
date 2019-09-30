@@ -16,7 +16,11 @@ if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //BAAAAAAAAAD
 
 switch (_mode) do {
     case 0: {
-        private _input = param [2,[],[[]]];
+        params [
+            "",
+            "",
+            ["_input",[],[[]]]
+        ];
         private _arr = [];
         {
             if (!isNull _x && {!(_x isKindOf "House")}) then {
@@ -29,7 +33,11 @@ switch (_mode) do {
     };
 
     case 1: {
-        private _input = param [2,objNull,[objNull]];
+        params [
+            "",
+            "",
+            ["_input",objNull,[objNull]]
+        ];
         if (isNull _input || _input isKindOf "House") exitWith {};
         private _arr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
         _arr pushBack _input;

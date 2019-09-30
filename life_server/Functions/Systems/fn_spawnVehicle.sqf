@@ -136,7 +136,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
     _vehicle setFuel (_vInfo select 11);
-    }else{
+    } else {
     _vehicle setFuel 1;
 };
 

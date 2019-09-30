@@ -13,7 +13,6 @@ params [
 ];
 
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
-private _query = "";
 
 switch (_mode) do {
     case 0: {
@@ -23,7 +22,7 @@ switch (_mode) do {
             ["_value",0,[0]]
         ];
         _value = [_value] call DB_fnc_numberSafe;
-        _query = format ["UPDATE players SET cash='%1' WHERE pid='%2'",_value,_uid];
+        [format ["UPDATE players SET cash='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;
     };
 
     case 1: {
@@ -33,7 +32,7 @@ switch (_mode) do {
             ["_value",0,[0]]
         ];
         _value = [_value] call DB_fnc_numberSafe;
-        _query = format ["UPDATE players SET bankacc='%1' WHERE pid='%2'",_value,_uid];
+        [format ["UPDATE players SET bankacc='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;
     };
 
     case 2: {
@@ -49,10 +48,10 @@ switch (_mode) do {
             _value set[_i,[(_value select _i) select 0,_bool]];
         };
         _value = [_value] call DB_fnc_mresArray;
-        _query = switch (_side) do {
-            case west: {format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'",_value,_uid];};
-            case civilian: {format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid];};
-            case independent: {format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'",_value,_uid];};
+        switch (_side) do {
+            case west: {[format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;};
+            case civilian: {[format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;};
+            case independent: {[format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;};
         };
     };
 
@@ -63,10 +62,10 @@ switch (_mode) do {
             ["_value",[],[[]]]
         ];
         _value = [_value] call DB_fnc_mresArray;
-        _query = switch (_side) do {
-            case west: {format ["UPDATE players SET cop_gear='%1' WHERE pid='%2'",_value,_uid];};
-            case civilian: {format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid];};
-            case independent: {format ["UPDATE players SET med_gear='%1' WHERE pid='%2'",_value,_uid];};
+        switch (_side) do {
+            case west: {[format ["UPDATE players SET cop_gear='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;};
+            case civilian: {[format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;};
+            case independent: {[format ["UPDATE players SET med_gear='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;};
         };
     };
 
@@ -81,7 +80,7 @@ switch (_mode) do {
         _value = [_value] call DB_fnc_bool;
         _value1 = if (count _value1 isEqualTo 3) then {_value2} else {[0,0,0]};
         _value1 = [_value1] call DB_fnc_mresArray;
-        _query = format ["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE pid='%3'",_value,_value1,_uid];
+        [format ["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE pid='%3'",_value,_value1,_uid],1] call DB_fnc_asyncCall;
     };
 
     case 5: {
@@ -91,7 +90,7 @@ switch (_mode) do {
             ["_value",false,[true]]
         ];
         _value = [_value] call DB_fnc_bool;
-        _query = format ["UPDATE players SET arrested='%1' WHERE pid='%2'",_value,_uid];
+        [format ["UPDATE players SET arrested='%1' WHERE pid='%2'",_value,_uid],1] call DB_fnc_asyncCall;
     };
 
     case 6: {
@@ -104,7 +103,7 @@ switch (_mode) do {
         ];
         _value = [_value] call DB_fnc_numberSafe;
         _value1 = [_value1] call DB_fnc_numberSafe;
-        _query = format ["UPDATE players SET cash='%1', bankacc='%2' WHERE pid='%3'",_value,_value1,_uid];
+        [format ["UPDATE players SET cash='%1', bankacc='%2' WHERE pid='%3'",_value,_value1,_uid],1] call DB_fnc_asyncCall;
     };
 
     case 7: {
@@ -116,7 +115,3 @@ switch (_mode) do {
         [_uid,_side,_array,0] call TON_fnc_keyManagement;
     };
 };
-
-if (_query isEqualTo "") exitWith {};
-
-[_query,1] call DB_fnc_asyncCall;
