@@ -29,7 +29,7 @@ if (isServer) then {
     };
     if (_killerVeh isKindOf "Air" && _killerWep isEqualTo "") exitWith {
         diag_log format ["death_log: Aircraft Death Message: %1 has obliterated %2 with a %3", (name _killer), (name _victim), (getText(configFile >> "CfgVehicles" >> (typeOf _killerVeh) >> "displayName"))];
-    } else exitWith {
+    } else {
         diag_log format ["death_log: Death Message: %1 has killed %2", (name _killer), (name _victim)];
     };
 };
