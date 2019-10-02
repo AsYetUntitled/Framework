@@ -31,8 +31,8 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 //Double check to make sure the client isn't in the database...
-if (_queryResult isEqualType "") exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];}; //There was an entry!
-if !(count _queryResult isEqualTo 0) exitWith {[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];};
+if (_queryResult isEqualType "") exitWith {remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];}; //There was an entry!
+if !(count _queryResult isEqualTo 0) exitWith {remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];};
 
 //Clense and prepare some information.
 _name = [_name] call DB_fnc_mresString; //Clense the name of bad chars.
@@ -41,4 +41,4 @@ _money = [_money] call DB_fnc_numberSafe;
 _bank = [_bank] call DB_fnc_numberSafe;
 
 [format ["INSERT INTO players (pid, name, cash, bankacc, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",_uid, _name, _money, _bank, _alias],1] call DB_fnc_asyncCall;
-[] remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];
+remoteExecCall ["SOCK_fnc_dataQuery",(owner _returnToSender)];

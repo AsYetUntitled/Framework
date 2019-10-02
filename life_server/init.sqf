@@ -27,7 +27,7 @@ HC_Life = false;
 publicVariable "HC_Life";
 
 if (EXTDB_SETTING(getNumber,"HeadlessSupport") isEqualTo 1) then {
-    [] execVM "\life_server\initHC.sqf";
+    execVM "\life_server\initHC.sqf";
 };
 
 /*
@@ -79,14 +79,13 @@ diag_log "----------------------------------------------------------------------
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
-        _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";
-        [_query,1] call DB_fnc_asyncCall;
+        ["UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'",1] call DB_fnc_asyncCall;
     };
 };
 
 /* Map-based server side initialization. */
 master_group attachTo[bank_obj,[0,0,0]];
-
+private ["_hs","_var","_npc"];
 {
     _hs = createVehicle ["Land_Hospital_main_F", [0,0,0], [], 0, "NONE"];
     _hs setDir (markerDir _x);
@@ -143,7 +142,7 @@ fed_bank setVariable ["safe",count playableUnits,true];
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
-[] call compile preprocessFileLineNumbers "\life_server\functions.sqf";
+call compile preprocessFileLineNumbers "\life_server\functions.sqf";
 
 /* Set OwnerID players for Headless Client */
 TON_fnc_requestClientID =
@@ -159,7 +158,7 @@ TON_fnc_requestClientID =
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
 
-cleanupFSM = [] execFSM "\life_server\FSM\cleanup.fsm";
+cleanupFSM = execFSM "\life_server\FSM\cleanup.fsm";
 
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
@@ -171,7 +170,7 @@ cleanupFSM = [] execFSM "\life_server\FSM\cleanup.fsm";
 };
 
 [] spawn TON_fnc_initHouses;
-cleanup = [] spawn TON_fnc_cleanup;
+cleanup = spawn TON_fnc_cleanup;
 
 TON_fnc_playtime_values = [];
 TON_fnc_playtime_values_request = [];

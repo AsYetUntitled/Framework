@@ -42,12 +42,11 @@ _queryResult = [format ["SELECT id, active FROM gangs WHERE name='%1' AND active
 private _gangMembers = [[_uid]] call DB_fnc_mresArray;
 
 if (!(count _queryResult isEqualTo 0)) then {
-    private _query = format ["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)];
+    _queryResult = [format ["UPDATE gangs SET active='1', owner='%1',members='%2' WHERE id='%3'",_uid,_gangMembers,(_queryResult select 0)],1] call DB_fnc_asyncCall;
 } else {
-    private _query = format ["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers];
+    _queryResult = [format ["INSERT INTO gangs (owner, name, members) VALUES('%1','%2','%3')",_uid,_gangName,_gangMembers],1] call DB_fnc_asyncCall;
 };
 
-_queryResult = [_query,1] call DB_fnc_asyncCall;
 
 _group setVariable ["gang_name",_gangName,true];
 _group setVariable ["gang_owner",_uid,true];

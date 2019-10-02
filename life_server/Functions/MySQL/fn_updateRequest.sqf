@@ -34,7 +34,7 @@ _position = if (_side isEqualTo civilian) then {[_position] call DB_fnc_mresArra
 private "_bool";
 for "_i" from 0 to count(_licenses)-1 do {
     _bool = [(_licenses select _i) select 1] call DB_fnc_bool;
-    _licenses set[_i,[(_licenses select _i) select 0,_bool]];
+    _licenses set [_i,[(_licenses select _i) select 0,_bool]];
 };
 
 _licenses = [_licenses] call DB_fnc_mresArray;

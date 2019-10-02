@@ -22,18 +22,17 @@ if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 1) then {
     _ownerID addMPEventHandler ["MPKilled", {_this call fn_whoDoneIt}];
 };
 _ownerID = owner _ownerID;
-
-private _query = switch (_side) do {
+private "_queryResult";
+switch (_side) do {
     // West - 11 entries returned
-    case west: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
+    case west: {_queryResult = [format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid],2] call DB_fnc_asyncCall;};
     // Civilian - 12 entries returned
-    case civilian: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
+    case civilian: {_queryResult = [format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid],2] call DB_fnc_asyncCall;};
     // Independent - 10 entries returned
-    case independent: {format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
+    case independent: {_queryResult = [format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid],2] call DB_fnc_asyncCall;};
 };
 
 private _tickTime = diag_tickTime;
-private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
@@ -44,11 +43,11 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 if (_queryResult isEqualType "") exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+    remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
 if (count _queryResult isEqualTo 0) exitWith {
-    [] remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
+    remoteExecCall ["SOCK_fnc_insertPlayerInfo",_ownerID];
 };
 
 //Blah conversion thing from a2net->extdb

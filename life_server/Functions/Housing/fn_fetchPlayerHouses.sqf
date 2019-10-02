@@ -24,7 +24,7 @@ private _containerss = [];
     if (_trunk isEqualType "") then {_trunk = call compile format ["%1", _trunk];};
     private _gear = [_x select 4] call DB_fnc_mresToArray;
     if (_gear isEqualType "") then {_gear = call compile format ["%1", _gear];};
-    private _container = createVehicle[_x select 2,[0,0,999],[],0,"NONE"];
+    private _container = createVehicle [_x select 2,[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_container" && {!isNull _container}};
     _containerss = _house getVariable ["containers",[]];
     _containerss pushBack _container;
