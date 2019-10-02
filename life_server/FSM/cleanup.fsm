@@ -42,7 +42,7 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "true">*/<
+                                /*%FSM<LINK "true">*/
                                 class true
                                 {
                                         itemno = 1;
@@ -84,7 +84,8 @@ class FSM
                 {
                         name = "Delete_Dead_Cars";
                         itemno = 5;
-                        init = /*%FSM<STATEINIT""">*/"{" "private [""_dbInfo"",""_uid"",""_plate""];"\n
+                        init = /*%FSM<STATEINIT""">*/ "private [""_dbInfo"",""_uid"",""_plate""];" \n
+                         "{" \n
                          "  if (!alive _x) then {" \n
                          "      _dbInfo = _x getVariable [""dbInfo"",[]];" \n
                          "      if (count _dbInfo > 0) then {" \n
@@ -161,7 +162,7 @@ class FSM
                 /*%FSM</STATE>*/
         };
         initState = "init";
-        finalStates [] =
+        finalStates[] =
         {
                 "End_Cleanup_",
         };

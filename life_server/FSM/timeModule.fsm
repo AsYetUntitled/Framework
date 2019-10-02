@@ -29,11 +29,7 @@ class FSM
     class Init
     {
       name = "Init";
-      init = /*%FSM<STATEINIT""">*/
-        "params ['_skipDay',8,[0]]," \n
-        "['_fastNight',false,[true]]," \n
-        "['_skipNight',12,[0]]" \n
-        "];"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/ "params [[""_skipDay"",8,[0]], [""_fastNight"",false,[true]], [""_skipNight"",12,[0]]];" /*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -100,7 +96,7 @@ class FSM
     /*%FSM</STATE>*/
   };
   initState = "Init";
-  finalStates [] =
+  finalStates[] =
   {
     "Exit",
   };
