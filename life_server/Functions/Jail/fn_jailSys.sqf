@@ -11,6 +11,5 @@ params [
     ["_bad",false,[false]]
 ];
 if (isNull _unit) exitWith {};
-private _id = owner _unit;
-private _ret = [_unit] call life_fnc_wantedPerson;
-[_ret,_bad] remoteExec ["life_fnc_jailMe",_id];
+
+[[_unit] call life_fnc_wantedPerson,_bad] remoteExec ["life_fnc_jailMe",owner _unit];

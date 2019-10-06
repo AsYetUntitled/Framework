@@ -12,9 +12,8 @@ params [
     ["_color",-1,[0]]
 ];
 //Error checks
-if (_uid isEqualTo "" || _side isEqualTo sideUnknown || isNull _vehicle) exitWith {};
+if (_uid isEqualTo "" || {_side isEqualTo sideUnknown || isNull _vehicle}) exitWith {};
 if (!alive _vehicle) exitWith {};
-private _className = typeOf _vehicle;
 private _type = switch (true) do {
     case (_vehicle isKindOf "Car"): {"Car"};
     case (_vehicle isKindOf "Air"): {"Air"};
@@ -29,6 +28,6 @@ _side = switch (_side) do {
 };
 
 private _plate = round(random(1000000));
-[_uid,_side,_type,_classname,_color,_plate] call DB_fnc_insertVehicle;
+[_uid, _side, _type, typeOf _vehicle, _color, _plate] call DB_fnc_insertVehicle;
 
 _vehicle setVariable ["dbInfo",[_uid,_plate],true];

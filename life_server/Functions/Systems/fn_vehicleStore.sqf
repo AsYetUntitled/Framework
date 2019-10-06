@@ -17,14 +17,15 @@ if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owne
 private _vInfo = _vehicle getVariable ["dbInfo",[]];
 
 if (count _vInfo isEqualTo 0) exitWith {};
-private _plate = _vInfo select 1;
-private _uid = _vInfo select 0;
+_vInfo params [
+    ["_uid","",[""]],
+    ["_plate",0,[0]]
+];
 
 // save damage.
 private _damage = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
-    _damage = getAllHitPointsDamage _vehicle;
-    _damage = _damage select 2;
+    _damage = (getAllHitPointsDamage _vehicle) select 2;
 };
 _damage = [_damage] call DB_fnc_mresArray;
 
@@ -72,11 +73,11 @@ private _totalweight = 0;
 _items = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
-        private ["_isIllegal", "_blacklist"];
-        _blacklist = false;
+        private _blacklist = false;
         _profileQuery = format ["SELECT name FROM players WHERE pid='%1'", _uid];
         _profileName = [_profileQuery, 2] call DB_fnc_asyncCall;
         _profileName = _profileName select 0;
+        private "_isIllegal";
 
         {
             _isIllegal = M_CONFIG(getNumber,"VirtualItems",(_x select 0),"illegal");
@@ -85,15 +86,13 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
             if (((_x select 0) in _resourceItems) || (_isIllegal)) then {
                 _items pushBack[(_x select 0),(_x select 1)];
-                private _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
-                _totalweight = _weight + _totalweight;
+                _totalweight = ((ITEM_WEIGHT(_x select 0)) * (_x select 1)) + _totalweight;
             };
             if (_isIllegal) then {
                 _blacklist = true;
             };
 
-        }
-        foreach _itemList;
+        } foreach _itemList;
 
         if (_blacklist) then {
             [_uid, _profileName, "481"] remoteExecCall["life_fnc_wantedAdd", RSERV];
@@ -105,11 +104,9 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         {
             if ((_x select 0) in _resourceItems) then {
                 _items pushBack[(_x select 0),(_x select 1)];
-                private _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
-                _totalweight = _weight + _totalweight;
+                _totalweight = ((ITEM_WEIGHT(_x select 0)) * (_x select 1)) + _totalweight;
             };
-        }
-        forEach _itemList;
+        } forEach _itemList;
     };
 
     _trunk = [_items, _totalweight];

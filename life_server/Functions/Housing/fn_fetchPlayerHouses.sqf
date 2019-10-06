@@ -13,8 +13,6 @@ params [
 ];
 if (_uid isEqualTo "") exitWith {};
 
-private _containers = [format ["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
-
 private _containerss = [];
 {
     private _position = call compile format ["%1",_x select 1];
@@ -67,16 +65,12 @@ private _containerss = [];
         };
     };
     _house setVariable ["containers",_containerss,true];
-} forEach _containers;
-
-private _houses = [format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
+} forEach [format ["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
 
 private _return = [];
 {
-    private _pos = call compile format ["%1",_x select 1];
-    private _house = nearestObject [_pos, "House"];
-    _house allowDamage false;
+    (nearestObject [(call compile format ["%1",_x select 1]), "House"]) allowDamage false;
     _return pushBack [_x select 1];
-} forEach _houses;
+} forEach [format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
 
 missionNamespace setVariable [format ["houses_%1",_uid],_return];

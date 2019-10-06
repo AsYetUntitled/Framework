@@ -12,9 +12,9 @@
     STRING - The request had invalid handles or an unknown error and is logged to the RPT.
 */
 params [
-    [_uid,"",[""]],
-    [_side,sideUnknown,[civilian]],
-    [_ownerID,objNull,[objNull]]
+    ["_uid","",[""]],
+    ["_side",sideUnknown,[civilian]],
+    ["_ownerID",objNull,[objNull]]
 ];
 
 if (isNull _ownerID) exitWith {};
@@ -22,6 +22,7 @@ if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 1) then {
     _ownerID addMPEventHandler ["MPKilled", {_this call fn_whoDoneIt}];
 };
 _ownerID = owner _ownerID;
+private _tickTime = diag_tickTime;
 private "_queryResult";
 switch (_side) do {
     // West - 11 entries returned
@@ -32,11 +33,13 @@ switch (_side) do {
     case independent: {_queryResult = [format ["SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid],2] call DB_fnc_asyncCall;};
 };
 
-private _tickTime = diag_tickTime;
-
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
-    diag_log format ["QUERY: %1",_query];
+    switch (_side) do {
+        case west: {diag_log format ["QUERY: SELECT pid, name, cash, bankacc, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
+        case civilian: {diag_log format ["QUERY: SELECT pid, name, cash, bankacc, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
+        case independent: {diag_log format ["QUERY: SELECT pid, name, cash, bankacc, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
+    };
     diag_log format ["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
     diag_log format ["Result: %1",_queryResult];
     diag_log "------------------------------------------------";
@@ -51,10 +54,8 @@ if (count _queryResult isEqualTo 0) exitWith {
 };
 
 //Blah conversion thing from a2net->extdb
-private _tmp = _queryResult select 2;
-_queryResult set[2,[_tmp] call DB_fnc_numberSafe];
-_tmp = _queryResult select 3;
-_queryResult set[3,[_tmp] call DB_fnc_numberSafe];
+_queryResult set[2,[(_queryResult select 2)] call DB_fnc_numberSafe];
+_queryResult set[3,[(_queryResult select 3)] call DB_fnc_numberSafe];
 
 //Parse licenses (Always index 6)
 private _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
@@ -64,8 +65,7 @@ _queryResult set[6,_new];
 //Convert tinyint to boolean
 private _old = _queryResult select 6;
 for "_i" from 0 to (count _old)-1 do {
-    private _data = _old select _i;
-    _old set[_i,[_data select 0, ([_data select 1,1] call DB_fnc_bool)]];
+    _old set[_i,[(_old select _i) select 0, ([(_old select _i) select 1,1] call DB_fnc_bool)]];
 };
 
 _queryResult set[6,_old];
@@ -86,7 +86,7 @@ switch (_side) do {
         //Playtime
         _new = [(_queryResult select 11)] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _index = TON_fnc_playtime_values_request find [_uid, _new];
+        private _index = TON_fnc_playtime_values_request find [_uid, _new];
         if (_index != -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
@@ -114,7 +114,7 @@ switch (_side) do {
         //Playtime
         _new = [(_queryResult select 12)] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _index = TON_fnc_playtime_values_request find [_uid, _new];
+        private _index = TON_fnc_playtime_values_request find [_uid, _new];
         if (_index != -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
@@ -125,13 +125,10 @@ switch (_side) do {
         [_uid,_new select 2] call TON_fnc_setPlayTime;
 
         /* Make sure nothing else is added under here */
-        _houseData = _uid spawn TON_fnc_fetchPlayerHouses;
-        waitUntil {scriptDone _houseData};
+        waitUntil {scriptDone (_uid spawn TON_fnc_fetchPlayerHouses)};
         _queryResult pushBack (missionNamespace getVariable [format ["houses_%1",_uid],[]]);
-        _gangData = _uid spawn TON_fnc_queryPlayerGang;
-        waitUntil{scriptDone _gangData};
+        waitUntil{scriptDone (_uid spawn TON_fnc_queryPlayerGang)};
         _queryResult pushBack (missionNamespace getVariable [format ["gang_%1",_uid],[]]);
-
     };
 
     case independent: {
@@ -143,7 +140,7 @@ switch (_side) do {
         //Playtime
         _new = [(_queryResult select 10)] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _index = TON_fnc_playtime_values_request find [_uid, _new];
+        private _index = TON_fnc_playtime_values_request find [_uid, _new];
         if !(_index isEqualTo -1) then {
             TON_fnc_playtime_values_request set[_index,-1];
             TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
@@ -157,7 +154,6 @@ switch (_side) do {
 
 publicVariable "TON_fnc_playtime_values_request";
 
-private _keyArr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
-_queryResult pushBack _keyArr;
+_queryResult pushBack (missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]]);
 
 _queryResult remoteExec ["SOCK_fnc_requestReceived",_ownerID];

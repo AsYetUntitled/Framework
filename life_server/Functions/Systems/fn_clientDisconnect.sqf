@@ -42,8 +42,7 @@ if !(alive _unit) then {
     } forEach server_corpses;
 };
 
-private _containers = nearestObjects[_unit,["WeaponHolderSimulated"],5];
-{deleteVehicle _x} forEach _containers;
+{deleteVehicle _x} forEach (nearestObjects[_unit,["WeaponHolderSimulated"],5]);
 deleteVehicle _unit;
 
 [_uid] spawn TON_fnc_houseCleanup;

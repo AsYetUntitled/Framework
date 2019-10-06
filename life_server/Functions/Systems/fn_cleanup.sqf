@@ -7,19 +7,18 @@
     Server-side cleanup script on vehicles.
     Sort of a lame way but whatever. Yep someone should look at it!
 */
-private ["_protect","_veh","_vehicleClass","_fuel","_dbInfo","_units","_uid","_plate"];
+private ["_protect","_veh","_fuel","_dbInfo","_units"];
 private _deleted = false;
 for "_i" from 0 to 1 step 0 do {
     uiSleep (60 * 60);
     {
         _protect = false;
         _veh = _x;
-        _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
         _fuel = 1;
 
         if (!isNil {_veh getVariable "NPC"} && {_veh getVariable "NPC"}) then {_protect = true;};
 
-        if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
+        if (getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass") in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
             if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {_fuel = (fuel _veh);};
             _dbInfo = _veh getVariable ["dbInfo",[]];
             _units = {(_x distance _veh < 300)} count playableUnits;
@@ -41,10 +40,7 @@ for "_i" from 0 to 1 step 0 do {
 
             if (isNull _veh) then {
                 if (count _dbInfo > 0) then {
-                    _uid = _dbInfo select 0;
-                    _plate = _dbInfo select 1;
-
-                    [format ["UPDATE vehicles SET active='0', fuel='%3' WHERE pid='%1' AND plate='%2'",_uid,_plate,_fuel],1] call DB_fnc_asyncCall;
+                    [format ["UPDATE vehicles SET active='0', fuel='%3' WHERE pid='%1' AND plate='%2'", _dbInfo select 0, _dbInfo select 1, _fuel],1] call DB_fnc_asyncCall;
                 };
             };
         };

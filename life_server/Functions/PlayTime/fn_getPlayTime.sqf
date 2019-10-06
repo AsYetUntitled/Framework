@@ -24,15 +24,10 @@ private _time_join = nil;
 } forEach TON_fnc_playtime_values;
 
 if (isNil "_time_gathered" || isNil "_time_join") then {
-    _time_gathered = 0;
-    _time_join = time;
-    TON_fnc_playtime_values pushBack [_uid, _time_gathered, _time_join];
+    TON_fnc_playtime_values pushBack [_uid, 0, time];
 };
 
 publicVariable "TON_fnc_playtime_values";
 
-private _time = (time - _time_join); //return time
-_time = _time + _time_gathered;
-_time = round (_time/60);
-
+private _time = round (((time - _time_join) + _time_gathered) / 60); //return time
 _time;

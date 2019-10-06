@@ -12,7 +12,7 @@ params [
     ["_mode",0,[0]]
 ];
 
-if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //BAAAAAAAAADDDDDDDD
+if (_uid isEqualTo "" || {_side isEqualTo sideUnknown}) exitWith {}; //BAAAAAAAAADDDDDDDD
 
 switch (_mode) do {
     case 0: {
@@ -27,9 +27,7 @@ switch (_mode) do {
                 _arr pushBack _x;
             };
         } forEach _input;
-
-        _arr = _arr - [objNull];
-        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side],_arr];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side], _arr - [objNull]];
     };
 
     case 1: {
@@ -39,15 +37,10 @@ switch (_mode) do {
             ["_input",objNull,[objNull]]
         ];
         if (isNull _input || _input isKindOf "House") exitWith {};
-        private _arr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
-        _arr pushBack _input;
-        _arr = _arr - [objNull];
-        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side],_arr];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side], ((missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]]) pushBack _input) - [objNull]];
     };
 
     case 2: {
-        private _arr = missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]];
-        _arr = _arr - [objNull];
-        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side],_arr];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side], (missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]]) - [objNull]];
     };
 };

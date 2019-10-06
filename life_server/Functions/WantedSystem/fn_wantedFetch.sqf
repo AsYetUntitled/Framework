@@ -36,7 +36,6 @@ if (count _units isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList
     };
 } forEach _units;
 
-private _queryResult = [format ["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement],2,true] call DB_fnc_asyncCall;
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log format ["Query: SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement];
 };
@@ -44,7 +43,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 {
     _list pushBack _x;
     false
-} count _queryResult;
+} count ([format ["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in (%1)",_inStatement],2,true] call DB_fnc_asyncCall);
 
 if (count _list isEqualTo 0) exitWith {[_list] remoteExec ["life_fnc_wantedList",_ret];};
 

@@ -12,7 +12,7 @@ params [
     ["_mode",-1,[0]]
 ];
 
-if (_uid isEqualTo "" || isNull _house || _mode isEqualTo -1) exitWith {};
+if (_uid isEqualTo "" || {isNull _house || _mode isEqualTo -1}) exitWith {};
 
 private _housePos = getPosATL _house;
 

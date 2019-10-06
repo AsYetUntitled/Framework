@@ -14,11 +14,10 @@ params [
 
 if (isNull _obj || {isNull _client}) exitWith {systemChat "Obj or client is null?";}; //No.
 if (!(_obj getVariable ["inUse",false])) exitWith {
-    _client = owner _client;
     _obj setVariable ["inUse",true,true];
     if (_cash) then {
-        _obj remoteExecCall ["life_fnc_pickupMoney",_client];
+        _obj remoteExecCall ["life_fnc_pickupMoney",owner _client];
     } else {
-        _obj remoteExecCall ["life_fnc_pickupItem",_client];
+        _obj remoteExecCall ["life_fnc_pickupItem",owner _client];
     };
 };

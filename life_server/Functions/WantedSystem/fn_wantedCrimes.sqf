@@ -17,18 +17,15 @@ params [
 
 private _queryResult = [format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_criminal select 0],2] call DB_fnc_asyncCall;
 
-_ret = owner _ret;
-
 private _type = [_queryResult select 0] call DB_fnc_mresToArray;
 if (_type isEqualType "") then {_type = call compile format ["%1", _type];};
 
 private _crimesArr = [];
 {
-    private _str = format ["STR_Crime_%1", _x];
-    _crimesArr pushBack _str;
+    _crimesArr pushBack (format ["STR_Crime_%1", _x]);
     false
 } count _type;
 
 _queryResult set[0,_crimesArr];
 
-[_queryResult] remoteExec ["life_fnc_wantedInfo",_ret];
+[_queryResult] remoteExec ["life_fnc_wantedInfo", owner _ret];
