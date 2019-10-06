@@ -13,7 +13,7 @@ params [
     ["_uid","",[""]]
 ];
 if (_uid isEqualTo "") exitWith {}; //Bad.
-[_uid] call TON_fnc_getPlayTime
+[_uid] call TON_fnc_getPlayTime;
 
 //set value no 1
 {

@@ -27,9 +27,7 @@ switch (_mode) do {
         if ((count (_vehItems select 0) isEqualTo 0) && (count (_vehMags select 0) isEqualTo 0) && (count (_vehWeapons select 0) isEqualTo 0) && (count (_vehBackpacks select 0) isEqualTo 0)) then {
             _cargo = [];
         };
-[_cargo] call DB_fnc_mresArray
-
-        [format ["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'", _dbInfo select 0, _dbInfo select 1, _cargo], 1] call DB_fnc_asyncCall;
+        [format ["UPDATE vehicles SET gear='%3' WHERE pid='%1' AND plate='%2'", _dbInfo select 0, _dbInfo select 1, [_cargo] call DB_fnc_mresArray], 1] call DB_fnc_asyncCall;
     };
 
     case 2: {
