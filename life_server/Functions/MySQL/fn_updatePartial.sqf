@@ -12,7 +12,7 @@ params [
     ["_mode",-1,[0]]
 ];
 
-if (_uid isEqualTo "" || {_side isEqualTo sideUnknown}) exitWith {}; //Bad.
+if (_uid isEqualTo "" || {_side isEqualTo sideUnknown}) exitWith {}; //Bad. )
 
 switch (_mode) do {
     case 0: {
@@ -44,9 +44,9 @@ switch (_mode) do {
             _value set[_i,[(_value select _i) select 0,[(_value select _i) select 1] call DB_fnc_bool]];
         };
         switch (_side) do {
-            case west: {[format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'", [_value] call DB_fnc_mresArray), _uid],1] call DB_fnc_asyncCall;};
-            case civilian: {[format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'", [_value] call DB_fnc_mresArray), _uid],1] call DB_fnc_asyncCall;};
-            case independent: {[format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'", [_value] call DB_fnc_mresArray), _uid],1] call DB_fnc_asyncCall;};
+            case west: {[format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'", [_value] call DB_fnc_mresArray, _uid],1] call DB_fnc_asyncCall;};
+            case civilian: {[format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'", [_value] call DB_fnc_mresArray, _uid],1] call DB_fnc_asyncCall;};
+            case independent: {[format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'", [_value] call DB_fnc_mresArray, _uid],1] call DB_fnc_asyncCall;};
         };
     };
 
