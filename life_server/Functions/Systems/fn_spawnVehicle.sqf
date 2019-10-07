@@ -42,8 +42,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 if (_queryResult isEqualType "") exitWith {};
 
 private _vInfo = _queryResult;
-if (isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
-if (count _vInfo isEqualTo 0) exitWith {serv_sv_use deleteAt _servIndex;};
+if (isNil "_vInfo" || {count _vInfo isEqualTo 0}) exitWith {serv_sv_use deleteAt _servIndex;};
 
 if ((_vInfo select 5) isEqualTo 0) exitWith {
     serv_sv_use deleteAt _servIndex;
@@ -70,8 +69,7 @@ if (count _nearVehicles > 0) exitWith {
 private _trunk = [(_vInfo select 9)] call DB_fnc_mresToArray;
 private _gear = [(_vInfo select 10)] call DB_fnc_mresToArray;
 private _damage = [call compile (_vInfo select 12)] call DB_fnc_mresToArray;
-private _wasIllegal = _vInfo select 13;
-_wasIllegal = if (_wasIllegal isEqualTo 1) then { true } else { false };
+private _wasIllegal = if ((_vInfo select 13) isEqualTo 1) then { true } else { false };
 
 [format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid],1] call DB_fnc_asyncCall;
 
@@ -125,8 +123,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     
         } count ["NameCityCapital", "NameCity", "NameVillage"];
  
-        _location = text _location;
-        [1,"STR_NOTF_BlackListedVehicle",true,[_location,_name]] remoteExecCall ["life_fnc_broadcast",west];
+        [1,"STR_NOTF_BlackListedVehicle",true,[text _location,_name]] remoteExecCall ["life_fnc_broadcast",west];
 
         [format ["UPDATE vehicles SET blacklist='0' WHERE id='%1' AND pid='%2'",_vid,_pid],1] call DB_fnc_asyncCall;
     };

@@ -35,13 +35,12 @@ compileFinal "
         ['_string','',['']]
     ];
     if (_string isEqualTo '') exitWith {false};
-    private _array = _string splitString '';
     private _return = true;
     {
         if !(_x in ['0','1','2','3','4','5','6','7','8','9']) exitWith {
             _return = false;
         };
-    } forEach _array;
+    } forEach (_string splitString '');
     _return;
 ";
 
@@ -72,8 +71,7 @@ compileFinal "
     ];
     if (isNull _vehicle || isNull _unit || isNull _giver) exitWith {};
     if (player isEqualTo _unit && !(_vehicle in life_vehicles)) then {
-        private _name = getText(configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName');
-        hint format [localize 'STR_NOTF_gaveKeysFrom',_giver,_name];
+        hint format [localize 'STR_NOTF_gaveKeysFrom',_giver,getText(configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')];
         life_vehicles pushBack _vehicle;
         [getPlayerUID player,playerSide,_vehicle,1] remoteExecCall ['TON_fnc_keyManagement',2];
     };
@@ -127,14 +125,12 @@ TON_fnc_cell_emsrequest =
 compileFinal "
     ctrlShow[3022,false];
     private _msg = ctrlText 3003;
-    private _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3022,true];};
-    private _to = 'EMS Units';
+    if ((count (toArray(_msg))) > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3022,true];};
     if (_msg isEqualTo '') exitWith {hint localize 'STR_CELLMSG_EnterMSG';ctrlShow[3022,true];};
 
     [_msg,name player,5,mapGridPosition player,player] remoteExecCall ['TON_fnc_clientMessage',independent];
     call life_fnc_cellphone;
-    hint format [localize 'STR_CELLMSG_ToEMS',_to,_msg];
+    hint format [localize 'STR_CELLMSG_ToEMS',EMS Units,_msg];
     ctrlShow[3022,true];
 ";
 //To One Person
@@ -143,8 +139,7 @@ compileFinal "
     ctrlShow[3015,false];
     private _msg = ctrlText 3003;
 
-    private _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3015,true];};
+    if ((count (toArray(_msg))) > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3015,true];};
     if (lbCurSel 3004 isEqualTo -1) exitWith {hint localize 'STR_CELLMSG_SelectPerson'; ctrlShow[3015,true];};
 
     private _to = call compile format ['%1',(lbData[3004,(lbCurSel 3004)])];
@@ -161,15 +156,13 @@ TON_fnc_cell_textcop =
 compileFinal "
     ctrlShow[3016,false];
     private _msg = ctrlText 3003;
-    private _to = 'The Police';
 
     if (_msg isEqualTo '') exitWith {hint localize 'STR_CELLMSG_EnterMSG';ctrlShow[3016,true];};
-    private _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3016,true];};
+    if ((count (toArray(_msg))) > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3016,true];};
 
     [_msg,name player,1,mapGridPosition player,player] remoteExecCall ['TON_fnc_clientMessage',-2];
     call life_fnc_cellphone;
-    hint format [localize 'STR_CELLMSG_ToPerson',_to,_msg];
+    hint format [localize 'STR_CELLMSG_ToPerson',The Police,_msg];
     ctrlShow[3016,true];
 ";
 //To All Admins
@@ -177,15 +170,13 @@ TON_fnc_cell_textadmin =
 compileFinal "
     ctrlShow[3017,false];
     private _msg = ctrlText 3003;
-    private _to = 'The Admins';
 
     if (_msg isEqualTo '') exitWith {hint localize 'STR_CELLMSG_EnterMSG';ctrlShow[3017,true];};
-    private _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3017,true];};
+    if ((count (toArray(_msg))) > 400) exitWith {hint localize 'STR_CELLMSG_LIMITEXCEEDED';ctrlShow[3017,true];};
 
     [_msg,name player,2,mapGridPosition player,player] remoteExecCall ['TON_fnc_clientMessage',-2];
     call life_fnc_cellphone;
-    hint format [localize 'STR_CELLMSG_ToPerson',_to,_msg];
+    hint format [localize 'STR_CELLMSG_ToPerson',The Admins,_msg];
     ctrlShow[3017,true];
 ";
 //Admin To One Person

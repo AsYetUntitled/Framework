@@ -20,10 +20,6 @@ private _headgear = ["H_Cap_tan", "H_Cap_blk", "H_Cap_blk_CMMG", "H_Cap_brn_SPEC
              "H_Bandanna_surfer", "H_Beret_blk", "H_Beret_red", "H_Beret_grn", "H_TurbanO_blk", "H_StrawHat",
              "H_StrawHat_dark", "H_Hat_blue", "H_Hat_brown", "H_Hat_camo", "H_Hat_grey", "H_Hat_checker", "H_Hat_tan"];
 
-private _headCount = count _headgear;
-
-private _clothes = ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_redwhite","U_C_Poloshirt_salmon","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_HunterBody_grn"];
-
 if (isServer) then
 {
     BIS_randomSeed1 = [];
@@ -31,13 +27,13 @@ if (isServer) then
     
     //Hotfix patch, We don't want players getting a 'random' hat, just our NPC's
     _this setVariable ["BIS_randomSeed1",3,true];
-    private _rnd2 = floor random _headCount;
+    private _rnd2 = floor random (count _headgear);
     _this setVariable ["BIS_randomSeed2", _rnd2, true];
 
     //Random clothing for our NPC's to add a bit of spice.
     if (local _this && !isPlayer _this) then
     {
-        _this addUniform (selectRandom _clothes);
+        _this addUniform (selectRandom ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_redwhite","U_C_Poloshirt_salmon","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_HunterBody_grn"]);
     };
 };
 

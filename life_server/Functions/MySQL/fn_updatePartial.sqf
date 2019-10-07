@@ -71,7 +71,7 @@ switch (_mode) do {
             "",
             ["_value1",[],[[]]]
         ];
-        _value1 = if (count _value1 isEqualTo 3) then {_value2} else {[0,0,0]};
+        _value1 = if (count _value1 isEqualTo 3) then {_value} else {[0,0,0]};
         [format ["UPDATE players SET civ_alive='%1', civ_position='%2' WHERE pid='%3'", [_value] call DB_fnc_bool, [_value1] call DB_fnc_mresArray, _uid],1] call DB_fnc_asyncCall;
     };
 

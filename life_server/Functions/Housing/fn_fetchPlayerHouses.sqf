@@ -12,32 +12,25 @@ params [
     ["_uid","",[""]]
 ];
 if (_uid isEqualTo "") exitWith {};
-
+private ["_position","_house","_trunk","_direction","_container","_gear","_currentPos","_items","_mags","_weapons","_backpacks"];
 private _containerss = [];
 {
-    private _position = call compile format ["%1",_x select 1];
-    private _house = nearestObject [_position, "House"];
-    private _direction = call compile format ["%1",_x select 5];
-    private _trunk = [_x select 3] call DB_fnc_mresToArray;
+    _position = call compile format ["%1",_x select 1];
+    _house = nearestObject [_position, "House"];
+    _direction = call compile format ["%1",_x select 5];
+    _trunk = [_x select 3] call DB_fnc_mresToArray;
     if (_trunk isEqualType "") then {_trunk = call compile format ["%1", _trunk];};
-    private _gear = [_x select 4] call DB_fnc_mresToArray;
+    _gear = [_x select 4] call DB_fnc_mresToArray;
     if (_gear isEqualType "") then {_gear = call compile format ["%1", _gear];};
-    private _container = createVehicle [_x select 2,[0,0,999],[],0,"NONE"];
+    _container = createVehicle [_x select 2,[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_container" && {!isNull _container}};
     _containerss = _house getVariable ["containers",[]];
     _containerss pushBack _container;
     _container allowDamage false;
     _container setPosATL _position;
     _container setVectorDirAndUp _direction;
-    //Fix position for more accurate positioning
-    private _posX = _position select 0;
-    private _posY = _position select 1;
-    private _posZ = _position select 2;
-    private _currentPos = getPosATL _container;
-    private _fixX = (_currentPos select 0) - _posX;
-    private _fixY = (_currentPos select 1) - _posY;
-    private _fixZ = (_currentPos select 2) - _posZ;
-    _container setPosATL [(_posX - _fixX), (_posY - _fixY), (_posZ - _fixZ)];
+    _currentPos = getPosATL _container;
+    _container setPosATL [((_position select 0) - ((_currentPos select 0) - _posX)), ((_position select 1) - ((_currentPos select 1) - _posY)), ((_position select 2) - ((_currentPos select 2) - _posZ))];
     _container setVectorDirAndUp _direction;
     _container setVariable ["Trunk",_trunk,true];
     _container setVariable ["container_owner",[_x select 0],true];
@@ -47,10 +40,10 @@ private _containerss = [];
     clearMagazineCargoGlobal _container;
     clearBackpackCargoGlobal _container;
     if (count _gear > 0) then {
-        private _items = _gear select 0;
-        private _mags = _gear select 1;
-        private _weapons = _gear select 2;
-        private _backpacks = _gear select 3;
+        _items = _gear select 0;
+        _mags = _gear select 1;
+        _weapons = _gear select 2;
+        _backpacks = _gear select 3;
         for "_i" from 0 to ((count (_items select 0)) - 1) do {
             _container addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
         };
