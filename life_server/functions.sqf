@@ -130,7 +130,7 @@ compileFinal "
 
     [_msg,name player,5,mapGridPosition player,player] remoteExecCall ['TON_fnc_clientMessage',independent];
     call life_fnc_cellphone;
-    hint format [localize 'STR_CELLMSG_ToEMS',EMS Units,_msg];
+    hint format [localize 'STR_CELLMSG_ToEMS','EMS Units',_msg];
     ctrlShow[3022,true];
 ";
 //To One Person
@@ -162,7 +162,7 @@ compileFinal "
 
     [_msg,name player,1,mapGridPosition player,player] remoteExecCall ['TON_fnc_clientMessage',-2];
     call life_fnc_cellphone;
-    hint format [localize 'STR_CELLMSG_ToPerson',The Police,_msg];
+    hint format [localize 'STR_CELLMSG_ToPerson','The Police',_msg];
     ctrlShow[3016,true];
 ";
 //To All Admins
@@ -176,7 +176,7 @@ compileFinal "
 
     [_msg,name player,2,mapGridPosition player,player] remoteExecCall ['TON_fnc_clientMessage',-2];
     call life_fnc_cellphone;
-    hint format [localize 'STR_CELLMSG_ToPerson',The Admins,_msg];
+    hint format [localize 'STR_CELLMSG_ToPerson','The Admins',_msg];
     ctrlShow[3017,true];
 ";
 //Admin To One Person
