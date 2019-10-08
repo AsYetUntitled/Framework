@@ -8,13 +8,9 @@
 */
 params [
     ["_vid",-1,[0]],
-    ["_pid","",[""]],
-    ["_sp",2500,[0]],
-    ["_unit",objNull,[objNull]],
-    ["_type","",[""]]
+    ["_pid","",[""]]
 ];
 
-if (_vid isEqualTo -1 || {_pid isEqualTo "" || _sp isEqualTo 0 || isNull _unit || _type isEqualTo ""}) exitWith {};
-_unit = owner _unit;
+if (_vid isEqualTo -1 || {_pid isEqualTo ""}) exitWith {};
 
 [format ["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,_vid],1] call DB_fnc_asyncCall;

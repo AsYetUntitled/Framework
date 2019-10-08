@@ -11,7 +11,7 @@ publicVariable "TON_fnc_terrainSort";
 TON_fnc_index =
 compileFinal "
     params [
-        ['_item','',['']],
+        ['_item',Any Value,[]],
         ['_stack',[],[[]]]
     ];
     _stack findIf {_item in _x};
