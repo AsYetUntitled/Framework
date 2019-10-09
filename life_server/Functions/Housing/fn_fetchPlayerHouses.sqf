@@ -58,7 +58,7 @@ private _containerss = [];
         };
     };
     _house setVariable ["containers",_containerss,true];
-} forEach [format ["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
+} forEach ([format ["SELECT pid, pos, classname, inventory, gear, dir, id FROM containers WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall);
 
 private _return = [];
 {
