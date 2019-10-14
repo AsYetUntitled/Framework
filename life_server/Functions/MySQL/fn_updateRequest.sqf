@@ -15,6 +15,7 @@ params [
     ["_licenses",[],[[]]],
     ["_gear",[],[[]]],
     ["_stats",[100,100],[[]]],
+    "",
     ["_alive",false,[true]],
     ["_position",[],[[]]]
 ];
