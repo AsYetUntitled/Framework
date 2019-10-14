@@ -58,7 +58,7 @@ _queryResult set[2,[(_queryResult select 2)] call DB_fnc_numberSafe];
 _queryResult set[3,[(_queryResult select 3)] call DB_fnc_numberSafe];
 
 //Parse licenses (Always index 6)
-private _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
+private _new = [_queryResult select 6] call DB_fnc_mresToArray;
 if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
 _queryResult set[6,_new];
 
@@ -70,7 +70,7 @@ for "_i" from 0 to (count _old)-1 do {
 
 _queryResult set[6,_old];
 
-_new = [(_queryResult select 8)] call DB_fnc_mresToArray;
+_new = [_queryResult select 8] call DB_fnc_mresToArray;
 if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
 _queryResult set[8,_new];
 //Parse data for specific side.
@@ -79,12 +79,12 @@ switch (_side) do {
         _queryResult set[9,([_queryResult select 9,1] call DB_fnc_bool)];
 
         //Parse Stats
-        _new = [(_queryResult select 10)] call DB_fnc_mresToArray;
+        _new = [_queryResult select 10] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _queryResult set[10,_new];
 
         //Playtime
-        _new = [(_queryResult select 11)] call DB_fnc_mresToArray;
+        _new = [_queryResult select 11] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         private _index = TON_fnc_playtime_values_request find [_uid, _new];
         if (_index != -1) then {
@@ -107,12 +107,12 @@ switch (_side) do {
 
         //Position
         _queryResult set[10,([_queryResult select 10,1] call DB_fnc_bool)];
-        _new = [(_queryResult select 11)] call DB_fnc_mresToArray;
+        _new = [_queryResult select 11] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _queryResult set[11,_new];
 
         //Playtime
-        _new = [(_queryResult select 12)] call DB_fnc_mresToArray;
+        _new = [_queryResult select 12] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         private _index = TON_fnc_playtime_values_request find [_uid, _new];
         if (_index != -1) then {
@@ -125,20 +125,22 @@ switch (_side) do {
         [_uid,_new select 2] call TON_fnc_setPlayTime;
 
         /* Make sure nothing else is added under here */
-        waitUntil {scriptDone (_uid spawn TON_fnc_fetchPlayerHouses)};
+        private _handle = _uid spawn TON_fnc_fetchPlayerHouses;
+        waitUntil {scriptDone _handle};
         _queryResult pushBack (missionNamespace getVariable [format ["houses_%1",_uid],[]]);
-        waitUntil{scriptDone (_uid spawn TON_fnc_queryPlayerGang)};
+        _handle = _uid spawn TON_fnc_queryPlayerGang;
+        waitUntil{scriptDone _handle};
         _queryResult pushBack (missionNamespace getVariable [format ["gang_%1",_uid],[]]);
     };
 
     case independent: {
         //Parse Stats
-        _new = [(_queryResult select 9)] call DB_fnc_mresToArray;
+        _new = [_queryResult select 9] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _queryResult set[9,_new];
 
         //Playtime
-        _new = [(_queryResult select 10)] call DB_fnc_mresToArray;
+        _new = [_queryResult select 10] call DB_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         private _index = TON_fnc_playtime_values_request find [_uid, _new];
         if !(_index isEqualTo -1) then {

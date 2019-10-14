@@ -64,6 +64,6 @@ private _return = [];
 {
     (nearestObject [(call compile format ["%1",_x select 1]), "House"]) allowDamage false;
     _return pushBack [_x select 1];
-} forEach [format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall;
+} forEach ([format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid],2,true] call DB_fnc_asyncCall);
 
 missionNamespace setVariable [format ["houses_%1",_uid],_return];
