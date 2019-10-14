@@ -18,7 +18,6 @@ params [
     ["_alive",false,[true]],
     ["_position",[],[[]]]
 ];
-
 //Get to those error checks.
 if (_uid isEqualTo "" || {_name isEqualTo ""}) exitWith {};
 
@@ -26,7 +25,6 @@ if (_uid isEqualTo "" || {_name isEqualTo ""}) exitWith {};
 for "_i" from 0 to count(_licenses)-1 do {
     _licenses set [_i,[(_licenses select _i) select 0,[(_licenses select _i) select 1] call DB_fnc_bool]];
 };
-
 //PLAYTIME
 private _playtime_update = [];
 {
@@ -36,10 +34,11 @@ private _playtime_update = [];
     };
 } forEach TON_fnc_playtime_values_request;
 
+_playtime_update = (_playtime_update select 0) select 0;
 switch (_side) do {
-    case west: {(_playtime_update select 0) select 0 set[0,[_uid] call TON_fnc_getPlayTime];};
-    case civilian: {(_playtime_update select 0) select 0 set[2,[_uid] call TON_fnc_getPlayTime];};
-    case independent: {(_playtime_update select 0) select 0 set[1,[_uid] call TON_fnc_getPlayTime];};
+    case west: {_playtime_update set [0,[_uid] call TON_fnc_getPlayTime];};
+    case civilian: {_playtime_update set [2,[_uid] call TON_fnc_getPlayTime];};
+    case independent: {_playtime_update set [1,[_uid] call TON_fnc_getPlayTime];};
 };
 
 switch (_side) do {
