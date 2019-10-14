@@ -9,6 +9,7 @@
 params [
     ["_uid","",[""]],
     ["_side",sideUnknown,[civilian]],
+    "",
     ["_mode",-1,[0]]
 ];
 

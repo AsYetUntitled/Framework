@@ -8,7 +8,7 @@
 
 params [
     ["_uid","",[""]],
-    ["_side",sideUnknown,[civilian]],
+    ["_side","",[""]],
     ["_type","",[""]],
     ["_className","",[""]],
     ["_color",-1,[0]],

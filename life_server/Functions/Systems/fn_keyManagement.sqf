@@ -37,10 +37,10 @@ switch (_mode) do {
             ["_input",objNull,[objNull]]
         ];
         if (isNull _input || _input isKindOf "House") exitWith {};
-        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side], ((missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]]) pushBack _input) - [objNull]];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side], (((missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]]) pushBack _input) - [objNull])];
     };
 
     case 2: {
-        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side], (missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]]) - [objNull]];
+        missionNamespace setVariable [format ["%1_KEYS_%2",_uid,_side], ((missionNamespace getVariable [format ["%1_KEYS_%2",_uid,_side],[]]) - [objNull])];
     };
 };

@@ -16,10 +16,8 @@ private ["_uid","_plate"];
 if (isNull _vehicle || isNull _unit) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 private _vInfo = _vehicle getVariable ["dbInfo",[]];
 if (count _vInfo > 0) then {
-    _vInfo params [
-        ["_uid","",[""]],
-        ["_plate",0,[0]]
-    ];
+    _uid = _vInfo select 0;
+    _plate = _vInfo select 1;
 };
 
 // save damage.
