@@ -6,10 +6,21 @@
     Description:
     Main function for item effects and functionality through the player menu.
 */
-private "_item";
 disableSerialization;
 if ((lbCurSel 2005) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
-_item = CONTROL_DATA(2005);
+private _item = CONTROL_DATA(2005);
+
+if !(M_CONFIG(getNumber,"VirtualItems",_item,"edible") isEqualTo -1) exitWith {
+    if ([false,_item,1] call life_fnc_handleInv) then {
+        private _val = M_CONFIG(getNumber,"VirtualItems",_item,"edible");
+        private _sum = life_hunger + _val;
+
+        life_hunger = (_sum max 5) min 100; //never below 5 or above 100
+
+        [] call life_fnc_p_updateMenu;
+        [] call life_fnc_hudUpdate;
+    };
+};
 
 switch (true) do {
     case (_item in ["waterBottle","coffee","redgull"]): {
