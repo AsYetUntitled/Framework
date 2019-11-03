@@ -1,46 +1,76 @@
+#include "..\..\script_macros.hpp"
 /*
     File: fn_startLoadout.sqf
     Author: Casperento
 
     Description:
-    Loads a custom loadout on player
+    Loads a custom loadout on player when he got a new life
 */
-private _loadOutCfg = getArray(missionConfigFile >> "Loadouts" >> str(side player) >> "loadOut");
+private _pCloth = M_CONFIG(getArray,"Loadouts",str(playerSide),"cloth");
+private _pVest = M_CONFIG(getArray,"Loadouts",str(playerSide),"vest");
+private _pBackpack = M_CONFIG(getArray,"Loadouts",str(playerSide),"backpack");
+private _pWeapon = M_CONFIG(getArray,"Loadouts",str(playerSide),"weapon");
+private _pMagazines = M_CONFIG(getArray,"Loadouts",str(playerSide),"mags");
+private _pItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"items");
+private _linkedItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"linkedItems");
 
-_loadOutCfg params [
-    ["_pCloth","",["",[]]],
-    "_pVest",
-    "_pBackpack",
-    "_pWeapon",
-    ["_pMagazines",[],[[]]],
-    ["_pItems",[],[[]]]
-];
-
-private _commonItems = getArray(missionConfigFile >> "Loadouts" >> "commonItems");
-
-_pCloth = if (_pCloth isEqualType [] && !(_pCloth isEqualTo [])) then {selectRandom _pCloth} else {_pCloth};
-if !(life_is_arrested) then {
-    if !(_pCloth isEqualTo "") then {player addUniform _pCloth;};
+if !(_pCloth isEqualTo []) then {
+    if (playerSide isEqualTo civilian) then {
+        _pCloth = (selectRandom _pCloth);
+        if (!(_x isEqualTo []) && !((_pCloth select 0) isEqualTo "") && ([(_pCloth select 1)] call life_fnc_levelCheck)) then {
+            player addUniform (_pCloth select 0);
+        };
+    } else {
+        _pCloth apply {
+            if (!(_x isEqualTo []) && !((_x select 0) isEqualTo "") && ([(_x select 1)] call life_fnc_levelCheck)) then {
+                player addUniform (_x select 0);
+            };
+        };
+    };
 };
-if !(_pVest isEqualTo "") then {player addVest _pVest;};
-if !(_pBackpack isEqualTo "") then {player addBackpack _pBackpack;};
-if !(_pWeapon isEqualTo "") then {player addWeapon _pWeapon;};
-if (_pMagazines isEqualType [] && !(_pMagazines select 0 isEqualTo "") && !(_pMagazines isEqualTo [])) then {
+
+if !(_pVest isEqualTo []) then {
+    _pVest apply {
+        if (!(_x isEqualTo []) && !((_x select 0) isEqualTo "") && ([(_x select 1)] call life_fnc_levelCheck)) then {
+            player addVest (_x select 0);
+        };
+    };
+};
+
+if !(_pBackpack isEqualTo []) then {
+    _pBackpack apply {
+        if (!(_x isEqualTo []) && !((_x select 0) isEqualTo "") && ([(_x select 1)] call life_fnc_levelCheck)) then {
+            player addBackpack (_x select 0);
+        };
+    };
+};
+
+if !(_pWeapon isEqualTo []) then {
+    _pWeapon apply {
+        if (!(_x isEqualTo []) && !((_x select 0) isEqualTo "") && ([(_x select 1)] call life_fnc_levelCheck)) then {
+            player addWeapon (_x select 0);
+        };
+    };
+};
+
+if !(_pMagazines isEqualTo []) then {
     _pMagazines apply {
-        if ((_x select 1) > 0) then {
+        if (!(_x isEqualTo []) && !((_x select 0) isEqualTo "") && (_x select 1) > 0 && ([(_x select 2)] call life_fnc_levelCheck)) then {
             player addMagazines [(_x select 0),(_x select 1)];
         };
     };
 };
+
 if !(_pItems isEqualTo []) then {
-    {
-        if (((_x select 1) > 0) && !((_x select 0) isEqualTo "")) then {
+    _pItems apply {
+        if (!(_x isEqualTo []) && !((_x select 0) isEqualTo "") && (_x select 1) > 0 && ([(_x select 2)] call life_fnc_levelCheck)) then {
             for "_i" from 1 to (_x select 1) step 1 do {player addItem (_x select 0)};
         };
-    } count _pItems;
+    };
 };
-if !(_commonItems isEqualTo []) then {
-    _commonItems apply {
+
+if !(_linkedItems isEqualTo []) then {
+    _linkedItems apply {
         if !(_x isEqualTo "") then {
             player linkItem _x;
         };
