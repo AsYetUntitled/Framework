@@ -2,10 +2,10 @@
     class PLAYERSIDE { // PLAYERSIDE can be: WEST (for cops), CIV (for civ/reb), GUER (for medics), EAST (for opfor)
         // NOTES:
         //     empty array means that nothing will be add on players
-        //     if you put more than a cloth on thev CIV's class, they will be selected randonly,
-        //         otherwise, for the other teams, player will get the cloth related to his level
+        //     if you put more than a uniform on the CIV's class, they will be selected randonly,
+        //         otherwise, for the other teams, player will get the uniform related to his level
 
-        itemType[] = { // itemType can be: cloth, vest, backpack, weapon, items or linkedItems
+        itemType[] = { // itemType can be: uniform, vest, backpack, weapon, items or linkedItems
             { "classname", "conditions" }
         };
     };
@@ -13,7 +13,7 @@
 class Loadouts {
     // COP
     class WEST {
-        cloth[] = {
+        uniform[] = {
             {"U_Rangemaster", "call life_copLevel >= 0"}
         };
         vest[] = {
@@ -36,7 +36,7 @@ class Loadouts {
 
     // CIV
     class CIV {
-        cloth[] = {
+        uniform[] = {
             {"U_C_Poloshirt_blue", "!life_is_arrested"},
             {"U_C_Poloshirt_burgundy", "!life_is_arrested"},
             {"U_C_Poloshirt_stripped", "!life_is_arrested"},
@@ -59,7 +59,7 @@ class Loadouts {
 
     // MED
     class GUER {
-        cloth[] = {
+        uniform[] = {
             {"U_Rangemaster", "call life_medicLevel >= 1"}
         };
         vest[] = {
