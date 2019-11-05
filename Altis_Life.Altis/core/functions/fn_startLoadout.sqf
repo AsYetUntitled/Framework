@@ -16,7 +16,7 @@ private _linkedItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"linkedItems
 
 if !(_pUniform isEqualTo []) then {
     if (playerSide isEqualTo civilian) then {
-        _pUniform = (selectRandom _pUniform);
+        _pUniform = selectRandom _pUniform;
         if (!(_pUniform isEqualTo []) && {!((_pUniform select 0) isEqualTo "") && {([(_pUniform select 1)] call life_fnc_levelCheck)}}) then {
             player addUniform (_pUniform select 0);
         };
