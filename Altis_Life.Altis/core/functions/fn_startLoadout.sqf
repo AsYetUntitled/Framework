@@ -71,8 +71,8 @@ if !(_pItems isEqualTo []) then {
 
 if !(_linkedItems isEqualTo []) then {
     _linkedItems apply {
-        if !(_x isEqualTo "") then {
-            player linkItem _x;
+        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
+            player linkItem (_x select 0);
         };
     };
 };

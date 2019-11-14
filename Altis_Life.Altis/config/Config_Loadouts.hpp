@@ -28,9 +28,9 @@ class Loadouts {
         };
         items[] = {};
         linkedItems[] = {
-            "ItemMap",
-            "ItemCompass",
-            "ItemWatch"
+            {"ItemMap", "call life_copLevel >= 0"},
+            {"ItemCompass", "call life_copLevel >= 0"},
+            {"ItemWatch", "call life_copLevel >= 0"}
         };
     };
 
@@ -51,9 +51,9 @@ class Loadouts {
         mags[] = {};
         items[] = {};
         linkedItems[] = {
-            "ItemMap",
-            "ItemCompass",
-            "ItemWatch"
+            {"ItemMap", ""},
+            {"ItemCompass", ""},
+            {"ItemWatch", ""}
         };
     };
 
@@ -76,9 +76,9 @@ class Loadouts {
             {"FirstAidKit", 2, "call life_medicLevel >= 1"}
         };
         linkedItems[] = {
-            "ItemMap",
-            "ItemCompass",
-            "ItemWatch"
+            {"ItemMap", "call life_medicLevel >= 1"},
+            {"ItemCompass", "call life_medicLevel >= 1"},
+            {"ItemWatch", "call life_medicLevel >= 1"}
         };
     };
 };
