@@ -22,8 +22,7 @@ if (life_is_alive && !life_is_arrested) then {
 } else {
     if (!life_is_alive && !life_is_arrested) then {
         if (LIFE_SETTINGS(getNumber,"save_civilian_positionStrict") isEqualTo 1) then {
-            _handle = [] spawn life_fnc_civLoadout;
-            waitUntil {scriptDone _handle};
+            [] call life_fnc_startLoadout;
             CASH = 0;
             [0] call SOCK_fnc_updatePartial;
         };
