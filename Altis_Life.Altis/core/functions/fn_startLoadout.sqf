@@ -55,7 +55,7 @@ if !(_pWeapon isEqualTo []) then {
 
 if !(_pMagazines isEqualTo []) then {
     _pMagazines apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && (_x select 1) > 0 && {([(_x select 2)] call life_fnc_levelCheck)}}) then {
+        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {{(_x select 1) > 0} && {([(_x select 2)] call life_fnc_levelCheck)}}}) then {
             player addMagazines [(_x select 0),(_x select 1)];
         };
     };
@@ -63,7 +63,7 @@ if !(_pMagazines isEqualTo []) then {
 
 if !(_pItems isEqualTo []) then {
     _pItems apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && (_x select 1) > 0 && {([(_x select 2)] call life_fnc_levelCheck)}}) then {
+        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {{(_x select 1) > 0} && {([(_x select 2)] call life_fnc_levelCheck)}}}) then {
             for "_i" from 1 to (_x select 1) step 1 do {player addItem (_x select 0)};
         };
     };
