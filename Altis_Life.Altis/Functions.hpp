@@ -92,7 +92,6 @@ class Life_Client_Core {
 
     class Civilian {
         file = "core\civilian";
-        class civLoadout {};
         class civMarkers {};
         class demoChargeTimer {};
         class freezePlayer {};
@@ -120,7 +119,6 @@ class Life_Client_Core {
         class containerInvSearch {};
         class copInteractionMenu {};
         class copLights {};
-        class copLoadout {};
         class copMarkers {};
         class copSearch {};
         class copSiren {};
@@ -214,6 +212,7 @@ class Life_Client_Core {
         class revealObjects {};
         class saveGear {};
         class simDisable {};
+        class startLoadout {};
         class stripDownPlayer {};
         class teleport {};
         class whereAmI {};
@@ -276,7 +275,6 @@ class Life_Client_Core {
         file = "core\medical";
         class deathScreen {};
         class medicLights {};
-        class medicLoadout {};
         class medicMarkers {};
         class medicRequest {};
         class medicSiren {};
