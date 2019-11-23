@@ -9,11 +9,11 @@
 disableSerialization;
 if ((lbCurSel 2005) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
 private _item = CONTROL_DATA(2005);
+private _edible = M_CONFIG(getNumber, "VirtualItems", _item, "edible");
 
-if !(M_CONFIG(getNumber,"VirtualItems",_item,"edible") isEqualTo -1) exitWith {
-    if ([false,_item,1] call life_fnc_handleInv) then {
-        private _val = M_CONFIG(getNumber,"VirtualItems",_item,"edible");
-        private _sum = life_hunger + _val;
+if !(_edible isEqualTo -1) exitWith {
+    if ([false, _item, 1] call life_fnc_handleInv) then {
+        private _sum = life_hunger + _edible;
 
         life_hunger = (_sum max 5) min 100; //never below 5 or above 100
 
@@ -23,14 +23,14 @@ if !(M_CONFIG(getNumber,"VirtualItems",_item,"edible") isEqualTo -1) exitWith {
 };
 
 switch (true) do {
-    case (_item in ["waterBottle","coffee","redgull"]): {
-        if ([false,_item,1] call life_fnc_handleInv) then {
+    case (_item in ["waterBottle", "coffee", "redgull"]): {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
             life_thirst = 100;
-            if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1) then {player setFatigue 0;};
-            if (_item isEqualTo "redgull" && {LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1}) then {
+            if (LIFE_SETTINGS(getNumber, "enable_fatigue") isEqualTo 1) then {player setFatigue 0;};
+            if (_item isEqualTo "redgull" && {LIFE_SETTINGS(getNumber, "enable_fatigue") isEqualTo 1}) then {
                 [] spawn {
                     life_redgull_effect = time;
-                    titleText[localize "STR_ISTR_RedGullEffect","PLAIN"];
+                    titleText[localize "STR_ISTR_RedGullEffect", "PLAIN"];
                     player enableFatigue false;
                     waitUntil {!alive player || ((time - life_redgull_effect) > (3 * 60))};
                     player enableFatigue true;
@@ -66,7 +66,7 @@ switch (true) do {
 
     case (_item isEqualTo "spikeStrip"): {
         if (!isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"; closeDialog 0};
-        if ([false,_item,1] call life_fnc_handleInv) then {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
             [] spawn life_fnc_spikeStrip;
             closeDialog 0;
         };
