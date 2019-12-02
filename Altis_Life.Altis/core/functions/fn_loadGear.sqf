@@ -9,7 +9,7 @@
 private _items = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
-if (count _items isEqualTo 0) exitWith {
+if (_items isEqualTo []) exitWith {
     call life_fnc_stripDownPlayer;
 
     switch (playerSide) do {
@@ -37,6 +37,6 @@ player setUnitLoadout _gear;
 life_maxWeight = if (backpack player isEqualTo "") then {LIFE_SETTINGS(getNumber,"total_maxWeight")} else {LIFE_SETTINGS(getNumber,"total_maxWeight") + round(FETCH_CONFIG2(getNumber,"CfgVehicles",(backpack player),"maximumload") / 4)};
 {
     [true,(_x select 0),(_x select 1)] call life_fnc_handleInv;
-} forEach (_vItems);
+} count _vItems;
 
 call life_fnc_playerSkins;
