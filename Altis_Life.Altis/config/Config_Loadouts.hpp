@@ -62,16 +62,10 @@ class Loadouts {
         uniform[] = {
             {"U_Rangemaster", "call life_medicLevel >= 1"}
         };
-        vest[] = {
-            {"V_Rangemaster_belt", "call life_medicLevel >= 1"}
-        };
+        vest[] = {};
         backpack[] = {};
-        weapon[] = {
-            {"hgun_P07_snds_F", "call life_medicLevel >= 1"}
-        };
-        mags[] = {
-            {"16Rnd_9x21_Mag", 1, "call life_medicLevel >= 1"}
-        };
+        weapon[] = {};
+        mags[] = {};
         items[] = {
             {"FirstAidKit", 2, "call life_medicLevel >= 1"}
         };

@@ -18,12 +18,12 @@ if !(_pUniform isEqualTo []) then {
     if (playerSide isEqualTo civilian) then {
         _pUniform = selectRandom _pUniform;
         if (!(_pUniform isEqualTo []) && {!((_pUniform select 0) isEqualTo "") && {([(_pUniform select 1)] call life_fnc_levelCheck)}}) then {
-            player addUniform (_pUniform select 0);
+            player forceAddUniform (_pUniform select 0);
         };
     } else {
         _pUniform apply {
             if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-                player addUniform (_x select 0);
+                player forceAddUniform (_x select 0);
             };
         };
     };
