@@ -6,6 +6,7 @@
     Description:
     Loads a custom loadout on player when he got a new life
 */
+
 private "_cfg";
 private "_index";
 private "_pUniform";
