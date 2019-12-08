@@ -29,6 +29,9 @@ _action = [
 ] call BIS_fnc_guiMessage;
 
 if (_action) then {
+
+    if (gettingBought > 1) exitWith { hint localize "STR_House_CoolDown"; };
+    
     _house setVariable ["house_sold",true,true];
 
     if (life_HC_isActive) then {
@@ -81,3 +84,6 @@ if (_action) then {
     };
     _house setVariable ["containers",nil,true];
 };
+
+sleep 60;
+gettingBought = 0;
