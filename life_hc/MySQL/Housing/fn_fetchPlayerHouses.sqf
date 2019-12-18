@@ -33,6 +33,7 @@ _containerss = [];
     _containerss = _house getVariable ["containers",[]];
     _containerss pushBack _container;
     _container allowDamage false;
+    _container enableRopeAttach false;
     _container setPosATL _position;
     _container setVectorDirAndUp _direction;
     //Fix position for more accurate positioning
