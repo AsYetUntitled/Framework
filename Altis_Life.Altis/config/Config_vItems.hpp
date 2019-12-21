@@ -521,7 +521,7 @@ class VirtualItems {
         buyPrice = 1500;
         sellPrice = 200;
         illegal = false;
-        edible = 100;
+        edible = -1;
         icon = "icons\ico_redgull.paa";
     };
 
@@ -532,7 +532,7 @@ class VirtualItems {
         buyPrice = 10;
         sellPrice = 5;
         illegal = false;
-        edible = 100;
+        edible = -1;
         icon = "icons\ico_coffee.paa";
     };
 
@@ -543,7 +543,7 @@ class VirtualItems {
         buyPrice = 10;
         sellPrice = 5;
         illegal = false;
-        edible = 100;
+        edible = -1;
         icon = "icons\ico_waterBottle.paa";
     };
 
