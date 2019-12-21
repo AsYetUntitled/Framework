@@ -97,7 +97,7 @@ if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
 };
 
 life_fnc_RequestClientId = player;
-publicVariableServer "life_fnc_RequestClientId"; 
+publicVariableServer "life_fnc_RequestClientId";
 
 /*
     https://feedback.bistudio.com/T117205 - disableChannels settings cease to work when leaving/rejoining mission
