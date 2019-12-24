@@ -17,7 +17,6 @@ if ((lbCurSel 2005) isEqualTo -1) exitWith {
 private _item = CONTROL_DATA(2005);
 private _edible = M_CONFIG(getNumber, "VirtualItems", _item, "edible");
 private _drinkable = M_CONFIG(getNumber, "VirtualItems", _item, "drinkable");
-private _handled = false;
 
 if (_edible > -1 || _drinkable > -1) exitWith {
     if ([false, _item, 1] call life_fnc_handleInv) then {
