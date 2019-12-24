@@ -1,4 +1,5 @@
 #include "..\..\script_macros.hpp"
+
 /*
     File: fn_useItem.sqf
     Author: Bryan "Tonic" Boardwine
@@ -6,6 +7,7 @@
     Description:
     Main function for item effects and functionality through the player menu.
 */
+
 disableSerialization;
 
 if ((lbCurSel 2005) isEqualTo -1) exitWith {
@@ -17,8 +19,7 @@ private _edible = M_CONFIG(getNumber, "VirtualItems", _item, "edible");
 private _drinkable = M_CONFIG(getNumber, "VirtualItems", _item, "drinkable");
 private _handled = false;
 
-if (_edible > -1 || _drinkable > -1) {
-    _handled = true;
+if (_edible > -1 || _drinkable > -1) exitWith {
     if ([false, _item, 1] call life_fnc_handleInv) then {
         if (_edible > -1) then {
             private _sum = life_hunger + _edible;
@@ -44,10 +45,7 @@ if (_edible > -1 || _drinkable > -1) {
             };
         };
     };
-};
 
-// IFF already handled the item as edible/drinkable -> exit
-if (_handled) exitWith {
     [] call life_fnc_p_updateMenu;
     [] call life_fnc_hudUpdate;
 };
