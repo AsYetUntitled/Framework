@@ -28,6 +28,8 @@ _action = [
 
 if (_action) then {
 
+    if (gettingBought > 1) exitWith { hint localize "STR_House_CoolDown"; };
+
     if (life_HC_isActive) then {
         [_uid,_house,1] remoteExec ["HC_fnc_houseGarage",HC_Life];
     } else {
@@ -40,3 +42,6 @@ if (_action) then {
     _house setVariable ["garageBought",false,true];
 
 };
+
+sleep 60;
+gettingBought = 0;

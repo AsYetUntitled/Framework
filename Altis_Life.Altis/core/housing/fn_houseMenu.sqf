@@ -114,7 +114,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
 } else {
     if (isClass (missionConfigFile >> "Garages" >> worldName >> (typeOf _curTarget))) then {
         _Btn1 ctrlSetText localize "STR_pInAct_SellGarage";
-        _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouse; closeDialog 0;";
+        _Btn1 buttonSetAction "gettingBought = gettingBought + 1; diag_log gettingBought; closeDialog 0; [life_pInact_curTarget] spawn life_fnc_sellHouse;";
         _Btn1 ctrlShow true;
 
         if !(((_curTarget getVariable "house_owner") select 0) isEqualTo getPlayerUID player) then {
@@ -130,7 +130,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
         _Btn3 ctrlShow true;
     } else {
         _Btn1 ctrlSetText localize "STR_pInAct_SellHouse";
-        _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouse; closeDialog 0;";
+        _Btn1 buttonSetAction "gettingBought = gettingBought + 1; diag_log gettingBought; closeDialog 0; [life_pInact_curTarget] spawn life_fnc_sellHouse;";
         _Btn1 ctrlShow true;
 
         if (((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {
@@ -156,7 +156,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
         if (getNumber (missionConfigFile >> "Housing" >> worldName >> (typeOf _curTarget) >> "canGarage") isEqualTo 1 && {!(_curTarget getVariable ["blacklistedGarage",false])}) then {
             if (_curTarget getVariable ["garageBought",false]) then {
                 _Btn4 ctrlSetText localize "STR_pInAct_SellGarage";
-                _Btn4 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouseGarage; closeDialog 0;";
+                _Btn4 buttonSetAction "gettingBought = gettingBought + 1; diag_log gettingBought; closeDialog 0; [life_pInact_curTarget] spawn life_fnc_sellHouseGarage;";
                 _Btn4 ctrlShow true;
 
                 if (((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {

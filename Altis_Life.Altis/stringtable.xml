@@ -6330,6 +6330,18 @@
         </Key>
     </Package>
     <Package name="Housing_Strings">
+        <Key ID="STR_House_CoolDown">
+            <Original>You can only sell a house every 60 seconds.</Original>
+            <Czech>Dům můžete prodat pouze každých 60 sekund.</Czech>
+            <Spanish>Solo puedes vender una casa cada 60 segundos.</Spanish>
+            <Russian>Вы можете продавать дом только каждые 60 секунд.</Russian>
+            <German>Du kannst ein Haus nur alle 60 Sekunden verkaufen.</German>
+            <French>Vous ne pouvez vendre une maison que toutes les 60 secondes.</French>
+            <Italian>Puoi vendere una casa solo ogni 60 secondi.</Italian>
+            <Portuguese>Você só pode vender uma casa a cada 60 segundos.</Portuguese>
+            <Polish>Możesz sprzedać dom tylko co 60 sekund.</Polish>
+			<Chinesesimp>您每60秒只能卖出一栋房子。</Chinesesimp>
+        </Key>
         <Key ID="STR_House_ContainerError">
             <Original>Error saving container, couldn't locate house?</Original>
             <Czech>Chyba při ukládání kontejner, nemohl najít dům?</Czech>
