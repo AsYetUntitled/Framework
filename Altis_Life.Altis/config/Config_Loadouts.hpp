@@ -1,35 +1,78 @@
-class LifeStartupLoadouts {
-    commonItens[] = {"ItemMap","ItemCompass","ItemWatch"}; //Common link items between sides
+/*
+    class PLAYERSIDE { // PLAYERSIDE can be: WEST (for cops), CIV (for civ/reb), GUER (for medics), EAST (for opfor)
+        // NOTES:
+        //     empty array means that nothing will be add on players
+        //     if you put more than a uniform on the CIV's class, they will be selected randonly,
+        //         otherwise, for the other teams, player will get the uniform related to his level
+
+        itemType[] = { // itemType can be: uniform, vest, backpack, weapon, items or linkedItems
+            { "classname", "conditions" }
+        };
+    };
+*/
+class Loadouts {
+    // COP
     class WEST {
-        life_loadOutItens[] = {
-            "U_Rangemaster", //Uniform - empty ("" or {""} or {}) will load nothing...Otherwise, use "" for a unique uniform or {"",""} for a randomly selected uniform
-            "V_Rangemaster_belt", //Vest - empty ("") will load nothing
-            "", //Backpack - empty ("") will load nothing
-            "hgun_P07_snds_F", //Weapon - empty ("") will load nothing
-            {"16Rnd_9x21_Mag",6}, //Mags, amount - empty ("",0) will load nothing
-            {} //Specific items to be loaded on player - empty ({}) will load nothing...Otherwise, {"ItemName", Amount}
+        uniform[] = {
+            {"U_Rangemaster", "call life_copLevel >= 0"}
+        };
+        vest[] = {
+            {"V_Rangemaster_belt", "call life_copLevel >= 0"}
+        };
+        backpack[] = {};
+        weapon[] = {
+            {"hgun_P07_snds_F", "call life_copLevel >= 0"}
+        };
+        mags[] = {
+            {"16Rnd_9x21_Mag", 6, "call life_copLevel >= 0"}
+        };
+        items[] = {};
+        linkedItems[] = {
+            {"ItemMap", "call life_copLevel >= 0"},
+            {"ItemCompass", "call life_copLevel >= 0"},
+            {"ItemWatch", "call life_copLevel >= 0"}
         };
     };
 
+    // CIV
     class CIV {
-        life_loadOutItens[] = {
-            {"U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_Poloshirt_salmon","U_C_Poloshirt_redwhite","U_C_Commoner1_1"}, //Uniform - empty ("" or {""}) will load nothing...Otherwise, use "" for a unique uniform or {"",""} for a randomly selected uniform
-            "", //Vest - empty ("") will load nothing
-            "", //Backpack - empty ("") will load nothing
-            "", //Weapon - empty ("") will load nothing
-            {"",0}, //Mags, amount - empty ("",0) will load nothing
-            {} //Specific items to be loaded on player - empty ({}) will load nothing...Otherwise, {"ItemName", Amount}
+        uniform[] = {
+            {"U_C_Poloshirt_blue", "!life_is_arrested"},
+            {"U_C_Poloshirt_burgundy", "!life_is_arrested"},
+            {"U_C_Poloshirt_stripped", "!life_is_arrested"},
+            {"U_C_Poloshirt_tricolour", "!life_is_arrested"},
+            {"U_C_Poloshirt_salmon", "!life_is_arrested"},
+            {"U_C_Poloshirt_redwhite", "!life_is_arrested"},
+            {"U_C_Commoner1_1", "!life_is_arrested"}
+        };
+        vest[] = {};
+        backpack[] = {};
+        weapon[] = {};
+        mags[] = {};
+        items[] = {};
+        linkedItems[] = {
+            {"ItemMap", ""},
+            {"ItemCompass", ""},
+            {"ItemWatch", ""}
         };
     };
 
+    // MED
     class GUER {
-        life_loadOutItens[] = {
-            "U_I_HeliPilotCoveralls", //Uniform - empty ("" or {""}) will load nothing...Otherwise, use "" for a unique uniform or {"",""} for a randomly selected uniform
-            "V_Rangemaster_belt", //Vest - empty ("") will load nothing
-            "", //Backpack - empty ("") will load nothing
-            "hgun_P07_snds_F", //Weapon - empty ("") will load nothing
-            {"16Rnd_9x21_Mag",1}, //Mags, amount - empty ("",0) will load nothing
-            {{"FirstAidKit",2}} //Specific items to be loaded on player - empty ({}) will load nothing...Otherwise, {"ItemName", Amount}
+        uniform[] = {
+            {"U_Rangemaster", "call life_medicLevel >= 1"}
+        };
+        vest[] = {};
+        backpack[] = {};
+        weapon[] = {};
+        mags[] = {};
+        items[] = {
+            {"FirstAidKit", 2, "call life_medicLevel >= 1"}
+        };
+        linkedItems[] = {
+            {"ItemMap", "call life_medicLevel >= 1"},
+            {"ItemCompass", "call life_medicLevel >= 1"},
+            {"ItemWatch", "call life_medicLevel >= 1"}
         };
     };
 };

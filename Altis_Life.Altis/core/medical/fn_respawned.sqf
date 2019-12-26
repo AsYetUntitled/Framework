@@ -25,7 +25,7 @@ player setVariable ["Revive",nil,true];
 player setVariable ["name",nil,true];
 player setVariable ["Reviving",nil,true];
 
-[] call life_fnc_startupLoadout;
+[] call life_fnc_startLoadout;
 
 //Cleanup of weapon containers near the body & hide it.
 if (!isNull life_corpse) then {
