@@ -44,8 +44,6 @@ diag_log "[Life Client] Server loading completed ";
 waitUntil {life_session_completed};
 0 cutText[localize "STR_Init_ClientFinish","BLACK FADED",99999999];
 
-[] spawn life_fnc_escInterupt;
-
 switch (playerSide) do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
@@ -80,14 +78,7 @@ diag_log "[Life Client] Executing client.fsm";
 
 0 cutText ["","BLACK IN"];
 
-[] spawn {
-    for "_i" from 0 to 1 step 0 do {
-        waitUntil {(!isNull (findDisplay 49)) && {(!isNull (findDisplay 602))}}; // Check if Inventory and ESC dialogs are open
-        (findDisplay 49) closeDisplay 2; // Close ESC dialog
-        (findDisplay 602) closeDisplay 2; // Close Inventory dialog
-    };
-};
-
+[missionNamespace,"OnGameInterrupt",{_this call life_fnc_onGameInterrupt}] call BIS_fnc_addScriptedEventHandler;
 addMissionEventHandler ["EachFrame", life_fnc_playerTags];
 addMissionEventHandler ["EachFrame", life_fnc_revealObjects];
 
