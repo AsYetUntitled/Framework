@@ -24,13 +24,8 @@ class CfgFunctions
         {
             file = "\life_hc\MySQL\General";
             class asyncCall {};
-            class bool {};
             class insertRequest {};
             class insertVehicle {};
-            class mresArray {};
-            class mresString {};
-            class mresToArray {};
-            class numberSafe {};
             class queryRequest {};
             class updatePartial {};
             class updateRequest {};
@@ -53,6 +48,7 @@ class CfgFunctions
             class addHouse {};
             class deleteDBContainer {};
             class fetchPlayerHouses {};
+            class houseCleanup {};
             class sellHouse {};
             class sellHouseContainer {};
             class updateHouseContainers {};
