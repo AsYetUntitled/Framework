@@ -48,10 +48,10 @@ if (_extDBNotLoaded isEqualType []) then {
 
 if (_extDBNotLoaded isEqualType []) exitWith {}; //extDB3-HC did not fully initialize so terminate the rest of the initialization process.
 
-["resetLifeVehicles", 1] call DB_fnc_asyncCall;
-["deleteDeadVehicles", 1] call DB_fnc_asyncCall;
-["deleteOldHouses", 1] call DB_fnc_asyncCall;
-["deleteOldGangs", 1] call DB_fnc_asyncCall;
+["resetLifeVehicles", 1] call HC_fnc_asyncCall;
+["deleteDeadVehicles", 1] call HC_fnc_asyncCall;
+["deleteOldHouses", 1] call HC_fnc_asyncCall;
+["deleteOldGangs", 1] call HC_fnc_asyncCall;
 
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
