@@ -86,7 +86,6 @@ HC_MPAllowedFuncs = [
     "hc_fnc_addhouse",
     "hc_fnc_deletedbcontainer",
     "hc_fnc_fetchplayerhouses",
-    "hc_fnc_housecleanup",
     "hc_fnc_sellhouse",
     "hc_fnc_sellhousecontainer",
     "hc_fnc_updatehousecontainers",

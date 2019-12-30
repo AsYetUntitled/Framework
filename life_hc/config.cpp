@@ -48,7 +48,6 @@ class CfgFunctions
             class addHouse {};
             class deleteDBContainer {};
             class fetchPlayerHouses {};
-            class houseCleanup {};
             class sellHouse {};
             class sellHouseContainer {};
             class updateHouseContainers {};
