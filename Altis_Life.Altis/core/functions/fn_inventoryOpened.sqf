@@ -46,3 +46,11 @@ private _list = ["LandVehicle", "Ship", "Air"];
         true breakOut "main";
     };
 } count [_container, _secContainer];
+
+[] spawn {
+    private _startTime = time;
+    waitUntil {!(isNull (findDisplay 49)) || time > (_startTime + 2.5)};
+    if !(isNull (findDisplay 49)) then {
+        (findDisplay 49) closeDisplay 2; //close Esc dialog
+    };
+};
