@@ -16,5 +16,5 @@ if (_groupID isEqualTo -1) exitWith {};
 [format ["UPDATE gangs SET active='0' WHERE id='%1'",_groupID],1] call HC_fnc_asyncCall;
 
 [_group] remoteExecCall ["life_fnc_gangDisbanded",(units _group)];
-uiSleep 5;
+waitUntil {(units _group) isEqualTo []};
 deleteGroup _group;
