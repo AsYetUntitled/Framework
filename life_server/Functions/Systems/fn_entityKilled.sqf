@@ -10,6 +10,7 @@ params [
 ];
 
 if (isPlayer _killed) then {
+    if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 0) exitWith {};
     private _killedName = name _killed;
     private _killerName = name _killer;
     private _message = format ["Death Message: %1 has killed %2", _killerName, _killedName];
