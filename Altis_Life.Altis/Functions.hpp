@@ -178,7 +178,7 @@ class Life_Client_Core {
         class checkMap {};
         class clearVehicleAmmo {};
         class dropItems {};
-        class escInterupt {};
+        class onGameInterrupt {};
         class fetchCfgDetails {};
         class fetchDeadGear {};
         class fetchVehInfo {};
