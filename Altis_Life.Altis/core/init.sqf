@@ -78,7 +78,6 @@ diag_log "[Life Client] Executing client.fsm";
 
 0 cutText ["","BLACK IN"];
 
-[missionNamespace,"OnGameInterrupt",{_this call life_fnc_onGameInterrupt}] call BIS_fnc_addScriptedEventHandler;
 addMissionEventHandler ["EachFrame", life_fnc_playerTags];
 addMissionEventHandler ["EachFrame", life_fnc_revealObjects];
 
