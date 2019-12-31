@@ -13,6 +13,7 @@ if (isNull _group) exitWith {};
 _groupID = _group getVariable ["gang_id",-1];
 if (_groupID isEqualTo -1) exitWith {};
 
+_group setVariable ["gang_owner",nil,true];
 [format ["UPDATE gangs SET active='0' WHERE id='%1'",_groupID],1] call DB_fnc_asyncCall;
 
 [_group] remoteExecCall ["life_fnc_gangDisbanded",(units _group)];
