@@ -87,16 +87,16 @@ CREATE TABLE IF NOT EXISTS `players` (
     `civ_gear`     TEXT NOT NULL,
     `cop_gear`     TEXT NOT NULL,
     `med_gear`     TEXT NOT NULL,
-    `civ_stats`    VARCHAR(25) NOT NULL DEFAULT '"[100,100,0]"',
-    `cop_stats`    VARCHAR(25) NOT NULL DEFAULT '"[100,100,0]"',
-    `med_stats`    VARCHAR(25) NOT NULL DEFAULT '"[100,100,0]"',
+    `civ_stats`    VARCHAR(25) NOT NULL DEFAULT '[100,100,0]',
+    `cop_stats`    VARCHAR(25) NOT NULL DEFAULT '[100,100,0]',
+    `med_stats`    VARCHAR(25) NOT NULL DEFAULT '[100,100,0]',
     `arrested`     TINYINT NOT NULL DEFAULT 0,
     `adminlevel`   ENUM('0','1','2','3','4','5')  NOT NULL DEFAULT '0',
     `donorlevel`   ENUM('0','1','2','3','4','5')  NOT NULL DEFAULT '0',
     `blacklist`    TINYINT NOT NULL DEFAULT 0,
     `civ_alive`    TINYINT NOT NULL DEFAULT 0,
-    `civ_position` VARCHAR(32) NOT NULL DEFAULT '"[]"',
-    `playtime`     VARCHAR(32) NOT NULL DEFAULT '"[0,0,0]"',
+    `civ_position` VARCHAR(32) NOT NULL DEFAULT '[]',
+    `playtime`     VARCHAR(32) NOT NULL DEFAULT '[0,0,0]',
     `insert_time`  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `last_seen`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
@@ -105,6 +105,7 @@ CREATE TABLE IF NOT EXISTS `players` (
     INDEX `index_name` (`name`),
     INDEX `index_blacklist` (`blacklist`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- --------------------------------------------------------
 

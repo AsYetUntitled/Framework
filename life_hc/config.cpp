@@ -24,13 +24,8 @@ class CfgFunctions
         {
             file = "\life_hc\MySQL\General";
             class asyncCall {};
-            class bool {};
             class insertRequest {};
             class insertVehicle {};
-            class mresArray {};
-            class mresString {};
-            class mresToArray {};
-            class numberSafe {};
             class queryRequest {};
             class updatePartial {};
             class updateRequest {};
