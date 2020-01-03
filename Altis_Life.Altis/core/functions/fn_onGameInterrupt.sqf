@@ -43,5 +43,5 @@ if (_conditions) then {
         _abortButton ctrlEnable true;
     };
 } else {
-	_respawnButton ctrlEnable false;	
+    _respawnButton ctrlEnable false;    
 };
