@@ -35,7 +35,6 @@ life_corpse setVariable ["name",nil,true];
 deleteVehicle life_corpse;
 
 life_action_inUse = false;
-life_is_alive = true;
 
 player setVariable ["Revive",nil,true];
 player setVariable ["name",nil,true];
