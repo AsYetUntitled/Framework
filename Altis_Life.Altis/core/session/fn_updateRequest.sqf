@@ -6,7 +6,6 @@
     Description:
     Passes ALL player information to the server to save player data to the database.
 */
-private ["_packet","_array","_flag","_alive","_position"];
 private _packet = [player,CASH,BANK];
 private _array = [];
 

@@ -10,26 +10,25 @@
 */
 
 params [
-    ["_uid", "", [""]],
-    ["_name", "", [""]],
-    ["_side", sideUnknown, [civilian]],
+    ["_unit",objNull,[objNull]],
     ["_cash", 0, [0]],
     ["_bank", 5000, [0]],
     ["_licenses", [], [[]]],
     ["_gear", [], [[]]],
     ["_stats", [100,100],[[]]],
-    ["_arrested", false, [true]],
-    ["_alive", false, [true]],
-    ["_position", [], [[]]]
+    ["_arrested", false, [true]]
 ];
 
 //Get to those error checks.
-if (_uid isEqualTo "" || {_name isEqualTo ""}) exitWith {};
+if (isNull _unit) exitWith {};
 
 //Setup some data.
-_position = if (_side isEqualTo civilian) then {_position} else {[]};
+private _uid = getPlayerUID _unit;
+private _name = name _unit;
+private _side = side _unit;
+private _alive = alive _unit;
+private _position = if (_side isEqualTo civilian && {alive _unit}) then {getPosATL _unit} else {[]};
 _arrested = [0, 1] select _arrested;
-_alive = [0, 1] select _alive;
 
 for "_i" from 0 to (count _licenses) -1 do {
     (_licenses select _i) params ["_license", "_owned"];
@@ -54,7 +53,7 @@ switch (_side) do {
 
 private _query = switch (_side) do {
     case west: {format ["updateWest:%1:%2:%3:%4:%5:%6:%7:%8", _name, _cash, _bank, _gear, _licenses, _stats, _playtime_update, _uid];};
-    case civilian: {format ["updateCiv:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11", _name, _cash, _bank, _licenses, _gear, _arrested, _stats, _alive, _position, _playtime_update, _uid];};
+    case civilian: {format ["updateCiv:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10", _name, _cash, _bank, _licenses, _gear, _arrested, _stats, _position, _playtime_update, _uid];};
     case independent: {format ["updateIndep:%1:%2:%3:%4:%5:%6:%7:%8", _name, _cash, _bank, _licenses, _gear, _stats, _playtime_update, _uid];};
 };
 
