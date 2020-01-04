@@ -16,7 +16,6 @@ private _topButton = _display displayCtrl 2;
 
 _abortButton ctrlEnable false;
 _abortButton buttonSetAction "call SOCK_fnc_updateRequest; [player] remoteExec [""TON_fnc_cleanupRequest"",2];";
-_respawnButton ctrlEnable false;
 _fieldManual ctrlEnable false;
 _saveButton ctrlEnable false;
 
@@ -43,4 +42,6 @@ if (_conditions) then {
         _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
         _abortButton ctrlEnable true;
     };
+} else {
+    _respawnButton ctrlEnable false;    
 };
