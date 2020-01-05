@@ -67,8 +67,6 @@ player setVariable ["playerSurrender", false, true];
 player setVariable ["realname", profileName, true];
 
 diag_log "[Life Client] Past Settings Init";
-[] execFSM "core\fsm\client.fsm";
-diag_log "[Life Client] Executing client.fsm";
 
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 [player, life_settings_enableSidechannel, playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
