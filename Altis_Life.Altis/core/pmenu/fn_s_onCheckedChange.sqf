@@ -7,8 +7,8 @@
     Switching it up and making it prettier..
 */
 params [
-	["_option","",[""]],
-	["_state",0,[0]]
+    ["_option","",[""]],
+    ["_state",0,[0]]
 ];
 if (_option isEqualTo "") exitWith {};
 
