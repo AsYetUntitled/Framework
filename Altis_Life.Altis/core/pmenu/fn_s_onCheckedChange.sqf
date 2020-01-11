@@ -6,18 +6,20 @@
     Description:
     Switching it up and making it prettier..
 */
-private ["_option","_state"];
-_option = _this select 0;
-_state = _this select 1;
+params [
+	["_option","",[""]],
+	["_state",0,[0]]
+];
+if (_option isEqualTo "") exitWith {};
 
-switch (_option) do {
+switch _option do {
     case "tags": {
         if (_state isEqualTo 1) then {
-            life_settings_tagson = true;
             profileNamespace setVariable ["life_settings_tagson",true];
+            LIFE_ID_PlayerTags = addMissionEventHandler ["EachFrame", life_fnc_playerTags];
         } else {
-            life_settings_tagson = false;
             profileNamespace setVariable ["life_settings_tagson",false];
+            removeMissionEventHandler ["EachFrame",LIFE_ID_PlayerTags];
         };
     };
 

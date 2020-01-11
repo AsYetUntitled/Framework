@@ -78,7 +78,9 @@ diag_log "[Life Client] Executing client.fsm";
 
 0 cutText ["","BLACK IN"];
 
-addMissionEventHandler ["EachFrame", life_fnc_playerTags];
+if (profileNamespace getVariable ["life_settings_revealObjects",true]) then {
+    LIFE_ID_PlayerTags = addMissionEventHandler ["EachFrame", life_fnc_playerTags];
+};
 if (profileNamespace getVariable ["life_settings_revealObjects",true]) then {
     LIFE_ID_RevealObjects = addMissionEventHandler ["EachFrame", life_fnc_revealObjects];
 };
