@@ -51,9 +51,9 @@ private _fnc_paycheck = {
         private _paycheck = call life_paycheck;
         if (player distance (getMarkerPos "fed_reserve") < 120 && playerSide isEqualTo west) then {
             systemChat format [localize "STR_ReceivedPay",[_paycheck + 1500] call life_fnc_numberText];
-            life_atmbank = life_atmbank + _paycheck + 1500;
+            BANK = BANK + _paycheck + 1500;
         } else {
-            life_atmbank = life_atmbank + _paycheck;
+            BANK = BANK + _paycheck;
             systemChat format [localize "STR_ReceivedPay",[_paycheck] call life_fnc_numberText];
         };
     } else {
