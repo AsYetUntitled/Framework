@@ -214,7 +214,7 @@ class Life_Settings {
     };
     
     /* ! --- Do not change --- ! */
-    framework_version = "5.0.0";
+    framework_version = "6.0.0";
     /* ------------------------- */
     
 };
