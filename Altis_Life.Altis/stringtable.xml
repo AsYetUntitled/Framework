@@ -10221,8 +10221,8 @@
 			<Chinesesimp>你的库存</Chinesesimp>
         </Key>
     </Package>
-    <Package name="FSM_Strings">
-        <Key ID="STR_FSM_Paycheck">
+    <Package name="Pay_Strings">
+        <Key ID="STR_Paycheck">
             <Original>You will receive your next paycheck in %1 minutes.</Original>
             <Czech>Obdržíte svůj další výplatní pásku v %1 minut.</Czech>
             <Spanish>Recibiras tu siguiente pago en %1 minutos</Spanish>
@@ -10234,7 +10234,7 @@
             <Polish>Otrzymasz kolejną wypłatę w ciągu %1 minut.</Polish>
 			<Chinesesimp>你将在 %1 分钟后收到你的下一张薪水支票。</Chinesesimp>
         </Key>
-        <Key ID="STR_FSM_MissedPay">
+        <Key ID="STR_MissedPay">
             <Original>You have missed a paycheck because you were dead.</Original>
             <Czech>Jste vynechal výplatu, protože jste byli mrtví.</Czech>
             <Spanish>Te has perdido un pago por estar muerto.</Spanish>
@@ -10246,7 +10246,7 @@
             <Polish>Ominęła cię wypłata ponieważ byłeś martwy.</Polish>
 			<Chinesesimp>因为你死了，你错过了薪水。</Chinesesimp>
         </Key>
-        <Key ID="STR_FSM_ReceivedPay">
+        <Key ID="STR_ReceivedPay">
             <Original>You have received a paycheck of $%1.</Original>
             <Czech>Dostali jste výplatu ve výši $ %1.</Czech>
             <Spanish>Has recibido un pago de $%1</Spanish>

@@ -46,9 +46,26 @@ _fnc_water = {
     };
 };
 
+private _fnc_paycheck = {
+    if (alive player) then {
+        private _paycheck = call life_paycheck;
+        if (player distance (getMarkerPos "fed_reserve") < 120 && playerSide isEqualTo west) then {
+            systemChat format [localize "STR_ReceivedPay",[_paycheck + 1500] call life_fnc_numberText];
+            BANK = BANK + _paycheck + 1500;
+        } else {
+            BANK = BANK + _paycheck;
+            systemChat format [localize "STR_ReceivedPay",[_paycheck] call life_fnc_numberText];
+        };
+    } else {
+        systemChat localize "STR_MissedPay";
+    };
+};
+
 //Setup the time-based variables.
 _foodTime = time;
 _waterTime = time;
+private _paycheckTime = time;
+private _paycheckPeriod = (getNumber(missionConfigFile >> "Life_Settings" >> "paycheck_period")) * 60;
 _walkDis = 0;
 _bp = "";
 _lastPos = visiblePosition player;
@@ -59,6 +76,7 @@ for "_i" from 0 to 1 step 0 do {
     /* Thirst / Hunger adjustment that is time based */
     if ((time - _waterTime) > 600 && {!life_god}) then {[] call _fnc_water; _waterTime = time;};
     if ((time - _foodTime) > 850 && {!life_god}) then {[] call _fnc_food; _foodTime = time;};
+    if ((time - _paycheckTime) > _paycheckPeriod) then {[] call _fnc_paycheck; _paycheckTime = time};
 
     /* Adjustment of carrying capacity based on backpack changes */
     if (backpack player isEqualTo "") then {
