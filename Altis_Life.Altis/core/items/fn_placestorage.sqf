@@ -19,6 +19,7 @@ detach _container;
 [_container,true] remoteExecCall ["life_fnc_simDisable",RANY];
 _container setPosATL [getPosATL _container select 0, getPosATL _container select 1, (getPosATL _container select 2) + 0.7];
 _container allowDamage false;
+_container enableRopeAttach false;
 
 if ((typeOf _container) == "B_supplyCrate_F") then {
     [false,"storagebig",1] call life_fnc_handleInv;
