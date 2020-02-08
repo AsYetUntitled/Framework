@@ -10,7 +10,9 @@
     Description:
     Fetches a specific person from the wanted array.
 */
-params [ ["_unit",objNull,[objNull]] ];
+params [
+    ["_unit",objNull,[objNull]]
+];
 if (isNull _unit) exitWith {[]};
 
 private _uid = getPlayerUID _unit;
