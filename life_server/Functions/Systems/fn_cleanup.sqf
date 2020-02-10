@@ -7,40 +7,22 @@
     Server-side cleanup script on vehicles.
     Sort of a lame way but whatever. Yep someone should look at it!
 */
-private "_deleted";
-_deleted = false;
 for "_i" from 0 to 1 step 0 do {
-    private ["_veh","_units","_fuel"];
     uiSleep (60 * 60);
     {
-        _protect = false;
-        _veh = _x;
-        _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
-        _fuel = 1;
-
-        if (!isNil {_veh getVariable "NPC"} && {_veh getVariable "NPC"}) then {_protect = true;};
+        private _veh = _x;
+        private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
+        private _fuel = (if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {fuel _veh} else {1});
+        private _protect = _veh getVariable ["NPC",false];
 
         if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
-            if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {_fuel = (fuel _veh);};
-            _dbInfo = _veh getVariable ["dbInfo",[]];
-            _units = {(_x distance _veh < 300)} count playableUnits;
-            if (count crew _x isEqualTo 0) then {
-                switch (true) do {
-                    case ((_x getHitPointDamage "HitEngine") > 0.7 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitLFWheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitLF2Wheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitRFWheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case ((_x getHitPointDamage "HitRF2Wheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
-                    case (_units isEqualTo 0): {deleteVehicle _x; _deleted = true;};
-                };
-            };
+            private _dbInfo = _veh getVariable ["dbInfo",[]];
+            private _units = {(_x distance _veh < 300)} count playableUnits;
 
-            if (_deleted) then {
+            if (count crew _x isEqualTo 0 && {_units isEqualTo 0}) then {
+                deleteVehicle _x;
                 waitUntil {isNull _veh};
-                _deleted = false;
-            };
 
-            if (isNull _veh) then {
                 if (count _dbInfo > 0) then {
                     _uid = _dbInfo select 0;
                     _plate = _dbInfo select 1;
@@ -55,9 +37,9 @@ for "_i" from 0 to 1 step 0 do {
 
     uiSleep (3 * 60); //3 minute cool-down before next cycle.
     {
-        if ((typeOf _x) in ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F", "Land_Can_V3_F","Land_Money_F","Land_Suitcase_F"]) then {
+        if (!isNil {_x getVariable "item"}) then {
             deleteVehicle _x;
-        };
+        }
     } forEach (allMissionObjects "Thing");
 
     uiSleep (2 * 60);
