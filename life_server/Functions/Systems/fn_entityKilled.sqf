@@ -6,9 +6,9 @@
     Called when an entity dies
 */
 params [
-    ["_killed", objNull, [objNull],
-    ["_killer", objNull, [objNull],
-    ["_instigator", objNull, [objNull],
+    ["_killed", objNull, [objNull]],
+    ["_killer", objNull, [objNull]],
+    ["_instigator", objNull, [objNull]],
     ["_useEffects", true, [true]]
 ];
 
