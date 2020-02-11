@@ -25,7 +25,7 @@ if (isPlayer _killed) exitWith {
     if (isNull _instigator) exitWith {
         private _vehicle = vehicle _killer;
         private _vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-        _instigator = UAVControl _vehicle select 0;
+        (UAVControl _vehicle) params ["_instigator"];
 
         if !(isNull _instigator) exitWith {
             diag_log format ["death_log: UAV Death Message: %1 has knocked down %2 with a %3", name _instigator, _killedName, _vehicleName];
@@ -64,14 +64,18 @@ if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
         private _delay = LIFE_SETTINGS(getNumber,"dead_vehicles_despawn_delay");
         private _minUnitDistance = LIFE_SETTINGS(getNumber,"dead_vehicles_max_units_distance");
 
-        [_killed, _startTime, _delay] spawn {
+        [_killed, _startTime, _delay, _minUnitDistance] spawn {
             params [
                 "_killed",
                 "_startTime",
-                "_delay"
+                "_delay",
+                "_minUnitDistance"
             ];
 
-            waitUntil {uiSleep 1;  (count nearestObjects [_killed, ["CAManBase"], _minUnitDistance] < 0) || {serverTime - _startTime >= _delay}};
+            waitUntil {
+                uiSleep 1;
+                ((nearestObjects [_killed, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1) || {serverTime - _startTime >= _delay}
+            };
             deleteVehicle _killed;
         };
     };
