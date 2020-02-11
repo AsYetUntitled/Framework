@@ -12,28 +12,25 @@ params [
     ["_useEffects", true, [true]]
 ];
 
-//Player Death
 if (isPlayer _killed) exitWith {
     if (LIFE_SETTINGS(getNumber,"player_deathLog") isEqualTo 0) exitWith {};
     private _killedName = name _killed;
 
-    //Suicide
     if (_killed isEqualTo _killer) exitWith {
         diag_log format ["death_log: Suicide Message: %1 committed suicide (or disconnected)", _killedName];
     };
 
-    //Roadkill
+    //instigator is null -> indicated Roadkill
+    //reference: https://community.bistudio.com/wiki/Arma_3:_Event_Handlers/addMissionEventHandler#EntityKilled
     if (isNull _instigator) exitWith {
         private _vehicle = vehicle _killer;
         private _vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
         _instigator = UAVControl _vehicle select 0;
 
-        // UAV/UGV player operated road kill
         if !(isNull _instigator) exitWith {
             diag_log format ["death_log: UAV Death Message: %1 has knocked down %2 with a %3", name _instigator, _killedName, _vehicleName];
         };
 
-        // player driven vehicle road kill
         _instigator = _killer;
         if (_vehicle isKindOf "Air") exitWith {
             diag_log format ["death_log: Aircraft Death Message: %1 has obliterated %2 with a %3", name _instigator, _killedName, _vehicleName];
@@ -41,7 +38,6 @@ if (isPlayer _killed) exitWith {
         diag_log format ["death_log: Vehicle Death Message: %1 has knocked down %2 with a %3", name _instigator, _killedName, _vehicleName];
     };
 
-    //player kill
     private _weaponName = getText(configFile >> "cfgWeapons" >> (currentWeapon _instigator) >> "displayName");
     private _distance = floor(_killer distance _killed);
 
@@ -50,7 +46,6 @@ if (isPlayer _killed) exitWith {
 
 private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _killed) >> "vehicleClass");
 
-//vehicle destroy
 if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
     private _dbInfo = _killed getVariable ["dbInfo",[]];
 
@@ -69,8 +64,15 @@ if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
         private _delay = LIFE_SETTINGS(getNumber,"dead_vehicles_despawn_delay");
         private _minUnitDistance = LIFE_SETTINGS(getNumber,"dead_vehicles_max_units_distance");
 
-        //wait before despawning until no units near or delay
-        waitUntil {uiSleep 1; isNull (nearestObject [_killed, ["Man"], _minUnitDistance]) || {serverTime - _startTime >= _delay}};
-        deleteVehicle _killed;
+        [_killed, _startTime, _delay] spawn {
+            params [
+                "_killed",
+                "_startTime",
+                "_delay"
+            ];
+
+            waitUntil {uiSleep 1;  (count nearestObjects [_killed, ["CAManBase"], _minUnitDistance] < 0) || {serverTime - _startTime >= _delay}};
+            deleteVehicle _killed;
+        };
     };
 };
