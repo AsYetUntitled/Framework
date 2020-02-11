@@ -5,7 +5,6 @@
 
     Description:
     Server-side cleanup script on vehicles.
-    Sort of a lame way but whatever. Yep someone should look at it!
 */
 for "_i" from 0 to 1 step 0 do {
     uiSleep (60 * 60);
@@ -17,13 +16,14 @@ for "_i" from 0 to 1 step 0 do {
 
         if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
             private _dbInfo = _veh getVariable ["dbInfo",[]];
-            private _units = {(_x distance _veh < 300)} count playableUnits;
+            private _noUnitsNear = ((nearestObjects [_killed, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1);
 
-            if (count crew _x isEqualTo 0 && {_units isEqualTo 0}) then {
+            if (count crew _x isEqualTo 0 && {_noUnitsNear}) then {
                 deleteVehicle _x;
-                waitUntil {isNull _veh};
 
                 if (count _dbInfo < 1) exitWith {};
+
+                waitUntil {uiSleep 1; isNull _veh};
 
                 _dbInfo params [
                     "_uid",
@@ -38,7 +38,6 @@ for "_i" from 0 to 1 step 0 do {
         true
     } count vehicles;
 
-    uiSleep (3 * 60); //3 minute cool-down before next cycle.
     {
         if (!isNil {_x getVariable "item"}) then {
             deleteVehicle _x;
@@ -46,9 +45,15 @@ for "_i" from 0 to 1 step 0 do {
         true
     } count (allMissionObjects "Thing");
 
-    uiSleep (2 * 60);
     {
         deleteVehicle _x;
         true
     } count (allMissionObjects "GroundWeaponHolder");
+
+    {
+        if (local _x && {units _x isEqualTo []}) then {
+            deleteGroup _x;
+        };
+        true
+    } count allGroups;
 };
