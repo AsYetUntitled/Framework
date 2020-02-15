@@ -31,11 +31,10 @@ if (isPlayer _killed) exitWith {
             diag_log format ["death_log: UAV Death Message: %1 has knocked down %2 with a %3", name _instigator, _killedName, _vehicleName];
         };
 
-        _instigator = _killer;
         if (_vehicle isKindOf "Air") exitWith {
-            diag_log format ["death_log: Aircraft Death Message: %1 has obliterated %2 with a %3", name _instigator, _killedName, _vehicleName];
+            diag_log format ["death_log: Aircraft Death Message: %1 has obliterated %2 with a %3", name _killer, _killedName, _vehicleName];
         };
-        diag_log format ["death_log: Vehicle Death Message: %1 has knocked down %2 with a %3", name _instigator, _killedName, _vehicleName];
+        diag_log format ["death_log: Vehicle Death Message: %1 has knocked down %2 with a %3", name _killer, _killedName, _vehicleName];
     };
 
     private _weaponName = getText(configFile >> "cfgWeapons" >> (currentWeapon _instigator) >> "displayName");
@@ -60,16 +59,13 @@ if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
     };
 
     if (!isNull _killed) then {
-        private _startTime = serverTime;
-        private _delay = LIFE_SETTINGS(getNumber,"dead_vehicles_despawn_delay");
-        private _minUnitDistance = LIFE_SETTINGS(getNumber,"dead_vehicles_max_units_distance");
 
-        [_killed, _startTime, _delay, _minUnitDistance] spawn {
+        [_killed] spawn {
+            private _startTime = serverTime;
+            private _delay = LIFE_SETTINGS(getNumber,"dead_vehicles_despawn_delay");
+            private _minUnitDistance = LIFE_SETTINGS(getNumber,"dead_vehicles_max_units_distance");
             params [
-                "_killed",
-                "_startTime",
-                "_delay",
-                "_minUnitDistance"
+                ["_killed", objNull, [objNull]]
             ];
 
             waitUntil {
