@@ -59,7 +59,7 @@ if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
         [_query,1] spawn DB_fnc_asyncCall;
     };
 
-    if (!isNil "_killed" && {!isNull _killed}) then {
+    if (!isNull _killed) then {
         private _startTime = serverTime;
         private _delay = LIFE_SETTINGS(getNumber,"dead_vehicles_despawn_delay");
         private _minUnitDistance = LIFE_SETTINGS(getNumber,"dead_vehicles_max_units_distance");
