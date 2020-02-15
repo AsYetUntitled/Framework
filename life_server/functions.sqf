@@ -14,7 +14,7 @@ compileFinal "
         ""_item"",
         [""_stack"",[],[[]]]
     ];
-    
+
     _stack findIf {_item in _x};
 ";
 
@@ -56,7 +56,9 @@ compileFinal "
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
     if (player isEqualTo _unit && (group player) == _group) then {
         life_my_gang = objNull;
-        [player] joinSilent (createGroup civilian);
+        private _newGroup = createGroup civilian;
+        _newGroup deleteGroupWhenEmpty true;
+        [player] joinSilent _newGroup;
         hint localize ""STR_GNOTF_KickOutGang"";
     };
 ";
@@ -103,7 +105,10 @@ compileFinal "
     if (isNil ""_unit"" || isNil ""_group"") exitWith {};
     if (player isEqualTo _unit && (group player) == _group) then {
         life_my_gang = objNull;
-        [player] joinSilent (createGroup civilian);
+
+        private _newGroup = createGroup civilian;
+        _newGroup deleteGroupWhenEmpty true;
+        [player] joinSilent _newGroup;
         hint localize ""STR_GNOTF_LeaveGang"";
     };
 ";
