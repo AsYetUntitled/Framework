@@ -20,6 +20,9 @@ class Life_Settings {
     dead_vehicles_despawn_delay = 30; //delay in seconds before despawning dead vehicles
     dead_vehicles_max_units_distance = 300; //maximum distance between wreck and nearest player before despawning (vehicle despawns anyway after specified delay!)
 
+    /* Cleanup */
+    vehicles_despawn_max_distance = 1000; //maximum distance between a vehicle and the nearest player, before server puts it back to garage
+
 /* Database Related Settings */
     /* Player Data Saving */
     save_virtualItems = true; //Save Virtual items (all sides)?

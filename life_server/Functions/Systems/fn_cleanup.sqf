@@ -6,24 +6,27 @@
     Description:
     Server-side cleanup script on vehicles.
 */
+private _saveFuel = LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1;
+private _minUnitDistance = LIFE_SETTINGS(getNumber,"vehicles_despawn_max_distance");
+
 for "_i" from 0 to 1 step 0 do {
     uiSleep (60 * 60);
     {
-        private _veh = _x;
-        private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "vehicleClass");
-        private _fuel = (if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {fuel _veh} else {1});;
-        private _protect = _veh getVariable ["NPC",false];
+        private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "vehicleClass");
+        private _protect = _x getVariable ["NPC",false];
 
         if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
-            private _dbInfo = _veh getVariable ["dbInfo",[]];
-            private _noUnitsNear = ((nearestObjects [_veh, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1);
+            private _noUnitsNear = ((nearestObjects [_x, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1);
 
-            if (count crew _x isEqualTo 0 && {_noUnitsNear}) then {
+            if (crew _x isEqualTo [] && {_noUnitsNear}) then {
+                private _fuel = if (_saveFuel) then {fuel _x} else {1});
+                private _dbInfo = _x getVariable "dbInfo";
+
                 deleteVehicle _x;
 
-                if (count _dbInfo < 1) exitWith {};
+                if (isNil "_dbInfo") exitWith {};
 
-                waitUntil {uiSleep 1; isNull _veh};
+                waitUntil {uiSleep 1; isNull _x};
 
                 _dbInfo params [
                     "_uid",
