@@ -56,7 +56,7 @@ if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
         ];
 
         private _query = format ["deleteVehicle:%1:%2", _uid, _plate];
-        [_query,1] spawn DB_fnc_asyncCall;
+        [_query,1] call DB_fnc_asyncCall;
     };
 
     if (!isNull _killed) then {
