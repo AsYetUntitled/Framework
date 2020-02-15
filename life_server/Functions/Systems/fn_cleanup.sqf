@@ -19,7 +19,7 @@ for "_i" from 0 to 1 step 0 do {
             private _noUnitsNear = ((nearestObjects [_x, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1);
 
             if (crew _x isEqualTo [] && {_noUnitsNear}) then {
-                private _fuel = if (_saveFuel) then {fuel _x} else {1});
+                private _fuel = if (_saveFuel) then {fuel _x} else {1};
                 private _dbInfo = _x getVariable "dbInfo";
 
                 deleteVehicle _x;
