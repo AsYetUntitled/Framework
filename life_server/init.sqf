@@ -143,7 +143,6 @@ fed_bank setVariable ["safe",count playableUnits,true];
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
-[] call compile preprocessFileLineNumbers "\life_server\functions.sqf";
 
 /* Set OwnerID players for Headless Client */
 TON_fnc_requestClientID =
@@ -179,6 +178,8 @@ TON_fnc_playtime_values_request = [];
 //Just incase the Headless Client connects before anyone else
 publicVariable "TON_fnc_playtime_values";
 publicVariable "TON_fnc_playtime_values_request";
+
+publicVariable "TON_fnc_terrainSort";
 
 
 /* Setup the federal reserve building(s) */

@@ -21,6 +21,32 @@ class SpyGlass {
     };
 };
 
+class Tonic {
+    tag = "TON";
+    class Functions {
+        file = "core\functions\TON";
+        class clientGangKick {};
+        class clientGangLeader {};
+        class clientGangLeft {};
+        class clientGetKey {};
+        class clientMessage {};
+        class index {};
+        class isNumber {};
+        class player_query {};
+    };
+
+    class cellphone {
+        tag = "TON_cell";
+        file = "core\functions\TON\cell";
+        class adminmsg {};
+        class adminmsgall {};
+        class emsrequest {};
+        class textadmin {};
+        class textcop {};
+        class textmsg {};
+    };
+};
+
 class Life_Client_Core {
     tag = "life";
 
