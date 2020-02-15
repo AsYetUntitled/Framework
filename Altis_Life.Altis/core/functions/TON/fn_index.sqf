@@ -2,7 +2,7 @@
     File: fn_index.sqf
     Author: Bryan "Tonic" Boardwine
 
-    Description: TODO
+    Description: return index of _item in _stack
 */
 params [
     "_item",
