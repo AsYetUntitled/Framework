@@ -45,11 +45,4 @@ for "_i" from 0 to 1 step 0 do {
         };
         true
     } count (allMissionObjects "Thing");
-
-    {
-        if (local _x && {units _x isEqualTo []}) then {
-            deleteGroup _x;
-        };
-        true
-    } count allGroups;
 };

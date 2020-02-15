@@ -52,6 +52,7 @@ switch (playerSide) do {
     case civilian: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
         [] call life_fnc_initCiv;
+        (group player) deleteGroupWhenEmpty true;
     };
     case independent: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
