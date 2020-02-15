@@ -19,7 +19,7 @@ for "_i" from 0 to 1 step 0 do {
 
         if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
             private _dbInfo = _veh getVariable ["dbInfo",[]];
-            private _noUnitsNear = ((nearestObjects [_killed, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1);
+            private _noUnitsNear = ((nearestObjects [_veh, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1);
 
             if (count crew _x isEqualTo 0 && {_noUnitsNear}) then {
                 deleteVehicle _x;
@@ -33,8 +33,8 @@ for "_i" from 0 to 1 step 0 do {
                     "_plate"
                 ];
 
-                _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _plate];
-                [_query, 1] call DB_fnc_asyncCall;
+                private _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _plate];
+                [_query, 1] call HC_fnc_asyncCall;
             };
         };
     } forEach vehicles;
@@ -45,11 +45,6 @@ for "_i" from 0 to 1 step 0 do {
         };
         true
     } count (allMissionObjects "Thing");
-
-    {
-        deleteVehicle _x;
-        true
-    } count (allMissionObjects "GroundWeaponHolder");
 
     {
         if (local _x && {units _x isEqualTo []}) then {
