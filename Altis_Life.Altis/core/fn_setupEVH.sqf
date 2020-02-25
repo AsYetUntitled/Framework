@@ -14,8 +14,8 @@ player addEventHandler ["InventoryClosed", {_this call life_fnc_inventoryClosed}
 player addEventHandler ["InventoryOpened", {_this call life_fnc_inventoryOpened}];
 player addEventHandler ["HandleRating", {0}];
 
-player addEventHandler ["GetInMan", {_this call life_fnc_vehicleChanged}];
-player addEventHandler ["GetOutMan", {_this call life_fnc_vehicleChanged}];
+player addEventHandler ["GetInMan", {_this call life_fnc_getInMan}];
+player addEventHandler ["GetOutMan", {_this call life_fnc_getOutMan}];
 
 addMissionEventHandler ["Map", {_this call life_fnc_checkMap}];
 
