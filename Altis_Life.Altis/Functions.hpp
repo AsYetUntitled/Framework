@@ -215,6 +215,7 @@ class Life_Client_Core {
         class startLoadout {};
         class stripDownPlayer {};
         class teleport {};
+        class vehicleChanged {};
         class whereAmI {};
         class moveIn {};
     };
