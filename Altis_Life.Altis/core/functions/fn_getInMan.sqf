@@ -1,9 +1,9 @@
 /*
-    File: fn_vehicleChanged.sqf
+    File: fn_getInMan.sqf
     Author: blackfisch
 
     Description:
-    handles player switching vehicles
+    handles player entering vehicle
 */
 params [
     ["_unit", objNull, [objNull]],

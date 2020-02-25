@@ -183,6 +183,8 @@ class Life_Client_Core {
         class fetchDeadGear {};
         class fetchVehInfo {};
         class isDamaged {};
+        class getInMan {};
+        class getOutMan {};
         class giveDiff {};
         class handleDamage {};
         class handleInv {};
@@ -215,7 +217,6 @@ class Life_Client_Core {
         class startLoadout {};
         class stripDownPlayer {};
         class teleport {};
-        class vehicleChanged {};
         class whereAmI {};
         class moveIn {};
     };
