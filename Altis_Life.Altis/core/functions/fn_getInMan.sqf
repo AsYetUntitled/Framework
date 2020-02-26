@@ -3,7 +3,7 @@
     Author: blackfisch
 
     Description:
-    handles player entering vehicle
+    Handles player entering a vehicle.
 */
 params [
     ["_unit", objNull, [objNull]],
