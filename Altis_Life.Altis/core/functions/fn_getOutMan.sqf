@@ -3,7 +3,7 @@
     Author: blackfisch
 
     Description:
-    handles player leaving vehicle
+    Handles player leaving a vehicle.
 */
 params [
     ["_unit", objNull, [objNull]],
