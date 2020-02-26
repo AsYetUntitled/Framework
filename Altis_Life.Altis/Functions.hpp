@@ -190,7 +190,6 @@ class Life_Client_Core {
         class handleInv {};
         class handleItem {};
         class hideObj {};
-        class hudSetup {};
         class hudUpdate {};
         class inventoryClosed {};
         class inventoryOpened {};
