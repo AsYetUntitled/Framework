@@ -168,11 +168,13 @@ def main():
     args = parser.parse_args()
 
     # Allow running from root directory as well as from inside the tools directory
-    rootDir = "../addons"
-    if (os.path.exists("addons")):
-        rootDir = "addons"
+    rootDir = "../Framework"
+    if (os.path.exists("Framework")):
+        rootDir = "Framework"
 
     for root, dirnames, filenames in os.walk(rootDir + '/' + args.module):
+      if ".git" in root:
+        continue
       for filename in fnmatch.filter(filenames, '*.sqf'):
         sqf_list.append(os.path.join(root, filename))
 
