@@ -1,5 +1,5 @@
 /*
-    File: fn_player_query.sqf
+    File: fn_playerQuery.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

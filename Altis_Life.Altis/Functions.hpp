@@ -32,7 +32,7 @@ class Tonic {
         class clientMessage {};
         class index {};
         class isNumber {};
-        class player_query {};
+        class playerQuery {};
     };
 
     class cellphone {

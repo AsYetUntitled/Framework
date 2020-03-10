@@ -15,5 +15,5 @@ _info = call compile format ["%1", _info];
 
 if (isNil "_info") exitWith {_text ctrlSetText localize "STR_ANOTF_QueryFail";};
 if (isNull _info) exitWith {_text ctrlSetText localize "STR_ANOTF_QueryFail";};
-remoteExecCall ["TON_fnc_player_query",_info];
+remoteExecCall ["TON_fnc_playerQuery",_info];
 _text ctrlSetText localize "STR_ANOTF_Query";
