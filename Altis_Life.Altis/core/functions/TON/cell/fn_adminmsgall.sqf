@@ -4,12 +4,14 @@
 
     Description: send message as admin to all players
 */
-if ((call life_adminlevel) < 1) exitWith {hint localize "STR_CELLMSG_NoAdmin";};
+private _maxLength = getNumber(missionConfigFile >> "Life_Settings" >> "message_maxlength");
 
+if ((call life_adminlevel) < 1) exitWith {hint localize "STR_CELLMSG_NoAdmin";};
 
 ctrlShow[3021,false];
 private _msg = ctrlText 3003;
 if (_msg isEqualTo "") exitWith {hint localize "STR_CELLMSG_EnterMSG";ctrlShow[3021,true];};
+if (_maxLength > -1 && {(count _msg) > _maxLength}) exitWith {hint localize "STR_CELLMSG_LIMITEXCEEDED";ctrlShow[3021,true];};
 
 [_msg,name player,4] remoteExecCall ["TON_fnc_clientMessage",-2];
 call life_fnc_cellphone;
