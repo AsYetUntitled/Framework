@@ -31,6 +31,13 @@ ctrlSetText[3504,format [(localize "STR_MISC_Weight")+ " %1/%2",_veh_data select
 life_trunk_vehicle = _vehicle;
 
 _vehicle spawn {
+    waitUntil {
+		if ((_this getVariable ["trunk_in_use_by",player]) != player) then {closeDialog 0; hint "Another player tried to open the inventory of that vehicle!"};
+		(isNull (findDisplay 3500))
+	};
+};
+
+_vehicle spawn {
     waitUntil {isNull (findDisplay 3500)};
     _this setVariable ["trunk_in_use",false,true];
     if (_this isKindOf "Box_IND_Grenades_F" || _this isKindOf "B_supplyCrate_F") then {
