@@ -17,7 +17,6 @@ _extDBNotLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
-fn_whoDoneIt = compile preprocessFileLineNumbers "\life_server\Functions\Systems\fn_whoDoneIt.sqf";
 
 /*
     Prepare the headless client.
@@ -43,7 +42,7 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
         try {
         _result = EXTDB format ["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
-        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL:%1:TEXT2",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL_CUSTOM:%1:AL.ini",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
     } catch {
         diag_log _exception;
@@ -67,10 +66,10 @@ life_server_extDB_notLoaded = false;
 publicVariable "life_server_extDB_notLoaded";
 
 /* Run stored procedures for SQL side cleanup */
-["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
-["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
-["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
-["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
+["resetLifeVehicles", 1] call DB_fnc_asyncCall;
+["deleteDeadVehicles", 1] call DB_fnc_asyncCall;
+["deleteOldHouses", 1] call DB_fnc_asyncCall;
+["deleteOldGangs", 1] call DB_fnc_asyncCall;
 
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
@@ -80,7 +79,7 @@ diag_log "----------------------------------------------------------------------
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
-        _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";
+        ["updateCivAlive", 1] call DB_fnc_asyncCall;
         [_query,1] call DB_fnc_asyncCall;
     };
 };
@@ -160,8 +159,6 @@ TON_fnc_requestClientID =
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
 
-cleanupFSM = [] execFSM "\life_server\FSM\cleanup.fsm";
-
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
         uiSleep (30 * 60);
@@ -207,6 +204,7 @@ aiSpawn = ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
 server_corpses = [];
 addMissionEventHandler ["EntityRespawned", {_this call TON_fnc_entityRespawned}];
+addMissionEventHandler ["EntityKilled", {_this call TON_fnc_entityKilled}];
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
