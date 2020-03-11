@@ -7,6 +7,7 @@
     Loads a custom loadout on player when he got a new life
 */
 private _pUniform = M_CONFIG(getArray,"Loadouts",str(playerSide),"uniform");
+private _pHeadgear = M_CONFIG(getArray,"Loadouts",str(playerSide),"headgear");
 private _pVest = M_CONFIG(getArray,"Loadouts",str(playerSide),"vest");
 private _pBackpack = M_CONFIG(getArray,"Loadouts",str(playerSide),"backpack");
 private _pWeapon = M_CONFIG(getArray,"Loadouts",str(playerSide),"weapon");
@@ -25,6 +26,14 @@ if !(_pUniform isEqualTo []) then {
             if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
                 player forceAddUniform (_x select 0);
             };
+        };
+    };
+};
+
+if !(_pHeadgear isEqualTo []) then {
+    _pHeadgear apply {
+        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
+            player addHeadgear (_x select 0);
         };
     };
 };
