@@ -13,7 +13,7 @@ disableSerialization;
 
 params [
     ["_ret",objNull,[objNull]],
-    ["_criminal",[],[]]
+    ["_criminal",[],[[]]]
 ];
 
 private _query = format ["selectWantedActive:%1", _criminal select 0];
