@@ -80,7 +80,7 @@ if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "ST
 life_action_inUse = false;
 
 titleText[localize "STR_GNOTF_Captured","PLAIN"];
-private _flagTexture = [
+private _flagTexture = selectRandom [
         "\A3\Data_F\Flags\Flag_red_CO.paa",
         "\A3\Data_F\Flags\Flag_green_CO.paa",
         "\A3\Data_F\Flags\Flag_blue_CO.paa",
@@ -89,7 +89,7 @@ private _flagTexture = [
         "\A3\Data_F\Flags\flag_fd_green_CO.paa",
         "\A3\Data_F\Flags\flag_fd_blue_CO.paa",
         "\A3\Data_F\Flags\flag_fd_orange_CO.paa"
-    ] call BIS_fnc_selectRandom;
+    ];
 _this select 0 setFlagTexture _flagTexture;
 [[0,1],"STR_GNOTF_CaptureSuccess",true,[name player,(group player) getVariable "gang_name"]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 _hideout setVariable ["inCapture",false,true];
