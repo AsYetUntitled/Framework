@@ -32,8 +32,8 @@ life_trunk_vehicle = _vehicle;
 
 _vehicle spawn {
     waitUntil {
-        if ((_this getVariable ["trunk_in_use_by",player]) != player) then {closeDialog 0; hint "Another player tried to open the inventory of that vehicle!"};
-        (isNull (findDisplay 3500))
+        if ((_this getVariable ["trunk_in_use_by",player]) != player) then {closeDialog 0; hint localize "STR_MISC_VehInvUse"};
+        isNull (findDisplay 3500)
     };
 };
 
