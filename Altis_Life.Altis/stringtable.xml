@@ -1564,27 +1564,27 @@
         </Key>
         <Key ID="STR_CELLMSG_NoCops">
             <Original>There are currently no police units available!</Original>
-            <Czech>There are currently no police units available!</Czech>
-            <Spanish>There are currently no police units available!</Spanish>
-            <Russian>There are currently no police units available!</Russian>
+            <Czech>Momentálně nejsou k dispozici žádné policejní jednotky!</Czech>
+            <Spanish>¡Actualmente no hay unidades de policía disponibles!</Spanish>
+            <Russian>В настоящее время нет полицейских подразделений!</Russian>
             <German>Aktuell stehen keine Polizeieinheiten zur Verfügung!</German>
-            <French>There are currently no police units available!</French>
-            <Italian>There are currently no police units available!</Italian>
-            <Portuguese>There are currently no police units available!</Portuguese>
-            <Polish>There are currently no police units available!</Polish>
-            <Chinesesimp>There are currently no police units available!</Chinesesimp>
+            <French>Il n'y a actuellement aucune unité de police disponible!</French>
+            <Italian>Al momento non ci sono unità di polizia disponibili!</Italian>
+            <Portuguese>Actualmente não há unidades policiais disponíveis!</Portuguese>
+            <Polish>Obecnie nie ma żadnych jednostek policyjnych!</Polish>
+            <Chinesesimp>目前没有警用单位!</Chinesesimp>
         </Key>
         <Key ID="STR_CELLMSG_NoMedics">
             <Original>There are currently no EMS units available!</Original>
-            <Czech>There are currently no EMS units available!</Czech>
-            <Spanish>There are currently no EMS units available!</Spanish>
-            <Russian>There are currently no EMS units available!</Russian>
+            <Czech>Momentálně nejsou k dispozici žádné jednotky EMS!</Czech>
+            <Spanish>Actualmente no hay unidades de EMS disponibles!</Spanish>
+            <Russian>В настоящее время нет доступных модулей EMS!</Russian>
             <German>Aktuell stehen keine Sanitäter zur Verfügung!</German>
-            <French>There are currently no EMS units available!</French>
-            <Italian>There are currently no EMS units available!</Italian>
-            <Portuguese>There are currently no EMS units available!</Portuguese>
-            <Polish>There are currently no EMS units available!</Polish>
-            <Chinesesimp>There are currently no EMS units available!</Chinesesimp>
+            <French>Il n'y a actuellement aucune unité EMS disponible !</French>
+            <Italian>Attualmente non ci sono unità EMS disponibili!</Italian>
+            <Portuguese>Não existem actualmente unidades EMS disponíveis!</Portuguese>
+            <Polish>Obecnie nie ma dostępnych jednostek EMS!</Polish>
+            <Chinesesimp>目前没有特快专递单位!</Chinesesimp>
         </Key>
     </Package>
     <Package name="Chop_Shop">
