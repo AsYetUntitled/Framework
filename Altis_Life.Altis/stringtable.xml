@@ -1562,6 +1562,30 @@
             <Polish>Admin Message Sent To All: %2</Polish>
             <Chinesesimp>管理员发送信息到全体: %2</Chinesesimp>
         </Key>
+        <Key ID="STR_CELLMSG_NoCops">
+            <Original>There are currently no police units available!</Original>
+            <Czech>There are currently no police units available!</Czech>
+            <Spanish>There are currently no police units available!</Spanish>
+            <Russian>There are currently no police units available!</Russian>
+            <German>Aktuell stehen keine Polizeieinheiten zur Verfügung!</German>
+            <French>There are currently no police units available!</French>
+            <Italian>There are currently no police units available!</Italian>
+            <Portuguese>There are currently no police units available!</Portuguese>
+            <Polish>There are currently no police units available!</Polish>
+            <Chinesesimp>There are currently no police units available!</Chinesesimp>
+        </Key>
+        <Key ID="STR_CELLMSG_NoMedics">
+            <Original>There are currently no EMS units available!</Original>
+            <Czech>There are currently no EMS units available!</Czech>
+            <Spanish>There are currently no EMS units available!</Spanish>
+            <Russian>There are currently no EMS units available!</Russian>
+            <German>Aktuell stehen keine Sanitäter zur Verfügung!</German>
+            <French>There are currently no EMS units available!</French>
+            <Italian>There are currently no EMS units available!</Italian>
+            <Portuguese>There are currently no EMS units available!</Portuguese>
+            <Polish>There are currently no EMS units available!</Polish>
+            <Chinesesimp>There are currently no EMS units available!</Chinesesimp>
+        </Key>
     </Package>
     <Package name="Chop_Shop">
         <Key ID="STR_ChopShop_Title">

@@ -4,33 +4,19 @@
 
     Description:
         displays a received message
-
-        0 = private message
-        1 = police message
-        2 = message to admin
-        3 = message from admin
-        4 = admin message to all
-        5 = ems message
 */
 params [
     ["_msg", "", [""]],
     ["_from", "", [""]],
-    ["_type", 0, [0]],
+    ["_type", "", [""]],
     ["_loc", "Unknown", [""]]
 ];
 
 if (_from isEqualTo "" || {_msg isEqualTo ""}) exitWith {};
 private _message = "";
 
-switch (_type) do {
-    case 0 : {
-        _message = format [">>>MESSAGE FROM %1: %2",_from,_msg];
-        hint parseText format ["<t color='#FFCC00'><t size='2'><t align='center'>New Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2",_from,_msg];
-
-        ["TextMessage",[format ["You Received A New Private Message From %1",_from]]] call bis_fnc_showNotification;
-    };
-
-    case 1 : {
+switch (toLower _type) do {
+    case "cop" : {
         if !(playerSide isEqualTo west) exitWith {};
         _message = format ["--- 911 DISPATCH FROM %1: %2",_from,_msg];
 
@@ -39,7 +25,16 @@ switch (_type) do {
         ["PoliceDispatch",[format ["A New Police Report From: %1",_from]]] call bis_fnc_showNotification;
     };
 
-    case 2 : {
+    case "med": {
+        if !(playerSide isEqualTo independent) exitWith {};
+
+        _message = format ["!!! EMS REQUEST: %1",_msg];
+        hint parseText format ["<t color='#FFCC00'><t size='2'><t align='center'>EMS Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><t color='#33CC33'>Coords: <t color='#ffffff'>%2<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%3",_from,_loc,_msg];
+
+        ["TextMessage",[format ["EMS Request from %1",_from]]] call bis_fnc_showNotification;
+    };
+
+    case "admin" : {
         if ((call life_adminlevel) < 1) exitWith {};
         _message = format ["!!! ADMIN REQUEST FROM %1: %2",_from,_msg];
 
@@ -48,7 +43,7 @@ switch (_type) do {
         ["AdminDispatch",[format ["%1 Has Requested An Admin!",_from]]] call bis_fnc_showNotification;
     };
 
-    case 3 : {
+    case "adminall" : {
         _message = format ["!!! ADMIN MESSAGE: %1",_msg];
         _admin = format ["Sent by admin: %1", _from];
         hint parseText format ["<t color='#FF0000'><t size='2'><t align='center'>Admin Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>An Admin<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1",_msg];
@@ -57,7 +52,7 @@ switch (_type) do {
         if ((call life_adminlevel) > 0) then {systemChat _admin;};
     };
 
-    case 4 : {
+    case "admintoplayer": {
         _message = format ["!!!ADMIN MESSAGE: %1",_msg];
 
         hint parseText format ["<t color='#FF0000'><t size='2'><t align='center'>Admin Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Players<br/><t color='#33CC33'>From: <t color='#ffffff'>The Admins<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1",_msg];
@@ -69,13 +64,11 @@ switch (_type) do {
         };
     };
 
-    case 5: {
-        if !(playerSide isEqualTo independent) exitWith {};
+    default {
+        _message = format [">>>MESSAGE FROM %1: %2",_from,_msg];
+        hint parseText format ["<t color='#FFCC00'><t size='2'><t align='center'>New Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2",_from,_msg];
 
-        _message = format ["!!! EMS REQUEST: %1",_msg];
-        hint parseText format ["<t color='#FFCC00'><t size='2'><t align='center'>EMS Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>%1<br/><t color='#33CC33'>Coords: <t color='#ffffff'>%2<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%3",_from,_loc,_msg];
-
-        ["TextMessage",[format ["EMS Request from %1",_from]]] call bis_fnc_showNotification;
+        ["TextMessage",[format ["You Received A New Private Message From %1",_from]]] call bis_fnc_showNotification;
     };
 };
 

@@ -1,3 +1,4 @@
+#define CLIENTS -2
 /*
     File: fn_sendMessage.sqf
     Author: blackfisch
@@ -13,6 +14,16 @@ _ehParams params [
 ];
 
 _control ctrlEnable false;
+
+if (_target isEqualTo "cop" && {(west countSide allPlayers) isEqualTo 0}) exitWith {
+    hint localize "STR_CELLMSG_NoCops";
+    _control ctrlEnable true;
+};
+
+if (_target isEqualTo "med" && {(independent countSide allPlayers) isEqualTo 0}) exitWith {
+    hint localize "STR_CELLMSG_NoMedics";
+    _control ctrlEnable true;
+};
 
 private _to = call compile format ["%1",(lbData[3004,(lbCurSel 3004)])];
 if ((_target in ["adminToPlayer", "player"]) && {isNil "_to" || {isNull _to}}) exitWith {
@@ -31,39 +42,36 @@ if (_maxLength > -1 && {(count _msg) > _maxLength}) exitWith {
     _control ctrlEnable true;
 };
 
-private _targetFunction = 0;
-private _sender = player getVariable ["realName", profileName];
-private _toName = (if (isNil "_to" || {isNull _to}) then {"ERROR"} else {_to getVariable ["realname", name _to]});
-private _confirmMessage = "STR_CELLMSG_ToPerson";
-
-switch (_target) do {
+private _remoteTarget = CLIENTS;
+private _confirmMessage = (switch (toLower _target) do {
     case "cop": {
-        _to = west;
-        _targetFunction = 1;
-        _confirmMessage = "STR_CELLMSG_ToPolice";
+        _remoteTarget = west;
+        "STR_CELLMSG_ToPolice";
     };
     case "med": {
-        _to = independent;
-        _targetFunction = 5;
-        _confirmMessage = "STR_CELLMSG_ToEMS";
+        _remoteTarget = independent;
+        "STR_CELLMSG_ToEMS";
     };
     case "admin": {
-        _to = -2;
-        _targetFunction = 2;
-        _confirmMessage = "STR_CELLMSG_ToAdmin";
+        "STR_CELLMSG_ToAdmin";
     };
-    case "adminToPlayer": {
-        _targetFunction = 3;
-        _confirmMessage = "STR_CELLMSG_AdminToPerson";
+    case "adminall": {
+        "STR_CELLMSG_AdminToAll";
     };
-    case "adminAll": {
-        _to = -2;
-        _targetFunction = 4;
-        _confirmMessage = "STR_CELLMSG_AdminToAll";
+    case "admintoplayer": {
+        _remoteTarget = _to;
+        "STR_CELLMSG_AdminToPerson";
     };
-};
+    default {
+        _remoteTarget = _to;
+        "STR_CELLMSG_ToPerson";
+    };
+});
 
-[_msg,_sender,_targetFunction, mapGridPosition player] remoteExecCall ["life_fnc_clientMessage",_to];
+private _sender = player getVariable ["realName", profileName];
+[_msg,_sender,_target, mapGridPosition player] remoteExecCall ["life_fnc_clientMessage",_remoteTarget];
 call life_fnc_cellphone;
+
+private _toName = (if (isNil "_to" || {isNull _to}) then {"ERROR"} else {_to getVariable ["realname", name _to]});
 hint format [localize _confirmMessage,_toName,_msg];
 _control ctrlEnable true;
