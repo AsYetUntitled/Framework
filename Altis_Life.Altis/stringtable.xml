@@ -1560,7 +1560,7 @@
             <Italian>Admin Message Sent To All: %2</Italian>
             <Portuguese>Admin Message Sent To All: %2</Portuguese>
             <Polish>Admin Message Sent To All: %2</Polish>
-			<Chinesesimp>管理员发送信息到全体: %2</Chinesesimp>
+            <Chinesesimp>管理员发送信息到全体: %2</Chinesesimp>
         </Key>
     </Package>
     <Package name="Chop_Shop">
