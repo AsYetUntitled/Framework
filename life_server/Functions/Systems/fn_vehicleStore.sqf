@@ -70,6 +70,9 @@ if (_vInfo isEqualTo []) exitWith {
     [1,"STR_Garage_Store_NotPersistent",true] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
     life_garage_store = false;
     (owner _unit) publicVariableClient "life_garage_store";
+    if (!isNil "_vehicle" && {!isNull _vehicle}) then {
+        deleteVehicle _vehicle;
+    };
 };
 
 if !(_uid isEqualTo getPlayerUID _unit) exitWith {

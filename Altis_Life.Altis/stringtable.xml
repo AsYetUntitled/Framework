@@ -2543,16 +2543,16 @@
 			<Chinesesimp>你以 $%1 的价格出售了这辆载具</Chinesesimp>
         </Key>
         <Key ID="STR_Garage_Store_NotPersistent">
-            <Original>That vehicle is a rental and cannot be stored in your garage.</Original>
-            <Czech>Že vozidlo je půjčovna a nemohou být uloženy ve vaší garáži.</Czech>
-            <Spanish>Este vehículo es rentado y no puede ser guardado.</Spanish>
-            <Russian></Russian>
-            <German>Mietwagen können nicht in der Garage geparkt werden.</German>
-            <French>Ce véhicule est une location et ne peut pas être stocké dans votre garage.</French>
-            <Italian>Il veicolo è in affitto e non può essere depositato in garage.</Italian>
-            <Portuguese>Esse veículo é alugado e não pode ser armazenado na garagem.</Portuguese>
-            <Polish>Pojazd wynajęty, nie możesz go schować w garażu.</Polish>
-			<Chinesesimp>载具是租赁的，不能存放在你的仓库里。</Chinesesimp>
+            <Original>Thank you for returning the rental vehicle.</Original>
+            <Czech>Děkujeme za vrácení zapůjčeného vozidla.</Czech>
+            <Spanish>Gracias por devolver el vehículo de alquiler.</Spanish>
+            <Russian>Спасибо, что вернул автомобиль в аренду.</Russian>
+            <German>Vielen Dank für die Rückgabe des Mietwagens.</German>
+            <French>Nous vous remercions de nous avoir rendu le véhicule de location.</French>
+            <Italian>Grazie per aver restituito il veicolo a noleggio.</Italian>
+            <Portuguese>Obrigado por devolver o veículo alugado.</Portuguese>
+            <Polish>Dziękuję za zwrot wypożyczonego pojazdu.</Polish>
+            <Chinesesimp>感谢您归还租车。</Chinesesimp>
         </Key>
         <Key ID="STR_Garage_Store_NoOwnership">
             <Original>That vehicle doesn't belong to you therefor you cannot store it in your garage.</Original>
