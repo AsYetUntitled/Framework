@@ -5,7 +5,7 @@
     Description: send message to target
 */
 params [
-    ["_ehParams", [], []],
+    ["_ehParams", [], [[]]],
     ["_target", "player", [""]]
 ];
 _ehParams params [
