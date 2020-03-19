@@ -33,19 +33,7 @@ class Tonic {
         class index {};
         class isNumber {};
         class playerQuery {};
-    };
-};
-
-class TON_Cellphone {
-    tag = "TON_cell";
-    class cellphone {
-        file = "core\functions\TON\cell";
-        class adminmsg {};
-        class adminmsgall {};
-        class emsrequest {};
-        class textadmin {};
-        class textcop {};
-        class textmsg {};
+        class sendMessage {};
     };
 };
 

@@ -1490,6 +1490,30 @@
             <Polish>You have sent a message to all EMS Units.</Polish>
 			<Chinesesimp>你已经向所有医护人员发送了消息.</Chinesesimp>
         </Key>
+        <Key ID="STR_CELLMSG_ToPolice">
+            <Original>You have sent a message to all Police Units.</Original>
+            <Czech>You have sent a message to all Police Units.</Czech>
+            <Spanish>You have sent a message to all Police Units.</Spanish>
+            <Russian>You have sent a message to all Police Units.</Russian>
+            <German>Du hast eine Nachricht an alle Polizisten gesendet.</German>
+            <French>Vous avez envoyé un message à tous les Police.</French>
+            <Italian>You have sent a message to all Police Units.</Italian>
+            <Portuguese>You have sent a message to all Police Units.</Portuguese>
+            <Polish>You have sent a message to all Police Units.</Polish>
+			<Chinesesimp></Chinesesimp>
+        </Key>
+        <Key ID="STR_CELLMSG_ToAdmin">
+            <Original>You have sent a message to all Admins.</Original>
+            <Czech>You have sent a message to all Admins.</Czech>
+            <Spanish>You have sent a message to all Admins.</Spanish>
+            <Russian>You have sent a message to all Admins.</Russian>
+            <German>Du hast eine Nachricht an alle Admins gesendet.</German>
+            <French>Vous avez envoyé un message à tous les Admins.</French>
+            <Italian>You have sent a message to all Admins.</Italian>
+            <Portuguese>You have sent a message to all Admins.</Portuguese>
+            <Polish>You have sent a message to all Admins.</Polish>
+			<Chinesesimp></Chinesesimp>
+        </Key>
         <Key ID="STR_CELLMSG_ToPerson">
             <Original>You sent %1 a message: %2</Original>
             <Czech>You sent %1 a message: %2</Czech>
@@ -1527,16 +1551,16 @@
 			<Chinesesimp>管理员消息发送给: %1 - 信息: %2</Chinesesimp>
         </Key>
         <Key ID="STR_CELLMSG_AdminToAll">
-            <Original>Admin Message Sent To All: %1</Original>
-            <Czech>Admin Message Sent To All: %1</Czech>
-            <Spanish>Admin Message Sent To All: %1</Spanish>
-            <Russian>Admin Message Sent To All: %1</Russian>
-            <German>Admin Nachricht Gesendet an Alle: %1</German>
-            <French>Message admin envoyé à tous les joueurs : %1</French>
-            <Italian>Admin Message Sent To All: %1</Italian>
-            <Portuguese>Admin Message Sent To All: %1</Portuguese>
-            <Polish>Admin Message Sent To All: %1</Polish>
-			<Chinesesimp>管理员发送信息到全体: %1</Chinesesimp>
+            <Original>Admin Message Sent To All: %2</Original>
+            <Czech>Admin Message Sent To All: %2</Czech>
+            <Spanish>Admin Message Sent To All: %2</Spanish>
+            <Russian>Admin Message Sent To All: %2</Russian>
+            <German>Admin Nachricht Gesendet an Alle: %2</German>
+            <French>Message admin envoyé à tous les joueurs : %2</French>
+            <Italian>Admin Message Sent To All: %2</Italian>
+            <Portuguese>Admin Message Sent To All: %2</Portuguese>
+            <Polish>Admin Message Sent To All: %2</Polish>
+			<Chinesesimp>管理员发送信息到全体: %2</Chinesesimp>
         </Key>
     </Package>
     <Package name="Chop_Shop">

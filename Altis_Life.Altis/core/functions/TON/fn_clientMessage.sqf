@@ -10,6 +10,7 @@
         2 = message to admin
         3 = message from admin
         4 = admin message to all
+        5 = ems message
 */
 params [
     ["_msg", "", [""]],
