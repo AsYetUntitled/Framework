@@ -42,6 +42,9 @@ if (_units isEqualTo []) exitWith {[_list] remoteExec ["life_fnc_wantedList",_re
 
 private _query = format ["selectWantedActiveID:%1", _inStatement];
 private _queryResult = [_query, 2, true] call HC_fnc_asyncCall;
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
+    diag_log format ["Query: %1",_query];
+};
 
 {
     _list pushBack _x;

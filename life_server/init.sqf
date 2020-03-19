@@ -159,8 +159,6 @@ TON_fnc_requestClientID =
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
 
-cleanupFSM = [] execFSM "\life_server\FSM\cleanup.fsm";
-
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
         uiSleep (30 * 60);
