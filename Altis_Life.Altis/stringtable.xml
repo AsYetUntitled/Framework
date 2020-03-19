@@ -2626,6 +2626,30 @@
             <Polish>Nie ma pojazdu w pobliżu NPC</Polish>
 			<Chinesesimp>NPC附近没有载具。</Chinesesimp>
         </Key>
+        <Key ID="STR_Garage_SellWarn">
+            <Original>Are you sure you want to sell your %1 for $%2?</Original>
+            <Czech>Opravdu chcete prodat svůj %1 za $%2?</Czech>
+            <Spanish>¿Estás seguro de que quieres vender tu %1 por $%2?</Spanish>
+            <Russian>Вы уверены, что хотите продать свой %1 за $%2?</Russian>
+            <German>Bist du sicher, dass du deine(n) %1 für $%2 verkaufen möchtest?</German>
+            <French>Êtes-vous sûr de vouloir vendre votre %1 pour $%2 ?</French>
+            <Italian>Siete sicuri di voler vendere la vostra %1 per $%2?</Italian>
+            <Portuguese>Tem a certeza que quer vender a sua %1 por $%2?</Portuguese>
+            <Polish>Jesteś pewien, że chcesz sprzedać swój %1 za $%2?</Polish>
+			<Chinesesimp>你确定要把你的%1卖给%2？</Chinesesimp>
+        </Key>
+        <Key ID="STR_Garage_SellWarnTitle">
+            <Original>Sell vehicle</Original>
+            <Czech>Prodat vozidlo</Czech>
+            <Spanish>Vender el vehículo</Spanish>
+            <Russian>Продать автомобиль</Russian>
+            <German>Fahrzeug verkaufen</German>
+            <French>Vendre un véhicule</French>
+            <Italian>Vendere il veicolo</Italian>
+            <Portuguese>Vender veículo</Portuguese>
+            <Polish>Sprzedaj pojazd</Polish>
+			<Chinesesimp>出售车辆</Chinesesimp>
+        </Key>
     </Package>
     <Package name="Key_Chain">
         <Key ID="STR_Keys_Title">
