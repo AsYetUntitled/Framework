@@ -37,7 +37,7 @@ private _mTwPositions = [
     ["back",[28.9248,-42.0977,-3.8896],[-1.33789,-24.6035,-10.2108]]
 ];
 
-private _index = [_mode,_mTwPositions] call TON_fnc_index;
+private _index = [_mode,_mTwPositions] call life_util_fnc_index;
 
 if (_index isEqualTo -1) then {
     //Turn off

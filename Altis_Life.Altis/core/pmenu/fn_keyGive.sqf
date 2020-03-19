@@ -28,7 +28,7 @@ if (_unit == player) exitWith {};
 
 _uid = getPlayerUID _unit;
 _owners = _vehicle getVariable "vehicle_info_owners";
-_index = [_uid,_owners] call TON_fnc_index;
+_index = [_uid,_owners] call life_util_fnc_index;
 if (_index isEqualTo -1) then  {
     _owners pushBack [_uid,_unit getVariable ["realname",name _unit]];
     _vehicle setVariable ["vehicle_info_owners",_owners,true];

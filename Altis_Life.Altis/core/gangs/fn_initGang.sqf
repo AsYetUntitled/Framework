@@ -30,7 +30,7 @@ if (!isNil "_group") then {
     [player] join _group;
     if ((life_gangData select 1) isEqualTo getPlayerUID player) then {
         _group selectLeader player;
-        call TON_fnc_clientGangLeader;
+        call life_fnc_clientGangLeader;
     };
 } else {
     _group = group player;

@@ -63,7 +63,7 @@ switch (_target) do {
     };
 };
 
-[_msg,_sender,_targetFunction, mapGridPosition player] remoteExecCall ["TON_fnc_clientMessage",_to];
+[_msg,_sender,_targetFunction, mapGridPosition player] remoteExecCall ["life_fnc_clientMessage",_to];
 call life_fnc_cellphone;
 hint format [localize _confirmMessage,_toName,_msg];
 _control ctrlEnable true;
