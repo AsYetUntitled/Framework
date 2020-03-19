@@ -15,7 +15,7 @@ _ehParams params [
 _control ctrlEnable false;
 
 private _to = call compile format ["%1",(lbData[3004,(lbCurSel 3004)])];
-if (!(_target in ["admin", "adminAll"]) && {isNil "_to" || {isNull _to}}) exitWith {
+if ((_target in ["adminToPlayer", "player"]) && {isNil "_to" || {isNull _to}}) exitWith {
     _control ctrlEnable true;
 };
 
