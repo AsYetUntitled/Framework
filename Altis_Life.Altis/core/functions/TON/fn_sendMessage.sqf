@@ -12,7 +12,6 @@ _ehParams params [
     ["_control", controlNull, [controlNull]]
 ];
 
-if (isNull _control) exitWith {hint "An error occured"};
 _control ctrlEnable false;
 
 private _to = call compile format ["%1",(lbData[3004,(lbCurSel 3004)])];
