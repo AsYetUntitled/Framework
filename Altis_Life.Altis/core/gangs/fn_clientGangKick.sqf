@@ -4,6 +4,7 @@
 
     Description: handles being kicked out of a gang
 */
+
 life_my_gang = objNull;
 [player] joinSilent (createGroup civilian);
 hint localize "STR_GNOTF_KickOutGang";

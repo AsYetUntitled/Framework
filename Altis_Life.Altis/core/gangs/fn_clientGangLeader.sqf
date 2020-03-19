@@ -4,6 +4,7 @@
 
     Description: appoints player as gang leader
 */
+
 player setRank "COLONEL";
 (group player) selectLeader player;
 hint localize "STR_GNOTF_GaveTransfer";
