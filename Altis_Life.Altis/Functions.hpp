@@ -34,9 +34,11 @@ class Tonic {
         class isNumber {};
         class playerQuery {};
     };
+};
 
+class TON_Cellphone {
+    tag = "TON_cell";
     class cellphone {
-        tag = "TON_cell";
         file = "core\functions\TON\cell";
         class adminmsg {};
         class adminmsgall {};
