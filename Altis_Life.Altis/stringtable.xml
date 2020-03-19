@@ -1512,7 +1512,7 @@
             <Italian>You have sent a message to all Admins.</Italian>
             <Portuguese>You have sent a message to all Admins.</Portuguese>
             <Polish>You have sent a message to all Admins.</Polish>
-			<Chinesesimp></Chinesesimp>
+            <Chinesesimp></Chinesesimp>
         </Key>
         <Key ID="STR_CELLMSG_ToPerson">
             <Original>You sent %1 a message: %2</Original>
