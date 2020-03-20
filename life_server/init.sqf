@@ -43,7 +43,7 @@ if (isNil {uiNamespace getVariable "life_sql_id"}) then {
         try {
         _result = EXTDB format ["9:ADD_DATABASE:%1",EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
-        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL:%1:TEXT2",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
+        _result = EXTDB format ["9:ADD_DATABASE_PROTOCOL:%2:SQL_CUSTOM:%1:AL.ini",FETCH_CONST(life_sql_id),EXTDB_SETTING(getText,"DatabaseName")];
         if (!(_result isEqualTo "[1]")) then {throw "extDB3: Error with Database Connection"};
     } catch {
         diag_log _exception;
@@ -67,20 +67,20 @@ life_server_extDB_notLoaded = false;
 publicVariable "life_server_extDB_notLoaded";
 
 /* Run stored procedures for SQL side cleanup */
-["CALL resetLifeVehicles",1] call DB_fnc_asyncCall;
-["CALL deleteDeadVehicles",1] call DB_fnc_asyncCall;
-["CALL deleteOldHouses",1] call DB_fnc_asyncCall;
-["CALL deleteOldGangs",1] call DB_fnc_asyncCall;
+["resetLifeVehicles", 1] call DB_fnc_asyncCall;
+["deleteDeadVehicles", 1] call DB_fnc_asyncCall;
+["deleteOldHouses", 1] call DB_fnc_asyncCall;
+["deleteOldGangs", 1] call DB_fnc_asyncCall;
 
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
-diag_log "------------------------------------------ Version 5.0.0 -------------------------------------------";
+diag_log format["------------------------------------------ Version %1 -------------------------------------------",(LIFE_SETTINGS(getText,"framework_version"))];
 diag_log "----------------------------------------------------------------------------------------------------";
 
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
-        _query = "UPDATE players SET civ_alive = '0' WHERE civ_alive = '1'";
+        ["updateCivAlive", 1] call DB_fnc_asyncCall;
         [_query,1] call DB_fnc_asyncCall;
     };
 };
@@ -205,13 +205,8 @@ publicVariable "life_server_isReady";
 /* Initialize hunting zone(s) */
 aiSpawn = ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
-// We create the attachment point to be used for objects to attachTo load virtually in vehicles.
-life_attachment_point = "Land_HelipadEmpty_F" createVehicle [0,0,0];
-life_attachment_point setPosASL [0,0,0];
-life_attachment_point setVectorDirAndUp [[0,1,0], [0,0,1]];
-
-// Sharing the point of attachment with all players.
-publicVariable "life_attachment_point";
+server_corpses = [];
+addMissionEventHandler ["EntityRespawned", {_this call TON_fnc_entityRespawned}];
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];

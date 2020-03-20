@@ -12,22 +12,20 @@ params [
     ["_bad", false, [false]]
 ];
 
-private "_time";
-if (_bad) then {
-    _time = time + 1100; 
-} else {
-    _time = time + (15 * 60); 
-};
-
-if (count _ret > 0) then {
-    life_bail_amount = (_ret select 2);
-} else {
-    life_bail_amount = 1500;
-    _time = time + (10 * 60); 
-};
-
 private _esc = false;
 private _bail = false;
+private _time = time + (LIFE_SETTINGS(getNumber,"jail_timeMultiplier") * 60);
+
+if (_bad) then {
+    _time = _time + 900;
+};
+
+if !(_ret isEqualTo []) then {
+    life_bail_amount = _ret select 2;
+} else {
+    life_bail_amount = 1500;
+    _time = time + (10 * 60);
+};
 
 [_bad] spawn {
     life_canpay_bail = false;
@@ -41,9 +39,9 @@ private _bail = false;
 
 private "_countDown";
 for "_i" from 0 to 1 step 0 do {
-    if ((round(_time - time)) > 0) then {
-        _countDown = [(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString;
-        hintSilent parseText format [(localize "STR_Jail_Time")+ "<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>" +(localize "STR_Jail_Pay")+ " %3<br/>" +(localize "STR_Jail_Price")+ " $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if (life_canpay_bail) then {"Yes"} else {"No"}];
+    if (round(_time - time) > 0) then {
+        _countDown = [(_time - time), "MM:SS.MS"] call BIS_fnc_secondsToString;
+        hintSilent parseText format [(localize "STR_Jail_Time") + "<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>" + (localize "STR_Jail_Pay") + " %3<br/>" + (localize "STR_Jail_Price") + " $%2", _countDown, [life_bail_amount] call life_fnc_numberText, if (life_canpay_bail) then {"Yes"} else {"No"}];
     };
 
     if (LIFE_SETTINGS(getNumber,"jail_forceWalk") isEqualTo 1) then {
@@ -61,7 +59,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     if (round(_time - time) < 1) exitWith {hint ""};
-    if (!alive player && round(_time - time) > 0) exitWith {};
+    if (!alive player && {(round(_time - time)) > 0}) exitWith {};
     sleep 0.1;
 };
 
@@ -75,9 +73,9 @@ switch (true) do {
         player setPos (getMarkerPos "jail_release");
 
         if (life_HC_isActive) then {
-            [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
+            [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove", HC_Life];
         } else {
-            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
+            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove", RSERV];
         };
 
         [5] call SOCK_fnc_updatePartial;
@@ -86,25 +84,25 @@ switch (true) do {
     case (_esc): {
         life_is_arrested = false;
         hint localize "STR_Jail_EscapeSelf";
-        [0,"STR_Jail_EscapeNOTF",true,[profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+        [0, "STR_Jail_EscapeNOTF", true, [profileName]] remoteExecCall ["life_fnc_broadcast", RCLIENT];
 
         if (life_HC_isActive) then {
-            [getPlayerUID player,profileName,"901"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];
+            [getPlayerUID player, profileName, "901"] remoteExecCall ["HC_fnc_wantedAdd", HC_Life];
         } else {
-            [getPlayerUID player,profileName,"901"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+            [getPlayerUID player, profileName, "901"] remoteExecCall ["life_fnc_wantedAdd", RSERV];
         };
 
         [5] call SOCK_fnc_updatePartial;
     };
 
-    case (alive player && !_esc && !_bail): {
+    case (alive player && {!_esc} && {!_bail}): {
         life_is_arrested = false;
         hint localize "STR_Jail_Released";
 
         if (life_HC_isActive) then {
-            [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove",HC_Life];
+            [getPlayerUID player] remoteExecCall ["HC_fnc_wantedRemove", HC_Life];
         } else {
-            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove",RSERV];
+            [getPlayerUID player] remoteExecCall ["life_fnc_wantedRemove", RSERV];
         };
 
         player setPos (getMarkerPos "jail_release");

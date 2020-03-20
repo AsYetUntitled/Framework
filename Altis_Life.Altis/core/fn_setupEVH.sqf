@@ -13,3 +13,7 @@ player addEventHandler ["Fired", {_this call life_fnc_onFired}];
 player addEventHandler ["InventoryClosed", {_this call life_fnc_inventoryClosed}];
 player addEventHandler ["InventoryOpened", {_this call life_fnc_inventoryOpened}];
 player addEventHandler ["HandleRating", {0}];
+
+addMissionEventHandler ["Map", {_this call life_fnc_checkMap}];
+
+[missionNamespace,"OnGameInterrupt",{_this call life_fnc_onGameInterrupt}] call BIS_fnc_addScriptedEventHandler;

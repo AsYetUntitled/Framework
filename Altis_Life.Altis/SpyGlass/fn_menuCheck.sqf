@@ -114,7 +114,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _display = findDisplay 316000;
-    if (!isNull _display && !isNil "life_admin_debug" && !life_admin_debug) exitWith {
+    if (!isNull _display && !(missionNamespace getVariable ["life_admin_debug",true])) exitWith {
         [profileName,getPlayerUID player,"MenuBasedHack_RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_cookieJar",RSERV];
         [profileName,"Menu Hack: RscDisplayDebugPublic"] remoteExecCall ["SPY_fnc_notifyAdmins",RCLIENT];
         closeDialog 0;

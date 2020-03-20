@@ -25,20 +25,7 @@ player setVariable ["Revive",nil,true];
 player setVariable ["name",nil,true];
 player setVariable ["Reviving",nil,true];
 
-//Load gear for a 'new life'
-switch (playerSide) do
-{
-    case west: {
-        _handle = [] spawn life_fnc_copLoadout;
-    };
-    case civilian: {
-        _handle = [] spawn life_fnc_civLoadout;
-    };
-    case independent: {
-        _handle = [] spawn life_fnc_medicLoadout;
-    };
-    waitUntil {scriptDone _handle};
-};
+[] call life_fnc_startLoadout;
 
 //Cleanup of weapon containers near the body & hide it.
 if (!isNull life_corpse) then {

@@ -53,6 +53,8 @@ Contributing to AsYetUntitled
   * ...optimise your code to have as little impact on performance as possible. See [code optimisation](https://community.bistudio.com/wiki/Code_Optimisation) on the Bohemia Interactive Wiki for more information. 
   * ...if applicable, be sure to update the [BattlEye filters](https://github.com/AsYetUntitled/Framework/tree/master/BEFilters) and [SpyGlass variables](https://github.com/AsYetUntitled/Framework/blob/master/Altis_Life.Altis/config/Config_SpyGlass.hpp) to be compatible with your changes. If you are unsure on how to do so then ask if someone else would be kind enough to do so for you. 
 * If you make a change to the [life_server](https://github.com/AsYetUntitled/Framework/tree/master/life_server) files then you (probably) have to make that same change to the corresponding [life_hc](https://github.com/AsYetUntitled/Framework/tree/master/life_hc) files or vice versa. 
+* It is recommended that changes are committed to a new branch on your fork. Avoid directly editing the `master` branch. This practice helps prevent merge conflicts if changes are committed to the `master` branch ahead of your pull request being merged. See [creating and deleting branches within your repository](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/). 
+* Keep to one bug fix, new feature, or other unique change per pull request. For example if you wish to fix two separate [issues](https://github.com/AsYetUntitled/Framework/issues) then please submit two pull requests. 
 
 ### Help! The Travis CI build failed!
 * If the Travis CI build on your pull request fails then Travis may have detected a syntax error in the code. Click "Show all checks" near the bottom of your pull request and then click "Details" next to the check that failed. Search for "ERROR" to find what is causing the check to fail. 
@@ -74,5 +76,4 @@ Contributing to AsYetUntitled
 * See [issues](https://github.com/AsYetUntitled/Framework/issues) for a full list of all open tasks and bugs. If you would like to work on a solution to an issue then please leave a comment on that issue so that others know a solution is in progress. 
 
 ## Contact
-* If you need to chat with us in real-time then you can do so on the [ArmA RPG Life Discord server](https://discord.gg/EaB7Jgw). 
-  * Please be sure to read the rules which can be found in the #announcements channel. 
+* If you need to chat with us in real-time then you can do so on the [ArmA RPG Life Discord server](https://discord.gg/ajGUDSH). 

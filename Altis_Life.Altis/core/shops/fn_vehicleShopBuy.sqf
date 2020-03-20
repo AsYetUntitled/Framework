@@ -10,6 +10,8 @@
 params [["_mode",true,[true]]];
 
 if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
+if ((time - life_action_delay) < 0.2) exitWith {hint localize "STR_NOTF_ActionDelay";};
+life_action_delay = time;
 
 private _className = lbData[2302,(lbCurSel 2302)];
 private _vIndex = lbValue[2302,(lbCurSel 2302)];
@@ -80,7 +82,11 @@ if ((life_veh_shop select 0) == "med_air_hs") then {
 if (_spawnPoint isEqualTo "") exitWith {hint localize "STR_Shop_Veh_Block"; closeDialog 0;};
 CASH = CASH - _purchasePrice;
 [0] call SOCK_fnc_updatePartial;
-hint format [localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
+if (_mode) then {
+    hint format [localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
+} else {
+    hint format [localize "STR_Shop_Veh_Rented",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_purchasePrice] call life_fnc_numberText];
+};
 
 //Spawn the vehicle and prep it.
 
@@ -106,8 +112,9 @@ _vehicle lock 2;
 
 [_vehicle,_colorIndex] call life_fnc_colorVehicle;
 [_vehicle] call life_fnc_clearVehicleAmmo;
-[_vehicle,"trunk_in_use",false,true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
-[_vehicle,"vehicle_info_owners",[[getPlayerUID player,profileName]],true] remoteExecCall ["TON_fnc_setObjVar",RSERV];
+
+_vehicle setVariable ["trunk_in_use",false,true];
+_vehicle setVariable ["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 

@@ -6,48 +6,42 @@
     Description:
     Adds fuel in car.
 */
-disableSerialization;
-private ["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
-_classname = lbData[20302,(lbCurSel 20302)];
-_index =  lbValue[20302,(lbCurSel 20302)];
+private _index = lbCurSel 20302;
+private _classname = lbData[20302,_index];
 
 if (isNil "_classname" || _classname isEqualTo "") exitWith {
     hint localize "STR_Select_Vehicle_Pump";
-    vehiclefuelList = [];
-    life_action_inUse = false;
     closeDialog 0;
 };
+private _vehicleFuelList = uiNamespace getVariable ["fuel_list",[]];
 
-_car = (vehiclefuelList select _index) select 0;
-_vehicleInfo = [_className]call life_fnc_fetchVehInfo;
-_fuelNow = fuel _car;
-_fueltank = (_vehicleInfo select 12);
-if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fueltank = 350;};//hemtt
-if (_car isKindOf "C_Van_01_box_F") then {_fueltank = 100;};
-if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fueltank = 175;};
-_fueltoput= ((SliderPosition 20901)-(floor(_fuelnow * _fueltank)));
-_setfuell = _fuelnow + (_fueltoput/_fueltank);
-_timer = ((_fueltoput * .25)/100);
+(_vehicleFuelList select _index) params ["_car"];
+private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+private _fuelNow = fuel _car;
+private _fueltank = _vehicleInfo select 12;
+if (_car isKindOf "B_Truck_01_box_F" || _car isKindOf "B_Truck_01_transport_F") then {_fueltank = 350};//hemtt
+if (_car isKindOf "C_Van_01_box_F") then {_fueltank = 100};
+if (_car isKindOf "I_Truck_02_covered_F" || _car isKindOf "I_Truck_02_transport_F") then {_fueltank = 175};
+private _fueltoput = ((parseNumber((sliderPosition 20901) toFixed 2))-(floor(_fuelnow * _fueltank)));
+private _setfuel = _fuelnow + (_fueltoput/_fueltank);
+private _timer = ((_fueltoput * .25)/100);
 if (_car distance player > 10 && !(isNull objectParent player)) exitWith {
     hint localize "STR_Distance_Vehicle_Pump";
-    vehiclefuelList = [];
-    life_action_inUse = false;
     closeDialog 0;
 };
 
-if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
+private _fuelCost = uiNamespace getVariable ["fuel_cost",0];
+if ((BANK - (_fueltoput * _fuelCost)) > 0) then {
     life_is_processing = true;
     //Setup our progress bar.
     disableSerialization;
     "progressBar" cutRsc ["life_progress","PLAIN"];
-    _ui = uiNameSpace getVariable "life_progress";
-    _progress = _ui displayCtrl 38201;
-    _pgText = _ui displayCtrl 38202;
+    private _ui = uiNameSpace getVariable "life_progress";
+    private _progress = _ui displayCtrl 38201;
+    private _pgText = _ui displayCtrl 38202;
     _pgText ctrlSetText format ["%2 (1%1)...","%","Refuel:"];
     _progress progressSetPosition 0.01;
-    _cP = 0.01;
-    _tp =0;
-    _totalcost = _fueltoput * life_fuelPrices;
+    private _cP = 0.01;
     for "_i" from 0 to 1 step 0 do {
         uiSleep  _timer;
         _cP = _cP + 0.01;
@@ -56,30 +50,21 @@ if ((BANK - (_fueltoput * life_fuelPrices))> 0)then {
         if (_cP >= 1) exitWith {};
         if (player distance _car > 10) exitWith {};
         if !(isNull objectParent player) exitWith {};
-        if !((BANK - round(0.01 * _totalcost))> 0) exitWith {};
-        BANK = BANK - round((0.01 * _totalcost));
-        _tp = _tp +1;
-        if (_tp == 9) then {
-            _tp = 0;
-            [_car,_cp * _setfuell] remoteExecCall ["life_fnc_setFuel",_car];
+        if (((_cP * 100) mod 10) isEqualTo 0) then {
+            [_car,_cP * _setfuel] remoteExecCall ["life_fnc_setFuel",_car];
         };
     };
+    private _toPay = floor((_fueltoput * _fuelCost) * _cP);
+    BANK = BANK - _toPay; //pay the received fuel
+    [_car,_cP * _setfuel] remoteExecCall ["life_fnc_setFuel",_car]; //update the fuel
     "progressBar" cutText ["","PLAIN"];
     if (_car distance player > 10 || !(isNull objectParent player)) then {
         hint localize "STR_Distance_Vehicle_Pump";
-        vehiclefuelList = [];
-        life_is_processing = false;
-        life_action_inUse = false;
-        [0] call SOCK_fnc_updatePartial;
-        closeDialog 0;
-    } else {
-        life_is_processing = false;
-        [0] call SOCK_fnc_updatePartial;
     };
+    [0] call SOCK_fnc_updatePartial;
+    life_is_processing = false;
 } else {
     hint localize "STR_NOTF_NotEnoughMoney";
 };
 
-vehiclefuelList = [];
-life_action_inUse = false;
 closeDialog 0;
