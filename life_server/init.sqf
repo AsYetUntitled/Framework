@@ -17,7 +17,6 @@ _extDBNotLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
-fn_whoDoneIt = compile preprocessFileLineNumbers "\life_server\Functions\Systems\fn_whoDoneIt.sqf";
 
 /*
     Prepare the headless client.
@@ -160,8 +159,6 @@ TON_fnc_requestClientID =
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
 
-cleanupFSM = [] execFSM "\life_server\FSM\cleanup.fsm";
-
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
         uiSleep (30 * 60);
@@ -207,6 +204,7 @@ aiSpawn = ["hunting_zone",30] spawn TON_fnc_huntingZone;
 
 server_corpses = [];
 addMissionEventHandler ["EntityRespawned", {_this call TON_fnc_entityRespawned}];
+addMissionEventHandler ["EntityKilled", {_this call TON_fnc_entityKilled}];
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];

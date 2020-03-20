@@ -183,12 +183,13 @@ class Life_Client_Core {
         class fetchDeadGear {};
         class fetchVehInfo {};
         class isDamaged {};
+        class getInMan {};
+        class getOutMan {};
         class giveDiff {};
         class handleDamage {};
         class handleInv {};
         class handleItem {};
         class hideObj {};
-        class hudSetup {};
         class hudUpdate {};
         class inventoryClosed {};
         class inventoryOpened {};

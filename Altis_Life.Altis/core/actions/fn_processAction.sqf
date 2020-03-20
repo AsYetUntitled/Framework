@@ -164,7 +164,6 @@ if (_hasLicense) then {
 
     life_is_processing = false;
     life_action_inUse = false;
-
 } else {
     if (CASH < _cost) exitWith {
         hint format [localize "STR_Process_License",[_cost] call life_fnc_numberText];
