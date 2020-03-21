@@ -9,6 +9,10 @@ params [
     ["_group", grpNull, [grpNull]]
 ];
 
+_unit setRank "COLONEL";
+
+if !(local _group) exitWith {};
 _group selectLeader _unit;
-[1, "STR_GNOTF_GaveTransfer", true] remoteExecCall ["life_fnc_broadcast", _unit];
-[_unit,"COLONEL"] remoteExecCall ["setRank", units _group, _group];
+
+if !(_unit isEqualTo player) exitWith {};
+hint localize "STR_GNOTF_GaveTransfer";

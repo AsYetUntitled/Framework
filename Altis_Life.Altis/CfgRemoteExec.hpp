@@ -69,7 +69,7 @@ class CfgRemoteExec {
         F(SOCK_fnc_requestReceived,CLIENT)
         F(SOCK_fnc_updateRequest,CLIENT)
         F(life_fnc_clientGangKick,CLIENT)
-        F(life_fnc_clientGangLeader,CLIENT)
+        JIP(life_fnc_clientGangLeader,CLIENT)
         F(life_fnc_clientGangLeft,CLIENT)
         F(TON_fnc_clientGetKey,CLIENT)
         F(life_fnc_clientMessage,CLIENT)
@@ -176,6 +176,5 @@ class CfgRemoteExec {
         F(addPrimaryWeaponItem,ANYONE)
         F(addWeapon,ANYONE)
         F(setFuel,ANYONE)
-        JIP(setRank,ANYONE)
     };
 };

@@ -27,7 +27,7 @@ if (_action) then {
     if (_unitID isEqualTo "") exitWith {hint localize "STR_GNOTF_badUID";}; //Unlikely?
     private _group = group player;
     _group setVariable ["gang_owner",_unitID,true];
-    [_unit, _group] remoteExecCall ["life_fnc_clientGangLeader", groupOwner _group];
+    [_unit, _group] remoteExecCall ["life_fnc_clientGangLeader", _group, _group];
 
     if (life_HC_isActive) then {
         [3,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.
