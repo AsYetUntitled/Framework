@@ -11,4 +11,4 @@ params [
 
 _group selectLeader _unit;
 [1, "STR_GNOTF_GaveTransfer", true] remoteExecCall ["life_fnc_broadcast", _unit];
-[_unit,"COLONEL"] remoteExec ["setRank", units _group, _group];
+[_unit,"COLONEL"] remoteExecCall ["setRank", units _group, _group];
