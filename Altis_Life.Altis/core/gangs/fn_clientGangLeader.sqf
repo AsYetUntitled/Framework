@@ -4,7 +4,11 @@
 
     Description: appoints player as gang leader
 */
+params [
+    ["_unit", objNull, [objNull]],
+    ["_group", grpNull, [grpNull]]
+];
 
-player setRank "COLONEL";
-(group player) selectLeader player;
-hint localize "STR_GNOTF_GaveTransfer";
+_group selectLeader _unit;
+[1, "STR_GNOTF_GaveTransfer", true] remoteExecCall ["life_fnc_broadcast", _unit];
+[_unit,"COLONEL"] remoteExec ["setRank", units _group, _group];
