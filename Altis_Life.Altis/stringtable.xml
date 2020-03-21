@@ -1500,7 +1500,7 @@
             <Italian>You have sent a message to all Police Units.</Italian>
             <Portuguese>You have sent a message to all Police Units.</Portuguese>
             <Polish>You have sent a message to all Police Units.</Polish>
-			<Chinesesimp></Chinesesimp>
+            <Chinesesimp></Chinesesimp>
         </Key>
         <Key ID="STR_CELLMSG_ToAdmin">
             <Original>You have sent a message to all Admins.</Original>
