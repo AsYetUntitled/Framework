@@ -53,7 +53,7 @@ private _action = [
     localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;
 
-if (isNil "_action" || {!_action}) exitWith {};
+if !(_action) exitWith {};
 
 if (life_HC_isActive) then {
     [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
