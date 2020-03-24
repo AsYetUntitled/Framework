@@ -46,6 +46,7 @@ _sellPrice = _purchasePrice * _multiplier;
 
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 
+closeDialog 0;
 private _action = [
     format[localize "STR_Garage_SellWarn", getText(configFile >> "CfgVehicles" >> _vehicle >> "displayName"), [_sellPrice] call life_fnc_numberText],
     localize "STR_Garage_SellWarnTitle",
