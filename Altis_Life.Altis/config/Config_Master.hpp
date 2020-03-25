@@ -15,6 +15,14 @@ class Life_Settings {
     player_moneyLog = false; //False [default] - No money logging. True - Logs player bank deposits, withdraws, and transfers, gang bank deposits and withdraws, money picked up off of the ground, and player robbery. Search for: money_log
     player_deathLog = false; //False [default] - No death logging. True - Logs victim and killer, and vehicle or weapon if used, when a player dies. Search for: death_log
 
+/* Performance Settings */
+    /* Vehicle Wrecks */
+    dead_vehicles_despawn_delay = 30; //delay in seconds before despawning dead vehicles
+    dead_vehicles_max_units_distance = 300; //maximum distance between wreck and nearest player before despawning (vehicle despawns anyway after specified delay!)
+
+    /* Cleanup */
+    vehicles_despawn_max_distance = 1000; //maximum distance between a vehicle and the nearest player, before server puts it back to garage
+
 /* Database Related Settings */
     /* Player Data Saving */
     save_virtualItems = true; //Save Virtual items (all sides)?
@@ -77,6 +85,7 @@ class Life_Settings {
     gang_price = 75000; //Gang creation price. --Remember they are persistent so keep it reasonable to avoid millions of gangs.
     gang_upgradeBase = 10000; //The base cost for purchasing additional slots in a gang
     gang_upgradeMultiplier = 2.5; //CURRENTLY NOT IN USE
+    gang_area[] = {"gang_area_1","gang_area_2","gang_area_3"}; //Variable of gang zone markers
 
     /* Housing System Configurations */
     house_limit = 5; //Maximum number of houses a player can own.
@@ -96,9 +105,10 @@ class Life_Settings {
 
     /* Jail System Configurations */
     jail_seize_vItems[] = { "spikeStrip","lockpick","goldbar","blastingcharge","boltcutter","defusekit","heroin_unprocessed","heroin_processed","cannabis","marijuana","cocaine_unprocessed","cocaine_processed","turtle_raw" }; //Define VIRTUAL items you want to be removed from players upon jailing here. Use "jail_seize_inventory" for Arma inventory items.
-    jail_seize_inventory = false; //Set to true to run the cop seize script on inmates. False will remove only weapons and magazines otherwise. (Basically used in case cops forget to seize items). [See Lines 106-111 below]
+    jail_seize_inventory = false; //Set to true to run the cop seize script on inmates. False will remove only weapons and magazines otherwise. (Basically used in case cops forget to seize items). [See Lines 127-131 below]
     sendtoJail_locations[] = { "police_hq_1", "police_hq_2", "cop_spawn_3", "cop_spawn_5", "Correctional_Facility" }; //Enter the variableName from the mission.sqm here to allow cops to send a person to jail at these locations.
     jail_forceWalk = true;
+    jail_timeMultiplier = 15; //Put in minutes how long you want your victim in jail.
 
     /* Medical System Configurations */
     revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
@@ -210,6 +220,11 @@ class Life_Settings {
         {"STR_Crime_24","10000","24"},
         {"STR_Crime_25","20000","25"}
     };
+
+    /* ! --- Do not change --- ! */
+    framework_version = "6.0.0";
+    /* ------------------------- */
+
 };
 
 #include "Config_Clothing.hpp"
@@ -222,3 +237,4 @@ class Life_Settings {
 #include "Config_Process.hpp"
 #include "Config_Housing.hpp"
 #include "Config_Garages.hpp"
+#include "Config_Loadouts.hpp"

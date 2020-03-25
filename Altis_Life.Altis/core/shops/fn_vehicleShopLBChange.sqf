@@ -44,7 +44,7 @@ _horsepower = (_vehicleInfo select 11);
 _passengerseats = (_vehicleInfo select 10);
 _fuel = (_vehicleInfo select 12);
 _armor = (_vehicleInfo select 9);
-[_className] call life_fnc_vehicleShop3DPreview;
+[_className] call life_fnc_3dPreviewDisplay;
 
 ctrlShow [2330,true];
 (CONTROL(2300,2303)) ctrlSetStructuredText parseText format [
@@ -92,7 +92,7 @@ _numberindexcolorarray = [];
 for "_i" from 0 to (count(_colorArray) - 1) do {
     _numberindexcolorarray pushBack _i;
 };
-_indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
+_indexrandom = selectRandom _numberindexcolorarray;
 _ctrl lbSetCurSel _indexrandom;
 
 if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {

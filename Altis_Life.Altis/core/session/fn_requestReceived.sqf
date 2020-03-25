@@ -8,6 +8,7 @@
     sort through the information, validate it and if all valid
     set the client up.
 */
+
 private _count = count _this;
 life_session_tries = life_session_tries + 1;
 if (life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
@@ -32,8 +33,8 @@ if (!isServer && (!isNil "life_adminlevel" || !isNil "life_coplevel" || !isNil "
 };
 
 //Parse basic player information.
-CASH = parseNumber (_this select 2);
-BANK = parseNumber (_this select 3);
+CASH = _this select 2;
+BANK = _this select 3;
 CONST(life_adminlevel,(_this select 4));
 if (LIFE_SETTINGS(getNumber,"donor_level") isEqualTo 1) then {
     CONST(life_donorlevel,(_this select 5));
@@ -42,7 +43,7 @@ if (LIFE_SETTINGS(getNumber,"donor_level") isEqualTo 1) then {
 };
 
 //Loop through licenses
-if (count (_this select 6) > 0) then {
+if !((_this select 6) isEqualTo []) then {
     {missionNamespace setVariable [(_x select 0),(_x select 1)];} forEach (_this select 6);
 };
 
@@ -86,7 +87,7 @@ switch (playerSide) do {
         } forEach life_houses;
 
         life_gangData = _this select (_count - 2);
-        if !(count life_gangData isEqualTo 0) then {
+        if !(life_gangData isEqualTo []) then {
             [] spawn life_fnc_initGang;
         };
         [] spawn life_fnc_initHouses;
@@ -106,7 +107,7 @@ switch (playerSide) do {
 life_gear = _this select 8;
 [true] call life_fnc_loadGear;
 
-if (count (_this select (_count - 1)) > 0) then {
+if !((_this select (_count - 1)) isEqualTo []) then {
     {life_vehicles pushBack _x;} forEach (_this select (_count - 1));
 };
 

@@ -8,19 +8,20 @@
     Description:
     Grabs a list of crimes committed by a person.
 */
+
 disableSerialization;
 
 params [
     ["_ret",objNull,[objNull]],
-    ["_criminal",[],[]]
+    ["_criminal",[],[[]]]
 ];
 
-private _query = format ["SELECT wantedCrimes, wantedBounty FROM wanted WHERE active='1' AND wantedID='%1'",_criminal select 0];
-private _queryResult = [_query,2] call DB_fnc_asyncCall;
+private _query = format ["selectWantedActive:%1", _criminal select 0];
+private _queryResult = [_query, 2] call DB_fnc_asyncCall;
 
 _ret = owner _ret;
 
-private _type = [_queryResult select 0] call DB_fnc_mresToArray;
+private _type = _queryResult select 0;
 if (_type isEqualType "") then {_type = call compile format ["%1", _type];};
 
 private _crimesArr = [];
@@ -30,6 +31,6 @@ private _crimesArr = [];
     false
 } count _type;
 
-_queryResult set[0,_crimesArr];
+_queryResult set[0, _crimesArr];
 
-[_queryResult] remoteExec ["life_fnc_wantedInfo",_ret];
+[_queryResult] remoteExec ["life_fnc_wantedInfo", _ret];

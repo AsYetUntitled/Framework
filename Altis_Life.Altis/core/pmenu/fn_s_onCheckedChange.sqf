@@ -6,32 +6,30 @@
     Description:
     Switching it up and making it prettier..
 */
-private ["_option","_state"];
-_option = _this select 0;
-_state = _this select 1;
+params [
+    ["_option","",[""]],
+    ["_state",0,[0]]
+];
+if (_option isEqualTo "") exitWith {};
 
-switch (_option) do {
+switch _option do {
     case "tags": {
         if (_state isEqualTo 1) then {
-            life_settings_tagson = true;
             profileNamespace setVariable ["life_settings_tagson",true];
-            LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
+            LIFE_ID_PlayerTags = addMissionEventHandler ["EachFrame", life_fnc_playerTags];
         } else {
-            life_settings_tagson = false;
             profileNamespace setVariable ["life_settings_tagson",false];
-            [LIFE_ID_PlayerTags,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+            removeMissionEventHandler ["EachFrame",LIFE_ID_PlayerTags];
         };
     };
 
     case "objects": {
         if (_state isEqualTo 1) then {
-            life_settings_revealObjects = true;
             profileNamespace setVariable ["life_settings_revealObjects",true];
-            LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
+            LIFE_ID_RevealObjects = addMissionEventHandler ["EachFrame", life_fnc_revealObjects];
         } else {
-            life_settings_revealObjects = false;
             profileNamespace setVariable ["life_settings_revealObjects",false];
-            [LIFE_ID_RevealObjects,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+            removeMissionEventHandler ["EachFrame",LIFE_ID_RevealObjects];
         };
     };
 

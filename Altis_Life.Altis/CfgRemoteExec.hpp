@@ -62,6 +62,8 @@ class CfgRemoteExec {
         F(life_fnc_vehicleAnimate,CLIENT)
         F(life_fnc_wantedList,CLIENT)
         F(life_fnc_wireTransfer,CLIENT)
+        F(life_fnc_gangBankResponse,CLIENT)
+        F(life_fnc_chopShopSold,CLIENT)
         F(SOCK_fnc_dataQuery,CLIENT)
         F(SOCK_fnc_insertPlayerInfo,CLIENT)
         F(SOCK_fnc_requestReceived,CLIENT)
@@ -74,7 +76,6 @@ class CfgRemoteExec {
         F(TON_fnc_player_query,CLIENT)
 
         /* Server only functions */
-        F(BIS_fnc_execVM,SERVER)
         F(DB_fnc_insertRequest,SERVER)
         F(DB_fnc_queryRequest,SERVER)
         F(DB_fnc_updatePartial,SERVER)
@@ -102,7 +103,6 @@ class CfgRemoteExec {
         F(TON_fnc_removeGang,SERVER)
         F(TON_fnc_sellHouse,SERVER)
         F(TON_fnc_sellHouseContainer,SERVER)
-        F(TON_fnc_setObjVar,SERVER)
         F(TON_fnc_spawnVehicle,SERVER)
         F(TON_fnc_spikeStrip,SERVER)
         F(TON_fnc_updateGang,SERVER)
