@@ -4,6 +4,8 @@ AsYetUntitled, formerly <b>Altis Life RPG</b> and <b>ARMARPGLIFE</b> is a rolepl
 
 This Github is not currently associated with any forums.
 
+![Validation](https://github.com/AsYetUntitled/Framework/workflows/Validation/badge.svg?branch=master)
+
 # Features:
 
   - Police, Civ and Medic roles 
