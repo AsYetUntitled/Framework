@@ -67,7 +67,7 @@ if (_impound) exitWith {
 
 // not persistent so just do this!
 if (_vInfo isEqualTo []) exitWith {
-    if (LIFE_SETTINGS(getNumber,"rentals_return") isEqualTo 1) isEqualTo 1) then {
+    if (LIFE_SETTINGS(getNumber,"rentals_return") isEqualTo 1) then {
         [1,"STR_Garage_Store_NotPersistent2",true] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
         if (!isNil "_vehicle" && {!isNull _vehicle}) then {
             deleteVehicle _vehicle;
