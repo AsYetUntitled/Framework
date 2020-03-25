@@ -2,9 +2,13 @@ name: Validation
 
 on:
   push:
-    branches: [ master, v5.X.X ]
+    branches:
+    - 'master'
+    - 'v5.X.X'
   pull_request:
-    branches: [ master, v5.X.X ]
+    branches:
+    - 'master'
+    - 'v5.X.X'
 
 jobs:
   validate:
