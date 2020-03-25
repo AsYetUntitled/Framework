@@ -22,7 +22,7 @@ private _key = EXTDB format ["%1:%2:%3",_mode,FETCH_CONST(life_sql_id),_queryStm
 
 if (_mode isEqualTo 1) exitWith {true};
 
-_key = call compile format ["%1",_key];
+_key = parseSimpleArray format ["%1",_key];
 _key = _key select 1;
 private _queryResult = EXTDB format ["4:%1", _key];
 
@@ -46,7 +46,7 @@ if (_queryResult isEqualTo "[5]") then {
     if (!_loop) exitWith {};
     };
 };
-_queryResult = call compile _queryResult;
+_queryResult = parseSimpleArray _queryResult;
 if ((_queryResult select 0) isEqualTo 0) exitWith {diag_log format ["extDB3: Protocol Error: %1", _queryResult]; []};
 private _return = (_queryResult select 1);
 if (!_multiarr && {!(_return isEqualTo [])}) then {

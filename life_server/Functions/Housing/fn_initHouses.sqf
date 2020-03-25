@@ -11,7 +11,7 @@ for [{_x=0},{_x<=_count},{_x=_x+10}] do {
     private _queryResult = [_query, 2, true] call DB_fnc_asyncCall;
     if (_queryResult isEqualTo []) exitWith {};
     {
-        _pos = call compile format ["%1", _x select 2];
+        _pos = parseSimpleArray format ["%1", _x select 2];
         _house = nearestObject [_pos, "House"];
         _house setVariable ["house_owner",[_x select 1, _x select 3],true];
         _house setVariable ["house_id", _x select 0, true];

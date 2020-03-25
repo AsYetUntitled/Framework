@@ -82,7 +82,7 @@ switch (playerSide) do {
         };
 
         {
-            _house = nearestObject [(call compile format ["%1",(_x select 0)]), "House"];
+            _house = nearestObject [(parseSimpleArray format ["%1",(_x select 0)]), "House"];
             life_vehicles pushBack _house;
         } forEach life_houses;
 

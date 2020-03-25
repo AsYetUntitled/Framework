@@ -10,7 +10,7 @@ if !(playerSide isEqualTo west) exitWith {hint localize "STR_Cop_wantedList_notC
 if ((lbCurSel 2406) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noPlayerSelected";};
 if ((lbCurSel 2407) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noCrimeSelected";};
 private _unit = lbData [2406,lbCurSel 2406];
-_unit = call compile format ["%1",_unit];
+_unit = parseSimpleArray format ["%1",_unit];
 private _amount = lbData [2407,lbCurSel 2407];
 if (isNil "_unit") exitWith {};
 if (isNull _unit) exitWith {};

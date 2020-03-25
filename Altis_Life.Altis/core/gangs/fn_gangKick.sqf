@@ -10,7 +10,7 @@ private ["_unit","_unitID","_members"];
 disableSerialization;
 
 if ((lbCurSel 2621) isEqualTo -1) exitWith {hint localize "STR_GNOTF_SelectKick"};
-_unit = call compile format ["%1",CONTROL_DATA(2621)];
+_unit = parseSimpleArray format ["%1",CONTROL_DATA(2621)];
 
 if (isNull _unit) exitWith {}; //Bad unit?
 if (_unit == player) exitWith {hint localize "STR_GNOTF_KickSelf"};

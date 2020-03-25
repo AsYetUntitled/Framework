@@ -13,7 +13,7 @@ _index = _this select 1;
 
 //Fetch some information.
 _dataArr = CONTROL_DATAI(_control,_index);
-_dataArr = call compile format ["%1",_dataArr];
+_dataArr = parseSimpleArray format ["%1",_dataArr];
 _className = (_dataArr select 0);
 _classNameLife = _className;
 
