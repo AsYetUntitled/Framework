@@ -25,7 +25,7 @@ private _plate = "";
 while {_plate isEqualTo ""} do {
     {
         private _randomPlate = [];
-        if (_x isEqualTo "") then {
+        if (_x isEqualTo "$") then {
             _randomPlate pushBack (selectRandom _letterArray);
         } else {
             if (_x isEqualTo " ") then {
