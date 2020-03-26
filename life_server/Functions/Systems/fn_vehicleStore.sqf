@@ -83,7 +83,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
             _isIllegal = _isIllegal isEqualTo 1;
 
-            if ((_itemName in _resourceItems) || _isIllegal) then {
+            if ((_itemName in _resourceItems) || {_isIllegal}) then {
                 _items pushBack [_itemName,_itemCount];
                 private _weight = (ITEM_WEIGHT(_itemName)) * _itemCount;
                 _totalweight = _weight + _totalweight;
@@ -123,7 +123,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     private _vehWeapons = getWeaponCargo _vehicle;
     private _vehBackpacks = getBackpackCargo _vehicle;
 
-    if !(((_vehItems select 0) isEqualTo []) && ((_vehMags select 0) isEqualTo []) && ((_vehWeapons select 0) isEqualTo []) && ((_vehBackpacks select 0) isEqualTo [])) then {
+    if !((_vehItems select 0) isEqualTo [] && {(_vehMags select 0) isEqualTo [] && {(_vehWeapons select 0) isEqualTo [] && {(_vehBackpacks select 0) isEqualTo []}}}) then {
         _cargo = [_vehItems, _vehMags, _vehWeapons, _vehBackpacks];
     };
 };

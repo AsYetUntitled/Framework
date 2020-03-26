@@ -43,31 +43,9 @@ if (_spawnPoint isEqualType []) then {
 };
 
 if (life_HC_isActive) then {
-
+    [player,_plate,_spawnPoint] remoteExecCall ["NC_fnc_spawnVehicle",HC_Life];
 } else {
-    [player,_plate,_spawnPoint]
-};
-
-if (life_garage_sp isEqualType []) then {
-    if (life_HC_isActive) then {
-        [_vid,_pid,(life_garage_sp select 0),_unit,_price,(life_garage_sp select 1),_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
-    } else {
-        [_vid,_pid,(life_garage_sp select 0),_unit,_price,(life_garage_sp select 1),_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
-    };
-} else {
-    if (life_garage_sp in ["medic_spawn_1","medic_spawn_2","medic_spawn_3"]) then {
-        if (life_HC_isActive) then {
-            [_vid,_pid,life_garage_sp,_unit,_price,0,_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
-        } else {
-            [_vid,_pid,life_garage_sp,_unit,_price,0,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
-        };
-    } else {
-        if (life_HC_isActive) then {
-            [_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp,_spawntext] remoteExec ["HC_fnc_spawnVehicle",HC_Life];
-        } else {
-            [_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp,_spawntext] remoteExec ["TON_fnc_spawnVehicle",RSERV];
-        };
-    };
+    [player,_plate,_spawnPoint] remoteExecCall ["TON_fnc_spawnVehicle",RSERV];
 };
 
 hint localize "STR_Garage_SpawningVeh";

@@ -26,6 +26,7 @@ private _vehicleColor = ((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"te
 if (isNil "_vehicleColor") then {_vehicleColor = "Default";};
 
 private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+_vehicleInfo params ["","","","","","","","","_maxSpeed","","_seats","_horsePower","_fuelCapacity"];
 private _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 
 private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
@@ -67,11 +68,11 @@ if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice 
     ",
     [_retrievePrice] call life_fnc_numberText,
     [_sellPrice] call life_fnc_numberText,
-    (_vehicleInfo select 8),
-    (_vehicleInfo select 11),
-    (_vehicleInfo select 10),
+    _maxSpeed,
+    _horsePower,
+    _seats,
     if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
-    (_vehicleInfo select 12),
+    _fuelCapacity,
     _vehicleColor
 ];
 

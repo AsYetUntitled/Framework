@@ -12,7 +12,7 @@ params [
     ["_purchase",false,[false]]
 ];
 
-if (isNull _unit || {{_className isEqualTo ""} || {_spawnPoint isEqualTo ""}}) exitWith {};
+if (isNull _unit || {_className isEqualTo "" || {_spawnPoint isEqualTo ""}}) exitWith {};
 
 private _uid = getPlayerUID _unit;
 private _className = typeOf _vehicle;
