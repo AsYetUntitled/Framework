@@ -2602,6 +2602,18 @@
             <Polish>Pojazd wynajęty, nie możesz go schować w garażu.</Polish>
             <Chinesesimp>载具是租赁的，不能存放在你的仓库里。</Chinesesimp>
         </Key>
+        <Key ID="STR_Garage_Store_NotPersistent2">
+            <Original>Thank you for returning the rental vehicle.</Original>
+            <Czech>Děkujeme za vrácení zapůjčeného vozidla.</Czech>
+            <Spanish>Gracias por devolver el vehículo de alquiler.</Spanish>
+            <Russian>Спасибо, что вернул автомобиль в аренду.</Russian>
+            <German>Vielen Dank für die Rückgabe des Mietwagens.</German>
+            <French>Nous vous remercions de nous avoir rendu le véhicule de location.</French>
+            <Italian>Grazie per aver restituito il veicolo a noleggio.</Italian>
+            <Portuguese>Obrigado por devolver o veículo alugado.</Portuguese>
+            <Polish>Dziękuję za zwrot wypożyczonego pojazdu.</Polish>
+            <Chinesesimp>感谢您归还租车。</Chinesesimp>
+        </Key>
         <Key ID="STR_Garage_Store_NoOwnership">
             <Original>That vehicle doesn't belong to you therefor you cannot store it in your garage.</Original>
             <Czech>Co vozidlo nepatří k vám proto jej nelze ukládat ve vaší garáži.</Czech>
