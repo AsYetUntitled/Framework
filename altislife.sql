@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 --
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
-    `plate`       VARCHAR(9) NOT NULL,
+    `plate`       VARCHAR(14) NOT NULL,
     `pid`         VARCHAR(17) NOT NULL,
     `side`        VARCHAR(10) NOT NULL,
     `classname`   VARCHAR(64) NOT NULL,

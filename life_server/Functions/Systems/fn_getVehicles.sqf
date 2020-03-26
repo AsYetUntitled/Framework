@@ -13,7 +13,7 @@ params [
 //Error checks
 if (isNull _unit || {_type isEqualTo ""}) exitWith {
     if (!isNull _unit) then {
-        [[]] remoteExec ["life_fnc_impoundMenu",(owner _unit)];
+        [[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
     };
 };
 

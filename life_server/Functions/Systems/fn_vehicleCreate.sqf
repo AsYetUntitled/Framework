@@ -18,6 +18,7 @@ private _uid = getPlayerUID _unit;
 private _className = typeOf _vehicle;
 
 private _plateFormat = LIFE_SETTINGS(getText,"vehicle_plateFormat");
+private _platePrefix = LIFE_SETTINGS(getText,"vehicle_platePrefix");
 private _plateFormatArray = _plateFormat splitString "";
 private _letterArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
@@ -40,6 +41,7 @@ while {_plate isEqualTo ""} do {
         if (_return isEqualTo []) exitWith {_plate = _randomPlate};
     } forEach _plateFormatArray;
 };
+_plate = format["%1%2",_platePrefix,_plate];
 
 if (_purchase) then {
     private _type = call {
@@ -75,7 +77,7 @@ _vehicle disableTIEquipment true;
 _vehicle setVariable ["trunk_in_use",false,true];
 _vehicle setVariable ["vehicle_info_owners",[[_uid,name _unit]],true];
 _vehicle setPlateNumber _plate;
-//_vehicle setVariable ["plate", _plate, true]; what happens to ships/air?
+_vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for setPlateNumber
 
 switch (side _unit) do {
     case west: {

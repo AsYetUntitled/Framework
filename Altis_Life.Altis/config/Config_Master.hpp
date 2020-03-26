@@ -147,6 +147,7 @@ class Life_Settings {
     vehicleShop_3D = false; //Add preview 3D inside Shop vehicle.       Default : False
     vehicle_rentalReturn = false; //Can return rental vehicles to 'Store vehicle in garage', doesn't actually store it in garage.
     vehicle_plateFormat = "$$## $$$"; //Format of vehicle plates, $ representing letter, # representing number, maximum 9 characters.
+    vehicle_platePrefix = ""; //Prefix of the plate, can be left blank, max 5 characters.
 
     /* Vehicle Purchase Prices */
     vehicle_purchase_multiplier_CIVILIAN = 1; //Civilian Vehicle Buy Price = Config_Vehicle price * multiplier

@@ -73,7 +73,7 @@ _vehicle disableTIEquipment true;
 _vehicle setVariable ["trunk_in_use",false,true];
 _vehicle setVariable ["vehicle_info_owners",[[_uid,name _unit]],true];
 _vehicle setPlateNumber _plate;
-//_vehicle setVariable ["plate", _plate, true]; what happens to ships/air?
+_vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for setPlateNumber
 
 switch (side _unit) do {
     case west: {
