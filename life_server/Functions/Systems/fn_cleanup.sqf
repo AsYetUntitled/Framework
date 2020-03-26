@@ -20,18 +20,15 @@ for "_i" from 0 to 1 step 0 do {
 
             if (crew _x isEqualTo [] && {_noUnitsNear}) then {
                 private _fuel = if (_saveFuel) then {fuel _x} else {1};
-                private _dbInfo = _x getVariable "dbInfo";
-
+                private _ownerInfo = (_x getVariable ["vehicle_info_owners",[]]) select 0;
+                _ownerInfo params ["_uid"];
+                private _plate = _x getVariable ["plate",""];
+                
                 deleteVehicle _x;
 
-                if (isNil "_dbInfo") exitWith {};
+                if (_plate isEqualTo "") exitWith {};
 
                 waitUntil {uiSleep 1; isNull _x};
-
-                _dbInfo params [
-                    "_uid",
-                    "_plate"
-                ];
 
                 private _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _plate];
                 [_query, 1] call DB_fnc_asyncCall;

@@ -6,24 +6,23 @@
     Description:
     Yeah... Gets the vehicle from the garage.
 */
-private ["_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_price","_storageFee","_purchasePrice"];
-disableSerialization;
-if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
-_vehicle = (call compile format ["%1",_vehicle]) select 0;
-_vehicleLife = _vehicle;
-_vid = lbValue[2802,(lbCurSel 2802)];
-_pid = getPlayerUID player;
-_unit = player;
-_spawntext = localize "STR_Garage_spawn_Success";
-if (isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _vehicleLife)) then {
-    _vehicleLife = "Default"; //Use Default class if it doesn't exist
-    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_vehicle];
+private _control = CONTROL(2800,2802);
+private _index = lbCurSel _control;
+if (_index isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
+
+private _dataArr = _control lbData _index;
+private _color = _control lbValue _index;
+_dataArr = call compile format ["%1",_dataArr];
+_dataArr params ["_plate",["_className",""]];
+if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
+
+if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
+    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+    _className = "Default"; //Use Default class if it doesn't exist
 };
 
-_price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
-_storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
+private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
+private _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
 switch (playerSide) do {
     case civilian: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");};
@@ -35,6 +34,19 @@ _price = _purchasePrice * _storageFee;
 
 if (!(_price isEqualType 0) || _price < 1) then {_price = 500;};
 if (BANK < _price) exitWith {hint format [(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
+
+private _spawnPoint = life_garage_sp;
+if (_spawnPoint isEqualType []) then {
+    {
+        if ((nearestObjects[(getMarkerPos _x),["Car","Ship","Air"],5]) isEqualTo []) exitWith {_spawnPoint = _x}
+    } forEach _spawnPoint;
+};
+
+if (life_HC_isActive) then {
+
+} else {
+    [player,_plate,_spawnPoint]
+};
 
 if (life_garage_sp isEqualType []) then {
     if (life_HC_isActive) then {

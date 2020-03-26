@@ -6,16 +6,18 @@
     Description:
     Stores the vehicle in the garage.
 */
-private ["_nearVehicles","_vehicle"];
-if !(isNull objectParent player) then {
-    _vehicle = vehicle player;
-} else {
-    _nearVehicles = nearestObjects[getPos (_this select 0),["Car","Air","Ship"],30]; //Fetch vehicles within 30m.
-    if (count _nearVehicles > 0) then {
+params [
+    ["_garage",objNull,[objNull]],
+    ["_unit",objNull,[objNull]]
+];
+
+private _vehicle = objNull;
+if (isNull objectParent player) then {
+    private _nearVehicles = nearestObjects[getPos _garage,["Car","Air","Ship"],30]; //Fetch vehicles within 30m.
+    if !(_nearVehicles isEqualTo []) then {
         {
-            if (!isNil "_vehicle") exitWith {}; //Kill the loop.
             _vehData = _x getVariable ["vehicle_info_owners",[]];
-            if (count _vehData  > 0) then {
+            if !(_vehData  isEqualTo []) then {
                 _vehOwner = ((_vehData select 0) select 0);
                 if ((getPlayerUID player) == _vehOwner) exitWith {
                     _vehicle = _x;
@@ -25,16 +27,13 @@ if !(isNull objectParent player) then {
     };
 };
 
-if (isNil "_vehicle") exitWith {hint localize "STR_Garage_NoNPC"};
-if (isNull _vehicle) exitWith {};
+if (isNull _vehicle) exitWith {hint localize "STR_Garage_NoNPC"};
 if (!alive _vehicle) exitWith {hint localize "STR_Garage_SQLError_Destroyed"};
 
-_storetext = localize "STR_Garage_Store_Success";
-
 if (life_HC_isActive) then {
-    [_vehicle,false,(_this select 1),_storetext] remoteExec ["HC_fnc_vehicleStore",HC_Life];
+    [_vehicle,false,_unit] remoteExec ["HC_fnc_vehicleStore",HC_Life];
 } else {
-    [_vehicle,false,(_this select 1),_storetext] remoteExec ["TON_fnc_vehicleStore",RSERV];
+    [_vehicle,false,_unit] remoteExec ["TON_fnc_vehicleStore",RSERV];
 };
 
 hint localize "STR_Garage_Store_Server";

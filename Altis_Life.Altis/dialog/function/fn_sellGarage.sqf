@@ -6,23 +6,23 @@
     Description:
     Sells a vehicle from the garage.
 */
-private ["_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_price","_purchasePrice"];
-disableSerialization;
-if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
-_vehicle = (call compile format ["%1",_vehicle]) select 0;
-_vehicleLife = _vehicle;
-_vid = lbValue[2802,(lbCurSel 2802)];
-_pid = getPlayerUID player;
+private _control = CONTROL(2800,2802);
+private _index = lbCurSel _control;
+if (_index isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 
-if (isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
+private _dataArr = _control lbData _index;
+private _color = _control lbValue _index;
+_dataArr = call compile format ["%1",_dataArr];
+_dataArr params ["_plate",["_className",""]];
+if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
+
 if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _vehicleLife)) then {
-    _vehicleLife = "Default"; //Use Default class if it doesn't exist
-    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_vehicle];
+if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
+    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+    _className = "Default"; //Use Default class if it doesn't exist
 };
 
-_price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
+private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
 switch (playerSide) do {
     case civilian: {
         _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");
@@ -59,7 +59,7 @@ if !(_action) exitWith {};
 if (life_HC_isActive) then {
     [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
 } else {
-    [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
+    [player,_plate] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
 };
 
 hint format [localize "STR_Garage_SoldCar",[_sellPrice] call life_fnc_numberText];

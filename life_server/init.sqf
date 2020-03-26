@@ -14,7 +14,6 @@ DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
 _extDBNotLoaded = "";
-serv_sv_use = [];
 publicVariable "life_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 

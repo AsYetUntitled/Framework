@@ -19,7 +19,6 @@ class CfgFunctions {
             class asyncCall{};
             class insertRequest{};
             class updateRequest{};
-            class insertVehicle {};
             class updatePartial {};
         };
     };

@@ -6,7 +6,6 @@
     Description:
     Tells the database that this vehicle need update inventory.
 */
-
 params [
     ["_vehicle", objNull, [objNull]],
     ["_mode", 1, [0]]
@@ -14,13 +13,13 @@ params [
 
 if (isNull _vehicle) exitWith {}; //NULL
 
-private _dbInfo = _vehicle getVariable ["dbInfo",[]];
+private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
 if (_dbInfo isEqualTo []) exitWith {};
 
-private _uid = _dbInfo select 0;
-private _plate = _dbInfo select 1;
+_ownerInfo params ["_uid"];
+private _plate = _vehicle getVariable ["plate",""];
 
-switch (_mode) do {
+switch _mode do {
     case 1: {
         private _vehItems = getItemCargo _vehicle;
         private _vehMags = getMagazineCargo _vehicle;
@@ -34,7 +33,7 @@ switch (_mode) do {
         };
 
         private _query = format ["updateVehicleGear:%1:%2:%3", _cargo, _uid, _plate];
-        private _thread = [_query, 1] call DB_fnc_asyncCall;
+        [_query, 1] call DB_fnc_asyncCall;
     };
 
     case 2: {
@@ -53,6 +52,6 @@ switch (_mode) do {
         _trunk = [_items,_totalweight];
 
         private _query = format ["updateVehicleTrunk:%1:%2:%3", _trunk, _uid, _plate];
-        private _thread = [_query,1] call DB_fnc_asyncCall;
+        [_query,1] call DB_fnc_asyncCall;
     };
 };

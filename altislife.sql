@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 --
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
-    `id`          INT NOT NULL AUTO_INCREMENT,
+    `plate`       VARCHAR(9) NOT NULL,
     `pid`         VARCHAR(17) NOT NULL,
     `side`        VARCHAR(10) NOT NULL,
     `classname`   VARCHAR(64) NOT NULL,
@@ -122,15 +122,14 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
     `alive`       TINYINT NOT NULL DEFAULT 1,
     `blacklist`   TINYINT NOT NULL DEFAULT 0,
     `active`      TINYINT NOT NULL DEFAULT 0,
-    `plate`       MEDIUMINT NOT NULL,
     `color`       INT NOT NULL,
     `inventory`   TEXT NOT NULL,
     `gear`        TEXT NOT NULL,
     `fuel`        DOUBLE NOT NULL DEFAULT 1,
-    `damage`      VARCHAR(256) NOT NULL,
+    `damage`      VARCHAR(256) NOT NULL DEFAULT '[]',
     `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (`id`),
+    PRIMARY KEY (`plate`),
     INDEX `fkIdx_players_vehicles` (`pid`),
     CONSTRAINT `FK_players_vehicles` FOREIGN KEY `fkIdx_players_vehicles` (`pid`)
       REFERENCES `players` (`pid`)
