@@ -14,8 +14,7 @@ params [
 //Fetch some information.
 private _dataArr = _control lbData _index;
 private _color = _control lbValue _index;
-_dataArr = call compile format ["%1",_dataArr];
-_dataArr params ["_plate","_className"];
+(parseSimpleArray _dataArr) params ["_plate","_className"];
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];

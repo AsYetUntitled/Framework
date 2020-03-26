@@ -12,8 +12,7 @@ if (_index isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 
 private _dataArr = _control lbData _index;
 private _color = _control lbValue _index;
-_dataArr = call compile format ["%1",_dataArr];
-_dataArr params ["_plate",["_className",""]];
+(parseSimpleArray _dataArr) params ["_plate",["_className",""]];
 if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
 
 if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
@@ -22,6 +21,8 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     _className = "Default"; //Use Default class if it doesn't exist
 };
 
+private "_multiplier";
+private "_purchasePrice";
 private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
 switch (playerSide) do {
     case civilian: {
@@ -42,7 +43,7 @@ switch (playerSide) do {
     };
 };
 
-_sellPrice = _purchasePrice * _multiplier;
+private _sellPrice = _purchasePrice * _multiplier;
 
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 
@@ -57,7 +58,7 @@ private _action = [
 if !(_action) exitWith {};
 
 if (life_HC_isActive) then {
-    [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
+    [player,_plate] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
 } else {
     [player,_plate] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
 };

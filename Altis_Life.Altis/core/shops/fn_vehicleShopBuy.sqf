@@ -89,7 +89,7 @@ if (_mode) then {
 };
 
 if (life_HC_isActive) then {
-    [(getPlayerUID player),playerSide,_vehicle,_colorIndex] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
+    [player,_className,_spawnPoint,_colorIndex,_mode] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
 } else {
     [player,_className,_spawnPoint,_colorIndex,_mode] remoteExecCall ["TON_fnc_vehicleCreate",RSERV];
 };

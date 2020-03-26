@@ -24,10 +24,9 @@ lbClear _control;
 
 {
     _x params ["_plate","_className","_color"];
-    _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+    private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
     _control lbAdd (_vehicleInfo select 3);
-    _tmp = [_plate,_className];
-    _tmp = str(_tmp);
+    private _tmp = str([_plate,_className]);
     _control lbSetData [_forEachIndex,_tmp];
     _control lbSetPicture [_forEachIndex,(_vehicleInfo select 2)];
     _control lbSetValue [_forEachIndex,_color];

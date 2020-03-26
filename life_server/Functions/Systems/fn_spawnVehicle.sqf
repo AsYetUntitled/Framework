@@ -8,7 +8,8 @@
 params [
     ["_unit",objNull,[objNull]],
     ["_plate","",[""]],
-    ["_spawnPoint","",[""]]
+    ["_spawnPoint","",[""]],
+    ["_dir",-1,[0]]
 ];
 
 private _name = name _unit;
@@ -54,7 +55,10 @@ _query = format ["updateVehicle:%1:%2", _pid, _plate];
 _wasIllegal = _wasIllegal isEqualTo 1;
 
 private _vehicle = createVehicle [_className,getMarkerPos _spawnPoint,[],0];
-_vehicle setDir (markerDir _spawnPoint);
+if (_dir isEqualTo -1) then {
+    _dir = markerDir _spawnPoint;
+};
+_vehicle setDir _dir;
 
 clearWeaponCargoGlobal _vehicle;
 clearMagazineCargoGlobal _vehicle;
