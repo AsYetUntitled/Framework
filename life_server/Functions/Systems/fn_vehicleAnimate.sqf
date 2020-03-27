@@ -6,23 +6,18 @@
 */
 params [
     ["_vehicle",objNull,[objNull]],
-    ["_animate","",[""]],
+    ["_animate","",["",[]]],
     ["_preset",false,[false]]
 ];
 if (isNull _vehicle) exitWith {};
 
 if !(_preset) then {
-    if (count _animate > 1) then {
-        {
-            _x params ["_selection","_value"];
-            _vehicle animate [_selection,_value];
-        } forEach _animate;
-    } else {
-        _animate params ["_selection","_value"];
+    {
+        _x params ["_selection","_value"];
         _vehicle animate [_selection,_value];
-    };
+    } forEach _animate;
 } else {
-    switch (_animate) do {
+    switch _animate do {
         case "civ_littlebird": {
             _vehicle animate ["addDoors",1];
             _vehicle animate ["addBenches",0];

@@ -7,7 +7,7 @@
     Master configuration for vehicle weight.
 */
 params [
-	["_className","",[""]]
+    ["_className","",[""]]
 ];
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {

@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Can't be bothered to answer it.. Already deleted it by accident..
+    Updates the information when garage selection is changed.
 */
 params [
     ["_control",controlNull,[controlNull]],

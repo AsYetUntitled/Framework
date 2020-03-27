@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Yeah... Gets the vehicle from the garage.
+    Gets the vehicle from the garage.
 */
 private _control = CONTROL(2800,2802);
 private _index = lbCurSel _control;
