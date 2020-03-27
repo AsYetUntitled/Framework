@@ -1,4 +1,4 @@
-#include "\life_server\script_macros.hpp"
+#include "\life_hc\hc_macros.hpp"
 /*
     File: fn_cleanup.sqf
     Author: Bryan "Tonic" Boardwine
