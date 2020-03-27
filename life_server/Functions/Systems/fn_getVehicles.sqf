@@ -17,14 +17,9 @@ if (isNull _unit || {_type isEqualTo ""}) exitWith {
     };
 };
 
-private _side = switch (side _unit) do {
-    case west:{"cop"};
-    case civilian: {"civ"};
-    case independent: {"med"};
-    default {"Error"};
-};
+private _side = [_unit,true] call life_util_fnc_sideToString;
 
-if (_side isEqualTo "Error") exitWith {
+if (_side isEqualTo "Unknown") exitWith {
     [[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
 };
 

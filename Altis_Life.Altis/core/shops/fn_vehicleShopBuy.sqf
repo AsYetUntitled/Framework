@@ -13,10 +13,11 @@ if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPic
 if ((time - life_action_delay) < 0.2) exitWith {hint localize "STR_NOTF_ActionDelay";};
 life_action_delay = time;
 
+life_veh_shop params ["_type","_spawnPoints"];
 private _className = lbData[2302,(lbCurSel 2302)];
 private _vIndex = lbValue[2302,(lbCurSel 2302)];
-private _vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"vehicles");
-private _shopSide = M_CONFIG(getText,"CarShops",(life_veh_shop select 0),"side");
+private _vehicleList = M_CONFIG(getArray,"CarShops",_type,"vehicles");
+private _shopSide = M_CONFIG(getText,"CarShops",_type,"side");
 
 
 private _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
@@ -60,10 +61,9 @@ private _colorIndex = lbValue[2304,(lbCurSel 2304)];
 if (_purchasePrice < 0) exitWith {closeDialog 0;}; //Bad price entry
 if (CASH < _purchasePrice) exitWith {hint format [localize "STR_Shop_Veh_NotEnough",[_purchasePrice - CASH] call life_fnc_numberText];closeDialog 0;};
 
-private _spawnPoints = life_veh_shop select 1;
 private _spawnPoint = "";
 
-if ((life_veh_shop select 0) == "med_air_hs") then {
+if (_type == "med_air_hs") then {
     if (nearestObjects[(getMarkerPos _spawnPoints),["Air"],35] isEqualTo []) exitWith {_spawnPoint = _spawnPoints};
 } else {
     //Check if there is multiple spawn points and find a suitable spawnpoint.

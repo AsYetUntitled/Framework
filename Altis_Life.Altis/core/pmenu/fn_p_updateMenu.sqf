@@ -13,7 +13,7 @@ if (FETCH_CONST(life_adminlevel) < 1) then {
     ctrlShow[2021,false];
 };
 
-_side = switch (playerSide) do {case west:{"cop"}; case civilian:{"civ"}; case independent:{"med"};};
+private _side = [player,true] call life_util_fnc_sideToString;
 
 _inv = CONTROL(2001,2005);
 _lic = CONTROL(2001,2014);

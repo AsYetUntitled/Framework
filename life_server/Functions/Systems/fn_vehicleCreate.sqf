@@ -15,7 +15,6 @@ params [
 if (isNull _unit || {_className isEqualTo "" || {_spawnPoint isEqualTo ""}}) exitWith {};
 
 private _uid = getPlayerUID _unit;
-private _className = typeOf _vehicle;
 
 private _plateFormat = LIFE_SETTINGS(getText,"vehicle_plateFormat");
 private _platePrefix = LIFE_SETTINGS(getText,"vehicle_platePrefix");
@@ -50,12 +49,7 @@ if (_purchase) then {
         if (_vehicle isKindOf "Ship") exitWith {"Ship"};
     };
 
-    private _side = switch (side _unit) do {
-        case west:{"cop"};
-        case civilian: {"civ"};
-        case independent: {"med"};
-        default {"Error"};
-    };
+    private _side = [_unit,true] call life_util_fnc_sideToString;
 
     private _query = format ["insertVehicle:%1:%2:%3:%4:%5:%6", _side, _className, _type, _uid, _color, _plate];
     [_query, 1] call DB_fnc_asyncCall;
@@ -71,7 +65,7 @@ clearBackpackCargoGlobal _vehicle;
 _vehicle lock 2;
 _vehicle disableTIEquipment true;
 
-[_vehicle,_colorIndex] call life_fnc_colorVehicle;
+[_vehicle,_color] call life_fnc_colorVehicle;
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 _vehicle setVariable ["trunk_in_use",false,true];
@@ -81,15 +75,19 @@ _vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for se
 
 switch (side _unit) do {
     case west: {
-        [_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
+        if (_className in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
+            [_vehicle,"cop_offroad",true] call TON_fnc_vehicleAnimate;
+        };
     };
     case civilian: {
-        if ((life_veh_shop select 2) isEqualTo "civ" && {_className == "B_Heli_Light_01_F"}) then {
-            [_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
+        if (_className isEqualTo "B_Heli_Light_01_F" && !(_color isEqualTo 13)) then {
+            [_vehicle,"civ_littlebird",true] call TON_fnc_vehicleAnimate;
         };
     };
     case independent: {
-        [_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
+        if (_className isEqualTo "C_Offroad_01_F") then {
+            [_vehicle,"med_offroad",true] call TON_fnc_vehicleAnimate;
+        };
     };
 };
 

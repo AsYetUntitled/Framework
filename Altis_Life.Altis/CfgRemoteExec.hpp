@@ -59,7 +59,6 @@ class CfgRemoteExec {
         F(life_fnc_tazeSound,CLIENT)
         F(life_fnc_ticketPaid,CLIENT)
         F(life_fnc_ticketPrompt,CLIENT)
-        F(life_fnc_vehicleAnimate,CLIENT)
         F(life_fnc_wantedList,CLIENT)
         F(life_fnc_wireTransfer,CLIENT)
         F(life_fnc_gangBankResponse,CLIENT)
