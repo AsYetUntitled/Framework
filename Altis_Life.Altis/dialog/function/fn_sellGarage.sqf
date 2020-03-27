@@ -46,6 +46,16 @@ _sellPrice = _purchasePrice * _multiplier;
 
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 
+closeDialog 0;
+private _action = [
+    format[localize "STR_Garage_SellWarn", getText(configFile >> "CfgVehicles" >> _vehicle >> "displayName"), [_sellPrice] call life_fnc_numberText],
+    localize "STR_Garage_SellWarnTitle",
+    localize "STR_Global_Yes",
+    localize "STR_Global_No"
+] call BIS_fnc_guiMessage;
+
+if !(_action) exitWith {};
+
 if (life_HC_isActive) then {
     [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
 } else {
