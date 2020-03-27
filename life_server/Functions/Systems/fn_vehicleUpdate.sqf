@@ -17,7 +17,7 @@ private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
 if (_dbInfo isEqualTo []) exitWith {};
 
 _ownerInfo params ["_uid"];
-private _plate = _vehicle getVariable ["plate",""];
+private _vid = _vehicle getVariable ["vehID",-1];
 
 switch _mode do {
     case 1: {
@@ -32,7 +32,7 @@ switch _mode do {
             _cargo = [];
         };
 
-        private _query = format ["updateVehicleGear:%1:%2:%3", _cargo, _uid, _plate];
+        private _query = format ["updateVehicleGear:%1:%2:%3", _cargo, _uid, _vid];
         [_query, 1] call DB_fnc_asyncCall;
     };
 
@@ -51,7 +51,7 @@ switch _mode do {
         } forEach _itemList;
         _trunk = [_items,_totalweight];
 
-        private _query = format ["updateVehicleTrunk:%1:%2:%3", _trunk, _uid, _plate];
+        private _query = format ["updateVehicleTrunk:%1:%2:%3", _trunk, _uid, _vid];
         [_query,1] call DB_fnc_asyncCall;
     };
 };

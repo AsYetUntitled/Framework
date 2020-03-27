@@ -12,7 +12,7 @@ if (_index isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 
 private _dataArr = _control lbData _index;
 private _color = _control lbValue _index;
-(parseSimpleArray _dataArr) params ["_plate",["_className",""]];
+(parseSimpleArray _dataArr) params ["_vid",["_className",""]];
 if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
@@ -42,9 +42,9 @@ if (_spawnPoint isEqualType []) then {
 };
 
 if (life_HC_isActive) then {
-    [player,_plate,_spawnPoint,_dir] remoteExecCall ["HC_fnc_spawnVehicle",HC_Life];
+    [player,_vid,_spawnPoint,_dir] remoteExecCall ["HC_fnc_spawnVehicle",HC_Life];
 } else {
-    [player,_plate,_spawnPoint,_dir] remoteExecCall ["TON_fnc_spawnVehicle",RSERV];
+    [player,_vid,_spawnPoint,_dir] remoteExecCall ["TON_fnc_spawnVehicle",RSERV];
 };
 
 hint localize "STR_Garage_SpawningVeh";

@@ -12,7 +12,7 @@ if (_index isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 
 private _dataArr = _control lbData _index;
 private _color = _control lbValue _index;
-(parseSimpleArray _dataArr) params ["_plate",["_className",""]];
+(parseSimpleArray _dataArr) params ["_vid",["_className",""]];
 if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
 
 if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
@@ -58,9 +58,9 @@ private _action = [
 if !(_action) exitWith {};
 
 if (life_HC_isActive) then {
-    [player,_plate] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
+    [player,_vid] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
 } else {
-    [player,_plate] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
+    [player,_vid] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
 };
 
 hint format [localize "STR_Garage_SoldCar",[_sellPrice] call life_fnc_numberText];

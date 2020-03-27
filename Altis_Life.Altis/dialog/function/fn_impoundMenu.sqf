@@ -23,10 +23,10 @@ private _control = CONTROL(2800,2802);
 lbClear _control;
 
 {
-    _x params ["_plate","_className","_color"];
+    _x params ["_vid","_plate","_className","_color"];
     private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-    _control lbAdd (_vehicleInfo select 3);
-    private _tmp = str([_plate,_className]);
+    _control lbAdd format ["%1 - %2",(_vehicleInfo select 3),_plate];
+    private _tmp = str([_vid,_className]);
     _control lbSetData [_forEachIndex,_tmp];
     _control lbSetPicture [_forEachIndex,(_vehicleInfo select 2)];
     _control lbSetValue [_forEachIndex,_color];

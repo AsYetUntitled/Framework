@@ -6,14 +6,15 @@
     Description:
     Master configuration for vehicle weight.
 */
-private ["_className","_classNameLife","_weight"];
-_className = [_this,0,"",[""]] call BIS_fnc_param;
-_classNameLife = _className;
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
-    _classNameLife = "Default"; //Use Default class if it doesn't exist
-    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
-};
-_weight = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"vItemSpace");
+params [
+	["_className","",[""]]
+];
 
-if (isNil "_weight") then {_weight = -1;};
+if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
+    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+    _className = "Default"; //Use Default class if it doesn't exist
+};
+
+private _weight = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"vItemSpace");
+
 _weight;

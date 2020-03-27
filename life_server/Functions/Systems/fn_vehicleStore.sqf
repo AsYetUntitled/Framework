@@ -15,7 +15,7 @@ if (isNull _vehicle || {isNull _unit}) exitWith {life_impound_inuse = false; (ow
 
 private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
 _ownerInfo params ["_uid"];
-private _plate = _vehicle getVariable ["plate",""];
+private _vid = _vehicle getVariable ["vehID",-1];
 
 // save damage.
 private _damage = [];
@@ -32,7 +32,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
 
 if (_impound) exitWith {
     if !(_vInfo isEqualTo []) then  {
-        private _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid, _plate];
+        private _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid, _vid];
         [_query,1] call DB_fnc_asyncCall;
     };
 
@@ -96,7 +96,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 
         if (_blacklist) then {
             [_uid, _profileName, "481"] remoteExecCall ["life_fnc_wantedAdd", RSERV];
-            private _query = format ["updateVehicleBlacklistPlate:%1:%2", _uid, _plate];
+            private _query = format ["updateVehicleBlacklistPlate:%1:%2", _uid, _vid];
             [_query, 1] call DB_fnc_asyncCall;
         };
 
@@ -129,7 +129,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
 };
 
 // update
-private _query = format ["updateVehicleAll:%1:%2:%3:%4:%5:%6", _trunk, _cargo, _fuel, _damage, _uid, _plate];
+private _query = format ["updateVehicleAll:%1:%2:%3:%4:%5:%6", _trunk, _cargo, _fuel, _damage, _uid, _vid];
 [_query,1] call DB_fnc_asyncCall;
 
 if (!isNil "_vehicle" && {!isNull _vehicle}) then {

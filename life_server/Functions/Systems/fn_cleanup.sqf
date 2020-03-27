@@ -22,15 +22,15 @@ for "_i" from 0 to 1 step 0 do {
                 private _fuel = if (_saveFuel) then {fuel _x} else {1};
                 private _ownerInfo = (_x getVariable ["vehicle_info_owners",[]]) select 0;
                 _ownerInfo params ["_uid"];
-                private _plate = _x getVariable ["plate",""];
+                private _vid = _x getVariable ["vehID",-1];
                 
                 deleteVehicle _x;
 
-                if (_plate isEqualTo "") exitWith {};
+                if (_vid isEqualTo -1) exitWith {};
 
                 waitUntil {uiSleep 1; isNull _x};
 
-                private _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _plate];
+                private _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _vid];
                 [_query, 1] call DB_fnc_asyncCall;
             };
         };

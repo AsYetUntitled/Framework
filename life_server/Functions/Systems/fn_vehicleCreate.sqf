@@ -18,6 +18,7 @@ private _uid = getPlayerUID _unit;
 
 private _plateFormat = LIFE_SETTINGS(getText,"vehicle_plateFormat");
 private _platePrefix = LIFE_SETTINGS(getText,"vehicle_platePrefix");
+private _plateForceUnique = LIFE_SETTINGS(getNumber,"vehicle_enforceUniquePlate") isEqualTo 1;
 private _plateFormatArray = _plateFormat splitString "";
 private _letterArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
@@ -37,11 +38,16 @@ while {_plate isEqualTo ""} do {
     } forEach _plateFormatArray;
 
     _randomPlate = _randomPlate joinString "";
-    private _return = [format["checkPlate:%1",_randomPlate],2] call DB_fnc_asyncCall;
-    if (_return isEqualTo []) exitWith {_plate = _randomPlate};
+    if (_plateForceUnique) then {
+        private _return = [format["checkPlate:%1",_randomPlate],2] call DB_fnc_asyncCall;
+        if (_return isEqualTo []) exitWith {_plate = _randomPlate};
+    } else {
+        _plate = _randomPlate;
+    };
 };
 _plate = format["%1%2",_platePrefix,_plate];
 
+private _vid = -1;
 if (_purchase) then {
     private _type = call {
         if (_vehicle isKindOf "Car") exitWith {"Car"};
@@ -72,6 +78,16 @@ _vehicle setVariable ["trunk_in_use",false,true];
 _vehicle setVariable ["vehicle_info_owners",[[_uid,name _unit]],true];
 _vehicle setPlateNumber _plate;
 _vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for setPlateNumber
+if (_purchase) then {
+    [_plate,_uid,_vehicle] spawn {
+        params ["_plate","_uid","_vehicle"];
+        uiSleep 0.3;
+        private _query = format ["selectVehicleID:%1:%2", _plate, _uid];
+        private _queryResult = [_query, 2] call DB_fnc_asyncCall;
+        _queryResult params ["_vid"];
+        _vehicle setVariable ["vehID",_vid];
+    };
+};
 
 switch (side _unit) do {
     case west: {

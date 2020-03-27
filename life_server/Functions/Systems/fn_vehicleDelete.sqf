@@ -7,10 +7,10 @@
 
 params [
     ["_unit",objNull,[objNull]],
-    ["_plate","",[""]]
+    ["_vid",-1,[0]]
 ];
-if (isNull _unit || {_plate isEqualTo ""}) exitWith {};
+if (isNull _unit || {_vid isEqualTo -1}) exitWith {};
 
 private _pid = getPlayerUID _unit;
-private _query = format ["deleteVehicle:%1:%2", _pid, _plate];
+private _query = format ["deleteVehicle:%1:%2", _pid, _vid];
 [_query, 1] call DB_fnc_asyncCall;

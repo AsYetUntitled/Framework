@@ -7,17 +7,17 @@
 */
 params [
     ["_unit",objNull,[objNull]],
-    ["_plate","",[""]],
+    ["_vid",-1,[""]],
     ["_spawnPoint","",[""]],
     ["_dir",-1,[0]]
 ];
-if (isNull _unit || {_plate isEqualTo ""}) exitWith {};
+if (isNull _unit || {_vid isEqualTo -1}) exitWith {};
 
 private _name = name _unit;
 private _side = side _unit;
 private _pid = getPlayerUID _unit;
 
-private _query = format ["selectVehiclesMore:%1:%2", _plate, _pid];
+private _query = format ["selectVehiclesMore:%1:%2", _vid, _pid];
 
 private _tickTime = diag_tickTime;
 private _queryResult = [_query, 2] call DB_fnc_asyncCall;
@@ -31,7 +31,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 if (_queryResult isEqualType "" || {_queryResult isEqualTo []}) exitWith {};
-_queryResult params ["_className","_color","_trunk","_gear","_fuel","_damage","_wasIllegal","_active","_alive"];
+_queryResult params ["_className","_plate","_color","_trunk","_gear","_fuel","_damage","_wasIllegal","_active","_alive"];
 
 if (_alive isEqualTo 0) exitWith {
     [1,"STR_Garage_SQLError_Destroyed",true,[_className]] remoteExecCall ["life_fnc_broadcast",_unit];
@@ -47,7 +47,7 @@ if !(_nearVehicles isEqualTo []) exitWith {
     [_price] remoteExecCall ["life_fnc_garageRefund",_unit];
 };
 
-_query = format ["updateVehicle:%1:%2", _pid, _plate];
+_query = format ["updateVehicle:%1:%2", _pid, _vid];
 [_query, 1] call DB_fnc_asyncCall;
 
 private _vehicle = createVehicle [_className,getMarkerPos _spawnPoint,[],0];
@@ -70,6 +70,7 @@ _vehicle setVariable ["trunk_in_use",false,true];
 _vehicle setVariable ["vehicle_info_owners",[[_pid,name _unit]],true];
 _vehicle setPlateNumber _plate;
 _vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for setPlateNumber
+_vehicle setVariable ["vehID",_vid];
 
 switch _side do {
     case west: {
@@ -116,7 +117,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         _location = text _location;
         [1, "STR_NOTF_BlackListedVehicle", true, [_location, _name]] remoteExecCall ["life_fnc_broadcast", west];
 
-        _query = format ["updateVehicleBlacklist:%1:%2", _plate, _pid];
+        _query = format ["updateVehicleBlacklist:%1:%2", _vid, _pid];
         [_query, 1] call DB_fnc_asyncCall;
     };
 } else {

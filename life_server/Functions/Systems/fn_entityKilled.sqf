@@ -48,11 +48,11 @@ private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _killed) 
 if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
     private _ownerInfo = (_x getVariable ["vehicle_info_owners",[]]) select 0;
     _ownerInfo params ["_uid"];
-    private _plate = _x getVariable ["plate",""];
+    private _vid = _x getVariable ["vehID",-1];
 
-    if !(_plate isEqualTo "") then {
+    if !(_vid isEqualTo -1) then {
 
-        private _query = format ["deleteVehicle:%1:%2", _uid, _plate];
+        private _query = format ["deleteVehicle:%1:%2", _uid, _vid];
         [_query,1] call DB_fnc_asyncCall;
     };
 
