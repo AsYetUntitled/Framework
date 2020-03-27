@@ -59,8 +59,7 @@ if (_purchase) then {
 
     private _query = format ["insertVehicle:%1:%2:%3:%4:%5:%6", _side, _className, _type, _uid, _color, _plate];
     private _queryResult = [_query, 2] call DB_fnc_asyncCall;
-    _queryResult params ["_vid"];
-
+    _vid = _queryResult select 0;
 };
 
 private _vehicle = createVehicle [_className,getMarkerPos _spawnPoint,[],0];
