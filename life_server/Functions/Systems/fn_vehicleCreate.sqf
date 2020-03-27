@@ -58,7 +58,9 @@ if (_purchase) then {
     private _side = [_unit,true] call life_util_fnc_sideToString;
 
     private _query = format ["insertVehicle:%1:%2:%3:%4:%5:%6", _side, _className, _type, _uid, _color, _plate];
-    [_query, 1] call DB_fnc_asyncCall;
+    private _queryResult = [_query, 2] call DB_fnc_asyncCall;
+    _queryResult params ["_vid"];
+
 };
 
 private _vehicle = createVehicle [_className,getMarkerPos _spawnPoint,[],0];
@@ -79,12 +81,9 @@ _vehicle setVariable ["vehicle_info_owners",[[_uid,name _unit]],true];
 _vehicle setPlateNumber _plate;
 _vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for setPlateNumber
 if (_purchase) then {
-    [_plate,_uid,_vehicle] spawn {
-        params ["_plate","_uid","_vehicle"];
+    [_vehicle,_vid] spawn {
+        params ["_vehicle","_vid"];
         uiSleep 0.3;
-        private _query = format ["selectVehicleID:%1:%2", _plate, _uid];
-        private _queryResult = [_query, 2] call DB_fnc_asyncCall;
-        _queryResult params ["_vid"];
         _vehicle setVariable ["vehID",_vid];
     };
 };
