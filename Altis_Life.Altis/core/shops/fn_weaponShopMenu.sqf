@@ -13,7 +13,7 @@ private _conditions = M_CONFIG(getText,"WeaponShops",(_this select 3),"condition
 
 private _exit = false;
 if !(_shopSide isEqualTo "") then {
-	private _flag = [player,true] call life_util_fnc_sideToString;
+    private _flag = [player,true] call life_util_fnc_sideToString;
     if !(_flag isEqualTo _shopSide) then {_exit = true;};
 };
 

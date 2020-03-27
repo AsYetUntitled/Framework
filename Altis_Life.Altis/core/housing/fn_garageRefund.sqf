@@ -7,7 +7,7 @@
     Returns players money as vehicle could not be spawned.
 */
 params [
-	["_price",0,[0]]
+    ["_price",0,[0]]
 ];
 
 hint localize "STR_Garage_SpawnPointError";
