@@ -18,11 +18,7 @@ private _fnc_fedDealerUpdate = {
     fed_bank setVariable ["safe",round(_funds+((count playableUnits)/2)),true];
 };
 
-for "_i" from 0 to 1 step 0 do {
-    uiSleep (30 * 60);
-    [] call _fnc_fedDealerUpdate;
-    uiSleep (30 * 60);
-    [] call _fnc_fedDealerUpdate;
+private _fnc_cleanVehicles = {
     {
         private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "vehicleClass");
         private _protect = _x getVariable ["NPC",false];
@@ -57,4 +53,25 @@ for "_i" from 0 to 1 step 0 do {
         };
         true
     } count (allMissionObjects "Thing");
+};
+
+//Array format: [parameters,function,delayTime]
+private _routines = [
+    [[],_fnc_fedDealerUpdate,1800],
+    [[],_fnc_cleanVehicles,3600]
+];
+
+{
+    _x pushBack diag_tickTime;
+} forEach _routines;
+
+for "_i" from 0 to 1 step 0 do {
+    {
+        _x params ["_params","_function","_delay","_timeToRun"];
+        if (diag_tickTime > _timeToRun) then {
+            _x set [2,_timeToRun + _delay];
+            _params call _function;
+        };
+    } forEach _routines;
+    uiSleep 1e-6;
 };
