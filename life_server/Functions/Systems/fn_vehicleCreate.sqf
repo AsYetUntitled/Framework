@@ -23,8 +23,8 @@ private _letterArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 
 private _plate = "";
 while {_plate isEqualTo ""} do {
+    private _randomPlate = [];
     {
-        private _randomPlate = [];
         if (_x isEqualTo "$") then {
             _randomPlate pushBack (selectRandom _letterArray);
         } else {
@@ -34,11 +34,11 @@ while {_plate isEqualTo ""} do {
                 _randomPlate pushBack (round(random 9));
             };
         };
-        _randomPlate = _randomPlate joinString "";
-
-        private _return = [format["checkPlate:%1",_randomPlate],2] call DB_fnc_asyncCall;
-        if (_return isEqualTo []) exitWith {_plate = _randomPlate};
     } forEach _plateFormatArray;
+
+    _randomPlate = _randomPlate joinString "";
+    private _return = [format["checkPlate:%1",_randomPlate],2] call DB_fnc_asyncCall;
+    if (_return isEqualTo []) exitWith {_plate = _randomPlate};
 };
 _plate = format["%1%2",_platePrefix,_plate];
 

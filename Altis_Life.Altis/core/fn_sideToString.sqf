@@ -16,7 +16,7 @@ private _sideText = switch (side _unit) do {
     case civilian: {"Civ"};
     case independent: {"Med"};
     case east: {"East"};
-    default {"Unknown"};    
+    default {"Unknown"};
 };
 
 if (_lowerCase) then {
