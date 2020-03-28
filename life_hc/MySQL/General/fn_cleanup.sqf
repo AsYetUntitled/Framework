@@ -23,8 +23,8 @@ private _fnc_cleanVehicles = {
         private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _x) >> "vehicleClass");
         private _protect = _x getVariable ["NPC",false];
 
-        if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!(_protect)}) then {
-            private _noUnitsNear = ((nearestObjects [_x, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1);
+        if ((_vehicleClass in ["Car","Air","Ship","Armored","Submarine"]) && {!_protect}) then {
+            private _noUnitsNear = (nearestObjects [_x, ["CAManBase"], _minUnitDistance]) findIf {isPlayer _x && {alive _x}} isEqualTo -1;
 
             if (crew _x isEqualTo [] && {_noUnitsNear}) then {
                 private _fuel = if (_saveFuel) then {fuel _x} else {1};
