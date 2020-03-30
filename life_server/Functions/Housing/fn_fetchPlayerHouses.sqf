@@ -20,13 +20,13 @@ private _containers = [_query, 2, true] call DB_fnc_asyncCall;
 private _containerss = [];
 
 {
-    _position = parseSimpleArray format ["%1",_x select 1];
+    _position = call compile format ["%1",_x select 1];
     _house = nearestObject [_position, "House"];
-    _direction = parseSimpleArray format ["%1",_x select 5];
+    _direction = call compile format ["%1",_x select 5];
     _trunk = _x select 3;
-    if (_trunk isEqualType "") then {_trunk = parseSimpleArray format ["%1", _trunk];};
+    if (_trunk isEqualType "") then {_trunk = call compile format ["%1", _trunk];};
     _gear = _x select 4;
-    if (_gear isEqualType "") then {_gear = parseSimpleArray format ["%1", _gear];};
+    if (_gear isEqualType "") then {_gear = call compile format ["%1", _gear];};
     _container = createVehicle[_x select 2,[0,0,999],[],0,"NONE"];
     waitUntil {!isNil "_container" && {!isNull _container}};
     _containerss = _house getVariable ["containers",[]];
@@ -77,7 +77,7 @@ private _houses = [_query, 2, true] call DB_fnc_asyncCall;
 
 _return = [];
 {
-    _pos = parseSimpleArray format ["%1",_x select 1];
+    _pos = call compile format ["%1",_x select 1];
     _house = nearestObject [_pos, "House"];
     _house allowDamage false;
     _return pushBack [_x select 1];

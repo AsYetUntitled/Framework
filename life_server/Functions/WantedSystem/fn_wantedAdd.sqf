@@ -41,7 +41,7 @@ if !(_queryResult isEqualTo []) then {
     _queryResult = [_query,2] call DB_fnc_asyncCall;
     _pastCrimes = _queryResult select 0;
 
-    if (_pastCrimes isEqualType "") then {_pastCrimes = parseSimpleArray format ["%1", _pastCrimes];};
+    if (_pastCrimes isEqualType "") then {_pastCrimes = call compile format ["%1", _pastCrimes];};
     _pastCrimes pushBack _number;
     _query = format ["updateWanted:%1:%2:%3", _pastCrimes, _val, _uid];
     [_query,1] call DB_fnc_asyncCall;

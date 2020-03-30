@@ -14,10 +14,10 @@ if (life_spawn_point isEqualTo []) then {
     _sp = _spCfg select 0;
 
     if (playerSide isEqualTo civilian) then {
-        if (isNil {(parseSimpleArray format ["%1",_sp select 0])}) then {
+        if (isNil {(call compile format ["%1",_sp select 0])}) then {
             player setPos (getMarkerPos (_sp select 0));
         } else {
-            _spawnPos = selectRandom (parseSimpleArray format ["%1",_sp select 0]);
+            _spawnPos = selectRandom (call compile format ["%1",_sp select 0]);
             _spawnPos = _spawnPos buildingPos 0;
             player setPos _spawnPos;
         };
@@ -27,7 +27,7 @@ if (life_spawn_point isEqualTo []) then {
     titleText[format ["%2 %1",_sp select 1,localize "STR_Spawn_Spawned"],"BLACK IN"];
 } else {
     if (playerSide isEqualTo civilian) then {
-        if (isNil {(parseSimpleArray format ["%1",life_spawn_point select 0])}) then {
+        if (isNil {(call compile format ["%1",life_spawn_point select 0])}) then {
 
             if (((life_spawn_point select 0) find "house") != -1) then {
                 private ["_bPos","_house","_pos"];
@@ -45,7 +45,7 @@ if (life_spawn_point isEqualTo []) then {
                 player setPos (getMarkerPos (life_spawn_point select 0));
             };
         } else {
-            _spawnPos = selectRandom (parseSimpleArray format ["%1", life_spawn_point select 0]);
+            _spawnPos = selectRandom (call compile format ["%1", life_spawn_point select 0]);
             _spawnPos = _spawnPos buildingPos 0;
             player setPos _spawnPos;
         };

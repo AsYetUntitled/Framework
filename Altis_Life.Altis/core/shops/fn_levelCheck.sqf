@@ -25,7 +25,7 @@ if (_itemConfig isEqualType []) then {
 
 if (_itemConfig isEqualTo "") exitWith {true};
 
-private _evaluation = parseSimpleArray _itemConfig;
+private _evaluation = call compile _itemConfig;
 
 if (_evaluation isEqualType true) then {
     if (_evaluation) then {

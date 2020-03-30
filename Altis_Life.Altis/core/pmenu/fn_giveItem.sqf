@@ -25,7 +25,7 @@ call {
 
 
     private _unit = lbData [2023, lbCurSel 2023];
-    _unit = parseSimpleArray format ["%1",_unit];
+    _unit = call compile format ["%1",_unit];
 
     if (isNil "_unit") exitWith {
         hint localize "STR_NOTF_notWithinRange";

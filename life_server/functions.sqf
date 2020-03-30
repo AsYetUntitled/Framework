@@ -151,7 +151,7 @@ compileFinal "
     if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3015,true];};
     if (lbCurSel 3004 isEqualTo -1) exitWith {hint localize ""STR_CELLMSG_SelectPerson""; ctrlShow[3015,true];};
 
-    _to = parseSimpleArray format [""%1"",(lbData[3004,(lbCurSel 3004)])];
+    _to = call compile format [""%1"",(lbData[3004,(lbCurSel 3004)])];
     if (isNull _to) exitWith {ctrlShow[3015,true];};
     if (isNil ""_to"") exitWith {ctrlShow[3015,true];};
     if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3015,true];};
@@ -203,7 +203,7 @@ compileFinal "
     private [""_msg"",""_to""];
     ctrlShow[3020,false];
     _msg = ctrlText 3003;
-    _to = parseSimpleArray format [""%1"",(lbData[3004,(lbCurSel 3004)])];
+    _to = call compile format [""%1"",(lbData[3004,(lbCurSel 3004)])];
     if (isNull _to) exitWith {ctrlShow[3020,true];};
     if (isNil ""_to"") exitWith {ctrlShow[3020,true];};
     if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3020,true];};

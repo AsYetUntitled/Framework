@@ -22,7 +22,7 @@ private _queryResult = [_query, 2] call DB_fnc_asyncCall;
 _ret = owner _ret;
 
 private _type = _queryResult select 0;
-if (_type isEqualType "") then {_type = parseSimpleArray format ["%1", _type];};
+if (_type isEqualType "") then {_type = call compile format ["%1", _type];};
 
 private _crimesArr = [];
 {
