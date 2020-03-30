@@ -68,7 +68,14 @@ if (_impound) exitWith {
 
 // not persistent so just do this!
 if (_vInfo isEqualTo []) exitWith {
-    [1,"STR_Garage_Store_NotPersistent",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
+    if (LIFE_SETTINGS(getNumber,"vehicle_rentalReturn") isEqualTo 1) then {
+        [1,"STR_Garage_Store_NotPersistent2",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
+        if (!isNil "_vehicle" && {!isNull _vehicle}) then {
+            deleteVehicle _vehicle;
+        };
+    } else {
+        [1,"STR_Garage_Store_NotPersistent",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
+    };
     life_garage_store = false;
     _ownerID publicVariableClient "life_garage_store";
 };
