@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
     `blacklist`   TINYINT NOT NULL DEFAULT 0,
     `active`      TINYINT NOT NULL DEFAULT 0,
     `plate`       VARCHAR(15) NOT NULL,
-    `color`       INT NOT NULL,
+    `color`       VARCHAR(64) NOT NULL,
     `inventory`   TEXT NOT NULL,
     `gear`        TEXT NOT NULL,
     `fuel`        DOUBLE NOT NULL DEFAULT 1,

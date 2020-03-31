@@ -63,7 +63,7 @@ clearBackpackCargoGlobal _vehicle;
 _vehicle lock 2;
 _vehicle disableTIEquipment true;
 
-[_vehicle,_colorIndex] call life_fnc_colorVehicle;
+[_vehicle,_color] call life_fnc_colorVehicle;
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 _vehicle setVariable ["trunk_in_use",false,true];
@@ -79,7 +79,7 @@ switch _side do {
         };
     };
     case civilian: {
-        if (_className isEqualTo "B_Heli_Light_01_F" && !(_color isEqualTo 13)) then {
+        if (_className isEqualTo "B_Heli_Light_01_F" && !(_color isEqualTo "Digi Green")) then {
             [_vehicle,"civ_littlebird",true] call TON_fnc_vehicleAnimate;
         };
     };

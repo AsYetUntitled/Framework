@@ -13,16 +13,12 @@ params [
 
 //Fetch some information.
 private _dataArr = _control lbData _index;
-private _color = _control lbValue _index;
-(parseSimpleArray _dataArr) params ["","_className"];
+(parseSimpleArray _dataArr) params ["","_className","_vehicleColor"];
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
     _className = "Default"; //Use Default class if it doesn't exist
 };
-
-private _vehicleColor = ((M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures") select _color) select 0);
-if (isNil "_vehicleColor") then {_vehicleColor = "Default";};
 
 private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _vehicleInfo params ["","","","","","","","","_maxSpeed","","_seats","_horsePower","_fuelCapacity"];
@@ -31,6 +27,8 @@ private _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 private _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
+private "_purchasePrice";
+private "_sellMultiplier";
 switch (playerSide) do {
     case civilian: {
         _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");

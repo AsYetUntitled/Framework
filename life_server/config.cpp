@@ -40,10 +40,6 @@ class CfgFunctions {
             file = "\life_server\Functions\Jail";
             class jailSys {};
         };
-
-        class Client_Code {
-            file = "\life_server\Functions\Client";
-        };
     };
 
     class TON_System {

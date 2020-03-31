@@ -8,7 +8,7 @@ params [
     ["_unit", objNull, [objNull]],
     ["_className","",[""]],
     ["_spawnPoint","",[""]],
-    ["_color", -1, [0]],
+    ["_color", "", [""]],
     ["_purchase",false,[false]]
 ];
 
@@ -94,7 +94,7 @@ switch (side _unit) do {
         };
     };
     case civilian: {
-        if (_className isEqualTo "B_Heli_Light_01_F" && !(_color isEqualTo 13)) then {
+        if (_className isEqualTo "B_Heli_Light_01_F" && !(_color isEqualTo "Digi Green")) then {
             [_vehicle,"civ_littlebird",true] call TON_fnc_vehicleAnimate;
         };
     };

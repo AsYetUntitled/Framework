@@ -11,7 +11,6 @@ private _index = lbCurSel _control;
 if (_index isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 
 private _dataArr = _control lbData _index;
-private _color = _control lbValue _index;
 (parseSimpleArray _dataArr) params ["_vid",["_className",""]];
 if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
 
