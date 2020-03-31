@@ -22,6 +22,9 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
 
 private _textureArray = M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures");
 private _colorIndex = _textureArray findIf {_x select 0 == _colorName};
+if (_colorIndex isEqualTo -1) then {
+    _colorIndex = 0;
+};
 private _textures = (_textureArray select _colorIndex) select 2;
 if (_textures isEqualTo []) exitWith {};
 

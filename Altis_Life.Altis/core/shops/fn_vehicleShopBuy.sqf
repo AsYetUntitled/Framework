@@ -19,7 +19,6 @@ private _vIndex = lbValue[2302,(lbCurSel 2302)];
 private _vehicleList = M_CONFIG(getArray,"CarShops",_type,"vehicles");
 private _shopSide = M_CONFIG(getText,"CarShops",_type,"side");
 
-
 private _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
 private "_buyMultiplier";
@@ -44,19 +43,16 @@ switch (playerSide) do {
     };
 };
 
-private "_purchasePrice";
-
-if (_mode) then {
-    _purchasePrice = round(_initalPrice * _buyMultiplier);
+private _purchasePrice = if (_mode) then {
+    round(_initalPrice * _buyMultiplier);
 } else {
-    _purchasePrice = round(_initalPrice * _rentMultiplier);
+    round(_initalPrice * _rentMultiplier);
 };
 
 private _conditions = M_CONFIG(getText,"LifeCfgVehicles",_className,"conditions");
+if !([_conditions] call life_fnc_levelCheck) exitWith {hint localize "STR_Shop_Veh_NoLicense"};
 
-if !([_conditions] call life_fnc_levelCheck) exitWith {hint localize "STR_Shop_Veh_NoLicense";};
-
-private _colorIndex = lbValue[2304,(lbCurSel 2304)];
+private _color = lbText [2304,(lbCurSel 2304)];
 
 if (_purchasePrice < 0) exitWith {closeDialog 0;}; //Bad price entry
 if (CASH < _purchasePrice) exitWith {hint format [localize "STR_Shop_Veh_NotEnough",[_purchasePrice - CASH] call life_fnc_numberText];closeDialog 0;};
@@ -89,9 +85,9 @@ if (_mode) then {
 };
 
 if (life_HC_isActive) then {
-    [player,_className,_spawnPoint,_colorIndex,_mode] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
+    [player,_className,_spawnPoint,_color,_mode] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
 } else {
-    [player,_className,_spawnPoint,_colorIndex,_mode] remoteExecCall ["TON_fnc_vehicleCreate",RSERV];
+    [player,_className,_spawnPoint,_color,_mode] remoteExecCall ["TON_fnc_vehicleCreate",RSERV];
 };
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
