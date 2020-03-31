@@ -364,7 +364,6 @@ class Life_Client_Core {
         class lockVehicle {};
         class openInventory {};
         class vehiclecolor3DRefresh {};
-        class vehicleOwners {};
         class vehicleWeight {};
         class vehInventory {};
         class vehStoreItem {};

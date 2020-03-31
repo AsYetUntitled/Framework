@@ -1,30 +1,31 @@
 #include "..\..\script_macros.hpp"
 /*
     File: fn_searchVehAction.sqf
-    Author:
+    Author: DomT602
 
     Description:
-
+    Currently finds who has keys to the vehicle.
 */
-private ["_vehicle","_data"];
-_vehicle = cursorObject;
-if ((_vehicle isKindOf "Car") || !(_vehicle isKindOf "Air") || !(_vehicle isKindOf "Ship")) then {
-    _owners = _vehicle getVariable "vehicle_info_owners";
-    if (isNil "_owners") exitWith {hint localize "STR_NOTF_VehCheat"; deleteVehicle _vehicle;};
+params [
+    ["_vehicle",objNull,[objNull]]
+];
+if (isNull _vehicle) exitWith {};
 
-    life_action_inUse = true;
-    hint localize "STR_NOTF_Searching";
+private _keyHolders = _vehicle getVariable ["vehicle_info_owners",[]];
+if (_keyHolders isEqualTo []) exitWith {hint localize "STR_NOTF_VehCheat"; deleteVehicle _vehicle};
 
-    sleep 3;
-    life_action_inUse = false;
+life_action_inUse = true;
+hint localize "STR_NOTF_Searching";
 
-    if (player distance _vehicle > 10 || !alive player || !alive _vehicle) exitWith {hint localize "STR_NOTF_SearchVehFail";};
-    //_inventory = [(_vehicle getVariable "vehicle_info_inv")] call fnc_veh_inv;
-    //if (isNil {_inventory}) then {_inventory = "Nothing in storage."};
-    _owners = [_owners] call life_fnc_vehicleOwners;
+sleep 3;
+life_action_inUse = false;
 
-    if (_owners == "any<br/>") then {
-        _owners = "No owners, impound it<br/>";
-    };
-    hint parseText format [localize "STR_NOTF_SearchVeh",_owners];
-};
+if (!alive _vehicle || {player distance _vehicle > 10 || {!alive player}}) exitWith {hint localize "STR_NOTF_SearchVehFail"};
+
+private _owners = "";
+{
+    private _name = _x select 1;
+    _owners = format ["%1<br/>%2",_owners,_name];
+} forEach _keyHolders;
+
+hint parseText format [localize "STR_NOTF_SearchVeh",_owners];
