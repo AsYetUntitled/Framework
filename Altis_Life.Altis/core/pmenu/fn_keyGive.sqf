@@ -1,4 +1,3 @@
-#include "..\..\script_macros.hpp"
 /*
     File: fn_keyGive.sqf
     Author: Bryan "Tonic" Boardwine

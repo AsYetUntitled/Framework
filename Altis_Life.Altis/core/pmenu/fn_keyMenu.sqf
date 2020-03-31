@@ -5,7 +5,6 @@
 
     Description:
     Initializes the key menu
-    Will be revised.
 */
 disableSerialization;
 
@@ -26,7 +25,7 @@ life_vehicles = life_vehicles - [objNull];
         private _pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
 
         _vehicles lbAdd format ["%1 %3 - [Distance: %2m]",_name,round(player distance _veh),_color];
-        if !(_pic isEqualTo "pictureStaticObject") then {
+        if (_pic != "pictureStaticObject") then {
             _vehicles lbSetPicture [(lbSize _vehicles)-1,_pic];
         };
         _vehicles lbSetValue [(lbSize _vehicles)-1,_forEachIndex];
