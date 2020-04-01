@@ -50,8 +50,9 @@ switch (_mode) do {
     };
 
     case 4: {
-        private _position = if (alive _unit) then {getPosATL _unit} else {[]};
-        _query = format ["updateCivPosition:%1:%2", _position, _uid];
+        private _alive = alive _unit;
+        private _position = getPosATL _unit;
+        _query = format ["updateCivPosition:%1:%2:%3", _alive, _position, _uid];
     };
 
     case 5: {
@@ -61,10 +62,6 @@ switch (_mode) do {
 
     case 6: {
         _query = format ["updateCashAndBank:%1:%2:%3", _value, _value1, _uid];
-    };
-
-    case 7: {
-        [_uid, _side, _value, 0] call TON_fnc_keyManagement;
     };
 };
 

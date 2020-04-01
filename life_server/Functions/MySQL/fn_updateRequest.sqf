@@ -25,7 +25,7 @@ private _uid = getPlayerUID _unit;
 private _name = name _unit;
 private _side = side _unit;
 private _alive = alive _unit;
-private _position = if (_side isEqualTo civilian && {alive _unit}) then {getPosATL _unit} else {[]};
+private _position = getPosATL _unit;
 _arrested = [0, 1] select _arrested;
 
 for "_i" from 0 to (count _licenses) -1 do {
@@ -51,7 +51,7 @@ switch (_side) do {
 
 private _query = switch (_side) do {
     case west: {format ["updateWest:%1:%2:%3:%4:%5:%6:%7:%8", _name, _cash, _bank, _gear, _licenses, _stats, _playtime_update, _uid];};
-    case civilian: {format ["updateCiv:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10", _name, _cash, _bank, _licenses, _gear, _arrested, _stats, _position, _playtime_update, _uid];};
+    case civilian: {format ["updateCiv:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11", _name, _cash, _bank, _licenses, _gear, _arrested, _stats, _alive, _position, _playtime_update, _uid];};
     case independent: {format ["updateIndep:%1:%2:%3:%4:%5:%6:%7:%8", _name, _cash, _bank, _licenses, _gear, _stats, _playtime_update, _uid];};
 };
 

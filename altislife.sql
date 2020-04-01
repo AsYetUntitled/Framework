@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS `players` (
     `adminlevel`   ENUM('0','1','2','3','4','5')  NOT NULL DEFAULT '0',
     `donorlevel`   ENUM('0','1','2','3','4','5')  NOT NULL DEFAULT '0',
     `blacklist`    TINYINT NOT NULL DEFAULT 0,
+    `civ_alive`    TINYINT NOT NULL DEFAULT 0,
     `civ_position` VARCHAR(32) NOT NULL DEFAULT '[]',
     `playtime`     VARCHAR(32) NOT NULL DEFAULT '[0,0,0]',
     `insert_time`  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

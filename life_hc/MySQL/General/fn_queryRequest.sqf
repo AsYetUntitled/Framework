@@ -2,7 +2,7 @@
 /*
     File: fn_queryRequest.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     This file is for Nanou's HeadlessClient.
 
     Description:
@@ -25,7 +25,7 @@ if (isNull _ownerID) exitWith {};
 private _query = switch (_side) do {
     // West - 11 entries returned
     case west: {format ["selectWest:%1", _uid];};
-    // Civilian - 11 entries returned
+    // Civilian - 12 entries returned
     case civilian: {format ["selectCiv:%1", _uid];};
     // Independent - 10 entries returned
     case independent: {format ["selectIndep:%1",_uid];};
@@ -58,8 +58,9 @@ private "_playTimes";
 switch (_side) do {
   case civilian: {
       _queryResult set[7, [false, true] select (_queryResult select 7)];
+      _queryResult set[10, [false, true] select (_queryResult select 10)];
 
-      _playTimes = _queryResult select 11;
+      _playTimes = _queryResult select 12;
 
       /* Make sure nothing else is added under here */
       _houseData = _uid spawn TON_fnc_fetchPlayerHouses;

@@ -73,7 +73,7 @@ switch (playerSide) do {
 
         //Position
         if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 1) then {
-            life_civ_position = _this select 10;
+            life_civ_position = [_this select 10,_this select 11];
             if !(life_civ_position isEqualTo []) then {
                 if (life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_civ_position = []};
             };

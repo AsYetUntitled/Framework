@@ -39,7 +39,7 @@ switch (_mode) do {
     };
 
     case 4: {
-        //old location
+        //used for location
     };
 
     case 5: {
@@ -49,10 +49,6 @@ switch (_mode) do {
     case 6: {
         _packet pushBack CASH;
         _packet pushBack BANK;
-    };
-
-    case 7: {
-        // Tonic is using for keychain..?
     };
 };
 
