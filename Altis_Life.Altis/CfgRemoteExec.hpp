@@ -92,7 +92,6 @@ class CfgRemoteExec {
         F(TON_fnc_addContainer,SERVER)
         F(TON_fnc_addHouse,SERVER)
         F(TON_fnc_chopShopSell,SERVER)
-        F(TON_fnc_cleanupRequest,SERVER)
         F(TON_fnc_deleteDBContainer,SERVER)
         F(TON_fnc_getID,SERVER)
         F(TON_fnc_getVehicles,SERVER)
