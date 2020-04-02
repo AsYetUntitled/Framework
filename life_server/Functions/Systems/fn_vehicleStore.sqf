@@ -27,11 +27,11 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
 // because fuel price!
 private _fuel = 1;
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
-    _fuel = (fuel _vehicle);
+    _fuel = fuel _vehicle;
 };
 
 if (_impound) exitWith {
-    if !(_vInfo isEqualTo []) then  {
+    if (_vid isEqualTo -1) then  {
         private _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid, _vid];
         [_query,1] call DB_fnc_asyncCall;
     };
@@ -40,7 +40,7 @@ if (_impound) exitWith {
 };
 
 // not persistent so just do this!
-if (_vInfo isEqualTo []) exitWith {
+if (_vid isEqualTo -1) exitWith {
     if (LIFE_SETTINGS(getNumber,"vehicle_rentalReturn") isEqualTo 1) then {
         [1,"STR_Garage_Store_NotPersistent2",true] remoteExecCall ["life_fnc_broadcast",_unit];
         deleteVehicle _vehicle;
@@ -59,8 +59,8 @@ if !(_uid isEqualTo getPlayerUID _unit) exitWith {
 
 // sort out whitelisted items!
 private _trunk = _vehicle getVariable ["Trunk", [[], 0]];
-private _itemList = _trunk select 0;
-private _totalweight = 0;
+_trunk params ["_itemList"];
+private _totalWeight = 0;
 private _items = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
@@ -79,7 +79,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             if ((_itemName in _resourceItems) || {_isIllegal}) then {
                 _items pushBack [_itemName,_itemCount];
                 private _weight = (ITEM_WEIGHT(_itemName)) * _itemCount;
-                _totalweight = _weight + _totalweight;
+                _totalWeight = _weight + _totalWeight;
             };
             if (_isIllegal) then {
                 _blacklist = true;
@@ -88,7 +88,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
         } forEach _itemList;
 
         if (_blacklist) then {
-            [_uid, _profileName, "481"] remoteExecCall ["life_fnc_wantedAdd", RSERV];
+            [_uid, _profileName, "481"] call life_fnc_wantedAdd;
             private _query = format ["updateVehicleBlacklistPlate:%1:%2", _uid, _vid];
             [_query, 1] call DB_fnc_asyncCall;
         };
@@ -99,12 +99,12 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
             if (_itemName in _resourceItems) then {
                 _items pushBack [_itemName,_itemCount];
                 private _weight = (ITEM_WEIGHT(_itemName)) * _itemCount;
-                _totalweight = _weight + _totalweight;
+                _totalWeight = _weight + _totalWeight;
             };
         } forEach _itemList;
     };
 
-    _trunk = [_items, _totalweight];
+    _trunk = [_items, _totalWeight];
 } else {
     _trunk = [[], 0];
 };

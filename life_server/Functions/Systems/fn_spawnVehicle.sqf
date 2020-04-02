@@ -18,7 +18,6 @@ private _side = side _unit;
 private _pid = getPlayerUID _unit;
 
 private _query = format ["selectVehiclesMore:%1:%2", _vid, _pid];
-
 private _tickTime = diag_tickTime;
 private _queryResult = [_query, 2] call DB_fnc_asyncCall;
 

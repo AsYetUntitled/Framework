@@ -15,7 +15,6 @@ params [
 if (isNull _unit || {_className isEqualTo "" || {_spawnPoint isEqualTo ""}}) exitWith {};
 
 private _uid = getPlayerUID _unit;
-
 private _plateFormat = LIFE_SETTINGS(getText,"vehicle_plateFormat");
 private _platePrefix = LIFE_SETTINGS(getText,"vehicle_platePrefix");
 private _plateForceUnique = LIFE_SETTINGS(getNumber,"vehicle_enforceUniquePlate") isEqualTo 1;
