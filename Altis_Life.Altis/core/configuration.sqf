@@ -21,7 +21,6 @@ life_clothing_filter = 0;
 life_redgull_effect = time;
 life_is_processing = false;
 life_bail_paid = false;
-life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = objNull;
 life_knockout = false;
@@ -97,6 +96,6 @@ life_vehicles = [];
 
 /* Setup life_hideoutBuildings */
 {
-    _building = nearestBuilding getMarkerPos _x; 
+    _building = nearestBuilding getMarkerPos _x;
     life_hideoutBuildings pushBack _building
 } forEach (LIFE_SETTINGS(getArray,"gang_area"));

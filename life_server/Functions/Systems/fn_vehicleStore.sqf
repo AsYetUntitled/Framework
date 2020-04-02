@@ -11,7 +11,7 @@ params [
     ["_unit", objNull, [objNull]]
 ];
 
-if (isNull _vehicle || {isNull _unit}) exitWith {life_impound_inuse = false; (owner _unit) publicVariableClient "life_impound_inuse";life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
+if (isNull _vehicle || {isNull _unit}) exitWith {life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 
 private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
 _ownerInfo params ["_uid"];
@@ -36,21 +36,14 @@ if (_impound) exitWith {
         [_query,1] call DB_fnc_asyncCall;
     };
 
-    if (!isNil "_vehicle" && {!isNull _vehicle}) then {
-        deleteVehicle _vehicle;
-    };
-
-    life_impound_inuse = false;
-    (owner _unit) publicVariableClient "life_impound_inuse";
+    deleteVehicle _vehicle;
 };
 
 // not persistent so just do this!
 if (_vInfo isEqualTo []) exitWith {
     if (LIFE_SETTINGS(getNumber,"vehicle_rentalReturn") isEqualTo 1) then {
         [1,"STR_Garage_Store_NotPersistent2",true] remoteExecCall ["life_fnc_broadcast",_unit];
-        if (!isNil "_vehicle" && {!isNull _vehicle}) then {
-            deleteVehicle _vehicle;
-        };
+        deleteVehicle _vehicle;
     } else {
         [1,"STR_Garage_Store_NotPersistent",true] remoteExecCall ["life_fnc_broadcast",_unit];
     };
@@ -132,9 +125,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
 private _query = format ["updateVehicleAll:%1:%2:%3:%4:%5:%6", _trunk, _cargo, _fuel, _damage, _uid, _vid];
 [_query,1] call DB_fnc_asyncCall;
 
-if (!isNil "_vehicle" && {!isNull _vehicle}) then {
-    deleteVehicle _vehicle;
-};
+deleteVehicle _vehicle;
 
 life_garage_store = false;
 (owner _unit) publicVariableClient "life_garage_store";

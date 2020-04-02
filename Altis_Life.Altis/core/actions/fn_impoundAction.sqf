@@ -50,15 +50,13 @@ if (count crew _vehicle isEqualTo 0) then {
     if (!(KINDOF_ARRAY(_vehicle,_filters))) exitWith {life_action_inUse = false;};
     _type = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 
-    life_impound_inuse = true;
-
     if (life_HC_isActive) then {
         [_vehicle,true,player] remoteExec ["HC_fnc_vehicleStore",HC_Life];
     } else {
         [_vehicle,true,player] remoteExec ["TON_fnc_vehicleStore",RSERV];
     };
 
-    waitUntil {!life_impound_inuse};
+    waitUntil {isNull _vehicle};
     if (playerSide isEqualTo west) then {
             _impoundMultiplier = LIFE_SETTINGS(getNumber,"vehicle_cop_impound_multiplier");
             _value = _price * _impoundMultiplier;
