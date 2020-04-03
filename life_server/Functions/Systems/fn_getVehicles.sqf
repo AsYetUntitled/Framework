@@ -13,14 +13,14 @@ params [
 //Error checks
 if (isNull _unit || {_type isEqualTo ""}) exitWith {
     if !(isNull _unit) then {
-        [[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
+        [[]] remoteExec ["life_fnc_impoundMenu",_unit];
     };
 };
 
 private _side = [_unit,true] call life_util_fnc_sideToString;
 
 if (_side isEqualTo "Unknown") exitWith {
-    [[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
+    [[]] remoteExec ["life_fnc_impoundMenu",_unit];
 };
 
 private _query = format ["selectVehicles:%1:%2:%3", _pid, _side, _type];
@@ -37,7 +37,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 if (_queryResult isEqualType "") exitWith {
-    [[]] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
+    [[]] remoteExec ["life_fnc_impoundMenu",_unit];
 };
 
-[_queryResult] remoteExec ["life_fnc_impoundMenu",remoteExecutedOwner];
+[_queryResult] remoteExec ["life_fnc_impoundMenu",_unit];
