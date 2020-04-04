@@ -16,7 +16,7 @@
          case civilian: {[] spawn life_fnc_civMarkers};
      };
 
-     if (life_markers && {!(life_markers_active)}) then {
+     if (life_markers && {!life_markers_active}) then {
         [true] spawn life_fnc_adminMarkers;
      };
 
