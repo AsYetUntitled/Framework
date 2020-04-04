@@ -14,8 +14,8 @@ private _fnc_fedDealerUpdate = {
         _x setVariable ["sellers",[],true];
     } forEach [Dealer_1,Dealer_2,Dealer_3];
 
-    private _funds = fed_bank getVariable ["safe",0];
-    fed_bank setVariable ["safe",round(_funds+((count playableUnits)/2)),true];
+    private _funds = fed_bank getVariable ["safe", 0];
+    fed_bank setVariable ["safe", round(_funds+((count playableUnits)/2)), true];
 };
 
 private _fnc_cleanVehicles = {
@@ -57,8 +57,8 @@ private _fnc_cleanVehicles = {
 
 //Array format: [parameters,function,delayTime]
 private _routines = [
-    [[],_fnc_fedDealerUpdate,1800],
-    [[],_fnc_cleanVehicles,3600]
+    [[], _fnc_fedDealerUpdate, 1800],
+    [[], _fnc_cleanVehicles, 3600]
 ];
 
 {
@@ -67,10 +67,10 @@ private _routines = [
 
 for "_i" from 0 to 1 step 0 do {
     {
-        _x params ["_params","_function","_delay","_timeToRun"];
+        _x params ["_params", "_function", "_delay", "_timeToRun"];
         if (diag_tickTime > _timeToRun) then {
             _params call _function;
-            _x set [2,diag_tickTime + _delay];
+            _x set [2, diag_tickTime + _delay];
         };
     } forEach _routines;
     uiSleep 1e-6;
