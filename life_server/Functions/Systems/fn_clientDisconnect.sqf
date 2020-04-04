@@ -17,9 +17,7 @@ if (isNull _unit) exitWith {};
 //Save civilian position
 if (life_save_civilian_position && {side _unit isEqualTo civilian}) then {
     if (isNil "HC_UID" || {!(_uid isEqualTo HC_UID)}) then {
-        if ((getMarkerPos "respawn_civilian" distance _position) > 300) then {
-            if (life_HC_isActive) then {[_unit,4] remoteExec ["HC_fnc_updatePartial",HC_Life]} else {[_unit,4] spawn DB_fnc_updatePartial};
-        };
+        if (life_HC_isActive) then {[_unit,4] remoteExec ["HC_fnc_updatePartial",HC_Life]} else {[_unit,4] spawn DB_fnc_updatePartial};
     };
 };
 

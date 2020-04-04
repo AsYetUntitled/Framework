@@ -25,6 +25,11 @@ private _uid = getPlayerUID _unit;
 private _name = name _unit;
 private _side = side _unit;
 private _alive = alive _unit;
+private _alive = alive _unit;
+if ((getMarkerPos "respawn_civilian" distance _position) < 300) then {
+    _alive = false;
+};
+_alive = [0, 1] select _alive;
 private _position = getPosATL _unit;
 _arrested = [0, 1] select _arrested;
 

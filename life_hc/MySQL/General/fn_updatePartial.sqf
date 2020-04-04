@@ -53,6 +53,10 @@ switch (_mode) do {
 
     case 4: {
         private _alive = alive _unit;
+        if ((getMarkerPos "respawn_civilian" distance _position) < 300) then {
+            _alive = false;
+        };
+        _alive = [0, 1] select _alive;
         private _position = getPosATL _unit;
         _query = format ["updateCivPosition:%1:%2:%3", _alive, _position, _uid];
     };
