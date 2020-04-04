@@ -11,7 +11,10 @@ private _minUnitDistance = LIFE_SETTINGS(getNumber,"vehicles_despawn_max_distanc
 
 private _fnc_fedDealerUpdate = {
     {
-        _x setVariable ["sellers",[],true];
+        private _dealer = missionNamespace getVariable [_x, objNull];
+        if !(isNull _dealer) then {
+            _x setVariable ["sellers", [], true];
+        };
     } forEach [Dealer_1,Dealer_2,Dealer_3];
 
     private _funds = fed_bank getVariable ["safe", 0];
