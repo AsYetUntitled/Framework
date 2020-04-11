@@ -15,7 +15,7 @@ private _fnc_fedDealerUpdate = {
         if !(isNull _dealer) then {
             _x setVariable ["sellers", [], true];
         };
-    } forEach [Dealer_1,Dealer_2,Dealer_3];
+    } forEach ["Dealer_1", "Dealer_2", "Dealer_3"];
 
     private _funds = fed_bank getVariable ["safe", 0];
     fed_bank setVariable ["safe", round(_funds + ((count playableUnits)/2)), true];
