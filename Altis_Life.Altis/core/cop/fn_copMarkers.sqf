@@ -3,7 +3,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Marks cops on the map for other cops. Only initializes when the actual map is open.
+    Marks cops on the map for other cops.
 */
 private _markers = [];
 
