@@ -62,7 +62,6 @@ class CfgFunctions {
             class vehicleDelete {};
             class spikeStrip {};
             class transferOwnership {};
-            class federalUpdate {};
             class chopShopSell {};
             class clientDisconnect {};
             class entityRespawned {};
