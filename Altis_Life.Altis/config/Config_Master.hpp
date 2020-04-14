@@ -49,6 +49,9 @@ class Life_Settings {
     noatm_timer = 10; //Time in minutes that players cannot deposit money after selling stolen gold.
     minimum_cops = 5; //Minimum cops required online to rob the Federal Reserve
 
+    /* Messaging Settings */
+    message_maxlength = 400; //maximum character count allowed in text messages. Used to prevent improper message displaying. -1 to disable the limit
+
     /*Death settings*/
     drop_weapons_onDeath = false; //Set true to enable weapon dropping on death. False (default) will delete player weapons on death, allowing them to be revived with them instead
 
@@ -145,6 +148,7 @@ class Life_Settings {
     vehicle_infiniteRepair[] = {false, false, true, false}; //Set to true for unlimited repairs with 1 toolkit. False will remove toolkit upon use. civilian, west, independent, east
     vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F", "B_Boat_Armed_01_minigun_F" }; //Vehicles that can only be rented and not purchased. (Last only for the session)
     vehicleShop_3D = false; //Add preview 3D inside Shop vehicle.       Default : False
+    vehicle_rentalReturn = false; //Can return rental vehicles to 'Store vehicle in garage', doesn't actually store it in garage.
 
     /* Vehicle Purchase Prices */
     vehicle_purchase_multiplier_CIVILIAN = 1; //Civilian Vehicle Buy Price = Config_Vehicle price * multiplier

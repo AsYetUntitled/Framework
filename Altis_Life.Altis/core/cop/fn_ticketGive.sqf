@@ -16,12 +16,9 @@ if (isNull life_ticket_unit) exitWith {
 };
 
 private _val = ctrlText 2652;
+private _parsedVal = parseNumber _val;
 
-if !([_val] call TON_fnc_isnumber) exitWith {
-    hint localize "STR_Cop_TicketNum"
-};
-
-private _parsedVal = parsgeNumber _val;
+if !([_val] call life_util_fnc_isNumber) exitWith {hint localize "STR_Cop_TicketNum"};
 
 if (_parsedVal > 200000) exitWith {
     hint localize "STR_Cop_TicketOver100"
