@@ -141,7 +141,6 @@ fed_bank setVariable ["safe",count playableUnits,true];
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
-[] call compile preprocessFileLineNumbers "\life_server\functions.sqf";
 
 /* Set OwnerID players for Headless Client */
 TON_fnc_requestClientID =
@@ -169,10 +168,10 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
+private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call life_util_fnc_terrainSort;
 private _altisArray = [16019.5,16952.9,0];
 private _tanoaArray = [11074.2,11501.5,0.00137329];
-private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
+private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call life_util_fnc_terrainSort;
 
 _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 _rsb = nearestObject [_pos,_vaultHouse];

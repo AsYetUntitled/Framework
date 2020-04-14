@@ -98,11 +98,11 @@ for "_i" from 0 to 1 step 0 do {
     objNull call _checkFunction;
     uiSleep 10;
     objNull call _uiCheckFunction;
-    
+
     if !((count allVariables profileNameSpace) isEqualTo _profileCount) then {
         failMission "SpyGlass";
     };
-    
+
     if !((count allVariables parsingNamespace) isEqualTo 0) then {
         //We should check whether both these variables are present in parsingNS on init, and whether the order is consistent, so to remove the loop
         {
