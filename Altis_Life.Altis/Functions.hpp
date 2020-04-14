@@ -29,6 +29,7 @@ class Life_Client_Utilities {
         class isNumber {};
         class index {};
         class playerQuery {};
+        class sideToString {};
         class terrainSort {};
     };
 };
