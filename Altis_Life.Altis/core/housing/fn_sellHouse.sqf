@@ -58,7 +58,7 @@ if (_action) then {
         life_vehicles deleteAt _index;
     };
 
-    _index = [str(getPosATL _house),life_houses] call TON_fnc_index;
+    _index = [str(getPosATL _house),life_houses] call life_util_fnc_index;
     if !(_index isEqualTo -1) then {
         life_houses deleteAt _index;
     };

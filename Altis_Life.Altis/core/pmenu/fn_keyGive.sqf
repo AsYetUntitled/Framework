@@ -29,4 +29,4 @@ if (_insertedIndex != -1) then {
 };
 
 hint format [localize "STR_NOTF_givenKeysTo",_unit getVariable ["realname",name _unit],typeOf _vehicle];
-[_vehicle,profileName] remoteExecCall ["TON_fnc_clientGetKey",_unit];
+[_vehicle,profileName] remoteExecCall ["life_fnc_clientGetKey",_unit];
