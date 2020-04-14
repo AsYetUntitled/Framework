@@ -20,7 +20,7 @@ if (_uid isEqualTo "" || {_type isEqualTo ""} || {_name isEqualTo ""}) exitWith 
 
 //What is the crime?
 private _crimesConfig = getArray(missionConfigFile >> "Life_Settings" >> "crimes");
-private _index = [_type, _crimesConfig] call TON_fnc_index;
+private _index = [_type, _crimesConfig] call life_util_fnc_index;
 
 if (_index isEqualTo -1) exitWith {};
 
