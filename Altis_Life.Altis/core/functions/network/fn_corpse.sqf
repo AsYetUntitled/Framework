@@ -7,10 +7,9 @@
 */
 
 params [
-    ["_corpse", 0, [[],0]]
+    ["_corpse", objNull, [objNull]]
 ];
 
 if (isNull _corpse) exitWith {};
-if (alive _corpse) exitWith {};
 
 deleteVehicle _corpse;
