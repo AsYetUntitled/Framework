@@ -23,36 +23,21 @@ params [
 if (isNull _vendor || {_type isEqualTo ""} || {player distance _vendor > 10}) exitWith {};
 life_action_inUse = true;
 
-if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
-    _materialsRequired = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsReq");
-    _materialsGiven = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsGive");
-    _noLicenseCost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
-    _text = M_CONFIG(getText,"ProcessAction",_type,"Text");
-} else {
-    life_action_inUse = false;
-    breakOut "main";
+if !(isClass (missionConfigFile >> "ProcessAction" >> _type)) exitWith {
+    diag_log format ["%1: Processor class doesn't exist",_type];
 };
+
+life_action_inUse = true;
+private _materialsRequired = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsReq");
+if (_materialsRequired isEqualTo []) exitWith {};
+
+life_action_inUse = true; 
+private _materialsGiven = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsGive");
+private _noLicenseCost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
+private _text = M_CONFIG(getText,"ProcessAction",_type,"Text");
 
 if (isLocalized _text) then {
     _text = localize _text;
-};
-
-private _itemInfo = [_materialsRequired, _materialsGiven, _noLicenseCost, _text];
-if (count _itemInfo isEqualTo 0) exitWith {
-    life_action_inUse = false;
-};
-
-//Setup vars.
-
-_itemInfo params [
-    "_oldItems",
-    "_newItems",
-    "_cost",
-    "_upp"
-];
-
-if (count _oldItems isEqualTo 0) exitWith {
-    life_action_inUse = false;
 };
 
 private _totalConversions = [];
@@ -73,7 +58,7 @@ private _totalConversions = [];
     _totalConversions pushBack (floor (_var/_noRequired));
 
     true
-} count _oldItems;
+} count _materialsRequired;
 
 private "_hasLicense";
 if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
@@ -82,26 +67,26 @@ if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
     _hasLicense = LICENSE_VALUE(_type,"civ");
 };
 
-_cost = _cost * (count _oldItems);
+_noLicenseCost = _noLicenseCost * (count _materialsRequired);
 
 private _minimumConversions = selectMin _totalConversions;
-private _oldItemsWeight = 0;
+private _materialsRequiredWeight = 0;
 private "_weight";
 {
     _weight = (([_x select 0] call life_fnc_itemWeight) * (_x select 1));
-    _oldItemsWeight = _oldItemsWeight + _weight;
+    _materialsRequiredWeight = _materialsRequiredWeight + _weight;
     true
-} count _oldItems;
+} count _materialsRequired;
 
-_noRequired _newItemsWeight = 0;
+_materialsGivenWeight = 0;
 {
     _weight = ([_x select 0] call life_fnc_itemWeight) * (_x select 1);
-    _newItemsWeight = _newItemsWeight + _weight;
+    _materialsGivenWeight = _materialsGivenWeight + _weight;
     true
-} count _newItems;
+} count _materialsGiven;
 
-if (_newItemsWeight > _oldItemsWeight) then {
-    _netChange = _newItemsWeight - _oldItemsWeight;
+if (_materialsGivenWeight > _materialsRequiredWeight) then {
+    _netChange = _materialsGivenWeight - _materialsRequiredWeight;
     _freeSpace = life_maxWeight - life_carryWeight;
 
     if (_freeSpace < _netChange) then {
@@ -123,7 +108,7 @@ disableSerialization;
 private _ui = uiNamespace getVariable "life_progress";
 private _progress = _ui displayCtrl 38201;
 private _pgText = _ui displayCtrl 38202;
-_pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
+_pgText ctrlSetText format ["%2 (1%1)...","%",_text];
 private _progress progressSetPosition 0.01;
 private _cP = 0.01;
 
@@ -134,7 +119,7 @@ if (_hasLicense) then {
         uiSleep  0.28;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
-        _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
+        _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_text];
         if (_cP >= 1) exitWith {};
         if (player distance _vendor > 10) exitWith {};
     };
@@ -148,12 +133,12 @@ if (_hasLicense) then {
     {
         [false,_x select 0,(_x select 1)*(_minimumConversions)] call life_fnc_handleInv;
         true
-    } count _oldItems;
+    } count _materialsRequired;
 
     {
         [true,_x select 0,(_x select 1)*(_minimumConversions)] call life_fnc_handleInv;
         true
-    } count _newItems;
+    } count _materialsGiven;
 
     "progressBar" cutText ["","PLAIN"];
     if (_minimumConversions isEqualTo (selectMin _totalConversions)) then {
@@ -165,8 +150,8 @@ if (_hasLicense) then {
     life_is_processing = false;
     life_action_inUse = false;
 } else {
-    if (CASH < _cost) exitWith {
-        hint format [localize "STR_Process_License",[_cost] call life_fnc_numberText];
+    if (CASH < _noLicenseCost) exitWith {
+        hint format [localize "STR_Process_License",[_noLicenseCost] call life_fnc_numberText];
         "progressBar" cutText ["","PLAIN"];
         life_is_processing = false;
         life_action_inUse = false;
@@ -176,7 +161,7 @@ if (_hasLicense) then {
         uiSleep  0.9;
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
-        _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_upp];
+        _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_text];
         if (_cP >= 1) exitWith {};
         if (player distance _vendor > 10) exitWith {};
     };
@@ -188,8 +173,8 @@ if (_hasLicense) then {
         life_action_inUse = false;
     };
 
-    if (CASH < _cost) exitWith {
-        hint format [localize "STR_Process_License",[_cost] call life_fnc_numberText];
+    if (CASH < _noLicenseCost) exitWith {
+        hint format [localize "STR_Process_License",[_noLicenseCost] call life_fnc_numberText];
         "progressBar" cutText ["","PLAIN"];
         life_is_processing = false;
         life_action_inUse = false;
@@ -197,11 +182,11 @@ if (_hasLicense) then {
 
     {
         [false,_x select 0,((_x select 1)*_minimumConversions)] call life_fnc_handleInv;
-    } count _oldItems;
+    } count _materialsRequired;
 
     {
         [true,_x select 0,((_x select 1)*_minimumConversions)] call life_fnc_handleInv;
-    } count _newItems;
+    } count _materialsGiven;
 
     "progressBar" cutText ["","PLAIN"];
     if (_minimumConversions isEqualTo (selectMin _totalConversions)) then {
@@ -209,7 +194,7 @@ if (_hasLicense) then {
     } else {
         hint localize "STR_Process_Partial";
     };
-    CASH = CASH - _cost;
+    CASH = CASH - _noLicenseCost;
     [0] call SOCK_fnc_updatePartial;
     life_is_processing = false;
     life_action_inUse = false;
