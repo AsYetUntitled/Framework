@@ -298,102 +298,60 @@ switch (_code) do {
                     if (_locked isEqualTo 2) then {
                         if (local _veh) then {
                             _veh lock 0;
-
-                            // BI
-                            _veh animateDoor ["door_back_R",1];
-                            _veh animateDoor ["door_back_L",1];
-                            _veh animateDoor ['door_R',1];
-                            _veh animateDoor ['door_L',1];
-                            _veh animateDoor ['Door_L_source',1];
-                            _veh animateDoor ['Door_rear',1];
-                            _veh animateDoor ['Door_rear_source',1];
-                            _veh animateDoor ['Door_1_source',1];
-                            _veh animateDoor ['Door_2_source',1];
-                            _veh animateDoor ['Door_3_source',1];
-                            _veh animateDoor ['Door_LM',1];
-                            _veh animateDoor ['Door_RM',1];
-                            _veh animateDoor ['Door_LF',1];
-                            _veh animateDoor ['Door_RF',1];
-                            _veh animateDoor ['Door_LB',1];
-                            _veh animateDoor ['Door_RB',1];
-                            _veh animateDoor ['DoorL_Front_Open',1];
-                            _veh animateDoor ['DoorR_Front_Open',1];
-                            _veh animateDoor ['DoorL_Back_Open',1];
-                            _veh animateDoor ['DoorR_Back_Open ',1];
                         } else {
                             [_veh,0] remoteExecCall ["life_fnc_lockVehicle",_veh];
-
-                            _veh animateDoor ["door_back_R",1];
-                            _veh animateDoor ["door_back_L",1];
-                            _veh animateDoor ['door_R',1];
-                            _veh animateDoor ['door_L',1];
-                            _veh animateDoor ['Door_L_source',1];
-                            _veh animateDoor ['Door_rear',1];
-                            _veh animateDoor ['Door_rear_source',1];
-                            _veh animateDoor ['Door_1_source',1];
-                            _veh animateDoor ['Door_2_source',1];
-                            _veh animateDoor ['Door_3_source',1];
-                            _veh animateDoor ['Door_LM',1];
-                            _veh animateDoor ['Door_RM',1];
-                            _veh animateDoor ['Door_LF',1];
-                            _veh animateDoor ['Door_RF',1];
-                            _veh animateDoor ['Door_LB',1];
-                            _veh animateDoor ['Door_RB',1];
-                            _veh animateDoor ['DoorL_Front_Open',1];
-                            _veh animateDoor ['DoorR_Front_Open',1];
-                            _veh animateDoor ['DoorL_Back_Open',1];
-                            _veh animateDoor ['DoorR_Back_Open ',1];
                         };
+
+                        // BI
+                        _veh animateDoor ["door_back_R",1];
+                        _veh animateDoor ["door_back_L",1];
+                        _veh animateDoor ['door_R',1];
+                        _veh animateDoor ['door_L',1];
+                        _veh animateDoor ['Door_L_source',1];
+                        _veh animateDoor ['Door_rear',1];
+                        _veh animateDoor ['Door_rear_source',1];
+                        _veh animateDoor ['Door_1_source',1];
+                        _veh animateDoor ['Door_2_source',1];
+                        _veh animateDoor ['Door_3_source',1];
+                        _veh animateDoor ['Door_LM',1];
+                        _veh animateDoor ['Door_RM',1];
+                        _veh animateDoor ['Door_LF',1];
+                        _veh animateDoor ['Door_RF',1];
+                        _veh animateDoor ['Door_LB',1];
+                        _veh animateDoor ['Door_RB',1];
+                        _veh animateDoor ['DoorL_Front_Open',1];
+                        _veh animateDoor ['DoorR_Front_Open',1];
+                        _veh animateDoor ['DoorL_Back_Open',1];
+                        _veh animateDoor ['DoorR_Back_Open ',1];
                         systemChat localize "STR_MISC_VehUnlock";
                         [_veh,"unlockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
-                    } else {
+                   } else {
                         if (local _veh) then {
                             _veh lock 2;
-
-                            _veh animateDoor ["door_back_R",0];
-                            _veh animateDoor ["door_back_L",0];
-                            _veh animateDoor ['door_R',0];
-                            _veh animateDoor ['door_L',0];
-                            _veh animateDoor ['Door_L_source',0];
-                            _veh animateDoor ['Door_rear',0];
-                            _veh animateDoor ['Door_rear_source',0];
-                            _veh animateDoor ['Door_1_source',0];
-                            _veh animateDoor ['Door_2_source',0];
-                            _veh animateDoor ['Door_3_source',0];
-                            _veh animateDoor ['Door_LM',0];
-                            _veh animateDoor ['Door_RM',0];
-                            _veh animateDoor ['Door_LF',0];
-                            _veh animateDoor ['Door_RF',0];
-                            _veh animateDoor ['Door_LB',0];
-                            _veh animateDoor ['Door_RB',0];
-                            _veh animateDoor ['DoorL_Front_Open',0];
-                            _veh animateDoor ['DoorR_Front_Open',0];
-                            _veh animateDoor ['DoorL_Back_Open',0];
-                            _veh animateDoor ['DoorR_Back_Open ',0];
                         } else {
                             [_veh,2] remoteExecCall ["life_fnc_lockVehicle",_veh];
-
-                            _veh animateDoor ["door_back_R",0];
-                            _veh animateDoor ["door_back_L",0];
-                            _veh animateDoor ['door_R',0];
-                            _veh animateDoor ['door_L',0];
-                            _veh animateDoor ['Door_L_source',0];
-                            _veh animateDoor ['Door_rear',0];
-                            _veh animateDoor ['Door_rear_source',0];
-                            _veh animateDoor ['Door_1_source',0];
-                            _veh animateDoor ['Door_2_source',0];
-                            _veh animateDoor ['Door_3_source',0];
-                            _veh animateDoor ['Door_LM',0];
-                            _veh animateDoor ['Door_RM',0];
-                            _veh animateDoor ['Door_LF',0];
-                            _veh animateDoor ['Door_RF',0];
-                            _veh animateDoor ['Door_LB',0];
-                            _veh animateDoor ['Door_RB',0];
-                            _veh animateDoor ['DoorL_Front_Open',0];
-                            _veh animateDoor ['DoorR_Front_Open',0];
-                            _veh animateDoor ['DoorL_Back_Open',0];
-                            _veh animateDoor ['DoorR_Back_Open ',0];
                         };
+
+                        _veh animateDoor ["door_back_R",0];
+                        _veh animateDoor ["door_back_L",0];
+                        _veh animateDoor ['door_R',0];
+                        _veh animateDoor ['door_L',0];
+                        _veh animateDoor ['Door_L_source',0];
+                        _veh animateDoor ['Door_rear',0];
+                        _veh animateDoor ['Door_rear_source',0];
+                        _veh animateDoor ['Door_1_source',0];
+                        _veh animateDoor ['Door_2_source',0];
+                        _veh animateDoor ['Door_3_source',0];
+                        _veh animateDoor ['Door_LM',0];
+                        _veh animateDoor ['Door_RM',0];
+                        _veh animateDoor ['Door_LF',0];
+                        _veh animateDoor ['Door_RF',0];
+                        _veh animateDoor ['Door_LB',0];
+                        _veh animateDoor ['Door_RB',0];
+                        _veh animateDoor ['DoorL_Front_Open',0];
+                        _veh animateDoor ['DoorR_Front_Open',0];
+                        _veh animateDoor ['DoorL_Back_Open',0];
+                        _veh animateDoor ['DoorR_Back_Open ',0];
                         systemChat localize "STR_MISC_VehLock";
                         [_veh,"lockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
                     };
