@@ -76,9 +76,9 @@ switch (_item) do {
     };
 
     case "spikeStrip": {
-        if (!isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"; closeDialog 0};
+        if !(isNull life_spikestrip) exitWith {hint localize "STR_ISTR_SpikesDeployment"; closeDialog 0};
         if ([false, _item, 1] call life_fnc_handleInv) then {
-            [] spawn life_fnc_spikeStrip;
+            [] call life_fnc_spikeStrip;
             closeDialog 0;
         };
     };
