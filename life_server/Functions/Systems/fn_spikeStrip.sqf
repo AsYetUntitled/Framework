@@ -23,7 +23,7 @@ if (server_spikes isEqualTo []) then { //start monitoring spikestrips
         {
             private _pos = getPosATL _x;
             (nearestObjects [_pos,["Car"],5]) params [["_nearVeh", objNull]];
-            if (alive _nearVeh && {speed _nearVeh > _minSpikeSpeed}) then {
+            if (alive _nearVeh && {abs (speed _nearVeh) > _minSpikeSpeed}) then {
                 [_nearVeh] remoteExecCall ["life_fnc_spikeStripEffect",_nearVeh];
                 deleteVehicle _x;
                 _toDelete pushBack _forEachIndex;
