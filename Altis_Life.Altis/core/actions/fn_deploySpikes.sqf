@@ -10,11 +10,13 @@ if (isNull life_spikeStrip) exitWith {};
 private _spikeStrip = life_spikeStrip;
 life_spikeStrip = objNull;
 
-detach _spikeStrip;
-private _pos = getPosATL _spikeStrip;
-_pos set [2,0];
-_spikeStrip setPosATL _pos;
-_spikeStrip setDamage 1;
+detach life_spikeStrip;
+private _pos = getPosASL _spikeStrip;
+private _intersects = lineIntersectsSurfaces [_pos,_pos vectorAdd [0,0,-50],_spikeStrip,objNull,true,1,"GEOM","NONE"];
+(_intersects) params ["_firstObjectData"];
+_firstObjectData params ["_posASL","_surfaceNormal"];
+_spikeStrip setPosASL _posASL;
+_spikeStrip setVectorUp _surfaceNormal;
 
 player removeAction life_action_spikeStripDeploy;
 life_action_spikeStripDeploy = nil;
