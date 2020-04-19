@@ -22,7 +22,7 @@ player removeAction life_action_spikeStripDeploy;
 life_action_spikeStripDeploy = nil;
 
 if (life_HC_isActive) then {
-    [_spikeStrip] remoteExec ["HC_fnc_spikeStrip",HC_Life]; //Send it to the HeadlessClient for monitoring.
+    [_spikeStrip] remoteExec ["HC_fnc_spikeStrip",HC_Life];
 } else {
-    [_spikeStrip] remoteExec ["TON_fnc_spikeStrip",RSERV]; //Send it to the server for monitoring.
+    [_spikeStrip] remoteExec ["TON_fnc_spikeStrip",RSERV];
 };
