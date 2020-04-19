@@ -20,7 +20,6 @@ if (count hc_spikes isEqualTo 1) then { //start monitoring spikestrips
 
     for "_i" from 0 to 1 step 0 do {
         if (hc_spikes isEqualTo []) exitWith {};
-        private _toDelete = [];
 
         {
             private _pos = getPosATL _x;
@@ -28,19 +27,10 @@ if (count hc_spikes isEqualTo 1) then { //start monitoring spikestrips
             if (alive _nearVeh && {abs (speed _nearVeh) > _minSpikeSpeed}) then {
                 [_nearVeh] remoteExecCall ["life_fnc_spikeStripEffect",_nearVeh];
                 deleteVehicle _x;
-                _toDelete pushBack _forEachIndex;
-            } else {
-                if (isNull _x) then {
-                    deleteVehicle _x;
-                    _toDelete pushBack _forEachIndex;
-                };
             };
         } forEach hc_spikes;
 
-        reverse _toDelete;
-        {
-            hc_spikes deleteAt _x;
-        } forEach _toDelete;
+        hc_spikes = hc_spikes - [objNull];
 
         uiSleep 1e-6;
     };
