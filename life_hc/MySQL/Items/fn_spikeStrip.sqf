@@ -40,7 +40,7 @@ if (hc_spikes isEqualTo []) then { //start monitoring spikestrips
         reverse _toDelete;
         {
             hc_spikes deleteAt _x;
-        };
+        } forEach _toDelete;
 
         uiSleep 1e-6;
     };

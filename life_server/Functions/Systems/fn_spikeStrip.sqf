@@ -38,7 +38,7 @@ if (server_spikes isEqualTo []) then { //start monitoring spikestrips
         reverse _toDelete;
         {
             server_spikes deleteAt _x;
-        };
+        } forEach _toDelete;
 
         uiSleep 1e-6;
     };
