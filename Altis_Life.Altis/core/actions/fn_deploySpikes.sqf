@@ -10,10 +10,10 @@ if (isNull life_spikeStrip) exitWith {};
 private _spikeStrip = life_spikeStrip;
 life_spikeStrip = objNull;
 
-detach life_spikeStrip;
+detach _spikeStrip;
 private _pos = getPosASL _spikeStrip;
 private _intersects = lineIntersectsSurfaces [_pos,_pos vectorAdd [0,0,-50],_spikeStrip,objNull,true,1,"GEOM","NONE"];
-(_intersects) params ["_firstObjectData"];
+_intersects params ["_firstObjectData"];
 _firstObjectData params ["_posASL","_surfaceNormal"];
 _spikeStrip setPosASL _posASL;
 _spikeStrip setVectorUp _surfaceNormal;

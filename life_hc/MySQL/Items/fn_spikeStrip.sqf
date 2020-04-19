@@ -15,7 +15,7 @@ if (isNull _spikeStrip) exitWith {};
 
 hc_spikes pushBack _spikeStrip;
 
-if (hc_spikes isEqualTo []) then { //start monitoring spikestrips
+if (count hc_spikes isEqualTo 1) then { //start monitoring spikestrips
     private _minSpikeSpeed = LIFE_SETTINGS(getNumber,"minimumSpikeSpeed");
 
     for "_i" from 0 to 1 step 0 do {
@@ -30,7 +30,7 @@ if (hc_spikes isEqualTo []) then { //start monitoring spikestrips
                 deleteVehicle _x;
                 _toDelete pushBack _forEachIndex;
             } else {
-                if (isNull _object) then {
+                if (isNull _x) then {
                     deleteVehicle _x;
                     _toDelete pushBack _forEachIndex;
                 };
