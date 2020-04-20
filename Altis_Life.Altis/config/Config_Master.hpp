@@ -177,7 +177,7 @@ class Life_Settings {
                                  //Commander/tactical view is accessed via pressing . [NUM] by default. It raises the camera significantly higher and steeper above the player in order to give a boarder tactical view of the surrounding area.
 
     maximumSpikestrips = -1; //Maximum number of spikes deployed per cop, -1 allows unlimited placement of spikestrips
-    minimumSpikeSpeed = 0; //Minimum speed for a spikestrip to take effect
+    minimumSpikeSpeed = 0; //Minimum speed for a spikestrip to take effect, a negative speed will allow stationary vehicles to be spiked
 
     /* Wanted System Settings *
     /* crimes[] = {String, Bounty, Code} */
