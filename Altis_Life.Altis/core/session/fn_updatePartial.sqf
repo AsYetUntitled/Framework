@@ -8,51 +8,47 @@
     meant to keep the network traffic down with large sums of data flowing
     through remoteExec
 */
-private ["_mode","_packet","_array","_flag"];
-_mode = param [0,0,[0]];
-_packet = [getPlayerUID player,playerSide,nil,_mode];
-_array = [];
-_flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
+params [
+    ["_mode",0,[0]]
+];
+private _packet = [player,_mode];
 
 switch (_mode) do {
     case 0: {
-        _packet set[2,CASH];
+        _packet pushBack CASH;
     };
 
     case 1: {
-        _packet set[2,BANK];
+        _packet pushBack BANK;
     };
 
     case 2: {
+        private _array = [];
+        private _flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
         {
             _varName = LICENSE_VARNAME(configName _x,_flag);
             _array pushBack [_varName,LICENSE_VALUE(configName _x,_flag)];
         } forEach (format ["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "Licenses"));
 
-        _packet set[2,_array];
+        _packet pushBack _array;
     };
 
     case 3: {
         [] call life_fnc_saveGear;
-        _packet set[2,life_gear];
+        _packet pushBack life_gear;
     };
 
     case 4: {
-        _packet set[2,life_is_alive];
-        _packet set[4,getPosATL player];
+        //used for location
     };
 
     case 5: {
-        _packet set[2,life_is_arrested];
+        _packet pushBack life_is_arrested;
     };
 
     case 6: {
-        _packet set[2,CASH];
-        _packet set[4,BANK];
-    };
-
-    case 7: {
-        // Tonic is using for keychain..?
+        _packet pushBack CASH;
+        _packet pushBack BANK;
     };
 };
 

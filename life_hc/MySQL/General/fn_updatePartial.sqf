@@ -10,14 +10,15 @@
 */
 
 params [
-    ["_uid", "", [""]],
-    ["_side", sideUnknown, [civilian]],
-    "_value",
+    ["_unit",objNull,[objNull]],
     ["_mode", -1, [0]],
+    "_value",
     "_value1"
 ];
 
-if (_uid isEqualTo "" || {_side isEqualTo sideUnknown}) exitWith {}; //Bad.
+if (isNull _unit) exitWith {}; //Bad.
+private _uid = getPlayerUID _unit;
+private _side = side _unit;
 private _query = "";
 
 switch (_mode) do {
@@ -51,9 +52,13 @@ switch (_mode) do {
     };
 
     case 4: {
-        _value = [0, 1] select _value;
-        _value1 = if (count _value1 isEqualTo 3) then {_value1} else {[0,0,0]};
-        _query = format ["updateCivPosition:%1:%2:%3", _value, _value1, _uid];
+        private _alive = alive _unit;
+        if ((getMarkerPos "respawn_civilian" distance _position) < 300) then {
+            _alive = false;
+        };
+        _alive = [0, 1] select _alive;
+        private _position = getPosATL _unit;
+        _query = format ["updateCivPosition:%1:%2:%3", _alive, _position, _uid];
     };
 
     case 5: {

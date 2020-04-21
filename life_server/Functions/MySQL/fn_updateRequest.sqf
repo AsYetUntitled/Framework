@@ -8,26 +8,30 @@
 */
 
 params [
-    ["_uid", "", [""]],
-    ["_name", "", [""]],
-    ["_side", sideUnknown, [civilian]],
+    ["_unit",objNull,[objNull]],
     ["_cash", 0, [0]],
     ["_bank", 5000, [0]],
     ["_licenses", [], [[]]],
     ["_gear", [], [[]]],
     ["_stats", [100,100],[[]]],
-    ["_arrested", false, [true]],
-    ["_alive", false, [true]],
-    ["_position", [], [[]]]
+    ["_arrested", false, [true]]
 ];
 
 //Get to those error checks.
-if (_uid isEqualTo "" || {_name isEqualTo ""}) exitWith {};
+if (isNull _unit) exitWith {};
 
 //Setup some data.
-_position = if (_side isEqualTo civilian) then {_position} else {[]};
-_arrested = [0, 1] select _arrested;
+private _uid = getPlayerUID _unit;
+private _name = name _unit;
+private _side = side _unit;
+private _alive = alive _unit;
+private _alive = alive _unit;
+if ((getMarkerPos "respawn_civilian" distance _position) < 300) then {
+    _alive = false;
+};
 _alive = [0, 1] select _alive;
+private _position = getPosATL _unit;
+_arrested = [0, 1] select _arrested;
 
 for "_i" from 0 to (count _licenses) -1 do {
     (_licenses select _i) params ["_license", "_owned"];

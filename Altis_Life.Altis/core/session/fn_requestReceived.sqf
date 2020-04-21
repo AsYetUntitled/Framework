@@ -73,11 +73,9 @@ switch (playerSide) do {
 
         //Position
         if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 1) then {
-            life_is_alive = _this select 10;
-            life_civ_position = _this select 11;
-            if (life_is_alive) then {
-                if !(count life_civ_position isEqualTo 3) then {diag_log format ["[requestReceived] Bad position received. Data: %1",life_civ_position];life_is_alive =false;};
-                if (life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_is_alive = false;};
+            life_civ_position = [_this select 10,_this select 11];
+            if !(life_civ_position isEqualTo []) then {
+                if (life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_civ_position = []};
             };
         };
 

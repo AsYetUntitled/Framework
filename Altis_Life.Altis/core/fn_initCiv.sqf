@@ -16,11 +16,12 @@ civ_spawn_3 = nearestObjects[getMarkerPos  "civ_spawn_3", _spawnBuildings,350];
 civ_spawn_4 = nearestObjects[getMarkerPos  "civ_spawn_4", _spawnBuildings,350];
 
 waitUntil {!(isNull (findDisplay 46))};
-if (life_is_alive && !life_is_arrested) then {
+life_civ_position params ["_alive","_position"];
+if (_alive && !life_is_arrested) then {
     /* Spawn at our last position */
-    player setVehiclePosition [life_civ_position, [], 0, "CAN_COLLIDE"];
+    player setVehiclePosition [_position, [], 0, "CAN_COLLIDE"];
 } else {
-    if (!life_is_alive && !life_is_arrested) then {
+    if (!_alive && !life_is_arrested) then {
         if (LIFE_SETTINGS(getNumber,"save_civilian_positionStrict") isEqualTo 1) then {
             [] call life_fnc_startLoadout;
             CASH = 0;
@@ -36,4 +37,3 @@ if (life_is_alive && !life_is_arrested) then {
         };
     };
 };
-life_is_alive = true;

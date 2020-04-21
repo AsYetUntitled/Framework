@@ -66,7 +66,6 @@ class CfgFunctions {
             class clientDisconnect {};
             class entityRespawned {};
             class entityKilled {};
-            class cleanupRequest {};
             class keyManagement {};
             class vehicleUpdate {};
             class recupkeyforHC {};
