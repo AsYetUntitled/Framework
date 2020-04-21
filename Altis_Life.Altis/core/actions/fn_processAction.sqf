@@ -21,17 +21,15 @@ params [
 
 //Error check
 if (isNull _vendor || {_type isEqualTo ""} || {player distance _vendor > 10}) exitWith {};
-life_action_inUse = true;
 
 if !(isClass (missionConfigFile >> "ProcessAction" >> _type)) exitWith {
     diag_log format ["%1: Processor class doesn't exist",_type];
 };
 
-life_action_inUse = true;
 private _materialsRequired = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsReq");
 if (_materialsRequired isEqualTo []) exitWith {};
 
-life_action_inUse = true; 
+life_action_inUse = true;
 private _materialsGiven = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsGive");
 private _noLicenseCost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
 private _text = M_CONFIG(getText,"ProcessAction",_type,"Text");
@@ -50,20 +48,17 @@ private _totalConversions = [];
     private _var = ITEM_VALUE(_var);
 
     if (_var isEqualTo 0 || {_var < _noRequired}) then {
-        life_is_processing = false;
         hint localize "STR_NOTF_NotEnoughItemProcess";
         life_action_inUse = false;
         breakOut "main";
     };
-    _totalConversions pushBack (floor (_var/_noRequired));
+    _totalConversions pushBack (floor (_var / _noRequired));
 
     true
 } count _materialsRequired;
 
-private "_hasLicense";
-if (_vendor in [mari_processor,coke_processor,heroin_processor]) then {
-    _hasLicense = true;
-} else {
+private _hasLicense = true;
+if !(_vendor in [mari_processor,coke_processor,heroin_processor]) then {
     _hasLicense = LICENSE_VALUE(_type,"civ");
 };
 
@@ -71,27 +66,27 @@ _noLicenseCost = _noLicenseCost * (count _materialsRequired);
 
 private _minimumConversions = selectMin _totalConversions;
 private _materialsRequiredWeight = 0;
-private "_weight";
 {
-    _weight = (([_x select 0] call life_fnc_itemWeight) * (_x select 1));
+    _x params ["_item","_count"];
+    private _weight = ([_item] call life_fnc_itemWeight) * _count;
     _materialsRequiredWeight = _materialsRequiredWeight + _weight;
     true
 } count _materialsRequired;
 
-_materialsGivenWeight = 0;
+private _materialsGivenWeight = 0;
 {
-    _weight = ([_x select 0] call life_fnc_itemWeight) * (_x select 1);
+    _x params ["_item","_count"];
+    private _weight = ([_item] call life_fnc_itemWeight) * _count;
     _materialsGivenWeight = _materialsGivenWeight + _weight;
     true
 } count _materialsGiven;
 
 if (_materialsGivenWeight > _materialsRequiredWeight) then {
-    _netChange = _materialsGivenWeight - _materialsRequiredWeight;
-    _freeSpace = life_maxWeight - life_carryWeight;
+    private _netChange = _materialsGivenWeight - _materialsRequiredWeight;
+    private _freeSpace = life_maxWeight - life_carryWeight;
 
     if (_freeSpace < _netChange) then {
         hint localize "STR_Process_Weight";
-        life_is_processing = false;
         life_action_inUse = false;
         breakOut "main";
     };
@@ -109,7 +104,7 @@ private _ui = uiNamespace getVariable "life_progress";
 private _progress = _ui displayCtrl 38201;
 private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format ["%2 (1%1)...","%",_text];
-private _progress progressSetPosition 0.01;
+_progress progressSetPosition 0.01;
 private _cP = 0.01;
 
 life_is_processing = true;
@@ -131,12 +126,14 @@ if (_hasLicense) then {
     };
 
     {
-        [false,_x select 0,(_x select 1)*(_minimumConversions)] call life_fnc_handleInv;
+        _x params ["_item","_count"];
+        [false,_item,_count * (_minimumConversions)] call life_fnc_handleInv;
         true
     } count _materialsRequired;
 
     {
-        [true,_x select 0,(_x select 1)*(_minimumConversions)] call life_fnc_handleInv;
+        _x params ["_item","_count"];
+        [true,_item,_count * (_minimumConversions)] call life_fnc_handleInv;
         true
     } count _materialsGiven;
 
@@ -181,11 +178,15 @@ if (_hasLicense) then {
     };
 
     {
-        [false,_x select 0,((_x select 1)*_minimumConversions)] call life_fnc_handleInv;
+        _x params ["_item","_count"];
+        [false,_item,_count * (_minimumConversions)] call life_fnc_handleInv;
+        true
     } count _materialsRequired;
 
     {
-        [true,_x select 0,((_x select 1)*_minimumConversions)] call life_fnc_handleInv;
+        _x params ["_item","_count"];
+        [true,_item,_count * (_minimumConversions)] call life_fnc_handleInv;
+        true
     } count _materialsGiven;
 
     "progressBar" cutText ["","PLAIN"];

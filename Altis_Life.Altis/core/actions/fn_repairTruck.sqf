@@ -24,7 +24,7 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
         private _progress = _ui displayCtrl 38201;
         private _pgText = _ui displayCtrl 38202;
         _pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
-        private _progress progressSetPosition 0.01;
+        _progress progressSetPosition 0.01;
         private _cP = 0.01;
 
         for "_i" from 0 to 1 step 0 do {

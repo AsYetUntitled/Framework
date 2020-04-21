@@ -28,11 +28,11 @@ private _fishInfo = switch typeOf _fish do {
 //--- Sort out array
 _fishInfo params ["_fishName", "_fishType"];
 
-//--- Localize name of fish
-private _fishName = localize _fishName;
-
 //--- No fishtype
 if (_fishType isEqualTo "") exitWith {}; //Couldn't get a type
+
+//--- Localize name of fish
+private _fishName = localize _fishName;
 
 //--- Add fish into inventory
 if ([true,_type,1] call life_fnc_handleInv) then {
