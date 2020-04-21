@@ -54,7 +54,7 @@ private _cpRate = switch (typeOf _building) do {
     case "Land_Dome_Big_F": {0.008};
     case "Land_Medevac_house_V1_F";
     case "Land_Research_house_V1_F": {0.005};
-    default {0.08}
+    default {0.08};
 };
 
 for "_i" from 0 to 1 step 0 do {
@@ -81,8 +81,7 @@ player playActionNow "stop";
 
 life_action_inUse = false;
 
-if (!alive player) exitWith {
-};
+if (!alive player) exitWith {};
 
 if (life_interrupted) exitWith {
     life_interrupted = false;
