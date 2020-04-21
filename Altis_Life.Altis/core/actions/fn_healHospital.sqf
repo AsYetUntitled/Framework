@@ -28,17 +28,15 @@ private _action = [
     localize "STR_Global_No"
 ] call BIS_fnc_guiMessage;
 
+closeDialog 0;
 if (_action) then {
     titleText [localize "STR_NOTF_HS_Healing", "PLAIN"];
-    closeDialog 0;
     uiSleep 8;
     if (player distance _target > 5) exitWith {life_action_inUse = false; titleText [localize "STR_NOTF_HS_ToFar", "PLAIN"]};
     titleText [localize "STR_NOTF_HS_Healed", "PLAIN"];
     player setDamage 0;
     CASH = CASH - _healCost;
-    life_action_inUse = false;
 } else {
     hint localize "STR_NOTF_ActionCancel";
-    closeDialog 0;
-    life_action_inUse = false;
 };
+life_action_inUse = false;

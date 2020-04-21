@@ -14,7 +14,7 @@ params [
 if (isNull _animalCorpse) exitWith {}; //Object passed is null?
 
 life_interrupted = false;
-if (player distance _animalCorpse > 3.5) exitWith {}; //WTF need check with nearest objects I love Arma
+if (player distance _animalCorpse > 3.5) exitWith {};
 life_action_inUse = true;
 
 private _animalInfo = switch (typeOf _animalCorpse) do {

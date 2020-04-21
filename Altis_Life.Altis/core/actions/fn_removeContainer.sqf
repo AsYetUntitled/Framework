@@ -10,6 +10,7 @@
 params [
     ["_container", objNull, [objNull]]
 ];
+if (isNull _container) exitWith {};
 
 private _containerType = typeOf _container;
 private _house = nearestObject [player, "House"];
@@ -17,8 +18,6 @@ private _house = nearestObject [player, "House"];
 if !(_house in life_vehicles) exitWith {
     hint localize "STR_ISTR_Box_NotinHouse"
 };
-
-if (isNull _container) exitWith {};
 
 private _containers = _house getVariable ["containers",[]];
 closeDialog 0;
@@ -28,9 +27,9 @@ private _action = [
 ] call BIS_fnc_guiMessage;
 
 if (_action) then {
-    private _box = switch (_containerType) do {
-        case ("B_supplyCrate_F"): {"storagebig"};
-        case ("Box_IND_Grenades_F"): {"storagesmall"};
+    private _box = switch _containerType do {
+        case "B_supplyCrate_F": {"storagebig"};
+        case "Box_IND_Grenades_F": {"storagesmall"};
         default {"None"};
     };
     if (_box isEqualTo "None") exitWith {};

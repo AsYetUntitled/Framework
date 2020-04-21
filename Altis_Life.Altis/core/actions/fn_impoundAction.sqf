@@ -18,7 +18,7 @@ if (player distance cursorObject > 10) exitWith {};
 if (_vehicle getVariable "NPC") exitWith {hint localize "STR_NPC_Protected"};
 
 private _vehicleData = _vehicle getVariable ["vehicle_info_owners",[]];
-if (_vehicleData isEqualTo 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
+if (_vehicleData isEqualTo []) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 
 private _vehicleName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 private _price = M_CONFIG(getNumber,"LifeCfgVehicles",(typeOf _vehicle),"price");

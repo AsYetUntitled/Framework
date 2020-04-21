@@ -54,16 +54,16 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
 
         //Check if playerSide has infinite repair enabled
         call {
-            if (playerSide isEqualTo civilian && (_sideRepairArray select 0) isEqualTo 0) then {
+            if (playerSide isEqualTo civilian && (_sideRepairArray select 0) isEqualTo 0) exitWith {
                 [false,"toolkit",1] call life_fnc_handleInv;
             };
-            if (playerSide isEqualTo west && (_sideRepairArray select 1) isEqualTo 0) then {
+            if (playerSide isEqualTo west && (_sideRepairArray select 1) isEqualTo 0) exitWith {
                 [false,"toolkit",1] call life_fnc_handleInv;
             };
-            if (playerSide isEqualTo independent && (_sideRepairArray select 2) isEqualTo 0) then {
+            if (playerSide isEqualTo independent && (_sideRepairArray select 2) isEqualTo 0) exitWith {
                 [false,"toolkit",1] call life_fnc_handleInv;
             };
-            if (playerSide isEqualTo east && (_sideRepairArray select 3) isEqualTo 0) then {
+            if (playerSide isEqualTo east && (_sideRepairArray select 3) isEqualTo 0) exitWith {
                 [false,"toolkit",1] call life_fnc_handleInv;
             };
         };
