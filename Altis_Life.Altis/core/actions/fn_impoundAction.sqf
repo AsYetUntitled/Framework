@@ -56,8 +56,7 @@ if (player distance _vehicle > 10) exitWith {
 
 if (!alive player) exitWith {life_action_inUse = false;};
 
-if (count crew _vehicle isEqualTo 0) then {
-    if !(KINDOF_ARRAY(_vehicle,_filters)) exitWith {life_action_inUse = false;};
+if (crew _vehicle isEqualTo []) then {
     private _type = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 
     life_impound_inuse = true;
