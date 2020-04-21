@@ -7,7 +7,7 @@
 
 params [
     ["_object", objNull, [objNull]],
-    "_value"
+    ["_value", 1, [0]]
 ];
 
 if (isNull _object) exitWith {};
