@@ -12,9 +12,9 @@ disableSerialization;
 if (life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
 
 private _serviceCost = LIFE_SETTINGS(getNumber,"service_chopper");
-private _search = nearestObjects[getPos air_sp, ["Air"], 10];
+private _search = nearestObjects [getPos air_sp, ["Air"], 10];
 
-if (count _search isEqualTo 0) exitWith {
+if (_search isEqualTo []) exitWith {
     hint localize "STR_Service_Chopper_NoAir"
 };
 if (CASH < _serviceCost) exitWith {
@@ -38,7 +38,7 @@ for "_i" from 0 to 1 step 0 do {
     if (_cP >= 1) exitWith {};
 };
 
-private _nearestChopper = _search select 0;
+_search params ["_nearestChopper"];
 
 if (!alive _nearestChopper || {_nearestChopper distance air_sp > 15}) exitWith {
     life_action_inUse = false;

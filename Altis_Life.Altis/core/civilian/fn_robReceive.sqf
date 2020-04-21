@@ -8,11 +8,10 @@
 */
 params [
     ["_cash",0,[0]],
-    ["_victim",objNull,[objNull]],
-    ["_robber",objNull,[objNull]]
+    ["_victim",objNull,[objNull]]
 ];
 
-if (_robber isEqualTo _victim) exitWith {};
+if (player isEqualTo _victim) exitWith {};
 if (_cash isEqualTo 0) exitWith {
     titleText[localize "STR_Civ_RobFail","PLAIN"]
 };

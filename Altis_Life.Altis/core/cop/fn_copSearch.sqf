@@ -17,9 +17,9 @@ params [
 
 if (isNull _civ) exitWith {};
 
-private _illegal = 0;
 private _inv = "";
 if (count _invs > 0) then {
+    private _illegal = 0;
     {
         _x params ["_var", "_count"];
 

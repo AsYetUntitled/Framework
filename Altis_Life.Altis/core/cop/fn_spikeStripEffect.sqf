@@ -3,8 +3,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Doesn't work without the server-side effect but shifted part of it clientside
-    so code can easily be changed. Ultimately it just pops the tires.
+    Pops the vehicles tyres - required due to the local arguments for setHitPointDamage being local.
 */
 
 params [
@@ -13,5 +12,5 @@ params [
 
 if (isNull _vehicle) exitWith {};
 
-_vehicle setHitPointDamage["HitLFWheel",1];
-_vehicle setHitPointDamage["HitRFWheel",1];
+_vehicle setHitPointDamage ["HitLFWheel",1];
+_vehicle setHitPointDamage ["HitRFWheel",1];

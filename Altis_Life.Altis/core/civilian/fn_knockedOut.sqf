@@ -12,16 +12,15 @@ params [
     ["_who","",[""]]
 ];
 
-if (isNull _target) exitWith {};
+if (isNull _target || {_who isEqualTo ""}) exitWith {};
 if !(_target isEqualTo player) exitWith {};
-if (_who isEqualTo "") exitWith {};
 
-titleText[format [localize "STR_Civ_KnockedOut",_who],"PLAIN"];
+titleText [format [localize "STR_Civ_KnockedOut",_who],"PLAIN"];
 player playMoveNow "Incapacitated";
 disableUserInput true;
 
-private _obj = "Land_ClutterCutter_small_F" createVehicle ASLTOATL(visiblePositionASL player);
-_obj setPosATL ASLTOATL(visiblePositionASL player);
+private _obj = "Land_ClutterCutter_small_F" createVehicle ASLTOATL (visiblePositionASL player);
+_obj setPosATL ASLTOATL (visiblePositionASL player);
 
 life_isknocked = true;
 player attachTo [_obj,[0,0,0]];

@@ -13,18 +13,19 @@ params [
 
 private _sellers = _dealer getVariable ["sellers", []];
 
-if (count _sellers isEqualTo 0) exitWith {
+if (_sellers isEqualTo []) exitWith {
     hint localize "STR_Cop_DealerQuestion"
-}; //No data.
+};
 
 life_action_inUse = true;
 private _crimes = LIFE_SETTINGS(getArray,"crimes");
 
 private _names = "";
 {
+    _x params ["_uid","_name","_value"];
     private _val = 0;
-    if (_x select 2 > 150000) then {
-        _val = round((_x select 2) / 16);
+    if (_value > 150000) then {
+        _val = round(_value / 16);
     } else {
         _val = ["483",_crimes] call life_util_fnc_index;
         _val = ((_crimes select _val) select 1);
@@ -32,8 +33,8 @@ private _names = "";
             _val = parseNumber _val;
         };
     };
-    [(_x select 0),(_x select 1),"483",_val] remoteExecCall ["life_fnc_wantedAdd",RSERV];
-    _names = _names + format ["%1<br/>",(_x select 1)];
+    [_uid,_name,"483",_val] remoteExecCall ["life_fnc_wantedAdd",RSERV];
+    _names = _names + format ["%1<br/>",_name];
 
     true
 } count _sellers;

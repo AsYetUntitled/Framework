@@ -11,7 +11,6 @@ params [
     ["_cop", objNull, [objNull]]
 ];
 
-private _player = player;
 private _vehicle = vehicle player;
 if (isNull _cop) exitWith {};
 
@@ -54,7 +53,7 @@ while {player getVariable ["restrained", false]} do {
         player setVariable ["restrained",false,true];
         player setVariable ["Escorting",false,true];
         player setVariable ["transporting",false,true];
-        detach _player;
+        detach player;
     };
 
     if (!alive _cop) then {

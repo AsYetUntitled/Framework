@@ -23,16 +23,11 @@ params [
 
 disableSerialization;
 
-private _seizeRank = LIFE_SETTINGS(getNumber,"seize_minimum_rank");
-
 if (player getVariable ["Escorting", false]) then {
-    if (isNull _curTarget) exitWith {
+    if (isNull _curTarget || {player distance _curTarget > 4}) exitWith {
         closeDialog 0;
     };
     if (!isPlayer _curTarget && {side _curTarget isEqualTo civilian}) exitWith {
-        closeDialog 0;
-    };
-    if (player distance _curTarget > 4 ) exitWith {
         closeDialog 0;
     };
 };
@@ -52,6 +47,7 @@ private _btn7 = _display displayCtrl BTN_7;
 private _btn8 = _display displayCtrl BTN_8;
 
 life_pInact_curTarget = _curTarget;
+private _seizeRank = LIFE_SETTINGS(getNumber,"seize_minimum_rank");
 
 if (player getVariable ["isEscorting",false]) then {
     {

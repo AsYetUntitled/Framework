@@ -17,8 +17,7 @@ private _text = CONTROL(2900,2903);
 private _info = lbData[2902,lbCurSel (2902)];
 _info = call compile format ["%1", _info];
 
-if (isNil "_info") exitWith {_text ctrlSetText localize "STR_ANOTF_QueryFail"};
-if (isNull _info) exitWith {_text ctrlSetText localize "STR_ANOTF_QueryFail"};
+if (isNil "_info" || {isNull _info}) exitWith {_text ctrlSetText localize "STR_ANOTF_QueryFail"};
 remoteExecCall ["life_util_fnc_playerQuery",_info];
 
 _text ctrlSetText localize "STR_ANOTF_Query";

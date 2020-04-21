@@ -44,5 +44,4 @@ if (life_HC_isActive) then {
 
 [0, "STR_Cop_Ticket_PaidNOTF", true, [profileName, [life_ticket_val] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast", west];
 closeDialog 0;
-[1, "STR_Cop_Ticket_PaidNOTF_2", true, [profileName]] remoteExecCall ["life_fnc_broadcast", life_ticket_cop];
-[life_ticket_val, player, life_ticket_cop] remoteExecCall ["life_fnc_ticketPaid", life_ticket_cop];
+[life_ticket_val, player] remoteExecCall ["life_fnc_ticketPaid", life_ticket_cop];

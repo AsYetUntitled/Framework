@@ -13,7 +13,7 @@ params [
 if (isNull _robber) exitWith {};
 
 if (CASH > 0) then {
-    [CASH,player,_robber] remoteExecCall ["life_fnc_robReceive",_robber];
+    [CASH,player] remoteExecCall ["life_fnc_robReceive",_robber];
 
     if (life_HC_isActive) then {
         [getPlayerUID _robber,_robber getVariable ["realname",name _robber],"211"] remoteExecCall ["HC_fnc_wantedAdd",HC_Life];

@@ -26,6 +26,6 @@ private _licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses
 } count _licensesConfigs;
 
 if (_licenses isEqualTo "") then {
-    _licenses = (localize "STR_Cop_NoLicensesFound");
+    _licenses = localize "STR_Cop_NoLicensesFound";
 };
 [profileName,_licenses] remoteExecCall ["life_fnc_licensesRead",_cop];

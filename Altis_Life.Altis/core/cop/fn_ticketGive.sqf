@@ -25,5 +25,5 @@ if (_parsedVal > 200000) exitWith {
 };
 
 [0,"STR_Cop_TicketGive", true, [profileName, [_parsedVal] call life_fnc_numberText, life_ticket_unit getVariable ["realname", name life_ticket_unit]]] remoteExecCall ["life_fnc_broadcast", RCLIENT];
-[player, _parsedVal] remoteExec ["life_fnc_ticketPrompt", life_ticket_unit];
+[player, _parsedVal] remoteExecCall ["life_fnc_ticketPrompt", life_ticket_unit];
 closeDialog 0;

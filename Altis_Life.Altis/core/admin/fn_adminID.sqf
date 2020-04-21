@@ -9,7 +9,7 @@
 disableSerialization;
 
 params [
-    "_ret"
+    ["_ret", -1, [0]]
 ];
 private _display = findDisplay 2900;
 private _text = _display displayCtrl 2903;
