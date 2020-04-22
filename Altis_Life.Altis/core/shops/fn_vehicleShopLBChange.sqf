@@ -70,7 +70,7 @@ ctrlShow [2330,true];
 private _ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
 
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
     _className = "Default"; //Use Default class if it doesn't exist
 };

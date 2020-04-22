@@ -15,7 +15,7 @@ private _dataArr = _control lbData _index;
 if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
 
 if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
     _className = "Default"; //Use Default class if it doesn't exist
 };

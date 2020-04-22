@@ -79,7 +79,6 @@ diag_log "----------------------------------------------------------------------
 if (LIFE_SETTINGS(getNumber,"save_civilian_position_restart") isEqualTo 1) then {
     [] spawn {
         ["updateCivAlive", 1] call DB_fnc_asyncCall;
-        [_query,1] call DB_fnc_asyncCall;
     };
 };
 
@@ -149,15 +148,6 @@ addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect;
 
 /* Miscellaneous mission-required stuff */
 life_wanted_list = [];
-
-[] spawn {
-    for "_i" from 0 to 1 step 0 do {
-        uiSleep (30 * 60);
-        {
-            _x setVariable ["sellers",[],true];
-        } forEach [Dealer_1,Dealer_2,Dealer_3];
-    };
-};
 
 [] spawn TON_fnc_initHouses;
 cleanup = [] spawn TON_fnc_cleanup;

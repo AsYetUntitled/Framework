@@ -14,7 +14,7 @@ private _dataArr = _control lbData _index;
 (parseSimpleArray _dataArr) params ["_vid",["_className",""]];
 if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
 
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
     _className = "Default"; //Use Default class if it doesn't exist
 };
