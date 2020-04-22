@@ -6874,17 +6874,17 @@
             <Polish>W pobliżu nie ma helikoptera!</Polish>
             <Chinesesimp>直升机停机坪上没有直升机！</Chinesesimp>
         </Key>
-        <Key ID="STR_Serive_Chopper_NotEnough">
-            <Original>You need $1,000 to service your chopper</Original>
-            <Czech>Musíte $ 1,000 servisních kontrol vrtulník</Czech>
-            <Spanish>Necesitas $1,000 para reparar el helicóptero.</Spanish>
+        <Key ID="STR_Service_Chopper_NotEnough">
+            <Original>You need $%1 to service your chopper</Original>
+            <Czech>Musíte $%1 servisních kontrol vrtulník</Czech>
+            <Spanish>Necesitas $%1 para reparar el helicóptero.</Spanish>
             <Russian></Russian>
-            <German>Du benötigst $1,000, um deinen Helikopter zu warten.</German>
-            <French>Vous avez besoin de $1000 pour entretien de votre hélicoptère</French>
-            <Italian>Necessiti di $1.000 per fare manutenzione al tuo elicottero</Italian>
-            <Portuguese>Você precisa de R$1.000 para reparar a sua aeronave</Portuguese>
-            <Polish>Potrzebujesz $1000 aby serwisować helikopter</Polish>
-            <Chinesesimp>你需要 $1,000 来维修你的直升机</Chinesesimp>
+            <German>Du benötigst $%1, um deinen Helikopter zu warten.</German>
+            <French>Vous avez besoin de $%1 pour entretien de votre hélicoptère</French>
+            <Italian>Necessiti di $%1 per fare manutenzione al tuo elicottero</Italian>
+            <Portuguese>Você precisa de R$%1 para reparar a sua aeronave</Portuguese>
+            <Polish>Potrzebujesz $%1 aby serwisować helikopter</Polish>
+            <Chinesesimp>你需要 $%1 来维修你的直升机</Chinesesimp>
         </Key>
         <Key ID="STR_Service_Chopper_Servicing">
             <Original>Servicing Chopper [%1]...</Original>

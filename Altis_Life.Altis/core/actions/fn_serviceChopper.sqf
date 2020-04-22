@@ -18,7 +18,7 @@ if (_search isEqualTo []) exitWith {
     hint localize "STR_Service_Chopper_NoAir"
 };
 if (CASH < _serviceCost) exitWith {
-    hint localize "STR_Serive_Chopper_NotEnough"
+    hint format [localize "STR_Service_Chopper_NotEnough", _serviceCost];
 };
 
 life_action_inUse = true;
