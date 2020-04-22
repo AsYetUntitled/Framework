@@ -7,7 +7,7 @@
 */
 params [
     ["_unit", objNull, [objNull]],
-    ["_type", "", [""]],
+    ["_type", "", [""]]
 ];
 
 //Error checks

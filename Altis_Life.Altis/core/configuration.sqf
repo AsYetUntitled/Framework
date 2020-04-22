@@ -27,7 +27,6 @@ life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
 life_removeWanted = false;
-life_action_gathering = false;
 life_god = false;
 life_frozen = false;
 life_save_gear = [];
