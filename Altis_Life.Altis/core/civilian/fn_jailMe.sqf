@@ -8,8 +8,8 @@
 */
 
 params [
-    ["_ret",[],[[]]],
-    ["_bad",false,[false]]
+    ["_ret", [], [[]]],
+    ["_bad", false, [false]]
 ];
 
 private _esc = false;
@@ -37,6 +37,7 @@ if !(_ret isEqualTo []) then {
     life_canpay_bail = true;
 };
 
+private "_countDown";
 for "_i" from 0 to 1 step 0 do {
     if (round(_time - time) > 0) then {
         _countDown = [(_time - time), "MM:SS.MS"] call BIS_fnc_secondsToString;
