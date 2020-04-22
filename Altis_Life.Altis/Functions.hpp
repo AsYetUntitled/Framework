@@ -29,6 +29,7 @@ class Life_Client_Utilities {
         class isNumber {};
         class index {};
         class playerQuery {};
+        class sideToString {};
         class terrainSort {};
     };
 };
@@ -121,7 +122,6 @@ class Life_Client_Core {
         file = "core\config";
         class houseConfig {};
         class itemWeight {};
-        class vehicleAnimate {};
         class vehicleWeightCfg {};
     };
 
@@ -383,7 +383,6 @@ class Life_Client_Core {
         class lockVehicle {};
         class openInventory {};
         class vehiclecolor3DRefresh {};
-        class vehicleOwners {};
         class vehicleWeight {};
         class vehInventory {};
         class vehStoreItem {};

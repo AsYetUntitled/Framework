@@ -19,7 +19,6 @@ class CfgFunctions {
             class asyncCall{};
             class insertRequest{};
             class updateRequest{};
-            class insertVehicle {};
             class updatePartial {};
         };
     };
@@ -41,10 +40,6 @@ class CfgFunctions {
             file = "\life_server\Functions\Jail";
             class jailSys {};
         };
-
-        class Client_Code {
-            file = "\life_server\Functions\Client";
-        };
     };
 
     class TON_System {
@@ -62,6 +57,7 @@ class CfgFunctions {
             class vehicleDelete {};
             class spikeStrip {};
             class transferOwnership {};
+            class federalUpdate {};
             class chopShopSell {};
             class clientDisconnect {};
             class entityRespawned {};
@@ -71,6 +67,7 @@ class CfgFunctions {
             class vehicleUpdate {};
             class recupkeyforHC {};
             class handleBlastingCharge {};
+            class vehicleAnimate {};
         };
 
         class Housing {

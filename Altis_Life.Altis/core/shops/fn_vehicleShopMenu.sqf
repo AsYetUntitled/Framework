@@ -18,9 +18,7 @@
 
 disableSerialization;
 
-//Long boring series of checks
-if (dialog) exitWith {};
-if (_shop isEqualTo "") exitWith {};
+if (dialog || {_shop isEqualTo ""}) exitWith {};
 if (!(_sideCheck isEqualTo sideUnknown) && {!(playerSide isEqualTo _sideCheck)}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
 
 private _conditions = M_CONFIG(getText,"CarShops",_shop,"conditions");
@@ -42,7 +40,7 @@ if (_disableBuy) then {
 };
 
 //Fetch the shop config.
-_vehicleList = M_CONFIG(getArray,"CarShops",_shop,"vehicles");
+private _vehicleList = M_CONFIG(getArray,"CarShops",_shop,"vehicles");
 
 private _control = CONTROL(2300,2302);
 lbClear _control; //Flush the list.

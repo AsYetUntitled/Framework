@@ -6,9 +6,10 @@
     Description:
     Starts the initialization of vehicle virtual inventory menu.
 */
-private ["_vehicle","_veh_data"];
 if (dialog) exitWith {};
-_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+params [
+    ["_vehicle",objNull,[objNull]]
+];
 if (isNull _vehicle || !(_vehicle isKindOf "Car" || _vehicle isKindOf "Air" || _vehicle isKindOf "Ship" || _vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F")) exitWith {}; //Either a null or invalid vehicle type.
 if ((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint localize "STR_MISC_VehInvUse"};
 _vehicle setVariable ["trunk_in_use",true,true];
@@ -22,7 +23,7 @@ if (_vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F
     ctrlSetText[3501,format [(localize "STR_MISC_VehStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 };
 
-_veh_data = [_vehicle] call life_fnc_vehicleWeight;
+private _veh_data = [_vehicle] call life_fnc_vehicleWeight;
 
 if (_veh_data select 0 isEqualTo -1) exitWith {closeDialog 0; _vehicle setVariable ["trunk_in_use",false,true]; hint localize "STR_MISC_NoStorageVeh";};
 

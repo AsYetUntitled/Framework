@@ -29,12 +29,7 @@ switch (FETCH_CONST(life_adminlevel)) do
 lbClear _list;
 
 {
-    private _side = switch (side _x) do {
-        case west: {"Cop"};
-        case civilian: {"Civ"};
-        case independent: {"Medic"};
-        default {"Unknown"};
-    };
+    private _side = [_x] call life_util_fnc_sideToString;
     _list lbAdd format ["%1 - %2", _x getVariable ["realname",name _x], _side];
     _list lbSetdata [(lbSize _list)-1, str _x];
 

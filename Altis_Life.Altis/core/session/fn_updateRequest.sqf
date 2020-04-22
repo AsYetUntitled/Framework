@@ -11,7 +11,7 @@ _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
 _array = [];
 _alive = alive player;
 _position = getPosATL player;
-_flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
+private _flag = [player,true] call life_util_fnc_sideToString;
 
 {
     _varName = LICENSE_VARNAME(configName _x,_flag);

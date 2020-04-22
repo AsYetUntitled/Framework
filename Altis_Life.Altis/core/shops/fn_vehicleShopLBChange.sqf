@@ -8,17 +8,19 @@
     Called when a new selection is made in the list box and
     displays various bits of information about the vehicle.
 */
+params [
+    ["_control",controlNull,[controlNull]],
+    ["_index",0,[0]]
+];
 disableSerialization;
-private ["_className","_classNameLife","_initalPrice","_buyMultiplier","_rentMultiplier","_vehicleInfo","_colorArray","_ctrl","_trunkSpace","_maxspeed","_horsepower","_passengerseats","_fuel","_armor"];
 
-//Fetch some information.
-_className = (_this select 0) lbData (_this select 1);
-_classNameLife = _className;
-_vIndex = (_this select 0) lbValue (_this select 1);
+private _className = _control lbData _index;
+private _vIndex = _control lbValue _index;
+private _initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 
-_initalPrice = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
-
-switch (playerSide) do {
+private "_buyMultiplier";
+private "_rentMultiplier";
+switch playerSide do {
     case civilian: {
         _buyMultiplier = LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
         _rentMultiplier = LIFE_SETTINGS(getNumber,"vehicle_rental_multiplier_CIVILIAN");
@@ -37,14 +39,13 @@ switch (playerSide) do {
     };
 };
 
-_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-_trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
-_maxspeed = (_vehicleInfo select 8);
-_horsepower = (_vehicleInfo select 11);
-_passengerseats = (_vehicleInfo select 10);
-_fuel = (_vehicleInfo select 12);
-_armor = (_vehicleInfo select 9);
-[_className] call life_fnc_3dPreviewDisplay;
+private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+private _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
+_vehicleInfo params ["","","","","","","","","_maxSpeed","_armor","_seats","_horsePower","_fuelCapacity"];
+
+if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+    [_className] call life_fnc_3dPreviewDisplay;
+};
 
 ctrlShow [2330,true];
 (CONTROL(2300,2303)) ctrlSetStructuredText parseText format [
@@ -58,47 +59,40 @@ ctrlShow [2330,true];
     (localize "STR_Shop_Veh_UI_Armor")+ " %8",
     [round(_initalPrice * _rentMultiplier)] call life_fnc_numberText,
     [round(_initalPrice * _buyMultiplier)] call life_fnc_numberText,
-    _maxspeed,
-    _horsepower,
-    _passengerseats,
+    _maxSpeed,
+    _horsePower,
+    _seats,
     if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
-    _fuel,
+    _fuelCapacity,
     _armor
 ];
 
-_ctrl = CONTROL(2300,2304);
+private _ctrl = CONTROL(2300,2304);
 lbClear _ctrl;
 
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
-    _classNameLife = "Default"; //Use Default class if it doesn't exist
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+    _className = "Default"; //Use Default class if it doesn't exist
 };
-_colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures");
 
+private _colorArray = M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures");
 {
-    _flag = (_x select 1);
-    _textureName = (_x select 0);
+    _x params ["_textureName","_flag"];
     if ((life_veh_shop select 2) isEqualTo _flag) then {
-        _x params ["_texture"];
         private _toShow = [_x] call life_fnc_levelCheck;
         if (_toShow) then {
             _ctrl lbAdd _textureName;
-            _ctrl lbSetValue [(lbSize _ctrl)-1,_forEachIndex];
         };
     };
 } forEach _colorArray;
 
-_numberindexcolorarray = [];
-for "_i" from 0 to (count(_colorArray) - 1) do {
-    _numberindexcolorarray pushBack _i;
-};
-_indexrandom = selectRandom _numberindexcolorarray;
-_ctrl lbSetCurSel _indexrandom;
+private _count = (count _colorArray) - 1;
+_ctrl lbSetCurSel (round(random _count));
 
 if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
     ctrlEnable [2309,false];
 } else {
-    if (!(life_veh_shop select 3)) then {
+    if !(life_veh_shop select 3) then {
         ctrlEnable [2309,true];
     };
 };

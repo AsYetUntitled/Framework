@@ -14,7 +14,7 @@ params [
 ];
 
 private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
-private _ownerID = _unit getVariable ["life_clientID",-1];
+private _ownerID = remoteExecutedOwner;
 
 if (isNull _vehicle || {isNull _unit}) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.
 private _vInfo = _vehicle getVariable ["dbInfo", []];

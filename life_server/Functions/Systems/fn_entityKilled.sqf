@@ -46,15 +46,13 @@ if (isPlayer _killed) exitWith {
 private _vehicleClass = getText(configFile >> "CfgVehicles" >> (typeOf _killed) >> "vehicleClass");
 
 if (_vehicleClass in ["Air","Armored","Car","Ship","Submarine"]) exitWith {
-    private _dbInfo = _killed getVariable ["dbInfo",[]];
+    private _ownerInfo = (_x getVariable ["vehicle_info_owners",[]]) select 0;
+    _ownerInfo params ["_uid"];
+    private _vid = _x getVariable ["vehID",-1];
 
-    if (count _dbInfo > 0) then {
-        _dbInfo params [
-            "_uid",
-            "_plate"
-        ];
+    if !(_vid isEqualTo -1) then {
 
-        private _query = format ["deleteVehicle:%1:%2", _uid, _plate];
+        private _query = format ["deleteVehicle:%1:%2", _uid, _vid];
         [_query,1] call DB_fnc_asyncCall;
     };
 

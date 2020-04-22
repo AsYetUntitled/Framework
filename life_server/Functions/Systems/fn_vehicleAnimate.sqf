@@ -1,33 +1,24 @@
 /*
     File: fn_vehicleAnimate.sqf
-    Author: Bryan "Tonic" Boardwine
-
+    Author: DomT602
     Description:
-    Pass what you want to be animated.
+    Animates various aspects of the vehicle - moved to server.
 */
-
 params [
-    ["_vehicle", objNull, [objNull]],
-    ["_animate", "", ["", []]],
-    ["_preset", false, [true]]
+    ["_vehicle",objNull,[objNull]],
+    ["_animate","",["",[]]],
+    ["_preset",false,[false]]
 ];
-
 if (isNull _vehicle) exitWith {};
 
-if (!_preset) then {
-    if (count _animate > 1) then
+if !(_preset) then {
     {
-        {
-            _vehicle animate[_x select 0,_x select 1];
-        } count _animate;
-    } else {
-        _vehicle animate[_animate select 0,_animate select 1];
-    };
+        _x params ["_selection","_value"];
+        _vehicle animate [_selection,_value];
+    } forEach _animate;
 } else {
-    switch (_animate) do
-    {
-        case "civ_littlebird":
-        {
+    switch _animate do {
+        case "civ_littlebird": {
             _vehicle animate ["addDoors",1];
             _vehicle animate ["addBenches",0];
             _vehicle animate ["addTread",0];
@@ -38,20 +29,17 @@ if (!_preset) then {
             _vehicle lockCargo [5,true];
         };
 
-        case "service_truck":
-        {
+        case "service_truck": {
             _vehicle animate ["HideServices", 0];
             _vehicle animate ["HideDoor3", 1];
         };
 
-        case "med_offroad":
-        {
+        case "med_offroad": {
             _vehicle animate ["HidePolice", 0];
             _vehicle setVariable ["lights",false,true];
         };
 
-        case "cop_offroad":
-        {
+        case "cop_offroad": {
             _vehicle animate ["HidePolice", 0];
             _vehicle animate ["HideBumper1", 0];
             _vehicle setVariable ["lights",false,true];
