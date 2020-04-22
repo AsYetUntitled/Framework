@@ -29,8 +29,12 @@ if !(isNull objectParent player) then {
     };
 };
 
-if (isNull _vehicle) exitWith {hint localize "STR_Garage_NoNPC"};
-if (!alive _vehicle) exitWith {hint localize "STR_Garage_SQLError_Destroyed"};
+if (isNull _vehicle) exitWith {
+    hint localize "STR_Garage_NoNPC"
+};
+if !(alive _vehicle) exitWith {
+    hint localize "STR_Garage_SQLError_Destroyed"
+};
 
 if (life_HC_isActive) then {
     [_vehicle,false,_unit] remoteExecCall ["HC_fnc_vehicleStore",HC_Life];
