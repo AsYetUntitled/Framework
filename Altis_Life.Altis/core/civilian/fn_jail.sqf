@@ -6,22 +6,23 @@
     Description:
     Starts the initial process of jailing.
 */
-private ["_illegalItems"];
+
 params [
     ["_unit",objNull,[objNull]],
     ["_bad",false,[false]]
 ];
 
-if (isNull _unit) exitWith {}; //Dafuq?
-if !(_unit isEqualTo player) exitWith {}; //Dafuq?
-if (life_is_arrested) exitWith {}; //Dafuq i'm already arrested
-_illegalItems = LIFE_SETTINGS(getArray,"jail_seize_vItems");
+if (isNull _unit) exitWith {};
+if !(_unit isEqualTo player) exitWith {};
+if (life_is_arrested) exitWith {};
+
+private _illegalItems = LIFE_SETTINGS(getArray,"jail_seize_vItems");
 
 player setVariable ["restrained",false,true];
 player setVariable ["Escorting",false,true];
 player setVariable ["transporting",false,true];
 
-titleText[localize "STR_Jail_Warn","PLAIN"];
+titleText [localize "STR_Jail_Warn","PLAIN"];
 hint localize "STR_Jail_LicenseNOTF";
 player setPos (getMarkerPos "jail_marker");
 
@@ -42,15 +43,18 @@ if (player distance (getMarkerPos "jail_marker") > 40) then {
     if (_amount > 0) then {
         [false,_x,_amount] call life_fnc_handleInv;
     };
-} forEach _illegalItems;
+    true
+} count _illegalItems;
 
 life_is_arrested = true;
 
 if (LIFE_SETTINGS(getNumber,"jail_seize_inventory") isEqualTo 1) then {
-    [] spawn life_fnc_seizeClient;
+    [] call life_fnc_seizeClient;
 } else {
     removeAllWeapons player;
-    {player removeMagazine _x} forEach (magazines player);
+    {
+        player removeMagazine _x
+    } count (magazines player);
 };
 
 if (life_HC_isActive) then {

@@ -35,7 +35,7 @@ private _mTwPositions = [
     ["vault",[19.9775,-0.0078125,-1.90735e-006],[-5.00684,0.59375,-9.57164]],
     ["front",[0.972656,78.8281,15.617],[-0.657227,22.9082,-10.4033]],
     ["back",[28.9248,-42.0977,-3.8896],[-1.33789,-24.6035,-10.2108]]
-];
+]; //modelToWorld positions
 
 private _index = [_mode,_mTwPositions] call life_util_fnc_index;
 
@@ -46,7 +46,7 @@ if (_index isEqualTo -1) then {
     _laptop setObjectTexture [0,""];
     life_fed_scam = nil;
 } else {
-    _temp = _mTwPositions select _index;
+    private _temp = _mTwPositions select _index;
     life_fed_scam camSetPos (_dome modelToWorld (_temp select 1));
     life_fed_scam camSetTarget (_dome modelToWorld (_temp select 2));
     life_fed_scam camCommit 0;
