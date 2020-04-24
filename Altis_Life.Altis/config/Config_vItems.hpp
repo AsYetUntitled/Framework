@@ -137,6 +137,7 @@ class VirtualShops {
 *        buyPrice = Item Buy Price
 *        sellPrice = Item Sell Price
 *        illegal = Illegal Item
+*        hasLicense = Item hasLicense traitement
 *        edible = Item Edible (-1 = Disabled, other values = added value)
 *        drinkable = Item Drinkable (-1 = Disabled, other values = added value)
 *        icon = Item Icon
@@ -310,6 +311,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_oilUnprocessed.paa";
@@ -322,6 +324,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 3200;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_oilProcessed.paa";
@@ -334,6 +337,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_copperOre.paa";
@@ -346,6 +350,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 1500;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_copper.paa";
@@ -358,6 +363,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_ironOre.paa";
@@ -370,6 +376,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 3200;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_iron.paa";
@@ -382,6 +389,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_saltUnprocessed.paa";
@@ -394,6 +402,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 1450;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_saltProcessed.paa";
@@ -406,6 +415,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_sand.paa";
@@ -418,6 +428,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 1450;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_glass.paa";
@@ -430,6 +441,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 750;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_diamondUncut.paa";
@@ -442,6 +454,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 2000;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_diamondCut.paa";
@@ -454,6 +467,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_rock.paa";
@@ -466,6 +480,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 1950;
         illegal = false;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_cement.paa";
@@ -479,6 +494,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = true;
+        hasLicense = true;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_heroinUnprocessed.paa";
@@ -492,6 +508,7 @@ class VirtualItems {
         buyPrice = 3500;
         sellPrice = 2560;
         illegal = true;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_heroinProcessed.paa";
@@ -504,6 +521,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = true;
+        hasLicense = true;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_cannabis.paa";
@@ -517,6 +535,7 @@ class VirtualItems {
         buyPrice = 2800;
         sellPrice = 2350;
         illegal = true;
+        hasLicense = true;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_marijuana.paa";
@@ -529,6 +548,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = -1;
         illegal = true;
+        hasLicense = true;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_cocaineUnprocessed.paa";
@@ -542,6 +562,7 @@ class VirtualItems {
         buyPrice = -1;
         sellPrice = 5000;
         illegal = true;
+        hasLicense = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_cocaineProcessed.paa";
