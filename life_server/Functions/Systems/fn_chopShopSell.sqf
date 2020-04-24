@@ -22,7 +22,7 @@ private _plate = _vehicle getVariable ["plate",""];
 if !(_plate isEqualTo "") then {
     private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
     _ownerInfo params ["_uid"];
-    _query = format ["deleteVehicle:%1:%2", _uid, _plate];
+    private _query = format ["deleteVehicle:%1:%2", _uid, _plate];
     [_query,1] call DB_fnc_asyncCall;
 };
 

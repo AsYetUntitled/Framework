@@ -11,7 +11,7 @@ params [
     ["_mode", 1, [0]]
 ];
 
-if (isNull _vehicle) exitWith {}; //NULL
+if (isNull _vehicle) exitWith {};
 
 private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
 if (_ownerInfo isEqualTo []) exitWith {};

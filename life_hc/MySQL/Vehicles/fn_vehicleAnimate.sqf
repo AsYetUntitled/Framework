@@ -1,6 +1,9 @@
 /*
     File: fn_vehicleAnimate.sqf
     Author: DomT602
+
+    This file is for Nanou's HeadlessClient.
+
     Description:
     Animates various aspects of the vehicle - moved to server.
 */
