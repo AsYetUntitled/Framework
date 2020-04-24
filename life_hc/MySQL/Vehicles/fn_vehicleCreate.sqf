@@ -1,4 +1,4 @@
-#include "\life_hc\script_macros.hpp"
+#include "\life_hc\hc_macros.hpp"
 /*
     File: fn_vehicleCreate.sqf
     Author: Bryan "Tonic" Boardwine
