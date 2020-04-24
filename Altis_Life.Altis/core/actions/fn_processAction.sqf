@@ -50,7 +50,7 @@ if (ITEM_HASLICENSE(_type) isEqualTo 1) then {
     _hasLicense = true;
 } else {
     _hasLicense = LICENSE_VALUE(_type,"civ");
-}
+};
 
 
 _cost = _cost * (count _oldItem);
