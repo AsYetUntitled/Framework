@@ -24,7 +24,7 @@ private _letterArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 
 private _plate = "";
 while {_plate isEqualTo ""} do {
-    private _randomPlate = [];
+    private _randomPlate = [_platePrefix];
     {
         if (_x isEqualTo "$") then {
             _randomPlate pushBack (selectRandom _letterArray);
@@ -45,7 +45,6 @@ while {_plate isEqualTo ""} do {
         _plate = _randomPlate;
     };
 };
-_plate = format["%1%2",_platePrefix,_plate];
 
 private _vid = -1;
 if (_purchase) then {
