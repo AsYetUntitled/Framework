@@ -13,8 +13,7 @@ if (_maxSpikeCount != -1 && {(count life_spikesDeployed) isEqualTo _maxSpikeCoun
 private _spikeStrip = "Land_Razorwire_F" createVehicle [0,0,0];
 _spikeStrip attachTo [player,[0,5.5,0]];
 _spikeStrip setDir 90;
-_spikeStrip setVariable ["item","spikeDeployed",true];
 life_spikeStrip = _spikeStrip;
 life_spikesDeployed pushBack _spikeStrip;
 
-life_action_spikeStripDeploy = player addAction[localize "STR_ISTR_Spike_Place",life_fnc_deploySpikes,"",0,false,false,"",'!isNull life_spikestrip'];
+life_action_spikeStripDeploy = player addAction [localize "STR_ISTR_Spike_Place",life_fnc_deploySpikes,"",0,false,false,"",'!isNull life_spikestrip'];

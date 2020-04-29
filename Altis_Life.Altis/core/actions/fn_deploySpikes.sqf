@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
     File: fn_deploySpikes.sqf
     Author: DomT602
@@ -17,6 +18,7 @@ _intersects params ["_firstObjectData"];
 _firstObjectData params ["_posASL","_surfaceNormal"];
 _spikeStrip setPosASL _posASL;
 _spikeStrip setVectorUp _surfaceNormal;
+_spikeStrip setVariable ["item","spikeDeployed",true]; //only set this once deployed to prevent others picking up
 
 player removeAction life_action_spikeStripDeploy;
 life_action_spikeStripDeploy = nil;

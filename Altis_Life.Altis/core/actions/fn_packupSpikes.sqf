@@ -5,12 +5,12 @@
     Description:
     Packs up a deployed spike strip.
 */
-(nearestObjects[getPosATL player,["Land_Razorwire_F"],8]) params [["_spikes", objNull]];
+(nearestObjects [getPosATL player,["Land_Razorwire_F"],8]) params [["_spikes", objNull]];
 if (isNull _spikes) exitWith {};
 
 if ([true,"spikeStrip",1] call life_fnc_handleInv) then {
-    private _index = life_spikesDeployed findIf {_x select 0 isEqualTo _spikes};
+    private _index = life_spikesDeployed findIf {_x isEqualTo _spikes};
     life_spikesDeployed deleteAt _index; //remove spikes from spike array
-    titleText[localize "STR_NOTF_SpikeStrip","PLAIN"];
+    titleText [localize "STR_NOTF_SpikeStrip","PLAIN"];
     deleteVehicle _spikes;
 };
