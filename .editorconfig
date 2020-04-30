@@ -12,7 +12,7 @@ indent_style = space
 # 1 indent is 4 spaces
 indent_size = 4
 # Windows-style newlines
-end_of_line = crlf
+end_of_line = lf
 # Set default character encoding
 charset = utf-8
 # Remove any whitespace characters preceding newline characters
