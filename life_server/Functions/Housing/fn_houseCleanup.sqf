@@ -8,18 +8,19 @@ params [
     ["_uid","",[""]]
 ];
 
-private _query = format ["selectContainerPositions:%1", _uid];
-private _containers = [_query,2,true] call DB_fnc_asyncCall;
+private _query = format ["selectHousesCleanup:%1", _uid];
+private _houses = [_query,2,true] call DB_fnc_asyncCall;
 
 {
     _x params ["_pos"];
     _pos = parseSimpleArray _pos;
-    {
-        deleteVehicle _x;
-    } forEach (nearestObjects [_pos,["Box_IND_Grenades_F","B_supplyCrate_F"],12]);
-
     private _house = nearestObject [_pos, "House"];
-    if !(_house getVariable ["containers",[]] isEqualTo []) then {
+    private _containers = _house getArray ["containers",[]];
+
+    if !(_containers isEqualTo []) then {
+        {
+            deleteVehicle _x;
+        } forEach _containers;
         _house setVariable ["containers",nil,true];
     };
-} forEach _containers;
+} forEach _houses;
