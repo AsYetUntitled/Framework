@@ -18,4 +18,9 @@ private _containers = [_query,2,true] call DB_fnc_asyncCall;
     {
         deleteVehicle _x;
     } forEach (nearestObjects[_pos,["Box_IND_Grenades_F","B_supplyCrate_F"],12]);
+
+    private _house = nearestObject [_pos, "House"];
+    if !(_house getVariable ["containers",[]] isEqualTo []) then {
+        _house setVariable ["containers",nil,true];
+    };
 } forEach _containers;
