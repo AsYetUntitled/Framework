@@ -19,5 +19,5 @@ if (!(_obj getVariable ["inUse",false])) exitWith {
         _obj remoteExecCall ["life_fnc_pickupItem", remoteExecutedOwner];
     };
 } else {
-	[ "Attempt to pick up money twice!" ] call BIS_fnc_error;
+    [ "Attempt to pick up money twice!" ] call BIS_fnc_error;
 };
