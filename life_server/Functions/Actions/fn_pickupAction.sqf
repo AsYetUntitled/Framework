@@ -7,17 +7,16 @@
 */
 private _target = param [0, objNull, [objNull]];
 
-if (!isRemoteExecuted) exitWith { ["Not remote executed"] call BIS_fnc_error };
-if (isNull _obj) exitWith { ["Target object is NULL"] call BIS_fnc_error };
+if (!isRemoteExecuted) exitWith {};
+if (isNull _obj) exitWith {};
+if (!(_target getVariable ["item", false]) isEqualType []) exitWith {};
 
 if (!(_obj getVariable ["inUse",false])) exitWith {
-    _obj setVariable ["inUse",true,true];
+    _target setVariable ["inUse",true,true];
 
     if (_target getVariable "item" select 0 isEqualTo "cash") then {
-        _obj remoteExecCall ["life_fnc_pickupMoney", remoteExecutedOwner];
+        _target remoteExecCall ["life_fnc_pickupMoney", remoteExecutedOwner];
     } else {
-        _obj remoteExecCall ["life_fnc_pickupItem", remoteExecutedOwner];
+        _target remoteExecCall ["life_fnc_pickupItem", remoteExecutedOwner];
     };
-} else {
-    [ "Attempt to pick up money twice!" ] call BIS_fnc_error;
 };
