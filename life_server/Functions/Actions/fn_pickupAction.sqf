@@ -11,7 +11,7 @@ if (!isRemoteExecuted) exitWith {};
 if (isNull _obj) exitWith {};
 if (!(_target getVariable ["item", false]) isEqualType []) exitWith {};
 
-if (!(_obj getVariable ["inUse",false])) exitWith {
+if !(_obj getVariable ["inUse",false]) exitWith {
     _target setVariable ["inUse",true,true];
 
     if (_target getVariable "item" select 0 isEqualTo "cash") then {
