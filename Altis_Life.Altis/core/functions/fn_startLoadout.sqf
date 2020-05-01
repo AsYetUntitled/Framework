@@ -15,15 +15,8 @@ private _pMagazines = M_CONFIG(getArray,"Loadouts",str(playerSide),"mags");
 private _pItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"items");
 private _linkedItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"linkedItems");
 
-// Removing every default items before adding the custom ones
-removeAllWeapons player;
-removeAllItems player;
-removeAllAssignedItems player;
-removeUniform player;
-removeVest player;
-removeBackpack player;
-removeHeadgear player;
-removeGoggles player;
+// Removing every default item before adding the custom ones
+[] call life_fnc_stripDownPlayer;
 
 if !(_pUniform isEqualTo []) then {
     if (playerSide isEqualTo civilian) then {
