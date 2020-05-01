@@ -9,7 +9,8 @@ private _target = param [0, objNull, [objNull]];
 
 if (!isRemoteExecuted) exitWith {};
 if (isNull _obj) exitWith {};
-if (!(_target getVariable ["item", false]) isEqualType []) exitWith {};
+private _item = _target getVariable "item";
+if (isNil "_item") exitWith {};
 
 if !(_obj getVariable ["inUse",false]) exitWith {
     _target setVariable ["inUse",true,true];
