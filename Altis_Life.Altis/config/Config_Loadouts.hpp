@@ -5,7 +5,7 @@
         //     CIV's loadout are selected randonly if he is not in jail,
         //         otherwise, for the other teams, player will get the uniform related to his level
 
-        class lvl_X : lvl_base { // where X is a level of the selected team and inherits from lvl_base
+        class lvl_X : lvl_base { // where X is the level of the selected team and inherits from lvl_base
             uniformClass = "";
             backpack = "";
             linkedItems[] = {};
@@ -61,36 +61,12 @@ class Loadouts {
             weapons[] = {"hgun_P07_snds_F"};
             magazines[] = {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
         };
-        class lvl_2 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            weapons[] = {"hgun_P07_snds_F"};
-            magazines[] = {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
-        };
-        class lvl_3 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            weapons[] = {"hgun_P07_snds_F"};
-            magazines[] = {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
-        };
-        class lvl_4 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            weapons[] = {"hgun_P07_snds_F"};
-            magazines[] = {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
-        };
-        class lvl_5 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            weapons[] = {"hgun_P07_snds_F"};
-            magazines[] = {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
-        };
-        class lvl_6 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            weapons[] = {"hgun_P07_snds_F"};
-            magazines[] = {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
-        };
-        class lvl_7 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            weapons[] = {"hgun_P07_snds_F"};
-            magazines[] = {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"};
-        };
+        class lvl_2 : lvl_1 {};
+        class lvl_3 : lvl_1 {};
+        class lvl_4 : lvl_1 {};
+        class lvl_5 : lvl_1 {};
+        class lvl_6 : lvl_1 {};
+        class lvl_7 : lvl_1 {};
     };
 
     // MED
@@ -99,21 +75,9 @@ class Loadouts {
             uniformClass = "U_Rangemaster";
             items[] = {"FirstAidKit"};
         };
-        class lvl_2 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            items[] = {"FirstAidKit"};
-        };
-        class lvl_3 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            items[] = {"FirstAidKit"};
-        };
-        class lvl_4 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            items[] = {"FirstAidKit"};
-        };
-        class lvl_5 : lvl_base {
-            uniformClass = "U_Rangemaster";
-            items[] = {"FirstAidKit"};
-        };
+        class lvl_2 : lvl_1 {};
+        class lvl_3 : lvl_1 {};
+        class lvl_4 : lvl_1 {};
+        class lvl_5 : lvl_1 {};
     };
 };
