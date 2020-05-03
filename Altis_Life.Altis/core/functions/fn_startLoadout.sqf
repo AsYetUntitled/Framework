@@ -11,7 +11,7 @@ private _level = call {
         if (life_is_arrested) then {
             "arrested"
         } else {
-            floor random [0, round(count(missionConfigFile >> "Loadouts" >> str(playerSide))-1)/2), count(missionConfigFile >> "Loadouts" >> str(playerSide))-1]
+            floor(random (count(missionConfigFile >> "Loadouts" >> str(playerSide))-1))
         };
     };
     if (playerSide isEqualTo west) exitWith {
@@ -22,7 +22,7 @@ private _level = call {
     };
 };
 
-player setUnitLoadout (missionConfigFile >> "Loadouts" >> str(playerSide) >> format["lvl_",_level]);
+player setUnitLoadout (missionConfigFile >> "Loadouts" >> str(playerSide) >> format["lvl_%1",_level]);
 
 [] call life_fnc_playerSkins;
 [] call life_fnc_saveGear;
