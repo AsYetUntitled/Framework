@@ -15,6 +15,9 @@ private _pMagazines = M_CONFIG(getArray,"Loadouts",str(playerSide),"mags");
 private _pItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"items");
 private _linkedItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"linkedItems");
 
+// Removing every default items before adding the custom ones
+[] call life_fnc_stripDownPlayer;
+
 if !(_pUniform isEqualTo []) then {
     if (playerSide isEqualTo civilian) then {
         _pUniform = selectRandom _pUniform;
