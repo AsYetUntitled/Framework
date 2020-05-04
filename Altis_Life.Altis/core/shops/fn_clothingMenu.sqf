@@ -25,7 +25,7 @@ private _exit = false;
 private "_flag";
 
 if !(_shopSide isEqualTo "") then {
-    _flag = switch (playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+    _flag = [player,true] call life_util_fnc_sideToString;
     if !(_flag isEqualTo _shopSide) then {_exit = true;};
 };
 

@@ -1,21 +1,16 @@
 /*
     File: fn_vehicleDelete.sqf
     Author: Bryan "Tonic" Boardwine
-
     Description:
-    Doesn't actually delete since we don't give our DB user that type of
-    access so instead we set it to alive=0 so it never shows again.
+    Sets the vehicle to be 'dead' so it can be cleaned up later.
 */
 
 params [
-    ["_vid", -1, [0]],
-    ["_pid", "", [""]],
-    ["_sp", 2500, [0]],
-    ["_unit", objNull, [objNull]],
-    ["_type", "", [""]]
+    ["_unit",objNull,[objNull]],
+    ["_vid",-1,[0]]
 ];
+if (isNull _unit || {_vid isEqualTo -1}) exitWith {};
 
-if (_vid isEqualTo -1 || {_pid isEqualTo ""} || {_sp isEqualTo 0} || {isNull _unit} || {_type isEqualTo ""}) exitWith {};
-
-private _query = format ["deleteVehicleID:%1:%2", _pid, _vid];
-private _thread = [_query, 1] call DB_fnc_asyncCall;
+private _pid = getPlayerUID _unit;
+private _query = format ["deleteVehicle:%1:%2", _pid, _vid];
+[_query, 1] call DB_fnc_asyncCall;

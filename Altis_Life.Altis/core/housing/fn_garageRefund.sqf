@@ -4,10 +4,12 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    I don't know?
+    Returns players money as vehicle could not be spawned.
 */
-_price = _this select 0;
-_unit = _this select 1;
-if !(_unit isEqualTo player) exitWith {};
+params [
+    ["_price",0,[0]]
+];
+
+hint localize "STR_Garage_SpawnPointError";
 BANK = BANK + _price;
 [1] call SOCK_fnc_updatePartial;

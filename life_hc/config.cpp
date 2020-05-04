@@ -25,7 +25,6 @@ class CfgFunctions
             file = "\life_hc\MySQL\General";
             class asyncCall {};
             class insertRequest {};
-            class insertVehicle {};
             class queryRequest {};
             class updatePartial {};
             class updateRequest {};
@@ -71,6 +70,7 @@ class CfgFunctions
             class getVehicles {};
             class spawnVehicle {};
             class keyManagement {};
+            class vehicleAnimate {};
             class vehicleStore {};
             class vehicleCreate {};
             class vehicleDelete {};

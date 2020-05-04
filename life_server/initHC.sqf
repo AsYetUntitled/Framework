@@ -14,7 +14,6 @@ HC_UID = nil;
         HC_UID = getPlayerUID hc_1;
         HC_Life = owner hc_1;
         publicVariable "HC_Life";
-        HC_Life publicVariableClient "serv_sv_use";
         terminate cleanup;
         terminate aiSpawn;
         [true] call TON_fnc_transferOwnership;

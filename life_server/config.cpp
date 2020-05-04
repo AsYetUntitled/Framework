@@ -19,7 +19,6 @@ class CfgFunctions {
             class asyncCall{};
             class insertRequest{};
             class updateRequest{};
-            class insertVehicle {};
             class updatePartial {};
         };
     };
@@ -40,10 +39,6 @@ class CfgFunctions {
         class Jail_Sys {
             file = "\life_server\Functions\Jail";
             class jailSys {};
-        };
-
-        class Client_Code {
-            file = "\life_server\Functions\Client";
         };
     };
 
@@ -71,6 +66,7 @@ class CfgFunctions {
             class vehicleUpdate {};
             class recupkeyforHC {};
             class handleBlastingCharge {};
+            class vehicleAnimate {};
         };
 
         class Housing {

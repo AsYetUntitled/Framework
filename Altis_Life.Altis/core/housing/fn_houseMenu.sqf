@@ -126,7 +126,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
         _Btn2 ctrlShow true;
 
         _Btn3 ctrlSetText localize "STR_pInAct_StoreVeh";
-        _Btn3 buttonSetAction "closeDialog 0; [life_pInact_curTarget,player] spawn life_fnc_storeVehicle;";
+        _Btn3 buttonSetAction "closeDialog 0; [life_pInact_curTarget,player] call life_fnc_storeVehicle;";
         _Btn3 ctrlShow true;
     } else {
         _Btn1 ctrlSetText localize "STR_pInAct_SellHouse";
@@ -168,7 +168,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
                 _Btn5 ctrlShow true;
 
                 _Btn6 ctrlSetText localize "STR_pInAct_StoreVeh";
-                _Btn6 buttonSetAction "closeDialog 0; [life_pInact_curTarget,player] spawn life_fnc_storeVehicle;";
+                _Btn6 buttonSetAction "closeDialog 0; [life_pInact_curTarget,player] call life_fnc_storeVehicle;";
                 _Btn6 ctrlShow true;
             } else {
                 _Btn5 ctrlSetText localize "STR_pInAct_BuyGarage";

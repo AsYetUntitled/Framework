@@ -2,35 +2,22 @@
 /*
     File: fn_spawnVehicle.sqf
     Author: Bryan "Tonic" Boardwine
-
     Description:
-    Sends the query request to the database, if an array is returned then it creates
-    the vehicle if it's not in use or dead.
+    Attempts to create the selected vehicle, returning error messages if required.
 */
-
 params [
-    ["_vid", -1, [0]],
-    ["_pid", "", [""]],
-    ["_sp", [], [[],""]],
-    ["_unit", objNull, [objNull]],
-    ["_price", 0, [0]],
-    ["_dir", 0, [0]],
-    "_spawntext"
+    ["_unit",objNull,[objNull]],
+    ["_vid",-1,[""]],
+    ["_spawnPoint","",[""]],
+    ["_dir",-1,[0]]
 ];
+if (isNull _unit || {_vid isEqualTo -1}) exitWith {};
 
-private _unit_return = _unit;
 private _name = name _unit;
 private _side = side _unit;
-_unit = owner _unit;
-
-if (_vid isEqualTo -1 || {_pid isEqualTo ""}) exitWith {};
-if (_vid in serv_sv_use) exitWith {};
-serv_sv_use pushBack _vid;
-
-private _servIndex = serv_sv_use find _vid;
+private _pid = getPlayerUID _unit;
 
 private _query = format ["selectVehiclesMore:%1:%2", _vid, _pid];
-
 private _tickTime = diag_tickTime;
 private _queryResult = [_query, 2] call DB_fnc_asyncCall;
 
@@ -42,79 +29,74 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------------------------------------------";
 };
 
-if (_queryResult isEqualType "") exitWith {};
+if (_queryResult isEqualType "" || {_queryResult isEqualTo []}) exitWith {};
+_queryResult params ["_className","_plate","_color","_trunk","_gear","_fuel","_damage","_wasIllegal","_active","_alive"];
 
-private _vInfo = _queryResult;
-if (isNil "_vInfo") exitWith {serv_sv_use deleteAt _servIndex;};
-if (_vInfo isEqualTo []) exitWith {serv_sv_use deleteAt _servIndex;};
-
-if ((_vInfo select 5) isEqualTo 0) exitWith {
-    serv_sv_use deleteAt _servIndex;
-    [1,"STR_Garage_SQLError_Destroyed",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
+if (_alive isEqualTo 0) exitWith {
+    [1,"STR_Garage_SQLError_Destroyed",true,[_className]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-if ((_vInfo select 6) isEqualTo 1) exitWith {
-    serv_sv_use deleteAt _servIndex;
-    [1,"STR_Garage_SQLError_Active",true,[_vInfo select 2]] remoteExecCall ["life_fnc_broadcast",_unit];
+if (_active isEqualTo 1) exitWith {
+    [1,"STR_Garage_SQLError_Active",true,[_className]] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-private "_nearVehicles";
-if !(_sp isEqualType "") then {
-    _nearVehicles = nearestObjects[_sp,["Car","Air","Ship"],10];
-} else {
-    _nearVehicles = [];
-};
+private _nearVehicles = nearestObjects[_spawnPoint,["Car","Air","Ship"],6]; //last check for nearby vehicles
 
 if !(_nearVehicles isEqualTo []) exitWith {
-    serv_sv_use deleteAt _servIndex;
-    [_price,_unit_return] remoteExecCall ["life_fnc_garageRefund",_unit];
-    [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
+    [_price] remoteExecCall ["life_fnc_garageRefund",_unit];
 };
 
 _query = format ["updateVehicle:%1:%2", _pid, _vid];
-
-private _trunk = _vInfo select 9;
-private _gear = _vInfo select 10;
-private _damage = _vInfo select 12;
-private _wasIllegal = _vInfo select 13;
-_wasIllegal = _wasIllegal isEqualTo 1;
-
 [_query, 1] call DB_fnc_asyncCall;
 
-private "_vehicle";
-if (_sp isEqualType "") then {
-    _vehicle = createVehicle[(_vInfo select 2),[0,0,999],[],0,"NONE"];
-    waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
-    _vehicle allowDamage false;
-    _hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
-    _vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
-    uiSleep 0.6;
-} else {
-    _vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
-    waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
-    _vehicle allowDamage false;
-    _vehicle setPos _sp;
-    _vehicle setVectorUp (surfaceNormal _sp);
-    _vehicle setDir _dir;
+private _vehicle = createVehicle [_className,getMarkerPos _spawnPoint,[],0];
+if (_dir isEqualTo -1) then {
+    _dir = markerDir _spawnPoint;
 };
-_vehicle allowDamage true;
-//Send keys over the network.
-[_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain",_unit];
-[_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
+_vehicle setDir _dir;
+
+clearWeaponCargoGlobal _vehicle;
+clearMagazineCargoGlobal _vehicle;
+clearItemCargoGlobal _vehicle;
+clearBackpackCargoGlobal _vehicle;
 _vehicle lock 2;
-//Reskin the vehicle
-[_vehicle,(_vInfo select 8)] remoteExecCall ["life_fnc_colorVehicle",_unit];
-_vehicle setVariable ["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
-_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
+_vehicle disableTIEquipment true;
+
+[_vehicle,_color] call life_fnc_colorVehicle;
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
-if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
+_vehicle setVariable ["trunk_in_use",false,true];
+_vehicle setVariable ["vehicle_info_owners",[[_pid,name _unit]],true];
+_vehicle setPlateNumber _plate;
+_vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for setPlateNumber
+_vehicle setVariable ["vehID",_vid];
 
+switch _side do {
+    case west: {
+        if (_className in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
+            [_vehicle,"cop_offroad",true] call TON_fnc_vehicleAnimate;
+        };
+    };
+    case civilian: {
+        if (_className isEqualTo "B_Heli_Light_01_F" && !(_color isEqualTo "Digi Green")) then {
+            [_vehicle,"civ_littlebird",true] call TON_fnc_vehicleAnimate;
+        };
+    };
+    case independent: {
+        if (_className isEqualTo "C_Offroad_01_F") then {
+            [_vehicle,"med_offroad",true] call TON_fnc_vehicleAnimate;
+        };
+    };
+};
+
+[_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
+[_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain",_unit];
+
+if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     _vehicle setVariable ["Trunk",_trunk,true];
 
-    if (_wasIllegal) then {
-        private _refPoint = if (_sp isEqualType "") then {getMarkerPos _sp;} else {_sp;};
+    if (_wasIllegal isEqualTo 1) then {
+        private _refPoint = getMarkerPos _spawnPoint;
 
         private _distance = 100000;
         private "_location";
@@ -142,16 +124,13 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
 };
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
-    _vehicle setFuel (_vInfo select 11);
+    _vehicle setFuel _fuel;
 } else {
     _vehicle setFuel 1;
 };
 
 if (!(_gear isEqualTo []) && (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1)) then {
-    _items = _gear select 0;
-    _mags = _gear select 1;
-    _weapons = _gear select 2;
-    _backpacks = _gear select 3;
+    _gear params ["_items","_mags","_weapons","_backpacks"];
 
     for "_i" from 0 to ((count (_items select 0)) - 1) do {
         _vehicle addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
@@ -168,25 +147,11 @@ if (!(_gear isEqualTo []) && (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") 
 };
 
 if (!(_damage isEqualTo []) && (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1)) then {
-    _parts = getAllHitPointsDamage _vehicle;
+    private _parts = getAllHitPointsDamage _vehicle;
 
     for "_i" from 0 to ((count _damage) - 1) do {
         _vehicle setHitPointDamage [format ["%1",((_parts select 0) select _i)],_damage select _i];
     };
 };
 
-//Sets of animations
-if ((_vInfo select 1) isEqualTo "civ" && (_vInfo select 2) isEqualTo "B_Heli_Light_01_F" && !((_vInfo select 8) isEqualTo 13)) then {
-    [_vehicle,"civ_littlebird",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
-};
-
-if ((_vInfo select 1) isEqualTo "cop" && ((_vInfo select 2)) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
-    [_vehicle,"cop_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
-};
-
-if ((_vInfo select 1) isEqualTo "med" && (_vInfo select 2) isEqualTo "C_Offroad_01_F") then {
-    [_vehicle,"med_offroad",true] remoteExecCall ["life_fnc_vehicleAnimate",_unit];
-};
-
-[1,_spawntext] remoteExecCall ["life_fnc_broadcast",_unit];
-serv_sv_use deleteAt _servIndex;
+[1,"STR_Garage_spawn_Success",true] remoteExecCall ["life_fnc_broadcast",_unit];

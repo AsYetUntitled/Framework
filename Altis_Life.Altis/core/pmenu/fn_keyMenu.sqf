@@ -5,47 +5,39 @@
 
     Description:
     Initializes the key menu
-    Will be revised.
 */
-private ["_display","_vehicles","_plist","_near_units","_pic","_name","_text","_color","_index"];
 disableSerialization;
 
 waitUntil {!isNull (findDisplay 2700)};
-_display = findDisplay 2700;
-_vehicles = _display displayCtrl 2701;
-lbClear _vehicles;
-_plist = _display displayCtrl 2702;
-lbClear _plist;
-_near_units = [];
+private _display = findDisplay 2700;
+private _vehicles = _display displayCtrl 2701;
+private _pList = _display displayCtrl 2702;
 
-{ if (player distance _x < 20) then {_near_units pushBack _x};} forEach playableUnits;
-
-for "_i" from 0 to (count life_vehicles)-1 do {
-    _veh = life_vehicles select _i;
-    if (!isNull _veh && alive _veh) then {
-        _color = ((M_CONFIG(getArray,"LifeCfgVehicles",(typeOf _veh),"textures") select (_veh getVariable "Life_VEH_color")) select 0);
-        if (isNil "_color") then {_color = ""};
-        _text = format ["(%1)",_color];
-        if (_text == "()") then {
-            _text = "";
+life_vehicles = life_vehicles - [objNull];
+{
+    if (alive _x) then {
+        private _className = typeOf _x;
+        private _color = _x getVariable ["Life_veh_color",""];
+        if !(_color isEqualTo "") then {
+            _color = format["(%1)",_color];
         };
+        private _name = getText(configFile >> "CfgVehicles" >> _className >> "displayName");
+        private _pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
 
-        _name = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
-        _pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
-        _vehicles lbAdd format ["%1 %3 - [Distance: %2m]",_name,round(player distance _veh),_text];
+        _vehicles lbAdd format ["%1 %3 - [Distance: %2m]",_name,round(player distance _veh),_color];
         if (_pic != "pictureStaticObject") then {
             _vehicles lbSetPicture [(lbSize _vehicles)-1,_pic];
         };
-        _vehicles lbSetData [(lbSize _vehicles)-1,str(_i)];
+        _vehicles lbSetValue [(lbSize _vehicles)-1,_forEachIndex];
     };
-};
+} forEach life_vehicles;
 
 {
-    if (!isNull _x && alive _x && player distance _x < 20 && !(_x isEqualTo player)) then {
-        _plist lbAdd format ["%1 - %2",_x getVariable ["realname",name _x], side _x];
-        _plist lbSetData [(lbSize _plist)-1,str(_x)];
+    if (alive _x && {player distance _x < 20}) then {
+        _pList lbAdd format ["%1 - %2",_x getVariable ["realname",name _x], side _x];
+        _pList lbSetData [(lbSize _pList)-1,str(_x)];
     };
-} forEach _near_units;
+} forEach (playableUnits - [player]);
 
 if (((lbSize _vehicles)-1) isEqualTo -1) then {
     _vehicles lbAdd localize "STR_NOTF_noVehOwned";

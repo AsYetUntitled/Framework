@@ -14,7 +14,6 @@ DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
 _extDBNotLoaded = "";
-serv_sv_use = [];
 publicVariable "life_server_isReady";
 life_save_civilian_position = if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 0) then {false} else {true};
 
@@ -141,13 +140,6 @@ fed_bank setVariable ["safe",count playableUnits,true];
 
 /* Event handler for disconnecting players */
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
-
-/* Set OwnerID players for Headless Client */
-TON_fnc_requestClientID =
-{
-    (_this select 1) setVariable ["life_clientID", owner (_this select 1), true];
-};
-"life_fnc_RequestClientId" addPublicVariableEventHandler TON_fnc_requestClientID;
 
 /* Event handler for logs */
 "money_log" addPublicVariableEventHandler {diag_log (_this select 1)};
