@@ -5,7 +5,8 @@
         //     CIV's loadout are selected randonly if he is not in jail,
         //         otherwise, for the other teams, player will get the uniform related to his level
 
-        class lvl_X : lvl_0 { // where X is the level of the selected team and inherits from lvl_0
+		// Unit Loadout Array detailed information: https://community.bistudio.com/wiki/Unit_Loadout_Array
+        class side_level_X : side_level_0 { // where side can be: civ, cop or med. And X is a level number of the given side
             uniformClass = "";
             backpack = "";
             linkedItems[] = {};
@@ -17,72 +18,52 @@
 */
 class Loadouts {
     // CIV
-    class CIV {
-        class lvl_0 {
-            uniformClass = "U_C_Poloshirt_blue";
-			backpack = "";
-			linkedItems[] = {"ItemMap" , "ItemCompass", "ItemWatch"};
-			weapons[] = {};
-			items[] = {};
-			magazines[] = {};
-        };
-        class lvl_1 : lvl_0 {
-            uniformClass = "U_C_Poloshirt_burgundy";
-        };
-        class lvl_2 : lvl_0 {
-            uniformClass = "U_C_Poloshirt_stripped";
-        };
-        class lvl_3 : lvl_0 {
-            uniformClass = "U_C_Poloshirt_tricolour";
-        };
-        class lvl_4 : lvl_0 {
-            uniformClass = "U_C_Poloshirt_salmon";
-        };
-        class lvl_5 : lvl_0 {
-            uniformClass = "U_C_Poloshirt_redwhite";
-        };
-        class lvl_6 : lvl_0 {
-            uniformClass = "U_C_Commoner1_1";
-        };
-        class lvl_arrested : lvl_0 {
-            uniformClass = "U_C_WorkerCoveralls"; // Arrested player's uniform
-            linkedItems[] = {};
-        };
+    class civ_level_random {
+        uniformClass = "";
+        backpack = "";
+        linkedItems[] = {"ItemMap" , "ItemCompass", "ItemWatch"};
+        weapons[] = {};
+        items[] = {};
+        magazines[] = {};
+    };
+    class civ_level_arrested { // Arrested player's loadout
+        uniformClass = "U_C_WorkerCoveralls";
+        backpack = "";
+        linkedItems[] = {};
+        weapons[] = {};
+        items[] = {};
+        magazines[] = {};
     };
 
     // COP
-    class WEST {
-		class lvl_0 {
-            uniformClass = "U_Rangemaster";
-			backpack = "";
-			linkedItems[] = {"H_Cap_blk", "V_Rangemaster_belt", "ItemMap" , "ItemCompass", "ItemWatch"};
-			weapons[] = {"hgun_P07_snds_F"};
-			items[] = {};
-            magazines[] = {"16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag"};
-		};
-        class lvl_1 : lvl_0 {};
-        class lvl_2 : lvl_0 {};
-        class lvl_3 : lvl_0 {};
-        class lvl_4 : lvl_0 {};
-        class lvl_5 : lvl_0 {};
-        class lvl_6 : lvl_0 {};
-        class lvl_7 : lvl_0 {};
+    class cop_level_0 {
+        uniformClass = "U_Rangemaster";
+        backpack = "";
+        linkedItems[] = {"H_Cap_blk", "V_Rangemaster_belt", "ItemMap" , "ItemCompass", "ItemWatch"};
+        weapons[] = {"hgun_P07_snds_F"};
+        items[] = {};
+        magazines[] = {"16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag", "16Rnd_9x21_Mag"};
     };
+    class cop_level_1 : cop_level_0 {};
+    class cop_level_2 : cop_level_0 {};
+    class cop_level_3 : cop_level_0 {};
+    class cop_level_4 : cop_level_0 {};
+    class cop_level_5 : cop_level_0 {};
+    class cop_level_6 : cop_level_0 {};
+    class cop_level_7 : cop_level_0 {};
 
     // MED
-    class GUER {
-        class lvl_0 {
-            uniformClass = "U_Rangemaster";
-			backpack = "";
-			linkedItems[] = {"H_Cap_red", "ItemMap" , "ItemCompass", "ItemWatch"};
-			weapons[] = {};
-			items[] = {"FirstAidKit", "FirstAidKit"};
-			magazines[] = {};
-        };
-        class lvl_1 : lvl_0 {};
-        class lvl_2 : lvl_0 {};
-        class lvl_3 : lvl_0 {};
-        class lvl_4 : lvl_0 {};
-        class lvl_5 : lvl_0 {};
+    class med_level_0 {
+        uniformClass = "U_Rangemaster";
+        backpack = "";
+        linkedItems[] = {"H_Cap_red", "ItemMap" , "ItemCompass", "ItemWatch"};
+        weapons[] = {};
+        items[] = {"FirstAidKit", "FirstAidKit"};
+        magazines[] = {};
     };
+    class med_level_1 : med_level_0 {};
+    class med_level_2 : med_level_0 {};
+    class med_level_3 : med_level_0 {};
+    class med_level_4 : med_level_0 {};
+    class med_level_5 : med_level_0 {};
 };
