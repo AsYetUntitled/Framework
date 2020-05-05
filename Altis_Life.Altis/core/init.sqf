@@ -44,8 +44,6 @@ diag_log "[Life Client] Server loading completed ";
 waitUntil {life_session_completed};
 0 cutText[localize "STR_Init_ClientFinish","BLACK FADED",99999999];
 
-[] spawn life_fnc_escInterupt;
-
 switch (playerSide) do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
@@ -54,6 +52,7 @@ switch (playerSide) do {
     case civilian: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
         [] call life_fnc_initCiv;
+        (group player) deleteGroupWhenEmpty true;
     };
     case independent: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
@@ -69,27 +68,20 @@ player setVariable ["playerSurrender", false, true];
 player setVariable ["realname", profileName, true];
 
 diag_log "[Life Client] Past Settings Init";
-[] execFSM "core\fsm\client.fsm";
-diag_log "[Life Client] Executing client.fsm";
 
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 [player, life_settings_enableSidechannel, playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
 
-[] call life_fnc_hudSetup;
 [] spawn life_fnc_survival;
 
 0 cutText ["","BLACK IN"];
 
-[] spawn {
-    for "_i" from 0 to 1 step 0 do {
-        waitUntil {(!isNull (findDisplay 49)) && {(!isNull (findDisplay 602))}}; // Check if Inventory and ESC dialogs are open
-        (findDisplay 49) closeDisplay 2; // Close ESC dialog
-        (findDisplay 602) closeDisplay 2; // Close Inventory dialog
-    };
+if (profileNamespace getVariable ["life_settings_revealObjects",true]) then {
+    LIFE_ID_PlayerTags = addMissionEventHandler ["EachFrame", life_fnc_playerTags];
 };
-
-addMissionEventHandler ["EachFrame", life_fnc_playerTags];
-addMissionEventHandler ["EachFrame", life_fnc_revealObjects];
+if (profileNamespace getVariable ["life_settings_revealObjects",true]) then {
+    LIFE_ID_RevealObjects = addMissionEventHandler ["EachFrame", life_fnc_revealObjects];
+};
 
 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 0) then {player enableFatigue false;};
 if (LIFE_SETTINGS(getNumber,"pump_service") isEqualTo 1) then {
@@ -119,6 +111,8 @@ if (life_HC_isActive) then {
 } else {
     [getPlayerUID player, player getVariable ["realname", name player]] remoteExec ["life_fnc_wantedProfUpdate", RSERV];
 };
+
+[] call life_fnc_hudUpdate;
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];

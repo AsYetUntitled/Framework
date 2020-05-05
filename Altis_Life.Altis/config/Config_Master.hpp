@@ -15,6 +15,14 @@ class Life_Settings {
     player_moneyLog = false; //False [default] - No money logging. True - Logs player bank deposits, withdraws, and transfers, gang bank deposits and withdraws, money picked up off of the ground, and player robbery. Search for: money_log
     player_deathLog = false; //False [default] - No death logging. True - Logs victim and killer, and vehicle or weapon if used, when a player dies. Search for: death_log
 
+/* Performance Settings */
+    /* Vehicle Wrecks */
+    dead_vehicles_despawn_delay = 30; //delay in seconds before despawning dead vehicles
+    dead_vehicles_max_units_distance = 300; //maximum distance between wreck and nearest player before despawning (vehicle despawns anyway after specified delay!)
+
+    /* Cleanup */
+    vehicles_despawn_max_distance = 1000; //maximum distance between a vehicle and the nearest player, before server puts it back to garage
+
 /* Database Related Settings */
     /* Player Data Saving */
     save_virtualItems = true; //Save Virtual items (all sides)?
@@ -40,6 +48,9 @@ class Life_Settings {
     global_ATM = true; //Allow users to access any ATM on the map (Marked & Unmarked).
     noatm_timer = 10; //Time in minutes that players cannot deposit money after selling stolen gold.
     minimum_cops = 5; //Minimum cops required online to rob the Federal Reserve
+
+    /* Messaging Settings */
+    message_maxlength = 400; //maximum character count allowed in text messages. Used to prevent improper message displaying. -1 to disable the limit
 
     /*Death settings*/
     drop_weapons_onDeath = false; //Set true to enable weapon dropping on death. False (default) will delete player weapons on death, allowing them to be revived with them instead
@@ -77,7 +88,7 @@ class Life_Settings {
     gang_price = 75000; //Gang creation price. --Remember they are persistent so keep it reasonable to avoid millions of gangs.
     gang_upgradeBase = 10000; //The base cost for purchasing additional slots in a gang
     gang_upgradeMultiplier = 2.5; //CURRENTLY NOT IN USE
-    gang_area[] = {"gang_area_1","gang_area_2","gang_area_3"}; //Variable of gang zone markers  
+    gang_area[] = {"gang_area_1","gang_area_2","gang_area_3"}; //Variable of gang zone markers
 
     /* Housing System Configurations */
     house_limit = 5; //Maximum number of houses a player can own.
@@ -137,6 +148,7 @@ class Life_Settings {
     vehicle_infiniteRepair[] = {false, false, true, false}; //Set to true for unlimited repairs with 1 toolkit. False will remove toolkit upon use. civilian, west, independent, east
     vehicleShop_rentalOnly[] = { "B_MRAP_01_hmg_F", "B_G_Offroad_01_armed_F", "B_Boat_Armed_01_minigun_F" }; //Vehicles that can only be rented and not purchased. (Last only for the session)
     vehicleShop_3D = false; //Add preview 3D inside Shop vehicle.       Default : False
+    vehicle_rentalReturn = false; //Can return rental vehicles to 'Store vehicle in garage', doesn't actually store it in garage.
 
     /* Vehicle Purchase Prices */
     vehicle_purchase_multiplier_CIVILIAN = 1; //Civilian Vehicle Buy Price = Config_Vehicle price * multiplier
@@ -212,11 +224,11 @@ class Life_Settings {
         {"STR_Crime_24","10000","24"},
         {"STR_Crime_25","20000","25"}
     };
-    
+
     /* ! --- Do not change --- ! */
-    framework_version = "5.0.0";
+    framework_version = "6.0.0";
     /* ------------------------- */
-    
+
 };
 
 #include "Config_Clothing.hpp"

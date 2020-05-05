@@ -9,13 +9,13 @@
 private _altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
 private _tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
 
-private _hideoutObjs = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
+private _hideoutObjs = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call life_util_fnc_terrainSort;
 
 private _hideout = (nearestObjects[getPosATL player,_hideoutObjs,25]) select 0;
 private _group = _hideout getVariable ["gangOwner",grpNull];
 
 if (isNil {group player getVariable "gang_name"}) exitWith {titleText[localize "STR_GNOTF_CreateGang","PLAIN"];};
-if (_group == group player) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
+if (_group isEqualTo group player) exitWith {titleText[localize "STR_GNOTF_Controlled","PLAIN"]};
 if ((_hideout getVariable ["inCapture",false])) exitWith {hint localize "STR_GNOTF_onePersonAtATime";};
 
 private "_action";
@@ -80,7 +80,7 @@ if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "ST
 life_action_inUse = false;
 
 titleText[localize "STR_GNOTF_Captured","PLAIN"];
-private _flagTexture = [
+private _flagTexture = selectRandom [
         "\A3\Data_F\Flags\Flag_red_CO.paa",
         "\A3\Data_F\Flags\Flag_green_CO.paa",
         "\A3\Data_F\Flags\Flag_blue_CO.paa",
@@ -89,7 +89,7 @@ private _flagTexture = [
         "\A3\Data_F\Flags\flag_fd_green_CO.paa",
         "\A3\Data_F\Flags\flag_fd_blue_CO.paa",
         "\A3\Data_F\Flags\flag_fd_orange_CO.paa"
-    ] call BIS_fnc_selectRandom;
+    ];
 _this select 0 setFlagTexture _flagTexture;
 [[0,1],"STR_GNOTF_CaptureSuccess",true,[name player,(group player) getVariable "gang_name"]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
 _hideout setVariable ["inCapture",false,true];
