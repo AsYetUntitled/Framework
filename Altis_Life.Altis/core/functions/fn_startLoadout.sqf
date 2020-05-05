@@ -10,40 +10,39 @@ private _side = call {
     if (playerSide isEqualTo civilian) exitWith {"civ"};
     if (playerSide isEqualTo west) exitWith {"cop"};
     if (playerSide isEqualTo independent) exitWith {"med"};
+    if (playerSide isEqualTo independent) exitWith {"east"};
 };
 
-private _level = call {
-    if (_side isEqualTo "civ") exitWith {
-        if (life_is_arrested) then {
-            "arrested"
-        } else {
-            "random"
+if (_side isEqualTo "civ") exitWith {
+    if (life_is_arrested) then {
+        player setUnitLoadout (missionConfigFile >> "Loadouts" >> "civ_level_arrested");
+    } else {
+		private _civLoadout = getUnitLoadout (missionConfigFile >> "Loadouts" >> "civ_level_random");
+        if (getNumber(missionConfigFile >> "Loadouts" >> "civilian_randomClothing") isEqualTo 1) then {
+            private _arr = getArray(missionConfigFile >> "Loadouts" >> "civRandomClothing");
+            (_civLoadout select 3) set [0, (selectRandom _arr)];
         };
+        player setUnitLoadout _civLoadout;
     };
-    if (_side isEqualTo "cop") exitWith {
-        FETCH_CONST(life_coplevel)
-    };
-    if (_side isEqualTo "med") exitWith {
-        FETCH_CONST(life_mediclevel)
-    };
+
+    [] call life_fnc_playerSkins;
+    [] call life_fnc_saveGear;
 };
 
-if (_side isEqualTo "civ" && _level isEqualTo "random") then {
-    private _civLoadout = getUnitLoadout (missionConfigFile >> "Loadouts" >> "civ_level_random");
-    private _arr = [
-        "U_C_Poloshirt_blue",
-        "U_C_Poloshirt_burgundy",
-        "U_C_Poloshirt_stripped",
-        "U_C_Poloshirt_tricolour",
-        "U_C_Poloshirt_salmon",
-        "U_C_Poloshirt_redwhite",
-        "U_C_Commoner1_1"
-    ];
-	_civLoadout set [3, [(selectRandom _arr), []]];
-    player setUnitLoadout _civloadout;
-} else {
-    player setUnitLoadout (missionConfigFile >> "Loadouts" >> format["%1_level_%2", _side, _level]);
+if (_side isEqualTo "cop") exitWith {
+    player setUnitLoadout (missionConfigFile >> "Loadouts" >> format["%1_level_%2", _side, FETCH_CONST(life_coplevel)]);
+    [] call life_fnc_playerSkins;
+    [] call life_fnc_saveGear;
 };
 
-[] call life_fnc_playerSkins;
-[] call life_fnc_saveGear;
+if (_side isEqualTo "med") exitWith {
+    player setUnitLoadout (missionConfigFile >> "Loadouts" >> format["%1_level_%2", _side, FETCH_CONST(life_mediclevel)]);
+    [] call life_fnc_playerSkins;
+    [] call life_fnc_saveGear;
+};
+
+if (_side isEqualTo "east") exitWith {
+    player setUnitLoadout (missionConfigFile >> "Loadouts" >> "east_level_0");
+    [] call life_fnc_playerSkins;
+    [] call life_fnc_saveGear;
+};
