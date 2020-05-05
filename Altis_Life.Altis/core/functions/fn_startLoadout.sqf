@@ -24,7 +24,6 @@ if (_side isEqualTo "civ") then {
         (_civLoadout select 3) set [0, selectRandom _arr];
     };
     player setUnitLoadout _civLoadout;
-
 } else {
     private _level = call {
         if (_side isEqualTo "cop") exitWith {FETCH_CONST(life_coplevel)};
@@ -32,7 +31,6 @@ if (_side isEqualTo "civ") then {
         if (_side isEqualTo "east") exitWith {0};
     };
     player setUnitLoadout (missionConfigFile >> "Loadouts" >> format["%1_level_%2", _side, _level]);
-
 };
 
 [] call life_fnc_playerSkins;
