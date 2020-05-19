@@ -40,3 +40,4 @@ if (_action) then {
     hint localize "STR_NOTF_ActionCancel";
 };
 life_action_inUse = false;
+[] call life_fnc_hudUpdate;
