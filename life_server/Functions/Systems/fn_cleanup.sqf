@@ -13,7 +13,7 @@ private _fnc_fedDealerUpdate = {
     {
         private _dealer = missionNamespace getVariable [_x, objNull];
         if !(isNull _dealer) then {
-            _x setVariable ["sellers", [], true];
+            _dealer setVariable ["sellers", [], true];
         };
     } forEach ["Dealer_1", "Dealer_2", "Dealer_3"];
 
