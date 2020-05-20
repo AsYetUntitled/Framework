@@ -13,7 +13,6 @@ private _houses = [_query,2,true] call DB_fnc_asyncCall;
 
 {
     _x params ["_pos"];
-    _pos = parseSimpleArray _pos;
     private _house = nearestObject [_pos, "House"];
     private _containers = _house getVariable ["containers",[]];
 
