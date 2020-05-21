@@ -55,7 +55,7 @@ if ((_roofCheck select 0) isKindOf "House_F") then {
         };
     } forEach [_wallCheck_Front,_wallCheck_Back,_wallCheck_Right,_wallCheck_Left,_floorCheck];
 
-    if ({_x == (_roofCheck select 0)} count _array >= 3) then {
+    if ({_x isEqualTo (_roofCheck select 0)} count _array >= 3) then {
         _return = true;
     } else {
         _return = false;

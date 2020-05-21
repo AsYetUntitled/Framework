@@ -11,7 +11,7 @@ params [
 ];
 
 if (isNull _unit) exitWith {};
-if (animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
+if (animationState _unit isEqualTo "AovrPercMrunSrasWrflDf") exitWith {};
 
 private _oldPos = getPosATL _unit;
 

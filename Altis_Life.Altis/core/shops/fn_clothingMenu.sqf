@@ -56,9 +56,9 @@ sliderSetRange [3107, 0, 360];
 
 //Cop / Civ Pre Check
 if (_shop in ["bruce","dive","reb","kart"] && {!(playerSide isEqualTo civilian)}) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
-if (_shop == "reb" && {!license_civ_rebel}) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
-if (_shop == "cop" && {!(playerSide isEqualTo west)}) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
-if (_shop == "dive" && {!license_civ_dive}) exitWith {hint localize "STR_Shop_NotaDive"; closeDialog 0;};
+if (_shop isEqualTo "reb" && {!license_civ_rebel}) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
+if (_shop isEqualTo "cop" && {!(playerSide isEqualTo west)}) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
+if (_shop isEqualTo "dive" && {!license_civ_dive}) exitWith {hint localize "STR_Shop_NotaDive"; closeDialog 0;};
 
 
 private ["_pos","_oldPos","_oldDir","_oldBev","_testLogic","_nearVeh","_light"];
@@ -117,7 +117,7 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
         if (_x != player) then {_x hideObject true;};
         true
     } count playableUnits;
-    
+
     if (LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 0) then {
         {
             if (_x != player && _x != _light) then {_x hideObject true;};
@@ -133,7 +133,7 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
     };
 
     player setBehaviour "SAFE";
-    if (_shop == "dive") then {
+    if (_shop isEqualTo "dive") then {
         player setPosATL [-1000, -1000, 10];
         sleep 0.0005;
     };

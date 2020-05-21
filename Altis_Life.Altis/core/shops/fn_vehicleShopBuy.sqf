@@ -63,7 +63,7 @@ if (CASH < _purchasePrice) exitWith {hint format [localize "STR_Shop_Veh_NotEnou
 private _spawnPoints = life_veh_shop select 1;
 private _spawnPoint = "";
 
-if ((life_veh_shop select 0) == "med_air_hs") then {
+if ((life_veh_shop select 0) isEqualTo "med_air_hs") then {
     if (nearestObjects[(getMarkerPos _spawnPoints),["Air"],35] isEqualTo []) exitWith {_spawnPoint = _spawnPoints};
 } else {
     //Check if there is multiple spawn points and find a suitable spawnpoint.
@@ -92,7 +92,7 @@ if (_mode) then {
 
 private "_vehicle";
 
-if ((life_veh_shop select 0) == "med_air_hs") then {
+if ((life_veh_shop select 0) isEqualTo "med_air_hs") then {
     _vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
     waitUntil {!isNil "_vehicle" && {!isNull _vehicle}}; //Wait?
     _vehicle allowDamage false;
@@ -124,7 +124,7 @@ switch (playerSide) do {
         [_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
     };
     case civilian: {
-        if ((life_veh_shop select 2) isEqualTo "civ" && {_className == "B_Heli_Light_01_F"}) then {
+        if ((life_veh_shop select 2) isEqualTo "civ" && {_className isEqualTo "B_Heli_Light_01_F"}) then {
             [_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
         };
     };

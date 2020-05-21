@@ -427,7 +427,7 @@ if (_bool) then {
                                 clearWeaponCargo (uniformContainer player);
                                 {
                                     _numVestWeps = _tWeaponCount select _forEachIndex;
-                                    if (_x == _this) then
+                                    if (_x isEqualTo _this) then
                                     {
                                         _numVestWeps = _numVestWeps - 1;
                                     };
@@ -442,7 +442,7 @@ if (_bool) then {
                                 clearWeaponCargo (vestContainer player);
                                 {
                                     _numVestWeps = _tWeaponCount select _forEachIndex;
-                                    if (_x == _this) then
+                                    if (_x isEqualTo _this) then
                                     {
                                         _numVestWeps = _numVestWeps - 1;
                                     };
@@ -457,7 +457,7 @@ if (_bool) then {
                                 clearWeaponCargo (backpackContainer player);
                                 {
                                     _numVestWeps = _tWeaponCount select _forEachIndex;
-                                    if (_x == _this) then
+                                    if (_x isEqualTo _this) then
                                     {
                                         _numVestWeps = _numVestWeps - 1;
                                     };

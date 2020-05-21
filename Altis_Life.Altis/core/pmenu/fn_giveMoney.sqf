@@ -13,7 +13,7 @@ if ((lbCurSel 2022) isEqualTo -1) exitWith {hint localize "STR_NOTF_noOneSelecte
 _unit = lbData [2022,lbCurSel 2022];
 _unit = call compile format ["%1",_unit];
 if (isNil "_unit") exitWith {ctrlShow[2001,true];};
-if (_unit == player) exitWith {ctrlShow[2001,true];};
+if (_unit isEqualTo player) exitWith {ctrlShow[2001,true];};
 if (isNull _unit) exitWith {ctrlShow[2001,true];};
 
 //A series of checks *ugh*

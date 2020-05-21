@@ -20,4 +20,4 @@ closeDialog 0;
 
 _unit switchCamera "INTERNAL";
 hint format [localize "STR_NOTF_nowSpectating",_unit getVariable ["realname",name _unit]];
-AM_Exit = (findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 68) then {(findDisplay 46) displayRemoveEventHandler ['KeyDown',AM_Exit]; player switchCamera 'INTERNAL'; hint localize 'STR_NOTF_stoppedSpectating';}; false"];
+AM_Exit = (findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) isEqualTo 68) then {(findDisplay 46) displayRemoveEventHandler ['KeyDown',AM_Exit]; player switchCamera 'INTERNAL'; hint localize 'STR_NOTF_stoppedSpectating';}; false"];
