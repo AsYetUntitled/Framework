@@ -1,4 +1,9 @@
-params ["_injured", "_healer", "_isMedic"];
+params
+[
+  ["_injured", objNull],
+  ["_healer", objNull],
+  ["_isMedic", false]
+];
 _damage = damage _injured;
 waitUntil { damage _injured != _damage };
 [] call life_fnc_hudUpdate;
