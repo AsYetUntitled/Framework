@@ -17,6 +17,7 @@ if (player distance _unit > 3) exitWith {};
 _unit attachTo [player, [0.1,1.1,0]];
 player setVariable ["escortingPlayer", _unit];
 player setVariable ["isEscorting", true];
+_unit setVariable ["Escorting",true,true];
 
 [_unit] spawn {
     params [
