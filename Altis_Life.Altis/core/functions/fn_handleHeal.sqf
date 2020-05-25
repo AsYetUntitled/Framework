@@ -6,4 +6,4 @@ params
 ];
 _damage = damage _injured;
 waitUntil { damage _injured != _damage };
-[] call life_fnc_hudUpdate;
+[] remoteExecCall ["life_fnc_hudUpdate", _injured, false];
