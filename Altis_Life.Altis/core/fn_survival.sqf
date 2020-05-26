@@ -59,7 +59,7 @@ private _fnc_paycheck = {
     } else {
         systemChat localize "STR_MissedPay";
     };
-    systemChat format [localize "STR_FSM_Paycheck",(getNumber(missionConfigFile >> "Life_Settings" >> "paycheck_period"))];
+    systemChat format [localize "STR_Paycheck",(getNumber(missionConfigFile >> "Life_Settings" >> "paycheck_period"))];
 };
 
 //Setup the time-based variables.
