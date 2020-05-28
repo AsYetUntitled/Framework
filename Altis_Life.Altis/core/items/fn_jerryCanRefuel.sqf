@@ -56,8 +56,8 @@ if (_action) then {
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format ["%3 (%1%2)...",round(_cP * 100),"%",_title];
         if (_cP >= 1) exitWith {};
-        if (!alive player) exitWith {life_action_inUse = false;};
-        if (life_interrupted) exitWith {life_interrupted = false; life_action_inUse = false;};
+        if (!alive player) exitWith {};
+        if (life_interrupted) exitWith {};
     };
 
     //Kill the UI display and check for various states
