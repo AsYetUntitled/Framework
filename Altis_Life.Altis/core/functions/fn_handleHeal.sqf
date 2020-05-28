@@ -1,3 +1,4 @@
+private ["_injured", "_healer", "_isMedic", "_damage", "_id"];
 params
 [
   ["_injured", objNull],
@@ -6,4 +7,5 @@ params
 ];
 _damage = damage _injured;
 waitUntil { damage _injured != _damage };
-[] remoteExec ["life_fnc_hudUpdate", _injured, false];
+_id = owner _injured;
+[] remoteExec ["life_fnc_hudUpdate", _id];
