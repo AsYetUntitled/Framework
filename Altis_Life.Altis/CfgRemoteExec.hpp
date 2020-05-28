@@ -74,6 +74,7 @@ class CfgRemoteExec {
         F(life_fnc_clientGetKey,CLIENT)
         F(life_fnc_clientMessage,CLIENT)
         F(life_util_fnc_playerQuery,CLIENT)
+        F(life_fnc_hudUpdate,CLIENT)
 
         /* Server only functions */
         F(DB_fnc_insertRequest,SERVER)
