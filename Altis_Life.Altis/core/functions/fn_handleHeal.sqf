@@ -8,4 +8,4 @@ params
 _damage = damage _injured;
 waitUntil { damage _injured != _damage };
 _id = owner _injured;
-[] remoteExec ["life_fnc_hudUpdate", _id];
+[] remoteExecCall ["life_fnc_hudUpdate", _id];
