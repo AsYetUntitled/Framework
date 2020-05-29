@@ -70,6 +70,8 @@ publicVariable "life_server_extDB_notLoaded";
 ["deleteDeadVehicles", 1] call DB_fnc_asyncCall;
 ["deleteOldHouses", 1] call DB_fnc_asyncCall;
 ["deleteOldGangs", 1] call DB_fnc_asyncCall;
+["deleteOldContainers", 1] call DB_fnc_asyncCall;
+["deleteOldWanted", 1] call DB_fnc_asyncCall;
 
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
