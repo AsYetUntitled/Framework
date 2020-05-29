@@ -65,7 +65,7 @@ private _fnc_cleanDatabase = {
     ["deleteOldGangs", 1] call DB_fnc_asyncCall;
     ["deleteOldContainers", 1] call DB_fnc_asyncCall;
     ["deleteOldWanted", 1] call DB_fnc_asyncCall;
-}
+};
 
 //Array format: [parameters,function,delayTime]
 private _routines = [
