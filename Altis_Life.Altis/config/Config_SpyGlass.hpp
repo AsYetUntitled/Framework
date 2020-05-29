@@ -234,8 +234,7 @@ class SpyGlass {
         "bis_fnc_slerp","bis_fnc_controlpoint_edenunregisteredfromworld","bis_fnc_richcurve_istimeinseconds","bis_fnc_quinticinvector","bis_fnc_getmarkers","bis_fnc_key_getarrivetangent","bis_fnc_key_getfov","bis_fnc_bounceinoutvector","bis_fnc_bouncein","bis_fnc_cancelmarker","bis_fnc_decodeflags4","bis_fnc_lerpvector","bis_fnc_richcurve_edenmarkstatedirty","bis_fnc_holdkey","bis_fnc_richcurve_edendragged",
         "bis_fnc_decodeflags8","bis_fnc_quinticoutvector","bis_fnc_showmarker","bis_fnc_key_edendragged","bis_fnc_key_settime","bis_fnc_controlpoint_edenisselected","bis_fnc_camera_edenisselected","bis_fnc_pulsate","bis_fnc_key_getarrivecontrolpoint","bis_fnc_richcurve_getkeyfromindex","bis_fnc_easeinvector","bis_fnc_modulecivilianpresence","bis_fnc_hermitevector","bis_fnc_richcurve_edenconnectionchanged",
         "bis_fnc_controlpoint_getownerkey","bis_fnc_richcurve_getcurvevaluevector","bis_fnc_interpolatevector","bis_fnc_camera_getfocus","bis_fnc_bounceinvector","bis_fnc_richcurve_reset","bis_fnc_timeline_setpause","bis_fnc_camera_setcam","bis_fnc_3den_onmissionnew","bis_fnc_richcurve_setkeys","bis_fnc_camera_getcinemabordersenabled","bis_fnc_richcurve_numkeys","bis_fnc_bezierlength","bis_fnc_camera_edendeleted",
-        "bis_fnc_keyframeanimation_deltatime","bis_fnc_timeline_getinterpmode","bis_fnc_initmodules_keyframeanimation","bis_fnc_randomposintersection","bis_fnc_modulevanguardfob","bis_fnc_animatedbriefing","bis_fnc_reviveisvalidsecure","bis_fnc_modulevanguardobjective","bis_fnc_animatedopening",
-        "life_fnc_handleheal", "life_fnc_handleheal_meta"
+        "bis_fnc_keyframeanimation_deltatime","bis_fnc_timeline_getinterpmode","bis_fnc_initmodules_keyframeanimation","bis_fnc_randomposintersection","bis_fnc_modulevanguardfob","bis_fnc_animatedbriefing","bis_fnc_reviveisvalidsecure","bis_fnc_modulevanguardobjective","bis_fnc_animatedopening"
     };
 
     //Life Functions
