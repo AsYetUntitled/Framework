@@ -19,6 +19,4 @@ player addEventHandler ["GetOutMan", {_this call life_fnc_getOutMan}];
 
 addMissionEventHandler ["Map", {_this call life_fnc_checkMap}];
 
-player addEventHandler ["HandleHeal", {_this spawn life_fnc_handleHeal}];
-
 [missionNamespace,"OnGameInterrupt",{_this call life_fnc_onGameInterrupt}] call BIS_fnc_addScriptedEventHandler;
