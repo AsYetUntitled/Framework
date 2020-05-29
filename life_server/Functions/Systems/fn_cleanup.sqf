@@ -58,10 +58,20 @@ private _fnc_cleanVehicles = {
     } count (allMissionObjects "Thing");
 };
 
+private _fnc_cleanDatabase = {
+    ["resetLifeVehicles", 1] call DB_fnc_asyncCall;
+    ["deleteDeadVehicles", 1] call DB_fnc_asyncCall;
+    ["deleteOldHouses", 1] call DB_fnc_asyncCall;
+    ["deleteOldGangs", 1] call DB_fnc_asyncCall;
+    ["deleteOldContainers", 1] call DB_fnc_asyncCall;
+    ["deleteOldWanted", 1] call DB_fnc_asyncCall;
+}
+
 //Array format: [parameters,function,delayTime]
 private _routines = [
     [[], _fnc_fedDealerUpdate, 1800],
-    [[], _fnc_cleanVehicles, 3600]
+    [[], _fnc_cleanVehicles, 3600],
+    [[], _fnc_cleanDatabase, 3600]
 ];
 
 {
