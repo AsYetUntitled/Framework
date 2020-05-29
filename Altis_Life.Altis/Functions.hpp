@@ -230,7 +230,6 @@ class Life_Client_Core {
         class teleport {};
         class whereAmI {};
         class moveIn {};
-        class handleHeal {};
     };
 
     class Gangs {
