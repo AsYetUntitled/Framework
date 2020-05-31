@@ -165,7 +165,7 @@ class AddonsMetaData
 randomSeed=2639488;
 class ScenarioData
 {
-	author="Tonic";
+	author="github.com/AsYetUntitled";
 	overViewPicture="textures\armalife.jpg";
 	overViewPictureLocked="textures\armalife.jpg";
 	loadScreen="textures\armalife.jpg";
@@ -260,7 +260,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Altis Life RPG v5.0.0";
+		briefingName="Altis Life RPG v6 86f766e";
 		startWeather=0.099999994;
 		startWind=0.29999998;
 		startWindDir=20;
@@ -1733,21 +1733,23 @@ class Mission
 		class Item145
 		{
 			dataType="Marker";
-			position[]={25716.904,18.13162,21271.055};
+			position[]={25710.152,18.132,21266.648};
 			name="car_g_2";
 			type="Empty";
-			angle=220.38788;
+			angle=220.38799;
 			id=147;
+			atlOffset=-0.15843391;
 		};
 		class Item146
 		{
 			dataType="Marker";
-			position[]={25723.572,18.269375,21278.281};
+			position[]={25719.703,18.166,21268.896};
 			name="civ_gar_1_2";
 			text="@STR_MAR_Garage";
 			type="o_service";
-			angle=168.39319;
+			angle=168.39299;
 			id=148;
+			atlOffset=0.13744164;
 		};
 		class Item147
 		{
@@ -36105,8 +36107,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={25723.953,18.246689,21277.715};
-						angles[]={6.249867,3.8464787,6.2738476};
+						position[]={25719.703,18.029997,21268.947};
+						angles[]={6.2605233,4.9403644,6.2711902};
 					};
 					side="Civilian";
 					flags=4;

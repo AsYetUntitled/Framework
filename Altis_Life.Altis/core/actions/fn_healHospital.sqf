@@ -36,7 +36,6 @@ if (_action) then {
     titleText [localize "STR_NOTF_HS_Healed", "PLAIN"];
     player setDamage 0;
     CASH = CASH - _healCost;
-    [] call life_fnc_hudUpdate;
 } else {
     hint localize "STR_NOTF_ActionCancel";
 };

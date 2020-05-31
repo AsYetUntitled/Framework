@@ -52,6 +52,8 @@ if (_extDBNotLoaded isEqualType []) exitWith {}; //extDB3-HC did not fully initi
 ["deleteDeadVehicles", 1] call HC_fnc_asyncCall;
 ["deleteOldHouses", 1] call HC_fnc_asyncCall;
 ["deleteOldGangs", 1] call HC_fnc_asyncCall;
+["deleteOldContainers", 1] call HC_fnc_asyncCall;
+["deleteOldWanted", 1] call HC_fnc_asyncCall;
 
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
@@ -60,6 +62,7 @@ diag_log format["-------------------------------------------- Version %1 -------
 diag_log "----------------------------------------------------------------------------------------------------";
 
 [] spawn HC_fnc_cleanup;
+[] spawn HC_fnc_noop;
 
 /* Initialize hunting zone(s) */
 ["hunting_zone",30] spawn HC_fnc_huntingZone;

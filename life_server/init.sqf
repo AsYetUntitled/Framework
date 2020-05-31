@@ -70,6 +70,8 @@ publicVariable "life_server_extDB_notLoaded";
 ["deleteDeadVehicles", 1] call DB_fnc_asyncCall;
 ["deleteOldHouses", 1] call DB_fnc_asyncCall;
 ["deleteOldGangs", 1] call DB_fnc_asyncCall;
+["deleteOldContainers", 1] call DB_fnc_asyncCall;
+["deleteOldWanted", 1] call DB_fnc_asyncCall;
 
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
@@ -158,6 +160,8 @@ life_wanted_list = [];
 
 [] spawn TON_fnc_initHouses;
 cleanup = [] spawn TON_fnc_cleanup;
+
+[] spawn TON_fnc_noop;
 
 TON_fnc_playtime_values = [];
 TON_fnc_playtime_values_request = [];

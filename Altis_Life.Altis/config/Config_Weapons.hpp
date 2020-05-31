@@ -66,6 +66,7 @@ class WeaponShops {
         mags[] = {
             { "30Rnd_556x45_Stanag", "", 300, 150, "" },
             { "30Rnd_762x39_Mag_F", "", 300, 150, "" }, //Apex DLC
+            { "30Rnd_762x39_AK12_Mag_F", "", 300, 150, "" }, //Apex DLC
             { "30Rnd_545x39_Mag_F", "", 300, 150, "" }, //Apex DLC
             { "30Rnd_65x39_caseless_green", "", 275, 140, "" },
             { "10Rnd_762x54_Mag", "", 500, 250, "" },

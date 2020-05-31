@@ -32,6 +32,7 @@ class CfgFunctions
             class cleanup {};
             class huntingZone {};
             class receivekeyofServer {};
+            class noop {};
         };
 
         class PlayTime

@@ -66,7 +66,7 @@ switch (_mode) do {
     };
 
     case 7: {
-        [_uid, _side, _value, 0] call TON_fnc_keyManagement;
+        [_uid, _side, _value, 0] call HC_fnc_keyManagement;
     };
 };
 

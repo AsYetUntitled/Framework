@@ -8,8 +8,8 @@
 */
 
 params [
-    ["_val", "", [""]],
-    ["_total", "", [""]]
+    ["_val", 0, [0]],
+    ["_total", 0, [0]]
 ];
 
 if (_val == _total) then {

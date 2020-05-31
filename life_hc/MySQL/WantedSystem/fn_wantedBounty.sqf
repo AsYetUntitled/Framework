@@ -18,7 +18,7 @@ params [
     ["_half",false,[false]]
 ];
 
-if (isNull _civ || {isNull _cop}) exitWith {};
+if (isNull _civ || isNull _cop) exitWith {};
 
 private _query = format ["selectWanted:%1", _uid];
 private _queryResult = [_query,2] call HC_fnc_asyncCall;

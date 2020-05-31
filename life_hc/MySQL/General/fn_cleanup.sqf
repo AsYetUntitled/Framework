@@ -13,13 +13,12 @@ private _fnc_fedDealerUpdate = {
     {
         private _dealer = missionNamespace getVariable [_x, objNull];
         if !(isNull _dealer) then {
-            _x setVariable ["sellers", [], true];
+            _dealer setVariable ["sellers", [], true];
         };
     } forEach ["Dealer_1", "Dealer_2", "Dealer_3"];
 
-
     private _funds = fed_bank getVariable ["safe", 0];
-    fed_bank setVariable ["safe", round(_funds+((count playableUnits)/2)), true];
+    fed_bank setVariable ["safe", round(_funds + ((count playableUnits)/2)), true];
 };
 
 private _fnc_cleanVehicles = {
@@ -59,10 +58,20 @@ private _fnc_cleanVehicles = {
     } count (allMissionObjects "Thing");
 };
 
+private _fnc_cleanDatabase = {
+    ["resetLifeVehicles", 1] call HC_fnc_asyncCall;
+    ["deleteDeadVehicles", 1] call HC_fnc_asyncCall;
+    ["deleteOldHouses", 1] call HC_fnc_asyncCall;
+    ["deleteOldGangs", 1] call HC_fnc_asyncCall;
+    ["deleteOldContainers", 1] call HC_fnc_asyncCall;
+    ["deleteOldWanted", 1] call HC_fnc_asyncCall;
+};
+
 //Array format: [parameters,function,delayTime]
 private _routines = [
     [[], _fnc_fedDealerUpdate, 1800],
-    [[], _fnc_cleanVehicles, 3600]
+    [[], _fnc_cleanVehicles, 3600],
+    [[], _fnc_cleanDatabase, 3600]
 ];
 
 {
@@ -74,8 +83,8 @@ for "_i" from 0 to 1 step 0 do {
         _x params ["_params", "_function", "_delay", "_timeToRun"];
         if (diag_tickTime > _timeToRun) then {
             _params call _function;
-            _x set [2, diag_tickTime + _delay];
+            _x set [3, diag_tickTime + _delay];
         };
     } forEach _routines;
-    uiSleep 1e-6;
+    uiSleep 60;
 };

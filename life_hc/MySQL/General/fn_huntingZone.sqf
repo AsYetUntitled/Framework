@@ -49,7 +49,7 @@ for "_i" from 0 to 1 step 0 do {
             _animalsActive = false;
         };
     };
-    sleep (3 + random 2);
+    uiSleep (3 + random 2);
     _maxAnimals = param [1,10,[0]];
     publicVariableServer "animals";
 };

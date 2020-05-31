@@ -100,10 +100,10 @@ if (_sp isEqualType "") then {
 _vehicle allowDamage true;
 //Send keys over the network.
 [_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain",_unit];
-[_pid,_side,_vehicle,1] remoteExecCall ["TON_fnc_keyManagement",RSERV];
+[_pid,_side,_vehicle,1] remoteExecCall ["HC_fnc_keyManagement",RSERV];
 _vehicle lock 2;
 //Reskin the vehicle
-[_vehicle, _vInfo select 8] remoteExecCall ["life_fnc_colorVehicle",_unit];
+[_vehicle,(_vInfo select 8)] remoteExecCall ["life_fnc_colorVehicle",_unit];
 _vehicle setVariable ["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.

@@ -71,6 +71,7 @@ class CfgFunctions {
             class vehicleUpdate {};
             class recupkeyforHC {};
             class handleBlastingCharge {};
+            class noop {};
         };
 
         class Housing {

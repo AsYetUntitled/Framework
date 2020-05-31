@@ -36,28 +36,10 @@ AsYetUntitled (formerly ArmaLife) is a GitHub project which aims to update and k
         [
             "Altis Life Changelog",
                 "
-The full changelog can be found on the AsYetUntitled/Framework repository on GitHub. https://github.com/AsYetUntitled/Framework/<br/><br/>
-v4.4 release 3!<br/>
-By: danielstuart14<br/>
-Date: 31. May 2016<br/><br/>
-v4.4 release 2!<br/>
-By: danielstuart14<br/>
-Date: 20. March 2016<br/><br/>
-v4.4 release 1!<br/>
-By: danielstuart14<br/>
-Date: 12. February 2016<br/><br/>
-v4.3 release 4!<br/>
-By: danielstuart14<br/>
-Date: 31. January 2016<br/><br/>
-v4.3 release 3!<br/>
-By: danielstuart14<br/>
-Date: Not released<br/><br/>
-v4.3 release 2!<br/>
-By: danielstuart14<br/>
-Date: 22. January 2016<br/><br/>
-v4.3 release 1!<br/>
-By: danielstuart14<br/>
-Date: 19. January 2016<br/><br/>
+The full changelog can be found on the AsYetUntitled/Framework repository on GitHub. https://github.com/AsYetUntitled/Framework/<br/>
+<br/>
+master branch commit 86f766e<br/>
+28.05.2020
                 "
         ]
     ];
@@ -66,7 +48,17 @@ Date: 19. January 2016<br/><br/>
         [
             "Server Change Log",
                 "
-This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.<br/><br/>
+Container bugfix #653<br/>
+Fixes (escort &amp; cleanup) #674<br/>
+fix selling vehicles #677<br/>
+fixes for master branch #688<br/>
+<br/>
+server patches<br/>
+call hudUpdate on health change (updates hud when healed)<br/>
+fix cop getting bounty when player is send to jail<br/>
+converted textures to PAA as required by headless client<br/>
+fix missing ammo for AK12<br/>
+fix sofia garage
                 "
         ]
     ];

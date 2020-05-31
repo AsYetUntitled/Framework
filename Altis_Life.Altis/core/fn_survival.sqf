@@ -71,7 +71,7 @@ _walkDis = 0;
 _bp = "";
 _lastPos = visiblePosition player;
 _lastPos = (_lastPos select 0) + (_lastPos select 1);
-
+private _damage = damage player;
 for "_i" from 0 to 1 step 0 do {
     /* Thirst / Hunger adjustment that is time based */
     if ((time - _waterTime) > 600 && {!life_god}) then {[] call _fnc_water; _waterTime = time;};
@@ -116,5 +116,11 @@ for "_i" from 0 to 1 step 0 do {
         _lastPos = visiblePosition player;
         _lastPos = (_lastPos select 0) + (_lastPos select 1);
     };
+
+	if(_damage != damage player) then
+	{
+		_damage = damage player;
+		[] call life_fnc_hudUpdate;
+	};
     uiSleep 1;
 };
