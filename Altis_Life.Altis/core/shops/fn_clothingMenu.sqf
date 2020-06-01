@@ -48,7 +48,7 @@ life_oldHat = headgear player;
 createDialog "Life_Clothing";
 disableSerialization;
 
-ctrlSetText [3103,localize _shopTitle];
+ctrlSetText [3103, _shopTitle];
 
 (findDisplay 3100) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
 
@@ -117,7 +117,7 @@ if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 1) then {
         if (_x != player) then {_x hideObject true;};
         true
     } count playableUnits;
-    
+
     if (LIFE_SETTINGS(getNumber,"clothing_box") isEqualTo 0) then {
         {
             if (_x != player && _x != _light) then {_x hideObject true;};
