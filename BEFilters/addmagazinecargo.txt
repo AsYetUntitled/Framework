@@ -1,3 +1,3 @@
 //regex
 1 ""
-5 "" !=[69]Rnd_45ACP_(Cylinder|Mag) ![13][60]Rnd_9x21_Mag !=[123][60]Rnd_65x39_caseless_(green|mag) !=[123]0Rnd_[57][568][620]x[345][2459]_(AK12_)?(Mag(_F)?|Stanag|UW_Mag) !=Chemlight_(blue|green|red|yellow) !=HandGrenade_Stone !=30Rnd_545x39_Mag_F !=30Rnd_762x39_AK12_Mag_F
+5 "" !=([69]|11)Rnd_45ACP_(Cylinder|Mag) ![13][60]Rnd_9x21_Mag !=[123][60]Rnd_65x39_caseless_(green|mag) !=[123]0Rnd_[57][568][620]x[345][2459]_(AK12_)?(Mag(_F)?|Stanag|UW_Mag) !=Chemlight_(blue|green|red|yellow) !=HandGrenade_Stone !=30Rnd_545x39_Mag_F !=30Rnd_762x39_AK12_Mag_F !=20Rnd_650x39_Cased_Mag_F
