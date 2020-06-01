@@ -161,7 +161,7 @@ for "_i" from 0 to 1 step 0 do {
     };
 
     _itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
-    titleText[format [localize "STR_NOTF_DeviceMined",_sum,(localize _itemName)],"PLAIN"];
+    titleText[format [localize "STR_NOTF_DeviceMined",_sum,_itemName],"PLAIN"];
     _itemWeight = ([_resource] call life_fnc_itemWeight) * _sum;
     _vehicle setVariable ["Trunk",[_inv,_space + _itemWeight],true];
     _weight = [_vehicle] call life_fnc_vehicleWeight;

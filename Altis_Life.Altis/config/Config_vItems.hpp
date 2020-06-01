@@ -148,7 +148,7 @@ class VirtualItems {
     //Misc
     class pickaxe {
         variable = "pickaxe";
-        displayName = "STR_Item_Pickaxe";
+        displayName = $STR_Item_Pickaxe;
         weight = 2;
         buyPrice = 750;
         sellPrice = 350;
@@ -160,7 +160,7 @@ class VirtualItems {
 
     class defibrillator {
         variable = "defibrillator";
-        displayName = "STR_Item_Defibrillator";
+        displayName = $STR_Item_Defibrillator;
         weight = 4;
         buyPrice = 900;
         sellPrice = 450;
@@ -172,7 +172,7 @@ class VirtualItems {
 
     class toolkit {
         variable = "toolkit";
-        displayName = "STR_Item_Toolkit";
+        displayName = $STR_Item_Toolkit;
         weight = 4;
         buyPrice = 350;
         sellPrice = 100;
@@ -184,7 +184,7 @@ class VirtualItems {
 
     class fuelEmpty {
         variable = "fuelEmpty";
-        displayName = "STR_Item_FuelE";
+        displayName = $STR_Item_FuelE;
         weight = 2;
         buyPrice = -1;
         sellPrice = 10;
@@ -196,7 +196,7 @@ class VirtualItems {
 
     class fuelFull {
         variable = "fuelFull";
-        displayName = "STR_Item_FuelF";
+        displayName = $STR_Item_FuelF;
         weight = 5;
         buyPrice = 850;
         sellPrice = 500;
@@ -208,7 +208,7 @@ class VirtualItems {
 
     class spikeStrip {
         variable = "spikeStrip";
-        displayName = "STR_Item_SpikeStrip";
+        displayName = $STR_Item_SpikeStrip;
         weight = 15;
         buyPrice = 2500;
         sellPrice = 1200;
@@ -220,7 +220,7 @@ class VirtualItems {
 
     class lockpick {
         variable = "lockpick";
-        displayName = "STR_Item_Lockpick";
+        displayName = $STR_Item_Lockpick;
         weight = 1;
         buyPrice = 150;
         sellPrice = 75;
@@ -232,7 +232,7 @@ class VirtualItems {
 
     class goldbar {
         variable = "goldBar";
-        displayName = "STR_Item_GoldBar";
+        displayName = $STR_Item_GoldBar;
         weight = 12;
         buyPrice = -1;
         sellPrice = 95000;
@@ -244,7 +244,7 @@ class VirtualItems {
 
     class blastingcharge {
         variable = "blastingCharge";
-        displayName = "STR_Item_BCharge";
+        displayName = $STR_Item_BCharge;
         weight = 15;
         buyPrice = 35000;
         sellPrice = 10000;
@@ -256,7 +256,7 @@ class VirtualItems {
 
     class boltcutter {
         variable = "boltCutter";
-        displayName = "STR_Item_BCutter";
+        displayName = $STR_Item_BCutter;
         weight = 5;
         buyPrice = 7500;
         sellPrice = 1000;
@@ -268,7 +268,7 @@ class VirtualItems {
 
     class defusekit {
         variable = "defuseKit";
-        displayName = "STR_Item_DefuseKit";
+        displayName = $STR_Item_DefuseKit;
         weight = 2;
         buyPrice = 2500;
         sellPrice = 2000;
@@ -280,7 +280,7 @@ class VirtualItems {
 
     class storagesmall {
         variable = "storageSmall";
-        displayName = "STR_Item_StorageBS";
+        displayName = $STR_Item_StorageBS;
         weight = 5;
         buyPrice = 75000;
         sellPrice = 50000;
@@ -292,7 +292,7 @@ class VirtualItems {
 
     class storagebig {
         variable = "storageBig";
-        displayName = "STR_Item_StorageBL";
+        displayName = $STR_Item_StorageBL;
         weight = 10;
         buyPrice = 150000;
         sellPrice = 125000;
@@ -305,7 +305,7 @@ class VirtualItems {
     //Mined Items
     class oil_unprocessed {
         variable = "oilUnprocessed";
-        displayName = "STR_Item_OilU";
+        displayName = $STR_Item_OilU;
         weight = 7;
         buyPrice = -1;
         sellPrice = -1;
@@ -317,7 +317,7 @@ class VirtualItems {
 
     class oil_processed {
         variable = "oilProcessed";
-        displayName = "STR_Item_OilP";
+        displayName = $STR_Item_OilP;
         weight = 6;
         buyPrice = -1;
         sellPrice = 3200;
@@ -329,7 +329,7 @@ class VirtualItems {
 
     class copper_unrefined {
         variable = "copperUnrefined";
-        displayName = "STR_Item_CopperOre";
+        displayName = $STR_Item_CopperOre;
         weight = 4;
         buyPrice = -1;
         sellPrice = -1;
@@ -341,7 +341,7 @@ class VirtualItems {
 
     class copper_refined {
         variable = "copperRefined";
-        displayName = "STR_Item_CopperIngot";
+        displayName = $STR_Item_CopperIngot;
         weight = 3;
         buyPrice = -1;
         sellPrice = 1500;
@@ -353,7 +353,7 @@ class VirtualItems {
 
     class iron_unrefined {
         variable = "ironUnrefined";
-        displayName = "STR_Item_IronOre";
+        displayName = $STR_Item_IronOre;
         weight = 5;
         buyPrice = -1;
         sellPrice = -1;
@@ -365,7 +365,7 @@ class VirtualItems {
 
     class iron_refined {
         variable = "ironRefined";
-        displayName = "STR_Item_IronIngot";
+        displayName = $STR_Item_IronIngot;
         weight = 3;
         buyPrice = -1;
         sellPrice = 3200;
@@ -377,7 +377,7 @@ class VirtualItems {
 
     class salt_unrefined {
         variable = "saltUnrefined";
-        displayName = "STR_Item_Salt";
+        displayName = $STR_Item_Salt;
         weight = 3;
         buyPrice = -1;
         sellPrice = -1;
@@ -389,7 +389,7 @@ class VirtualItems {
 
     class salt_refined {
         variable = "saltRefined";
-        displayName = "STR_Item_SaltR";
+        displayName = $STR_Item_SaltR;
         weight = 1;
         buyPrice = -1;
         sellPrice = 1450;
@@ -401,7 +401,7 @@ class VirtualItems {
 
     class sand {
         variable = "sand";
-        displayName = "STR_Item_Sand";
+        displayName = $STR_Item_Sand;
         weight = 3;
         buyPrice = -1;
         sellPrice = -1;
@@ -413,7 +413,7 @@ class VirtualItems {
 
     class glass {
         variable = "glass";
-        displayName = "STR_Item_Glass";
+        displayName = $STR_Item_Glass;
         weight = 1;
         buyPrice = -1;
         sellPrice = 1450;
@@ -425,7 +425,7 @@ class VirtualItems {
 
     class diamond_uncut {
         variable = "diamondUncut";
-        displayName = "STR_Item_DiamondU";
+        displayName = $STR_Item_DiamondU;
         weight = 4;
         buyPrice = -1;
         sellPrice = 750;
@@ -437,7 +437,7 @@ class VirtualItems {
 
     class diamond_cut {
         variable = "diamondCut";
-        displayName = "STR_Item_DiamondC";
+        displayName = $STR_Item_DiamondC;
         weight = 2;
         buyPrice = -1;
         sellPrice = 2000;
@@ -449,7 +449,7 @@ class VirtualItems {
 
     class rock {
         variable = "rock";
-        displayName = "STR_Item_Rock";
+        displayName = $STR_Item_Rock;
         weight = 6;
         buyPrice = -1;
         sellPrice = -1;
@@ -461,7 +461,7 @@ class VirtualItems {
 
     class cement {
         variable = "cement";
-        displayName = "STR_Item_CementBag";
+        displayName = $STR_Item_CementBag;
         weight = 5;
         buyPrice = -1;
         sellPrice = 1950;
@@ -474,7 +474,7 @@ class VirtualItems {
     //Drugs
     class heroin_unprocessed {
         variable = "heroinUnprocessed";
-        displayName = "STR_Item_HeroinU";
+        displayName = $STR_Item_HeroinU;
         weight = 6;
         buyPrice = -1;
         sellPrice = -1;
@@ -487,7 +487,7 @@ class VirtualItems {
 
     class heroin_processed {
         variable = "heroinProcessed";
-        displayName = "STR_Item_HeroinP";
+        displayName = $STR_Item_HeroinP;
         weight = 4;
         buyPrice = 3500;
         sellPrice = 2560;
@@ -499,7 +499,7 @@ class VirtualItems {
 
     class cannabis {
         variable = "cannabis";
-        displayName = "STR_Item_Cannabis";
+        displayName = $STR_Item_Cannabis;
         weight = 4;
         buyPrice = -1;
         sellPrice = -1;
@@ -512,7 +512,7 @@ class VirtualItems {
 
     class marijuana {
         variable = "marijuana";
-        displayName = "STR_Item_Marijuana";
+        displayName = $STR_Item_Marijuana;
         weight = 3;
         buyPrice = 2800;
         sellPrice = 2350;
@@ -524,7 +524,7 @@ class VirtualItems {
 
     class cocaine_unprocessed {
         variable = "cocaineUnprocessed";
-        displayName = "STR_Item_CocaineU";
+        displayName = $STR_Item_CocaineU;
         weight = 6;
         buyPrice = -1;
         sellPrice = -1;
@@ -537,7 +537,7 @@ class VirtualItems {
 
     class cocaine_processed {
         variable = "cocaineProcessed";
-        displayName = "STR_Item_CocaineP";
+        displayName = $STR_Item_CocaineP;
         weight = 4;
         buyPrice = -1;
         sellPrice = 5000;
@@ -550,7 +550,7 @@ class VirtualItems {
     //Drink
     class redgull {
         variable = "redgull";
-        displayName = "STR_Item_RedGull";
+        displayName = $STR_Item_RedGull;
         weight = 1;
         buyPrice = 1500;
         sellPrice = 200;
@@ -562,7 +562,7 @@ class VirtualItems {
 
     class coffee {
         variable = "coffee";
-        displayName = "STR_Item_Coffee";
+        displayName = $STR_Item_Coffee;
         weight = 1;
         buyPrice = 10;
         sellPrice = 5;
@@ -574,7 +574,7 @@ class VirtualItems {
 
     class waterBottle {
         variable = "waterBottle";
-        displayName = "STR_Item_WaterBottle";
+        displayName = $STR_Item_WaterBottle;
         weight = 1;
         buyPrice = 10;
         sellPrice = 5;
@@ -587,7 +587,7 @@ class VirtualItems {
     //Food
     class apple {
         variable = "apple";
-        displayName = "STR_Item_Apple";
+        displayName = $STR_Item_Apple;
         weight = 1;
         buyPrice = 65;
         sellPrice = 50;
@@ -599,7 +599,7 @@ class VirtualItems {
 
     class peach {
         variable = "peach";
-        displayName = "STR_Item_Peach";
+        displayName = $STR_Item_Peach;
         weight = 1;
         buyPrice = 68;
         sellPrice = 55;
@@ -611,7 +611,7 @@ class VirtualItems {
 
     class tbacon {
         variable = "tbacon";
-        displayName = "STR_Item_TBacon";
+        displayName = $STR_Item_TBacon;
         weight = 1;
         buyPrice = 75;
         sellPrice = 25;
@@ -623,7 +623,7 @@ class VirtualItems {
 
     class donuts {
         variable = "donuts";
-        displayName = "STR_Item_Donuts";
+        displayName = $STR_Item_Donuts;
         weight = 1;
         buyPrice = 120;
         sellPrice = 60;
@@ -635,7 +635,7 @@ class VirtualItems {
 
     class rabbit_raw {
         variable = "rabbitRaw";
-        displayName = "STR_Item_RabbitRaw";
+        displayName = $STR_Item_RabbitRaw;
         weight = 2;
         buyPrice = -1;
         sellPrice = 95;
@@ -647,7 +647,7 @@ class VirtualItems {
 
     class rabbit {
         variable = "rabbit";
-        displayName = "STR_Item_Rabbit";
+        displayName = $STR_Item_Rabbit;
         weight = 1;
         buyPrice = 150;
         sellPrice = 115;
@@ -659,7 +659,7 @@ class VirtualItems {
 
     class salema_raw {
         variable = "salemaRaw";
-        displayName = "STR_Item_SalemaRaw";
+        displayName = $STR_Item_SalemaRaw;
         weight = 2;
         buyPrice = -1;
         sellPrice = 45;
@@ -671,7 +671,7 @@ class VirtualItems {
 
     class salema {
         variable = "salema";
-        displayName = "STR_Item_Salema";
+        displayName = $STR_Item_Salema;
         weight = 1;
         buyPrice = 75;
         sellPrice = 55;
@@ -683,7 +683,7 @@ class VirtualItems {
 
     class ornate_raw {
         variable = "ornateRaw";
-        displayName = "STR_Item_OrnateRaw";
+        displayName = $STR_Item_OrnateRaw;
         weight = 2;
         buyPrice = -1;
         sellPrice = 40;
@@ -695,7 +695,7 @@ class VirtualItems {
 
     class ornate {
         variable = "ornate";
-        displayName = "STR_Item_Ornate";
+        displayName = $STR_Item_Ornate;
         weight = 1;
         buyPrice = 175;
         sellPrice = 150;
@@ -707,7 +707,7 @@ class VirtualItems {
 
     class mackerel_raw {
         variable = "mackerelRaw";
-        displayName = "STR_Item_MackerelRaw";
+        displayName = $STR_Item_MackerelRaw;
         weight = 4;
         buyPrice = -1;
         sellPrice = 175;
@@ -719,7 +719,7 @@ class VirtualItems {
 
     class mackerel {
         variable = "mackerel";
-        displayName = "STR_Item_Mackerel";
+        displayName = $STR_Item_Mackerel;
         weight = 2;
         buyPrice = 250;
         sellPrice = 200;
@@ -731,7 +731,7 @@ class VirtualItems {
 
     class tuna_raw {
         variable = "tunaRaw";
-        displayName = "STR_Item_TunaRaw";
+        displayName = $STR_Item_TunaRaw;
         weight = 6;
         buyPrice = -1;
         sellPrice = 700;
@@ -743,7 +743,7 @@ class VirtualItems {
 
     class tuna {
         variable = "tuna";
-        displayName = "STR_Item_Tuna";
+        displayName = $STR_Item_Tuna;
         weight = 3;
         buyPrice = 1250;
         sellPrice = 1000;
@@ -755,7 +755,7 @@ class VirtualItems {
 
     class mullet_raw {
         variable = "mulletRaw";
-        displayName = "STR_Item_MulletRaw";
+        displayName = $STR_Item_MulletRaw;
         weight = 4;
         buyPrice = -1;
         sellPrice = 250;
@@ -767,7 +767,7 @@ class VirtualItems {
 
     class mullet {
         variable = "mullet";
-        displayName = "STR_Item_Mullet";
+        displayName = $STR_Item_Mullet;
         weight = 2;
         buyPrice = 600;
         sellPrice = 400;
@@ -779,7 +779,7 @@ class VirtualItems {
 
     class catshark_raw {
         variable = "catsharkRaw";
-        displayName = "STR_Item_CatSharkRaw";
+        displayName = $STR_Item_CatSharkRaw;
         weight = 6;
         buyPrice = -1;
         sellPrice = 300;
@@ -791,7 +791,7 @@ class VirtualItems {
 
     class catshark {
         variable = "catshark";
-        displayName = "STR_Item_CatShark";
+        displayName = $STR_Item_CatShark;
         weight = 3;
         buyPrice = 750;
         sellPrice = 500;
@@ -803,7 +803,7 @@ class VirtualItems {
 
     class turtle_raw {
         variable = "turtleRaw";
-        displayName = "STR_Item_TurtleRaw";
+        displayName = $STR_Item_TurtleRaw;
         weight = 6;
         buyPrice = -1;
         sellPrice = 3000;
@@ -815,7 +815,7 @@ class VirtualItems {
 
     class turtle_soup {
         variable = "turtleSoup";
-        displayName = "STR_Item_TurtleSoup";
+        displayName = $STR_Item_TurtleSoup;
         weight = 2;
         buyPrice = 1000;
         sellPrice = 750;
@@ -827,7 +827,7 @@ class VirtualItems {
 
     class hen_raw {
         variable = "henRaw";
-        displayName = "STR_Item_HenRaw";
+        displayName = $STR_Item_HenRaw;
         weight = 1;
         buyPrice = -1;
         sellPrice = 65;
@@ -839,7 +839,7 @@ class VirtualItems {
 
     class hen {
         variable = "hen";
-        displayName = "STR_Item_Hen";
+        displayName = $STR_Item_Hen;
         weight = 1;
         buyPrice = 115;
         sellPrice = 85;
@@ -851,7 +851,7 @@ class VirtualItems {
 
     class rooster_raw {
         variable = "roosterRaw";
-        displayName = "STR_Item_RoosterRaw";
+        displayName = $STR_Item_RoosterRaw;
         weight = 1;
         buyPrice = -1;
         sellPrice = 65;
@@ -863,7 +863,7 @@ class VirtualItems {
 
     class rooster {
         variable = "rooster";
-        displayName = "STR_Item_Rooster";
+        displayName = $STR_Item_Rooster;
         weight = 115;
         buyPrice = 90;
         sellPrice = 85;
@@ -875,7 +875,7 @@ class VirtualItems {
 
     class sheep_raw {
         variable = "sheepRaw";
-        displayName = "STR_Item_SheepRaw";
+        displayName = $STR_Item_SheepRaw;
         weight = 2;
         buyPrice = -1;
         sellPrice = 95;
@@ -887,7 +887,7 @@ class VirtualItems {
 
     class sheep {
         variable = "sheep";
-        displayName = "STR_Item_Sheep";
+        displayName = $STR_Item_Sheep;
         weight = 2;
         buyPrice = 155;
         sellPrice = 115;
@@ -899,7 +899,7 @@ class VirtualItems {
 
     class goat_raw {
         variable = "goatRaw";
-        displayName = "STR_Item_GoatRaw";
+        displayName = $STR_Item_GoatRaw;
         weight = 2;
         buyPrice = -1;
         sellPrice = 115;
@@ -911,7 +911,7 @@ class VirtualItems {
 
     class goat {
         variable = "goat";
-        displayName = "STR_Item_Goat";
+        displayName = $STR_Item_Goat;
         weight = 2;
         buyPrice = 175;
         sellPrice = 135;

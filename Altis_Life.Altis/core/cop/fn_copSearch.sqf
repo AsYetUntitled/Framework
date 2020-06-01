@@ -24,7 +24,7 @@ if (count _invs > 0) then {
         _x params ["_var", "_count"];
 
         private _displayName = M_CONFIG(getText,"VirtualItems", _var, "displayName");
-        _inv = _inv + format ["%1 %2<br/>", _count, localize _displayName];
+        _inv = _inv + format ["%1 %2<br/>", _count, _displayName];
         private _price = M_CONFIG(getNumber,"VirtualItems", _var, "sellPrice");
         if (!isNull (missionConfigFile >> "VirtualItems" >> _var >> "processedItem")) then {
             private _processed = M_CONFIG(getText,"VirtualItems", _var, "processedItem");
