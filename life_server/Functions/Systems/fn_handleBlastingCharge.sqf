@@ -5,7 +5,7 @@
     Information: Nothing really special, just handles the fed explosion over the server so if the client who place the charge logs out it still blows up.
 */
 private _time = time + (5 * 60);
-waitUntil{(round(_time - time) < 1) || (fed_bank getVariable["chargeplaced",false])};
+waitUntil{(round(_time - time) < 1) || !(fed_bank getVariable["chargeplaced",false])};
 sleep 0.9;
 if (!(fed_bank getVariable["chargeplaced",false])) exitWith {};
 
