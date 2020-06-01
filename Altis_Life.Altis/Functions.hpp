@@ -21,6 +21,18 @@ class SpyGlass {
     };
 };
 
+class Life_Client_Utilities {
+    tag = "life_util";
+
+    class Main {
+        file = "core\utils";
+        class isNumber {};
+        class index {};
+        class playerQuery {};
+        class terrainSort {};
+    };
+};
+
 class Life_Client_Core {
     tag = "life";
 
@@ -222,6 +234,9 @@ class Life_Client_Core {
 
     class Gangs {
         file = "core\gangs";
+        class clientGangKick {};
+        class clientGangLeader {};
+        class clientGangLeft {};
         class createGang {};
         class gangCreated {};
         class gangDisband {};
@@ -301,6 +316,7 @@ class Life_Client_Core {
     class Player_Menu {
         file = "core\pmenu";
         class cellphone {};
+        class clientMessage {};
         class giveItem {};
         class giveMoney {};
         class keyDrop {};
@@ -310,6 +326,7 @@ class Life_Client_Core {
         class p_updateMenu {};
         class pardon {};
         class removeItem {};
+        class sendMessage {};
         class s_onChar {};
         class s_onCheckedChange {};
         class s_onSliderChange {};
@@ -357,6 +374,7 @@ class Life_Client_Core {
     class Vehicle {
         file = "core\vehicle";
         class addVehicle2Chain {};
+        class clientGetKey {};
         class colorVehicle {};
         class deviceMine {};
         class FuelRefuelcar {};

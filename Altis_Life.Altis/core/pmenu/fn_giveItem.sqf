@@ -34,7 +34,7 @@ call {
 
     private _item = lbData [2005, lbCurSel 2005];
 
-    if !([_value] call TON_fnc_isnumber) exitWith {
+    if !([_value] call life_util_fnc_isNumber) exitWith {
         hint localize "STR_NOTF_notNumberFormat";
     };
     if (parseNumber _value <= 0) exitWith {

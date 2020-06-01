@@ -29,8 +29,7 @@ _exitLoop = false;
 if (!isNil "_group") then {
     [player] join _group;
     if ((life_gangData select 1) isEqualTo getPlayerUID player) then {
-        _group selectLeader player;
-        [player,_group] remoteExecCall ["TON_fnc_clientGangLeader",(units _group)];
+        [_unit, _group] remoteExecCall ["life_fnc_clientGangLeader", _group, _group];
     };
 } else {
     _group = group player;

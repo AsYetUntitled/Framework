@@ -28,7 +28,6 @@ life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
 life_removeWanted = false;
-life_action_gathering = false;
 life_god = false;
 life_frozen = false;
 life_save_gear = [];
@@ -97,6 +96,6 @@ life_vehicles = [];
 
 /* Setup life_hideoutBuildings */
 {
-    _building = nearestBuilding getMarkerPos _x; 
+    _building = nearestBuilding getMarkerPos _x;
     life_hideoutBuildings pushBack _building
 } forEach (LIFE_SETTINGS(getArray,"gang_area"));
