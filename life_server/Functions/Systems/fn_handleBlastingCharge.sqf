@@ -6,7 +6,6 @@
 */
 private _time = time + LIFE_SETTINGS(getNumber,"fed_chargeTime") * 60;
 waitUntil {(round(_time - time) < 1) || !(fed_bank getVariable["chargeplaced",false])};
-sleep 0.9;
 if !(fed_bank getVariable["chargeplaced",false]) exitWith {};
 
 private _bomb = "Bo_GBU12_LGB_MI10" createVehicle [getPosATL fed_bank select 0, getPosATL fed_bank select 1, (getPosATL fed_bank select 2)+0.5];
