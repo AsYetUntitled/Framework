@@ -13,7 +13,7 @@ disableSerialization;
 
 private _uiDisp = uiNamespace getVariable "life_timer";
 private _timer = _uiDisp displayCtrl 38301;
-private _time = time + (5 * 60);
+private _time = LIFE_SETTINGS(getNumber,"fed_chargeTime") * 60;
 
 for "_i" from 0 to 1 step 0 do {
     if (isNull _uiDisp) then {
