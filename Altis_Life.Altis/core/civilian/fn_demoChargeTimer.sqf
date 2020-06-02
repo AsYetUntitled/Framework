@@ -26,4 +26,4 @@ for "_i" from _time to 0 step -1 do {
     uiSleep 1;
 };
 
-"lifeTimer" cutText["","PLAIN"];
+"lifeTimer" cutText ["","PLAIN"];
