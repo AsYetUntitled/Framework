@@ -30,7 +30,7 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
 private _textures = M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures");
 if (count _textures <= _index) exitWith {};
 
-private _texturePaths =  (_textures select _index) param [2,[]]);
+private _texturePaths =  (_textures select _index) param [2,[]];
 
 _vehicle setVariable ["Life_VEH_color",_index,true];
 
