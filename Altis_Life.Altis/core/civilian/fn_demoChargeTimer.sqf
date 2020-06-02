@@ -22,7 +22,7 @@ for "_i" from _time to 0 step -1 do {
         _timer = _uiDisp displayCtrl 38301;
     };
     if !(fed_bank getVariable ["chargeplaced",false]) exitWith {};
-    _timer ctrlSetText format ["%1",[(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString];
+    _timer ctrlSetText ([_i,"MM:SS"] call BIS_fnc_secondsToString);
     uiSleep 1;
 };
 
