@@ -55,7 +55,7 @@ life_action_inUse = false;
 "progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player) exitWith {};
-if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"];};
+if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; [true,"fuelFull",1] call life_fnc_handleInv;};
 
 
 switch (true) do {
