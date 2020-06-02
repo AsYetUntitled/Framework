@@ -28,7 +28,7 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
 };
 
 private _textures = M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures");
-if (_textures isEqualTo [] || {count _textures <= _index}) exitWith {};
+if (count _textures <= _index) exitWith {};
 
 private _texturePaths =  (_textures select _index) param [2,[]]);
 
