@@ -20,7 +20,7 @@ private _licensesConfigs = "getText(_x >> 'side') isEqualTo 'civ'" configClasses
 
 {
     if (LICENSE_VALUE(configName _x, "civ")) then {
-        _licenses = _licenses + localize getText(_x >> "displayName") + "<br/>";
+        _licenses = _licenses + getText(_x >> "displayName") + "<br/>";
     };
     true
 } count _licensesConfigs;

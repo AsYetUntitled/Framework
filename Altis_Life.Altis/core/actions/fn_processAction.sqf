@@ -34,10 +34,6 @@ private _materialsGiven = M_CONFIG(getArray,"ProcessAction",_type,"MaterialsGive
 private _noLicenseCost = M_CONFIG(getNumber,"ProcessAction",_type,"NoLicenseCost");
 private _text = M_CONFIG(getText,"ProcessAction",_type,"Text");
 
-if (isLocalized _text) then {
-    _text = localize _text;
-};
-
 private _totalConversions = [];
 {
     _x params [
