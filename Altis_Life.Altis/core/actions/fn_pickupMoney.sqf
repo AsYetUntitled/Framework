@@ -19,14 +19,11 @@ if (isNull _money || {player distance _money > 3}) exitWith {
 };
 
 private _value = (_money getVariable "item") select 1;
+private _pickupLimit = LIFE_SETTINGS(getNumber,"cash_pickup_limit");
 if (!isNil "_value") exitWith {
     deleteVehicle _money;
 
-    _value = switch (true) do {
-        case (_value > 20000000) : {100000}; //VAL>20mil->100k
-        case (_value > 5000000) : {250000}; //VAL>5mil->250k
-        default {};
-    };
+    _value = _value min _pickupLimit;
 
     player playMove "AinvPknlMstpSlayWrflDnon";
     titleText[format [localize "STR_NOTF_PickedMoney",[_value] call life_fnc_numberText],"PLAIN"];
