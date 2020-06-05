@@ -25,7 +25,7 @@ if (!isNil "_value") exitWith {
     _value = switch (true) do {
         case (_value > 20000000) : {100000}; //VAL>20mil->100k
         case (_value > 5000000) : {250000}; //VAL>5mil->250k
-        default {};
+        default {_value};
     };
 
     player playMove "AinvPknlMstpSlayWrflDnon";
