@@ -54,7 +54,7 @@ life_action_inUse = false;
 player playActionNow "stop";
 if (!alive player) exitWith {};
 if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"];};
-if (!([false,"fuelFull",1] call life_fnc_handleInv)) exitWith {};
+if !([false,"fuelFull",1] call life_fnc_handleInv) exitWith {};
 
 private _fuelAmount = call {
     if (_vehicle isKindOf "LandVehicle") exitWith {0.5};
