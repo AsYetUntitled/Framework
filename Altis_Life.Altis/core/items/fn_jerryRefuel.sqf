@@ -6,30 +6,28 @@
     Description:
     Refuels the vehicle if the player has a fuel can.
 */
-private ["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
-_vehicle = cursorObject;
+private _vehicle = cursorObject;
 life_interrupted = false;
 
 if (isNull _vehicle) exitWith {hint localize "STR_ISTR_Jerry_NotLooking"};
 if (!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship")) exitWith {};
 if (player distance _vehicle > 7.5) exitWith {hint localize "STR_ISTR_Jerry_NotNear"};
 
-if (!([false,"fuelFull",1] call life_fnc_handleInv)) exitWith {};
 life_action_inUse = true;
 
-_displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
+private _displayName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 
-_upp = format [localize "STR_ISTR_Jerry_Process",_displayName];
+private _upp = format [localize "STR_ISTR_Jerry_Process",_displayName];
 
 //Setup our progress bar.
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progress = _ui displayCtrl 38201;
+private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
 _progress progressSetPosition 0.01;
-_cP = 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
@@ -55,33 +53,20 @@ life_action_inUse = false;
 "progressBar" cutText ["","PLAIN"];
 player playActionNow "stop";
 if (!alive player) exitWith {};
-if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; [true,"fuelFull",1] call life_fnc_handleInv;};
+if (life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"];};
+if (!([false,"fuelFull",1] call life_fnc_handleInv)) exitWith {};
 
-
-switch (true) do {
-    case (_vehicle isKindOF "LandVehicle"): {
-        if (!local _vehicle) then {
-            [_vehicle,(Fuel _vehicle) + 0.5] remoteExecCall ["life_fnc_setFuel",_vehicle];
-        } else {
-            _vehicle setFuel ((Fuel _vehicle) + 0.5);
-        };
-    };
-
-    case (_vehicle isKindOf "Air"): {
-        if (!local _vehicle) then {
-            [_vehicle,(Fuel _vehicle) + 0.2] remoteExecCall ["life_fnc_setFuel",_vehicle];
-        } else {
-            _vehicle setFuel ((Fuel _vehicle) + 0.2);
-        };
-    };
-
-    case (_vehicle isKindOf "Ship"): {
-        if (!local _vehicle) then {
-            [_vehicle,(Fuel _vehicle) + 0.35] remoteExecCall ["life_fnc_setFuel",_vehicle];
-        } else {
-            _vehicle setFuel ((Fuel _vehicle) + 0.35);
-        };
-    };
+private _fuelAmount = call {
+    if (_vehicle isKindOf "LandVehicle") exitWith {0.5};
+    if (_vehicle isKindOf "Air") exitWith {0.2};
+    0.35;
 };
+private _newFuel = (fuel _vehicle) + _fuelAmount;
+if (local _vehicle) then {
+    _vehicle setFuel _newFuel;
+} else {
+    [_vehicle,_newFuel] remoteExecCall ["life_fnc_setFuel",_vehicle];
+};
+
 titleText[format [localize "STR_ISTR_Jerry_Success",_displayName],"PLAIN"];
 [true,"fuelEmpty",1] call life_fnc_handleInv;
