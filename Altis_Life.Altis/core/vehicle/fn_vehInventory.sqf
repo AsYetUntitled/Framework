@@ -28,7 +28,7 @@ if (count _data isEqualTo 0) then {_veh setVariable ["Trunk",[[],0],true]; _data
     _val = ITEM_VALUE(configName _x);
 
     if (_val > 0) then {
-        _pInv lbAdd format ["[%1] - %2",_val,localize (getText(_x >> "displayName"))];
+        _pInv lbAdd format ["[%1] - %2",_val, (getText(_x >> "displayName"))];
         _pInv lbSetData [(lbSize _pInv)-1,configName _x];
         _icon = (getText(_x >> "icon"));
         if (!(_icon isEqualTo "")) then {
@@ -43,7 +43,7 @@ if (count _data isEqualTo 0) then {_veh setVariable ["Trunk",[[],0],true]; _data
     _val = (_x select 1);
 
     if (_val > 0) then {
-        _tInv lbAdd format ["[%1] - %2",_val,localize _name];
+        _tInv lbAdd format ["[%1] - %2",_val, _name];
         _tInv lbSetData [(lbSize _tInv)-1,(_x select 0)];
         _icon = M_CONFIG(getText,"VirtualItems",(_x select 0),"icon");
         if (!(_icon isEqualTo "")) then {

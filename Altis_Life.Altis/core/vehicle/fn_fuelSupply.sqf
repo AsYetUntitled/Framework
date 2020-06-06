@@ -45,12 +45,14 @@ private _random = floor((random 11000) + 1500);
         _x setVariable ["fuelTank",[_random,time],true];
         _fuelFeedState = _random;
     } else {
-        _stationTank params ["_fuelFeedState","_fuelFeedTime"];
-        if (_fuelFeedState isEqualTo 0) then {
+        _stationTank params ["_pFuelFeedState","_fuelFeedTime"];
+        if (_pFuelFeedState isEqualTo 0) then {
             if (time >= _fuelFeedTime) then {
                 _x setVariable ["fuelTank",[_random,time],true];
                 _fuelFeedState = _random;
             };
+        } else {
+            _fuelFeedState = _pFuelFeedState;
         };
     };   
 } forEach (nearestObjects [_vehicle, ["Land_FuelStation_Feed_F","Land_fs_feed_F"], 100]);

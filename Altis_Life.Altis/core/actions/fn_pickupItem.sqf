@@ -23,10 +23,6 @@ _itemInfo params ["_item", "_value"];
 private _illegal = ITEM_ILLEGAL(_item);
 private _itemName = ITEM_NAME(_item);
 
-if (isLocalized _itemName) then {
-    _itemName = localize _itemName;
-};
-
 life_action_delay = time;
 
 if (playerSide isEqualTo west && {_illegal isEqualTo 1}) exitWith {

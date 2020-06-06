@@ -42,7 +42,7 @@ ctrlSetText[2009,format ["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 
 {
     if (ITEM_VALUE(configName _x) > 0) then {
-        _inv lbAdd format ["%2 [x%1]",ITEM_VALUE(configName _x),localize (getText(_x >> "displayName"))];
+        _inv lbAdd format ["%2 [x%1]",ITEM_VALUE(configName _x), (getText(_x >> "displayName"))];
         _inv lbSetData [(lbSize _inv)-1,configName _x];
         _icon = M_CONFIG(getText,"VirtualItems",configName _x,"icon");
         if (!(_icon isEqualTo "")) then {
@@ -55,7 +55,7 @@ ctrlSetText[2009,format ["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
     _displayName = getText(_x >> "displayName");
 
     if (LICENSE_VALUE(configName _x,_side)) then {
-        _struct = _struct + format ["%1<br/>",localize _displayName];
+        _struct = _struct + format ["%1<br/>", _displayName];
     };
 } forEach (format ["getText(_x >> 'side') isEqualTo '%1'",_side] configClasses (missionConfigFile >> "Licenses"));
 
