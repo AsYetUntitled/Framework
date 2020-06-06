@@ -22,7 +22,7 @@
 class WeaponShops {
     //Armory Shops
     class gun {
-        name = "Billy Joe's Firearms";
+        name = $STR_Shop_W_gun;
         side = "civ";
         conditions = "license_civ_gun";
         items[] = {
@@ -48,7 +48,7 @@ class WeaponShops {
     };
 
     class rebel {
-        name = "Mohammed's Jihadi Shop";
+        name = $STR_Shop_W_rebel;
         side = "civ";
         conditions = "license_civ_rebel";
         items[] = {
@@ -81,7 +81,7 @@ class WeaponShops {
     };
 
     class gang {
-        name = "Hideout Armament";
+        name = $STR_Shop_W_hideout;
         side = "civ";
         conditions = "";
         items[] = {
@@ -104,7 +104,7 @@ class WeaponShops {
 
     //Basic Shops
     class genstore {
-        name = "Altis General Store";
+        name = $STR_Shop_W_genstore;
         side = "civ";
         conditions = "";
         items[] = {
@@ -125,7 +125,7 @@ class WeaponShops {
     };
 
     class f_station_store {
-        name = "Altis Fuel Station Store";
+        name = $STR_Shop_W_fuelstation;
         side = "";
         conditions = "";
         items[] = {
@@ -147,7 +147,7 @@ class WeaponShops {
 
     //Cop Shops
     class cop_basic {
-        name = "Altis Cop Shop";
+        name = $STR_Shop_W_cop_basic;
         side = "cop";
         conditions = "";
         items[] = {
@@ -189,7 +189,7 @@ class WeaponShops {
 
     //Medic Shops
     class med_basic {
-        name = "store";
+        name = $STR_Shop_W_med_basic;
         side = "med";
         conditions = "";
         items[] = {

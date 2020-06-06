@@ -46,7 +46,7 @@ call {
 
     [_unit, _value, _item, player] remoteExecCall ["life_fnc_receiveItem", _unit];
     private _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
-    hint format [localize "STR_NOTF_youGaveItem", _unit getVariable ["realname", name _unit], _value, localize _type];
+    hint format [localize "STR_NOTF_youGaveItem", _unit getVariable ["realname", name _unit], _value, _type];
 
     [] call life_fnc_p_updateMenu;
 };
