@@ -75,7 +75,6 @@ diag_log "[Life Client] Executing client.fsm";
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
 [player, life_settings_enableSidechannel, playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
 
-[] call life_fnc_hudSetup;
 [] spawn life_fnc_survival;
 
 0 cutText ["","BLACK IN"];
@@ -119,6 +118,8 @@ if (life_HC_isActive) then {
 } else {
     [getPlayerUID player, player getVariable ["realname", name player]] remoteExec ["life_fnc_wantedProfUpdate", RSERV];
 };
+
+[] call life_fnc_hudSetup;
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];
