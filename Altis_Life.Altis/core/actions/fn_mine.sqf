@@ -109,7 +109,7 @@ for "_i" from 0 to 4 do {
 
 if (([true, _mined, _diff] call life_fnc_handleInv)) then {
     _itemName = M_CONFIG(getText, "VirtualItems", _mined, "displayName");
-    titleText[format [localize "STR_NOTF_Mine_Success", (localize _itemName), _diff], "PLAIN"];
+    titleText[format [localize "STR_NOTF_Mine_Success", _itemName, _diff], "PLAIN"];
 };
 
 sleep 2.5;
