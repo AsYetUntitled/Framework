@@ -59,9 +59,10 @@ if (!([false,"fuelFull",1] call life_fnc_handleInv)) exitWith {};
 private _fuelAmount = call {
     if (_vehicle isKindOf "LandVehicle") exitWith {0.5};
     if (_vehicle isKindOf "Air") exitWith {0.2};
-    0.35;
+    0.35
 };
 private _newFuel = (fuel _vehicle) + _fuelAmount;
+
 if (local _vehicle) then {
     _vehicle setFuel _newFuel;
 } else {
