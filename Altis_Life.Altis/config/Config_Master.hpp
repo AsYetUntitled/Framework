@@ -48,6 +48,7 @@ class Life_Settings {
     global_ATM = true; //Allow users to access any ATM on the map (Marked & Unmarked).
     noatm_timer = 10; //Time in minutes that players cannot deposit money after selling stolen gold.
     minimum_cops = 5; //Minimum cops required online to rob the Federal Reserve
+    fed_chargeTime = 5; //Time in minutes for the explosive charge at the Federal Reserve to explode
 
     /* Messaging Settings */
     message_maxlength = 400; //maximum character count allowed in text messages. Used to prevent improper message displaying. -1 to disable the limit
