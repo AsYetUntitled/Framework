@@ -126,9 +126,9 @@ class Life_Settings {
     bank_civ = 3000; //Amount of cash in bank for new civillians
     bank_med = 6500; //Amount of cash in bank for new medics
 
-    paycheck_cop[] = { 500, 550, 600, 650, 700, 750, 800, 850 }; //Payment for cops, increases with rank [rank 0, rank 1, rank 2, etc.]
+    paycheck_cop[] = { 500, 550, 600, 650, 700, 750, 800, 850 }; //Payment for cops, increases with rank {rank 0, rank 1, rank 2, etc.}
     paycheck_civ = 350; //Payment for civillians
-    paycheck_med[] = { 450, 500, 550, 600, 650, 700 }; //Payment for medics, increases with rank [rank 0, rank 1, rank 2, etc.]
+    paycheck_med[] = { 450, 500, 550, 600, 650, 700 }; //Payment for medics, increases with rank {rank 0, rank 1, rank 2, etc.}
 
     paycheck_period = 5; //Scaled in minutes
     bank_transferTax = .05; //Tax that player pays when transferring money from ATM. Tax = Amount * multiplier
