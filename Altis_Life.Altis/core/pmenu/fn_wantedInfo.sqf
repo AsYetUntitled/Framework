@@ -24,7 +24,7 @@ private _crimes = _data select 0;
     _crime = _x;
     if !(_crime in _mylist) then {
         _mylist pushBack _crime;
-        _list lbAdd format [localize "STR_Wanted_Count",{_x == _crime} count _crimes,_crime];
+        _list lbAdd format [localize "STR_Wanted_Count",{_x == _crime} count _crimes,localize _crime];
     };
 } forEach _crimes;
 
