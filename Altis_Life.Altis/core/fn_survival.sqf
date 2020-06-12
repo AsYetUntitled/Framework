@@ -47,7 +47,7 @@ _fnc_water = {
 };
 
 private _fnc_paycheck = {
-    if (alive player) then {
+    if (life_is_alive) then {
         private _paycheck = call life_paycheck;
         if (player distance (getMarkerPos "fed_reserve") < 120 && playerSide isEqualTo west) then {
             systemChat format [localize "STR_ReceivedPay",[_paycheck + 1500] call life_fnc_numberText];
