@@ -339,6 +339,90 @@
             <Polish>Caffe OLLEN</Polish>
             <Chinesesimp>加油站咖啡店</Chinesesimp>
         </Key>
+        <Key ID="STR_Shop_W_gun">
+            <Original>Billy Joe's Firearms</Original>
+            <Czech>Billy Joe střelné zbraně</Czech>
+            <French>Armes à feu Billy Joe</French>
+            <Spanish></Spanish>
+            <Italian>Armi da fuoco di Billy Joe</Italian>
+            <Russian>Огнестрельное оружие Билли Джо</Russian>
+            <German>Billy Joes Schusswaffen</German>
+            <Portuguese>Armas de Fogo de Billy Joe</Portuguese>
+            <Polish>Billy Joe broni palnej</Polish>
+            <Chinesesimp>比利·乔的枪械</Chinesesimp>
+        </Key>
+        <Key ID="STR_Shop_W_rebel">
+            <Original>Mohammed's Jihadi Shop</Original>
+            <Czech>Mohamedův obchod s džihádisty</Czech>
+            <French>Boutique djihadiste de Mohammed</French>
+            <Spanish>Tienda yihadista de Mohammed</Spanish>
+            <Italian>Negozio Jihadi di Maometto</Italian>
+            <Russian>Джихади магазин Мухаммеда</Russian>
+            <German>Mohammeds Jihadi-Shop</German>
+            <Portuguese>Loja Jihadi de Maomé</Portuguese>
+            <Polish>Sklep dżihadystyczny Mohammeda</Polish>
+            <Chinesesimp>穆罕默德的圣战商店</Chinesesimp>
+        </Key>
+        <Key ID="STR_Shop_W_hideout">
+            <Original>Hideout Armament</Original>
+            <Czech>Výzýlka</Czech>
+            <French>Armement de cachette</French>
+            <Spanish>Hideout Armament</Spanish>
+            <Italian>Nascondi armamento</Italian>
+            <Russian>Скрытая вооружение</Russian>
+            <German>Versteck Arsenal</German>
+            <Portuguese>Armamento de esconderijo</Portuguese>
+            <Polish>Uzbrojenie kryjówki</Polish>
+            <Chinesesimp>隐藏武器</Chinesesimp>
+        </Key>
+        <Key ID="STR_Shop_W_genstore">
+            <Original>Altis General Store</Original>
+            <Czech></Czech>
+            <French>Magasin général Altis</French>
+            <Spanish>Tienda General Altis</Spanish>
+            <Italian>Negozio Generale Altis</Italian>
+            <Russian>Альтис Общий магазин</Russian>
+            <German>Altis Gemischwarenladen</German>
+            <Portuguese></Portuguese>
+            <Polish>Sklep Altis General</Polish>
+            <Chinesesimp>阿尔蒂斯百货公司</Chinesesimp>
+        </Key>
+        <Key ID="STR_Shop_W_fuelstation">
+            <Original>Altis Fuel Station Store</Original>
+            <Czech>Altis čerpací stanice Obchod</Czech>
+            <French>Magasin de la station-service Altis</French>
+            <Spanish>Tienda altis De la estación de combustible</Spanish>
+            <Italian>Negozio di stazione di rifornimento Altis</Italian>
+            <Russian>Магазин топливных станций Altis</Russian>
+            <German>Altis Tankstellenladen</German>
+            <Portuguese></Portuguese>
+            <Polish>Sklep stacji paliw Altis</Polish>
+            <Chinesesimp>阿尔蒂斯加油站商店</Chinesesimp>
+        </Key>
+        <Key ID="STR_Shop_W_cop_basic">
+            <Original>Altis Cop Shop</Original>
+            <Czech>Altis Cop Obchod</Czech>
+            <French>Boutique Altis Cop</French>
+            <Spanish></Spanish>
+            <Italian>Negozio Altis Cop</Italian>
+            <Russian>Магазин Altis Cop</Russian>
+            <German>Altis Polizeigeschäft</German>
+            <Portuguese></Portuguese>
+            <Polish>Sklep Altis Cop</Polish>
+            <Chinesesimp>阿尔蒂斯警察商店</Chinesesimp>
+        </Key>
+        <Key ID="STR_Shop_W_med_basic">
+            <Original>Altis EMS Shop</Original>
+            <Czech>Altis EMS Obchod</Czech>
+            <French>Boutique Altis EMS</French>
+            <Spanish>Tienda Altis EMS</Spanish>
+            <Italian>Negozio Altis EMS</Italian>
+            <Russian>Магазин Altis EMS</Russian>
+            <German>Altis Rettungsdienst Geschäft</German>
+            <Portuguese></Portuguese>
+            <Polish>Sklep Altis EMS</Polish>
+            <Chinesesimp>阿尔蒂斯EMS商店</Chinesesimp>
+        </Key>
     </Package>
     <Package name="Global">
         <Key ID="STR_Global_Close">
