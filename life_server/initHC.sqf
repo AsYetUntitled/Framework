@@ -24,7 +24,7 @@ HC_UID = nil;
     };
 };
 
-HC_DC = ["HC_Disconnected","onPlayerDisconnected",
+HC_DC = addMissionEventHandler ["PlayerDisconnected",
     {
         if (!isNil "HC_UID" && {_uid == HC_UID}) then {
             life_HC_isActive = false;
@@ -39,5 +39,4 @@ HC_DC = ["HC_Disconnected","onPlayerDisconnected",
             diag_log "Ready for receiving queries on the server machine.";
         };
     }
-] call BIS_fnc_addStackedEventHandler;
-
+];
