@@ -12,9 +12,16 @@
 private ["_vehicle","_veh"];
 _vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _vehicle) exitWith {};
-_veh = typeOf _vehicle;
+private ["_vehicle","_veh"];
+_vehicle = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+if (isNull _vehicle) exitWith {};
 
-switch (_veh) do {
+clearWeaponCargoGlobal _vehicle;
+clearMagazineCargoGlobal _vehicle;
+clearItemCargoGlobal _vehicle;
+clearBackpackCargoGlobal _vehicle;
+
+switch (typeOf _vehicle) do {
     case "B_Boat_Armed_01_minigun_F": {
         _vehicle removeMagazinesTurret ["200Rnd_40mm_G_belt",[0]];
     };
@@ -32,8 +39,3 @@ switch (_veh) do {
         _vehicle removeMagazinesTurret ["2000Rnd_65x39_Belt_Tracer_Red",[2]];
     };
 };
-
-clearWeaponCargoGlobal _vehicle;
-clearMagazineCargoGlobal _vehicle;
-clearItemCargoGlobal _vehicle;
-clearBackpackCargoGlobal _vehicle;
