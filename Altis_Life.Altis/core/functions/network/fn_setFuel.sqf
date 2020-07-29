@@ -4,4 +4,12 @@
 
     Description: Used to set fuel levels in vehicles. (Ex. Service Chopper)
 */
-(_this select 0) setFuel (_this select 1);
+
+params [
+    ["_object", objNull, [objNull]],
+    ["_value", 1, [0]]
+];
+
+if (isNull _object) exitWith {};
+
+_object setFuel _value;

@@ -28,7 +28,6 @@ life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
 life_removeWanted = false;
-life_action_gathering = false;
 life_god = false;
 life_frozen = false;
 life_save_gear = [];
@@ -47,8 +46,6 @@ life_firstSpawn = true;
 //Settings
 life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast", true];
 life_settings_enableSidechannel = profileNamespace getVariable ["life_enableSidechannel", true];
-life_settings_tagson = profileNamespace getVariable ["life_settings_tagson", true];
-life_settings_revealObjects = profileNamespace getVariable ["life_settings_revealObjects", true];
 life_settings_viewDistanceFoot = profileNamespace getVariable ["life_viewDistanceFoot", 1250];
 life_settings_viewDistanceCar = profileNamespace getVariable ["life_viewDistanceCar", 1250];
 life_settings_viewDistanceAir = profileNamespace getVariable ["life_viewDistanceAir", 1250];
@@ -99,6 +96,6 @@ life_vehicles = [];
 
 /* Setup life_hideoutBuildings */
 {
-    _building = nearestBuilding getMarkerPos _x; 
+    _building = nearestBuilding getMarkerPos _x;
     life_hideoutBuildings pushBack _building
 } forEach (LIFE_SETTINGS(getArray,"gang_area"));

@@ -14,7 +14,7 @@ if ((lbCurSel 2703) isEqualTo -1) exitWith {hint localize "STR_ATM_NoneSelected"
 if (isNil "_unit") exitWith {hint localize "STR_ATM_DoesntExist"};
 if (_value > 999999) exitWith {hint localize "STR_ATM_TransferMax";};
 if (_value < 0) exitWith {};
-if (!([str(_value)] call TON_fnc_isnumber)) exitWith {hint localize "STR_ATM_notnumeric"};
+if (!([str(_value)] call life_util_fnc_isNumber)) exitWith {hint localize "STR_ATM_notnumeric"};
 if (_value > BANK) exitWith {hint localize "STR_ATM_NotEnoughFunds"};
 _tax = _value * LIFE_SETTINGS(getNumber,"bank_transferTax");
 if ((_value + _tax) > BANK) exitWith {hint format [localize "STR_ATM_SentMoneyFail",_value,_tax]};

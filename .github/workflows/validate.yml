@@ -1,0 +1,25 @@
+name: Validation
+
+on:
+  push:
+    branches:
+    - 'master'
+    - 'v5.X.X'
+  pull_request:
+    branches:
+    - 'master'
+    - 'v5.X.X'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.6.x'
+    - name: Validate SQF
+      run: python ./tools/sqf_validator.py
+    - name: Validate Configs
+      run: python ./tools/config_style_checker.py

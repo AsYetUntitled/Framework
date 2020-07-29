@@ -6,22 +6,24 @@
     Description:
     Starts the "Demo" timer for the police.
 */
-private ["_uiDisp","_time","_timer"];
-disableSerialization;
-"lifeTimer" cutRsc ["life_timer","PLAIN"];
-_uiDisp = uiNamespace getVariable "life_timer";
-_timer = _uiDisp displayCtrl 38301;
-_time = time + (5 * 60);
 
-for "_i" from 0 to 1 step 0 do {
+disableSerialization;
+
+"lifeTimer" cutRsc ["life_timer","PLAIN"];
+
+private _uiDisp = uiNamespace getVariable "life_timer";
+private _timer = _uiDisp displayCtrl 38301;
+private _time = LIFE_SETTINGS(getNumber,"fed_chargeTime") * 60;
+
+for "_i" from _time to 0 step -1 do {
     if (isNull _uiDisp) then {
         "lifeTimer" cutRsc ["life_timer","PLAIN"];
         _uiDisp = uiNamespace getVariable "life_timer";
         _timer = _uiDisp displayCtrl 38301;
     };
-    if (round(_time - time) < 1) exitWith {};
-    if (!(fed_bank getVariable ["chargeplaced",false])) exitWith {};
-    _timer ctrlSetText format ["%1",[(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString];
-    sleep 0.08;
+    if !(fed_bank getVariable ["chargeplaced",false]) exitWith {};
+    _timer ctrlSetText ([_i,"MM:SS"] call BIS_fnc_secondsToString);
+    uiSleep 1;
 };
-"lifeTimer" cutText["","PLAIN"];
+
+"lifeTimer" cutText ["","PLAIN"];

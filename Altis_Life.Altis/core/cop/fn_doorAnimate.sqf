@@ -5,7 +5,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Animates a door?
+    Animates a door
 */
 
 params [

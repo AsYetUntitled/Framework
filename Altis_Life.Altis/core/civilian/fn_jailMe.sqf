@@ -8,8 +8,8 @@
 */
 
 params [
-    ["_ret",[],[[]]],
-    ["_bad",false,[false]]
+    ["_ret", [], [[]]],
+    ["_bad", false, [false]]
 ];
 
 private _esc = false;
@@ -37,6 +37,7 @@ if !(_ret isEqualTo []) then {
     life_canpay_bail = true;
 };
 
+private "_countDown";
 for "_i" from 0 to 1 step 0 do {
     if (round(_time - time) > 0) then {
         _countDown = [(_time - time), "MM:SS.MS"] call BIS_fnc_secondsToString;
@@ -47,7 +48,7 @@ for "_i" from 0 to 1 step 0 do {
         player forceWalk true;
     };
 
-    private _escDist = [[["Altis", 60], ["Tanoa", 145]]] call TON_fnc_terrainSort;
+    private _escDist = [[["Altis", 60], ["Tanoa", 145]]] call life_util_fnc_terrainSort;
     
     if (player distance (getMarkerPos "jail_marker") > _escDist) exitWith {
         _esc = true;

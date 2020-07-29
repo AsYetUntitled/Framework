@@ -6,9 +6,12 @@
     Description:
 
 */
-private ["_unit"];
-_unit = param [0,objNull,[objNull]];
-if (isNull _unit || !(_unit getVariable ["restrained",false])) exitWith {}; //Error check?
+
+params [
+    ["_unit",objNull,[objNull]]
+];
+
+if (isNull _unit || {!(_unit getVariable ["restrained",false])}) exitWith {};
 
 _unit setVariable ["restrained",false,true];
 _unit setVariable ["Escorting",false,true];
