@@ -6,35 +6,41 @@
     Description:
     Guts the animal?
 */
-private ["_animalCorpse","_upp","_ui","_progress","_pgText","_cP","_displayName","_item"];
-_animalCorpse = param [0,objNull,[objNull]];
+
+params [
+    ["_animalCorpse", objNull, [objNull]]
+];
+
 if (isNull _animalCorpse) exitWith {}; //Object passed is null?
 
 life_interrupted = false;
-if (player distance _animalCorpse > 3.5) exitWith {}; //WTF need check with nearest objects I love Arma
+if (player distance _animalCorpse > 3.5) exitWith {};
 life_action_inUse = true;
 
-switch (typeOf _animalCorpse) do {
-    case "Hen_random_F": {_displayName = localize "STR_ANIM_chicken"; _item = "hen_raw";};
-    case "Cock_random_F": {_displayName = localize "STR_ANIM_Rooster"; _item = "rooster_raw";};
-    case "Goat_random_F": {_displayName = localize "STR_ANIM_Goat"; _item = "goat_raw";};
-    case "Sheep_random_F": {_displayName = localize "STR_ANIM_Sheep"; _item = "sheep_raw";};
-    case "Rabbit_F": {_displayName = localize "STR_ANIM_Rabbit"; _item = "rabbit_raw";};
-    default {_displayName = ""; _item = "";};
+private _animalInfo = switch (typeOf _animalCorpse) do {
+    case "Hen_random_F": {["STR_ANIM_chicken", "hen_raw"]};
+    case "Cock_random_F": {["STR_ANIM_Rooster", "rooster_raw"]};
+    case "Goat_random_F": {["STR_ANIM_Goat", "goat_raw"]};
+    case "Sheep_random_F": {["STR_ANIM_Sheep", "sheep_raw"]};
+    case "Rabbit_F": {["STR_ANIM_Rabbit", "rabbit_raw"]};
+    default {["", ""]};
 };
+
+_animalInfo params ["_displayName", "_item"];
+_displayName = localize _displayName;
 
 if (_displayName isEqualTo "") exitWith {life_action_inUse = false;};
 
-_upp = format [localize "STR_NOTF_Gutting",_displayName];
+private _upp = format [localize "STR_NOTF_Gutting",_displayName];
 //Setup our progress bar.
 disableSerialization;
 "progressBar" cutRsc ["life_progress","PLAIN"];
-_ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+private _ui = uiNamespace getVariable "life_progress";
+private _progress = _ui displayCtrl 38201;
+private _pgText = _ui displayCtrl 38202;
 _pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
 _progress progressSetPosition 0.01;
-_cP = 0.01;
+private _cP = 0.01;
 
 for "_i" from 0 to 1 step 0 do {
     if (animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {

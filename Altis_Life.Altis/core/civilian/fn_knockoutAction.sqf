@@ -6,13 +6,14 @@
     Description:
     Knocks out the target.
 */
-private "_target";
-_target = param [0,objNull,[objNull]];
+
+params [
+    ["_target",objNull,[objNull]]
+];
 
 //Error checks
-if (isNull _target) exitWith {};
-if (!isPlayer _target) exitWith {};
-if (player distance _target > 4) exitWith {};
+if (isNull _target || {player distance _target > 4}) exitWith {};
+
 life_knockout = true;
 [player,"AwopPercMstpSgthWrflDnon_End2"] remoteExecCall ["life_fnc_animSync",RCLIENT];
 sleep 0.08;

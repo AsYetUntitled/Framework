@@ -19,6 +19,10 @@ if (isNull _house || {_uid isEqualTo ""}) exitWith {};
 private _housePos = getPosATL _house;
 
 private _query = format ["insertHouse:%1:%2", _uid, _housePos];
+if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
+    diag_log format ["Query: %1",_query];
+};
+
 [_query, 1] call HC_fnc_asyncCall;
 
 uiSleep 0.3;

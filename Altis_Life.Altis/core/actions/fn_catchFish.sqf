@@ -6,25 +6,38 @@
     Description:
     Catches a fish that is near by.
 */
-private ["_fish","_type","_typeName"];
-_fish = [_this,0,objNull,[objNull]] call BIS_fnc_param;
-if (isNull _fish) exitWith {}; //Object passed is null?
-if (player distance _fish > 3.5) exitWith {};
+params [
+    ["_fish", objNull, [objNull]]
+];
 
-switch (true) do {
-    case ((typeOf _fish) isEqualTo "Salema_F"): {_typeName = localize "STR_ANIM_Salema"; _type = "salema_raw";};
-    case ((typeOf _fish) isEqualTo "Ornate_random_F") : {_typeName = localize "STR_ANIM_Ornate"; _type = "ornate_raw";};
-    case ((typeOf _fish) isEqualTo "Mackerel_F") : {_typeName = localize "STR_ANIM_Mackerel"; _type = "mackerel_raw";};
-    case ((typeOf _fish) isEqualTo "Tuna_F") : {_typeName = localize "STR_ANIM_Tuna"; _type = "tuna_raw";};
-    case ((typeOf _fish) isEqualTo "Mullet_F") : {_typeName = localize "STR_ANIM_Mullet"; _type = "mullet_raw";};
-    case ((typeOf _fish) isEqualTo "CatShark_F") : {_typeName = localize "STR_ANIM_Catshark"; _type = "catshark_raw";};
-    case ((typeOf _fish) isEqualTo "Turtle_F") : {_typeName = localize "STR_ANIM_Turtle"; _type = "turtle_raw";};
-    default {_type = ""};
+//--- Fish is null or distance to fish is more than 3.5 metres
+if (isNull _fish || {player distance _fish > 3.5}) exitWith {};
+
+//--- Set Fish Information
+private _fishInfo = switch typeOf _fish do {
+    case "Salema_F": {["STR_ANIM_Salema", "salema_raw"]};
+    case "Ornate_random_F": {["STR_ANIM_Ornate", "ornate_raw"]};
+    case "Mackerel_F": {["STR_ANIM_Mackerel", "mackerel_raw"]};
+    case "Tuna_F": {["STR_ANIM_Tuna", "tuna_raw"]};
+    case "Mullet_F": {["STR_ANIM_Mullet", "mullet_raw"]};
+    case "CatShark_F": {["STR_ANIM_Catshark", "catshark_raw"]};
+    case "Turtle_F": {["STR_ANIM_Turtle", "turtle_raw"]};
+    default {["", ""]};
 };
 
-if (_type isEqualTo "") exitWith {}; //Couldn't get a type
+//--- Sort out array
+_fishInfo params ["_fishName", "_fishType"];
 
-if ([true,_type,1] call life_fnc_handleInv) then {
+//--- No fishtype
+if (_fishType isEqualTo "") exitWith {}; //Couldn't get a type
+
+//--- Localize name of fish
+private _fishName = localize _fishName;
+
+//--- Add fish into inventory
+if ([true,_fishType,1] call life_fnc_handleInv) then {
+    //--- Delete fish in water
     deleteVehicle _fish;
-    titleText[format [(localize "STR_NOTF_Fishing"),_typeName],"PLAIN"];
+
+    titleText [format [localize "STR_NOTF_Fishing", _fishName], "PLAIN"];
 };

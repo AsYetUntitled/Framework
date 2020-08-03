@@ -59,8 +59,6 @@ diag_log "------------------------------------ Starting Altis Life HC Init -----
 diag_log format["-------------------------------------------- Version %1 -----------------------------------------",(LIFE_SETTINGS(getText,"framework_version"))];
 diag_log "----------------------------------------------------------------------------------------------------";
 
-[] execFSM "\life_hc\FSM\cleanup.fsm";
-
 [] spawn HC_fnc_cleanup;
 
 /* Initialize hunting zone(s) */

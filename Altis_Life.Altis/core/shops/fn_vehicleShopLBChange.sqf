@@ -92,7 +92,7 @@ _numberindexcolorarray = [];
 for "_i" from 0 to (count(_colorArray) - 1) do {
     _numberindexcolorarray pushBack _i;
 };
-_indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
+_indexrandom = selectRandom _numberindexcolorarray;
 _ctrl lbSetCurSel _indexrandom;
 
 if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {

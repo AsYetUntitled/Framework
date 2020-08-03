@@ -23,7 +23,7 @@ if (!(_members isEqualType [])) exitWith {};
 _members = _members - [_unitID];
 group player setVariable ["gang_members",_members,true];
 
-[_unit,group player] remoteExec ["TON_fnc_clientGangKick",_unit]; //Boot that bitch!
+remoteExecCall ["life_fnc_clientGangKick",_unit];
 
 if (life_HC_isActive) then {
     [4,group player] remoteExec ["HC_fnc_updateGang",HC_Life]; //Update the database.

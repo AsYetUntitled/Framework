@@ -24,15 +24,15 @@ _sel = lbCurSel _plist;
 _unit = _plist lbData _sel;
 _unit = call compile format ["%1", _unit];
 if (isNull _unit || isNil "_unit") exitWith {};
-if (_unit == player) exitWith {};
+if (_unit isEqualTo player) exitWith {};
 
 _uid = getPlayerUID _unit;
 _owners = _vehicle getVariable "vehicle_info_owners";
-_index = [_uid,_owners] call TON_fnc_index;
+_index = [_uid,_owners] call life_util_fnc_index;
 if (_index isEqualTo -1) then  {
     _owners pushBack [_uid,_unit getVariable ["realname",name _unit]];
     _vehicle setVariable ["vehicle_info_owners",_owners,true];
 };
 
 hint format [localize "STR_NOTF_givenKeysTo",_unit getVariable ["realname",name _unit],typeOf _vehicle];
-[_vehicle,_unit,profileName] remoteExecCAll ["TON_fnc_clientGetKey",_unit];
+[_vehicle,profileName] remoteExecCall ["life_fnc_clientGetKey",_unit];

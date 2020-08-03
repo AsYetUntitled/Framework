@@ -6,22 +6,27 @@
     Description:
     Picks up money
 */
-private "_value";
-if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay"; _this setVariable ["inUse",false,true];};
-if (isNull _this || {player distance _this > 3}) exitWith {_this setVariable ["inUse",false,true];};
+params [
+    ["_money", objNull, [objNull]]
+];
 
-_value = ((_this getVariable "item") select 1);
+if ((time - life_action_delay) < 1.5) exitWith {
+    hint localize "STR_NOTF_ActionDelay";
+    _money setVariable ["inUse",false,true];
+};
+if (isNull _money || {player distance _money > 3}) exitWith {
+    _money setVariable ["inUse",false,true];
+};
+
+private _value = (_money getVariable "item") select 1;
 if (!isNil "_value") exitWith {
-    deleteVehicle _this;
+    deleteVehicle _money;
 
-    switch (true) do {
-        case (_value > 20000000) : {_value = 100000;}; //VAL>20mil->100k
-        case (_value > 5000000) : {_value = 250000;}; //VAL>5mil->250k
-        default {};
-    };
+    private _pickupLimit = LIFE_SETTINGS(getNumber,"cash_pickup_limit");
+    _value = _value min _pickupLimit;
 
     player playMove "AinvPknlMstpSlayWrflDnon";
-    titleText[format [localize "STR_NOTF_PickedMoney",[_value] call life_fnc_numberText],"PLAIN"];
+    titleText [format [localize "STR_NOTF_PickedMoney",[_value] call life_fnc_numberText],"PLAIN"];
     CASH = CASH + _value;
     [0] call SOCK_fnc_updatePartial;
     life_action_delay = time;
@@ -32,6 +37,6 @@ if (!isNil "_value") exitWith {
         } else {
             money_log = format [localize "STR_DL_ML_pickedUpMoney",profileName,(getPlayerUID player),[_value] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
         };
-    publicVariableServer "money_log";
+        publicVariableServer "money_log";
     };
 };

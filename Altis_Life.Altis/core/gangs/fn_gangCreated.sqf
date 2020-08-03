@@ -6,7 +6,6 @@
     Description:
     Tells the player that the gang is created and throws him into it.
 */
-private "_group";
 life_action_gangInUse = nil;
 
 if (BANK < (LIFE_SETTINGS(getNumber,"gang_price"))) exitWith {

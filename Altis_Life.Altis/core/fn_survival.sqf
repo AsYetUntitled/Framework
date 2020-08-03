@@ -59,6 +59,7 @@ private _fnc_paycheck = {
     } else {
         systemChat localize "STR_MissedPay";
     };
+    systemChat format [localize "STR_Paycheck",(getNumber(missionConfigFile >> "Life_Settings" >> "paycheck_period"))];
 };
 
 //Setup the time-based variables.
@@ -70,7 +71,6 @@ _walkDis = 0;
 _bp = "";
 _lastPos = visiblePosition player;
 _lastPos = (_lastPos select 0) + (_lastPos select 1);
-_lastState = vehicle player;
 
 for "_i" from 0 to 1 step 0 do {
     /* Thirst / Hunger adjustment that is time based */
@@ -87,12 +87,6 @@ for "_i" from 0 to 1 step 0 do {
             _bp = backpack player;
             life_maxWeight = LIFE_SETTINGS(getNumber,"total_maxWeight") + round(FETCH_CONFIG2(getNumber,"CfgVehicles",_bp,"maximumload") / 4);
         };
-    };
-
-    /* Check if the player's state changed? */
-    if (!(vehicle player isEqualTo _lastState) || {!alive player}) then {
-        [] call life_fnc_updateViewDistance;
-        _lastState = vehicle player;
     };
 
     /* Check if the weight has changed and the player is carrying to much */

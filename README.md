@@ -4,6 +4,8 @@ AsYetUntitled, formerly <b>Altis Life RPG</b> and <b>ARMARPGLIFE</b> is a rolepl
 
 This Github is not currently associated with any forums.
 
+![Validation](https://github.com/AsYetUntitled/Framework/workflows/Validation/badge.svg?branch=master)
+
 # Features:
 
   - Police, Civ and Medic roles 
@@ -15,7 +17,7 @@ This Github is not currently associated with any forums.
   - Many more. 
 
 # License: 
-Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
+Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
 
 # Links:
   - Discord: https://discord.gg/ajGUDSH
@@ -24,10 +26,7 @@ Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attributio
   - Releases (Stable Builds): https://github.com/AsYetUntitled/Framework/releases
 
 <p align="center">
-    <a href="https://travis-ci.org/AsYetUntitled/Framework">
-        <img src="https://api.travis-ci.org/AsYetUntitled/Framework.svg" alt="Build Status">
-    </a>
-       <a href="https://discord.gg/ajGUDSH">
+    <a href="https://discord.gg/ajGUDSH">
         <img src="https://img.shields.io/badge/Discord-Join%20chat%20→-738bd7.svg" alt="Join the chat at https://discord.gg/ajGUDSH">
     </a>
 </p>

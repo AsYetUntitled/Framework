@@ -5,7 +5,7 @@ Contributing to AsYetUntitled
 
 ## Guidelines
 
-1. **Don't break the build**: We have a simple continuous integration system setup with [Travis](https://travis-ci.org/AsYetUntitled/Framework). If your pull request does not pass then it will not be merged. Travis will only check your changes after you submit a pull request. 
+1. **Don't break the build**: We have a simple continuous integration system setup with [GitHub Actions](https://github.com/AsYetUntitled/Framework/actions). If your pull request does not pass then it will not be merged. GitHub Actions will only check your changes after you submit a pull request. 
 2. **Search before posting**: It is likely that what you have to say has already been said. Use the search function to see if someone else has already made a similar issue or pull request. 
 3. **Test, test, and test**: Test your changes thoroughly prior to submitting a pull request. If you were unable to test your changes then ask if someone else can test them for you in your pull request message. Take it a step further and test another person's pull request and report your result to them. 
 4. **Bug fixes over features**: New features may be cool, but ideally bug fixes and optimisations for existing features should be prioritised above implementing new features. 
