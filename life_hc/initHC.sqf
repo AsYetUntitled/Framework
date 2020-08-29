@@ -116,6 +116,8 @@ CONSTVAR(HC_MPAllowedFuncs);
     };
 };
 
+hc_spikes = [];
+
 life_HC_isActive = true;
 publicVariable "life_HC_isActive";
 diag_log "----------------------------------------------------------------------------------------------------";
