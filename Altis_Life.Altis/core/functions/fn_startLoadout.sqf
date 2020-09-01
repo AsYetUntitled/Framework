@@ -6,84 +6,31 @@
     Description:
     Loads a custom loadout on player when he got a new life
 */
-private _pUniform = M_CONFIG(getArray,"Loadouts",str(playerSide),"uniform");
-private _pHeadgear = M_CONFIG(getArray,"Loadouts",str(playerSide),"headgear");
-private _pVest = M_CONFIG(getArray,"Loadouts",str(playerSide),"vest");
-private _pBackpack = M_CONFIG(getArray,"Loadouts",str(playerSide),"backpack");
-private _pWeapon = M_CONFIG(getArray,"Loadouts",str(playerSide),"weapon");
-private _pMagazines = M_CONFIG(getArray,"Loadouts",str(playerSide),"mags");
-private _pItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"items");
-private _linkedItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"linkedItems");
-
-if !(_pUniform isEqualTo []) then {
-    if (playerSide isEqualTo civilian) then {
-        _pUniform = selectRandom _pUniform;
-        if (!(_pUniform isEqualTo []) && {!((_pUniform select 0) isEqualTo "") && {([(_pUniform select 1)] call life_fnc_levelCheck)}}) then {
-            player forceAddUniform (_pUniform select 0);
-        };
-    } else {
-        _pUniform apply {
-            if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-                player forceAddUniform (_x select 0);
-            };
-        };
-    };
+private _side = call {
+    if (playerSide isEqualTo civilian) exitWith {"civ"};
+    if (playerSide isEqualTo west) exitWith {"cop"};
+    if (playerSide isEqualTo independent) exitWith {"med"};
+    if (playerSide isEqualTo east) exitWith {"east"};
 };
 
-if !(_pHeadgear isEqualTo []) then {
-    _pHeadgear apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-            player addHeadgear (_x select 0);
-        };
+if (_side isEqualTo "civ") then {
+    if (life_is_arrested) exitWith {
+        player setUnitLoadout (missionConfigFile >> "Loadouts" >> "civ_level_arrested");
     };
-};
 
-if !(_pVest isEqualTo []) then {
-    _pVest apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-            player addVest (_x select 0);
-        };
+    private _civLoadout = getUnitLoadout (missionConfigFile >> "Loadouts" >> "civ_level_random");
+    if (getNumber(missionConfigFile >> "Loadouts" >> "civilian_randomClothing") isEqualTo 1) then {
+        private _arr = getArray(missionConfigFile >> "Loadouts" >> "civRandomClothing");
+        (_civLoadout select 3) set [0, selectRandom _arr];
     };
-};
-
-if !(_pBackpack isEqualTo []) then {
-    _pBackpack apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-            player addBackpack (_x select 0);
-        };
+    player setUnitLoadout _civLoadout;
+} else {
+    private _level = call {
+        if (_side isEqualTo "cop") exitWith {FETCH_CONST(life_coplevel)};
+        if (_side isEqualTo "med") exitWith {FETCH_CONST(life_mediclevel)};
+        if (_side isEqualTo "east") exitWith {0};
     };
-};
-
-if !(_pWeapon isEqualTo []) then {
-    _pWeapon apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-            player addWeapon (_x select 0);
-        };
-    };
-};
-
-if !(_pMagazines isEqualTo []) then {
-    _pMagazines apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {((_x select 1) > 0) && {([(_x select 2)] call life_fnc_levelCheck)}}}) then {
-            player addMagazines [(_x select 0),(_x select 1)];
-        };
-    };
-};
-
-if !(_pItems isEqualTo []) then {
-    _pItems apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {((_x select 1) > 0) && {([(_x select 2)] call life_fnc_levelCheck)}}}) then {
-            for "_i" from 1 to (_x select 1) step 1 do {player addItem (_x select 0)};
-        };
-    };
-};
-
-if !(_linkedItems isEqualTo []) then {
-    _linkedItems apply {
-        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-            player linkItem (_x select 0);
-        };
-    };
+    player setUnitLoadout (missionConfigFile >> "Loadouts" >> format["%1_level_%2", _side, _level]);
 };
 
 [] call life_fnc_playerSkins;
