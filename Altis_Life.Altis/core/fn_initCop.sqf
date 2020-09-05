@@ -20,8 +20,14 @@ if (!(str(player) in ["cop_1","cop_2","cop_3","cop_4"])) then {
     };
 };
 
-
-player setVariable ["rank",(FETCH_CONST(life_coplevel)),true];
+private _rank = FETCH_CONST(life_coplevel);
+private _paychecks = LIFE_SETTINGS(getArray,"paycheck_cop");
+if (count _paychecks isEqualTo 1) then {
+    life_paycheck = _paychecks select 0;
+} else {
+    life_paycheck = _paychecks select _rank;
+};
+player setVariable ["rank",_rank,true];
 [] call life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
