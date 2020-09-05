@@ -27,9 +27,11 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     _className = "Default"; //Use Default class if it doesn't exist
 };
 
-private _textures = ((M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures") select _index) param [2,[]]);
-if (_textures isEqualTo []) exitWith {};
+private _textures = M_CONFIG(getArray,"LifeCfgVehicles",_className,"textures");
+if (count _textures <= _index) exitWith {};
+
+private _texturePaths =  (_textures select _index) param [2,[]];
 
 _vehicle setVariable ["Life_VEH_color",_index,true];
 
-{_vehicle setObjectTextureGlobal [_forEachIndex,_x]} forEach _textures;
+{_vehicle setObjectTextureGlobal [_forEachIndex,_x]} forEach _texturePaths;
