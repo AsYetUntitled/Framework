@@ -2,23 +2,22 @@
 /*
     File: fn_pickupAction.sqf
     Author: Bryan "Tonic" Boardwine
-
     Description:
     Validates that the cash is not a lie
 */
-params [
-    ["_obj",objNull,[objNull]],
-    ["_client",objNull,[objNull]],
-    ["_cash",false,[true]]
-];
+private _target = param [0, objNull, [objNull]];
 
-if (isNull _obj || {isNull _client}) exitWith {systemChat "Obj or client is null?";}; //No.
-if (!(_obj getVariable ["inUse",false])) exitWith {
-    _client = owner _client;
-    _obj setVariable ["inUse",true,true];
-    if (_cash) then {
-        _obj remoteExecCall ["life_fnc_pickupMoney",_client];
+if (!isRemoteExecuted) exitWith {};
+if (isNull _obj) exitWith {};
+private _item = _target getVariable "item";
+if (isNil "_item") exitWith {};
+
+if !(_obj getVariable ["inUse",false]) exitWith {
+    _target setVariable ["inUse",true,true];
+
+    if (_target getVariable "item" select 0 isEqualTo "cash") then {
+        _target remoteExecCall ["life_fnc_pickupMoney", remoteExecutedOwner];
     } else {
-        _obj remoteExecCall ["life_fnc_pickupItem",_client];
+        _target remoteExecCall ["life_fnc_pickupItem", remoteExecutedOwner];
     };
 };
