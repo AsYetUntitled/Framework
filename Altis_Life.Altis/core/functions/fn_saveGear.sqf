@@ -22,8 +22,8 @@ if (playerSide isEqualTo west || playerSide isEqualTo civilian && {LIFE_SETTINGS
     _return pushBack primaryWeapon player;
     _return pushBack handgunWeapon player;
 } else {
-    _return pushBack [];
-    _return pushBack [];
+    _return pushBack "";
+    _return pushBack "";
 };
 
 _uItems = [];
