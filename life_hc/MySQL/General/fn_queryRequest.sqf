@@ -2,7 +2,7 @@
 /*
     File: fn_queryRequest.sqf
     Author: Bryan "Tonic" Boardwine
-    
+
     This file is for Nanou's HeadlessClient.
 
     Description:
@@ -32,7 +32,7 @@ private _query = switch (_side) do {
 };
 
 private _tickTime = diag_tickTime;
-private _queryResult = [_query,2] call DB_fnc_asyncCall;
+private _queryResult = [_query,2] call HC_fnc_asyncCall;
 
 if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
     diag_log "------------- Client Query Request -------------";
@@ -56,29 +56,29 @@ for "_i" from 0 to (count _licenses) -1 do {
 private "_playTimes";
 
 switch (_side) do {
-  case civilian: {
-      _queryResult set[7, [false, true] select (_queryResult select 7)];
-      _queryResult set[10, [false, true] select (_queryResult select 10)];
+    case civilian: {
+        _queryResult set[7, [false, true] select (_queryResult select 7)];
+        _queryResult set[10, [false, true] select (_queryResult select 10)];
 
-      _playTimes = _queryResult select 12;
+        _playTimes = _queryResult select 12;
 
-      /* Make sure nothing else is added under here */
-      _houseData = _uid spawn TON_fnc_fetchPlayerHouses;
-      waitUntil {scriptDone _houseData};
-      _queryResult pushBack (missionNamespace getVariable [format ["houses_%1",_uid],[]]);
-      _gangData = _uid spawn TON_fnc_queryPlayerGang;
-      waitUntil {scriptDone _gangData};
-      _queryResult pushBack (missionNamespace getVariable [format ["gang_%1",_uid],[]]);
-  };
+        /* Make sure nothing else is added under here */
+        _houseData = _uid spawn HC_fnc_fetchPlayerHouses;
+        waitUntil {scriptDone _houseData};
+        _queryResult pushBack (missionNamespace getVariable [format ["houses_%1",_uid],[]]);
+        _gangData = _uid spawn HC_fnc_queryPlayerGang;
+        waitUntil {scriptDone _gangData};
+        _queryResult pushBack (missionNamespace getVariable [format ["gang_%1",_uid],[]]);
+    };
 
-  case west: {
-    _queryResult set[9, [false, true] select (_queryResult select 9)];
-    _playTimes = _queryResult select 11;
-  };
+    case west: {
+        _queryResult set[9, [false, true] select (_queryResult select 9)];
+        _playTimes = _queryResult select 11;
+    };
 
-  case independent: {
-    _playTimes = _queryResult select 10;
-  };
+    case independent: {
+        _playTimes = _queryResult select 10;
+    };
 };
 
 _index = TON_fnc_playtime_values_request find [_uid, _playTimes];
@@ -91,7 +91,7 @@ if (_index != -1) then {
     TON_fnc_playtime_values_request pushBack [_uid, _playTimes];
 };
 
-[_uid, _playTimes select 2] call TON_fnc_setPlayTime;
+[_uid, _playTimes select 2] call HC_fnc_setPlayTime;
 publicVariable "TON_fnc_playtime_values_request";
 
 life_keyreceived = false;
