@@ -68,3 +68,9 @@ _lic ctrlSetStructuredText parseText format ["
 %1
 </t>
 ",_struct];
+
+private _ctrlPos = ctrlPosition _lic;
+_ctrlPos set [3,(ctrltextheight _lic) min (safezoneH - (_ctrlPos select 1) + 0.13)];
+_lic ctrlSetPosition _ctrlPos;
+_lic ctrlCommit 0;
+
