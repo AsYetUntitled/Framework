@@ -17,6 +17,8 @@ _color = [_this,3,-1,[0]] call BIS_fnc_param;
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown || isNull _vehicle) exitWith {};
 if (!alive _vehicle) exitWith {};
 _className = typeOf _vehicle;
+
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) exitWith {}; // No-Inject Batiment hack script
 _type = switch (true) do {
     case (_vehicle isKindOf "Car"): {"Car"};
     case (_vehicle isKindOf "Air"): {"Air"};
