@@ -10,7 +10,7 @@ private ["_medic","_dir","_reviveCost"];
 _medic = param [0,"Unknown Medic",[""]];
 _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
-[life_save_gear] spawn life_fnc_loadDeadGear;
+player setUnitLoadout life_save_gear;
 
 hint format [localize "STR_Medic_RevivePay",_medic,[_reviveCost] call life_fnc_numberText];
 
