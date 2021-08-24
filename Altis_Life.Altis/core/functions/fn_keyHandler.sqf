@@ -98,6 +98,10 @@ switch (_code) do {
             hint localize "STR_NOTF_CommanderView";
             _handled = true;
         };
+        
+        if (_code in (actionKeys "Diary")) then {
+            _handled = true;
+        };
     };
 
     //Space key for Jumping
