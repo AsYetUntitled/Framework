@@ -128,6 +128,15 @@ for "_i" from 0 to 1 step 0 do {
         sleep 0.5;
         failMission "SpyGlass";
     };
+    
+    if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
+        if (cameraView isEqualTo "GROUP") then {
+            [profileName,getPlayerUID player,"Entered_commander_view"] remoteExec ["SPY_fnc_cookieJar",RSERV];
+            [profileName,"Entered commander view"] remoteExec ["SPY_fnc_notifyAdmins",RCLIENT];
+            sleep 0.5;
+            failMission "SpyGlass";
+        };
+    };
 
     /*
         Display Validator
