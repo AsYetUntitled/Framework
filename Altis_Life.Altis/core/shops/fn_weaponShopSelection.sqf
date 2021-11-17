@@ -2,8 +2,7 @@
 /*
     File: fn_weaponShopSelection.sqf
     Author: Bryan "Tonic" Boardwine
-
-    Edit and improvement by ::"mohsen98"::
+    Edited : mohsen98
 
     Description:
     Checks the weapon & adds the price tag.
@@ -55,7 +54,7 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
             };
 
             //Accessories Menu
-            _itemArray = _item call BIS_fnc_compatibleItems;;
+            _itemArray = _item call BIS_fnc_compatibleItems;
             _bool = false;
             {
                 _var = _x select 0;
