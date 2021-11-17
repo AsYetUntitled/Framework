@@ -2,7 +2,7 @@
 /*
     File: fn_weaponShopSelection.sqf
     Author: Bryan "Tonic" Boardwine
-    Edited : mohsen98
+    Edited: mohsen98
 
     Description:
     Checks the weapon & adds the price tag.
