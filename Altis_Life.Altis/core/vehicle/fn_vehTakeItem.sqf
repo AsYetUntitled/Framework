@@ -13,6 +13,7 @@ disableSerialization;
 if (isNull life_trunk_vehicle || !alive life_trunk_vehicle) exitWith {hint localize "STR_MISC_VehDoesntExist"};
 if (!alive player) exitWith {closeDialog 0;};
 if ((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith {  closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
+if (life_action_inUse) exitWith {closeDialog 0;}; // How did he opened the dialog ?!
 
 if ((lbCurSel 3502) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection";};
 _ctrl = ctrlSelData(3502);
