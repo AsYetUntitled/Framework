@@ -1,7 +1,8 @@
 #include "..\..\script_macros.hpp"
 /*
     File: fn_weaponShopMags.sqf
-    Author: Daniel Stuart
+    Authors: Daniel Stuart, Faron
+	 
 
     Description:
     Set Weapon Shop in magazine mode
@@ -9,13 +10,42 @@
 disableSerialization;
 
 if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 0) then {
-    private _weapon = lbData[38403,lbCurSel (38403)];
-    private _magArray = FETCH_CONFIG2(getArray,"CfgWeapons",_weapon,"magazines");
-    {
-        if (_x in FETCH_CONFIG2(getArray,"CfgWeapons",_weapon,"muzzles")) then {
-            _magArray append FETCH_CONFIG(getArray,"CfgWeapons",_weapon,_x,"magazines");
-        };
-    } count ["EGLM", "GL_3GL_F"];
+    private ["_weapon","_magArray","_magWell","_subClass","_muzzles","_subCfgClass"];
+    _weapon = lbData[38403,lbCurSel (38403)];
+    _magArray = getArray (configFile >> "CfgWeapons" >> _weapon >> "magazines");
+	
+    _magWell = getArray (configFile >> "CfgWeapons" >> _weapon >> "magazineWell");
+	{
+		_subClass = _x;
+		_subCfgClass = configProperties [configFile >> "CfgMagazineWells" >> _subClass];
+		
+		{
+			_magArray append getArray _x;
+			true;
+		} count _subCfgClass;
+		true;
+	} count _magWell;
+	
+	//GL and stuff
+	_muzzles = (getArray (configFile >> "CfgWeapons" >> _weapon >> "muzzles")) - ["this"];
+	if (count _muzzles > 0) then {
+		{
+			_magArray append getArray (configFile >> "CfgWeapons" >> _weapon >> _x >> "magazines");
+			_magWell = getArray (configFile >> "CfgWeapons" >> _weapon >> _x >> "magazineWell");
+			{
+				_subClass = _x;
+				_subCfgClass = configProperties [configFile >> "CfgMagazineWells" >> _subClass];
+				
+				{
+					_magArray append getArray _x;
+					true;
+				} count _subCfgClass;
+				true;
+			} count _magWell;
+			true;
+		} count _muzzles;
+	};
+	
     uiNamespace setVariable ["Magazine_Array",_magArray];
     uiNamespace setVariable ["Weapon_Magazine",1];
 } else {
