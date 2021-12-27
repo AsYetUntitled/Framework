@@ -46,21 +46,6 @@ while {_plate isEqualTo ""} do {
     };
 };
 
-private _vid = -1;
-if (_purchase) then {
-    private _type = call {
-        if (_vehicle isKindOf "Car") exitWith {"Car"};
-        if (_vehicle isKindOf "Air") exitWith {"Air"};
-        if (_vehicle isKindOf "Ship") exitWith {"Ship"};
-    };
-
-    private _side = [_unit,true] call life_util_fnc_sideToString;
-
-    private _query = format ["insertVehicle:%1:%2:%3:%4:%5:%6", _side, _className, _type, _uid, _color, _plate];
-    private _queryResult = [_query, 2] call DB_fnc_asyncCall;
-    _vid = _queryResult select 0;
-};
-
 private _vehicle = createVehicle [_className,getMarkerPos _spawnPoint,[],0];
 _vehicle setDir (markerDir _spawnPoint);
 
@@ -78,7 +63,21 @@ _vehicle setVariable ["trunk_in_use",false,true];
 _vehicle setVariable ["vehicle_info_owners",[[_uid,name _unit]],true];
 _vehicle setPlateNumber _plate;
 _vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for setPlateNumber
+
+private _vid = -1;
 if (_purchase) then {
+    private _type = call {
+        if (_vehicle isKindOf "Car") exitWith {"Car"};
+        if (_vehicle isKindOf "Air") exitWith {"Air"};
+        if (_vehicle isKindOf "Ship") exitWith {"Ship"};
+    };
+
+    private _side = [_unit,true] call life_util_fnc_sideToString;
+
+    private _query = format ["insertVehicle:%1:%2:%3:%4:%5:%6", _side, _className, _type, _uid, _color, _plate];
+    private _queryResult = [_query, 2] call DB_fnc_asyncCall;
+    _vid = _queryResult select 0;
+
     [_vehicle,_vid] spawn {
         params ["_vehicle","_vid"];
         uiSleep 0.3;
