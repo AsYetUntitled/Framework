@@ -109,13 +109,6 @@ HC_MPAllowedFuncs = [
 
 CONSTVAR(HC_MPAllowedFuncs);
 
-[] spawn {
-    for "_i" from 0 to 1 step 0 do {
-        uiSleep 60;
-        publicVariableServer "serv_sv_use";
-    };
-};
-
 life_HC_isActive = true;
 publicVariable "life_HC_isActive";
 diag_log "----------------------------------------------------------------------------------------------------";

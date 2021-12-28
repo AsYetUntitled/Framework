@@ -24,7 +24,7 @@ private _uid = getPlayerUID _unit;
 private _owners = _vehicle getVariable "vehicle_info_owners";
 private _insertedIndex = _owners pushBackUnique [_uid,_unit getVariable ["realname",name _unit]];
 
-if (_insertedIndex != -1) then {
+if (_insertedIndex isNotEqualTo -1) then {
     _vehicle setVariable ["vehicle_info_owners",_owners,true];
 };
 

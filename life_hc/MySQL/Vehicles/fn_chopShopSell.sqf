@@ -15,14 +15,14 @@ params [
 ];
 
 //Error checks
-if (isNull _vehicle || isNull _unit) exitWith  {
+if (isNull _vehicle || {isNull _unit}) exitWith  {
     [] remoteExecCall ["life_fnc_chopShopSold", remoteExecutedOwner];
 };
 
 private _displayName = FETCH_CONFIG2(getText,"CfgVehicles",typeOf _vehicle, "displayName");
 
 private _plate = _vehicle getVariable ["plate",""];
-if !(_plate isEqualTo "") then {
+if (_plate isNotEqualTo "") then {
     private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
     _ownerInfo params ["_uid"];
     private _query = format ["deleteVehicle:%1:%2", _uid, _plate];
