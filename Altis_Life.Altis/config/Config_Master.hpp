@@ -50,6 +50,9 @@ class Life_Settings {
     minimum_cops = 5; //Minimum cops required online to rob the Federal Reserve
     fed_chargeTime = 5; //Time in minutes for the explosive charge at the Federal Reserve to explode
 
+    /* Messaging Settings */
+    message_maxlength = 400; //maximum character count allowed in text messages. Used to prevent improper message displaying. -1 to disable the limit
+
     /*Death settings*/
     drop_weapons_onDeath = false; //Set true to enable weapon dropping on death. False (default) will delete player weapons on death, allowing them to be revived with them instead
 
