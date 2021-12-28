@@ -31,7 +31,7 @@ if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
 };
 
 if (_impound) exitWith {
-    if (_vid isEqualTo -1) then {
+    if (_vid isNotEqualTo -1) then {
         private _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid, _vid];
         [_query,1] call DB_fnc_asyncCall;
     };
