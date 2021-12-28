@@ -18,8 +18,9 @@ if !(isNull objectParent player) then {
     private _nearVehicles = nearestObjects[getPos _garage,["Car","Air","Ship"],30]; //Fetch vehicles within 30m.
     if !(_nearVehicles isEqualTo []) then {
         {
+            if (!isNull _vehicle) exitWith {}; //Kill the loop.
             private _vehData = _x getVariable ["vehicle_info_owners",[]];
-            if !(_vehData  isEqualTo []) then {
+            if !(_vehData isEqualTo []) then {
                 (_vehData select 0) params ["_ownerUID"];
                 if ((getPlayerUID player) isEqualTo _ownerUID) exitWith {
                     _vehicle = _x;

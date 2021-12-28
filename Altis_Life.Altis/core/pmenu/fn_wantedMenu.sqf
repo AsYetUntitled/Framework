@@ -31,12 +31,14 @@ lbClear _list2; //Purge the list
 
 private _crimes = LIFE_SETTINGS(getArray,"crimes");
 {
-  if (isLocalized (_x select 0)) then {
-    _list2 lbAdd format ["%1 - $%2 (%3)",localize (_x select 0),(_x select 1),(_x select 2)];
-  } else {
-    _list2 lbAdd format ["%1 - $%2 (%3)",(_x select 0),(_x select 1),(_x select 2)];
-  };
-    _list2 lbSetData [(lbSize _list2)-1,(_x select 2)];
+    _x params [
+        "_name",
+        "_bounty",
+        "_code"
+    ];
+
+    private _id = _list2 lbAdd format ["%1 - $%2 (%3)",_name,_bounty,_code];
+    _list2 lbSetData [_id, _code];
 } forEach _crimes;
 
 ctrlSetText[2404,"Establishing connection..."];

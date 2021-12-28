@@ -71,7 +71,7 @@ class CfgRemoteExec {
         F(life_fnc_clientGangKick,CLIENT)
         JIP(life_fnc_clientGangLeader,CLIENT)
         F(life_fnc_clientGangLeft,CLIENT)
-        F(TON_fnc_clientGetKey,CLIENT)
+        F(life_fnc_clientGetKey,CLIENT)
         F(life_fnc_clientMessage,CLIENT)
         F(life_util_fnc_playerQuery,CLIENT)
 
