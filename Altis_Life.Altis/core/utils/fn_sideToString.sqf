@@ -3,7 +3,7 @@
     Author: DomT602
     Description:
     Translates a side to a string representing the side.
-    To-do - add to functions.hpp, add to spyglass, move into utils folder
+    To-do - add to spyglass
 */
 params [
     ["_unit",objNull,[objNull]],
