@@ -67,9 +67,9 @@ _vehicle setVariable ["plate", _plate, true]; //'Air' don't work properly for se
 private _vid = -1;
 if (_purchase) then {
     private _type = call {
-        if (_vehicle isKindOf "Car") exitWith {"Car"};
         if (_vehicle isKindOf "Air") exitWith {"Air"};
         if (_vehicle isKindOf "Ship") exitWith {"Ship"};
+        "Car"
     };
 
     private _side = [_unit,true] call life_util_fnc_sideToString;
