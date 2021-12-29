@@ -17,10 +17,10 @@ _type = M_CONFIG(getText,"VirtualItems",_item,"displayName");
 
 if (_bool) then {
     if ([true,_item,(parseNumber _val)] call life_fnc_handleInv) then {
-        hint format [localize "STR_MISC_TooMuch",_from getVariable ["realname",name _from],_val,(localize _type)];
+        hint format [localize "STR_MISC_TooMuch",_from getVariable ["realname",name _from],_val,_type];
     };
 } else {
     if ([true,_item,(parseNumber _val)] call life_fnc_handleInv) then {
-        hint format [localize "STR_MISC_TooMuch_2",_from getVariable ["realname",name _from],_val,(localize _type)];
+        hint format [localize "STR_MISC_TooMuch_2",_from getVariable ["realname",name _from],_val,_type];
     };
 };
