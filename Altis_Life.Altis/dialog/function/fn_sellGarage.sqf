@@ -22,7 +22,7 @@ if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
 
 private "_multiplier";
 private "_purchasePrice";
-private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
+private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 switch (playerSide) do {
     case civilian: {
         _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");
@@ -68,9 +68,9 @@ BANK = BANK + _sellPrice;
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        advanced_log = format [localize "STR_DL_AL_soldVehicle_BEF",_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        advanced_log = format [localize "STR_DL_AL_soldVehicle_BEF",_className,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     } else {
-        advanced_log = format [localize "STR_DL_AL_soldVehicle",profileName,(getPlayerUID player),_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        advanced_log = format [localize "STR_DL_AL_soldVehicle",profileName,(getPlayerUID player),_className,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     };
     publicVariableServer "advanced_log";
 };
