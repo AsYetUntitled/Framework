@@ -25,7 +25,7 @@ switch (playerSide) do {
     case west: {
         //Pickup spikes
         life_actions pushBack (player addAction[localize "STR_ISTR_Spike_Pack",life_fnc_packupSpikes,"",0,false,false,"",
-        '(nearestObjects[getPosATL player,["Land_Razorwire_F"],8]) params [["_spikes",objNull]]; !isNull _spikes && !isNil {(_spikes getVariable "item")} ']);
+        '(nearestObjects[player,["Land_Razorwire_F"],8]) params [["_spikes",objNull]]; !isNull _spikes && {!isNil {(_spikes getVariable "item")}} ']);
 
     };
 

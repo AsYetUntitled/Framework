@@ -5,7 +5,7 @@
     Description:
     Packs up a deployed spike strip.
 */
-(nearestObjects [getPosATL player,["Land_Razorwire_F"],8]) params [["_spikes", objNull]];
+(nearestObjects [player,["Land_Razorwire_F"],8]) params [["_spikes", objNull]];
 if (isNull _spikes) exitWith {};
 
 if ([true,"spikeStrip",1] call life_fnc_handleInv) then {

@@ -22,8 +22,7 @@ if (count hc_spikes isEqualTo 1) then { //start monitoring spikestrips
         if (hc_spikes isEqualTo []) exitWith {};
 
         {
-            private _pos = getPosATL _x;
-            (nearestObjects [_pos,["Car"],5]) params [["_nearVeh", objNull]];
+            (nearestObjects [_x,["Car"],5]) params [["_nearVeh", objNull]];
             if (alive _nearVeh && {abs (speed _nearVeh) > _minSpikeSpeed}) then {
                 [_nearVeh] remoteExecCall ["life_fnc_spikeStripEffect",_nearVeh];
                 deleteVehicle _x;

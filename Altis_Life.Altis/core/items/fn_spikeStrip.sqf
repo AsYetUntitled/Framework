@@ -8,7 +8,7 @@
 */
 private _maxSpikeCount = LIFE_SETTINGS(getNumber,"maximumSpikestrips");
 life_spikesDeployed = life_spikesDeployed - [objNull];
-if (_maxSpikeCount != -1 && {(count life_spikesDeployed) isEqualTo _maxSpikeCount}) exitWith {hint format [localize "STR_ISTR_MaxSpikesDeployed", _maxSpikeCount]}; //max spikes placed
+if (_maxSpikeCount isNotEqualTo -1 && {(count life_spikesDeployed) isEqualTo _maxSpikeCount}) exitWith {hint format [localize "STR_ISTR_MaxSpikesDeployed", _maxSpikeCount]};
 
 private _spikeStrip = "Land_Razorwire_F" createVehicle [0,0,0];
 _spikeStrip attachTo [player,[0,5.5,0]];
