@@ -20,10 +20,15 @@ switch (playerSide) do {
         life_actions pushBack (player addAction[localize "STR_pAct_RobPerson",life_fnc_robAction,"",0,false,false,"",'
         !isNull cursorObject && player distance cursorObject < 3.5 && isPlayer cursorObject && animationState cursorObject == "Incapacitated" && !(cursorObject getVariable ["robbed",false]) ']);
     };
-    
+
     //Cops
-    case west: { };
-    
+    case west: {
+        //Pickup spikes
+        life_actions pushBack (player addAction[localize "STR_ISTR_Spike_Pack",life_fnc_packupSpikes,"",0,false,false,"",
+        '(nearestObjects[player,["Land_Razorwire_F"],8]) params [["_spikes",objNull]]; !isNull _spikes && {!isNil {(_spikes getVariable "item")}} ']);
+
+    };
+
     //EMS
     case independent: { };
 

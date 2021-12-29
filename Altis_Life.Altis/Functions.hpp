@@ -53,6 +53,7 @@ class Life_Client_Core {
         class buyLicense {};
         class captureHideout {};
         class catchFish {};
+        class deploySpikes {};
         class dpFinish {};
         class dropFishingNet {};
         class escortAction {};

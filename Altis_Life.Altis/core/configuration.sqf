@@ -24,6 +24,7 @@ life_bail_paid = false;
 life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = objNull;
+life_spikesDeployed = [];
 life_knockout = false;
 life_interrupted = false;
 life_respawned = false;

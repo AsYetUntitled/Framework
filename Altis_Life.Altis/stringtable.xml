@@ -339,7 +339,6 @@
             <Polish>Caffe OLLEN</Polish>
             <Chinesesimp>加油站咖啡店</Chinesesimp>
         </Key>
-
         <Key ID="STR_Shop_W_gun">
             <Original>Billy Joe's Firearms</Original>
             <Czech>Billy Joe střelné zbraně</Czech>
@@ -8596,6 +8595,18 @@
             <Portuguese>Você já tem um Tapete de Espinhos ativo</Portuguese>
             <Polish>Aktualnie masz rozłożoną kolczatkę</Polish>
             <Chinesesimp>你已经部署了一个钉刺带。</Chinesesimp>
+        </Key>
+        <Key ID="STR_ISTR_MaxSpikesDeployed">
+            <Original>You have the max number of spike strips already active (%1).</Original>
+            <Czech>Máte již aktivní maximální počet špiček (%1).</Czech>
+            <Spanish>Tiene el número máximo de tiras de espiga ya activas (%1).</Spanish>
+            <Russian></Russian>
+            <German>Du hast die maximale Anzahl platzierbarer Nagelbänder (%1) erreicht.</German>
+            <French>Vous avez déjà déployé le nombre maximum de herses (%1).</French>
+            <Italian>Hai il numero massimo di striscia chiodata già attive (%1).</Italian>
+            <Portuguese>Você tem o número máximo de faixas de pico já ativas (%1).</Portuguese>
+            <Polish>Masz już maksymalną liczbę pasków kolców (%1).</Polish>
+            <Chinesesimp>您已激活的最大钉条数量（％1）。</Chinesesimp>
         </Key>
         <Key ID="STR_ISTR_RefuelInVehicle">
             <Original>You can't refuel the vehicle while in it!</Original>
