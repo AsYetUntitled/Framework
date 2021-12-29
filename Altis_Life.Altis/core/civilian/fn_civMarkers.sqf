@@ -8,14 +8,12 @@
 private _markers = [];
 
 {
-    if !(_x isEqualTo player) then {
-        private _marker = createMarkerLocal [format ["%1_marker",_x],getPosATL _x];
-        _marker setMarkerColorLocal "ColorCivilian";
-        _marker setMarkerTypeLocal "Mil_dot";
-        _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
+    private _marker = createMarkerLocal [format ["%1_marker",_x],getPosATL _x];
+    _marker setMarkerColorLocal "ColorCivilian";
+    _marker setMarkerTypeLocal "Mil_dot";
+    _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
         _markers pushBack [_marker,_x];
-    };
-} forEach (units (group player));
+} forEach ((units (group player)) - [player]);
 
 while {visibleMap} do {
     {
