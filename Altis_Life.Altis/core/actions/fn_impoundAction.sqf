@@ -54,12 +54,10 @@ if (player distance _vehicle > 10) exitWith {
     life_action_inUse = false;
 };
 
-if (!alive player) exitWith {life_action_inUse = false;};
+if !(alive player) exitWith {life_action_inUse = false};
 
 if (crew _vehicle isEqualTo []) then {
     private _type = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
-
-    life_impound_inuse = true;
 
     if (life_HC_isActive) then {
         [_vehicle,true,player] remoteExec ["HC_fnc_vehicleStore",HC_Life];
@@ -67,7 +65,7 @@ if (crew _vehicle isEqualTo []) then {
         [_vehicle,true,player] remoteExec ["TON_fnc_vehicleStore",RSERV];
     };
 
-    waitUntil {!life_impound_inuse};
+    waitUntil {isNull _vehicle};
     if (playerSide isEqualTo west) then {
             private _impoundMultiplier = LIFE_SETTINGS(getNumber,"vehicle_cop_impound_multiplier");
             private _value = _price * _impoundMultiplier;

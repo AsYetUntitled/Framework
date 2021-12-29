@@ -5,163 +5,128 @@
     Description:
     Stores the vehicle in the 'Garage'
 */
-
 params [
     ["_vehicle", objNull, [objNull]],
     ["_impound", false, [true]],
-    ["_unit", objNull, [objNull]],
-    ["_storetext", "", [""]]
+    ["_unit", objNull, [objNull]]
 ];
 
-private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
-private _ownerID = _unit getVariable ["life_clientID",-1];
+if (isNull _vehicle || {isNull _unit}) exitWith {life_garage_store = false;(owner _unit) publicVariableClient "life_garage_store";}; //Bad data passed.
 
-if (isNull _vehicle || {isNull _unit}) exitWith {life_impound_inuse = false; _ownerID publicVariableClient "life_impound_inuse";life_garage_store = false;_ownerID publicVariableClient "life_garage_store";}; //Bad data passed.
-private _vInfo = _vehicle getVariable ["dbInfo", []];
-private "_plate";
-private "_uid";
-
-if !(_vInfo isEqualTo []) then {
-    _plate = _vInfo select 1;
-    _uid = _vInfo select 0;
-};
+private _ownerInfo = (_vehicle getVariable ["vehicle_info_owners",[]]) select 0;
+_ownerInfo params ["_uid"];
+private _vid = _vehicle getVariable ["vehID",-1];
 
 // save damage.
-private "_damage";
+private _damage = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
     _damage = getAllHitPointsDamage _vehicle;
     _damage = _damage select 2;
-} else {
-    _damage = [];
 };
 
 // because fuel price!
-private "_fuel";
+private _fuel = 1;
 if (LIFE_SETTINGS(getNumber,"save_vehicle_fuel") isEqualTo 1) then {
-    _fuel = (fuel _vehicle);
-} else {
-    _fuel = 1;
+    _fuel = fuel _vehicle;
 };
 
-private "_query";
-private "_thread";
 if (_impound) exitWith {
-    if (_vInfo isEqualTo []) then  {
-        life_impound_inuse = false;
-        _ownerID publicVariableClient "life_impound_inuse";
-
-        if (!isNil "_vehicle" && {!isNull _vehicle}) then {
-            deleteVehicle _vehicle;
-        };
-    } else {    // no free repairs!
-        _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid, _plate];
-        _thread = [_query,1] call HC_fnc_asyncCall;
-
-        if (!isNil "_vehicle" && {!isNull _vehicle}) then {
-            deleteVehicle _vehicle;
-        };
-
-        life_impound_inuse = false;
-        _ownerID publicVariableClient "life_impound_inuse";
+    if (_vid isEqualTo -1) then {
+        private _query = format ["updateVehicleFuel:%1:%2:%3:%4", _fuel, _damage, _uid, _vid];
+        [_query,1] call HC_fnc_asyncCall;
     };
+
+    deleteVehicle _vehicle;
 };
 
 // not persistent so just do this!
-if (_vInfo isEqualTo []) exitWith {
+if (_vid isEqualTo -1) exitWith {
     if (LIFE_SETTINGS(getNumber,"vehicle_rentalReturn") isEqualTo 1) then {
-        [1,"STR_Garage_Store_NotPersistent2",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
-        if (!isNil "_vehicle" && {!isNull _vehicle}) then {
-            deleteVehicle _vehicle;
-        };
+        [1,"STR_Garage_Store_NotPersistent2",true] remoteExecCall ["life_fnc_broadcast",_unit];
+        deleteVehicle _vehicle;
     } else {
-        [1,"STR_Garage_Store_NotPersistent",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
+        [1,"STR_Garage_Store_NotPersistent",true] remoteExecCall ["life_fnc_broadcast",_unit];
     };
     life_garage_store = false;
-    _ownerID publicVariableClient "life_garage_store";
+    (owner _unit) publicVariableClient "life_garage_store";
 };
 
 if !(_uid isEqualTo getPlayerUID _unit) exitWith {
-    [1,"STR_Garage_Store_NoOwnership",true] remoteExecCall ["life_fnc_broadcast",_ownerID];
+    [1,"STR_Garage_Store_NoOwnership",true] remoteExecCall ["life_fnc_broadcast",_unit];
     life_garage_store = false;
-    _ownerID publicVariableClient "life_garage_store";
+    (owner _unit) publicVariableClient "life_garage_store";
 };
 
 // sort out whitelisted items!
 private _trunk = _vehicle getVariable ["Trunk", [[], 0]];
-private _itemList = _trunk select 0;
-private _totalweight = 0;
-private "_weight";
-_items = [];
+_trunk params ["_itemList"];
+private _totalWeight = 0;
+private _items = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
+    private _resourceItems = LIFE_SETTINGS(getArray,"save_vehicle_items");
     if (LIFE_SETTINGS(getNumber,"save_vehicle_illegal") isEqualTo 1) then {
         private _blacklist = false;
-        _profileQuery = format ["selectName:%1", _uid];
-        _profileName = [_profileQuery, 2] call HC_fnc_asyncCall;
+        private _profileQuery = format ["selectName:%1", _uid];
+        private _profileName = [_profileQuery, 2] call HC_fnc_asyncCall;
         _profileName = _profileName select 0;
 
         {
-            private _isIllegal = M_CONFIG(getNumber,"VirtualItems",(_x select 0),"illegal");
+            _x params ["_itemName","_itemCount"];
+            private _isIllegal = M_CONFIG(getNumber,"VirtualItems",_itemName,"illegal");
 
-            _isIllegal = if (_isIllegal isEqualTo 1) then { true } else { false };
+            _isIllegal = _isIllegal isEqualTo 1;
 
-            if (((_x select 0) in _resourceItems) || (_isIllegal)) then {
-                _items pushBack[(_x select 0),(_x select 1)];
-                _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
-                _totalweight = _weight + _totalweight;
+            if ((_itemName in _resourceItems) || {_isIllegal}) then {
+                _items pushBack [_itemName,_itemCount];
+                private _weight = (ITEM_WEIGHT(_itemName)) * _itemCount;
+                _totalWeight = _weight + _totalWeight;
             };
             if (_isIllegal) then {
                 _blacklist = true;
             };
 
-        }
-        foreach _itemList;
+        } forEach _itemList;
 
         if (_blacklist) then {
-            [_uid, _profileName, "481"] remoteExecCall["life_fnc_wantedAdd", RSERV];
-            _query = format ["updateVehicleBlacklistPlate:%1:%2", _uid, _plate];
-            _thread = [_query, 1] call HC_fnc_asyncCall;
+            [_uid, _profileName, "481"] call life_fnc_wantedAdd;
+            private _query = format ["updateVehicleBlacklistPlate:%1:%2", _uid, _vid];
+            [_query, 1] call HC_fnc_asyncCall;
         };
 
-    }
-    else {
+    } else {
         {
-            if ((_x select 0) in _resourceItems) then {
-                _items pushBack[(_x select 0),(_x select 1)];
-                _weight = (ITEM_WEIGHT(_x select 0)) * (_x select 1);
-                _totalweight = _weight + _totalweight;
+            _x params ["_itemName","_itemCount"];
+            if (_itemName in _resourceItems) then {
+                _items pushBack [_itemName,_itemCount];
+                private _weight = (ITEM_WEIGHT(_itemName)) * _itemCount;
+                _totalWeight = _weight + _totalWeight;
             };
-        }
-        forEach _itemList;
+        } forEach _itemList;
     };
 
-    _trunk = [_items, _totalweight];
-}
-else {
+    _trunk = [_items, _totalWeight];
+} else {
     _trunk = [[], 0];
 };
 
-private "_cargo";
-
+private _cargo = [];
 if (LIFE_SETTINGS(getNumber,"save_vehicle_inventory") isEqualTo 1) then {
     private _vehItems = getItemCargo _vehicle;
     private _vehMags = getMagazineCargo _vehicle;
     private _vehWeapons = getWeaponCargo _vehicle;
     private _vehBackpacks = getBackpackCargo _vehicle;
-    _cargo = [_vehItems, _vehMags, _vehWeapons, _vehBackpacks];
-    // no items? clean the array so the database looks pretty
-    if (((_vehItems select 0) isEqualTo []) && ((_vehMags select 0) isEqualTo []) && ((_vehWeapons select 0) isEqualTo []) && ((_vehBackpacks select 0) isEqualTo [])) then {_cargo = [];};
-    } else {
-    _cargo = [];
+
+    if !((_vehItems select 0) isEqualTo [] && {(_vehMags select 0) isEqualTo [] && {(_vehWeapons select 0) isEqualTo [] && {(_vehBackpacks select 0) isEqualTo []}}}) then {
+        _cargo = [_vehItems, _vehMags, _vehWeapons, _vehBackpacks];
+    };
 };
 
 // update
-_query = format ["updateVehicleAll:%1:%2:%3:%4:%5:%6", _trunk, _cargo, _fuel, _damage, _uid, _plate];
-_thread = [_query,1] call HC_fnc_asyncCall;
+private _query = format ["updateVehicleAll:%1:%2:%3:%4:%5:%6", _trunk, _cargo, _fuel, _damage, _uid, _vid];
+[_query,1] call HC_fnc_asyncCall;
 
-if (!isNil "_vehicle" && {!isNull _vehicle}) then {
-    deleteVehicle _vehicle;
-};
+deleteVehicle _vehicle;
 
 life_garage_store = false;
-_ownerID publicVariableClient "life_garage_store";
-[1, _storetext] remoteExecCall ["life_fnc_broadcast", _ownerID];
+(owner _unit) publicVariableClient "life_garage_store";
+[1,"STR_Garage_Store_Success",true] remoteExecCall ["life_fnc_broadcast",_unit];

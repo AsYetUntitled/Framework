@@ -21,7 +21,7 @@ lbClear _list;
 lbClear _players;
 
 {
-    private _side = switch (side _x) do {case west: {"Cop"}; case civilian : {"Civ"}; default {"Unknown"};};
+    private _side = [_x] call life_util_fnc_sideToString;
     _players lbAdd format ["%1 - %2", name _x,_side];
     _players lbSetdata [(lbSize _players)-1,str(_x)];
 } forEach playableUnits;

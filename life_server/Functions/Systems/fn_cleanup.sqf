@@ -31,20 +31,17 @@ private _fnc_cleanVehicles = {
 
             if (crew _x isEqualTo [] && {_noUnitsNear}) then {
                 private _fuel = if (_saveFuel) then {fuel _x} else {1};
-                private _dbInfo = _x getVariable "dbInfo";
+                private _ownerInfo = (_x getVariable ["vehicle_info_owners",[]]) select 0;
+                _ownerInfo params ["_uid"];
+                private _vid = _x getVariable ["vehID",-1];
 
                 deleteVehicle _x;
 
-                if (isNil "_dbInfo") exitWith {};
+                if (_vid isEqualTo -1) exitWith {};
 
                 waitUntil {uiSleep 1; isNull _x};
 
-                _dbInfo params [
-                    "_uid",
-                    "_plate"
-                ];
-
-                private _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _plate];
+                private _query = format ["cleanupVehicle:%1:%2:%3", _fuel, _uid, _vid];
                 [_query, 1] call DB_fnc_asyncCall;
             };
         };
@@ -73,7 +70,7 @@ for "_i" from 0 to 1 step 0 do {
         _x params ["_params", "_function", "_delay", "_timeToRun"];
         if (diag_tickTime > _timeToRun) then {
             _params call _function;
-            _x set [3, diag_tickTime + _delay];
+            _x set [2, diag_tickTime + _delay];
         };
     } forEach _routines;
     uiSleep 1e-6;

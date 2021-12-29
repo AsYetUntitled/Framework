@@ -2,35 +2,25 @@
 /*
     File: fn_getVehicles.sqf
     Author: Bryan "Tonic" Boardwine
-
     Description:
     Sends a request to query the database information and returns vehicles.
 */
-
 params [
-    ["_pid", "", [""]],
-    ["_side", sideUnknown, [west]],
-    ["_type", "", [""]],
-    ["_unit", objNull, [objNull]]
+    ["_unit", objNull, [objNull]],
+    ["_type", "", [""]]
 ];
 
 //Error checks
-if (_pid isEqualTo "" || {_side isEqualTo sideUnknown} || {_type isEqualTo ""} || {isNull _unit}) exitWith {
-    if (!isNull _unit) then {
-        [[]] remoteExec ["life_fnc_impoundMenu",(owner _unit)];
+if (isNull _unit || {_type isEqualTo ""}) exitWith {
+    if !(isNull _unit) then {
+        [[]] remoteExec ["life_fnc_impoundMenu",_unit];
     };
 };
 
-_unit = owner _unit;
-_side = switch (_side) do {
-    case west:{"cop"};
-    case civilian: {"civ"};
-    case independent: {"med"};
-    default {"Error"};
-};
+private _side = [_unit,true] call life_util_fnc_sideToString;
 
-if (_side isEqualTo "Error") exitWith {
-    [[]] remoteExec ["life_fnc_impoundMenu", (owner _unit)];
+if (_side isEqualTo "Unknown") exitWith {
+    [[]] remoteExec ["life_fnc_impoundMenu",_unit];
 };
 
 private _query = format ["selectVehicles:%1:%2:%3", _pid, _side, _type];
@@ -47,7 +37,7 @@ if (EXTDB_SETTING(getNumber,"DebugMode") isEqualTo 1) then {
 };
 
 if (_queryResult isEqualType "") exitWith {
-    [[]] remoteExec ["life_fnc_impoundMenu", (owner _unit)];
+    [[]] remoteExec ["life_fnc_impoundMenu",_unit];
 };
 
-[_queryResult] remoteExec ["life_fnc_impoundMenu", _unit];
+[_queryResult] remoteExec ["life_fnc_impoundMenu",_unit];

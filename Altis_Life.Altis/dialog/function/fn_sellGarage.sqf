@@ -6,23 +6,23 @@
     Description:
     Sells a vehicle from the garage.
 */
-private ["_vehicle","_vehicleLife","_vid","_pid","_sellPrice","_multiplier","_price","_purchasePrice"];
-disableSerialization;
-if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
-_vehicle = (call compile format ["%1",_vehicle]) select 0;
-_vehicleLife = _vehicle;
-_vid = lbValue[2802,(lbCurSel 2802)];
-_pid = getPlayerUID player;
+private _control = CONTROL(2800,2802);
+private _index = lbCurSel _control;
+if (_index isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
 
-if (isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
+private _dataArr = _control lbData _index;
+(parseSimpleArray _dataArr) params ["_vid",["_className",""]];
+if (_className isEqualTo "") exitWith {hint localize "STR_Garage_Selection_Error"};
+
 if ((time - life_action_delay) < 1.5) exitWith {hint localize "STR_NOTF_ActionDelay";};
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _vehicleLife)) then {
-    _vehicleLife = "Default"; //Use Default class if it doesn't exist
-    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_vehicle];
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
+    diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+    _className = "Default"; //Use Default class if it doesn't exist
 };
 
-_price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
+private "_multiplier";
+private "_purchasePrice";
+private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
 switch (playerSide) do {
     case civilian: {
         _multiplier = LIFE_SETTINGS(getNumber,"vehicle_sell_multiplier_CIVILIAN");
@@ -42,7 +42,7 @@ switch (playerSide) do {
     };
 };
 
-_sellPrice = _purchasePrice * _multiplier;
+private _sellPrice = _purchasePrice * _multiplier;
 
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 
@@ -57,9 +57,9 @@ private _action = [
 if !(_action) exitWith {};
 
 if (life_HC_isActive) then {
-    [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
+    [player,_vid] remoteExecCall ["HC_fnc_vehicleDelete",HC_Life];
 } else {
-    [_vid,_pid,_sellPrice,player,life_garage_type] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
+    [player,_vid] remoteExecCall ["TON_fnc_vehicleDelete",RSERV];
 };
 
 hint format [localize "STR_Garage_SoldCar",[_sellPrice] call life_fnc_numberText];
@@ -68,11 +68,12 @@ BANK = BANK + _sellPrice;
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {
-        advanced_log = format [localize "STR_DL_AL_soldVehicle_BEF",_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        advanced_log = format [localize "STR_DL_AL_soldVehicle_BEF",_className,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     } else {
-        advanced_log = format [localize "STR_DL_AL_soldVehicle",profileName,(getPlayerUID player),_vehicleLife,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+        advanced_log = format [localize "STR_DL_AL_soldVehicle",profileName,(getPlayerUID player),_className,[_sellPrice] call life_fnc_numberText,[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
     };
     publicVariableServer "advanced_log";
 };
 
 life_action_delay = time;
+closeDialog 0;

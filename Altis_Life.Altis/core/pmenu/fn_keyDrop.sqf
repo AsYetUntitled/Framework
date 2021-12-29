@@ -9,19 +9,15 @@ disableSerialization;
 
 private _dialog = findDisplay 2700;
 private _list = _dialog displayCtrl 2701;
-private _sel = lbCurSel _list;
+private _listIndex = lbCurSel _list;
 
-if (_sel isEqualTo -1) exitWith {
+if (_listIndex isEqualTo -1) exitWith {
     hint localize "STR_NOTF_noDataSelected"
 };
 
-if (_list lbData _sel isEqualTo "") exitWith {
-    hint localize "STR_NOTF_didNotSelectVehicle"
-};
-
-private _index = parseNumber (_list lbData _sel);
-private _vehicle = life_vehicles param [_index, objNull, [objNull]];
-if isNull _vehicle exitWith {};
+private _keyIndex = _list lbValue _vehIndex;
+private _vehicle = life_vehicles select _keyIndex;
+if (isNull _vehicle) exitWith {};
 
 // Do not let them drop the key to a house
 if (_vehicle isKindOf "House_F") exitWith {
@@ -37,8 +33,6 @@ life_vehicles = life_vehicles - [_vehicle];
 
 // Update vehicle owners
 private _owners = _vehicle getVariable ["vehicle_info_owners", []];
-_owners deleteAt _index;
+_owners deleteAt _keyIndex;
 _vehicle setVariable ["vehicle_info_owners", _owners, true];
-
-// Reload
-call life_fnc_keyMenu
+_list lbDelete _listIndex;

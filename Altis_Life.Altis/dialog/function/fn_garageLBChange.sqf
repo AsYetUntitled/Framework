@@ -4,33 +4,31 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Can't be bothered to answer it.. Already deleted it by accident..
+    Updates the information when garage selection is changed.
 */
-disableSerialization;
-private ["_control","_index","_className","_classNameLife","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_sellMultiplier","_price","_storageFee","_purchasePrice"];
-_control = _this select 0;
-_index = _this select 1;
+params [
+    ["_control",controlNull,[controlNull]],
+    ["_index",0,[0]]
+];
 
 //Fetch some information.
-_dataArr = CONTROL_DATAI(_control,_index);
-_dataArr = call compile format ["%1",_dataArr];
-_className = (_dataArr select 0);
-_classNameLife = _className;
+private _dataArr = _control lbData _index;
+(parseSimpleArray _dataArr) params ["","_className","_vehicleColor"];
 
-if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
-    _classNameLife = "Default"; //Use Default class if it doesn't exist
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) then {
     diag_log format ["%1: LifeCfgVehicles class doesn't exist",_className];
+    _className = "Default"; //Use Default class if it doesn't exist
 };
 
-_vehicleColor = ((M_CONFIG(getArray,"LifeCfgVehicles",_classNameLife,"textures") select (_dataArr select 1)) select 0);
-if (isNil "_vehicleColor") then {_vehicleColor = "Default";};
+private _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
+_vehicleInfo params ["","","","","","","","","_maxSpeed","","_seats","_horsePower","_fuelCapacity"];
+private _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 
-_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
-_trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
+private _price = M_CONFIG(getNumber,"LifeCfgVehicles",_className,"price");
+private _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
-_price = M_CONFIG(getNumber,"LifeCfgVehicles",_classNameLife,"price");
-_storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
-
+private "_purchasePrice";
+private "_sellMultiplier";
 switch (playerSide) do {
     case civilian: {
         _purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");
@@ -65,14 +63,14 @@ if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice 
     " +(localize "STR_Shop_Veh_UI_Trunk")+ " %6<br/>
     " +(localize "STR_Shop_Veh_UI_Fuel")+ " %7
     ",
-[_retrievePrice] call life_fnc_numberText,
-[_sellPrice] call life_fnc_numberText,
-(_vehicleInfo select 8),
-(_vehicleInfo select 11),
-(_vehicleInfo select 10),
-if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
-(_vehicleInfo select 12),
-_vehicleColor
+    [_retrievePrice] call life_fnc_numberText,
+    [_sellPrice] call life_fnc_numberText,
+    _maxSpeed,
+    _horsePower,
+    _seats,
+    if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
+    _fuelCapacity,
+    _vehicleColor
 ];
 
 ctrlShow [2803,true];

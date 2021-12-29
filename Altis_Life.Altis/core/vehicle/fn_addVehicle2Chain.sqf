@@ -5,8 +5,9 @@
     Description:
     A short function for telling the player to add a vehicle to his keychain.
 */
-private "_vehicle";
-_vehicle = param [0,objNull,[objNull]];
-if (!(_vehicle in life_vehicles)) then {
-    life_vehicles pushBack _vehicle;
-};
+params [
+    ["_vehicle",objNull,[objNull]]
+];
+if (isNull _vehicle) exitWith {};
+
+life_vehicles pushBackUnique _vehicle;

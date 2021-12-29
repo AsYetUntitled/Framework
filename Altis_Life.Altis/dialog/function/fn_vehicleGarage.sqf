@@ -12,7 +12,7 @@ params [
     ["_type","",[""]]
 ];
 
-_className = typeOf _garageObj;
+private _className = typeOf _garageObj;
 private _houseConfig = missionConfigFile >> "Housing" >> worldName >> _className;
 private _garageConfig = missionConfigFile >> "Garages" >> worldName >> _className;
 
@@ -28,9 +28,9 @@ life_garage_sp = [(_garageObj modelToWorld _mTwPos),((getDir _garageObj) + _dir)
 life_garage_type = _type;
 
 if (life_HC_isActive) then {
-    [getPlayerUID player,playerSide,_type,player] remoteExec ["HC_fnc_getVehicles",HC_Life];
+    [player,_type] remoteExecCall ["HC_fnc_getVehicles",HC_Life];
 } else {
-    [getPlayerUID player,playerSide,_type,player] remoteExec ["TON_fnc_getVehicles",RSERV];
+    [player,_type] remoteExecCall ["TON_fnc_getVehicles",RSERV];
 };
 
 createDialog "Life_impound_menu";
