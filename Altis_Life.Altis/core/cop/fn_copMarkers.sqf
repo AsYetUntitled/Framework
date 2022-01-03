@@ -8,14 +8,12 @@
 private _markers = [];
 
 {
-    if (side _x isEqualTo west) then {
-        private _marker = createMarkerLocal [format ["%1_marker",_x],getPosATL _x];
-        _marker setMarkerColorLocal "ColorBLUFOR";
-        _marker setMarkerTypeLocal "Mil_dot";
-        _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
-        _markers pushBack [_marker,_x];
-    };
-} forEach (playableUnits - [player]);
+    private _marker = createMarkerLocal [format ["%1_marker",netID _x],getPosATL _x];
+    _marker setMarkerColorLocal "ColorBLUFOR";
+    _marker setMarkerTypeLocal "Mil_dot";
+    _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
+    _markers pushBack [_marker,_x];
+} forEach ((units west) - [player]);
 
 while {visibleMap} do {
     {

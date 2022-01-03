@@ -9,14 +9,12 @@ private _deadMarkers = [];
 private _medicMarkers = [];
 
 {
-    if (side _x isEqualTo independent) then {
-        private _marker = createMarkerLocal [format ["%1_marker",_x],getPosATL _x];
-        _marker setMarkerColorLocal "ColorIndependent";
-        _marker setMarkerTypeLocal "Mil_dot";
-        _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
-        _medicMarkers pushBack [_marker,_x];
-    };
-} forEach (playableUnits - [player]);
+    private _marker = createMarkerLocal [format ["%1_marker",netID _x],getPosATL _x];
+    _marker setMarkerColorLocal "ColorIndependent";
+    _marker setMarkerTypeLocal "Mil_dot";
+    _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
+    _medicMarkers pushBack [_marker,_x];
+} forEach ((units independent) - [player]);
 
 {
     private _name = _x getVariable "name";

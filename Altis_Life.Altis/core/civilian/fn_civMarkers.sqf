@@ -8,11 +8,11 @@
 private _markers = [];
 
 {
-    private _marker = createMarkerLocal [format ["%1_marker",_x],getPosATL _x];
+    private _marker = createMarkerLocal [format ["%1_marker",netID _x],getPosATL _x];
     _marker setMarkerColorLocal "ColorCivilian";
     _marker setMarkerTypeLocal "Mil_dot";
     _marker setMarkerTextLocal format ["%1", _x getVariable ["realname",name _x]];
-        _markers pushBack [_marker,_x];
+    _markers pushBack [_marker,_x];
 } forEach ((units (group player)) - [player]);
 
 while {visibleMap} do {
@@ -25,7 +25,7 @@ while {visibleMap} do {
             _mark setMarkerPosLocal (getPosATL _unit);
         };
     } forEach _markers;
-    sleep 0.01;
+    uiSleep 0.01;
 };
 
 {
