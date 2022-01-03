@@ -25,7 +25,7 @@ while {visibleMap} do {
             _mark setMarkerPosLocal (getPosATL _unit);
         };
     } forEach _markers;
-    sleep 0.01;
+    uiSleep 0.01;
 };
 
 {

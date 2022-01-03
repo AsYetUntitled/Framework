@@ -38,7 +38,7 @@ while {visibleMap} do {
             _mark setMarkerPosLocal (getPosATL _unit);
         };
     } forEach _medicMarkers;
-    sleep 0.01;
+    uiSleep 0.01;
 };
 
 {
