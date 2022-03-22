@@ -27,17 +27,7 @@ _headgear = _loadout select 14;
 _goggles = _loadout select 15;
 
 //Strip the unit down
-RemoveAllWeapons player;
-{player removeMagazine _x;} forEach (magazines player);
-removeUniform player;
-removeVest player;
-removeBackpack player;
-removeGoggles player;
-removeHeadGear player;
-{
-    player unassignItem _x;
-    player removeItem _x;
-} forEach (assignedItems player);
+player setUnitLoadout (configFile >> "EmptyLoadout");
 
 //Add the gear
 if (!(_uniform isEqualTo "")) then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};

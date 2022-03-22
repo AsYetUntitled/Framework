@@ -9,7 +9,7 @@
 private _itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
-[] call life_fnc_stripDownPlayer;
+player setUnitLoadout (configFile >> "EmptyLoadout");
 
 if (_itemArray isEqualTo []) exitWith {[] call life_fnc_startLoadout;};
 
