@@ -14,11 +14,11 @@ diag_log "----------------------------------------------------------------------
 _timeStamp = diag_tickTime;
 
 waitUntil {!isNull (findDisplay 46)};
-[] call compile preprocessFileLineNumbers "core\clientValidator.sqf";
+[] call compileScript ["core\clientValidator.sqf"];
 enableSentences false;
 
 diag_log "[Life Client] Initialization Variables";
-[] call compile preprocessFileLineNumbers "core\configuration.sqf";
+[] call compileScript ["core\configuration.sqf"];
 diag_log "[Life Client] Variables initialized";
 
 diag_log "[Life Client] Setting up Eventhandlers";

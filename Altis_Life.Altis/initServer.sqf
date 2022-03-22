@@ -6,4 +6,4 @@
     Starts the initialization of the server.
 */
 
-[] call compile preprocessFileLineNumbers "\life_server\init.sqf";
+[] call compileScript ["\life_server\init.sqf"];

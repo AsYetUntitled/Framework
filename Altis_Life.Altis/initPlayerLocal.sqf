@@ -7,7 +7,7 @@
     Starts the initialization of the player.
 */
 if (!hasInterface && !isServer) exitWith {
-    [] call compile preprocessFileLineNumbers "\life_hc\initHC.sqf";
+    [] call compileScript ["\life_hc\initHC.sqf"];
 };
 
 CONST(BIS_fnc_endMission,BIS_fnc_endMission);
