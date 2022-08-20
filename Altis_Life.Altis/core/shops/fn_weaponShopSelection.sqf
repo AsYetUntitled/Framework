@@ -2,6 +2,7 @@
 /*
     File: fn_weaponShopSelection.sqf
     Author: Bryan "Tonic" Boardwine
+    Edited: mohsen98
 
     Description:
     Checks the weapon & adds the price tag.
@@ -33,69 +34,40 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
         _priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#8cff9b'>$%1</t></t>",[(_price)] call life_fnc_numberText];
     };
     if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 0 && (uiNamespace getVariable ["Weapon_Accessories",0]) isEqualTo 0) then {
-            if (isClass (configFile >> "CfgWeapons" >> _item)) then {
-                //Magazines menu
-                if (isArray (configFile >> "CfgWeapons" >> _item >> "magazines")) then {
-                    _itemArray = FETCH_CONFIG2(getArray,"CfgWeapons",_item,"magazines");
-                    _bool = false;
-                    {
-                        _var = _x select 0;
-                        _count = {_x == _var} count _itemArray;
-                        if (_count > 0) exitWith {_bool = true};
-                    } forEach M_CONFIG(getArray,"WeaponShops",_shop,"mags");
-                    if (_bool) then {
-                        ((findDisplay 38400) displayCtrl 38406) ctrlEnable true;
-                    } else {
-                        ((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
-                    };
+        if (isClass (configFile >> "CfgWeapons" >> _item)) then {
+            //Magazines menu
+            if (isArray (configFile >> "CfgWeapons" >> _item >> "magazines")) then {
+                _itemArray = FETCH_CONFIG2(getArray,"CfgWeapons",_item,"magazines");
+                _bool = false;
+                {
+                    _var = _x select 0;
+                    _count = {_x == _var} count _itemArray;
+                    if (_count > 0) exitWith {_bool = true};
+                } forEach M_CONFIG(getArray,"WeaponShops",_shop,"mags");
+                if (_bool) then {
+                    ((findDisplay 38400) displayCtrl 38406) ctrlEnable true;
                 } else {
                     ((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
                 };
-
-                //Accessories Menu
-                if (isClass (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo")) then {
-                    private ["_slotArray"];
-                    _itemArray = [];
-                    if (isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems")) then {
-                        _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","CowsSlot","compatibleItems");
-                        {
-                            _itemArray pushBack _x;
-                        } forEach _slotArray;
-                    };
-                    if (isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems")) then {
-                        _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","MuzzleSlot","compatibleItems");
-                        {
-                            _itemArray pushBack _x;
-                        } forEach _slotArray;
-                    };
-                    if (isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems")) then {
-                        _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","PointerSlot","compatibleItems");
-                        {
-                            _itemArray pushBack _x;
-                        } forEach _slotArray;
-                    };
-                    if (isArray (configFile >> "CfgWeapons" >> _item >> "WeaponSlotsInfo" >> "UnderBarrelSlot" >> "compatibleItems")) then {
-                        _slotArray = FETCH_CONFIG3(getArray,"CfgWeapons",_item,"WeaponSlotsInfo","UnderBarrelSlot","compatibleItems");
-                        {
-                            _itemArray pushBack _x;
-                        } forEach _slotArray;
-                    };
-
-                    _bool = false;
-                    {
-                        _var = _x select 0;
-                        _count = {_x == _var} count _itemArray;
-                        if (_count > 0) exitWith {_bool = true};
-                    } forEach M_CONFIG(getArray,"WeaponShops",_shop,"accs");
-                    if (_bool) then {
-                        ((findDisplay 38400) displayCtrl 38407) ctrlEnable true;
-                    } else {
-                        ((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
-                    };
-                } else {
-                    ((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
-                };
             } else {
+                ((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
+            };
+
+            //Accessories Menu
+            _itemArray = _item call BIS_fnc_compatibleItems;
+            _bool = false;
+            {
+                _var = _x select 0;
+                _count = {_x == _var} count _itemArray;
+                if (_count > 0) exitWith {_bool = true};
+            } forEach M_CONFIG(getArray,"WeaponShops",_shop,"accs");
+            if (_bool) then {
+                ((findDisplay 38400) displayCtrl 38407) ctrlEnable true;
+            } else {
+                ((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
+            };
+
+        } else {
             ((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
             ((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
         };
