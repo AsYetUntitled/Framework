@@ -89,5 +89,6 @@ if !(_linkedItems isEqualTo []) then {
     };
 };
 
-[] call life_fnc_playerSkins;
 [] call life_fnc_saveGear;
+
+true
