@@ -202,7 +202,6 @@ class Life_Client_Core {
         class numberText {};
         class onFired {};
         class onTakeItem {};
-        class playerSkins {};
         class playerTags {};
         class postNewsBroadcast {};
         class pullOutVeh {};
@@ -217,6 +216,7 @@ class Life_Client_Core {
         class teleport {};
         class whereAmI {};
         class moveIn {};
+        class playerTextures {preInit = 1;};
     };
 
     class Gangs {
