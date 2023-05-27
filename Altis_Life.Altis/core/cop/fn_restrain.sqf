@@ -9,7 +9,7 @@
 
 // Add the scroll wheel action for restraining
 // Precheck for if player is a cop ensures that the scroll wheel action for restraining will only be available to police officers
-if (playerSide isEqualTo west && !isNull (west createGroup (group player)) && !(west createGroup (group player)) isEqualTo (west createGroup createUnit ["", position player, [], 0, ""] createUnit ["", position player, [], 0, ""])) then {
+if (playerSide isEqualTo west && !(isNil {player getVariable "restrained"}) && !(isNil {player getVariable "Escorting"}) && !(isNil {player getVariable "transporting"})) then {
     player addAction ["Restrain Player", { [] spawn fn_restrainPlayer; }, [], 1, true, true, "", ""];
 };
 
